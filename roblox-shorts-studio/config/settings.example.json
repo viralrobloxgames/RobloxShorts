@@ -1,0 +1,22 @@
+{
+  "_comment": "Copy to ~/.roblox-shorts-studio/settings.json (or tools.local.json next to scripts/../). Paths and preferences only. No API keys or tokens: those go in the OS keyring (service 'roblox-shorts-studio') or environment variables.",
+
+  "blender": "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe",
+  "python": "C:\Program Files\Blender Foundation\Blender 5.2\5.2\python\bin\python.exe",
+  "ffmpeg": "C:\path\to\ffmpeg.exe",
+  "ffprobe": "C:\path\to\ffprobe.exe",
+
+  "transcription_python": "C:\path\to\asr\Scripts\python.exe",
+  "transcription_model": "C:\path\to\model-cache\hub\models--Systran--faster-whisper-base.en\snapshots\<id>",
+  "ctranslate2_compat": "C:\path\to\asr-compat\ctranslate2-4.6.0",
+
+  "elevenlabs_mode": "connector",
+  "voice_name": "George - Warm, Captivating Storyteller",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "voice_model": "eleven_multilingual_v2",
+  "voice_settings": {"speed": 1.0, "stability": 0.5, "similarity_boost": 0.75, "style": 0, "use_speaker_boost": true},
+
+  "render": {"where": "GarageFarm", "blender_version": "5.2.1_x64", "engine": "EEVEE", "format": "PNG", "priority": "Low", "frames_per_execution": 5},
+  "delivery_mode": "local-review",
+  "publish_default": "private"
+}

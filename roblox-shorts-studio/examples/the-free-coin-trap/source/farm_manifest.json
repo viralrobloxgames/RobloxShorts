@@ -1,0 +1,120 @@
+{
+  "title": "The Free Coin Trap",
+  "file": "The_Free_Coin_Trap_GarageFarm.blend",
+  "sha256": "79effe5c9c164f849a74e37f2cfe13339b202363fbcd20ff6e16e75d55fd447f",
+  "blender": "5.2.1 LTS",
+  "engine": "BLENDER_EEVEE",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frame_start": 1,
+  "frame_end": 651,
+  "seconds": 21.7,
+  "test_frames": [
+    1,
+    87,
+    118,
+    199,
+    290,
+    397,
+    469,
+    510,
+    545,
+    600,
+    621
+  ],
+  "objects": 731,
+  "linked_libraries": 0,
+  "autoexec_required": false,
+  "local_render_performed": false,
+  "checks": [
+    {
+      "frame": 1,
+      "max_head_in_frame": [
+        0.39,
+        0.523,
+        28.304
+      ]
+    },
+    {
+      "frame": 87,
+      "max_head_in_frame": [
+        0.597,
+        0.625,
+        24.116
+      ]
+    },
+    {
+      "frame": 118,
+      "max_head_in_frame": [
+        0.589,
+        0.625,
+        24.11
+      ]
+    },
+    {
+      "frame": 199,
+      "max_head_in_frame": [
+        0.416,
+        0.554,
+        26.106
+      ]
+    },
+    {
+      "frame": 290,
+      "max_head_in_frame": [
+        0.374,
+        0.514,
+        28.332
+      ]
+    },
+    {
+      "frame": 397,
+      "max_head_in_frame": [
+        0.426,
+        0.517,
+        24.987
+      ]
+    },
+    {
+      "frame": 469,
+      "max_head_in_frame": [
+        0.343,
+        0.531,
+        28.381
+      ]
+    },
+    {
+      "frame": 510,
+      "max_head_in_frame": [
+        0.343,
+        0.531,
+        28.376
+      ]
+    },
+    {
+      "frame": 545,
+      "max_head_in_frame": [
+        0.446,
+        0.522,
+        23.747
+      ]
+    },
+    {
+      "frame": 600,
+      "max_head_in_frame": [
+        0.343,
+        0.504,
+        25.781
+      ]
+    },
+    {
+      "frame": 621,
+      "max_head_in_frame": [
+        0.343,
+        0.507,
+        25.901
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1093 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.16,
+    "text": "Leo won five rounds",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.18,
+        "word": " Leo"
+      },
+      {
+        "start": 0.18,
+        "end": 0.52,
+        "word": " won"
+      },
+      {
+        "start": 0.52,
+        "end": 0.94,
+        "word": " five"
+      },
+      {
+        "start": 0.94,
+        "end": 1.16,
+        "word": " rounds"
+      }
+    ]
+  },
+  {
+    "start": 1.16,
+    "end": 2.76,
+    "text": "of disaster island and",
+    "words": [
+      {
+        "start": 1.16,
+        "end": 1.42,
+        "word": " of"
+      },
+      {
+        "start": 1.42,
+        "end": 1.6,
+        "word": " disaster"
+      },
+      {
+        "start": 1.6,
+        "end": 2.14,
+        "word": " island"
+      },
+      {
+        "start": 2.14,
+        "end": 2.76,
+        "word": " and"
+      }
+    ]
+  },
+  {
+    "start": 2.76,
+    "end": 3.92,
+    "text": "never touched his keyboard.",
+    "words": [
+      {
+        "start": 2.76,
+        "end": 2.94,
+        "word": " never"
+      },
+      {
+        "start": 2.94,
+        "end": 3.24,
+        "word": " touched"
+      },
+      {
+        "start": 3.24,
+        "end": 3.46,
+        "word": " his"
+      },
+      {
+        "start": 3.46,
+        "end": 3.8,
+        "word": " keyboard."
+      }
+    ]
+  },
+  {
+    "start": 4.64,
+    "end": 5.5600000000000005,
+    "text": "Round one,",
+    "words": [
+      {
+        "start": 4.64,
+        "end": 5.02,
+        "word": " Round"
+      },
+      {
+        "start": 5.02,
+        "end": 5.44,
+        "word": " one,"
+      }
+    ]
+  },
+  {
+    "start": 5.94,
+    "end": 6.36,
+    "text": "flood,",
+    "words": [
+      {
+        "start": 5.94,
+        "end": 6.24,
+        "word": " flood,"
+      }
+    ]
+  },
+  {
+    "start": 6.92,
+    "end": 7.82,
+    "text": "Max climbed the tallest",
+    "words": [
+      {
+        "start": 6.92,
+        "end": 7.08,
+        "word": " Max"
+      },
+      {
+        "start": 7.08,
+        "end": 7.48,
+        "word": " climbed"
+      },
+      {
+        "start": 7.48,
+        "end": 7.68,
+        "word": " the"
+      },
+      {
+        "start": 7.68,
+        "end": 7.82,
+        "word": " tallest"
+      }
+    ]
+  },
+  {
+    "start": 7.82,
+    "end": 8.399999999999999,
+    "text": "tower,",
+    "words": [
+      {
+        "start": 7.82,
+        "end": 8.28,
+        "word": " tower,"
+      }
+    ]
+  },
+  {
+    "start": 8.76,
+    "end": 9.719999999999999,
+    "text": "Mia grabbed a boat,",
+    "words": [
+      {
+        "start": 8.76,
+        "end": 8.92,
+        "word": " Mia"
+      },
+      {
+        "start": 8.92,
+        "end": 9.18,
+        "word": " grabbed"
+      },
+      {
+        "start": 9.18,
+        "end": 9.42,
+        "word": " a"
+      },
+      {
+        "start": 9.42,
+        "end": 9.6,
+        "word": " boat,"
+      }
+    ]
+  },
+  {
+    "start": 10.38,
+    "end": 11.32,
+    "text": "Leo just stood there",
+    "words": [
+      {
+        "start": 10.38,
+        "end": 10.5,
+        "word": " Leo"
+      },
+      {
+        "start": 10.5,
+        "end": 10.8,
+        "word": " just"
+      },
+      {
+        "start": 10.8,
+        "end": 11.04,
+        "word": " stood"
+      },
+      {
+        "start": 11.04,
+        "end": 11.32,
+        "word": " there"
+      }
+    ]
+  },
+  {
+    "start": 11.32,
+    "end": 12.5,
+    "text": "on the only crate",
+    "words": [
+      {
+        "start": 11.32,
+        "end": 11.88,
+        "word": " on"
+      },
+      {
+        "start": 11.88,
+        "end": 12.0,
+        "word": " the"
+      },
+      {
+        "start": 12.0,
+        "end": 12.16,
+        "word": " only"
+      },
+      {
+        "start": 12.16,
+        "end": 12.5,
+        "word": " crate"
+      }
+    ]
+  },
+  {
+    "start": 12.5,
+    "end": 13.08,
+    "text": "that floats.",
+    "words": [
+      {
+        "start": 12.5,
+        "end": 12.74,
+        "word": " that"
+      },
+      {
+        "start": 12.74,
+        "end": 12.96,
+        "word": " floats."
+      }
+    ]
+  },
+  {
+    "start": 13.84,
+    "end": 14.459999999999999,
+    "text": "Round two,",
+    "words": [
+      {
+        "start": 13.84,
+        "end": 13.98,
+        "word": " Round"
+      },
+      {
+        "start": 13.98,
+        "end": 14.34,
+        "word": " two,"
+      }
+    ]
+  },
+  {
+    "start": 14.94,
+    "end": 15.6,
+    "text": "Meteor Shower,",
+    "words": [
+      {
+        "start": 14.94,
+        "end": 15.1,
+        "word": " Meteor"
+      },
+      {
+        "start": 15.1,
+        "end": 15.48,
+        "word": " Shower,"
+      }
+    ]
+  },
+  {
+    "start": 16.04,
+    "end": 17.02,
+    "text": "Max dodged left,",
+    "words": [
+      {
+        "start": 16.04,
+        "end": 16.2,
+        "word": " Max"
+      },
+      {
+        "start": 16.2,
+        "end": 16.46,
+        "word": " dodged"
+      },
+      {
+        "start": 16.46,
+        "end": 16.9,
+        "word": " left,"
+      }
+    ]
+  },
+  {
+    "start": 17.54,
+    "end": 18.48,
+    "text": "Mia dodged right,",
+    "words": [
+      {
+        "start": 17.54,
+        "end": 17.7,
+        "word": " Mia"
+      },
+      {
+        "start": 17.7,
+        "end": 17.96,
+        "word": " dodged"
+      },
+      {
+        "start": 17.96,
+        "end": 18.36,
+        "word": " right,"
+      }
+    ]
+  },
+  {
+    "start": 19.08,
+    "end": 20.26,
+    "text": "Leo didn't move so",
+    "words": [
+      {
+        "start": 19.08,
+        "end": 19.18,
+        "word": " Leo"
+      },
+      {
+        "start": 19.18,
+        "end": 19.62,
+        "word": " didn't"
+      },
+      {
+        "start": 19.62,
+        "end": 19.86,
+        "word": " move"
+      },
+      {
+        "start": 19.86,
+        "end": 20.26,
+        "word": " so"
+      }
+    ]
+  },
+  {
+    "start": 20.26,
+    "end": 21.46,
+    "text": "every Meteor missed him",
+    "words": [
+      {
+        "start": 20.26,
+        "end": 20.56,
+        "word": " every"
+      },
+      {
+        "start": 20.56,
+        "end": 20.9,
+        "word": " Meteor"
+      },
+      {
+        "start": 20.9,
+        "end": 21.18,
+        "word": " missed"
+      },
+      {
+        "start": 21.18,
+        "end": 21.46,
+        "word": " him"
+      }
+    ]
+  },
+  {
+    "start": 21.46,
+    "end": 22.74,
+    "text": "and one landed right",
+    "words": [
+      {
+        "start": 21.46,
+        "end": 21.88,
+        "word": " and"
+      },
+      {
+        "start": 21.88,
+        "end": 22.1,
+        "word": " one"
+      },
+      {
+        "start": 22.1,
+        "end": 22.44,
+        "word": " landed"
+      },
+      {
+        "start": 22.44,
+        "end": 22.74,
+        "word": " right"
+      }
+    ]
+  },
+  {
+    "start": 22.74,
+    "end": 23.44,
+    "text": "in front of him",
+    "words": [
+      {
+        "start": 22.74,
+        "end": 22.96,
+        "word": " in"
+      },
+      {
+        "start": 22.96,
+        "end": 23.14,
+        "word": " front"
+      },
+      {
+        "start": 23.14,
+        "end": 23.32,
+        "word": " of"
+      },
+      {
+        "start": 23.32,
+        "end": 23.44,
+        "word": " him"
+      }
+    ]
+  },
+  {
+    "start": 23.44,
+    "end": 24.06,
+    "text": "like a wall.",
+    "words": [
+      {
+        "start": 23.44,
+        "end": 23.66,
+        "word": " like"
+      },
+      {
+        "start": 23.66,
+        "end": 23.82,
+        "word": " a"
+      },
+      {
+        "start": 23.82,
+        "end": 24.06,
+        "word": " wall."
+      }
+    ]
+  },
+  {
+    "start": 24.06,
+    "end": 25.580000000000002,
+    "text": "Round three,",
+    "words": [
+      {
+        "start": 24.06,
+        "end": 25.02,
+        "word": " Round"
+      },
+      {
+        "start": 25.02,
+        "end": 25.46,
+        "word": " three,"
+      }
+    ]
+  },
+  {
+    "start": 25.7,
+    "end": 26.02,
+    "text": "Tornado,",
+    "words": [
+      {
+        "start": 25.7,
+        "end": 25.9,
+        "word": " Tornado,"
+      }
+    ]
+  },
+  {
+    "start": 26.72,
+    "end": 28.12,
+    "text": "Max hid behind Leo's",
+    "words": [
+      {
+        "start": 26.72,
+        "end": 27.0,
+        "word": " Max"
+      },
+      {
+        "start": 27.0,
+        "end": 27.32,
+        "word": " hid"
+      },
+      {
+        "start": 27.32,
+        "end": 27.6,
+        "word": " behind"
+      },
+      {
+        "start": 27.6,
+        "end": 28.12,
+        "word": " Leo's"
+      }
+    ]
+  },
+  {
+    "start": 28.12,
+    "end": 28.400000000000002,
+    "text": "meteor,",
+    "words": [
+      {
+        "start": 28.12,
+        "end": 28.28,
+        "word": " meteor,"
+      }
+    ]
+  },
+  {
+    "start": 28.96,
+    "end": 29.86,
+    "text": "the tornado took the",
+    "words": [
+      {
+        "start": 28.96,
+        "end": 29.02,
+        "word": " the"
+      },
+      {
+        "start": 29.02,
+        "end": 29.28,
+        "word": " tornado"
+      },
+      {
+        "start": 29.28,
+        "end": 29.66,
+        "word": " took"
+      },
+      {
+        "start": 29.66,
+        "end": 29.86,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 29.86,
+    "end": 31.1,
+    "text": "meteor and Max.",
+    "words": [
+      {
+        "start": 29.86,
+        "end": 30.1,
+        "word": " meteor"
+      },
+      {
+        "start": 30.1,
+        "end": 30.74,
+        "word": " and"
+      },
+      {
+        "start": 30.74,
+        "end": 30.98,
+        "word": " Max."
+      }
+    ]
+  },
+  {
+    "start": 31.62,
+    "end": 32.379999999999995,
+    "text": "Round four,",
+    "words": [
+      {
+        "start": 31.62,
+        "end": 31.86,
+        "word": " Round"
+      },
+      {
+        "start": 31.86,
+        "end": 32.26,
+        "word": " four,"
+      }
+    ]
+  },
+  {
+    "start": 32.64,
+    "end": 33.46,
+    "text": "the floor is lava,",
+    "words": [
+      {
+        "start": 32.64,
+        "end": 32.66,
+        "word": " the"
+      },
+      {
+        "start": 32.66,
+        "end": 32.86,
+        "word": " floor"
+      },
+      {
+        "start": 32.86,
+        "end": 33.12,
+        "word": " is"
+      },
+      {
+        "start": 33.12,
+        "end": 33.34,
+        "word": " lava,"
+      }
+    ]
+  },
+  {
+    "start": 34.16,
+    "end": 35.04,
+    "text": "Mia tried to push",
+    "words": [
+      {
+        "start": 34.16,
+        "end": 34.28,
+        "word": " Mia"
+      },
+      {
+        "start": 34.28,
+        "end": 34.64,
+        "word": " tried"
+      },
+      {
+        "start": 34.64,
+        "end": 34.78,
+        "word": " to"
+      },
+      {
+        "start": 34.78,
+        "end": 35.04,
+        "word": " push"
+      }
+    ]
+  },
+  {
+    "start": 35.04,
+    "end": 36.08,
+    "text": "Leo off his rock,",
+    "words": [
+      {
+        "start": 35.04,
+        "end": 35.24,
+        "word": " Leo"
+      },
+      {
+        "start": 35.24,
+        "end": 35.58,
+        "word": " off"
+      },
+      {
+        "start": 35.58,
+        "end": 35.72,
+        "word": " his"
+      },
+      {
+        "start": 35.72,
+        "end": 35.96,
+        "word": " rock,"
+      }
+    ]
+  },
+  {
+    "start": 36.48,
+    "end": 37.339999999999996,
+    "text": "Leo lagged,",
+    "words": [
+      {
+        "start": 36.48,
+        "end": 36.74,
+        "word": " Leo"
+      },
+      {
+        "start": 36.74,
+        "end": 37.22,
+        "word": " lagged,"
+      }
+    ]
+  },
+  {
+    "start": 37.56,
+    "end": 38.18,
+    "text": "she didn't.",
+    "words": [
+      {
+        "start": 37.56,
+        "end": 37.66,
+        "word": " she"
+      },
+      {
+        "start": 37.66,
+        "end": 38.06,
+        "word": " didn't."
+      }
+    ]
+  },
+  {
+    "start": 38.7,
+    "end": 39.56,
+    "text": "So Max and Mia",
+    "words": [
+      {
+        "start": 38.7,
+        "end": 38.94,
+        "word": " So"
+      },
+      {
+        "start": 38.94,
+        "end": 39.16,
+        "word": " Max"
+      },
+      {
+        "start": 39.16,
+        "end": 39.4,
+        "word": " and"
+      },
+      {
+        "start": 39.4,
+        "end": 39.56,
+        "word": " Mia"
+      }
+    ]
+  },
+  {
+    "start": 39.56,
+    "end": 40.78,
+    "text": "spent every coin they",
+    "words": [
+      {
+        "start": 39.56,
+        "end": 39.9,
+        "word": " spent"
+      },
+      {
+        "start": 39.9,
+        "end": 40.26,
+        "word": " every"
+      },
+      {
+        "start": 40.26,
+        "end": 40.54,
+        "word": " coin"
+      },
+      {
+        "start": 40.54,
+        "end": 40.78,
+        "word": " they"
+      }
+    ]
+  },
+  {
+    "start": 40.78,
+    "end": 41.72,
+    "text": "had on one last",
+    "words": [
+      {
+        "start": 40.78,
+        "end": 41.0,
+        "word": " had"
+      },
+      {
+        "start": 41.0,
+        "end": 41.24,
+        "word": " on"
+      },
+      {
+        "start": 41.24,
+        "end": 41.46,
+        "word": " one"
+      },
+      {
+        "start": 41.46,
+        "end": 41.72,
+        "word": " last"
+      }
+    ]
+  },
+  {
+    "start": 41.72,
+    "end": 42.22,
+    "text": "disaster,",
+    "words": [
+      {
+        "start": 41.72,
+        "end": 42.1,
+        "word": " disaster,"
+      }
+    ]
+  },
+  {
+    "start": 42.86,
+    "end": 44.54,
+    "text": "kick all AFK players,",
+    "words": [
+      {
+        "start": 42.86,
+        "end": 43.04,
+        "word": " kick"
+      },
+      {
+        "start": 43.04,
+        "end": 43.4,
+        "word": " all"
+      },
+      {
+        "start": 43.4,
+        "end": 44.0,
+        "word": " AFK"
+      },
+      {
+        "start": 44.0,
+        "end": 44.42,
+        "word": " players,"
+      }
+    ]
+  },
+  {
+    "start": 45.0,
+    "end": 45.96,
+    "text": "the scanner beeped over",
+    "words": [
+      {
+        "start": 45.0,
+        "end": 45.1,
+        "word": " the"
+      },
+      {
+        "start": 45.1,
+        "end": 45.34,
+        "word": " scanner"
+      },
+      {
+        "start": 45.34,
+        "end": 45.82,
+        "word": " beeped"
+      },
+      {
+        "start": 45.82,
+        "end": 45.96,
+        "word": " over"
+      }
+    ]
+  },
+  {
+    "start": 45.96,
+    "end": 47.96,
+    "text": "Leo and Leo sneezed,",
+    "words": [
+      {
+        "start": 45.96,
+        "end": 46.2,
+        "word": " Leo"
+      },
+      {
+        "start": 46.2,
+        "end": 46.92,
+        "word": " and"
+      },
+      {
+        "start": 46.92,
+        "end": 47.12,
+        "word": " Leo"
+      },
+      {
+        "start": 47.12,
+        "end": 47.84,
+        "word": " sneezed,"
+      }
+    ]
+  },
+  {
+    "start": 48.1,
+    "end": 48.919999999999995,
+    "text": "player active.",
+    "words": [
+      {
+        "start": 48.1,
+        "end": 48.44,
+        "word": " player"
+      },
+      {
+        "start": 48.44,
+        "end": 48.8,
+        "word": " active."
+      }
+    ]
+  },
+  {
+    "start": 49.36,
+    "end": 50.82,
+    "text": "The kick bounced straight",
+    "words": [
+      {
+        "start": 49.36,
+        "end": 49.92,
+        "word": " The"
+      },
+      {
+        "start": 49.92,
+        "end": 50.1,
+        "word": " kick"
+      },
+      {
+        "start": 50.1,
+        "end": 50.4,
+        "word": " bounced"
+      },
+      {
+        "start": 50.4,
+        "end": 50.82,
+        "word": " straight"
+      }
+    ]
+  },
+  {
+    "start": 50.82,
+    "end": 51.76,
+    "text": "back to the lobby.",
+    "words": [
+      {
+        "start": 50.82,
+        "end": 51.12,
+        "word": " back"
+      },
+      {
+        "start": 51.12,
+        "end": 51.34,
+        "word": " to"
+      },
+      {
+        "start": 51.34,
+        "end": 51.42,
+        "word": " the"
+      },
+      {
+        "start": 51.42,
+        "end": 51.64,
+        "word": " lobby."
+      }
+    ]
+  },
+  {
+    "start": 52.38,
+    "end": 53.62,
+    "text": "Leo finally woke up,",
+    "words": [
+      {
+        "start": 52.38,
+        "end": 52.52,
+        "word": " Leo"
+      },
+      {
+        "start": 52.52,
+        "end": 52.92,
+        "word": " finally"
+      },
+      {
+        "start": 52.92,
+        "end": 53.22,
+        "word": " woke"
+      },
+      {
+        "start": 53.22,
+        "end": 53.5,
+        "word": " up,"
+      }
+    ]
+  },
+  {
+    "start": 53.76,
+    "end": 54.8,
+    "text": "looked around and asked,",
+    "words": [
+      {
+        "start": 53.76,
+        "end": 53.9,
+        "word": " looked"
+      },
+      {
+        "start": 53.9,
+        "end": 54.18,
+        "word": " around"
+      },
+      {
+        "start": 54.18,
+        "end": 54.44,
+        "word": " and"
+      },
+      {
+        "start": 54.44,
+        "end": 54.68,
+        "word": " asked,"
+      }
+    ]
+  },
+  {
+    "start": 55.16,
+    "end": 55.44,
+    "text": "wait,",
+    "words": [
+      {
+        "start": 55.16,
+        "end": 55.32,
+        "word": " wait,"
+      }
+    ]
+  },
+  {
+    "start": 55.8,
+    "end": 56.919999999999995,
+    "text": "did the game start?",
+    "words": [
+      {
+        "start": 55.8,
+        "end": 56.18,
+        "word": " did"
+      },
+      {
+        "start": 56.18,
+        "end": 56.3,
+        "word": " the"
+      },
+      {
+        "start": 56.3,
+        "end": 56.46,
+        "word": " game"
+      },
+      {
+        "start": 56.46,
+        "end": 56.8,
+        "word": " start?"
+      }
+    ]
+  },
+  {
+    "start": 57.64,
+    "end": 58.38,
+    "text": "Then he pressed ready",
+    "words": [
+      {
+        "start": 57.64,
+        "end": 57.74,
+        "word": " Then"
+      },
+      {
+        "start": 57.74,
+        "end": 57.88,
+        "word": " he"
+      },
+      {
+        "start": 57.88,
+        "end": 58.08,
+        "word": " pressed"
+      },
+      {
+        "start": 58.08,
+        "end": 58.38,
+        "word": " ready"
+      }
+    ]
+  },
+  {
+    "start": 58.38,
+    "end": 59.44,
+    "text": "for disaster island.",
+    "words": [
+      {
+        "start": 58.38,
+        "end": 59.0,
+        "word": " for"
+      },
+      {
+        "start": 59.0,
+        "end": 59.0,
+        "word": " disaster"
+      },
+      {
+        "start": 59.0,
+        "end": 59.32,
+        "word": " island."
+      }
+    ]
+  }
+]

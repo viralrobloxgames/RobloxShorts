@@ -1,0 +1,1454 @@
+{
+  "title": "The AFK Champion",
+  "file": "The_AFK_Champion_GarageFarm.blend",
+  "sha256": "9f274df6c1737b527ec1ed4a77c86723e38e47af544fde18eb7948319ac2dd0c",
+  "blender": "5.2.1 LTS",
+  "engine": "BLENDER_EEVEE",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frame_start": 1,
+  "frame_end": 1935,
+  "seconds": 64.5,
+  "test_frames": [
+    1,
+    16,
+    31,
+    61,
+    271,
+    316,
+    376,
+    427,
+    493,
+    541,
+    631,
+    739,
+    856,
+    916,
+    949,
+    1021,
+    1105,
+    1141,
+    1171,
+    1246,
+    1351,
+    1411,
+    1486,
+    1543,
+    1573,
+    1615,
+    1639,
+    1654,
+    1711,
+    1801,
+    1858,
+    1921
+  ],
+  "objects": 500,
+  "linked_libraries": 0,
+  "autoexec_required": false,
+  "local_render_performed": false,
+  "sole_sign": 1.0,
+  "framing_problems": [],
+  "checks": [
+    {
+      "shot": "Hook: wave and AFK Leo",
+      "frame": 4,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.563,
+        58.803
+      ],
+      "subject_height": 0.247,
+      "blocked_by": null,
+      "ok": true,
+      "afk": [
+        0.5,
+        0.5,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "shot": "Hook: wave and AFK Leo",
+      "frame": 43,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.563,
+        58.803
+      ],
+      "subject_height": 0.247,
+      "blocked_by": null,
+      "ok": true,
+      "afk": [
+        0.5,
+        0.5,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "shot": "Hook: wave and AFK Leo",
+      "frame": 82,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.563,
+        58.803
+      ],
+      "subject_height": 0.247,
+      "blocked_by": null,
+      "ok": true,
+      "afk": [
+        0.5,
+        0.5,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "shot": "Hook: Leo does not move",
+      "frame": 88,
+      "actor": "Leo",
+      "head_ndc": [
+        0.506,
+        0.748,
+        59.499
+      ],
+      "subject_height": 0.515,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Hook: Leo does not move",
+      "frame": 111,
+      "actor": "Leo",
+      "head_ndc": [
+        0.506,
+        0.748,
+        59.499
+      ],
+      "subject_height": 0.515,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Hook: Leo does not move",
+      "frame": 133,
+      "actor": "Leo",
+      "head_ndc": [
+        0.506,
+        0.748,
+        59.499
+      ],
+      "subject_height": 0.515,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Hook: wave looms",
+      "frame": 139,
+      "actor": "Leo",
+      "head_ndc": [
+        0.448,
+        0.519,
+        57.95
+      ],
+      "subject_height": 0.235,
+      "blocked_by": null,
+      "ok": true,
+      "afk": [
+        0.45,
+        0.45,
+        0.6,
+        0.6
+      ]
+    },
+    {
+      "shot": "Hook: wave looms",
+      "frame": 154,
+      "actor": "Leo",
+      "head_ndc": [
+        0.448,
+        0.519,
+        57.95
+      ],
+      "subject_height": 0.235,
+      "blocked_by": null,
+      "ok": true,
+      "afk": [
+        0.45,
+        0.45,
+        0.6,
+        0.6
+      ]
+    },
+    {
+      "shot": "Hook: wave looms",
+      "frame": 169,
+      "actor": "Leo",
+      "head_ndc": [
+        0.448,
+        0.519,
+        57.95
+      ],
+      "subject_height": 0.235,
+      "blocked_by": null,
+      "ok": true,
+      "afk": [
+        0.45,
+        0.45,
+        0.6,
+        0.6
+      ]
+    },
+    {
+      "shot": "Round one: flood",
+      "frame": 175,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.6,
+        57.437
+      ],
+      "subject_height": 0.237,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round one: flood",
+      "frame": 208,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.6,
+        57.437
+      ],
+      "subject_height": 0.237,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round one: flood",
+      "frame": 241,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.6,
+        57.437
+      ],
+      "subject_height": 0.237,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max climbs the tower",
+      "frame": 247,
+      "actor": "Max",
+      "head_ndc": [
+        0.549,
+        0.489,
+        58.886
+      ],
+      "subject_height": 0.245,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max climbs the tower",
+      "frame": 273,
+      "actor": "Max",
+      "head_ndc": [
+        0.549,
+        0.739,
+        58.051
+      ],
+      "subject_height": 0.245,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max climbs the tower",
+      "frame": 298,
+      "actor": "Max",
+      "head_ndc": [
+        0.478,
+        0.824,
+        59.251
+      ],
+      "subject_height": 0.245,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia grabs a boat",
+      "frame": 304,
+      "actor": "Mia",
+      "head_ndc": [
+        0.3,
+        0.626,
+        59.474
+      ],
+      "subject_height": 0.386,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia grabs a boat",
+      "frame": 327,
+      "actor": "Mia",
+      "head_ndc": [
+        0.585,
+        0.798,
+        59.531
+      ],
+      "subject_height": 0.386,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia grabs a boat",
+      "frame": 349,
+      "actor": "Mia",
+      "head_ndc": [
+        0.544,
+        0.839,
+        59.558
+      ],
+      "subject_height": 0.387,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Leo floats on the crate",
+      "frame": 355,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.653,
+        59.467
+      ],
+      "subject_height": 0.414,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Leo floats on the crate",
+      "frame": 382,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.698,
+        59.345
+      ],
+      "subject_height": 0.414,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Leo floats on the crate",
+      "frame": 409,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.723,
+        59.276
+      ],
+      "subject_height": 0.414,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Flood wide",
+      "frame": 415,
+      "actor": "Leo",
+      "head_ndc": [
+        0.509,
+        0.63,
+        58.417
+      ],
+      "subject_height": 0.22,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Flood wide",
+      "frame": 433,
+      "actor": "Leo",
+      "head_ndc": [
+        0.509,
+        0.63,
+        58.415
+      ],
+      "subject_height": 0.22,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Flood wide",
+      "frame": 451,
+      "actor": "Leo",
+      "head_ndc": [
+        0.509,
+        0.63,
+        58.415
+      ],
+      "subject_height": 0.22,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round two: meteors",
+      "frame": 457,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.526,
+        59.94
+      ],
+      "subject_height": 0.206,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round two: meteors",
+      "frame": 485,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.526,
+        59.94
+      ],
+      "subject_height": 0.206,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round two: meteors",
+      "frame": 514,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.526,
+        59.94
+      ],
+      "subject_height": 0.206,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max dodges left",
+      "frame": 520,
+      "actor": "Max",
+      "head_ndc": [
+        0.736,
+        0.674,
+        59.987
+      ],
+      "subject_height": 0.41,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max dodges left",
+      "frame": 541,
+      "actor": "Max",
+      "head_ndc": [
+        0.276,
+        0.641,
+        58.888
+      ],
+      "subject_height": 0.407,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max dodges left",
+      "frame": 562,
+      "actor": "Max",
+      "head_ndc": [
+        0.193,
+        0.635,
+        59.173
+      ],
+      "subject_height": 0.416,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia dodges right",
+      "frame": 568,
+      "actor": "Mia",
+      "head_ndc": [
+        0.265,
+        0.675,
+        59.994
+      ],
+      "subject_height": 0.41,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia dodges right",
+      "frame": 587,
+      "actor": "Mia",
+      "head_ndc": [
+        0.736,
+        0.639,
+        58.966
+      ],
+      "subject_height": 0.409,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia dodges right",
+      "frame": 607,
+      "actor": "Mia",
+      "head_ndc": [
+        0.787,
+        0.628,
+        58.862
+      ],
+      "subject_height": 0.409,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Every meteor misses Leo",
+      "frame": 613,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.62,
+        59.569
+      ],
+      "subject_height": 0.356,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Every meteor misses Leo",
+      "frame": 645,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.62,
+        59.569
+      ],
+      "subject_height": 0.356,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Every meteor misses Leo",
+      "frame": 676,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.62,
+        59.569
+      ],
+      "subject_height": 0.356,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "The big one",
+      "frame": 682,
+      "actor": "Leo",
+      "head_ndc": [
+        0.53,
+        0.503,
+        61.191
+      ],
+      "subject_height": 0.248,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "The big one",
+      "frame": 706,
+      "actor": "Leo",
+      "head_ndc": [
+        0.53,
+        0.503,
+        61.191
+      ],
+      "subject_height": 0.248,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "The big one",
+      "frame": 730,
+      "actor": "Leo",
+      "head_ndc": [
+        0.53,
+        0.503,
+        61.191
+      ],
+      "subject_height": 0.248,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "A wall",
+      "frame": 736,
+      "actor": "Leo",
+      "head_ndc": [
+        0.463,
+        0.692,
+        60.73
+      ],
+      "subject_height": 0.456,
+      "blocked_by": null,
+      "ok": true,
+      "rock": [
+        0.23,
+        0.84,
+        0.07,
+        0.4
+      ]
+    },
+    {
+      "shot": "A wall",
+      "frame": 757,
+      "actor": "Leo",
+      "head_ndc": [
+        0.463,
+        0.692,
+        60.73
+      ],
+      "subject_height": 0.456,
+      "blocked_by": null,
+      "ok": true,
+      "rock": [
+        0.23,
+        0.84,
+        0.07,
+        0.4
+      ]
+    },
+    {
+      "shot": "A wall",
+      "frame": 778,
+      "actor": "Leo",
+      "head_ndc": [
+        0.463,
+        0.692,
+        60.73
+      ],
+      "subject_height": 0.456,
+      "blocked_by": null,
+      "ok": true,
+      "rock": [
+        0.23,
+        0.84,
+        0.07,
+        0.4
+      ]
+    },
+    {
+      "shot": "Round three: tornado",
+      "frame": 784,
+      "actor": "Leo",
+      "head_ndc": [
+        0.264,
+        0.45,
+        61.005
+      ],
+      "subject_height": 0.207,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round three: tornado",
+      "frame": 809,
+      "actor": "Leo",
+      "head_ndc": [
+        0.264,
+        0.45,
+        61.005
+      ],
+      "subject_height": 0.207,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round three: tornado",
+      "frame": 835,
+      "actor": "Leo",
+      "head_ndc": [
+        0.264,
+        0.45,
+        61.005
+      ],
+      "subject_height": 0.207,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max hides",
+      "frame": 841,
+      "actor": "Max",
+      "head_ndc": [
+        0.501,
+        0.647,
+        58.961
+      ],
+      "subject_height": 0.452,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max hides",
+      "frame": 871,
+      "actor": "Max",
+      "head_ndc": [
+        0.501,
+        0.647,
+        58.961
+      ],
+      "subject_height": 0.452,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Max hides",
+      "frame": 901,
+      "actor": "Max",
+      "head_ndc": [
+        0.501,
+        0.647,
+        58.961
+      ],
+      "subject_height": 0.452,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Tornado takes the meteor",
+      "frame": 907,
+      "tornado": [
+        0.53,
+        0.53,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "shot": "Tornado takes the meteor",
+      "frame": 919,
+      "tornado": [
+        0.44,
+        0.44,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "shot": "Tornado takes the meteor",
+      "frame": 931,
+      "tornado": [
+        0.35,
+        0.35,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "shot": "And Max",
+      "frame": 937,
+      "actor": "Leo",
+      "head_ndc": [
+        0.678,
+        0.3,
+        63.127
+      ],
+      "subject_height": 0.234,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "And Max",
+      "frame": 959,
+      "actor": "Leo",
+      "head_ndc": [
+        0.678,
+        0.3,
+        63.127
+      ],
+      "subject_height": 0.234,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "And Max",
+      "frame": 982,
+      "actor": "Leo",
+      "head_ndc": [
+        0.678,
+        0.3,
+        63.127
+      ],
+      "subject_height": 0.234,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round four: lava",
+      "frame": 988,
+      "actor": "Leo",
+      "head_ndc": [
+        0.401,
+        0.609,
+        58.606
+      ],
+      "subject_height": 0.229,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round four: lava",
+      "frame": 1022,
+      "actor": "Leo",
+      "head_ndc": [
+        0.401,
+        0.609,
+        58.606
+      ],
+      "subject_height": 0.229,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Round four: lava",
+      "frame": 1057,
+      "actor": "Leo",
+      "head_ndc": [
+        0.401,
+        0.609,
+        58.606
+      ],
+      "subject_height": 0.229,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia charges",
+      "frame": 1063,
+      "actor": "Mia",
+      "head_ndc": [
+        0.818,
+        0.72,
+        58.568
+      ],
+      "subject_height": 0.459,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia charges",
+      "frame": 1095,
+      "actor": "Mia",
+      "head_ndc": [
+        0.332,
+        0.721,
+        59.74
+      ],
+      "subject_height": 0.456,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Mia charges",
+      "frame": 1126,
+      "actor": "Mia",
+      "head_ndc": [
+        0.111,
+        0.734,
+        60.294
+      ],
+      "subject_height": 0.459,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Leo lagged",
+      "frame": 1132,
+      "actor": "Leo",
+      "head_ndc": [
+        0.468,
+        0.669,
+        59.381
+      ],
+      "subject_height": 0.46,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Leo lagged",
+      "frame": 1146,
+      "actor": "Leo",
+      "head_ndc": [
+        0.621,
+        0.682,
+        59.985
+      ],
+      "subject_height": 0.46,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Leo lagged",
+      "frame": 1159,
+      "actor": "Leo",
+      "head_ndc": [
+        0.621,
+        0.682,
+        59.985
+      ],
+      "subject_height": 0.46,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "She did not",
+      "frame": 1165
+    },
+    {
+      "shot": "She did not",
+      "frame": 1180
+    },
+    {
+      "shot": "She did not",
+      "frame": 1195
+    },
+    {
+      "shot": "Lobby: last disaster",
+      "frame": 1201,
+      "actor": "Max",
+      "head_ndc": [
+        0.259,
+        0.543,
+        58.207
+      ],
+      "subject_height": 0.272,
+      "blocked_by": null,
+      "ok": true,
+      "kick_panel": [
+        0.07,
+        0.93,
+        0.53,
+        0.62
+      ]
+    },
+    {
+      "shot": "Lobby: last disaster",
+      "frame": 1259,
+      "actor": "Max",
+      "head_ndc": [
+        0.259,
+        0.543,
+        58.175
+      ],
+      "subject_height": 0.272,
+      "blocked_by": null,
+      "ok": true,
+      "kick_panel": [
+        0.08,
+        0.92,
+        0.53,
+        0.62
+      ]
+    },
+    {
+      "shot": "Lobby: last disaster",
+      "frame": 1318,
+      "actor": "Max",
+      "head_ndc": [
+        0.259,
+        0.544,
+        58.24
+      ],
+      "subject_height": 0.273,
+      "blocked_by": null,
+      "ok": true,
+      "kick_panel": [
+        0.08,
+        0.92,
+        0.53,
+        0.62
+      ]
+    },
+    {
+      "shot": "Kick all AFK players",
+      "frame": 1324,
+      "kick_panel": [
+        0.04,
+        0.96,
+        0.47,
+        0.57
+      ]
+    },
+    {
+      "shot": "Kick all AFK players",
+      "frame": 1354,
+      "kick_panel": [
+        0.05,
+        0.95,
+        0.47,
+        0.57
+      ]
+    },
+    {
+      "shot": "Kick all AFK players",
+      "frame": 1384,
+      "kick_panel": [
+        0.06,
+        0.94,
+        0.47,
+        0.56
+      ]
+    },
+    {
+      "shot": "bye Leo",
+      "frame": 1390,
+      "actor": "Max",
+      "head_ndc": [
+        0.463,
+        0.585,
+        59.594
+      ],
+      "subject_height": 0.385,
+      "blocked_by": null,
+      "ok": true,
+      "bubble": [
+        0.5,
+        0.5,
+        0.77,
+        0.77
+      ]
+    },
+    {
+      "shot": "bye Leo",
+      "frame": 1427,
+      "actor": "Max",
+      "head_ndc": [
+        0.47,
+        0.582,
+        59.429
+      ],
+      "subject_height": 0.382,
+      "blocked_by": null,
+      "ok": true,
+      "bubble": [
+        0.5,
+        0.5,
+        0.76,
+        0.76
+      ]
+    },
+    {
+      "shot": "bye Leo",
+      "frame": 1465,
+      "actor": "Max",
+      "head_ndc": [
+        0.463,
+        0.585,
+        59.594
+      ],
+      "subject_height": 0.385,
+      "blocked_by": null,
+      "ok": true,
+      "bubble": [
+        0.5,
+        0.5,
+        0.77,
+        0.77
+      ]
+    },
+    {
+      "shot": "Scanner",
+      "frame": 1471,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.592,
+        59.922
+      ],
+      "subject_height": 0.38,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Scanner",
+      "frame": 1496,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.592,
+        59.922
+      ],
+      "subject_height": 0.38,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Scanner",
+      "frame": 1522,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.592,
+        59.922
+      ],
+      "subject_height": 0.38,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Sneeze",
+      "frame": 1528,
+      "actor": "Leo",
+      "head_ndc": [
+        0.51,
+        0.501,
+        60.188
+      ],
+      "subject_height": 0.781,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Sneeze",
+      "frame": 1543,
+      "actor": "Leo",
+      "head_ndc": [
+        0.483,
+        0.473,
+        59.692
+      ],
+      "subject_height": 0.753,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Sneeze",
+      "frame": 1558,
+      "actor": "Leo",
+      "head_ndc": [
+        0.51,
+        0.501,
+        60.188
+      ],
+      "subject_height": 0.781,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Player active",
+      "frame": 1564,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.525,
+        60.127
+      ],
+      "subject_height": 0.353,
+      "blocked_by": null,
+      "ok": true,
+      "active": [
+        0.31,
+        0.69,
+        0.69,
+        0.72
+      ]
+    },
+    {
+      "shot": "Player active",
+      "frame": 1583,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.525,
+        60.127
+      ],
+      "subject_height": 0.353,
+      "blocked_by": null,
+      "ok": true,
+      "active": [
+        0.12,
+        0.88,
+        0.68,
+        0.73
+      ]
+    },
+    {
+      "shot": "Player active",
+      "frame": 1603,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.525,
+        60.127
+      ],
+      "subject_height": 0.353,
+      "blocked_by": null,
+      "ok": true,
+      "active": [
+        0.12,
+        0.88,
+        0.68,
+        0.73
+      ]
+    },
+    {
+      "shot": "Kick bounces",
+      "frame": 1609,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.286,
+        60.566
+      ],
+      "subject_height": 0.235,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Kick bounces",
+      "frame": 1618,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.286,
+        60.566
+      ],
+      "subject_height": 0.235,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Kick bounces",
+      "frame": 1627,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.286,
+        60.566
+      ],
+      "subject_height": 0.235,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Lobby zapped",
+      "frame": 1633
+    },
+    {
+      "shot": "Lobby zapped",
+      "frame": 1659
+    },
+    {
+      "shot": "Lobby zapped",
+      "frame": 1684
+    },
+    {
+      "shot": "Winner",
+      "frame": 1690,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.442,
+        60.51
+      ],
+      "subject_height": 0.328,
+      "blocked_by": null,
+      "ok": true,
+      "winner": [
+        0.38,
+        0.62,
+        0.63,
+        0.65
+      ]
+    },
+    {
+      "shot": "Winner",
+      "frame": 1708,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.442,
+        60.51
+      ],
+      "subject_height": 0.328,
+      "blocked_by": null,
+      "ok": true,
+      "winner": [
+        0.19,
+        0.81,
+        0.63,
+        0.67
+      ]
+    },
+    {
+      "shot": "Winner",
+      "frame": 1726,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.442,
+        60.51
+      ],
+      "subject_height": 0.328,
+      "blocked_by": null,
+      "ok": true,
+      "winner": [
+        0.19,
+        0.81,
+        0.63,
+        0.67
+      ]
+    },
+    {
+      "shot": "Did the game start?",
+      "frame": 1732,
+      "actor": "Leo",
+      "head_ndc": [
+        0.491,
+        0.632,
+        60.112
+      ],
+      "subject_height": 0.468,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Did the game start?",
+      "frame": 1786,
+      "actor": "Leo",
+      "head_ndc": [
+        0.491,
+        0.632,
+        60.112
+      ],
+      "subject_height": 0.468,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Did the game start?",
+      "frame": 1840,
+      "actor": "Leo",
+      "head_ndc": [
+        0.491,
+        0.632,
+        60.112
+      ],
+      "subject_height": 0.468,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Pressed ready",
+      "frame": 1846,
+      "actor": "Leo",
+      "head_ndc": [
+        0.601,
+        0.662,
+        60.642
+      ],
+      "subject_height": 0.514,
+      "blocked_by": null,
+      "ok": true,
+      "ready_cap": [
+        0.27,
+        0.49,
+        0.34,
+        0.39
+      ]
+    },
+    {
+      "shot": "Pressed ready",
+      "frame": 1865,
+      "actor": "Leo",
+      "head_ndc": [
+        0.601,
+        0.662,
+        60.642
+      ],
+      "subject_height": 0.514,
+      "blocked_by": null,
+      "ok": true,
+      "ready_cap": [
+        0.27,
+        0.49,
+        0.33,
+        0.38
+      ]
+    },
+    {
+      "shot": "Pressed ready",
+      "frame": 1885,
+      "actor": "Leo",
+      "head_ndc": [
+        0.601,
+        0.662,
+        60.642
+      ],
+      "subject_height": 0.514,
+      "blocked_by": null,
+      "ok": true,
+      "ready_cap": [
+        0.27,
+        0.49,
+        0.34,
+        0.39
+      ]
+    },
+    {
+      "shot": "Loop back to the wave",
+      "frame": 1891,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.563,
+        58.803
+      ],
+      "subject_height": 0.247,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Loop back to the wave",
+      "frame": 1912,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.563,
+        58.803
+      ],
+      "subject_height": 0.247,
+      "blocked_by": null,
+      "ok": true
+    },
+    {
+      "shot": "Loop back to the wave",
+      "frame": 1933,
+      "actor": "Leo",
+      "head_ndc": [
+        0.5,
+        0.563,
+        58.803
+      ],
+      "subject_height": 0.247,
+      "blocked_by": null,
+      "ok": true
+    }
+  ],
+  "build_seconds": 68
+}

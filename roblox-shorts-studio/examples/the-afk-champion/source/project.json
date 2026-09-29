@@ -1,0 +1,13 @@
+{
+  "title": "The AFK Champion",
+  "characters": [
+    "Leo",
+    "Max",
+    "Mia"
+  ],
+  "seconds": 64.5,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "status": "Packed baked scene; awaiting GarageFarm test frames"
+}

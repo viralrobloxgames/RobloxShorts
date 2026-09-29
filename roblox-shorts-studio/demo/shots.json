@@ -1,0 +1,27 @@
+[
+  {
+    "start": 0,
+    "end": 2,
+    "label": "WALK IN"
+  },
+  {
+    "start": 2,
+    "end": 4,
+    "label": "SAY HELLO"
+  },
+  {
+    "start": 4,
+    "end": 5.25,
+    "label": "BIG REACTIONS"
+  },
+  {
+    "start": 5.25,
+    "end": 6.7,
+    "label": "A LITTLE DRAMA"
+  },
+  {
+    "start": 6.7,
+    "end": 8,
+    "label": "READY FOR A STORY"
+  }
+]

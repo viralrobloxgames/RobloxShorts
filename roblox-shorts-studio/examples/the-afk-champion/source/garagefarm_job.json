@@ -1,0 +1,32 @@
+{
+  "farm_file": "/The_AFK_Champion_GarageFarm/data/The_AFK_Champion_GarageFarm_gv004.blend",
+  "blend_sha256_prefix": "58bfe34f7d80",
+  "settings": {
+    "version": "5.2.1_x64",
+    "format": "PNG",
+    "resolution": "1080x1920",
+    "engine": "EEVEE",
+    "samples": 24,
+    "priority": "Low",
+    "frames_per_execution": 5,
+    "video_option": false
+  },
+  "test_job": {
+    "runs": 3,
+    "range": "1to1935s50",
+    "frames": 39,
+    "cost_usd": 0.24,
+    "state": "done",
+    "notes": "test 1 found the flat wave and side-on hook; test 2/3 drove the wave rebuild, boat scale, scanner beam, crop fixes"
+  },
+  "full_job": {
+    "submitted": "2026-09-17 21:03 farm clock",
+    "range": "1to1935s1",
+    "frames": 1935,
+    "estimate_usd": 3.97,
+    "cap_usd": 8.0,
+    "state": "running"
+  },
+  "balance_before_usd": 47.24,
+  "budget": "User approved an $8 cap for this short. No top-ups."
+}

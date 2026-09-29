@@ -1,0 +1,12 @@
+{
+  "scene": "Block_Characters.blend",
+  "rigs": [
+    "Max_Rig",
+    "Mia_Rig",
+    "Leo_Rig"
+  ],
+  "mesh_count": 184,
+  "actions": 24,
+  "errors": [],
+  "passed": true
+}

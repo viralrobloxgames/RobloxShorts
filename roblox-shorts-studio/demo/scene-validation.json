@@ -1,0 +1,14 @@
+{
+  "scene": "Character_Motion_Test.blend",
+  "rigs": [
+    "Max_Rig"
+  ],
+  "mesh_count": 67,
+  "actions": 26,
+  "errors": [],
+  "frames_checked": 240,
+  "minimum_frame_margin": 0.0518,
+  "maximum_sole_ground_error": 0.0,
+  "clipped_frames": [],
+  "passed": true
+}

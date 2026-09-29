@@ -1,0 +1,23 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Title,Arial,66,&H00FFFFFF,&H00FFFFFF,&H00403125,&H00000000,-1,0,0,0,100,100,0,0,1,2,0,8,45,45,115,1
+Style: Small,Arial,20,&H00FFFFFF,&H00FFFFFF,&H00564B42,&H00000000,-1,0,0,0,100,100,2,0,1,1,0,8,45,45,88,1
+Style: Beat,Arial,29,&H004C3430,&H004C3430,&H00F6E7DF,&H00F6E7DF,-1,0,0,0,100,100,1,0,3,10,0,2,50,50,178,1
+Style: Footer,Arial,18,&H004C3430,&H004C3430,&H00F6E7DF,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,45,45,95,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:08.00,Small,,0,0,0,,CHARACTER TEST / 01
+Dialogue: 0,0:00:00.00,0:00:08.00,Title,,0,0,0,,MEET MAX.
+Dialogue: 0,0:00:00.00,0:00:08.00,Footer,,0,0,0,,ORIGINAL BLOCK CHARACTER / MOTION PREVIEW
+Dialogue: 1,0:00:00.00,0:00:02.00,Beat,,0,0,0,,WALK IN
+Dialogue: 1,0:00:02.00,0:00:04.00,Beat,,0,0,0,,SAY HELLO
+Dialogue: 1,0:00:04.00,0:00:05.25,Beat,,0,0,0,,BIG REACTIONS
+Dialogue: 1,0:00:05.25,0:00:06.70,Beat,,0,0,0,,A LITTLE DRAMA
+Dialogue: 1,0:00:06.70,0:00:08.00,Beat,,0,0,0,,READY FOR A STORY

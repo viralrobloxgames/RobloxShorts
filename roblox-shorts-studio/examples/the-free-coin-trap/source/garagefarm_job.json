@@ -1,0 +1,21 @@
+{
+  "test_job_id": "9187976",
+  "site": "https://app.garagefarm.net/jobs?coupon=BLNDGFNET",
+  "browser": "Brave",
+  "project": "The_Free_Coin_Trap_GarageFarm",
+  "uploaded_scene": "/The_Free_Coin_Trap_GarageFarm/data/The_Free_Coin_Trap_GarageFarm.blend",
+  "version": "5.2.1_x64",
+  "engine": "EEVEE",
+  "priority": "Low",
+  "test_range": "1to651s50",
+  "full_range": "1to651",
+  "approved_credit_budget_usd": 10,
+  "top_up_authorized": false,
+  "initial_balance_usd": 50,
+  "last_seen_balance_usd": 47.24,
+  "last_seen_status": "Done: 651 of 651 frames",
+  "full_render_submitted": true,
+  "render_total_cost_usd": 2.76,
+  "render_folder": "/The_Free_Coin_Trap_GarageFarm/The_Free_Coin_Trap_GarageFarm-Renders",
+  "download_status": "Preparing ZIP through Brave; local download not yet complete"
+}

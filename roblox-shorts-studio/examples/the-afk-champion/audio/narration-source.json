@@ -1,0 +1,15 @@
+{
+  "voice": "George - Warm, Captivating Storyteller",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "settings": {"speed": 1.0, "stability": 0.5, "similarity_boost": 0.75, "style": 0, "speaker_boost": true},
+  "takes": {
+    "source/main_take.mp3": "full approved script, 845 credits, 60.00 s",
+    "source/insert_lines.mp3": "\"Here's how.\" + \"Max even typed 'bye Leo' in chat.\", 56 credits, added to pass TikTok's >60 s rule"
+  },
+  "assembled_by": "source/assemble_narration.py",
+  "duration_seconds": 63.88,
+  "speech_end_seconds": 63.2,
+  "video_seconds": 64.5,
+  "frames_at_30fps": 1935
+}

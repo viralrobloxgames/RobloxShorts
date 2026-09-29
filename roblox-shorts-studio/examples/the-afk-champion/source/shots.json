@@ -1,0 +1,172 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.8,
+    "title": "Hook: wave and AFK Leo"
+  },
+  {
+    "start": 2.8,
+    "end": 4.5,
+    "title": "Hook: Leo does not move"
+  },
+  {
+    "start": 4.5,
+    "end": 5.7,
+    "title": "Hook: wave looms"
+  },
+  {
+    "start": 5.7,
+    "end": 8.1,
+    "title": "Round one: flood"
+  },
+  {
+    "start": 8.1,
+    "end": 10.0,
+    "title": "Max climbs the tower"
+  },
+  {
+    "start": 10.0,
+    "end": 11.7,
+    "title": "Mia grabs a boat"
+  },
+  {
+    "start": 11.7,
+    "end": 13.7,
+    "title": "Leo floats on the crate"
+  },
+  {
+    "start": 13.7,
+    "end": 15.1,
+    "title": "Flood wide"
+  },
+  {
+    "start": 15.1,
+    "end": 17.2,
+    "title": "Round two: meteors"
+  },
+  {
+    "start": 17.2,
+    "end": 18.8,
+    "title": "Max dodges left"
+  },
+  {
+    "start": 18.8,
+    "end": 20.3,
+    "title": "Mia dodges right"
+  },
+  {
+    "start": 20.3,
+    "end": 22.6,
+    "title": "Every meteor misses Leo"
+  },
+  {
+    "start": 22.6,
+    "end": 24.4,
+    "title": "The big one"
+  },
+  {
+    "start": 24.4,
+    "end": 26.0,
+    "title": "A wall"
+  },
+  {
+    "start": 26.0,
+    "end": 27.9,
+    "title": "Round three: tornado"
+  },
+  {
+    "start": 27.9,
+    "end": 30.1,
+    "title": "Max hides"
+  },
+  {
+    "start": 30.1,
+    "end": 31.1,
+    "title": "Tornado takes the meteor"
+  },
+  {
+    "start": 31.1,
+    "end": 32.8,
+    "title": "And Max"
+  },
+  {
+    "start": 32.8,
+    "end": 35.3,
+    "title": "Round four: lava"
+  },
+  {
+    "start": 35.3,
+    "end": 37.6,
+    "title": "Mia charges"
+  },
+  {
+    "start": 37.6,
+    "end": 38.7,
+    "title": "Leo lagged"
+  },
+  {
+    "start": 38.7,
+    "end": 39.9,
+    "title": "She did not"
+  },
+  {
+    "start": 39.9,
+    "end": 44.0,
+    "title": "Lobby: last disaster"
+  },
+  {
+    "start": 44.0,
+    "end": 46.2,
+    "title": "Kick all AFK players"
+  },
+  {
+    "start": 46.2,
+    "end": 48.9,
+    "title": "bye Leo"
+  },
+  {
+    "start": 48.9,
+    "end": 50.8,
+    "title": "Scanner"
+  },
+  {
+    "start": 50.8,
+    "end": 52.0,
+    "title": "Sneeze"
+  },
+  {
+    "start": 52.0,
+    "end": 53.5,
+    "title": "Player active"
+  },
+  {
+    "start": 53.5,
+    "end": 54.3,
+    "title": "Kick bounces"
+  },
+  {
+    "start": 54.3,
+    "end": 56.2,
+    "title": "Lobby zapped"
+  },
+  {
+    "start": 56.2,
+    "end": 57.6,
+    "title": "Winner"
+  },
+  {
+    "start": 57.6,
+    "end": 61.4,
+    "title": "Did the game start?"
+  },
+  {
+    "start": 61.4,
+    "end": 62.9,
+    "title": "Pressed ready"
+  },
+  {
+    "start": 62.9,
+    "end": 64.5,
+    "title": "Loop back to the wave"
+  }
+]

@@ -1,0 +1,79 @@
+# Full workflow: idea to finished Short
+
+Each project folder is self-contained and editable. Its layout, created by `studio.py new`:
+
+```
+projects/<slug>/
+  START_HERE.md              resume notes: done / next / job + budget state
+  script.txt                 approved narration text
+  <Title>_GarageFarm.blend   packed, baked scene uploaded to the farm
+  assets/Block_Characters.blend
+  audio/narration.mp3|wav    final narration
+  audio/narration-source.json  voice, model, settings, credits, takes
+  audio/alignment/           transcript.json, captions.json, captions.srt (measured)
+  source/project.json        title, seconds, fps, size, finish options
+  source/story.md            beat list, hook first
+  source/shots.json          [{start, end, title}] from measured timings
+  source/build_scene.py      scene author (Blender, background, no render)
+  source/characters.py       rig helpers (copy of scripts/characters.py)
+  source/sound_cues.json     SFX placements for finish.py
+  source/overlays.json       optional HUD / title pops for finish.py
+  source/farm_manifest.json  scene fingerprint, test frames, framing checks
+  source/garagefarm_job.json farm settings, jobs, costs, cap
+  renders/farm/              downloaded farm PNGs (git-ignored)
+  delivery/<Title>.mp4 .ass .srt .validation.json
+```
+
+## 1. Idea
+
+Record it in `ideas/idea-ledger.json` with a title, logline, platform and status. Good Roblox-short shapes include:
+
+- a game mechanic taken literally (free coin button, AFK, lag-snap, admin commands)
+- a round-based disaster
+- an overconfident character undone by the game's own rules
+
+There must be a visible cause, a reaction and a physical payoff. A loop ending is a bonus: the last frame cuts back to the hook.
+
+## 2. Story and script
+
+Write `source/story.md` as numbered beats. **Beat 1 is the hook: the central action is already happening on frame 1.** Then write `script.txt`. Short, punchy lines work best. For about 20 s aim for 45–60 words; for about 64 s aim for 150–170 words. Adjust to the real voice. Get the script approved before spending credits. Status in the ledger: `script_draft_awaiting_approval` → `script_approved`.
+
+## 3. Narration and timings
+
+See [voice-and-audio.md](voice-and-audio.md). Timings come from the finished recording, never a guessed reading rate. After `studio.py transcribe`, read `audio/alignment/captions.json` against the script. Fix misheard words with `finish.word_fixes` in `project.json` (e.g. `{"BY": "BYE"}`). Don't edit timings by hand.
+
+Set `seconds` = speech end + ~0.5 s tail (frames = `round(seconds * 30)`). **TikTok Creator Rewards requires more than 60 s.** If the take is short, generate only the extra lines and splice them in at measured silences, as `examples/the-afk-champion/source/assemble_narration.py` does. Don't regenerate the whole script.
+
+## 4. Shots and scene
+
+Build `source/shots.json` from caption times. Change shot every 2–3 s and align cuts to integer frames (`F(t) = round(t*30)+1`). Put the timing constants in one module, as `afk_timeline.py` does, so animation, audio and captions share them.
+
+Author the scene in `source/build_scene.py`. The helpers in `characters.py` are:
+
+- `reset`, `setup_scene`, `stage`, `load_character`
+- `pose`, `action_pose`, `key_pose`, `ground_actor`, `set_expression`
+- `material`, `cube`, `cylinder`, `sphere`, `aim`
+
+See [authoring.md](authoring.md) for the rig. Rules that made the farm renders work:
+
+- Bake everything to ordinary keyframes (CONSTANT interpolation is fine). No physics or simulations, no drivers that need auto-run scripts.
+- Pack all data, use no linked libraries, and save the result as `<Title>_GarageFarm.blend`.
+- Render settings: EEVEE, 1080 × 1920, 30 fps, PNG, frame_start 1.
+- Build with `python scripts/studio.py build projects/<slug>` (background Blender, about 40 s, **no rendering**).
+- For each test frame, record numeric checks in `farm_manifest.json`: `world_to_camera_view` of each featured head must be inside 0–1, with occlusion checks where it matters. This replaces local preview renders.
+- Keep captions and HUD clear of the TikTok UI: bottom 20 % and right 15 % of the frame.
+
+## 5. Render on GarageFarm
+
+Follow [garagefarm.md](garagefarm.md): run a test job, review it, render the full range within the cap, then download the PNGs to `renders/farm/`.
+
+## 6. Sound, captions, encode
+
+- `source/sound_cues.json`: motivated SFX only, with restrained gains (0.15–0.6). Use library sounds (`impact_1-4`, `swish_1-4`, `click`, `drum_hit`) or synthesized tones (coin pings, beeps, stings). See the examples for timings.
+- `source/overlays.json`: HUD lines (`HUD` style), eliminations (`Out`), round titles (`Title` with a pop tag).
+- `python scripts/studio.py finish projects/<slug>` writes `audio/final_mix.wav` (loudness −16 LUFS, −1.5 dBTP) and `delivery/<Title>.ass/.srt`. Listen to the mix before encoding.
+- `python scripts/studio.py finish projects/<slug> --encode` checks that frames 1..N have no gaps or duplicates, burns the captions with Luckiest Guy, encodes H.264/AAC with faststart, fully decodes it, and checks the frame count.
+
+## 7. Review and hand-off
+
+Watch the full MP4. Run `scripts/review/contact_sheet.py --frames renders/encode --out delivery/contact.jpg`. Check for clipping, floating feet, expression timing, prop contact, caption overlap with the HUD, and the loop cut. Update `START_HERE.md` and the ledger status (`delivered_local_review`). Publishing happens only on request (see [publishing.md](publishing.md)).

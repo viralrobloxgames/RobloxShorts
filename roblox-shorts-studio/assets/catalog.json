@@ -1,0 +1,70 @@
+{
+  "version": "0.1.0",
+  "kind": "Roblox-style original block character prototype",
+  "provenance": "All geometry and face marks authored locally. No Roblox Studio, Sketchfab or CircleToons models copied.",
+  "characters": [
+    "Max",
+    "Mia",
+    "Leo"
+  ],
+  "expressions": [
+    "happy",
+    "neutral",
+    "surprised",
+    "angry",
+    "sad",
+    "laugh"
+  ],
+  "actions": [
+    "Idle",
+    "Walk",
+    "Run",
+    "Wave",
+    "Talk",
+    "Point",
+    "Shock",
+    "Laugh"
+  ],
+  "rig": {
+    "bones": 7,
+    "body_style": "rigid six-part block body with cylindrical head",
+    "forward": "-Y",
+    "up": "Z",
+    "ground": "z=0",
+    "height": 5.43
+  },
+  "library": "Block_Characters.blend",
+  "blender_version": "5.2.1 LTS",
+  "limitations": [
+    "Original Roblox-style designs, not official Roblox avatars.",
+    "Palette variants share one body and hair design.",
+    "No elbow, knee, finger or lip-sync articulation in this first block rig.",
+    "Eight actions are authored; the demo visually tests walk, wave, shock and recovery."
+  ],
+  "previews": [
+    "Character_Lineup.png",
+    "Pose_Reference.jpg"
+  ],
+  "review": {
+    "rig_and_weights": "passed",
+    "static_pose_review": [
+      "Idle",
+      "Walk",
+      "Run",
+      "Wave",
+      "Talk",
+      "Point",
+      "Shock",
+      "Laugh"
+    ],
+    "expressions_reviewed": [
+      "happy",
+      "neutral",
+      "surprised",
+      "angry",
+      "sad",
+      "laugh"
+    ],
+    "motion_demo": "walk, wave, surprise, wobble, recover; all 240 frames passed numerical framing and ground contact checks"
+  }
+}
