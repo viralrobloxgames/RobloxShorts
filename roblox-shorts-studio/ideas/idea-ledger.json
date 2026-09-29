@@ -18,6 +18,15 @@
       "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
       "platform": "TikTok (>60 s for Creator Rewards)",
       "project": "examples/the-afk-champion"
+    },
+    {
+      "title": "The Sixty Second Admin",
+      "series": "roblox",
+      "created": "2026-09-29",
+      "status": "script_draft_awaiting_approval",
+      "logline": "Leo wins admin commands for one minute in Mega Obby; every command backfires until fly gets him one block from the finish as admin expires.",
+      "platform": "TikTok (>60 s for Creator Rewards)",
+      "project": "projects/the-sixty-second-admin"
     }
   ],
   "statuses": [

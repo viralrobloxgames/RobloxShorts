@@ -1,0 +1,19 @@
+{
+  "title": "The Sixty Second Admin",
+  "character": "Leo",
+  "characters": [
+    "Leo",
+    "Max",
+    "Mia"
+  ],
+  "seconds": 64.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s for Creator Rewards)",
+  "status": "script_draft_awaiting_approval",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {}
+  }
+}
