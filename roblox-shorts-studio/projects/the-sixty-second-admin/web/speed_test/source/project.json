@@ -1,0 +1,10 @@
+{
+  "title": "Admin Speed Test",
+  "seconds": 10,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (test clip)",
+  "status": "web-render quality test: 'command one: speed' beat, no narration yet",
+  "finish": {"narration": false, "music": "playful_history_music", "music_gain": 0.32, "sfx_gain": 0.9}
+}

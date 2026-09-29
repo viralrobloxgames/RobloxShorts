@@ -1,0 +1,15 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Words,Luckiest Guy,76,&H00FFFFFF,&H003DDAFF,&H00152435,&H80000000,0,0,0,0,100,100,1,0,1,6,2,2,90,150,640,1
+Style: HUD,Luckiest Guy,50,&H00FFFFFF,&H00FFFFFF,&H70152435,&H70152435,0,0,0,0,100,100,1,0,3,14,0,7,70,0,250,1
+Style: Out,Luckiest Guy,60,&H003F4BFF,&H003F4BFF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,1,0,1,5,0,7,70,0,345,1
+Style: Title,Luckiest Guy,104,&H0036D4FF,&H0036D4FF,&H00152435,&H80000000,0,0,0,0,100,100,2,0,1,9,4,8,60,60,470,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
