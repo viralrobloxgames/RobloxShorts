@@ -6,12 +6,12 @@
     "Max",
     "Mia"
   ],
-  "seconds": 64.0,
+  "seconds": 63.8,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "script_draft_awaiting_approval",
+  "status": "narration_done; web render",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}

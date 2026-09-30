@@ -1,7 +1,7 @@
 // Render a web clip to PNG frames with headless Chromium (software WebGL, no GPU needed).
 //
 //   node web/render.mjs --clip projects/<slug>/web/<clip>.js --out projects/<slug>/renders/web
-//        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2]
+//        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2] [--resume]
 //
 // Frames are written as web_0001.png ... so `studio.py finish <project> --encode --frames renders/web` can assemble them.
 import { chromium } from 'playwright-core';
@@ -52,6 +52,8 @@ for (const part of spec.split(',')) {
   for (let f = a; f <= (b || a); f++) frames.push(f);
 }
 if (args.every) frames = frames.filter((f) => (f - 1) % Number(args.every) === 0);
+// --resume: skip frames already written (lets a long render pick up where it stopped).
+if (args.resume) frames = frames.filter((f) => !fs.existsSync(path.join(out, `web_${String(f).padStart(4, '0')}.png`)));
 
 const workers = Math.max(1, Number(args.workers || 1));
 const pages = [first, ...(await Promise.all(Array.from({ length: workers - 1 }, openPage)))];
@@ -61,7 +63,8 @@ await Promise.all(pages.map(async (page) => {
   while (queue.length) {
     const f = queue.shift();
     const url = await page.evaluate(([f, s]) => window.renderFrame(f, s ? { samples: s } : {}), [f, args.samples ? Number(args.samples) : 0]);
-    fs.writeFileSync(path.join(out, `web_${String(f).padStart(4, '0')}.png`), Buffer.from(url.split(',')[1], 'base64'));
+    const file = path.join(out, `web_${String(f).padStart(4, '0')}.png`);
+    fs.writeFileSync(file + '.part', Buffer.from(url.split(',')[1], 'base64')); fs.renameSync(file + '.part', file);
     done++;
     if (done % 10 === 0 || done === frames.length) {
       const s = (Date.now() - t0) / 1000;
