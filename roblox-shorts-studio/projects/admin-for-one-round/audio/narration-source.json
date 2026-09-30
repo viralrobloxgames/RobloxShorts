@@ -1,0 +1,21 @@
+{
+  "voice": "George - Warm, Captivating Storyteller",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "settings": {
+    "speed": 1.0,
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "use_speaker_boost": true
+  },
+  "take": "take-01",
+  "request_id": "f4sXENcTydq88vzqqTjV",
+  "history_item_id": "B1bNR6pExZ7gEQxgGVGy",
+  "characters": 845,
+  "credits": {
+    "before": 3336,
+    "after": 4181
+  },
+  "recovered_from_history": true
+}

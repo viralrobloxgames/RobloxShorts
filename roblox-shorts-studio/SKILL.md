@@ -35,6 +35,10 @@ Full detail is in [references/workflow.md](references/workflow.md). The short ve
 
 Keep `START_HERE.md` in each project updated with what is done, what is next, and the job and budget state, so any session can resume.
 
+## Web route (no Blender)
+
+`web/` renders scenes with three.js in headless Chromium, with the same Max/Mia/Leo cast, so a short can be made with no Blender and no farm (for example in a cloud session). Author `projects/<slug>/web/<clip>.js`, preview frames at half size, render with `node web/render.mjs`, then finish with `scripts/finish.py --encode --frames <renders/web>`. See [web/README.md](web/README.md). For a clip with no narration yet, set `"finish": {"narration": false}`.
+
 ## Tools and settings
 
 `scripts/settings.py` merges `~/.roblox-shorts-studio/settings.json`, `tools.local.json` and older kit settings, then falls back to PATH. See `config/settings.example.json`. Blender 5.2.1 is tested. Run the Python helpers with Blender's bundled Python (it has numpy). Word timings need faster-whisper, set as `transcription_python`.

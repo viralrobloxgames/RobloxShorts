@@ -1,0 +1,1168 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.58,
+    "text": "Leo got admin commands.",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.34,
+        "word": " Leo"
+      },
+      {
+        "start": 0.34,
+        "end": 0.5,
+        "word": " got"
+      },
+      {
+        "start": 0.5,
+        "end": 0.86,
+        "word": " admin"
+      },
+      {
+        "start": 0.86,
+        "end": 1.46,
+        "word": " commands."
+      }
+    ]
+  },
+  {
+    "start": 1.82,
+    "end": 2.56,
+    "text": "For one round,",
+    "words": [
+      {
+        "start": 1.82,
+        "end": 1.92,
+        "word": " For"
+      },
+      {
+        "start": 1.92,
+        "end": 2.14,
+        "word": " one"
+      },
+      {
+        "start": 2.14,
+        "end": 2.44,
+        "word": " round,"
+      }
+    ]
+  },
+  {
+    "start": 2.86,
+    "end": 3.62,
+    "text": "he typed fly.",
+    "words": [
+      {
+        "start": 2.86,
+        "end": 2.9,
+        "word": " he"
+      },
+      {
+        "start": 2.9,
+        "end": 3.16,
+        "word": " typed"
+      },
+      {
+        "start": 3.16,
+        "end": 3.5,
+        "word": " fly."
+      }
+    ]
+  },
+  {
+    "start": 3.94,
+    "end": 4.42,
+    "text": "He flew.",
+    "words": [
+      {
+        "start": 3.94,
+        "end": 4.02,
+        "word": " He"
+      },
+      {
+        "start": 4.02,
+        "end": 4.3,
+        "word": " flew."
+      }
+    ]
+  },
+  {
+    "start": 4.8,
+    "end": 5.64,
+    "text": "He typed speed.",
+    "words": [
+      {
+        "start": 4.8,
+        "end": 4.9,
+        "word": " He"
+      },
+      {
+        "start": 4.9,
+        "end": 5.18,
+        "word": " typed"
+      },
+      {
+        "start": 5.18,
+        "end": 5.52,
+        "word": " speed."
+      }
+    ]
+  },
+  {
+    "start": 6.32,
+    "end": 7.04,
+    "text": "He finished the whole",
+    "words": [
+      {
+        "start": 6.32,
+        "end": 6.36,
+        "word": " He"
+      },
+      {
+        "start": 6.36,
+        "end": 6.62,
+        "word": " finished"
+      },
+      {
+        "start": 6.62,
+        "end": 6.82,
+        "word": " the"
+      },
+      {
+        "start": 6.82,
+        "end": 7.04,
+        "word": " whole"
+      }
+    ]
+  },
+  {
+    "start": 7.04,
+    "end": 8.319999999999999,
+    "text": "obby in four seconds.",
+    "words": [
+      {
+        "start": 7.04,
+        "end": 7.32,
+        "word": " obby"
+      },
+      {
+        "start": 7.32,
+        "end": 7.48,
+        "word": " in"
+      },
+      {
+        "start": 7.48,
+        "end": 7.72,
+        "word": " four"
+      },
+      {
+        "start": 7.72,
+        "end": 8.2,
+        "word": " seconds."
+      }
+    ]
+  },
+  {
+    "start": 8.68,
+    "end": 9.52,
+    "text": "He typed giant.",
+    "words": [
+      {
+        "start": 8.68,
+        "end": 8.76,
+        "word": " He"
+      },
+      {
+        "start": 8.76,
+        "end": 9.06,
+        "word": " typed"
+      },
+      {
+        "start": 9.06,
+        "end": 9.4,
+        "word": " giant."
+      }
+    ]
+  },
+  {
+    "start": 10.36,
+    "end": 11.04,
+    "text": "Now the lobby fit",
+    "words": [
+      {
+        "start": 10.36,
+        "end": 10.4,
+        "word": " Now"
+      },
+      {
+        "start": 10.4,
+        "end": 10.6,
+        "word": " the"
+      },
+      {
+        "start": 10.6,
+        "end": 10.82,
+        "word": " lobby"
+      },
+      {
+        "start": 10.82,
+        "end": 11.04,
+        "word": " fit"
+      }
+    ]
+  },
+  {
+    "start": 11.04,
+    "end": 11.819999999999999,
+    "text": "in his hand.",
+    "words": [
+      {
+        "start": 11.04,
+        "end": 11.18,
+        "word": " in"
+      },
+      {
+        "start": 11.18,
+        "end": 11.3,
+        "word": " his"
+      },
+      {
+        "start": 11.3,
+        "end": 11.7,
+        "word": " hand."
+      }
+    ]
+  },
+  {
+    "start": 12.54,
+    "end": 13.2,
+    "text": "Max asked for a",
+    "words": [
+      {
+        "start": 12.54,
+        "end": 12.54,
+        "word": " Max"
+      },
+      {
+        "start": 12.54,
+        "end": 12.88,
+        "word": " asked"
+      },
+      {
+        "start": 12.88,
+        "end": 13.08,
+        "word": " for"
+      },
+      {
+        "start": 13.08,
+        "end": 13.2,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 13.2,
+    "end": 13.62,
+    "text": "turn.",
+    "words": [
+      {
+        "start": 13.2,
+        "end": 13.5,
+        "word": " turn."
+      }
+    ]
+  },
+  {
+    "start": 14.34,
+    "end": 15.299999999999999,
+    "text": "Leo typed tiny.",
+    "words": [
+      {
+        "start": 14.34,
+        "end": 14.5,
+        "word": " Leo"
+      },
+      {
+        "start": 14.5,
+        "end": 14.82,
+        "word": " typed"
+      },
+      {
+        "start": 14.82,
+        "end": 15.18,
+        "word": " tiny."
+      }
+    ]
+  },
+  {
+    "start": 15.68,
+    "end": 16.68,
+    "text": "Max became a very",
+    "words": [
+      {
+        "start": 15.68,
+        "end": 16.04,
+        "word": " Max"
+      },
+      {
+        "start": 16.04,
+        "end": 16.34,
+        "word": " became"
+      },
+      {
+        "start": 16.34,
+        "end": 16.48,
+        "word": " a"
+      },
+      {
+        "start": 16.48,
+        "end": 16.68,
+        "word": " very"
+      }
+    ]
+  },
+  {
+    "start": 16.68,
+    "end": 17.220000000000002,
+    "text": "small,",
+    "words": [
+      {
+        "start": 16.68,
+        "end": 17.1,
+        "word": " small,"
+      }
+    ]
+  },
+  {
+    "start": 17.5,
+    "end": 18.66,
+    "text": "very angry problem.",
+    "words": [
+      {
+        "start": 17.5,
+        "end": 17.66,
+        "word": " very"
+      },
+      {
+        "start": 17.66,
+        "end": 18.1,
+        "word": " angry"
+      },
+      {
+        "start": 18.1,
+        "end": 18.54,
+        "word": " problem."
+      }
+    ]
+  },
+  {
+    "start": 19.4,
+    "end": 19.98,
+    "text": "Mia told him to",
+    "words": [
+      {
+        "start": 19.4,
+        "end": 19.4,
+        "word": " Mia"
+      },
+      {
+        "start": 19.4,
+        "end": 19.64,
+        "word": " told"
+      },
+      {
+        "start": 19.64,
+        "end": 19.84,
+        "word": " him"
+      },
+      {
+        "start": 19.84,
+        "end": 19.98,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 19.98,
+    "end": 20.720000000000002,
+    "text": "be responsible.",
+    "words": [
+      {
+        "start": 19.98,
+        "end": 20.1,
+        "word": " be"
+      },
+      {
+        "start": 20.1,
+        "end": 20.6,
+        "word": " responsible."
+      }
+    ]
+  },
+  {
+    "start": 21.26,
+    "end": 22.3,
+    "text": "Leo typed rainbow.",
+    "words": [
+      {
+        "start": 21.26,
+        "end": 21.36,
+        "word": " Leo"
+      },
+      {
+        "start": 21.36,
+        "end": 21.78,
+        "word": " typed"
+      },
+      {
+        "start": 21.78,
+        "end": 22.18,
+        "word": " rainbow."
+      }
+    ]
+  },
+  {
+    "start": 22.88,
+    "end": 24.04,
+    "text": "Mia was now responsible",
+    "words": [
+      {
+        "start": 22.88,
+        "end": 23.16,
+        "word": " Mia"
+      },
+      {
+        "start": 23.16,
+        "end": 23.36,
+        "word": " was"
+      },
+      {
+        "start": 23.36,
+        "end": 23.56,
+        "word": " now"
+      },
+      {
+        "start": 23.56,
+        "end": 24.04,
+        "word": " responsible"
+      }
+    ]
+  },
+  {
+    "start": 24.04,
+    "end": 25.18,
+    "text": "and rainbow.",
+    "words": [
+      {
+        "start": 24.04,
+        "end": 24.64,
+        "word": " and"
+      },
+      {
+        "start": 24.64,
+        "end": 25.06,
+        "word": " rainbow."
+      }
+    ]
+  },
+  {
+    "start": 25.94,
+    "end": 26.86,
+    "text": "Then Leo found the",
+    "words": [
+      {
+        "start": 25.94,
+        "end": 26.08,
+        "word": " Then"
+      },
+      {
+        "start": 26.08,
+        "end": 26.38,
+        "word": " Leo"
+      },
+      {
+        "start": 26.38,
+        "end": 26.66,
+        "word": " found"
+      },
+      {
+        "start": 26.66,
+        "end": 26.86,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 26.86,
+    "end": 28.0,
+    "text": "best command of all.",
+    "words": [
+      {
+        "start": 26.86,
+        "end": 27.08,
+        "word": " best"
+      },
+      {
+        "start": 27.08,
+        "end": 27.42,
+        "word": " command"
+      },
+      {
+        "start": 27.42,
+        "end": 27.6,
+        "word": " of"
+      },
+      {
+        "start": 27.6,
+        "end": 27.88,
+        "word": " all."
+      }
+    ]
+  },
+  {
+    "start": 28.76,
+    "end": 29.1,
+    "text": "Explode.",
+    "words": [
+      {
+        "start": 28.76,
+        "end": 28.98,
+        "word": " Explode."
+      }
+    ]
+  },
+  {
+    "start": 29.34,
+    "end": 29.94,
+    "text": "He pointed it at",
+    "words": [
+      {
+        "start": 29.34,
+        "end": 29.38,
+        "word": " He"
+      },
+      {
+        "start": 29.38,
+        "end": 29.6,
+        "word": " pointed"
+      },
+      {
+        "start": 29.6,
+        "end": 29.82,
+        "word": " it"
+      },
+      {
+        "start": 29.82,
+        "end": 29.94,
+        "word": " at"
+      }
+    ]
+  },
+  {
+    "start": 29.94,
+    "end": 30.44,
+    "text": "the lava.",
+    "words": [
+      {
+        "start": 29.94,
+        "end": 30.1,
+        "word": " the"
+      },
+      {
+        "start": 30.1,
+        "end": 30.32,
+        "word": " lava."
+      }
+    ]
+  },
+  {
+    "start": 31.0,
+    "end": 31.48,
+    "text": "Nothing.",
+    "words": [
+      {
+        "start": 31.0,
+        "end": 31.36,
+        "word": " Nothing."
+      }
+    ]
+  },
+  {
+    "start": 31.78,
+    "end": 32.46,
+    "text": "He pointed it at",
+    "words": [
+      {
+        "start": 31.78,
+        "end": 31.88,
+        "word": " He"
+      },
+      {
+        "start": 31.88,
+        "end": 32.08,
+        "word": " pointed"
+      },
+      {
+        "start": 32.08,
+        "end": 32.32,
+        "word": " it"
+      },
+      {
+        "start": 32.32,
+        "end": 32.46,
+        "word": " at"
+      }
+    ]
+  },
+  {
+    "start": 32.46,
+    "end": 33.0,
+    "text": "the timer.",
+    "words": [
+      {
+        "start": 32.46,
+        "end": 32.6,
+        "word": " the"
+      },
+      {
+        "start": 32.6,
+        "end": 32.88,
+        "word": " timer."
+      }
+    ]
+  },
+  {
+    "start": 33.56,
+    "end": 34.0,
+    "text": "Nothing.",
+    "words": [
+      {
+        "start": 33.56,
+        "end": 33.88,
+        "word": " Nothing."
+      }
+    ]
+  },
+  {
+    "start": 34.5,
+    "end": 35.22,
+    "text": "He pointed it at",
+    "words": [
+      {
+        "start": 34.5,
+        "end": 34.6,
+        "word": " He"
+      },
+      {
+        "start": 34.6,
+        "end": 34.84,
+        "word": " pointed"
+      },
+      {
+        "start": 34.84,
+        "end": 35.08,
+        "word": " it"
+      },
+      {
+        "start": 35.08,
+        "end": 35.22,
+        "word": " at"
+      }
+    ]
+  },
+  {
+    "start": 35.22,
+    "end": 35.94,
+    "text": "the leaderboard,",
+    "words": [
+      {
+        "start": 35.22,
+        "end": 35.32,
+        "word": " the"
+      },
+      {
+        "start": 35.32,
+        "end": 35.82,
+        "word": " leaderboard,"
+      }
+    ]
+  },
+  {
+    "start": 36.12,
+    "end": 36.66,
+    "text": "the sky,",
+    "words": [
+      {
+        "start": 36.12,
+        "end": 36.18,
+        "word": " the"
+      },
+      {
+        "start": 36.18,
+        "end": 36.54,
+        "word": " sky,"
+      }
+    ]
+  },
+  {
+    "start": 36.86,
+    "end": 37.98,
+    "text": "and one very confused",
+    "words": [
+      {
+        "start": 36.86,
+        "end": 36.96,
+        "word": " and"
+      },
+      {
+        "start": 36.96,
+        "end": 37.16,
+        "word": " one"
+      },
+      {
+        "start": 37.16,
+        "end": 37.44,
+        "word": " very"
+      },
+      {
+        "start": 37.44,
+        "end": 37.98,
+        "word": " confused"
+      }
+    ]
+  },
+  {
+    "start": 37.98,
+    "end": 38.559999999999995,
+    "text": "noob.",
+    "words": [
+      {
+        "start": 37.98,
+        "end": 38.44,
+        "word": " noob."
+      }
+    ]
+  },
+  {
+    "start": 38.96,
+    "end": 39.48,
+    "text": "Nothing.",
+    "words": [
+      {
+        "start": 38.96,
+        "end": 39.36,
+        "word": " Nothing."
+      }
+    ]
+  },
+  {
+    "start": 39.78,
+    "end": 40.72,
+    "text": "Ten seconds left.",
+    "words": [
+      {
+        "start": 39.78,
+        "end": 39.92,
+        "word": " Ten"
+      },
+      {
+        "start": 39.92,
+        "end": 40.28,
+        "word": " seconds"
+      },
+      {
+        "start": 40.28,
+        "end": 40.6,
+        "word": " left."
+      }
+    ]
+  },
+  {
+    "start": 41.38,
+    "end": 42.44,
+    "text": "Leo typed it again,",
+    "words": [
+      {
+        "start": 41.38,
+        "end": 41.56,
+        "word": " Leo"
+      },
+      {
+        "start": 41.56,
+        "end": 41.84,
+        "word": " typed"
+      },
+      {
+        "start": 41.84,
+        "end": 42.02,
+        "word": " it"
+      },
+      {
+        "start": 42.02,
+        "end": 42.32,
+        "word": " again,"
+      }
+    ]
+  },
+  {
+    "start": 42.8,
+    "end": 43.32,
+    "text": "and again,",
+    "words": [
+      {
+        "start": 42.8,
+        "end": 42.92,
+        "word": " and"
+      },
+      {
+        "start": 42.92,
+        "end": 43.2,
+        "word": " again,"
+      }
+    ]
+  },
+  {
+    "start": 43.54,
+    "end": 44.14,
+    "text": "and again.",
+    "words": [
+      {
+        "start": 43.54,
+        "end": 43.7,
+        "word": " and"
+      },
+      {
+        "start": 43.7,
+        "end": 44.02,
+        "word": " again."
+      }
+    ]
+  },
+  {
+    "start": 44.76,
+    "end": 45.76,
+    "text": "Max noticed a tiny",
+    "words": [
+      {
+        "start": 44.76,
+        "end": 44.94,
+        "word": " Max"
+      },
+      {
+        "start": 44.94,
+        "end": 45.3,
+        "word": " noticed"
+      },
+      {
+        "start": 45.3,
+        "end": 45.56,
+        "word": " a"
+      },
+      {
+        "start": 45.56,
+        "end": 45.76,
+        "word": " tiny"
+      }
+    ]
+  },
+  {
+    "start": 45.76,
+    "end": 46.82,
+    "text": "message in the corner.",
+    "words": [
+      {
+        "start": 45.76,
+        "end": 46.14,
+        "word": " message"
+      },
+      {
+        "start": 46.14,
+        "end": 46.32,
+        "word": " in"
+      },
+      {
+        "start": 46.32,
+        "end": 46.42,
+        "word": " the"
+      },
+      {
+        "start": 46.42,
+        "end": 46.7,
+        "word": " corner."
+      }
+    ]
+  },
+  {
+    "start": 47.46,
+    "end": 48.199999999999996,
+    "text": "Explode.",
+    "words": [
+      {
+        "start": 47.46,
+        "end": 48.08,
+        "word": " Explode."
+      }
+    ]
+  },
+  {
+    "start": 48.5,
+    "end": 48.76,
+    "text": "Target.",
+    "words": [
+      {
+        "start": 48.5,
+        "end": 48.64,
+        "word": " Target."
+      }
+    ]
+  },
+  {
+    "start": 49.14,
+    "end": 49.48,
+    "text": "Me.",
+    "words": [
+      {
+        "start": 49.14,
+        "end": 49.36,
+        "word": " Me."
+      }
+    ]
+  },
+  {
+    "start": 50.16,
+    "end": 50.66,
+    "text": "Times 47.",
+    "words": [
+      {
+        "start": 50.16,
+        "end": 50.16,
+        "word": " Times"
+      },
+      {
+        "start": 50.16,
+        "end": 50.54,
+        "word": " 47."
+      }
+    ]
+  },
+  {
+    "start": 51.1,
+    "end": 51.54,
+    "text": "Three.",
+    "words": [
+      {
+        "start": 51.1,
+        "end": 51.42,
+        "word": " Three."
+      }
+    ]
+  },
+  {
+    "start": 51.74,
+    "end": 52.239999999999995,
+    "text": "Two.",
+    "words": [
+      {
+        "start": 51.74,
+        "end": 52.12,
+        "word": " Two."
+      }
+    ]
+  },
+  {
+    "start": 52.44,
+    "end": 52.839999999999996,
+    "text": "One.",
+    "words": [
+      {
+        "start": 52.44,
+        "end": 52.72,
+        "word": " One."
+      }
+    ]
+  },
+  {
+    "start": 53.32,
+    "end": 53.779999999999994,
+    "text": "Round over.",
+    "words": [
+      {
+        "start": 53.32,
+        "end": 53.32,
+        "word": " Round"
+      },
+      {
+        "start": 53.32,
+        "end": 53.66,
+        "word": " over."
+      }
+    ]
+  },
+  {
+    "start": 54.3,
+    "end": 54.9,
+    "text": "Admin removed.",
+    "words": [
+      {
+        "start": 54.3,
+        "end": 54.3,
+        "word": " Admin"
+      },
+      {
+        "start": 54.3,
+        "end": 54.78,
+        "word": " removed."
+      }
+    ]
+  },
+  {
+    "start": 55.32,
+    "end": 56.56,
+    "text": "The explosions were not",
+    "words": [
+      {
+        "start": 55.32,
+        "end": 55.62,
+        "word": " The"
+      },
+      {
+        "start": 55.62,
+        "end": 56.08,
+        "word": " explosions"
+      },
+      {
+        "start": 56.08,
+        "end": 56.42,
+        "word": " were"
+      },
+      {
+        "start": 56.42,
+        "end": 56.56,
+        "word": " not"
+      }
+    ]
+  },
+  {
+    "start": 56.56,
+    "end": 57.16,
+    "text": "removed.",
+    "words": [
+      {
+        "start": 56.56,
+        "end": 57.04,
+        "word": " removed."
+      }
+    ]
+  },
+  {
+    "start": 57.56,
+    "end": 58.779999999999994,
+    "text": "All 47 of them.",
+    "words": [
+      {
+        "start": 57.56,
+        "end": 57.7,
+        "word": " All"
+      },
+      {
+        "start": 57.7,
+        "end": 58.18,
+        "word": " 47"
+      },
+      {
+        "start": 58.18,
+        "end": 58.44,
+        "word": " of"
+      },
+      {
+        "start": 58.44,
+        "end": 58.66,
+        "word": " them."
+      }
+    ]
+  },
+  {
+    "start": 59.3,
+    "end": 60.0,
+    "text": "Next round,",
+    "words": [
+      {
+        "start": 59.3,
+        "end": 59.6,
+        "word": " Next"
+      },
+      {
+        "start": 59.6,
+        "end": 59.88,
+        "word": " round,"
+      }
+    ]
+  },
+  {
+    "start": 60.14,
+    "end": 60.98,
+    "text": "Max got admin.",
+    "words": [
+      {
+        "start": 60.14,
+        "end": 60.24,
+        "word": " Max"
+      },
+      {
+        "start": 60.24,
+        "end": 60.48,
+        "word": " got"
+      },
+      {
+        "start": 60.48,
+        "end": 60.86,
+        "word": " admin."
+      }
+    ]
+  },
+  {
+    "start": 61.34,
+    "end": 62.5,
+    "text": "He typed one command.",
+    "words": [
+      {
+        "start": 61.34,
+        "end": 61.44,
+        "word": " He"
+      },
+      {
+        "start": 61.44,
+        "end": 61.68,
+        "word": " typed"
+      },
+      {
+        "start": 61.68,
+        "end": 61.92,
+        "word": " one"
+      },
+      {
+        "start": 61.92,
+        "end": 62.38,
+        "word": " command."
+      }
+    ]
+  },
+  {
+    "start": 62.74,
+    "end": 63.239999999999995,
+    "text": "Kick Leo.",
+    "words": [
+      {
+        "start": 62.74,
+        "end": 62.9,
+        "word": " Kick"
+      },
+      {
+        "start": 62.9,
+        "end": 63.12,
+        "word": " Leo."
+      }
+    ]
+  }
+]

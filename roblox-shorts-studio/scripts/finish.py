@@ -13,6 +13,8 @@ Project inputs
       {"asset": "impact_1", "start": 3.2, "gain": 0.35}           library WAV (assets/audio) or a file in audio/
       {"tone": [988, 1319], "dur": 0.15, "start": 5.7, "gain": 0.2, "square": false, "sweep": 0}
   source/overlays.json      optional extra ASS events: {"start","end","style","text","layer"}
+
+Set "finish": {"narration": false} in project.json for a clip without voice (music + SFX only, no word captions).
 """
 from pathlib import Path
 import argparse, json, re, shutil, subprocess, sys, wave
@@ -76,9 +78,13 @@ def main():
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(sfx, -.98, .98) * 32767).astype('<i2').tobytes())
 
     # --- mix: narration + looping music bed + sfx, mastered for Shorts/TikTok
+    voiced = opt.get('narration', True) is not False
     narr = next((A / f for f in ('narration.wav', 'narration.mp3') if (A / f).is_file()), None)
-    if not narr:
+    if voiced and not narr:
         raise SystemExit('audio/narration.wav or audio/narration.mp3 is missing.')
+    if not voiced:  # no voice: silent stand-in keeps one mixing graph
+        narr = A / 'silence.wav'
+        subprocess.run([FF, '-y', '-v', 'error', '-f', 'lavfi', '-i', f'anullsrc=r={SR}:cl=mono', '-t', str(SECONDS), str(narr)], check=True)
     music = ROOT / 'assets/audio' / (opt['music'] + '.wav') if not Path(opt['music']).is_file() else Path(opt['music'])
     fade = max(0.0, SECONDS - 1.2)
     subprocess.run([FF, '-y', '-v', 'error', '-i', str(narr), '-stream_loop', '-1', '-i', str(music), '-i', str(A / 'sfx.wav'), '-filter_complex',
@@ -94,7 +100,7 @@ def main():
     ass += ['', '[Events]', 'Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text']
     fixes = {k.upper(): v.upper() for k, v in opt['word_fixes'].items()}
     word = lambda x: fixes.get(x.strip().upper().strip(',.?!'), x.strip().upper())
-    for cap in json.loads((A / 'alignment/captions.json').read_text(encoding='utf-8')):
+    for cap in json.loads((A / 'alignment/captions.json').read_text(encoding='utf-8')) if voiced else []:
         ws = cap['words']
         for i, w in enumerate(ws):
             s, e = w['start'], ws[i + 1]['start'] if i + 1 < len(ws) else cap['end']
@@ -105,7 +111,7 @@ def main():
     for o in json.loads(ov.read_text(encoding='utf-8')) if ov.exists() else []:
         ass.append(f'Dialogue: {o.get("layer", 2)},{ts(o["start"])},{ts(o["end"])},{o["style"]},,0,0,0,,{o["text"]}')
     (D / f'{name}.ass').write_text('\n'.join(ass) + '\n', encoding='utf-8')
-    srt = (A / 'alignment/captions.srt').read_text(encoding='utf-8')
+    srt = (A / 'alignment/captions.srt').read_text(encoding='utf-8') if voiced else ''
     for k, v in opt['word_fixes'].items():
         srt = re.sub(rf'\b{re.escape(k)}\b', v, srt)
     (D / f'{name}.srt').write_text(srt, encoding='utf-8')
