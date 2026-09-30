@@ -14,6 +14,7 @@ export const meta = { seconds: 63.8, fps: 30, width: 1080, height: 1920, title: 
 export const sky = { zenith: '#2a78e4', horizon: '#bfe6ff', below: '#eaf5ff', fog: '#d4ecff' };
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const CROWN_S = 1.15;
 
 // ---------- timeline ----------
 const T = {
@@ -172,7 +173,6 @@ export async function setup(stage) {
   [leo, max, mia, noob] = await Promise.all(['Leo', 'Max', 'Mia', 'Noob'].map((n) => loadRobloxCharacter(n, { expressions })));
   // Leo's fringe sits over his eyes in close-ups; lift it a little so every expression reads.
   leo.bones.Head.children.find((o) => o.name === 'Hair').position.y += 0.16;
-  leo.hatOffset.y += 0.16;
   scene.add(leo.root, max.root, mia.root, noob.root);
   // Mia gets her own materials so she can turn rainbow (face ink stays dark).
   mia.root.traverse((o) => {
@@ -180,8 +180,11 @@ export async function setup(stage) {
     o.material = o.material.clone(); const hsl = {}; o.material.color.getHSL(hsl); miaMeshes.push({ m: o.material, hsl, base: o.material.color.clone(), map: o.material.map });
   });
 
+  // Crowns sit on top of the hair: a slightly larger band (radius 0.72 * CROWN_S) seated where the hair narrows to fit it.
   leoCrown = await packItem('accessories', 'crown_admin'); scene.add(leoCrown);
-  maxCrown = await packItem('accessories', 'crown_admin'); maxCrown.position.copy(max.hatOffset); max.bones.Head.add(maxCrown);
+  maxCrown = await packItem('accessories', 'crown_admin'); max.bones.Head.add(maxCrown); maxCrown.scale.setScalar(CROWN_S);
+  for (const a of [leo, max]) a.hatOffset = a.hatSeat(0.72 * CROWN_S).add(V(0, 0.04, 0));
+  maxCrown.position.copy(max.hatOffset);
   ff = forceField(); scene.add(ff);
 
   // Lobby "in his hand": small studded platform with a spawn pad; Max and Mia stand on it in that shot.
@@ -436,10 +439,10 @@ export function update(t, stage) {
     const sc = leo.root.scale.x;
     leo.bones.Head.getWorldQuaternion(leoCrown.quaternion);
     const on = leo.hatOffset.clone().applyQuaternion(leoCrown.quaternion).multiplyScalar(sc).add(lh);
-    leoCrown.position.copy(on).add(V(0, 4 * (1 - drop), 0)); leoCrown.scale.setScalar(sc);
+    leoCrown.position.copy(on).add(V(0, 4 * (1 - drop), 0)); leoCrown.scale.setScalar(sc * CROWN_S);
   } else {
     const u = t - T.roundOver;
-    leoCrown.position.set(lh.x + u * 3, lh.y + 1.5 + 9 * u - 4 * u * u, lh.z); leoCrown.rotation.set(u * 6, u * 4, u * 3); leoCrown.scale.setScalar(1 - inv(0.9, 1.2, u));
+    leoCrown.position.set(lh.x + u * 3, lh.y + 1.5 + 9 * u - 4 * u * u, lh.z); leoCrown.rotation.set(u * 6, u * 4, u * 3); leoCrown.scale.setScalar(CROWN_S * (1 - inv(0.9, 1.2, u)));
   }
   maxCrown.visible = t >= T.round2;
   if (maxCrown.visible) maxCrown.position.y = max.hatOffset.y + 4 * (1 - easeOutBack(inv(T.round2, T.round2 + 0.5, t), 1.2));

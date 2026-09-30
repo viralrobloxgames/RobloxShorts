@@ -96,6 +96,19 @@ export async function loadRobloxCharacter(name, { expressions = ['happy'], scale
       if (!t) throw new Error(`Face "${e}" was not preloaded for ${name}`);
       face.material.map = t; actor.expression = e;     // set on whatever material the Face mesh has now (clips may clone it)
     },
+    // Head-bone-local seat for a hat of the given band radius: the highest point where hair still sticks out wider
+    // than the band, so the hat sits on the hair instead of cutting through it (head top when there is no hair).
+    hatSeat(radius) {
+      let y = (HAT_ATTACHMENT - PIVOTS.Head[1]) * scale;   // head top (centre 4.5 + 0.6)
+      const hair = bones.Head.children.find((o) => o.name === 'Hair');
+      if (hair) {
+        const p = hair.geometry.attributes.position, o = hair.position;
+        for (let i = 0; i < p.count; i++) {
+          if (Math.hypot(p.getX(i) + o.x, p.getZ(i) + o.z) > radius) y = Math.max(y, p.getY(i) + o.y);
+        }
+      }
+      return new THREE.Vector3(0, y, 0);
+    },
     // Lowest point of the leg boxes (1x2x1 studs, centre 1 stud below the hip pivot) in world space.
     soleHeight() {
       root.updateMatrixWorld(true);
