@@ -15,6 +15,7 @@ Everything needed to make a Roblox-style Short lives in this folder. Paths below
 - **Downloads:** the user has pre-approved downloading their own generated outputs (ElevenLabs narration, GarageFarm frames) for the current short.
 - **Publishing** needs an explicit request with the destination and visibility. The default deliverable is a local review MP4.
 - **Frame 1 shows the central action.** No title cards or slow approaches. It must read on mute within 1–2 s.
+- **Accessories must fit before any full render.** Hats, hair and other accessories are placed only with `wear()` / `fitAccessory()` from `web/lib/robloxPack.js`, never with hand-typed offsets or scales. Before every full render run `node web/fit_check.mjs --clip <clip>`: every pair must PASS (nothing pokes through by more than 0.02 studs), and every view in `fit_check/fit_sheet.png` (front, three-quarter, side, back) must be looked at for hair or head showing through, floating, oversized or badly placed items. Only then mark it with `--reviewed`. `web/render.mjs` refuses a full render without a current, passing, reviewed check, and any edit to the clip or the fitting code needs a new one. Never use `--skip-fit-check` for a delivery.
 
 ## Workflow
 
@@ -38,6 +39,8 @@ Keep `START_HERE.md` in each project updated with what is done, what is next, an
 ## Web route (no Blender)
 
 `web/` renders scenes with three.js in headless Chromium, with the same Max/Mia/Leo cast, so a short can be made with no Blender and no farm (for example in a cloud session). Author `projects/<slug>/web/<clip>.js`, preview frames at half size, render with `node web/render.mjs`, then finish with `scripts/finish.py --encode --frames <renders/web>`. See [web/README.md](web/README.md). For a clip with no narration yet, set `"finish": {"narration": false}`.
+
+Characters, faces, accessories and map pieces come from the Roblox R6 pack (`assets/roblox_pack/`, loaded by `web/lib/robloxPack.js`). Web-route order: preview one frame per shot → **accessory fit check** (`node web/fit_check.mjs --clip <clip>`, review the sheet, `--reviewed`) → full render → finish and encode. When a new accessory or character is added to the pack, give it a rule in `ACCESSORY_FIT` and run `node web/fit_check.mjs --all` (sheet in `assets/roblox_pack/fit_check/`); every pair must pass and look right before any clip uses it.
 
 ## Tools and settings
 

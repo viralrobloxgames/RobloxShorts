@@ -145,6 +145,7 @@ export function makeCharacter(name, palette) {
 }
 
 export function setExpression(actor, e) {
+  if (actor.setFace) return actor.setFace(e);          // Roblox pack characters swap a face texture
   if (!EXPRESSIONS.includes(e)) throw new Error('Unknown expression ' + e);
   for (const k of EXPRESSIONS) actor.faces[k].visible = k === e;
   actor.expression = e;
@@ -193,6 +194,7 @@ export function actionPose(kind, phase) {
 
 // Lowest shoe-sole point in world space, for grounding like characters.ground_actor.
 export function soleHeight(actor) {
+  if (actor.soleHeight) return actor.soleHeight();
   actor.root.updateMatrixWorld(true);
   let min = Infinity; const v = new THREE.Vector3();
   for (const side of ['Leg.L', 'Leg.R']) {

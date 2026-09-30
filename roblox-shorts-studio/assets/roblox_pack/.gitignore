@@ -3,3 +3,5 @@ _studio_raw/
 # Raw KeyframeSequence dumps pulled from the Studio log (animations/*.json already contain all of this data)
 tools/raw_roblox_animations/
 tools/__pycache__/
+# fit check close-ups (the sheet and report are kept)
+fit_check/views/

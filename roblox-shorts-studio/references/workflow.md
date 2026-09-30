@@ -63,6 +63,19 @@ See [authoring.md](authoring.md) for the rig. Rules that made the farm renders w
 - For each test frame, record numeric checks in `farm_manifest.json`: `world_to_camera_view` of each featured head must be inside 0–1, with occlusion checks where it matters. This replaces local preview renders.
 - Keep captions and HUD clear of the TikTok UI: bottom 20 % and right 15 % of the frame.
 
+### Web route: accessory fit check (required)
+
+On the web route (`web/`, no Blender) characters and accessories come from the Roblox pack. Accessories are placed only
+with `wear()` / `fitAccessory()` in `web/lib/robloxPack.js`. Before every full render:
+
+1. `node web/fit_check.mjs --clip projects/<slug>/web/<clip>.js`. Every pair must PASS.
+2. Open `projects/<slug>/web/fit_check/fit_sheet.png` and check every view (front, three-quarter, side, back): no hair or
+   head showing through, nothing floating, oversized or off-centre.
+3. Fix anything wrong in the fitting rules (`ACCESSORY_FIT`), not with per-clip offsets, and rerun.
+4. `node web/fit_check.mjs --clip ... --reviewed`, then render. `web/render.mjs` blocks full renders until this is done.
+
+New accessories or characters in the pack: add a rule and run `node web/fit_check.mjs --all` before any clip uses them.
+
 ## 5. Render on GarageFarm
 
 Follow [garagefarm.md](garagefarm.md): run a test job, review it, render the full range within the cap, then download the PNGs to `renders/farm/`.
