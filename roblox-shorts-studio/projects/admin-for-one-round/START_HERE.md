@@ -11,11 +11,17 @@ Made entirely with the web renderer (`web/`), no Blender and no render farm.
 - Sound: `source/sound_cues.json`. Mix: -16 LUFS, -1.5 dBTP.
 - **Delivered:** `delivery/Admin_For_One_Round.mp4` (1080x1920, 30 fps, 1,914 frames, burned word captions).
 
+## v2: Roblox asset pack
+- Same scenes, voice, sound and captions, re-cast with the Roblox R6 pack (`web/lib/robloxPack.js`): pack characters,
+  32-face set (richer expressions per beat), fitted admin crowns, pack spawn / obby blocks / lava / checkpoint.
+- Accessory fit check: `web/fit_check/` (passed, reviewed). Frames: `renders/web_pack/`.
+
 ## Re-render / re-encode
 ```
 cd roblox-shorts-studio
-node web/render.mjs --clip projects/admin-for-one-round/web/admin_clip.js --out projects/admin-for-one-round/renders/web --workers 2 --resume
-python scripts/finish.py projects/admin-for-one-round --encode --frames projects/admin-for-one-round/renders/web
+node web/fit_check.mjs --clip projects/admin-for-one-round/web/admin_clip.js   # then review the sheet and add --reviewed
+node web/render.mjs --clip projects/admin-for-one-round/web/admin_clip.js --out projects/admin-for-one-round/renders/web_pack --workers 2 --resume
+python scripts/finish.py projects/admin-for-one-round --encode --frames projects/admin-for-one-round/renders/web_pack
 ```
 Full quality took about 2.3 h in a 4-CPU cloud session (software WebGL). `--resume` skips frames already written.
 Preview single frames first with `--frames a,b,c --scale 0.3 --samples 1`.

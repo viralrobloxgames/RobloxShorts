@@ -1,0 +1,99 @@
+{
+  "clip": "projects/admin-for-one-round/web/admin_clip.js",
+  "generated": "2026-09-30T19:01:04.687Z",
+  "fingerprint": "4461c653f2378110",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Leo",
+      "options": {
+        "expressions": [
+          "happy",
+          "neutral",
+          "surprised",
+          "angry",
+          "sad",
+          "laugh",
+          "evil_grin",
+          "confused",
+          "annoyed",
+          "shouting",
+          "shocked",
+          "scared",
+          "dizzy",
+          "smug"
+        ],
+        "scale": 1,
+        "hairLift": 0.16
+      },
+      "accessories": [
+        "crown_admin"
+      ]
+    },
+    {
+      "character": "Max",
+      "options": {
+        "expressions": [
+          "happy",
+          "neutral",
+          "surprised",
+          "angry",
+          "sad",
+          "laugh",
+          "evil_grin",
+          "confused",
+          "annoyed",
+          "shouting",
+          "shocked",
+          "scared",
+          "dizzy",
+          "smug"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "crown_admin"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Leo",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.64,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.019,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Max",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.48,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.041,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-09-30T19:01:17.277Z"
+}

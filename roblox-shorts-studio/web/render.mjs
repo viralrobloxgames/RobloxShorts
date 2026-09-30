@@ -3,17 +3,25 @@
 //   node web/render.mjs --clip projects/<slug>/web/<clip>.js --out projects/<slug>/renders/web
 //        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2] [--resume]
 //
+// A full render (no --frames / --every) of a clip that uses the Roblox pack needs a current, passing and reviewed
+// accessory fit check first: node web/fit_check.mjs --clip <clip>. --skip-fit-check overrides (not for deliveries).
+//
 // Frames are written as web_0001.png ... so `studio.py finish <project> --encode --frames renders/web` can assemble them.
 import { chromium } from 'playwright-core';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fitGate } from './lib/fitgate.mjs';
 
 const WEB = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.dirname(WEB);
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith('--') ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]] : a), []));
 if (!args.clip || !args.out) { console.error('Usage: node web/render.mjs --clip <path from studio root> --out <dir> [--frames a-b|list] [--every n] [--scale s] [--samples n] [--workers n]'); process.exit(2); }
+if (!args.frames && !args.every && !args['skip-fit-check']) {
+  const why = fitGate(args.clip);
+  if (why) { console.error(`Full render blocked: ${why}.\nRun: node web/fit_check.mjs --clip ${args.clip}`); process.exit(3); }
+}
 const out = path.resolve(args.out); fs.mkdirSync(out, { recursive: true });
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.png': 'image/png', '.jpg': 'image/jpeg', '.wav': 'audio/wav' };

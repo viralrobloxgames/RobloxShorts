@@ -8,13 +8,12 @@ import { makeCharacter, pose, actionPose, mixPose, setExpression, soleHeight, ma
 import { part, spawnPad, sign, checkpoint, cloud, crown, forceField, puff, neonMaterial, canvasTexture, rng } from '../../../web/lib/world.js';
 import { clamp, lerp, inv, track, easeInOut, easeOut, easeIn, easeOutBack, shotAt } from '../../../web/lib/anim.js';
 import { adminTimer, speedLines, flash, roundRect, drawCrown } from '../../../web/lib/overlay.js';
-import { loadRobloxCharacter, packItem } from '../../../web/lib/robloxPack.js';
+import { loadRobloxCharacter, packItem, fitAccessory, wear } from '../../../web/lib/robloxPack.js';
 
 export const meta = { seconds: 63.8, fps: 30, width: 1080, height: 1920, title: 'Admin For One Round' };
 export const sky = { zenith: '#2a78e4', horizon: '#bfe6ff', below: '#eaf5ff', fog: '#d4ecff' };
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const CROWN_S = 1.15;
 
 // ---------- timeline ----------
 const T = {
@@ -120,7 +119,7 @@ function courseY(x) {
   return 0;
 }
 
-let leo, max, mia, noob, leoCrown, maxCrown, ff, timerTex, timerCanvas, miniLobby, blastPool = [], smoke = [], zapPuffs = [], sparkles = [];
+let leo, max, mia, noob, leoCrown, maxCrown, leoFit, maxFit, ff, timerTex, timerCanvas, miniLobby, blastPool = [], smoke = [], zapPuffs = [], sparkles = [];
 let miaMeshes = [];
 
 export async function setup(stage) {
@@ -170,9 +169,8 @@ export async function setup(stage) {
   // Cast.
   // Roblox R6 pack cast (assets/roblox_pack); faces are shared textures, preloaded once.
   const expressions = ['happy', 'neutral', 'surprised', 'angry', 'sad', 'laugh', 'evil_grin', 'confused', 'annoyed', 'shouting', 'shocked', 'scared', 'dizzy', 'smug'];
-  [leo, max, mia, noob] = await Promise.all(['Leo', 'Max', 'Mia', 'Noob'].map((n) => loadRobloxCharacter(n, { expressions })));
-  // Leo's fringe sits over his eyes in close-ups; lift it a little so every expression reads.
-  leo.bones.Head.children.find((o) => o.name === 'Hair').position.y += 0.16;
+  // Leo's fringe sits over his eyes in close-ups, so his hair is lifted a little and every expression reads.
+  [leo, max, mia, noob] = await Promise.all(['Leo', 'Max', 'Mia', 'Noob'].map((n) => loadRobloxCharacter(n, { expressions, hairLift: n === 'Leo' ? 0.16 : 0 })));
   scene.add(leo.root, max.root, mia.root, noob.root);
   // Mia gets her own materials so she can turn rainbow (face ink stays dark).
   mia.root.traverse((o) => {
@@ -180,11 +178,10 @@ export async function setup(stage) {
     o.material = o.material.clone(); const hsl = {}; o.material.color.getHSL(hsl); miaMeshes.push({ m: o.material, hsl, base: o.material.color.clone(), map: o.material.map });
   });
 
-  // Crowns sit on top of the hair: a slightly larger band (radius 0.72 * CROWN_S) seated where the hair narrows to fit it.
-  leoCrown = await packItem('accessories', 'crown_admin'); scene.add(leoCrown);
-  maxCrown = await packItem('accessories', 'crown_admin'); max.bones.Head.add(maxCrown); maxCrown.scale.setScalar(CROWN_S);
-  for (const a of [leo, max]) a.hatOffset = a.hatSeat(0.72 * CROWN_S).add(V(0, 0.04, 0));
-  maxCrown.position.copy(max.hatOffset);
+  // Crowns are fitted per character (robloxPack.js fitAccessory, checked by web/fit_check.mjs). Leo's stays in world space
+  // so it can drop on at the start and fly off at round over; Max's is worn on his head.
+  leoFit = await fitAccessory(leo, 'crown_admin'); leoCrown = leoFit.item; scene.add(leoCrown);
+  maxFit = await wear(max, 'crown_admin'); maxCrown = maxFit.item;
   ff = forceField(); scene.add(ff);
 
   // Lobby "in his hand": small studded platform with a spawn pad; Max and Mia stand on it in that shot.
@@ -438,14 +435,14 @@ export function update(t, stage) {
     const drop = easeOutBack(inv(...T.crownDrop, t), 1.2);
     const sc = leo.root.scale.x;
     leo.bones.Head.getWorldQuaternion(leoCrown.quaternion);
-    const on = leo.hatOffset.clone().applyQuaternion(leoCrown.quaternion).multiplyScalar(sc).add(lh);
-    leoCrown.position.copy(on).add(V(0, 4 * (1 - drop), 0)); leoCrown.scale.setScalar(sc * CROWN_S);
+    const on = leoFit.offset.clone().applyQuaternion(leoCrown.quaternion).multiplyScalar(sc).add(lh);
+    leoCrown.position.copy(on).add(V(0, 4 * (1 - drop), 0)); leoCrown.scale.setScalar(sc * leoFit.scale);
   } else {
     const u = t - T.roundOver;
-    leoCrown.position.set(lh.x + u * 3, lh.y + 1.5 + 9 * u - 4 * u * u, lh.z); leoCrown.rotation.set(u * 6, u * 4, u * 3); leoCrown.scale.setScalar(CROWN_S * (1 - inv(0.9, 1.2, u)));
+    leoCrown.position.set(lh.x + u * 3, lh.y + 1.5 + 9 * u - 4 * u * u, lh.z); leoCrown.rotation.set(u * 6, u * 4, u * 3); leoCrown.scale.setScalar(leoFit.scale * (1 - inv(0.9, 1.2, u)));
   }
   maxCrown.visible = t >= T.round2;
-  if (maxCrown.visible) maxCrown.position.y = max.hatOffset.y + 4 * (1 - easeOutBack(inv(T.round2, T.round2 + 0.5, t), 1.2));
+  if (maxCrown.visible) maxCrown.position.y = maxFit.offset.y + 4 * (1 - easeOutBack(inv(T.round2, T.round2 + 0.5, t), 1.2));
 
   // Rainbow Mia.
   const rb = t >= T.rainbowZap;

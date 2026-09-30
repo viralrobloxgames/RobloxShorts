@@ -19,3 +19,6 @@ examples/*/assets/fonts/
 __pycache__/
 *.pyc
 node_modules/
+
+# fit check close-ups (fit_sheet.png and fit_check.json are kept)
+**/fit_check/views/

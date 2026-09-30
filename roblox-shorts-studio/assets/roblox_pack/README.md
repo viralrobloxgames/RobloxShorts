@@ -46,6 +46,8 @@ roblox_pack/
 - **Pivots:** every OBJ is moved so its pivot is at the origin:
   - characters: feet centre on the ground;
   - accessories: their attachment point on the head (`HatAttachment`/`HairAttachment` = head centre + (0, 0.6, 0));
+    this point sits inside most hairstyles, so never place accessories at it directly: use `wear()` / `fitAccessory()`
+    in `web/lib/robloxPack.js`, and run `node web/fit_check.mjs` (see `web/README.md`) before any full render;
   - handheld props: the grip, in Roblox tool-handle orientation;
   - world props and map pieces: bottom centre (islands: top centre).
   `catalog.json` gives each item's pivot kind and bounding box.
