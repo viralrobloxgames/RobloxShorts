@@ -1,0 +1,64 @@
+# Materials for Mia. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl head
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_composite.png
+
+newmtl face
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+Ns 20
+d 0.9990
+illum 2
+map_Kd face.png
+
+newmtl torso
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_composite.png
+
+newmtl left_arm
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_composite.png
+
+newmtl right_arm
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_composite.png
+
+newmtl left_leg
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_composite.png
+
+newmtl right_leg
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_composite.png
+
+newmtl hair
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd mia_hair.png

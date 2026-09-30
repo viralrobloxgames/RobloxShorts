@@ -1,0 +1,63 @@
+# Materials for gift_box. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl box
+Kd 0.8863 0.1647 0.2588
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl lid
+Kd 0.9412 0.2353 0.3294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl ribbonx
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl ribbonz
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl ribbontopx
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl ribbontopz
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl bowl
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl bowr
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl knot
+Kd 1.0000 0.8314 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

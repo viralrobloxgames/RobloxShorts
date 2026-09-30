@@ -1,0 +1,5 @@
+# Raw Studio exports: intermediate, rebuilt into the per-item folders by tools/process_export.py
+_studio_raw/
+# Raw KeyframeSequence dumps pulled from the Studio log (animations/*.json already contain all of this data)
+tools/raw_roblox_animations/
+tools/__pycache__/

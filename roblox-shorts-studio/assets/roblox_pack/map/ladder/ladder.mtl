@@ -1,0 +1,104 @@
+# Materials for ladder. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl raill
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl railr
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung1
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung2
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung3
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung4
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung5
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung6
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung7
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung8
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung9
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung10
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl rung11
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png

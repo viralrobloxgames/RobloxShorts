@@ -1,0 +1,974 @@
+{
+ "name": "Noob",
+ "rigType": "R6",
+ "units": "studs (1 stud = 1 unit)",
+ "axes": "+Y up, character faces -Z, +X is the character's right",
+ "origin": "feet centre on the ground (HumanoidRootPart position with Y = 0)",
+ "formula": "Part1.CFrame = Part0.CFrame * C0 * Transform * C1:Inverse(); animations supply Transform per joint (see animations/*.json)",
+ "cframeFormat": "[x, y, z, R00, R01, R02, R10, R11, R12, R20, R21, R22] (Roblox CFrame:GetComponents, row-major rotation)",
+ "objFile": "Noob.obj",
+ "objObjects": [
+  "Head",
+  "Face",
+  "Torso",
+  "Left Arm",
+  "Right Arm",
+  "Left Leg",
+  "Right Leg"
+ ],
+ "restPartCFrames": {
+  "Head": [
+   0,
+   4.5,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "Torso": [
+   0,
+   3,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "Left Arm": [
+   -1.5,
+   3,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "Right Arm": [
+   1.5,
+   3,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "Left Leg": [
+   -0.5,
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "Right Leg": [
+   0.5,
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "HumanoidRootPart": [
+   0,
+   3,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ]
+ },
+ "parts": [
+  {
+   "faceDecal": {
+    "face": "Front",
+    "texture": "rbxasset://textures/face.png"
+   },
+   "transparency": 0,
+   "name": "Head",
+   "material": "Plastic",
+   "color": [
+    245,
+    205,
+    48
+   ],
+   "cframe": [
+    0,
+    4.5,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "specialMesh": {
+    "meshType": "Head",
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "size": [
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Torso",
+   "color": [
+    13,
+    105,
+    172
+   ],
+   "cframe": [
+    0,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Left Arm",
+   "color": [
+    245,
+    205,
+    48
+   ],
+   "cframe": [
+    -1.5,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Right Arm",
+   "color": [
+    245,
+    205,
+    48
+   ],
+   "cframe": [
+    1.5,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Left Leg",
+   "color": [
+    164,
+    189,
+    71
+   ],
+   "cframe": [
+    -0.5,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Right Leg",
+   "color": [
+    164,
+    189,
+    71
+   ],
+   "cframe": [
+    0.5,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 1,
+   "name": "HumanoidRootPart",
+   "color": [
+    163,
+    162,
+    165
+   ],
+   "cframe": [
+    0,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    2,
+    2,
+    1
+   ]
+  }
+ ],
+ "joints": [
+  {
+   "name": "Right Shoulder",
+   "part0": "Torso",
+   "part1": "Right Arm",
+   "c0": [
+    1,
+    0.5,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "c1": [
+    -0.5,
+    0.5,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "pivotInCharacterSpace": [
+    1.0,
+    3.5,
+    0.0
+   ],
+   "parentInstance": "Torso"
+  },
+  {
+   "name": "Left Shoulder",
+   "part0": "Torso",
+   "part1": "Left Arm",
+   "c0": [
+    -1,
+    0.5,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "c1": [
+    0.5,
+    0.5,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "pivotInCharacterSpace": [
+    -1.0,
+    3.5,
+    0.0
+   ],
+   "parentInstance": "Torso"
+  },
+  {
+   "name": "Right Hip",
+   "part0": "Torso",
+   "part1": "Right Leg",
+   "c0": [
+    1,
+    -1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "c1": [
+    0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "pivotInCharacterSpace": [
+    1.0,
+    2.0,
+    0.0
+   ],
+   "parentInstance": "Torso"
+  },
+  {
+   "name": "Left Hip",
+   "part0": "Torso",
+   "part1": "Left Leg",
+   "c0": [
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "c1": [
+    -0.5,
+    1,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "pivotInCharacterSpace": [
+    -1.0,
+    2.0,
+    0.0
+   ],
+   "parentInstance": "Torso"
+  },
+  {
+   "name": "Neck",
+   "part0": "Torso",
+   "part1": "Head",
+   "c0": [
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "c1": [
+    0,
+    -0.5,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "pivotInCharacterSpace": [
+    0.0,
+    4.0,
+    0.0
+   ],
+   "parentInstance": "Torso"
+  },
+  {
+   "name": "RootJoint",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "pivotInCharacterSpace": [
+    0.0,
+    3.0,
+    0.0
+   ],
+   "parentInstance": "HumanoidRootPart"
+  }
+ ],
+ "attachments": [
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "HairAttachment"
+  },
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "HatAttachment"
+  },
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0,
+    -0.6,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "FaceFrontAttachment"
+  },
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "FaceCenterAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "NeckAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    0,
+    -0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "BodyFrontAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    0,
+    0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "BodyBackAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    -1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftCollarAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightCollarAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    -1,
+    -0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "WaistFrontAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "WaistCenterAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    -1,
+    0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "WaistBackAttachment"
+  },
+  {
+   "part": "Left Arm",
+   "cframe": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftShoulderAttachment"
+  },
+  {
+   "part": "Left Arm",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftGripAttachment"
+  },
+  {
+   "part": "Right Arm",
+   "cframe": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightShoulderAttachment"
+  },
+  {
+   "part": "Right Arm",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightGripAttachment"
+  },
+  {
+   "part": "Left Leg",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftFootAttachment"
+  },
+  {
+   "part": "Right Leg",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightFootAttachment"
+  },
+  {
+   "part": "HumanoidRootPart",
+   "cframe": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RootAttachment"
+  }
+ ],
+ "accessories": [],
+ "bodyColors": {
+  "rightArm": [
+   245,
+   205,
+   48
+  ],
+  "head": [
+   245,
+   205,
+   48
+  ],
+  "rightLeg": [
+   164,
+   189,
+   71
+  ],
+  "torso": [
+   13,
+   105,
+   172
+  ],
+  "leftArm": [
+   245,
+   205,
+   48
+  ],
+  "leftLeg": [
+   164,
+   189,
+   71
+  ]
+ },
+ "clothing": {},
+ "defaultFace": {
+  "studio": "rbxasset://textures/face.png (Roblox 'Smile', asset 144075659)",
+  "pack": "faces/happy.png (vector redraw of Smile)"
+ },
+ "humanoid": {
+  "jumpPower": 50,
+  "rigType": "R6",
+  "walkSpeed": 16,
+  "hipHeight": 0
+ },
+ "studioOriginOfThisModel": [
+  7.5,
+  0,
+  40
+ ],
+ "textures": {
+  "composite": "noob_composite.png",
+  "body": "noob_body.png",
+  "clothing": "noob_clothing.png",
+  "face": "face.png",
+  "hair": null,
+  "note": "composite = body colours + Pants + Shirt, 128 px per stud. body/clothing are the two layers on their own (recolour gags: tint body, keep clothing). Head uses a skin swatch in the same atlas. Swap face.png (or map faces/<expression>/face.png) to change expression."
+ },
+ "build": "tools/build_characters_local.py (see README: Studio does not export clothing atlases or head meshes while its window is not rendering)"
+}

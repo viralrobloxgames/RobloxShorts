@@ -1,0 +1,15 @@
+# Materials for baseplate_tile_grid. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tile
+Kd 0.3569 0.3569 0.3569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tile_grid
+Kd 0.0000 0.0000 0.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.2000
+illum 2
+map_Kd baseplate_tile_grid_tile_grid.png

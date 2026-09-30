@@ -1,0 +1,55 @@
+# Materials for tree_blocky. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl trunk
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl leaves1
+Kd 0.2941 0.5922 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl leaves1_studs
+Kd 0.2941 0.5922 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_studs_diff.png
+norm roblox_studs_nmap.png
+
+newmtl leaves2
+Kd 0.3451 0.6667 0.3216
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl leaves2_studs
+Kd 0.3451 0.6667 0.3216
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_studs_diff.png
+norm roblox_studs_nmap.png
+
+newmtl leaves3
+Kd 0.3922 0.7294 0.3529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl leaves3_studs
+Kd 0.3922 0.7294 0.3529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_studs_diff.png
+norm roblox_studs_nmap.png

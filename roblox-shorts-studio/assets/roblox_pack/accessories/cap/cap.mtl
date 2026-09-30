@@ -1,0 +1,21 @@
+# Materials for cap. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl brim
+Kd 0.6667 0.0941 0.1255
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl button
+Kd 0.6667 0.0941 0.1255
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl dome
+Kd 0.8627 0.1412 0.1725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

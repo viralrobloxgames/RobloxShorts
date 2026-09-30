@@ -1,0 +1,42 @@
+# Roblox asset pack: baseplate_tile_studs (map). Exported from Roblox Studio with Export Selection, then split/renamed/re-centred by tools/process_export.py. Units: studs (1 stud = 1 unit). +Y up. Pivot (bottom_centre) at the origin.
+mtllib baseplate_tile_studs.mtl
+
+v 8.00000 1.00000 -8.00000
+v 8.00000 1.00000 8.00000
+v 8.00000 0.00000 -8.00000
+v 8.00000 0.00000 8.00000
+v -8.00000 1.00000 8.00000
+v -8.00000 0.00000 8.00000
+v -8.00000 1.00000 -8.00000
+v -8.00000 0.00000 -8.00000
+vt 4.00000 -4.75000
+vt 2.00000 -4.75000
+vt 4.00000 -4.87500
+vt 2.00000 -4.87500
+vt 0.00000 16.00000
+vt 16.00000 16.00000
+vt 0.00000 0.00000
+vt 16.00000 0.00000
+vn 1.0000 0.0000 0.0000
+vn 0.0000 0.0000 1.0000
+vn -1.0000 0.0000 0.0000
+vn 0.0000 0.0000 -1.0000
+vn 0.0000 1.0000 0.0000
+vn 0.0000 -1.0000 0.0000
+
+o Tile
+usemtl tile
+f 1/1/1 2/2/1 3/3/1
+f 3/3/1 2/2/1 4/4/1
+f 2/1/2 5/2/2 4/3/2
+f 4/3/2 5/2/2 6/4/2
+f 5/1/3 7/2/3 6/3/3
+f 6/3/3 7/2/3 8/4/3
+f 7/1/4 1/2/4 8/3/4
+f 8/3/4 1/2/4 3/4/4
+usemtl tile_studs
+f 5/5/5 2/6/5 7/7/5
+f 7/7/5 2/6/5 1/8/5
+usemtl tile_inlet
+f 8/7/6 3/8/6 6/5/6
+f 6/5/6 3/8/6 4/6/6

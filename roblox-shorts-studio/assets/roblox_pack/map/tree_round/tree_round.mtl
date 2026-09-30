@@ -1,0 +1,14 @@
+# Materials for tree_round. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl trunk
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl leaves
+Kd 0.2941 0.5922 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

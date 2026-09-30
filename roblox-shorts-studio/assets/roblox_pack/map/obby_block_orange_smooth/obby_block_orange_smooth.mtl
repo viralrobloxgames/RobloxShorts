@@ -1,0 +1,7 @@
+# Materials for obby_block_orange_smooth. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl block
+Kd 1.0000 0.6902 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

@@ -1,0 +1,31 @@
+# Materials for leaderboard_board. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl board
+Kd 0.1216 0.1647 0.2667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl board_face
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd leaderboard_board_board_face.png
+
+newmtl postl
+Kd 0.4196 0.2902 0.1804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png
+
+newmtl postr
+Kd 0.4196 0.2902 0.1804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_wood_diff.png

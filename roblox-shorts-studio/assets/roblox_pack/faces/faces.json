@@ -1,0 +1,388 @@
+{
+  "size_px": 1024,
+  "grid": "128-unit grid of Roblox's default Smile face (rbxasset://textures/face.png); multiply by size/128 for pixels",
+  "eye_centres_grid": [
+    [
+      52.74,
+      35.74
+    ],
+    [
+      76.26,
+      35.74
+    ]
+  ],
+  "eye_centres_px": [
+    [
+      421.92,
+      285.92
+    ],
+    [
+      610.08,
+      285.92
+    ]
+  ],
+  "eye_centres_uv": [
+    [
+      0.41203,
+      0.72078
+    ],
+    [
+      0.59578,
+      0.72078
+    ]
+  ],
+  "mouth_centre_grid": [
+    64.5,
+    89.5
+  ],
+  "ink": "#000000",
+  "tongue": "#D6546E",
+  "tear": "#60C4FF",
+  "heart": "#FF3A5C",
+  "faces": [
+    {
+      "index": 1,
+      "name": "neutral",
+      "group": "expression",
+      "aliases": [],
+      "description": "Default eyes, flat mouth.",
+      "file": "neutral.png",
+      "eyes_layer": "layers/eyes/neutral.png",
+      "mouth_layer": "layers/mouth/neutral.png"
+    },
+    {
+      "index": 2,
+      "name": "happy",
+      "group": "expression",
+      "aliases": [
+        "smile"
+      ],
+      "description": "Vector redraw of Roblox's default Smile face (asset 144075659).",
+      "file": "happy.png",
+      "eyes_layer": "layers/eyes/happy.png",
+      "mouth_layer": "layers/mouth/happy.png"
+    },
+    {
+      "index": 3,
+      "name": "surprised",
+      "group": "expression",
+      "aliases": [],
+      "description": "Bigger eyes, raised brows, small O mouth.",
+      "file": "surprised.png",
+      "eyes_layer": "layers/eyes/surprised.png",
+      "mouth_layer": "layers/mouth/surprised.png"
+    },
+    {
+      "index": 4,
+      "name": "angry",
+      "group": "expression",
+      "aliases": [],
+      "description": "Slanted brows, lidded eyes, frown.",
+      "file": "angry.png",
+      "eyes_layer": "layers/eyes/angry.png",
+      "mouth_layer": "layers/mouth/angry.png"
+    },
+    {
+      "index": 5,
+      "name": "sad",
+      "group": "expression",
+      "aliases": [],
+      "description": "Worried brows, frown.",
+      "file": "sad.png",
+      "eyes_layer": "layers/eyes/sad.png",
+      "mouth_layer": "layers/mouth/sad.png"
+    },
+    {
+      "index": 6,
+      "name": "laugh",
+      "group": "expression",
+      "aliases": [
+        "laughing"
+      ],
+      "description": "Closed happy eyes, wide open mouth with tongue.",
+      "file": "laugh.png",
+      "eyes_layer": "layers/eyes/laugh.png",
+      "mouth_layer": "layers/mouth/laugh.png"
+    },
+    {
+      "index": 7,
+      "name": "smug",
+      "group": "expression",
+      "aliases": [],
+      "description": "Half-lidded eyes, one raised brow, sideways smirk.",
+      "file": "smug.png",
+      "eyes_layer": "layers/eyes/smug.png",
+      "mouth_layer": "layers/mouth/smug.png"
+    },
+    {
+      "index": 8,
+      "name": "evil_grin",
+      "group": "expression",
+      "aliases": [],
+      "description": "Angry brows, narrowed eyes, big toothy Epic-style grin.",
+      "file": "evil_grin.png",
+      "eyes_layer": "layers/eyes/evil_grin.png",
+      "mouth_layer": "layers/mouth/evil_grin.png"
+    },
+    {
+      "index": 9,
+      "name": "scheming",
+      "group": "expression",
+      "aliases": [],
+      "description": "Narrow sideways-lidded eyes, low brows, long sly grin.",
+      "file": "scheming.png",
+      "eyes_layer": "layers/eyes/scheming.png",
+      "mouth_layer": "layers/mouth/scheming.png"
+    },
+    {
+      "index": 10,
+      "name": "scared",
+      "group": "expression",
+      "aliases": [
+        "panic"
+      ],
+      "description": "Worried brows, big eyes with highlights, wobbly open mouth.",
+      "file": "scared.png",
+      "eyes_layer": "layers/eyes/scared.png",
+      "mouth_layer": "layers/mouth/scared.png"
+    },
+    {
+      "index": 11,
+      "name": "crying",
+      "group": "expression",
+      "aliases": [],
+      "description": "Squeezed shut eyes, tear streams, wailing mouth.",
+      "file": "crying.png",
+      "eyes_layer": "layers/eyes/crying.png",
+      "mouth_layer": "layers/mouth/crying.png"
+    },
+    {
+      "index": 12,
+      "name": "dizzy",
+      "group": "expression",
+      "aliases": [],
+      "description": "Spiral eyes, wavy mouth.",
+      "file": "dizzy.png",
+      "eyes_layer": "layers/eyes/dizzy.png",
+      "mouth_layer": "layers/mouth/dizzy.png"
+    },
+    {
+      "index": 13,
+      "name": "confused",
+      "group": "expression",
+      "aliases": [],
+      "description": "One brow up, one flat, off-centre squiggle mouth.",
+      "file": "confused.png",
+      "eyes_layer": "layers/eyes/confused.png",
+      "mouth_layer": "layers/mouth/confused.png"
+    },
+    {
+      "index": 14,
+      "name": "annoyed",
+      "group": "expression",
+      "aliases": [
+        "deadpan"
+      ],
+      "description": "Deadpan: flat brows, half-lidded eyes, short flat mouth.",
+      "file": "annoyed.png",
+      "eyes_layer": "layers/eyes/annoyed.png",
+      "mouth_layer": "layers/mouth/annoyed.png"
+    },
+    {
+      "index": 15,
+      "name": "shocked",
+      "group": "expression",
+      "aliases": [],
+      "description": "White eyes with tiny pupils, high brows, gasp.",
+      "file": "shocked.png",
+      "eyes_layer": "layers/eyes/shocked.png",
+      "mouth_layer": "layers/mouth/shocked.png"
+    },
+    {
+      "index": 16,
+      "name": "determined",
+      "group": "expression",
+      "aliases": [],
+      "description": "Low slanted brows, lidded eyes, clenched teeth.",
+      "file": "determined.png",
+      "eyes_layer": "layers/eyes/determined.png",
+      "mouth_layer": "layers/mouth/determined.png"
+    },
+    {
+      "index": 17,
+      "name": "wink",
+      "group": "expression",
+      "aliases": [],
+      "description": "One eye closed, classic smile.",
+      "file": "wink.png",
+      "eyes_layer": "layers/eyes/wink.png",
+      "mouth_layer": "layers/mouth/wink.png"
+    },
+    {
+      "index": 18,
+      "name": "sleeping",
+      "group": "expression",
+      "aliases": [
+        "sleepy",
+        "afk"
+      ],
+      "description": "Closed relaxed eyes, small open snoring mouth.",
+      "file": "sleeping.png",
+      "eyes_layer": "layers/eyes/sleeping.png",
+      "mouth_layer": "layers/mouth/sleeping.png"
+    },
+    {
+      "index": 19,
+      "name": "nervous",
+      "group": "expression",
+      "aliases": [
+        "nervous_sweat"
+      ],
+      "description": "Worried brows, wobbly smile, sweat drop.",
+      "file": "nervous.png",
+      "eyes_layer": "layers/eyes/nervous.png",
+      "mouth_layer": "layers/mouth/nervous.png"
+    },
+    {
+      "index": 20,
+      "name": "love",
+      "group": "expression",
+      "aliases": [
+        "heart_eyes"
+      ],
+      "description": "Heart eyes, open smile.",
+      "file": "love.png",
+      "eyes_layer": "layers/eyes/love.png",
+      "mouth_layer": "layers/mouth/love.png"
+    },
+    {
+      "index": 21,
+      "name": "cool",
+      "group": "expression",
+      "aliases": [
+        "sunglasses"
+      ],
+      "description": "Black sunglasses with glints, confident smirk.",
+      "file": "cool.png",
+      "eyes_layer": "layers/eyes/cool.png",
+      "mouth_layer": "layers/mouth/cool.png"
+    },
+    {
+      "index": 22,
+      "name": "blink",
+      "group": "expression",
+      "aliases": [
+        "eyes_closed"
+      ],
+      "description": "Eyes closed with the classic smile; use for blinks.",
+      "file": "blink.png",
+      "eyes_layer": "layers/eyes/blink.png",
+      "mouth_layer": "layers/mouth/blink.png"
+    },
+    {
+      "index": 23,
+      "name": "suspicious",
+      "group": "expression",
+      "aliases": [],
+      "description": "One narrowed eye with a low brow, one raised brow, small side mouth.",
+      "file": "suspicious.png",
+      "eyes_layer": "layers/eyes/suspicious.png",
+      "mouth_layer": "layers/mouth/suspicious.png"
+    },
+    {
+      "index": 24,
+      "name": "shouting",
+      "group": "expression",
+      "aliases": [
+        "yelling"
+      ],
+      "description": "Angry brows, big open yelling mouth with teeth and tongue.",
+      "file": "shouting.png",
+      "eyes_layer": "layers/eyes/shouting.png",
+      "mouth_layer": "layers/mouth/shouting.png"
+    },
+    {
+      "index": 25,
+      "name": "knocked_out",
+      "group": "expression",
+      "aliases": [
+        "ko",
+        "dead"
+      ],
+      "description": "X eyes, small open mouth with tongue out.",
+      "file": "knocked_out.png",
+      "eyes_layer": "layers/eyes/knocked_out.png",
+      "mouth_layer": "layers/mouth/knocked_out.png"
+    },
+    {
+      "index": 26,
+      "name": "disgusted",
+      "group": "expression",
+      "aliases": [],
+      "description": "One squeezed eye, one lidded eye, wavy frown with tongue out.",
+      "file": "disgusted.png",
+      "eyes_layer": "layers/eyes/disgusted.png",
+      "mouth_layer": "layers/mouth/disgusted.png"
+    },
+    {
+      "index": 27,
+      "name": "talking",
+      "group": "expression",
+      "aliases": [],
+      "description": "Default eyes, medium open mouth.",
+      "file": "talking.png",
+      "eyes_layer": "layers/eyes/talking.png",
+      "mouth_layer": "layers/mouth/talking.png"
+    },
+    {
+      "index": 28,
+      "name": "mouth_closed",
+      "group": "lipsync",
+      "aliases": [],
+      "description": "Lip-sync: closed (M, B, P) - soft smile line.",
+      "file": "mouth_closed.png",
+      "eyes_layer": "layers/eyes/mouth_closed.png",
+      "mouth_layer": "layers/mouth/mouth_closed.png"
+    },
+    {
+      "index": 29,
+      "name": "mouth_small",
+      "group": "lipsync",
+      "aliases": [],
+      "description": "Lip-sync: small open (most consonants).",
+      "file": "mouth_small.png",
+      "eyes_layer": "layers/eyes/mouth_small.png",
+      "mouth_layer": "layers/mouth/mouth_small.png"
+    },
+    {
+      "index": 30,
+      "name": "mouth_wide",
+      "group": "lipsync",
+      "aliases": [],
+      "description": "Lip-sync: wide open (A, I).",
+      "file": "mouth_wide.png",
+      "eyes_layer": "layers/eyes/mouth_wide.png",
+      "mouth_layer": "layers/mouth/mouth_wide.png"
+    },
+    {
+      "index": 31,
+      "name": "mouth_o",
+      "group": "lipsync",
+      "aliases": [],
+      "description": "Lip-sync: rounded O (O, U, W).",
+      "file": "mouth_o.png",
+      "eyes_layer": "layers/eyes/mouth_o.png",
+      "mouth_layer": "layers/mouth/mouth_o.png"
+    },
+    {
+      "index": 32,
+      "name": "mouth_e",
+      "group": "lipsync",
+      "aliases": [],
+      "description": "Lip-sync: wide smile showing teeth (E, EE).",
+      "file": "mouth_e.png",
+      "eyes_layer": "layers/eyes/mouth_e.png",
+      "mouth_layer": "layers/mouth/mouth_e.png"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Materials for obby_block_green_studs. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl block
+Kd 0.0000 1.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl block_studs
+Kd 0.0000 1.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_studs_diff.png
+norm roblox_studs_nmap.png
+
+newmtl block_inlet
+Kd 0.0000 1.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_inlet_diff.png
+norm roblox_inlet_nmap.png

@@ -1,0 +1,25 @@
+# Materials for baseplate_tile_studs. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tile
+Kd 0.1569 0.4980 0.2784
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tile_studs
+Kd 0.1569 0.4980 0.2784
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_studs_diff.png
+norm roblox_studs_nmap.png
+
+newmtl tile_inlet
+Kd 0.1569 0.4980 0.2784
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_inlet_diff.png
+norm roblox_inlet_nmap.png

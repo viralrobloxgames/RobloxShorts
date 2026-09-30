@@ -1,0 +1,55 @@
+{
+  "purpose": "Reference values for matching a typical bright Roblox obby look in the web (three.js) renderer. The same preset is stored in Studio at Workspace/RobloxAssetPack/LightingPreset (inert: move its children into Lighting and copy its attributes to apply).",
+  "sky": {
+    "note": "Roblox's current default sky, as found in a fresh Baseplate place (Lighting.Sky). Free images that Roblox ships in its default template; the uploader accounts are DodgerJavi (sky, sun) and meow_pizza (moon), not the Roblox account (see CREDITS.md).",
+    "SkyboxBk": "rbxassetid://6444884337",
+    "SkyboxFt": "rbxassetid://6444884337",
+    "SkyboxLf": "rbxassetid://6444884337",
+    "SkyboxRt": "rbxassetid://6444884337",
+    "SkyboxDn": "rbxassetid://6444884785",
+    "SkyboxUp": "rbxassetid://6412503613",
+    "SunTextureId": "rbxassetid://6196665106",
+    "MoonTextureId": "rbxassetid://6444320592",
+    "SunAngularSize": 11,
+    "MoonAngularSize": 11,
+    "StarCount": 3000,
+    "classicSkyAlternative": "rbxasset://textures/sky/sky512_{bk,dn,ft,lf,rt,up}.tex (the pre-2020 blue sky that ships inside Studio)"
+  },
+  "lighting": {
+    "Technology": "Future",
+    "Brightness": 3,
+    "ClockTime": 14,
+    "GeographicLatitude": 0,
+    "Ambient": [70, 70, 70],
+    "OutdoorAmbient": [128, 128, 128],
+    "ColorShift_Top": [255, 247, 232],
+    "ColorShift_Bottom": [0, 0, 0],
+    "EnvironmentDiffuseScale": 1,
+    "EnvironmentSpecularScale": 1,
+    "GlobalShadows": true,
+    "ShadowSoftness": 0.2,
+    "ExposureCompensation": 0,
+    "FogStart": 0,
+    "FogEnd": 100000,
+    "FogColor": [192, 192, 192],
+    "notes": "Roblox's default Baseplate uses Brightness 3, ClockTime 14.5, Ambient and OutdoorAmbient (70,70,70), ColorShift 0. For a brighter obby read on phones, raise OutdoorAmbient to (128,128,128) and add a slightly warm ColorShift_Top. The MCP could not read or set Lighting.Technology (it lacks the RobloxScript capability), so set Future by hand in Studio."
+  },
+  "atmosphere": { "Density": 0.3, "Offset": 0.25, "Color": [199, 199, 199], "Decay": [106, 112, 125], "Glare": 0, "Haze": 0 },
+  "postEffects": {
+    "Bloom": { "Intensity": 1, "Size": 24, "Threshold": 2 },
+    "SunRays": { "Intensity": 0.01, "Spread": 0.1 },
+    "ColorCorrection": { "Brightness": 0.02, "Contrast": 0.05, "Saturation": 0.15, "TintColor": [255, 255, 255] }
+  },
+  "defaultBaseplateInThisPlace": {
+    "Brightness": 3, "ClockTime": 14.5, "Ambient": [70, 70, 70], "OutdoorAmbient": [70, 70, 70], "ColorShift_Top": [0, 0, 0], "ColorShift_Bottom": [0, 0, 0],
+    "EnvironmentDiffuseScale": 1, "EnvironmentSpecularScale": 1, "GlobalShadows": true, "ShadowSoftness": 0.2, "LightingStyle": "Soft", "PrioritizeLightingQuality": true,
+    "Bloom": { "Intensity": 1, "Size": 24, "Threshold": 2 }, "SunRays": { "Intensity": 0.01, "Spread": 0.1 },
+    "Atmosphere": { "Density": 0.3, "Offset": 0.25, "Color": [199, 199, 199], "Decay": [106, 112, 125] }
+  },
+  "threejsMapping": {
+    "sun": "DirectionalLight, warm white (#fff1d6), intensity ~3 with soft shadows; ClockTime 14 is roughly 55-60 degrees sun elevation",
+    "sky": "Use the gradient sky already in web/lib/world.js (zenith #2f7fe6, horizon #bfe4ff) or a cube map made from the skybox IDs above",
+    "ambient": "HemisphereLight sky #d9ecff / ground #8a93a6 at ~0.55 approximates OutdoorAmbient 128 + EnvironmentDiffuseScale 1",
+    "neon": "Materials with Ke in the pack's MTL files are Roblox Neon: render emissive and let the bloom pass catch them"
+  }
+}

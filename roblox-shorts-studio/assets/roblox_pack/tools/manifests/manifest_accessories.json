@@ -1,0 +1,2043 @@
+{
+ "batch": "accessories",
+ "items": [
+  {
+   "pivotKind": "HatAttachment",
+   "kind": "accessory",
+   "folder": "accessories/crown_admin",
+   "attachTo": "Head",
+   "item": "crown_admin",
+   "category": "accessories",
+   "attachment": "HatAttachment",
+   "file": "crown_admin",
+   "pivot": [
+    -22,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22,
+      2.2,
+      60,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      0.34,
+      1.36,
+      1.36
+     ],
+     "tag": "i01p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point0R",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.915,
+      2.57,
+      59.37,
+      0,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point0L",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.085,
+      2.57,
+      59.37,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.13,
+      0.13
+     ],
+     "transparency": 0,
+     "name": "Tip0",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22,
+      2.82,
+      59.37,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i01p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0.15000000596046448,
+     "color": [
+      255,
+      40,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "transparency": 0,
+     "name": "Gem0",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22,
+      2.2,
+      59.32,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i01p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point1R",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.5729,
+      2.57,
+      59.72448,
+      0.95106,
+      0,
+      -0.30902,
+      0,
+      1,
+      0,
+      0.30902,
+      0,
+      0.95106
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point1L",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.62543,
+      2.57,
+      59.88616,
+      -0.95106,
+      0,
+      0.30902,
+      0,
+      1,
+      0,
+      -0.30902,
+      0,
+      -0.95106
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.13,
+      0.13
+     ],
+     "transparency": 0,
+     "name": "Tip1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.59916,
+      2.82,
+      59.80532,
+      0.30902,
+      0,
+      0.95106,
+      0,
+      1,
+      0,
+      -0.95106,
+      0,
+      0.30902
+     ],
+     "shape": "Ball",
+     "tag": "i01p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0.15000000596046448,
+     "color": [
+      40,
+      130,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "transparency": 0,
+     "name": "Gem1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.64672,
+      2.2,
+      59.78987,
+      0.30902,
+      0,
+      0.95106,
+      0,
+      1,
+      0,
+      -0.95106,
+      0,
+      0.30902
+     ],
+     "shape": "Ball",
+     "tag": "i01p009x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point2R",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.43907,
+      2.57,
+      60.45972,
+      0.58779,
+      0,
+      0.80902,
+      0,
+      1,
+      0,
+      -0.80902,
+      0,
+      0.58779
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p010x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point2L",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.30154,
+      2.57,
+      60.55964,
+      -0.58779,
+      0,
+      -0.80902,
+      0,
+      1,
+      0,
+      0.80902,
+      0,
+      -0.58779
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p011x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.13,
+      0.13
+     ],
+     "transparency": 0,
+     "name": "Tip2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.3703,
+      2.82,
+      60.50968,
+      -0.80902,
+      0,
+      0.58779,
+      0,
+      1,
+      0,
+      -0.58779,
+      0,
+      -0.80902
+     ],
+     "shape": "Ball",
+     "tag": "i01p012x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0.15000000596046448,
+     "color": [
+      40,
+      220,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "transparency": 0,
+     "name": "Gem2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.39969,
+      2.2,
+      60.55013,
+      -0.80902,
+      0,
+      0.58779,
+      0,
+      1,
+      0,
+      -0.58779,
+      0,
+      -0.80902
+     ],
+     "shape": "Ball",
+     "tag": "i01p013x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point3R",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.69846,
+      2.57,
+      60.55964,
+      -0.58779,
+      0,
+      0.80902,
+      0,
+      1,
+      0,
+      -0.80902,
+      0,
+      -0.58779
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p014x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point3L",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.56093,
+      2.57,
+      60.45972,
+      0.58779,
+      0,
+      -0.80902,
+      0,
+      1,
+      0,
+      0.80902,
+      0,
+      0.58779
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p015x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.13,
+      0.13
+     ],
+     "transparency": 0,
+     "name": "Tip3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.6297,
+      2.82,
+      60.50968,
+      -0.80902,
+      0,
+      -0.58779,
+      0,
+      1,
+      0,
+      0.58779,
+      0,
+      -0.80902
+     ],
+     "shape": "Ball",
+     "tag": "i01p016x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0.15000000596046448,
+     "color": [
+      180,
+      70,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "transparency": 0,
+     "name": "Gem3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.60031,
+      2.2,
+      60.55013,
+      -0.80902,
+      0,
+      -0.58779,
+      0,
+      1,
+      0,
+      0.58779,
+      0,
+      -0.80902
+     ],
+     "shape": "Ball",
+     "tag": "i01p017x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point4R",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.37457,
+      2.57,
+      59.88616,
+      -0.95106,
+      0,
+      -0.30902,
+      0,
+      1,
+      0,
+      0.30902,
+      0,
+      -0.95106
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p018x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Point4L",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.4271,
+      2.57,
+      59.72448,
+      0.95106,
+      0,
+      0.30902,
+      0,
+      1,
+      0,
+      -0.30902,
+      0,
+      0.95106
+     ],
+     "size": [
+      0.07,
+      0.42,
+      0.17
+     ],
+     "tag": "i01p019x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.13,
+      0.13
+     ],
+     "transparency": 0,
+     "name": "Tip4",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.40084,
+      2.82,
+      59.80532,
+      0.30902,
+      0,
+      -0.95106,
+      0,
+      1,
+      0,
+      0.95106,
+      0,
+      0.30902
+     ],
+     "shape": "Ball",
+     "tag": "i01p020x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0.15000000596046448,
+     "color": [
+      40,
+      130,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "transparency": 0,
+     "name": "Gem4",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.35328,
+      2.2,
+      59.78987,
+      0.30902,
+      0,
+      -0.95106,
+      0,
+      1,
+      0,
+      0.95106,
+      0,
+      0.30902
+     ],
+     "shape": "Ball",
+     "tag": "i01p021x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HatAttachment",
+   "kind": "accessory",
+   "folder": "accessories/admin_badge_halo",
+   "attachTo": "Head",
+   "item": "admin_badge_halo",
+   "category": "accessories",
+   "attachment": "HatAttachment",
+   "file": "admin_badge_halo",
+   "pivot": [
+    -16.5,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      205,
+      60
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      -16.5,
+      2.6,
+      60,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      0.1,
+      1.45,
+      1.45
+     ],
+     "tag": "i02p001x"
+    },
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "AdminText",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://118521769225336"
+      },
+      {
+       "transparency": 0,
+       "name": "AdminText",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Back",
+       "texture": "rbxassetid://118521769225336"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      31,
+      42,
+      68
+     ],
+     "class": "Part",
+     "size": [
+      1.7,
+      0.54,
+      0.08
+     ],
+     "transparency": 0,
+     "name": "Badge",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -16.5,
+      3.35,
+      60,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i02p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.06,
+      0.4,
+      0.06
+     ],
+     "transparency": 0,
+     "name": "BadgeStem",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -16.5,
+      2.88,
+      60,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i02p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HairAttachment",
+   "sourceAssetId": 63690008,
+   "kind": "accessory",
+   "folder": "accessories/hair_leo",
+   "attachTo": "Head",
+   "item": "hair_leo",
+   "category": "accessories",
+   "attachment": "HairAttachment",
+   "file": "hair_leo",
+   "pivot": [
+    -11,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "rbxassetid://6858317867",
+     "meshId": "http://www.roblox.com/asset/?id=83293901",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -11,
+      1.75,
+      59.75027,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.75983,
+      1.32495,
+      1.94817
+     ],
+     "tag": "i03p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HairAttachment",
+   "sourceAssetId": 62234425,
+   "kind": "accessory",
+   "folder": "accessories/hair_max",
+   "attachTo": "Head",
+   "item": "hair_max",
+   "category": "accessories",
+   "attachment": "HairAttachment",
+   "file": "hair_max",
+   "pivot": [
+    -5.5,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "http://www.roblox.com/asset/?id=81504106",
+     "meshId": "rbxassetid://117529535472346",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -5.5025,
+      1.86295,
+      59.9697,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.49477,
+      1.36104,
+      1.64919
+     ],
+     "tag": "i04p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HairAttachment",
+   "sourceAssetId": 376527350,
+   "kind": "accessory",
+   "folder": "accessories/hair_mia",
+   "attachTo": "Head",
+   "item": "hair_mia",
+   "category": "accessories",
+   "attachment": "HairAttachment",
+   "file": "hair_mia",
+   "pivot": [
+    0,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "http://www.roblox.com/asset/?id=376188601",
+     "meshId": "http://www.roblox.com/asset/?id=319344974",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      0,
+      1.37,
+      60.04027,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.70306,
+      1.87073,
+      1.59999
+     ],
+     "tag": "i05p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HatAttachment",
+   "sourceAssetId": 1103003368,
+   "kind": "accessory",
+   "folder": "accessories/beanie",
+   "attachTo": "Head",
+   "item": "beanie",
+   "category": "accessories",
+   "attachment": "HatAttachment",
+   "file": "beanie",
+   "pivot": [
+    11,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "rbxassetid://1102816925",
+     "meshId": "rbxassetid://220855121",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      11,
+      1.1,
+      60.20027,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.70598,
+      3.10118,
+      1.98825
+     ],
+     "tag": "i06p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HairAttachment",
+   "sourceAssetId": 376524487,
+   "kind": "accessory",
+   "folder": "accessories/spiky_hair",
+   "attachTo": "Head",
+   "item": "spiky_hair",
+   "category": "accessories",
+   "attachment": "HairAttachment",
+   "file": "spiky_hair",
+   "pivot": [
+    27.5,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "http://www.roblox.com/asset/?id=376189070",
+     "meshId": "http://www.roblox.com/asset/?id=319337852",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      27.5,
+      1.87,
+      59.96927,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.37601,
+      1.28005,
+      1.68283
+     ],
+     "tag": "i07p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HairAttachment",
+   "sourceAssetId": 376526888,
+   "kind": "accessory",
+   "folder": "accessories/long_hair",
+   "attachTo": "Head",
+   "item": "long_hair",
+   "category": "accessories",
+   "attachment": "HairAttachment",
+   "file": "long_hair",
+   "pivot": [
+    33,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "http://www.roblox.com/asset/?id=376186990 ",
+     "meshId": "http://www.roblox.com/asset/?id=319354652",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      33,
+      1.2,
+      60.02027,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.65208,
+      2.64018,
+      1.65232
+     ],
+     "tag": "i08p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HatAttachment",
+   "kind": "accessory",
+   "folder": "accessories/cap",
+   "attachTo": "Head",
+   "item": "cap",
+   "category": "accessories",
+   "attachment": "HatAttachment",
+   "file": "cap",
+   "pivot": [
+    5.5,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      170,
+      24,
+      32
+     ],
+     "class": "Part",
+     "size": [
+      0.07,
+      1.15,
+      1.15
+     ],
+     "transparency": 0,
+     "name": "Brim",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      5.5,
+      2.08,
+      59.5,
+      0,
+      -1,
+      0,
+      0.99452,
+      0,
+      0.10453,
+      -0.10453,
+      0,
+      0.99452
+     ],
+     "shape": "Cylinder",
+     "tag": "i09p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      170,
+      24,
+      32
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "transparency": 0,
+     "name": "Button",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      5.5,
+      2.55,
+      60.02,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i09p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      220,
+      36,
+      44
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      5.5,
+      1.875,
+      60.02,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.34,
+      0.45,
+      1.34
+     ],
+     "tag": "i09p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HatAttachment",
+   "kind": "accessory",
+   "folder": "accessories/headphones",
+   "attachTo": "Head",
+   "item": "headphones",
+   "category": "accessories",
+   "attachment": "HatAttachment",
+   "file": "headphones",
+   "pivot": [
+    16.5,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      40,
+      42,
+      50
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      16.5,
+      1.5,
+      60,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.22,
+      0.76,
+      1.60377
+     ],
+     "tag": "i10p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      30,
+      200,
+      190
+     ],
+     "class": "Part",
+     "size": [
+      0.28,
+      0.62,
+      0.62
+     ],
+     "transparency": 0,
+     "name": "CupL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15.78,
+      1.5,
+      60,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i10p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      28,
+      28,
+      32
+     ],
+     "class": "Part",
+     "size": [
+      0.1,
+      0.52,
+      0.52
+     ],
+     "transparency": 0,
+     "name": "PadL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15.9,
+      1.5,
+      60,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i10p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      30,
+      200,
+      190
+     ],
+     "class": "Part",
+     "size": [
+      0.28,
+      0.62,
+      0.62
+     ],
+     "transparency": 0,
+     "name": "CupR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      17.22,
+      1.5,
+      60,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i10p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      28,
+      28,
+      32
+     ],
+     "class": "Part",
+     "size": [
+      0.1,
+      0.52,
+      0.52
+     ],
+     "transparency": 0,
+     "name": "PadR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      17.1,
+      1.5,
+      60,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i10p005x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "HatAttachment",
+   "kind": "accessory",
+   "folder": "accessories/top_hat",
+   "attachTo": "Head",
+   "item": "top_hat",
+   "category": "accessories",
+   "attachment": "HatAttachment",
+   "file": "top_hat",
+   "pivot": [
+    22,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      24,
+      24,
+      28
+     ],
+     "class": "Part",
+     "size": [
+      0.07,
+      1.5,
+      1.5
+     ],
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      22,
+      2.12,
+      60,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i11p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      24,
+      24,
+      28
+     ],
+     "class": "Part",
+     "size": [
+      0.95,
+      0.98,
+      0.98
+     ],
+     "transparency": 0,
+     "name": "Crown",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      22,
+      2.63,
+      60,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i11p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      200,
+      30,
+      45
+     ],
+     "class": "Part",
+     "size": [
+      0.17,
+      1,
+      1
+     ],
+     "transparency": 0,
+     "name": "Band",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      22,
+      2.26,
+      60,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i11p003x"
+    }
+   ]
+  }
+ ],
+ "category": "accessories"
+}

@@ -1,0 +1,252 @@
+# Materials for coin_pile. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl coin1
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin2
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin3
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin4
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin5
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin6
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin7
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin8
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin9
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin10
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin11
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin12
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin13
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin14
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin15
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin16
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin17
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin18
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin19
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin20
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin21
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin22
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin23
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin24
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin25
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin26
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin27
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin28
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin29
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin30
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin31
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin32
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin33
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin34
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl coin35
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl cointop
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

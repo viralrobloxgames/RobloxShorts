@@ -1,0 +1,4745 @@
+{
+ "batch": "map",
+ "items": [
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/baseplate_tile_studs",
+   "item": "baseplate_tile_studs",
+   "category": "map",
+   "file": "baseplate_tile_studs",
+   "pivot": [
+    -40,
+    0,
+    110,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      40,
+      127,
+      71
+     ],
+     "class": "Part",
+     "size": [
+      16,
+      1,
+      16
+     ],
+     "transparency": 0,
+     "name": "Tile",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -40,
+      0.5,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i01p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/baseplate_tile_grid",
+   "item": "baseplate_tile_grid",
+   "category": "map",
+   "file": "baseplate_tile_grid",
+   "pivot": [
+    -20,
+    0,
+    110,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "studsPerTileV": 8,
+       "transparency": 0.800000011920929,
+       "name": "Grid",
+       "studsPerTileU": 8,
+       "color": [
+        0,
+        0,
+        0
+       ],
+       "class": "Texture",
+       "face": "Top",
+       "texture": "rbxassetid://6372755229"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      91,
+      91,
+      91
+     ],
+     "class": "Part",
+     "size": [
+      16,
+      1,
+      16
+     ],
+     "transparency": 0,
+     "name": "Tile",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -20,
+      0.5,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i02p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/spawn_location",
+   "item": "spawn_location",
+   "category": "map",
+   "file": "spawn_location",
+   "pivot": [
+    0,
+    0,
+    110,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Decal",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Top",
+       "texture": "rbxasset://textures/SpawnLocation.png"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "SpawnLocation",
+     "size": [
+      12,
+      1,
+      12
+     ],
+     "transparency": 0,
+     "name": "SpawnLocation",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      0,
+      0.5,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i03p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/finish_pad",
+   "item": "finish_pad",
+   "category": "map",
+   "file": "finish_pad",
+   "pivot": [
+    18,
+    0,
+    110,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Checker",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Top",
+       "texture": "rbxassetid://107112331396369"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      248,
+      248,
+      248
+     ],
+     "class": "Part",
+     "size": [
+      8,
+      1,
+      8
+     ],
+     "transparency": 0,
+     "name": "Pad",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      18,
+      0.5,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i04p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/checkpoint",
+   "item": "checkpoint",
+   "category": "map",
+   "file": "checkpoint",
+   "pivot": [
+    32,
+    0,
+    110,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Decal",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Top",
+       "texture": "rbxasset://textures/SpawnLocation.png"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      0,
+      255,
+      0
+     ],
+     "class": "SpawnLocation",
+     "size": [
+      6,
+      1,
+      6
+     ],
+     "transparency": 0,
+     "name": "Pad",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      32,
+      0.5,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i05p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      235,
+      235,
+      240
+     ],
+     "class": "Part",
+     "size": [
+      7,
+      0.3,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "Pole",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      34.4,
+      4.5,
+      112.4,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i05p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      0,
+      200,
+      60
+     ],
+     "class": "Part",
+     "size": [
+      2.4,
+      1.5,
+      0.1
+     ],
+     "transparency": 0,
+     "name": "Flag",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      33.05,
+      7.1,
+      112.4,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i05p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "transparency": 0,
+     "name": "Ball",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      34.4,
+      8.1,
+      112.4,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i05p004x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/winners_podium",
+   "item": "winners_podium",
+   "category": "map",
+   "file": "winners_podium",
+   "pivot": [
+    50,
+    0,
+    110,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Number",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://73841515972004"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      3,
+      4
+     ],
+     "transparency": 0,
+     "name": "First",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      50,
+      1.5,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i06p001x"
+    },
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Number",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://109598785313208"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      192,
+      197,
+      208
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      2,
+      4
+     ],
+     "transparency": 0,
+     "name": "Second",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      54,
+      1,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i06p002x"
+    },
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Number",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://117125449913948"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      205,
+      127,
+      50
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1.4,
+      4
+     ],
+     "transparency": 0,
+     "name": "Third",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      46,
+      0.7,
+      110,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i06p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_red_smooth",
+   "item": "obby_block_red_smooth",
+   "category": "map",
+   "file": "obby_block_red_smooth",
+   "pivot": [
+    -36,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      0,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -36,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i07p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_red_studs",
+   "item": "obby_block_red_studs",
+   "category": "map",
+   "file": "obby_block_red_studs",
+   "pivot": [
+    -30,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      0,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -30,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i08p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_orange_smooth",
+   "item": "obby_block_orange_smooth",
+   "category": "map",
+   "file": "obby_block_orange_smooth",
+   "pivot": [
+    -24,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      176,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -24,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i09p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_orange_studs",
+   "item": "obby_block_orange_studs",
+   "category": "map",
+   "file": "obby_block_orange_studs",
+   "pivot": [
+    -18,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      176,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -18,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_yellow_smooth",
+   "item": "obby_block_yellow_smooth",
+   "category": "map",
+   "file": "obby_block_yellow_smooth",
+   "pivot": [
+    -12,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      255,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -12,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i11p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_yellow_studs",
+   "item": "obby_block_yellow_studs",
+   "category": "map",
+   "file": "obby_block_yellow_studs",
+   "pivot": [
+    -6,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      255,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -6,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i12p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_green_smooth",
+   "item": "obby_block_green_smooth",
+   "category": "map",
+   "file": "obby_block_green_smooth",
+   "pivot": [
+    0,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      0,
+      255,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      0,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i13p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_green_studs",
+   "item": "obby_block_green_studs",
+   "category": "map",
+   "file": "obby_block_green_studs",
+   "pivot": [
+    6,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      0,
+      255,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      6,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i14p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_blue_smooth",
+   "item": "obby_block_blue_smooth",
+   "category": "map",
+   "file": "obby_block_blue_smooth",
+   "pivot": [
+    12,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      0,
+      0,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      12,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i15p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_blue_studs",
+   "item": "obby_block_blue_studs",
+   "category": "map",
+   "file": "obby_block_blue_studs",
+   "pivot": [
+    18,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      0,
+      0,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      18,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i16p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_purple_smooth",
+   "item": "obby_block_purple_smooth",
+   "category": "map",
+   "file": "obby_block_purple_smooth",
+   "pivot": [
+    24,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      170,
+      0,
+      170
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      24,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i17p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/obby_block_purple_studs",
+   "item": "obby_block_purple_studs",
+   "category": "map",
+   "file": "obby_block_purple_studs",
+   "pivot": [
+    30,
+    0,
+    140,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      170,
+      0,
+      170
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "Block",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      30,
+      0.5,
+      140,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i18p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/lava_strip",
+   "item": "lava_strip",
+   "category": "map",
+   "file": "lava_strip",
+   "pivot": [
+    -40,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      72,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      8,
+      1,
+      2
+     ],
+     "transparency": 0,
+     "name": "Lava",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      -40,
+      0.5,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i19p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/kill_brick",
+   "item": "kill_brick",
+   "category": "map",
+   "file": "kill_brick",
+   "pivot": [
+    -30,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      0,
+      0
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      1,
+      4
+     ],
+     "transparency": 0,
+     "name": "KillBrick",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      -30,
+      0.5,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i20p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/truss",
+   "item": "truss",
+   "category": "map",
+   "file": "truss",
+   "pivot": [
+    -22,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "TrussPart",
+     "transparency": 0,
+     "name": "Truss",
+     "material": "Plastic",
+     "cframe": [
+      -22,
+      8,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      2,
+      16,
+      2
+     ],
+     "tag": "i21p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/ladder",
+   "item": "ladder",
+   "category": "map",
+   "file": "ladder",
+   "pivot": [
+    -16,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      12,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "RailL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16.95,
+      6,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      12,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "RailR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -15.05,
+      6,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      1.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      2.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      3.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung4",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      4.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung5",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      5.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung6",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      6.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung7",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      7.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p009x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung8",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      8.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p010x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung9",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      9.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p011x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung10",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      10.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p012x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Rung11",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      -16,
+      11.1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i22p013x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/wedge",
+   "item": "wedge",
+   "category": "map",
+   "file": "wedge",
+   "pivot": [
+    -8,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "Wedge",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -8,
+      1,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      4,
+      2,
+      4
+     ],
+     "tag": "i23p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/cylinder",
+   "item": "cylinder",
+   "category": "map",
+   "file": "cylinder",
+   "pivot": [
+    0,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "Part",
+     "size": [
+      2,
+      4,
+      4
+     ],
+     "transparency": 0,
+     "name": "Cylinder",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      0,
+      1,
+      165,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i24p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/ball",
+   "item": "ball",
+   "category": "map",
+   "file": "ball",
+   "pivot": [
+    8,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "Part",
+     "size": [
+      4,
+      4,
+      4
+     ],
+     "transparency": 0,
+     "name": "Ball",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      8,
+      2,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i25p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/stage_sign",
+   "item": "stage_sign",
+   "category": "map",
+   "file": "stage_sign",
+   "pivot": [
+    18,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Face",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://106364404101389"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      31,
+      42,
+      68
+     ],
+     "class": "Part",
+     "size": [
+      6,
+      2,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "Board",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      18,
+      4.2,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i26p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      107,
+      74,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      3.2,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "PostL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      15.6,
+      1.6,
+      165.05,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i26p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      107,
+      74,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      3.2,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "PostR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      20.4,
+      1.6,
+      165.05,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i26p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/leaderboard_board",
+   "item": "leaderboard_board",
+   "category": "map",
+   "file": "leaderboard_board",
+   "pivot": [
+    30,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Face",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://122821788625923"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      31,
+      42,
+      68
+     ],
+     "class": "Part",
+     "size": [
+      8,
+      5,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "Board",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      30,
+      6.5,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i27p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      107,
+      74,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      4.2,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "PostL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      26.8,
+      2.1,
+      165.10001,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i27p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      107,
+      74,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      4.2,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "PostR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      33.2,
+      2.1,
+      165.10001,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i27p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/round_timer_board",
+   "item": "round_timer_board",
+   "category": "map",
+   "file": "round_timer_board",
+   "pivot": [
+    42,
+    0,
+    165,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "Face",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://113095170950157"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      31,
+      42,
+      68
+     ],
+     "class": "Part",
+     "size": [
+      6,
+      3.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "Board",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      42,
+      5.7,
+      165,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i28p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      107,
+      74,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      4.2,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "PostL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      39.8,
+      2.1,
+      165.10001,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i28p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      107,
+      74,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      4.2,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "PostR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Wood",
+     "cframe": [
+      44.2,
+      2.1,
+      165.10001,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i28p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "top_centre",
+   "kind": "map",
+   "folder": "map/island_small",
+   "item": "island_small",
+   "category": "map",
+   "file": "island_small",
+   "pivot": [
+    -40,
+    10,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      75,
+      151,
+      75
+     ],
+     "class": "Part",
+     "size": [
+      12,
+      1,
+      12
+     ],
+     "transparency": 0,
+     "name": "Grass",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Grass",
+     "cframe": [
+      -40,
+      9.5,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i29p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      12,
+      1.5,
+      12
+     ],
+     "transparency": 0,
+     "name": "Dirt",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Ground",
+     "cframe": [
+      -40,
+      8.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i29p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      9,
+      1.5,
+      9
+     ],
+     "transparency": 0,
+     "name": "Rock1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -40,
+      6.75,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i29p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      6,
+      1.5,
+      6
+     ],
+     "transparency": 0,
+     "name": "Rock2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -40,
+      5.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i29p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      3,
+      1.5,
+      3
+     ],
+     "transparency": 0,
+     "name": "Rock3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -40,
+      3.75,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i29p005x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "top_centre",
+   "kind": "map",
+   "folder": "map/island_large",
+   "item": "island_large",
+   "category": "map",
+   "file": "island_large",
+   "pivot": [
+    -16,
+    10,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      75,
+      151,
+      75
+     ],
+     "class": "Part",
+     "size": [
+      20,
+      1,
+      20
+     ],
+     "transparency": 0,
+     "name": "Grass",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Grass",
+     "cframe": [
+      -16,
+      9.5,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i30p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      20,
+      1.5,
+      20
+     ],
+     "transparency": 0,
+     "name": "Dirt",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Ground",
+     "cframe": [
+      -16,
+      8.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i30p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      15,
+      1.5,
+      15
+     ],
+     "transparency": 0,
+     "name": "Rock1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -16,
+      6.75,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i30p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      10,
+      1.5,
+      10
+     ],
+     "transparency": 0,
+     "name": "Rock2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -16,
+      5.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i30p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      5,
+      1.5,
+      5
+     ],
+     "transparency": 0,
+     "name": "Rock3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -16,
+      3.75,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i30p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      2,
+      1.5,
+      2
+     ],
+     "transparency": 0,
+     "name": "Rock4",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Slate",
+     "cframe": [
+      -16,
+      2.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i30p006x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/tree_round",
+   "item": "tree_round",
+   "category": "map",
+   "file": "tree_round",
+   "pivot": [
+    6,
+    0,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      6,
+      1.4,
+      1.4
+     ],
+     "transparency": 0,
+     "name": "Trunk",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      6,
+      3,
+      200,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i31p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      75,
+      151,
+      75
+     ],
+     "class": "Part",
+     "size": [
+      7,
+      7,
+      7
+     ],
+     "transparency": 0,
+     "name": "Leaves",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      6,
+      8.2,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i31p002x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/tree_blocky",
+   "item": "tree_blocky",
+   "category": "map",
+   "file": "tree_blocky",
+   "pivot": [
+    16,
+    0,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      124,
+      92,
+      70
+     ],
+     "class": "Part",
+     "size": [
+      1.5,
+      6,
+      1.5
+     ],
+     "transparency": 0,
+     "name": "Trunk",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      16,
+      3,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i32p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      75,
+      151,
+      75
+     ],
+     "class": "Part",
+     "size": [
+      6,
+      2.5,
+      6
+     ],
+     "transparency": 0,
+     "name": "Leaves1",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      16,
+      7.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i32p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      88,
+      170,
+      82
+     ],
+     "class": "Part",
+     "size": [
+      4.5,
+      2,
+      4.5
+     ],
+     "transparency": 0,
+     "name": "Leaves2",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      16,
+      9.5,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i32p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      100,
+      186,
+      90
+     ],
+     "class": "Part",
+     "size": [
+      2.5,
+      1.5,
+      2.5
+     ],
+     "transparency": 0,
+     "name": "Leaves3",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      16,
+      11.25,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i32p004x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/tycoon_dropper",
+   "item": "tycoon_dropper",
+   "category": "map",
+   "file": "tycoon_dropper",
+   "pivot": [
+    28,
+    0,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.6,
+      7.2,
+      0.6
+     ],
+     "transparency": 0,
+     "name": "Post",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      28,
+      3.6,
+      202.2,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i33p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.6,
+      0.6,
+      2.2
+     ],
+     "transparency": 0,
+     "name": "Arm",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      28,
+      7,
+      201.10001,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i33p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      56,
+      60,
+      72
+     ],
+     "class": "Part",
+     "size": [
+      2.4,
+      2.2,
+      2.4
+     ],
+     "transparency": 0,
+     "name": "Box",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      28,
+      6.6,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i33p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      36,
+      38,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      1.2,
+      0.8,
+      1.2
+     ],
+     "transparency": 0,
+     "name": "Funnel",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      28,
+      5.1,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i33p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      60,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.5,
+      0.3,
+      0.5
+     ],
+     "transparency": 0,
+     "name": "Light",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      28,
+      7.85,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i33p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      2.46,
+      0.3,
+      2.46
+     ],
+     "transparency": 0,
+     "name": "Stripe",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      28,
+      6.1,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i33p006x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/tycoon_ore",
+   "item": "tycoon_ore",
+   "category": "map",
+   "file": "tycoon_ore",
+   "pivot": [
+    36,
+    0,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      190,
+      50
+     ],
+     "class": "Part",
+     "size": [
+      1,
+      1,
+      1
+     ],
+     "transparency": 0,
+     "name": "Ore",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      36,
+      0.5,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i34p001x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/tycoon_conveyor",
+   "item": "tycoon_conveyor",
+   "category": "map",
+   "file": "tycoon_conveyor",
+   "pivot": [
+    46,
+    0,
+    200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [
+      {
+       "studsPerTileV": 3,
+       "transparency": 0,
+       "name": "Arrows",
+       "studsPerTileU": 3,
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Texture",
+       "face": "Top",
+       "texture": "rbxassetid://92764495662346"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      40,
+      40,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      3,
+      0.6,
+      16
+     ],
+     "transparency": 0,
+     "name": "Belt",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      46,
+      0.7,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      0.9,
+      16
+     ],
+     "transparency": 0,
+     "name": "RailL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      44.35,
+      0.85,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "LegFrontL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      44.8,
+      0.2,
+      194,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "LegMidL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      44.8,
+      0.2,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "LegBackL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      44.8,
+      0.2,
+      206,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      0.9,
+      16
+     ],
+     "transparency": 0,
+     "name": "RailR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      47.65,
+      0.85,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "LegFrontR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      47.2,
+      0.2,
+      194,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "LegMidR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      47.2,
+      0.2,
+      200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      74,
+      86
+     ],
+     "class": "Part",
+     "size": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "LegBackR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      47.2,
+      0.2,
+      206,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i35p009x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "map",
+   "folder": "map/lobby_platform",
+   "item": "lobby_platform",
+   "category": "map",
+   "file": "lobby_platform",
+   "pivot": [
+    0,
+    0,
+    250,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "Part",
+     "size": [
+      40,
+      2,
+      40
+     ],
+     "transparency": 0,
+     "name": "Floor",
+     "surfaces": {
+      "Top": "Studs",
+      "Front": "Smooth",
+      "Bottom": "Inlet",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      0,
+      1,
+      250,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i36p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      42,
+      2.2,
+      1
+     ],
+     "transparency": 0,
+     "name": "TrimBack",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      0,
+      1.1,
+      270.5,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i36p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      42,
+      2.2,
+      1
+     ],
+     "transparency": 0,
+     "name": "TrimFront",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      0,
+      1.1,
+      229.5,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i36p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      1,
+      2.2,
+      40
+     ],
+     "transparency": 0,
+     "name": "TrimRight",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      20.5,
+      1.1,
+      250,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i36p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      99,
+      95,
+      98
+     ],
+     "class": "Part",
+     "size": [
+      1,
+      2.2,
+      40
+     ],
+     "transparency": 0,
+     "name": "TrimLeft",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      -20.5,
+      1.1,
+      250,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i36p005x"
+    }
+   ]
+  }
+ ],
+ "category": "map"
+}

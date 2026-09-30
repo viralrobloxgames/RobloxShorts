@@ -1,0 +1,1365 @@
+{
+ "name": "climb",
+ "type": "roblox_default",
+ "category": "roblox_default",
+ "source": {
+  "assetId": 180436334,
+  "assetName": "ClimbLoopAnimation",
+  "creator": "Roblox",
+  "robloxMade": true,
+  "free": true,
+  "owned": "not required (Roblox default animation)",
+  "from": "R6 Animate script: Animate.climb",
+  "loadedWith": "KeyframeSequenceProvider:GetKeyframeSequenceAsync"
+ },
+ "loop": true,
+ "priority": "Core",
+ "length": 0.458333,
+ "joints": [
+  "Left Hip",
+  "Left Shoulder",
+  "Neck",
+  "Right Hip",
+  "Right Shoulder",
+  "RootJoint"
+ ],
+ "transformConvention": "cframe = Motor6D.Transform as Roblox CFrame components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major rotation). Part1.CFrame = Part0.CFrame * C0 * Transform * C1:Inverse() (C0/C1 in characters/<Name>/rig.json). Easing on a pose applies from that keyframe to the next. A joint missing from a keyframe keeps interpolating between its neighbouring keyframes; weight 0 poses do not drive the joint.",
+ "keyframes": [
+  {
+   "time": 0,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.981948,
+      0.962229,
+      0.106957,
+      0.995348,
+      0.095636,
+      0.011687,
+      -0.095476,
+      0.99534,
+      -0.013548,
+      -0.012928,
+      0.012369,
+      0.99984
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.280432,
+      0.082411,
+      0.070704,
+      0.810013,
+      0.586145,
+      -0.017695,
+      -0.585149,
+      0.80988,
+      0.041171,
+      0.038463,
+      -0.022995,
+      0.998995
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.053035,
+      -0.148916,
+      0.024635,
+      0.634192,
+      0.773002,
+      0.016389,
+      -0.772967,
+      0.634371,
+      -0.009815,
+      -0.017984,
+      -0.006443,
+      0.999818
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999237,
+      0,
+      -0.039069,
+      0,
+      1,
+      0,
+      0.039069,
+      0,
+      0.999237
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.996935,
+      -0.005991,
+      0.077999,
+      -0.032042,
+      0.878315,
+      0.477007,
+      -0.071365,
+      -0.478044,
+      0.875432
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.016813,
+      0.178557,
+      -0.084282,
+      -0.933842,
+      -0.354358,
+      0.04868,
+      0.357592,
+      -0.928032,
+      0.104332,
+      0.008206,
+      0.114837,
+      0.99335
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.05,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.996801,
+      0.52291,
+      0.086902,
+      0.994661,
+      0.102442,
+      0.012423,
+      -0.102435,
+      0.994739,
+      -0.001233,
+      -0.012484,
+      -4.6e-05,
+      0.999922
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.777037,
+      0.347651,
+      0.081026,
+      0.865106,
+      0.500467,
+      -0.03353,
+      -0.499595,
+      0.865694,
+      0.03127,
+      0.044676,
+      -0.010301,
+      0.998948
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.061829,
+      -0.085441,
+      0.032434,
+      0.447369,
+      0.888864,
+      0.098902,
+      -0.89192,
+      0.451562,
+      -0.023869,
+      -0.065877,
+      -0.077535,
+      0.994811
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999507,
+      0,
+      -0.031383,
+      0,
+      1,
+      0,
+      0.031383,
+      0,
+      0.999507
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.998322,
+      -0.005976,
+      0.057592,
+      -0.022267,
+      0.878541,
+      0.477148,
+      -0.053448,
+      -0.47763,
+      0.876934
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.164118,
+      0.195846,
+      -0.060597,
+      -0.855633,
+      -0.510529,
+      0.085159,
+      0.517495,
+      -0.846852,
+      0.122639,
+      0.009507,
+      0.149003,
+      0.988791
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.1,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.912894,
+      0.334797,
+      0.07783,
+      0.989065,
+      0.146937,
+      0.012643,
+      -0.146946,
+      0.989145,
+      -0.00024,
+      -0.012541,
+      -0.001621,
+      0.99992
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.908063,
+      0.663068,
+      0.082572,
+      0.942754,
+      0.330433,
+      -0.04505,
+      -0.329718,
+      0.943807,
+      0.022687,
+      0.050015,
+      -0.006534,
+      0.998727
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.035437,
+      -0.022791,
+      0.03057,
+      0.1109,
+      0.988403,
+      0.103729,
+      -0.993239,
+      0.113834,
+      -0.02278,
+      -0.034323,
+      -0.100501,
+      0.994345
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999716,
+      0,
+      -0.023844,
+      0,
+      1,
+      0,
+      0.023844,
+      0,
+      0.999716
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.999283,
+      -0.005977,
+      0.037385,
+      -0.0126,
+      0.878657,
+      0.477288,
+      -0.035702,
+      -0.477417,
+      0.877951
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.185541,
+      0.15212,
+      -0.034902,
+      -0.705012,
+      -0.704055,
+      0.08523,
+      0.708793,
+      -0.695458,
+      0.118114,
+      -0.023885,
+      0.143682,
+      0.989336
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.15,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.185637,
+      0.029046,
+      0.070435,
+      0.946027,
+      0.323875,
+      0.011695,
+      -0.323947,
+      0.946063,
+      0.004796,
+      -0.009511,
+      -0.008326,
+      0.99992
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      1.000318,
+      1.115751,
+      0.082889,
+      0.999889,
+      -0.00202,
+      -0.01479,
+      0.002125,
+      0.999972,
+      0.007121,
+      0.014775,
+      -0.007152,
+      0.999865
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.288367,
+      0.141008,
+      -0.029866,
+      -0.856045,
+      0.514779,
+      -0.046792,
+      -0.516711,
+      -0.854673,
+      0.050433,
+      -0.01403,
+      0.067351,
+      0.997631
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.99997,
+      0,
+      -0.007791,
+      0,
+      1,
+      0,
+      0.007791,
+      0,
+      0.99997
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.999968,
+      -0.005996,
+      -0.005254,
+      0.007777,
+      0.878552,
+      0.477583,
+      0.001753,
+      -0.477609,
+      0.878571
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.186469,
+      -0.026214,
+      -0.028377,
+      -0.221089,
+      -0.972461,
+      0.073749,
+      0.973971,
+      -0.216289,
+      0.067823,
+      -0.050004,
+      0.086824,
+      0.994968
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.2,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.214014,
+      0.052939,
+      0.072718,
+      0.996119,
+      0.087685,
+      0.00769,
+      -0.087724,
+      0.996133,
+      0.004923,
+      -0.007229,
+      -0.005578,
+      0.999958
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      1.007194,
+      1.099608,
+      0.081544,
+      0.999441,
+      -0.032997,
+      0.005454,
+      0.033007,
+      0.999454,
+      -0.001677,
+      -0.005396,
+      0.001857,
+      0.999984
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.04515,
+      0.124721,
+      -0.073712,
+      -0.842911,
+      0.533471,
+      -0.07007,
+      -0.538042,
+      -0.83487,
+      0.116204,
+      0.003492,
+      0.13565,
+      0.990751
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999999,
+      0,
+      -0.001728,
+      0,
+      1,
+      0,
+      0.001728,
+      0,
+      0.999999
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.999771,
+      -0.005994,
+      -0.020544,
+      0.015083,
+      0.878399,
+      0.477689,
+      0.015182,
+      -0.47789,
+      0.878289
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.186647,
+      -0.117939,
+      -0.024212,
+      0.039178,
+      -0.997271,
+      0.062574,
+      0.998365,
+      0.041675,
+      0.039115,
+      -0.041616,
+      0.060939,
+      0.997274
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.25,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.626616,
+      0.184228,
+      0.091678,
+      0.822069,
+      -0.569381,
+      -0.002691,
+      0.569266,
+      0.821983,
+      -0.016734,
+      0.01174,
+      0.012224,
+      0.999856
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      1.003244,
+      0.568309,
+      0.076893,
+      0.998445,
+      -0.047851,
+      0.028602,
+      0.04759,
+      0.998819,
+      0.009762,
+      -0.029036,
+      -0.008386,
+      0.999543
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.115683,
+      0.08355,
+      -0.085819,
+      -0.680001,
+      0.711158,
+      -0.178474,
+      -0.733162,
+      -0.662326,
+      0.154262,
+      -0.008503,
+      0.235749,
+      0.971777
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999999,
+      0,
+      -0.001432,
+      0,
+      1,
+      0,
+      0.001432,
+      0,
+      0.999999
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.99971,
+      -0.005993,
+      -0.023329,
+      0.016414,
+      0.878365,
+      0.477708,
+      0.017629,
+      -0.477953,
+      0.878209
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.186242,
+      -0.248312,
+      -0.012108,
+      0.380729,
+      -0.924274,
+      0.027636,
+      0.924658,
+      0.380781,
+      -0.003562,
+      -0.007231,
+      0.02691,
+      0.999612
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.3,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.880038,
+      0.64523,
+      0.100526,
+      0.836288,
+      -0.548237,
+      -0.007596,
+      0.547839,
+      0.836082,
+      -0.028973,
+      0.022235,
+      0.020068,
+      0.999551
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.89073,
+      0.353274,
+      0.078521,
+      0.993905,
+      -0.107233,
+      0.025557,
+      0.106683,
+      0.994049,
+      0.022008,
+      -0.027765,
+      -0.019148,
+      0.999431
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.081706,
+      0.023638,
+      -0.064647,
+      -0.489258,
+      0.859232,
+      -0.149491,
+      -0.871617,
+      -0.475799,
+      0.117894,
+      0.030171,
+      0.187979,
+      0.981709
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999977,
+      0,
+      -0.006755,
+      0,
+      1,
+      0,
+      0.006755,
+      0,
+      0.999977
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      -1e-06,
+      0.999949,
+      -0.005996,
+      -0.008085,
+      0.00913,
+      0.878528,
+      0.477603,
+      0.004239,
+      -0.477653,
+      0.878539
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.186115,
+      -0.263485,
+      -0.000582,
+      0.417763,
+      -0.908548,
+      -0.003848,
+      0.908501,
+      0.41778,
+      -0.009226,
+      0.00999,
+      0.000358,
+      0.99995
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.35,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.995412,
+      1.144819,
+      0.125608,
+      0.998013,
+      -0.062503,
+      -0.007945,
+      0.061952,
+      0.996451,
+      -0.056985,
+      0.011478,
+      0.05638,
+      0.998343
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.385783,
+      0.029253,
+      0.087778,
+      0.959844,
+      -0.280393,
+      0.008927,
+      0.279958,
+      0.959424,
+      0.033597,
+      -0.017986,
+      -0.029749,
+      0.999396
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.001062,
+      -0.106843,
+      -0.015647,
+      0.098738,
+      0.993087,
+      -0.063478,
+      -0.994514,
+      0.100692,
+      0.028344,
+      0.034539,
+      0.060331,
+      0.997581
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999745,
+      0,
+      -0.022586,
+      0,
+      1,
+      0,
+      0.022586,
+      0,
+      0.999745
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.9994,
+      -0.005979,
+      0.034121,
+      -0.011039,
+      0.878665,
+      0.477311,
+      -0.032834,
+      -0.477401,
+      0.878072
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.1857,
+      -0.124144,
+      0.055726,
+      -0.026374,
+      -0.98432,
+      -0.17441,
+      0.999648,
+      -0.025441,
+      -0.007581,
+      0.003025,
+      -0.174549,
+      0.984644
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.4,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.939302,
+      1.090024,
+      0.126416,
+      0.995981,
+      0.089566,
+      0.000804,
+      -0.089379,
+      0.994408,
+      -0.056248,
+      -0.005838,
+      0.05595,
+      0.998417
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.148774,
+      0.017245,
+      0.08729,
+      0.970331,
+      -0.241755,
+      -0.003546,
+      0.241714,
+      0.969612,
+      0.037778,
+      -0.005695,
+      -0.037514,
+      0.99928
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.020916,
+      -0.142547,
+      0.006685,
+      0.371536,
+      0.928131,
+      -0.023098,
+      -0.92838,
+      0.371631,
+      -0.000162,
+      0.008433,
+      0.021504,
+      0.999733
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.99954,
+      0,
+      -0.030322,
+      0,
+      1,
+      0,
+      0.030322,
+      0,
+      0.99954
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.998483,
+      -0.005975,
+      0.05473,
+      -0.020897,
+      0.878564,
+      0.477168,
+      -0.050935,
+      -0.477588,
+      0.877106
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.163727,
+      -0.015324,
+      0.047341,
+      -0.408993,
+      -0.89723,
+      -0.16644,
+      0.909505,
+      -0.415653,
+      0.005736,
+      -0.074327,
+      -0.149032,
+      0.986035
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.45,
+   "name": "End",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.946653,
+      1.094515,
+      0.126256,
+      0.991139,
+      0.132373,
+      0.010959,
+      -0.132041,
+      0.990881,
+      -0.026833,
+      -0.014411,
+      0.025148,
+      0.99958
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.183816,
+      0.032925,
+      0.072505,
+      0.781446,
+      0.623722,
+      -0.017694,
+      -0.622721,
+      0.78136,
+      0.041159,
+      0.039498,
+      -0.021145,
+      0.998996
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      -0.051349,
+      -0.148916,
+      0.024616,
+      0.632745,
+      0.774192,
+      0.016173,
+      -0.774155,
+      0.63292,
+      -0.009813,
+      -0.017833,
+      -0.006312,
+      0.999821
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0.433189,
+      0,
+      0.999239,
+      0,
+      -0.039014,
+      0,
+      1,
+      0,
+      0.039014,
+      0,
+      0.999239
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.996947,
+      -0.005991,
+      0.077854,
+      -0.031973,
+      0.878317,
+      0.477008,
+      -0.071239,
+      -0.478041,
+      0.875444
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.018438,
+      0.177433,
+      -0.050854,
+      -0.931855,
+      -0.362606,
+      0.012785,
+      0.362655,
+      -0.929726,
+      0.063954,
+      -0.011304,
+      0.064233,
+      0.997871
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.458333,
+   "name": "KF0.45833298563957",
+   "poses": {},
+   "markers": []
+  }
+ ]
+}

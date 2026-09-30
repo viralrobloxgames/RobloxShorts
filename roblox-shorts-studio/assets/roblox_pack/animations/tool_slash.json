@@ -1,0 +1,137 @@
+{
+ "name": "tool_slash",
+ "type": "roblox_default",
+ "category": "roblox_default",
+ "source": {
+  "assetId": 129967390,
+  "assetName": "Slash",
+  "creator": "Roblox",
+  "robloxMade": true,
+  "free": true,
+  "owned": "not required (Roblox default animation)",
+  "from": "R6 Animate script: Animate.toolslash",
+  "loadedWith": "KeyframeSequenceProvider:GetKeyframeSequenceAsync"
+ },
+ "loop": false,
+ "priority": "Idle",
+ "length": 0.5,
+ "joints": [
+  "Right Shoulder"
+ ],
+ "transformConvention": "cframe = Motor6D.Transform as Roblox CFrame components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major rotation). Part1.CFrame = Part0.CFrame * C0 * Transform * C1:Inverse() (C0/C1 in characters/<Name>/rig.json). Easing on a pose applies from that keyframe to the next. A joint missing from a keyframe keeps interpolating between its neighbouring keyframes; weight 0 poses do not drive the joint.",
+ "keyframes": [
+  {
+   "time": 0,
+   "name": "Keyframe",
+   "poses": {
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      -0.037437,
+      -0.999299,
+      0,
+      0.999299,
+      -0.037437,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.2,
+   "name": "Keyframe",
+   "poses": {
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.999996,
+      -0.002901,
+      0,
+      0.002901,
+      0.999996,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.3,
+   "name": "Keyframe",
+   "poses": {
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.999996,
+      -0.002901,
+      0,
+      0.002901,
+      0.999996,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.5,
+   "name": "Keyframe",
+   "poses": {
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      -0.037437,
+      -0.999299,
+      0,
+      0.999299,
+      -0.037437,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  }
+ ],
+ "note": "Only drives the right arm; one-shot sword slash."
+}

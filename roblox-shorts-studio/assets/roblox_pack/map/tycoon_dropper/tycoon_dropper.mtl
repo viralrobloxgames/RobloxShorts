@@ -1,0 +1,43 @@
+# Materials for tycoon_dropper. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl post
+Kd 0.2745 0.2902 0.3373
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl arm
+Kd 0.2745 0.2902 0.3373
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl box
+Kd 0.2196 0.2353 0.2824
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl funnel
+Kd 0.1412 0.1490 0.1804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl light
+Kd 1.0000 0.2353 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.2353 0.1569
+d 1.0000
+illum 2
+
+newmtl stripe
+Kd 1.0000 0.7843 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
