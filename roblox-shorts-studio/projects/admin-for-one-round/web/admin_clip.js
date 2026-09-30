@@ -119,7 +119,7 @@ function courseY(x) {
   return 0;
 }
 
-let leo, max, mia, noob, leoCrown, maxCrown, leoFit, maxFit, ff, timerTex, timerCanvas, miniLobby, blastPool = [], smoke = [], zapPuffs = [], sparkles = [];
+let checkpointPad, leo, max, mia, noob, leoCrown, maxCrown, leoFit, maxFit, ff, timerTex, timerCanvas, miniLobby, blastPool = [], smoke = [], zapPuffs = [], sparkles = [];
 let miaMeshes = [];
 
 export async function setup(stage) {
@@ -130,7 +130,7 @@ export async function setup(stage) {
   const island = part(24, 2.4, 18, '#c3cbdb', { studs: true, rough: 0.55 }); scene.add(island);
   const pad = await packItem('map', 'spawn_location'); pad.scale.set(0.5, 0.35, 0.5); pad.position.set(PAD.x, 0, PAD.z); scene.add(pad);
   const lobbySign = sign('LOBBY', { w: 5.2, h: 1.7, post: 3.4 }); lobbySign.position.set(-4.5, 0, -7.6); scene.add(lobbySign);
-  const cp = await packItem('map', 'checkpoint'); cp.position.set(-8.2, 0, 5.2); cp.rotation.y = 0.6; scene.add(cp);
+  checkpointPad = await packItem('map', 'checkpoint'); checkpointPad.position.set(-8.2, 0, 5.2); checkpointPad.rotation.y = 0.6; scene.add(checkpointPad);
 
   // Round timer billboard (redrawn every frame).
   timerCanvas = document.createElement('canvas'); timerCanvas.width = 1024; timerCanvas.height = 560;
@@ -510,6 +510,7 @@ export function update(t, stage) {
 
   // ---------- shots ----------
   const { shot, u } = shotAt(SHOTS, t);
+  checkpointPad.visible = shot.id !== 'tinyMax';        // the low tiny-Max camera sits right beside it
   const lead = leo.root.position;
   stage.bloom.strength = 0.28;
   // Camera on a sphere around a target: az 0 looks from +Z, el lifts the camera.

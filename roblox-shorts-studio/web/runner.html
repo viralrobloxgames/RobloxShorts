@@ -51,6 +51,7 @@ window.renderFrame = (frame, opts = {}) => {
   return out.toDataURL('image/png');
 };
 window.clipMeta = meta;
+window.clipModule = clip; window.clipStage = stage;     // for tools that query a clip (e.g. which frames see an object)
 window.ready = true;
 </script>
 </body>
