@@ -8,6 +8,7 @@ import { makeCharacter, pose, actionPose, mixPose, setExpression, soleHeight, ma
 import { part, spawnPad, sign, checkpoint, cloud, crown, forceField, puff, neonMaterial, canvasTexture, rng } from '../../../web/lib/world.js';
 import { clamp, lerp, inv, track, easeInOut, easeOut, easeIn, easeOutBack, shotAt } from '../../../web/lib/anim.js';
 import { adminTimer, speedLines, flash, roundRect, drawCrown } from '../../../web/lib/overlay.js';
+import { loadRobloxCharacter, packItem } from '../../../web/lib/robloxPack.js';
 
 export const meta = { seconds: 63.8, fps: 30, width: 1080, height: 1920, title: 'Admin For One Round' };
 export const sky = { zenith: '#2a78e4', horizon: '#bfe6ff', below: '#eaf5ff', fog: '#d4ecff' };
@@ -127,9 +128,9 @@ export async function setup(stage) {
 
   // Lobby island + spawn pad + signs.
   const island = part(24, 2.4, 18, '#c3cbdb', { studs: true, rough: 0.55 }); scene.add(island);
-  const pad = spawnPad(6); pad.position.set(PAD.x, 0.35, PAD.z); scene.add(pad);
+  const pad = await packItem('map', 'spawn_location'); pad.scale.set(0.5, 0.35, 0.5); pad.position.set(PAD.x, 0, PAD.z); scene.add(pad);
   const lobbySign = sign('LOBBY', { w: 5.2, h: 1.7, post: 3.4 }); lobbySign.position.set(-4.5, 0, -7.6); scene.add(lobbySign);
-  const cp = checkpoint('#3ddc97'); cp.position.set(10.5, 0, 7.5); scene.add(cp);
+  const cp = await packItem('map', 'checkpoint'); cp.position.set(-8.2, 0, 5.2); cp.rotation.y = 0.6; scene.add(cp);
 
   // Round timer billboard (redrawn every frame).
   timerCanvas = document.createElement('canvas'); timerCanvas.width = 1024; timerCanvas.height = 560;
@@ -148,9 +149,9 @@ export async function setup(stage) {
 
   // Obby course with a lava strip, and the finish island.
   const cols = ['#ff5a5f', '#ffb400', '#3ddc97', '#4f8cff', '#b36bff'];
-  COURSE.slice(1, 6).forEach(([a, b, y], i) => { const p = part(b - a, 1, 4, cols[i], { studs: true }); p.position.set((a + b) / 2, y, i % 2 ? -1 : 1); scene.add(p); });
-  const lava = part(7, 0.6, 2.2, '#ff2d3d', { material: neonMaterial('#ff2d3d', 1.8), radius: 0.08 }); lava.position.copy(LAVA); scene.add(lava);
-  for (const x of [31.6, 38.8]) { const post = part(1.2, 0.6, 2.2, '#39414f', {}); post.position.set(x, 2.7, 0); scene.add(post); }
+  const blocks = ['red', 'orange', 'green', 'blue', 'purple'];
+  for (const [i, [a, b, y]] of COURSE.slice(1, 6).entries()) { const p = await packItem('map', `obby_block_${blocks[i]}_studs`); p.position.set((a + b) / 2, y - 1, i % 2 ? -1 : 1); scene.add(p); }
+  const lava = await packItem('map', 'lava_strip'); lava.position.set(LAVA.x, LAVA.y - 1, 0); scene.add(lava);
   const island2 = part(12, 2.4, 10, '#c3cbdb', { studs: true, rough: 0.55 }); island2.position.set(60, 4.5, 0); scene.add(island2);
   const fin = sign('FINISH', { w: 5.2, h: 1.7, post: 3.4, accent: '#3ddc97' }); fin.position.set(60, 4.5, -3.8); scene.add(fin);
   const win = part(3.6, 0.3, 3.6, '#ffd23f', { material: neonMaterial('#ffd23f', 0.7) }); win.position.set(60, 4.8, 1); scene.add(win);
@@ -166,18 +167,21 @@ export async function setup(stage) {
   for (let i = 0; i < 24; i++) { const c = cloud(300 + i, 5 + r() * 6); const a = r() * Math.PI * 2, d = 90 + r() * 80; c.position.set(Math.cos(a) * d, 10 + r() * 30, Math.sin(a) * d); scene.add(c); }
 
   // Cast.
-  leo = makeCharacter('Leo'); max = makeCharacter('Max'); mia = makeCharacter('Mia');
-  noob = makeCharacter('Noob', { skin: 'F5CD30', top: '0D69AC', dark: 'A4BD47', hair: 'F5CD31', accent: '0D69AC' });
-  noob.root.traverse((o) => { if (o.isMesh && o.material === mat('F5CD31', 0.55)) o.visible = false; });   // bald classic noob
+  // Roblox R6 pack cast (assets/roblox_pack); faces are shared textures, preloaded once.
+  const expressions = ['happy', 'neutral', 'surprised', 'angry', 'sad', 'laugh', 'evil_grin', 'confused', 'annoyed', 'shouting', 'shocked', 'scared', 'dizzy', 'smug'];
+  [leo, max, mia, noob] = await Promise.all(['Leo', 'Max', 'Mia', 'Noob'].map((n) => loadRobloxCharacter(n, { expressions })));
+  // Leo's fringe sits over his eyes in close-ups; lift it a little so every expression reads.
+  leo.bones.Head.children.find((o) => o.name === 'Hair').position.y += 0.16;
+  leo.hatOffset.y += 0.16;
   scene.add(leo.root, max.root, mia.root, noob.root);
   // Mia gets her own materials so she can turn rainbow (face ink stays dark).
   mia.root.traverse((o) => {
-    if (!o.isMesh || (o.parent && o.parent.name.startsWith('face_'))) return;
-    o.material = o.material.clone(); const hsl = {}; o.material.color.getHSL(hsl); miaMeshes.push({ m: o.material, hsl, base: o.material.color.clone() });
+    if (!o.isMesh || o.name === 'Face' || (o.parent && o.parent.name.startsWith('face_'))) return;
+    o.material = o.material.clone(); const hsl = {}; o.material.color.getHSL(hsl); miaMeshes.push({ m: o.material, hsl, base: o.material.color.clone(), map: o.material.map });
   });
 
-  leoCrown = crown(); scene.add(leoCrown);
-  maxCrown = crown(); maxCrown.scale.setScalar(0.95); maxCrown.position.set(0, 1.5, 0.02); max.bones.Head.add(maxCrown);
+  leoCrown = await packItem('accessories', 'crown_admin'); scene.add(leoCrown);
+  maxCrown = await packItem('accessories', 'crown_admin'); maxCrown.position.copy(max.hatOffset); max.bones.Head.add(maxCrown);
   ff = forceField(); scene.add(ff);
 
   // Lobby "in his hand": small studded platform with a spawn pad; Max and Mia stand on it in that shot.
@@ -280,7 +284,7 @@ function leoState(t) {
     else if (t < 21.2) { base.rotY = 0.6; base.pose = idle(t); base.face = t < 20.0 ? 'neutral' : 'happy'; }
     else { base.rotY = 0.6; base.pose = isLeoTyping ? TYPE(t) : t < 22.85 ? POINT : actionPose('Laugh', (t * 2.2) % 1); base.face = t < 21.85 ? 'happy' : 'laugh'; }
   } else if (t < 29.3) {
-    base.rotY = 0.05; base.pose = mixPose(idle(t), SCHEME(t), easeOutBack(inv(26.0, 26.4, t))); base.face = t < 26.6 ? 'happy' : 'laugh';
+    base.rotY = 0.05; base.pose = mixPose(idle(t), SCHEME(t), easeOutBack(inv(26.0, 26.4, t))); base.face = t < 26.6 ? 'happy' : 'evil_grin';
     if (t > 28.7) { base.pose = mixPose(SCHEME(t), CHEER(t), easeOutBack(inv(28.7, 28.95, t))); }
   } else if (t < 39.7) {
     // Explode attempts: aim at each target, fizzle, deflate.
@@ -290,16 +294,16 @@ function leoState(t) {
     base.rotY = face(0, tgt.x - PAD.x, tgt.z - PAD.z);
     const aim = k === 3 ? POINT_UP : POINT;
     base.pose = isLeoTyping ? TYPE(t) : mixPose(aim, { 'Arm.R': [-40, 0, 10], Head: [8, 0, 0], Torso: [6, 0, 0] }, easeInOut(inv(nothing, nothing + 0.3, t)));
-    base.face = t < nothing - 0.4 ? 'laugh' : t < nothing ? 'surprised' : k === 4 ? 'angry' : 'neutral';
+    base.face = t < nothing - 0.4 ? 'evil_grin' : t < nothing ? 'surprised' : k === 4 ? 'angry' : 'annoyed';
   } else if (t < 44.6) {
     base.rotY = 0.1;
-    if (t < 41.3) { base.pose = mixPose(idle(t), actionPose('Shock', 0), easeOutBack(inv(39.8, 40.1, t))); base.face = 'surprised'; }
-    else { base.pose = TYPE(t * 1.6); base.face = 'angry'; base.shake = 0.03 * Math.sin(t * 70); }
+    if (t < 41.3) { base.pose = mixPose(idle(t), actionPose('Shock', 0), easeOutBack(inv(39.8, 40.1, t))); base.face = 'shocked'; }
+    else { base.pose = TYPE(t * 1.6); base.face = 'shouting'; base.shake = 0.03 * Math.sin(t * 70); }
   } else if (t < 51.0) {
     base.rotY = 0.2; base.pose = t < 47.3 ? TYPE(t * 1.6) : mixPose(TYPE(t), actionPose('Shock', 0), easeOutBack(inv(49.1, 49.4, t)));
-    base.face = t < 49.1 ? 'angry' : 'surprised';
+    base.face = t < 49.1 ? 'shouting' : 'scared';
   } else if (t < T.roundOver) {
-    base.rotY = 0.1; base.pose = actionPose('Shock', 0); base.face = 'surprised'; base.shake = 0.025 * Math.sin(t * 60);
+    base.rotY = 0.1; base.pose = actionPose('Shock', 0); base.face = 'scared'; base.shake = 0.025 * Math.sin(t * 60);
   } else if (t < BLASTS[0]) {
     base.rotY = 0.1; base.pose = mixPose(actionPose('Shock', 0), CHEER(t), easeOutBack(inv(54.3, 54.7, t))); base.face = t < 54.3 ? 'surprised' : 'happy';
   } else if (t < T.round2) {
@@ -311,12 +315,12 @@ function leoState(t) {
     base.rotY = 0.1 + (t - BLASTS[0]) * 5; base.rotX = Math.sin(t * 7) * 0.5; base.rotZ = Math.cos(t * 5) * 0.4;
     const flail = Math.sin(t * 24);
     base.pose = { Torso: [-8, 0, 0], Head: [-12, 0, 0], 'Arm.L': [0, 0, -150 - 20 * flail], 'Arm.R': [0, 0, 150 + 20 * flail], 'Leg.L': [30 * flail, 0, 0], 'Leg.R': [-30 * flail, 0, 0] };
-    base.face = 'surprised';
+    base.face = 'dizzy';
   } else {
     // Round 2: back at spawn, singed and sulking; then kicked.
     base.pos.set(2.4, 0, 1.4); base.rotY = -0.5; base.floor = 0;
     base.pose = { 'Arm.L': [0, 0, -4], 'Arm.R': [0, 0, 4], Head: [14, 0, 0], Torso: [6, 0, 0] };
-    base.face = t < 62.5 ? 'sad' : 'surprised';
+    base.face = t < 62.5 ? 'dizzy' : 'shocked';
     if (t > 62.5) base.pose = actionPose('Shock', 0);
     base.scale = t < T.kick ? 1 : Math.max(0.001, 1 - easeIn(inv(T.kick, T.kick + 0.18, t)));
   }
@@ -340,7 +344,7 @@ function maxState(t) {
       const hop = Math.abs(Math.sin((t - 15.3) * 7.5)) * (t > 15.3 ? 1 : 0);
       s.pos.y = hop * 0.35; s.grounded = hop < 0.02;
       s.pose = { 'Arm.L': [0, 0, -150 + 25 * Math.sin(t * 15)], 'Arm.R': [0, 0, 150 - 25 * Math.sin(t * 15)], Head: [-18, 0, 0], 'Leg.L': [20 * Math.sin(t * 15), 0, 0], 'Leg.R': [-20 * Math.sin(t * 15), 0, 0] };
-      s.face = t < 15.35 ? 'surprised' : 'angry';
+      s.face = t < 15.35 ? 'surprised' : 'shouting';
     }
   } else if (t < 44.6) { s.pos.set(-3.0, 0, 3.4); s.rotY = face(0, PAD.x + 3, PAD.z - 3.4); s.pose = idle(t); s.face = 'angry'; if (t >= 29.3 && t < 39.7) { s.pos.set(-2.6, 0, 3.8); } }
   else if (t < T.roundOver) {
@@ -354,7 +358,7 @@ function maxState(t) {
     s.pos.set(-1.2, 0, 3.4); s.rotY = 0.25; s.scale = 1;
     const ty = typing(t);
     s.pose = ty && ty.name === 'Max' ? TYPE(t) : t > T.kick ? actionPose('Laugh', (t * 2.2) % 1) : mixPose(idle(t), CHEER(t), easeOutBack(inv(59.5, 59.9, t)));
-    s.face = ty ? 'happy' : 'laugh';
+    s.face = ty ? 'smug' : 'laugh';
   }
   return s;
 }
@@ -372,7 +376,7 @@ function miaState(t) {
     s.pos.x += 1.5 * (1 - easeOut(walkIn));
     s.pose = t < 19.7 ? actionPose('Walk', (t * 2.2) % 1) : t < T.rainbowZap ? mixPose(actionPose('Talk', (t * 1.8) % 1), { 'Arm.R': [-70, 0, 10] }, 0.5) : actionPose('Shock', 0);
     s.face = t < T.rainbowZap ? 'angry' : 'surprised';
-  } else if (t < 25.8) { s.pos.set(3.2, 0, 4.2); s.rotY = face(0, PAD.x - 3.2, PAD.z - 4.2) + 0.5; s.pose = { 'Arm.L': [0, 0, -4], 'Arm.R': [0, 0, 4], Head: [0, 0, 0] }; s.face = 'neutral'; }
+  } else if (t < 25.8) { s.pos.set(3.2, 0, 4.2); s.rotY = face(0, PAD.x - 3.2, PAD.z - 4.2) + 0.5; s.pose = { 'Arm.L': [0, 0, -4], 'Arm.R': [0, 0, 4], Head: [0, 0, 0] }; s.face = 'annoyed'; }
   else if (t < T.round2) {
     s.pos.set(-4.2, 0, -2.6); s.rotY = face(0, PAD.x + 4.2, PAD.z + 2.6); s.pose = idle(t, 0.7); s.face = 'neutral';
     if (t >= 51.7 && t < T.roundOver) { s.pos.x += 1.3 * easeOut(inv(51.7, 52.4, t)); s.pose = actionPose('Walk', (t * 2) % 1); s.face = 'surprised'; }
@@ -385,7 +389,7 @@ function noobState(t) {
   const s = st(NOOB_AT, face(0, PAD.x - NOOB_AT.x, PAD.z - NOOB_AT.z), idle(t, 1.1), 'neutral');
   if (t >= 37.6 && t < 39.7) {
     const look = Math.sin((t - 37.6) * 5) * 30 * clamp((39.4 - t) * 2);
-    s.pose = { ...actionPose('Shock', 0), Head: [0, look, 0] }; s.face = 'surprised';
+    s.pose = { ...actionPose('Shock', 0), Head: [0, look, 0] }; s.face = 'confused';
   }
   return s;
 }
@@ -431,21 +435,21 @@ export function update(t, stage) {
     const drop = easeOutBack(inv(...T.crownDrop, t), 1.2);
     const sc = leo.root.scale.x;
     leo.bones.Head.getWorldQuaternion(leoCrown.quaternion);
-    const on = new THREE.Vector3(0, 1.5, 0.02).applyQuaternion(leoCrown.quaternion).multiplyScalar(sc).add(lh);
-    leoCrown.position.copy(on).add(V(0, 4 * (1 - drop), 0)); leoCrown.scale.setScalar(0.95 * sc);
-    leoCrown.rotateY(t * 0.8);
+    const on = leo.hatOffset.clone().applyQuaternion(leoCrown.quaternion).multiplyScalar(sc).add(lh);
+    leoCrown.position.copy(on).add(V(0, 4 * (1 - drop), 0)); leoCrown.scale.setScalar(sc);
   } else {
     const u = t - T.roundOver;
-    leoCrown.position.set(lh.x + u * 3, lh.y + 1.5 + 9 * u - 4 * u * u, lh.z); leoCrown.rotation.set(u * 6, u * 4, u * 3); leoCrown.scale.setScalar(0.95 * (1 - inv(0.9, 1.2, u)));
+    leoCrown.position.set(lh.x + u * 3, lh.y + 1.5 + 9 * u - 4 * u * u, lh.z); leoCrown.rotation.set(u * 6, u * 4, u * 3); leoCrown.scale.setScalar(1 - inv(0.9, 1.2, u));
   }
   maxCrown.visible = t >= T.round2;
-  if (maxCrown.visible) maxCrown.position.y = 1.5 + 4 * (1 - easeOutBack(inv(T.round2, T.round2 + 0.5, t), 1.2));
+  if (maxCrown.visible) maxCrown.position.y = max.hatOffset.y + 4 * (1 - easeOutBack(inv(T.round2, T.round2 + 0.5, t), 1.2));
 
   // Rainbow Mia.
   const rb = t >= T.rainbowZap;
-  miaMeshes.forEach(({ m, hsl, base }, i) => {
-    if (!rb) { m.color.copy(base); m.emissive?.set('#000000'); return; }
-    const h = (t * 0.45 + i * 0.045) % 1; m.color.setHSL(h, 0.85, 0.58); m.emissive?.setHSL(h, 0.9, 0.12);
+  // Pack textures are dark (hoodie, pants), so the hue goes on as a glow over them and the clothing detail stays readable.
+  miaMeshes.forEach(({ m, base }, i) => {
+    if (!rb) { m.color.copy(base); m.emissive?.set('#000000'); m.emissiveIntensity = 0; return; }
+    const h = (t * 0.45 + i * 0.045) % 1; m.color.setHSL(h, 0.7, 0.75); m.emissive?.setHSL(h, 1, 0.5); m.emissiveIntensity = 0.55;
   });
 
   // ForceField on respawn in round 2.
