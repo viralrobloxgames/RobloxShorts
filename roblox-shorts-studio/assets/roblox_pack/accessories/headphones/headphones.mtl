@@ -1,0 +1,35 @@
+# Materials for headphones. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl headband
+Kd 0.1569 0.1647 0.1961
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl cupl
+Kd 0.1176 0.7843 0.7451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl padl
+Kd 0.1098 0.1098 0.1255
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl cupr
+Kd 0.1176 0.7843 0.7451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl padr
+Kd 0.1098 0.1098 0.1255
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

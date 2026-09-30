@@ -1,0 +1,21 @@
+# Materials for top_hat. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl brim
+Kd 0.0941 0.0941 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl crown
+Kd 0.0941 0.0941 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl band
+Kd 0.7843 0.1176 0.1765
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

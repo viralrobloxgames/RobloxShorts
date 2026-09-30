@@ -1,0 +1,4406 @@
+{
+ "errors": [],
+ "warnings": [],
+ "obj_files": 189,
+ "objs": {
+  "accessories/admin_badge_halo/admin_badge_halo.obj": {
+   "objects": [
+    "Halo",
+    "Badge",
+    "Badge_AdminText",
+    "Badge_AdminText_2",
+    "BadgeStem"
+   ],
+   "bbox_min": [
+    -0.85,
+    0.45,
+    -0.725
+   ],
+   "bbox_max": [
+    0.85,
+    1.52,
+    0.725
+   ],
+   "size": [
+    1.7,
+    1.07,
+    1.45
+   ],
+   "vertices": 120
+  },
+  "accessories/beanie/beanie.obj": {
+   "objects": [
+    "Beanie"
+   ],
+   "bbox_min": [
+    -0.853,
+    -2.551,
+    -0.794
+   ],
+   "bbox_max": [
+    0.853,
+    0.551,
+    1.194
+   ],
+   "size": [
+    1.706,
+    3.101,
+    1.988
+   ],
+   "vertices": 1093
+  },
+  "accessories/cap/cap.obj": {
+   "objects": [
+    "Brim",
+    "Button",
+    "Dome"
+   ],
+   "bbox_min": [
+    -0.67,
+    -0.115,
+    -1.076
+   ],
+   "bbox_max": [
+    0.67,
+    0.53,
+    0.69
+   ],
+   "size": [
+    1.34,
+    0.645,
+    1.765
+   ],
+   "vertices": 389
+  },
+  "accessories/crown_admin/crown_admin.obj": {
+   "objects": [
+    "Band",
+    "Point0R",
+    "Point0L",
+    "Tip0",
+    "Gem0",
+    "Point1R",
+    "Point1L",
+    "Tip1",
+    "Gem1",
+    "Point2R",
+    "Point2L",
+    "Tip2",
+    "Gem2",
+    "Point3R",
+    "Point3L",
+    "Tip3",
+    "Gem3",
+    "Point4R",
+    "Point4L",
+    "Tip4",
+    "Gem4"
+   ],
+   "bbox_min": [
+    -0.727,
+    -0.07,
+    -0.76
+   ],
+   "bbox_max": [
+    0.727,
+    0.785,
+    0.68
+   ],
+   "size": [
+    1.453,
+    0.855,
+    1.44
+   ],
+   "vertices": 2316
+  },
+  "accessories/hair_leo/hair_leo.obj": {
+   "objects": [
+    "Hair"
+   ],
+   "bbox_min": [
+    -0.9,
+    -0.931,
+    -1.019
+   ],
+   "bbox_max": [
+    0.86,
+    0.394,
+    0.929
+   ],
+   "size": [
+    1.76,
+    1.325,
+    1.948
+   ],
+   "vertices": 804
+  },
+  "accessories/hair_max/hair_max.obj": {
+   "objects": [
+    "Hair"
+   ],
+   "bbox_min": [
+    -0.75,
+    -0.918,
+    -0.855
+   ],
+   "bbox_max": [
+    0.745,
+    0.443,
+    0.794
+   ],
+   "size": [
+    1.495,
+    1.361,
+    1.649
+   ],
+   "vertices": 881
+  },
+  "accessories/hair_mia/hair_mia.obj": {
+   "objects": [
+    "Hair"
+   ],
+   "bbox_min": [
+    -0.786,
+    -1.61,
+    -0.757
+   ],
+   "bbox_max": [
+    0.917,
+    0.261,
+    0.843
+   ],
+   "size": [
+    1.703,
+    1.871,
+    1.6
+   ],
+   "vertices": 500
+  },
+  "accessories/headphones/headphones.obj": {
+   "objects": [
+    "Headband",
+    "CupL",
+    "PadL",
+    "CupR",
+    "PadR"
+   ],
+   "bbox_min": [
+    -0.86,
+    -0.91,
+    -0.31
+   ],
+   "bbox_max": [
+    0.86,
+    0.64,
+    0.31
+   ],
+   "size": [
+    1.72,
+    1.55,
+    0.62
+   ],
+   "vertices": 254
+  },
+  "accessories/long_hair/long_hair.obj": {
+   "objects": [
+    "Hair"
+   ],
+   "bbox_min": [
+    -0.826,
+    -2.22,
+    -0.806
+   ],
+   "bbox_max": [
+    0.826,
+    0.42,
+    0.846
+   ],
+   "size": [
+    1.652,
+    2.64,
+    1.652
+   ],
+   "vertices": 542
+  },
+  "accessories/spiky_hair/spiky_hair.obj": {
+   "objects": [
+    "Hair"
+   ],
+   "bbox_min": [
+    -0.688,
+    -0.87,
+    -0.872
+   ],
+   "bbox_max": [
+    0.688,
+    0.41,
+    0.811
+   ],
+   "size": [
+    1.376,
+    1.28,
+    1.683
+   ],
+   "vertices": 321
+  },
+  "accessories/top_hat/top_hat.obj": {
+   "objects": [
+    "Brim",
+    "Crown",
+    "Band"
+   ],
+   "bbox_min": [
+    -0.75,
+    -0.015,
+    -0.75
+   ],
+   "bbox_max": [
+    0.75,
+    1.005,
+    0.75
+   ],
+   "size": [
+    1.5,
+    1.02,
+    1.5
+   ],
+   "vertices": 149
+  },
+  "characters/Leo/Leo.obj": {
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -1.019
+   ],
+   "bbox_max": [
+    2.0,
+    5.494,
+    0.929
+   ],
+   "size": [
+    4.0,
+    5.494,
+    1.948
+   ],
+   "vertices": 1758
+  },
+  "characters/Max/Max.obj": {
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -0.855
+   ],
+   "bbox_max": [
+    2.0,
+    5.543,
+    0.794
+   ],
+   "size": [
+    4.0,
+    5.543,
+    1.649
+   ],
+   "vertices": 1835
+  },
+  "characters/Mia/Mia.obj": {
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -0.757
+   ],
+   "bbox_max": [
+    2.0,
+    5.361,
+    0.843
+   ],
+   "size": [
+    4.0,
+    5.361,
+    1.6
+   ],
+   "vertices": 1454
+  },
+  "characters/Noob/Noob.obj": {
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -0.604
+   ],
+   "bbox_max": [
+    2.0,
+    5.106,
+    0.604
+   ],
+   "size": [
+    4.0,
+    5.106,
+    1.208
+   ],
+   "vertices": 954
+  },
+  "characters/Leo/faces/angry/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/annoyed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/blink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/confused/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/cool/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/crying/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/determined/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/disgusted/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/dizzy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/evil_grin/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/happy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/knocked_out/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/laugh/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/love/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/mouth_closed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/mouth_e/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/mouth_o/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/mouth_small/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/mouth_wide/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/nervous/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/neutral/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/sad/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/scared/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/scheming/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/shocked/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/shouting/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/sleeping/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/smug/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/surprised/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/suspicious/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/talking/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Leo/faces/wink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/angry/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/annoyed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/blink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/confused/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/cool/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/crying/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/determined/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/disgusted/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/dizzy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/evil_grin/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/happy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/knocked_out/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/laugh/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/love/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/mouth_closed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/mouth_e/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/mouth_o/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/mouth_small/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/mouth_wide/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/nervous/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/neutral/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/sad/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/scared/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/scheming/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/shocked/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/shouting/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/sleeping/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/smug/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/surprised/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/suspicious/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/talking/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Max/faces/wink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/angry/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/annoyed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/blink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/confused/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/cool/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/crying/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/determined/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/disgusted/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/dizzy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/evil_grin/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/happy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/knocked_out/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/laugh/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/love/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/mouth_closed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/mouth_e/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/mouth_o/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/mouth_small/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/mouth_wide/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/nervous/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/neutral/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/sad/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/scared/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/scheming/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/shocked/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/shouting/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/sleeping/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/smug/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/surprised/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/suspicious/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/talking/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Mia/faces/wink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/angry/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/annoyed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/blink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/confused/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/cool/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/crying/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/determined/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/disgusted/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/dizzy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/evil_grin/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/happy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/knocked_out/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/laugh/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/love/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/mouth_closed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/mouth_e/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/mouth_o/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/mouth_small/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/mouth_wide/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/nervous/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/neutral/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/sad/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/scared/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/scheming/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/shocked/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/shouting/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/sleeping/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/smug/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/surprised/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/suspicious/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/talking/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Noob/faces/wink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "map/ball/ball.obj": {
+   "objects": [
+    "Ball"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    4.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    4.0,
+    4.0
+   ],
+   "vertices": 220
+  },
+  "map/baseplate_tile_grid/baseplate_tile_grid.obj": {
+   "objects": [
+    "Tile",
+    "Tile_Grid"
+   ],
+   "bbox_min": [
+    -8.0,
+    0.0,
+    -8.0
+   ],
+   "bbox_max": [
+    8.0,
+    1.005,
+    8.0
+   ],
+   "size": [
+    16.0,
+    1.005,
+    16.0
+   ],
+   "vertices": 12
+  },
+  "map/baseplate_tile_studs/baseplate_tile_studs.obj": {
+   "objects": [
+    "Tile"
+   ],
+   "bbox_min": [
+    -8.0,
+    0.0,
+    -8.0
+   ],
+   "bbox_max": [
+    8.0,
+    1.0,
+    8.0
+   ],
+   "size": [
+    16.0,
+    1.0,
+    16.0
+   ],
+   "vertices": 8
+  },
+  "map/checkpoint/checkpoint.obj": {
+   "objects": [
+    "Pad",
+    "Pad_Decal",
+    "Pole",
+    "Flag",
+    "Ball"
+   ],
+   "bbox_min": [
+    -3.0,
+    0.0,
+    -3.0
+   ],
+   "bbox_max": [
+    3.0,
+    8.35,
+    3.0
+   ],
+   "size": [
+    6.0,
+    8.35,
+    6.0
+   ],
+   "vertices": 288
+  },
+  "map/cylinder/cylinder.obj": {
+   "objects": [
+    "Cylinder"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    2.0,
+    4.0
+   ],
+   "vertices": 50
+  },
+  "map/finish_pad/finish_pad.obj": {
+   "objects": [
+    "Pad",
+    "Pad_Checker"
+   ],
+   "bbox_min": [
+    -4.0,
+    0.0,
+    -4.0
+   ],
+   "bbox_max": [
+    4.0,
+    1.005,
+    4.0
+   ],
+   "size": [
+    8.0,
+    1.005,
+    8.0
+   ],
+   "vertices": 12
+  },
+  "map/island_large/island_large.obj": {
+   "objects": [
+    "Grass",
+    "Dirt",
+    "Rock1",
+    "Rock2",
+    "Rock3",
+    "Rock4"
+   ],
+   "bbox_min": [
+    -10.0,
+    -8.5,
+    -10.0
+   ],
+   "bbox_max": [
+    10.0,
+    0.0,
+    10.0
+   ],
+   "size": [
+    20.0,
+    8.5,
+    20.0
+   ],
+   "vertices": 44
+  },
+  "map/island_small/island_small.obj": {
+   "objects": [
+    "Grass",
+    "Dirt",
+    "Rock1",
+    "Rock2",
+    "Rock3"
+   ],
+   "bbox_min": [
+    -6.0,
+    -7.0,
+    -6.0
+   ],
+   "bbox_max": [
+    6.0,
+    0.0,
+    6.0
+   ],
+   "size": [
+    12.0,
+    7.0,
+    12.0
+   ],
+   "vertices": 36
+  },
+  "map/kill_brick/kill_brick.obj": {
+   "objects": [
+    "KillBrick"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/ladder/ladder.obj": {
+   "objects": [
+    "RailL",
+    "RailR",
+    "Rung1",
+    "Rung2",
+    "Rung3",
+    "Rung4",
+    "Rung5",
+    "Rung6",
+    "Rung7",
+    "Rung8",
+    "Rung9",
+    "Rung10",
+    "Rung11"
+   ],
+   "bbox_min": [
+    -1.1,
+    0.0,
+    -0.15
+   ],
+   "bbox_max": [
+    1.1,
+    12.0,
+    0.15
+   ],
+   "size": [
+    2.2,
+    12.0,
+    0.3
+   ],
+   "vertices": 104
+  },
+  "map/lava_strip/lava_strip.obj": {
+   "objects": [
+    "Lava"
+   ],
+   "bbox_min": [
+    -4.0,
+    0.0,
+    -1.0
+   ],
+   "bbox_max": [
+    4.0,
+    1.0,
+    1.0
+   ],
+   "size": [
+    8.0,
+    1.0,
+    2.0
+   ],
+   "vertices": 8
+  },
+  "map/leaderboard_board/leaderboard_board.obj": {
+   "objects": [
+    "Board",
+    "Board_Face",
+    "PostL",
+    "PostR"
+   ],
+   "bbox_min": [
+    -4.0,
+    0.0,
+    -0.205
+   ],
+   "bbox_max": [
+    4.0,
+    9.0,
+    0.3
+   ],
+   "size": [
+    8.0,
+    9.0,
+    0.505
+   ],
+   "vertices": 28
+  },
+  "map/lobby_platform/lobby_platform.obj": {
+   "objects": [
+    "Floor",
+    "TrimBack",
+    "TrimFront",
+    "TrimRight",
+    "TrimLeft"
+   ],
+   "bbox_min": [
+    -21.0,
+    0.0,
+    -21.0
+   ],
+   "bbox_max": [
+    21.0,
+    2.2,
+    21.0
+   ],
+   "size": [
+    42.0,
+    2.2,
+    42.0
+   ],
+   "vertices": 28
+  },
+  "map/obby_block_blue_smooth/obby_block_blue_smooth.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_blue_studs/obby_block_blue_studs.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_green_smooth/obby_block_green_smooth.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_green_studs/obby_block_green_studs.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_orange_smooth/obby_block_orange_smooth.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_orange_studs/obby_block_orange_studs.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_purple_smooth/obby_block_purple_smooth.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_purple_studs/obby_block_purple_studs.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_red_smooth/obby_block_red_smooth.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_red_studs/obby_block_red_studs.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_yellow_smooth/obby_block_yellow_smooth.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/obby_block_yellow_studs/obby_block_yellow_studs.obj": {
+   "objects": [
+    "Block"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    1.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "vertices": 8
+  },
+  "map/round_timer_board/round_timer_board.obj": {
+   "objects": [
+    "Board",
+    "Board_Face",
+    "PostL",
+    "PostR"
+   ],
+   "bbox_min": [
+    -3.0,
+    0.0,
+    -0.205
+   ],
+   "bbox_max": [
+    3.0,
+    7.4,
+    0.3
+   ],
+   "size": [
+    6.0,
+    7.4,
+    0.505
+   ],
+   "vertices": 28
+  },
+  "map/spawn_location/spawn_location.obj": {
+   "objects": [
+    "SpawnLocation",
+    "SpawnLocation_Decal"
+   ],
+   "bbox_min": [
+    -6.0,
+    0.0,
+    -6.0
+   ],
+   "bbox_max": [
+    6.0,
+    1.005,
+    6.0
+   ],
+   "size": [
+    12.0,
+    1.005,
+    12.0
+   ],
+   "vertices": 12
+  },
+  "map/stage_sign/stage_sign.obj": {
+   "objects": [
+    "Board",
+    "Board_Face",
+    "PostL",
+    "PostR"
+   ],
+   "bbox_min": [
+    -3.0,
+    0.0,
+    -0.155
+   ],
+   "bbox_max": [
+    3.0,
+    5.2,
+    0.2
+   ],
+   "size": [
+    6.0,
+    5.2,
+    0.355
+   ],
+   "vertices": 28
+  },
+  "map/tree_blocky/tree_blocky.obj": {
+   "objects": [
+    "Trunk",
+    "Leaves1",
+    "Leaves2",
+    "Leaves3"
+   ],
+   "bbox_min": [
+    -3.0,
+    0.0,
+    -3.0
+   ],
+   "bbox_max": [
+    3.0,
+    12.0,
+    3.0
+   ],
+   "size": [
+    6.0,
+    12.0,
+    6.0
+   ],
+   "vertices": 32
+  },
+  "map/tree_round/tree_round.obj": {
+   "objects": [
+    "Trunk",
+    "Leaves"
+   ],
+   "bbox_min": [
+    -3.5,
+    0.0,
+    -3.5
+   ],
+   "bbox_max": [
+    3.5,
+    11.7,
+    3.5
+   ],
+   "size": [
+    7.0,
+    11.7,
+    7.0
+   ],
+   "vertices": 274
+  },
+  "map/truss/truss.obj": {
+   "objects": [
+    "Truss"
+   ],
+   "bbox_min": [
+    -1.0,
+    0.0,
+    -1.0
+   ],
+   "bbox_max": [
+    1.0,
+    16.0,
+    1.0
+   ],
+   "size": [
+    2.0,
+    16.0,
+    2.0
+   ],
+   "vertices": 480
+  },
+  "map/tycoon_conveyor/tycoon_conveyor.obj": {
+   "objects": [
+    "Belt",
+    "Belt_Arrows",
+    "RailL",
+    "LegFrontL",
+    "LegMidL",
+    "LegBackL",
+    "RailR",
+    "LegFrontR",
+    "LegMidR",
+    "LegBackR"
+   ],
+   "bbox_min": [
+    -1.8,
+    0.0,
+    -8.0
+   ],
+   "bbox_max": [
+    1.8,
+    1.3,
+    8.0
+   ],
+   "size": [
+    3.6,
+    1.3,
+    16.0
+   ],
+   "vertices": 72
+  },
+  "map/tycoon_dropper/tycoon_dropper.obj": {
+   "objects": [
+    "Post",
+    "Arm",
+    "Box",
+    "Funnel",
+    "Light",
+    "Stripe"
+   ],
+   "bbox_min": [
+    -1.23,
+    0.0,
+    -1.23
+   ],
+   "bbox_max": [
+    1.23,
+    8.0,
+    2.5
+   ],
+   "size": [
+    2.46,
+    8.0,
+    3.73
+   ],
+   "vertices": 48
+  },
+  "map/tycoon_ore/tycoon_ore.obj": {
+   "objects": [
+    "Ore"
+   ],
+   "bbox_min": [
+    -0.5,
+    0.0,
+    -0.5
+   ],
+   "bbox_max": [
+    0.5,
+    1.0,
+    0.5
+   ],
+   "size": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "vertices": 8
+  },
+  "map/wedge/wedge.obj": {
+   "objects": [
+    "Wedge"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -2.0
+   ],
+   "bbox_max": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "size": [
+    4.0,
+    2.0,
+    4.0
+   ],
+   "vertices": 6
+  },
+  "map/winners_podium/winners_podium.obj": {
+   "objects": [
+    "First",
+    "First_Number",
+    "Second",
+    "Second_Number",
+    "Third",
+    "Third_Number"
+   ],
+   "bbox_min": [
+    -6.0,
+    0.0,
+    -2.005
+   ],
+   "bbox_max": [
+    6.0,
+    3.0,
+    2.0
+   ],
+   "size": [
+    12.0,
+    3.0,
+    4.005
+   ],
+   "vertices": 30
+  },
+  "props/bomb/bomb.obj": {
+   "objects": [
+    "Body",
+    "Cap",
+    "Fuse1",
+    "Fuse2",
+    "Fuse3",
+    "Spark",
+    "SparkX",
+    "SparkY",
+    "Shine"
+   ],
+   "bbox_min": [
+    -1.0,
+    0.0,
+    -1.0
+   ],
+   "bbox_max": [
+    1.333,
+    2.913,
+    1.0
+   ],
+   "size": [
+    2.333,
+    2.913,
+    2.0
+   ],
+   "vertices": 870
+  },
+  "props/coin_pile/coin_pile.obj": {
+   "objects": [
+    "Coin1",
+    "Coin2",
+    "Coin3",
+    "Coin4",
+    "Coin5",
+    "Coin6",
+    "Coin7",
+    "Coin8",
+    "Coin9",
+    "Coin10",
+    "Coin11",
+    "Coin12",
+    "Coin13",
+    "Coin14",
+    "Coin15",
+    "Coin16",
+    "Coin17",
+    "Coin18",
+    "Coin19",
+    "Coin20",
+    "Coin21",
+    "Coin22",
+    "Coin23",
+    "Coin24",
+    "Coin25",
+    "Coin26",
+    "Coin27",
+    "Coin28",
+    "Coin29",
+    "Coin30",
+    "Coin31",
+    "Coin32",
+    "Coin33",
+    "Coin34",
+    "Coin35",
+    "CoinTop"
+   ],
+   "bbox_min": [
+    -1.8,
+    -0.08,
+    -2.662
+   ],
+   "bbox_max": [
+    2.668,
+    1.417,
+    1.734
+   ],
+   "size": [
+    4.468,
+    1.497,
+    4.396
+   ],
+   "vertices": 1801
+  },
+  "props/free_coins_button/free_coins_button.obj": {
+   "objects": [
+    "Base",
+    "BaseTrim",
+    "Button",
+    "ButtonTop",
+    "PostL",
+    "PostR",
+    "Sign",
+    "Sign_SignText"
+   ],
+   "bbox_min": [
+    -1.9,
+    0.0,
+    -1.65
+   ],
+   "bbox_max": [
+    1.9,
+    4.26,
+    1.65
+   ],
+   "size": [
+    3.8,
+    4.26,
+    3.3
+   ],
+   "vertices": 144
+  },
+  "props/gift_box/gift_box.obj": {
+   "objects": [
+    "Box",
+    "Lid",
+    "RibbonX",
+    "RibbonZ",
+    "RibbonTopX",
+    "RibbonTopZ",
+    "BowL",
+    "BowR",
+    "Knot"
+   ],
+   "bbox_min": [
+    -1.1,
+    0.0,
+    -1.1
+   ],
+   "bbox_max": [
+    1.1,
+    2.43,
+    1.1
+   ],
+   "size": [
+    2.2,
+    2.43,
+    2.2
+   ],
+   "vertices": 458
+  },
+  "props/gold_coin/gold_coin.obj": {
+   "objects": [
+    "Rim",
+    "Face",
+    "Emblem"
+   ],
+   "bbox_min": [
+    -0.7,
+    -0.7,
+    -0.12
+   ],
+   "bbox_max": [
+    0.7,
+    0.7,
+    0.12
+   ],
+   "size": [
+    1.4,
+    1.4,
+    0.24
+   ],
+   "vertices": 196
+  },
+  "props/phone/phone.obj": {
+   "objects": [
+    "Body",
+    "Screen",
+    "Camera"
+   ],
+   "bbox_min": [
+    -0.45,
+    -0.4,
+    -0.085
+   ],
+   "bbox_max": [
+    0.45,
+    1.3,
+    0.075
+   ],
+   "size": [
+    0.9,
+    1.7,
+    0.16
+   ],
+   "vertices": 24
+  },
+  "props/rocket_launcher/rocket_launcher.obj": {
+   "objects": [
+    "Tube",
+    "FrontRing",
+    "BackRing",
+    "RocketNose",
+    "RocketBody",
+    "Grip",
+    "Trigger",
+    "FrontGrip",
+    "Sight",
+    "SightGlass",
+    "Stripe"
+   ],
+   "bbox_min": [
+    -0.475,
+    -0.383,
+    -2.83
+   ],
+   "bbox_max": [
+    0.475,
+    1.27,
+    1.66
+   ],
+   "size": [
+    0.95,
+    1.653,
+    4.49
+   ],
+   "vertices": 622
+  },
+  "props/sword/sword.obj": {
+   "objects": [
+    "Grip",
+    "Pommel",
+    "Guard",
+    "Blade",
+    "TipR",
+    "TipL",
+    "Fuller"
+   ],
+   "bbox_min": [
+    -0.55,
+    -0.6,
+    -0.15
+   ],
+   "bbox_max": [
+    0.55,
+    3.65,
+    0.15
+   ],
+   "size": [
+    1.1,
+    4.25,
+    0.3
+   ],
+   "vertices": 296
+  },
+  "props/tablet/tablet.obj": {
+   "objects": [
+    "Body",
+    "Screen",
+    "ScreenGlow"
+   ],
+   "bbox_min": [
+    -0.95,
+    -0.125,
+    -0.05
+   ],
+   "bbox_max": [
+    0.95,
+    1.225,
+    0.071
+   ],
+   "size": [
+    1.9,
+    1.35,
+    0.121
+   ],
+   "vertices": 24
+  },
+  "props/trophy/trophy.obj": {
+   "objects": [
+    "Base",
+    "Plinth",
+    "Stem",
+    "Knot",
+    "Cup",
+    "CupBottom",
+    "HandleL",
+    "HandleR"
+   ],
+   "bbox_min": [
+    -0.86,
+    -0.845,
+    -0.55
+   ],
+   "bbox_max": [
+    0.86,
+    1.145,
+    0.55
+   ],
+   "size": [
+    1.72,
+    1.99,
+    1.1
+   ],
+   "vertices": 622
+  }
+ },
+ "face_alignment": {
+  "Leo": {
+   "expressions": 32,
+   "identical_head_meshes": true,
+   "face_png_sizes": [
+    [
+     1024,
+     1024
+    ]
+   ],
+   "eye_positions_character_space": [
+    [
+     0.107,
+     4.765,
+     -0.594
+    ],
+    [
+     -0.116,
+     4.765,
+     -0.593
+    ]
+   ]
+  },
+  "Max": {
+   "expressions": 32,
+   "identical_head_meshes": true,
+   "face_png_sizes": [
+    [
+     1024,
+     1024
+    ]
+   ],
+   "eye_positions_character_space": [
+    [
+     0.107,
+     4.765,
+     -0.594
+    ],
+    [
+     -0.116,
+     4.765,
+     -0.593
+    ]
+   ]
+  },
+  "Mia": {
+   "expressions": 32,
+   "identical_head_meshes": true,
+   "face_png_sizes": [
+    [
+     1024,
+     1024
+    ]
+   ],
+   "eye_positions_character_space": [
+    [
+     0.107,
+     4.765,
+     -0.594
+    ],
+    [
+     -0.116,
+     4.765,
+     -0.593
+    ]
+   ]
+  },
+  "Noob": {
+   "expressions": 32,
+   "identical_head_meshes": true,
+   "face_png_sizes": [
+    [
+     1024,
+     1024
+    ]
+   ],
+   "eye_positions_character_space": [
+    [
+     0.107,
+     4.765,
+     -0.594
+    ],
+    [
+     -0.116,
+     4.765,
+     -0.593
+    ]
+   ]
+  }
+ },
+ "total_bytes": 21476443,
+ "files": 760
+}

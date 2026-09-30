@@ -1,0 +1,302 @@
+{
+ "name": "tool_lunge",
+ "type": "roblox_default",
+ "category": "roblox_default",
+ "source": {
+  "assetId": 129967478,
+  "assetName": "lunge",
+  "creator": "Roblox",
+  "robloxMade": true,
+  "free": true,
+  "owned": "not required (Roblox default animation)",
+  "from": "R6 Animate script: Animate.toollunge",
+  "loadedWith": "KeyframeSequenceProvider:GetKeyframeSequenceAsync"
+ },
+ "loop": false,
+ "priority": "Idle",
+ "length": 1.5,
+ "joints": [
+  "Left Hip",
+  "Left Shoulder",
+  "Neck",
+  "Right Hip",
+  "Right Shoulder",
+  "RootJoint"
+ ],
+ "transformConvention": "cframe = Motor6D.Transform as Roblox CFrame components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major rotation). Part1.CFrame = Part0.CFrame * C0 * Transform * C1:Inverse() (C0/C1 in characters/<Name>/rig.json). Easing on a pose applies from that keyframe to the next. A joint missing from a keyframe keeps interpolating between its neighbouring keyframes; weight 0 poses do not drive the joint.",
+ "keyframes": [
+  {
+   "time": 0,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.035536,
+      -0.999368,
+      0,
+      0.999368,
+      0.035536,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.819771,
+      -0.572692,
+      0,
+      0.572692,
+      0.819771,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.815005,
+      -0.579454,
+      0,
+      0.579454,
+      0.815005,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.005264,
+      -0.999986,
+      0,
+      0.999986,
+      0.005264,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 1.490625,
+   "name": "Keyframe",
+   "poses": {
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.035536,
+      -0.999368,
+      0,
+      0.999368,
+      0.035536,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.819771,
+      -0.572692,
+      0,
+      0.572692,
+      0.819771,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.815005,
+      -0.579454,
+      0,
+      0.579454,
+      0.815005,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0,
+      0,
+      0,
+      0.005264,
+      -0.999986,
+      0,
+      0.999986,
+      0.005264,
+      0,
+      0,
+      0,
+      1
+     ],
+     "weight": 1,
+     "easingStyle": "Linear",
+     "easingDirection": "In"
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 1.5,
+   "name": "KF1.5",
+   "poses": {},
+   "markers": []
+  }
+ ],
+ "note": "One-shot lunge used by the classic sword."
+}

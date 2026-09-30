@@ -1,0 +1,45 @@
+# Materials for winners_podium. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl first
+Kd 1.0000 0.7843 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl first_number
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd winners_podium_first_number.png
+
+newmtl second
+Kd 0.7529 0.7725 0.8157
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl second_number
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd winners_podium_second_number.png
+
+newmtl third
+Kd 0.8039 0.4980 0.1961
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl third_number
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd winners_podium_third_number.png

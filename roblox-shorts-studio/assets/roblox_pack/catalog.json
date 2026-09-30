@@ -1,0 +1,3118 @@
+{
+ "pack": "Roblox R6 asset pack for RobloxShorts",
+ "version": "1.0.0",
+ "generated": "2026-09-30",
+ "units": "studs (1 stud = 1 unit)",
+ "axes": "+Y up; characters face -Z; +X is the character's right; OBJ coordinates are relative to each item's pivot",
+ "studio": {
+  "place": "Copy of Steal a Beast Egg! (placeId 121299808702869)",
+  "folder": "Workspace.RobloxAssetPack"
+ },
+ "colour": "MTL Kd/Ks/Ke are sRGB; materials with Ke are Roblox Neon; overlays (decals/textures/face) use alpha with d 0.999",
+ "characters": [
+  {
+   "name": "Leo",
+   "path": "characters/Leo/Leo.obj",
+   "rig": "characters/Leo/rig.json",
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -1.019
+    ],
+    "max": [
+     2.0,
+     5.494,
+     0.929
+    ],
+    "size": [
+     4.0,
+     5.494,
+     1.948
+    ]
+   },
+   "pivot": "feet centre on the ground (origin), facing -Z",
+   "bodyColors": {
+    "rightArm": [
+     242,
+     200,
+     154
+    ],
+    "head": [
+     242,
+     200,
+     154
+    ],
+    "rightLeg": [
+     242,
+     200,
+     154
+    ],
+    "torso": [
+     242,
+     200,
+     154
+    ],
+    "leftArm": [
+     242,
+     200,
+     154
+    ],
+    "leftLeg": [
+     242,
+     200,
+     154
+    ]
+   },
+   "textures": [
+    "face.png",
+    "leo_body.png",
+    "leo_clothing.png",
+    "leo_composite.png",
+    "leo_hair.png"
+   ],
+   "faces": "characters/Leo/faces/<expression>/face.png + head.obj/.mtl",
+   "clothing": {
+    "shirt": {
+     "template": "../../clothing/shirt_leo.png",
+     "robloxAsset": "rbxassetid://121525159603968",
+     "size": [
+      585,
+      559
+     ]
+    },
+    "pants": {
+     "template": "../../clothing/pants_leo.png",
+     "robloxAsset": "rbxassetid://93353925862639",
+     "size": [
+      585,
+      559
+     ]
+    }
+   },
+   "hair": [
+    {
+     "name": "LeoHair",
+     "sourceAssetId": 63690008,
+     "item": "accessories/hair_leo"
+    }
+   ],
+   "source": {
+    "rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
+    "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
+    "robloxMade": "rig, meshes and hair yes; clothing templates and faces are ours",
+    "built": "tools/build_characters_local.py"
+   }
+  },
+  {
+   "name": "Max",
+   "path": "characters/Max/Max.obj",
+   "rig": "characters/Max/rig.json",
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -0.855
+    ],
+    "max": [
+     2.0,
+     5.543,
+     0.794
+    ],
+    "size": [
+     4.0,
+     5.543,
+     1.649
+    ]
+   },
+   "pivot": "feet centre on the ground (origin), facing -Z",
+   "bodyColors": {
+    "rightArm": [
+     240,
+     183,
+     116
+    ],
+    "head": [
+     240,
+     183,
+     116
+    ],
+    "rightLeg": [
+     240,
+     183,
+     116
+    ],
+    "torso": [
+     240,
+     183,
+     116
+    ],
+    "leftArm": [
+     240,
+     183,
+     116
+    ],
+    "leftLeg": [
+     240,
+     183,
+     116
+    ]
+   },
+   "textures": [
+    "face.png",
+    "max_body.png",
+    "max_clothing.png",
+    "max_composite.png",
+    "max_hair.png"
+   ],
+   "faces": "characters/Max/faces/<expression>/face.png + head.obj/.mtl",
+   "clothing": {
+    "shirt": {
+     "template": "../../clothing/shirt_max.png",
+     "robloxAsset": "rbxassetid://80401978037462",
+     "size": [
+      585,
+      559
+     ]
+    },
+    "pants": {
+     "template": "../../clothing/pants_max.png",
+     "robloxAsset": "rbxassetid://77496743302839",
+     "size": [
+      585,
+      559
+     ]
+    }
+   },
+   "hair": [
+    {
+     "name": "MaxHair",
+     "sourceAssetId": 62234425,
+     "item": "accessories/hair_max"
+    }
+   ],
+   "source": {
+    "rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
+    "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
+    "robloxMade": "rig, meshes and hair yes; clothing templates and faces are ours",
+    "built": "tools/build_characters_local.py"
+   }
+  },
+  {
+   "name": "Mia",
+   "path": "characters/Mia/Mia.obj",
+   "rig": "characters/Mia/rig.json",
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -0.757
+    ],
+    "max": [
+     2.0,
+     5.361,
+     0.843
+    ],
+    "size": [
+     4.0,
+     5.361,
+     1.6
+    ]
+   },
+   "pivot": "feet centre on the ground (origin), facing -Z",
+   "bodyColors": {
+    "rightArm": [
+     186,
+     123,
+     81
+    ],
+    "head": [
+     186,
+     123,
+     81
+    ],
+    "rightLeg": [
+     186,
+     123,
+     81
+    ],
+    "torso": [
+     186,
+     123,
+     81
+    ],
+    "leftArm": [
+     186,
+     123,
+     81
+    ],
+    "leftLeg": [
+     186,
+     123,
+     81
+    ]
+   },
+   "textures": [
+    "face.png",
+    "mia_body.png",
+    "mia_clothing.png",
+    "mia_composite.png",
+    "mia_hair.png"
+   ],
+   "faces": "characters/Mia/faces/<expression>/face.png + head.obj/.mtl",
+   "clothing": {
+    "shirt": {
+     "template": "../../clothing/shirt_mia.png",
+     "robloxAsset": "rbxassetid://135925767311841",
+     "size": [
+      585,
+      559
+     ]
+    },
+    "pants": {
+     "template": "../../clothing/pants_mia.png",
+     "robloxAsset": "rbxassetid://108300612488196",
+     "size": [
+      585,
+      559
+     ]
+    }
+   },
+   "hair": [
+    {
+     "name": "MiaHair",
+     "sourceAssetId": 376527350,
+     "item": "accessories/hair_mia"
+    }
+   ],
+   "source": {
+    "rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
+    "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
+    "robloxMade": "rig, meshes and hair yes; clothing templates and faces are ours",
+    "built": "tools/build_characters_local.py"
+   }
+  },
+  {
+   "name": "Noob",
+   "path": "characters/Noob/Noob.obj",
+   "rig": "characters/Noob/rig.json",
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -0.604
+    ],
+    "max": [
+     2.0,
+     5.106,
+     0.604
+    ],
+    "size": [
+     4.0,
+     5.106,
+     1.208
+    ]
+   },
+   "pivot": "feet centre on the ground (origin), facing -Z",
+   "bodyColors": {
+    "rightArm": [
+     245,
+     205,
+     48
+    ],
+    "head": [
+     245,
+     205,
+     48
+    ],
+    "rightLeg": [
+     164,
+     189,
+     71
+    ],
+    "torso": [
+     13,
+     105,
+     172
+    ],
+    "leftArm": [
+     245,
+     205,
+     48
+    ],
+    "leftLeg": [
+     164,
+     189,
+     71
+    ]
+   },
+   "textures": [
+    "face.png",
+    "noob_body.png",
+    "noob_clothing.png",
+    "noob_composite.png"
+   ],
+   "faces": "characters/Noob/faces/<expression>/face.png + head.obj/.mtl",
+   "clothing": {},
+   "hair": [],
+   "source": {
+    "rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
+    "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
+    "robloxMade": "rig, meshes and hair yes; clothing templates and faces are ours",
+    "built": "tools/build_characters_local.py"
+   }
+  }
+ ],
+ "faces": {
+  "master": "faces/<expression>.png (1024x1024, transparent)",
+  "layers": "faces/layers/eyes|mouth/<expression>.png",
+  "sheet": "faces/face_sheet.png",
+  "eye_centres_uv": [
+   [
+    0.41203,
+    0.72078
+   ],
+   [
+    0.59578,
+    0.72078
+   ]
+  ],
+  "count": 32,
+  "list": [
+   {
+    "name": "neutral",
+    "group": "expression",
+    "aliases": [],
+    "description": "Default eyes, flat mouth.",
+    "robloxDecalAsset": "rbxassetid://107074341985229"
+   },
+   {
+    "name": "happy",
+    "group": "expression",
+    "aliases": [
+     "smile"
+    ],
+    "description": "Vector redraw of Roblox's default Smile face (asset 144075659).",
+    "robloxDecalAsset": "rbxassetid://125176076893296"
+   },
+   {
+    "name": "surprised",
+    "group": "expression",
+    "aliases": [],
+    "description": "Bigger eyes, raised brows, small O mouth.",
+    "robloxDecalAsset": "rbxassetid://135756012553494"
+   },
+   {
+    "name": "angry",
+    "group": "expression",
+    "aliases": [],
+    "description": "Slanted brows, lidded eyes, frown.",
+    "robloxDecalAsset": "rbxassetid://114290998337077"
+   },
+   {
+    "name": "sad",
+    "group": "expression",
+    "aliases": [],
+    "description": "Worried brows, frown.",
+    "robloxDecalAsset": "rbxassetid://134026942648535"
+   },
+   {
+    "name": "laugh",
+    "group": "expression",
+    "aliases": [
+     "laughing"
+    ],
+    "description": "Closed happy eyes, wide open mouth with tongue.",
+    "robloxDecalAsset": "rbxassetid://107174762907936"
+   },
+   {
+    "name": "smug",
+    "group": "expression",
+    "aliases": [],
+    "description": "Half-lidded eyes, one raised brow, sideways smirk.",
+    "robloxDecalAsset": "rbxassetid://102596987408059"
+   },
+   {
+    "name": "evil_grin",
+    "group": "expression",
+    "aliases": [],
+    "description": "Angry brows, narrowed eyes, big toothy Epic-style grin.",
+    "robloxDecalAsset": "rbxassetid://101671834031550"
+   },
+   {
+    "name": "scheming",
+    "group": "expression",
+    "aliases": [],
+    "description": "Narrow sideways-lidded eyes, low brows, long sly grin.",
+    "robloxDecalAsset": "rbxassetid://104570663825938"
+   },
+   {
+    "name": "scared",
+    "group": "expression",
+    "aliases": [
+     "panic"
+    ],
+    "description": "Worried brows, big eyes with highlights, wobbly open mouth.",
+    "robloxDecalAsset": "rbxassetid://110094932699155"
+   },
+   {
+    "name": "crying",
+    "group": "expression",
+    "aliases": [],
+    "description": "Squeezed shut eyes, tear streams, wailing mouth.",
+    "robloxDecalAsset": "rbxassetid://124019527348674"
+   },
+   {
+    "name": "dizzy",
+    "group": "expression",
+    "aliases": [],
+    "description": "Spiral eyes, wavy mouth.",
+    "robloxDecalAsset": "rbxassetid://115744369289608"
+   },
+   {
+    "name": "confused",
+    "group": "expression",
+    "aliases": [],
+    "description": "One brow up, one flat, off-centre squiggle mouth.",
+    "robloxDecalAsset": "rbxassetid://139424499722437"
+   },
+   {
+    "name": "annoyed",
+    "group": "expression",
+    "aliases": [
+     "deadpan"
+    ],
+    "description": "Deadpan: flat brows, half-lidded eyes, short flat mouth.",
+    "robloxDecalAsset": "rbxassetid://84031339724280"
+   },
+   {
+    "name": "shocked",
+    "group": "expression",
+    "aliases": [],
+    "description": "White eyes with tiny pupils, high brows, gasp.",
+    "robloxDecalAsset": "rbxassetid://75855059690259"
+   },
+   {
+    "name": "determined",
+    "group": "expression",
+    "aliases": [],
+    "description": "Low slanted brows, lidded eyes, clenched teeth.",
+    "robloxDecalAsset": "rbxassetid://102817621368441"
+   },
+   {
+    "name": "wink",
+    "group": "expression",
+    "aliases": [],
+    "description": "One eye closed, classic smile.",
+    "robloxDecalAsset": "rbxassetid://94104854982458"
+   },
+   {
+    "name": "sleeping",
+    "group": "expression",
+    "aliases": [
+     "sleepy",
+     "afk"
+    ],
+    "description": "Closed relaxed eyes, small open snoring mouth.",
+    "robloxDecalAsset": "rbxassetid://91550177931058"
+   },
+   {
+    "name": "nervous",
+    "group": "expression",
+    "aliases": [
+     "nervous_sweat"
+    ],
+    "description": "Worried brows, wobbly smile, sweat drop.",
+    "robloxDecalAsset": "rbxassetid://72048266953848"
+   },
+   {
+    "name": "love",
+    "group": "expression",
+    "aliases": [
+     "heart_eyes"
+    ],
+    "description": "Heart eyes, open smile.",
+    "robloxDecalAsset": "rbxassetid://76469622883268"
+   },
+   {
+    "name": "cool",
+    "group": "expression",
+    "aliases": [
+     "sunglasses"
+    ],
+    "description": "Black sunglasses with glints, confident smirk.",
+    "robloxDecalAsset": "rbxassetid://109814399913514"
+   },
+   {
+    "name": "blink",
+    "group": "expression",
+    "aliases": [
+     "eyes_closed"
+    ],
+    "description": "Eyes closed with the classic smile; use for blinks.",
+    "robloxDecalAsset": "rbxassetid://75604803436150"
+   },
+   {
+    "name": "suspicious",
+    "group": "expression",
+    "aliases": [],
+    "description": "One narrowed eye with a low brow, one raised brow, small side mouth.",
+    "robloxDecalAsset": "rbxassetid://100499364182396"
+   },
+   {
+    "name": "shouting",
+    "group": "expression",
+    "aliases": [
+     "yelling"
+    ],
+    "description": "Angry brows, big open yelling mouth with teeth and tongue.",
+    "robloxDecalAsset": "rbxassetid://136533257390042"
+   },
+   {
+    "name": "knocked_out",
+    "group": "expression",
+    "aliases": [
+     "ko",
+     "dead"
+    ],
+    "description": "X eyes, small open mouth with tongue out.",
+    "robloxDecalAsset": "rbxassetid://100228519415884"
+   },
+   {
+    "name": "disgusted",
+    "group": "expression",
+    "aliases": [],
+    "description": "One squeezed eye, one lidded eye, wavy frown with tongue out.",
+    "robloxDecalAsset": "rbxassetid://94424233970432"
+   },
+   {
+    "name": "talking",
+    "group": "expression",
+    "aliases": [],
+    "description": "Default eyes, medium open mouth.",
+    "robloxDecalAsset": "rbxassetid://109247875528867"
+   },
+   {
+    "name": "mouth_closed",
+    "group": "lipsync",
+    "aliases": [],
+    "description": "Lip-sync: closed (M, B, P) - soft smile line.",
+    "robloxDecalAsset": "rbxassetid://138009653929597"
+   },
+   {
+    "name": "mouth_small",
+    "group": "lipsync",
+    "aliases": [],
+    "description": "Lip-sync: small open (most consonants).",
+    "robloxDecalAsset": "rbxassetid://81074431659462"
+   },
+   {
+    "name": "mouth_wide",
+    "group": "lipsync",
+    "aliases": [],
+    "description": "Lip-sync: wide open (A, I).",
+    "robloxDecalAsset": "rbxassetid://138304902096119"
+   },
+   {
+    "name": "mouth_o",
+    "group": "lipsync",
+    "aliases": [],
+    "description": "Lip-sync: rounded O (O, U, W).",
+    "robloxDecalAsset": "rbxassetid://99731717304755"
+   },
+   {
+    "name": "mouth_e",
+    "group": "lipsync",
+    "aliases": [],
+    "description": "Lip-sync: wide smile showing teeth (E, EE).",
+    "robloxDecalAsset": "rbxassetid://90496259127215"
+   }
+  ]
+ },
+ "accessories": [
+  {
+   "name": "admin_badge_halo",
+   "path": "accessories/admin_badge_halo/admin_badge_halo.obj",
+   "description": "Glowing gold halo ring (Neon) with a floating 'ADMIN' badge plate above it. Objects: Halo, Badge, Badge_AdminText (front) and Badge_AdminText_2 (back), BadgeStem.",
+   "objects": [
+    "Halo",
+    "Badge",
+    "Badge_AdminText",
+    "Badge_AdminText_2",
+    "BadgeStem"
+   ],
+   "dimensions": {
+    "min": [
+     -0.85,
+     0.45,
+     -0.725
+    ],
+    "max": [
+     0.85,
+     1.52,
+     0.725
+    ],
+    "size": [
+     1.7,
+     1.07,
+     1.45
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://118521769225336"
+    ]
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "beanie",
+   "path": "accessories/beanie/beanie.obj",
+   "description": "Roblox 'Orange Beanie with Black Hair' (free, Roblox-made).",
+   "objects": [
+    "Beanie"
+   ],
+   "dimensions": {
+    "min": [
+     -0.853,
+     -2.551,
+     -0.794
+    ],
+    "max": [
+     0.853,
+     0.551,
+     1.194
+    ],
+    "size": [
+     1.706,
+     3.101,
+     1.988
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 1103003368,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "cap",
+   "path": "accessories/cap/cap.obj",
+   "description": "Red baseball cap, no logo (original: CSG half-sphere crown, round brim at the front, button).",
+   "objects": [
+    "Brim",
+    "Button",
+    "Dome"
+   ],
+   "dimensions": {
+    "min": [
+     -0.67,
+     -0.115,
+     -1.076
+    ],
+    "max": [
+     0.67,
+     0.53,
+     0.69
+    ],
+    "size": [
+     1.34,
+     0.645,
+     1.765
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "crown_admin",
+   "path": "accessories/crown_admin/crown_admin.obj",
+   "description": "Gold admin crown with five points and gems (original, CSG band). Sits on the head top.",
+   "objects": [
+    "Band",
+    "Point0R",
+    "Point0L",
+    "Tip0",
+    "Gem0",
+    "Point1R",
+    "Point1L",
+    "Tip1",
+    "Gem1",
+    "Point2R",
+    "Point2L",
+    "Tip2",
+    "Gem2",
+    "Point3R",
+    "Point3L",
+    "Tip3",
+    "Gem3",
+    "Point4R",
+    "Point4L",
+    "Tip4",
+    "Gem4"
+   ],
+   "dimensions": {
+    "min": [
+     -0.727,
+     -0.07,
+     -0.76
+    ],
+    "max": [
+     0.727,
+     0.785,
+     0.68
+    ],
+    "size": [
+     1.453,
+     0.855,
+     1.44
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "hair_leo",
+   "path": "accessories/hair_leo/hair_leo.obj",
+   "description": "Leo's hair: Roblox 'Pal Hair' (free, Roblox-made) with its original dark amber texture. characters/Leo uses a copy brightened toward ginger.",
+   "objects": [
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -0.9,
+     -0.931,
+     -1.019
+    ],
+    "max": [
+     0.86,
+     0.394,
+     0.929
+    ],
+    "size": [
+     1.76,
+     1.325,
+     1.948
+    ]
+   },
+   "pivot": {
+    "kind": "HairAttachment",
+    "attachment": "HairAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 63690008,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HairAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "hair_max",
+   "path": "accessories/hair_max/hair_max.obj",
+   "description": "Max's hair: Roblox 'Brown Hair' (free, Roblox-made), short dark brown.",
+   "objects": [
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -0.75,
+     -0.918,
+     -0.855
+    ],
+    "max": [
+     0.745,
+     0.443,
+     0.794
+    ],
+    "size": [
+     1.495,
+     1.361,
+     1.649
+    ]
+   },
+   "pivot": {
+    "kind": "HairAttachment",
+    "attachment": "HairAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 62234425,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HairAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "hair_mia",
+   "path": "accessories/hair_mia/hair_mia.obj",
+   "description": "Mia's hair: Roblox 'Black Ponytail' (free, Roblox-made).",
+   "objects": [
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -0.786,
+     -1.61,
+     -0.757
+    ],
+    "max": [
+     0.917,
+     0.261,
+     0.843
+    ],
+    "size": [
+     1.703,
+     1.871,
+     1.6
+    ]
+   },
+   "pivot": {
+    "kind": "HairAttachment",
+    "attachment": "HairAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 376527350,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HairAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "headphones",
+   "path": "accessories/headphones/headphones.obj",
+   "description": "Over-ear headphones: dark band (CSG arc) and teal cups (original).",
+   "objects": [
+    "Headband",
+    "CupL",
+    "PadL",
+    "CupR",
+    "PadR"
+   ],
+   "dimensions": {
+    "min": [
+     -0.86,
+     -0.91,
+     -0.31
+    ],
+    "max": [
+     0.86,
+     0.64,
+     0.31
+    ],
+    "size": [
+     1.72,
+     1.55,
+     0.62
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "long_hair",
+   "path": "accessories/long_hair/long_hair.obj",
+   "description": "Roblox 'Straight Blonde Hair' (free, Roblox-made).",
+   "objects": [
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -0.826,
+     -2.22,
+     -0.806
+    ],
+    "max": [
+     0.826,
+     0.42,
+     0.846
+    ],
+    "size": [
+     1.652,
+     2.64,
+     1.652
+    ]
+   },
+   "pivot": {
+    "kind": "HairAttachment",
+    "attachment": "HairAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 376526888,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HairAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "spiky_hair",
+   "path": "accessories/spiky_hair/spiky_hair.obj",
+   "description": "Roblox 'Blonde Spiked Hair' (free, Roblox-made).",
+   "objects": [
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -0.688,
+     -0.87,
+     -0.872
+    ],
+    "max": [
+     0.688,
+     0.41,
+     0.811
+    ],
+    "size": [
+     1.376,
+     1.28,
+     1.683
+    ]
+   },
+   "pivot": {
+    "kind": "HairAttachment",
+    "attachment": "HairAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 376524487,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HairAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "top_hat",
+   "path": "accessories/top_hat/top_hat.obj",
+   "description": "Black top hat with a red band (original).",
+   "objects": [
+    "Brim",
+    "Crown",
+    "Band"
+   ],
+   "dimensions": {
+    "min": [
+     -0.75,
+     -0.015,
+     -0.75
+    ],
+    "max": [
+     0.75,
+     1.005,
+     0.75
+    ],
+    "size": [
+     1.5,
+     1.02,
+     1.5
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  }
+ ],
+ "props": [
+  {
+   "name": "bomb",
+   "path": "props/bomb/bomb.obj",
+   "description": "Cartoon bomb with fuse and spark (original). Pivot bottom centre.",
+   "objects": [
+    "Body",
+    "Cap",
+    "Fuse1",
+    "Fuse2",
+    "Fuse3",
+    "Spark",
+    "SparkX",
+    "SparkY",
+    "Shine"
+   ],
+   "dimensions": {
+    "min": [
+     -1.0,
+     0.0,
+     -1.0
+    ],
+    "max": [
+     1.333,
+     2.913,
+     1.0
+    ],
+    "size": [
+     2.333,
+     2.913,
+     2.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "coin_pile",
+   "path": "props/coin_pile/coin_pile.obj",
+   "description": "Heap of 36 gold coins (original). Pivot bottom centre.",
+   "objects": [
+    "Coin1",
+    "Coin2",
+    "Coin3",
+    "Coin4",
+    "Coin5",
+    "Coin6",
+    "Coin7",
+    "Coin8",
+    "Coin9",
+    "Coin10",
+    "Coin11",
+    "Coin12",
+    "Coin13",
+    "Coin14",
+    "Coin15",
+    "Coin16",
+    "Coin17",
+    "Coin18",
+    "Coin19",
+    "Coin20",
+    "Coin21",
+    "Coin22",
+    "Coin23",
+    "Coin24",
+    "Coin25",
+    "Coin26",
+    "Coin27",
+    "Coin28",
+    "Coin29",
+    "Coin30",
+    "Coin31",
+    "Coin32",
+    "Coin33",
+    "Coin34",
+    "Coin35",
+    "CoinTop"
+   ],
+   "dimensions": {
+    "min": [
+     -1.8,
+     -0.08,
+     -2.662
+    ],
+    "max": [
+     2.668,
+     1.417,
+     1.734
+    ],
+    "size": [
+     4.468,
+     1.497,
+     4.396
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "free_coins_button",
+   "path": "props/free_coins_button/free_coins_button.obj",
+   "description": "Big red 'FREE COINS' button on a base with a sign behind it (original). Pivot bottom centre.",
+   "objects": [
+    "Base",
+    "BaseTrim",
+    "Button",
+    "ButtonTop",
+    "PostL",
+    "PostR",
+    "Sign",
+    "Sign_SignText"
+   ],
+   "dimensions": {
+    "min": [
+     -1.9,
+     0.0,
+     -1.65
+    ],
+    "max": [
+     1.9,
+     4.26,
+     1.65
+    ],
+    "size": [
+     3.8,
+     4.26,
+     3.3
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://109168806742399"
+    ]
+   }
+  },
+  {
+   "name": "gift_box",
+   "path": "props/gift_box/gift_box.obj",
+   "description": "Red gift box with gold ribbon and bow (original). Pivot bottom centre.",
+   "objects": [
+    "Box",
+    "Lid",
+    "RibbonX",
+    "RibbonZ",
+    "RibbonTopX",
+    "RibbonTopZ",
+    "BowL",
+    "BowR",
+    "Knot"
+   ],
+   "dimensions": {
+    "min": [
+     -1.1,
+     0.0,
+     -1.1
+    ],
+    "max": [
+     1.1,
+     2.43,
+     1.1
+    ],
+    "size": [
+     2.2,
+     2.43,
+     2.2
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "gold_coin",
+   "path": "props/gold_coin/gold_coin.obj",
+   "description": "Gold coin with raised rim and centre (original). Pivot at its centre, face toward -Z.",
+   "objects": [
+    "Rim",
+    "Face",
+    "Emblem"
+   ],
+   "dimensions": {
+    "min": [
+     -0.7,
+     -0.7,
+     -0.12
+    ],
+    "max": [
+     0.7,
+     0.7,
+     0.12
+    ],
+    "size": [
+     1.4,
+     1.4,
+     0.24
+    ]
+   },
+   "pivot": {
+    "kind": "grip",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  },
+  {
+   "name": "phone",
+   "path": "props/phone/phone.obj",
+   "description": "Smartphone with a glowing screen facing +Z (toward the holder). Pivot at the grip.",
+   "objects": [
+    "Body",
+    "Screen",
+    "Camera"
+   ],
+   "dimensions": {
+    "min": [
+     -0.45,
+     -0.4,
+     -0.085
+    ],
+    "max": [
+     0.45,
+     1.3,
+     0.075
+    ],
+    "size": [
+     0.9,
+     1.7,
+     0.16
+    ]
+   },
+   "pivot": {
+    "kind": "grip",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  },
+  {
+   "name": "rocket_launcher",
+   "path": "props/rocket_launcher/rocket_launcher.obj",
+   "description": "Cartoon rocket launcher: olive tube, red-nosed rocket, pistol grip (original, no gore). Pivot at the grip, tube along -Z.",
+   "objects": [
+    "Tube",
+    "FrontRing",
+    "BackRing",
+    "RocketNose",
+    "RocketBody",
+    "Grip",
+    "Trigger",
+    "FrontGrip",
+    "Sight",
+    "SightGlass",
+    "Stripe"
+   ],
+   "dimensions": {
+    "min": [
+     -0.475,
+     -0.383,
+     -2.83
+    ],
+    "max": [
+     0.475,
+     1.27,
+     1.66
+    ],
+    "size": [
+     0.95,
+     1.653,
+     4.49
+    ]
+   },
+   "pivot": {
+    "kind": "grip",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  },
+  {
+   "name": "sword",
+   "path": "props/sword/sword.obj",
+   "description": "Classic-style sword: silver blade, gold guard and pommel, leather grip (original). Pivot at the grip, blade along +Y.",
+   "objects": [
+    "Grip",
+    "Pommel",
+    "Guard",
+    "Blade",
+    "TipR",
+    "TipL",
+    "Fuller"
+   ],
+   "dimensions": {
+    "min": [
+     -0.55,
+     -0.6,
+     -0.15
+    ],
+    "max": [
+     0.55,
+     3.65,
+     0.15
+    ],
+    "size": [
+     1.1,
+     4.25,
+     0.3
+    ]
+   },
+   "pivot": {
+    "kind": "grip",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  },
+  {
+   "name": "tablet",
+   "path": "props/tablet/tablet.obj",
+   "description": "Tablet (landscape) with a glowing screen facing +Z. Pivot at the grip (bottom edge).",
+   "objects": [
+    "Body",
+    "Screen",
+    "ScreenGlow"
+   ],
+   "dimensions": {
+    "min": [
+     -0.95,
+     -0.125,
+     -0.05
+    ],
+    "max": [
+     0.95,
+     1.225,
+     0.071
+    ],
+    "size": [
+     1.9,
+     1.35,
+     0.121
+    ]
+   },
+   "pivot": {
+    "kind": "grip",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  },
+  {
+   "name": "trophy",
+   "path": "props/trophy/trophy.obj",
+   "description": "Gold trophy cup on a wooden base (original). Pivot at the stem (grip); base bottom at y = -0.845.",
+   "objects": [
+    "Base",
+    "Plinth",
+    "Stem",
+    "Knot",
+    "Cup",
+    "CupBottom",
+    "HandleL",
+    "HandleR"
+   ],
+   "dimensions": {
+    "min": [
+     -0.86,
+     -0.845,
+     -0.55
+    ],
+    "max": [
+     0.86,
+     1.145,
+     0.55
+    ],
+    "size": [
+     1.72,
+     1.99,
+     1.1
+    ]
+   },
+   "pivot": {
+    "kind": "grip",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   },
+   "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  }
+ ],
+ "map": [
+  {
+   "name": "ball",
+   "path": "map/ball/ball.obj",
+   "description": "4-stud ball.",
+   "objects": [
+    "Ball"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     4.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     4.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "baseplate_tile_grid",
+   "path": "map/baseplate_tile_grid/baseplate_tile_grid.obj",
+   "description": "16x1x16 modern baseplate tile (dark grey + Roblox's grid texture 6372755229 at 0.8 transparency).",
+   "objects": [
+    "Tile",
+    "Tile_Grid"
+   ],
+   "dimensions": {
+    "min": [
+     -8.0,
+     0.0,
+     -8.0
+    ],
+    "max": [
+     8.0,
+     1.005,
+     8.0
+    ],
+    "size": [
+     16.0,
+     1.005,
+     16.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://6372755229"
+    ]
+   }
+  },
+  {
+   "name": "baseplate_tile_studs",
+   "path": "map/baseplate_tile_studs/baseplate_tile_studs.obj",
+   "description": "16x1x16 classic studded baseplate tile (Dark green, studs on top, inlets below).",
+   "objects": [
+    "Tile"
+   ],
+   "dimensions": {
+    "min": [
+     -8.0,
+     0.0,
+     -8.0
+    ],
+    "max": [
+     8.0,
+     1.0,
+     8.0
+    ],
+    "size": [
+     16.0,
+     1.0,
+     16.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "checkpoint",
+   "path": "map/checkpoint/checkpoint.obj",
+   "description": "6x1x6 green checkpoint SpawnLocation with a flag pole and green flag.",
+   "objects": [
+    "Pad",
+    "Pad_Decal",
+    "Pole",
+    "Flag",
+    "Ball"
+   ],
+   "dimensions": {
+    "min": [
+     -3.0,
+     0.0,
+     -3.0
+    ],
+    "max": [
+     3.0,
+     8.35,
+     3.0
+    ],
+    "size": [
+     6.0,
+     8.35,
+     6.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxasset://textures/SpawnLocation.png"
+    ]
+   }
+  },
+  {
+   "name": "cylinder",
+   "path": "map/cylinder/cylinder.obj",
+   "description": "Upright cylinder platform, 4 wide, 2 tall.",
+   "objects": [
+    "Cylinder"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     2.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     2.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "finish_pad",
+   "path": "map/finish_pad/finish_pad.obj",
+   "description": "8x1x8 white pad with a black/white checker decal on top.",
+   "objects": [
+    "Pad",
+    "Pad_Checker"
+   ],
+   "dimensions": {
+    "min": [
+     -4.0,
+     0.0,
+     -4.0
+    ],
+    "max": [
+     4.0,
+     1.005,
+     4.0
+    ],
+    "size": [
+     8.0,
+     1.005,
+     8.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://107112331396369"
+    ]
+   }
+  },
+  {
+   "name": "island_large",
+   "path": "map/island_large/island_large.obj",
+   "description": "Floating island, 20x20 grass top with dirt and stepped rock underside (Grass/Ground/Slate parts, flat colours). Pivot top centre (walkable surface).",
+   "objects": [
+    "Grass",
+    "Dirt",
+    "Rock1",
+    "Rock2",
+    "Rock3",
+    "Rock4"
+   ],
+   "dimensions": {
+    "min": [
+     -10.0,
+     -8.5,
+     -10.0
+    ],
+    "max": [
+     10.0,
+     0.0,
+     10.0
+    ],
+    "size": [
+     20.0,
+     8.5,
+     20.0
+    ]
+   },
+   "pivot": {
+    "kind": "top_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "island_small",
+   "path": "map/island_small/island_small.obj",
+   "description": "Floating island, 12x12 grass top with dirt and stepped rock underside (Grass/Ground/Slate parts, flat colours). Pivot top centre (walkable surface).",
+   "objects": [
+    "Grass",
+    "Dirt",
+    "Rock1",
+    "Rock2",
+    "Rock3"
+   ],
+   "dimensions": {
+    "min": [
+     -6.0,
+     -7.0,
+     -6.0
+    ],
+    "max": [
+     6.0,
+     0.0,
+     6.0
+    ],
+    "size": [
+     12.0,
+     7.0,
+     12.0
+    ]
+   },
+   "pivot": {
+    "kind": "top_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "kill_brick",
+   "path": "map/kill_brick/kill_brick.obj",
+   "description": "4x1x4 Neon red kill brick.",
+   "objects": [
+    "KillBrick"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "ladder",
+   "path": "map/ladder/ladder.obj",
+   "description": "12-stud wooden ladder (two rails, 11 rungs) with Roblox's Wood material texture.",
+   "objects": [
+    "RailL",
+    "RailR",
+    "Rung1",
+    "Rung2",
+    "Rung3",
+    "Rung4",
+    "Rung5",
+    "Rung6",
+    "Rung7",
+    "Rung8",
+    "Rung9",
+    "Rung10",
+    "Rung11"
+   ],
+   "dimensions": {
+    "min": [
+     -1.1,
+     0.0,
+     -0.15
+    ],
+    "max": [
+     1.1,
+     12.0,
+     0.15
+    ],
+    "size": [
+     2.2,
+     12.0,
+     0.3
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "lava_strip",
+   "path": "map/lava_strip/lava_strip.obj",
+   "description": "8x1x2 Neon lava strip (orange-red, emissive).",
+   "objects": [
+    "Lava"
+   ],
+   "dimensions": {
+    "min": [
+     -4.0,
+     0.0,
+     -1.0
+    ],
+    "max": [
+     4.0,
+     1.0,
+     1.0
+    ],
+    "size": [
+     8.0,
+     1.0,
+     2.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "leaderboard_board",
+   "path": "map/leaderboard_board/leaderboard_board.obj",
+   "description": "Blank leaderboard: 8x5 board on posts. Board_Face (UV 0..1) is blank for drawing.",
+   "objects": [
+    "Board",
+    "Board_Face",
+    "PostL",
+    "PostR"
+   ],
+   "dimensions": {
+    "min": [
+     -4.0,
+     0.0,
+     -0.205
+    ],
+    "max": [
+     4.0,
+     9.0,
+     0.3
+    ],
+    "size": [
+     8.0,
+     9.0,
+     0.505
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://122821788625923"
+    ]
+   }
+  },
+  {
+   "name": "lobby_platform",
+   "path": "map/lobby_platform/lobby_platform.obj",
+   "description": "40x2x40 studded lobby platform with a darker trim.",
+   "objects": [
+    "Floor",
+    "TrimBack",
+    "TrimFront",
+    "TrimRight",
+    "TrimLeft"
+   ],
+   "dimensions": {
+    "min": [
+     -21.0,
+     0.0,
+     -21.0
+    ],
+    "max": [
+     21.0,
+     2.2,
+     21.0
+    ],
+    "size": [
+     42.0,
+     2.2,
+     42.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_blue_smooth",
+   "path": "map/obby_block_blue_smooth/obby_block_blue_smooth.obj",
+   "description": "4x1x4 obby block, blue, SmoothPlastic.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_blue_studs",
+   "path": "map/obby_block_blue_studs/obby_block_blue_studs.obj",
+   "description": "4x1x4 obby block, blue, Plastic with studs on top and inlets below.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_green_smooth",
+   "path": "map/obby_block_green_smooth/obby_block_green_smooth.obj",
+   "description": "4x1x4 obby block, green, SmoothPlastic.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_green_studs",
+   "path": "map/obby_block_green_studs/obby_block_green_studs.obj",
+   "description": "4x1x4 obby block, green, Plastic with studs on top and inlets below.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_orange_smooth",
+   "path": "map/obby_block_orange_smooth/obby_block_orange_smooth.obj",
+   "description": "4x1x4 obby block, orange, SmoothPlastic.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_orange_studs",
+   "path": "map/obby_block_orange_studs/obby_block_orange_studs.obj",
+   "description": "4x1x4 obby block, orange, Plastic with studs on top and inlets below.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_purple_smooth",
+   "path": "map/obby_block_purple_smooth/obby_block_purple_smooth.obj",
+   "description": "4x1x4 obby block, purple, SmoothPlastic.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_purple_studs",
+   "path": "map/obby_block_purple_studs/obby_block_purple_studs.obj",
+   "description": "4x1x4 obby block, purple, Plastic with studs on top and inlets below.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_red_smooth",
+   "path": "map/obby_block_red_smooth/obby_block_red_smooth.obj",
+   "description": "4x1x4 obby block, red, SmoothPlastic.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_red_studs",
+   "path": "map/obby_block_red_studs/obby_block_red_studs.obj",
+   "description": "4x1x4 obby block, red, Plastic with studs on top and inlets below.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_yellow_smooth",
+   "path": "map/obby_block_yellow_smooth/obby_block_yellow_smooth.obj",
+   "description": "4x1x4 obby block, yellow, SmoothPlastic.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "obby_block_yellow_studs",
+   "path": "map/obby_block_yellow_studs/obby_block_yellow_studs.obj",
+   "description": "4x1x4 obby block, yellow, Plastic with studs on top and inlets below.",
+   "objects": [
+    "Block"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "round_timer_board",
+   "path": "map/round_timer_board/round_timer_board.obj",
+   "description": "Blank round-timer board: 6x3.4 on posts. Board_Face (UV 0..1) is blank for drawing.",
+   "objects": [
+    "Board",
+    "Board_Face",
+    "PostL",
+    "PostR"
+   ],
+   "dimensions": {
+    "min": [
+     -3.0,
+     0.0,
+     -0.205
+    ],
+    "max": [
+     3.0,
+     7.4,
+     0.3
+    ],
+    "size": [
+     6.0,
+     7.4,
+     0.505
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://113095170950157"
+    ]
+   }
+  },
+  {
+   "name": "spawn_location",
+   "path": "map/spawn_location/spawn_location.obj",
+   "description": "12x1x12 SpawnLocation with Roblox's spawn decal.",
+   "objects": [
+    "SpawnLocation",
+    "SpawnLocation_Decal"
+   ],
+   "dimensions": {
+    "min": [
+     -6.0,
+     0.0,
+     -6.0
+    ],
+    "max": [
+     6.0,
+     1.005,
+     6.0
+    ],
+    "size": [
+     12.0,
+     1.005,
+     12.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxasset://textures/SpawnLocation.png"
+    ]
+   }
+  },
+  {
+   "name": "stage_sign",
+   "path": "map/stage_sign/stage_sign.obj",
+   "description": "Blank stage sign: 6x2 board on two posts. Board_Face is a separate quad with UVs 0..1 for your text.",
+   "objects": [
+    "Board",
+    "Board_Face",
+    "PostL",
+    "PostR"
+   ],
+   "dimensions": {
+    "min": [
+     -3.0,
+     0.0,
+     -0.155
+    ],
+    "max": [
+     3.0,
+     5.2,
+     0.2
+    ],
+    "size": [
+     6.0,
+     5.2,
+     0.355
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://106364404101389"
+    ]
+   }
+  },
+  {
+   "name": "tree_blocky",
+   "path": "map/tree_blocky/tree_blocky.obj",
+   "description": "Blocky tree: square trunk and three stacked studded leaf blocks.",
+   "objects": [
+    "Trunk",
+    "Leaves1",
+    "Leaves2",
+    "Leaves3"
+   ],
+   "dimensions": {
+    "min": [
+     -3.0,
+     0.0,
+     -3.0
+    ],
+    "max": [
+     3.0,
+     12.0,
+     3.0
+    ],
+    "size": [
+     6.0,
+     12.0,
+     6.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "tree_round",
+   "path": "map/tree_round/tree_round.obj",
+   "description": "Classic Roblox tree: cylinder trunk and ball of leaves.",
+   "objects": [
+    "Trunk",
+    "Leaves"
+   ],
+   "dimensions": {
+    "min": [
+     -3.5,
+     0.0,
+     -3.5
+    ],
+    "max": [
+     3.5,
+     11.7,
+     3.5
+    ],
+    "size": [
+     7.0,
+     11.7,
+     7.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "truss",
+   "path": "map/truss/truss.obj",
+   "description": "2x16x2 TrussPart (climbable).",
+   "objects": [
+    "Truss"
+   ],
+   "dimensions": {
+    "min": [
+     -1.0,
+     0.0,
+     -1.0
+    ],
+    "max": [
+     1.0,
+     16.0,
+     1.0
+    ],
+    "size": [
+     2.0,
+     16.0,
+     2.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "tycoon_conveyor",
+   "path": "map/tycoon_conveyor/tycoon_conveyor.obj",
+   "description": "3x16 conveyor belt with arrow texture (points along the belt) and yellow rails.",
+   "objects": [
+    "Belt",
+    "Belt_Arrows",
+    "RailL",
+    "LegFrontL",
+    "LegMidL",
+    "LegBackL",
+    "RailR",
+    "LegFrontR",
+    "LegMidR",
+    "LegBackR"
+   ],
+   "dimensions": {
+    "min": [
+     -1.8,
+     0.0,
+     -8.0
+    ],
+    "max": [
+     1.8,
+     1.3,
+     8.0
+    ],
+    "size": [
+     3.6,
+     1.3,
+     16.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://92764495662346"
+    ]
+   }
+  },
+  {
+   "name": "tycoon_dropper",
+   "path": "map/tycoon_dropper/tycoon_dropper.obj",
+   "description": "Tycoon dropper: post, arm and dropper box with funnel and red light. Drops fall from ~y 4.7.",
+   "objects": [
+    "Post",
+    "Arm",
+    "Box",
+    "Funnel",
+    "Light",
+    "Stripe"
+   ],
+   "dimensions": {
+    "min": [
+     -1.23,
+     0.0,
+     -1.23
+    ],
+    "max": [
+     1.23,
+     8.0,
+     2.5
+    ],
+    "size": [
+     2.46,
+     8.0,
+     3.73
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "tycoon_ore",
+   "path": "map/tycoon_ore/tycoon_ore.obj",
+   "description": "1x1x1 tycoon drop / ore block (gold).",
+   "objects": [
+    "Ore"
+   ],
+   "dimensions": {
+    "min": [
+     -0.5,
+     0.0,
+     -0.5
+    ],
+    "max": [
+     0.5,
+     1.0,
+     0.5
+    ],
+    "size": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "wedge",
+   "path": "map/wedge/wedge.obj",
+   "description": "4x2x4 WedgePart ramp (slope faces -Z).",
+   "objects": [
+    "Wedge"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     2.0,
+     2.0
+    ],
+    "size": [
+     4.0,
+     2.0,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": null
+   }
+  },
+  {
+   "name": "winners_podium",
+   "path": "map/winners_podium/winners_podium.obj",
+   "description": "Winner's podium: 1st (gold, 3 tall, centre), 2nd (silver, 2 tall, +X), 3rd (bronze, 1.4 tall, -X) with number decals on the -Z faces.",
+   "objects": [
+    "First",
+    "First_Number",
+    "Second",
+    "Second_Number",
+    "Third",
+    "Third_Number"
+   ],
+   "dimensions": {
+    "min": [
+     -6.0,
+     0.0,
+     -2.005
+    ],
+    "max": [
+     6.0,
+     3.0,
+     2.0
+    ],
+    "size": [
+     12.0,
+     3.0,
+     4.005
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre",
+    "attachment": null,
+    "attachTo": null
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, built from Parts/CSG in Studio for this pack",
+    "decalTextures": [
+     "rbxassetid://109598785313208",
+     "rbxassetid://117125449913948",
+     "rbxassetid://73841515972004"
+    ]
+   }
+  }
+ ],
+ "animations": "animations/index.json",
+ "lighting": "lighting.json",
+ "clothing": [
+  {
+   "path": "clothing/pants_leo.png",
+   "robloxImageAsset": "rbxassetid://93353925862639",
+   "size": [
+    585,
+    559
+   ],
+   "type": "pants"
+  },
+  {
+   "path": "clothing/pants_max.png",
+   "robloxImageAsset": "rbxassetid://77496743302839",
+   "size": [
+    585,
+    559
+   ],
+   "type": "pants"
+  },
+  {
+   "path": "clothing/pants_mia.png",
+   "robloxImageAsset": "rbxassetid://108300612488196",
+   "size": [
+    585,
+    559
+   ],
+   "type": "pants"
+  },
+  {
+   "path": "clothing/shirt_leo.png",
+   "robloxImageAsset": "rbxassetid://121525159603968",
+   "size": [
+    585,
+    559
+   ],
+   "type": "shirt"
+  },
+  {
+   "path": "clothing/shirt_max.png",
+   "robloxImageAsset": "rbxassetid://80401978037462",
+   "size": [
+    585,
+    559
+   ],
+   "type": "shirt"
+  },
+  {
+   "path": "clothing/shirt_mia.png",
+   "robloxImageAsset": "rbxassetid://135925767311841",
+   "size": [
+    585,
+    559
+   ],
+   "type": "shirt"
+  }
+ ],
+ "decals": [
+  {
+   "path": "decals/admin_badge.png",
+   "robloxImageAsset": "rbxassetid://118521769225336"
+  },
+  {
+   "path": "decals/board_blank.png",
+   "robloxImageAsset": "rbxassetid://122821788625923"
+  },
+  {
+   "path": "decals/conveyor_arrows.png",
+   "robloxImageAsset": "rbxassetid://92764495662346"
+  },
+  {
+   "path": "decals/finish_checker.png",
+   "robloxImageAsset": "rbxassetid://107112331396369"
+  },
+  {
+   "path": "decals/free_coins_sign.png",
+   "robloxImageAsset": "rbxassetid://109168806742399"
+  },
+  {
+   "path": "decals/podium_1.png",
+   "robloxImageAsset": "rbxassetid://73841515972004"
+  },
+  {
+   "path": "decals/podium_2.png",
+   "robloxImageAsset": "rbxassetid://109598785313208"
+  },
+  {
+   "path": "decals/podium_3.png",
+   "robloxImageAsset": "rbxassetid://117125449913948"
+  },
+  {
+   "path": "decals/sign_blank.png",
+   "robloxImageAsset": "rbxassetid://106364404101389"
+  },
+  {
+   "path": "decals/timer_blank.png",
+   "robloxImageAsset": "rbxassetid://113095170950157"
+  }
+ ],
+ "counts": {
+  "characters": 4,
+  "faces_per_character": 32,
+  "accessories": 11,
+  "props": 10,
+  "map": 36,
+  "animations": 51
+ }
+}

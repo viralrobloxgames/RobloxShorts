@@ -1,0 +1,36 @@
+# Materials for checkpoint. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl pad
+Kd 0.0000 1.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl pad_decal
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd checkpoint_pad_decal.png
+
+newmtl pole
+Kd 0.9216 0.9216 0.9412
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl flag
+Kd 0.0000 0.7843 0.2353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl ball
+Kd 1.0000 0.7843 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

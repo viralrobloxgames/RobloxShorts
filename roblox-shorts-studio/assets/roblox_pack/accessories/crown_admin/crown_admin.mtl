@@ -1,0 +1,147 @@
+# Materials for crown_admin. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl band
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl point0r
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl point0l
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tip0
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl gem0
+Kd 1.0000 0.1569 0.2745
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl point1r
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl point1l
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tip1
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl gem1
+Kd 0.1569 0.5098 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl point2r
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl point2l
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tip2
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl gem2
+Kd 0.1569 0.8627 0.4314
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl point3r
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl point3l
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tip3
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl gem3
+Kd 0.7059 0.2745 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl point4r
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl point4l
+Kd 1.0000 0.7686 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tip4
+Kd 1.0000 0.8863 0.4314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl gem4
+Kd 0.1569 0.5098 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2

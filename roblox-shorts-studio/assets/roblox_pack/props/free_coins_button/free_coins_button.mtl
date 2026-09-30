@@ -1,0 +1,57 @@
+# Materials for free_coins_button. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl base
+Kd 0.2275 0.2431 0.2824
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl basetrim
+Kd 1.0000 0.7843 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl button
+Kd 0.9098 0.1255 0.1804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl buttontop
+Kd 1.0000 0.3137 0.3529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl postl
+Kd 0.9216 0.9216 0.9412
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl postr
+Kd 0.9216 0.9216 0.9412
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl sign
+Kd 0.9098 0.1412 0.2039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl sign_signtext
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd free_coins_button_sign_signtext.png

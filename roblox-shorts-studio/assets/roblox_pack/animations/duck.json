@@ -1,0 +1,324 @@
+{
+ "name": "duck",
+ "type": "authored",
+ "category": "reaction",
+ "description": "Duck and cover: lean in, arms over the head.",
+ "source": {
+  "robloxMade": false,
+  "free": true,
+  "author": "Original pose authored for this pack (tools/make_poses.py)"
+ },
+ "loop": false,
+ "priority": "Action",
+ "length": 0.25,
+ "keyframes": [
+  {
+   "time": 0.0,
+   "name": "",
+   "poses": {
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {}
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {}
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {}
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {}
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {}
+    },
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {}
+    }
+   },
+   "markers": []
+  },
+  {
+   "time": 0.25,
+   "name": "",
+   "poses": {
+    "RootJoint": {
+     "part": "Torso",
+     "parentPart": "HumanoidRootPart",
+     "cframe": [
+      0.0,
+      0.0,
+      -0.15,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.848048,
+      -0.529919,
+      0.0,
+      0.529919,
+      0.848048
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {
+      "pitch": 32,
+      "offset": [
+       0,
+       -0.15,
+       0
+      ]
+     }
+    },
+    "Right Hip": {
+     "part": "Right Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      0.848048,
+      0.529919,
+      0.0,
+      -0.529919,
+      0.848048,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {
+      "pitch": -32
+     }
+    },
+    "Left Hip": {
+     "part": "Left Leg",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      0.848048,
+      -0.529919,
+      0.0,
+      0.529919,
+      0.848048,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {
+      "pitch": -32
+     }
+    },
+    "Right Shoulder": {
+     "part": "Right Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      -0.813798,
+      -0.563757,
+      0.141108,
+      0.5,
+      -0.802965,
+      -0.324419,
+      0.296198,
+      -0.193457,
+      0.935329
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {
+      "pitch": 150,
+      "roll": 22,
+      "yaw": 20
+     }
+    },
+    "Left Shoulder": {
+     "part": "Left Arm",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      -0.813798,
+      0.563757,
+      -0.141108,
+      -0.5,
+      -0.802965,
+      -0.324419,
+      -0.296198,
+      -0.193457,
+      0.935329
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {
+      "pitch": 150,
+      "roll": 22,
+      "yaw": 20
+     }
+    },
+    "Neck": {
+     "part": "Head",
+     "parentPart": "Torso",
+     "cframe": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.970296,
+      -0.241922,
+      0.0,
+      0.241922,
+      0.970296
+     ],
+     "weight": 1,
+     "easingStyle": "Cubic",
+     "easingDirection": "InOut",
+     "intent": {
+      "pitch": 14
+     }
+    }
+   },
+   "markers": []
+  }
+ ],
+ "joints": [
+  "RootJoint",
+  "Neck",
+  "Right Shoulder",
+  "Left Shoulder",
+  "Right Hip",
+  "Left Hip"
+ ],
+ "transformConvention": "cframe = Motor6D.Transform as Roblox CFrame components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major rotation). Part1.CFrame = Part0.CFrame * C0 * Transform * C1:Inverse() (C0/C1 in characters/<Name>/rig.json). Easing on a pose applies from that keyframe to the next. A joint missing from a keyframe keeps interpolating between its neighbouring keyframes; weight 0 poses do not drive the joint."
+}

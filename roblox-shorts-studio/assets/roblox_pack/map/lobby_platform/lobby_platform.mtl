@@ -1,0 +1,53 @@
+# Materials for lobby_platform. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl floor
+Kd 0.6392 0.6353 0.6471
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl floor_studs
+Kd 0.6392 0.6353 0.6471
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_studs_diff.png
+norm roblox_studs_nmap.png
+
+newmtl floor_inlet
+Kd 0.6392 0.6353 0.6471
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd roblox_inlet_diff.png
+norm roblox_inlet_nmap.png
+
+newmtl trimback
+Kd 0.3882 0.3725 0.3843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl trimfront
+Kd 0.3882 0.3725 0.3843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl trimright
+Kd 0.3882 0.3725 0.3843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl trimleft
+Kd 0.3882 0.3725 0.3843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

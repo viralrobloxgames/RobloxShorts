@@ -1,0 +1,4364 @@
+{
+ "batch": "props",
+ "items": [
+  {
+   "pivotKind": "grip",
+   "kind": "prop_handheld",
+   "toolGrip": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "folder": "props/gold_coin",
+   "item": "gold_coin",
+   "category": "props",
+   "file": "gold_coin",
+   "pivot": [
+    -27,
+    3,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Rim",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -27,
+      3,
+      80,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.24,
+      1.4,
+      1.4
+     ],
+     "tag": "i01p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      214,
+      150,
+      20
+     ],
+     "class": "Part",
+     "size": [
+      0.16,
+      1.12,
+      1.12
+     ],
+     "transparency": 0,
+     "name": "Face",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -27,
+      3,
+      80,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "shape": "Cylinder",
+     "tag": "i01p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.2,
+      0.62,
+      0.62
+     ],
+     "transparency": 0,
+     "name": "Emblem",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -27,
+      3,
+      80,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "shape": "Cylinder",
+     "tag": "i01p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "prop_world",
+   "folder": "props/coin_pile",
+   "item": "coin_pile",
+   "category": "props",
+   "file": "coin_pile",
+   "pivot": [
+    -21,
+    0,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.13133,
+      0.07,
+      80.89762,
+      0.00482,
+      0.47154,
+      -0.88183,
+      0.98698,
+      0.13953,
+      0.08,
+      0.16077,
+      -0.87074,
+      -0.46473
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.7465,
+      0.07,
+      81.09312,
+      0.02695,
+      -0.25012,
+      0.96784,
+      0.99718,
+      -0.06117,
+      -0.04357,
+      0.0701,
+      0.96628,
+      0.24776
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.42694,
+      0.07,
+      81.1394,
+      -0.05465,
+      -0.89786,
+      0.43687,
+      0.98904,
+      0.01144,
+      0.14723,
+      -0.13719,
+      0.44013,
+      0.88739
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin4",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.09686,
+      0.07,
+      80.86527,
+      -0.00104,
+      0.73834,
+      -0.67443,
+      0.98851,
+      -0.10119,
+      -0.11231,
+      -0.15116,
+      -0.6668,
+      -0.72975
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin5",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.30285,
+      0.07,
+      80.47395,
+      0.09992,
+      -0.5983,
+      0.79502,
+      0.99466,
+      0.08087,
+      -0.06415,
+      -0.02591,
+      0.79718,
+      0.60318
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin6",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.32295,
+      0.07,
+      79.59587,
+      -0.04335,
+      -0.50951,
+      -0.85937,
+      0.99833,
+      0.01074,
+      -0.05673,
+      0.03814,
+      -0.8604,
+      0.5082
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin7",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -22.04529,
+      0.07,
+      79.41532,
+      -0.052,
+      0.73942,
+      0.67123,
+      0.99861,
+      0.03283,
+      0.04119,
+      0.00842,
+      0.67244,
+      -0.7401
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin8",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.24863,
+      0.07,
+      78.59662,
+      0.00407,
+      -0.30623,
+      0.95195,
+      0.99996,
+      -0.00606,
+      -0.00623,
+      0.00767,
+      0.95194,
+      0.30619
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin9",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.71591,
+      0.07,
+      78.8307,
+      -0.04144,
+      0.80615,
+      -0.59026,
+      0.98801,
+      0.12101,
+      0.09591,
+      0.14874,
+      -0.5792,
+      -0.8015
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p009x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin10",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.0451,
+      0.07,
+      79.14431,
+      0.01156,
+      -0.07926,
+      0.99679,
+      0.99292,
+      0.11881,
+      -0.00207,
+      -0.11826,
+      0.98975,
+      0.08007
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p010x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin11",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -19.76025,
+      0.07,
+      79.64204,
+      -0.13989,
+      0.94395,
+      0.29899,
+      0.98351,
+      0.16742,
+      -0.06841,
+      -0.11463,
+      0.28449,
+      -0.9518
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p011x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin12",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -19.89289,
+      0.07,
+      80.34273,
+      0.03273,
+      0.79499,
+      -0.60574,
+      0.99471,
+      0.03316,
+      0.09727,
+      0.09742,
+      -0.60572,
+      -0.78969
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p012x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin13",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.60182,
+      0.21,
+      80.78722,
+      0.04278,
+      0.67736,
+      -0.73441,
+      0.99559,
+      -0.0903,
+      -0.02529,
+      -0.08345,
+      -0.73009,
+      -0.67824
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p013x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin14",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.93336,
+      0.21,
+      80.93281,
+      0.01993,
+      0.20494,
+      0.97857,
+      0.9966,
+      0.07415,
+      -0.03583,
+      -0.07991,
+      0.97596,
+      -0.20277
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p014x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin15",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.65178,
+      0.21,
+      80.58344,
+      -0.00173,
+      0.02376,
+      0.99972,
+      0.99759,
+      0.06936,
+      8e-05,
+      -0.06934,
+      0.99731,
+      -0.02382
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p015x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin16",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.84052,
+      0.21,
+      80.01085,
+      -0.04634,
+      -0.70657,
+      -0.70613,
+      0.97888,
+      -0.17303,
+      0.10889,
+      -0.19912,
+      -0.68617,
+      0.69966
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p016x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin17",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.69919,
+      0.21,
+      79.49789,
+      0.00282,
+      -0.17928,
+      0.98379,
+      0.99599,
+      0.08853,
+      0.01328,
+      -0.08947,
+      0.97981,
+      0.17881
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p017x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin18",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.18317,
+      0.21,
+      79.257,
+      -0.1328,
+      -0.7659,
+      0.62909,
+      0.98789,
+      -0.15367,
+      0.02146,
+      0.08024,
+      0.62432,
+      0.77704
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p018x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin19",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.73963,
+      0.21,
+      79.10865,
+      0.03023,
+      0.18038,
+      -0.98313,
+      0.99926,
+      -0.02881,
+      0.02544,
+      -0.02373,
+      -0.98317,
+      -0.18112
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p019x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin20",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.31729,
+      0.21,
+      79.49454,
+      -0.00051,
+      -0.22317,
+      -0.97478,
+      0.99923,
+      -0.03835,
+      0.00825,
+      -0.03923,
+      -0.97402,
+      0.22302
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p020x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin21",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.08723,
+      0.21,
+      80.33316,
+      0.02266,
+      0.76761,
+      0.64052,
+      0.9863,
+      -0.12189,
+      0.11118,
+      0.16342,
+      0.62922,
+      -0.75985
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p021x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin22",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.9136,
+      0.35,
+      80.48872,
+      -0.10476,
+      -0.79531,
+      -0.59709,
+      0.99447,
+      -0.07961,
+      -0.06845,
+      0.0069,
+      -0.60096,
+      0.79925
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p022x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin23",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.26966,
+      0.35,
+      80.41073,
+      -0.03707,
+      -0.65475,
+      0.75493,
+      0.99271,
+      0.06258,
+      0.10301,
+      -0.11469,
+      0.75325,
+      0.64766
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p023x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin24",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.45361,
+      0.35,
+      79.8298,
+      -0.01396,
+      -0.39384,
+      0.91907,
+      0.999,
+      0.03358,
+      0.02957,
+      -0.04251,
+      0.91856,
+      0.39298
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p024x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin25",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.15572,
+      0.35,
+      79.43039,
+      -0.05596,
+      0.41719,
+      -0.90709,
+      0.99793,
+      0.05231,
+      -0.0375,
+      0.03181,
+      -0.90731,
+      -0.41926
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p025x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin26",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.62702,
+      0.35,
+      79.67673,
+      -0.09237,
+      -0.76189,
+      0.64108,
+      0.98524,
+      -0.16312,
+      -0.0519,
+      0.14411,
+      0.62683,
+      0.76572
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p026x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin27",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.5194,
+      0.35,
+      80.0766,
+      0.14149,
+      0.92874,
+      -0.34267,
+      0.98807,
+      -0.15378,
+      -0.00882,
+      -0.06089,
+      -0.33733,
+      -0.93942
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p027x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin28",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.17703,
+      0.49,
+      80.15678,
+      -0.06926,
+      0.58406,
+      -0.80875,
+      0.98979,
+      0.14148,
+      0.0174,
+      0.12458,
+      -0.79928,
+      -0.5879
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p028x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin29",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -21.07128,
+      0.49,
+      79.76561,
+      0.00672,
+      -0.79035,
+      -0.61262,
+      0.98848,
+      -0.08741,
+      0.1236,
+      -0.15123,
+      -0.60639,
+      0.78065
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p029x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin30",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.74201,
+      0.49,
+      80.0443,
+      0.0493,
+      -0.80318,
+      -0.59369,
+      0.99531,
+      -0.01005,
+      0.09625,
+      -0.08327,
+      -0.59565,
+      0.79892
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p030x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin31",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -19.19811,
+      0.07,
+      81.26221,
+      0,
+      -0.1945,
+      0.9809,
+      1,
+      0,
+      0,
+      0,
+      0.9809,
+      0.1945
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p031x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin32",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -18.97467,
+      0.07,
+      80.85909,
+      0,
+      -0.07673,
+      -0.99705,
+      1,
+      0,
+      0,
+      0,
+      -0.99705,
+      0.07673
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p032x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin33",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.78539,
+      0.07,
+      77.81049,
+      0,
+      0.88257,
+      -0.47018,
+      1,
+      0,
+      0,
+      0,
+      -0.47018,
+      -0.88257
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p033x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin34",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -18.80705,
+      0.07,
+      80.17595,
+      0,
+      0.83251,
+      0.55401,
+      1,
+      0,
+      0,
+      0,
+      0.55401,
+      -0.83251
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p034x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "Coin35",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.13105,
+      0.07,
+      77.97888,
+      0,
+      0.93834,
+      0.34572,
+      1,
+      0,
+      0,
+      0,
+      0.34572,
+      -0.93834
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p035x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.13,
+      0.95,
+      0.95
+     ],
+     "transparency": 0,
+     "name": "CoinTop",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -20.9,
+      0.95,
+      80,
+      0,
+      -0.92106,
+      0.38942,
+      0.34202,
+      -0.36593,
+      -0.86551,
+      0.93969,
+      0.13319,
+      0.31502
+     ],
+     "shape": "Cylinder",
+     "tag": "i02p036x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "grip",
+   "kind": "prop_handheld",
+   "toolGrip": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "folder": "props/trophy",
+   "item": "trophy",
+   "category": "props",
+   "file": "trophy",
+   "pivot": [
+    -15,
+    3,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      92,
+      58,
+      36
+     ],
+     "class": "Part",
+     "size": [
+      1.1,
+      0.45,
+      1.1
+     ],
+     "transparency": 0,
+     "name": "Base",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15,
+      2.38,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i03p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.8,
+      0.14,
+      0.8
+     ],
+     "transparency": 0,
+     "name": "Plinth",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15,
+      2.67,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i03p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.6,
+      0.24,
+      0.24
+     ],
+     "transparency": 0,
+     "name": "Stem",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15,
+      3,
+      80,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i03p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      226,
+      110
+     ],
+     "class": "Part",
+     "size": [
+      0.14,
+      0.4,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "Knot",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15,
+      3.1,
+      80,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i03p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Cup",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15,
+      3.72,
+      80,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      0.85,
+      1.05,
+      1.05
+     ],
+     "tag": "i03p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      1,
+      1,
+      1
+     ],
+     "transparency": 0,
+     "name": "CupBottom",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15,
+      3.34,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i03p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "HandleL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -15.6,
+      3.78,
+      80,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.09,
+      0.52,
+      0.52
+     ],
+     "tag": "i03p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "HandleR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -14.4,
+      3.78,
+      80,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.09,
+      0.52,
+      0.52
+     ],
+     "tag": "i03p008x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "grip",
+   "kind": "prop_handheld",
+   "toolGrip": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "folder": "props/sword",
+   "item": "sword",
+   "category": "props",
+   "file": "sword",
+   "pivot": [
+    -9,
+    3,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      105,
+      64,
+      38
+     ],
+     "class": "Part",
+     "size": [
+      0.75,
+      0.2,
+      0.2
+     ],
+     "transparency": 0,
+     "name": "Grip",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -9,
+      3,
+      80,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i04p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      0.3,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "Pommel",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -9,
+      2.55,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i04p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      196,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      1.1,
+      0.16,
+      0.28
+     ],
+     "transparency": 0,
+     "name": "Guard",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -9,
+      3.45,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i04p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      205,
+      210,
+      220
+     ],
+     "class": "Part",
+     "size": [
+      0.34,
+      2.7,
+      0.1
+     ],
+     "transparency": 0,
+     "name": "Blade",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      -9,
+      4.88,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i04p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      205,
+      210,
+      220
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "TipR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      -8.915,
+      6.44,
+      80,
+      0,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+     ],
+     "size": [
+      0.1,
+      0.42,
+      0.17
+     ],
+     "tag": "i04p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      205,
+      210,
+      220
+     ],
+     "class": "WedgePart",
+     "transparency": 0,
+     "name": "TipL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      -9.085,
+      6.44,
+      80,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.1,
+      0.42,
+      0.17
+     ],
+     "tag": "i04p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      160,
+      168,
+      182
+     ],
+     "class": "Part",
+     "size": [
+      0.08,
+      2.2,
+      0.12
+     ],
+     "transparency": 0,
+     "name": "Fuller",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Metal",
+     "cframe": [
+      -9,
+      4.8,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i04p007x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "grip",
+   "kind": "prop_handheld",
+   "toolGrip": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "folder": "props/rocket_launcher",
+   "item": "rocket_launcher",
+   "category": "props",
+   "file": "rocket_launcher",
+   "pivot": [
+    -3,
+    3,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      64,
+      96,
+      58
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "Tube",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.62,
+      79.5,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      4.2,
+      0.82,
+      0.82
+     ],
+     "tag": "i05p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      40,
+      40,
+      44
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "FrontRing",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.62,
+      77.45,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.22,
+      0.95,
+      0.95
+     ],
+     "tag": "i05p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      40,
+      40,
+      44
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "BackRing",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.62,
+      81.55,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.22,
+      0.95,
+      0.95
+     ],
+     "tag": "i05p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      230,
+      40,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.56,
+      0.56,
+      0.56
+     ],
+     "transparency": 0,
+     "name": "RocketNose",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.62,
+      77.45,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i05p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      230,
+      230,
+      230
+     ],
+     "class": "Part",
+     "size": [
+      0.9,
+      0.56,
+      0.56
+     ],
+     "transparency": 0,
+     "name": "RocketBody",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.62,
+      77.9,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "shape": "Cylinder",
+     "tag": "i05p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      35,
+      35,
+      38
+     ],
+     "class": "Part",
+     "size": [
+      0.26,
+      0.8,
+      0.4
+     ],
+     "transparency": 0,
+     "name": "Grip",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.05,
+      80,
+      1,
+      0,
+      0,
+      0,
+      0.97815,
+      -0.20791,
+      0,
+      0.20791,
+      0.97815
+     ],
+     "shape": "Block",
+     "tag": "i05p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      20,
+      20,
+      22
+     ],
+     "class": "Part",
+     "size": [
+      0.08,
+      0.22,
+      0.12
+     ],
+     "transparency": 0,
+     "name": "Trigger",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.18,
+      79.7,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i05p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      35,
+      35,
+      38
+     ],
+     "class": "Part",
+     "size": [
+      0.24,
+      0.55,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "FrontGrip",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.12,
+      78.7,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i05p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      35,
+      35,
+      38
+     ],
+     "class": "Part",
+     "size": [
+      0.12,
+      0.3,
+      0.5
+     ],
+     "transparency": 0,
+     "name": "Sight",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      4.12,
+      78.9,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i05p009x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      60,
+      200,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      0.1,
+      0.16,
+      0.04
+     ],
+     "transparency": 0,
+     "name": "SightGlass",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      -3,
+      4.18,
+      78.64,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i05p010x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      30
+     ],
+     "class": "Part",
+     "size": [
+      0.2,
+      0.86,
+      0.86
+     ],
+     "transparency": 0,
+     "name": "Stripe",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      -3,
+      3.62,
+      78.3,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "shape": "Cylinder",
+     "tag": "i05p011x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "grip",
+   "kind": "prop_handheld",
+   "toolGrip": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "folder": "props/phone",
+   "item": "phone",
+   "category": "props",
+   "file": "phone",
+   "pivot": [
+    3,
+    3,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      28,
+      28,
+      34
+     ],
+     "class": "Part",
+     "size": [
+      0.9,
+      1.7,
+      0.12
+     ],
+     "transparency": 0,
+     "name": "Body",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      3,
+      3.45,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i06p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      40,
+      110,
+      230
+     ],
+     "class": "Part",
+     "size": [
+      0.78,
+      1.46,
+      0.02
+     ],
+     "transparency": 0,
+     "name": "Screen",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      3,
+      3.47,
+      80.065,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i06p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      12,
+      12,
+      14
+     ],
+     "class": "Part",
+     "size": [
+      0.14,
+      0.14,
+      0.03
+     ],
+     "transparency": 0,
+     "name": "Camera",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      2.75,
+      4.1,
+      79.93,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i06p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "grip",
+   "kind": "prop_handheld",
+   "toolGrip": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "folder": "props/tablet",
+   "item": "tablet",
+   "category": "props",
+   "file": "tablet",
+   "pivot": [
+    9,
+    3,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      210,
+      212,
+      218
+     ],
+     "class": "Part",
+     "size": [
+      1.9,
+      1.35,
+      0.1
+     ],
+     "transparency": 0,
+     "name": "Body",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      9,
+      3.55,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i07p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      30,
+      30,
+      38
+     ],
+     "class": "Part",
+     "size": [
+      1.7,
+      1.15,
+      0.02
+     ],
+     "transparency": 0,
+     "name": "Screen",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      9,
+      3.55,
+      80.055,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i07p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      70,
+      160,
+      255
+     ],
+     "class": "Part",
+     "size": [
+      1.6,
+      1.05,
+      0.01
+     ],
+     "transparency": 0,
+     "name": "ScreenGlow",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      9,
+      3.55,
+      80.066,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i07p003x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "prop_world",
+   "folder": "props/free_coins_button",
+   "item": "free_coins_button",
+   "category": "props",
+   "file": "free_coins_button",
+   "pivot": [
+    15,
+    0,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      58,
+      62,
+      72
+     ],
+     "class": "Part",
+     "size": [
+      3.2,
+      1.2,
+      3.2
+     ],
+     "transparency": 0,
+     "name": "Base",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15,
+      0.6,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i08p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      200,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      3.3,
+      0.16,
+      3.3
+     ],
+     "transparency": 0,
+     "name": "BaseTrim",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15,
+      1.18,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i08p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      232,
+      32,
+      46
+     ],
+     "class": "Part",
+     "size": [
+      0.55,
+      2.3,
+      2.3
+     ],
+     "transparency": 0,
+     "name": "Button",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15,
+      1.5,
+      80,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i08p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      80,
+      90
+     ],
+     "class": "Part",
+     "size": [
+      0.08,
+      1.9,
+      1.9
+     ],
+     "transparency": 0,
+     "name": "ButtonTop",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15,
+      1.8,
+      80,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i08p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      235,
+      235,
+      240
+     ],
+     "class": "Part",
+     "size": [
+      0.22,
+      3.4,
+      0.22
+     ],
+     "transparency": 0,
+     "name": "PostL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      13.45,
+      1.7,
+      81.45,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i08p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      235,
+      235,
+      240
+     ],
+     "class": "Part",
+     "size": [
+      0.22,
+      3.4,
+      0.22
+     ],
+     "transparency": 0,
+     "name": "PostR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      16.55,
+      1.7,
+      81.45,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i08p006x"
+    },
+    {
+     "overlays": [
+      {
+       "transparency": 0,
+       "name": "SignText",
+       "color": [
+        255,
+        255,
+        255
+       ],
+       "class": "Decal",
+       "face": "Front",
+       "texture": "rbxassetid://109168806742399"
+      }
+     ],
+     "reflectance": 0,
+     "color": [
+      232,
+      36,
+      52
+     ],
+     "class": "Part",
+     "size": [
+      3.8,
+      1.42,
+      0.14
+     ],
+     "transparency": 0,
+     "name": "Sign",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      15,
+      3.55,
+      81.45,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i08p007x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "prop_world",
+   "folder": "props/bomb",
+   "item": "bomb",
+   "category": "props",
+   "file": "bomb",
+   "pivot": [
+    21,
+    0,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0.07999999821186066,
+     "color": [
+      32,
+      32,
+      38
+     ],
+     "class": "Part",
+     "size": [
+      2,
+      2,
+      2
+     ],
+     "transparency": 0,
+     "name": "Body",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      21,
+      1,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i09p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      90,
+      92,
+      100
+     ],
+     "class": "Part",
+     "size": [
+      0.35,
+      0.62,
+      0.62
+     ],
+     "transparency": 0,
+     "name": "Cap",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      21.28,
+      1.95,
+      80,
+      0.30902,
+      -0.95106,
+      0,
+      0.95106,
+      0.30902,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i09p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      196,
+      160,
+      104
+     ],
+     "class": "Part",
+     "size": [
+      0.38,
+      0.1,
+      0.1
+     ],
+     "transparency": 0,
+     "name": "Fuse1",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      21.42,
+      2.25,
+      80,
+      0.47059,
+      -0.88235,
+      0,
+      0.88235,
+      0.47059,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i09p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      196,
+      160,
+      104
+     ],
+     "class": "Part",
+     "size": [
+      0.38409,
+      0.1,
+      0.1
+     ],
+     "transparency": 0,
+     "name": "Fuse2",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      21.64,
+      2.5,
+      80,
+      0.81373,
+      -0.58124,
+      0,
+      0.58124,
+      0.81373,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i09p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      196,
+      160,
+      104
+     ],
+     "class": "Part",
+     "size": [
+      0.31659,
+      0.1,
+      0.1
+     ],
+     "transparency": 0,
+     "name": "Fuse3",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      21.915,
+      2.63,
+      80,
+      0.97619,
+      -0.21693,
+      0,
+      0.21693,
+      0.97619,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i09p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      190,
+      40
+     ],
+     "class": "Part",
+     "size": [
+      0.34,
+      0.34,
+      0.34
+     ],
+     "transparency": 0,
+     "name": "Spark",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      22.1,
+      2.68,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i09p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      240,
+      120
+     ],
+     "class": "Part",
+     "size": [
+      0.6,
+      0.06,
+      0.06
+     ],
+     "transparency": 0,
+     "name": "SparkX",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      22.1,
+      2.68,
+      80,
+      0.70711,
+      -0.70711,
+      0,
+      0.70711,
+      0.70711,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i09p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      240,
+      120
+     ],
+     "class": "Part",
+     "size": [
+      0.6,
+      0.06,
+      0.06
+     ],
+     "transparency": 0,
+     "name": "SparkY",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Neon",
+     "cframe": [
+      22.1,
+      2.68,
+      80,
+      0.70711,
+      0.70711,
+      0,
+      -0.70711,
+      0.70711,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i09p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      200,
+      200,
+      215
+     ],
+     "class": "Part",
+     "size": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "transparency": 0,
+     "name": "Shine",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      20.55,
+      1.55,
+      79.32,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i09p009x"
+    }
+   ]
+  },
+  {
+   "pivotKind": "bottom_centre",
+   "kind": "prop_world",
+   "folder": "props/gift_box",
+   "item": "gift_box",
+   "category": "props",
+   "file": "gift_box",
+   "pivot": [
+    27,
+    0,
+    80,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      226,
+      42,
+      66
+     ],
+     "class": "Part",
+     "size": [
+      2,
+      1.6,
+      2
+     ],
+     "transparency": 0,
+     "name": "Box",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      0.8,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p001x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      240,
+      60,
+      84
+     ],
+     "class": "Part",
+     "size": [
+      2.16,
+      0.36,
+      2.16
+     ],
+     "transparency": 0,
+     "name": "Lid",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      1.72,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p002x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "Part",
+     "size": [
+      2.2,
+      1.95,
+      0.34
+     ],
+     "transparency": 0,
+     "name": "RibbonX",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      0.98,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p003x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "Part",
+     "size": [
+      0.34,
+      1.95,
+      2.2
+     ],
+     "transparency": 0,
+     "name": "RibbonZ",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      0.98,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p004x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "Part",
+     "size": [
+      2.2,
+      0.06,
+      0.34
+     ],
+     "transparency": 0,
+     "name": "RibbonTopX",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      1.92,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p005x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "Part",
+     "size": [
+      0.34,
+      0.06,
+      2.2
+     ],
+     "transparency": 0,
+     "name": "RibbonTopZ",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      1.92,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i10p006x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "BowL",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      26.64,
+      2.12,
+      80,
+      0,
+      0.57358,
+      0.81915,
+      0,
+      0.81915,
+      -0.57358,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.16,
+      0.62,
+      0.62
+     ],
+     "tag": "i10p007x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "UnionOperation",
+     "transparency": 0,
+     "name": "BowR",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27.36,
+      2.12,
+      80,
+      0,
+      -0.57358,
+      0.81915,
+      0,
+      0.81915,
+      0.57358,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.16,
+      0.62,
+      0.62
+     ],
+     "tag": "i10p008x"
+    },
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      255,
+      212,
+      60
+     ],
+     "class": "Part",
+     "size": [
+      0.3,
+      0.3,
+      0.3
+     ],
+     "transparency": 0,
+     "name": "Knot",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "SmoothPlastic",
+     "cframe": [
+      27,
+      2.02,
+      80,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i10p009x"
+    }
+   ]
+  }
+ ],
+ "category": "props"
+}

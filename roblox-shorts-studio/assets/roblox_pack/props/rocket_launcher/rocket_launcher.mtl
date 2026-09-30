@@ -1,0 +1,78 @@
+# Materials for rocket_launcher. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tube
+Kd 0.2510 0.3765 0.2275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl frontring
+Kd 0.1569 0.1569 0.1725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl backring
+Kd 0.1569 0.1569 0.1725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl rocketnose
+Kd 0.9020 0.1569 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl rocketbody
+Kd 0.9020 0.9020 0.9020
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl grip
+Kd 0.1373 0.1373 0.1490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl trigger
+Kd 0.0784 0.0784 0.0863
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl frontgrip
+Kd 0.1373 0.1373 0.1490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl sight
+Kd 0.1373 0.1373 0.1490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl sightglass
+Kd 0.2353 0.7843 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.2353 0.7843 1.0000
+d 1.0000
+illum 2
+
+newmtl stripe
+Kd 1.0000 0.7843 0.1176
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

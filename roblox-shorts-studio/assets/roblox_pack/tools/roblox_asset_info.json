@@ -1,0 +1,179 @@
+{
+  "checked": "2026-09-30 via MarketplaceService:GetProductInfo in Studio",
+  "info": {
+    "63690008": {
+      "assetTypeId": 41,
+      "name": "Pal Hair",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": true
+    },
+    "83293901": {
+      "assetTypeId": 4,
+      "name": "PalHair",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "6858317867": {
+      "assetTypeId": 1,
+      "name": "Images/63690008",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "62234425": {
+      "assetTypeId": 41,
+      "name": "Brown Hair",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": true
+    },
+    "117529535472346": {
+      "assetTypeId": 4,
+      "name": "FixedMesh_62234425",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "81504106": {
+      "assetTypeId": 4,
+      "name": "TX_MaleChunk_Hero",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "376527350": {
+      "assetTypeId": 41,
+      "name": "Black Ponytail",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": true
+    },
+    "319344974": {
+      "assetTypeId": 4,
+      "name": "MESH_SidePonyTail",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "376188601": {
+      "assetTypeId": 1,
+      "name": "GenericGirl2_Hair",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "1103003368": {
+      "assetTypeId": 41,
+      "name": "Orange Beanie with Black Hair",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": true
+    },
+    "220855121": {
+      "assetTypeId": 4,
+      "name": "MESH_RedKnitBeanie&Hair",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "1102816925": {
+      "assetTypeId": 1,
+      "name": "SpookyHair2",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "376524487": {
+      "assetTypeId": 41,
+      "name": "Blonde Spiked Hair",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": true
+    },
+    "319337852": {
+      "assetTypeId": 4,
+      "name": "MESH_BoyMessyHair",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "376189070": {
+      "assetTypeId": 1,
+      "name": "GenericBoy2_Hair",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "376526888": {
+      "assetTypeId": 41,
+      "name": "Straight Blonde Hair",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": true
+    },
+    "319354652": {
+      "assetTypeId": 4,
+      "name": "MESH_LongStraightHair",
+      "creator": "Roblox",
+      "isForSale": false
+    },
+    "144075659": {
+      "assetTypeId": 18,
+      "name": "Smile",
+      "creator": "Roblox",
+      "price": 0,
+      "isForSale": false
+    },
+    "6444884337": {
+      "assetTypeId": 1,
+      "name": "Images/pz",
+      "creator": "DodgerJavi",
+      "isForSale": false
+    },
+    "6444884785": {
+      "assetTypeId": 1,
+      "name": "Images/ny",
+      "creator": "DodgerJavi",
+      "isForSale": false
+    },
+    "6412503613": {
+      "assetTypeId": 1,
+      "name": "Images/top",
+      "creator": "DodgerJavi",
+      "isForSale": false
+    },
+    "6196665106": {
+      "assetTypeId": 1,
+      "name": "Images/sun_alb",
+      "creator": "DodgerJavi",
+      "isForSale": false
+    },
+    "6444320592": {
+      "assetTypeId": 1,
+      "name": "Moon_01_alb_256",
+      "creator": "meow_pizza",
+      "isForSale": false
+    },
+    "6372755229": {
+      "assetTypeId": 1,
+      "name": "Grid",
+      "creator": "meow_pizza",
+      "isForSale": false
+    },
+    "376186990": {
+      "assetTypeId": 1,
+      "name": "GenericGirl1_Hair",
+      "creator": "Roblox",
+      "isForSale": false
+    }
+  },
+  "meshTextureRefs": [
+    "hair_leo mesh 83293901",
+    "hair_leo texture 6858317867",
+    "hair_max mesh 117529535472346",
+    "hair_max texture 81504106",
+    "hair_mia mesh 319344974",
+    "hair_mia texture 376188601",
+    "beanie mesh 220855121",
+    "beanie texture 1102816925",
+    "spiky_hair mesh 319337852",
+    "spiky_hair texture 376189070",
+    "long_hair mesh 319354652",
+    "long_hair texture 376186990"
+  ],
+  "notes": {
+    "default_template_images": "6444884337, 6444884785, 6412503613, 6196665106 (DodgerJavi) and 6444320592, 6372755229 (meow_pizza) are the sky, sun, moon and grid images Roblox itself puts in the default Baseplate template. They are free to use but the creator field is a user account, so they are listed as not Roblox-made."
+  }
+}
