@@ -8,6 +8,7 @@ review/poses/
 **/audio/coin_sfx.wav
 **/audio/music.wav
 **/audio/final_mix.wav
+**/audio/silence.wav
 **/audio/takes/
 examples/*/assets/fonts/
 *.validation.json
@@ -17,3 +18,4 @@ examples/*/assets/fonts/
 *.blend2
 __pycache__/
 *.pyc
+node_modules/

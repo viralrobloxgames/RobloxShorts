@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Web shorts runner</title>
+<style>
+  @font-face { font-family: "Luckiest Guy"; src: url("../assets/fonts/LuckiestGuy-Regular.ttf"); }
+  @font-face { font-family: "Montserrat"; font-weight: 800; src: url("node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2"); }
+  html, body { margin: 0; background: #111; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { createStage } from './lib/world.js';
+
+// Frame runner: loads ?clip=<path from studio root>, then window.renderFrame(n) returns a PNG data URL.
+// Each frame averages `samples` sub-renders with sub-pixel jitter (anti-aliasing) and, when the clip
+// asks for it, spread over the shutter interval (true motion blur). The overlay is drawn once, crisp.
+const q = new URLSearchParams(location.search);
+const scale = Number(q.get('scale') || 1);
+await Promise.all([document.fonts.load('80px "Luckiest Guy"'), document.fonts.load('800 34px Montserrat')]);
+const clip = await import('../' + q.get('clip'));
+const meta = { width: 1080, height: 1920, fps: 30, ...clip.meta };
+const stage = createStage({ width: meta.width, height: meta.height, scale, sky: clip.sky || {} });
+await clip.setup(stage, THREE);
+
+const out = document.createElement('canvas'); out.width = stage.W; out.height = stage.H;
+const g = out.getContext('2d');
+const halton = (i, b) => { let f = 1, r = 0; while (i > 0) { f /= b; r += f * (i % b); i = Math.floor(i / b); } return r; };
+
+window.renderFrame = (frame, opts = {}) => {
+  const t = (frame - 1) / meta.fps;
+  const samples = opts.samples ?? (clip.samples ? clip.samples(t) : 4);
+  const shutter = clip.shutter ? clip.shutter(t) : 0;           // fraction of a frame
+  for (let i = 0; i < samples; i++) {
+    const ts = t + (samples > 1 ? ((i + 0.5) / samples - 0.5) * shutter / meta.fps : 0);
+    clip.update(ts, stage);
+    if (samples > 1) stage.camera.setViewOffset(stage.W, stage.H, halton(i + 1, 2) - 0.5, halton(i + 1, 3) - 0.5, stage.W, stage.H);
+    stage.composer.render();
+    stage.camera.clearViewOffset();
+    g.globalAlpha = 1 / (i + 1);
+    g.drawImage(stage.canvas, 0, 0);
+  }
+  g.globalAlpha = 1;
+  clip.update(t, stage);
+  if (clip.overlay) clip.overlay(g, stage.scale, t);
+  return out.toDataURL('image/png');
+};
+window.clipMeta = meta;
+window.ready = true;
+</script>
+</body>
+</html>
