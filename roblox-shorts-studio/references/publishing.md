@@ -9,7 +9,7 @@ Making a video and posting it are separate steps. Post only once the user has ap
 - **TikTok:** longer than 60 s if it's aimed at Creator Rewards.
 - Audience settings are chosen deliberately. A cartoon look does not mean the video is made for kids. Declare AI-generated / synthetic content (the voice is AI) where the platform asks.
 
-## Automatic posting from the cloud (`scripts/publish.py`) - the default once set up
+## Automatic posting from the cloud (`scripts/publish.py`) - once the platform reviews pass
 
 After the user approves a finished video, post it with no browser: **TikTok first, then YouTube Shorts straight after.**
 
@@ -36,9 +36,22 @@ python3 scripts/publish.py projects/<slug> --post       # TikTok, then YouTube  
 2. Log in once with the channel's TikTok account to get the refresh token (valid 365 days) into `TIKTOK_REFRESH_TOKEN`, with the app's key and secret in the other two.
 3. Until TikTok audits the app, direct posts can only be private. Use `--tiktok-mode draft` meanwhile: the video lands in the TikTok app's inbox with the caption ready to finish in a couple of taps. Apply for the audit; after approval, direct mode posts publicly by itself.
 
-## TikTok / YouTube Studio (browser, fallback)
+## Posting through the user's browser (current default)
 
-Use the user's signed-in browser. Confirm the target account or channel on screen, upload the verified MP4, fill in the prepared metadata, set audience, disclosure and visibility, then read back the resulting URL and visibility. Don't claim an upload happened if you only opened the page.
+The API route below needs developer apps that both platforms keep private-only until they pass a review, so for now
+approved videos are posted from a Claude session **on the user's computer** (Claude Desktop with the built-in browser,
+Claude in Chrome or computer use), in the browser where TikTok and YouTube are already signed in. A cloud session
+can't reach that browser.
+
+1. `git pull` the repo so the approved `delivery/<Title>.mp4`, `<Title>_cover.jpg` and `post.json` are on disk.
+2. **TikTok first** (tiktok.com/tiktokstudio/upload): confirm the account is @viralrobloxgames, upload the MP4, paste
+   `post.json` tiktok.caption, set the cover (Edit cover → upload the cover image if offered, else pick the frame the
+   cover is based on), turn on the AI-generated content label, visibility Everyone, comments/duet/stitch on. Post.
+3. **YouTube Shorts straight after** (studio.youtube.com → Create → Upload): confirm the channel, upload the same MP4,
+   title / description / tags from `post.json`, "No, it's not made for kids", altered content: No, thumbnail = cover
+   if Studio offers it for Shorts, visibility Public. Publish.
+4. Read back both links and visibility, write them into `delivery/published.json`, set the ledger status to `posted`.
+   Never claim a post happened if you only opened the page.
 
 ## YouTube API from a laptop (`scripts/youtube_upload.py`, older alternative)
 
