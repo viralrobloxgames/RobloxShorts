@@ -22,7 +22,7 @@ export function update(t, stage) {
   leo.root.updateMatrixWorld(true);
   const tg = max.bones.Head.localToWorld(V(0, 0.2, 0));
   stage.camera.position.copy(tg).add(V(0.6, -0.9, 12)); stage.camera.fov = 44; stage.camera.updateProjectionMatrix();
-  stage.camera.lookAt(tg.clone().add(V(2.3, -0.9, 0)));
+  stage.camera.lookAt(tg.clone().add(V(2.3, 0.35, 0)));   // aim high so the crown sits below the headline
   stage.aimSun(V(tg.x, 0, tg.z), 20); stage.bloom.strength = 0.35;
 }
 function big(g, s, text, x, y, size, color, rot = 0) {
@@ -31,21 +31,22 @@ function big(g, s, text, x, y, size, color, rot = 0) {
   g.strokeStyle = '#152435'; g.lineWidth = size * 0.22 * s; g.strokeText(text, 0, 0); g.shadowColor = 'transparent';
   g.fillStyle = color; g.fillText(text, 0, 0); g.restore();
 }
+// Everything stays inside y 290..1560: TikTok's profile grid shows only the middle 3:4 (y 240..1680) of a 9:16 cover.
 export function overlay(g, s) {
-  big(g, s, 'HE HAD 1 SECOND', 540, 260, 118, '#ffffff', -0.04);
-  big(g, s, 'TO BAN HIM', 540, 400, 150, '#FFD23F', -0.04);
+  big(g, s, 'HE HAD 1 SECOND', 540, 450, 112, '#ffffff', -0.04);
+  big(g, s, 'TO BAN HIM', 540, 585, 142, '#FFD23F', -0.04);
   // The ban being typed, and the admin clock about to run out.
-  g.save(); g.translate(540 * s, 1380 * s); g.rotate(-0.03);
+  g.save(); g.translate(540 * s, 1260 * s); g.rotate(-0.03);
   roundRect(g, -430 * s, -95 * s, 860 * s, 190 * s, 34 * s); g.fillStyle = 'rgba(12,18,28,.9)'; g.fill(); g.lineWidth = 8 * s; g.strokeStyle = '#ffffff'; g.stroke();
   g.font = `800 ${104 * s}px Montserrat`; g.fillStyle = '#ffffff'; g.textBaseline = 'middle'; g.textAlign = 'left';
   g.fillText(':ban leo', -380 * s, 4 * s); const w = g.measureText(':ban leo').width; g.fillRect(-380 * s + w + 10 * s, -55 * s, 10 * s, 110 * s);
   g.restore();
-  g.save(); g.translate(540 * s, 1600 * s); g.rotate(0.03);
+  g.save(); g.translate(540 * s, 1470 * s); g.rotate(0.03);
   roundRect(g, -300 * s, -70 * s, 600 * s, 140 * s, 36 * s); g.fillStyle = '#e8213a'; g.fill(); g.lineWidth = 8 * s; g.strokeStyle = '#ffffff'; g.stroke();
   drawCrown(g, -205 * s, 0, 44 * s);
   g.font = `${78 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.textBaseline = 'middle'; g.textAlign = 'left'; g.fillText('ADMIN 0:01', -150 * s, 6 * s);
   g.restore();
-  g.save(); g.translate(540 * s, 115 * s); g.rotate(-0.04); g.font = `${54 * s}px "Luckiest Guy"`;
+  g.save(); g.translate(540 * s, 330 * s); g.rotate(-0.04); g.font = `${54 * s}px "Luckiest Guy"`;
   roundRect(g, -110 * s, -42 * s, 220 * s, 84 * s, 22 * s); g.fillStyle = '#FFD23F'; g.fill(); g.lineWidth = 5 * s; g.strokeStyle = '#152435'; g.stroke();
   g.fillStyle = '#152435'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('PART 2', 0, 4 * s); g.restore();
 }

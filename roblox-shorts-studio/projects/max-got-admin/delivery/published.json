@@ -1,0 +1,24 @@
+{
+  "file": "Max_Got_Admin_For_One_Round.mp4",
+  "sha256": "713b49d491859fdb04f557eab78fcc4309d4920851600dfafec6d5a316b32957",
+  "approved": {"by": "user", "at": "2026-10-01", "how": "approved in chat; posted through the user's signed-in browser"},
+  "tiktok": {
+    "status": "posted",
+    "url": "https://www.tiktok.com/@viralrobloxgames/video/7691740997637721366",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "first cover (headline at the top, cut off in the 3:4 grid); TikTok allows only a frame pick after posting",
+    "posted_at": "2026-10-01T17:43"
+  },
+  "youtube": {
+    "status": "posted",
+    "url": "https://youtube.com/shorts/vkO_Dv1VP7s",
+    "video_id": "vkO_Dv1VP7s",
+    "channel_id": "UC9BMTHo_LNCEZR9K4kc5y4Q",
+    "privacy": "public",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "Max_Got_Admin_For_One_Round_cover.jpg (re-rendered, grid-safe)",
+    "posted_at": "2026-10-01"
+  }
+}

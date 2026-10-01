@@ -9,6 +9,17 @@ Making a video and posting it are separate steps. Post only once the user has ap
 - **TikTok:** longer than 60 s if it's aimed at Creator Rewards.
 - Audience settings are chosen deliberately. A cartoon look does not mean the video is made for kids. Declare AI-generated / synthetic content (the voice is AI) where the platform asks.
 
+## Cover spec (every video)
+
+- `delivery/<Title>_cover.jpg` (+ `.png`): **1080x1920 (9:16)**, JPG under 2 MB (YouTube's thumbnail limit), sRGB.
+- **Everything that must be read sits inside y 290..1560 and x 60..1020**: the headline, part/episode badges and the
+  main faces. TikTok's profile grid shows only the middle 3:4 (1080x1440, y 240..1680) and the TikTok/Shorts feed
+  covers the bottom ~300 px with UI. Above y 290 and below y 1560 is background only. (Max Got Admin Part 2's first
+  cover put the headline at y 60..450 and TikTok cut it off.)
+- Before delivering, check the crop, `ffmpeg -i <cover>.png -vf crop=1080:1440:0:240 grid.png`, and look at it: the
+  whole headline has to read in that crop.
+- When posting, upload this file as the cover (TikTok: Edit cover → Upload cover image; its preview shows the 3:4 crop).
+
 ## Automatic posting from the cloud (`scripts/publish.py`) - once the platform reviews pass
 
 After the user approves a finished video, post it with no browser: **TikTok first, then YouTube Shorts straight after.**
@@ -46,7 +57,8 @@ can't reach that browser.
 1. `git pull` the repo so the approved `delivery/<Title>.mp4`, `<Title>_cover.jpg` and `post.json` are on disk.
 2. **TikTok first** (tiktok.com/tiktokstudio/upload): confirm the account is @viralrobloxgames, upload the MP4, paste
    `post.json` tiktok.caption, set the cover (Edit cover → upload the cover image if offered, else pick the frame the
-   cover is based on), turn on the AI-generated content label, visibility Everyone, comments/duet/stitch on. Post.
+   cover is based on; once posted, TikTok only allows a frame pick, so get the cover right first), leave the
+   AI-generated content label **off** (the user's call, 2026-10-01), visibility Everyone, comments/duet/stitch on. Post.
 3. **YouTube Shorts straight after** (studio.youtube.com → Create → Upload): confirm the channel, upload the same MP4,
    title / description / tags from `post.json`, "No, it's not made for kids", altered content: No, thumbnail = cover
    if Studio offers it for Shorts, visibility Public. Publish.
