@@ -18,7 +18,15 @@ Making a video and posting it are separate steps. Post only once the user has ap
   cover put the headline at y 60..450 and TikTok cut it off.)
 - Before delivering, check the crop, `ffmpeg -i <cover>.png -vf crop=1080:1440:0:240 grid.png`, and look at it: the
   whole headline has to read in that crop.
-- When posting, upload this file as the cover (TikTok: Edit cover → Upload cover image; its preview shows the 3:4 crop).
+- **The cover has to be a frame of the uploaded video.** The YouTube Shorts shelf (channel page, Shorts feed) ignores
+  an uploaded thumbnail and shows the frame chosen under Thumbnail → *Select from video*. Max Got Admin Part 2 had the
+  cover uploaded, but the shelf showed a random mid-video frame. So upload `delivery/<Title>_upload.mp4`, the approved
+  MP4 with the cover added as its last 0.1 s (`publish.py` builds it; by hand, run the ffmpeg command below), and pick
+  that last frame as the cover on both platforms. Also upload the JPG as the YouTube thumbnail for search/watch pages.
+
+  ```
+  ffmpeg -i <Title>.mp4 -loop 1 -framerate 30 -t 0.1 -i <Title>_cover.jpg -f lavfi -t 0.1 -i anullsrc=r=48000:cl=stereo -filter_complex "[0:v]fps=30,format=yuv420p,setsar=1[v0];[1:v]scale=1080:1920,fps=30,format=yuv420p,setsar=1[v1];[0:a]aresample=48000,aformat=channel_layouts=stereo[a0];[v0][a0][v1][2:a]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart <Title>_upload.mp4
+  ```
 
 ## Automatic posting from the cloud (`scripts/publish.py`) - once the platform reviews pass
 
@@ -32,7 +40,7 @@ python3 scripts/publish.py projects/<slug> --post       # TikTok, then YouTube  
 
 - `delivery/post.json` holds the metadata: `tiktok` {`caption` (at most 5 hashtags), `privacy` (`PUBLIC_TO_EVERYONE`), `ai_generated` (true: the narration is an AI voice), `allow_comments/duet/stitch`} and `youtube` {`title`, `description`, `tags`, `category_id` (`20` Gaming), `privacy`, `made_for_kids` (false), `contains_synthetic_media` (false: a cartoon; YouTube's label is for realistic content), optional `channel_id`}.
 - `delivery/published.json` records the approval (tied to the MP4's sha256) and each platform's result. A platform already marked posted is skipped; one left "started" must be checked by hand before retrying, so nothing is ever double-posted.
-- **Cover:** TikTok's API only takes a cover *frame*, so the TikTok copy (`<Title>_tiktok.mp4`) has the cover appended as its last 0.1 s and that frame is chosen. YouTube gets `<Title>_cover.jpg` through `thumbnails.set` (Shorts may still show a frame).
+- **Cover:** both platforms get `<Title>_upload.mp4` (cover appended as the last 0.1 s). TikTok's API picks that frame; YouTube also gets `<Title>_cover.jpg` through `thumbnails.set`, but the Shorts shelf frame can't be set through the API, so set it to the last frame in Studio (Thumbnail → Select from video) after the post.
 - **Credentials** are environment variables in the cloud environment's settings, never files or chat: `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REFRESH_TOKEN`, `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN`. Network access must allow `open.tiktokapis.com`, `oauth2.googleapis.com` and `www.googleapis.com`.
 
 ### One-time setup
@@ -54,14 +62,18 @@ approved videos are posted from a Claude session **on the user's computer** (Cla
 Claude in Chrome or computer use), in the browser where TikTok and YouTube are already signed in. A cloud session
 can't reach that browser.
 
-1. `git pull` the repo so the approved `delivery/<Title>.mp4`, `<Title>_cover.jpg` and `post.json` are on disk.
-2. **TikTok first** (tiktok.com/tiktokstudio/upload): confirm the account is @viralrobloxgames, upload the MP4, paste
+1. `git pull` the repo so the approved `delivery/<Title>.mp4`, `<Title>_cover.jpg` and `post.json` are on disk. Check
+   the cover against the cover spec above, then build `<Title>_upload.mp4` (ffmpeg command above) and check that its
+   last frame is the cover.
+2. **TikTok first** (tiktok.com/tiktokstudio/upload): confirm the account is @viralrobloxgames, upload `_upload.mp4`, paste
    `post.json` tiktok.caption, set the cover (Edit cover → upload the cover image if offered, else pick the frame the
    cover is based on; once posted, TikTok only allows a frame pick, so get the cover right first), leave the
    AI-generated content label **off** (the user's call, 2026-10-01), visibility Everyone, comments/duet/stitch on. Post.
-3. **YouTube Shorts straight after** (studio.youtube.com → Create → Upload): confirm the channel, upload the same MP4,
-   title / description / tags from `post.json`, "No, it's not made for kids", altered content: No, thumbnail = cover
-   if Studio offers it for Shorts, visibility Public. Publish.
+3. **YouTube Shorts straight after** (studio.youtube.com → Create → Upload): confirm the channel, upload the same _upload.mp4,
+   title / description / tags from `post.json`, "No, it's not made for kids", altered content: No, visibility Public.
+   **Thumbnail:** *Select from video* → drag to the very end and choose the cover frame (this is what the Shorts shelf
+   shows), and also *Upload file* → `<Title>_cover.jpg`. Publish, then open the channel's Shorts tab and check the
+   tile shows the cover; if it shows another frame, fix it under *Select from video* in the video's details.
 4. Read back both links and visibility, write them into `delivery/published.json`, set the ledger status to `posted`.
    Never claim a post happened if you only opened the page.
 

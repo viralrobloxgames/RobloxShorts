@@ -12,8 +12,8 @@ Credentials come from environment variables only (the cloud environment's settin
 Metadata: delivery/post.json (see references/publishing.md). Record: delivery/published.json; a platform that is
 already marked posted for this MP4 is skipped, so re-running after a failure only does what is left.
 
-TikTok's API can't take a cover image, only a cover frame, so the TikTok copy (delivery/<Title>_tiktok.mp4) has the
-cover appended as its last 0.1 s and that frame is picked as the cover. YouTube gets the cover via thumbnails.set.
+Neither TikTok's API nor the YouTube Shorts shelf uses a cover image (both show a frame), so the upload copy (delivery/<Title>_upload.mp4) has the
+cover appended as its last 0.1 s; TikTok picks that frame as the cover, and YouTube also gets the cover via thumbnails.set.
 """
 from pathlib import Path
 import argparse, hashlib, json, os, re, subprocess, time
@@ -73,9 +73,9 @@ def save(c):
 
 
 # ---------------- TikTok (Content Posting API) ----------------
-def tiktok_copy(c):
-    """The delivered MP4 plus the cover as a 0.1 s last frame (TikTok can only pick a cover frame from the video)."""
-    out = c['video'].with_name(c['stem'] + '_tiktok.mp4')
+def upload_copy(c):
+    """The delivered MP4 plus the cover as a 0.1 s last frame (TikTok and the Shorts shelf only show a frame of the video)."""
+    out = c['video'].with_name(c['stem'] + '_upload.mp4')
     if not c['cover']: return c['video'], None
     if not out.is_file() or out.stat().st_mtime < max(c['video'].stat().st_mtime, c['cover'].stat().st_mtime):
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(c['video']), '-loop', '1', '-framerate', '30', '-t', '0.1', '-i', str(c['cover']),
@@ -109,7 +109,7 @@ def post_tiktok(c, mode, dry):
     if dry:
         print(f'TikTok ({mode}): caption {t["caption"]!r}, AI label {t["ai_generated"]}, cover frame from {c["cover"].name if c["cover"] else "none"}'); return
     token = tiktok_token()
-    video, cover_ms = tiktok_copy(c)
+    video, cover_ms = upload_copy(c)
     size = video.stat().st_size
     chunk = size if size <= 64 * MB else 10 * MB                      # whole file if it fits, else 10 MB chunks
     count = max(1, size // chunk)                                     # the last chunk carries the remainder
@@ -167,12 +167,13 @@ def post_youtube(c, dry):
     if len(ch) != 1: die('The YouTube login does not point at exactly one channel.')
     if y.get('channel_id') and ch[0]['id'] != y['channel_id']: die(f'Logged in to channel {ch[0]["snippet"]["title"]}, not the one in post.json.')
     print(f'YouTube: uploading to {ch[0]["snippet"]["title"]}')
-    size = c['video'].stat().st_size
+    video, _ = upload_copy(c)                                         # ends on the cover, so the Shorts frame picker can use it
+    size = video.stat().st_size
     r = requests.post('https://www.googleapis.com/upload/youtube/v3/videos', params={'uploadType': 'resumable', 'part': 'snippet,status'}, json=body, timeout=60,
                       headers={**H, 'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': str(size)})
     if r.status_code != 200: die(f'YouTube refused the upload: HTTP {r.status_code} {r.text[:400]}')
     c['rec'].update(sha256=c['digest']); c['rec']['youtube'] = {'status': 'started', 'channel': ch[0]['id'], 'started_at': time.time()}; save(c)
-    with c['video'].open('rb') as f:
+    with video.open('rb') as f:
         u = requests.put(r.headers['Location'], data=f, timeout=1800, headers={**H, 'Content-Type': 'video/mp4', 'Content-Length': str(size)})
     if u.status_code not in (200, 201): die(f'YouTube upload failed: HTTP {u.status_code} {u.text[:400]} (published.json says "started"; check YouTube Studio before retrying)')
     v = u.json(); url = f'https://youtube.com/shorts/{v["id"]}'
