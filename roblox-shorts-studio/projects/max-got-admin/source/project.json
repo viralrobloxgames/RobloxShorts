@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "narration recorded; web clip web/max_clip.js; render then finish",
+  "status": "delivered_local_review",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}

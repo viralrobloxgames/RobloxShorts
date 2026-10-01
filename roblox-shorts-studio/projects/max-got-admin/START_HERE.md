@@ -12,8 +12,12 @@ Roblox R6 pack and animations, George narration, call to action at the end.
 - Cover `delivery/Max_Got_Admin_For_One_Round_cover.jpg|png` (`web/cover_clip.js`).
 - Posting metadata `delivery/post.json` (TikTok caption with 5 hashtags, YouTube title/description/tags).
 
+- **Delivered:** `delivery/Max_Got_Admin_For_One_Round.mp4` (1080x1920, 30 fps, 2,025 frames, 26 MB).
+
 ## Next
-- Full render to `renders/web`, encode, review, hand-off. Post after the user approves (`scripts/publish.py`).
+- Post after the user approves it: `python3 scripts/publish.py projects/max-got-admin --approve`, then `--post`
+  (TikTok, then YouTube). Needs the one-time account setup in `references/publishing.md`.
+- After 24 h, add its TikTok results to `ideas/series/admin-for-one-round.md` and decide on Part 3.
 
 ## Re-render / re-encode
 ```

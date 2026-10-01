@@ -1,62 +1,62 @@
 {
- "schema_version": 1,
- "ideas": [
-  {
-   "title": "The Free Coin Trap",
-   "series": "roblox",
-   "created": "2026-09-17",
-   "status": "delivered_local_review",
-   "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
-   "platform": "YouTube Shorts / TikTok",
-   "project": "examples/the-free-coin-trap"
-  },
-  {
-   "title": "The AFK Champion",
-   "series": "roblox",
-   "created": "2026-09-17",
-   "status": "farm_render_downloaded_awaiting_encode",
-   "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
-   "platform": "TikTok (>60 s for Creator Rewards)",
-   "project": "examples/the-afk-champion"
-  },
-  {
-   "title": "Admin For One Round",
-   "series": "roblox",
-   "created": "2026-09-30",
-   "status": "delivered_local_review",
-   "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "projects/admin-for-one-round"
-  },
-  {
-   "title": "The AFK Millionaire",
-   "series": "roblox",
-   "created": "2026-09-30",
-   "status": "delivered_local_review",
-   "logline": "Last one in the circle wins a million coins: Leo, Max and Mia take each other out with tricks while the noob never moves, because he was eating dinner.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "projects/the-afk-millionaire"
-  },
-  {
-   "title": "Max Got Admin For One Round",
-   "series": "admin for one round (part 2)",
-   "created": "2026-10-01",
-   "status": "script_draft_awaiting_approval",
-   "logline": "Max gets admin and spends the round trying to get rid of Leo; every command backfires, the ban lands one second too late, and next round Leo gets admin again.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/max-got-admin"
-  }
- ],
- "statuses": [
-  "idea",
-  "script_draft_awaiting_approval",
-  "script_approved",
-  "narration_done",
-  "scene_built",
-  "farm_test_review",
-  "farm_render_running",
-  "farm_render_downloaded_awaiting_encode",
-  "delivered_local_review",
-  "published"
- ]
+  "schema_version": 1,
+  "ideas": [
+    {
+      "title": "The Free Coin Trap",
+      "series": "roblox",
+      "created": "2026-09-17",
+      "status": "delivered_local_review",
+      "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
+      "platform": "YouTube Shorts / TikTok",
+      "project": "examples/the-free-coin-trap"
+    },
+    {
+      "title": "The AFK Champion",
+      "series": "roblox",
+      "created": "2026-09-17",
+      "status": "farm_render_downloaded_awaiting_encode",
+      "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
+      "platform": "TikTok (>60 s for Creator Rewards)",
+      "project": "examples/the-afk-champion"
+    },
+    {
+      "title": "Admin For One Round",
+      "series": "roblox",
+      "created": "2026-09-30",
+      "status": "delivered_local_review",
+      "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "projects/admin-for-one-round"
+    },
+    {
+      "title": "The AFK Millionaire",
+      "series": "roblox",
+      "created": "2026-09-30",
+      "status": "delivered_local_review",
+      "logline": "Last one in the circle wins a million coins: Leo, Max and Mia take each other out with tricks while the noob never moves, because he was eating dinner.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "projects/the-afk-millionaire"
+    },
+    {
+      "title": "Max Got Admin For One Round",
+      "series": "admin for one round (part 2)",
+      "created": "2026-10-01",
+      "status": "delivered_local_review",
+      "logline": "Max gets admin and spends the round trying to get rid of Leo; every command backfires, the ban lands one second too late, and next round Leo gets admin again.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/max-got-admin"
+    }
+  ],
+  "statuses": [
+    "idea",
+    "script_draft_awaiting_approval",
+    "script_approved",
+    "narration_done",
+    "scene_built",
+    "farm_test_review",
+    "farm_render_running",
+    "farm_render_downloaded_awaiting_encode",
+    "delivered_local_review",
+    "published"
+  ]
 }
