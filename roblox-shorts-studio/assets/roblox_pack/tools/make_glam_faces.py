@@ -9,7 +9,13 @@ positions and faces still swap mid-shot without a jump. On top of each face it a
   * berry lips: the mouth's black ink is recoloured, tongue and teeth keep their colours;
   * soft blush on both cheeks.
 
-    python make_glam_faces.py <pack_dir>          -> faces/glam/<expression>.png (1024 px) + faces/glam/glam_sheet.png
+    python make_glam_faces.py <pack_dir> [style,...]   -> faces/glam/<expression>.png (1024 px) + faces/glam/glam_sheet.png
+                                                     and faces/glam_doll/ (same faces laid out for a doll-style mesh head)
+
+Layouts move and scale the three layers (eyes with lashes and sparkle, blush, mouth) in texture pixels:
+  glam      - Roblox Smile positions, for classic R6 heads (the pack cast)
+  glam_doll - bigger eyes set lower, blush and mouth to match, for Skye's doll head (the Roblox Studio model in
+              Workspace.ViralNews.Skye, where the face is a Decal on the head's front)
 """
 import json
 import math
@@ -66,6 +72,23 @@ def layer_overlay(px, eye_centres, eyes_alpha, name):
     return blush, im.resize((px, px), Image.LANCZOS)
 
 
+LAYOUTS = {
+    "glam": None,
+    "glam_doll": {"eyes": {"scale": 1.3, "from": (516, 286), "to": (516, 545)},
+                  "blush": {"scale": 1.0, "from": (516, 440), "to": (516, 668)},
+                  "mouth": {"scale": 0.95, "from": (516, 716), "to": (516, 790)}},
+}
+
+
+def place(img, spec):
+    """Scale a layer about spec['from'] and move that point to spec['to'] (same canvas size)."""
+    if not spec:
+        return img
+    s, (fx, fy), (tx, ty) = spec["scale"], spec["from"], spec["to"]
+    # output (x, y) samples input ((x - tx) / s + fx, (y - ty) / s + fy)
+    return img.transform(img.size, Image.AFFINE, (1 / s, 0, fx - tx / s, 0, 1 / s, fy - ty / s), resample=Image.BICUBIC)
+
+
 def berry_lips(mouth):
     m = np.array(mouth).astype(np.int32)
     ink = (m[..., 3] > 0) & (m[..., 0] < 70) & (m[..., 1] < 70) & (m[..., 2] < 70)
@@ -73,39 +96,49 @@ def berry_lips(mouth):
     return Image.fromarray(m.astype(np.uint8), "RGBA")
 
 
-def main(pack):
+def main(pack, only=None):
     pack = Path(pack)
     meta = json.loads((pack / "faces" / "faces.json").read_text(encoding="utf-8"))
     px = meta["size_px"]
     eyes_c = [tuple(e) for e in meta["eye_centres_grid"]]
-    out = pack / "faces" / "glam"
-    out.mkdir(parents=True, exist_ok=True)
     names = [f["name"] for f in meta["faces"]]
-    for name in names:
-        eyes = Image.open(pack / "faces" / "layers" / "eyes" / f"{name}.png").convert("RGBA")
-        mouth = Image.open(pack / "faces" / "layers" / "mouth" / f"{name}.png").convert("RGBA")
-        alpha = np.array(eyes.getchannel("A"))
-        face = Image.new("RGBA", (px, px), (0, 0, 0, 0))
-        blush, features = layer_overlay(px, eyes_c, alpha, name)
-        face.alpha_composite(blush)
-        face.alpha_composite(eyes)
-        face.alpha_composite(berry_lips(mouth))
-        face.alpha_composite(features)
-        face.save(out / f"{name}.png", optimize=True)
-    # contact sheet on Roblox yellow-ish skin
+    for style, layout in LAYOUTS.items():
+        if only and style not in only:
+            continue
+        out = pack / "faces" / style
+        out.mkdir(parents=True, exist_ok=True)
+        L = layout or {}
+        for name in names:
+            eyes = Image.open(pack / "faces" / "layers" / "eyes" / f"{name}.png").convert("RGBA")
+            mouth = Image.open(pack / "faces" / "layers" / "mouth" / f"{name}.png").convert("RGBA")
+            alpha = np.array(eyes.getchannel("A"))
+            blush, features = layer_overlay(px, eyes_c, alpha, name)
+            eye_layer = Image.new("RGBA", (px, px), (0, 0, 0, 0))
+            eye_layer.alpha_composite(eyes)
+            eye_layer.alpha_composite(features)
+            face = Image.new("RGBA", (px, px), (0, 0, 0, 0))
+            face.alpha_composite(place(blush, L.get("blush")))
+            face.alpha_composite(place(berry_lips(mouth), L.get("mouth")))
+            face.alpha_composite(place(eye_layer, L.get("eyes")))
+            face.save(out / f"{name}.png", optimize=True)
+        sheet(out, names, style)
+        print(f"wrote {len(names)} {style} faces to {out}")
+
+
+def sheet(out, names, style):
+    """Contact sheet on a warm skin tone."""
     cell, cols = 200, 8
     rows = math.ceil(len(names) / cols)
-    sheet = Image.new("RGBA", (cell * cols, (cell + 30) * rows), (255, 255, 255, 255))
-    d = ImageDraw.Draw(sheet)
+    img = Image.new("RGBA", (cell * cols, (cell + 30) * rows), (255, 255, 255, 255))
+    d = ImageDraw.Draw(img)
     for i, name in enumerate(names):
         x, y = (i % cols) * cell, (i // cols) * (cell + 30)
-        sheet.paste((234, 184, 146, 255), (x, y + 30, x + cell, y + 30 + cell))
+        img.paste((234, 184, 146, 255), (x, y + 30, x + cell, y + 30 + cell))
         f = Image.open(out / f"{name}.png").resize((cell, cell), Image.LANCZOS)
-        sheet.alpha_composite(f, (x, y + 30))
+        img.alpha_composite(f, (x, y + 30))
         d.text((x + 6, y + 8), name, fill=(0, 0, 0, 255))
-    sheet.convert("RGB").save(out / "glam_sheet.png", optimize=True)
-    print(f"wrote {len(names)} glam faces to {out}")
+    img.convert("RGB").save(out / f"{style}_sheet.png", optimize=True)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2].split(",") if len(sys.argv) > 2 else None)

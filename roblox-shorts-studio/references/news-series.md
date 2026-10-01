@@ -23,13 +23,16 @@ Status: **plan agreed 2026-10-01, nothing built yet; decisions recorded at the b
 
 A dedicated news anchor who appears in **every** episode and **only** in news, so she becomes the face of the series. Leo, Max, Mia and the Noob stay in the story Shorts and can appear as "reporters in the field" or in clips.
 
-- **Look (chosen 2026-10-01: "pink waves"):** a pretty, glamorous TV-anchor Roblox girl that viewers recognise instantly.
-  - **Hair:** long, glossy, wavy **pink** hair (her signature; no other character has pink hair).
-  - **Outfit:** fitted **navy blazer** with cyan piping and a "VR NEWS" pin over a **white top**. Not the teal/cyan blazer from the sketch: the user didn't like that colour. Small gold hoop earrings.
-  - **Face:** big bright eyes with lashes, soft blush, a glossy friendly smile. A few fixed expressions: smile, shocked, wink, serious.
-  - **Mic:** handheld mic with a navy "VR NEWS" mic flag.
-  - Attractive and polished like a real presenter, kept age-appropriate for a young audience: no revealing outfits.
-- **Build it like the rest of the cast:** R6 character in `assets/roblox_pack/characters/Skye/`, hair from free Roblox-made accessories placed with `wear()`/`fitAccessory()`, original shirt and pants templates from `tools/make_clothing.py`, faces in `faces/`. Pass `node web/fit_check.mjs --all` before any clip uses her. Add her to `CREDITS.md`.
+- **Look (changed 2026-10-01 to "Look3_B2"):** the user found the first R6 Skye "too blocky and nooby" and wanted a cute modern Roblox girl. She is now an R15 avatar built in Studio from Marketplace items through a HumanoidDescription, previewed without buying them (the user's choice):
+  - **Body:** Woman Doll bundle (238208798580824), skin colour (240, 196, 166).
+  - **Hair:** Pink Messy Buns (10690199700); pink hair is still her signature.
+  - **Outfit:** Y2K puff-sleeve top (17519277512), Black Preppy Skirt (17115328553), White Socks Black Lace Bow (16511421410), Platform Pearl Heels (12766492526).
+  - **Mic:** handheld mic with a navy "VR NEWS" mic flag (to build with the booth).
+  - Preview: `assets/roblox_pack/previews/skye_look_options.jpg` (look 3).
+- **Swappable faces:** the doll head's own face texture is removed (`Head.TextureID = ""`; the original is kept in the `OriginalHeadTexture` attribute), and a Decal named `face` on the Front face holds the expression. Faces come from `tools/make_glam_faces.py` (`glam_doll` layout: lashes, blush, berry lips, placed lower to clear the fringe), 32 expressions in `assets/roblox_pack/faces/glam_doll/`. The uploaded ids are stored as attributes on `Skye.Faces` in Studio (happy, talking, surprised, shocked, laugh, sad, angry, love, confused, smug, neutral, wink); swap by setting `Head.face.Texture` to one of them. Preview: `assets/roblox_pack/previews/skye_doll_expressions.jpg`.
+  - **Limitation:** the Woman Doll head's UVs are mirrored left/right, so the head shows only the left half of a face, doubled. Symmetric faces look right; **wink and other one-sided faces don't work** on this head. Use shocked, happy or pointing instead of wink for covers.
+- **Studio location:** place "Copy of Steal a Beast Egg!", `Workspace.ViralNews.Skye` (anchored at 0, 3.5, 500).
+- The first R6 build (`assets/roblox_pack/characters/Skye/`, pink waves, navy blazer) stays in the pack but is no longer the presenter.
 - **Fixed poses for the set and covers:** sitting at the desk, pointing at the screen, hands-on-desk "breaking" lean, shocked (hands up), wave goodbye. Using the same poses every time is part of the recognisability.
 - **Voice: Brittney - Social Media Voice - Fun, Youthful & Informative** (ElevenLabs voice library, voice ID `kPzsL2i3teMYv0FxEYQ6`; added to the account's My Voices on 2026-10-01). Different from George (the story narrator), so the series is also recognisable by ear. Use the same voice, model and settings every episode. Pick the model and settings on the pilot, then record them in `references/voice-and-audio.md`.
 - **Name: Skye** (chosen 2026-10-01). She says it in the sign-off: "I'm Skye, this has been ViralRoblox News."
@@ -78,7 +81,7 @@ Length: over 60 s for TikTok Creator Rewards (aim for 65 s or more; exactly 1:00
 Rendered from the booth scene with a `cover_clip.js` per episode, as for the story Shorts. The layout never changes, so a grid of covers reads as one series:
 
 - **Top band:** red "ROBLOX NEWS" label with the ViralRoblox logo and a white episode badge "#N".
-- **Left:** the presenter in one of the fixed cover poses (shocked, pointing at the screen, or wink), large and cut out with a cyan rim.
+- **Left:** the presenter in one of the fixed cover poses (shocked, pointing at the screen, or happy), large and cut out with a cyan rim.
 - **Right:** the topic image inside a TV-screen frame (the same frame every time).
 - **Bottom:** 2 to 4 word headline in Luckiest Guy, white with yellow highlight word, dark outline.
 - **Background:** navy/cyan studio blur, never a different colour scheme.
@@ -108,7 +111,7 @@ Rendered from the booth scene with a `cover_clip.js` per episode, as for the sto
 
 ## Build order
 
-1. **Presenter: done 2026-10-01.** `assets/roblox_pack/characters/Skye/` (pink Belle Of Belfast waves, navy blazer over a white top, slim black trousers, glam faces); fit check passed for all 12 accessories; previews in `assets/roblox_pack/previews/skye_*.jpg`.
+1. **Presenter: done 2026-10-01.** Look3_B2 R15 doll avatar in Studio with swappable `glam_doll` faces (see The presenter). Next: a filming method for her in Studio (poses, lip-sync face swaps, camera angles).
 2. **Booth:** desk, video wall, lighting, three camera angles and the overlay layer, as a reusable template.
 3. **Cover template:** render 3 sample covers side by side to check the grid looks like one series.
 4. **Research script and `ideas/news-ledger.json`**, then the morning scheduled task.
@@ -131,7 +134,7 @@ Rendered from the booth scene with a `cover_clip.js` per episode, as for the sto
 
 ## Decisions (2026-10-01)
 
-- Presenter: **Skye**, look **pink waves with a navy blazer and white top** (not teal), voice **Brittney** (`kPzsL2i3teMYv0FxEYQ6`).
+- Presenter: **Skye**, voice **Brittney** (`kPzsL2i3teMYv0FxEYQ6`). Look: **Look3_B2** (Woman Doll body, Pink Messy Buns, Y2K top, black preppy skirt), which replaced the R6 "pink waves" build the same day.
 - Series name: **ViralRoblox News**.
 - Evidence: **real screenshots**. Sources are credited only at the end of the description, never in the video.
 - Cadence: **daily**; ElevenLabs limits not a concern for now.
