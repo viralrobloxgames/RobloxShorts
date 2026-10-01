@@ -1,0 +1,1167 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.929,
+    "text": "This noob won a",
+    "words": [
+      {
+        "word": "This",
+        "start": 0.0,
+        "end": 0.255
+      },
+      {
+        "word": "noob",
+        "start": 0.348,
+        "end": 0.58
+      },
+      {
+        "word": "won",
+        "start": 0.65,
+        "end": 0.778
+      },
+      {
+        "word": "a",
+        "start": 0.824,
+        "end": 0.848
+      }
+    ]
+  },
+  {
+    "start": 0.929,
+    "end": 2.07,
+    "text": "million coins...",
+    "words": [
+      {
+        "word": "million",
+        "start": 0.929,
+        "end": 1.231
+      },
+      {
+        "word": "coins...",
+        "start": 1.312,
+        "end": 1.95
+      }
+    ]
+  },
+  {
+    "start": 2.101,
+    "end": 3.777,
+    "text": "without touching his keyboard.",
+    "words": [
+      {
+        "word": "without",
+        "start": 2.101,
+        "end": 2.415
+      },
+      {
+        "word": "touching",
+        "start": 2.45,
+        "end": 2.775
+      },
+      {
+        "word": "his",
+        "start": 2.821,
+        "end": 2.914
+      },
+      {
+        "word": "keyboard.",
+        "start": 2.972,
+        "end": 3.657
+      }
+    ]
+  },
+  {
+    "start": 4.354,
+    "end": 5.294,
+    "text": "Here's how.",
+    "words": [
+      {
+        "word": "Here's",
+        "start": 4.354,
+        "end": 4.644
+      },
+      {
+        "word": "how.",
+        "start": 4.69,
+        "end": 5.178
+      }
+    ]
+  },
+  {
+    "start": 5.294,
+    "end": 6.331,
+    "text": "Four players.",
+    "words": [
+      {
+        "word": "Four",
+        "start": 5.294,
+        "end": 5.55
+      },
+      {
+        "word": "players.",
+        "start": 5.608,
+        "end": 6.211
+      }
+    ]
+  },
+  {
+    "start": 6.362,
+    "end": 7.291,
+    "text": "One circle.",
+    "words": [
+      {
+        "word": "One",
+        "start": 6.362,
+        "end": 6.583
+      },
+      {
+        "word": "circle.",
+        "start": 6.629,
+        "end": 7.198
+      }
+    ]
+  },
+  {
+    "start": 7.291,
+    "end": 8.522,
+    "text": "Last one inside wins",
+    "words": [
+      {
+        "word": "Last",
+        "start": 7.291,
+        "end": 7.558
+      },
+      {
+        "word": "one",
+        "start": 7.628,
+        "end": 7.755
+      },
+      {
+        "word": "inside",
+        "start": 7.79,
+        "end": 8.255
+      },
+      {
+        "word": "wins",
+        "start": 8.301,
+        "end": 8.487
+      }
+    ]
+  },
+  {
+    "start": 8.522,
+    "end": 9.755999999999998,
+    "text": "a million coins.",
+    "words": [
+      {
+        "word": "a",
+        "start": 8.522,
+        "end": 8.545
+      },
+      {
+        "word": "million",
+        "start": 8.603,
+        "end": 8.905
+      },
+      {
+        "word": "coins.",
+        "start": 8.975,
+        "end": 9.636
+      }
+    ]
+  },
+  {
+    "start": 10.449,
+    "end": 11.880999999999998,
+    "text": "Leo wanted that money.",
+    "words": [
+      {
+        "word": "Leo",
+        "start": 10.449,
+        "end": 10.728
+      },
+      {
+        "word": "wanted",
+        "start": 10.786,
+        "end": 11.076
+      },
+      {
+        "word": "that",
+        "start": 11.111,
+        "end": 11.238
+      },
+      {
+        "word": "money.",
+        "start": 11.297,
+        "end": 11.761
+      }
+    ]
+  },
+  {
+    "start": 11.889,
+    "end": 12.716999999999999,
+    "text": "Badly.",
+    "words": [
+      {
+        "word": "Badly.",
+        "start": 11.889,
+        "end": 12.597
+      }
+    ]
+  },
+  {
+    "start": 12.771,
+    "end": 13.293,
+    "text": "So he put a",
+    "words": [
+      {
+        "word": "So",
+        "start": 12.771,
+        "end": 12.899
+      },
+      {
+        "word": "he",
+        "start": 12.957,
+        "end": 13.015
+      },
+      {
+        "word": "put",
+        "start": 13.05,
+        "end": 13.177
+      },
+      {
+        "word": "a",
+        "start": 13.212,
+        "end": 13.235
+      }
+    ]
+  },
+  {
+    "start": 13.293,
+    "end": 14.957999999999998,
+    "text": "button outside the circle.",
+    "words": [
+      {
+        "word": "button",
+        "start": 13.293,
+        "end": 13.549
+      },
+      {
+        "word": "outside",
+        "start": 13.618,
+        "end": 14.036
+      },
+      {
+        "word": "the",
+        "start": 14.071,
+        "end": 14.141
+      },
+      {
+        "word": "circle.",
+        "start": 14.187,
+        "end": 14.838
+      }
+    ]
+  },
+  {
+    "start": 15.534,
+    "end": 16.618000000000002,
+    "text": "Free coins.",
+    "words": [
+      {
+        "word": "Free",
+        "start": 15.534,
+        "end": 15.79
+      },
+      {
+        "word": "coins.",
+        "start": 15.848,
+        "end": 16.498
+      }
+    ]
+  },
+  {
+    "start": 16.939,
+    "end": 18.708000000000002,
+    "text": "Max lasted four seconds.",
+    "words": [
+      {
+        "word": "Max",
+        "start": 16.939,
+        "end": 17.218
+      },
+      {
+        "word": "lasted",
+        "start": 17.288,
+        "end": 17.647
+      },
+      {
+        "word": "four",
+        "start": 17.705,
+        "end": 17.891
+      },
+      {
+        "word": "seconds.",
+        "start": 17.961,
+        "end": 18.588
+      }
+    ]
+  },
+  {
+    "start": 18.762,
+    "end": 19.683,
+    "text": "One down.",
+    "words": [
+      {
+        "word": "One",
+        "start": 18.762,
+        "end": 18.971
+      },
+      {
+        "word": "down.",
+        "start": 19.017,
+        "end": 19.563
+      }
+    ]
+  },
+  {
+    "start": 20.004,
+    "end": 21.239,
+    "text": "Mia was smarter.",
+    "words": [
+      {
+        "word": "Mia",
+        "start": 20.004,
+        "end": 20.236
+      },
+      {
+        "word": "was",
+        "start": 20.295,
+        "end": 20.399
+      },
+      {
+        "word": "smarter.",
+        "start": 20.445,
+        "end": 21.119
+      }
+    ]
+  },
+  {
+    "start": 21.27,
+    "end": 22.199,
+    "text": "She didn't fall for",
+    "words": [
+      {
+        "word": "She",
+        "start": 21.27,
+        "end": 21.397
+      },
+      {
+        "word": "didn't",
+        "start": 21.444,
+        "end": 21.688
+      },
+      {
+        "word": "fall",
+        "start": 21.746,
+        "end": 21.978
+      },
+      {
+        "word": "for",
+        "start": 22.048,
+        "end": 22.152
+      }
+    ]
+  },
+  {
+    "start": 22.199,
+    "end": 22.945,
+    "text": "buttons.",
+    "words": [
+      {
+        "word": "buttons.",
+        "start": 22.199,
+        "end": 22.825
+      }
+    ]
+  },
+  {
+    "start": 23.522,
+    "end": 24.428,
+    "text": "So Leo sent her",
+    "words": [
+      {
+        "word": "So",
+        "start": 23.522,
+        "end": 23.685
+      },
+      {
+        "word": "Leo",
+        "start": 23.754,
+        "end": 24.01
+      },
+      {
+        "word": "sent",
+        "start": 24.068,
+        "end": 24.254
+      },
+      {
+        "word": "her",
+        "start": 24.3,
+        "end": 24.381
+      }
+    ]
+  },
+  {
+    "start": 24.428,
+    "end": 25.043,
+    "text": "a gift.",
+    "words": [
+      {
+        "word": "a",
+        "start": 24.428,
+        "end": 24.451
+      },
+      {
+        "word": "gift.",
+        "start": 24.497,
+        "end": 24.973
+      }
+    ]
+  },
+  {
+    "start": 25.043,
+    "end": 26.022000000000002,
+    "text": "It was a bomb.",
+    "words": [
+      {
+        "word": "It",
+        "start": 25.043,
+        "end": 25.159
+      },
+      {
+        "word": "was",
+        "start": 25.194,
+        "end": 25.287
+      },
+      {
+        "word": "a",
+        "start": 25.322,
+        "end": 25.356
+      },
+      {
+        "word": "bomb.",
+        "start": 25.403,
+        "end": 25.902
+      }
+    ]
+  },
+  {
+    "start": 26.343,
+    "end": 27.365,
+    "text": "Mia sent it straight",
+    "words": [
+      {
+        "word": "Mia",
+        "start": 26.343,
+        "end": 26.599
+      },
+      {
+        "word": "sent",
+        "start": 26.657,
+        "end": 26.854
+      },
+      {
+        "word": "it",
+        "start": 26.901,
+        "end": 26.982
+      },
+      {
+        "word": "straight",
+        "start": 27.028,
+        "end": 27.319
+      }
+    ]
+  },
+  {
+    "start": 27.365,
+    "end": 27.949,
+    "text": "back.",
+    "words": [
+      {
+        "word": "back.",
+        "start": 27.365,
+        "end": 27.829
+      }
+    ]
+  },
+  {
+    "start": 28.004,
+    "end": 29.285,
+    "text": "Leo went flying.",
+    "words": [
+      {
+        "word": "Leo",
+        "start": 28.004,
+        "end": 28.271
+      },
+      {
+        "word": "went",
+        "start": 28.34,
+        "end": 28.491
+      },
+      {
+        "word": "flying.",
+        "start": 28.549,
+        "end": 29.165
+      }
+    ]
+  },
+  {
+    "start": 29.675,
+    "end": 30.585,
+    "text": "Two down.",
+    "words": [
+      {
+        "word": "Two",
+        "start": 29.675,
+        "end": 29.884
+      },
+      {
+        "word": "down.",
+        "start": 29.954,
+        "end": 30.465
+      }
+    ]
+  },
+  {
+    "start": 30.639,
+    "end": 31.405,
+    "text": "Now it was just",
+    "words": [
+      {
+        "word": "Now",
+        "start": 30.639,
+        "end": 30.836
+      },
+      {
+        "word": "it",
+        "start": 30.906,
+        "end": 30.964
+      },
+      {
+        "word": "was",
+        "start": 30.999,
+        "end": 31.092
+      },
+      {
+        "word": "just",
+        "start": 31.15,
+        "end": 31.336
+      }
+    ]
+  },
+  {
+    "start": 31.405,
+    "end": 32.117,
+    "text": "Mia...",
+    "words": [
+      {
+        "word": "Mia...",
+        "start": 31.405,
+        "end": 31.997
+      }
+    ]
+  },
+  {
+    "start": 32.322,
+    "end": 33.36,
+    "text": "and the noob.",
+    "words": [
+      {
+        "word": "and",
+        "start": 32.322,
+        "end": 32.473
+      },
+      {
+        "word": "the",
+        "start": 32.531,
+        "end": 32.601
+      },
+      {
+        "word": "noob.",
+        "start": 32.659,
+        "end": 33.24
+      }
+    ]
+  },
+  {
+    "start": 33.843,
+    "end": 35.263999999999996,
+    "text": "The noob hadn't moved.",
+    "words": [
+      {
+        "word": "The",
+        "start": 33.843,
+        "end": 33.971
+      },
+      {
+        "word": "noob",
+        "start": 34.041,
+        "end": 34.261
+      },
+      {
+        "word": "hadn't",
+        "start": 34.319,
+        "end": 34.552
+      },
+      {
+        "word": "moved.",
+        "start": 34.598,
+        "end": 35.144
+      }
+    ]
+  },
+  {
+    "start": 35.423,
+    "end": 36.355,
+    "text": "Not once.",
+    "words": [
+      {
+        "word": "Not",
+        "start": 35.423,
+        "end": 35.609
+      },
+      {
+        "word": "once.",
+        "start": 35.678,
+        "end": 36.235
+      }
+    ]
+  },
+  {
+    "start": 36.839,
+    "end": 37.888,
+    "text": "Mia pushed him.",
+    "words": [
+      {
+        "word": "Mia",
+        "start": 36.839,
+        "end": 37.06
+      },
+      {
+        "word": "pushed",
+        "start": 37.118,
+        "end": 37.385
+      },
+      {
+        "word": "him.",
+        "start": 37.42,
+        "end": 37.768
+      }
+    ]
+  },
+  {
+    "start": 38.093,
+    "end": 38.724,
+    "text": "Nothing.",
+    "words": [
+      {
+        "word": "Nothing.",
+        "start": 38.093,
+        "end": 38.604
+      }
+    ]
+  },
+  {
+    "start": 38.813,
+    "end": 39.463,
+    "text": "She hit him with",
+    "words": [
+      {
+        "word": "She",
+        "start": 38.813,
+        "end": 38.952
+      },
+      {
+        "word": "hit",
+        "start": 39.033,
+        "end": 39.161
+      },
+      {
+        "word": "him",
+        "start": 39.196,
+        "end": 39.277
+      },
+      {
+        "word": "with",
+        "start": 39.3,
+        "end": 39.417
+      }
+    ]
+  },
+  {
+    "start": 39.463,
+    "end": 40.187,
+    "text": "a sword.",
+    "words": [
+      {
+        "word": "a",
+        "start": 39.463,
+        "end": 39.486
+      },
+      {
+        "word": "sword.",
+        "start": 39.544,
+        "end": 40.067
+      }
+    ]
+  },
+  {
+    "start": 40.578,
+    "end": 41.208,
+    "text": "Nothing.",
+    "words": [
+      {
+        "word": "Nothing.",
+        "start": 40.578,
+        "end": 41.088
+      }
+    ]
+  },
+  {
+    "start": 41.692,
+    "end": 42.656,
+    "text": "She fired a rocket",
+    "words": [
+      {
+        "word": "She",
+        "start": 41.692,
+        "end": 41.831
+      },
+      {
+        "word": "fired",
+        "start": 41.901,
+        "end": 42.203
+      },
+      {
+        "word": "a",
+        "start": 42.238,
+        "end": 42.261
+      },
+      {
+        "word": "rocket",
+        "start": 42.331,
+        "end": 42.609
+      }
+    ]
+  },
+  {
+    "start": 42.656,
+    "end": 43.321,
+    "text": "launcher.",
+    "words": [
+      {
+        "word": "launcher.",
+        "start": 42.656,
+        "end": 43.201
+      }
+    ]
+  },
+  {
+    "start": 43.352,
+    "end": 44.397,
+    "text": "The noob flew across",
+    "words": [
+      {
+        "word": "The",
+        "start": 43.352,
+        "end": 43.468
+      },
+      {
+        "word": "noob",
+        "start": 43.55,
+        "end": 43.782
+      },
+      {
+        "word": "flew",
+        "start": 43.863,
+        "end": 44.061
+      },
+      {
+        "word": "across",
+        "start": 44.107,
+        "end": 44.362
+      }
+    ]
+  },
+  {
+    "start": 44.397,
+    "end": 44.989,
+    "text": "the map,",
+    "words": [
+      {
+        "word": "the",
+        "start": 44.397,
+        "end": 44.467
+      },
+      {
+        "word": "map,",
+        "start": 44.525,
+        "end": 44.873
+      }
+    ]
+  },
+  {
+    "start": 44.989,
+    "end": 46.211999999999996,
+    "text": "bounced off a tree...",
+    "words": [
+      {
+        "word": "bounced",
+        "start": 44.989,
+        "end": 45.314
+      },
+      {
+        "word": "off",
+        "start": 45.349,
+        "end": 45.465
+      },
+      {
+        "word": "a",
+        "start": 45.512,
+        "end": 45.535
+      },
+      {
+        "word": "tree...",
+        "start": 45.593,
+        "end": 46.092
+      }
+    ]
+  },
+  {
+    "start": 46.336,
+    "end": 47.404,
+    "text": "and landed right back",
+    "words": [
+      {
+        "word": "and",
+        "start": 46.336,
+        "end": 46.499
+      },
+      {
+        "word": "landed",
+        "start": 46.58,
+        "end": 46.905
+      },
+      {
+        "word": "right",
+        "start": 46.963,
+        "end": 47.149
+      },
+      {
+        "word": "back",
+        "start": 47.195,
+        "end": 47.358
+      }
+    ]
+  },
+  {
+    "start": 47.404,
+    "end": 48.314,
+    "text": "in the circle.",
+    "words": [
+      {
+        "word": "in",
+        "start": 47.404,
+        "end": 47.462
+      },
+      {
+        "word": "the",
+        "start": 47.509,
+        "end": 47.578
+      },
+      {
+        "word": "circle.",
+        "start": 47.625,
+        "end": 48.194
+      }
+    ]
+  },
+  {
+    "start": 48.705,
+    "end": 49.869,
+    "text": "Still not moving.",
+    "words": [
+      {
+        "word": "Still",
+        "start": 48.705,
+        "end": 48.972
+      },
+      {
+        "word": "not",
+        "start": 49.018,
+        "end": 49.134
+      },
+      {
+        "word": "moving.",
+        "start": 49.192,
+        "end": 49.749
+      }
+    ]
+  },
+  {
+    "start": 50.191,
+    "end": 51.724,
+    "text": "Mia needed something bigger.",
+    "words": [
+      {
+        "word": "Mia",
+        "start": 50.191,
+        "end": 50.434
+      },
+      {
+        "word": "needed",
+        "start": 50.492,
+        "end": 50.76
+      },
+      {
+        "word": "something",
+        "start": 50.806,
+        "end": 51.108
+      },
+      {
+        "word": "bigger.",
+        "start": 51.166,
+        "end": 51.608
+      }
+    ]
+  },
+  {
+    "start": 51.724,
+    "end": 52.888999999999996,
+    "text": "So she stepped out.",
+    "words": [
+      {
+        "word": "So",
+        "start": 51.724,
+        "end": 51.851
+      },
+      {
+        "word": "she",
+        "start": 51.909,
+        "end": 52.002
+      },
+      {
+        "word": "stepped",
+        "start": 52.072,
+        "end": 52.397
+      },
+      {
+        "word": "out.",
+        "start": 52.443,
+        "end": 52.769
+      }
+    ]
+  },
+  {
+    "start": 52.919,
+    "end": 54.282,
+    "text": "Just for one second.",
+    "words": [
+      {
+        "word": "Just",
+        "start": 52.919,
+        "end": 53.152
+      },
+      {
+        "word": "for",
+        "start": 53.198,
+        "end": 53.314
+      },
+      {
+        "word": "one",
+        "start": 53.384,
+        "end": 53.57
+      },
+      {
+        "word": "second.",
+        "start": 53.616,
+        "end": 54.162
+      }
+    ]
+  },
+  {
+    "start": 54.289,
+    "end": 55.211,
+    "text": "Three down.",
+    "words": [
+      {
+        "word": "Three",
+        "start": 54.289,
+        "end": 54.58
+      },
+      {
+        "word": "down.",
+        "start": 54.626,
+        "end": 55.091
+      }
+    ]
+  },
+  {
+    "start": 55.265,
+    "end": 56.089,
+    "text": "The noob won a",
+    "words": [
+      {
+        "word": "The",
+        "start": 55.265,
+        "end": 55.404
+      },
+      {
+        "word": "noob",
+        "start": 55.485,
+        "end": 55.741
+      },
+      {
+        "word": "won",
+        "start": 55.822,
+        "end": 55.961
+      },
+      {
+        "word": "a",
+        "start": 56.008,
+        "end": 56.031
+      }
+    ]
+  },
+  {
+    "start": 56.089,
+    "end": 57.149,
+    "text": "million coins.",
+    "words": [
+      {
+        "word": "million",
+        "start": 56.089,
+        "end": 56.368
+      },
+      {
+        "word": "coins.",
+        "start": 56.449,
+        "end": 57.029
+      }
+    ]
+  },
+  {
+    "start": 57.238,
+    "end": 57.505,
+    "text": "Then,",
+    "words": [
+      {
+        "word": "Then,",
+        "start": 57.238,
+        "end": 57.459
+      }
+    ]
+  },
+  {
+    "start": 57.505,
+    "end": 58.039,
+    "text": "finally,",
+    "words": [
+      {
+        "word": "finally,",
+        "start": 57.505,
+        "end": 57.993
+      }
+    ]
+  },
+  {
+    "start": 58.039,
+    "end": 59.285999999999994,
+    "text": "he typed in chat.",
+    "words": [
+      {
+        "word": "he",
+        "start": 58.039,
+        "end": 58.121
+      },
+      {
+        "word": "typed",
+        "start": 58.179,
+        "end": 58.434
+      },
+      {
+        "word": "in",
+        "start": 58.481,
+        "end": 58.574
+      },
+      {
+        "word": "chat.",
+        "start": 58.666,
+        "end": 59.166
+      }
+    ]
+  },
+  {
+    "start": 59.549,
+    "end": 60.141,
+    "text": "\"Sorry,",
+    "words": [
+      {
+        "word": "\"Sorry,",
+        "start": 59.549,
+        "end": 60.106
+      }
+    ]
+  },
+  {
+    "start": 60.141,
+    "end": 61.19,
+    "text": "was eating dinner.",
+    "words": [
+      {
+        "word": "was",
+        "start": 60.141,
+        "end": 60.28
+      },
+      {
+        "word": "eating",
+        "start": 60.327,
+        "end": 60.559
+      },
+      {
+        "word": "dinner.",
+        "start": 60.617,
+        "end": 61.07
+      }
+    ]
+  },
+  {
+    "start": 61.395,
+    "end": 62.602,
+    "text": "Did I miss anything?\"",
+    "words": [
+      {
+        "word": "Did",
+        "start": 61.395,
+        "end": 61.546
+      },
+      {
+        "word": "I",
+        "start": 61.604,
+        "end": 61.627
+      },
+      {
+        "word": "miss",
+        "start": 61.697,
+        "end": 61.871
+      },
+      {
+        "word": "anything?\"",
+        "start": 61.906,
+        "end": 62.602
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "voice": "George - Warm, Captivating Storyteller",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "settings": {
+    "speed": 1.0,
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "use_speaker_boost": true
+  },
+  "take": "take-01",
+  "request_id": "1IWo4YmUTR32Y5kGnKf0",
+  "speech_end_seconds": 62.602
+}

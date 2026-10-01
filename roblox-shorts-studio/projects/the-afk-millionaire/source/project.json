@@ -1,0 +1,20 @@
+{
+  "title": "The AFK Millionaire",
+  "character": "Leo",
+  "characters": [
+    "Leo",
+    "Max",
+    "Mia",
+    "Noob"
+  ],
+  "seconds": 63.2,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "delivered_local_review",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {}
+  }
+}

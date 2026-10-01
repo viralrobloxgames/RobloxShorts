@@ -237,3 +237,107 @@ export async function wear(actor, name) {
   if (fit.hideHair) { const hair = actor.bones.Head.children.find((o) => o.name === 'Hair'); if (hair) hair.visible = false; }
   return fit;
 }
+
+// ---------- Roblox animations (assets/roblox_pack/animations) ----------
+// Keyframes hold Motor6D.Transform per joint. With Part1 = Part0 * C0 * T * C1^-1 and parts axis-aligned at rest, a joint's
+// effect is the rigid move D = C0 * T * C0^-1 in Part0 space. It is brought into this rig's character space
+// (turned by pi about Y, Part0 origin at its rest centre) and written onto the matching bone. RootJoint drives the Root
+// bone, so the legs follow the torso like in Roblox (the Torso bone stays at rest).
+const cf = (c) => new THREE.Matrix4().set(c[3], c[4], c[5], c[0], c[6], c[7], c[8], c[1], c[9], c[10], c[11], c[2], 0, 0, 0, 1);
+const FLIP = new THREE.Matrix4().makeRotationY(Math.PI);
+const JOINTS = {   // joint -> [bone, C0 (Roblox), Part0 rest centre in Roblox character space]
+  RootJoint: ['Root', [0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0], [0, 3, 0]],
+  Neck: ['Head', [0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0], [0, 3, 0]],
+  'Right Shoulder': ['Arm.R', [1, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0], [0, 3, 0]],
+  'Left Shoulder': ['Arm.L', [-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0], [0, 3, 0]],
+  'Right Hip': ['Leg.R', [1, -1, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0], [0, 3, 0]],
+  'Left Hip': ['Leg.L', [-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0], [0, 3, 0]],
+};
+const EASE = {
+  Linear: (u) => u, Constant: () => 0,
+  Cubic: { In: (u) => u * u * u, Out: (u) => 1 - (1 - u) ** 3, InOut: (u) => (u < 0.5 ? 4 * u * u * u : 1 - (-2 * u + 2) ** 3 / 2) },
+  Elastic: { Out: (u) => (u === 0 || u === 1 ? u : 2 ** (-10 * u) * Math.sin((u * 10 - 0.75) * ((2 * Math.PI) / 3)) + 1) },
+  Bounce: { Out: (u) => { const n = 7.5625, d = 2.75; if (u < 1 / d) return n * u * u; if (u < 2 / d) return n * (u -= 1.5 / d) * u + 0.75; if (u < 2.5 / d) return n * (u -= 2.25 / d) * u + 0.9375; return n * (u -= 2.625 / d) * u + 0.984375; } },
+};
+function ease(style, dir, u) {
+  const e = EASE[style] ?? EASE.Cubic;
+  if (typeof e === 'function') return e(u);
+  if (e[dir]) return e[dir](u);
+  const out = e.Out; if (dir === 'In') return 1 - out(1 - u);
+  return u < 0.5 ? (1 - out(1 - 2 * u)) / 2 : (1 + out(2 * u - 1)) / 2;
+}
+
+const animCache = new Map();
+export async function loadAnimation(name) {
+  if (!animCache.has(name)) {
+    animCache.set(name, fetch(`${PACK}animations/${name}.json`).then((r) => r.json()).then((a) => {
+      const tracks = {};
+      for (const k of a.keyframes) for (const [joint, p] of Object.entries(k.poses)) {
+        if (!JOINTS[joint] || p.weight === 0) continue;
+        const m = cf(p.cframe), pos = new THREE.Vector3(), q = new THREE.Quaternion(); m.decompose(pos, q, new THREE.Vector3());
+        (tracks[joint] ||= []).push({ time: k.time, pos, q, style: p.easingStyle, dir: p.easingDirection });
+      }
+      for (const t of Object.values(tracks)) t.sort((x, y) => x.time - y.time);
+      return { name, length: a.length || 0.001, loop: !!a.loop, tracks };
+    }));
+  }
+  return animCache.get(name);
+}
+
+// Joint transforms T at time t (seconds; looped or held at the end).
+function sampleTracks(anim, t, loop = anim.loop) {
+  const len = anim.length, tt = loop ? ((t % len) + len) % len : Math.min(Math.max(t, 0), len), out = {};
+  for (const [joint, ks] of Object.entries(anim.tracks)) {
+    let i = ks.findIndex((k) => k.time > tt);
+    let a, b, u;
+    if (i === -1) { a = b = ks[ks.length - 1]; u = 0; }
+    else if (i === 0) { a = b = ks[0]; u = 0; }
+    else { a = ks[i - 1]; b = ks[i]; u = ease(a.style, a.dir, (tt - a.time) / Math.max(1e-6, b.time - a.time)); }
+    out[joint] = { pos: a.pos.clone().lerp(b.pos, u), q: a.q.clone().slerp(b.q, u) };
+  }
+  return out;
+}
+
+// Blend several [anim, t, weight] layers (weights normalised) into joint transforms, then write them onto the actor.
+// Clears the rig first, like rig.js pose().
+export function robloxPose(actor, layers) {
+  const joints = {};
+  let wsum = 0;
+  for (const [anim, t, w = 1, loop] of layers) {
+    if (!anim || w <= 0) continue;
+    const s = sampleTracks(anim, t, loop ?? anim.loop);
+    wsum += w;
+    for (const [j, v] of Object.entries(s)) {
+      if (!joints[j]) joints[j] = { pos: v.pos.clone(), q: v.q.clone(), w };
+      else { const k = w / (joints[j].w + w); joints[j].pos.lerp(v.pos, k); joints[j].q.slerp(v.q, k); joints[j].w += w; }
+    }
+  }
+  for (const k of Object.keys(PIVOTS)) { actor.bones[k].quaternion.identity(); actor.bones[k].position.copy(new THREE.Vector3(...PIVOTS[k]).sub(PARENT[k] === 'Root' ? new THREE.Vector3() : new THREE.Vector3(...PIVOTS[PARENT[k]]))).multiplyScalar(actor.scale); }
+  actor.bones.Root.position.set(0, 0, 0); actor.bones.Root.quaternion.identity();
+  const S = actor.scale;
+  for (const [joint, v] of Object.entries(joints)) {
+    const [bone, c0, centre] = JOINTS[joint];
+    const C0 = cf(c0), T = new THREE.Matrix4().compose(v.pos, v.q, new THREE.Vector3(1, 1, 1));
+    const D = C0.clone().multiply(T).multiply(C0.clone().invert());                          // Part0 space
+    const toChar = new THREE.Matrix4().makeTranslation(centre[0], centre[1], centre[2]);
+    let Dc = FLIP.clone().multiply(toChar).multiply(D).multiply(toChar.clone().invert()).multiply(FLIP.clone().invert()); // our char space
+    if (S !== 1) Dc = new THREE.Matrix4().makeScale(S, S, S).multiply(Dc).multiply(new THREE.Matrix4().makeScale(1 / S, 1 / S, 1 / S));
+    // Bone local matrix L with  Tr(parentPivot) * L * Tr(-pivot) = Dc  (rest bones are unrotated).
+    const piv = bone === 'Root' ? new THREE.Vector3() : new THREE.Vector3(...PIVOTS[bone]).multiplyScalar(S);
+    const par = bone === 'Root' || PARENT[bone] === 'Root' ? new THREE.Vector3() : new THREE.Vector3(...PIVOTS[PARENT[bone]]).multiplyScalar(S);
+    const L = new THREE.Matrix4().makeTranslation(-par.x, -par.y, -par.z).multiply(Dc).multiply(new THREE.Matrix4().makeTranslation(piv.x, piv.y, piv.z));
+    L.decompose(actor.bones[bone].position, actor.bones[bone].quaternion, new THREE.Vector3());
+  }
+}
+
+// Hold a tool (pack props with a "grip" pivot) the way Roblox does: RightGrip C0 = (0,-1,0) below the arm centre,
+// rotated so the tool's +Y points forward. `hand` is 'right' or 'left'.
+export function holdItem(actor, item, hand = 'right') {
+  const bone = actor.bones[hand === 'right' ? 'Arm.R' : 'Arm.L'], sx = hand === 'right' ? -1 : 1, S = actor.scale;
+  const grip = FLIP.clone().multiply(cf([0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0])).multiply(FLIP.clone().invert());
+  item.quaternion.setFromRotationMatrix(grip);
+  item.position.set(sx * 0.5 * S, -1.5 * S, 0);          // arm centre (0.5 out, 0.5 below the shoulder) + 1 stud down
+  item.scale.setScalar(S);
+  bone.add(item);
+  return item;
+}
