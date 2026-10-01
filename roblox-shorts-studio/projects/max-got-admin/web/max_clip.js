@@ -338,7 +338,7 @@ export function update(t, stage) {
     case 'chair': frame(stage, V(P.leo.x - 0.6, 6.4, 3.6), -0.2, 0.1, 9, 42); break;
     case 'laugh': frame(stage, xh.clone().add(V(0, -0.5, 0)), F(max) - 0.2, 0.08, 7, 40); break;
     case 'tiny': frame(stage, V(P.leo.x - 0.5, lerp(2.4, 1.1, easeOut(clamp(u * 3))), 3.4), -0.1, 0.14, lerp(6, 3.6, easeOut(clamp(u * 3))), 42); break;
-    case 'stomp': { const j = s > B.stomp && s < B.stomp + 0.3 ? jolt(t, 0.16 * (1 - (s - B.stomp) / 0.3)) : V(0, 0, 0); const k = easeInOut(inv(29.72, 29.95, s)); frame(stage, V(3.0, lerp(2.7, 1.4, k), 3.4).add(j), 0.55, lerp(0.04, 0.3, k), lerp(8, 5, k), 42); break; }
+    case 'stomp': { const j = s > B.stomp && s < B.stomp + 0.3 ? jolt(t, 0.16 * (1 - (s - B.stomp) / 0.3)) : V(0, 0, 0); const k = easeInOut(inv(29.72, 29.95, s)); frame(stage, V(3.0, lerp(4.4, 2.3, k), 3.4).add(j), 0.55, lerp(0.04, 0.3, k), lerp(10, 5.5, k), 42); break; }   // ground kept below the caption line
     case 'respawn': frame(stage, V(P.leo.x, 3.0, P.leo.z), 0.95, 0.1, lerp(8, 7, u), 42); break;
     case 'flight': { const p = leo.bones.Torso.localToWorld(V(0, 1, 0)); look(stage, p.clone().add(V(10, 4, 15)), p.clone().add(V(-1.5, 0.5, 0)), 48); stage.aimSun(p.clone().setY(0), 34); break; }
     case 'podium': frame(stage, PODIUM_TOP.clone().add(V(0, 2.2, 0)), face(PODIUM, V(0, 0, 8)) + 0.15, 0.12, lerp(11, 9, u), 42); break;
@@ -408,7 +408,7 @@ export function overlay(g, s, t) {
   if (t < B.leoAdmin) hudW = adminHud(g, s, 'MAX', t < 53.25 ? clock(t) : 0, t, { grey: t >= 53.25, flashing: t >= B.ten });
   else hudW = adminHud(g, s, 'LEO', 60, t);
   partTag(g, s, hudW + 20);
-  if (t < B.cta) chatBox(g, s, t);
+  if (t < B.cta && SHOT !== 'stomp') chatBox(g, s, t);      // no chat over Max's jump
   // Opening: make the stakes explicit, one round is one minute of admin.
   if (t > 0.55 && t < 4.6) {
     const k = easeOutBack(clamp((t - 0.55) / 0.25), 2.2), al = 1 - inv(4.35, 4.6, t);
