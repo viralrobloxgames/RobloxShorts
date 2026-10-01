@@ -20,8 +20,7 @@ the end of 2026) and offline play (mid-2027), from RDC 2026 (2026-09-11).
 ## Next
 1. The user approves or edits the script.
 2. Narration with Brittney (`kPzsL2i3teMYv0FxEYQ6`), then word timings into `audio/alignment/`.
-3. Filming method in Studio: per-shot camera marks (`Booth.Cameras`), face swaps on the word timings, and capture at
-   9:16. The Studio viewport is landscape, so a centre crop is only 364x648 px. This needs a portrait viewport or a
-   higher-resolution capture before the pilot.
+3. Filming method in Studio: per-shot camera marks (`Booth.Cameras`) and face swaps on the word timings. Capture 9:16
+   with the rolled-camera trick (648x1152 px, upscaled); look for a sharper capture before the pilot.
 4. Overlay layer (BREAKING bar, ticker, captions, FOLLOW pop-up), the cover, then review. Nothing is posted without
    the user's OK.
