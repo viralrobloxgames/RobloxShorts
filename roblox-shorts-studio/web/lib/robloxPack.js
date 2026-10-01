@@ -68,6 +68,10 @@ export async function packItem(kind, name) {
 // Every pack character a clip loads, with its options and what it wears; web/fit_check.mjs reads this.
 export const packActors = [];
 
+// Characters with their own face style (same expressions and eye positions, restyled): faces/<style>/<name>.png.
+// Skye (ViralRoblox News presenter) has lashes, eye sparkle, blush and berry lips (tools/make_glam_faces.py).
+export const FACE_STYLE = { Skye: 'glam' };
+
 // A pack character driven by rig.js. `expressions` are preloaded face textures (faces/<name>.png).
 // `hairLift` raises the Hair mesh (studs) when a fringe hides the eyes in close-ups.
 export async function loadRobloxCharacter(name, { expressions = ['happy'], scale = 1, hairLift = 0 } = {}) {
@@ -92,7 +96,8 @@ export async function loadRobloxCharacter(name, { expressions = ['happy'], scale
     if (mesh.name === 'Face') { face = mesh; mesh.material = mesh.material.clone(); mesh.material.polygonOffset = true; mesh.material.polygonOffsetFactor = -2; }
   }
   const faceTex = {};
-  await Promise.all(expressions.map(async (e) => { faceTex[e] = await packTexture(`faces/${e}.png`); }));
+  const faceDir = FACE_STYLE[name] ? `faces/${FACE_STYLE[name]}` : 'faces';
+  await Promise.all(expressions.map(async (e) => { faceTex[e] = await packTexture(`${faceDir}/${e}.png`); }));
   const actor = {
     name, root, bones, face, faceTex, expression: null, pack: true, scale,
     options: { expressions, scale, hairLift }, worn: [],
@@ -128,7 +133,7 @@ export async function loadRobloxCharacter(name, { expressions = ['happy'], scale
 // occupies, no hair/head surface point may lie further out than the accessory (tolerance FIT_TOLERANCE studs).
 export const ACCESSORY_FIT = {
   crown_admin: 'seat', top_hat: 'seat', cap: 'cover', beanie: 'hair', headphones: 'band', admin_badge_halo: 'float',
-  hair_leo: 'hair', hair_max: 'hair', hair_mia: 'hair', spiky_hair: 'hair', long_hair: 'hair',
+  hair_leo: 'hair', hair_max: 'hair', hair_mia: 'hair', hair_skye: 'hair', spiky_hair: 'hair', long_hair: 'hair',
 };
 export const FIT_TOLERANCE = 0.02;
 // How far above the attachment each kind may sit before it would look perched rather than worn.

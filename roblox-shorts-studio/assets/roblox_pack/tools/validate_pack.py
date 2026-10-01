@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-SKIP = {"_studio_raw", "tools"}
+SKIP = {"_studio_raw", "tools", "fit_check"}      # fit_check/: review sheets from web/fit_check.mjs, not pack textures
 R6 = ["Head", "Face", "Torso", "Left Arm", "Right Arm", "Left Leg", "Right Leg"]
 
 

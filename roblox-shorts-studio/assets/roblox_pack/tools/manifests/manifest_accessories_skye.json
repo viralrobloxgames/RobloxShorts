@@ -1,0 +1,77 @@
+{
+ "batch": "accessories_skye",
+ "items": [
+  {
+   "pivotKind": "HairAttachment",
+   "sourceAssetId": 2956239660,
+   "kind": "accessory",
+   "folder": "accessories/hair_skye",
+   "attachTo": "Head",
+   "item": "hair_skye",
+   "category": "accessories",
+   "attachment": "HairAttachment",
+   "file": "hair_skye",
+   "pivot": [
+    12,
+    2.1,
+    60,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "parts": [
+    {
+     "overlays": [],
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "texturedMesh": true,
+     "textureId": "rbxassetid://2907184367",
+     "meshId": "rbxassetid://2907183829",
+     "transparency": 0,
+     "name": "Handle",
+     "surfaces": {
+      "Top": "Smooth",
+      "Front": "Smooth",
+      "Bottom": "Smooth",
+      "Right": "Smooth",
+      "Left": "Smooth",
+      "Back": "Smooth"
+     },
+     "material": "Plastic",
+     "cframe": [
+      11.99162,
+      1.17143,
+      60.18473,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      1.68266,
+      2.52236,
+      1.67609
+     ],
+     "tag": "i01p001x"
+    }
+   ]
+  }
+ ],
+ "category": "accessories"
+}

@@ -1,7 +1,7 @@
 {
  "errors": [],
  "warnings": [],
- "obj_files": 189,
+ "obj_files": 223,
  "objs": {
   "accessories/admin_badge_halo/admin_badge_halo.obj": {
    "objects": [
@@ -175,6 +175,27 @@
     1.6
    ],
    "vertices": 500
+  },
+  "accessories/hair_skye/hair_skye.obj": {
+   "objects": [
+    "Hair"
+   ],
+   "bbox_min": [
+    -0.85,
+    -2.19,
+    -0.653
+   ],
+   "bbox_max": [
+    0.833,
+    0.333,
+    1.023
+   ],
+   "size": [
+    1.683,
+    2.522,
+    1.676
+   ],
+   "vertices": 667
   },
   "accessories/headphones/headphones.obj": {
    "objects": [
@@ -376,6 +397,34 @@
     1.208
    ],
    "vertices": 954
+  },
+  "characters/Skye/Skye.obj": {
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "bbox_min": [
+    -2.0,
+    0.0,
+    -0.653
+   ],
+   "bbox_max": [
+    2.0,
+    5.433,
+    1.023
+   ],
+   "size": [
+    4.0,
+    5.433,
+    1.676
+   ],
+   "vertices": 1621
   },
   "characters/Leo/faces/angry/head.obj": {
    "objects": [
@@ -3193,6 +3242,710 @@
    ],
    "vertices": 850
   },
+  "characters/Skye/faces/angry/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/annoyed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/blink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/confused/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/cool/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/crying/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/determined/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/disgusted/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/dizzy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/evil_grin/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/happy/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/knocked_out/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/laugh/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/love/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/mouth_closed/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/mouth_e/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/mouth_o/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/mouth_small/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/mouth_wide/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/nervous/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/neutral/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/sad/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/scared/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/scheming/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/shocked/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/shouting/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/sleeping/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/smug/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/surprised/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/suspicious/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/talking/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
+  "characters/Skye/faces/wink/head.obj": {
+   "objects": [
+    "Head",
+    "Face"
+   ],
+   "bbox_min": [
+    -0.604,
+    3.894,
+    -0.604
+   ],
+   "bbox_max": [
+    0.604,
+    5.106,
+    0.604
+   ],
+   "size": [
+    1.208,
+    1.212,
+    1.208
+   ],
+   "vertices": 850
+  },
   "map/ball/ball.obj": {
    "objects": [
     "Ball"
@@ -4399,8 +5152,30 @@
      -0.593
     ]
    ]
+  },
+  "Skye": {
+   "expressions": 32,
+   "identical_head_meshes": true,
+   "face_png_sizes": [
+    [
+     1024,
+     1024
+    ]
+   ],
+   "eye_positions_character_space": [
+    [
+     0.107,
+     4.765,
+     -0.594
+    ],
+    [
+     -0.116,
+     4.765,
+     -0.593
+    ]
+   ]
   }
  },
- "total_bytes": 21476443,
- "files": 760
+ "total_bytes": 27510068,
+ "files": 904
 }

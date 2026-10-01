@@ -1073,6 +1073,7 @@
   "clothing": "mia_clothing.png",
   "face": "face.png",
   "hair": "mia_hair.png",
+  "faceStyle": "classic",
   "note": "composite = body colours + Pants + Shirt, 128 px per stud. body/clothing are the two layers on their own (recolour gags: tint body, keep clothing). Head uses a skin swatch in the same atlas. Swap face.png (or map faces/<expression>/face.png) to change expression."
  },
  "build": "tools/build_characters_local.py (see README: Studio does not export clothing atlases or head meshes while its window is not rendering)"

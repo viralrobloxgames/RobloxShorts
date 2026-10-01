@@ -21,7 +21,7 @@ export async function setup(stage) {
     wardrobe = packActors.filter((a) => a.worn.length).map((a) => ({ character: a.name, options: a.options, accessories: a.worn.map((w) => w.name) }));
     for (const o of stage.scene.children) if (!keep.has(o)) o.visible = false;      // hide the clip's own set
   } else {
-    wardrobe = ['Leo', 'Max', 'Mia', 'Noob'].map((c) => ({ character: c, options: {}, accessories: Object.keys(ACCESSORY_FIT) }));
+    wardrobe = ['Leo', 'Max', 'Mia', 'Noob', 'Skye'].map((c) => ({ character: c, options: {}, accessories: Object.keys(ACCESSORY_FIT) }));
   }
   let i = 0;
   for (const w of wardrobe) {

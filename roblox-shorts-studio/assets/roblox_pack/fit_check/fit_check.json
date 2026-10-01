@@ -1,6 +1,6 @@
 {
   "clip": null,
-  "generated": "2026-09-30T19:02:50.062Z",
+  "generated": "2026-10-01T16:00:09.035Z",
   "fingerprint": null,
   "tolerance_studs": 0.02,
   "passed": true,
@@ -19,6 +19,7 @@
         "hair_leo",
         "hair_max",
         "hair_mia",
+        "hair_skye",
         "spiky_hair",
         "long_hair"
       ]
@@ -36,6 +37,7 @@
         "hair_leo",
         "hair_max",
         "hair_mia",
+        "hair_skye",
         "spiky_hair",
         "long_hair"
       ]
@@ -53,6 +55,7 @@
         "hair_leo",
         "hair_max",
         "hair_mia",
+        "hair_skye",
         "spiky_hair",
         "long_hair"
       ]
@@ -70,6 +73,25 @@
         "hair_leo",
         "hair_max",
         "hair_mia",
+        "hair_skye",
+        "spiky_hair",
+        "long_hair"
+      ]
+    },
+    {
+      "character": "Skye",
+      "options": {},
+      "accessories": [
+        "crown_admin",
+        "top_hat",
+        "cap",
+        "beanie",
+        "headphones",
+        "admin_badge_halo",
+        "hair_leo",
+        "hair_max",
+        "hair_mia",
+        "hair_skye",
         "spiky_hair",
         "long_hair"
       ]
@@ -215,6 +237,23 @@
     {
       "character": "Leo",
       "accessory": "hair_mia",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Leo",
+      "accessory": "hair_skye",
       "mode": "hair",
       "scale": 1,
       "stretch": 1,
@@ -418,6 +457,23 @@
     },
     {
       "character": "Max",
+      "accessory": "hair_skye",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Max",
       "accessory": "spiky_hair",
       "mode": "hair",
       "scale": 1,
@@ -589,6 +645,23 @@
     {
       "character": "Mia",
       "accessory": "hair_mia",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Mia",
+      "accessory": "hair_skye",
       "mode": "hair",
       "scale": 1,
       "stretch": 1,
@@ -792,6 +865,23 @@
     },
     {
       "character": "Noob",
+      "accessory": "hair_skye",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Noob",
       "accessory": "spiky_hair",
       "mode": "hair",
       "scale": 1,
@@ -809,6 +899,210 @@
     },
     {
       "character": "Noob",
+      "accessory": "long_hair",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.2,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.006,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "top_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.24,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.001,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "cap",
+      "mode": "cover",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.12,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.011,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "beanie",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
+      "accessory": "headphones",
+      "mode": "band",
+      "scale": 1,
+      "stretch": 1.2,
+      "offset": [
+        0,
+        1.24,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.018,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "admin_badge_halo",
+      "mode": "float",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "hair_leo",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
+      "accessory": "hair_max",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
+      "accessory": "hair_mia",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
+      "accessory": "hair_skye",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
+      "accessory": "spiky_hair",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Skye",
       "accessory": "long_hair",
       "mode": "hair",
       "scale": 1,

@@ -1,4 +1,4 @@
-"""Original classic-clothing templates (Shirt + Pants, 585 x 559) for Leo, Max and Mia.
+"""Original classic-clothing templates (Shirt + Pants, 585 x 559) for Leo, Max, Mia and Skye (news presenter).
 
 Regions follow Roblox's classic template (verified against a Studio OBJ export): every region is drawn as seen
 from outside the body, top = up. On the torso front the viewer's left is the character's right shoulder.
@@ -28,6 +28,9 @@ LOOKS = {
     "Leo": {"hoodie": "FF7B2C", "dark": "D45C16", "lining": "A9460D", "pants": "22325A", "pants_dark": "16213D", "accent": "FF7B2C", "emblem": "bolt"},
     "Max": {"hoodie": "16B8B2", "dark": "0E8F8A", "lining": "0A6A66", "pants": "1C2B4A", "pants_dark": "111A30", "accent": "16B8B2", "emblem": "star"},
     "Mia": {"hoodie": "A56DFF", "dark": "7F4BDB", "lining": "5F33B2", "pants": "2E2352", "pants_dark": "1E163A", "accent": "FF7BC5", "emblem": "heart"},
+    # ViralRoblox News presenter: fitted navy blazer (cyan piping, VR NEWS pin) over a white top, slim black trousers, heels
+    "Skye": {"style": "blazer", "blazer": "1E3270", "dark": "15245A", "lapel": "122050", "piping": "38D6E8", "top": "F7F5F2",
+             "button": "E9B949", "pants": "1C1C24", "pants_dark": "121218", "shoe": "17171C", "accent": "F27AA8"},
 }
 CREAM, SHOE, SOLE, LACE = (246, 240, 228, 255), (244, 244, 240, 255), (58, 58, 64, 255), (170, 170, 178, 255)
 
@@ -118,7 +121,92 @@ def overlay(base, draw_fn):
     base.alpha_composite(layer)
 
 
+def blazer_shirt(look):
+    im = Image.new("RGBA", (W * SCALE, H * SCALE), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    bz, dark, lapel, pipe = rgb(look["blazer"]), rgb(look["dark"]), rgb(look["lapel"]), rgb(look["piping"])
+    top, button = rgb(look["top"]), rgb(look["button"])
+    for rect in TORSO.values():
+        Region(d, rect).rect(0, 0, rect[2], rect[3], bz)
+    f = Region(d, TORSO["F"])
+    f.poly([(40, 0), (88, 0), (64, 58)], top)                                          # white top in the V
+    f.poly([(34, 6), (64, 52), (70, 52)], shade(top, 0.93))                            # soft fold of the top
+    f.poly([(40, 0), (26, 0), (36, 30), (30, 36), (64, 62)], lapel)                    # lapels (notched)
+    f.poly([(88, 0), (102, 0), (92, 30), (98, 36), (64, 62)], lapel)
+    f.line([(40, 0), (64, 59)], pipe, 2)                                               # cyan piping on the opening
+    f.line([(88, 0), (64, 59)], pipe, 2)
+    f.line([(64, 62), (64, 128)], dark, 2)                                             # front closure
+    for y in (78, 98):
+        f.ellipse(60, y - 4, 68, y + 4, button, shade(button, 0.7))
+    for x0 in (14, 84):                                                                # pocket flaps
+        f.rect(x0, 100, x0 + 30, 106, dark)
+        f.line([(x0, 100), (x0 + 30, 100)], pipe, 1)
+    f.rect(86, 22, 108, 33, pipe)                                                      # "VR NEWS" pin, character's left chest
+    f.rect(88, 24, 106, 31, (255, 255, 255, 255))
+    f.rect(90, 26, 104, 29, rgb(look["blazer"]))
+    f.ribs(122, 128, dark, dark)                                                       # hem
+    b = Region(d, TORSO["B"])
+    b.rect(0, 0, 128, 8, dark)                                                         # collar
+    b.line([(64, 8), (64, 128)], dark, 2)                                              # centre seam
+    b.line([(30, 40), (98, 40)], shade(bz, 1.1), 1)
+    for side in ("R", "L"):
+        s = Region(d, TORSO[side])
+        s.line([(32, 0), (32, 128)], dark, 2)
+    u = Region(d, TORSO["U"])
+    u.ellipse(40, 10, 88, 48, top)                                                     # neckline
+    u.rect(40, 0, 88, 12, lapel)
+    Region(d, TORSO["D"]).rect(0, 0, 128, 64, dark)
+    for arm in (RARM, LARM):                                                           # sleeves to the wrist, white cuff, bare hand
+        for k in ("L", "B", "R", "F"):
+            r = Region(d, arm[k])
+            r.rect(0, 0, r.w, 100, bz)
+            r.rect(0, 98, r.w, 100, pipe)
+            r.rect(0, 100, r.w, 106, top)
+            r.line([(0, 2), (r.w, 2)], shade(bz, 0.9), 3)
+        Region(d, arm["U"]).rect(0, 0, 64, 64, bz)
+
+    def shading(dd):
+        for rect in TORSO.values():
+            Region(dd, rect).edge_shade(0.88, 5)
+        for rect in [RARM[k] for k in "LBRF"] + [LARM[k] for k in "LBRF"]:
+            Region(dd, (rect[0], rect[1], rect[2], 100)).edge_shade(0.88, 5)
+    overlay(im, shading)
+    return im
+
+
+def slim_pants(look):
+    im = Image.new("RGBA", (W * SCALE, H * SCALE), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    p, pd, shoe, acc = rgb(look["pants"]), rgb(look["pants_dark"]), rgb(look["shoe"]), rgb(look["accent"])
+    for k in ("F", "B", "R", "L"):
+        r = Region(d, TORSO[k])
+        r.rect(0, 64, r.w, 128, p)
+    Region(d, TORSO["D"]).rect(0, 0, 128, 64, p)
+    for leg in (RARM, LARM):
+        for k in ("L", "B", "R", "F"):
+            r = Region(d, leg[k])
+            r.rect(0, 0, r.w, 100, p)                                                  # slim trousers; ankle shows above the shoe
+            r.line([(32, 4), (32, 98)], pd, 1)                                         # pressed crease
+            r.rect(0, 106, r.w, 128, shoe)                                             # heels
+            r.rect(0, 124, r.w, 128, acc)                                              # pink sole
+            if k == "F":
+                r.poly([(14, 106), (50, 106), (40, 114), (24, 114)], shade(shoe, 1.6))  # toe-cap shine
+            elif k == "B":
+                r.rect(26, 112, 38, 128, shade(shoe, 1.35))                            # heel
+        Region(d, leg["U"]).rect(0, 0, 64, 64, p)
+        sole = Region(d, leg["D"])
+        sole.rect(0, 0, 64, 64, acc)
+
+    def shading(dd):
+        for rect in [RARM[k] for k in "LBRF"] + [LARM[k] for k in "LBRF"]:
+            Region(dd, (rect[0], rect[1], rect[2], 100)).edge_shade(0.86, 5)
+    overlay(im, shading)
+    return im
+
+
 def shirt(look):
+    if look.get("style") == "blazer":
+        return blazer_shirt(look)
     im = Image.new("RGBA", (W * SCALE, H * SCALE), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     hood, dark, lining = rgb(look["hoodie"]), rgb(look["dark"]), rgb(look["lining"])
@@ -171,6 +259,8 @@ def shirt(look):
 
 
 def pants(look):
+    if look.get("style") == "blazer":
+        return slim_pants(look)
     im = Image.new("RGBA", (W * SCALE, H * SCALE), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     p, pd, acc = rgb(look["pants"]), rgb(look["pants_dark"]), rgb(look["accent"])

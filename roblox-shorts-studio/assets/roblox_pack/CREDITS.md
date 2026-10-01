@@ -24,6 +24,9 @@ Every Roblox asset used by the pack. **Roblox-made** means the creator is Roblox
 | 376189070 | GenericBoy2_Hair | Roblox | Free | Yes | accessories/spiky_hair (texture of the item above) |
 | 319354652 | MESH_LongStraightHair | Roblox | Free | Yes | accessories/long_hair (mesh of the item above) |
 | 376186990 | GenericGirl1_Hair | Roblox | Free | Yes | accessories/long_hair (texture of the item above) |
+| 2956239660 | Belle Of Belfast Long Red Hair | Roblox | Free | Yes | accessories/hair_skye, characters/Skye (the character copy of the texture is recoloured to pink) |
+| 2907183829 | RenderMesh (mesh of Belle Of Belfast Long Red Hair) | BillCypherLives | Free (part of the free Roblox item above) | No | accessories/hair_skye (mesh of the item above) |
+| 2907184367 | TX_FIT (texture of Belle Of Belfast Long Red Hair) | Roblox | Free (part of the free Roblox item above) | Yes | accessories/hair_skye (texture of the item above) |
 | 144075659 | Smile | Roblox | Free | Yes | default face on the Studio characters (rbxasset://textures/face.png); faces/happy.png is a vector redraw |
 | built-in | rbxasset://textures/SpawnLocation.png | Roblox | Free | Yes | map/spawn_location, map/checkpoint decal |
 | built-in | Roblox Wood material texture (Studio) | Roblox | Free | Yes | roblox_wood_diff.png on map/ladder and the sign / board posts (512 px copy of Studio's export) |
@@ -82,6 +85,12 @@ Roblox puts these images in its own default Baseplate template, but the asset cr
 | 77496743302839 | clothing/pants_max.png | Owned (ours) | No | Pants template for Max |
 | 135925767311841 | clothing/shirt_mia.png | Owned (ours) | No | Shirt template for Mia |
 | 108300612488196 | clothing/pants_mia.png | Owned (ours) | No | Pants template for Mia |
+| 94359000002068 | clothing/shirt_skye.png | Owned (ours) | No | Shirt template for Skye (navy blazer, white top) |
+| 103307071917091 | clothing/pants_skye.png | Owned (ours) | No | Pants template for Skye (slim black trousers, heels) |
+| 72624711477330 | faces/glam/happy.png | Owned (ours) | No | Skye's face decal in Studio (glam happy) |
+| 101696392898207 | pink recolour of the Belle Of Belfast hair texture | Owned (ours, derived from the Roblox texture) | No | SkyeHair texture in the Studio model only; the pack keeps Roblox's original in accessories/hair_skye |
+| 94359000002068 | clothing/shirt_skye.png | Owned (ours) | No | Shirt template for Skye |
+| 103307071917091 | clothing/pants_skye.png | Owned (ours) | No | Pants template for Skye |
 | 107074341985229 | faces/neutral.png | Owned (ours) | No | face decal 'neutral' (Studio face sheet) |
 | 125176076893296 | faces/happy.png | Owned (ours) | No | face decal 'happy' (Studio face sheet) |
 | 135756012553494 | faces/surprised.png | Owned (ours) | No | face decal 'surprised' (Studio face sheet) |

@@ -20,6 +20,7 @@ DESC = {
     "hair_leo": "Leo's hair: Roblox 'Pal Hair' (free, Roblox-made) with its original dark amber texture. characters/Leo uses a copy brightened toward ginger.",
     "hair_max": "Max's hair: Roblox 'Brown Hair' (free, Roblox-made), short dark brown.",
     "hair_mia": "Mia's hair: Roblox 'Black Ponytail' (free, Roblox-made).",
+    "hair_skye": "Skye's hair: Roblox 'Belle Of Belfast Long Red Hair' (free, Roblox-made), long waves with a braided crown, original red texture. characters/Skye uses a copy recoloured to pink.",
     "beanie": "Roblox 'Orange Beanie with Black Hair' (free, Roblox-made).",
     "spiky_hair": "Roblox 'Blonde Spiked Hair' (free, Roblox-made).",
     "long_hair": "Roblox 'Straight Blonde Hair' (free, Roblox-made).",
@@ -108,6 +109,7 @@ def main(pack, manifest_dir):
              "pivot": "feet centre on the ground (origin), facing -Z", "bodyColors": rig["bodyColors"],
              "textures": sorted(p.name for p in rig_path.parent.glob("*.png")),
              "faces": f"characters/{name}/faces/<expression>/face.png + head.obj/.mtl",
+             "faceStyle": rig.get("textures", {}).get("faceStyle", "classic"),
              "clothing": rig.get("clothing"), "hair": [{"name": a["name"], "sourceAssetId": a.get("sourceAssetId"), "item": a.get("packItem")} for a in rig["accessories"]],
              "source": {"rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
                         "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
@@ -119,6 +121,11 @@ def main(pack, manifest_dir):
                     "sheet": "faces/face_sheet.png", "eye_centres_uv": fm["eye_centres_uv"], "count": len(fm["faces"]),
                     "list": [{"name": f["name"], "group": f["group"], "aliases": f["aliases"], "description": f["description"],
                               "robloxDecalAsset": UPLOADS["faces"].get(f["name"])} for f in fm["faces"]]}
+    if (pack / "faces" / "glam").exists():
+        cat["faces"]["styles"] = {"glam": {"path": "faces/glam/<expression>.png", "sheet": "faces/glam/glam_sheet.png",
+                                           "description": "Same expressions and eye positions with lashes, eye sparkle, blush and berry lips "
+                                                          "(tools/make_glam_faces.py). Used by Skye.",
+                                           "robloxDecalAssets": UPLOADS.get("faces_glam", {})}}
     for cat_name in ("accessories", "props", "map"):
         for d in sorted((pack / cat_name).iterdir() if (pack / cat_name).exists() else []):
             if not d.is_dir():

@@ -1,63 +1,74 @@
 {
-  "account": "theshermanator9 (user 9114155701)",
-  "uploaded": "2026-09-30",
-  "note": "Original images made for this pack and uploaded as Image assets (free, own). Used as Shirt/Pants templates and face decals in Studio.",
-  "clothing": {
-    "shirt_leo": "rbxassetid://121525159603968",
-    "pants_leo": "rbxassetid://93353925862639",
-    "shirt_max": "rbxassetid://80401978037462",
-    "pants_max": "rbxassetid://77496743302839",
-    "shirt_mia": "rbxassetid://135925767311841",
-    "pants_mia": "rbxassetid://108300612488196"
-  },
-  "faces": {
-    "neutral": "rbxassetid://107074341985229",
-    "happy": "rbxassetid://125176076893296",
-    "surprised": "rbxassetid://135756012553494",
-    "angry": "rbxassetid://114290998337077",
-    "sad": "rbxassetid://134026942648535",
-    "laugh": "rbxassetid://107174762907936",
-    "smug": "rbxassetid://102596987408059",
-    "evil_grin": "rbxassetid://101671834031550",
-    "scheming": "rbxassetid://104570663825938",
-    "scared": "rbxassetid://110094932699155",
-    "crying": "rbxassetid://124019527348674",
-    "dizzy": "rbxassetid://115744369289608",
-    "confused": "rbxassetid://139424499722437",
-    "annoyed": "rbxassetid://84031339724280",
-    "shocked": "rbxassetid://75855059690259",
-    "determined": "rbxassetid://102817621368441",
-    "wink": "rbxassetid://94104854982458",
-    "sleeping": "rbxassetid://91550177931058",
-    "nervous": "rbxassetid://72048266953848",
-    "love": "rbxassetid://76469622883268",
-    "cool": "rbxassetid://109814399913514",
-    "blink": "rbxassetid://75604803436150",
-    "suspicious": "rbxassetid://100499364182396",
-    "shouting": "rbxassetid://136533257390042",
-    "knocked_out": "rbxassetid://100228519415884",
-    "disgusted": "rbxassetid://94424233970432",
-    "talking": "rbxassetid://109247875528867",
-    "mouth_closed": "rbxassetid://138009653929597",
-    "mouth_small": "rbxassetid://81074431659462",
-    "mouth_wide": "rbxassetid://138304902096119",
-    "mouth_o": "rbxassetid://99731717304755",
-    "mouth_e": "rbxassetid://90496259127215"
-  },
-  "decals": {
-    "admin_badge": "rbxassetid://118521769225336",
-    "free_coins_sign": "rbxassetid://109168806742399",
-    "sign_blank": "rbxassetid://106364404101389",
-    "board_blank": "rbxassetid://122821788625923",
-    "timer_blank": "rbxassetid://113095170950157",
-    "finish_checker": "rbxassetid://107112331396369",
-    "podium_1": "rbxassetid://73841515972004",
-    "podium_2": "rbxassetid://109598785313208",
-    "podium_3": "rbxassetid://117125449913948",
-    "conveyor_arrows": "rbxassetid://92764495662346"
-  },
-  "diagnostics": {
-    "diag_shirt": "rbxassetid://80412762996752",
-    "diag_pants": "rbxassetid://119163638818395"
-  }
+ "account": "theshermanator9 (user 9114155701)",
+ "uploaded": "2026-09-30",
+ "note": "Original images made for this pack and uploaded as Image assets (free, own). Used as Shirt/Pants templates and face decals in Studio.",
+ "clothing": {
+  "shirt_leo": "rbxassetid://121525159603968",
+  "pants_leo": "rbxassetid://93353925862639",
+  "shirt_max": "rbxassetid://80401978037462",
+  "pants_max": "rbxassetid://77496743302839",
+  "shirt_mia": "rbxassetid://135925767311841",
+  "pants_mia": "rbxassetid://108300612488196",
+  "shirt_skye": "rbxassetid://94359000002068",
+  "pants_skye": "rbxassetid://103307071917091"
+ },
+ "faces": {
+  "neutral": "rbxassetid://107074341985229",
+  "happy": "rbxassetid://125176076893296",
+  "surprised": "rbxassetid://135756012553494",
+  "angry": "rbxassetid://114290998337077",
+  "sad": "rbxassetid://134026942648535",
+  "laugh": "rbxassetid://107174762907936",
+  "smug": "rbxassetid://102596987408059",
+  "evil_grin": "rbxassetid://101671834031550",
+  "scheming": "rbxassetid://104570663825938",
+  "scared": "rbxassetid://110094932699155",
+  "crying": "rbxassetid://124019527348674",
+  "dizzy": "rbxassetid://115744369289608",
+  "confused": "rbxassetid://139424499722437",
+  "annoyed": "rbxassetid://84031339724280",
+  "shocked": "rbxassetid://75855059690259",
+  "determined": "rbxassetid://102817621368441",
+  "wink": "rbxassetid://94104854982458",
+  "sleeping": "rbxassetid://91550177931058",
+  "nervous": "rbxassetid://72048266953848",
+  "love": "rbxassetid://76469622883268",
+  "cool": "rbxassetid://109814399913514",
+  "blink": "rbxassetid://75604803436150",
+  "suspicious": "rbxassetid://100499364182396",
+  "shouting": "rbxassetid://136533257390042",
+  "knocked_out": "rbxassetid://100228519415884",
+  "disgusted": "rbxassetid://94424233970432",
+  "talking": "rbxassetid://109247875528867",
+  "mouth_closed": "rbxassetid://138009653929597",
+  "mouth_small": "rbxassetid://81074431659462",
+  "mouth_wide": "rbxassetid://138304902096119",
+  "mouth_o": "rbxassetid://99731717304755",
+  "mouth_e": "rbxassetid://90496259127215"
+ },
+ "decals": {
+  "admin_badge": "rbxassetid://118521769225336",
+  "free_coins_sign": "rbxassetid://109168806742399",
+  "sign_blank": "rbxassetid://106364404101389",
+  "board_blank": "rbxassetid://122821788625923",
+  "timer_blank": "rbxassetid://113095170950157",
+  "finish_checker": "rbxassetid://107112331396369",
+  "podium_1": "rbxassetid://73841515972004",
+  "podium_2": "rbxassetid://109598785313208",
+  "podium_3": "rbxassetid://117125449913948",
+  "conveyor_arrows": "rbxassetid://92764495662346"
+ },
+ "diagnostics": {
+  "diag_shirt": "rbxassetid://80412762996752",
+  "diag_pants": "rbxassetid://119163638818395"
+ },
+ "faces_glam": {
+  "happy": "rbxassetid://72624711477330"
+ },
+ "textures": {
+  "hair_skye_pink": "rbxassetid://101696392898207"
+ },
+ "notes": {
+  "2026-10-01": "Skye (ViralRoblox News presenter): shirt/pants templates, glam happy face decal and the pink recolour of the Belle Of Belfast hair texture (Studio copy only), uploaded to the same account."
+ }
 }

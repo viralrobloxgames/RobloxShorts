@@ -108,7 +108,7 @@ Rendered from the booth scene with a `cover_clip.js` per episode, as for the sto
 
 ## Build order
 
-1. **Presenter:** build Skye (pink waves, navy blazer) in the R6 pack, render previews for the user to approve, and pass the fit check.
+1. **Presenter: done 2026-10-01.** `assets/roblox_pack/characters/Skye/` (pink Belle Of Belfast waves, navy blazer over a white top, slim black trousers, glam faces); fit check passed for all 12 accessories; previews in `assets/roblox_pack/previews/skye_*.jpg`.
 2. **Booth:** desk, video wall, lighting, three camera angles and the overlay layer, as a reusable template.
 3. **Cover template:** render 3 sample covers side by side to check the grid looks like one series.
 4. **Research script and `ideas/news-ledger.json`**, then the morning scheduled task.

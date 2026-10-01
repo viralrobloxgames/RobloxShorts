@@ -29,7 +29,7 @@ BUILTIN = Path(__file__).resolve().parent / "builtin_textures"
 PACK_ROOT = Path(__file__).resolve().parent.parent
 PLAIN_MATERIALS = {"Plastic", "SmoothPlastic", "Neon", "Glass", "ForceField"}
 # Roblox calls an accessory's main part "Handle"; name it after what it is in the pack's OBJ files.
-HANDLE_NAMES = {"crown_admin": "Band", "admin_badge_halo": "Halo", "hair_leo": "Hair", "hair_max": "Hair", "hair_mia": "Hair",
+HANDLE_NAMES = {"crown_admin": "Band", "admin_badge_halo": "Halo", "hair_leo": "Hair", "hair_max": "Hair", "hair_mia": "Hair", "hair_skye": "Hair",
                 "beanie": "Beanie", "spiky_hair": "Hair", "long_hair": "Hair", "cap": "Dome", "headphones": "Headband",
                 "top_hat": "Brim"}
 

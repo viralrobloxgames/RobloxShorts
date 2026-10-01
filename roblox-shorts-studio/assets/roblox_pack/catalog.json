@@ -1,7 +1,7 @@
 {
  "pack": "Roblox R6 asset pack for RobloxShorts",
  "version": "1.0.0",
- "generated": "2026-09-30",
+ "generated": "2026-10-01",
  "units": "studs (1 stud = 1 unit)",
  "axes": "+Y up; characters face -Z; +X is the character's right; OBJ coordinates are relative to each item's pivot",
  "studio": {
@@ -82,6 +82,7 @@
     "leo_hair.png"
    ],
    "faces": "characters/Leo/faces/<expression>/face.png + head.obj/.mtl",
+   "faceStyle": "classic",
    "clothing": {
     "shirt": {
      "template": "../../clothing/shirt_leo.png",
@@ -186,6 +187,7 @@
     "max_hair.png"
    ],
    "faces": "characters/Max/faces/<expression>/face.png + head.obj/.mtl",
+   "faceStyle": "classic",
    "clothing": {
     "shirt": {
      "template": "../../clothing/shirt_max.png",
@@ -290,6 +292,7 @@
     "mia_hair.png"
    ],
    "faces": "characters/Mia/faces/<expression>/face.png + head.obj/.mtl",
+   "faceStyle": "classic",
    "clothing": {
     "shirt": {
      "template": "../../clothing/shirt_mia.png",
@@ -392,8 +395,114 @@
     "noob_composite.png"
    ],
    "faces": "characters/Noob/faces/<expression>/face.png + head.obj/.mtl",
+   "faceStyle": "classic",
    "clothing": {},
    "hair": [],
+   "source": {
+    "rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
+    "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
+    "robloxMade": "rig, meshes and hair yes; clothing templates and faces are ours",
+    "built": "tools/build_characters_local.py"
+   }
+  },
+  {
+   "name": "Skye",
+   "path": "characters/Skye/Skye.obj",
+   "rig": "characters/Skye/rig.json",
+   "objects": [
+    "Head",
+    "Face",
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -0.653
+    ],
+    "max": [
+     2.0,
+     5.433,
+     1.023
+    ],
+    "size": [
+     4.0,
+     5.433,
+     1.676
+    ]
+   },
+   "pivot": "feet centre on the ground (origin), facing -Z",
+   "bodyColors": {
+    "rightArm": [
+     234,
+     184,
+     146
+    ],
+    "head": [
+     234,
+     184,
+     146
+    ],
+    "rightLeg": [
+     234,
+     184,
+     146
+    ],
+    "torso": [
+     234,
+     184,
+     146
+    ],
+    "leftArm": [
+     234,
+     184,
+     146
+    ],
+    "leftLeg": [
+     234,
+     184,
+     146
+    ]
+   },
+   "textures": [
+    "face.png",
+    "skye_body.png",
+    "skye_clothing.png",
+    "skye_composite.png",
+    "skye_hair.png"
+   ],
+   "faces": "characters/Skye/faces/<expression>/face.png + head.obj/.mtl",
+   "faceStyle": "glam",
+   "clothing": {
+    "shirt": {
+     "template": "../../clothing/shirt_skye.png",
+     "robloxAsset": "rbxassetid://94359000002068",
+     "size": [
+      585,
+      559
+     ]
+    },
+    "pants": {
+     "template": "../../clothing/pants_skye.png",
+     "robloxAsset": "rbxassetid://103307071917091",
+     "size": [
+      585,
+      559
+     ]
+    }
+   },
+   "hair": [
+    {
+     "name": "SkyeHair",
+     "sourceAssetId": 2956239660,
+     "item": "accessories/hair_skye"
+    }
+   ],
    "source": {
     "rig": "Players:CreateHumanoidModelFromDescription(..., R6) (Roblox's own R6 rig)",
     "meshes": "R6 body-part mesh (box with 0.065 stud bevel) and head / face-decal meshes as Studio exports them",
@@ -666,7 +775,17 @@
     "description": "Lip-sync: wide smile showing teeth (E, EE).",
     "robloxDecalAsset": "rbxassetid://90496259127215"
    }
-  ]
+  ],
+  "styles": {
+   "glam": {
+    "path": "faces/glam/<expression>.png",
+    "sheet": "faces/glam/glam_sheet.png",
+    "description": "Same expressions and eye positions with lashes, eye sparkle, blush and berry lips (tools/make_glam_faces.py). Used by Skye.",
+    "robloxDecalAssets": {
+     "happy": "rbxassetid://72624711477330"
+    }
+   }
+  }
  },
  "accessories": [
   {
@@ -956,6 +1075,44 @@
    },
    "source": {
     "robloxAssetId": 376527350,
+    "robloxMade": true,
+    "free": true,
+    "built": "Roblox catalog item inserted with InsertService",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HairAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "hair_skye",
+   "path": "accessories/hair_skye/hair_skye.obj",
+   "description": "Skye's hair: Roblox 'Belle Of Belfast Long Red Hair' (free, Roblox-made), long waves with a braided crown, original red texture. characters/Skye uses a copy recoloured to pink.",
+   "objects": [
+    "Hair"
+   ],
+   "dimensions": {
+    "min": [
+     -0.85,
+     -2.19,
+     -0.653
+    ],
+    "max": [
+     0.833,
+     0.333,
+     1.023
+    ],
+    "size": [
+     1.683,
+     2.522,
+     1.676
+    ]
+   },
+   "pivot": {
+    "kind": "HairAttachment",
+    "attachment": "HairAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": 2956239660,
     "robloxMade": true,
     "free": true,
     "built": "Roblox catalog item inserted with InsertService",
@@ -3038,6 +3195,15 @@
    "type": "pants"
   },
   {
+   "path": "clothing/pants_skye.png",
+   "robloxImageAsset": "rbxassetid://103307071917091",
+   "size": [
+    585,
+    559
+   ],
+   "type": "pants"
+  },
+  {
    "path": "clothing/shirt_leo.png",
    "robloxImageAsset": "rbxassetid://121525159603968",
    "size": [
@@ -3058,6 +3224,15 @@
   {
    "path": "clothing/shirt_mia.png",
    "robloxImageAsset": "rbxassetid://135925767311841",
+   "size": [
+    585,
+    559
+   ],
+   "type": "shirt"
+  },
+  {
+   "path": "clothing/shirt_skye.png",
+   "robloxImageAsset": "rbxassetid://94359000002068",
    "size": [
     585,
     559
@@ -3108,9 +3283,9 @@
   }
  ],
  "counts": {
-  "characters": 4,
+  "characters": 5,
   "faces_per_character": 32,
-  "accessories": 11,
+  "accessories": 12,
   "props": 10,
   "map": 36,
   "animations": 51

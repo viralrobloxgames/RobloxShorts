@@ -1,0 +1,911 @@
+{
+ "rigType": "R6",
+ "origin": "feet centre on the ground (HumanoidRootPart position with Y = 0); character faces -Z",
+ "attachments": [
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "HairAttachment"
+  },
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "FaceCenterAttachment"
+  },
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0,
+    -0.6,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "FaceFrontAttachment"
+  },
+  {
+   "part": "Head",
+   "cframe": [
+    0,
+    0.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "HatAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "WaistCenterAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    0,
+    0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "BodyBackAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    -1,
+    0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "WaistBackAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    -1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftCollarAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightCollarAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "NeckAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    -1,
+    -0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "WaistFrontAttachment"
+  },
+  {
+   "part": "Torso",
+   "cframe": [
+    0,
+    0,
+    -0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "BodyFrontAttachment"
+  },
+  {
+   "part": "Left Arm",
+   "cframe": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftShoulderAttachment"
+  },
+  {
+   "part": "Left Arm",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftGripAttachment"
+  },
+  {
+   "part": "Right Arm",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightGripAttachment"
+  },
+  {
+   "part": "Right Arm",
+   "cframe": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightShoulderAttachment"
+  },
+  {
+   "part": "Left Leg",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "LeftFootAttachment"
+  },
+  {
+   "part": "Right Leg",
+   "cframe": [
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RightFootAttachment"
+  },
+  {
+   "part": "HumanoidRootPart",
+   "cframe": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "name": "RootAttachment"
+  }
+ ],
+ "bodyColors": {
+  "rightArm": [
+   234,
+   184,
+   146
+  ],
+  "head": [
+   234,
+   184,
+   146
+  ],
+  "rightLeg": [
+   234,
+   184,
+   146
+  ],
+  "torso": [
+   234,
+   184,
+   146
+  ],
+  "leftArm": [
+   234,
+   184,
+   146
+  ],
+  "leftLeg": [
+   234,
+   184,
+   146
+  ]
+ },
+ "humanoid": {
+  "jumpPower": 50,
+  "rigType": "R6",
+  "walkSpeed": 16,
+  "hipHeight": 0
+ },
+ "motor6ds": [
+  {
+   "part1": "Torso",
+   "name": "RootJoint",
+   "maxVelocity": 0.10000000149011612,
+   "parent": "HumanoidRootPart",
+   "c0": [
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "part0": "HumanoidRootPart"
+  },
+  {
+   "part1": "Right Leg",
+   "name": "Right Hip",
+   "maxVelocity": 0.10000000149011612,
+   "parent": "Torso",
+   "c0": [
+    1,
+    -1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "c1": [
+    0.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "part0": "Torso"
+  },
+  {
+   "part1": "Head",
+   "name": "Neck",
+   "maxVelocity": 0.10000000149011612,
+   "parent": "Torso",
+   "c0": [
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "c1": [
+    0,
+    -0.5,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "part0": "Torso"
+  },
+  {
+   "part1": "Right Arm",
+   "name": "Right Shoulder",
+   "maxVelocity": 0.10000000149011612,
+   "parent": "Torso",
+   "c0": [
+    1,
+    0.5,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "c1": [
+    -0.5,
+    0.5,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0
+   ],
+   "part0": "Torso"
+  },
+  {
+   "part1": "Left Leg",
+   "name": "Left Hip",
+   "maxVelocity": 0.10000000149011612,
+   "parent": "Torso",
+   "c0": [
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "c1": [
+    -0.5,
+    1,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "part0": "Torso"
+  },
+  {
+   "part1": "Left Arm",
+   "name": "Left Shoulder",
+   "maxVelocity": 0.10000000149011612,
+   "parent": "Torso",
+   "c0": [
+    -1,
+    0.5,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "c1": [
+    0.5,
+    0.5,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "part0": "Torso"
+  }
+ ],
+ "clothing": {
+  "shirt": "rbxassetid://94359000002068",
+  "pants": "rbxassetid://103307071917091"
+ },
+ "accessories": [
+  {
+   "attachedTo": "Head",
+   "handleCFrame": [
+    -0.008376,
+    4.171427,
+    0.184734,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "handleSize": [
+    1.682662,
+    2.522365,
+    1.676085
+   ],
+   "meshId": "rbxassetid://2907183829",
+   "weldC0": [
+    0.008376,
+    0.928573,
+    -0.184735,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "textureId": "rbxassetid://101696392898207",
+   "handleClass": "MeshPart",
+   "name": "SkyeHair",
+   "handleCFrameInHead": [
+    -0.008376,
+    -0.328573,
+    0.184734,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "sourceAssetId": 2956239660,
+   "attachment": "HairAttachment",
+   "handleAttachmentCFrame": [
+    0.008376,
+    0.928573,
+    -0.184735,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "weldC1": [
+    0,
+    0.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ]
+  }
+ ],
+ "name": "Skye",
+ "parts": [
+  {
+   "faceDecal": {
+    "texture": "rbxassetid://72624711477330",
+    "face": "Front"
+   },
+   "transparency": 0,
+   "name": "Head",
+   "material": "Plastic",
+   "color": [
+    234,
+    184,
+    146
+   ],
+   "cframe": [
+    0,
+    4.5,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "specialMesh": {
+    "meshType": "Head",
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "size": [
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Torso",
+   "color": [
+    234,
+    184,
+    146
+   ],
+   "cframe": [
+    0,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Left Arm",
+   "color": [
+    234,
+    184,
+    146
+   ],
+   "cframe": [
+    -1.5,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Right Arm",
+   "color": [
+    234,
+    184,
+    146
+   ],
+   "cframe": [
+    1.5,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Left Leg",
+   "color": [
+    234,
+    184,
+    146
+   ],
+   "cframe": [
+    -0.5,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 0,
+   "name": "Right Leg",
+   "color": [
+    234,
+    184,
+    146
+   ],
+   "cframe": [
+    0.5,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "transparency": 1,
+   "name": "HumanoidRootPart",
+   "color": [
+    163,
+    162,
+    165
+   ],
+   "cframe": [
+    0,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "material": "Plastic",
+   "size": [
+    2,
+    2,
+    1
+   ]
+  }
+ ],
+ "worldOriginInStudio": [
+  12.5,
+  0,
+  40
+ ]
+}

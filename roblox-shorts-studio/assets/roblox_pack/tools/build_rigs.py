@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 
 UPLOADS = json.loads((Path(__file__).parent / "uploads.json").read_text(encoding="utf-8"))
-HAIR_ITEM = {"LeoHair": "hair_leo", "MaxHair": "hair_max", "MiaHair": "hair_mia"}
+HAIR_ITEM = {"LeoHair": "hair_leo", "MaxHair": "hair_max", "MiaHair": "hair_mia", "SkyeHair": "hair_skye"}
 
 
 def M(c):

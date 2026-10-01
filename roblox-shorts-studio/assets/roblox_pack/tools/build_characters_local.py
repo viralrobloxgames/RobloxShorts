@@ -32,6 +32,10 @@ R6_HEAD = Path(__file__).resolve().parent / "builtin_meshes" / "r6_head.obj"
 HEAD = np.array([0.0, 4.5, 0.0])
 HAIR_ATTACHMENT = np.array([0.0, 5.1, 0.0])
 HAIR_TINT = {"Leo": (1.8, 1.65, 1.0, 20)}   # per-channel gain + offset on the hair texture (character copy only)
+# Luminance -> colour ramp for the hair texture (character copy only): Skye's signature pink waves from Roblox's red
+# Belle Of Belfast hair. Stops are (t, r, g, b), t = texture luminance between its 2nd and 98th percentile.
+HAIR_RAMP = {"Skye": [(0.0, 150, 40, 95), (0.45, 232, 96, 160), (0.8, 255, 160, 205), (1.0, 255, 214, 236)]}
+FACE_STYLE = {"Skye": "glam"}               # faces/<style>/<expression>.png instead of faces/<expression>.png
 
 PARTS = {  # R6 rest layout in character space (feet centre at the origin, facing -Z, +X = character's right)
     "Torso": ((0.0, 3.0, 0.0), (2.0, 2.0, 1.0)),
@@ -226,7 +230,8 @@ def build(pack, name, report):
     w.add_object("Head", [(w.add_material("head", Kd=(1, 1, 1), map_Kd=f"{stem}_composite.png"),
                            obj_tris(head["Head"], HEAD, uv=swatch_uv))])
     face_tris = obj_tris(head["Face"], HEAD)
-    shutil.copyfile(pack / "faces" / "happy.png", out / "face.png")
+    faces_dir = pack / "faces" / FACE_STYLE[name] if name in FACE_STYLE else pack / "faces"
+    shutil.copyfile(faces_dir / "happy.png", out / "face.png")
     w.add_object("Face", [(w.add_material("face", Kd=(1, 1, 1), d=FACE_D, map_Kd="face.png", Ks=(0, 0, 0)), face_tris)])
     for part, (centre, size) in PARTS.items():
         rects = {fname: LAYOUT[part][LETTER[fname]] for fname in FACE_AXES}
@@ -240,7 +245,16 @@ def build(pack, name, report):
             continue
         objs = read_pack_obj(src / f"{item}.obj")
         tex = next(src.glob("*.png"), None)
-        if tex and name in HAIR_TINT:                  # brief: Leo has ginger hair; Pal Hair's texture is dark amber
+        if tex and name in HAIR_RAMP:
+            a = np.array(Image.open(tex).convert("RGBA")).astype(float)
+            L = 0.299 * a[..., 0] + 0.587 * a[..., 1] + 0.114 * a[..., 2]
+            lo, hi = np.percentile(L, 2), np.percentile(L, 98)
+            tt = np.clip((L - lo) / (hi - lo), 0, 1)
+            stops = np.array(HAIR_RAMP[name], dtype=float)
+            for c in range(3):
+                a[..., c] = np.interp(tt, stops[:, 0], stops[:, c + 1])
+            Image.fromarray(a.astype("uint8")).save(out / f"{stem}_hair.png", optimize=True)
+        elif tex and name in HAIR_TINT:                  # brief: Leo has ginger hair; Pal Hair's texture is dark amber
             k = np.array(HAIR_TINT[name][:3]); add = HAIR_TINT[name][3]
             a = np.array(Image.open(tex).convert("RGBA")).astype(float)
             a[..., :3] = np.clip(a[..., :3] * k + add, 0, 255)
@@ -272,7 +286,7 @@ def build(pack, name, report):
         d.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(tmp / "head.obj", d / "head.obj")
         shutil.copyfile(tmp / "head.mtl", d / "head.mtl")
-        shutil.copyfile(pack / "faces" / f"{fn}.png", d / "face.png")
+        shutil.copyfile(faces_dir / f"{fn}.png", d / "face.png")
     shutil.rmtree(tmp)
     report.append(f"  {name}: {len(face_names)} face folders")
 
@@ -282,7 +296,10 @@ def build(pack, name, report):
         "clothing": f"{stem}_clothing.png",
         "face": "face.png",
         "hair": (f"{stem}_hair.png" + (" (the Roblox hair texture brightened toward ginger for this character; the original is in "
-                                       "accessories/)" if name in HAIR_TINT else "")) if rig.get("accessories") else None,
+                                       "accessories/)" if name in HAIR_TINT else
+                                       " (the Roblox hair texture recoloured to pink for this character; the original is in accessories/)"
+                                       if name in HAIR_RAMP else "")) if rig.get("accessories") else None,
+        "faceStyle": FACE_STYLE.get(name, "classic"),
         "note": "composite = body colours + Pants + Shirt, 128 px per stud. body/clothing are the two layers on their own "
                 "(recolour gags: tint body, keep clothing). Head uses a skin swatch in the same atlas. Swap face.png "
                 "(or map faces/<expression>/face.png) to change expression.",
@@ -294,7 +311,7 @@ def build(pack, name, report):
 def main(pack):
     pack = Path(pack)
     report = []
-    for name in ("Leo", "Max", "Mia", "Noob"):
+    for name in ("Leo", "Max", "Mia", "Noob", "Skye"):
         build(pack, name, report)
     return report
 

@@ -10,7 +10,7 @@ hand-made placeholder cast (6 faces, 8 procedural motions).
 
 ```
 roblox_pack/
-  characters/<Name>/          Leo, Max, Mia, Noob
+  characters/<Name>/          Leo, Max, Mia, Noob, Skye (ViralRoblox News presenter; glam faces, pink hair)
     <Name>.obj/.mtl           objects: Head, Face, Torso, Left Arm, Right Arm, Left Leg, Right Leg (+ Hair)
     <name>_composite.png      R6 body atlas: body colours + Pants + Shirt, 1024x1024 at 128 px per stud
     <name>_body.png           the same atlas, body colours only        (recolour gags: tint this...)
@@ -19,13 +19,13 @@ roblox_pack/
     rig.json                  part sizes, Motor6D C0/C1, joint pivots, attachments, accessory offsets, clothing IDs
     faces/<expression>/       face.png (1024 px, transparent) + head.obj/.mtl with that face applied
   faces/                      master face set: <expression>.png, layers/eyes|mouth/, faces.json, face_sheet.png
-  accessories/<item>/         crown_admin, admin_badge_halo, hair_leo|max|mia, cap, beanie, headphones, top_hat, spiky_hair, long_hair
+  accessories/<item>/         crown_admin, admin_badge_halo, hair_leo|max|mia|skye, cap, beanie, headphones, top_hat, spiky_hair, long_hair
   props/<item>/               gold_coin, coin_pile, trophy, sword, rocket_launcher, phone, tablet, free_coins_button, bomb, gift_box
   map/<item>/                 36 pieces: baseplate tiles, spawn, 12 obby blocks, lava, kill brick, checkpoint, truss, ladder,
                               wedge, cylinder, ball, stage sign, finish pad, podium, lobby, islands, trees, tycoon dropper/ore/conveyor,
                               leaderboard and round-timer boards
   animations/<name>.json      24 Roblox default R6 animations + 27 authored poses/loops, animations/index.json
-  clothing/                   the Shirt/Pants templates (585x559) worn by Leo, Max and Mia
+  clothing/                   the Shirt/Pants templates (585x559) worn by Leo, Max, Mia and Skye
   decals/                     original decal images used on props and map pieces
   lighting.json               sky asset IDs and bright-obby lighting values
   catalog.json                every asset: path, description, objects, dimensions, pivot, source asset IDs
@@ -118,6 +118,9 @@ The head uses a skin swatch inside the same atlas, so swapping the atlas recolou
 own 1024x512 atlas). Use it once the export runs while Studio is the active window.
 
 ## Faces (32)
+
+**Glam style** (`faces/glam/`, made by `tools/make_glam_faces.py` from the eye and mouth layers): the same 32 expressions with lashes, eye sparkle, blush and berry lips, eyes in the same place. Skye (the ViralRoblox News presenter) uses it; `FACE_STYLE` in `web/lib/robloxPack.js` and `tools/build_characters_local.py` picks it per character.
+`studio/RobloxAssetPack.rbxm` predates Skye: her Studio model is `Workspace.RobloxAssetPack.Characters.Skye` in the place.
 
 happy (Roblox Smile, redrawn), neutral, surprised, angry, sad, laugh, smug, evil_grin, scheming, scared (panic),
 crying, dizzy, confused, annoyed (deadpan), shocked, determined, wink, sleeping (sleepy/AFK), nervous (sweat), love
