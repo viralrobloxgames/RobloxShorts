@@ -508,3 +508,4 @@ export function overlay(g, s, t) {
 }
 
 export const cast = () => ({ leo, max, mia, noob });
+export const crownFits = () => crowns;      // for the cover still
