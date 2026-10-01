@@ -1,8 +1,11 @@
 {
-  "title": "Leo Got Admin Again",
+  "title": "Leo Gave Everyone Admin",
   "character": "Leo",
   "characters": [
-    "Leo"
+    "Leo",
+    "Max",
+    "Mia",
+    "Noob"
   ],
   "seconds": 64.0,
   "fps": 30,
