@@ -1,0 +1,32 @@
+{
+ "schema_version": 1,
+ "note": "Topics covered by ViralRoblox News, so the daily research never repeats a story.",
+ "episodes": [
+  {
+   "n": 1,
+   "date": "2026-10-01",
+   "topic": "Roblox web player in Chrome (no app, end of 2026) and offline play (mid-2027)",
+   "source_event": "RDC 2026 (2026-09-11)",
+   "status": "script_draft_awaiting_approval",
+   "project": "projects/news-001-roblox-in-your-browser"
+  }
+ ],
+ "candidates": [
+  {
+   "topic": "Roblox Plus free private servers cut to one per game (from 2026-09-21)",
+   "source": "https://devforum.roblox.com/t/changes-to-roblox-plus-private-server-limits/4739922"
+  },
+  {
+   "topic": "Moments: tap any avatar in a clip to buy its items (October 2026)",
+   "source": "https://about.roblox.com/newsroom/2026/09/rdc-2026-the-world-needs-more-play"
+  },
+  {
+   "topic": "YouTube videos removed from game pages (from 2026-09-30)",
+   "source": "https://devforum.roblox.com/t/youtube-videos-will-be-removed-from-game-detail-pages/4879633"
+  },
+  {
+   "topic": "Flee the Facility passes 6 billion visits (2026-09-12)",
+   "source": "https://roblox.fandom.com/wiki/Timeline_of_Roblox_history/2026"
+  }
+ ]
+}

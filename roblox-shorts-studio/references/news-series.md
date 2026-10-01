@@ -40,12 +40,16 @@ A dedicated news anchor who appears in **every** episode and **only** in news, s
 
 ## The news booth (fixed set)
 
-Built once as a reusable web-route template (`web/lib/newsDesk.js` plus props in `assets/roblox_pack/props/` and `map/`), then reused by every episode. Only the story content changes.
+**Built 2026-10-01 in Studio** (Skye is a Studio avatar now, so the booth lives there, not in the web route): `Workspace.ViralNews.Booth` in the place "Copy of Steal a Beast Egg!", built by `assets/roblox_pack/tools/luau/build_news_booth.luau` (re-run it through the Studio MCP to rebuild; edit `STORY_IMAGE` per episode). It is also saved as `assets/roblox_pack/studio/ViralNewsBooth.rbxm` (booth plus Skye). Preview: `assets/roblox_pack/previews/news_booth_*.jpg`. Only the story content changes between episodes.
 
-- **Desk:** curved block-style anchor desk with the ViralRoblox NEWS logo on the front panel, a branded mug and a tablet prop.
-- **Backdrop:** a big video wall behind her that shows the story image (screenshot, game thumbnail or our own Studio recreation), plus a block-city skyline in navy/cyan like the banner.
-- **Lighting:** the same studio lighting preset every episode (key light, cyan rim light, slight bloom).
-- **Cameras:** three fixed angles: wide (desk and wall), medium (her and the screen), close-up (reactions). Cutting between fixed angles keeps the pace up without new set work.
+- **Room:** enclosed navy studio (no sky in shot), glossy floor, lighting truss.
+- **Dais:** round navy dais with a cyan neon ring; Skye stands on it.
+- **Desk:** three-facet anchor desk (straight centre with the "ViralRoblox NEWS" logo, two wings angled back), white top, cyan neon strips. The top sits just above her waist. Props: branded mug, tablet, desk mic with a "VR NEWS" flag.
+- **Video wall:** 16:9 screen behind her with a cyan glow edge and a red LIVE tag. The story image is `Booth.VideoWall.Screen.SurfaceGui.Story.Image`.
+- **Side panels:** screen left shows the logo and "DAILY ROBLOX NEWS"; screen right shows BREAKING and "FOLLOW FOR DAILY ROBLOX NEWS @viralrobloxgames".
+- **Backdrop:** block-city skyline at night in navy and cyan, with lit windows.
+- **Lighting:** local lights only (the place's global Lighting is untouched): warm key, cool fill, two cyan rims from the truss, a soft wash, plus the screen glow.
+- **Cameras:** `Booth.Cameras.Wide | Medium | CloseUp` (CFrame plus a `LookAt` attribute). Positions for MCP `screen_capture` are camera to look-at: Wide (0, 5.6, 487) to (0, 4.4, 502); Medium (0, 5.1, 492.8) to (0, 4.5, 500); CloseUp (0, 5, 496.4) to (0, 4.85, 500).
 - **On-screen graphics (overlay layer, same every episode):**
   - red **BREAKING** bar with the headline (2 to 6 words)
   - bottom ticker scrolling other headlines **and "FOLLOW @viralrobloxgames FOR DAILY ROBLOX NEWS"**
@@ -112,7 +116,9 @@ Rendered from the booth scene with a `cover_clip.js` per episode, as for the sto
 ## Build order
 
 1. **Presenter: done 2026-10-01.** Look3_B2 R15 doll avatar in Studio with swappable `glam_doll` faces (see The presenter). Next: a filming method for her in Studio (poses, lip-sync face swaps, camera angles).
-2. **Booth:** desk, video wall, lighting, three camera angles and the overlay layer, as a reusable template.
+2. **Booth: done 2026-10-01** in Studio (see The news booth). The overlay layer (BREAKING bar, ticker, captions) is still to build, with the filming method.
+   - **Episode 1 scripted 2026-10-01:** `projects/news-001-roblox-in-your-browser/` (web player and offline play, from RDC 2026), awaiting approval.
+   - **Evidence screenshots:** `node web/news_shot.mjs --url <page> --out <png> [--find "phrase"]` captures the page and outlines the quoted paragraph in yellow.
 3. **Cover template:** render 3 sample covers side by side to check the grid looks like one series.
 4. **Research script and `ideas/news-ledger.json`**, then the morning scheduled task.
 5. **Pilot episode #1** end to end, reviewed by the user before anything is posted.
