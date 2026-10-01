@@ -1,6 +1,6 @@
 > **Example in the Roblox Shorts Studio repo.** Paths below are relative to this project folder.
 > Farm frames are not in git. The full 1,935-frame render (job `The_AFK_Champion_GarageFarm_gv004`) was downloaded on the original laptop to
-> `~/.ps2-shorts-studio/The_AFK_Champion_GarageFarm/The_AFK_Champion_GarageFarm_gv004-Renders/`. The MP4 has **not** been encoded yet.
+> `~/Old kit/ps2-shorts-studio-leftovers/The_AFK_Champion_GarageFarm/The_AFK_Champion_GarageFarm_gv004-Renders/` (moved from `~/.ps2-shorts-studio/` on 2026-10-01). The MP4 has **not** been encoded yet.
 > To finish: copy those PNGs into `renders/farm/` and run `python source/assemble_narration.py`
 > (rebuilds `audio/narration.wav`), then `python source/finish_afk.py --encode`.
 
