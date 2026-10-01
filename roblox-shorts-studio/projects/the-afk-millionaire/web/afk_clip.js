@@ -358,7 +358,7 @@ export function update(t, stage) {
     case 'intro2': orbit(stage, mh, front(P.mia), 0.06, 9, 34); break;
     case 'intro3': orbit(stage, nh, front(P.noob), 0.06, 9, 34); break;
     case 'circle': orbit(stage, V(0, 0, 0), 0.2 + u * 0.3, 1.1, lerp(30, 27, u), 44); break;
-    case 'prize': { const k = easeInOut(u); look(stage, V(lerp(-1, 1, k), lerp(4.5, 6, k), lerp(6, 2, k)), V(0, lerp(5, 6.5, k), -13), 44); break; }
+    case 'prize': { const k = easeInOut(u); look(stage, V(lerp(-1, 1, k), lerp(8.5, 7.5, k), lerp(4, 1, k)), V(-1, lerp(4.5, 6.5, k), -14), 44); break; }   // over the players' heads
     case 'leo': orbit(stage, lh.clone().add(V(0, -0.5, 0)), front(P.leo), 0.06, t > 11.89 ? 6.5 : lerp(10.5, 9.5, u), 34); break;
     case 'drop': look(stage, V(-7, 9, -9), V(7, 1, -2), 42); break;
     case 'sign': orbit(stage, BUTTON.clone().add(V(0, 2.4, 0)), face(BUTTON, V(0, 0, 0)) + 0.15, 0.14, lerp(7, 6.2, u), 40); break;
