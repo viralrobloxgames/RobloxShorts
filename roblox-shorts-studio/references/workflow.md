@@ -115,4 +115,4 @@ Watch the full MP4. Run `scripts/review/contact_sheet.py --frames renders/encode
 
 ## 8. Post (after approval)
 
-When the user approves the video, run `python3 scripts/publish.py projects/<slug> --approve`, then `--post`: TikTok first, YouTube Shorts straight after. Report both links. Set the ledger status to `posted`. Details and the one-time account setup: [publishing.md](publishing.md).
+When the user approves the video, post it: TikTok first, YouTube Shorts straight after (for now from a Claude session on the user's computer through their signed-in browser; later `scripts/publish.py` from the cloud). Report both links. Set the ledger status to `posted`. Details and the one-time account setup: [publishing.md](publishing.md).
