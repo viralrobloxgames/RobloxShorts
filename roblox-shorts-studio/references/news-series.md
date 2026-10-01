@@ -40,16 +40,22 @@ A dedicated news anchor who appears in **every** episode and **only** in news, s
 
 ## The news booth (fixed set)
 
-**Built 2026-10-01 in Studio** (Skye is a Studio avatar now, so the booth lives there, not in the web route): `Workspace.ViralNews.Booth` in the place "Copy of Steal a Beast Egg!", built by `assets/roblox_pack/tools/luau/build_news_booth.luau` (re-run it through the Studio MCP to rebuild; edit `STORY_IMAGE` per episode). It is also saved as `assets/roblox_pack/studio/ViralNewsBooth.rbxm` (booth plus Skye). Preview: `assets/roblox_pack/previews/news_booth_*.jpg`. Only the story content changes between episodes.
+**Built 2026-10-01 in Studio, v2 the same day** (Skye is a Studio avatar now, so the set lives there, not in the web route): `Workspace.ViralNews.Booth` in the place "Copy of Steal a Beast Egg!", built by `assets/roblox_pack/tools/luau/build_news_booth.luau`. Re-run it through the Studio MCP to rebuild, and edit `STORY_IMAGE` per episode. It is also saved as `assets/roblox_pack/studio/ViralNewsBooth.rbxm` (set plus Skye). Previews: `assets/roblox_pack/previews/news_booth_v2*.jpg` and `news_frame_v2.jpg` (the 9:16 frame with the overlay mock).
 
-- **Room:** enclosed navy studio (no sky in shot), glossy floor, lighting truss.
-- **Dais:** round navy dais with a cyan neon ring; Skye stands on it.
-- **Desk:** three-facet anchor desk (straight centre with the "ViralRoblox NEWS" logo, two wings angled back), white top, cyan neon strips. The top sits just above her waist. Props: branded mug, tablet, desk mic with a "VR NEWS" flag.
-- **Video wall:** 16:9 screen behind her with a cyan glow edge and a red LIVE tag. The story image is `Booth.VideoWall.Screen.SurfaceGui.Story.Image`.
-- **Side panels:** screen left shows the logo and "DAILY ROBLOX NEWS"; screen right shows BREAKING and "FOLLOW FOR DAILY ROBLOX NEWS @viralrobloxgames".
-- **Backdrop:** block-city skyline at night in navy and cyan, with lit windows.
-- **Lighting:** local lights only (the place's global Lighting is untouched): warm key, cool fill, two cyan rims from the truss, a soft wash, plus the screen glow.
-- **Cameras:** `Booth.Cameras.Wide | Medium | CloseUp` (CFrame plus a `LookAt` attribute). Positions for MCP `screen_capture` are camera to look-at: Wide (0, 5.6, 487) to (0, 4.4, 502); Medium (0, 5.1, 492.8) to (0, 4.5, 500); CloseUp (0, 5, 496.4) to (0, 4.85, 500).
+- **Why v2:** the user found the first navy and cyan booth "really bad" next to pink Skye, and wanted it to read more obviously as a TV news-anchor set. v2 follows real news-set references: a round anchor desk on a tiered circular platform with neon rings, an overhead lighting halo, a wraparound LED wall with light columns, and one bold brand colour.
+- **Palette:** hot pink (255, 64, 160), purple (150, 70, 255), plum (66, 24, 92) and white, with red for BREAKING and NEWS. **No blue anywhere** (the user disliked it), and **no `Reflectance`** on any part: it mirrors the place's blue skybox.
+- **Room:** enclosed dark plum studio (no sky in shot), with two glowing pink rings on the floor.
+- **Platform:** two tiers: plum with a purple neon edge, then white with a hot-pink neon edge. Skye stands on the top tier.
+- **Desk:** curved anchor desk around her: plum body, white top, pink neon top strip, purple base strip, pink ribs. A front logo screen shows "ViralRoblox NEWS" on a pink-to-purple gradient. Props: mug, tablet, papers.
+- **Skye's pose:** hands resting on the desk. All her parts are anchored and the arm parts are rotated about the shoulder and elbow. Her joints are AnimationConstraints, so moving unanchored parts in Edit makes the solver twist the whole body. Each arm part keeps its rest pose in a `RestCF` attribute, so re-runs don't stack rotations.
+- **LED wall:** centre panel with the brand graphic (`tools/make_news_wall.py`: pink globe, light rays, block-city skyline, no logo), with LED tile seams and a pink band above it reading "VIRALROBLOX NEWS · DAILY ROBLOX NEWS · FOLLOW @VIRALROBLOXGAMES".
+  - The screen-left panel shows **TOP STORY** with the episode's story card. Make a pink story card per episode, not a raw screenshot; it is `Booth.VideoWall.SideL.SurfaceGui.Frame.Story.Image`.
+  - The screen-right panel shows BREAKING NEWS and the follow handle. Pink neon light columns stand between the panels.
+- **Halo:** two neon rings overhead (pink and purple), visible in the wide shot. Four more light columns frame the wide shot.
+- **Lighting:** local lights only (the place's global Lighting is untouched): white key, pink fill, pink and purple rims, a pink wash, and the wall glow.
+- **Cameras:** `Booth.Cameras.Wide | Medium | CloseUp` (CFrame plus a `LookAt` attribute).
+  - Wide shot for MCP `screen_capture`: camera (0, 7, 483) looking at (0, 5.2, 503).
+  - 9:16 video frame: Scriptable camera, FOV 34, `CFrame.lookAt((0, 4.75, 492.4), (0, 4.55, 500)) * CFrame.Angles(0, 0, rad(90))`, then rotate the capture 90° (see the portrait-capture note). Skye's head lands in front of the globe, the LED band and halo sit at the top, and the desk logo at the bottom.
 - **On-screen graphics (overlay layer, same every episode):**
   - red **BREAKING** bar with the headline (2 to 6 words)
   - bottom ticker scrolling other headlines **and "FOLLOW @viralrobloxgames FOR DAILY ROBLOX NEWS"**

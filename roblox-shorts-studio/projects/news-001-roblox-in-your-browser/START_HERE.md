@@ -12,9 +12,10 @@ the end of 2026) and offline play (mid-2027), from RDC 2026 (2026-09-11).
   - `02_newsroom_browser.png`: the "Play on the web" paragraph
   - `03_devforum_post.png`: the DevForum RDC26 post
   - `04_newsroom_offline.png`: the "Play offline" paragraph
-  - `wall_rdc26.png`: the RDC26 art cropped to 16:9 for the booth's video wall (uploaded as rbxassetid://117471170185339)
+  - `wall_rdc26.png`: the RDC26 art cropped to 16:9 (not used on the set: it is blue)
+  - `wall_story_card.png`: pink "PLAY IN YOUR BROWSER" story card for the TOP STORY panel (rbxassetid://86820019915207)
 - Booth built in Studio (`Workspace.ViralNews.Booth`, built by `assets/roblox_pack/tools/luau/build_news_booth.luau`)
-  with this episode's wall image.
+  with this episode's story card (set v2, pink).
 
 ## Next
 1. The user approves or edits the script.
