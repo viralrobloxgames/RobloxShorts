@@ -1,0 +1,776 @@
+{
+  "source": "takes/take-01/narration.mp3",
+  "provider": "elevenlabs-with-timestamps",
+  "words": [
+    {
+      "word": "Leo",
+      "start": 0.0,
+      "end": 0.325
+    },
+    {
+      "word": "got",
+      "start": 0.383,
+      "end": 0.522
+    },
+    {
+      "word": "admin",
+      "start": 0.58,
+      "end": 0.917
+    },
+    {
+      "word": "for",
+      "start": 0.975,
+      "end": 1.08
+    },
+    {
+      "word": "one",
+      "start": 1.138,
+      "end": 1.289
+    },
+    {
+      "word": "round.",
+      "start": 1.347,
+      "end": 1.846
+    },
+    {
+      "word": "One",
+      "start": 2.438,
+      "end": 2.647
+    },
+    {
+      "word": "minute.",
+      "start": 2.67,
+      "end": 3.111
+    },
+    {
+      "word": "His",
+      "start": 3.158,
+      "end": 3.332
+    },
+    {
+      "word": "plan:",
+      "start": 3.39,
+      "end": 3.866
+    },
+    {
+      "word": "kick",
+      "start": 4.075,
+      "end": 4.272
+    },
+    {
+      "word": "everyone",
+      "start": 4.331,
+      "end": 4.679
+    },
+    {
+      "word": "and",
+      "start": 4.702,
+      "end": 4.772
+    },
+    {
+      "word": "have",
+      "start": 4.818,
+      "end": 4.957
+    },
+    {
+      "word": "the",
+      "start": 4.969,
+      "end": 5.05
+    },
+    {
+      "word": "server",
+      "start": 5.097,
+      "end": 5.387
+    },
+    {
+      "word": "to",
+      "start": 5.433,
+      "end": 5.48
+    },
+    {
+      "word": "himself.",
+      "start": 5.55,
+      "end": 6.153
+    },
+    {
+      "word": "He",
+      "start": 6.397,
+      "end": 6.49
+    },
+    {
+      "word": "typed",
+      "start": 6.548,
+      "end": 6.803
+    },
+    {
+      "word": "it",
+      "start": 6.838,
+      "end": 6.908
+    },
+    {
+      "word": "fast.",
+      "start": 6.966,
+      "end": 7.488
+    },
+    {
+      "word": "Too",
+      "start": 7.663,
+      "end": 7.86
+    },
+    {
+      "word": "fast.",
+      "start": 7.93,
+      "end": 8.44
+    },
+    {
+      "word": "Admin...",
+      "start": 8.591,
+      "end": 9.195
+    },
+    {
+      "word": "all.",
+      "start": 9.567,
+      "end": 10.031
+    },
+    {
+      "word": "Now",
+      "start": 10.461,
+      "end": 10.693
+    },
+    {
+      "word": "everyone",
+      "start": 10.774,
+      "end": 11.122
+    },
+    {
+      "word": "had",
+      "start": 11.157,
+      "end": 11.285
+    },
+    {
+      "word": "admin.",
+      "start": 11.331,
+      "end": 11.854
+    },
+    {
+      "word": "Max",
+      "start": 12.365,
+      "end": 12.643
+    },
+    {
+      "word": "went",
+      "start": 12.701,
+      "end": 12.864
+    },
+    {
+      "word": "first.",
+      "start": 12.934,
+      "end": 13.479
+    },
+    {
+      "word": "Explode",
+      "start": 13.607,
+      "end": 14.187
+    },
+    {
+      "word": "Leo.",
+      "start": 14.222,
+      "end": 14.675
+    },
+    {
+      "word": "Boom.",
+      "start": 14.849,
+      "end": 15.348
+    },
+    {
+      "word": "Leo",
+      "start": 15.778,
+      "end": 16.045
+    },
+    {
+      "word": "respawned.",
+      "start": 16.126,
+      "end": 16.893
+    },
+    {
+      "word": "Invisible",
+      "start": 17.067,
+      "end": 17.612
+    },
+    {
+      "word": "me.",
+      "start": 17.647,
+      "end": 17.984
+    },
+    {
+      "word": "Leo",
+      "start": 18.193,
+      "end": 18.471
+    },
+    {
+      "word": "disappeared.",
+      "start": 18.529,
+      "end": 19.238
+    },
+    {
+      "word": "Except",
+      "start": 19.667,
+      "end": 20.062
+    },
+    {
+      "word": "his",
+      "start": 20.097,
+      "end": 20.201
+    },
+    {
+      "word": "hair.",
+      "start": 20.259,
+      "end": 20.712
+    },
+    {
+      "word": "The",
+      "start": 20.863,
+      "end": 20.979
+    },
+    {
+      "word": "hair",
+      "start": 21.037,
+      "end": 21.2
+    },
+    {
+      "word": "crept",
+      "start": 21.269,
+      "end": 21.56
+    },
+    {
+      "word": "up",
+      "start": 21.618,
+      "end": 21.722
+    },
+    {
+      "word": "behind",
+      "start": 21.78,
+      "end": 22.117
+    },
+    {
+      "word": "Max.",
+      "start": 22.21,
+      "end": 22.686
+    },
+    {
+      "word": "Max",
+      "start": 22.86,
+      "end": 23.127
+    },
+    {
+      "word": "spotted",
+      "start": 23.173,
+      "end": 23.533
+    },
+    {
+      "word": "it.",
+      "start": 23.591,
+      "end": 23.847
+    },
+    {
+      "word": "Giant",
+      "start": 24.056,
+      "end": 24.404
+    },
+    {
+      "word": "me.",
+      "start": 24.45,
+      "end": 24.729
+    },
+    {
+      "word": "Max",
+      "start": 24.903,
+      "end": 25.228
+    },
+    {
+      "word": "grew",
+      "start": 25.298,
+      "end": 25.507
+    },
+    {
+      "word": "to",
+      "start": 25.553,
+      "end": 25.611
+    },
+    {
+      "word": "the",
+      "start": 25.669,
+      "end": 25.739
+    },
+    {
+      "word": "size",
+      "start": 25.774,
+      "end": 26.041
+    },
+    {
+      "word": "of",
+      "start": 26.064,
+      "end": 26.111
+    },
+    {
+      "word": "a",
+      "start": 26.157,
+      "end": 26.18
+    },
+    {
+      "word": "building.",
+      "start": 26.238,
+      "end": 26.796
+    },
+    {
+      "word": "Leo",
+      "start": 27.306,
+      "end": 27.597
+    },
+    {
+      "word": "hit",
+      "start": 27.666,
+      "end": 27.806
+    },
+    {
+      "word": "back.",
+      "start": 27.864,
+      "end": 28.27
+    },
+    {
+      "word": "Rocket",
+      "start": 28.386,
+      "end": 28.723
+    },
+    {
+      "word": "Max.",
+      "start": 28.781,
+      "end": 29.303
+    },
+    {
+      "word": "Giant",
+      "start": 29.478,
+      "end": 29.814
+    },
+    {
+      "word": "Max",
+      "start": 29.872,
+      "end": 30.128
+    },
+    {
+      "word": "went",
+      "start": 30.186,
+      "end": 30.348
+    },
+    {
+      "word": "to",
+      "start": 30.383,
+      "end": 30.441
+    },
+    {
+      "word": "space.",
+      "start": 30.499,
+      "end": 31.056
+    },
+    {
+      "word": "And",
+      "start": 31.382,
+      "end": 31.544
+    },
+    {
+      "word": "Mia?",
+      "start": 31.637,
+      "end": 32.101
+    },
+    {
+      "word": "Mia",
+      "start": 32.485,
+      "end": 32.728
+    },
+    {
+      "word": "wasn't",
+      "start": 32.786,
+      "end": 33.042
+    },
+    {
+      "word": "fighting.",
+      "start": 33.1,
+      "end": 33.646
+    },
+    {
+      "word": "Mia",
+      "start": 33.854,
+      "end": 34.122
+    },
+    {
+      "word": "was",
+      "start": 34.168,
+      "end": 34.284
+    },
+    {
+      "word": "typing.",
+      "start": 34.342,
+      "end": 34.888
+    },
+    {
+      "word": "A",
+      "start": 35.062,
+      "end": 35.143
+    },
+    {
+      "word": "very...",
+      "start": 35.213,
+      "end": 35.515
+    },
+    {
+      "word": "long...",
+      "start": 35.642,
+      "end": 36.037
+    },
+    {
+      "word": "command.",
+      "start": 36.095,
+      "end": 36.803
+    },
+    {
+      "word": "Max",
+      "start": 37.407,
+      "end": 37.721
+    },
+    {
+      "word": "came",
+      "start": 37.779,
+      "end": 37.976
+    },
+    {
+      "word": "back",
+      "start": 38.011,
+      "end": 38.162
+    },
+    {
+      "word": "down.",
+      "start": 38.22,
+      "end": 38.649
+    },
+    {
+      "word": "Right",
+      "start": 38.824,
+      "end": 39.044
+    },
+    {
+      "word": "on",
+      "start": 39.091,
+      "end": 39.16
+    },
+    {
+      "word": "top",
+      "start": 39.218,
+      "end": 39.404
+    },
+    {
+      "word": "of",
+      "start": 39.451,
+      "end": 39.509
+    },
+    {
+      "word": "Leo.",
+      "start": 39.578,
+      "end": 39.961
+    },
+    {
+      "word": "Twenty",
+      "start": 40.054,
+      "end": 40.379
+    },
+    {
+      "word": "seconds",
+      "start": 40.426,
+      "end": 40.751
+    },
+    {
+      "word": "left.",
+      "start": 40.809,
+      "end": 41.25
+    },
+    {
+      "word": "Mia",
+      "start": 41.575,
+      "end": 41.819
+    },
+    {
+      "word": "pressed",
+      "start": 41.889,
+      "end": 42.202
+    },
+    {
+      "word": "enter.",
+      "start": 42.26,
+      "end": 42.736
+    },
+    {
+      "word": "Remove",
+      "start": 42.887,
+      "end": 43.259
+    },
+    {
+      "word": "admin",
+      "start": 43.305,
+      "end": 43.677
+    },
+    {
+      "word": "from",
+      "start": 43.735,
+      "end": 43.862
+    },
+    {
+      "word": "Leo",
+      "start": 43.932,
+      "end": 44.153
+    },
+    {
+      "word": "and",
+      "start": 44.211,
+      "end": 44.292
+    },
+    {
+      "word": "Max...",
+      "start": 44.338,
+      "end": 44.907
+    },
+    {
+      "word": "and",
+      "start": 45.081,
+      "end": 45.232
+    },
+    {
+      "word": "make",
+      "start": 45.302,
+      "end": 45.476
+    },
+    {
+      "word": "them",
+      "start": 45.511,
+      "end": 45.639
+    },
+    {
+      "word": "dance.",
+      "start": 45.697,
+      "end": 46.242
+    },
+    {
+      "word": "Both",
+      "start": 46.359,
+      "end": 46.614
+    },
+    {
+      "word": "crowns",
+      "start": 46.672,
+      "end": 47.032
+    },
+    {
+      "word": "vanished.",
+      "start": 47.09,
+      "end": 47.67
+    },
+    {
+      "word": "And",
+      "start": 47.949,
+      "end": 48.088
+    },
+    {
+      "word": "the",
+      "start": 48.135,
+      "end": 48.204
+    },
+    {
+      "word": "boys",
+      "start": 48.251,
+      "end": 48.53
+    },
+    {
+      "word": "danced.",
+      "start": 48.588,
+      "end": 49.11
+    },
+    {
+      "word": "Together.",
+      "start": 49.168,
+      "end": 49.841
+    },
+    {
+      "word": "Until",
+      "start": 50.225,
+      "end": 50.515
+    },
+    {
+      "word": "the",
+      "start": 50.561,
+      "end": 50.631
+    },
+    {
+      "word": "round",
+      "start": 50.689,
+      "end": 50.944
+    },
+    {
+      "word": "ended.",
+      "start": 51.025,
+      "end": 51.559
+    },
+    {
+      "word": "Mia",
+      "start": 52.001,
+      "end": 52.256
+    },
+    {
+      "word": "won",
+      "start": 52.326,
+      "end": 52.535
+    },
+    {
+      "word": "without",
+      "start": 52.593,
+      "end": 52.871
+    },
+    {
+      "word": "throwing",
+      "start": 52.918,
+      "end": 53.22
+    },
+    {
+      "word": "a",
+      "start": 53.266,
+      "end": 53.289
+    },
+    {
+      "word": "single",
+      "start": 53.347,
+      "end": 53.649
+    },
+    {
+      "word": "punch.",
+      "start": 53.684,
+      "end": 54.172
+    },
+    {
+      "word": "But",
+      "start": 54.381,
+      "end": 54.531
+    },
+    {
+      "word": "she",
+      "start": 54.555,
+      "end": 54.648
+    },
+    {
+      "word": "forgot",
+      "start": 54.717,
+      "end": 54.984
+    },
+    {
+      "word": "one",
+      "start": 55.054,
+      "end": 55.205
+    },
+    {
+      "word": "player.",
+      "start": 55.24,
+      "end": 55.704
+    },
+    {
+      "word": "The",
+      "start": 55.82,
+      "end": 55.936
+    },
+    {
+      "word": "noob",
+      "start": 56.006,
+      "end": 56.215
+    },
+    {
+      "word": "still",
+      "start": 56.273,
+      "end": 56.494
+    },
+    {
+      "word": "had",
+      "start": 56.552,
+      "end": 56.691
+    },
+    {
+      "word": "admin.",
+      "start": 56.761,
+      "end": 57.364
+    },
+    {
+      "word": "And",
+      "start": 57.747,
+      "end": 57.887
+    },
+    {
+      "word": "he",
+      "start": 57.933,
+      "end": 57.98
+    },
+    {
+      "word": "just",
+      "start": 58.038,
+      "end": 58.177
+    },
+    {
+      "word": "got",
+      "start": 58.212,
+      "end": 58.34
+    },
+    {
+      "word": "back",
+      "start": 58.398,
+      "end": 58.56
+    },
+    {
+      "word": "from",
+      "start": 58.607,
+      "end": 58.734
+    },
+    {
+      "word": "dinner.",
+      "start": 58.792,
+      "end": 59.245
+    },
+    {
+      "word": "Follow",
+      "start": 59.942,
+      "end": 60.255
+    },
+    {
+      "word": "Viral",
+      "start": 60.325,
+      "end": 60.673
+    },
+    {
+      "word": "Roblox",
+      "start": 60.743,
+      "end": 61.196
+    },
+    {
+      "word": "Games",
+      "start": 61.254,
+      "end": 61.59
+    },
+    {
+      "word": "for",
+      "start": 61.637,
+      "end": 61.741
+    },
+    {
+      "word": "part",
+      "start": 61.799,
+      "end": 62.02
+    },
+    {
+      "word": "four.",
+      "start": 62.078,
+      "end": 62.74
+    }
+  ]
+}
