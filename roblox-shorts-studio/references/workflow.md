@@ -34,9 +34,31 @@ Record it in `ideas/idea-ledger.json` with a title, logline, platform and status
 
 There must be a visible cause, a reaction and a physical payoff. A loop ending is a bonus: the last frame cuts back to the hook.
 
+### Series
+
+Before a new idea, check `ideas/series/`. When a format's first part performs well (after at least 24 h on TikTok:
+average watch time and full-watch rate clearly above the channel's other originals), the next video is usually its next
+part. A series part:
+
+- stands alone in the first 3 s (a new viewer must understand the premise) but continues the story: same characters,
+  running gags, the previous part's ending as its setup;
+- shows a small "PART N" tag on screen, which sends viewers to the earlier parts on the profile;
+- ends on a cliffhanger into the next part, then the call to action ("Follow Viral Roblox Games for part N+1").
+
+Each series has `ideas/series/<series>.md` with its format rules, the parts made (story, what each set up, results) and
+open threads for the next part. Update it when a part is planned, delivered, and when its results come in. Stop a series
+(with a final part) when its parts stop performing.
+
+### What the analytics have taught us (keep adding)
+
+- The first 3-6 s decide the video: state the premise in the first line with the main character already doing it, readable
+  at a glance. No flash-forwards, rewinds or intro cards. (The AFK Millionaire's first post lost ~70% by 0:06.)
+- An on-screen countdown or progress counter for the whole video, and a new visual payoff every 3-5 s.
+- Give the main character agency; the twist can be on them.
+
 ## 2. Story and script
 
-Write `source/story.md` as numbered beats. **Beat 1 is the hook: the central action is already happening on frame 1.** Then write `script.txt`. Short, punchy lines work best. For about 20 s aim for 45–60 words; for about 64 s aim for 150–170 words. Adjust to the real voice. Get the script approved before spending credits. Status in the ledger: `script_draft_awaiting_approval` → `script_approved`.
+Write `source/story.md` as numbered beats. **Beat 1 is the hook: the central action is already happening on frame 1.** Then write `script.txt`. Short, punchy lines work best. The last line is always the call to action (see SKILL.md hard rules), after the payoff. For about 20 s aim for 45–60 words; for about 64 s aim for 150–170 words. Adjust to the real voice. Get the script approved before spending credits. Status in the ledger: `script_draft_awaiting_approval` → `script_approved`.
 
 ## 3. Narration and timings
 

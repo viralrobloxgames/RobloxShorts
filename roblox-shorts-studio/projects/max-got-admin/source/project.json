@@ -2,14 +2,17 @@
   "title": "Max Got Admin For One Round",
   "character": "Max",
   "characters": [
-    "Max"
+    "Max",
+    "Leo",
+    "Mia",
+    "Noob"
   ],
-  "seconds": 63.0,
+  "seconds": 67.5,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "idea; write story.md and script.txt, then narration, then author build_scene.py",
+  "status": "narration recorded; web clip web/max_clip.js; render then finish",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}
