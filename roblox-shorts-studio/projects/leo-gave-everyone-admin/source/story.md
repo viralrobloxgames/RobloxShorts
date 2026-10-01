@@ -26,7 +26,7 @@ Beats:
    leo max ; loop ..."). Cut back to it between the chaos beats.
 8. Giant Max falls back down - lands right on Leo (impact, dust, shake).
 9. 0:20: Mia presses ENTER. Leo's and Max's crowns pop off. Both start the Roblox dance, side by side, can't stop.
-   Mia sips... no: Mia sits on the ice-free ground, deadpan, crown on. "MIA WINS".
+   Mia watches, deadpan, the only crown left. "MIA WINS".
 10. TWIST: "But she forgot one player." Slow push to the noob in the corner, crown still on, "AFK" tag flips to
     "BACK". Chat: "[noob]: sorry was eating dinner" (callback to The AFK Millionaire). His eyes open.
 11. CTA end card: "PART 4: THE NOOB HAS ADMIN" + @viralrobloxgames + FOLLOW.
