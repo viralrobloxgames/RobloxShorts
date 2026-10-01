@@ -345,7 +345,7 @@ export function update(t, stage) {
     case 'forgot': { const k = easeInOut(inv(54.3, 54.95, s)); look(stage, V(12.5, 4.6, 8), ih.clone().lerp(nh.clone().add(V(0, -1, 0)), k), lerp(40, 30, k)); break; }
     case 'noob': frame(stage, nh.clone().add(V(0, 0.2, 0)), yaw(noob), 0.06, lerp(9, 5, easeInOut(u)), 36); break;
     case 'back': frame(stage, nh.clone().add(V(0, 0.3, 0)), yaw(noob), 0.05, 4.4, 36); break;
-    default: frame(stage, nh.clone().add(V(0, -1.4, 0)), yaw(noob) + 0.15, 0.06, 7.5, 36);   // CTA: the noob, awake, typing
+    default: frame(stage, nh.clone().add(V(0, 0.9, 0)), yaw(noob) + 0.15, 0.06, 6.5, 36);   // CTA: the noob, awake, typing - face below the end card
   }
 }
 

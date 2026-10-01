@@ -1,11 +1,42 @@
 {
   "clip": "projects/leo-gave-everyone-admin/web/leo_clip.js",
-  "generated": "2026-10-01T22:19:11.950Z",
-  "fingerprint": "95ea8f5392b401e3",
+  "generated": "2026-10-01T23:12:24.963Z",
+  "fingerprint": "b7ef574df0c0f65a",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "happy",
+          "neutral",
+          "surprised",
+          "shocked",
+          "angry",
+          "annoyed",
+          "smug",
+          "evil_grin",
+          "scheming",
+          "scared",
+          "laugh",
+          "determined",
+          "dizzy",
+          "cool",
+          "sleeping",
+          "blink",
+          "knocked_out",
+          "suspicious",
+          "confused"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "crown_admin"
+      ]
+    },
     {
       "character": "Mia",
       "options": {
@@ -69,37 +100,6 @@
       ]
     },
     {
-      "character": "Noob",
-      "options": {
-        "expressions": [
-          "happy",
-          "neutral",
-          "surprised",
-          "shocked",
-          "angry",
-          "annoyed",
-          "smug",
-          "evil_grin",
-          "scheming",
-          "scared",
-          "laugh",
-          "determined",
-          "dizzy",
-          "cool",
-          "sleeping",
-          "blink",
-          "knocked_out",
-          "suspicious",
-          "confused"
-        ],
-        "scale": 1,
-        "hairLift": 0
-      },
-      "accessories": [
-        "crown_admin"
-      ]
-    },
-    {
       "character": "Max",
       "options": {
         "expressions": [
@@ -132,6 +132,23 @@
     }
   ],
   "pairs": [
+    {
+      "character": "Noob",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.119,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
     {
       "character": "Mia",
       "accessory": "crown_admin",
@@ -167,23 +184,6 @@
       "note": ""
     },
     {
-      "character": "Noob",
-      "accessory": "crown_admin",
-      "mode": "seat",
-      "scale": 1,
-      "stretch": 1,
-      "offset": [
-        0,
-        1,
-        0
-      ],
-      "hideHair": false,
-      "depth": -0.119,
-      "count": 0,
-      "passed": true,
-      "note": ""
-    },
-    {
       "character": "Max",
       "accessory": "crown_admin",
       "mode": "seat",
@@ -201,5 +201,5 @@
       "note": ""
     }
   ],
-  "reviewedAt": "2026-10-01T22:19:12.635Z"
+  "reviewedAt": "2026-10-01T23:12:25.657Z"
 }
