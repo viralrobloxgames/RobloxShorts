@@ -2,13 +2,14 @@
 // second left on his admin clock, Leo smirking over his shoulder. Reuses the video's scene at story time 52.8 s.
 import * as THREE from 'three';
 import * as base from './max_clip.js';
-import { packActors } from '../../../web/lib/robloxPack.js';
+import { packActors, loadAnimation, robloxPose } from '../../../web/lib/robloxPack.js';
 import { setExpression } from '../../../web/lib/rig.js';
 import { roundRect, drawCrown } from '../../../web/lib/overlay.js';
 
 export const meta = { ...base.meta, seconds: 1 };
 export const sky = base.sky;
-export const setup = base.setup;
+let proud;
+export async function setup(stage) { await base.setup(stage); proud = await loadAnimation('proud'); }
 export function samples() { return 6; }
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 export function update(t, stage) {
@@ -17,7 +18,7 @@ export function update(t, stage) {
   const max = actor('Max'), leo = actor('Leo');
   setExpression(max, 'evil_grin');
   // A still can be staged freely: Leo stands just behind Max's shoulder, smirking at the camera.
-  leo.root.position.set(5.4, 0, 0.4); leo.root.rotation.set(0, -0.45, 0); leo.root.scale.setScalar(1); setExpression(leo, 'smug');
+  leo.root.position.set(5.4, 0, 0.4); leo.root.rotation.set(0, -0.45, 0); leo.root.scale.setScalar(1); robloxPose(leo, [[proud, 0.35]]); setExpression(leo, 'smug');   // hands on hips, unbothered
   leo.root.updateMatrixWorld(true);
   const tg = max.bones.Head.localToWorld(V(0, 0.2, 0));
   stage.camera.position.copy(tg).add(V(0.6, -0.9, 12)); stage.camera.fov = 44; stage.camera.updateProjectionMatrix();

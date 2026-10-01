@@ -12,6 +12,10 @@ Roblox R6 pack and animations, George narration, call to action at the end.
 - Cover `delivery/Max_Got_Admin_For_One_Round_cover.jpg|png` (`web/cover_clip.js`).
 - Posting metadata `delivery/post.json` (TikTok caption with 5 hashtags, YouTube title/description/tags).
 
+- Revision after review: Leo turns side-on and squeezes out through a one-bar gap in the cage; arm gestures from
+  `web/lib/gestures.js` replace the pack's celebrate/panic/wave (arms went through heads); "1 ROUND = 1 MINUTE" label,
+  "1 round = 60 seconds." chat line and the clock shown as 1:00; tiny Leo is now a jump-stomp (leap, slam, splat, poof),
+  framed with Leo below the caption line. Changed frames re-rendered; cover has Leo hands on hips.
 - **Delivered:** `delivery/Max_Got_Admin_For_One_Round.mp4` (1080x1920, 30 fps, 2,025 frames, 26 MB).
 
 ## Next

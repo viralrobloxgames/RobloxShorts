@@ -1,38 +1,11 @@
 {
   "clip": "projects/max-got-admin/web/max_clip.js",
-  "generated": "2026-10-01T13:33:28.490Z",
-  "fingerprint": "0c694e4fe29023bd",
+  "generated": "2026-10-01T16:04:44.845Z",
+  "fingerprint": "a5246db43ed201de",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [
-    {
-      "character": "Leo",
-      "options": {
-        "expressions": [
-          "happy",
-          "neutral",
-          "surprised",
-          "shocked",
-          "angry",
-          "annoyed",
-          "smug",
-          "evil_grin",
-          "scheming",
-          "scared",
-          "laugh",
-          "sad",
-          "determined",
-          "talking",
-          "dizzy"
-        ],
-        "scale": 1,
-        "hairLift": 0.16
-      },
-      "accessories": [
-        "crown_admin"
-      ]
-    },
     {
       "character": "Max",
       "options": {
@@ -59,26 +32,36 @@
       "accessories": [
         "crown_admin"
       ]
+    },
+    {
+      "character": "Leo",
+      "options": {
+        "expressions": [
+          "happy",
+          "neutral",
+          "surprised",
+          "shocked",
+          "angry",
+          "annoyed",
+          "smug",
+          "evil_grin",
+          "scheming",
+          "scared",
+          "laugh",
+          "sad",
+          "determined",
+          "talking",
+          "dizzy"
+        ],
+        "scale": 1,
+        "hairLift": 0.16
+      },
+      "accessories": [
+        "crown_admin"
+      ]
     }
   ],
   "pairs": [
-    {
-      "character": "Leo",
-      "accessory": "crown_admin",
-      "mode": "seat",
-      "scale": 1,
-      "stretch": 1,
-      "offset": [
-        0,
-        1.64,
-        0
-      ],
-      "hideHair": false,
-      "depth": 0.019,
-      "count": 0,
-      "passed": true,
-      "note": ""
-    },
     {
       "character": "Max",
       "accessory": "crown_admin",
@@ -95,7 +78,24 @@
       "count": 0,
       "passed": true,
       "note": ""
+    },
+    {
+      "character": "Leo",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.64,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.019,
+      "count": 0,
+      "passed": true,
+      "note": ""
     }
   ],
-  "reviewedAt": "2026-10-01T13:33:38.400Z"
+  "reviewedAt": "2026-10-01T16:04:51.966Z"
 }
