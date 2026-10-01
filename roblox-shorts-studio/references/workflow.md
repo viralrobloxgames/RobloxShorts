@@ -111,4 +111,8 @@ Follow [garagefarm.md](garagefarm.md): run a test job, review it, render the ful
 
 ## 7. Review and hand-off
 
-Watch the full MP4. Run `scripts/review/contact_sheet.py --frames renders/encode --out delivery/contact.jpg`. Check for clipping, floating feet, expression timing, prop contact, caption overlap with the HUD, and the loop cut. Update `START_HERE.md` and the ledger status (`delivered_local_review`). Publishing happens only on request (see [publishing.md](publishing.md)).
+Watch the full MP4. Run `scripts/review/contact_sheet.py --frames renders/encode --out delivery/contact.jpg`. Check for clipping, floating feet, expression timing, prop contact, caption overlap with the HUD, and the loop cut. Update `START_HERE.md` and the ledger status (`delivered_local_review`). Write `delivery/post.json` (TikTok caption with at most 5 hashtags, YouTube title/description/tags) alongside the hand-off.
+
+## 8. Post (after approval)
+
+When the user approves the video, run `python3 scripts/publish.py projects/<slug> --approve`, then `--post`: TikTok first, YouTube Shorts straight after. Report both links. Set the ledger status to `posted`. Details and the one-time account setup: [publishing.md](publishing.md).

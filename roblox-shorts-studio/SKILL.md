@@ -13,7 +13,7 @@ Everything needed to make a Roblox-style Short lives in this folder. Paths below
 - **Budget:** ask for a spending cap for each new short before its first farm job. Stay within it, and never top up credit. Record costs in `source/garagefarm_job.json`.
 - **Narration costs credits.** Save the script and get it approved before generating. Never regenerate a take that already exists. Recover it from ElevenLabs History instead.
 - **Downloads:** the user has pre-approved downloading their own generated outputs (ElevenLabs narration, GarageFarm frames) for the current short.
-- **Publishing** needs an explicit request with the destination and visibility. The default deliverable is a local review MP4.
+- **Publishing happens only after the user approves that specific video.** The default deliverable is a review MP4 plus cover and captions. Once the user has watched it and approves it ("approved", "post it"), post it straight away with `scripts/publish.py`: **TikTok first, then YouTube Shorts right after**, public, using `delivery/post.json`. Approval covers that one MP4 only; a re-cut needs a new approval. Never post anything unapproved, and never re-post something `published.json` marks as posted.
 - **Frame 1 shows the central action.** No title cards or slow approaches. It must read on mute within 1–2 s.
 - **Every video ends with a call to action:** a spoken last line and a ~2 s end card naming the account, e.g. "Follow Viral Roblox Games for part three" with **@viralrobloxgames** and "FOLLOW FOR PART N" on screen. It goes after the payoff, never before it.
 - **Series:** when the first part of a format performs well (judge it on TikTok analytics after at least 24 h: average watch time and full-watch rate against the channel's other originals), continue it as a numbered series that keeps the story going: same cast, running gags, last part's ending as this part's setup, a cliffhanger into the next part. Keep `ideas/series/<series>.md` up to date (parts, what each established, results). A series that stops performing gets its last part and ends.
@@ -34,7 +34,7 @@ Full detail is in [references/workflow.md](references/workflow.md). The short ve
 9. **Sound and captions:** write `source/sound_cues.json` and optional `source/overlays.json` (HUD, title pops). Run `python scripts/studio.py finish projects/<slug>`. Caption styles are in [references/captions.md](references/captions.md).
 10. **Encode:** run `python scripts/studio.py finish projects/<slug> --encode`. It checks for frame gaps and duplicates, burns the captions, verifies the MP4 decodes, and writes `delivery/<Title>.validation.json`.
 11. **Review:** watch the whole thing and check a contact sheet (`scripts/review/contact_sheet.py`). Look for clipping, floating, expression timing, prop contact and caption readability.
-12. **Publish (only on request):** see [references/publishing.md](references/publishing.md).
+12. **Post (after the user approves):** write `delivery/post.json` with the hand-off, then on approval `python3 scripts/publish.py projects/<slug> --approve` and `--post` (TikTok, then YouTube). See [references/publishing.md](references/publishing.md).
 
 Keep `START_HERE.md` in each project updated with what is done, what is next, and the job and budget state, so any session can resume.
 

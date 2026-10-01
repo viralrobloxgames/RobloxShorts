@@ -125,7 +125,7 @@ const arc = (a, b, h, u) => a.clone().lerp(b, u).add(V(0, h * 4 * u * (1 - u), 0
 
 function maxState(s) {
   const b = st(P.max, face(P.max, V(1.5, 0, 14)), idle(s), 'smug');
-  if (typing(s)) { b.layers = [[A.typing, s]]; b.face = s > 49 ? 'determined' : 'evil_grin'; b.rotY = face(P.max, V(0, 0, 14)); }
+  if (typing(s)) { b.pos = s > 29 ? STOMP.clone() : P.max.clone(); b.layers = [[A.typing, s]]; b.face = s > 49 ? 'determined' : 'evil_grin'; b.rotY = face(b.pos, V(0, 0, 14)); }   // types where he stands
   else if (s < B.revenge) { b.layers = s > 0.6 ? [[A.scheming, s - 0.6]] : idle(s); b.face = s < 0.5 ? 'surprised' : 'evil_grin'; }
   else if (s < 4.66) { b.layers = [[A.scheming, s]]; b.face = 'evil_grin'; }
   else if (s < 10.1) { b.rotY = s > 7.2 ? face(P.max, V(0, 0, 14)) : face(P.max, P.leo); b.layers = s > 7.2 ? [[A.celebrate, s - 7.2]] : [[A.point_forward, s - 5.6]]; b.face = s > 7.2 ? 'laugh' : 'evil_grin'; }
@@ -311,7 +311,7 @@ export function update(t, stage) {
     case 'ten': frame(stage, xh.clone().add(V(0, -0.4, 0)), F(max), 0.05, lerp(7, 6, u), 36); break;
     case 'drama': frame(stage, xh.clone().add(V(0, 0.3, 0)), F(max) + 0.1, -0.05, lerp(6, 4, easeIn(u)), 34); break;
     case 'banSlam': frame(stage, xh.clone().add(V(0, 0.4, 0)).add(jolt(t, 0.08)), F(max), -0.05, 4, 34); break;
-    case 'typing': frame(stage, xh.clone().add(V(0, -0.7, 0)), F(max) - 0.25, 0.12, 6.5, 38); break;
+    case 'typing': frame(stage, xh.clone().add(V(0, 0.9, 0)), F(max) - 0.25, 0.1, 6.5, 38); break;
     case 'denied': frame(stage, xh.clone().add(V(0, 0.0, 0)), F(max), 0.05, 5.5, 36); break;
     case 'roundOver': frame(stage, xh.clone().add(V(0, -0.8, 0)), F(max) + 0.3, 0.12, lerp(7.5, 9, u), 38); break;
     case 'stillHere': frame(stage, PODIUM_TOP.clone().add(V(0, 2.2, 0)), face(PODIUM, V(0, 0, 8)), 0.1, 9, 40); break;
@@ -396,8 +396,8 @@ export function overlay(g, s, t) {
     g.save(); roundRect(g, 120 * s, 700 * s, 840 * s, 170 * s, 30 * s); g.fillStyle = 'rgba(12,18,28,.85)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#ffffff'; g.stroke();
     g.font = `800 ${92 * s}px Montserrat`; g.fillStyle = '#ffffff'; g.textBaseline = 'middle'; const txt = banText(t);
     g.fillText(txt, 170 * s, 790 * s); if (Math.floor(t * 4) % 2 === 0) g.fillRect(170 * s + g.measureText(txt).width + 8 * s, 735 * s, 8 * s, 110 * s); g.restore();
-    const left = Math.max(0, Math.ceil(clock(t))); bigText(g, s, `0:0${left}`, 540, 990, 130, left > 0 ? '#ffffff' : '#ff4d5e', { k: 1 + 0.05 * Math.sin(t * 12) });
-    if (t > B.enter) bigText(g, s, 'ENTER', 540, 1110, 90, '#8BE36B', { k: easeOutBack(clamp((t - B.enter) / 0.15), 3) });
+    const left = Math.max(0, Math.ceil(clock(t))); bigText(g, s, `0:0${left}`, 815, 785, 104, left > 0 ? '#ffffff' : '#ff4d5e', { k: 1 + 0.05 * Math.sin(t * 12) });
+    if (t > B.enter) bigText(g, s, 'ENTER', 540, 1450, 100, '#8BE36B', { k: easeOutBack(clamp((t - B.enter) / 0.15), 3) });
   }
   if (t >= B.denied && t < 56.9) bigText(g, s, 'YOU ARE NOT AN ADMIN', 540, 760, 74, '#ff4d5e', { k: easeOutBack(clamp((t - B.denied) / 0.2), 2.4) });
   if (t >= B.roundOver && t < 59.3) { bigText(g, s, 'ROUND OVER', 540, 700, 118, '#FFD23F', { k: easeOutBack(clamp((t - B.roundOver) / 0.25), 2) }); if (t > 57.9) bigText(g, s, '1 SECOND TOO LATE', 540, 830, 76, '#ff4d5e', { k: easeOutBack(clamp((t - 57.9) / 0.2), 2.4) }); }
