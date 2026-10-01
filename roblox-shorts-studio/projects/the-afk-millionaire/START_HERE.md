@@ -18,6 +18,10 @@
 - New opening: 0-4.35 s the AFK noob in the circle in the coin rain, losers furious behind, title; 4.35-6.36 s one
   line-up shot with name tags. Frames 1-191 re-rendered; first version kept as `delivery/The_AFK_Millionaire_v1.mp4`.
 
+## Published
+- YouTube (ViralRobloxGames), 2026-10-01, Public: https://youtube.com/shorts/xy-kfx5SUio. Re-cut MP4
+  (sha256 417f2fdf…068a). Metadata in `upload.json`; not made for kids; altered-content answer No.
+
 ## Re-render / re-encode
 ```
 cd roblox-shorts-studio
