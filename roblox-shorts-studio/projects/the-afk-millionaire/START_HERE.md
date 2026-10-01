@@ -12,6 +12,12 @@
 - **Delivered:** `delivery/The_AFK_Millionaire.mp4` (1080x1920, 30 fps, 1,896 frames) and
   `delivery/The_AFK_Millionaire_cover.jpg|png` (made by `web/cover_clip.js`).
 
+## Re-cut (repost)
+- First post: ~70% of viewers left by 0:06 (abstract tumbling-flight hook, rewind, quick name cards); after 0:06 the
+  retention line stayed almost flat, so only the opening changed.
+- New opening: 0-4.35 s the AFK noob in the circle in the coin rain, losers furious behind, title; 4.35-6.36 s one
+  line-up shot with name tags. Frames 1-191 re-rendered; first version kept as `delivery/The_AFK_Millionaire_v1.mp4`.
+
 ## Re-render / re-encode
 ```
 cd roblox-shorts-studio
