@@ -50,10 +50,13 @@
    "title": "ViralRoblox News (daily series)",
    "series": "roblox-news",
    "created": "2026-10-01",
-   "status": "idea",
+   "status": "script_draft_awaiting_approval",
    "logline": "Daily 65-75 s Roblox news Short with one recurring girl news presenter, a fixed branded news booth, a fixed cover layout and a 'Follow ViralRobloxGames' call to action every episode.",
    "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "references/news-series.md"
+   "project": "references/news-series.md",
+   "episodes": [
+    "projects/news-001-roblox-in-your-browser"
+   ]
   },
   {
    "title": "Leo Gave Everyone Admin",

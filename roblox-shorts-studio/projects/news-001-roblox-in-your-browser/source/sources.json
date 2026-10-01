@@ -1,0 +1,24 @@
+{
+ "episode": 1,
+ "topic": "Roblox web player (play in Chrome, no app) and offline play",
+ "researched": "2026-10-01",
+ "sources": [
+  {
+   "name": "Roblox Newsroom: RDC 2026: The World Needs More Play",
+   "url": "https://about.roblox.com/newsroom/2026/09/rdc-2026-the-world-needs-more-play",
+   "publisher": "Roblox (David Baszucki, Founder and CEO)",
+   "published": "2026-09-11",
+   "used_for": ["web player in Chrome by end of 2026", "no app or install", "click a link from anywhere", "offline play by mid-2027"],
+   "evidence": ["evidence/01_newsroom_header.png", "evidence/02_newsroom_browser.png", "evidence/04_newsroom_offline.png", "evidence/wall_rdc26.png"]
+  },
+  {
+   "name": "Roblox Developer Forum: RDC26: What We Announced",
+   "url": "https://devforum.roblox.com/t/rdc26-what-we-announced/4865880",
+   "publisher": "Roblox Staff",
+   "published": "2026-09-11",
+   "used_for": ["second source for browser play from a shared link"],
+   "evidence": ["evidence/03_devforum_post.png"]
+  }
+ ],
+ "screenshots_tool": "node web/news_shot.mjs --url <page> --out <png> [--find \"phrase\"]"
+}
