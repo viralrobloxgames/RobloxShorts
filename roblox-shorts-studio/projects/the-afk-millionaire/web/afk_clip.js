@@ -33,14 +33,14 @@ const MAXSPOT = BUTTON.clone().add(P.max.clone().sub(BUTTON).normalize().multipl
 const GIFT_DIR = P.mia.clone().sub(P.leo).normalize();
 const AIMSPOT = V(-2.2, 0, 1.6), OUTSPOT = V(-7.9, 0, 2.9);
 
-// Story time from video time: slow-motion flight hook, a rewind, then real time.
+// Story time from video time. Hook (re-cut after the first post lost 70% of viewers in 6 s): the payoff, readable at
+// a glance - the AFK noob standing in the circle in the coin rain, the three losers furious behind him. Then real time.
 function storyTime(t) {
-  if (t < 4.35) return 43.4 + t * 0.32;              // the open-sky part of the flight, slowed down
-  if (t < 5.29) return lerp(44.8, 5.29, easeIn(inv(4.35, 5.29, t)));
+  if (t < 4.35) return 55.75 + t * 0.3;
   return t;
 }
 const SHOTS = [
-  [0, 'hook'], [4.35, 'rewind'], [5.29, 'intro0'], [5.55, 'intro1'], [5.81, 'intro2'], [6.07, 'intro3'], [6.36, 'circle'],
+  [0, 'hook'], [4.35, 'lineup'], [6.36, 'circle'],
   [7.29, 'prize'], [10.4, 'leo'], [12.77, 'drop'], [15.5, 'sign'], [16.94, 'maxRun'], [18.76, 'maxOut'],
   [20.0, 'miaSmart'], [23.5, 'gift'], [25.04, 'bomb'], [26.34, 'sendBack'], [28.0, 'leoFly'], [29.68, 'twoDown'],
   [30.64, 'standoff'], [32.32, 'noobClose'], [33.84, 'noobOrbit'], [36.84, 'push'], [38.81, 'sword'],
@@ -267,7 +267,7 @@ function orbit(stage, tg, az, el, d, fov = 40) { look(stage, tg.clone().add(V(Ma
 const head = (a) => { const v = new THREE.Vector3(0, 0.55, 0); return a.bones.Head.localToWorld(v); };   // head centre (the bone sits at the neck)
 const jolt = (t, a) => V(a * Math.sin(t * 83), a * Math.cos(t * 71), 0);
 
-export function samples(t) { const s = storyTime(t); return t < 5.29 || (s > B.maxRun[0] && s < B.maxSlam) || (s > B.leoFly[0] && s < B.leoFly[1]) || (s > B.hit && s < B.land) ? 3 : 1; }
+export function samples(t) { const s = storyTime(t); return t < 4.35 ? 2 : (s > B.maxRun[0] && s < B.maxSlam) || (s > B.leoFly[0] && s < B.leoFly[1]) || (s > B.hit && s < B.land) ? 3 : 1; }
 export function shutter(t) { return samples(t) > 1 ? 0.5 : 0; }
 
 let S = 0, SHOT = 'hook';
@@ -351,12 +351,8 @@ export function update(t, stage) {
   stage.bloom.strength = 0.3;
   const front = (pos) => face(pos, V(pos.x * 0.3, 0, 14));
   switch (shot.id) {
-    case 'hook': { const c = noob.bones.Torso.localToWorld(V(0, 1, 0)); look(stage, c.clone().add(V(7 - 2 * u, 1, 11)), c.clone().add(V(-0.3, 2.2, 0)), 46); stage.aimSun(c.clone().setY(0), 30); break; }
-    case 'rewind': orbit(stage, V(0, 1.5, 0), 0.3, 0.55, 34, 44); break;
-    case 'intro0': orbit(stage, lh, front(P.leo), 0.06, 9, 34); break;
-    case 'intro1': orbit(stage, xh, front(P.max), 0.06, 9, 34); break;
-    case 'intro2': orbit(stage, mh, front(P.mia), 0.06, 9, 34); break;
-    case 'intro3': orbit(stage, nh, front(P.noob), 0.06, 9, 34); break;
+    case 'hook': look(stage, V(2.4, 3.2, lerp(15, 12.5, easeOut(u))), V(5.4, 5.6, -3.5), 46); stage.bloom.strength = 0.45; break;   // noob front, losers behind
+    case 'lineup': look(stage, V(0, 4.4, lerp(23, 21, easeOut(u))), V(0, 3.2, 0), 52); break;   // all four, name tags over their heads
     case 'circle': orbit(stage, V(0, 0, 0), 0.2 + u * 0.3, 1.1, lerp(30, 27, u), 44); break;
     case 'prize': { const k = easeInOut(u); look(stage, V(lerp(-1, 1, k), lerp(8.5, 7.5, k), lerp(4, 1, k)), V(-1, lerp(4.5, 6.5, k), -14), 44); break; }   // over the players' heads
     case 'leo': orbit(stage, lh.clone().add(V(0, -0.5, 0)), front(P.leo), 0.06, t > 11.89 ? 6.5 : lerp(10.5, 9.5, u), 34); break;
@@ -406,8 +402,8 @@ function pill(g, s, x, y, text, { bg = 'rgba(21,36,53,.86)', fg = '#ffffff', bor
   g.fillStyle = fg; g.textBaseline = 'middle'; g.fillText(text, x * s + 30 * s, y * s + h / 2 + 3 * s); g.restore();
 }
 function chatBox(g, s, t, story, { x = 60, y = 370, w = 820, rows = 4 } = {}) {
-  const shown = CHAT.filter((l) => (t < 5.29 ? l.at < -1 : story >= l.at)).slice(-rows);
-  const ty = CHAT.find((l) => l.typed && story >= l.typed[0] - 0.1 && story < l.typed[1] + 0.1 && t >= 5.29);
+  const shown = CHAT.filter((l) => (t < 4.35 ? l.at < -1 : story >= l.at)).slice(-rows);
+  const ty = CHAT.find((l) => l.typed && story >= l.typed[0] - 0.1 && story < l.typed[1] + 0.1 && t >= 4.35);
   if (!shown.length && !ty) return;
   g.save();
   const lh = 50 * s, pad = 20 * s, n = shown.length + (ty ? 1 : 0), h = pad * 2 + n * lh + (ty ? 8 * s : 0);
@@ -415,7 +411,7 @@ function chatBox(g, s, t, story, { x = 60, y = 370, w = 820, rows = 4 } = {}) {
   g.font = `800 ${31 * s}px Montserrat`; g.textBaseline = 'middle'; g.textAlign = 'left';
   let yy = y * s + pad + lh / 2;
   for (const l of shown) {
-    g.globalAlpha = t < 5.29 ? 1 : clamp((story - l.at) / 0.12);
+    g.globalAlpha = t < 4.35 ? 1 : clamp((story - l.at) / 0.12);
     const tag = `[${l.name}]: `; g.fillStyle = l.name === 'Server' ? SERVER : C[l.name]; g.fillText(tag, x * s + pad, yy);
     g.fillStyle = l.name === 'Server' ? '#FFE9A8' : '#ffffff'; g.fillText(l.text, x * s + pad + g.measureText(tag).width, yy); yy += lh;
   }
@@ -450,23 +446,17 @@ export function overlay(g, s, t) {
     if (p.on) { g.save(); g.font = `${40 * s}px "Luckiest Guy"`; const w = g.measureText('AFK').width + 36 * s; roundRect(g, p.x - w / 2, p.y - 30 * s, w, 60 * s, 18 * s); g.fillStyle = 'rgba(40,40,48,.85)'; g.fill(); g.fillStyle = '#d7d7de'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('AFK', p.x, p.y + 3 * s); g.restore(); }
   }
 
-  // Hook title and rewind.
+  // Hook title; on the line-up, name tags over each player.
   if (t < 4.35) {
-    bigText(g, s, "HE WASN'T", 540, 650, 116, '#ffffff', { k: easeOutBack(clamp(t / 0.25), 2) });
-    bigText(g, s, 'EVEN PLAYING', 540, 770, 116, '#FFD23F', { k: easeOutBack(clamp((t - 0.12) / 0.25), 2) });
-    speedLines(g, s, t, 0.45, { cx: 540, cy: 1000 });
-  } else if (t < 5.29) {
-    g.save(); g.globalAlpha = 0.18; g.fillStyle = '#ffffff'; for (let y = 0; y < 1920; y += 14) g.fillRect(0, y * s, 1080 * s, 3 * s); g.restore();
-    const u = inv(4.35, 5.29, t);
-    g.save(); g.fillStyle = '#ffffff'; g.translate(420 * s, 700 * s);
-    for (const dx of [0, 70]) { g.beginPath(); g.moveTo((dx + 60) * s, -40 * s); g.lineTo(dx * s, 0); g.lineTo((dx + 60) * s, 40 * s); g.closePath(); g.fill(); }
-    g.restore(); bigText(g, s, 'REWIND', 640, 700, 78, '#ffffff', { alpha: 0.95 });
-    flash(g, s, 0.35 * (1 - u) * (Math.floor(t * 20) % 2), '#ffffff');
+    bigText(g, s, "HE WASN'T", 540, 540, 116, '#ffffff', { k: easeOutBack(clamp(t / 0.25), 2) });
+    bigText(g, s, 'EVEN PLAYING', 540, 660, 116, '#FFD23F', { k: easeOutBack(clamp((t - 0.12) / 0.25), 2) });
   }
-
-  // Intro name tags.
-  const intro = { intro0: ['LEO', C.Leo], intro1: ['MAX', C.Max], intro2: ['MIA', C.Mia], intro3: ['THE NOOB', C.noob] }[SHOT];
-  if (intro) bigText(g, s, intro[0], 540, 720, 104, intro[1]);
+  if (SHOT === 'lineup') {
+    [[leo, 'LEO', C.Leo], [max, 'MAX', C.Max], [mia, 'MIA', C.Mia], [noob, 'NOOB', C.noob]].forEach(([a, n, col], i) => {
+      const p = project(head(a).add(V(0, a === noob ? 2.0 : 1.2, 0)), s);
+      if (p.on) bigText(g, s, n, p.x / s, p.y / s, 54, col, { k: easeOutBack(clamp((t - 4.4 - i * 0.12) / 0.2), 2.4) });
+    });
+  }
 
   // Eliminations.
   for (const [at, who] of [[B.maxOut, 'MAX'], [29.68, 'LEO'], [B.miaOut, 'MIA']]) {
@@ -477,7 +467,7 @@ export function overlay(g, s, t) {
   }
   // Comic hits.
   for (const [at, word, x, y, col] of [[B.maxSlam + 0.05, 'SLAM!', 700, 900, '#ffffff'], [B.bombBoom, 'BOOM!', 540, 820, '#FFB640'], [B.clang, 'CLANG!', 700, 880, '#e8f4ff'], [B.hit, 'BOOM!', 560, 820, '#FFB640'], [B.tree, 'BONK!', 520, 760, '#8BE36B'], [B.buzzer, 'BZZZT!', 420, 860, '#ff4d5e']]) {
-    const a = story - at; if (a < 0 || a > 0.7 || t < 5.29 && word !== 'BONK!') continue;
+    const a = story - at; if (a < 0 || a > 0.7 || t < 4.35) continue;
     bigText(g, s, word, x, y, 120, col, { k: easeOutBack(clamp(a / 0.15), 3), alpha: 1 - inv(0.5, 0.7, a), rot: -0.12 });
   }
   if (SHOT === 'stepOut' && story > 52.92) bigText(g, s, '1 SECOND', 540, 700, 110, '#FFD23F', { k: easeOutBack(clamp((story - 52.92) / 0.2), 2.5) });
