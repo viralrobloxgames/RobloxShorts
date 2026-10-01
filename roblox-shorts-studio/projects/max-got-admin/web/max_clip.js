@@ -32,12 +32,13 @@ const SQUEEZE = [15.35, 15.85, 17.25, 17.7];      // Leo: turn side-on, shuffle 
 // Leo's distance out of the cage: shuffle up to the bars, a slow wriggle through the gap (front bars at 2.0), pop out.
 const squeezeZ = track([[15.85, 0, easeInOut], [16.45, 1.45, (u) => u], [17.0, 2.55, easeOut], [17.25, 3.2, (u) => u]]);
 const face = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
+const HOP = V(3.3, 0, 0.9), LAND = V(3.3, 0, 3.4);     // Max's jump-stomp: take-off, and landing with his right foot on tiny Leo
 const STOMP = V(2.0, 0, 3.7);           // where Max stands after the stomp, right next to where tiny Leo was
 
 const SHOTS = [
   [0, 'hook'], [3.89, 'revenge'], [4.66, 'kickType'], [5.95, 'kickGone'], [8.3, 'maxCheer'], [10.0, 'rejoin'],
   [11.5, 'jailType'], [13.5, 'cage'], [16.2, 'walkOut'], [18.25, 'freezeType'], [19.3, 'ice'], [22.4, 'chair'],
-  [24.0, 'laugh'], [27.1, 'tinyType'], [28.0, 'tiny'], [29.2, 'stomp'], [30.4, 'respawn'], [33.7, 'flingType'],
+  [24.0, 'laugh'], [27.1, 'tinyType'], [28.0, 'tiny'], [28.9, 'stomp'], [30.4, 'respawn'], [33.7, 'flingType'],
   [34.9, 'flight'], [37.7, 'podium'], [41.0, 'ten'], [44.3, 'drama'], [47.2, 'banSlam'], [47.95, 'typing'],
   [54.9, 'denied'], [56.9, 'roundOver'], [59.4, 'stillHere'], [60.9, 'nextRound'], [63.9, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
@@ -143,7 +144,15 @@ function maxState(s) {
   else if (s < 33.7) {
     const stompSpot = STOMP;
     b.rotY = face(P.max, P.leo);
-    if (s > 28.6 && s < 30.4) { const u = easeInOut(inv(28.6, 29.3, s)); b.pos = P.max.clone().lerp(stompSpot, u); b.layers = s < 29.3 ? [[A.walk, s * 1.4]] : [[A.stomp, s - 29.3]]; b.face = 'angry'; }
+    // The stomp: walk up behind tiny Leo, jump (arms out, right leg cocked), slam straight down with the right foot on
+    // him, lift the foot to look at the pancake, then step off to where he stands for the rest of the round.
+    if (s > 28.7 && s < 29.15) { const u = easeInOut(inv(28.7, 29.1, s)); b.pos = P.max.clone().lerp(HOP, u); b.rotY = lerp(face(P.max, HOP), 0, easeInOut(inv(28.9, 29.15, s))); b.layers = [[A.walk, s * 1.4]]; b.face = 'angry'; }
+    else if (s >= 29.15 && s < 30.1) {
+      const up = easeOut(inv(29.15, 29.42, s)), down = easeIn(inv(29.42, B.stomp, s));
+      b.pos = HOP.clone().lerp(LAND, up); b.rotY = 0; b.layers = idle(s); b.face = s < B.stomp ? 'angry' : 'evil_grin';
+      if (s < B.stomp) { b.grounded = false; b.pos.y = 2.6 * up * (1 - down); b.legR = -1.05 * up * (1 - down); b.legL = 0.3 * up * (1 - down); b.armsOut = 1.3 * up * (1 - 0.6 * down); }
+      else { b.squash = 1 - 0.12 * Math.sin(Math.PI * inv(B.stomp, B.stomp + 0.22, s)); b.armsOut = 0.5 * (1 - inv(B.stomp, 29.8, s)); if (s > 29.85) { b.legR = -0.6 * easeOut(inv(29.85, 29.97, s)); b.lookDown = 0.45 * easeOut(inv(29.8, 29.95, s)); } }
+    } else if (s >= 30.1 && s < 30.4) { b.pos = LAND.clone().lerp(stompSpot, easeInOut(inv(30.1, 30.4, s))); b.rotY = lerp(0, face(stompSpot, P.leo), inv(30.1, 30.4, s)); b.layers = [[A.walk, s * 1.4]]; b.face = 'smug'; }
     else if (s >= 30.4) { b.pos = stompSpot; b.rotY = face(stompSpot, P.leo); b.layers = s > 31.5 ? [[A.facepalm, s - 31.5]] : [[A.shock, s - 30.8]]; b.face = s > 31.5 ? 'annoyed' : 'shocked'; }
     else b.face = 'evil_grin';
   } else if (s < B.ten) {
@@ -174,11 +183,12 @@ function leoState(s) {
   } else if (s < B.shatter) {
     b.pos = P.leo.clone().add(V(0, 0, 3.2)); b.rotY = face(P.leo, V(P.leo.x, 0, 14));
     b.layers = s < B.ice[0] ? idle(s) : [[A.shock, 0.3]]; b.face = s < B.ice[0] ? 'smug' : 'shocked';
-  } else if (s < 29.9) {
-    b.pos = P.leo.clone().add(V(0, 0, 3.2)); b.rotY = face(b.pos, P.max.clone().add(V(-1, 0, 0)));
-    b.scale = lerp(1, 0.22, easeOutBack(inv(...B.tiny, s), 2)); b.layers = idle(s); b.gesture = 'panic'; b.face = 'scared';
-    if (s > B.stomp) b.squash = Math.max(0.08, 1 - easeIn(inv(B.stomp, B.stomp + 0.12, s)));
-    b.visible = s < B.stomp + 0.35;
+  } else if (s < 30.3) {
+    // Tiny Leo panics as Max lands on him, is flattened into a splat (seen when Max lifts his foot), then poofs.
+    b.pos = P.leo.clone().add(V(0, 0, 3.2)); b.rotY = s < 28.9 ? face(b.pos, P.max.clone().add(V(-1, 0, 0))) : 0;
+    b.scale = lerp(1, 0.22, easeOutBack(inv(...B.tiny, s), 2)); b.layers = idle(s); b.face = s < B.stomp ? 'scared' : 'dizzy';
+    if (s < B.stomp) b.gesture = 'panic';
+    else { b.squash = Math.max(0.1, 1 - easeIn(inv(B.stomp, B.stomp + 0.08, s))); b.spread = 1 + 1.2 * easeOut(inv(B.stomp, B.stomp + 0.1, s)); b.armsOut = 1.5; }
   } else if (s < B.respawn) { b.visible = false; }
   else if (s < B.fling) {
     b.scale = easeOutBack(clamp((s - B.respawn) / 0.3), 2); b.rotY = face(P.leo, V(-1, 0, 14));
@@ -224,7 +234,7 @@ function place(a, x) {
   a.root.visible = x.visible !== false;
   a.root.position.copy(x.pos); a.root.rotation.set(x.rotX || 0, x.rotY, x.rotZ || 0, 'YXZ');
   if (x.rotX || x.rotZ) { const c = V(0, 2.6 * (x.scale || 1), 0); a.root.position.add(c.clone().sub(c.clone().applyEuler(a.root.rotation))); }
-  a.root.scale.set(x.scale, x.scale * (x.squash || 1), x.scale);
+  a.root.scale.set(x.scale * (x.spread || 1), x.scale * (x.squash || 1), x.scale * (x.spread || 1));
   robloxPose(a, x.layers);
   if (x.bow) { a.bones.Root.rotateX(x.bow); }                 // a stiff R6 bow from the hips down
   if (x.shuffle !== undefined) {           // side-step shuffle: legs open and close, arms held in tight
@@ -232,6 +242,10 @@ function place(a, x) {
     a.bones['Leg.R'].rotation.set(0, 0, -0.32 * k); a.bones['Leg.L'].rotation.set(0, 0, 0.14 * k);
     a.bones['Arm.R'].rotation.set(0, 0, 0.05); a.bones['Arm.L'].rotation.set(0, 0, -0.05);
   }
+  if (x.legR !== undefined) a.bones['Leg.R'].rotation.set(x.legR, 0, 0);          // negative: leg raised forward
+  if (x.legL !== undefined) a.bones['Leg.L'].rotation.set(x.legL, 0, 0);
+  if (x.lookDown) a.bones.Head.rotateX(x.lookDown);
+  if (x.armsOut) { a.bones['Arm.L'].rotation.set(0, 0, x.armsOut); a.bones['Arm.R'].rotation.set(0, 0, -x.armsOut); }
   if (x.gesture) ({ cheer: cheerWave, wave: waveArm, panic: panicArms })[x.gesture](a, x.pos.x * 0.37 + performanceClock);
   if (x.grounded) { a.root.updateMatrixWorld(true); a.root.position.y += x.floor - soleHeight(a); }
   if (x.gesture === 'cheer') a.root.position.y += hop(performanceClock) * (x.scale || 1);
@@ -286,7 +300,7 @@ export function update(t, stage) {
   if (ff.visible) { ff.position.copy(P.leo).add(V(0, 2.9, 0)); ff.scale.setScalar(3.6 * easeOutBack(clamp(fa / 0.25), 2)); ff.material.uniforms.opacity.value = 1 - inv(1.7, 2.2, fa); ff.material.uniforms.time.value = t; }
 
   // Puffs: kick, shatter, stomp, landing.
-  const events = [[B.kick, P.leo.clone().add(V(0, 2.5, 0)), 1.2], [B.shatter, P.leo.clone().add(V(0, 3, 3.2)), 1.5], [B.stomp + 0.1, P.leo.clone().add(V(0, 0.4, 3.2)), 0.8], [B.land, PODIUM_TOP.clone().add(V(0, 0.4, 0)), 1.0], [B.cageDrop[1], P.leo.clone().add(V(0, 0.3, 0)), 1.2]];
+  const events = [[B.kick, P.leo.clone().add(V(0, 2.5, 0)), 1.2], [B.shatter, P.leo.clone().add(V(0, 3, 3.2)), 1.5], [B.stomp, P.leo.clone().add(V(0.6, 0.3, 3.2)), 0.65], [30.28, P.leo.clone().add(V(0, 0.3, 3.2)), 0.5], [B.land, PODIUM_TOP.clone().add(V(0, 0.4, 0)), 1.0], [B.cageDrop[1], P.leo.clone().add(V(0, 0.3, 0)), 1.2]];
   let ev = null; for (const e of events) if (s >= e[0] && s < e[0] + 0.9) ev = e;
   puffs.forEach((p, i) => {
     p.visible = !!ev; if (!ev) return;
@@ -324,7 +338,7 @@ export function update(t, stage) {
     case 'chair': frame(stage, V(P.leo.x - 0.6, 6.4, 3.6), -0.2, 0.1, 9, 42); break;
     case 'laugh': frame(stage, xh.clone().add(V(0, -0.5, 0)), F(max) - 0.2, 0.08, 7, 40); break;
     case 'tiny': frame(stage, V(P.leo.x - 0.5, lerp(2.4, 1.1, easeOut(clamp(u * 3))), 3.4), -0.1, 0.14, lerp(6, 3.6, easeOut(clamp(u * 3))), 42); break;
-    case 'stomp': frame(stage, V(2.5, 2.6, 3.5), 0.9, 0.1, 8, 42); break;
+    case 'stomp': { const j = s > B.stomp && s < B.stomp + 0.3 ? jolt(t, 0.16 * (1 - (s - B.stomp) / 0.3)) : V(0, 0, 0); const k = easeInOut(inv(29.72, 29.95, s)); frame(stage, V(3.0, lerp(2.7, 1.4, k), 3.4).add(j), 0.55, lerp(0.04, 0.3, k), lerp(8, 5, k), 42); break; }
     case 'respawn': frame(stage, V(P.leo.x, 3.0, P.leo.z), 0.95, 0.1, lerp(8, 7, u), 42); break;
     case 'flight': { const p = leo.bones.Torso.localToWorld(V(0, 1, 0)); look(stage, p.clone().add(V(10, 4, 15)), p.clone().add(V(-1.5, 0.5, 0)), 48); stage.aimSun(p.clone().setY(0), 34); break; }
     case 'podium': frame(stage, PODIUM_TOP.clone().add(V(0, 2.2, 0)), face(PODIUM, V(0, 0, 8)) + 0.15, 0.12, lerp(11, 9, u), 42); break;
