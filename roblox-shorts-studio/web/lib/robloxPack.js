@@ -70,7 +70,7 @@ export const packActors = [];
 
 // Characters with their own face style (same expressions and eye positions, restyled): faces/<style>/<name>.png.
 // Skye (ViralRoblox News presenter) has lashes, eye sparkle, blush and berry lips (tools/make_glam_faces.py).
-export const FACE_STYLE = { Skye: 'glam' };
+export const FACE_STYLE = { Skye: 'glam', Unlisted: 'unlisted', UnlistedForest: 'unlisted' };
 
 // A pack character driven by rig.js. `expressions` are preloaded face textures (faces/<name>.png).
 // `hairLift` raises the Hair mesh (studs) when a fringe hides the eyes in close-ups.

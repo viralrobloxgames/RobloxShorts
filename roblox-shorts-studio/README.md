@@ -42,6 +42,10 @@ Run the scripts with Blender's bundled Python, which already has numpy:
 
 ## Folder map
 
+Horror development: [research and examples](references/horror-research-2026-10-02.md),
+[proposed series and pilots](references/horror-series.md), and
+[prioritised asset checklist](assets/roblox_pack/HORROR_ASSETS.md).
+
 | Path | What |
 |---|---|
 | `SKILL.md` | the workflow and hard rules (read first) |

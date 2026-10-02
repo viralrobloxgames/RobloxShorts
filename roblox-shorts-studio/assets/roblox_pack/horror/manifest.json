@@ -1,0 +1,8168 @@
+{
+  "version": 1,
+  "generated": "2026-10-02",
+  "source": "tools/build_horror.py; original procedural geometry and synthesis",
+  "axes": "Y up, native -Z forward; web loader rotates to +Z",
+  "models": [
+    {
+      "name": "Unlisted",
+      "kind": "characters",
+      "description": "Original rigid R6 entity; blank face and cyan chest signal.",
+      "parts": [
+        {
+          "name": "Torso",
+          "size": [
+            2,
+            2,
+            1
+          ],
+          "pos": [
+            0,
+            3,
+            0
+          ],
+          "color": "#182631",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "Left Arm",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            -1.5,
+            3,
+            0
+          ],
+          "color": "#182631",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Left Arm",
+          "neon": false
+        },
+        {
+          "name": "Right Arm",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            1.5,
+            3,
+            0
+          ],
+          "color": "#182631",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Right Arm",
+          "neon": false
+        },
+        {
+          "name": "Left Leg",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            -0.5,
+            1,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Left Leg",
+          "neon": false
+        },
+        {
+          "name": "Right Leg",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            0.5,
+            1,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Right Leg",
+          "neon": false
+        },
+        {
+          "name": "Head",
+          "size": [
+            1.32,
+            1,
+            1.32
+          ],
+          "pos": [
+            0,
+            4.5,
+            0
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Head",
+          "neon": false
+        },
+        {
+          "name": "Face",
+          "size": [
+            1.04,
+            0.68,
+            0.006
+          ],
+          "pos": [
+            0,
+            4.5,
+            -0.662
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Face",
+          "neon": false
+        },
+        {
+          "name": "ChestInset",
+          "size": [
+            0.62,
+            0.68,
+            0.04
+          ],
+          "pos": [
+            0,
+            3.28,
+            -0.526
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "ChestSignal",
+          "size": [
+            0.24,
+            0.24,
+            0.025
+          ],
+          "pos": [
+            0,
+            3.3,
+            -0.554
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": true
+        },
+        {
+          "name": "CoatSeam-0.73",
+          "size": [
+            0.035,
+            1.8,
+            0.018
+          ],
+          "pos": [
+            -0.73,
+            3,
+            -0.518
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "CoatSeam0.73",
+          "size": [
+            0.035,
+            1.8,
+            0.018
+          ],
+          "pos": [
+            0.73,
+            3,
+            -0.518
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "CuffLeft Arm",
+          "size": [
+            1.025,
+            0.17,
+            1.025
+          ],
+          "pos": [
+            -1.5,
+            2.17,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Left Arm",
+          "neon": false
+        },
+        {
+          "name": "CuffRight Arm",
+          "size": [
+            1.025,
+            0.17,
+            1.025
+          ],
+          "pos": [
+            1.5,
+            2.17,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Right Arm",
+          "neon": false
+        }
+      ],
+      "rig": true,
+      "path": "characters/Unlisted/Unlisted.obj",
+      "dimensions": {
+        "min": [
+          -2.0125,
+          0.0,
+          -0.665
+        ],
+        "max": [
+          2.0125,
+          5.0,
+          0.66
+        ],
+        "size": [
+          4.025,
+          5.0,
+          1.3250000000000002
+        ]
+      },
+      "objects": [
+        "Torso",
+        "Left Arm",
+        "Right Arm",
+        "Left Leg",
+        "Right Leg",
+        "Head",
+        "Face"
+      ]
+    },
+    {
+      "name": "UnlistedForest",
+      "kind": "characters",
+      "description": "Original rigid R6 entity; blank face and cyan chest signal.",
+      "parts": [
+        {
+          "name": "Torso",
+          "size": [
+            2,
+            2,
+            1
+          ],
+          "pos": [
+            0,
+            3,
+            0
+          ],
+          "color": "#35453e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "Left Arm",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            -1.5,
+            3,
+            0
+          ],
+          "color": "#35453e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Left Arm",
+          "neon": false
+        },
+        {
+          "name": "Right Arm",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            1.5,
+            3,
+            0
+          ],
+          "color": "#35453e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Right Arm",
+          "neon": false
+        },
+        {
+          "name": "Left Leg",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            -0.5,
+            1,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Left Leg",
+          "neon": false
+        },
+        {
+          "name": "Right Leg",
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "pos": [
+            0.5,
+            1,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Right Leg",
+          "neon": false
+        },
+        {
+          "name": "Head",
+          "size": [
+            1.32,
+            1,
+            1.32
+          ],
+          "pos": [
+            0,
+            4.5,
+            0
+          ],
+          "color": "#b4bba7",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Head",
+          "neon": false
+        },
+        {
+          "name": "Face",
+          "size": [
+            1.04,
+            0.68,
+            0.006
+          ],
+          "pos": [
+            0,
+            4.5,
+            -0.662
+          ],
+          "color": "#b4bba7",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Face",
+          "neon": false
+        },
+        {
+          "name": "ChestInset",
+          "size": [
+            0.62,
+            0.68,
+            0.04
+          ],
+          "pos": [
+            0,
+            3.28,
+            -0.526
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "ChestSignal",
+          "size": [
+            0.24,
+            0.24,
+            0.025
+          ],
+          "pos": [
+            0,
+            3.3,
+            -0.554
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": true
+        },
+        {
+          "name": "CoatSeam-0.73",
+          "size": [
+            0.035,
+            1.8,
+            0.018
+          ],
+          "pos": [
+            -0.73,
+            3,
+            -0.518
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "CoatSeam0.73",
+          "size": [
+            0.035,
+            1.8,
+            0.018
+          ],
+          "pos": [
+            0.73,
+            3,
+            -0.518
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "CuffLeft Arm",
+          "size": [
+            1.025,
+            0.17,
+            1.025
+          ],
+          "pos": [
+            -1.5,
+            2.17,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Left Arm",
+          "neon": false
+        },
+        {
+          "name": "CuffRight Arm",
+          "size": [
+            1.025,
+            0.17,
+            1.025
+          ],
+          "pos": [
+            1.5,
+            2.17,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Right Arm",
+          "neon": false
+        },
+        {
+          "name": "Moss-0.7",
+          "size": [
+            0.4,
+            0.35,
+            0.04
+          ],
+          "pos": [
+            -0.7,
+            3.7,
+            -0.55
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        },
+        {
+          "name": "Moss0.8",
+          "size": [
+            0.4,
+            0.35,
+            0.04
+          ],
+          "pos": [
+            0.8,
+            2.6,
+            -0.55
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Torso",
+          "neon": false
+        }
+      ],
+      "rig": true,
+      "path": "characters/UnlistedForest/UnlistedForest.obj",
+      "dimensions": {
+        "min": [
+          -2.0125,
+          0.0,
+          -0.665
+        ],
+        "max": [
+          2.0125,
+          5.0,
+          0.66
+        ],
+        "size": [
+          4.025,
+          5.0,
+          1.3250000000000002
+        ]
+      },
+      "objects": [
+        "Torso",
+        "Left Arm",
+        "Right Arm",
+        "Left Leg",
+        "Right Leg",
+        "Head",
+        "Face"
+      ]
+    },
+    {
+      "name": "horror_lobby",
+      "kind": "map",
+      "description": "Modular open-front room, removable roof, clear actor staging.",
+      "parts": [
+        {
+          "name": "Floor",
+          "size": [
+            20,
+            0.35,
+            16
+          ],
+          "pos": [
+            0,
+            -0.175,
+            0
+          ],
+          "color": "#35434b",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Floor",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam-8.0",
+          "size": [
+            0.025,
+            0.008,
+            16
+          ],
+          "pos": [
+            -8.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam-8.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam-4.0",
+          "size": [
+            0.025,
+            0.008,
+            16
+          ],
+          "pos": [
+            -4.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam-4.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam0.0",
+          "size": [
+            0.025,
+            0.008,
+            16
+          ],
+          "pos": [
+            0.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam0.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam4.0",
+          "size": [
+            0.025,
+            0.008,
+            16
+          ],
+          "pos": [
+            4.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam4.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam8.0",
+          "size": [
+            0.025,
+            0.008,
+            16
+          ],
+          "pos": [
+            8.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam8.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross-6.0",
+          "size": [
+            20,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            -6.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross-6.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross-2.0",
+          "size": [
+            20,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            -2.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross-2.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross2.0",
+          "size": [
+            20,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            2.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross2.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross6.0",
+          "size": [
+            20,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            6.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross6.0",
+          "neon": false
+        },
+        {
+          "name": "BackWall",
+          "size": [
+            20,
+            9,
+            0.4
+          ],
+          "pos": [
+            0,
+            4.5,
+            8.0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackWall",
+          "neon": false
+        },
+        {
+          "name": "SideWall-1",
+          "size": [
+            0.4,
+            9,
+            16
+          ],
+          "pos": [
+            -10.0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideWall-1",
+          "neon": false
+        },
+        {
+          "name": "SideRail-1",
+          "size": [
+            0.45,
+            0.17,
+            16
+          ],
+          "pos": [
+            -10.0,
+            2.7,
+            0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideRail-1",
+          "neon": false
+        },
+        {
+          "name": "SideSkirt-1",
+          "size": [
+            0.5,
+            0.6,
+            16
+          ],
+          "pos": [
+            -10.0,
+            0.3,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideSkirt-1",
+          "neon": false
+        },
+        {
+          "name": "SideWall1",
+          "size": [
+            0.4,
+            9,
+            16
+          ],
+          "pos": [
+            10.0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideWall1",
+          "neon": false
+        },
+        {
+          "name": "SideRail1",
+          "size": [
+            0.45,
+            0.17,
+            16
+          ],
+          "pos": [
+            10.0,
+            2.7,
+            0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideRail1",
+          "neon": false
+        },
+        {
+          "name": "SideSkirt1",
+          "size": [
+            0.5,
+            0.6,
+            16
+          ],
+          "pos": [
+            10.0,
+            0.3,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideSkirt1",
+          "neon": false
+        },
+        {
+          "name": "BackSkirt",
+          "size": [
+            20,
+            0.6,
+            0.5
+          ],
+          "pos": [
+            0,
+            0.3,
+            8.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackSkirt",
+          "neon": false
+        },
+        {
+          "name": "BackRail",
+          "size": [
+            20,
+            0.17,
+            0.45
+          ],
+          "pos": [
+            0,
+            2.7,
+            8.0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackRail",
+          "neon": false
+        },
+        {
+          "name": "LampCase-7.0",
+          "size": [
+            2.8,
+            0.32,
+            0.48
+          ],
+          "pos": [
+            -7.0,
+            7.8,
+            7.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampCase-7.0",
+          "neon": false
+        },
+        {
+          "name": "LampGlow-7.0",
+          "size": [
+            2.4,
+            0.17,
+            0.06
+          ],
+          "pos": [
+            -7.0,
+            7.75,
+            7.43
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampGlow-7.0",
+          "neon": true
+        },
+        {
+          "name": "LampCase7.0",
+          "size": [
+            2.8,
+            0.32,
+            0.48
+          ],
+          "pos": [
+            7.0,
+            7.8,
+            7.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampCase7.0",
+          "neon": false
+        },
+        {
+          "name": "LampGlow7.0",
+          "size": [
+            2.4,
+            0.17,
+            0.06
+          ],
+          "pos": [
+            7.0,
+            7.75,
+            7.43
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampGlow7.0",
+          "neon": true
+        },
+        {
+          "name": "NoticeFrame",
+          "size": [
+            4.2,
+            2.4000000000000004,
+            0.16
+          ],
+          "pos": [
+            -5.5,
+            5.2,
+            7.71
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "NoticeFrame",
+          "neon": false
+        },
+        {
+          "name": "NoticeFace",
+          "size": [
+            4,
+            2.2,
+            0.04
+          ],
+          "pos": [
+            -5.5,
+            5.2,
+            7.61
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "NoticeFace",
+          "neon": false,
+          "label": "AFTER HOURS\nNO STAFF ONLINE"
+        },
+        {
+          "name": "ExitFrame",
+          "size": [
+            3.7,
+            1.8,
+            0.16
+          ],
+          "pos": [
+            5.4,
+            4.9,
+            7.71
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ExitFrame",
+          "neon": false
+        },
+        {
+          "name": "ExitFace",
+          "size": [
+            3.5,
+            1.6,
+            0.04
+          ],
+          "pos": [
+            5.4,
+            4.9,
+            7.61
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ExitFace",
+          "neon": false,
+          "label": "EXIT / 01"
+        },
+        {
+          "name": "BenchSeat-5",
+          "size": [
+            4,
+            0.3,
+            1.5
+          ],
+          "pos": [
+            -5,
+            1.9,
+            5.6
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BenchSeat-5",
+          "neon": false
+        },
+        {
+          "name": "BenchLeg-6.5",
+          "size": [
+            0.2,
+            1.8,
+            0.85
+          ],
+          "pos": [
+            -6.5,
+            0.9,
+            5.6
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BenchLeg-6.5",
+          "neon": false
+        },
+        {
+          "name": "BenchLeg-3.5",
+          "size": [
+            0.2,
+            1.8,
+            0.85
+          ],
+          "pos": [
+            -3.5,
+            0.9,
+            5.6
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BenchLeg-3.5",
+          "neon": false
+        },
+        {
+          "name": "BenchSeat5",
+          "size": [
+            4,
+            0.3,
+            1.5
+          ],
+          "pos": [
+            5,
+            1.9,
+            5.6
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BenchSeat5",
+          "neon": false
+        },
+        {
+          "name": "BenchLeg3.5",
+          "size": [
+            0.2,
+            1.8,
+            0.85
+          ],
+          "pos": [
+            3.5,
+            0.9,
+            5.6
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BenchLeg3.5",
+          "neon": false
+        },
+        {
+          "name": "BenchLeg6.5",
+          "size": [
+            0.2,
+            1.8,
+            0.85
+          ],
+          "pos": [
+            6.5,
+            0.9,
+            5.6
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BenchLeg6.5",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_lobby/horror_lobby.obj",
+      "dimensions": {
+        "min": [
+          -10.25,
+          -0.35,
+          -8.0
+        ],
+        "max": [
+          10.25,
+          9.0,
+          8.25
+        ],
+        "size": [
+          20.5,
+          9.35,
+          16.25
+        ]
+      },
+      "objects": [
+        "Floor",
+        "FloorSeam-8.0",
+        "FloorSeam-4.0",
+        "FloorSeam0.0",
+        "FloorSeam4.0",
+        "FloorSeam8.0",
+        "FloorCross-6.0",
+        "FloorCross-2.0",
+        "FloorCross2.0",
+        "FloorCross6.0",
+        "BackWall",
+        "SideWall-1",
+        "SideRail-1",
+        "SideSkirt-1",
+        "SideWall1",
+        "SideRail1",
+        "SideSkirt1",
+        "BackSkirt",
+        "BackRail",
+        "LampCase-7.0",
+        "LampGlow-7.0",
+        "LampCase7.0",
+        "LampGlow7.0",
+        "NoticeFrame",
+        "NoticeFace",
+        "ExitFrame",
+        "ExitFace",
+        "BenchSeat-5",
+        "BenchLeg-6.5",
+        "BenchLeg-3.5",
+        "BenchSeat5",
+        "BenchLeg3.5",
+        "BenchLeg6.5"
+      ]
+    },
+    {
+      "name": "horror_wall",
+      "kind": "map",
+      "description": "8x9 wall panel with lower trim and cyan route stripe.",
+      "parts": [
+        {
+          "name": "Wall",
+          "size": [
+            8,
+            9,
+            0.4
+          ],
+          "pos": [
+            0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Wall",
+          "neon": false
+        },
+        {
+          "name": "Skirt",
+          "size": [
+            8,
+            0.6,
+            0.45
+          ],
+          "pos": [
+            0,
+            0.3,
+            -0.03
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Skirt",
+          "neon": false
+        },
+        {
+          "name": "Stripe",
+          "size": [
+            8,
+            0.14,
+            0.43
+          ],
+          "pos": [
+            0,
+            2.7,
+            -0.02
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Stripe",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_wall/horror_wall.obj",
+      "dimensions": {
+        "min": [
+          -4.0,
+          0.0,
+          -0.255
+        ],
+        "max": [
+          4.0,
+          9.0,
+          0.2
+        ],
+        "size": [
+          8.0,
+          9.0,
+          0.455
+        ]
+      },
+      "objects": [
+        "Wall",
+        "Skirt",
+        "Stripe"
+      ]
+    },
+    {
+      "name": "horror_corner",
+      "kind": "map",
+      "description": "Two perpendicular modular walls, inside corner at origin.",
+      "parts": [
+        {
+          "name": "WallX",
+          "size": [
+            8,
+            9,
+            0.4
+          ],
+          "pos": [
+            4,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WallX",
+          "neon": false
+        },
+        {
+          "name": "WallZ",
+          "size": [
+            0.4,
+            9,
+            8
+          ],
+          "pos": [
+            0,
+            4.5,
+            4
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WallZ",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_corner/horror_corner.obj",
+      "dimensions": {
+        "min": [
+          -0.2,
+          0.0,
+          -0.2
+        ],
+        "max": [
+          8.0,
+          9.0,
+          8.0
+        ],
+        "size": [
+          8.2,
+          9.0,
+          8.2
+        ]
+      },
+      "objects": [
+        "WallX",
+        "WallZ"
+      ]
+    },
+    {
+      "name": "horror_door",
+      "kind": "map",
+      "description": "6-stud clear opening, 7-stud height. Hinge on left, opens away from approach.",
+      "parts": [
+        {
+          "name": "Frame-3.25",
+          "size": [
+            0.5,
+            7.5,
+            0.65
+          ],
+          "pos": [
+            -3.25,
+            3.75,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Frame-3.25",
+          "neon": false
+        },
+        {
+          "name": "Frame3.25",
+          "size": [
+            0.5,
+            7.5,
+            0.65
+          ],
+          "pos": [
+            3.25,
+            3.75,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Frame3.25",
+          "neon": false
+        },
+        {
+          "name": "Header",
+          "size": [
+            7,
+            0.5,
+            0.65
+          ],
+          "pos": [
+            0,
+            7.25,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Header",
+          "neon": false
+        },
+        {
+          "name": "Door",
+          "size": [
+            5.94,
+            6.94,
+            0.25
+          ],
+          "pos": [
+            0,
+            3.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Door",
+          "neon": false
+        },
+        {
+          "name": "DoorInset",
+          "size": [
+            5.35,
+            5.9,
+            0.05
+          ],
+          "pos": [
+            0,
+            3.6,
+            -0.15
+          ],
+          "color": "#182631",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Door",
+          "neon": false
+        },
+        {
+          "name": "Hinge1",
+          "size": [
+            0.15,
+            0.6,
+            0.32
+          ],
+          "pos": [
+            -2.96,
+            1,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Door",
+          "neon": false
+        },
+        {
+          "name": "Hinge6",
+          "size": [
+            0.15,
+            0.6,
+            0.32
+          ],
+          "pos": [
+            -2.96,
+            6,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Door",
+          "neon": false
+        },
+        {
+          "name": "NumberFrame",
+          "size": [
+            2.3000000000000003,
+            0.8500000000000001,
+            0.16
+          ],
+          "pos": [
+            0,
+            5.45,
+            -0.21
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Door",
+          "neon": false
+        },
+        {
+          "name": "NumberFace",
+          "size": [
+            2.1,
+            0.65,
+            0.04
+          ],
+          "pos": [
+            0,
+            5.45,
+            -0.31
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Door",
+          "neon": false,
+          "label": "01"
+        },
+        {
+          "name": "Handle",
+          "size": [
+            0.85,
+            0.14,
+            0.18
+          ],
+          "pos": [
+            2.15,
+            3.1,
+            -0.3
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Handle",
+          "neon": false
+        },
+        {
+          "name": "Latch",
+          "size": [
+            0.25,
+            0.4,
+            0.08
+          ],
+          "pos": [
+            2.45,
+            3.1,
+            -0.21
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Latch",
+          "neon": false
+        }
+      ],
+      "controls": {
+        "door": {
+          "pivot": [
+            -3,
+            0,
+            0
+          ],
+          "axis": "y",
+          "range": [
+            0,
+            -100
+          ],
+          "groups": [
+            "Door",
+            "Handle",
+            "Latch"
+          ]
+        },
+        "clearance": [
+          6,
+          7
+        ]
+      },
+      "path": "map/horror_door/horror_door.obj",
+      "dimensions": {
+        "min": [
+          -3.5,
+          0.0,
+          -0.39
+        ],
+        "max": [
+          3.5,
+          7.5,
+          0.325
+        ],
+        "size": [
+          7.0,
+          7.5,
+          0.7150000000000001
+        ]
+      },
+      "objects": [
+        "Frame-3.25",
+        "Frame3.25",
+        "Header",
+        "Door",
+        "Handle",
+        "Latch"
+      ]
+    },
+    {
+      "name": "horror_window",
+      "kind": "map",
+      "description": "Opaque framed window with separate glass for authored reflection inserts.",
+      "parts": [
+        {
+          "name": "GlassFrame",
+          "size": [
+            6.2,
+            4.2,
+            0.16
+          ],
+          "pos": [
+            0,
+            3.7,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "GlassFrame",
+          "neon": false
+        },
+        {
+          "name": "GlassFace",
+          "size": [
+            6,
+            4,
+            0.04
+          ],
+          "pos": [
+            0,
+            3.7,
+            -0.1
+          ],
+          "color": "#23474b",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "GlassFace",
+          "neon": false
+        },
+        {
+          "name": "Mullion",
+          "size": [
+            0.1,
+            4,
+            0.2
+          ],
+          "pos": [
+            0,
+            3.7,
+            -0.14
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Mullion",
+          "neon": false
+        },
+        {
+          "name": "Sill",
+          "size": [
+            6.5,
+            0.2,
+            0.6
+          ],
+          "pos": [
+            0,
+            1.6,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Sill",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_window/horror_window.obj",
+      "dimensions": {
+        "min": [
+          -3.25,
+          1.5,
+          -0.3
+        ],
+        "max": [
+          3.25,
+          5.800000000000001,
+          0.3
+        ],
+        "size": [
+          6.5,
+          4.300000000000001,
+          0.6
+        ]
+      },
+      "objects": [
+        "GlassFrame",
+        "GlassFace",
+        "Mullion",
+        "Sill"
+      ]
+    },
+    {
+      "name": "horror_corridor",
+      "kind": "map",
+      "description": "Modular open-front room, removable roof, clear actor staging.",
+      "parts": [
+        {
+          "name": "Floor",
+          "size": [
+            12,
+            0.35,
+            26
+          ],
+          "pos": [
+            0,
+            -0.175,
+            0
+          ],
+          "color": "#35434b",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Floor",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam-4.0",
+          "size": [
+            0.025,
+            0.008,
+            26
+          ],
+          "pos": [
+            -4.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam-4.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam0.0",
+          "size": [
+            0.025,
+            0.008,
+            26
+          ],
+          "pos": [
+            0.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam0.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam4.0",
+          "size": [
+            0.025,
+            0.008,
+            26
+          ],
+          "pos": [
+            4.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam4.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross-11.0",
+          "size": [
+            12,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            -11.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross-11.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross-7.0",
+          "size": [
+            12,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            -7.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross-7.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross-3.0",
+          "size": [
+            12,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            -3.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross-3.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross1.0",
+          "size": [
+            12,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            1.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross1.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross5.0",
+          "size": [
+            12,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            5.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross5.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross9.0",
+          "size": [
+            12,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            9.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross9.0",
+          "neon": false
+        },
+        {
+          "name": "BackWall",
+          "size": [
+            12,
+            9,
+            0.4
+          ],
+          "pos": [
+            0,
+            4.5,
+            13.0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackWall",
+          "neon": false
+        },
+        {
+          "name": "SideWall-1",
+          "size": [
+            0.4,
+            9,
+            26
+          ],
+          "pos": [
+            -6.0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideWall-1",
+          "neon": false
+        },
+        {
+          "name": "SideRail-1",
+          "size": [
+            0.45,
+            0.17,
+            26
+          ],
+          "pos": [
+            -6.0,
+            2.7,
+            0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideRail-1",
+          "neon": false
+        },
+        {
+          "name": "SideSkirt-1",
+          "size": [
+            0.5,
+            0.6,
+            26
+          ],
+          "pos": [
+            -6.0,
+            0.3,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideSkirt-1",
+          "neon": false
+        },
+        {
+          "name": "SideWall1",
+          "size": [
+            0.4,
+            9,
+            26
+          ],
+          "pos": [
+            6.0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideWall1",
+          "neon": false
+        },
+        {
+          "name": "SideRail1",
+          "size": [
+            0.45,
+            0.17,
+            26
+          ],
+          "pos": [
+            6.0,
+            2.7,
+            0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideRail1",
+          "neon": false
+        },
+        {
+          "name": "SideSkirt1",
+          "size": [
+            0.5,
+            0.6,
+            26
+          ],
+          "pos": [
+            6.0,
+            0.3,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideSkirt1",
+          "neon": false
+        },
+        {
+          "name": "BackSkirt",
+          "size": [
+            12,
+            0.6,
+            0.5
+          ],
+          "pos": [
+            0,
+            0.3,
+            13.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackSkirt",
+          "neon": false
+        },
+        {
+          "name": "BackRail",
+          "size": [
+            12,
+            0.17,
+            0.45
+          ],
+          "pos": [
+            0,
+            2.7,
+            13.0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackRail",
+          "neon": false
+        },
+        {
+          "name": "LampCase-3.0",
+          "size": [
+            2.8,
+            0.32,
+            0.48
+          ],
+          "pos": [
+            -3.0,
+            7.8,
+            12.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampCase-3.0",
+          "neon": false
+        },
+        {
+          "name": "LampGlow-3.0",
+          "size": [
+            2.4,
+            0.17,
+            0.06
+          ],
+          "pos": [
+            -3.0,
+            7.75,
+            12.43
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampGlow-3.0",
+          "neon": true
+        },
+        {
+          "name": "LampCase3.0",
+          "size": [
+            2.8,
+            0.32,
+            0.48
+          ],
+          "pos": [
+            3.0,
+            7.8,
+            12.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampCase3.0",
+          "neon": false
+        },
+        {
+          "name": "LampGlow3.0",
+          "size": [
+            2.4,
+            0.17,
+            0.06
+          ],
+          "pos": [
+            3.0,
+            7.75,
+            12.43
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampGlow3.0",
+          "neon": true
+        },
+        {
+          "name": "CeilingBar-8",
+          "size": [
+            12,
+            0.2,
+            0.5
+          ],
+          "pos": [
+            0,
+            8.7,
+            -8
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CeilingBar-8",
+          "neon": false
+        },
+        {
+          "name": "CeilingTube-8",
+          "size": [
+            4,
+            0.06,
+            0.25
+          ],
+          "pos": [
+            0,
+            8.55,
+            -8
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CeilingTube-8",
+          "neon": true
+        },
+        {
+          "name": "CeilingBar0",
+          "size": [
+            12,
+            0.2,
+            0.5
+          ],
+          "pos": [
+            0,
+            8.7,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CeilingBar0",
+          "neon": false
+        },
+        {
+          "name": "CeilingTube0",
+          "size": [
+            4,
+            0.06,
+            0.25
+          ],
+          "pos": [
+            0,
+            8.55,
+            0
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CeilingTube0",
+          "neon": true
+        },
+        {
+          "name": "CeilingBar8",
+          "size": [
+            12,
+            0.2,
+            0.5
+          ],
+          "pos": [
+            0,
+            8.7,
+            8
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CeilingBar8",
+          "neon": false
+        },
+        {
+          "name": "CeilingTube8",
+          "size": [
+            4,
+            0.06,
+            0.25
+          ],
+          "pos": [
+            0,
+            8.55,
+            8
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CeilingTube8",
+          "neon": true
+        }
+      ],
+      "path": "map/horror_corridor/horror_corridor.obj",
+      "dimensions": {
+        "min": [
+          -6.25,
+          -0.35,
+          -13.0
+        ],
+        "max": [
+          6.25,
+          9.0,
+          13.25
+        ],
+        "size": [
+          12.5,
+          9.35,
+          26.25
+        ]
+      },
+      "objects": [
+        "Floor",
+        "FloorSeam-4.0",
+        "FloorSeam0.0",
+        "FloorSeam4.0",
+        "FloorCross-11.0",
+        "FloorCross-7.0",
+        "FloorCross-3.0",
+        "FloorCross1.0",
+        "FloorCross5.0",
+        "FloorCross9.0",
+        "BackWall",
+        "SideWall-1",
+        "SideRail-1",
+        "SideSkirt-1",
+        "SideWall1",
+        "SideRail1",
+        "SideSkirt1",
+        "BackSkirt",
+        "BackRail",
+        "LampCase-3.0",
+        "LampGlow-3.0",
+        "LampCase3.0",
+        "LampGlow3.0",
+        "CeilingBar-8",
+        "CeilingTube-8",
+        "CeilingBar0",
+        "CeilingTube0",
+        "CeilingBar8",
+        "CeilingTube8"
+      ]
+    },
+    {
+      "name": "horror_locker",
+      "kind": "map",
+      "description": "Hinged storage locker and vented door.",
+      "parts": [
+        {
+          "name": "Side-1.5",
+          "size": [
+            0.15,
+            6.5,
+            2
+          ],
+          "pos": [
+            -1.5,
+            3.25,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Side-1.5",
+          "neon": false
+        },
+        {
+          "name": "Side1.5",
+          "size": [
+            0.15,
+            6.5,
+            2
+          ],
+          "pos": [
+            1.5,
+            3.25,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Side1.5",
+          "neon": false
+        },
+        {
+          "name": "Back",
+          "size": [
+            3,
+            6.5,
+            0.15
+          ],
+          "pos": [
+            0,
+            3.25,
+            1
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Back",
+          "neon": false
+        },
+        {
+          "name": "Top",
+          "size": [
+            3,
+            0.15,
+            2
+          ],
+          "pos": [
+            0,
+            6.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Top",
+          "neon": false
+        },
+        {
+          "name": "LockerDoor",
+          "size": [
+            2.95,
+            6.4,
+            0.12
+          ],
+          "pos": [
+            0,
+            3.25,
+            -1
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LockerDoor",
+          "neon": false
+        },
+        {
+          "name": "Vent4.9",
+          "size": [
+            2,
+            0.05,
+            0.025
+          ],
+          "pos": [
+            0,
+            4.9,
+            -1.08
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LockerDoor",
+          "neon": false
+        },
+        {
+          "name": "Vent5.15",
+          "size": [
+            2,
+            0.05,
+            0.025
+          ],
+          "pos": [
+            0,
+            5.15,
+            -1.08
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LockerDoor",
+          "neon": false
+        },
+        {
+          "name": "Vent5.4",
+          "size": [
+            2,
+            0.05,
+            0.025
+          ],
+          "pos": [
+            0,
+            5.4,
+            -1.08
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LockerDoor",
+          "neon": false
+        },
+        {
+          "name": "Pull",
+          "size": [
+            0.12,
+            0.65,
+            0.16
+          ],
+          "pos": [
+            1,
+            3.1,
+            -1.17
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LockerDoor",
+          "neon": false
+        }
+      ],
+      "controls": {
+        "door": {
+          "pivot": [
+            -1.5,
+            0,
+            -1
+          ],
+          "axis": "y",
+          "range": [
+            0,
+            -95
+          ],
+          "groups": [
+            "LockerDoor"
+          ]
+        }
+      },
+      "path": "map/horror_locker/horror_locker.obj",
+      "dimensions": {
+        "min": [
+          -1.575,
+          0.0,
+          -1.25
+        ],
+        "max": [
+          1.575,
+          6.575,
+          1.075
+        ],
+        "size": [
+          3.15,
+          6.575,
+          2.325
+        ]
+      },
+      "objects": [
+        "Side-1.5",
+        "Side1.5",
+        "Back",
+        "Top",
+        "LockerDoor"
+      ]
+    },
+    {
+      "name": "horror_fuse_box",
+      "kind": "props",
+      "description": "Wall-mounted fuse panel with switch and warning stripe.",
+      "parts": [
+        {
+          "name": "Housing",
+          "size": [
+            1.8,
+            2.4,
+            0.5
+          ],
+          "pos": [
+            0,
+            1.2,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Housing",
+          "neon": false
+        },
+        {
+          "name": "FusesFrame",
+          "size": [
+            1.5999999999999999,
+            1.4,
+            0.16
+          ],
+          "pos": [
+            0,
+            1.45,
+            -0.27
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FusesFrame",
+          "neon": false
+        },
+        {
+          "name": "FusesFace",
+          "size": [
+            1.4,
+            1.2,
+            0.04
+          ],
+          "pos": [
+            0,
+            1.45,
+            -0.37
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FusesFace",
+          "neon": false
+        },
+        {
+          "name": "Fuse-0.4",
+          "size": [
+            0.17,
+            0.5,
+            0.1
+          ],
+          "pos": [
+            -0.4,
+            1.45,
+            -0.36
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Fuse-0.4",
+          "neon": false
+        },
+        {
+          "name": "Fuse0",
+          "size": [
+            0.17,
+            0.5,
+            0.1
+          ],
+          "pos": [
+            0,
+            1.45,
+            -0.36
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Fuse0",
+          "neon": false
+        },
+        {
+          "name": "Fuse0.4",
+          "size": [
+            0.17,
+            0.5,
+            0.1
+          ],
+          "pos": [
+            0.4,
+            1.45,
+            -0.36
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Fuse0.4",
+          "neon": false
+        },
+        {
+          "name": "Lever",
+          "size": [
+            0.12,
+            0.4,
+            0.13
+          ],
+          "pos": [
+            0.5,
+            0.4,
+            -0.38
+          ],
+          "color": "#e76651",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Lever",
+          "neon": false
+        },
+        {
+          "name": "WarningFrame",
+          "size": [
+            1.5999999999999999,
+            0.42000000000000004,
+            0.16
+          ],
+          "pos": [
+            0,
+            2.1,
+            -0.29
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WarningFrame",
+          "neon": false
+        },
+        {
+          "name": "WarningFace",
+          "size": [
+            1.4,
+            0.22,
+            0.04
+          ],
+          "pos": [
+            0,
+            2.1,
+            -0.39
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WarningFace",
+          "neon": false,
+          "label": "POWER"
+        }
+      ],
+      "path": "props/horror_fuse_box/horror_fuse_box.obj",
+      "dimensions": {
+        "min": [
+          -0.9,
+          0.0,
+          -0.445
+        ],
+        "max": [
+          0.9,
+          2.4,
+          0.25
+        ],
+        "size": [
+          1.8,
+          2.4,
+          0.6950000000000001
+        ]
+      },
+      "objects": [
+        "Housing",
+        "FusesFrame",
+        "FusesFace",
+        "Fuse-0.4",
+        "Fuse0",
+        "Fuse0.4",
+        "Lever",
+        "WarningFrame",
+        "WarningFace"
+      ]
+    },
+    {
+      "name": "horror_service_counter",
+      "kind": "map",
+      "description": "Night-shift service window with vertical shutter.",
+      "parts": [
+        {
+          "name": "Counter",
+          "size": [
+            10,
+            0.4,
+            3
+          ],
+          "pos": [
+            0,
+            2.8,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Counter",
+          "neon": false
+        },
+        {
+          "name": "CounterFront",
+          "size": [
+            10,
+            2.5,
+            0.25
+          ],
+          "pos": [
+            0,
+            1.25,
+            -1.25
+          ],
+          "color": "#182631",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "CounterFront",
+          "neon": false
+        },
+        {
+          "name": "Upright-5",
+          "size": [
+            0.4,
+            7.5,
+            3
+          ],
+          "pos": [
+            -5,
+            3.75,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Upright-5",
+          "neon": false
+        },
+        {
+          "name": "Upright5",
+          "size": [
+            0.4,
+            7.5,
+            3
+          ],
+          "pos": [
+            5,
+            3.75,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Upright5",
+          "neon": false
+        },
+        {
+          "name": "Top",
+          "size": [
+            10,
+            0.5,
+            3
+          ],
+          "pos": [
+            0,
+            7.35,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Top",
+          "neon": false
+        },
+        {
+          "name": "Slat0",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            3.18,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat1",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            3.5,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat2",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            3.8200000000000003,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat3",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            4.140000000000001,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat4",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            4.46,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat5",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            4.78,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat6",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            5.1,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat7",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            5.42,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat8",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            5.74,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat9",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            6.0600000000000005,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat10",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            6.380000000000001,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat11",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            6.7,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "Slat12",
+          "size": [
+            9.6,
+            0.32,
+            0.18
+          ],
+          "pos": [
+            0,
+            7.02,
+            -1.25
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        },
+        {
+          "name": "ShutterHandle",
+          "size": [
+            1,
+            0.15,
+            0.2
+          ],
+          "pos": [
+            0,
+            3.13,
+            -1.4
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shutter",
+          "neon": false
+        }
+      ],
+      "controls": {
+        "shutter": {
+          "axis": "y",
+          "range": [
+            0,
+            4.4
+          ],
+          "groups": [
+            "Shutter"
+          ]
+        }
+      },
+      "path": "map/horror_service_counter/horror_service_counter.obj",
+      "dimensions": {
+        "min": [
+          -5.2,
+          0.0,
+          -1.5
+        ],
+        "max": [
+          5.2,
+          7.6,
+          1.5
+        ],
+        "size": [
+          10.4,
+          7.6,
+          3.0
+        ]
+      },
+      "objects": [
+        "Counter",
+        "CounterFront",
+        "Upright-5",
+        "Upright5",
+        "Top",
+        "Shutter"
+      ]
+    },
+    {
+      "name": "horror_stockroom",
+      "kind": "map",
+      "description": "Modular open-front room, removable roof, clear actor staging.",
+      "parts": [
+        {
+          "name": "Floor",
+          "size": [
+            14,
+            0.35,
+            12
+          ],
+          "pos": [
+            0,
+            -0.175,
+            0
+          ],
+          "color": "#35434b",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Floor",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam-5.0",
+          "size": [
+            0.025,
+            0.008,
+            12
+          ],
+          "pos": [
+            -5.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam-5.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam-1.0",
+          "size": [
+            0.025,
+            0.008,
+            12
+          ],
+          "pos": [
+            -1.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam-1.0",
+          "neon": false
+        },
+        {
+          "name": "FloorSeam3.0",
+          "size": [
+            0.025,
+            0.008,
+            12
+          ],
+          "pos": [
+            3.0,
+            0.008,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorSeam3.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross-4.0",
+          "size": [
+            14,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            -4.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross-4.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross0.0",
+          "size": [
+            14,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            0.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross0.0",
+          "neon": false
+        },
+        {
+          "name": "FloorCross4.0",
+          "size": [
+            14,
+            0.008,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.01,
+            4.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "FloorCross4.0",
+          "neon": false
+        },
+        {
+          "name": "BackWall",
+          "size": [
+            14,
+            9,
+            0.4
+          ],
+          "pos": [
+            0,
+            4.5,
+            6.0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackWall",
+          "neon": false
+        },
+        {
+          "name": "SideWall-1",
+          "size": [
+            0.4,
+            9,
+            12
+          ],
+          "pos": [
+            -7.0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideWall-1",
+          "neon": false
+        },
+        {
+          "name": "SideRail-1",
+          "size": [
+            0.45,
+            0.17,
+            12
+          ],
+          "pos": [
+            -7.0,
+            2.7,
+            0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideRail-1",
+          "neon": false
+        },
+        {
+          "name": "SideSkirt-1",
+          "size": [
+            0.5,
+            0.6,
+            12
+          ],
+          "pos": [
+            -7.0,
+            0.3,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideSkirt-1",
+          "neon": false
+        },
+        {
+          "name": "SideWall1",
+          "size": [
+            0.4,
+            9,
+            12
+          ],
+          "pos": [
+            7.0,
+            4.5,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideWall1",
+          "neon": false
+        },
+        {
+          "name": "SideRail1",
+          "size": [
+            0.45,
+            0.17,
+            12
+          ],
+          "pos": [
+            7.0,
+            2.7,
+            0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideRail1",
+          "neon": false
+        },
+        {
+          "name": "SideSkirt1",
+          "size": [
+            0.5,
+            0.6,
+            12
+          ],
+          "pos": [
+            7.0,
+            0.3,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SideSkirt1",
+          "neon": false
+        },
+        {
+          "name": "BackSkirt",
+          "size": [
+            14,
+            0.6,
+            0.5
+          ],
+          "pos": [
+            0,
+            0.3,
+            6.0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackSkirt",
+          "neon": false
+        },
+        {
+          "name": "BackRail",
+          "size": [
+            14,
+            0.17,
+            0.45
+          ],
+          "pos": [
+            0,
+            2.7,
+            6.0
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackRail",
+          "neon": false
+        },
+        {
+          "name": "LampCase-4.0",
+          "size": [
+            2.8,
+            0.32,
+            0.48
+          ],
+          "pos": [
+            -4.0,
+            7.8,
+            5.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampCase-4.0",
+          "neon": false
+        },
+        {
+          "name": "LampGlow-4.0",
+          "size": [
+            2.4,
+            0.17,
+            0.06
+          ],
+          "pos": [
+            -4.0,
+            7.75,
+            5.43
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampGlow-4.0",
+          "neon": true
+        },
+        {
+          "name": "LampCase4.0",
+          "size": [
+            2.8,
+            0.32,
+            0.48
+          ],
+          "pos": [
+            4.0,
+            7.8,
+            5.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampCase4.0",
+          "neon": false
+        },
+        {
+          "name": "LampGlow4.0",
+          "size": [
+            2.4,
+            0.17,
+            0.06
+          ],
+          "pos": [
+            4.0,
+            7.75,
+            5.43
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LampGlow4.0",
+          "neon": true
+        },
+        {
+          "name": "Shelf(-4.5, 1)",
+          "size": [
+            3,
+            0.18,
+            8
+          ],
+          "pos": [
+            -4.5,
+            1,
+            1
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shelf(-4.5, 1)",
+          "neon": false
+        },
+        {
+          "name": "Shelf(-4.5, 3.4)",
+          "size": [
+            3,
+            0.18,
+            8
+          ],
+          "pos": [
+            -4.5,
+            3.4,
+            1
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shelf(-4.5, 3.4)",
+          "neon": false
+        },
+        {
+          "name": "Shelf(-4.5, 5.8)",
+          "size": [
+            3,
+            0.18,
+            8
+          ],
+          "pos": [
+            -4.5,
+            5.8,
+            1
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shelf(-4.5, 5.8)",
+          "neon": false
+        },
+        {
+          "name": "ShelfPost(-4.5, -3)",
+          "size": [
+            0.15,
+            6,
+            0.15
+          ],
+          "pos": [
+            -4.5,
+            3,
+            -3
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ShelfPost(-4.5, -3)",
+          "neon": false
+        },
+        {
+          "name": "ShelfPost(-4.5, 5)",
+          "size": [
+            0.15,
+            6,
+            0.15
+          ],
+          "pos": [
+            -4.5,
+            3,
+            5
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ShelfPost(-4.5, 5)",
+          "neon": false
+        },
+        {
+          "name": "Shelf(4.5, 1)",
+          "size": [
+            3,
+            0.18,
+            8
+          ],
+          "pos": [
+            4.5,
+            1,
+            1
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shelf(4.5, 1)",
+          "neon": false
+        },
+        {
+          "name": "Shelf(4.5, 3.4)",
+          "size": [
+            3,
+            0.18,
+            8
+          ],
+          "pos": [
+            4.5,
+            3.4,
+            1
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shelf(4.5, 3.4)",
+          "neon": false
+        },
+        {
+          "name": "Shelf(4.5, 5.8)",
+          "size": [
+            3,
+            0.18,
+            8
+          ],
+          "pos": [
+            4.5,
+            5.8,
+            1
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Shelf(4.5, 5.8)",
+          "neon": false
+        },
+        {
+          "name": "ShelfPost(4.5, -3)",
+          "size": [
+            0.15,
+            6,
+            0.15
+          ],
+          "pos": [
+            4.5,
+            3,
+            -3
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ShelfPost(4.5, -3)",
+          "neon": false
+        },
+        {
+          "name": "ShelfPost(4.5, 5)",
+          "size": [
+            0.15,
+            6,
+            0.15
+          ],
+          "pos": [
+            4.5,
+            3,
+            5
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ShelfPost(4.5, 5)",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_stockroom/horror_stockroom.obj",
+      "dimensions": {
+        "min": [
+          -7.25,
+          -0.35,
+          -6.0
+        ],
+        "max": [
+          7.25,
+          9.0,
+          6.25
+        ],
+        "size": [
+          14.5,
+          9.35,
+          12.25
+        ]
+      },
+      "objects": [
+        "Floor",
+        "FloorSeam-5.0",
+        "FloorSeam-1.0",
+        "FloorSeam3.0",
+        "FloorCross-4.0",
+        "FloorCross0.0",
+        "FloorCross4.0",
+        "BackWall",
+        "SideWall-1",
+        "SideRail-1",
+        "SideSkirt-1",
+        "SideWall1",
+        "SideRail1",
+        "SideSkirt1",
+        "BackSkirt",
+        "BackRail",
+        "LampCase-4.0",
+        "LampGlow-4.0",
+        "LampCase4.0",
+        "LampGlow4.0",
+        "Shelf(-4.5, 1)",
+        "Shelf(-4.5, 3.4)",
+        "Shelf(-4.5, 5.8)",
+        "ShelfPost(-4.5, -3)",
+        "ShelfPost(-4.5, 5)",
+        "Shelf(4.5, 1)",
+        "Shelf(4.5, 3.4)",
+        "Shelf(4.5, 5.8)",
+        "ShelfPost(4.5, -3)",
+        "ShelfPost(4.5, 5)"
+      ]
+    },
+    {
+      "name": "horror_monitor",
+      "kind": "props",
+      "description": "CRT-style security monitor with replaceable screen, signal light and dial.",
+      "parts": [
+        {
+          "name": "Housing",
+          "size": [
+            3.3,
+            2.6,
+            1.7
+          ],
+          "pos": [
+            0,
+            1.7,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Housing",
+          "neon": false
+        },
+        {
+          "name": "ScreenFrame",
+          "size": [
+            2.6,
+            1.8499999999999999,
+            0.16
+          ],
+          "pos": [
+            -0.2,
+            1.8,
+            -0.87
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ScreenFrame",
+          "neon": false
+        },
+        {
+          "name": "ScreenFace",
+          "size": [
+            2.4,
+            1.65,
+            0.04
+          ],
+          "pos": [
+            -0.2,
+            1.8,
+            -0.97
+          ],
+          "color": "#173b3e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "ScreenFace",
+          "neon": false,
+          "label": "CAM 01\nNO SIGNAL"
+        },
+        {
+          "name": "Stand",
+          "size": [
+            1.5,
+            0.25,
+            1.3
+          ],
+          "pos": [
+            0,
+            0.13,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Stand",
+          "neon": false
+        },
+        {
+          "name": "Neck",
+          "size": [
+            0.4,
+            0.4,
+            0.5
+          ],
+          "pos": [
+            0,
+            0.43,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Neck",
+          "neon": false
+        },
+        {
+          "name": "LED",
+          "size": [
+            0.11,
+            0.11,
+            0.03
+          ],
+          "pos": [
+            1.36,
+            2.2,
+            -0.87
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "LED",
+          "neon": true
+        },
+        {
+          "name": "Dial",
+          "size": [
+            0.24,
+            0.24,
+            0.12
+          ],
+          "pos": [
+            1.33,
+            1.55,
+            -0.94
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            90,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Dial",
+          "neon": false
+        }
+      ],
+      "path": "props/horror_monitor/horror_monitor.obj",
+      "dimensions": {
+        "min": [
+          -1.65,
+          0.0050000000000000044,
+          -1.06
+        ],
+        "max": [
+          1.65,
+          3.0,
+          0.85
+        ],
+        "size": [
+          3.3,
+          2.995,
+          1.9100000000000001
+        ]
+      },
+      "objects": [
+        "Housing",
+        "ScreenFrame",
+        "ScreenFace",
+        "Stand",
+        "Neck",
+        "LED",
+        "Dial"
+      ]
+    },
+    {
+      "name": "horror_rule_board",
+      "kind": "props",
+      "description": "Three interchangeable original night-shift rule cards.",
+      "parts": [
+        {
+          "name": "RulesFrame",
+          "size": [
+            3.2,
+            4.0,
+            0.16
+          ],
+          "pos": [
+            0,
+            2.1,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "RulesFrame",
+          "neon": false
+        },
+        {
+          "name": "RulesFace",
+          "size": [
+            3,
+            3.8,
+            0.04
+          ],
+          "pos": [
+            0,
+            2.1,
+            -0.1
+          ],
+          "color": "#e9d9ad",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "RulesFace",
+          "neon": false,
+          "label": "NIGHT SHIFT\n1. CHECK THE CAMERA\n2. COUNT THE CUSTOMERS\n3. CLOSE THE SHUTTER"
+        }
+      ],
+      "path": "props/horror_rule_board/horror_rule_board.obj",
+      "dimensions": {
+        "min": [
+          -1.6,
+          0.10000000000000009,
+          -0.12000000000000001
+        ],
+        "max": [
+          1.6,
+          4.1,
+          0.08
+        ],
+        "size": [
+          3.2,
+          3.9999999999999996,
+          0.2
+        ]
+      },
+      "objects": [
+        "RulesFrame",
+        "RulesFace"
+      ]
+    },
+    {
+      "name": "horror_takeaway_bag",
+      "kind": "props",
+      "description": "Original folded kraft takeaway bag. Grip at origin.",
+      "parts": [
+        {
+          "name": "Bag",
+          "size": [
+            1.1,
+            1.3,
+            0.7
+          ],
+          "pos": [
+            0,
+            -0.55,
+            0
+          ],
+          "color": "#e9d9ad",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Bag",
+          "neon": false
+        },
+        {
+          "name": "Fold",
+          "size": [
+            1.15,
+            0.12,
+            0.72
+          ],
+          "pos": [
+            0,
+            0.12,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Fold",
+          "neon": false
+        },
+        {
+          "name": "BrandFrame",
+          "size": [
+            0.95,
+            0.65,
+            0.16
+          ],
+          "pos": [
+            0,
+            -0.55,
+            -0.37
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BrandFrame",
+          "neon": false
+        },
+        {
+          "name": "BrandFace",
+          "size": [
+            0.75,
+            0.45,
+            0.04
+          ],
+          "pos": [
+            0,
+            -0.55,
+            -0.47
+          ],
+          "color": "#e9d9ad",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BrandFace",
+          "neon": false,
+          "label": "AFTER\nHOURS"
+        }
+      ],
+      "pivot": "grip",
+      "path": "props/horror_takeaway_bag/horror_takeaway_bag.obj",
+      "dimensions": {
+        "min": [
+          -0.575,
+          -1.2000000000000002,
+          -0.49
+        ],
+        "max": [
+          0.575,
+          0.18,
+          0.36
+        ],
+        "size": [
+          1.15,
+          1.3800000000000001,
+          0.85
+        ]
+      },
+      "objects": [
+        "Bag",
+        "Fold",
+        "BrandFrame",
+        "BrandFace"
+      ]
+    },
+    {
+      "name": "horror_cup",
+      "kind": "props",
+      "description": "Takeaway drink with lid and straw. Grip at origin.",
+      "parts": [
+        {
+          "name": "Cup",
+          "size": [
+            0.65,
+            1,
+            0.65
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Cup",
+          "neon": false
+        },
+        {
+          "name": "Lid",
+          "size": [
+            0.73,
+            0.09,
+            0.73
+          ],
+          "pos": [
+            0,
+            0.55,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Lid",
+          "neon": false
+        },
+        {
+          "name": "Straw",
+          "size": [
+            0.065,
+            0.45,
+            0.065
+          ],
+          "pos": [
+            0.14,
+            0.8,
+            0
+          ],
+          "color": "#e76651",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Straw",
+          "neon": false
+        }
+      ],
+      "pivot": "grip",
+      "path": "props/horror_cup/horror_cup.obj",
+      "dimensions": {
+        "min": [
+          -0.365,
+          -0.5,
+          -0.365
+        ],
+        "max": [
+          0.365,
+          1.0250000000000001,
+          0.365
+        ],
+        "size": [
+          0.73,
+          1.5250000000000001,
+          0.73
+        ]
+      },
+      "objects": [
+        "Cup",
+        "Lid",
+        "Straw"
+      ]
+    },
+    {
+      "name": "horror_bell",
+      "kind": "props",
+      "description": "Desk bell with separate press button.",
+      "parts": [
+        {
+          "name": "Base",
+          "size": [
+            0.85,
+            0.12,
+            0.85
+          ],
+          "pos": [
+            0,
+            0.06,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Base",
+          "neon": false
+        },
+        {
+          "name": "Bell",
+          "size": [
+            0.73,
+            0.4,
+            0.73
+          ],
+          "pos": [
+            0,
+            0.2,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Bell",
+          "neon": false
+        },
+        {
+          "name": "Button",
+          "size": [
+            0.2,
+            0.15,
+            0.2
+          ],
+          "pos": [
+            0,
+            0.46,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Button",
+          "neon": false
+        }
+      ],
+      "controls": {
+        "press": {
+          "axis": "y",
+          "range": [
+            0,
+            -0.1
+          ],
+          "groups": [
+            "Button"
+          ]
+        }
+      },
+      "path": "props/horror_bell/horror_bell.obj",
+      "dimensions": {
+        "min": [
+          -0.425,
+          0.0,
+          -0.425
+        ],
+        "max": [
+          0.425,
+          0.535,
+          0.425
+        ],
+        "size": [
+          0.85,
+          0.535,
+          0.85
+        ]
+      },
+      "objects": [
+        "Base",
+        "Bell",
+        "Button"
+      ]
+    },
+    {
+      "name": "horror_flashlight",
+      "kind": "props",
+      "description": "Grip at origin; beam points along native -Z; lens independent.",
+      "parts": [
+        {
+          "name": "Grip",
+          "size": [
+            0.36,
+            0.85,
+            0.4
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grip",
+          "neon": false
+        },
+        {
+          "name": "Barrel",
+          "size": [
+            0.5,
+            1,
+            0.5
+          ],
+          "pos": [
+            0,
+            0.45,
+            -0.3
+          ],
+          "color": "#0c161e",
+          "rot": [
+            90,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Barrel",
+          "neon": false
+        },
+        {
+          "name": "Rim",
+          "size": [
+            0.7,
+            0.2,
+            0.7
+          ],
+          "pos": [
+            0,
+            0.45,
+            -0.86
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            90,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Rim",
+          "neon": false
+        },
+        {
+          "name": "Lens",
+          "size": [
+            0.58,
+            0.04,
+            0.58
+          ],
+          "pos": [
+            0,
+            0.45,
+            -0.98
+          ],
+          "color": "#ffc475",
+          "rot": [
+            90,
+            0,
+            0
+          ],
+          "shape": "cylinder",
+          "group": "Lens",
+          "neon": true
+        }
+      ],
+      "pivot": "grip",
+      "path": "props/horror_flashlight/horror_flashlight.obj",
+      "dimensions": {
+        "min": [
+          -0.35,
+          -0.425,
+          -1.0
+        ],
+        "max": [
+          0.35,
+          0.8,
+          0.2
+        ],
+        "size": [
+          0.7,
+          1.225,
+          1.2
+        ]
+      },
+      "objects": [
+        "Grip",
+        "Barrel",
+        "Rim",
+        "Lens"
+      ]
+    },
+    {
+      "name": "horror_radio",
+      "kind": "props",
+      "description": "Handheld radio with antenna, speaker slots and signal display.",
+      "parts": [
+        {
+          "name": "Body",
+          "size": [
+            0.7,
+            1.25,
+            0.4
+          ],
+          "pos": [
+            0,
+            0.25,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Body",
+          "neon": false
+        },
+        {
+          "name": "Antenna",
+          "size": [
+            0.09,
+            0.85,
+            0.09
+          ],
+          "pos": [
+            0.23,
+            1.27,
+            0
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Antenna",
+          "neon": false
+        },
+        {
+          "name": "DisplayFrame",
+          "size": [
+            0.65,
+            0.48000000000000004,
+            0.16
+          ],
+          "pos": [
+            0,
+            0.57,
+            -0.22
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "DisplayFrame",
+          "neon": false
+        },
+        {
+          "name": "DisplayFace",
+          "size": [
+            0.45,
+            0.28,
+            0.04
+          ],
+          "pos": [
+            0,
+            0.57,
+            -0.32
+          ],
+          "color": "#69e4df",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "DisplayFace",
+          "neon": false,
+          "label": "CH 01"
+        },
+        {
+          "name": "Speaker-0.1",
+          "size": [
+            0.44,
+            0.045,
+            0.025
+          ],
+          "pos": [
+            0,
+            -0.1,
+            -0.215
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Speaker-0.1",
+          "neon": false
+        },
+        {
+          "name": "Speaker0.03",
+          "size": [
+            0.44,
+            0.045,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.03,
+            -0.215
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Speaker0.03",
+          "neon": false
+        },
+        {
+          "name": "Speaker0.16",
+          "size": [
+            0.44,
+            0.045,
+            0.025
+          ],
+          "pos": [
+            0,
+            0.16,
+            -0.215
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Speaker0.16",
+          "neon": false
+        }
+      ],
+      "pivot": "grip",
+      "path": "props/horror_radio/horror_radio.obj",
+      "dimensions": {
+        "min": [
+          -0.35,
+          -0.375,
+          -0.34
+        ],
+        "max": [
+          0.35,
+          1.695,
+          0.2
+        ],
+        "size": [
+          0.7,
+          2.0700000000000003,
+          0.54
+        ]
+      },
+      "objects": [
+        "Body",
+        "Antenna",
+        "DisplayFrame",
+        "DisplayFace",
+        "Speaker-0.1",
+        "Speaker0.03",
+        "Speaker0.16"
+      ]
+    },
+    {
+      "name": "horror_pedestal",
+      "kind": "map",
+      "description": "Statue plinth with original warning plate.",
+      "parts": [
+        {
+          "name": "Foot",
+          "size": [
+            4,
+            0.3,
+            4
+          ],
+          "pos": [
+            0,
+            0.15,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Foot",
+          "neon": false
+        },
+        {
+          "name": "Column",
+          "size": [
+            3,
+            1.2,
+            3
+          ],
+          "pos": [
+            0,
+            0.9,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Column",
+          "neon": false
+        },
+        {
+          "name": "Cap",
+          "size": [
+            4,
+            0.3,
+            4
+          ],
+          "pos": [
+            0,
+            1.65,
+            0
+          ],
+          "color": "#91a3a6",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Cap",
+          "neon": false
+        },
+        {
+          "name": "WarningFrame",
+          "size": [
+            2.6,
+            0.78,
+            0.16
+          ],
+          "pos": [
+            0,
+            0.92,
+            -1.53
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WarningFrame",
+          "neon": false
+        },
+        {
+          "name": "WarningFace",
+          "size": [
+            2.4,
+            0.58,
+            0.04
+          ],
+          "pos": [
+            0,
+            0.92,
+            -1.6300000000000001
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WarningFace",
+          "neon": false,
+          "label": "DO NOT LOOK AWAY"
+        }
+      ],
+      "path": "map/horror_pedestal/horror_pedestal.obj",
+      "dimensions": {
+        "min": [
+          -2.0,
+          0.0,
+          -2.0
+        ],
+        "max": [
+          2.0,
+          1.7999999999999998,
+          2.0
+        ],
+        "size": [
+          4.0,
+          1.7999999999999998,
+          4.0
+        ]
+      },
+      "objects": [
+        "Foot",
+        "Column",
+        "Cap",
+        "WarningFrame",
+        "WarningFace"
+      ]
+    },
+    {
+      "name": "horror_log",
+      "kind": "props",
+      "description": "Fuel log; bottom-centred with separate cut ends.",
+      "parts": [
+        {
+          "name": "Bark",
+          "size": [
+            1,
+            3,
+            1
+          ],
+          "pos": [
+            0,
+            0.5,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            90
+          ],
+          "shape": "cylinder",
+          "group": "Bark",
+          "neon": false
+        },
+        {
+          "name": "End-1.51",
+          "size": [
+            0.85,
+            0.02,
+            0.85
+          ],
+          "pos": [
+            -1.51,
+            0.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            90
+          ],
+          "shape": "cylinder",
+          "group": "End-1.51",
+          "neon": false
+        },
+        {
+          "name": "End1.51",
+          "size": [
+            0.85,
+            0.02,
+            0.85
+          ],
+          "pos": [
+            1.51,
+            0.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            90
+          ],
+          "shape": "cylinder",
+          "group": "End1.51",
+          "neon": false
+        }
+      ],
+      "path": "props/horror_log/horror_log.obj",
+      "dimensions": {
+        "min": [
+          -1.52,
+          -1.1102230246251565e-16,
+          -0.5
+        ],
+        "max": [
+          1.52,
+          1.0,
+          0.5
+        ],
+        "size": [
+          3.04,
+          1.0,
+          1.0
+        ]
+      },
+      "objects": [
+        "Bark",
+        "End-1.51",
+        "End1.51"
+      ]
+    },
+    {
+      "name": "horror_campfire",
+      "kind": "map",
+      "description": "Rock ring, crossed logs, emissive flame cluster; high/low/out groups.",
+      "parts": [
+        {
+          "name": "Stone0",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            1.4,
+            0.2,
+            0.0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone0",
+          "neon": false
+        },
+        {
+          "name": "Stone1",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            1.2124355652982142,
+            0.2,
+            0.6999999999999998
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            30,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone1",
+          "neon": false
+        },
+        {
+          "name": "Stone2",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            0.7000000000000001,
+            0.2,
+            1.212435565298214
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            60,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone2",
+          "neon": false
+        },
+        {
+          "name": "Stone3",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            8.572527594031472e-17,
+            0.2,
+            1.4
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            90,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone3",
+          "neon": false
+        },
+        {
+          "name": "Stone4",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            -0.6999999999999996,
+            0.2,
+            1.2124355652982142
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            120,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone4",
+          "neon": false
+        },
+        {
+          "name": "Stone5",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            -1.2124355652982142,
+            0.2,
+            0.6999999999999998
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            150,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone5",
+          "neon": false
+        },
+        {
+          "name": "Stone6",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            -1.4,
+            0.2,
+            1.7145055188062944e-16
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            180,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone6",
+          "neon": false
+        },
+        {
+          "name": "Stone7",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            -1.2124355652982142,
+            0.2,
+            -0.6999999999999996
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            210,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone7",
+          "neon": false
+        },
+        {
+          "name": "Stone8",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            -0.7000000000000006,
+            0.2,
+            -1.2124355652982137
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            240,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone8",
+          "neon": false
+        },
+        {
+          "name": "Stone9",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            -2.5717582782094415e-16,
+            0.2,
+            -1.4
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            270,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone9",
+          "neon": false
+        },
+        {
+          "name": "Stone10",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            0.7000000000000001,
+            0.2,
+            -1.212435565298214
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            300,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone10",
+          "neon": false
+        },
+        {
+          "name": "Stone11",
+          "size": [
+            0.55,
+            0.4,
+            0.45
+          ],
+          "pos": [
+            1.2124355652982137,
+            0.2,
+            -0.7000000000000006
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            330,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Stone11",
+          "neon": false
+        },
+        {
+          "name": "Log-45",
+          "size": [
+            0.42,
+            2.3,
+            0.42
+          ],
+          "pos": [
+            0,
+            0.3,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            90,
+            0,
+            -45
+          ],
+          "shape": "cylinder",
+          "group": "Log-45",
+          "neon": false
+        },
+        {
+          "name": "Log45",
+          "size": [
+            0.42,
+            2.3,
+            0.42
+          ],
+          "pos": [
+            0,
+            0.3,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            90,
+            0,
+            45
+          ],
+          "shape": "cylinder",
+          "group": "Log45",
+          "neon": false
+        },
+        {
+          "name": "Flame0",
+          "size": [
+            0.75,
+            1.7,
+            0.75
+          ],
+          "pos": [
+            0,
+            1.1,
+            0
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Flame",
+          "neon": true
+        },
+        {
+          "name": "Flame1",
+          "size": [
+            0.4,
+            1.1,
+            0.4
+          ],
+          "pos": [
+            -0.4,
+            0.8,
+            0.2
+          ],
+          "color": "#e76651",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Flame",
+          "neon": true
+        },
+        {
+          "name": "Flame2",
+          "size": [
+            0.4,
+            1.25,
+            0.4
+          ],
+          "pos": [
+            0.4,
+            0.9,
+            -0.2
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Flame",
+          "neon": true
+        }
+      ],
+      "controls": {
+        "fire": {
+          "groups": [
+            "Flame"
+          ],
+          "states": [
+            "high",
+            "low",
+            "out"
+          ]
+        }
+      },
+      "path": "map/horror_campfire/horror_campfire.obj",
+      "dimensions": {
+        "min": [
+          -1.6749999999999998,
+          0.0,
+          -1.6749999999999998
+        ],
+        "max": [
+          1.6749999999999998,
+          1.9500000000000002,
+          1.6749999999999998
+        ],
+        "size": [
+          3.3499999999999996,
+          1.9500000000000002,
+          3.3499999999999996
+        ]
+      },
+      "objects": [
+        "Stone0",
+        "Stone1",
+        "Stone2",
+        "Stone3",
+        "Stone4",
+        "Stone5",
+        "Stone6",
+        "Stone7",
+        "Stone8",
+        "Stone9",
+        "Stone10",
+        "Stone11",
+        "Log-45",
+        "Log45",
+        "Flame"
+      ]
+    },
+    {
+      "name": "horror_pine_tall",
+      "kind": "map",
+      "description": "Original block forest silhouette with trunk and low-poly crown.",
+      "parts": [
+        {
+          "name": "Trunk",
+          "size": [
+            0.9,
+            13,
+            0.9
+          ],
+          "pos": [
+            0,
+            6.5,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Trunk",
+          "neon": false
+        },
+        {
+          "name": "Crown0",
+          "size": [
+            5.0,
+            4.333333333333333,
+            5.0
+          ],
+          "pos": [
+            0,
+            4.55,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown0",
+          "neon": false
+        },
+        {
+          "name": "Crown1",
+          "size": [
+            4.0,
+            4.333333333333333,
+            4.0
+          ],
+          "pos": [
+            0,
+            6.63,
+            0
+          ],
+          "color": "#354d45",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown1",
+          "neon": false
+        },
+        {
+          "name": "Crown2",
+          "size": [
+            3.0,
+            4.333333333333333,
+            3.0
+          ],
+          "pos": [
+            0,
+            8.71,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown2",
+          "neon": false
+        },
+        {
+          "name": "Crown3",
+          "size": [
+            2.0,
+            4.333333333333333,
+            2.0
+          ],
+          "pos": [
+            0,
+            10.79,
+            0
+          ],
+          "color": "#354d45",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown3",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_pine_tall/horror_pine_tall.obj",
+      "dimensions": {
+        "min": [
+          -2.5,
+          0.0,
+          -2.5
+        ],
+        "max": [
+          2.5,
+          13.0,
+          2.5
+        ],
+        "size": [
+          5.0,
+          13.0,
+          5.0
+        ]
+      },
+      "objects": [
+        "Trunk",
+        "Crown0",
+        "Crown1",
+        "Crown2",
+        "Crown3"
+      ]
+    },
+    {
+      "name": "horror_pine_small",
+      "kind": "map",
+      "description": "Original block forest silhouette with trunk and low-poly crown.",
+      "parts": [
+        {
+          "name": "Trunk",
+          "size": [
+            0.9,
+            8,
+            0.9
+          ],
+          "pos": [
+            0,
+            4.0,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Trunk",
+          "neon": false
+        },
+        {
+          "name": "Crown0",
+          "size": [
+            3.076923076923077,
+            2.6666666666666665,
+            3.076923076923077
+          ],
+          "pos": [
+            0,
+            2.8,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown0",
+          "neon": false
+        },
+        {
+          "name": "Crown1",
+          "size": [
+            2.4615384615384617,
+            2.6666666666666665,
+            2.4615384615384617
+          ],
+          "pos": [
+            0,
+            4.08,
+            0
+          ],
+          "color": "#354d45",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown1",
+          "neon": false
+        },
+        {
+          "name": "Crown2",
+          "size": [
+            1.8461538461538463,
+            2.6666666666666665,
+            1.8461538461538463
+          ],
+          "pos": [
+            0,
+            5.359999999999999,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown2",
+          "neon": false
+        },
+        {
+          "name": "Crown3",
+          "size": [
+            1.2307692307692308,
+            2.6666666666666665,
+            1.2307692307692308
+          ],
+          "pos": [
+            0,
+            6.64,
+            0
+          ],
+          "color": "#354d45",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Crown3",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_pine_small/horror_pine_small.obj",
+      "dimensions": {
+        "min": [
+          -1.5384615384615385,
+          0.0,
+          -1.5384615384615385
+        ],
+        "max": [
+          1.5384615384615385,
+          8.0,
+          1.5384615384615385
+        ],
+        "size": [
+          3.076923076923077,
+          8.0,
+          3.076923076923077
+        ]
+      },
+      "objects": [
+        "Trunk",
+        "Crown0",
+        "Crown1",
+        "Crown2",
+        "Crown3"
+      ]
+    },
+    {
+      "name": "horror_dead_tree",
+      "kind": "map",
+      "description": "Original block forest silhouette with trunk and low-poly crown.",
+      "parts": [
+        {
+          "name": "Trunk",
+          "size": [
+            0.9,
+            11,
+            0.9
+          ],
+          "pos": [
+            0,
+            5.5,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Trunk",
+          "neon": false
+        },
+        {
+          "name": "Branch0",
+          "size": [
+            0.4,
+            4,
+            0.4
+          ],
+          "pos": [
+            -1.2,
+            5,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            -35
+          ],
+          "shape": "box",
+          "group": "Branch0",
+          "neon": false
+        },
+        {
+          "name": "Branch1",
+          "size": [
+            0.4,
+            4,
+            0.4
+          ],
+          "pos": [
+            1.2,
+            7,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            40
+          ],
+          "shape": "box",
+          "group": "Branch1",
+          "neon": false
+        },
+        {
+          "name": "Branch2",
+          "size": [
+            0.4,
+            4,
+            0.4
+          ],
+          "pos": [
+            -1.2,
+            9,
+            0
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            -25
+          ],
+          "shape": "box",
+          "group": "Branch2",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_dead_tree/horror_dead_tree.obj",
+      "dimensions": {
+        "min": [
+          -2.5109832815598905,
+          0.0,
+          -0.45
+        ],
+        "max": [
+          2.638784107996874,
+          11.0,
+          0.45
+        ],
+        "size": [
+          5.149767389556764,
+          11.0,
+          0.9
+        ]
+      },
+      "objects": [
+        "Trunk",
+        "Branch0",
+        "Branch1",
+        "Branch2"
+      ]
+    },
+    {
+      "name": "horror_rock",
+      "kind": "props",
+      "description": "Original angular boulder cluster.",
+      "parts": [
+        {
+          "name": "Rock0",
+          "size": [
+            2.7,
+            1.5,
+            2
+          ],
+          "pos": [
+            0,
+            0.65,
+            0
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "sphere",
+          "group": "Rock0",
+          "neon": false
+        },
+        {
+          "name": "Rock1",
+          "size": [
+            1.2,
+            1,
+            1.5
+          ],
+          "pos": [
+            1.2,
+            0.4,
+            0.3
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            35,
+            10
+          ],
+          "shape": "sphere",
+          "group": "Rock1",
+          "neon": false
+        },
+        {
+          "name": "Rock2",
+          "size": [
+            1.5,
+            0.7,
+            1.3
+          ],
+          "pos": [
+            -1,
+            0.3,
+            -0.5
+          ],
+          "color": "#536373",
+          "rot": [
+            0,
+            70,
+            20
+          ],
+          "shape": "sphere",
+          "group": "Rock2",
+          "neon": false
+        }
+      ],
+      "path": "props/horror_rock/horror_rock.obj",
+      "dimensions": {
+        "min": [
+          -1.6225180654971718,
+          -0.09999999999999998,
+          -1.2361976219478066
+        ],
+        "max": [
+          1.8418205041405313,
+          1.4,
+          1.0
+        ],
+        "size": [
+          3.464338569637703,
+          1.5,
+          2.236197621947807
+        ]
+      },
+      "objects": [
+        "Rock0",
+        "Rock1",
+        "Rock2"
+      ]
+    },
+    {
+      "name": "horror_forest_ground",
+      "kind": "map",
+      "description": "Open clearing floor and trail with low-profile ground dressing.",
+      "parts": [
+        {
+          "name": "Ground",
+          "size": [
+            36,
+            0.4,
+            32
+          ],
+          "pos": [
+            0,
+            -0.2,
+            0
+          ],
+          "color": "#293e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Ground",
+          "neon": false
+        },
+        {
+          "name": "Path",
+          "size": [
+            4,
+            0.025,
+            32
+          ],
+          "pos": [
+            0,
+            0.013,
+            0
+          ],
+          "color": "#66523e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Path",
+          "neon": false
+        },
+        {
+          "name": "Grass0",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            4,
+            0.2,
+            -14
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass0",
+          "neon": false
+        },
+        {
+          "name": "Grass1",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -7,
+            0.2,
+            -7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass1",
+          "neon": false
+        },
+        {
+          "name": "Grass2",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            10,
+            0.2,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            30
+          ],
+          "shape": "box",
+          "group": "Grass2",
+          "neon": false
+        },
+        {
+          "name": "Grass3",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -13,
+            0.2,
+            7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass3",
+          "neon": false
+        },
+        {
+          "name": "Grass4",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            4,
+            0.2,
+            -14
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass4",
+          "neon": false
+        },
+        {
+          "name": "Grass5",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -7,
+            0.2,
+            -7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            30
+          ],
+          "shape": "box",
+          "group": "Grass5",
+          "neon": false
+        },
+        {
+          "name": "Grass6",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            10,
+            0.2,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass6",
+          "neon": false
+        },
+        {
+          "name": "Grass7",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -13,
+            0.2,
+            7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass7",
+          "neon": false
+        },
+        {
+          "name": "Grass8",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            4,
+            0.2,
+            -14
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            30
+          ],
+          "shape": "box",
+          "group": "Grass8",
+          "neon": false
+        },
+        {
+          "name": "Grass9",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -7,
+            0.2,
+            -7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass9",
+          "neon": false
+        },
+        {
+          "name": "Grass10",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            10,
+            0.2,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass10",
+          "neon": false
+        },
+        {
+          "name": "Grass11",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -13,
+            0.2,
+            7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            30
+          ],
+          "shape": "box",
+          "group": "Grass11",
+          "neon": false
+        },
+        {
+          "name": "Grass12",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            4,
+            0.2,
+            -14
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass12",
+          "neon": false
+        },
+        {
+          "name": "Grass13",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -7,
+            0.2,
+            -7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass13",
+          "neon": false
+        },
+        {
+          "name": "Grass14",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            10,
+            0.2,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            30
+          ],
+          "shape": "box",
+          "group": "Grass14",
+          "neon": false
+        },
+        {
+          "name": "Grass15",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -13,
+            0.2,
+            7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass15",
+          "neon": false
+        },
+        {
+          "name": "Grass16",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            4,
+            0.2,
+            -14
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass16",
+          "neon": false
+        },
+        {
+          "name": "Grass17",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -7,
+            0.2,
+            -7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            30
+          ],
+          "shape": "box",
+          "group": "Grass17",
+          "neon": false
+        },
+        {
+          "name": "Grass18",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            10,
+            0.2,
+            0
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Grass18",
+          "neon": false
+        },
+        {
+          "name": "Grass19",
+          "size": [
+            0.13,
+            0.4,
+            0.1
+          ],
+          "pos": [
+            -13,
+            0.2,
+            7
+          ],
+          "color": "#536f58",
+          "rot": [
+            0,
+            0,
+            15
+          ],
+          "shape": "box",
+          "group": "Grass19",
+          "neon": false
+        }
+      ],
+      "path": "map/horror_forest_ground/horror_forest_ground.obj",
+      "dimensions": {
+        "min": [
+          -18.0,
+          -0.4,
+          -16.0
+        ],
+        "max": [
+          18.0,
+          0.4100084031894775,
+          16.0
+        ],
+        "size": [
+          36.0,
+          0.8100084031894775,
+          32.0
+        ]
+      },
+      "objects": [
+        "Ground",
+        "Path",
+        "Grass0",
+        "Grass1",
+        "Grass2",
+        "Grass3",
+        "Grass4",
+        "Grass5",
+        "Grass6",
+        "Grass7",
+        "Grass8",
+        "Grass9",
+        "Grass10",
+        "Grass11",
+        "Grass12",
+        "Grass13",
+        "Grass14",
+        "Grass15",
+        "Grass16",
+        "Grass17",
+        "Grass18",
+        "Grass19"
+      ]
+    },
+    {
+      "name": "horror_cabin",
+      "kind": "map",
+      "description": "Open-front cabin with plank walls, window and removable sloped roof.",
+      "parts": [
+        {
+          "name": "Floor",
+          "size": [
+            14,
+            0.4,
+            12
+          ],
+          "pos": [
+            0,
+            -0.2,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Floor",
+          "neon": false
+        },
+        {
+          "name": "BackPlank0.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            0.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank0.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 0.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            0.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 0.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 0.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            0.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 0.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank1.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            1.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank1.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 1.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            1.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 1.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 1.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            1.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 1.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank2.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            2.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank2.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 2.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            2.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 2.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 2.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            2.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 2.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank3.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            3.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank3.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 3.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            3.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 3.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 3.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            3.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 3.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank4.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            4.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank4.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 4.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            4.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 4.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 4.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            4.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 4.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank5.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            5.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank5.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 5.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            5.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 5.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 5.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            5.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 5.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank6.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            6.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank6.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 6.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            6.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 6.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 6.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            6.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 6.5)",
+          "neon": false
+        },
+        {
+          "name": "BackPlank7.5",
+          "size": [
+            14,
+            0.94,
+            0.4
+          ],
+          "pos": [
+            0,
+            7.5,
+            6
+          ],
+          "color": "#4c3e35",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "BackPlank7.5",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(-1, 7.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            -7,
+            7.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(-1, 7.5)",
+          "neon": false
+        },
+        {
+          "name": "SidePlank(1, 7.5)",
+          "size": [
+            0.4,
+            0.94,
+            12
+          ],
+          "pos": [
+            7,
+            7.5,
+            0
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "SidePlank(1, 7.5)",
+          "neon": false
+        },
+        {
+          "name": "Roof-3.7",
+          "size": [
+            8.2,
+            0.3,
+            13
+          ],
+          "pos": [
+            -3.7,
+            9,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            23
+          ],
+          "shape": "box",
+          "group": "Roof",
+          "neon": false
+        },
+        {
+          "name": "Roof3.7",
+          "size": [
+            8.2,
+            0.3,
+            13
+          ],
+          "pos": [
+            3.7,
+            9,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            -23
+          ],
+          "shape": "box",
+          "group": "Roof",
+          "neon": false
+        },
+        {
+          "name": "Beam",
+          "size": [
+            14,
+            0.3,
+            0.4
+          ],
+          "pos": [
+            0,
+            7.8,
+            -5.8
+          ],
+          "color": "#77563c",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Beam",
+          "neon": false
+        },
+        {
+          "name": "WindowFrame",
+          "size": [
+            4.2,
+            3.2,
+            0.16
+          ],
+          "pos": [
+            0,
+            4.8,
+            5.7
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WindowFrame",
+          "neon": false
+        },
+        {
+          "name": "WindowFace",
+          "size": [
+            4,
+            3,
+            0.04
+          ],
+          "pos": [
+            0,
+            4.8,
+            5.6000000000000005
+          ],
+          "color": "#0c161e",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "WindowFace",
+          "neon": false,
+          "label": "KEEP THE FIRE LIT"
+        }
+      ],
+      "path": "map/horror_cabin/horror_cabin.obj",
+      "dimensions": {
+        "min": [
+          -7.532679568428396,
+          -0.4,
+          -6.5
+        ],
+        "max": [
+          7.532679568428396,
+          10.740073354823888,
+          6.5
+        ],
+        "size": [
+          15.065359136856792,
+          11.140073354823889,
+          13.0
+        ]
+      },
+      "objects": [
+        "Floor",
+        "BackPlank0.5",
+        "SidePlank(-1, 0.5)",
+        "SidePlank(1, 0.5)",
+        "BackPlank1.5",
+        "SidePlank(-1, 1.5)",
+        "SidePlank(1, 1.5)",
+        "BackPlank2.5",
+        "SidePlank(-1, 2.5)",
+        "SidePlank(1, 2.5)",
+        "BackPlank3.5",
+        "SidePlank(-1, 3.5)",
+        "SidePlank(1, 3.5)",
+        "BackPlank4.5",
+        "SidePlank(-1, 4.5)",
+        "SidePlank(1, 4.5)",
+        "BackPlank5.5",
+        "SidePlank(-1, 5.5)",
+        "SidePlank(1, 5.5)",
+        "BackPlank6.5",
+        "SidePlank(-1, 6.5)",
+        "SidePlank(1, 6.5)",
+        "BackPlank7.5",
+        "SidePlank(-1, 7.5)",
+        "SidePlank(1, 7.5)",
+        "Roof",
+        "Beam",
+        "WindowFrame",
+        "WindowFace"
+      ]
+    },
+    {
+      "name": "horror_safe_boundary",
+      "kind": "map",
+      "description": "Eight separate warm safe-zone markers, 12-stud diameter.",
+      "parts": [
+        {
+          "name": "Marker0",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            6.0,
+            0.04,
+            0.0
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker0",
+          "neon": true
+        },
+        {
+          "name": "Marker1",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            4.242640687119286,
+            0.04,
+            4.242640687119286
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker1",
+          "neon": true
+        },
+        {
+          "name": "Marker2",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            3.6739403974420594e-16,
+            0.04,
+            6.0
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker2",
+          "neon": true
+        },
+        {
+          "name": "Marker3",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            -4.242640687119285,
+            0.04,
+            4.242640687119286
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker3",
+          "neon": true
+        },
+        {
+          "name": "Marker4",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            -6.0,
+            0.04,
+            7.347880794884119e-16
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker4",
+          "neon": true
+        },
+        {
+          "name": "Marker5",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            -4.242640687119286,
+            0.04,
+            -4.242640687119285
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker5",
+          "neon": true
+        },
+        {
+          "name": "Marker6",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            -1.102182119232618e-15,
+            0.04,
+            -6.0
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker6",
+          "neon": true
+        },
+        {
+          "name": "Marker7",
+          "size": [
+            0.65,
+            0.06,
+            0.65
+          ],
+          "pos": [
+            4.242640687119284,
+            0.04,
+            -4.242640687119286
+          ],
+          "color": "#ffc475",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Marker7",
+          "neon": true
+        }
+      ],
+      "path": "map/horror_safe_boundary/horror_safe_boundary.obj",
+      "dimensions": {
+        "min": [
+          -6.325,
+          0.010000000000000002,
+          -6.325
+        ],
+        "max": [
+          6.325,
+          0.07,
+          6.325
+        ],
+        "size": [
+          12.65,
+          0.060000000000000005,
+          12.65
+        ]
+      },
+      "objects": [
+        "Marker0",
+        "Marker1",
+        "Marker2",
+        "Marker3",
+        "Marker4",
+        "Marker5",
+        "Marker6",
+        "Marker7"
+      ]
+    },
+    {
+      "name": "horror_ceiling_light",
+      "kind": "props",
+      "description": "Ceiling light bar with independent emissive tube.",
+      "parts": [
+        {
+          "name": "Case",
+          "size": [
+            3.8,
+            0.35,
+            0.7
+          ],
+          "pos": [
+            0,
+            0.175,
+            0
+          ],
+          "color": "#283946",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Case",
+          "neon": false
+        },
+        {
+          "name": "Tube",
+          "size": [
+            3.3,
+            0.08,
+            0.5
+          ],
+          "pos": [
+            0,
+            -0.04,
+            0
+          ],
+          "color": "#deded0",
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "shape": "box",
+          "group": "Tube",
+          "neon": true
+        }
+      ],
+      "path": "props/horror_ceiling_light/horror_ceiling_light.obj",
+      "dimensions": {
+        "min": [
+          -1.9,
+          -0.08,
+          -0.35
+        ],
+        "max": [
+          1.9,
+          0.35,
+          0.35
+        ],
+        "size": [
+          3.8,
+          0.43,
+          0.7
+        ]
+      },
+      "objects": [
+        "Case",
+        "Tube"
+      ]
+    }
+  ],
+  "motions": [
+    "horror_look_back",
+    "horror_listen",
+    "horror_freeze",
+    "horror_reach",
+    "horror_handoff",
+    "horror_bell_press",
+    "horror_shutter_pull",
+    "horror_torch_hold",
+    "horror_radio_hold",
+    "horror_entity_turn",
+    "horror_backstep",
+    "horror_statue_advance"
+  ],
+  "audio": [
+    {
+      "name": "room_hum",
+      "path": "assets/audio/horror/room_hum.wav",
+      "seconds": 8,
+      "sample_rate": 48000,
+      "peak": 0.1893,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "entity_connect",
+      "path": "assets/audio/horror/entity_connect.wav",
+      "seconds": 1.1,
+      "sample_rate": 48000,
+      "peak": 0.2032,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "footstep",
+      "path": "assets/audio/horror/footstep.wav",
+      "seconds": 0.38,
+      "sample_rate": 48000,
+      "peak": 0.7,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "door_creak",
+      "path": "assets/audio/horror/door_creak.wav",
+      "seconds": 1.5,
+      "sample_rate": 48000,
+      "peak": 0.1844,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "latch",
+      "path": "assets/audio/horror/latch.wav",
+      "seconds": 0.28,
+      "sample_rate": 48000,
+      "peak": 0.564,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "tension_rise",
+      "path": "assets/audio/horror/tension_rise.wav",
+      "seconds": 3,
+      "sample_rate": 48000,
+      "peak": 0.1925,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "reveal_hit",
+      "path": "assets/audio/horror/reveal_hit.wav",
+      "seconds": 1.2,
+      "sample_rate": 48000,
+      "peak": 0.7,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "night_bed",
+      "path": "assets/audio/horror/night_bed.wav",
+      "seconds": 12,
+      "sample_rate": 48000,
+      "peak": 0.125,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "forest_wind",
+      "path": "assets/audio/horror/forest_wind.wav",
+      "seconds": 8,
+      "sample_rate": 48000,
+      "peak": 0.2463,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "leaves_step",
+      "path": "assets/audio/horror/leaves_step.wav",
+      "seconds": 0.5,
+      "sample_rate": 48000,
+      "peak": 0.7,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "radio_static",
+      "path": "assets/audio/horror/radio_static.wav",
+      "seconds": 2,
+      "sample_rate": 48000,
+      "peak": 0.5297,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "shutter",
+      "path": "assets/audio/horror/shutter.wav",
+      "seconds": 1.5,
+      "sample_rate": 48000,
+      "peak": 0.5878,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "desk_bell",
+      "path": "assets/audio/horror/desk_bell.wav",
+      "seconds": 1.4,
+      "sample_rate": 48000,
+      "peak": 0.2862,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "fire_loop",
+      "path": "assets/audio/horror/fire_loop.wav",
+      "seconds": 8,
+      "sample_rate": 48000,
+      "peak": 0.389,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "torch_click",
+      "path": "assets/audio/horror/torch_click.wav",
+      "seconds": 0.2,
+      "sample_rate": 48000,
+      "peak": 0.6852,
+      "source": "original deterministic synthesis; seed 1206"
+    },
+    {
+      "name": "disconnect",
+      "path": "assets/audio/horror/disconnect.wav",
+      "seconds": 0.7,
+      "sample_rate": 48000,
+      "peak": 0.2046,
+      "source": "original deterministic synthesis; seed 1206"
+    }
+  ]
+}

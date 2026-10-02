@@ -1,0 +1,130 @@
+[
+  {
+    "name": "room_hum",
+    "path": "assets/audio/horror/room_hum.wav",
+    "seconds": 8,
+    "sample_rate": 48000,
+    "peak": 0.1893,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "entity_connect",
+    "path": "assets/audio/horror/entity_connect.wav",
+    "seconds": 1.1,
+    "sample_rate": 48000,
+    "peak": 0.2032,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "footstep",
+    "path": "assets/audio/horror/footstep.wav",
+    "seconds": 0.38,
+    "sample_rate": 48000,
+    "peak": 0.7,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "door_creak",
+    "path": "assets/audio/horror/door_creak.wav",
+    "seconds": 1.5,
+    "sample_rate": 48000,
+    "peak": 0.1844,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "latch",
+    "path": "assets/audio/horror/latch.wav",
+    "seconds": 0.28,
+    "sample_rate": 48000,
+    "peak": 0.564,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "tension_rise",
+    "path": "assets/audio/horror/tension_rise.wav",
+    "seconds": 3,
+    "sample_rate": 48000,
+    "peak": 0.1925,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "reveal_hit",
+    "path": "assets/audio/horror/reveal_hit.wav",
+    "seconds": 1.2,
+    "sample_rate": 48000,
+    "peak": 0.7,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "night_bed",
+    "path": "assets/audio/horror/night_bed.wav",
+    "seconds": 12,
+    "sample_rate": 48000,
+    "peak": 0.125,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "forest_wind",
+    "path": "assets/audio/horror/forest_wind.wav",
+    "seconds": 8,
+    "sample_rate": 48000,
+    "peak": 0.2463,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "leaves_step",
+    "path": "assets/audio/horror/leaves_step.wav",
+    "seconds": 0.5,
+    "sample_rate": 48000,
+    "peak": 0.7,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "radio_static",
+    "path": "assets/audio/horror/radio_static.wav",
+    "seconds": 2,
+    "sample_rate": 48000,
+    "peak": 0.5297,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "shutter",
+    "path": "assets/audio/horror/shutter.wav",
+    "seconds": 1.5,
+    "sample_rate": 48000,
+    "peak": 0.5878,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "desk_bell",
+    "path": "assets/audio/horror/desk_bell.wav",
+    "seconds": 1.4,
+    "sample_rate": 48000,
+    "peak": 0.2862,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "fire_loop",
+    "path": "assets/audio/horror/fire_loop.wav",
+    "seconds": 8,
+    "sample_rate": 48000,
+    "peak": 0.389,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "torch_click",
+    "path": "assets/audio/horror/torch_click.wav",
+    "seconds": 0.2,
+    "sample_rate": 48000,
+    "peak": 0.6852,
+    "source": "original deterministic synthesis; seed 1206"
+  },
+  {
+    "name": "disconnect",
+    "path": "assets/audio/horror/disconnect.wav",
+    "seconds": 0.7,
+    "sample_rate": 48000,
+    "peak": 0.2046,
+    "source": "original deterministic synthesis; seed 1206"
+  }
+]

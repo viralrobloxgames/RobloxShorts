@@ -1,5 +1,9 @@
 # What to add next
 
+For the proposed horror series, use the dedicated [horror asset checklist](HORROR_ASSETS.md),
+based on the [2 October 2026 research](../../references/horror-research-2026-10-02.md).
+It separates existing assets from new work and defines a small first-pilot kit.
+
 Ideas for the next round of assets, ordered by how often they show up in viral Roblox Shorts and how cheaply the
 existing pipeline can make them. Everything here would be built the same way as this pack: generic Roblox look,
 original or Roblox-made free items, no logos and no copied game IP (no Brookhaven, Doors, Adopt Me or Pet Simulator
