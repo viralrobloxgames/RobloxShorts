@@ -56,6 +56,23 @@ open threads for the next part. Update it when a part is planned, delivered, and
 - An on-screen countdown or progress counter for the whole video, and a new visual payoff every 3-5 s.
 - Give the main character agency; the twist can be on them.
 
+## Running steps in parallel (standard since 2026-10-02)
+
+Rough cost of one 65 s web-route Short: narration 10-20 min, scene + cover + post.json 30-60 min of authoring, **full render 75-90 min**
+(the bottleneck), finish + checks 5-10 min. Only the render truly waits on the narration, because every frame is keyed to a spoken word.
+
+1. **Narration and scene authoring together.** The moment the script is approved, start the narration in the background (Route L in
+   voice-and-audio.md, George voice C). Meanwhile build the scene, cover and `delivery/post.json` against *estimated* timing: anchor every beat
+   to a narration word through `source/beats.py` -> `web/beats.js` (see `projects/the-noob-has-admin` for the pattern; it estimates from
+   `script.txt` until `audio/alignment/captions.json` exists), and generate `source/sound_cues.json` from the same beats with
+   `source/sound_cues.py`. When the narration lands: `beats.py`, `sound_cues.py`, set `seconds`, `finish.py` (mix + captions), one preview
+   frame per shot, fit check, render. Retiming takes minutes, not a rebuild.
+2. **The next video while this one renders.** During the 75-90 min render, write and get approval for the next script, and generate its
+   narration **on the laptop** (two machines, so nothing competes with the render; a narration in the same cloud session would slow the
+   render on its 4 shared CPUs).
+3. **Splitting a render across cloud sessions** (each takes a frame range) could cut the render to about a third. Not proven yet: the frame
+   PNGs (gigabytes) have to come back to one place to be stitched. Test it before relying on it.
+
 ## 2. Story and script
 
 Write `source/story.md` as numbered beats. **Beat 1 is the hook: the central action is already happening on frame 1.** Then write `script.txt`. Short, punchy lines work best. The last line is always the call to action (see SKILL.md hard rules), after the payoff. For about 20 s aim for 45–60 words; for about 64 s aim for 150–170 words. Adjust to the real voice. Get the script approved before spending credits. Status in the ledger: `script_draft_awaiting_approval` → `script_approved`.
