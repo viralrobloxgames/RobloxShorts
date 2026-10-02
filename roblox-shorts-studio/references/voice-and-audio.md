@@ -23,9 +23,17 @@ Don't run two Qwen jobs at once, because the laptop has 8 GB of RAM. In this Cla
 
 **ElevenLabs is now only for auditioning new voices.** To pick a voice for a new series or character, play the ElevenLabs previews or Voice Library samples. Once one is chosen, generate a 10–20 s sample, save it with `tts --add-voice <name>`, and narrate locally from then on.
 
-**Pitch match (Part 4 learning):** the 0.6B clone comes out about 1.3 semitones higher than ElevenLabs George (median F0 ~129 Hz vs 119-121 Hz in Parts 2-3). Keep the raw take as `audio/narration_qwen_raw.wav` and pitch it down with formants preserved (timing is unchanged, so word timings still hold):
-`ffmpeg -i audio/narration_qwen_raw.wav -af "rubberband=pitch=0.928:formant=preserved:pitchq=quality" -ar 24000 audio/narration.wav`
-Check the result's median F0 is about 120 Hz, then note it in `narration-source.json`.
+**George voice C (chosen 2026-10-02, Part 4 on):** the user compared four clone setups against real George by ear and picked C:
+**Qwen3-TTS 1.7B-Base** (not 0.6B), ICL sample = `assets/audio/voices/george_c.wav` (first 20.8 s of Part 3's ElevenLabs narration, transcript in
+`george_c.txt`), and speaker embedding = `george_c_1.7B_xvector.npy`, the mean x-vector over 161 clean George sentences from Parts 1-3 and
+The AFK Millionaire (about 3.5 minutes). Findings from that test (`projects/the-noob-has-admin/audio/auditions/`):
+- The old `george` setup (0.6B, 13.9 s sample) reads the same sentence about 33% slower than George, which is most of the "robotic" feel.
+  The 1.7B model with the longer sample is within ~10%. On a 4-core CPU the 1.7B model was only ~20% slower than 0.6B.
+- **Don't pitch-shift the narration.** George's own pitch varies between takes (about 119-131 Hz); lowering the clone made it sound deeper and
+  more processed. That pitch-shift step is withdrawn.
+- Cloud sessions generate it with `scripts/qwen_cloud_george_c.py <project> [--take take-02] [--redo 3,7]` (writes narrate.py's clip cache), then
+  `QWEN_TTS_DIR=<any dir> python3 scripts/narrate.py <project> --voice george_c --take take-02` joins, times and checks without regenerating.
+  On the laptop the 1.7B model needs about 7 GB in float32; use bfloat16 there, or keep the 0.6B `george` setup if memory runs out.
 
 ### Route A: ElevenLabs connector or signed-in website (legacy)
 
