@@ -6,7 +6,7 @@ Planning audit: **2 October 2026**. Priority means production dependency, not pe
 
 A first pass of the whole kit (P0 to P2 geometry) has since been built by `tools/build_horror.py` (original procedural
 geometry, motions and synthesised audio; rerun `tools/build_horror_studio.py` afterwards to augment the Studio file):
-the Unlisted and UnlistedForest entities with their face set, 29 map/prop models listed in `horror/manifest.json`,
+the Unlisted and UnlistedForest entities with their face set, 28 map/prop models listed in `horror/manifest.json`,
 12 `horror_*` motions, 16 sound cues in `assets/audio/horror/`, `studio/AfterHours_HorrorPack.rbxmx`,
 and the web helpers `web/lib/horror.js` (assets, controls, lighting presets, torch beam, panels) and `web/lib/horrorUi.js`
 (server panel, warnings, rule card, CCTV, fuel bar, cover, receipt).
