@@ -1,0 +1,10 @@
+{
+  "voice": "Brittney - Social Media Voice - Fun, Youthful & Informative",
+  "voice_id": "kPzsL2i3teMYv0FxEYQ6",
+  "model": "eleven_multilingual_v2",
+  "settings": {"speed": 1.0, "stability": 0.5, "similarity_boost": 0.75, "style": 0, "use_speaker_boost": true},
+  "route": "signed-in website (Chrome), 2026-10-01",
+  "characters": 927,
+  "raw_duration_seconds": 58.78,
+  "note": "Raw take is under 60 s; audio/narration.wav adds beat pauses between sections (source/assemble_narration.py)."
+}

@@ -99,6 +99,22 @@ Rendered from the booth scene with a `cover_clip.js` per episode, as for the sto
 - **Frame 1 must match the cover**, so the YouTube Shorts frame picker and the TikTok first frame both show the same branded look.
 - Story Shorts keep their current, different look, so the two series are never confused.
 
+## How an episode is made (proven on #1, 2026-10-02)
+
+Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture is composited in Python. Copy the scripts from `projects/news-001-roblox-in-your-browser/source/`; that project's `START_HERE.md` has the commands.
+
+1. **Narration:** generate with Brittney on the signed-in ElevenLabs site (Chrome) and save it as `audio/narration.mp3`. Then run `scripts/studio.py transcribe`.
+   - If the take is under 60 s, `assemble_narration.py` inserts beats between sections and shifts the timings. Brittney reads about 166 words in 58.8 s, so plan for that.
+2. **Stills:** in Studio, roll the camera 90° (see the portrait-capture note) for the Wide, Medium and CloseUp marks.
+   - For each, capture the `talking`, `happy` and `blink` faces, plus any emotes or poses the script needs (`surprised`, a wave).
+   - The first capture after a face change sometimes shows the old texture, so compare stills before using them.
+3. **Evidence cards:** use `web/news_shot.mjs --span "<one sentence>" --mark "<key words>" --width 360 --col 250 --pad 3`. You get two to four big lines with the key words highlighted.
+   - Never put a whole paragraph on screen; viewers get two or three seconds per card.
+   - No source labels on screen.
+4. **Compose:** in `compose_frames.py` the timeline is keyed to words, and the lip flap, blinks, pop-ups and sound cues all follow from it.
+   - Check 5 to 10 `--only` frames first, then render with 6 parallel `--range` workers (about 5 minutes on this laptop).
+5. **Finish:** run `finish.py --encode --frames renders/frames` (captions burned in with `caption_margin_v` 450), then `make_cover.py`, then `post.json`, then review with the user.
+
 ## Daily research and production pipeline
 
 **Morning scheduled task** (no posting, no paid generation):

@@ -1,26 +1,33 @@
 # ViralRoblox News #1: Roblox without the app (resume notes)
 
 First episode of the daily news series (`references/news-series.md`). Topic: the Roblox web player (Chrome, no app, by
-the end of 2026) and offline play (mid-2027), from RDC 2026 (2026-09-11).
+the end of 2026) and offline play (mid-2027), from RDC 2026 (2026-09-11). 66.0 s (1,980 frames), 1080x1920, 30 fps.
 
 ## Done
-- Research and fact check: `source/script.md` (shot plan, fact-check table, description draft), `source/sources.json`.
-- Narration script `script.txt`: 166 words, 928 ElevenLabs characters.
-- Evidence screenshots in `source/evidence/` (taken with `web/news_shot.mjs`, cookie banners hidden, the quoted
-  paragraph outlined in yellow):
-  - `01_newsroom_header.png`: the RDC 2026 Newsroom post title, author and date
-  - `02_newsroom_browser.png`: the "Play on the web" paragraph
-  - `03_devforum_post.png`: the DevForum RDC26 post
-  - `04_newsroom_offline.png`: the "Play offline" paragraph
-  - `wall_rdc26.png`: the RDC26 art cropped to 16:9 (not used on the set: it is blue)
-  - `wall_story_card.png`: pink "PLAY IN YOUR BROWSER" story card for the TOP STORY panel (rbxassetid://86820019915207)
-- Booth built in Studio (`Workspace.ViralNews.Booth`, built by `assets/roblox_pack/tools/luau/build_news_booth.luau`)
-  with this episode's story card (set v2, pink).
+- **Research and fact check:** `source/script.md` (shot plan, fact-check table, description draft) and `source/sources.json`.
+- **Narration:** Brittney (`kPzsL2i3teMYv0FxEYQ6`), `eleven_multilingual_v2`, default settings, generated on the signed-in ElevenLabs site, 927 characters (`audio/narration-source.json`).
+  - The raw take is 58.8 s. `source/assemble_narration.py` adds news-style beats after each section, taking it to 64.9 s in `audio/narration.wav`.
+  - It also shifts the faster-whisper word timings (raw copy in `audio/alignment/raw_captions.json`) and fixes the split brand words (ViralRoblox, ViralRobloxGames, mid-2027).
+- **Studio stills** (`source/stills/`): Skye in the pink set (`Workspace.ViralNews.Booth`), captured with the rolled-camera 9:16 trick.
+  - Each camera (Wide, Medium, CloseUp) has `talk`, `happy` and `blink` stills; there is also `M_surprised`, plus the wave poses `M_waveA_happy`, `M_waveA_talk` and `M_waveB_happy`.
+  - The stills differ only around her face, so swapping them reads as lip flap.
+- **Evidence cards** (`source/evidence/cards/`): two to four short lines each, with the key words behind a yellow highlighter.
+  - Taken with `web/news_shot.mjs --span ... --mark ... --col 250` (a narrow column means bigger text in the video). The user asked for short, readable cards, because viewers get two or three seconds per card.
+  - The header card is cropped from `source/evidence/vertical/01_header.png`.
+- **Picture:** `source/compose_frames.py` writes `renders/frames/` (git-ignored). Shots, lip flap, blinks, pop-ups (stamps, chips, FOLLOW, COMMENT, logo sting), the HUD (logo bug, BREAKING bar, ticker) and `source/sound_cues.json` all come from one word-keyed timeline.
+- **Sound and captions:** `scripts/finish.py` mixes the voice, the music bed and the cues, then burns in the word captions (`caption_margin_v` 450, so they sit between the BREAKING bar and the ticker).
+- **Cover:** `source/make_cover.py` writes `delivery/Roblox_Without_The_App_cover.jpg`, plus `_grid.jpg`, the TikTok 3:4 check.
+- **Posting text:** `delivery/post.json`, with sources at the end of the description and no AI label.
+
+## Rebuild
+```
+cd roblox-shorts-studio/projects/news-001-roblox-in-your-browser
+python source/assemble_narration.py
+python source/compose_frames.py --only 30,300,600      # review frames -> renders/review/
+python source/compose_frames.py --range 1,330          # x6 in parallel (1,330 331,660 ... 1651,1980); resumable
+python ../../scripts/finish.py . --encode --frames renders/frames
+python source/make_cover.py
+```
 
 ## Next
-1. The user approves or edits the script.
-2. Narration with Brittney (`kPzsL2i3teMYv0FxEYQ6`), then word timings into `audio/alignment/`.
-3. Filming method in Studio: per-shot camera marks (`Booth.Cameras`) and face swaps on the word timings. Capture 9:16
-   with the rolled-camera trick (648x1152 px, upscaled); look for a sharper capture before the pilot.
-4. Overlay layer (BREAKING bar, ticker, captions, FOLLOW pop-up), the cover, then review. Nothing is posted without
-   the user's OK.
+- The user reviews `delivery/Roblox_Without_The_App.mp4`. Nothing is posted without their OK; posting follows `references/publishing.md`, including the `_upload.mp4` with the cover as the last frame for YouTube.
