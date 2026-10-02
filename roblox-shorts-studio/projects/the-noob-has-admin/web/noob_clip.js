@@ -16,9 +16,9 @@ export const sky = { zenith: '#2a78e4', horizon: '#bfe6ff', below: '#eaf5ff', fo
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
 // ---------- layout ----------
-const N0 = V(0, 0, 2.0), N_SAFE = V(4.0, 0, -6.5), LEO0 = V(-4.2, 0, 0.4), MAX0 = V(4.2, 0, 0.4);
+const N0 = V(0, 0, 2.0), N_SAFE = V(2.2, 0, -6.2), LEO0 = V(-4.2, 0, 0.4), MAX0 = V(4.2, 0, 0.4);
 const MIA = V(7.6, 0, -4.6), SPAWN = V(-6, 0, -6), FLUNG = V(-46, 34, -70);
-const POKE = MIA.clone().add(V(-0.6, 0, 1.9));                   // where Leo stands to poke her
+const POKE = MIA.clone().add(V(-2.5, 0, 0.2));                   // where Leo stands to poke her: 2.5 to her left, so only the finger reaches
 const face = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
 const CAM = V(0, 0, 14);
 // Derived beats.
@@ -170,7 +170,7 @@ function leoState(s) {
     b.pos = from.clone().lerp(POKE, u); b.rotY = s < B.walk[0] ? face(from, MIA) : face(from, POKE);
     b.layers = s > B.walk[0] && s < B.walk[1] ? [[A.walk, s]] : idle(s); b.face = 'suspicious';
     if (s > B.walk[1]) { b.rotY = face(POKE, MIA); b.layers = s < B.poke + 0.7 && s > B.poke - 0.25 ? [[A.point_forward, s - B.poke + 0.25]] : idle(s); b.face = s > B.fall[0] ? 'shocked' : 'suspicious'; }
-    if (s > B.ggPost) { b.rotY = face(POKE, N_SAFE); b.face = s > B.alt ? 'angry' : 'shocked'; }
+    if (s > B.ggPost) { b.pos = POKE.clone().add(V(0.4, 0, 4.2 * easeOut(inv(B.ggPost, B.ggPost + 0.5, s)))); b.rotY = face(b.pos, N_SAFE); b.face = s > B.alt ? 'angry' : 'shocked'; }   // stumbles back
   }
   return b;
 }
@@ -309,10 +309,10 @@ export function update(t, stage) {
     case 'collide': frame(stage, N0.clone().add(V(0, 3.0, 0)).add(s > B.bonk && s < B.bonk + 0.3 ? jolt(t, 0.25 * (1 - (s - B.bonk) / 0.3)) : V(0, 0, 0)), 0.35, 0.1, 9.5, 40); break;
     case 'mia': frame(stage, ih.clone().add(V(0, -0.6, 0)), face(MIA, V(0, 0, 6)) + 0.7, 0.05, lerp(8, 5.5, easeInOut(u)), 36); break;
     case 'walk': look(stage, V(9.5, 5, 9), V(4.5, 3, -1.5), 44); break;
-    case 'poke': frame(stage, MIA.clone().add(V(-0.6, 2.6, 0.2)).add(s > B.fall[1] && s < B.fall[1] + 0.3 ? jolt(t, 0.2 * (1 - (s - B.fall[1]) / 0.3)) : V(0, 0, 0)), face(MIA, POKE) + 1.25, 0.12, 10, 40); break;
+    case 'poke': frame(stage, MIA.clone().lerp(POKE, 0.5).add(V(0, 2.6, 0)).add(s > B.fall[1] && s < B.fall[1] + 0.3 ? jolt(t, 0.2 * (1 - (s - B.fall[1]) / 0.3)) : V(0, 0, 0)), 0.12, 0.1, 10, 40); break;     // from the front: Leo and Mia side by side, the gap between them reads
     case 'gg': frame(stage, nh.clone().add(V(0, 0.1, 0)), yaw(noob) - 0.5, 0.05, 4.6, 36); break;
     case 'chat': frame(stage, V(3.6, 3.4, -0.8), -0.15, 0.1, 13, 40); break;
-    case 'alt': look(stage, V(3.5, 16, -1.5), V(6.6, 0.5, -7.4), 44); break;      // from above: the noob standing over flat Mia
+    case 'alt': { const m = N_SAFE.clone().lerp(MIA.clone().add(V(0.3, 0, -2.4)), 0.5).setY(0.5); look(stage, m.clone().add(V(0, 25, 3.5)), m, 44); break; }      // from above: the noob standing over flat Mia
     case 'flashback': frame(stage, nh.clone().add(V(0, 0.3, 0)), yaw(noob) - 0.5, 0.05, 4.4, 36); break;
     default: { const mid = lh.clone().lerp(xh, 0.5); frame(stage, mid.clone().add(V(0, 0.9, 0)), face(mid, N_SAFE), 0.05, 9, 38); }   // CTA: Leo and Max glaring at the noob
   }
@@ -422,7 +422,7 @@ export function overlay(g, s, t) {
   }
   if (SHOT === 'chat' && t > W.popped) { bigText(g, s, '[Mia]: gg', 540, 800, 120, '#C9A6FF', { k: easeOutBack(clamp((t - W.popped) / 0.2), 2.4) }); bigText(g, s, '...WRONG ACCOUNT', 540, 930, 72, '#ffffff', { k: easeOutBack(clamp((t - W.popped - 0.5) / 0.2), 2.4), alpha: clamp((t - W.popped - 0.5) / 0.1) }); }
   if (t > B.alt && t < B.shades) {
-    const a = t - B.alt; g.save(); g.translate(540 * s, 800 * s); g.rotate(-0.12); g.scale(1 + 1.4 * (1 - easeOut(clamp(a / 0.18))), 1 + 1.4 * (1 - easeOut(clamp(a / 0.18))));
+    const a = t - B.alt; g.save(); g.translate(540 * s, 1010 * s); g.rotate(-0.12); g.scale(1 + 1.4 * (1 - easeOut(clamp(a / 0.18))), 1 + 1.4 * (1 - easeOut(clamp(a / 0.18))));
     g.globalAlpha = clamp(a / 0.1); g.lineWidth = 12 * s; g.strokeStyle = '#ff2b3d'; roundRect(g, -380 * s, -95 * s, 760 * s, 190 * s, 24 * s); g.stroke();
     g.font = `${118 * s}px "Luckiest Guy"`; g.fillStyle = '#ff2b3d'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('ALT ACCOUNT', 0, 8 * s); g.restore();
   }

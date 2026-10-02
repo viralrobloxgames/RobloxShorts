@@ -1,0 +1,1179 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.04,
+    "text": "The noob got admin",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.26,
+        "word": " The"
+      },
+      {
+        "start": 0.26,
+        "end": 0.56,
+        "word": " noob"
+      },
+      {
+        "start": 0.56,
+        "end": 0.72,
+        "word": " got"
+      },
+      {
+        "start": 0.72,
+        "end": 1.04,
+        "word": " admin"
+      }
+    ]
+  },
+  {
+    "start": 1.04,
+    "end": 1.92,
+    "text": "for one round,",
+    "words": [
+      {
+        "start": 1.04,
+        "end": 1.28,
+        "word": " for"
+      },
+      {
+        "start": 1.28,
+        "end": 1.48,
+        "word": " one"
+      },
+      {
+        "start": 1.48,
+        "end": 1.8,
+        "word": " round,"
+      }
+    ]
+  },
+  {
+    "start": 2.2,
+    "end": 2.8000000000000003,
+    "text": "one minute,",
+    "words": [
+      {
+        "start": 2.2,
+        "end": 2.4,
+        "word": " one"
+      },
+      {
+        "start": 2.4,
+        "end": 2.68,
+        "word": " minute,"
+      }
+    ]
+  },
+  {
+    "start": 3.18,
+    "end": 3.86,
+    "text": "and for the first",
+    "words": [
+      {
+        "start": 3.18,
+        "end": 3.34,
+        "word": " and"
+      },
+      {
+        "start": 3.34,
+        "end": 3.48,
+        "word": " for"
+      },
+      {
+        "start": 3.48,
+        "end": 3.62,
+        "word": " the"
+      },
+      {
+        "start": 3.62,
+        "end": 3.86,
+        "word": " first"
+      }
+    ]
+  },
+  {
+    "start": 3.86,
+    "end": 5.24,
+    "text": "time ever he moved.",
+    "words": [
+      {
+        "start": 3.86,
+        "end": 4.16,
+        "word": " time"
+      },
+      {
+        "start": 4.16,
+        "end": 4.44,
+        "word": " ever"
+      },
+      {
+        "start": 4.44,
+        "end": 4.72,
+        "word": " he"
+      },
+      {
+        "start": 4.72,
+        "end": 5.12,
+        "word": " moved."
+      }
+    ]
+  },
+  {
+    "start": 6.02,
+    "end": 7.0600000000000005,
+    "text": "Leo laughed and typed,",
+    "words": [
+      {
+        "start": 6.02,
+        "end": 6.02,
+        "word": " Leo"
+      },
+      {
+        "start": 6.02,
+        "end": 6.36,
+        "word": " laughed"
+      },
+      {
+        "start": 6.36,
+        "end": 6.62,
+        "word": " and"
+      },
+      {
+        "start": 6.62,
+        "end": 6.94,
+        "word": " typed,"
+      }
+    ]
+  },
+  {
+    "start": 7.26,
+    "end": 8.12,
+    "text": "kick the noob.",
+    "words": [
+      {
+        "start": 7.26,
+        "end": 7.42,
+        "word": " kick"
+      },
+      {
+        "start": 7.42,
+        "end": 7.62,
+        "word": " the"
+      },
+      {
+        "start": 7.62,
+        "end": 8.0,
+        "word": " noob."
+      }
+    ]
+  },
+  {
+    "start": 8.46,
+    "end": 9.86,
+    "text": "The noob typed faster,",
+    "words": [
+      {
+        "start": 8.46,
+        "end": 8.66,
+        "word": " The"
+      },
+      {
+        "start": 8.66,
+        "end": 8.94,
+        "word": " noob"
+      },
+      {
+        "start": 8.94,
+        "end": 9.2,
+        "word": " typed"
+      },
+      {
+        "start": 9.2,
+        "end": 9.74,
+        "word": " faster,"
+      }
+    ]
+  },
+  {
+    "start": 10.18,
+    "end": 10.899999999999999,
+    "text": "fling Leo.",
+    "words": [
+      {
+        "start": 10.18,
+        "end": 10.48,
+        "word": " fling"
+      },
+      {
+        "start": 10.48,
+        "end": 10.78,
+        "word": " Leo."
+      }
+    ]
+  },
+  {
+    "start": 11.4,
+    "end": 12.44,
+    "text": "Leo was gone before",
+    "words": [
+      {
+        "start": 11.4,
+        "end": 11.72,
+        "word": " Leo"
+      },
+      {
+        "start": 11.72,
+        "end": 11.92,
+        "word": " was"
+      },
+      {
+        "start": 11.92,
+        "end": 12.14,
+        "word": " gone"
+      },
+      {
+        "start": 12.14,
+        "end": 12.44,
+        "word": " before"
+      }
+    ]
+  },
+  {
+    "start": 12.44,
+    "end": 13.219999999999999,
+    "text": "he hit enter.",
+    "words": [
+      {
+        "start": 12.44,
+        "end": 12.6,
+        "word": " he"
+      },
+      {
+        "start": 12.6,
+        "end": 12.76,
+        "word": " hit"
+      },
+      {
+        "start": 12.76,
+        "end": 13.1,
+        "word": " enter."
+      }
+    ]
+  },
+  {
+    "start": 13.92,
+    "end": 14.74,
+    "text": "Max tried his best",
+    "words": [
+      {
+        "start": 13.92,
+        "end": 14.04,
+        "word": " Max"
+      },
+      {
+        "start": 14.04,
+        "end": 14.34,
+        "word": " tried"
+      },
+      {
+        "start": 14.34,
+        "end": 14.54,
+        "word": " his"
+      },
+      {
+        "start": 14.54,
+        "end": 14.74,
+        "word": " best"
+      }
+    ]
+  },
+  {
+    "start": 14.74,
+    "end": 15.26,
+    "text": "move,",
+    "words": [
+      {
+        "start": 14.74,
+        "end": 15.14,
+        "word": " move,"
+      }
+    ]
+  },
+  {
+    "start": 15.68,
+    "end": 16.28,
+    "text": "giant me.",
+    "words": [
+      {
+        "start": 15.68,
+        "end": 15.84,
+        "word": " giant"
+      },
+      {
+        "start": 15.84,
+        "end": 16.16,
+        "word": " me."
+      }
+    ]
+  },
+  {
+    "start": 16.82,
+    "end": 18.1,
+    "text": "The noob tiny Max.",
+    "words": [
+      {
+        "start": 16.82,
+        "end": 16.96,
+        "word": " The"
+      },
+      {
+        "start": 16.96,
+        "end": 17.3,
+        "word": " noob"
+      },
+      {
+        "start": 17.3,
+        "end": 17.62,
+        "word": " tiny"
+      },
+      {
+        "start": 17.62,
+        "end": 17.98,
+        "word": " Max."
+      }
+    ]
+  },
+  {
+    "start": 18.74,
+    "end": 20.22,
+    "text": "Max shrank halfway through",
+    "words": [
+      {
+        "start": 18.74,
+        "end": 19.08,
+        "word": " Max"
+      },
+      {
+        "start": 19.08,
+        "end": 19.52,
+        "word": " shrank"
+      },
+      {
+        "start": 19.52,
+        "end": 19.82,
+        "word": " halfway"
+      },
+      {
+        "start": 19.82,
+        "end": 20.22,
+        "word": " through"
+      }
+    ]
+  },
+  {
+    "start": 20.22,
+    "end": 20.68,
+    "text": "growing.",
+    "words": [
+      {
+        "start": 20.22,
+        "end": 20.56,
+        "word": " growing."
+      }
+    ]
+  },
+  {
+    "start": 21.26,
+    "end": 22.44,
+    "text": "Leo came back invisible,",
+    "words": [
+      {
+        "start": 21.26,
+        "end": 21.44,
+        "word": " Leo"
+      },
+      {
+        "start": 21.44,
+        "end": 21.66,
+        "word": " came"
+      },
+      {
+        "start": 21.66,
+        "end": 21.94,
+        "word": " back"
+      },
+      {
+        "start": 21.94,
+        "end": 22.32,
+        "word": " invisible,"
+      }
+    ]
+  },
+  {
+    "start": 22.7,
+    "end": 23.36,
+    "text": "just his hair.",
+    "words": [
+      {
+        "start": 22.7,
+        "end": 22.84,
+        "word": " just"
+      },
+      {
+        "start": 22.84,
+        "end": 23.06,
+        "word": " his"
+      },
+      {
+        "start": 23.06,
+        "end": 23.36,
+        "word": " hair."
+      }
+    ]
+  },
+  {
+    "start": 23.36,
+    "end": 24.68,
+    "text": "The noob set it",
+    "words": [
+      {
+        "start": 23.36,
+        "end": 24.14,
+        "word": " The"
+      },
+      {
+        "start": 24.14,
+        "end": 24.36,
+        "word": " noob"
+      },
+      {
+        "start": 24.36,
+        "end": 24.54,
+        "word": " set"
+      },
+      {
+        "start": 24.54,
+        "end": 24.68,
+        "word": " it"
+      }
+    ]
+  },
+  {
+    "start": 24.68,
+    "end": 25.34,
+    "text": "on fire.",
+    "words": [
+      {
+        "start": 24.68,
+        "end": 24.82,
+        "word": " on"
+      },
+      {
+        "start": 24.82,
+        "end": 25.22,
+        "word": " fire."
+      }
+    ]
+  },
+  {
+    "start": 25.82,
+    "end": 26.68,
+    "text": "The hair ran around",
+    "words": [
+      {
+        "start": 25.82,
+        "end": 25.9,
+        "word": " The"
+      },
+      {
+        "start": 25.9,
+        "end": 26.14,
+        "word": " hair"
+      },
+      {
+        "start": 26.14,
+        "end": 26.4,
+        "word": " ran"
+      },
+      {
+        "start": 26.4,
+        "end": 26.68,
+        "word": " around"
+      }
+    ]
+  },
+  {
+    "start": 26.68,
+    "end": 27.220000000000002,
+    "text": "screaming.",
+    "words": [
+      {
+        "start": 26.68,
+        "end": 27.1,
+        "word": " screaming."
+      }
+    ]
+  },
+  {
+    "start": 27.98,
+    "end": 28.32,
+    "text": "Freeze,",
+    "words": [
+      {
+        "start": 27.98,
+        "end": 28.2,
+        "word": " Freeze,"
+      }
+    ]
+  },
+  {
+    "start": 28.62,
+    "end": 29.1,
+    "text": "spin,",
+    "words": [
+      {
+        "start": 28.62,
+        "end": 28.98,
+        "word": " spin,"
+      }
+    ]
+  },
+  {
+    "start": 29.4,
+    "end": 29.7,
+    "text": "sit,",
+    "words": [
+      {
+        "start": 29.4,
+        "end": 29.58,
+        "word": " sit,"
+      }
+    ]
+  },
+  {
+    "start": 29.96,
+    "end": 30.42,
+    "text": "dance.",
+    "words": [
+      {
+        "start": 29.96,
+        "end": 30.3,
+        "word": " dance."
+      }
+    ]
+  },
+  {
+    "start": 31.02,
+    "end": 31.720000000000002,
+    "text": "Four commands,",
+    "words": [
+      {
+        "start": 31.02,
+        "end": 31.24,
+        "word": " Four"
+      },
+      {
+        "start": 31.24,
+        "end": 31.6,
+        "word": " commands,"
+      }
+    ]
+  },
+  {
+    "start": 32.02,
+    "end": 32.76,
+    "text": "four seconds.",
+    "words": [
+      {
+        "start": 32.02,
+        "end": 32.16,
+        "word": " four"
+      },
+      {
+        "start": 32.16,
+        "end": 32.64,
+        "word": " seconds."
+      }
+    ]
+  },
+  {
+    "start": 33.5,
+    "end": 34.5,
+    "text": "Leo and Max charged",
+    "words": [
+      {
+        "start": 33.5,
+        "end": 33.62,
+        "word": " Leo"
+      },
+      {
+        "start": 33.62,
+        "end": 33.86,
+        "word": " and"
+      },
+      {
+        "start": 33.86,
+        "end": 34.08,
+        "word": " Max"
+      },
+      {
+        "start": 34.08,
+        "end": 34.5,
+        "word": " charged"
+      }
+    ]
+  },
+  {
+    "start": 34.5,
+    "end": 35.339999999999996,
+    "text": "at him together.",
+    "words": [
+      {
+        "start": 34.5,
+        "end": 34.72,
+        "word": " at"
+      },
+      {
+        "start": 34.72,
+        "end": 34.86,
+        "word": " him"
+      },
+      {
+        "start": 34.86,
+        "end": 35.22,
+        "word": " together."
+      }
+    ]
+  },
+  {
+    "start": 35.84,
+    "end": 36.88,
+    "text": "The noob gave himself",
+    "words": [
+      {
+        "start": 35.84,
+        "end": 36.02,
+        "word": " The"
+      },
+      {
+        "start": 36.02,
+        "end": 36.32,
+        "word": " noob"
+      },
+      {
+        "start": 36.32,
+        "end": 36.52,
+        "word": " gave"
+      },
+      {
+        "start": 36.52,
+        "end": 36.88,
+        "word": " himself"
+      }
+    ]
+  },
+  {
+    "start": 36.88,
+    "end": 37.44,
+    "text": "speed,",
+    "words": [
+      {
+        "start": 36.88,
+        "end": 37.32,
+        "word": " speed,"
+      }
+    ]
+  },
+  {
+    "start": 37.84,
+    "end": 38.72,
+    "text": "and they ran straight",
+    "words": [
+      {
+        "start": 37.84,
+        "end": 38.04,
+        "word": " and"
+      },
+      {
+        "start": 38.04,
+        "end": 38.18,
+        "word": " they"
+      },
+      {
+        "start": 38.18,
+        "end": 38.36,
+        "word": " ran"
+      },
+      {
+        "start": 38.36,
+        "end": 38.72,
+        "word": " straight"
+      }
+    ]
+  },
+  {
+    "start": 38.72,
+    "end": 39.58,
+    "text": "into each other.",
+    "words": [
+      {
+        "start": 38.72,
+        "end": 38.98,
+        "word": " into"
+      },
+      {
+        "start": 38.98,
+        "end": 39.2,
+        "word": " each"
+      },
+      {
+        "start": 39.2,
+        "end": 39.46,
+        "word": " other."
+      }
+    ]
+  },
+  {
+    "start": 40.22,
+    "end": 40.72,
+    "text": "And Mia.",
+    "words": [
+      {
+        "start": 40.22,
+        "end": 40.38,
+        "word": " And"
+      },
+      {
+        "start": 40.38,
+        "end": 40.6,
+        "word": " Mia."
+      }
+    ]
+  },
+  {
+    "start": 41.18,
+    "end": 42.26,
+    "text": "Mia hadn't moved,",
+    "words": [
+      {
+        "start": 41.18,
+        "end": 41.48,
+        "word": " Mia"
+      },
+      {
+        "start": 41.48,
+        "end": 41.8,
+        "word": " hadn't"
+      },
+      {
+        "start": 41.8,
+        "end": 42.14,
+        "word": " moved,"
+      }
+    ]
+  },
+  {
+    "start": 42.44,
+    "end": 43.16,
+    "text": "not once,",
+    "words": [
+      {
+        "start": 42.44,
+        "end": 42.64,
+        "word": " not"
+      },
+      {
+        "start": 42.64,
+        "end": 43.04,
+        "word": " once,"
+      }
+    ]
+  },
+  {
+    "start": 43.38,
+    "end": 44.199999999999996,
+    "text": "the whole round.",
+    "words": [
+      {
+        "start": 43.38,
+        "end": 43.5,
+        "word": " the"
+      },
+      {
+        "start": 43.5,
+        "end": 43.74,
+        "word": " whole"
+      },
+      {
+        "start": 43.74,
+        "end": 44.08,
+        "word": " round."
+      }
+    ]
+  },
+  {
+    "start": 44.78,
+    "end": 45.76,
+    "text": "Ten seconds left.",
+    "words": [
+      {
+        "start": 44.78,
+        "end": 44.96,
+        "word": " Ten"
+      },
+      {
+        "start": 44.96,
+        "end": 45.34,
+        "word": " seconds"
+      },
+      {
+        "start": 45.34,
+        "end": 45.64,
+        "word": " left."
+      }
+    ]
+  },
+  {
+    "start": 46.32,
+    "end": 47.4,
+    "text": "Leo walked over and",
+    "words": [
+      {
+        "start": 46.32,
+        "end": 46.6,
+        "word": " Leo"
+      },
+      {
+        "start": 46.6,
+        "end": 46.84,
+        "word": " walked"
+      },
+      {
+        "start": 46.84,
+        "end": 47.16,
+        "word": " over"
+      },
+      {
+        "start": 47.16,
+        "end": 47.4,
+        "word": " and"
+      }
+    ]
+  },
+  {
+    "start": 47.4,
+    "end": 48.0,
+    "text": "poked her.",
+    "words": [
+      {
+        "start": 47.4,
+        "end": 47.6,
+        "word": " poked"
+      },
+      {
+        "start": 47.6,
+        "end": 47.88,
+        "word": " her."
+      }
+    ]
+  },
+  {
+    "start": 48.46,
+    "end": 49.3,
+    "text": "She fell over like",
+    "words": [
+      {
+        "start": 48.46,
+        "end": 48.68,
+        "word": " She"
+      },
+      {
+        "start": 48.68,
+        "end": 48.86,
+        "word": " fell"
+      },
+      {
+        "start": 48.86,
+        "end": 49.14,
+        "word": " over"
+      },
+      {
+        "start": 49.14,
+        "end": 49.3,
+        "word": " like"
+      }
+    ]
+  },
+  {
+    "start": 49.3,
+    "end": 49.82,
+    "text": "a plank.",
+    "words": [
+      {
+        "start": 49.3,
+        "end": 49.46,
+        "word": " a"
+      },
+      {
+        "start": 49.46,
+        "end": 49.7,
+        "word": " plank."
+      }
+    ]
+  },
+  {
+    "start": 50.34,
+    "end": 51.58,
+    "text": "Then the noob typed",
+    "words": [
+      {
+        "start": 50.34,
+        "end": 50.66,
+        "word": " Then"
+      },
+      {
+        "start": 50.66,
+        "end": 50.92,
+        "word": " the"
+      },
+      {
+        "start": 50.92,
+        "end": 51.22,
+        "word": " noob"
+      },
+      {
+        "start": 51.22,
+        "end": 51.58,
+        "word": " typed"
+      }
+    ]
+  },
+  {
+    "start": 51.58,
+    "end": 52.26,
+    "text": "GG,",
+    "words": [
+      {
+        "start": 51.58,
+        "end": 52.14,
+        "word": " GG,"
+      }
+    ]
+  },
+  {
+    "start": 52.92,
+    "end": 53.7,
+    "text": "but it popped up",
+    "words": [
+      {
+        "start": 52.92,
+        "end": 53.1,
+        "word": " but"
+      },
+      {
+        "start": 53.1,
+        "end": 53.24,
+        "word": " it"
+      },
+      {
+        "start": 53.24,
+        "end": 53.44,
+        "word": " popped"
+      },
+      {
+        "start": 53.44,
+        "end": 53.7,
+        "word": " up"
+      }
+    ]
+  },
+  {
+    "start": 53.7,
+    "end": 54.699999999999996,
+    "text": "under Mia's name.",
+    "words": [
+      {
+        "start": 53.7,
+        "end": 53.96,
+        "word": " under"
+      },
+      {
+        "start": 53.96,
+        "end": 54.32,
+        "word": " Mia's"
+      },
+      {
+        "start": 54.32,
+        "end": 54.58,
+        "word": " name."
+      }
+    ]
+  },
+  {
+    "start": 55.34,
+    "end": 56.26,
+    "text": "The noob was Mia's",
+    "words": [
+      {
+        "start": 55.34,
+        "end": 55.42,
+        "word": " The"
+      },
+      {
+        "start": 55.42,
+        "end": 55.7,
+        "word": " noob"
+      },
+      {
+        "start": 55.7,
+        "end": 55.84,
+        "word": " was"
+      },
+      {
+        "start": 55.84,
+        "end": 56.26,
+        "word": " Mia's"
+      }
+    ]
+  },
+  {
+    "start": 56.26,
+    "end": 56.879999999999995,
+    "text": "alt account.",
+    "words": [
+      {
+        "start": 56.26,
+        "end": 56.42,
+        "word": " alt"
+      },
+      {
+        "start": 56.42,
+        "end": 56.76,
+        "word": " account."
+      }
+    ]
+  },
+  {
+    "start": 57.7,
+    "end": 58.5,
+    "text": "The whole time.",
+    "words": [
+      {
+        "start": 57.7,
+        "end": 57.82,
+        "word": " The"
+      },
+      {
+        "start": 57.82,
+        "end": 58.0,
+        "word": " whole"
+      },
+      {
+        "start": 58.0,
+        "end": 58.38,
+        "word": " time."
+      }
+    ]
+  },
+  {
+    "start": 59.36,
+    "end": 59.599999999999994,
+    "text": "So,",
+    "words": [
+      {
+        "start": 59.36,
+        "end": 59.48,
+        "word": " So,"
+      }
+    ]
+  },
+  {
+    "start": 59.6,
+    "end": 60.519999999999996,
+    "text": "in part three,",
+    "words": [
+      {
+        "start": 59.6,
+        "end": 59.74,
+        "word": " in"
+      },
+      {
+        "start": 59.74,
+        "end": 59.96,
+        "word": " part"
+      },
+      {
+        "start": 59.96,
+        "end": 60.4,
+        "word": " three,"
+      }
+    ]
+  },
+  {
+    "start": 61.16,
+    "end": 62.18,
+    "text": "she didn't forget him.",
+    "words": [
+      {
+        "start": 61.16,
+        "end": 61.28,
+        "word": " she"
+      },
+      {
+        "start": 61.28,
+        "end": 61.56,
+        "word": " didn't"
+      },
+      {
+        "start": 61.56,
+        "end": 61.74,
+        "word": " forget"
+      },
+      {
+        "start": 61.74,
+        "end": 62.06,
+        "word": " him."
+      }
+    ]
+  },
+  {
+    "start": 63.1,
+    "end": 64.84,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 63.1,
+        "end": 63.26,
+        "word": " Follow"
+      },
+      {
+        "start": 63.26,
+        "end": 64.54,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 64.54,
+        "end": 64.84,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 64.84,
+    "end": 65.58,
+    "text": "part five.",
+    "words": [
+      {
+        "start": 64.84,
+        "end": 65.1,
+        "word": " part"
+      },
+      {
+        "start": 65.1,
+        "end": 65.46,
+        "word": " five."
+      }
+    ]
+  }
+]

@@ -23,7 +23,7 @@ Everything needed to make a Roblox-style Short lives in this folder. Paths below
 
 ## Workflow
 
-Full detail is in [references/workflow.md](references/workflow.md). The short version:
+Full detail is in [references/workflow.md](references/workflow.md). **Work in parallel:** start the narration the moment a script is approved and build the scene against estimated, word-anchored timing while it generates; while a video renders, write the next script and narrate it on the laptop (workflow.md, "Running steps in parallel"). The short version:
 
 1. **Idea:** add it to `ideas/idea-ledger.json`. Choose a Roblox-game situation with a visible cause, reaction and payoff (e.g. disaster survival, obby, tycoon, simulator, AFK, lag, admin commands).
 2. **Scaffold:** `python scripts/studio.py new --out projects/<slug> --title "<Title>" --character Max|Mia|Leo --seconds 30`.
