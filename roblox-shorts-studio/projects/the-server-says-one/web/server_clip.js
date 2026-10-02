@@ -25,8 +25,8 @@ const SHOTS = [
   [0, 'hook'], [W.front + 0.5, 'face'], [W.light + 0.95, 'wave'], [W.waveBack - 0.3, 'waveBack'], [W.step - 0.45, 'steps'],
   [W.copying - 0.35, 'copying'], [W.every - 0.25, 'closer'], [W.door - 0.35, 'door'], [W.copyCan - 0.3, 'think'],
   ...T.CHASE.map(([id, a]) => [a, id]),
-  [W.hit - 0.12, 'hit'], [W.silence - 0.3, 'silence'], [W.checked - 0.25, 'list'], [W.updated - 0.3, 'updated'],
-  [W.two - 0.2, 'two'], [W.max2 - 0.3, 'reveal'], [E.cta, 'cta'],
+  [W.hit - 0.12, 'hit'], [W.silence - 0.3, 'silence'], [W.checked - 0.25, 'list'], [W.two - 0.2, 'two'],
+  [W.max2 - 0.3, 'reveal'], [E.dark[0] - 0.05, 'dark'], [E.twins, 'twins'], [W.which - 0.2, 'question'], [E.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 
 // ---------- scene ----------
@@ -71,7 +71,7 @@ export async function setup(stage) {
 // ---------- actors ----------
 function place(a, s, t, waveSide) {
   a.root.visible = s.visible !== false;
-  a.root.position.copy(P(s.pos)); a.root.rotation.set(0, s.heading, 0);
+  a.root.position.copy(P(s.pos)); a.root.rotation.set(0, s.heading, 0); a.root.scale.set(s.mirror ? -1 : 1, 1, 1);
   robloxPose(a, s.layers.map(([n, at, w = 1, loop]) => [A[n], at, w, loop]));
   if (s.wave) waveArm(a, t, waveSide);
   if (s.headTurn) a.bones.Head.rotateY(Math.PI * s.headTurn);
@@ -89,17 +89,23 @@ function maxEnd(t, g) {
   if (t >= E.stepOff) {
     const u = clamp((t - E.stepOff) / (2 / 12)); s.pos = [T.BACK[0], lerp(T.BACK[1], T.FWD[1], u)];
     s.layers = u > 0 && u < 1 ? [['walk', u * 1.9 / T.STRIDE]] : [['idle', t]];
-    s.face = t < W.justMax + 0.3 ? 'scared' : t < W.updated ? 'neutral' : t < W.two ? 'nervous' : 'scared';
-    s.lookDown = t > W.checked - 0.1 && t < W.updated + 0.3 ? 0.35 : 0;          // checking the list
+    s.face = t < W.two ? 'nervous' : 'scared';
+    s.lookDown = t > W.checked - 0.1 && t < W.two + 0.2 ? 0.35 : 0;              // checking the list
     if (t > W.max2 - 0.05) { const a = t - W.max2 + 0.05; s.layers = [['shock', Math.min(a * 0.8, 0.3), 1, false]]; s.face = 'shocked'; }
   }
+  if (t >= E.twins) Object.assign(s, twin(t, T.TWINS.real), { mirror: false });
   return s;
+}
+// Two of him: same pose, same idle phase, same face. They look at each other, then turn to us in perfect sync.
+function twin(t, pos) {
+  const k = 1 - easeInOut(clamp((t - E.sync) / 0.18));
+  return { pos, heading: 0, layers: [['idle', t]], face: t < E.sync ? 'scared' : 'neutral', headTurn: 0.17 * k, lookDown: 0, wave: 0, visible: true };
 }
 function copyMaxAt(t) {
   const s = { pos: T.COPY_MAX, heading: 0, layers: [['idle', t]], face: 'neutral', visible: t > E.copyOn };
   const a = t - (W.max2 - 0.05) - D;                     // flinches with Max, half a second late
   if (a > 0) { s.layers = [['shock', Math.min(a * 0.8, 0.3), 1, false]]; s.face = 'shocked'; }
-  if (t > E.cta + 0.9) s.headTurn = -0.12 * easeInOut(clamp((t - E.cta - 0.9) / 0.6));   // the tilt
+  if (t >= E.twins) Object.assign(s, twin(t, T.TWINS.copy), { mirror: true });   // its mirror image: the hoodie star flips
   return s;
 }
 
@@ -147,7 +153,9 @@ export function update(t, stage) {
   if (t > E.flicker[0] && t < E.flicker[1]) for (const l of Object.values(lamps)) l.intensity = l.userData.base * flickerAt(t);
   if (t > W.silence - 0.3 && t < W.checked) lamps.cor1.intensity *= 0.55 + 0.45 * flickerAt(t + 3, 7);
   lamps.cor3.intensity = t > E.copyOn ? lamps.cor3.userData.base * (t < E.copyOn + 0.35 ? flickerAt(t, 24) : 1) : 0;
-  glow.copy.sq.visible = glow.copy.l.visible = copy.root.visible;
+  glow.copy.sq.visible = glow.copy.l.visible = copy.root.visible && t < E.twins;     // it isn't marked any more
+  if (t > E.dark[0] && t < E.dark[1]) for (const l of Object.values(lamps)) l.intensity = 0;
+  if (t > E.twins && t < E.twins + 0.35) for (const l of Object.values(lamps)) l.intensity *= flickerAt(t, 22);
   stage.bloom.strength = 0.35;
 
   const mh = head(max), eh = head(ent), mid = mh.clone().lerp(eh, 0.5);
@@ -181,10 +189,11 @@ export function update(t, stage) {
     case 'hit': look(stage, V(3.2, 4.6, -17.2).add(shake(t, T.EVENTS.hit, 0.3, 0.5)), V(0.4, 3.8, -9).add(shake(t, T.EVENTS.hit, 0.2, 0.5)), 46); break;
     case 'silence': frame(stage, mh.clone().add(V(0, -0.9, 0)), Math.PI, 0.06, lerp(7.5, 6.5, u), 40); break;
     case 'list': frame(stage, mh.clone().add(V(0, -0.2, 0)), Math.PI + 0.25, 0.08, lerp(4.2, 3.6, u), 36); break;
-    case 'updated': frame(stage, mh.clone().add(V(0, -0.2, 0)), Math.PI + 0.25, 0.08, 3.6, 36, 0.04 * Math.sin(t * 31) * (t < W.updated + 0.5 ? 1 : 0)); break;
-    case 'two': frame(stage, mh.clone().add(V(0, -0.1, 0)), Math.PI - 0.15, 0.04, lerp(3.4, 2.7, u), 34); break;
-    case 'reveal': look(stage, mh.clone().add(V(2.5, 1.1, 2.0)), head(copy).add(V(0, -1.6, 0)).lerp(mh, 0.1), 46); break;   // over his shoulder: the far end
-    default: { const k = easeInOut(clamp((t - E.cta) / 3)); look(stage, mh.clone().add(V(lerp(2.5, 1.4, k), lerp(1.1, 0.6, k), lerp(2.0, -1.5, k))), head(copy).add(V(0, lerp(-1.6, 0.9, k), 0)).lerp(mh, lerp(0.1, 0, k)), lerp(46, 36, k)); }
+    case 'two': frame(stage, mh.clone().add(V(0, -0.1, 0)), Math.PI - 0.15, 0.04, lerp(3.4, 2.7, u), 34, 0.04 * Math.sin(t * 31) * (t < W.two + 0.4 ? 1 : 0)); break;
+    case 'reveal': case 'dark': look(stage, V(2.9, 5.1, -9.0), head(copy).add(V(0, -1.6, 0)).lerp(V(0.4, 4.4, -11), 0.1), 46); break;   // over his shoulder: the far end
+    case 'twins': look(stage, V(0, 4.3, lerp(-9.0, -10.2, u)), V(0, 3.0, -21), 58); break;                     // two of him
+    case 'question': look(stage, V(0, 4.2, lerp(-10.4, -11.4, u)), V(0, 3.3, -21), 52); break;
+    default: look(stage, V(0, 4.2, lerp(-11.4, -11.9, clamp((t - E.cta) / 3))), V(0, 3.2, -21), 52); }
   }
   cam = stage.camera;
 }
@@ -231,14 +240,14 @@ export function overlay(g, s, t) {
   const chase = T.CHASE.some(([id]) => id === SHOT);
   vignette(g, s, chase ? 0.55 : 0.45, chase ? '40,0,8' : '0,0,0');
   if (['cut', 'cutLow', 'ran', 'barge'].includes(SHOT)) speedLines(g, s, t, 0.3, { cx: 540, cy: 900 });
-  if (t < E.cta) { nameTag(g, s, max, 'Max'); if (t > E.copyOn) nameTag(g, s, copy, 'Max'); }
+  if (t < W.which - 0.2 && !(t > E.dark[0] && t < E.dark[1])) { nameTag(g, s, max, 'Max'); if (t > E.copyOn) nameTag(g, s, copy, 'Max'); }
 
   // The clue: one player online (opening), then the list after the escape.
   if (t < W.light + 0.95) playerList(g, s, t, ['Max']);                       // on screen from frame 1
-  if (t > W.checked - 0.1 && t < E.cta) {
+  if (t > W.checked - 0.1 && t < E.dark[0]) {
     const k = easeOutBack(clamp((t - W.checked + 0.1) / 0.25), 1.6);
     const names = t < W.two - 0.05 ? ['Max'] : t < W.max2 - 0.05 ? ['Max', '...'] : ['Max', 'Max'];
-    const glitch = t > W.updated - 0.1 && t < W.two ? 1 : 0;
+    const glitch = t > E.flicker[0] && t < E.flicker[1] ? 1 : 0;
     playerList(g, s, t, names, { k, glitch, highlight: t > W.max2 - 0.05 ? 1 : -1 });
   }
   // Half a second late: a small timer tag on the first copies.
@@ -248,17 +257,43 @@ export function overlay(g, s, t) {
   if (t > T.EVENTS.hit && t < T.EVENTS.hit + 0.5) { flash(g, s, 0.55 * (1 - (t - T.EVENTS.hit) / 0.5), '#ffffff'); vignette(g, s, 0.6 * (1 - (t - T.EVENTS.hit) / 0.5), '140,0,20'); }
   if (t > E.copyOn && t < E.copyOn + 0.25) flash(g, s, 0.35, '#78e4d8');
 
-  // Call to action, after the payoff.
+  // Blackout: only its chest light, then that goes too.
+  if (t > E.dark[0] && t < E.dark[1]) {
+    g.fillStyle = 'rgba(2,4,6,.94)'; g.fillRect(0, 0, 1080 * s, 1920 * s);
+    const p = project(copy.bones.Torso.localToWorld(V(0, 1.3, 0.55)), s), a = 1 - inv(E.dark[0] + 0.35, E.dark[0] + 0.55, t);
+    if (p.on && a > 0) { g.save(); g.globalAlpha = a; g.shadowColor = '#78e4d8'; g.shadowBlur = 40 * s; g.fillStyle = '#9ff3ea'; g.fillRect(p.x - 9 * s, p.y - 9 * s, 18 * s, 18 * s); g.restore(); }
+  }
+  // The question: which one is real? A tag over each, then the comment prompt.
+  for (const [a, label, at] of [[max, 'LEFT', E.left], [copy, 'RIGHT', E.right]]) {
+    if (t < at - 0.05) continue;
+    const p = project(head(a).add(V(0, 1.5, 0)), s); if (!p.on) continue;
+    const k = easeOutBack(clamp((t - at + 0.05) / 0.2), 2.2), bob = Math.sin(t * 6) * 6 * s;
+    g.save(); g.translate(p.x, p.y + bob); g.scale(k, k);
+    g.font = `${66 * s}px "Luckiest Guy"`; const w = g.measureText(label).width + 50 * s;
+    roundRect(g, -w / 2, -52 * s, w, 96 * s, 22 * s); g.fillStyle = 'rgba(10,18,24,.9)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#78e4d8'; g.stroke();
+    g.fillStyle = '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(label, 0, 2 * s);
+    g.beginPath(); g.moveTo(-20 * s, 50 * s); g.lineTo(20 * s, 50 * s); g.lineTo(0, 78 * s); g.closePath(); g.fillStyle = '#78e4d8'; g.fill();
+    g.restore();
+  }
+  const ask = (y, k) => {
+    g.save(); g.translate(540 * s, y * s); g.scale(k, k); g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineJoin = 'round';
+    g.font = `${74 * s}px "Luckiest Guy"`; g.strokeStyle = '#0a1218'; g.lineWidth = 15 * s; g.strokeText('WHICH MAX IS REAL?', 0, 0); g.fillStyle = '#ffffff'; g.fillText('WHICH MAX IS REAL?', 0, 0);
+    g.font = `${54 * s}px "Luckiest Guy"`; g.strokeText('COMMENT LEFT OR RIGHT', 0, 74 * s); g.fillStyle = '#78e4d8'; g.fillText('COMMENT LEFT OR RIGHT', 0, 74 * s);
+    g.restore();
+  };
+  if (t > W.which - 0.1 && t < E.cta) ask(400, easeOutBack(clamp((t - W.which + 0.1) / 0.25), 1.8));
+  // Call to action, after the question: follow for part 2, and the question stays up.
   if (t >= E.cta) {
     const a = t - E.cta, k2 = easeOutBack(clamp(a / 0.3), 1.6);
-    g.save(); g.translate(540 * s, 470 * s); g.scale(k2, k2);
-    roundRect(g, -430 * s, -190 * s, 860 * s, 380 * s, 40 * s); g.fillStyle = 'rgba(10,18,24,.9)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#78e4d8'; g.stroke();
+    g.save(); g.translate(540 * s, 330 * s); g.scale(k2, k2);
+    roundRect(g, -430 * s, -110 * s, 860 * s, 250 * s, 36 * s); g.fillStyle = 'rgba(10,18,24,.92)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#78e4d8'; g.stroke();
     g.textAlign = 'center'; g.textBaseline = 'middle';
-    g.font = `800 ${44 * s}px Montserrat`; g.fillStyle = '#78e4d8'; g.fillText('BEFORE IT LEARNS YOUR NAME', 0, -110 * s);
-    g.font = `800 ${58 * s}px Montserrat`; g.fillStyle = '#ffffff'; g.fillText('@viralrobloxgames', 0, -20 * s);
-    roundRect(g, -160 * s, 60 * s, 320 * s, 90 * s, 22 * s); g.fillStyle = '#fe2c55'; g.fill();
-    g.font = `${54 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('FOLLOW', 0, 108 * s);
+    g.font = `${64 * s}px "Luckiest Guy"`; g.fillStyle = '#78e4d8'; g.fillText('FOLLOW FOR PART 2', 0, -50 * s);
+    g.font = `800 ${46 * s}px Montserrat`; g.fillStyle = '#ffffff'; g.fillText('@viralrobloxgames', 0, 18 * s);
+    roundRect(g, -140 * s, 58 * s, 280 * s, 70 * s, 18 * s); g.fillStyle = '#fe2c55'; g.fill();
+    g.font = `${44 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('FOLLOW', 0, 96 * s);
     g.restore();
+    ask(560, 0.8);
   }
 }
 

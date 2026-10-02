@@ -34,9 +34,14 @@ T(320, E['freeze'] + 0.1, 0.05, 0.55, sweep=-180)                           # it
 for i in range(5): H('footstep', E['copyCharge'] + i * 0.2, 0.45)
 H('reveal_hit', E['hit'], 0.9); A('impact_1', E['hit'], 0.7); A('drum_hit', E['hit'], 0.6); thump(E['hit'], 0.8)
 A('click', W['checked'] + 0.1, 0.35)                                        # the player list
-H('disconnect', W['updated'], 0.55); H('radio_static', W['updated'] + 0.05, 0.18)
-H('entity_connect', W['two'], 0.6)
+H('disconnect', W['two'] - 0.25, 0.55); H('radio_static', W['two'] - 0.2, 0.18); H('entity_connect', W['two'] + 0.1, 0.6)
 T([660], W['max1'], 0.05, 0.08); H('latch', E['copyOn'], 0.45); H('reveal_hit', W['max2'], 0.8); thump(W['max2'], 0.7)
-H('entity_connect', E['cta'] + 0.9, 0.4)                                    # the tilt
+T(240, E['dark'][0], 0.12, 0.7, sweep=-260); H('disconnect', E['dark'][0], 0.4)    # lights out
+thump(E['dark'][0] + 0.9, 0.5)
+H('latch', E['twins'], 0.6); H('reveal_hit', E['twins'] + 0.02, 0.85); thump(E['twins'], 0.8)   # lights back: two of him
+H('entity_connect', E['sync'], 0.55); A('swish_1', E['sync'], 0.25)                # both heads turn at once
+T([880], E['left'], 0.08, 0.1); T([660], E['right'], 0.08, 0.1)                    # LEFT / RIGHT
+A('click', E['comment'], 0.3)
+H('entity_connect', E['cta'] + 0.6, 0.35)
 (P / 'source/sound_cues.json').write_text(json.dumps(c, indent=1))
 print(len(c), 'cues')

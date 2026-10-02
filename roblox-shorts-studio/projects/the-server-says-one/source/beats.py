@@ -15,8 +15,10 @@ ANCHORS = {
     'door': ('door', 1), 'behind1': ('behind', 1), 'copyCan': ('copy', 2), 'seen': ('seen', 1), 'fake': ('faked', 1),
     'fakeCopy': ('faked', 2), 'cut': ('cut', 1), 'sprinted': ('sprinted', 1), 'finishing': ('finishing', 1), 'ran': ('ran', 1),
     'behind2': ('behind', 2), 'dove': ('dove', 1), 'slammed': ('slammed', 1), 'hit': ('hit', 1), 'hard': ('hard', 1),
-    'silence': ('silence', 1), 'checked': ('checked', 1), 'online2': ('online', 2), 'justMax': ('max', 6), 'updated': ('updated', 1),
-    'two': ('two', 1), 'max1': ('max', 7), 'max2': ('max', 8), 'follow': ('follow', 1), 'learns': ('learns', 1),
+    'silence': ('silence', 1), 'checked': ('checked', 1), 'two': ('two', 1), 'max1': ('max', 6), 'max2': ('max', 7),
+    'lightsOut': ('out', 1), 'cameBack': ('back', 2), 'twoOfHim': ('two', 2), 'neither': ('neither', 1), 'notLate': ('late', 3),
+    'which': ('which', 1), 'left2': ('left', 5), 'right2': ('right', 3), 'comment': ('comment', 1), 'follow': ('follow', 1),
+    'partTwo': ('two', 3),
 }
 norm = lambda w: re.sub(r"[^a-z0-9]", '', w.lower())
 script = [norm(w) for line in (P / 'script.txt').read_text().splitlines() for w in line.split() if norm(w)]

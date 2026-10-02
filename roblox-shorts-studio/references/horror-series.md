@@ -83,7 +83,7 @@ Ready to start pilot production when H01–H09 have passed their acceptance chec
 
 | Episode | State | Canon established | Results |
 |---|---|---|---|
-| Empty server: **The Server Says One** (`projects/the-server-says-one`) | Rendering, 2026-10-02 | The Unlisted is the observed player's mirror image, 0.5 s late; each copy creeps it closer; it can only copy what it has seen (freezes when Max leaves its sight). Escape: fake left, cut right, slam the EXIT door; it hits the door. Open question: the list reads two players, Max and Max, and a copy of Max with the cyan chest light waits at the end of the corridor. Reused: lobby, door, corridor, Unlisted, horror audio. | Not posted yet |
+| Part 1: **The Server Says One** (`projects/the-server-says-one`) | Re-cut with an open ending, 2026-10-02 | The Unlisted is the observed player's mirror image, 0.5 s late; each copy creeps it closer; it can only copy what it has seen (freezes when Max leaves its sight). Escape: fake left, cut right, slam the EXIT door; it hits the door. Open ending: the list reads two players (Max, Max); lights out; two identical Maxes side by side, no longer late. CTA: "Which Max is real? Left or right? Comment below" + follow for part 2. **Secret canon for part 2: the real Max is on the LEFT; the copy is a mirror image, so its hoodie star is on the wrong side (the rewatch clue).** | Not posted yet |
 | Duplicate player | Proposed | None yet | Not produced |
 | Night shift | Proposed | None yet | Not produced |
 
