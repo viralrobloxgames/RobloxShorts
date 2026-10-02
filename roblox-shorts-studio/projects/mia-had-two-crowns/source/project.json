@@ -2,14 +2,18 @@
   "title": "Mia Had Two Crowns",
   "character": "Mia",
   "characters": [
-    "Mia"
+    "Mia",
+    "Noob",
+    "Leo",
+    "Max",
+    "Skye"
   ],
-  "seconds": 66.0,
+  "seconds": 68.3333,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "idea; write story.md and script.txt, then narration, then author build_scene.py",
+  "status": "delivered_local_review",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}
