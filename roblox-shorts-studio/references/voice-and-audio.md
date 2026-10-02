@@ -10,7 +10,7 @@ Story narration (the admin series and other story Shorts) is generated free on t
 
 **One background command does it all. Keep the token cost low:** don't use the Studio browser for project narration, don't read the log, and don't poll. Start this with `run_in_background` and wait for the completion notice:
 
-`& "$env:USERPROFILE\Qwen3-TTS\.venv\Scripts\python.exe" scripts/narrate.py projects/<slug>` (add `--voice <name>` for a voice other than `george`)
+`& "$env:USERPROFILE\Qwen3-TTS\.venv\Scripts\python.exe" scripts/narrate.py projects/<slug>` (add `--voice brittney` for ViralRoblox News; a blank line in `script.txt` adds a `--beat` pause, default 0.9 s)
 
 - It reads `script.txt`, one sentence or beat per line. Each line becomes a clip cached by its text in `audio/qwen/<take>/clips/`, so after a script edit only new or changed lines are generated.
 - It joins the clips with 0.4 s gaps into `audio/narration.wav`, writes `narration-source.json`, runs `transcribe.py` for word timings (Qwen gives none), and compares what was heard with the script.

@@ -13,6 +13,19 @@ from settings import load
 from timings import write_alignment
 
 
+def join_brand(words):
+    """Whisper hears the channel name as two words: 'Viral Roblox' -> 'ViralRoblox', '... Games' -> 'ViralRobloxGames'."""
+    out = []
+    for w in words:
+        prev = out[-1]['word'].strip() if out else ''
+        cur = w['word'].strip()
+        if (prev == 'Viral' and cur.startswith('Roblox')) or (prev == 'ViralRoblox' and cur.lower().startswith('games')):
+            out[-1].update(word=out[-1]['word'] + (cur[:6].capitalize() + cur[6:] if prev == 'Viral' else 'G' + cur[1:]), end=w['end'])
+        else:
+            out.append(w)
+    return out
+
+
 def main():
     cfg = load()
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -34,7 +47,7 @@ def main():
     segments, info = model.transcribe(str(a.audio), language=a.language, word_timestamps=True, beam_size=5)
     result = {'source': a.audio.name, 'duration': info.duration, 'segments': []}; words = []
     for seg in segments:
-        timed = [{'start': w.start, 'end': w.end, 'word': w.word} for w in seg.words or []]
+        timed = join_brand([{'start': w.start, 'end': w.end, 'word': w.word} for w in seg.words or []])
         result['segments'].append({'start': seg.start, 'end': seg.end, 'text': seg.text, 'words': timed}); words.extend(timed)
     write_alignment(a.output, result, words, info.duration)
     print('Timings ready. Check the words against the recording and script: ' + str(a.output))
