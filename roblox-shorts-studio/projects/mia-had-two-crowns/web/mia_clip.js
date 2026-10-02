@@ -11,52 +11,41 @@ import { speedLines, flash, roundRect, drawCrown } from '../../../web/lib/overla
 import { loadRobloxCharacter, packItem, loadAnimation, robloxPose, fitAccessory } from '../../../web/lib/robloxPack.js';
 
 import { W } from './beats.js';
+import { SEG, live, segStart, switches, eff, duelAt, CHARGE, DUEL_END, FLING_TYPE, EVENTS, HIT_PERIOD } from './duel.js';
 
 export const meta = { seconds: Math.ceil((W.end + 0.55) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'Mia Had Two Crowns' };
 export const sky = { zenith: '#2a78e4', horizon: '#bfe6ff', below: '#eaf5ff', fog: '#d4ecff' };
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
 // ---------- layout ----------
-const MIA = V(-4.4, 0, 0.6), NOOB = V(-1.4, 0, -0.6);                 // Mia's two accounts, left
-const LEO0 = V(2.8, 0, 0.8), MAX0 = V(6.4, 0, 0.0);                  // the team, right (3.7 apart: the fist bump meets in the middle)
-const SPAWN = V(5.5, 0, -7.5), FLUNG = V(42, 30, -60);
-const POKE = NOOB.clone().add(V(2.3, 0, 0.6));                        // Leo pokes the noob from here
-const AT_NOOB = NOOB.clone().add(V(2.5, 0, -0.3)), AT_MIA = MIA.clone().add(V(2.5, 0, -0.3));   // from the side, so the camera sees both faces
-const LC = V(2.0, 0, 2.0), MC = V(7.0, 0, 1.8);                      // where the boys regroup for the ending (apart, facing each other)
+// Mia's two accounts far apart (left / right), so each duel has room; Leo and Max between them at the back.
+const MIA = V(-5, 0, 0.6), NOOB = V(5, 0, 0.6);
+const LEO0 = V(-1.85, 0, -3), MAX0 = V(1.85, 0, -3);                 // 3.7 apart: the fist bump meets in the middle
+const SPAWN = V(0, 0, -10), FLUNG = V(42, 30, -60);
+const POKE = NOOB.clone().add(V(-2.4, 0, 0.3));                       // Leo pokes the noob from here
+const HL = V(1.0, 0, -3.6), HM = V(-1.0, 0, -3.6);                    // the huddle before they split up
+const CM = MIA.clone().add(V(2.2, 0, 0.5)), CL = NOOB.clone().add(V(-2.2, 0, -0.3));   // contact points (Max at Mia, Leo at the noob)
+const LC = V(1.2, 0, 2.2), MC = V(-3.6, 0, 2.2);                      // where the boys regroup for the ending (Leo right, Max left)
 const CAM = V(0, 0, 14);
 const face = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
 
 // Derived beats.
 const B = {
-  flingType: [W.fling - 0.95, W.fling - 0.05], flung: [W.fling + 0.15, W.fling + 1.8], respawn: W.plank + 0.3,
+  flingType: FLING_TYPE, flung: [W.fling + 0.15, W.fling + 1.8], respawn: W.plank + 0.3,
   pokeWalk: [W.noticed + 0.5, W.poked - 0.2], plank: [W.poked + 0.05, W.poked + 0.55], getUp: [W.onlyPlay, W.onlyPlay + 0.45],
-  charge: [W.attacked - 0.1, W.maxFor + 0.3], ice: [W.herself, W.herself + 0.35], regroup: [W.herself + 0.6, W.ten + 0.2],
+  huddle: [W.onlyPlay + 0.5, W.attacked], charge: CHARGE, ice: [W.herself, W.herself + 0.35], regroup: [DUEL_END, W.meant - 0.3],
   typoType: [W.meant - 0.2, W.typo + 0.6], crownsOn: W.newCrowns, kickType: [W.kickMax - 0.1, W.enter - 0.05], kicked: W.kicked,
   roundOver: W.roundOver, skye: W.joined - 0.1, cta: W.follow,
+  crownMia: [-0.06, 0.12], crownNoob: [W.twice - 0.16, W.twice],     // the two crowns slam on in the opening
 };
-// Which of Mia's accounts is live. Before the fling both just stand there; after it, only one at a time.
-const SEG = (() => {
-  const s = [[0, 'both'], [B.flingType[0], 'mia'], [W.onlyPlay, 'noob'], [W.sw1, 'mia'], [W.sw2, 'noob'], [W.sw3, 'mia']];
-  let t = W.faster - 0.15, k = 0, gap = 0.42;                          // "faster and faster"
-  while (t < W.freeze - 0.75) { s.push([t, k++ % 2 ? 'mia' : 'noob']); t += gap; gap = Math.max(0.11, gap * 0.8); }
-  s.push([W.freeze - 0.75, 'mia'], [W.herself + 0.05, 'noob']);       // types :freeze on her own window; then the noob is all she has
-  return s;
-})();
-const live = (s) => { let a = 'both'; for (const [t, who] of SEG) if (s >= t) a = who; return a; };
-const switches = (s) => SEG.filter(([t, w], i) => i >= 3 && t <= s && t >= W.sw1 - 0.01 && w !== 'both').length;
-// Effective time of an account: the live one follows the clock, the idle one is frozen at the moment it lost focus.
-function eff(who, s) {
-  if (live(s) === 'both' || live(s) === who) return s;
-  let start = 0; for (const [t] of SEG) { if (t > s) break; start = t; }      // it lost focus when the current segment began
-  return start;
-}
 // The round clock: 1:00 -> 0:10 on "ten seconds left" -> 0:00 at "round over".
 const clock = track([[0, 60, (u) => u], [W.ten, 10, (u) => u], [W.roundOver, 0, (u) => u]]);
 
 const SHOTS = [
-  [0, 'hook'], [W.teamed - 0.5, 'team'], [W.fling - 1.0, 'miaType'], [W.flying - 0.35, 'fling'], [W.noticed - 0.3, 'notice'],
-  [W.froze - 0.4, 'frozen'], [W.poked - 0.9, 'poke'], [W.onlyPlay - 0.3, 'rule'], [W.attacked - 0.2, 'charge'],
-  [W.sw1 - 0.1, 'swMia'], [W.sw2 - 0.1, 'swNoob'], [W.sw3 - 0.1, 'swMia'], [W.faster - 0.2, 'frenzy'], [W.freeze - 0.4, 'miaFreeze'],
+  [0, 'hookMia'], [W.twice - 0.45, 'hookNoob'], [W.twice + 0.85, 'reveal'], [W.alt - 0.5, 'altTag'], [W.alt + 1.3, 'team'],
+  [W.fling - 1.0, 'miaType'], [W.flying - 0.35, 'fling'], [W.noticed - 0.3, 'notice'], [W.froze - 0.9, 'frozen'],
+  [W.poked - 0.9, 'poke'], [W.onlyPlay - 0.3, 'rule'], [W.attacked - 0.2, 'charge'], [W.maxFor - 0.2, 'duelMia'],
+  [W.leoFor - 0.2, 'duelNoob'], [W.sw1 - 0.12, 'whip'], [W.faster - 0.2, 'frenzy'], [W.freeze - 0.4, 'miaFreeze'],
   [W.herself - 0.2, 'ice'], [W.ten - 0.3, 'ten'], [W.meant - 0.3, 'noobType'], [W.newCrowns - 0.4, 'crowns'],
   [W.lasted - 0.2, 'faceOff'], [W.kickMax - 0.25, 'kickType'], [W.kicked - 0.2, 'kicked'], [W.roundOver - 0.2, 'wins'],
   [W.chat - 0.3, 'skye'], [W.follow - 0.1, 'cta'],
@@ -120,53 +109,78 @@ const idle = (s, k = 0) => [[A.idle, s + k]];
 const arc = (a, b, h, u) => a.clone().lerp(b, u).add(V(0, h * 4 * u * (1 - u), 0));
 const switching = (s) => s >= W.sw1 - 0.05 && s < W.herself;
 const toCam = (p) => face(p, CAM);
+const DIAG_M = face(MIA, MIA.clone().add(V(2, 0, 2))), DIAG_N = face(NOOB, NOOB.clone().add(V(-2, 0, 2)));   // half to camera, half to the fight
 
 // Mia and the noob, as played (state at their effective time).
 function miaRaw(s) {
   const b = st(MIA, face(MIA, V(6, 0, 6)), idle(s, 0.6), 'smug');
-  if (s > B.flingType[0] && s < B.flingType[1] + 0.1) { b.layers = [[A.typing, s * 1.2]]; b.face = 'evil_grin'; }
-  else if (s > B.flingType[1] && s < W.attacked) { b.layers = [[A.laugh_big, s]]; b.face = 'laugh'; }
-  if (s >= W.attacked) { b.layers = [[A.typing, s * 2.4]]; b.face = s > W.faster ? 'scared' : 'determined'; b.rotY = toCam(MIA); }
+  if (s > B.flingType[0]) { b.layers = [[A.typing, s * 1.6]]; b.face = 'determined'; }                 // she's at the keyboard from here
+  if (s > B.flingType[1] && s < W.flying + 0.9) { b.layers = [[A.laugh_big, s]]; b.face = 'laugh'; }
+  if (s >= CHARGE[0]) {
+    b.rotY = DIAG_M; b.layers = [[A.typing, s * 2.4]]; b.face = s > W.faster ? 'scared' : 'determined';
+    const d = duelAt('max', s); if (s - d.lastBlast < 0.35) { b.layers = [[A.point_forward, 0.16]]; b.face = 'evil_grin'; }   // zap
+  }
   if (s > W.freeze - 0.75) { b.layers = [[A.typing, s * 2.4]]; b.face = s > W.herself ? 'shocked' : 'determined'; b.rotY = toCam(MIA); }
   return b;
 }
 function noobRaw(s) {
-  // A slow walk on the spot at the start, so freezing mid-step reads.
-  const b = st(NOOB, face(NOOB, V(6, 0, 7)), [[A.walk, s * 0.6]], 'happy');
-  if (s >= W.onlyPlay) { b.layers = [[A.typing, s * 2.4]]; b.face = 'determined'; b.rotY = toCam(NOOB); }
-  if (s >= W.herself) { b.rotY = toCam(NOOB); b.face = s > W.typo ? 'surprised' : 'scared'; b.layers = [[A.typing, s * 2.6]]; }
+  // Celebrating the two crowns (dance2: arms stay at shoulder height) until Mia takes the keyboard: then he freezes mid-dance.
+  const b = st(NOOB, face(NOOB, V(-2, 0, 14)), [[A.dance2, s, 1, true]], 'happy');
+  if (s >= W.onlyPlay) {
+    b.layers = [[A.typing, s * 2.4]]; b.face = 'determined'; b.rotY = DIAG_N;
+    const d = duelAt('leo', s); if (s >= CHARGE[1] && s - d.lastBlast < 0.35 && s < DUEL_END) { b.layers = [[A.point_forward, 0.16]]; b.face = 'evil_grin'; }
+  }
+  if (s >= W.herself) { b.rotY = s > DUEL_END ? toCam(NOOB) : b.rotY; b.face = s > W.typo ? 'surprised' : 'scared'; if (s > DUEL_END) b.layers = [[A.typing, s * 2.6]]; }
   if (s >= B.typoType[1] + 0.2) { b.layers = idle(s); b.face = s > W.newCrowns + 0.3 ? 'shocked' : 'surprised'; }
   if (s >= B.kicked + 0.4) { b.layers = [[A.dance2, s - B.kicked, 1, true]]; b.face = 'happy'; }
-  if (s >= B.skye) { b.layers = idle(s); b.face = 'surprised'; b.rotY = face(NOOB, SPAWN); }
+  if (s >= W.chat - 0.3) { b.layers = idle(s); b.face = 'surprised'; b.rotY = face(NOOB, SPAWN); }   // stops dancing: who's that?
   return b;
 }
+// A frozen account still takes the punches: a little knock on every hit.
+const knock = (side, s) => { const d = duelAt(side, s); return d.phase !== 'pre' && d.phase !== 'charge' && s - d.lastHit < 0.16 && s < W.herself ? 0.08 * (1 - (s - d.lastHit) / 0.16) : 0; };
 function miaState(s) {
-  return miaRaw(s > W.herself ? Math.min(eff('mia', s), W.herself + 0.05) : eff('mia', s));   // in the ice she stays put
+  const b = miaRaw(s > W.herself ? Math.min(eff('mia', s), W.herself + 0.05) : eff('mia', s));   // in the ice she stays put
+  b.rotZ = -knock('max', s);
+  return b;
 }
 function noobState(s) {
   const b = noobRaw(eff('noob', s));
   // Poked: a stiff plank fall while frozen; back up when she switches to him.
   if (s > B.plank[0] && s < B.getUp[1]) { b.plank = s < B.getUp[0] ? easeIn(inv(...B.plank, s)) : 1 - easeOut(inv(...B.getUp, s)); b.grounded = false; }
+  b.rotZ = knock('leo', s);
   return b;
+}
+
+// An attacker in the duel: charge in, punch the frozen account, get blasted by the live one, run back in.
+function duelPose(b, side, s, from, contact, target) {
+  const d = duelAt(side, s), away = side === 'max' ? 1 : -1;
+  if (d.phase === 'charge') { b.pos = from.clone().lerp(contact, easeIn(d.u)); b.rotY = face(from, contact); b.layers = [[A.run, s * 1.6]]; b.face = 'angry'; return; }
+  b.pos = contact.clone().add(V(away * d.x, 0, 0)); b.rotY = face(b.pos, target);
+  if (d.phase === 'fly') {
+    const u = clamp((s - d.lastBlast) / 0.43); b.layers = [[A.shock, 0.3]]; b.face = 'shocked';
+    b.floor = 1.1 * Math.sin(Math.PI * u); b.rotZ = away * 0.35 * Math.sin(Math.PI * u);
+  } else if (d.phase === 'run') { b.layers = [[A.run, s * 1.8]]; b.face = 'angry'; }
+  else if (d.phase === 'jab') { const u = ((s - d.lastHit) % HIT_PERIOD) / HIT_PERIOD; b.layers = [[A.point_forward, u < 0.4 ? lerp(0, 0.18, u / 0.4) : lerp(0.18, 0, (u - 0.4) / 0.6)]]; b.face = 'evil_grin'; }
+  else { b.layers = [[A.shock, 0.3]]; b.face = 'dizzy'; }
 }
 
 function leoState(s) {
   const b = st(LEO0, face(LEO0, MAX0), idle(s, 0.3), 'determined');
-  if (s < W.teamed - 0.6) { b.rotY = toCam(LEO0); b.face = 'annoyed'; }
-  else if (s < W.fling) { b.layers = [[A.point_forward, 0.6]]; b.face = 'evil_grin'; }                       // fist bump
+  if (s < W.alt + 1.3) { b.rotY = face(LEO0, MIA.clone().lerp(NOOB, 0.5).add(V(0, 0, 8))); b.face = 'angry'; }
+  else if (s < W.fling) { b.layers = [[A.point_forward, s > W.teamed - 0.3 ? 0.6 : 0]]; b.face = 'evil_grin'; }   // fist bump on "teamed up"
   else if (s < W.noticed) { b.rotY = face(LEO0, V(20, 6, -30)); b.layers = [[A.shock, s - W.fling]]; b.face = 'shocked'; }
-  else if (s < W.attacked) {
+  else if (s < B.huddle[0]) {
     const u = easeInOut(inv(...B.pokeWalk, s)); b.pos = LEO0.clone().lerp(POKE, u);
     b.rotY = face(b.pos, NOOB); b.face = 'suspicious';
     b.layers = s > B.pokeWalk[0] && s < B.pokeWalk[1] ? [[A.walk, s]] : s > W.poked - 0.25 && s < W.poked + 0.6 ? [[A.point_forward, s - W.poked + 0.25]] : idle(s);
     if (s > W.onlyPlay) b.face = 'evil_grin';
-  } else if (s < W.herself + 0.6) {
-    b.pos = POKE.clone().lerp(AT_NOOB, easeInOut(inv(...B.charge, s))); b.rotY = face(b.pos, NOOB); b.face = 'angry';
-    b.layers = s < B.charge[1] ? [[A.run, s * 1.4]] : [[A.point_forward, (s * 3.2) % 0.6]];                // jabs
-    if (switching(s) && live(s) === 'noob') { b.layers = [[A.shock, 0.25]]; b.face = 'shocked'; b.pos.add(V(0.5, 0, 0.2)); }  // pushed back
-  } else {
-    const u = easeInOut(inv(...B.regroup, s)); b.pos = AT_NOOB.clone().lerp(LC, u); b.rotY = s < B.regroup[1] ? face(AT_NOOB, LC) : face(LC, NOOB);
-    b.layers = s < B.regroup[1] ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
+  } else if (s < CHARGE[0]) {
+    const u = easeInOut(inv(B.huddle[0], B.huddle[1] - 0.4, s)); b.pos = POKE.clone().lerp(HL, u);
+    b.rotY = u < 1 ? face(POKE, HL) : face(HL, HM); b.layers = u > 0 && u < 1 ? [[A.walk, s * 1.3]] : idle(s); b.face = 'evil_grin';
+  } else if (s < DUEL_END) duelPose(b, 'leo', s, HL, CL, NOOB);
+  else {
+    const from = CL.clone().add(V(-duelAt('leo', DUEL_END).x, 0, 0)), u = easeInOut(inv(...B.regroup, s)); b.pos = from.clone().lerp(LC, u);
+    b.rotY = u < 1 ? face(from, LC) : face(LC, NOOB); b.layers = u > 0 && u < 1 ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
     if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.layers = [[A.proud, s - W.newCrowns - 0.6]]; b.face = 'laugh'; b.rotY = toCam(b.pos); } }
     if (s > W.lasted - 0.1) { b.rotY = face(LC, MC); b.face = 'scheming'; b.layers = idle(s); }
     if (s > B.kickType[0]) { b.layers = [[A.typing, s * 2]]; b.face = 'evil_grin'; }
@@ -178,21 +192,18 @@ function leoState(s) {
 
 function maxState(s) {
   const b = st(MAX0, face(MAX0, LEO0), idle(s, 0.6), 'determined');
-  if (s < W.teamed - 0.6) { b.rotY = toCam(MAX0); b.face = 'smug'; }
-  else if (s < B.flung[0]) { b.layers = [[A.point_forward, 0.6]]; b.face = 'evil_grin'; if (s > W.fling - 0.4) { b.face = 'shocked'; b.layers = [[A.shock, s - W.fling + 0.4]]; } }
+  if (s < W.alt + 1.3) { b.rotY = face(MAX0, MIA.clone().lerp(NOOB, 0.5).add(V(0, 0, 8))); b.face = 'angry'; }
+  else if (s < B.flung[0]) { b.layers = [[A.point_forward, s > W.teamed - 0.3 ? 0.6 : 0]]; b.face = 'evil_grin'; if (s > W.fling - 0.4) { b.face = 'shocked'; b.layers = [[A.shock, s - W.fling + 0.4]]; } }
   else if (s < B.flung[1]) { const u = inv(...B.flung, s); b.grounded = false; b.pos = arc(MAX0, FLUNG, 10, easeIn(u)); b.layers = [[A.shock, 0.3]]; b.face = 'scared'; b.rotX = u * 7; b.rotZ = u * 2.5; }
   else if (s < B.respawn) b.visible = false;
-  else if (s < W.attacked) {
-    const u = easeInOut(inv(B.respawn + 0.8, W.attacked - 0.3, s)); b.pos = SPAWN.clone().lerp(MAX0, u);
-    b.rotY = u > 0 && u < 1 ? face(SPAWN, MAX0) : face(MAX0, MIA); b.layers = u > 0 && u < 1 ? [[A.walk, s]] : idle(s); b.face = 'angry';
-  } else if (s < W.herself + 0.6) {
-    b.pos = MAX0.clone().lerp(AT_MIA, easeInOut(inv(...B.charge, s))); b.rotY = face(b.pos, MIA); b.face = 'angry';
-    b.layers = s < B.charge[1] ? [[A.run, s * 1.4 + 0.3]] : [[A.point_forward, (s * 3.2 + 0.3) % 0.6]];
-    if (switching(s) && live(s) === 'mia') { b.layers = [[A.shock, 0.25]]; b.face = 'shocked'; b.pos.add(V(0.5, 0, 0.2)); }
-    if (s > W.herself) { b.layers = [[A.shock, s - W.herself]]; b.face = 'dizzy'; b.pos.add(V(0.9 * easeOut(inv(W.herself, W.herself + 0.3, s)), 0, 0)); }  // bounces off the ice
-  } else {
-    const from = AT_MIA.clone().add(V(0.9, 0, 0)), u = easeInOut(inv(...B.regroup, s)); b.pos = from.clone().lerp(MC, u);
-    b.rotY = s < B.regroup[1] ? face(from, MC) : face(MC, NOOB); b.layers = s < B.regroup[1] ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
+  else if (s < CHARGE[0]) {
+    const u = easeInOut(inv(B.respawn + 0.8, B.huddle[1] - 0.4, s)); b.pos = SPAWN.clone().lerp(HM, u);
+    b.rotY = u > 0 && u < 1 ? face(SPAWN, HM) : face(HM, HL); b.layers = u > 0 && u < 1 ? [[A.run, s * 1.4]] : idle(s); b.face = 'angry';
+    if (s > B.huddle[1] - 0.4) b.face = 'evil_grin';
+  } else if (s < DUEL_END) duelPose(b, 'max', s, HM, CM, MIA);
+  else {
+    const from = CM.clone().add(V(duelAt('max', DUEL_END).x, 0, 0)), u = easeInOut(inv(...B.regroup, s)); b.pos = from.clone().lerp(MC, u);
+    b.rotY = u < 1 ? face(from, MC) : face(MC, NOOB); b.layers = u > 0 && u < 1 ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
     if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.layers = [[A.proud, s - W.newCrowns - 0.6]]; b.face = 'laugh'; b.rotY = toCam(b.pos); } }
     if (s > W.lasted - 0.1) { b.rotY = face(MC, LC); b.face = 'scheming'; b.layers = idle(s); }
     if (s > B.kickType[0]) { b.layers = [[A.typing, s * 2 + 0.2]]; b.face = 'evil_grin'; }
@@ -240,12 +251,14 @@ export function update(t, stage) {
 
   // Crowns: Mia's and the noob's from the start; Leo's and Max's drop on at "two new crowns" and go with them when kicked.
   for (const a of [mia, noob, leo, max]) {
-    const fit = crowns[a.name], c = fit.item, on = a === leo || a === max ? B.crownsOn - 0.5 : -1;
+    const fit = crowns[a.name], c = fit.item, on = a === leo || a === max ? B.crownsOn - 0.5 : a === mia ? B.crownMia[0] - 0.4 : B.crownNoob[1] - 0.5;
     c.visible = a.root.visible && s >= on;
     if (!c.visible) continue;
     c.quaternion.copy(a.bones.Head.getWorldQuaternion(new THREE.Quaternion())); c.scale.setScalar(fit.scale * a.root.scale.x);
     c.position.copy(a.bones.Head.localToWorld(fit.offset.clone()));
-    if (on > 0) c.position.y += 5 * (1 - easeOutBack(inv(on, on + 0.5, s), 1.2));
+    if (a === mia) c.position.y += 1.6 * (1 - easeIn(inv(...B.crownMia, s)));                 // slams down
+    else if (a === noob) c.position.y += 2.4 * (1 - easeIn(inv(...B.crownNoob, s)));
+    else if (on > 0) c.position.y += 5 * (1 - easeOutBack(inv(on, on + 0.5, s), 1.2));
   }
   ice.visible = s > B.ice[0]; ice.position.copy(MIA); ice.rotation.y = mia.root.rotation.y; ice.scale.setScalar(easeOutBack(inv(...B.ice, s), 1.6) || 0.001);
 
@@ -257,6 +270,7 @@ export function update(t, stage) {
   }
   // Puffs: the plank landing, ice forming, both boys kicked.
   const events = [[B.plank[1], NOOB.clone().add(V(0, 0.3, -2.4)), 1.4, 0.8], [B.ice[0], MIA.clone().add(V(0, 2, 0)), 2.2, 0.8], [B.kicked, LC.clone().add(V(0, 2.5, 0)), 1.6, 0.8], [B.kicked, MC.clone().add(V(0, 2.5, 0)), 1.6, 0.8]];
+  for (const [side, tgt] of [['max', CM], ['leo', CL]]) for (const bt of EVENTS.blasts[side]) if (s >= bt && s < bt + 0.45) events.push([bt, tgt.clone().add(V(side === 'max' ? 0.6 : -0.6, 2.6, 0)), 0.9, 0.45]);
   const evs = events.filter((e) => s >= e[0] && s < e[0] + e[3]);
   puffs.forEach((p, i) => {
     const ev = evs[i % Math.max(1, evs.length)]; p.visible = !!ev; if (!ev) return;
@@ -265,7 +279,7 @@ export function update(t, stage) {
     p.scale.setScalar(size * (0.3 + 0.5 * easeOut(u))); p.material.opacity = 0.85 * (1 - u) ** 2;
   });
   // Sparkles: the new crowns, Skye arriving.
-  const sparkAt = [[B.crownsOn, LC.clone().add(V(0, 6, 0))], [B.crownsOn, MC.clone().add(V(0, 6, 0))], [B.skye, SPAWN.clone().add(V(0, 5.5, 0))]];
+  const sparkAt = [[B.crownMia[1], head(mia).add(V(0, 0.8, 0))], [B.crownNoob[1], head(noob).add(V(0, 0.8, 0))], [B.crownsOn, LC.clone().add(V(0, 6, 0))], [B.crownsOn, MC.clone().add(V(0, 6, 0))], [B.skye, SPAWN.clone().add(V(0, 5.5, 0))]];
   const sps = sparkAt.filter((e) => s >= e[0] && s < e[0] + 1);
   sparkles.forEach((m, i) => {
     const sp = sps[i % Math.max(1, sps.length)]; m.visible = !!sp; if (!sp) return;
@@ -279,29 +293,41 @@ export function update(t, stage) {
   const ih = head(mia), nh = head(noob), lh = head(leo), xh = head(max);
   const pair = MIA.clone().lerp(NOOB, 0.5);
   stage.bloom.strength = 0.3;
+  const mid = (a, b) => a.clone().lerp(b, 0.5);
+  const duelM = V(-2.7, 3.2, 0.7), duelN = V(2.7, 3.2, 0.5);     // room for the attacker to fly back
+  const shake = (at, k, dur = 0.3) => (s > at && s < at + dur ? jolt(t, k * (1 - (s - at) / dur)) : V(0, 0, 0));
+  const lastBlast = Math.max(...[...EVENTS.blasts.max, ...EVENTS.blasts.leo].filter((x) => x <= s), -9);
   switch (shot.id) {
-    case 'hook': frame(stage, V(0.9, 3.4, 0.3), 0.06, 0.08, lerp(15, 13.5, easeOut(u)), 40); break;      // all four: two crowns vs the team
-    case 'team': frame(stage, LEO0.clone().lerp(MAX0, 0.5).add(V(0, 3.4, 0)), -0.15, 0.08, 7.5, 40); break;
-    case 'miaType': frame(stage, pair.clone().add(V(0, 3.6, 0.2)), 0.25, 0.08, 8, 40); break;
-    case 'fling': { const p = max.root.visible ? max.bones.Torso.localToWorld(V(0, 1, 0)) : FLUNG.clone(); const k = easeOut(inv(B.flung[0], B.flung[0] + 1.2, s)); look(stage, V(lerp(2, -4, k), lerp(4, 8, k), lerp(16, 12, k)), MAX0.clone().add(V(0, 3.5, 0)).lerp(p, 0.55 * k), 50); break; }
-    case 'notice': frame(stage, lh.clone().add(V(0, -0.2, 0)), toCam(LEO0) - 0.5, 0.06, 5.5, 36); break;
-    case 'frozen': frame(stage, pair.clone().add(V(0, 3.6, 0)), 0.2, 0.08, 8.5, 40); break;
-    case 'poke': frame(stage, NOOB.clone().lerp(POKE, 0.4).add(V(-0.4, 2.4, -0.6)).add(s > B.plank[1] && s < B.plank[1] + 0.3 ? jolt(t, 0.18 * (1 - (s - B.plank[1]) / 0.3)) : V(0, 0, 0)), 0.1, 0.12, 9, 40); break;
-    case 'rule': frame(stage, pair.clone().add(V(0, 3.6, 0)), 0.15, 0.1, 9.5, 40); break;
-    case 'charge': frame(stage, V(0.4, 3.4, 0.2), 0.05, 0.12, 14, 40); break;
-    case 'swMia': case 'swNoob': frame(stage, pair.clone().add(V(0.9, 3.3, 0)), 0.05, 0.07, lerp(11, 10, u), 40); break;   // two-shot: one plays, one freezes
-    case 'frenzy': { const last = SEG.filter(([tt]) => tt <= s).pop()[0], j = s - last < 0.08 ? jolt(t, 0.08) : V(0, 0, 0); frame(stage, pair.clone().add(V(0.9, 3.3, 0)).add(j), 0.05, 0.07, 9.5, 40); break; }   // a jolt on every switch
-    case 'miaFreeze': frame(stage, ih.clone().add(V(0.3, -0.6, 0)), -0.3, 0.06, 6.5, 38); break;      // from her left, Max behind her shoulder
-    case 'ice': frame(stage, MIA.clone().add(V(1.0, 3.3, 0.3)).add(s > B.ice[0] && s < B.ice[0] + 0.3 ? jolt(t, 0.15 * (1 - (s - B.ice[0]) / 0.3)) : V(0, 0, 0)), 0.3, 0.1, 10, 40); break;
-    case 'ten': frame(stage, V(0, 3.4, 0.6), 0.05, 0.1, 14, 40); break;
-    case 'noobType': frame(stage, nh.clone().add(V(-0.2, -0.2, 0)), toCam(NOOB) - 0.15, 0.06, 5.5, 36); break;
-    case 'crowns': frame(stage, LC.clone().lerp(MC, 0.5).add(V(0, 4.3, 0)), 0.05, 0.08, 11.5, 40); break;
-    case 'faceOff': frame(stage, LC.clone().lerp(MC, 0.5).add(V(0, 3.6, 0)), 0.0, 0.06, 10.5, 38); break;
-    case 'kickType': frame(stage, LC.clone().lerp(MC, 0.5).add(V(0, 3.4, 0)), 0.0, 0.06, 11, 38); break;
-    case 'kicked': frame(stage, LC.clone().lerp(MC, 0.5).add(V(0, 3.4, 0)).add(s > B.kicked && s < B.kicked + 0.3 ? jolt(t, 0.2 * (1 - (s - B.kicked) / 0.3)) : V(0, 0, 0)), 0.0, 0.08, 12, 40); break;
-    case 'wins': frame(stage, pair.clone().add(V(0.3, 3.6, 0.2)), 0.15, 0.08, lerp(9.5, 8.5, u), 40); break;
-    case 'skye': frame(stage, SPAWN.clone().add(V(0, 3.5, 0)), 0.15, 0.08, lerp(9, 7, easeInOut(u)), 38); break;
-    default: frame(stage, SPAWN.clone().add(V(0, 5.0, 0)), 0.15, 0.06, 7, 36);           // CTA: Skye's face just under the end card
+    case 'hookMia': { const k = easeOut(clamp((s - B.crownMia[1]) / 0.5)); frame(stage, ih.clone().add(V(0, 0.45, 0)).add(shake(B.crownMia[1], 0.18)), toCam(MIA) + 0.15, 0.05, lerp(3.3, 4.3, k), 36); break; }
+    case 'hookNoob': { const k = easeInOut(clamp((s - shot.start) / 0.22)); frame(stage, ih.clone().lerp(nh, k).add(V(0, lerp(0.45, 0.3, k), 0)).add(shake(B.crownNoob[1], 0.2)), lerp(toCam(MIA), toCam(NOOB), k) + 0.15, 0.05, lerp(4.3, 4.6, k), 36); break; }
+    case 'reveal': { const k = easeOut(clamp(u * 2.2)); frame(stage, nh.clone().add(V(0, -0.2, 0)).lerp(V(0, 3.2, -0.8), k), lerp(toCam(NOOB) + 0.15, 0.02, k), lerp(0.05, 0.1, k), lerp(4.4, 16, k), lerp(36, 40, k)); break; }   // crash zoom out
+    case 'altTag': frame(stage, V(0, 3.4, -0.4), 0.02, 0.1, lerp(16, 14.5, u), 40); break;
+    case 'team': frame(stage, mid(LEO0, MAX0).add(V(0, 3.4, 0)).add(shake(W.teamed - 0.25, 0.12)), -0.12, 0.08, lerp(8.5, 7.2, u), 40); break;
+    case 'miaType': frame(stage, mid(MIA, MAX0).add(V(0, 3.4, 0)), -0.45, 0.08, 11, 40); break;
+    case 'fling': { const p = max.root.visible ? max.bones.Torso.localToWorld(V(0, 1, 0)) : FLUNG.clone(); const k = easeOut(inv(B.flung[0], B.flung[0] + 1.2, s)); look(stage, V(lerp(2, -4, k), lerp(4, 8, k), lerp(14, 10, k)), MAX0.clone().add(V(0, 3.5, 0)).lerp(p, 0.55 * k), 50); break; }
+    case 'notice': frame(stage, lh.clone().add(V(0, -0.2, 0)), toCam(LEO0) + 0.4, 0.06, 5.5, 36); break;
+    case 'frozen': { const k = easeInOut(clamp(u * 1.4)); frame(stage, V(lerp(MIA.x, NOOB.x, k), 3.3, 0.6), 0.05, 0.08, 7.5, 40); break; }   // pan: Mia typing -> noob frozen mid-dance
+    case 'poke': frame(stage, mid(NOOB, POKE).add(V(0.2, 2.6, -0.4)).add(shake(B.plank[1], 0.18)), 0.1, 0.12, 9, 40); break;
+    case 'rule': frame(stage, V(0, 3.3, -0.6), 0.02, 0.1, 15.5, 40); break;
+    case 'charge': frame(stage, V(0, 3.0, -0.6), 0.02, lerp(0.22, 0.12, u), lerp(17, 15, u), 42); break;
+    case 'duelMia': frame(stage, duelM.clone().add(shake(lastBlast, 0.12)), 0.2, 0.06, lerp(9.8, 9.2, u), 40); break;
+    case 'duelNoob': frame(stage, duelN.clone().add(shake(lastBlast, 0.12)), -0.2, 0.06, lerp(9.8, 9.2, u), 40); break;
+    case 'whip': {      // whip-pan to whichever account just went live
+      const side = (w) => (w === 'mia' ? duelM : duelN), st0 = segStart(s), prev = live(st0 - 0.001), k = easeInOut(clamp((s - st0) / 0.18));
+      frame(stage, side(prev).clone().lerp(side(live(s)), k).add(shake(lastBlast, 0.12)), lerp(prev === 'mia' ? 0.2 : -0.2, live(s) === 'mia' ? 0.2 : -0.2, k), 0.06, 9.8, 40); break;
+    }
+    case 'frenzy': frame(stage, V(0, 3.2, 0.4).add(shake(segStart(s), 0.1, 0.1)), 0.02, 0.08, lerp(16.5, 14.5, u), 40); break;   // both fights, a jolt on every switch
+    case 'miaFreeze': frame(stage, ih.clone().add(V(0.3, -0.6, 0)), -0.3, 0.06, 6.5, 38); break;
+    case 'ice': frame(stage, MIA.clone().add(V(1.0, 3.3, 0.3)).add(shake(B.ice[0], 0.15)), 0.3, 0.1, 10, 40); break;
+    case 'ten': frame(stage, V(0, 3.4, 0.6), 0.02, 0.1, 15, 40); break;
+    case 'noobType': frame(stage, nh.clone().add(V(0.2, -0.2, 0)), 0.3, 0.06, 5.5, 36); break;     // from his right: Leo stays out of shot
+    case 'crowns': frame(stage, mid(LC, MC).add(V(0, 4.3, 0)), 0.02, 0.08, 11.5, 40); break;
+    case 'faceOff': frame(stage, mid(LC, MC).add(V(0, 3.6, 0)), 0.0, 0.06, 10.5, 38); break;
+    case 'kickType': frame(stage, mid(LC, MC).add(V(0, 3.4, 0)), 0.0, 0.06, 11, 38); break;
+    case 'kicked': frame(stage, mid(LC, MC).add(V(0, 3.4, 0)).add(shake(B.kicked, 0.2)), 0.0, 0.08, 12, 40); break;
+    case 'wins': frame(stage, V(0, 3.6, 0.2), 0.02, 0.08, lerp(15.5, 14.5, u), 40); break;
+    case 'skye': frame(stage, SPAWN.clone().add(V(0, 3.5, 0)), 0, 0.3, lerp(6.8, 6.2, easeInOut(u)), 24); break;   // long lens: nobody in the foreground
+    default: frame(stage, SPAWN.clone().add(V(0, 5.0, 0)), 0, 0.3, 7, 24);           // CTA: Skye's face just under the end card
   }
 }
 
@@ -371,10 +397,25 @@ function tagOver(g, s, a, text, bg, fg, alpha = 1) {
 
 export function overlay(g, s, t) {
   hud(g, s, t);
-  if (t < B.cta) chatBox(g, s, t);
+  const fight = ['charge', 'duelMia', 'duelNoob', 'whip', 'frenzy'].includes(SHOT);
+  if (t < B.cta && !fight) chatBox(g, s, t);
+  // Opening: the crown slams onto Mia; "x2" as the second one slams onto the noob.
+  if (t < 0.45) speedLines(g, s, t, 0.5 * (1 - t / 0.45), { cx: 540, cy: 760 });
+  if (t > B.crownNoob[1] - 0.02 && t < W.twice + 0.85) bigText(g, s, 'x2', 800, 700, 230, '#FFD23F', { k: easeOutBack(clamp((t - B.crownNoob[1]) / 0.15), 3), rot: 0.12 });
+  // Mia and the noob are the same player.
+  if (t > W.alt - 0.25 && t < W.alt + 1.25) {
+    const a = project(head(mia).add(V(0, 2.0, 0)), s), b2 = project(head(noob).add(V(0, 2.0, 0)), s), k = easeInOut(clamp((t - W.alt + 0.25) / 0.45));
+    if (a.on && b2.on) {
+      const cx = (a.x + b2.x) / 2, cy = Math.min(a.y, b2.y) - 120 * s;
+      g.save(); g.strokeStyle = '#FF8AC8'; g.lineWidth = 10 * s; g.setLineDash([26 * s, 16 * s]); g.lineCap = 'round';
+      g.beginPath(); const N = 40; for (let i = 0; i <= N * k; i++) { const u = i / N, x = (1 - u) * (1 - u) * a.x + 2 * u * (1 - u) * cx + u * u * b2.x, y = (1 - u) * (1 - u) * a.y + 2 * u * (1 - u) * cy + u * u * b2.y; i ? g.lineTo(x, y) : g.moveTo(x, y); }
+      g.stroke(); g.restore();
+      if (k > 0.98) bigText(g, s, 'SAME PLAYER', cx / s, cy / s + 150, 76, '#FF8AC8', { k: easeOutBack(clamp((t - W.alt - 0.2) / 0.2), 2.4) });
+    }
+  }
   // Opening: one round is one minute.
-  if (t > 0.55 && t < W.teamed - 0.6) {
-    const k = easeOutBack(clamp((t - 0.55) / 0.25), 2.2), al = 1 - inv(W.teamed - 0.85, W.teamed - 0.6, t);
+  if (t > W.twice + 0.95 && t < W.alt + 1.3) {
+    const k = easeOutBack(clamp((t - W.twice - 0.95) / 0.25), 2.2), al = 1 - inv(W.alt + 1.05, W.alt + 1.3, t);
     g.save(); g.globalAlpha = al; g.translate(540 * s, 1440 * s); g.scale(k, k); g.rotate(-0.03);
     roundRect(g, -390 * s, -70 * s, 780 * s, 140 * s, 40 * s); g.fillStyle = '#FFD23F'; g.fill(); g.lineWidth = 7 * s; g.strokeStyle = '#152435'; g.stroke();
     g.font = `${74 * s}px "Luckiest Guy"`; g.fillStyle = '#152435'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('1 ROUND = 1 MINUTE', 0, 6 * s);
@@ -397,7 +438,7 @@ export function overlay(g, s, t) {
   // ALT+TAB counter.
   if (switching(t) && t < W.freeze - 0.2) {
     const n = switches(t), last = SEG.filter(([tt]) => tt <= t).pop()[0], a = t - last;
-    g.save(); g.translate(540 * s, 780 * s); g.rotate(-0.05); g.scale(1 + 0.25 * (1 - clamp(a / 0.15)), 1 + 0.25 * (1 - clamp(a / 0.15)));
+    g.save(); g.translate(430 * s, 455 * s); g.rotate(-0.04); g.scale(0.8 * (1 + 0.25 * (1 - clamp(a / 0.15))), 0.8 * (1 + 0.25 * (1 - clamp(a / 0.15))));
     g.font = `${70 * s}px "Luckiest Guy"`; const kw = (txt) => g.measureText(txt).width + 40 * s;
     const keys = ['ALT', '+', 'TAB'], ws = keys.map((k) => (k === '+' ? 40 * s : kw(k))), tot = ws.reduce((x, y) => x + y, 0) + 20 * s;
     let xx = -tot / 2;
@@ -406,7 +447,7 @@ export function overlay(g, s, t) {
       g.fillStyle = k === '+' ? '#ffffff' : '#152435'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(k, xx + ws[i] / 2, 6 * s); xx += ws[i] + 10 * s;
     });
     g.restore();
-    bigText(g, s, `x${n}`, 540, 900, 110, '#FFD23F', { k: 1 + 0.2 * (1 - clamp(a / 0.15)) });
+    bigText(g, s, `x${n}`, 790, 455, 110, '#FFD23F', { k: 1 + 0.2 * (1 - clamp(a / 0.15)) });
   }
   // The :freeze on the wrong window, in Mia's own input box.
   if (t > W.freeze - 0.6 && t < W.herself + 0.4) inputBox(g, s, ':freeze'.slice(0, Math.ceil(clamp((t - W.freeze + 0.6) / 0.5) * 7)), { label: 'Mia', color: '#C9A6FF', t, cursor: t < W.justFreeze + 0.25 });
@@ -427,8 +468,8 @@ export function overlay(g, s, t) {
   // Two input boxes, side by side, typed at once.
   if (t > B.kickType[0] && t < W.kicked) {
     const u = clamp((t - B.kickType[0]) / (B.kickType[1] - B.kickType[0]));
-    inputBox(g, s, ':kick max'.slice(0, Math.ceil(u * 9)), { x: 40, w: 490, size: 54, label: 'Leo', color: '#FF9E80', t, cursor: t < W.enter });
-    inputBox(g, s, ':kick leo'.slice(0, Math.ceil(u * 9)), { x: 550, w: 490, size: 54, label: 'Max', color: '#7FE3DD', t, cursor: t < W.enter });
+    inputBox(g, s, ':kick max'.slice(0, Math.ceil(u * 9)), { x: 550, w: 490, size: 54, label: 'Leo', color: '#FF9E80', t, cursor: t < W.enter });
+    inputBox(g, s, ':kick leo'.slice(0, Math.ceil(u * 9)), { x: 40, w: 490, size: 54, label: 'Max', color: '#7FE3DD', t, cursor: t < W.enter });
     if (t > W.enter) bigText(g, s, 'ENTER', 540, 780, 130, '#8BE36B', { k: easeOutBack(clamp((t - W.enter) / 0.15), 3) });
   }
   if (t >= W.roundOver && t < W.chat - 0.3) { bigText(g, s, 'ROUND OVER', 540, 700, 118, '#FFD23F', { k: easeOutBack(clamp((t - W.roundOver) / 0.25), 2) }); if (t > W.wins) bigText(g, s, 'MIA WINS (AGAIN)', 540, 830, 84, '#C9A6FF', { k: easeOutBack(clamp((t - W.wins) / 0.2), 2.4) }); }
@@ -452,6 +493,29 @@ export function overlay(g, s, t) {
   }
   flash(g, s, t >= B.kicked && t < B.kicked + 0.15 ? 0.4 * (1 - (t - B.kicked) / 0.15) : t >= B.ice[0] && t < B.ice[0] + 0.12 ? 0.35 : 0, '#ffffff');
   if (SHOT === 'fling') speedLines(g, s, t, 0.45, { cx: 540, cy: 900 });
+  if (SHOT === 'charge' && t > CHARGE[0] && t < CHARGE[1] + 0.2) speedLines(g, s, t, 0.4, { cx: 540, cy: 900 });
+  // The duels: HP bars over Mia's accounts, damage numbers on every punch, POW on every blast.
+  if (t > CHARGE[1] - 0.2 && t < W.herself + 0.5) {
+    for (const [side, who, foe] of [['max', mia, max], ['leo', noob, leo]]) {
+      const d = duelAt(side, t), p = project(head(who).add(V(0, 2.55, 0)), s);
+      if (p.on) {
+        const w = 190 * s, h = 26 * s, hp = d.hp / 100;
+        g.save(); roundRect(g, p.x - w / 2, p.y - h / 2, w, h, 10 * s); g.fillStyle = 'rgba(12,18,28,.8)'; g.fill();
+        roundRect(g, p.x - w / 2 + 4 * s, p.y - h / 2 + 4 * s, (w - 8 * s) * hp, h - 8 * s, 7 * s); g.fillStyle = hp > 0.6 ? '#46d36b' : hp > 0.3 ? '#ffc83d' : '#ff4d5e'; g.fill();
+        g.font = `${24 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.textAlign = 'right'; g.textBaseline = 'middle'; g.fillText('HP', p.x - w / 2 - 8 * s, p.y + 2 * s); g.restore();
+      }
+      for (const ht of EVENTS.hits[side]) {
+        const a = t - ht; if (a < 0 || a > 0.6) continue;
+        const q = project(head(who).add(V(side === 'max' ? 0.9 : -0.9, 0.6, 0.4)), s); if (!q.on) continue;
+        bigText(g, s, '-5', q.x / s, q.y / s - 120 * a, 64, '#ff4d5e', { alpha: 1 - inv(0.35, 0.6, a), k: easeOutBack(clamp(a / 0.1), 3) });
+      }
+      for (const bt of EVENTS.blasts[side]) {
+        const a = t - bt; if (a < 0 || a > 0.4) continue;
+        const q = project(foe.bones.Torso.localToWorld(V(0, 1.6, 0)), s); if (!q.on) continue;
+        bigText(g, s, 'POW!', q.x / s, q.y / s - 60, 84, '#FFD23F', { alpha: 1 - inv(0.25, 0.4, a), k: easeOutBack(clamp(a / 0.1), 3), rot: side === 'max' ? 0.15 : -0.15 });
+      }
+    }
+  }
 }
 
 export const cast = () => ({ leo, max, mia, noob, skye });

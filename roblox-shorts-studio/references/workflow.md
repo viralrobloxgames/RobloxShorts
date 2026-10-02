@@ -51,6 +51,16 @@ open threads for the next part. Update it when a part is planned, delivered, and
 
 ### What the analytics have taught us (keep adding)
 
+- **The first 2 seconds need motion and impact, not a wide establishing shot** (user review of Part 5): open on a crash zoom /
+  punch-in on the main character with something landing (a crown slam, a hit), then whip-pan to the second beat. Wide shots come
+  after the hook.
+- **Action scenes need real action:** characters with space between them, knockbacks (fly back, run back in), hit reactions,
+  on-screen stakes (HP bars, damage numbers), camera whips and shakes on each hit. Bodies standing close together trading
+  small arm moves reads as "nothing happens". `projects/mia-had-two-crowns/web/duel.js` is a reusable pattern: a small
+  deterministic simulation that also feeds the SFX.
+- **Every motion needs a reason on screen.** No walking on the spot or idle loops that look like glitches; if a character must
+  be moving for a later freeze/joke, give the motion a purpose (celebrating, patrolling, typing).
+
 - The first 3-6 s decide the video: state the premise in the first line with the main character already doing it, readable
   at a glance. No flash-forwards, rewinds or intro cards. (The AFK Millionaire's first post lost ~70% by 0:06.)
 - An on-screen countdown or progress counter for the whole video, and a new visual payoff every 3-5 s.
