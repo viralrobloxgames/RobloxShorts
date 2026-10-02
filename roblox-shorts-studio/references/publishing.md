@@ -9,6 +9,17 @@ Making a video and posting it are separate steps. Post only once the user has ap
 - **TikTok:** longer than 60 s if it's aimed at Creator Rewards.
 - Audience settings are chosen deliberately. A cartoon look does not mean the video is made for kids. Declare AI-generated / synthetic content (the voice is AI) where the platform asks.
 
+## TikTok caption rule (every video)
+
+Keep `post.json` tiktok.caption **short**:
+- one hook line and one question to drive comments;
+- 4-6 hashtags;
+- a one-line source at the end, e.g. `Source: Roblox RDC 2026`.
+
+Aim for about 150 characters at most. Don't write a paragraph summarising the video, and don't add a "Follow @..." line (the video says it).
+
+The full explainer and source links go in the YouTube description only. The user said the 368-character News #1 caption was "WAY too long for tiktok" (2026-10-02).
+
 ## Cover spec (every video)
 
 - `delivery/<Title>_cover.jpg` (+ `.png`): **1080x1920 (9:16)**, JPG under 2 MB (YouTube's thumbnail limit), sRGB.
