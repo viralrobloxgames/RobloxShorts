@@ -70,6 +70,8 @@ Rough cost of one 65 s web-route Short: narration 10-20 min, scene + cover + pos
 2. **The next video while this one renders.** During the 75-90 min render, write and get approval for the next script, and generate its
    narration **on the laptop** (two machines, so nothing competes with the render; a narration in the same cloud session would slow the
    render on its 4 shared CPUs).
+- **Disk:** a cloud session has a fixed disk allowance and a full 1080p render writes 1.4-5 GB of PNG frames. Once a video is delivered,
+   delete its `renders/` folder (git-ignored, re-renderable) before starting the next render; otherwise a render dies with ENOSPC.
 3. **Splitting a render across cloud sessions** (each takes a frame range) could cut the render to about a third. Not proven yet: the frame
    PNGs (gigabytes) have to come back to one place to be stitched. Test it before relying on it.
 
