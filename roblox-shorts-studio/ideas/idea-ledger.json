@@ -2,6 +2,18 @@
  "schema_version": 1,
  "ideas": [
   {
+   "title": "After Hours (working title): Roblox horror pilots",
+   "series": "roblox-horror",
+   "created": "2026-10-02",
+   "status": "idea",
+   "logline": "Standalone suspense stories with Max, Mia and Leo: an unlisted player copies them across an empty server, a duplicate-player encounter and a night shift.",
+   "platform": "TikTok / YouTube Shorts",
+   "project": "references/horror-series.md",
+   "research": "references/horror-research-2026-10-02.md",
+   "asset_plan": "assets/roblox_pack/HORROR_ASSETS.md",
+   "notes": "Working name, entity and pilot premises are not approved scripts; no videos produced. First pass of the asset kit built and reviewed 2026-10-02 (see the build status in the asset plan)."
+  },
+  {
    "title": "The Free Coin Trap",
    "series": "roblox",
    "created": "2026-09-17",

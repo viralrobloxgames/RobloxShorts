@@ -509,6 +509,104 @@
     "robloxMade": "rig, meshes and hair yes; clothing templates and faces are ours",
     "built": "tools/build_characters_local.py"
    }
+  },
+  {
+   "name": "Unlisted",
+   "path": "characters/Unlisted/Unlisted.obj",
+   "description": "Original rigid R6 entity; blank face and cyan chest signal.",
+   "objects": [
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Head",
+    "Face"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0125,
+     0.0,
+     -0.665
+    ],
+    "max": [
+     2.0125,
+     5.0,
+     0.66
+    ],
+    "size": [
+     4.025,
+     5.0,
+     1.3250000000000002
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "rig": "characters/Unlisted/rig.json",
+   "expressions": [
+    "neutral",
+    "happy",
+    "scared",
+    "shocked",
+    "revealed"
+   ],
+   "faceStyle": "unlisted"
+  },
+  {
+   "name": "UnlistedForest",
+   "path": "characters/UnlistedForest/UnlistedForest.obj",
+   "description": "Original rigid R6 entity; blank face and cyan chest signal.",
+   "objects": [
+    "Torso",
+    "Left Arm",
+    "Right Arm",
+    "Left Leg",
+    "Right Leg",
+    "Head",
+    "Face"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0125,
+     0.0,
+     -0.665
+    ],
+    "max": [
+     2.0125,
+     5.0,
+     0.66
+    ],
+    "size": [
+     4.025,
+     5.0,
+     1.3250000000000002
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "rig": "characters/UnlistedForest/rig.json",
+   "expressions": [
+    "neutral",
+    "happy",
+    "scared",
+    "shocked",
+    "revealed"
+   ],
+   "faceStyle": "unlisted"
   }
  ],
  "faces": {
@@ -1744,6 +1842,428 @@
     "decalTextures": null
    },
    "hold": "Roblox Tool with Grip = identity: Handle frame = OBJ frame. R6 hold: RightArm.CFrame * CFrame.new(0,-1,0) * CFrame.Angles(-pi/2,0,0); with the tool_hold animation +Y points up and -Z forward."
+  },
+  {
+   "name": "horror_fuse_box",
+   "path": "props/horror_fuse_box/horror_fuse_box.obj",
+   "description": "Wall-mounted fuse panel with switch and warning stripe.",
+   "objects": [
+    "Housing",
+    "FusesFrame",
+    "FusesFace",
+    "Fuse-0.4",
+    "Fuse0",
+    "Fuse0.4",
+    "Lever",
+    "WarningFrame",
+    "WarningFace"
+   ],
+   "dimensions": {
+    "min": [
+     -0.9,
+     0.0,
+     -0.445
+    ],
+    "max": [
+     0.9,
+     2.4,
+     0.25
+    ],
+    "size": [
+     1.8,
+     2.4,
+     0.6950000000000001
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_monitor",
+   "path": "props/horror_monitor/horror_monitor.obj",
+   "description": "CRT-style security monitor with replaceable screen, signal light and dial.",
+   "objects": [
+    "Housing",
+    "ScreenFrame",
+    "ScreenFace",
+    "Stand",
+    "Neck",
+    "LED",
+    "Dial"
+   ],
+   "dimensions": {
+    "min": [
+     -1.65,
+     0.0050000000000000044,
+     -1.06
+    ],
+    "max": [
+     1.65,
+     3.0,
+     0.85
+    ],
+    "size": [
+     3.3,
+     2.995,
+     1.9100000000000001
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_rule_board",
+   "path": "props/horror_rule_board/horror_rule_board.obj",
+   "description": "Three interchangeable original night-shift rule cards.",
+   "objects": [
+    "RulesFrame",
+    "RulesFace"
+   ],
+   "dimensions": {
+    "min": [
+     -1.6,
+     0.10000000000000009,
+     -0.12000000000000001
+    ],
+    "max": [
+     1.6,
+     4.1,
+     0.08
+    ],
+    "size": [
+     3.2,
+     3.9999999999999996,
+     0.2
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_takeaway_bag",
+   "path": "props/horror_takeaway_bag/horror_takeaway_bag.obj",
+   "description": "Original folded kraft takeaway bag. Grip at origin.",
+   "objects": [
+    "Bag",
+    "Fold",
+    "BrandFrame",
+    "BrandFace"
+   ],
+   "dimensions": {
+    "min": [
+     -0.575,
+     -1.2000000000000002,
+     -0.49
+    ],
+    "max": [
+     0.575,
+     0.18,
+     0.36
+    ],
+    "size": [
+     1.15,
+     1.3800000000000001,
+     0.85
+    ]
+   },
+   "pivot": {
+    "kind": "grip"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_cup",
+   "path": "props/horror_cup/horror_cup.obj",
+   "description": "Takeaway drink with lid and straw. Grip at origin.",
+   "objects": [
+    "Cup",
+    "Lid",
+    "Straw"
+   ],
+   "dimensions": {
+    "min": [
+     -0.365,
+     -0.5,
+     -0.365
+    ],
+    "max": [
+     0.365,
+     1.0250000000000001,
+     0.365
+    ],
+    "size": [
+     0.73,
+     1.5250000000000001,
+     0.73
+    ]
+   },
+   "pivot": {
+    "kind": "grip"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_bell",
+   "path": "props/horror_bell/horror_bell.obj",
+   "description": "Desk bell with separate press button.",
+   "objects": [
+    "Base",
+    "Bell",
+    "Button"
+   ],
+   "dimensions": {
+    "min": [
+     -0.425,
+     0.0,
+     -0.425
+    ],
+    "max": [
+     0.425,
+     0.535,
+     0.425
+    ],
+    "size": [
+     0.85,
+     0.535,
+     0.85
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "controls": {
+    "press": {
+     "axis": "y",
+     "range": [
+      0,
+      -0.1
+     ],
+     "groups": [
+      "Button"
+     ]
+    }
+   }
+  },
+  {
+   "name": "horror_flashlight",
+   "path": "props/horror_flashlight/horror_flashlight.obj",
+   "description": "Grip at origin; beam points along native -Z; lens independent.",
+   "objects": [
+    "Grip",
+    "Barrel",
+    "Rim",
+    "Lens"
+   ],
+   "dimensions": {
+    "min": [
+     -0.35,
+     -0.425,
+     -1.0
+    ],
+    "max": [
+     0.35,
+     0.8,
+     0.2
+    ],
+    "size": [
+     0.7,
+     1.225,
+     1.2
+    ]
+   },
+   "pivot": {
+    "kind": "grip"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_radio",
+   "path": "props/horror_radio/horror_radio.obj",
+   "description": "Handheld radio with antenna, speaker slots and signal display.",
+   "objects": [
+    "Body",
+    "Antenna",
+    "DisplayFrame",
+    "DisplayFace",
+    "Speaker-0.1",
+    "Speaker0.03",
+    "Speaker0.16"
+   ],
+   "dimensions": {
+    "min": [
+     -0.35,
+     -0.375,
+     -0.34
+    ],
+    "max": [
+     0.35,
+     1.695,
+     0.2
+    ],
+    "size": [
+     0.7,
+     2.0700000000000003,
+     0.54
+    ]
+   },
+   "pivot": {
+    "kind": "grip"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_log",
+   "path": "props/horror_log/horror_log.obj",
+   "description": "Fuel log; bottom-centred with separate cut ends.",
+   "objects": [
+    "Bark",
+    "End-1.51",
+    "End1.51"
+   ],
+   "dimensions": {
+    "min": [
+     -1.52,
+     -1.1102230246251565e-16,
+     -0.5
+    ],
+    "max": [
+     1.52,
+     1.0,
+     0.5
+    ],
+    "size": [
+     3.04,
+     1.0,
+     1.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_rock",
+   "path": "props/horror_rock/horror_rock.obj",
+   "description": "Original angular boulder cluster.",
+   "objects": [
+    "Rock0",
+    "Rock1",
+    "Rock2"
+   ],
+   "dimensions": {
+    "min": [
+     -1.6225180654971718,
+     -0.09999999999999998,
+     -1.2361976219478066
+    ],
+    "max": [
+     1.8418205041405313,
+     1.4,
+     1.0
+    ],
+    "size": [
+     3.464338569637703,
+     1.5,
+     2.236197621947807
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_ceiling_light",
+   "path": "props/horror_ceiling_light/horror_ceiling_light.obj",
+   "description": "Ceiling light bar with independent emissive tube.",
+   "objects": [
+    "Case",
+    "Tube"
+   ],
+   "dimensions": {
+    "min": [
+     -1.9,
+     -0.08,
+     -0.35
+    ],
+    "max": [
+     1.9,
+     0.35,
+     0.35
+    ],
+    "size": [
+     3.8,
+     0.43,
+     0.7
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
   }
  ],
  "map": [
@@ -3162,6 +3682,842 @@
      "rbxassetid://73841515972004"
     ]
    }
+  },
+  {
+   "name": "horror_lobby",
+   "path": "map/horror_lobby/horror_lobby.obj",
+   "description": "Modular open-front room, removable roof, clear actor staging.",
+   "objects": [
+    "Floor",
+    "FloorSeam-8.0",
+    "FloorSeam-4.0",
+    "FloorSeam0.0",
+    "FloorSeam4.0",
+    "FloorSeam8.0",
+    "FloorCross-6.0",
+    "FloorCross-2.0",
+    "FloorCross2.0",
+    "FloorCross6.0",
+    "BackWall",
+    "SideWall-1",
+    "SideRail-1",
+    "SideSkirt-1",
+    "SideWall1",
+    "SideRail1",
+    "SideSkirt1",
+    "BackSkirt",
+    "BackRail",
+    "LampCase-7.0",
+    "LampGlow-7.0",
+    "LampCase7.0",
+    "LampGlow7.0",
+    "NoticeFrame",
+    "NoticeFace",
+    "ExitFrame",
+    "ExitFace",
+    "BenchSeat-5",
+    "BenchLeg-6.5",
+    "BenchLeg-3.5",
+    "BenchSeat5",
+    "BenchLeg3.5",
+    "BenchLeg6.5"
+   ],
+   "dimensions": {
+    "min": [
+     -10.25,
+     -0.35,
+     -8.0
+    ],
+    "max": [
+     10.25,
+     9.0,
+     8.25
+    ],
+    "size": [
+     20.5,
+     9.35,
+     16.25
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_wall",
+   "path": "map/horror_wall/horror_wall.obj",
+   "description": "8x9 wall panel with lower trim and cyan route stripe.",
+   "objects": [
+    "Wall",
+    "Skirt",
+    "Stripe"
+   ],
+   "dimensions": {
+    "min": [
+     -4.0,
+     0.0,
+     -0.255
+    ],
+    "max": [
+     4.0,
+     9.0,
+     0.2
+    ],
+    "size": [
+     8.0,
+     9.0,
+     0.455
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_corner",
+   "path": "map/horror_corner/horror_corner.obj",
+   "description": "Two perpendicular modular walls, inside corner at origin.",
+   "objects": [
+    "WallX",
+    "WallZ"
+   ],
+   "dimensions": {
+    "min": [
+     -0.2,
+     0.0,
+     -0.2
+    ],
+    "max": [
+     8.0,
+     9.0,
+     8.0
+    ],
+    "size": [
+     8.2,
+     9.0,
+     8.2
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_door",
+   "path": "map/horror_door/horror_door.obj",
+   "description": "6-stud clear opening, 7-stud height. Hinge on left, opens away from approach.",
+   "objects": [
+    "Frame-3.25",
+    "Frame3.25",
+    "Header",
+    "Door",
+    "Handle",
+    "Latch"
+   ],
+   "dimensions": {
+    "min": [
+     -3.5,
+     0.0,
+     -0.39
+    ],
+    "max": [
+     3.5,
+     7.5,
+     0.325
+    ],
+    "size": [
+     7.0,
+     7.5,
+     0.7150000000000001
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "controls": {
+    "door": {
+     "pivot": [
+      -3,
+      0,
+      0
+     ],
+     "axis": "y",
+     "range": [
+      0,
+      -100
+     ],
+     "groups": [
+      "Door",
+      "Handle",
+      "Latch"
+     ]
+    },
+    "clearance": [
+     6,
+     7
+    ]
+   }
+  },
+  {
+   "name": "horror_window",
+   "path": "map/horror_window/horror_window.obj",
+   "description": "Opaque framed window with separate glass for authored reflection inserts.",
+   "objects": [
+    "GlassFrame",
+    "GlassFace",
+    "Mullion",
+    "Sill"
+   ],
+   "dimensions": {
+    "min": [
+     -3.25,
+     1.5,
+     -0.3
+    ],
+    "max": [
+     3.25,
+     5.800000000000001,
+     0.3
+    ],
+    "size": [
+     6.5,
+     4.300000000000001,
+     0.6
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_corridor",
+   "path": "map/horror_corridor/horror_corridor.obj",
+   "description": "Modular open-front room, removable roof, clear actor staging.",
+   "objects": [
+    "Floor",
+    "FloorSeam-4.0",
+    "FloorSeam0.0",
+    "FloorSeam4.0",
+    "FloorCross-11.0",
+    "FloorCross-7.0",
+    "FloorCross-3.0",
+    "FloorCross1.0",
+    "FloorCross5.0",
+    "FloorCross9.0",
+    "BackWall",
+    "SideWall-1",
+    "SideRail-1",
+    "SideSkirt-1",
+    "SideWall1",
+    "SideRail1",
+    "SideSkirt1",
+    "BackSkirt",
+    "BackRail",
+    "LampCase-3.0",
+    "LampGlow-3.0",
+    "LampCase3.0",
+    "LampGlow3.0",
+    "CeilingBar-8",
+    "CeilingTube-8",
+    "CeilingBar0",
+    "CeilingTube0",
+    "CeilingBar8",
+    "CeilingTube8"
+   ],
+   "dimensions": {
+    "min": [
+     -6.25,
+     -0.35,
+     -13.0
+    ],
+    "max": [
+     6.25,
+     9.0,
+     13.25
+    ],
+    "size": [
+     12.5,
+     9.35,
+     26.25
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_locker",
+   "path": "map/horror_locker/horror_locker.obj",
+   "description": "Hinged storage locker and vented door.",
+   "objects": [
+    "Side-1.5",
+    "Side1.5",
+    "Back",
+    "Top",
+    "LockerDoor"
+   ],
+   "dimensions": {
+    "min": [
+     -1.575,
+     0.0,
+     -1.25
+    ],
+    "max": [
+     1.575,
+     6.575,
+     1.075
+    ],
+    "size": [
+     3.15,
+     6.575,
+     2.325
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "controls": {
+    "door": {
+     "pivot": [
+      -1.5,
+      0,
+      -1
+     ],
+     "axis": "y",
+     "range": [
+      0,
+      -95
+     ],
+     "groups": [
+      "LockerDoor"
+     ]
+    }
+   }
+  },
+  {
+   "name": "horror_service_counter",
+   "path": "map/horror_service_counter/horror_service_counter.obj",
+   "description": "Night-shift service window with vertical shutter.",
+   "objects": [
+    "Counter",
+    "CounterFront",
+    "Upright-5",
+    "Upright5",
+    "Top",
+    "Shutter"
+   ],
+   "dimensions": {
+    "min": [
+     -5.2,
+     0.0,
+     -1.5
+    ],
+    "max": [
+     5.2,
+     7.6,
+     1.5
+    ],
+    "size": [
+     10.4,
+     7.6,
+     3.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "controls": {
+    "shutter": {
+     "axis": "y",
+     "range": [
+      0,
+      4.4
+     ],
+     "groups": [
+      "Shutter"
+     ]
+    }
+   }
+  },
+  {
+   "name": "horror_stockroom",
+   "path": "map/horror_stockroom/horror_stockroom.obj",
+   "description": "Modular open-front room, removable roof, clear actor staging.",
+   "objects": [
+    "Floor",
+    "FloorSeam-5.0",
+    "FloorSeam-1.0",
+    "FloorSeam3.0",
+    "FloorCross-4.0",
+    "FloorCross0.0",
+    "FloorCross4.0",
+    "BackWall",
+    "SideWall-1",
+    "SideRail-1",
+    "SideSkirt-1",
+    "SideWall1",
+    "SideRail1",
+    "SideSkirt1",
+    "BackSkirt",
+    "BackRail",
+    "LampCase-4.0",
+    "LampGlow-4.0",
+    "LampCase4.0",
+    "LampGlow4.0",
+    "Shelf(-4.5, 1)",
+    "Shelf(-4.5, 3.4)",
+    "Shelf(-4.5, 5.8)",
+    "ShelfPost(-4.5, -3)",
+    "ShelfPost(-4.5, 5)",
+    "Shelf(4.5, 1)",
+    "Shelf(4.5, 3.4)",
+    "Shelf(4.5, 5.8)",
+    "ShelfPost(4.5, -3)",
+    "ShelfPost(4.5, 5)"
+   ],
+   "dimensions": {
+    "min": [
+     -7.25,
+     -0.35,
+     -6.0
+    ],
+    "max": [
+     7.25,
+     9.0,
+     6.25
+    ],
+    "size": [
+     14.5,
+     9.35,
+     12.25
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_pedestal",
+   "path": "map/horror_pedestal/horror_pedestal.obj",
+   "description": "Statue plinth with original warning plate.",
+   "objects": [
+    "Foot",
+    "Column",
+    "Cap",
+    "WarningFrame",
+    "WarningFace"
+   ],
+   "dimensions": {
+    "min": [
+     -2.0,
+     0.0,
+     -2.0
+    ],
+    "max": [
+     2.0,
+     1.7999999999999998,
+     2.0
+    ],
+    "size": [
+     4.0,
+     1.7999999999999998,
+     4.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_campfire",
+   "path": "map/horror_campfire/horror_campfire.obj",
+   "description": "Rock ring, crossed logs, emissive flame cluster; high/low/out groups.",
+   "objects": [
+    "Stone0",
+    "Stone1",
+    "Stone2",
+    "Stone3",
+    "Stone4",
+    "Stone5",
+    "Stone6",
+    "Stone7",
+    "Stone8",
+    "Stone9",
+    "Stone10",
+    "Stone11",
+    "Log-45",
+    "Log45",
+    "Flame"
+   ],
+   "dimensions": {
+    "min": [
+     -1.6749999999999998,
+     0.0,
+     -1.6749999999999998
+    ],
+    "max": [
+     1.6749999999999998,
+     1.9500000000000002,
+     1.6749999999999998
+    ],
+    "size": [
+     3.3499999999999996,
+     1.9500000000000002,
+     3.3499999999999996
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true,
+   "controls": {
+    "fire": {
+     "groups": [
+      "Flame"
+     ],
+     "states": [
+      "high",
+      "low",
+      "out"
+     ]
+    }
+   }
+  },
+  {
+   "name": "horror_pine_tall",
+   "path": "map/horror_pine_tall/horror_pine_tall.obj",
+   "description": "Original block forest silhouette with trunk and low-poly crown.",
+   "objects": [
+    "Trunk",
+    "Crown0",
+    "Crown1",
+    "Crown2",
+    "Crown3"
+   ],
+   "dimensions": {
+    "min": [
+     -2.5,
+     0.0,
+     -2.5
+    ],
+    "max": [
+     2.5,
+     13.0,
+     2.5
+    ],
+    "size": [
+     5.0,
+     13.0,
+     5.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_pine_small",
+   "path": "map/horror_pine_small/horror_pine_small.obj",
+   "description": "Original block forest silhouette with trunk and low-poly crown.",
+   "objects": [
+    "Trunk",
+    "Crown0",
+    "Crown1",
+    "Crown2",
+    "Crown3"
+   ],
+   "dimensions": {
+    "min": [
+     -1.5384615384615385,
+     0.0,
+     -1.5384615384615385
+    ],
+    "max": [
+     1.5384615384615385,
+     8.0,
+     1.5384615384615385
+    ],
+    "size": [
+     3.076923076923077,
+     8.0,
+     3.076923076923077
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_dead_tree",
+   "path": "map/horror_dead_tree/horror_dead_tree.obj",
+   "description": "Original block forest silhouette with trunk and low-poly crown.",
+   "objects": [
+    "Trunk",
+    "Branch0",
+    "Branch1",
+    "Branch2"
+   ],
+   "dimensions": {
+    "min": [
+     -2.5109832815598905,
+     0.0,
+     -0.45
+    ],
+    "max": [
+     2.638784107996874,
+     11.0,
+     0.45
+    ],
+    "size": [
+     5.149767389556764,
+     11.0,
+     0.9
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_forest_ground",
+   "path": "map/horror_forest_ground/horror_forest_ground.obj",
+   "description": "Open clearing floor and trail with low-profile ground dressing.",
+   "objects": [
+    "Ground",
+    "Path",
+    "Grass0",
+    "Grass1",
+    "Grass2",
+    "Grass3",
+    "Grass4",
+    "Grass5",
+    "Grass6",
+    "Grass7",
+    "Grass8",
+    "Grass9",
+    "Grass10",
+    "Grass11",
+    "Grass12",
+    "Grass13",
+    "Grass14",
+    "Grass15",
+    "Grass16",
+    "Grass17",
+    "Grass18",
+    "Grass19"
+   ],
+   "dimensions": {
+    "min": [
+     -18.0,
+     -0.4,
+     -16.0
+    ],
+    "max": [
+     18.0,
+     0.4100084031894775,
+     16.0
+    ],
+    "size": [
+     36.0,
+     0.8100084031894775,
+     32.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_cabin",
+   "path": "map/horror_cabin/horror_cabin.obj",
+   "description": "Open-front cabin with plank walls, window and removable sloped roof.",
+   "objects": [
+    "Floor",
+    "BackPlank0.5",
+    "SidePlank(-1, 0.5)",
+    "SidePlank(1, 0.5)",
+    "BackPlank1.5",
+    "SidePlank(-1, 1.5)",
+    "SidePlank(1, 1.5)",
+    "BackPlank2.5",
+    "SidePlank(-1, 2.5)",
+    "SidePlank(1, 2.5)",
+    "BackPlank3.5",
+    "SidePlank(-1, 3.5)",
+    "SidePlank(1, 3.5)",
+    "BackPlank4.5",
+    "SidePlank(-1, 4.5)",
+    "SidePlank(1, 4.5)",
+    "BackPlank5.5",
+    "SidePlank(-1, 5.5)",
+    "SidePlank(1, 5.5)",
+    "BackPlank6.5",
+    "SidePlank(-1, 6.5)",
+    "SidePlank(1, 6.5)",
+    "BackPlank7.5",
+    "SidePlank(-1, 7.5)",
+    "SidePlank(1, 7.5)",
+    "Roof",
+    "Beam",
+    "WindowFrame",
+    "WindowFace"
+   ],
+   "dimensions": {
+    "min": [
+     -7.532679568428396,
+     -0.4,
+     -6.5
+    ],
+    "max": [
+     7.532679568428396,
+     10.740073354823888,
+     6.5
+    ],
+    "size": [
+     15.065359136856792,
+     11.140073354823889,
+     13.0
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
+  },
+  {
+   "name": "horror_safe_boundary",
+   "path": "map/horror_safe_boundary/horror_safe_boundary.obj",
+   "description": "Eight separate warm safe-zone markers, 12-stud diameter.",
+   "objects": [
+    "Marker0",
+    "Marker1",
+    "Marker2",
+    "Marker3",
+    "Marker4",
+    "Marker5",
+    "Marker6",
+    "Marker7"
+   ],
+   "dimensions": {
+    "min": [
+     -6.325,
+     0.010000000000000002,
+     -6.325
+    ],
+    "max": [
+     6.325,
+     0.07,
+     6.325
+    ],
+    "size": [
+     12.65,
+     0.060000000000000005,
+     12.65
+    ]
+   },
+   "pivot": {
+    "kind": "bottom_centre"
+   },
+   "source": {
+    "built": "Original After Hours kit, tools/build_horror.py",
+    "robloxMade": false,
+    "free": true
+   },
+   "horror": true
   }
  ],
  "animations": "animations/index.json",
@@ -3283,11 +4639,12 @@
   }
  ],
  "counts": {
-  "characters": 5,
+  "characters": 7,
   "faces_per_character": 32,
   "accessories": 12,
-  "props": 10,
-  "map": 36,
-  "animations": 51
- }
+  "props": 21,
+  "map": 53,
+  "animations": 63
+ },
+ "horror": "horror/manifest.json"
 }
