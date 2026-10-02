@@ -16,6 +16,7 @@ Story narration (the admin series and other story Shorts) is generated free on t
 - It joins the clips with 0.4 s gaps into `audio/narration.wav`, writes `narration-source.json`, runs `transcribe.py` for word timings (Qwen gives none), and compares what was heard with the script.
 - It prints about 3–10 lines: `NARRATION_READY ...` and then either `CHECK clean` or the lines whose words differ or whose pace looks wrong. Everything else goes to `audio/qwen/<take>/narrate.log`; read that only if it fails.
 - Whisper often mishears names and game words, so a flagged line is not proof of a bad read. Cloned voices do sometimes drop a sentence-opening "And" or "So", or the last word of a long line. Fix one with `--redo 3,7`, which regenerates only those lines, re-joins and re-checks.
+- Every take comes out a little different. On 2026-10-02, the same `brittney` sample gave one take that sounded off and one the user rated closest of five; a longer mid-episode sample did no better. So if a line doesn't sound like the voice, `--redo` it rather than changing the sample.
 - Speed: about 1.5–3 min to load the model, then about 16 s per second of speech, so a 60 s Short takes about 17–20 min. Generation is free, but still get the script approved first.
 
 Don't run two Qwen jobs at once, because the laptop has 8 GB of RAM. In this Claude app's shell, `uv` needs `UV_PYTHON_INSTALL_DIR` and `UV_CACHE_DIR` pointed at `~/.uv` (the app sandboxes AppData); the `tts.bat` and Studio launchers don't.
