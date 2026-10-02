@@ -1,0 +1,26 @@
+{
+ "0.6B_short": {
+  "sim": 0.835,
+  "f0": 127.3,
+  "length_vs_real": 1.33,
+  "secs": 88
+ },
+ "0.6B_long": {
+  "sim": 0.8,
+  "f0": 107.9,
+  "length_vs_real": 1.12,
+  "secs": 97
+ },
+ "0.6B_long+avg": {
+  "sim": 0.818,
+  "f0": 119.1,
+  "length_vs_real": 1.12,
+  "secs": 96
+ },
+ "0.6B_short+avg": {
+  "sim": 0.804,
+  "f0": 129.1,
+  "length_vs_real": 1.27,
+  "secs": 85
+ }
+}
