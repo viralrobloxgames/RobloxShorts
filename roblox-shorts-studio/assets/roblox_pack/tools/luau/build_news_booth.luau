@@ -121,8 +121,8 @@ for i = 0, N - 1 do
 	local w = 2 * RF * math.sin(SPAN / N) + 0.06
 	local function at(y, r) local p = Vector3.new(O.X, 0, O.Z) + out * r + Vector3.new(0, y, 0); return CFrame.lookAt(p, p + out) end
 	part(desk, "Body" .. i, { Size = Vector3.new(w, bodyH, DEPTH), CFrame = at(PLATFORM_H + bodyH / 2, RF - DEPTH / 2), Color = PLUM, CanCollide = true })
-	part(desk, "Top" .. i, { Size = Vector3.new(w + 0.08, 0.14, DEPTH + 0.35), CFrame = at(TOP + 0.07, RF - DEPTH / 2 + 0.12), Color = WHITE })
-	neon(desk, "TopStrip" .. i, { Size = Vector3.new(w + 0.02, 0.06, 0.04), CFrame = at(TOP - 0.03, RF + 0.3) })
+	part(desk, "Top" .. i, { Size = Vector3.new(w + 0.08, 0.14, DEPTH + 0.35), CFrame = at(TOP + 0.07, RF - DEPTH / 2 + 0.12), Color = HOT })  -- hot pink, not white: a white top merged into Skye's white blouse
+	neon(desk, "TopStrip" .. i, { Size = Vector3.new(w + 0.02, 0.06, 0.04), CFrame = at(TOP - 0.03, RF + 0.3), Color = PURPLE })
 	neon(desk, "BaseStrip" .. i, { Size = Vector3.new(w, 0.08, 0.04), CFrame = at(PLATFORM_H + 0.2, RF + 0.01), Color = PURPLE })
 	if i % 2 == 1 and math.abs(a) > 0.5 then
 		neon(desk, "Rib" .. i, { Size = Vector3.new(0.05, bodyH - 0.5, 0.04), CFrame = at(PLATFORM_H + bodyH / 2, RF + 0.01) })

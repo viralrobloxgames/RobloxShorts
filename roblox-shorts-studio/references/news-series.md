@@ -105,7 +105,11 @@ Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture 
 
 1. **Narration:** generate with Brittney on the signed-in ElevenLabs site (Chrome) and save it as `audio/narration.mp3`. Then run `scripts/studio.py transcribe`.
    - If the take is under 60 s, `assemble_narration.py` inserts beats between sections and shifts the timings. Brittney reads about 166 words in 58.8 s, so plan for that.
-2. **Stills:** in Studio, roll the camera 90° (see the portrait-capture note) for the Wide, Medium and CloseUp marks.
+2. **Performance (v2, replaces stills):** run `performance.py`, then paste `perform.luau` into the Studio MCP once per camera with a 12 s lead.
+   - Bring Studio to the front (`assets/roblox_pack/tools/studio_front.ps1`) and record the viewport with ffmpeg `ddagrab` for 150 s.
+   - The performance plays at half speed; `extract_takes.py` syncs on the white card and speeds it back up.
+   - The user found pose-to-pose stills unnatural, so always animate.
+   - Old stills method, kept for the card backdrop: in Studio, roll the camera 90° (see the portrait-capture note) for the Wide, Medium and CloseUp marks.
    - For each, capture the `talking`, `happy` and `blink` faces, plus any emotes or poses the script needs (`surprised`, a wave).
    - The first capture after a face change sometimes shows the old texture, so compare stills before using them.
 3. **Evidence cards:** use `web/news_shot.mjs --span "<one sentence>" --mark "<key words>" --width 360 --col 250 --pad 3`. You get two to four big lines with the key words highlighted.
@@ -113,7 +117,8 @@ Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture 
    - No source labels on screen.
 4. **Compose:** in `compose_frames.py` the timeline is keyed to words, and the lip flap, blinks, pop-ups and sound cues all follow from it.
    - Check 5 to 10 `--only` frames first, then render with 6 parallel `--range` workers (about 5 minutes on this laptop).
-5. **Finish:** run `finish.py --encode --frames renders/frames` (captions burned in with `caption_margin_v` 450), then `make_cover.py`, then `post.json`, then review with the user.
+5. **Music:** use the series bed, `assets/audio/news_breaking_paulyudin.mp3` (Pixabay, chosen by the user), ducked by `build_music.py`, with `finish.music` set to `audio/music_bed.wav` and `music_gain` 1.0.
+6. **Finish:** run `finish.py --encode --frames renders/frames` (captions burned in with `caption_margin_v` 450), then `make_cover.py`, then `post.json`, then review with the user.
 
 ## Daily research and production pipeline
 

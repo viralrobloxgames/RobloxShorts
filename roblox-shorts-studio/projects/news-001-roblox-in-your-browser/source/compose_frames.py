@@ -1,13 +1,13 @@
-"""ViralRoblox News #1: assemble the 9:16 picture from Studio stills, evidence screenshots and the news overlay.
+"""ViralRoblox News #1: assemble the 9:16 picture from Studio takes, evidence screenshots and the news overlay.
 
     python source/compose_frames.py                 all frames -> renders/frames/0001.png..
     python source/compose_frames.py --only 1,200    just those frames (for review) -> renders/review/
     python source/compose_frames.py --cues          only rewrite source/sound_cues.json
     python source/compose_frames.py --range 1,660   one worker's share (run several in parallel; resumable)
 
-Studio can't be filmed through the MCP, so Skye is pose-to-pose: one still per camera and face (source/stills/,
-captured with the rolled-camera trick), swapped on the word timings for lip flap and blinks. Shots, pop-ups and
-sound cues all come from the timeline below, keyed to words in audio/alignment/captions.json.
+Skye's shots come from Studio takes: perform.luau animates her (lip-sync visemes, head motion, gestures, wave) and each
+camera's take is screen-recorded, then source/extract_takes.py turns it into renders/takes/<CAM>/ frames. Shots,
+pop-ups and sound cues all come from the timeline below, keyed to words in audio/alignment/captions.json.
 Captions are not drawn here: finish.py burns them in from the same timings.
 """
 import argparse, json, math, sys
@@ -57,21 +57,21 @@ T = dict(
 )
 CUT = 0.08  # cut slightly ahead of the line so the picture leads the voice
 SHOTS = [  # (start, end, kind, args)
-    (0.0, T['rdc'] - CUT if False else S(3.38) - CUT, 'skye', {'cam': 'M', 'emote': (0.0, 0.42, 'M_surprised')}),
+    (0.0, S(3.38) - CUT, 'skye', {'cam': 'M'}),
     (S(3.38) - CUT, T['rdc'] - CUT, 'skye', {'cam': 'W'}),
     (T['rdc'] - CUT, T['by_end'] - CUT, 'card', {'img': 'vertical/01_header', 'a': (0, 545, 1040, 895), 'zoom': (1.0, 1.04), 'focus': (520, 720)}),
     (T['by_end'] - CUT, T['no_app'] - CUT, 'card', {'img': 'cards/web', 'zoom': (1.0, 1.04)}),
     (T['no_app'] - CUT, T['link_beat'] - CUT, 'card', {'img': 'cards/noapp', 'zoom': (1.0, 1.04)}),
     (T['link_beat'] - CUT, T['click'] - CUT, 'skye', {'cam': 'C'}),
     (T['click'] - CUT, T['not_all'] - CUT, 'card', {'img': 'cards/link', 'zoom': (1.0, 1.04)}),
-    (T['not_all'] - CUT, T['offline'] - CUT, 'skye', {'cam': 'M', 'emote': (T['not_all'] - CUT, T['offline'], 'M_surprised')}),
+    (T['not_all'] - CUT, T['offline'] - CUT, 'skye', {'cam': 'M'}),
     (T['offline'] - CUT, T['plane'] - CUT, 'card', {'img': 'cards/offline', 'zoom': (1.0, 1.04)}),
     (T['plane'] - CUT, T['planned'] - CUT, 'skye', {'cam': 'M'}),
     (T['planned'] - CUT, T['so_what'] - CUT, 'card', {'img': 'cards/mid2027', 'zoom': (1.0, 1.04)}),
     (T['so_what'] - CUT, T['follow'] - CUT, 'skye', {'cam': 'C'}),
     (T['follow'] - CUT, T['would'] - CUT, 'skye', {'cam': 'M'}),
     (T['would'] - CUT, T['skye'] - CUT, 'skye', {'cam': 'C'}),
-    (T['skye'] - CUT, SECONDS, 'skye', {'cam': 'M', 'wave': True}),
+    (T['skye'] - CUT, SECONDS, 'skye', {'cam': 'M'}),
 ]
 POPS = [  # (start, end, kind, args)
     (T['sting'], T['sting_end'], 'sting', {}),
@@ -122,35 +122,16 @@ def still(name):
     return STILLS[name]
 
 
-def mouth_open(t):
-    for w in WORDS:
-        if w['start'] <= t < w['end']:
-            return int((t - w['start']) / 0.1) % 2 == 0
-    return False
-
-
-def blinking(t):
-    return (t % 3.7) < 0.12
+def take_frame(cam, t):
+    """Skye's animated performance: frame of the Studio take for this camera (source/extract_takes.py)."""
+    i = min(N, max(1, round(t * FPS) + 1))
+    return Image.open(P / f'renders/takes/{cam}/{i:04}.jpg').convert('RGB')
 
 
 def skye_frame(cam, t, s0, s1, args):
-    if args.get('wave'):
-        if mouth_open(t):
-            name = 'M_waveA_talk'
-        else:
-            name = 'M_waveA_happy' if int(t * 30 / 7) % 2 == 0 else 'M_waveB_happy'
-    elif args.get('emote') and args['emote'][0] <= t < args['emote'][1]:
-        name = args['emote'][2]
-    elif mouth_open(t):
-        name = f'{cam}_talk'
-    elif blinking(t) and cam in ('M', 'C'):
-        name = f'{cam}_blink'
-    else:
-        name = f'{cam}_happy'
-    base = still(name)
     p = (t - s0) / max(0.01, s1 - s0)
     punch = max(0.0, 1 - (t - s0) * FPS / 6) * 0.05  # small punch-in on each cut
-    return zoom(base, 1.0 + 0.05 * p + punch, FACE[cam])
+    return zoom(take_frame(cam, t), 1.0 + 0.04 * p + punch, FACE[cam])
 
 
 def zoom(img, z, focus):
@@ -206,10 +187,9 @@ def card_frame(t, s0, s1, args):
 
 
 def pip(frame, t):
-    """Skye in a circle while the evidence is up, still lip-syncing."""
-    name = 'C_talk' if mouth_open(t) else ('C_blink' if blinking(t) else 'C_happy')
+    """Skye in a circle while the evidence is up, still talking (close-up take)."""
     fx, fy = FACE['C']; r = 330
-    face = still(name).crop((fx - r, fy - r + 60, fx + r, fy + r + 60)).resize((300, 300), Image.LANCZOS)
+    face = take_frame('C', t).crop((fx - r, fy - r + 60, fx + r, fy + r + 60)).resize((300, 300), Image.LANCZOS)
     m = Image.new('L', (300, 300), 0); ImageDraw.Draw(m).ellipse((0, 0, 299, 299), fill=255)
     x, y = 744, 168  # top right: clear of the logo bug, the stamps and TikTok's side buttons
     ImageDraw.Draw(frame).ellipse((x - 8, y - 8, x + 308, y + 308), fill=HOT)

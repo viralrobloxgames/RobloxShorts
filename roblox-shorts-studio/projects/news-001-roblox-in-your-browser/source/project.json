@@ -12,9 +12,10 @@
   "platform": "TikTok + YouTube Shorts",
   "status": "delivered_local_review",
   "finish": {
-    "music": "playful_history_music",
+    "music": "projects/news-001-roblox-in-your-browser/audio/music_bed.wav",
     "caption_margin_v": 450,
     "caption_font_size": 72,
-    "word_fixes": {}
+    "word_fixes": {},
+    "music_gain": 1.0
   }
 }

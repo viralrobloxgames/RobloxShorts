@@ -8,7 +8,11 @@ the end of 2026) and offline play (mid-2027), from RDC 2026 (2026-09-11). 66.0 s
 - **Narration:** Brittney (`kPzsL2i3teMYv0FxEYQ6`), `eleven_multilingual_v2`, default settings, generated on the signed-in ElevenLabs site, 927 characters (`audio/narration-source.json`).
   - The raw take is 58.8 s. `source/assemble_narration.py` adds news-style beats after each section, taking it to 64.9 s in `audio/narration.wav`.
   - It also shifts the faster-whisper word timings (raw copy in `audio/alignment/raw_captions.json`) and fixes the split brand words (ViralRoblox, ViralRobloxGames, mid-2027).
-- **Studio stills** (`source/stills/`): Skye in the pink set (`Workspace.ViralNews.Booth`), captured with the rolled-camera 9:16 trick.
+- **v2 after review (2026-10-02):** the user found the stills' lip flap and wave unnatural, wanted urgent news music and a non-white countertop. Now:
+  - **Animation:** `source/performance.py` makes the lip-sync visemes (9 mouth shapes from the voice's loudness and spectrum), blinks, nods and gestures, and writes `source/perform.luau`. In Studio Edit mode that animates the anchored rig by FK (head sway, breathing, hands lifting, a real wave) at half speed. Each camera (W, M, C) was screen-recorded with ffmpeg `ddagrab` of the viewport (296,252 1160x648) and turned into frames by `source/extract_takes.py`, which also removes the view cube and the viewport's centre line.
+  - **Music:** Pixabay "Breaking News" (PaulYudin), ducked under the voice by `source/build_music.py`.
+  - **Countertop:** hot pink with a purple strip.
+- **v1 Studio stills** (`source/stills/`, still used for the blurred card backdrop): Skye in the pink set (`Workspace.ViralNews.Booth`), captured with the rolled-camera 9:16 trick.
   - Each camera (Wide, Medium, CloseUp) has `talk`, `happy` and `blink` stills; there is also `M_surprised`, plus the wave poses `M_waveA_happy`, `M_waveA_talk` and `M_waveB_happy`.
   - The stills differ only around her face, so swapping them reads as lip flap.
 - **Evidence cards** (`source/evidence/cards/`): two to four short lines each, with the key words behind a yellow highlighter.
