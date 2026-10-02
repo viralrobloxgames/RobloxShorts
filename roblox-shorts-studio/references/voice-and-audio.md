@@ -22,6 +22,10 @@ Don't run two Qwen jobs at once, because the laptop has 8 GB of RAM. In this Cla
 
 **ElevenLabs is now only for auditioning new voices.** To pick a voice for a new series or character, play the ElevenLabs previews or Voice Library samples. Once one is chosen, generate a 10–20 s sample, save it with `tts --add-voice <name>`, and narrate locally from then on.
 
+**Pitch match (Part 4 learning):** the 0.6B clone comes out about 1.3 semitones higher than ElevenLabs George (median F0 ~129 Hz vs 119-121 Hz in Parts 2-3). Keep the raw take as `audio/narration_qwen_raw.wav` and pitch it down with formants preserved (timing is unchanged, so word timings still hold):
+`ffmpeg -i audio/narration_qwen_raw.wav -af "rubberband=pitch=0.928:formant=preserved:pitchq=quality" -ar 24000 audio/narration.wav`
+Check the result's median F0 is about 120 Hz, then note it in `narration-source.json`.
+
 ### Route A: ElevenLabs connector or signed-in website (legacy)
 
 George's ElevenLabs settings were `eleven_multilingual_v2`, speed 1.0, stability 0.5, similarity 0.75, style 0, speaker boost on. Use the connected ElevenLabs tools, or the user's signed-in ElevenLabs site in Brave. Generate from the saved `script.txt` only after approval. Download the finished take (pre-approved) to `audio/narration.mp3`, or to `audio/source/` if you will splice. Record the voice, model, settings, credits and duration in `audio/narration-source.json`. A pending request is never a reason to generate again: check History.

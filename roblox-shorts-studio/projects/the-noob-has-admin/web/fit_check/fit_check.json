@@ -1,13 +1,13 @@
 {
   "clip": "projects/the-noob-has-admin/web/noob_clip.js",
-  "generated": "2026-10-02T12:24:14.145Z",
-  "fingerprint": "82d067b0b5ca39f1",
+  "generated": "2026-10-02T12:54:25.264Z",
+  "fingerprint": "7ba5020f6124d070",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [
     {
-      "character": "Mia",
+      "character": "Noob",
       "options": {
         "expressions": [
           "happy",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "character": "Noob",
+      "character": "Mia",
       "options": {
         "expressions": [
           "happy",
@@ -73,23 +73,6 @@
   ],
   "pairs": [
     {
-      "character": "Mia",
-      "accessory": "crown_admin",
-      "mode": "seat",
-      "scale": 1,
-      "stretch": 1,
-      "offset": [
-        0,
-        1.16,
-        0
-      ],
-      "hideHair": false,
-      "depth": 0.007,
-      "count": 0,
-      "passed": true,
-      "note": ""
-    },
-    {
       "character": "Noob",
       "accessory": "crown_admin",
       "mode": "seat",
@@ -105,7 +88,24 @@
       "count": 0,
       "passed": true,
       "note": ""
+    },
+    {
+      "character": "Mia",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.16,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.007,
+      "count": 0,
+      "passed": true,
+      "note": ""
     }
   ],
-  "reviewedAt": "2026-10-02T12:24:14.735Z"
+  "reviewedAt": "2026-10-02T12:54:33.264Z"
 }
