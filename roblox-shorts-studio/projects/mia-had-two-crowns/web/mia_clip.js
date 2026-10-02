@@ -11,6 +11,7 @@ import { speedLines, flash, roundRect, drawCrown } from '../../../web/lib/overla
 import { loadRobloxCharacter, packItem, loadAnimation, robloxPose, fitAccessory } from '../../../web/lib/robloxPack.js';
 
 import { W } from './beats.js';
+import { travel, travelTo, STRIDE } from '../../../web/lib/locomotion.js';
 import { SEG, live, segStart, switches, eff, duelAt, CHARGE, DUEL_END, FLING_TYPE, EVENTS, HIT_PERIOD } from './duel.js';
 
 export const meta = { seconds: Math.ceil((W.end + 0.55) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'Mia Had Two Crowns' };
@@ -154,12 +155,14 @@ function noobState(s) {
 // An attacker in the duel: charge in, punch the frozen account, get blasted by the live one, run back in.
 function duelPose(b, side, s, from, contact, target) {
   const d = duelAt(side, s), away = side === 'max' ? 1 : -1;
-  if (d.phase === 'charge') { b.pos = from.clone().lerp(contact, easeIn(d.u)); b.rotY = face(from, contact); b.layers = [[A.run, s * 1.6]]; b.face = 'angry'; return; }
+  if (d.phase === 'charge') {      // a crouched beat, then a full-speed sprint that lands on contact as the duel starts
+    const m = travelTo(from, contact, CHARGE[1], s, 16); b.pos = m.pos; b.rotY = m.heading; b.layers = m.moving ? [[A.run, m.anim]] : [[A.scheming, s]]; b.face = 'angry'; return;
+  }
   b.pos = contact.clone().add(V(away * d.x, 0, 0)); b.rotY = face(b.pos, target);
   if (d.phase === 'fly') {
     const u = clamp((s - d.lastBlast) / 0.43); b.layers = [[A.shock, 0.3]]; b.face = 'shocked';
     b.floor = 1.1 * Math.sin(Math.PI * u); b.rotZ = away * 0.35 * Math.sin(Math.PI * u);
-  } else if (d.phase === 'run') { b.layers = [[A.run, s * 1.8]]; b.face = 'angry'; }
+  } else if (d.phase === 'run') { b.layers = [[A.run, (3 - d.x) / STRIDE]]; b.face = 'angry'; }          // legs follow the distance closed
   else if (d.phase === 'jab') { const u = ((s - d.lastHit) % HIT_PERIOD) / HIT_PERIOD; b.layers = [[A.point_forward, u < 0.4 ? lerp(0, 0.18, u / 0.4) : lerp(0.18, 0, (u - 0.4) / 0.6)]]; b.face = 'evil_grin'; }
   else { b.layers = [[A.shock, 0.3]]; b.face = 'dizzy'; }
 }
@@ -170,17 +173,17 @@ function leoState(s) {
   else if (s < W.fling) { b.layers = [[A.point_forward, s > W.teamed - 0.3 ? 0.6 : 0]]; b.face = 'evil_grin'; }   // fist bump on "teamed up"
   else if (s < W.noticed) { b.rotY = face(LEO0, V(20, 6, -30)); b.layers = [[A.shock, s - W.fling]]; b.face = 'shocked'; }
   else if (s < B.huddle[0]) {
-    const u = easeInOut(inv(...B.pokeWalk, s)); b.pos = LEO0.clone().lerp(POKE, u);
-    b.rotY = face(b.pos, NOOB); b.face = 'suspicious';
-    b.layers = s > B.pokeWalk[0] && s < B.pokeWalk[1] ? [[A.walk, s]] : s > W.poked - 0.25 && s < W.poked + 0.6 ? [[A.point_forward, s - W.poked + 0.25]] : idle(s);
+    const m = travelTo(LEO0, POKE, W.poked - 0.35, s, 12); b.pos = m.pos;
+    b.rotY = m.moving ? m.heading : m.done ? face(POKE, NOOB) : face(LEO0, NOOB); b.face = 'suspicious';
+    b.layers = m.moving ? [[A.run, m.anim]] : s > W.poked - 0.25 && s < W.poked + 0.6 ? [[A.point_forward, s - W.poked + 0.25]] : idle(s);
     if (s > W.onlyPlay) b.face = 'evil_grin';
   } else if (s < CHARGE[0]) {
-    const u = easeInOut(inv(B.huddle[0], B.huddle[1] - 0.4, s)); b.pos = POKE.clone().lerp(HL, u);
-    b.rotY = u < 1 ? face(POKE, HL) : face(HL, HM); b.layers = u > 0 && u < 1 ? [[A.walk, s * 1.3]] : idle(s); b.face = 'evil_grin';
+    const m = travel(POKE, HL, B.huddle[0], s, 12); b.pos = m.pos;
+    b.rotY = m.moving ? m.heading : m.done ? face(HL, HM) : face(POKE, NOOB); b.layers = m.moving ? [[A.run, m.anim]] : idle(s); b.face = 'evil_grin';
   } else if (s < DUEL_END) duelPose(b, 'leo', s, HL, CL, NOOB);
   else {
-    const from = CL.clone().add(V(-duelAt('leo', DUEL_END).x, 0, 0)), u = easeInOut(inv(...B.regroup, s)); b.pos = from.clone().lerp(LC, u);
-    b.rotY = u < 1 ? face(from, LC) : face(LC, NOOB); b.layers = u > 0 && u < 1 ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
+    const from = CL.clone().add(V(-duelAt('leo', DUEL_END).x, 0, 0)), m = travel(from, LC, DUEL_END, s, 12); b.pos = m.pos;
+    b.rotY = m.moving ? m.heading : face(LC, NOOB); b.layers = m.moving ? [[A.run, m.anim]] : idle(s); b.face = 'evil_grin';
     if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.layers = [[A.proud, s - W.newCrowns - 0.6]]; b.face = 'laugh'; b.rotY = toCam(b.pos); } }
     if (s > W.lasted - 0.1) { b.rotY = face(LC, MC); b.face = 'scheming'; b.layers = idle(s); }
     if (s > B.kickType[0]) { b.layers = [[A.typing, s * 2]]; b.face = 'evil_grin'; }
@@ -197,13 +200,13 @@ function maxState(s) {
   else if (s < B.flung[1]) { const u = inv(...B.flung, s); b.grounded = false; b.pos = arc(MAX0, FLUNG, 10, easeIn(u)); b.layers = [[A.shock, 0.3]]; b.face = 'scared'; b.rotX = u * 7; b.rotZ = u * 2.5; }
   else if (s < B.respawn) b.visible = false;
   else if (s < CHARGE[0]) {
-    const u = easeInOut(inv(B.respawn + 0.8, B.huddle[1] - 0.4, s)); b.pos = SPAWN.clone().lerp(HM, u);
-    b.rotY = u > 0 && u < 1 ? face(SPAWN, HM) : face(HM, HL); b.layers = u > 0 && u < 1 ? [[A.run, s * 1.4]] : idle(s); b.face = 'angry';
+    const m = travel(SPAWN, HM, B.respawn + 0.8, s, 16); b.pos = m.pos;
+    b.rotY = m.moving ? m.heading : m.done ? face(HM, HL) : toCam(SPAWN); b.layers = m.moving ? [[A.run, m.anim]] : idle(s); b.face = 'angry';
     if (s > B.huddle[1] - 0.4) b.face = 'evil_grin';
   } else if (s < DUEL_END) duelPose(b, 'max', s, HM, CM, MIA);
   else {
-    const from = CM.clone().add(V(duelAt('max', DUEL_END).x, 0, 0)), u = easeInOut(inv(...B.regroup, s)); b.pos = from.clone().lerp(MC, u);
-    b.rotY = u < 1 ? face(from, MC) : face(MC, NOOB); b.layers = u > 0 && u < 1 ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
+    const from = CM.clone().add(V(duelAt('max', DUEL_END).x, 0, 0)), m = travel(from, MC, DUEL_END, s, 12); b.pos = m.pos;
+    b.rotY = m.moving ? m.heading : face(MC, NOOB); b.layers = m.moving ? [[A.run, m.anim]] : idle(s); b.face = 'evil_grin';
     if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.layers = [[A.proud, s - W.newCrowns - 0.6]]; b.face = 'laugh'; b.rotY = toCam(b.pos); } }
     if (s > W.lasted - 0.1) { b.rotY = face(MC, LC); b.face = 'scheming'; b.layers = idle(s); }
     if (s > B.kickType[0]) { b.layers = [[A.typing, s * 2 + 0.2]]; b.face = 'evil_grin'; }
