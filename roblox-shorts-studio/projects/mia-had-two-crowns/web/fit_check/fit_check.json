@@ -1,13 +1,13 @@
 {
   "clip": "projects/mia-had-two-crowns/web/mia_clip.js",
-  "generated": "2026-10-02T17:41:36.959Z",
-  "fingerprint": "a63111e10fbe0c95",
+  "generated": "2026-10-02T18:16:42.242Z",
+  "fingerprint": "b012341bc03215bc",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [
     {
-      "character": "Mia",
+      "character": "Leo",
       "options": {
         "expressions": [
           "happy",
@@ -30,7 +30,7 @@
           "blink"
         ],
         "scale": 1,
-        "hairLift": 0
+        "hairLift": 0.16
       },
       "accessories": [
         "crown_admin"
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "character": "Leo",
+      "character": "Mia",
       "options": {
         "expressions": [
           "happy",
@@ -90,7 +90,7 @@
           "blink"
         ],
         "scale": 1,
-        "hairLift": 0.16
+        "hairLift": 0
       },
       "accessories": [
         "crown_admin"
@@ -129,18 +129,18 @@
   ],
   "pairs": [
     {
-      "character": "Mia",
+      "character": "Leo",
       "accessory": "crown_admin",
       "mode": "seat",
       "scale": 1,
       "stretch": 1,
       "offset": [
         0,
-        1.16,
+        1.64,
         0
       ],
       "hideHair": false,
-      "depth": 0.007,
+      "depth": 0.019,
       "count": 0,
       "passed": true,
       "note": ""
@@ -163,18 +163,18 @@
       "note": ""
     },
     {
-      "character": "Leo",
+      "character": "Mia",
       "accessory": "crown_admin",
       "mode": "seat",
       "scale": 1,
       "stretch": 1,
       "offset": [
         0,
-        1.64,
+        1.16,
         0
       ],
       "hideHair": false,
-      "depth": 0.019,
+      "depth": 0.007,
       "count": 0,
       "passed": true,
       "note": ""
@@ -197,5 +197,5 @@
       "note": ""
     }
   ],
-  "reviewedAt": "2026-10-02T17:41:44.628Z"
+  "reviewedAt": "2026-10-02T18:16:43.002Z"
 }

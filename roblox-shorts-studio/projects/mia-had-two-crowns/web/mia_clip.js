@@ -9,7 +9,7 @@ import { cloud, puff, rng, forceField } from '../../../web/lib/world.js';
 import { clamp, lerp, inv, track, easeInOut, easeOut, easeIn, easeOutBack, shotAt } from '../../../web/lib/anim.js';
 import { speedLines, flash, roundRect, drawCrown } from '../../../web/lib/overlay.js';
 import { loadRobloxCharacter, packItem, loadAnimation, robloxPose, fitAccessory } from '../../../web/lib/robloxPack.js';
-import { cheerWave, panicArms, hop } from '../../../web/lib/gestures.js';
+
 import { W } from './beats.js';
 
 export const meta = { seconds: Math.ceil((W.end + 0.55) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'Mia Had Two Crowns' };
@@ -167,8 +167,8 @@ function leoState(s) {
   } else {
     const u = easeInOut(inv(...B.regroup, s)); b.pos = AT_NOOB.clone().lerp(LC, u); b.rotY = s < B.regroup[1] ? face(AT_NOOB, LC) : face(LC, NOOB);
     b.layers = s < B.regroup[1] ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
-    if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.gesture = 'cheer'; b.face = 'laugh'; } }
-    if (s > W.lasted - 0.1) { b.gesture = null; b.rotY = face(LC, MC); b.face = 'scheming'; b.layers = idle(s); }
+    if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.layers = [[A.proud, s - W.newCrowns - 0.6]]; b.face = 'laugh'; b.rotY = toCam(b.pos); } }
+    if (s > W.lasted - 0.1) { b.rotY = face(LC, MC); b.face = 'scheming'; b.layers = idle(s); }
     if (s > B.kickType[0]) { b.layers = [[A.typing, s * 2]]; b.face = 'evil_grin'; }
     if (s > W.enter) b.face = 'shocked';
     b.visible = s < B.kicked;
@@ -180,7 +180,7 @@ function maxState(s) {
   const b = st(MAX0, face(MAX0, LEO0), idle(s, 0.6), 'determined');
   if (s < W.teamed - 0.6) { b.rotY = toCam(MAX0); b.face = 'smug'; }
   else if (s < B.flung[0]) { b.layers = [[A.point_forward, 0.6]]; b.face = 'evil_grin'; if (s > W.fling - 0.4) { b.face = 'shocked'; b.layers = [[A.shock, s - W.fling + 0.4]]; } }
-  else if (s < B.flung[1]) { const u = inv(...B.flung, s); b.grounded = false; b.pos = arc(MAX0, FLUNG, 10, easeIn(u)); b.layers = [[A.fall, 0.2]]; b.gesture = 'panic'; b.face = 'scared'; b.rotX = u * 7; b.rotZ = u * 2.5; }
+  else if (s < B.flung[1]) { const u = inv(...B.flung, s); b.grounded = false; b.pos = arc(MAX0, FLUNG, 10, easeIn(u)); b.layers = [[A.shock, 0.3]]; b.face = 'scared'; b.rotX = u * 7; b.rotZ = u * 2.5; }
   else if (s < B.respawn) b.visible = false;
   else if (s < W.attacked) {
     const u = easeInOut(inv(B.respawn + 0.8, W.attacked - 0.3, s)); b.pos = SPAWN.clone().lerp(MAX0, u);
@@ -193,8 +193,8 @@ function maxState(s) {
   } else {
     const from = AT_MIA.clone().add(V(0.9, 0, 0)), u = easeInOut(inv(...B.regroup, s)); b.pos = from.clone().lerp(MC, u);
     b.rotY = s < B.regroup[1] ? face(from, MC) : face(MC, NOOB); b.layers = s < B.regroup[1] ? [[A.walk, s]] : idle(s); b.face = 'evil_grin';
-    if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.gesture = 'cheer'; b.face = 'laugh'; } }
-    if (s > W.lasted - 0.1) { b.gesture = null; b.rotY = face(MC, LC); b.face = 'scheming'; b.layers = idle(s); }
+    if (s > W.newCrowns - 0.2) { b.lookUp = s < W.newCrowns + 0.6 ? 0.45 : 0; b.face = 'happy'; if (s > W.newCrowns + 0.6) { b.layers = [[A.proud, s - W.newCrowns - 0.6]]; b.face = 'laugh'; b.rotY = toCam(b.pos); } }
+    if (s > W.lasted - 0.1) { b.rotY = face(MC, LC); b.face = 'scheming'; b.layers = idle(s); }
     if (s > B.kickType[0]) { b.layers = [[A.typing, s * 2 + 0.2]]; b.face = 'evil_grin'; }
     if (s > W.enter) b.face = 'shocked';
     b.visible = s < B.kicked;
@@ -216,11 +216,8 @@ function place(a, x) {
   if (x.plank) a.root.rotateX(-Math.PI / 2 * x.plank);
   a.root.scale.setScalar(x.scale);
   robloxPose(a, x.layers);
-  if (x.gesture === 'cheer') cheerWave(a, clockT + x.pos.x * 0.3);
-  if (x.gesture === 'panic') panicArms(a, clockT + x.pos.x * 0.37);
   if (x.lookUp) a.bones.Head.rotateX(-x.lookUp);
   if (x.grounded) { a.root.updateMatrixWorld(true); a.root.position.y += x.floor - soleHeight(a); }
-  if (x.gesture === 'cheer') a.root.position.y += hop(clockT) * x.scale;
   setExpression(a, x.face);
   a.root.updateMatrixWorld(true);
 }
