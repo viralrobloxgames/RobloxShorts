@@ -137,7 +137,7 @@ Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture 
 
 ## Cadence and budget
 
-- One news episode a day, posted 5 to 7 pm UK time, plus one story Short when possible.
+- One news episode a day at 17:30 UK, plus one story Short at 12:30 (11:00 at weekends). See references/posting-schedule.md for the data behind the times.
 - Never post the same video twice (TikTok treats it as duplicate content and can flag the account as unoriginal).
 - Narration is local and free (Qwen3-TTS Brittney clone). It costs about 20 min of laptop time per episode and no ElevenLabs credits.
 - Rendering is the web route: no GarageFarm cost.
