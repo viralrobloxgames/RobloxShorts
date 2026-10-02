@@ -2,13 +2,28 @@
 
 ## Voice
 
-The Roblox series narrator is **George - Warm, Captivating Storyteller** (`JBFqnCBsd6RMkjVDRZzb`), using `eleven_multilingual_v2`. Settings: speed 1.0, stability 0.5, similarity 0.75, style 0, speaker boost on. Use natural pitch and speed with **no PS2 crunch**.
+The Roblox series narrator is **George**: the voice of ElevenLabs' *George - Warm, Captivating Storyteller* (`JBFqnCBsd6RMkjVDRZzb`), now cloned into local Qwen3-TTS. Use natural pitch and speed with **no PS2 crunch**.
 
-### Route A: connector or signed-in website (default)
+### Route L: local Qwen3-TTS clone (default since 2026-10-02)
 
-Use the connected ElevenLabs tools, or the user's signed-in ElevenLabs site in Brave. Generate from the saved `script.txt` only after approval. Download the finished take (pre-approved) to `audio/narration.mp3`, or to `audio/source/` if you will splice. Record the voice, model, settings, credits and duration in `audio/narration-source.json`. A pending request is never a reason to generate again: check History.
+Story narration (the admin series and other story Shorts) is generated free on the laptop with Qwen3-TTS. It's installed at `~/Qwen3-TTS` by the personal `qwen3-tts` skill: CPU only, 0.6B model, preset and clone models (voice design isn't installed). The saved voice `george` is a 13.9 s cut from the start of Part 2's ElevenLabs narration (`projects/max-got-admin`). A copy with its exact transcript lives in `assets/audio/voices/george.wav` and `george.txt`; to restore it, run `tts --add-voice george --from assets/audio/voices/george.wav --ref-text "<george.txt>"`.
 
-### Route B: API (`scripts/voice.py`)
+1. Keep `script.txt` at **one sentence or beat per line**. Each line becomes one clip, with 0.4 s of silence between lines in the joined file.
+2. Run it in the **background**, because it is slow. The model takes about 1.5–3 min to load, then about 16 s of waiting per second of speech, so a 60 s Short takes about 17–20 min. Always use one `--file` run, never one call per line:
+   `& "$env:USERPROFILE\Qwen3-TTS\tts.bat" --file projects/<slug>/script.txt --clone george --join -o projects/<slug>/audio/qwen`
+3. Copy `audio/qwen/script_full.wav` to `audio/narration.wav`. Write `audio/narration-source.json` with `{"engine": "qwen3-tts", "model": "0.6B-Base", "voice": "george (clone)", "take": "take-01", "speech_end_seconds": ...}`.
+4. Run `scripts/studio.py transcribe` for word timings, because Qwen doesn't return timestamps. Compare the result with `script.txt`. Cloned voices sometimes drop a sentence-opening "And" or "So", or the last word of a long line. Regenerate only the bad lines into `audio/qwen/` with a `--file` holding just those lines, then rebuild the joined file.
+5. Generation is free, so re-takes are fine. Still get the script approved before generating, because each run takes about 20 minutes.
+
+Don't run two Qwen jobs at once, because the laptop has 8 GB of RAM. In this Claude app's shell, `uv` needs `UV_PYTHON_INSTALL_DIR` and `UV_CACHE_DIR` pointed at `~/.uv` (the app sandboxes AppData); the `tts.bat` and Studio launchers don't.
+
+**ElevenLabs is now only for auditioning new voices.** To pick a voice for a new series or character, play the ElevenLabs previews or Voice Library samples. Once one is chosen, generate a 10–20 s sample, save it with `tts --add-voice <name>`, and narrate locally from then on.
+
+### Route A: ElevenLabs connector or signed-in website (legacy)
+
+George's ElevenLabs settings were `eleven_multilingual_v2`, speed 1.0, stability 0.5, similarity 0.75, style 0, speaker boost on. Use the connected ElevenLabs tools, or the user's signed-in ElevenLabs site in Brave. Generate from the saved `script.txt` only after approval. Download the finished take (pre-approved) to `audio/narration.mp3`, or to `audio/source/` if you will splice. Record the voice, model, settings, credits and duration in `audio/narration-source.json`. A pending request is never a reason to generate again: check History.
+
+### Route B: ElevenLabs API (`scripts/voice.py`, legacy)
 
 Set `"elevenlabs_mode": "api"` in settings and store `ELEVENLABS_API_KEY` in the OS keyring (service `roblox-shorts-studio`) or the environment. Then run `python scripts/voice.py generate projects/<slug> --take take-01`. It makes one billed request with timestamps and writes `audio/narration.mp3`, the alignment captions and the source record. Repeating a completed take reuses it. A changed script needs a new take name.
 

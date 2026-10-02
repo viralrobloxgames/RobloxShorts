@@ -10,9 +10,9 @@ pack, call to action at the end.
 - Fit check: crowns on the noob and Mia passed and reviewed.
 - Cover `delivery/The_Noob_Has_Admin_cover.jpg|png` (1080x1920, checked on a 3:4 crop, no spoiler). `delivery/post.json`.
 
-## Blocked: narration
-- ElevenLabs free quota used up (9,470 / 10,000 until 15 Oct; free plan isn't licensed for commercial use). The user is
-  setting up a free alternative. When `audio/narration.mp3` (or .wav) is in place:
+## Narration (next)
+- Route L: Qwen3-TTS with the cloned `george` voice (references/voice-and-audio.md). Audition take first; once the user
+  approves it, put it at `audio/narration.wav` and:
 
 ```
 cd roblox-shorts-studio

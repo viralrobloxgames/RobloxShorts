@@ -1,10 +1,14 @@
-"""News music bed for ViralRoblox News #1: Pixabay "Breaking News" (PaulYudin), ducked under Skye's voice.
+"""News music bed for ViralRoblox News #1: "News Theme" by Kevin MacLeod (incompetech.com, CC BY 4.0), ducked under Skye's voice.
 
     python source/build_music.py    -> audio/music_bed.wav (48 kHz mono, already at its final level)
 
 The bed is loud and punchy wherever Skye isn't talking (the cold open, the beats between sections, the sign-off) and
 dips under her voice, so the video feels urgent from frame 1 without burying the narration. finish.py then mixes it
 with music_gain 1.0.
+
+The track is 27 s long and ends on a big hit. The bed plays its first 10 bars (124 BPM) twice, then the whole track, so
+the final hit lands at the end of the video. (The first bed, Pixabay "Breaking News" by PaulYudin, got the video blocked
+on YouTube by a Content ID claim.)
 """
 import subprocess, sys, wave
 from pathlib import Path
@@ -18,7 +22,8 @@ from settings import tools, executable  # noqa: E402
 
 SR = 48000
 SECONDS = 66.0
-TRACK = ROOT / 'assets/audio/news_breaking_paulyudin.mp3'
+TRACK = ROOT / 'assets/audio/news_theme_kevinmacleod.mp3'
+BARS, BPM, XF = 10, 124, 0.03   # loop body length, tempo, crossfade seconds at each join
 OPEN, UNDER = 0.30, 0.12   # bed level with no voice / under the voice
 ATTACK, RELEASE = 0.06, 0.45
 
@@ -32,7 +37,13 @@ def load(path):
 def main():
     n = int(SECONDS * SR)
     music = load(TRACK)
-    music = np.tile(music, int(np.ceil(n / len(music))))[:n]
+    body = music[:int(round(BARS * 4 * 60 / BPM * SR))]
+    x = int(XF * SR); ramp = np.linspace(0, 1, x, dtype=np.float32)
+    out = body.copy()
+    for seg in (body, music):  # body, body, then the full track with its ending
+        out[-x:] = out[-x:] * (1 - ramp) + seg[:x] * ramp
+        out = np.concatenate([out, seg[x:]])
+    music = np.pad(out, (0, max(0, n - len(out))))[:n]  # the final hit lands ~4 s before the end, under the sign-off
     music /= np.abs(music).max() + 1e-9
     voice = load(P / 'audio/narration.wav')
     voice = np.pad(voice, (0, max(0, n - len(voice))))[:n]
