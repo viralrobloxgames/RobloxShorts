@@ -22,7 +22,7 @@ export const switches = (s) => SEG.filter(([t, w], i) => i >= 3 && t <= s && t >
 // Effective time of an account: the live one follows the clock; the idle one is frozen at the moment it lost focus.
 export const eff = (who, s) => (live(s) === 'both' || live(s) === who ? s : segStart(s));
 
-const DT = 1 / 120, KICK = 12, DRAG = 28, RUN = 7, HIT_EVERY = 0.34, DMG = 4.5;
+const DT = 1 / 120, KICK = 12, DRAG = 28, RUN = 13, HIT_EVERY = 0.34, DMG = 4.5;
 const targetLive = (side, t) => (side === 'max' ? live(t) === 'mia' && t < W.herself : live(t) === 'noob');
 
 function simulate(side) {
