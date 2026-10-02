@@ -34,7 +34,7 @@ A dedicated news anchor who appears in **every** episode and **only** in news, s
 - **Studio location:** place "Copy of Steal a Beast Egg!", `Workspace.ViralNews.Skye` (anchored at 0, 3.5, 500).
 - The first R6 build (`assets/roblox_pack/characters/Skye/`, pink waves, navy blazer) stays in the pack but is no longer the presenter.
 - **Fixed poses for the set and covers:** sitting at the desk, pointing at the screen, hands-on-desk "breaking" lean, shocked (hands up), wave goodbye. Using the same poses every time is part of the recognisability.
-- **Voice: Brittney - Social Media Voice - Fun, Youthful & Informative** (ElevenLabs voice library, voice ID `kPzsL2i3teMYv0FxEYQ6`; added to the account's My Voices on 2026-10-01). Different from George (the story narrator), so the series is also recognisable by ear. Use the same voice, model and settings every episode. Pick the model and settings on the pilot, then record them in `references/voice-and-audio.md`.
+- **Voice: Brittney**: the voice of ElevenLabs' *Brittney - Social Media Voice - Fun, Youthful & Informative* (`kPzsL2i3teMYv0FxEYQ6`). Since 2026-10-02 it has been a local Qwen3-TTS clone, saved voice `brittney`, cut from the first 14.9 s of News #1's raw take; a copy is in `assets/audio/voices/`. It's different from George (the story narrator), so the series is also recognisable by ear. Use the same voice every episode.
 - **Name: Skye** (chosen 2026-10-01). She says it in the sign-off: "I'm Skye, this has been ViralRoblox News."
 - **Merch tie-in (later):** the "ViralRoblox News Crew" PRESS jacket from the planned group clothing store can be the outfit she wears.
 
@@ -103,8 +103,10 @@ Rendered from the booth scene with a `cover_clip.js` per episode, as for the sto
 
 Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture is composited in Python. Copy the scripts from `projects/news-001-roblox-in-your-browser/source/`; that project's `START_HERE.md` has the commands.
 
-1. **Narration:** generate with Brittney on the signed-in ElevenLabs site (Chrome) and save it as `audio/narration.mp3`. Then run `scripts/studio.py transcribe`.
-   - If the take is under 60 s, `assemble_narration.py` inserts beats between sections and shifts the timings. Brittney reads about 166 words in 58.8 s, so plan for that.
+1. **Narration:** run `scripts/narrate.py projects/<slug> --voice brittney` once in the background. It takes about 20 min, writes `audio/narration.wav` and the word timings, and prints a short script check (see references/voice-and-audio.md, Route L).
+   - Put a **blank line between sections** in `script.txt`. Each blank line becomes a news beat of `--beat` seconds (default 0.9). This replaces `assemble_narration.py`, which was only for News #1's ElevenLabs take.
+   - `transcribe.py` joins "Viral Roblox" into ViralRoblox and ViralRobloxGames in the captions automatically.
+   - Aim for just over 60 s. The ElevenLabs Brittney read about 166 words in 58.8 s; time the first clone episode and note its pace here.
 2. **Performance (v2, replaces stills):** run `performance.py`, then paste `perform.luau` into the Studio MCP once per camera with a 12 s lead.
    - Bring Studio to the front (`assets/roblox_pack/tools/studio_front.ps1`) and record the viewport with ffmpeg `ddagrab` for 150 s.
    - The performance plays at half speed; `extract_takes.py` syncs on the white card and speeds it back up.
@@ -135,9 +137,9 @@ Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture 
 
 ## Cadence and budget
 
-- One news episode a day, posted 5 to 7 pm UK time, plus one story Short when possible.
+- One news episode a day at 17:30 UK, plus one story Short at 12:30 (11:00 at weekends). See references/posting-schedule.md for the data behind the times.
 - Never post the same video twice (TikTok treats it as duplicate content and can flag the account as unoriginal).
-- Narration is about 1,000 ElevenLabs characters per episode, about 30K a month at one a day. Decision (2026-10-01): plan for daily and ignore the current 10K limit for now; revisit the ElevenLabs plan before launch.
+- Narration is local and free (Qwen3-TTS Brittney clone). It costs about 20 min of laptop time per episode and no ElevenLabs credits.
 - Rendering is the web route: no GarageFarm cost.
 
 ## Build order
@@ -170,4 +172,4 @@ Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture 
 - Presenter: **Skye**, voice **Brittney** (`kPzsL2i3teMYv0FxEYQ6`). Look: **Look3_B2** (Woman Doll body, Pink Messy Buns, Y2K top, black preppy skirt), which replaced the R6 "pink waves" build the same day.
 - Series name: **ViralRoblox News**.
 - Evidence: **real screenshots**. Sources are credited only at the end of the description, never in the video.
-- Cadence: **daily**; ElevenLabs limits not a concern for now.
+- Cadence: **daily**. Narration is local, so there's no ElevenLabs limit.

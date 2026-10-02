@@ -4,7 +4,8 @@
 
 script.txt holds one sentence or beat per line. Each line becomes one clip, cached by its text in
 audio/qwen/<take>/clips/, so a re-run only generates lines that are new or changed. --redo regenerates the
-listed line numbers anyway (for a bad read). Then it joins the clips with 0.4 s gaps into audio/narration.wav,
+listed line numbers anyway (for a bad read). Then it joins the clips with 0.4 s gaps (a blank line in script.txt
+makes a longer --beat pause between sections) into audio/narration.wav,
 writes audio/narration-source.json, measures word timings (transcribe.py) and compares them with the script.
 Logs go to audio/qwen/<take>/narrate.log, so only the report reaches stdout.
 """
@@ -31,8 +32,16 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('project', type=Path); p.add_argument('--voice', default='george'); p.add_argument('--take', default='take-01')
     p.add_argument('--redo', default='', help='comma list of line numbers to regenerate')
+    p.add_argument('--beat', type=float, default=0.9, help='pause in seconds at a blank line in script.txt')
     a = p.parse_args(); o = a.project.resolve(); cfg = load()
-    lines = [l.strip() for l in (o / 'script.txt').read_text(encoding='utf-8-sig').splitlines() if l.strip()]
+    raw = [l.strip() for l in (o / 'script.txt').read_text(encoding='utf-8-sig').splitlines()]
+    lines = [l for l in raw if l]
+    pause = []  # pause after each line: --beat if a blank line follows it, else GAP
+    for i, l in enumerate(raw):
+        if l:
+            pause.append(GAP)
+        elif pause:
+            pause[-1] = a.beat
     take = o / 'audio/qwen' / a.take; clips = take / 'clips'; clips.mkdir(parents=True, exist_ok=True)
     log = open(take / 'narrate.log', 'a', encoding='utf-8'); log.write(f'\n=== {time.ctime()}\n'); log.flush()
     redo = {int(n) for n in a.redo.split(',') if n.strip()}
@@ -57,12 +66,12 @@ def main():
         secs = len(wav) / sr; wps = len(norm(lines[i])) / max(secs, .1)
         if wps < 1.3 or wps > 4.5:
             report.append(f'  line {i + 1}: {secs:.1f}s for {len(norm(lines[i]))} words - odd pace, listen (redo with --redo {i + 1})')
-        parts += [wav, np.zeros(int(sr * GAP), dtype='float32')]
+        parts += [wav, np.zeros(int(sr * pause[i]), dtype='float32')]
     full = np.concatenate(parts[:-1]); sf.write(o / 'audio/narration.wav', full, sr, subtype='PCM_16')
     dur = len(full) / sr
     (o / 'audio/narration-source.json').write_text(json.dumps({
         'engine': 'qwen3-tts', 'model': 'Qwen3-TTS-12Hz-0.6B-Base', 'voice': f'{a.voice} (local clone)', 'take': a.take,
-        'clips': f'audio/qwen/{a.take}/clips', 'gap_seconds': GAP, 'speech_end_seconds': round(dur, 2)}, indent=2), encoding='utf-8')
+        'clips': f'audio/qwen/{a.take}/clips', 'gap_seconds': GAP, 'beat_seconds': a.beat, 'speech_end_seconds': round(dur, 2)}, indent=2), encoding='utf-8')
 
     py = cfg.get('transcription_python') if cfg.get('transcription_python') and Path(cfg['transcription_python']).is_file() else sys.executable
     r = subprocess.run([py, str(S / 'transcribe.py'), str(o / 'audio/narration.wav'), '--output', str(o / 'audio/alignment'), '--force'],
