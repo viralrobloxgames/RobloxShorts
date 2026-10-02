@@ -25,8 +25,8 @@ Don't run two Qwen jobs at once, because the laptop has 8 GB of RAM. In this Cla
 
 **George voice C (chosen 2026-10-02, Part 4 on):** the user compared four clone setups against real George by ear and picked C:
 **Qwen3-TTS 1.7B-Base** (not 0.6B), ICL sample = `assets/audio/voices/george_c.wav` (first 20.8 s of Part 3's ElevenLabs narration, transcript in
-`george_c.txt`), and speaker embedding = `george_c_1.7B_xvector.npy`, the mean x-vector over 161 clean George sentences from Parts 1-3 and
-The AFK Millionaire (about 3.5 minutes). Findings from that test (`projects/the-noob-has-admin/audio/auditions/`):
+`george_c.txt`), and speaker embedding = `george_c_1.7B_xvector.npy`, the mean x-vector over the 66 clean George sentences of 1.4 s or longer
+from Parts 1-3 and The AFK Millionaire (about 2.2 minutes). Findings from that test (`projects/the-noob-has-admin/audio/auditions/`):
 - The old `george` setup (0.6B, 13.9 s sample) reads the same sentence about 33% slower than George, which is most of the "robotic" feel.
   The 1.7B model with the longer sample is within ~10%. On a 4-core CPU the 1.7B model was only ~20% slower than 0.6B.
 - **Don't pitch-shift the narration.** George's own pitch varies between takes (about 119-131 Hz); lowering the clone made it sound deeper and

@@ -18,7 +18,7 @@
  },
  {
   "asset": "drum_hit",
-  "start": 4.85,
+  "start": 4.57,
   "gain": 0.4
  },
  {
@@ -28,7 +28,7 @@
    1175,
    1568
   ],
-  "start": 4.9,
+  "start": 4.62,
   "gain": 0.16,
   "dur": 0.12
  },
@@ -37,330 +37,275 @@
    2093,
    2637
   ],
-  "start": 5.05,
+  "start": 4.77,
   "gain": 0.06,
   "dur": 0.2
  },
  {
   "asset": "click",
-  "start": 5.45,
+  "start": 5.17,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 5.6,
+  "start": 5.32,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 7.09,
+  "start": 6.91,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.2,
+  "start": 7.02,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.31,
+  "start": 7.13,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.42,
+  "start": 7.24,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.53,
+  "start": 7.35,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.64,
+  "start": 7.46,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.75,
+  "start": 7.57,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.86,
+  "start": 7.68,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 7.97,
+  "start": 7.79,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.08,
+  "start": 7.9,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.19,
+  "start": 8.01,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.3,
+  "start": 8.12,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.41,
+  "start": 8.23,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.52,
+  "start": 8.34,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.63,
+  "start": 8.45,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.74,
+  "start": 8.56,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.85,
+  "start": 8.67,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 8.96,
+  "start": 8.78,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.07,
+  "start": 8.89,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.18,
+  "start": 9.0,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.29,
+  "start": 9.11,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.4,
+  "start": 9.22,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.51,
+  "start": 9.33,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.62,
+  "start": 9.44,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.73,
+  "start": 9.55,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.84,
+  "start": 9.66,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 9.95,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 10.06,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 10.12,
+  "start": 9.68,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 10.12,
+  "start": 9.74,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 10.17,
+  "start": 9.77,
   "gain": 0.08
+ },
+ {
+  "asset": "click",
+  "start": 9.8,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 9.86,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 9.88,
+  "gain": 0.08
+ },
+ {
+  "asset": "click",
+  "start": 9.92,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 9.98,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 9.99,
+  "gain": 0.08
+ },
+ {
+  "asset": "click",
+  "start": 10.04,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 10.1,
+  "gain": 0.08
+ },
+ {
+  "asset": "click",
+  "start": 10.1,
+  "gain": 0.12
  },
  {
   "asset": "click",
   "start": 10.18,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.18,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.24,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.24,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.28,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 10.3,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.3,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.36,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.36,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.39,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 10.42,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.42,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.48,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.48,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.5,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 10.54,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.54,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 10.61,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 10.62,
   "gain": 0.3
  },
  {
   "asset": "swish_4",
-  "start": 10.72,
+  "start": 10.28,
   "gain": 0.5
  },
  {
   "tone": 500,
-  "start": 10.72,
+  "start": 10.28,
   "gain": 0.12,
   "dur": 1.4,
   "sweep": 900
  },
  {
   "asset": "impact_3",
-  "start": 10.74,
+  "start": 10.3,
   "gain": 0.4
  },
  {
   "asset": "click",
-  "start": 16.12,
+  "start": 14.98,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.21,
+  "start": 15.07,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.3,
+  "start": 15.16,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.39,
+  "start": 15.25,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.48,
+  "start": 15.34,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.57,
+  "start": 15.43,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.66,
+  "start": 15.52,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 16.75,
+  "start": 15.61,
   "gain": 0.1
  },
  {
   "tone": 110,
-  "start": 16.87,
+  "start": 15.73,
   "gain": 0.2,
   "dur": 1.0,
   "sweep": 200,
@@ -368,59 +313,59 @@
  },
  {
   "asset": "click",
-  "start": 18.46,
+  "start": 17.1,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.52,
+  "start": 17.16,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.58,
+  "start": 17.22,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.64,
+  "start": 17.28,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.7,
+  "start": 17.34,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.76,
+  "start": 17.4,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.82,
+  "start": 17.46,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.88,
+  "start": 17.52,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 18.96,
+  "start": 17.6,
   "gain": 0.3
  },
  {
   "tone": 900,
-  "start": 19.01,
+  "start": 17.65,
   "gain": 0.14,
   "dur": 0.45,
   "sweep": -700
  },
  {
   "asset": "swish_2",
-  "start": 19.01,
+  "start": 17.65,
   "gain": 0.3
  },
  {
@@ -428,55 +373,55 @@
    2093,
    2637
   ],
-  "start": 19.41,
+  "start": 18.05,
   "gain": 0.06,
   "dur": 0.12
  },
  {
   "asset": "click",
-  "start": 22.1,
+  "start": 21.04,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.19,
+  "start": 21.13,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.28,
+  "start": 21.22,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.37,
+  "start": 21.31,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.46,
+  "start": 21.4,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.55,
+  "start": 21.49,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.64,
+  "start": 21.58,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 22.73,
+  "start": 21.67,
   "gain": 0.1
  },
  {
   "tone": [
    1200
   ],
-  "start": 22.8,
+  "start": 21.74,
   "gain": 0.04,
   "dur": 0.05
  },
@@ -484,7 +429,7 @@
   "tone": [
    1600
   ],
-  "start": 22.86,
+  "start": 21.8,
   "gain": 0.04,
   "dur": 0.05
  },
@@ -492,7 +437,7 @@
   "tone": [
    1200
   ],
-  "start": 22.92,
+  "start": 21.86,
   "gain": 0.04,
   "dur": 0.05
  },
@@ -500,7 +445,7 @@
   "tone": [
    1600
   ],
-  "start": 22.98,
+  "start": 21.92,
   "gain": 0.04,
   "dur": 0.05
  },
@@ -508,7 +453,7 @@
   "tone": [
    1200
   ],
-  "start": 23.04,
+  "start": 21.98,
   "gain": 0.04,
   "dur": 0.05
  },
@@ -516,63 +461,63 @@
   "tone": [
    1600
   ],
-  "start": 23.1,
+  "start": 22.04,
   "gain": 0.04,
   "dur": 0.05
  },
  {
   "asset": "click",
-  "start": 25.9,
+  "start": 24.32,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 25.96,
+  "start": 24.38,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.02,
+  "start": 24.44,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.08,
+  "start": 24.5,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.14,
+  "start": 24.56,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.2,
+  "start": 24.62,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.26,
+  "start": 24.68,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.32,
+  "start": 24.74,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 26.4,
+  "start": 24.82,
   "gain": 0.3
  },
  {
   "asset": "impact_1",
-  "start": 26.5,
+  "start": 24.92,
   "gain": 0.35
  },
  {
   "tone": 300,
-  "start": 26.5,
+  "start": 24.92,
   "gain": 0.1,
   "dur": 1.6,
   "sweep": -100,
@@ -580,75 +525,195 @@
  },
  {
   "asset": "swish_1",
-  "start": 26.7,
+  "start": 25.12,
   "gain": 0.06
  },
  {
   "asset": "swish_1",
-  "start": 26.9,
+  "start": 25.32,
   "gain": 0.06
  },
  {
   "asset": "swish_1",
-  "start": 27.1,
+  "start": 25.52,
   "gain": 0.06
  },
  {
   "asset": "swish_1",
-  "start": 27.3,
+  "start": 25.72,
   "gain": 0.06
  },
  {
   "asset": "swish_1",
-  "start": 27.5,
+  "start": 25.92,
   "gain": 0.06
  },
  {
   "asset": "swish_1",
-  "start": 27.7,
-  "gain": 0.06
- },
- {
-  "asset": "swish_1",
-  "start": 27.9,
-  "gain": 0.06
- },
- {
-  "asset": "swish_1",
-  "start": 28.1,
+  "start": 26.12,
   "gain": 0.06
  },
  {
   "tone": 1400,
-  "start": 28.14,
+  "start": 26.24,
   "gain": 0.07,
   "dur": 0.9,
   "sweep": 500
  },
  {
   "asset": "swish_1",
-  "start": 28.3,
+  "start": 26.32,
   "gain": 0.06
  },
  {
   "asset": "swish_1",
+  "start": 26.52,
+  "gain": 0.06
+ },
+ {
+  "asset": "swish_1",
+  "start": 26.72,
+  "gain": 0.06
+ },
+ {
+  "asset": "swish_1",
+  "start": 26.92,
+  "gain": 0.06
+ },
+ {
+  "asset": "swish_1",
+  "start": 27.12,
+  "gain": 0.06
+ },
+ {
+  "asset": "swish_1",
+  "start": 27.32,
+  "gain": 0.06
+ },
+ {
+  "asset": "swish_1",
+  "start": 27.52,
+  "gain": 0.06
+ },
+ {
+  "asset": "click",
+  "start": 27.68,
+  "gain": 0.12
+ },
+ {
+  "asset": "swish_1",
+  "start": 27.72,
+  "gain": 0.06
+ },
+ {
+  "asset": "click",
+  "start": 27.725,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 27.77,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 27.815,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 27.86,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 27.905,
+  "gain": 0.12
+ },
+ {
+  "asset": "impact_2",
+  "start": 27.98,
+  "gain": 0.45
+ },
+ {
+  "asset": "drum_hit",
+  "start": 27.98,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   523.0
+  ],
+  "start": 28.0,
+  "gain": 0.12,
+  "dur": 0.15,
+  "square": true
+ },
+ {
+  "tone": 2200,
+  "start": 28.0,
+  "gain": 0.06,
+  "dur": 0.3,
+  "sweep": -1200
+ },
+ {
+  "asset": "click",
+  "start": 28.32,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 28.365,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 28.41,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 28.455,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
   "start": 28.5,
-  "gain": 0.06
+  "gain": 0.12
  },
  {
-  "asset": "swish_1",
-  "start": 28.7,
-  "gain": 0.06
+  "asset": "click",
+  "start": 28.545,
+  "gain": 0.12
  },
  {
-  "asset": "swish_1",
-  "start": 28.9,
-  "gain": 0.06
+  "asset": "impact_2",
+  "start": 28.62,
+  "gain": 0.45
  },
  {
-  "asset": "swish_1",
+  "asset": "drum_hit",
+  "start": 28.62,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   621.9553211464231
+  ],
+  "start": 28.64,
+  "gain": 0.12,
+  "dur": 0.15,
+  "square": true
+ },
+ {
+  "asset": "click",
   "start": 29.1,
-  "gain": 0.06
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 29.145,
+  "gain": 0.12
  },
  {
   "asset": "click",
@@ -666,385 +731,265 @@
   "gain": 0.12
  },
  {
-  "asset": "swish_1",
-  "start": 29.3,
-  "gain": 0.06
- },
- {
   "asset": "click",
   "start": 29.325,
   "gain": 0.12
  },
  {
-  "asset": "click",
-  "start": 29.37,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 29.415,
-  "gain": 0.12
- },
- {
   "asset": "impact_2",
-  "start": 29.49,
+  "start": 29.4,
   "gain": 0.45
  },
  {
   "asset": "drum_hit",
-  "start": 29.49,
-  "gain": 0.3
- },
- {
-  "tone": [
-   523.0
-  ],
-  "start": 29.51,
-  "gain": 0.12,
-  "dur": 0.15,
-  "square": true
- },
- {
-  "tone": 2200,
-  "start": 29.51,
-  "gain": 0.06,
-  "dur": 0.3,
-  "sweep": -1200
- },
- {
-  "asset": "click",
-  "start": 29.72,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 29.765,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 29.81,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 29.855,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 29.9,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 29.945,
-  "gain": 0.12
- },
- {
-  "asset": "impact_2",
-  "start": 30.02,
-  "gain": 0.45
- },
- {
-  "asset": "drum_hit",
-  "start": 30.02,
-  "gain": 0.3
- },
- {
-  "tone": [
-   621.9553211464231
-  ],
-  "start": 30.04,
-  "gain": 0.12,
-  "dur": 0.15,
-  "square": true
- },
- {
-  "asset": "click",
-  "start": 30.56,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 30.605,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 30.65,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 30.695,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 30.74,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 30.785,
-  "gain": 0.12
- },
- {
-  "asset": "impact_2",
-  "start": 30.86,
-  "gain": 0.45
- },
- {
-  "asset": "drum_hit",
-  "start": 30.86,
+  "start": 29.4,
   "gain": 0.3
  },
  {
   "tone": [
    739.6336931211288
   ],
-  "start": 30.88,
+  "start": 29.42,
   "gain": 0.12,
   "dur": 0.15,
   "square": true
  },
  {
   "asset": "click",
-  "start": 31.26,
+  "start": 29.66,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 31.305,
+  "start": 29.705,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 31.35,
+  "start": 29.75,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 31.395,
+  "start": 29.795,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 31.44,
+  "start": 29.84,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 31.485,
+  "start": 29.885,
   "gain": 0.12
  },
  {
   "asset": "impact_2",
-  "start": 31.56,
+  "start": 29.96,
   "gain": 0.45
  },
  {
   "asset": "drum_hit",
-  "start": 31.56,
+  "start": 29.96,
   "gain": 0.3
  },
  {
   "tone": [
    879.5776503553853
   ],
-  "start": 31.58,
+  "start": 29.98,
   "gain": 0.12,
   "dur": 0.15,
   "square": true
  },
  {
   "tone": 392,
-  "start": 31.76,
+  "start": 30.16,
   "gain": 0.05,
   "dur": 0.1,
   "square": true
  },
  {
   "tone": 494,
-  "start": 32.01,
+  "start": 30.41,
   "gain": 0.05,
   "dur": 0.1,
   "square": true
  },
  {
   "tone": 587,
-  "start": 32.26,
+  "start": 30.66,
   "gain": 0.05,
   "dur": 0.1,
   "square": true
  },
  {
   "tone": 494,
-  "start": 32.51,
+  "start": 30.91,
   "gain": 0.05,
   "dur": 0.1,
   "square": true
  },
  {
   "tone": 392,
-  "start": 32.76,
+  "start": 31.16,
   "gain": 0.05,
   "dur": 0.1,
   "square": true
  },
  {
   "tone": 494,
-  "start": 33.01,
+  "start": 31.41,
   "gain": 0.05,
   "dur": 0.1,
   "square": true
  },
  {
   "asset": "click",
-  "start": 36.52,
+  "start": 34.18,
   "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 34.34,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 34.5,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 34.66,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 34.82,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 34.98,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 35.14,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 35.3,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 35.46,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 35.62,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 35.78,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 35.94,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 36.1,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 36.26,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 36.38,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 36.42,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 36.44,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 36.5,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 36.56,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 36.58,
+  "gain": 0.07
+ },
+ {
+  "asset": "click",
+  "start": 36.62,
+  "gain": 0.12
  },
  {
   "asset": "click",
   "start": 36.68,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 36.84,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.0,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.16,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.32,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.48,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.64,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.8,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 37.96,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.12,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.28,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.44,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.6,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.76,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.92,
-  "gain": 0.07
- },
- {
-  "asset": "click",
-  "start": 38.96,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 39.02,
+  "start": 36.74,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 39.08,
+  "start": 36.8,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 39.14,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 39.2,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 39.26,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 39.32,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 39.38,
-  "gain": 0.12
- },
- {
-  "asset": "click",
-  "start": 39.46,
+  "start": 36.88,
   "gain": 0.3
  },
  {
   "asset": "swish_3",
-  "start": 39.51,
+  "start": 36.93,
   "gain": 0.45
  },
  {
   "tone": 300,
-  "start": 39.51,
+  "start": 36.93,
   "gain": 0.12,
   "dur": 0.4,
   "sweep": 1200
  },
  {
   "asset": "impact_4",
-  "start": 41.75,
+  "start": 39.03,
   "gain": 0.65
  },
  {
   "asset": "drum_hit",
-  "start": 41.75,
+  "start": 39.03,
   "gain": 0.5
  },
  {
@@ -1053,7 +998,7 @@
    2793,
    3136
   ],
-  "start": 41.95,
+  "start": 39.23,
   "gain": 0.06,
   "dur": 0.5
  },
@@ -1063,90 +1008,90 @@
    494,
    466
   ],
-  "start": 43.02,
+  "start": 40.28,
   "gain": 0.06,
   "dur": 0.25
  },
  {
   "asset": "drum_hit",
-  "start": 48.2,
+  "start": 44.78,
   "gain": 0.4
  },
  {
   "tone": 140,
-  "start": 48.25,
+  "start": 44.83,
   "gain": 0.18,
   "dur": 0.4,
   "square": true
  },
  {
   "asset": "click",
-  "start": 50.34,
+  "start": 46.6,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 50.64,
+  "start": 46.9,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 50.94,
-  "gain": 0.08
- },
- {
-  "asset": "click",
-  "start": 51.24,
+  "start": 47.2,
   "gain": 0.08
  },
  {
   "tone": [
    1046
   ],
-  "start": 51.38,
+  "start": 47.4,
   "gain": 0.12,
   "dur": 0.06
  },
  {
   "asset": "click",
-  "start": 51.54,
+  "start": 47.5,
   "gain": 0.08
  },
  {
   "asset": "click",
-  "start": 51.84,
+  "start": 47.8,
+  "gain": 0.08
+ },
+ {
+  "asset": "click",
+  "start": 48.1,
   "gain": 0.08
  },
  {
   "tone": 400,
-  "start": 52.88,
+  "start": 48.68,
   "gain": 0.06,
   "dur": 0.5,
   "sweep": -150
  },
  {
   "asset": "impact_4",
-  "start": 53.43,
+  "start": 49.23,
   "gain": 0.6
  },
  {
   "asset": "impact_2",
-  "start": 53.45,
+  "start": 49.25,
   "gain": 0.4
  },
  {
   "asset": "click",
-  "start": 55.67,
+  "start": 50.73,
   "gain": 0.15
  },
  {
   "asset": "click",
-  "start": 55.92,
+  "start": 50.98,
   "gain": 0.15
  },
  {
   "asset": "click",
-  "start": 56.37,
+  "start": 51.43,
   "gain": 0.3
  },
  {
@@ -1155,7 +1100,7 @@
    330,
    262
   ],
-  "start": 56.67,
+  "start": 51.73,
   "gain": 0.1,
   "dur": 0.5
  },
@@ -1163,42 +1108,42 @@
   "tone": [
    1568
   ],
-  "start": 57.74,
+  "start": 53.14,
   "gain": 0.1,
   "dur": 0.08
  },
  {
   "tone": 220,
-  "start": 58.14,
+  "start": 53.54,
   "gain": 0.12,
   "dur": 0.4,
   "square": true
  },
  {
   "asset": "impact_4",
-  "start": 60.6,
+  "start": 56.26,
   "gain": 0.6
  },
  {
   "asset": "drum_hit",
-  "start": 60.6,
+  "start": 56.26,
   "gain": 0.55
  },
  {
   "tone": 98,
-  "start": 60.62,
+  "start": 56.28,
   "gain": 0.25,
   "dur": 0.6,
   "square": true
  },
  {
   "asset": "swish_2",
-  "start": 63.66,
+  "start": 59.66,
   "gain": 0.3
  },
  {
   "asset": "swish_1",
-  "start": 65.4,
+  "start": 61.18,
   "gain": 0.3
  },
  {
@@ -1207,13 +1152,13 @@
    659,
    784
   ],
-  "start": 65.5,
+  "start": 61.28,
   "gain": 0.1,
   "dur": 0.2
  },
  {
   "asset": "swish_3",
-  "start": 66.87,
+  "start": 63.05,
   "gain": 0.35
  },
  {
@@ -1222,7 +1167,7 @@
    1319,
    1568
   ],
-  "start": 66.92,
+  "start": 63.1,
   "gain": 0.12,
   "dur": 0.18
  }
