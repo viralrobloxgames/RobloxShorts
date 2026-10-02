@@ -1,40 +1,36 @@
 # The Noob Has Admin (Part 4)
 
-Series: "___ Got Admin For One Round" (`ideas/series/admin-for-one-round.md`). Part 3 ended on the AFK noob, crown
-still on, back from dinner; its end card promised "PART 4: THE NOOB HAS ADMIN". Part 4 picks up there. Roblox R6 pack,
-web route, George narration.
+Series: "___ Got Admin For One Round" (`ideas/series/admin-for-one-round.md`). Part 3 ended on the AFK noob, back
+from dinner, still holding admin that Mia "forgot" to take. Part 4: he is not clueless at all - he's terrifyingly
+good - and the twist recasts the whole series: the noob is Mia's alt account, so Mia didn't forget him in Part 3.
 
-Why it's not Parts 1-3 again: the admin has no plan. The noob doesn't know what admin does, so the other three try to
-steer him through chat and he takes every instruction too literally. Everyone else is the schemer this time; the noob
-is innocent and still wins every exchange. Callbacks: the million coins and the fling that lands him in the same pose
-(The AFK Millionaire), Mia's long typing (Part 3), Leo and Max finally on the same side.
+Why this beats the earlier draft (noob takes coaching literally, flings himself, :shutdown):
+- The main character drives every beat (agency) instead of being told what to type; the twist lands on him, caused by
+  his own mistake (typing "gg" on the wrong account).
+- A payoff every 2-4 s, each one a different visual: fling, interrupted giant, burning invisible hair, a 4-command combo,
+  a head-on collision, a plank-stiff Mia.
+- Every rival's signature move from the earlier parts gets countered (Leo's invisible hair, Max's giant): rewards
+  returning viewers, still reads for new ones.
+- The plant is visible all video (Mia never moves; whenever the noob types, Mia's chat bubble is silent), so the
+  reveal is fair. The last line pays off Part 3 and sets up Part 5 (Mia with two crowns vs Leo and Max).
 
-Running gags kept: whoever has admin is undone by their own command (the shutdown kicks the noob too); Mia judges
-everyone (and this time gets caught out herself); the noob goes AFK.
-
-Rules carried over (analytics + Parts 2-3 review):
-- Frame 1: the noob with the crown, HUD "NOOB ADMIN ?:??" flipping to "1:00", "1 ROUND = 1 MINUTE"; the first two
-  spoken lines state the premise.
-- ADMIN countdown on screen throughout; "COMMAND ONE..FIVE" cards; typed chat commands; "PART 4" tag; a payoff every
-  2-4 s. Arms via web/lib/gestures.js; nothing passes through solid things; key action clear of the captions.
+Rules carried over: premise in the first line and frame (crowned noob, AFK tag pops off, "NOOB ADMIN 1:00", "1 ROUND =
+1 MINUTE"); countdown on screen; typed chat commands; "PART 4" tag; COMBO counter during the speed run; arms via
+gestures.js and dance2 only; nothing passes through solid things; key action above the caption line; cover per spec.
 
 Beats:
-1. HOOK: the noob, crown on, "BACK" tag over his head, Leo, Max and Mia frozen around him. HUD "NOOB ADMIN ?:??"
-   ticks over to 1:00. Chat: "[noob]: what does admin do".
-2. "Leo is typing... Max is typing... Mia is typing..." stacked in the chat box.
-3. COMMAND ONE - Leo: "type :give me coins" (meaning Leo). The noob types ":give me coins". A coin pile and a
-   "1,000,000" sign land on the noob. Leo's face.
-4. COMMAND TWO - Max: "no!! type :fling leo". The noob types ":fling" and stops. The noob flies across the map,
-   bounces off a tree, lands back in his spot in the identical pose (AFK Millionaire callback).
-5. COMMAND THREE - Mia, calm: "type :unadmin me". Close on the noob's chat box: ":unadmin mia". Mia's crown pops off.
-   She stares at the camera, deadpan.
-6. 0:20 - Leo and Max look at each other; a handshake (first time on the same side). Chat: "type :cmds and give us
-   admin".
-7. COMMAND FOUR - ":cmds". A huge command list fills the screen; scroll, scroll, scroll; it stops on the last line,
-   red: ":shutdown".
-8. Chat floods: "[Leo]: DONT" "[Max]: DONT" "[Mia]: don't." The noob's cursor blinks.
-9. COMMAND FIVE - ENTER. Roblox disconnect box: "Server shutting down." Leo, Max, Mia blink out one by one; the
-   noob last, crown and all. Empty map, HUD "ROUND OVER".
-10. The server comes back: all four pop in at the spawn pad. Chat: "[noob]: brb dessert". His "AFK" tag flips back on.
-11. CLIFFHANGER: a crown drops onto Mia. HUD "MIA ADMIN 1:00". She smiles for the first time in the series. Cut.
-12. CTA end card: "PART 5: MIA GOT ADMIN" + @viralrobloxgames + FOLLOW.
+1. HOOK: the noob, crowned, AFK tag. The tag pops off, his eyes open, he cracks his knuckles. Leo/Max/Mia behind.
+2. Leo laughs, starts typing ":kick noob"; the noob's ":fling leo" lands first - Leo flies off mid-typing.
+3. Max: ":giant me" - he starts growing; ":tiny max" - he shrinks back down past normal to tiny, mid-growth.
+4. Leo respawns invisible (just hair + crown-less hair). ":fire leo" - the floating hair catches fire and runs in
+   circles (fire + smoke particles on the hair).
+5. Speed run: ":freeze" (Max ice), ":spin" (Leo spins), ":sit" (both sit), ":dance" (both dance2) - one per second,
+   COMBO x1..x4 counter, typing sound like a machine gun.
+6. Leo and Max charge at the noob from both sides; ":speed me" - the noob zips out of the middle; they collide, both
+   fall over, stars.
+7. "And Mia?" - Mia standing perfectly still all video (idle frozen, no blink). Leo, suspicious, walks over at 0:10
+   and pokes her - she tips over stiff as a plank (rigid fall, thud).
+8. REVEAL: the noob types "gg"; the chat shows "[Mia]: gg" (wrong account). Freeze frame, big "ALT ACCOUNT" stamp,
+   noob and plank-Mia side by side.
+9. Stinger: quick callback to Part 3's last shot (Mia, crown, "she forgot one player" ... crossed out: "she didn't").
+10. CTA end card: "PART 5: LEO & MAX VS MIA" + @viralrobloxgames + FOLLOW.
