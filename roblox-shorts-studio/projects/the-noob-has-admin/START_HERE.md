@@ -10,16 +10,19 @@ pack, call to action at the end.
 - Fit check: crowns on the noob and Mia passed and reviewed.
 - Cover `delivery/The_Noob_Has_Admin_cover.jpg|png` (1080x1920, checked on a 3:4 crop, no spoiler). `delivery/post.json`.
 
-## Narration (next)
-- Route L: Qwen3-TTS with the cloned `george` voice (references/voice-and-audio.md). One background run of narrate.py
-  writes `audio/narration.wav`, the word timings and a script check. Let the user listen to it; fix lines with `--redo N`.
+## Delivered
+- Narration take-02: George voice C (Qwen3-TTS 1.7B, `assets/audio/voices/george_c*`), 65.7 s, every word checked; user approved it.
+- `delivery/The_Noob_Has_Admin.mp4` (1080x1920, 30 fps, 1,981 frames, 66.0 s), cover, `post.json`.
 
+## Next
+- Post after the user approves the video (references/publishing.md; slot B 22:30 UK, references/posting-schedule.md).
+- After 24 h, add its results to `ideas/series/admin-for-one-round.md`.
+
+## Re-render / re-encode
 ```
 cd roblox-shorts-studio
-& "$env:USERPROFILE\Qwen3-TTS\.venv\Scripts\python.exe" scripts/narrate.py projects/the-noob-has-admin   # background, ~20 min
-python3 projects/the-noob-has-admin/source/beats.py                  # retime the clip to the real words
-# set source/project.json seconds to the clip's meta.seconds; write source/sound_cues.json; preview; fit check
-node web/fit_check.mjs --clip projects/the-noob-has-admin/web/noob_clip.js    # review, then --reviewed
+python3 projects/the-noob-has-admin/source/beats.py && python3 projects/the-noob-has-admin/source/sound_cues.py
+node web/fit_check.mjs --clip projects/the-noob-has-admin/web/noob_clip.js        # review, then --reviewed
 node web/render.mjs --clip projects/the-noob-has-admin/web/noob_clip.js --out projects/the-noob-has-admin/renders/web --workers 2 --resume
 python3 scripts/finish.py projects/the-noob-has-admin --encode --frames projects/the-noob-has-admin/renders/web
 ```
