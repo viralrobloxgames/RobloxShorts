@@ -1,0 +1,65 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:00<00:01,  1.97it/s]Fetching 4 files: 100%|██████████| 4/4 [00:06<00:00,  1.62s/it]Fetching 4 files: 100%|██████████| 4/4 [00:06<00:00,  1.62s/it]
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 1/25 1.9s in 28s: The server said one player online.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 2/25 2.1s in 28s: So who was standing right in front of Max?
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 3/25 2.4s in 29s: No name. No face. Just a light in its chest.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 4/25 1.0s in 18s: Max waved.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 5/25 2.2s in 26s: It waved back. Half a second late.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 6/25 3.1s in 32s: He stepped left. It stepped left. Late again.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 7/25 2.2s in 27s: It wasn't a player. It was copying him.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 8/25 2.4s in 26s: And every copy brought it one step closer.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 9/25 1.6s in 21s: The only door was behind it.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 10/25 2.4s in 26s: But a copy can only do what it has already seen.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 11/25 1.4s in 21s: So Max faked left.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 12/25 1.0s in 20s: It faked left.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 13/25 2.1s in 23s: He cut right and sprinted for the door.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 14/25 1.5s in 21s: It was still finishing the fake.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 15/25 1.9s in 22s: Then it ran. Half a second behind.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 16/25 2.1s in 23s: Max dove through and slammed the door.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 17/25 1.9s in 22s: It hit the other side. Hard.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 18/25 1.4s in 19s: Then... silence.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 19/25 1.4s in 20s: Max checked the player list.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 20/25 2.2s in 24s: One player online. Just Max.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 21/25 1.1s in 19s: Then it updated.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 22/25 1.3s in 20s: Two players online.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 23/25 0.6s in 16s: Max.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 24/25 0.7s in 17s: And Max.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 25/25 3.4s in 32s: Follow Viral Roblox Games... before it learns your name.
