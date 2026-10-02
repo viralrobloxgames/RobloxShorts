@@ -1,0 +1,923 @@
+{
+  "source": "narration.wav",
+  "duration": 68.0000625,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.36,
+      "text": " Mia had admin for one round, twice. One crown on her, one on her alt account,",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.32,
+          "word": " Mia"
+        },
+        {
+          "start": 0.32,
+          "end": 0.58,
+          "word": " had"
+        },
+        {
+          "start": 0.58,
+          "end": 0.92,
+          "word": " admin"
+        },
+        {
+          "start": 0.92,
+          "end": 1.2,
+          "word": " for"
+        },
+        {
+          "start": 1.2,
+          "end": 1.42,
+          "word": " one"
+        },
+        {
+          "start": 1.42,
+          "end": 1.74,
+          "word": " round,"
+        },
+        {
+          "start": 2.04,
+          "end": 2.32,
+          "word": " twice."
+        },
+        {
+          "start": 3.12,
+          "end": 3.38,
+          "word": " One"
+        },
+        {
+          "start": 3.38,
+          "end": 3.66,
+          "word": " crown"
+        },
+        {
+          "start": 3.66,
+          "end": 3.86,
+          "word": " on"
+        },
+        {
+          "start": 3.86,
+          "end": 4.12,
+          "word": " her,"
+        },
+        {
+          "start": 4.34,
+          "end": 4.56,
+          "word": " one"
+        },
+        {
+          "start": 4.56,
+          "end": 4.72,
+          "word": " on"
+        },
+        {
+          "start": 4.72,
+          "end": 4.88,
+          "word": " her"
+        },
+        {
+          "start": 4.88,
+          "end": 5.04,
+          "word": " alt"
+        },
+        {
+          "start": 5.04,
+          "end": 5.36,
+          "word": " account,"
+        }
+      ]
+    },
+    {
+      "start": 5.72,
+      "end": 11.32,
+      "text": " the noob. So Leo and Max did something new, they teamed up. Mia typed, fling Max.",
+      "words": [
+        {
+          "start": 5.72,
+          "end": 5.86,
+          "word": " the"
+        },
+        {
+          "start": 5.86,
+          "end": 6.2,
+          "word": " noob."
+        },
+        {
+          "start": 6.62,
+          "end": 6.86,
+          "word": " So"
+        },
+        {
+          "start": 6.86,
+          "end": 7.06,
+          "word": " Leo"
+        },
+        {
+          "start": 7.06,
+          "end": 7.3,
+          "word": " and"
+        },
+        {
+          "start": 7.3,
+          "end": 7.48,
+          "word": " Max"
+        },
+        {
+          "start": 7.48,
+          "end": 7.72,
+          "word": " did"
+        },
+        {
+          "start": 7.72,
+          "end": 8.04,
+          "word": " something"
+        },
+        {
+          "start": 8.04,
+          "end": 8.42,
+          "word": " new,"
+        },
+        {
+          "start": 8.7,
+          "end": 8.82,
+          "word": " they"
+        },
+        {
+          "start": 8.82,
+          "end": 9.04,
+          "word": " teamed"
+        },
+        {
+          "start": 9.04,
+          "end": 9.36,
+          "word": " up."
+        },
+        {
+          "start": 10.12,
+          "end": 10.22,
+          "word": " Mia"
+        },
+        {
+          "start": 10.22,
+          "end": 10.6,
+          "word": " typed,"
+        },
+        {
+          "start": 10.84,
+          "end": 11.06,
+          "word": " fling"
+        },
+        {
+          "start": 11.06,
+          "end": 11.32,
+          "word": " Max."
+        }
+      ]
+    },
+    {
+      "start": 12.1,
+      "end": 17.6,
+      "text": " Max went flying. But Leo noticed something. While Mia was typing, the noob froze.",
+      "words": [
+        {
+          "start": 12.1,
+          "end": 12.38,
+          "word": " Max"
+        },
+        {
+          "start": 12.38,
+          "end": 12.56,
+          "word": " went"
+        },
+        {
+          "start": 12.56,
+          "end": 12.94,
+          "word": " flying."
+        },
+        {
+          "start": 13.62,
+          "end": 13.82,
+          "word": " But"
+        },
+        {
+          "start": 13.82,
+          "end": 14.1,
+          "word": " Leo"
+        },
+        {
+          "start": 14.1,
+          "end": 14.46,
+          "word": " noticed"
+        },
+        {
+          "start": 14.46,
+          "end": 14.9,
+          "word": " something."
+        },
+        {
+          "start": 15.62,
+          "end": 15.78,
+          "word": " While"
+        },
+        {
+          "start": 15.78,
+          "end": 16.02,
+          "word": " Mia"
+        },
+        {
+          "start": 16.02,
+          "end": 16.2,
+          "word": " was"
+        },
+        {
+          "start": 16.2,
+          "end": 16.5,
+          "word": " typing,"
+        },
+        {
+          "start": 16.92,
+          "end": 17.04,
+          "word": " the"
+        },
+        {
+          "start": 17.04,
+          "end": 17.28,
+          "word": " noob"
+        },
+        {
+          "start": 17.28,
+          "end": 17.6,
+          "word": " froze."
+        }
+      ]
+    },
+    {
+      "start": 18.48,
+      "end": 23.36,
+      "text": " Leo poked him, he fell over like a plank. She could only play one account at a time.",
+      "words": [
+        {
+          "start": 18.48,
+          "end": 18.84,
+          "word": " Leo"
+        },
+        {
+          "start": 18.84,
+          "end": 19.12,
+          "word": " poked"
+        },
+        {
+          "start": 19.12,
+          "end": 19.36,
+          "word": " him,"
+        },
+        {
+          "start": 19.62,
+          "end": 19.78,
+          "word": " he"
+        },
+        {
+          "start": 19.78,
+          "end": 20.0,
+          "word": " fell"
+        },
+        {
+          "start": 20.0,
+          "end": 20.26,
+          "word": " over"
+        },
+        {
+          "start": 20.26,
+          "end": 20.44,
+          "word": " like"
+        },
+        {
+          "start": 20.44,
+          "end": 20.6,
+          "word": " a"
+        },
+        {
+          "start": 20.6,
+          "end": 20.84,
+          "word": " plank."
+        },
+        {
+          "start": 21.46,
+          "end": 21.68,
+          "word": " She"
+        },
+        {
+          "start": 21.68,
+          "end": 21.82,
+          "word": " could"
+        },
+        {
+          "start": 21.82,
+          "end": 22.04,
+          "word": " only"
+        },
+        {
+          "start": 22.04,
+          "end": 22.24,
+          "word": " play"
+        },
+        {
+          "start": 22.24,
+          "end": 22.46,
+          "word": " one"
+        },
+        {
+          "start": 22.46,
+          "end": 22.72,
+          "word": " account"
+        },
+        {
+          "start": 22.72,
+          "end": 22.92,
+          "word": " at"
+        },
+        {
+          "start": 22.92,
+          "end": 23.06,
+          "word": " a"
+        },
+        {
+          "start": 23.06,
+          "end": 23.36,
+          "word": " time."
+        }
+      ]
+    },
+    {
+      "start": 23.86,
+      "end": 28.5,
+      "text": " So they attacked both at once. Max went for Mia, Leo went for the noob.",
+      "words": [
+        {
+          "start": 23.86,
+          "end": 24.08,
+          "word": " So"
+        },
+        {
+          "start": 24.08,
+          "end": 24.22,
+          "word": " they"
+        },
+        {
+          "start": 24.22,
+          "end": 24.56,
+          "word": " attacked"
+        },
+        {
+          "start": 24.56,
+          "end": 24.86,
+          "word": " both"
+        },
+        {
+          "start": 24.86,
+          "end": 25.06,
+          "word": " at"
+        },
+        {
+          "start": 25.06,
+          "end": 25.44,
+          "word": " once."
+        },
+        {
+          "start": 26.04,
+          "end": 26.34,
+          "word": " Max"
+        },
+        {
+          "start": 26.34,
+          "end": 26.56,
+          "word": " went"
+        },
+        {
+          "start": 26.56,
+          "end": 26.78,
+          "word": " for"
+        },
+        {
+          "start": 26.78,
+          "end": 27.0,
+          "word": " Mia,"
+        },
+        {
+          "start": 27.36,
+          "end": 27.6,
+          "word": " Leo"
+        },
+        {
+          "start": 27.6,
+          "end": 27.86,
+          "word": " went"
+        },
+        {
+          "start": 27.86,
+          "end": 28.04,
+          "word": " for"
+        },
+        {
+          "start": 28.04,
+          "end": 28.16,
+          "word": " the"
+        },
+        {
+          "start": 28.16,
+          "end": 28.5,
+          "word": " noob."
+        }
+      ]
+    },
+    {
+      "start": 28.5,
+      "end": 35.86,
+      "text": " Mia switched, switched, switched. Faster and faster. Then she typed freeze, just freeze.",
+      "words": [
+        {
+          "start": 28.5,
+          "end": 29.3,
+          "word": " Mia"
+        },
+        {
+          "start": 29.3,
+          "end": 29.72,
+          "word": " switched,"
+        },
+        {
+          "start": 30.24,
+          "end": 30.44,
+          "word": " switched,"
+        },
+        {
+          "start": 30.94,
+          "end": 31.28,
+          "word": " switched."
+        },
+        {
+          "start": 31.82,
+          "end": 32.14,
+          "word": " Faster"
+        },
+        {
+          "start": 32.14,
+          "end": 32.54,
+          "word": " and"
+        },
+        {
+          "start": 32.54,
+          "end": 32.92,
+          "word": " faster."
+        },
+        {
+          "start": 33.8,
+          "end": 33.96,
+          "word": " Then"
+        },
+        {
+          "start": 33.96,
+          "end": 34.14,
+          "word": " she"
+        },
+        {
+          "start": 34.14,
+          "end": 34.44,
+          "word": " typed"
+        },
+        {
+          "start": 34.44,
+          "end": 34.76,
+          "word": " freeze,"
+        },
+        {
+          "start": 35.24,
+          "end": 35.44,
+          "word": " just"
+        },
+        {
+          "start": 35.44,
+          "end": 35.86,
+          "word": " freeze."
+        }
+      ]
+    },
+    {
+      "start": 36.6,
+      "end": 42.62,
+      "text": " On the wrong account. Mia froze herself. 10 seconds left, only the noob could save her.",
+      "words": [
+        {
+          "start": 36.6,
+          "end": 36.82,
+          "word": " On"
+        },
+        {
+          "start": 36.82,
+          "end": 36.92,
+          "word": " the"
+        },
+        {
+          "start": 36.92,
+          "end": 37.08,
+          "word": " wrong"
+        },
+        {
+          "start": 37.08,
+          "end": 37.48,
+          "word": " account."
+        },
+        {
+          "start": 38.14,
+          "end": 38.46,
+          "word": " Mia"
+        },
+        {
+          "start": 38.46,
+          "end": 38.78,
+          "word": " froze"
+        },
+        {
+          "start": 38.78,
+          "end": 39.28,
+          "word": " herself."
+        },
+        {
+          "start": 39.92,
+          "end": 40.08,
+          "word": " 10"
+        },
+        {
+          "start": 40.08,
+          "end": 40.4,
+          "word": " seconds"
+        },
+        {
+          "start": 40.4,
+          "end": 40.82,
+          "word": " left,"
+        },
+        {
+          "start": 41.22,
+          "end": 41.44,
+          "word": " only"
+        },
+        {
+          "start": 41.44,
+          "end": 41.64,
+          "word": " the"
+        },
+        {
+          "start": 41.64,
+          "end": 41.92,
+          "word": " noob"
+        },
+        {
+          "start": 41.92,
+          "end": 42.08,
+          "word": " could"
+        },
+        {
+          "start": 42.08,
+          "end": 42.34,
+          "word": " save"
+        },
+        {
+          "start": 42.34,
+          "end": 42.62,
+          "word": " her."
+        }
+      ]
+    },
+    {
+      "start": 43.2,
+      "end": 47.52,
+      "text": " She meant to type unadmin Leo and Max. She typed admin Leo and Max.",
+      "words": [
+        {
+          "start": 43.2,
+          "end": 43.36,
+          "word": " She"
+        },
+        {
+          "start": 43.36,
+          "end": 43.52,
+          "word": " meant"
+        },
+        {
+          "start": 43.52,
+          "end": 43.68,
+          "word": " to"
+        },
+        {
+          "start": 43.68,
+          "end": 43.94,
+          "word": " type"
+        },
+        {
+          "start": 43.94,
+          "end": 44.5,
+          "word": " unadmin"
+        },
+        {
+          "start": 44.5,
+          "end": 44.72,
+          "word": " Leo"
+        },
+        {
+          "start": 44.72,
+          "end": 44.96,
+          "word": " and"
+        },
+        {
+          "start": 44.96,
+          "end": 45.22,
+          "word": " Max."
+        },
+        {
+          "start": 45.92,
+          "end": 46.06,
+          "word": " She"
+        },
+        {
+          "start": 46.06,
+          "end": 46.3,
+          "word": " typed"
+        },
+        {
+          "start": 46.3,
+          "end": 46.72,
+          "word": " admin"
+        },
+        {
+          "start": 46.72,
+          "end": 46.96,
+          "word": " Leo"
+        },
+        {
+          "start": 46.96,
+          "end": 47.2,
+          "word": " and"
+        },
+        {
+          "start": 47.2,
+          "end": 47.52,
+          "word": " Max."
+        }
+      ]
+    },
+    {
+      "start": 48.2,
+      "end": 55.28,
+      "text": " Two new crowns. The team up lasted one second. Leo typed kick Max. Max typed kick Leo.",
+      "words": [
+        {
+          "start": 48.2,
+          "end": 48.38,
+          "word": " Two"
+        },
+        {
+          "start": 48.38,
+          "end": 48.68,
+          "word": " new"
+        },
+        {
+          "start": 48.68,
+          "end": 49.6,
+          "word": " crowns."
+        },
+        {
+          "start": 49.84,
+          "end": 49.98,
+          "word": " The"
+        },
+        {
+          "start": 49.98,
+          "end": 50.16,
+          "word": " team"
+        },
+        {
+          "start": 50.16,
+          "end": 50.3,
+          "word": " up"
+        },
+        {
+          "start": 50.3,
+          "end": 50.62,
+          "word": " lasted"
+        },
+        {
+          "start": 50.62,
+          "end": 50.92,
+          "word": " one"
+        },
+        {
+          "start": 50.92,
+          "end": 51.24,
+          "word": " second."
+        },
+        {
+          "start": 52.18,
+          "end": 52.34,
+          "word": " Leo"
+        },
+        {
+          "start": 52.34,
+          "end": 52.76,
+          "word": " typed"
+        },
+        {
+          "start": 52.76,
+          "end": 53.14,
+          "word": " kick"
+        },
+        {
+          "start": 53.14,
+          "end": 53.42,
+          "word": " Max."
+        },
+        {
+          "start": 54.08,
+          "end": 54.24,
+          "word": " Max"
+        },
+        {
+          "start": 54.24,
+          "end": 54.6,
+          "word": " typed"
+        },
+        {
+          "start": 54.6,
+          "end": 54.98,
+          "word": " kick"
+        },
+        {
+          "start": 54.98,
+          "end": 55.28,
+          "word": " Leo."
+        }
+      ]
+    },
+    {
+      "start": 55.84,
+      "end": 61.22,
+      "text": " They hit enter at the exact same time. Both kicked. Round over Mia wins again.",
+      "words": [
+        {
+          "start": 55.8,
+          "end": 56.1,
+          "word": " They"
+        },
+        {
+          "start": 56.1,
+          "end": 56.28,
+          "word": " hit"
+        },
+        {
+          "start": 56.28,
+          "end": 56.6,
+          "word": " enter"
+        },
+        {
+          "start": 56.6,
+          "end": 56.8,
+          "word": " at"
+        },
+        {
+          "start": 56.8,
+          "end": 56.92,
+          "word": " the"
+        },
+        {
+          "start": 56.92,
+          "end": 57.22,
+          "word": " exact"
+        },
+        {
+          "start": 57.22,
+          "end": 57.56,
+          "word": " same"
+        },
+        {
+          "start": 57.56,
+          "end": 58.02,
+          "word": " time."
+        },
+        {
+          "start": 58.54,
+          "end": 58.68,
+          "word": " Both"
+        },
+        {
+          "start": 58.68,
+          "end": 59.04,
+          "word": " kicked."
+        },
+        {
+          "start": 59.92,
+          "end": 59.98,
+          "word": " Round"
+        },
+        {
+          "start": 59.98,
+          "end": 60.3,
+          "word": " over"
+        },
+        {
+          "start": 60.3,
+          "end": 60.5,
+          "word": " Mia"
+        },
+        {
+          "start": 60.5,
+          "end": 60.82,
+          "word": " wins"
+        },
+        {
+          "start": 60.82,
+          "end": 61.22,
+          "word": " again."
+        }
+      ]
+    },
+    {
+      "start": 62.12,
+      "end": 67.76,
+      "text": " Then the chat said, Sky has joined the game. Follow Viral Roblox games for part 6.",
+      "words": [
+        {
+          "start": 62.12,
+          "end": 62.28,
+          "word": " Then"
+        },
+        {
+          "start": 62.28,
+          "end": 62.4,
+          "word": " the"
+        },
+        {
+          "start": 62.4,
+          "end": 62.62,
+          "word": " chat"
+        },
+        {
+          "start": 62.62,
+          "end": 62.94,
+          "word": " said,"
+        },
+        {
+          "start": 63.56,
+          "end": 63.84,
+          "word": " Sky"
+        },
+        {
+          "start": 63.84,
+          "end": 64.12,
+          "word": " has"
+        },
+        {
+          "start": 64.12,
+          "end": 64.44,
+          "word": " joined"
+        },
+        {
+          "start": 64.44,
+          "end": 64.64,
+          "word": " the"
+        },
+        {
+          "start": 64.64,
+          "end": 64.94,
+          "word": " game."
+        },
+        {
+          "start": 65.76,
+          "end": 65.78,
+          "word": " Follow"
+        },
+        {
+          "start": 65.78,
+          "end": 66.96,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 66.96,
+          "end": 67.24,
+          "word": " for"
+        },
+        {
+          "start": 67.24,
+          "end": 67.42,
+          "word": " part"
+        },
+        {
+          "start": 67.42,
+          "end": 67.76,
+          "word": " 6."
+        }
+      ]
+    }
+  ]
+}

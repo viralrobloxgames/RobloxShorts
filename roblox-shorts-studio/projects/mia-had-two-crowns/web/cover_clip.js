@@ -22,14 +22,14 @@ export function update(t, stage) {
   const { leo, max, mia, noob, skye } = base.cast(), fits = base.crownFits();
   put(mia, V(-1.6, 0, 1.2), 0.15, [[A.typing, 0.4]], 'determined');
   put(noob, V(1.4, 0, 0.9), -0.15, [[A.walk, 0.35]], 'neutral');
-  put(leo, V(-3.4, 0, -4.2), 0.5, [[A.point_forward, 0.6]], 'evil_grin');
-  put(max, V(3.8, 0, -4.4), -0.5, [[A.point_forward, 0.6]], 'evil_grin');
+  put(leo, V(-4.3, 0, -2.6), 0.6, [[A.point_forward, 0.6]], 'evil_grin');
+  put(max, V(4.5, 0, -2.8), -0.6, [[A.point_forward, 0.6]], 'evil_grin');
   skye.root.visible = false;
   for (const a of [mia, noob, leo, max]) {
     const f = fits[a.name], c = f.item; c.visible = a === mia || a === noob;
     c.quaternion.copy(a.bones.Head.getWorldQuaternion(new THREE.Quaternion())); c.scale.setScalar(f.scale); c.position.copy(a.bones.Head.localToWorld(f.offset.clone()));
   }
-  cam = stage.camera; cam.position.set(0, 3.6, 11.5); cam.fov = 54; cam.updateProjectionMatrix(); cam.lookAt(0, 4.6, -1.5);
+  cam = stage.camera; cam.position.set(0, 3.6, 13.8); cam.fov = 54; cam.updateProjectionMatrix(); cam.lookAt(0, 4.6, -1.5);
   stage.aimSun(V(0, 0, 0), 26); stage.bloom.strength = 0.35;
   tags = [[mia.bones.Head.localToWorld(V(0, 2.2, 0)), 'PLAYING', 'rgba(40,170,80,.95)'], [noob.bones.Head.localToWorld(V(0, 2.2, 0)), 'FROZEN', 'rgba(70,90,120,.95)']];
 }

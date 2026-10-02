@@ -294,7 +294,7 @@ export function update(t, stage) {
     case 'charge': frame(stage, V(0.4, 3.4, 0.2), 0.05, 0.12, 14, 40); break;
     case 'swMia': case 'swNoob': frame(stage, pair.clone().add(V(0.9, 3.3, 0)), 0.05, 0.07, lerp(11, 10, u), 40); break;   // two-shot: one plays, one freezes
     case 'frenzy': { const last = SEG.filter(([tt]) => tt <= s).pop()[0], j = s - last < 0.08 ? jolt(t, 0.08) : V(0, 0, 0); frame(stage, pair.clone().add(V(0.9, 3.3, 0)).add(j), 0.05, 0.07, 9.5, 40); break; }   // a jolt on every switch
-    case 'miaFreeze': frame(stage, ih.clone().add(V(0.8, -0.6, 0)), 0.1, 0.06, 6.5, 38); break;
+    case 'miaFreeze': frame(stage, ih.clone().add(V(0.3, -0.6, 0)), -0.3, 0.06, 6.5, 38); break;      // from her left, Max behind her shoulder
     case 'ice': frame(stage, MIA.clone().add(V(1.0, 3.3, 0.3)).add(s > B.ice[0] && s < B.ice[0] + 0.3 ? jolt(t, 0.15 * (1 - (s - B.ice[0]) / 0.3)) : V(0, 0, 0)), 0.3, 0.1, 10, 40); break;
     case 'ten': frame(stage, V(0, 3.4, 0.6), 0.05, 0.1, 14, 40); break;
     case 'noobType': frame(stage, nh.clone().add(V(-0.2, -0.2, 0)), toCam(NOOB) - 0.15, 0.06, 5.5, 36); break;
