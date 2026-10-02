@@ -1,113 +1,122 @@
 {
- "schema_version": 1,
- "ideas": [
-  {
-   "title": "After Hours (working title): Roblox horror pilots",
-   "series": "roblox-horror",
-   "created": "2026-10-02",
-   "status": "idea",
-   "logline": "Standalone suspense stories with Max, Mia and Leo: an unlisted player copies them across an empty server, a duplicate-player encounter and a night shift.",
-   "platform": "TikTok / YouTube Shorts",
-   "project": "references/horror-series.md",
-   "research": "references/horror-research-2026-10-02.md",
-   "asset_plan": "assets/roblox_pack/HORROR_ASSETS.md",
-   "notes": "Working name, entity and pilot premises are not approved scripts; no videos produced. First pass of the asset kit built and reviewed 2026-10-02 (see the build status in the asset plan)."
-  },
-  {
-   "title": "The Free Coin Trap",
-   "series": "roblox",
-   "created": "2026-09-17",
-   "status": "delivered_local_review",
-   "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
-   "platform": "YouTube Shorts / TikTok",
-   "project": "examples/the-free-coin-trap"
-  },
-  {
-   "title": "The AFK Champion",
-   "series": "roblox",
-   "created": "2026-09-17",
-   "status": "farm_render_downloaded_awaiting_encode",
-   "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
-   "platform": "TikTok (>60 s for Creator Rewards)",
-   "project": "examples/the-afk-champion"
-  },
-  {
-   "title": "Admin For One Round",
-   "series": "roblox",
-   "created": "2026-09-30",
-   "status": "delivered_local_review",
-   "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "projects/admin-for-one-round"
-  },
-  {
-   "title": "The AFK Millionaire",
-   "series": "roblox",
-   "created": "2026-09-30",
-   "status": "published",
-   "logline": "Last one in the circle wins a million coins: Leo, Max and Mia take each other out with tricks while the noob never moves, because he was eating dinner.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "projects/the-afk-millionaire"
-  },
-  {
-   "title": "Max Got Admin For One Round",
-   "series": "admin for one round (part 2)",
-   "created": "2026-10-01",
-   "status": "posted",
-   "logline": "Max gets admin and spends the round trying to get rid of Leo; every command backfires, the ban lands one second too late, and next round Leo gets admin again.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/max-got-admin"
-  },
-  {
-   "title": "ViralRoblox News (daily series)",
-   "series": "roblox-news",
-   "created": "2026-10-01",
-   "status": "delivered_local_review",
-   "logline": "Daily 65-75 s Roblox news Short with one recurring girl news presenter, a fixed branded news booth, a fixed cover layout and a 'Follow ViralRobloxGames' call to action every episode.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "references/news-series.md",
-   "episodes": [
-    "projects/news-001-roblox-in-your-browser"
-   ]
-  },
-  {
-   "title": "Leo Gave Everyone Admin",
-   "series": "admin for one round (part 3)",
-   "created": "2026-10-01",
-   "status": "delivered_local_review",
-   "logline": "Leo means to kick everyone but types admin all; an admin war breaks out (explode, invisible-with-floating-hair, giant, rocket) while Mia quietly types one long command that strips the boys of admin and makes them dance - but she forgot the AFK noob, who still has admin and just got back from dinner.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/leo-gave-everyone-admin"
-  },
-  {
-   "title": "The Noob Has Admin",
-   "series": "admin for one round (part 4)",
-   "created": "2026-10-02",
-   "status": "delivered_local_review",
-   "logline": "The noob gets admin and turns out to be a pro who counters everyone's signature moves; Mia never moves all round, Leo pokes her and she falls like a plank, then the noob types gg and it posts under Mia's name - the noob is Mia's alt, so in Part 3 she didn't forget him.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-noob-has-admin"
-  },
-  {
-   "title": "Mia Had Two Crowns",
-   "series": "admin for one round (part 5)",
-   "created": "2026-10-02",
-   "status": "delivered_local_review",
-   "logline": "Leo and Max team up against Mia's two accounts, discover only one can move at a time and overwhelm her; she freezes herself on the wrong window, then typos 'admin Leo and Max' - their alliance lasts one second and they kick each other. Mia wins by accident; Skye joins the game.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/mia-had-two-crowns"
-  }
- ],
- "statuses": [
-  "idea",
-  "script_draft_awaiting_approval",
-  "script_approved",
-  "narration_done",
-  "scene_built",
-  "farm_test_review",
-  "farm_render_running",
-  "farm_render_downloaded_awaiting_encode",
-  "delivered_local_review",
-  "published"
- ]
+  "schema_version": 1,
+  "ideas": [
+    {
+      "title": "After Hours (working title): Roblox horror pilots",
+      "series": "roblox-horror",
+      "created": "2026-10-02",
+      "status": "idea",
+      "logline": "Standalone suspense stories with Max, Mia and Leo: an unlisted player copies them across an empty server, a duplicate-player encounter and a night shift.",
+      "platform": "TikTok / YouTube Shorts",
+      "project": "references/horror-series.md",
+      "research": "references/horror-research-2026-10-02.md",
+      "asset_plan": "assets/roblox_pack/HORROR_ASSETS.md",
+      "notes": "Working name, entity and pilot premises are not approved scripts; no videos produced. First pass of the asset kit built and reviewed 2026-10-02 (see the build status in the asset plan)."
+    },
+    {
+      "title": "The Free Coin Trap",
+      "series": "roblox",
+      "created": "2026-09-17",
+      "status": "delivered_local_review",
+      "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
+      "platform": "YouTube Shorts / TikTok",
+      "project": "examples/the-free-coin-trap"
+    },
+    {
+      "title": "The AFK Champion",
+      "series": "roblox",
+      "created": "2026-09-17",
+      "status": "farm_render_downloaded_awaiting_encode",
+      "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
+      "platform": "TikTok (>60 s for Creator Rewards)",
+      "project": "examples/the-afk-champion"
+    },
+    {
+      "title": "Admin For One Round",
+      "series": "roblox",
+      "created": "2026-09-30",
+      "status": "delivered_local_review",
+      "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "projects/admin-for-one-round"
+    },
+    {
+      "title": "The AFK Millionaire",
+      "series": "roblox",
+      "created": "2026-09-30",
+      "status": "published",
+      "logline": "Last one in the circle wins a million coins: Leo, Max and Mia take each other out with tricks while the noob never moves, because he was eating dinner.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "projects/the-afk-millionaire"
+    },
+    {
+      "title": "Max Got Admin For One Round",
+      "series": "admin for one round (part 2)",
+      "created": "2026-10-01",
+      "status": "posted",
+      "logline": "Max gets admin and spends the round trying to get rid of Leo; every command backfires, the ban lands one second too late, and next round Leo gets admin again.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/max-got-admin"
+    },
+    {
+      "title": "ViralRoblox News (daily series)",
+      "series": "roblox-news",
+      "created": "2026-10-01",
+      "status": "delivered_local_review",
+      "logline": "Daily 65-75 s Roblox news Short with one recurring girl news presenter, a fixed branded news booth, a fixed cover layout and a 'Follow ViralRobloxGames' call to action every episode.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "references/news-series.md",
+      "episodes": [
+        "projects/news-001-roblox-in-your-browser"
+      ]
+    },
+    {
+      "title": "Leo Gave Everyone Admin",
+      "series": "admin for one round (part 3)",
+      "created": "2026-10-01",
+      "status": "delivered_local_review",
+      "logline": "Leo means to kick everyone but types admin all; an admin war breaks out (explode, invisible-with-floating-hair, giant, rocket) while Mia quietly types one long command that strips the boys of admin and makes them dance - but she forgot the AFK noob, who still has admin and just got back from dinner.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/leo-gave-everyone-admin"
+    },
+    {
+      "title": "The Noob Has Admin",
+      "series": "admin for one round (part 4)",
+      "created": "2026-10-02",
+      "status": "delivered_local_review",
+      "logline": "The noob gets admin and turns out to be a pro who counters everyone's signature moves; Mia never moves all round, Leo pokes her and she falls like a plank, then the noob types gg and it posts under Mia's name - the noob is Mia's alt, so in Part 3 she didn't forget him.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-noob-has-admin"
+    },
+    {
+      "title": "Mia Had Two Crowns",
+      "series": "admin for one round (part 5)",
+      "created": "2026-10-02",
+      "status": "delivered_local_review",
+      "logline": "Leo and Max team up against Mia's two accounts, discover only one can move at a time and overwhelm her; she freezes herself on the wrong window, then typos 'admin Leo and Max' - their alliance lasts one second and they kick each other. Mia wins by accident; Skye joins the game.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/mia-had-two-crowns"
+    },
+    {
+      "title": "The Server Says One",
+      "series": "After Hours horror (pilot 1)",
+      "created": "2026-10-02",
+      "status": "scene_built",
+      "logline": "The server says one player online, but a faceless player stands in front of Max, copying him half a second late. It is his mirror image, and it creeps closer with every copy. Max fakes left, cuts right and slams the EXIT door; the copy, running the wrong way, hits the other side. Then the list updates: two players online. Max. And Max.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-server-says-one"
+    }
+  ],
+  "statuses": [
+    "idea",
+    "script_draft_awaiting_approval",
+    "script_approved",
+    "narration_done",
+    "scene_built",
+    "farm_test_review",
+    "farm_render_running",
+    "farm_render_downloaded_awaiting_encode",
+    "delivered_local_review",
+    "published"
+  ]
 }

@@ -55,7 +55,7 @@ G.push = [G.arrive + 0.02, G.arrive + 0.24];
 G.slam = [G.push[0] + 0.06, G.push[0] + 0.2];     // door 80 deg -> shut
 G.turnBack = [G.slam[1] + 0.12, G.slam[1] + 0.3];
 G.backUp = G.turnBack[1];
-G.hit = K + 3.3;                                    // the copy hits the closed door
+G.hit = K + 3.6;                                    // the copy hits the closed door
 G.leanArrive = G.backUp + dist(PATH.at(-1), BACK) / WALK;
 
 export function maxAt(g) {
@@ -108,10 +108,10 @@ export function copyAt(g) {
   const s = { pos: mirror(m.pos, g), heading: Math.PI - m.heading, layers: m.layers, face: 'neutral', wave: m.wave, headTurn: 0, crouch: m.crouch };
   if (m.layers[0][0] === 'push' || m.layers[0][0] === 'shock') s.layers = [['idle', g]];
   const c = creeping(g);
-  if (c !== undefined && s.layers[0][0] === 'idle') s.layers = [['walk', (2 * CSTEP * smooth(inv(c, c + CDUR, g))) / STRIDE]];
+  if (c !== undefined && s.layers[0][0] === 'idle') s.layers = [['walk', (2 * CSTEP * smooth(inv(c, c + CDUR, g))) / STRIDE, 0.4], ['idle', g, 0.6]];   // a short step: shorter swing
   if (g >= G.through) {                                   // Max is gone: nothing left to copy
     s.layers = [['idle', 0]]; s.face = 'revealed';
-    s.headTurn = smooth(inv(G.through + 0.15, G.through + 0.5, g));     // the head goes first...
+    s.headTurn = smooth(inv(G.slam[0] - 0.05, G.slam[0] + 0.3, g));      // the head goes first...
     const frozen = mirror(maxAt(G.through - D).pos, G.through);
     const runStart = G.hit - dist(frozen, DF) / RUN;
     const r = along([frozen, DF], runStart, g, RUN);
@@ -178,7 +178,7 @@ export const EVENTS = {
   wave: G.wave[0], copyWave: G.wave[0] + D, step: G.step, copyStep: G.step + D, back: G.back, copyBack: G.back + D,
   creeps: CREEP, lunge: realIn('fake', G.lunge), copyLunge: realIn('fakeCopy', G.lunge + D),
   cut: realIn('cut', G.cut), copyRun: realIn('ran', G.cut + D),
-  barge: realIn('dove', G.barge), copyLungeAgain: realIn('finishing', G.lunge + D), slam: realIn('slam', G.slam[1]), freeze: realIn('slam', G.through + 0.15),
+  barge: realIn('dove', G.barge), copyLungeAgain: realIn('finishing', G.lunge + D), slam: realIn('slam', G.slam[1]), freeze: realIn('slam', G.slam[0] - 0.05),
   copyCharge: realIn('slam', G.hit - 0.9), hit: postReal(G.hit),
   ...E, end: W.end,
 };

@@ -52,20 +52,19 @@ export async function setup(stage) {
   replacePanel(lobby, 'ExitFace', 'EXIT  →', { background: '#0f3a2c', foreground: '#7dffb8' });
   replacePanel(lobby, 'NoticeFace', 'PLAYERS ONLINE\n1');
   const d = await horrorAsset('horror_door'); door = d; d.root.position.set(0, 0, T.DOOR_Z); scene.add(d.root);
-  replacePanel(d.root, 'NumberFace', 'EXIT', { background: '#0f3a2c', foreground: '#7dffb8' });
   const corridor = (await horrorAsset('horror_corridor')).root; corridor.position.set(0, 0, -21); scene.add(corridor);
   const apron = part(22, 0.35, 14, '#1e2a33', { radius: 0.02, clearcoat: 0 }); apron.position.set(0, 0, 15); scene.add(apron);
 
   // Practical lights: warm lobby lamps, corridor tubes (the far one flickers on for the reveal).
   const pl = (name, color, x, y, z, i, dist = 26) => { const l = new THREE.PointLight(color, i, dist, 1.4); l.position.set(x, y, z); scene.add(l); lamps[name] = l; l.userData.base = i; };
   pl('lobbyL', '#ffcf8a', -7, 7.2, -6.8, 70); pl('lobbyR', '#ffcf8a', 7, 7.2, -6.8, 70); pl('lobbyFront', '#9fd8e6', 0, 7.5, 6, 35);
-  pl('cor1', '#ffd9a0', 0, 8.0, -13, 55, 20); pl('cor2', '#ffd9a0', 0, 8.0, -21, 40, 20); pl('cor3', '#9feee6', 0, 8.0, -29, 60, 18);
+  pl('cor1', '#ffd9a0', 0, 8.0, -13, 55, 20); pl('cor2', '#ffd9a0', 0, 8.0, -21, 40, 20); pl('cor3', '#d8f3ff', 0, 8.0, -27, 18, 16);
 
   // Cyan chest signal: the Unlisted's mark, also on the copy of Max at the end.
   for (const [k, a] of [['ent', ent], ['copy', copy]]) {
     const sq = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.26, 0.04), new THREE.MeshStandardMaterial({ color: '#78e4d8', emissive: '#78e4d8', emissiveIntensity: 3.2 }));
     sq.position.set(0, 1.3, 0.53); a.bones.Torso.add(sq);
-    const l = new THREE.PointLight('#78e4d8', 4, 5, 1.6); l.position.set(0, 1.3, 1.0); a.bones.Torso.add(l); glow[k] = { sq, l };
+    const l = new THREE.PointLight('#78e4d8', k === 'copy' ? 1.2 : 3, 5, 1.6); l.position.set(0, 1.3, 1.0); a.bones.Torso.add(l); glow[k] = { sq, l };
   }
 }
 
@@ -112,6 +111,16 @@ function look(stage, p, tg, fov = 40, roll = 0) {
 function orbit(stage, tg, az, el, d, fov = 40, roll = 0) { look(stage, tg.clone().add(V(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)).multiplyScalar(d)), tg, fov, roll); }
 function frame(stage, tg, az, el, w, fov = 40, roll = 0) { orbit(stage, tg, az, el, w / (2 * Math.tan((fov * Math.PI) / 360) * (9 / 16)), fov, roll); }
 const jolt = (t, k) => V(k * Math.sin(t * 83), k * Math.cos(t * 71), 0);
+// Frame actors (bounding sphere of their bodies) from a direction; past maxD the lens widens instead of backing
+// through a wall.
+function fit(stage, actors, az, el, { fov = 40, pad = 1.12, maxD = 11, aim = V(0, 0, 0) } = {}) {
+  const box = new THREE.Box3(); for (const a of actors) { a.root.updateMatrixWorld(true); box.expandByObject(a.root); }
+  const sph = box.getBoundingSphere(new THREE.Sphere()), half = (f) => Math.atan(Math.tan((f * Math.PI) / 360) * (9 / 16));
+  let d = (sph.radius * pad) / Math.sin(half(fov));
+  if (d > maxD) { const h = Math.asin(Math.min(0.95, (sph.radius * pad) / maxD)); fov = (Math.atan(Math.tan(h) * (16 / 9)) * 360) / Math.PI; d = maxD; }
+  orbit(stage, sph.center.clone().add(aim), az, el, d, fov);
+}
+
 const shake = (t, at, k, dur = 0.35) => (t > at && t < at + dur ? jolt(t, k * (1 - (t - at) / dur)) : V(0, 0, 0));
 
 export function samples(t) { const id = shotAt(SHOTS, t).shot.id; return ['cut', 'cutLow', 'ran', 'barge', 'dove'].includes(id) ? 3 : 1; }
@@ -145,37 +154,37 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': {         // over Max's shoulder: a faceless player straight ahead, the EXIT door behind it
       const k = easeOut(clamp(t / (shot.end - shot.start)));
-      look(stage, mh.clone().add(V(lerp(1.5, 1.2, k), lerp(0.55, 0.45, k), lerp(3.6, 2.9, k))), eh.clone().add(V(0.4, -0.5, 0)), 40); break;
+      look(stage, mh.clone().add(V(lerp(2.3, 2.0, k), lerp(0.2, 0.1, k), lerp(5.6, 4.8, k))), eh.clone().add(V(0.3, -1.0, 0)), 46); break;
     }
     case 'face': {         // push in on the blank face, then tilt to the light in its chest
       const k = easeInOut(inv(W.light - 0.35, W.light + 0.25, t));
       frame(stage, eh.clone().lerp(torso(ent).add(V(0, 0.2, 0)), k), 0, 0.03, lerp(lerp(3.4, 2.7, u), 3.4, k), 32); break;
     }
-    case 'wave': frame(stage, mid.clone().add(V(0, -0.6, 0)), Math.PI / 2 - 0.12, 0.06, 14, 38); break;     // profile: wave
+    case 'wave': look(stage, V(5.6, 3.8, 13.6), V(-0.8, 3.0, -1.5), 46); break;                                // behind Max: the wave, the copy beyond
     case 'waveBack': frame(stage, torso(ent).add(V(0, 0.6, 0)), 0.35, 0.06, lerp(7, 6.2, u), 36); break;     // ...it waves back, late
     case 'steps': frame(stage, mid.clone().add(V(0, -1.4, 0)), 0.7, 0.45, 17, 40); break;                     // both step left
-    case 'copying': look(stage, eh.clone().add(V(-1.1, 0.55, -2.8)), mh.clone().add(V(0, -0.2, 0)), 34); break;  // over its shoulder
-    case 'closer': frame(stage, mid.clone().setY(1.8), Math.PI / 2 + 0.25, 0.02, lerp(13, 11, u), 38); break;      // the gap shrinking
+    case 'copying': look(stage, eh.clone().add(V(-2.6, 1.0, -5.0)), mh.clone().add(V(0, -0.3, 0)), 34); break;  // over its shoulder
+    case 'closer': fit(stage, [max, ent], Math.PI / 2, 0.05, { maxD: 10.5, pad: 1.05 }); break;                   // side on: the gap shrinking
     case 'door': look(stage, V(lerp(3.4, 2.6, u), lerp(10.5, 9.5, u), lerp(16, 14.5, u)), V(-0.6, 3.2, -5), 40); break;   // door behind it
     case 'think': frame(stage, mh.clone().add(V(0, -0.15, 0)), Math.PI + 0.2, 0.04, lerp(3.6, 3.1, u), 34); break;
     // --- chase ---
-    case 'fake': frame(stage, mid.clone().add(V(-1.6, -1.2, 0)), -0.35, 0.28, 17, 40); break;
-    case 'fakeCopy': frame(stage, torso(ent).add(V(0.6, 0.2, 0)), -0.45, 0.07, 8.5, 38); break;
-    case 'cut': { const p = torso(max); look(stage, p.clone().add(V(3.2, 0.9, 4.6)), p.clone().add(V(-0.4, 0.4, -2)), 50, -0.04); break; }
+    case 'fake': fit(stage, [max, ent], 0.15, 0.32, { maxD: 13 }); break;
+    case 'fakeCopy': fit(stage, [ent, max], 0.55, 0.1, { maxD: 9, pad: 0.9, aim: V(0.4, 0, -1.2) }); break;
+    case 'cut': fit(stage, [max, ent], 0.75, 0.14, { maxD: 10, pad: 1.0 }); break;
     case 'cutLow': { const p = torso(max); look(stage, V(4.8, 1.1, -3.2), p.clone().lerp(torso(ent), 0.25), 46, 0.05); break; }
-    case 'finishing': orbit(stage, torso(ent).add(V(0, 0.3, 0)), lerp(-1.05, -0.25, easeInOut(u)), 0.1, 8.2, 40); break;    // bullet time
-    case 'ran': look(stage, V(-3.6, 2.4, 16.5), V(-1.6, 3.2, -1.5), 44); break;
-    case 'barge': look(stage, V(-1.2, 4.3, 17), V(0, 3.6, -8), 20); break;                                     // long lens down the lobby
-    case 'dove': look(stage, V(3.0, 3.9, -20), V(-0.2, 3.4, -9.5).add(shake(t, T.EVENTS.slam, 0.12)), 46); break;   // corridor side
-    case 'slam': look(stage, V(-0.4, 3.7, 16.2).add(shake(t, T.EVENTS.hit - 0.02, 0.25)), V(-1.3, 3.9, -3), 32); break;
+    case 'finishing': fit(stage, [ent, max], lerp(0.2, 1.0, easeInOut(u)), 0.12, { maxD: 10, pad: 0.95 }); break;    // bullet time
+    case 'ran': fit(stage, [max, ent], 0.45, 0.16, { maxD: 13, pad: 1.0 }); break;
+    case 'barge': look(stage, V(4.8, 4.4, 17), V(0, 3.6, -8), 22); break;                                     // long lens down the lobby
+    case 'dove': look(stage, V(3.6, 4.4, -23), V(-0.2, 3.4, -9.5).add(shake(t, T.EVENTS.slam, 0.12)), 50); break;   // corridor side
+    case 'slam': look(stage, V(-1.3, 4.5, 19).add(shake(t, T.EVENTS.hit - 0.02, 0.25)), V(-1.6, 3.9, 0), 30); break;   // its face, then its back
     // --- after the bang ---
-    case 'hit': look(stage, V(2.6, 4.3, -15.8).add(shake(t, T.EVENTS.hit, 0.3, 0.5)), V(0.4, 3.6, -9).add(shake(t, T.EVENTS.hit, 0.2, 0.5)), 42); break;
+    case 'hit': look(stage, V(3.2, 4.6, -17.2).add(shake(t, T.EVENTS.hit, 0.3, 0.5)), V(0.4, 3.8, -9).add(shake(t, T.EVENTS.hit, 0.2, 0.5)), 46); break;
     case 'silence': frame(stage, mh.clone().add(V(0, -0.9, 0)), Math.PI, 0.06, lerp(7.5, 6.5, u), 40); break;
     case 'list': frame(stage, mh.clone().add(V(0, -0.2, 0)), Math.PI + 0.25, 0.08, lerp(4.2, 3.6, u), 36); break;
     case 'updated': frame(stage, mh.clone().add(V(0, -0.2, 0)), Math.PI + 0.25, 0.08, 3.6, 36, 0.04 * Math.sin(t * 31) * (t < W.updated + 0.5 ? 1 : 0)); break;
     case 'two': frame(stage, mh.clone().add(V(0, -0.1, 0)), Math.PI - 0.15, 0.04, lerp(3.4, 2.7, u), 34); break;
-    case 'reveal': look(stage, mh.clone().add(V(1.15, 0.35, 2.0)), head(copy).add(V(0, -1.5, 0)), 24); break;   // over his shoulder: the far end
-    default: { const k = easeInOut(clamp((t - E.cta) / 3)); look(stage, mh.clone().add(V(lerp(1.15, 0.6, k), lerp(0.35, 0.2, k), lerp(2.0, -3.5, k))), head(copy).add(V(0, -1.2, 0)), lerp(24, 20, k)); }
+    case 'reveal': look(stage, mh.clone().add(V(2.5, 1.1, 2.0)), head(copy).add(V(0, -1.6, 0)).lerp(mh, 0.1), 46); break;   // over his shoulder: the far end
+    default: { const k = easeInOut(clamp((t - E.cta) / 3)); look(stage, mh.clone().add(V(lerp(2.5, 1.4, k), lerp(1.1, 0.6, k), lerp(2.0, -1.5, k))), head(copy).add(V(0, lerp(-1.6, 0.9, k), 0)).lerp(mh, lerp(0.1, 0, k)), lerp(46, 36, k)); }
   }
   cam = stage.camera;
 }
@@ -225,7 +234,7 @@ export function overlay(g, s, t) {
   if (t < E.cta) { nameTag(g, s, max, 'Max'); if (t > E.copyOn) nameTag(g, s, copy, 'Max'); }
 
   // The clue: one player online (opening), then the list after the escape.
-  if (t < W.light + 0.95) playerList(g, s, t, ['Max'], { k: easeOutBack(clamp(t / 0.25), 1.6) });
+  if (t < W.light + 0.95) playerList(g, s, t, ['Max']);                       // on screen from frame 1
   if (t > W.checked - 0.1 && t < E.cta) {
     const k = easeOutBack(clamp((t - W.checked + 0.1) / 0.25), 1.6);
     const names = t < W.two - 0.05 ? ['Max'] : t < W.max2 - 0.05 ? ['Max', '...'] : ['Max', 'Max'];
@@ -242,7 +251,7 @@ export function overlay(g, s, t) {
   // Call to action, after the payoff.
   if (t >= E.cta) {
     const a = t - E.cta, k2 = easeOutBack(clamp(a / 0.3), 1.6);
-    g.save(); g.translate(540 * s, 600 * s); g.scale(k2, k2);
+    g.save(); g.translate(540 * s, 470 * s); g.scale(k2, k2);
     roundRect(g, -430 * s, -190 * s, 860 * s, 380 * s, 40 * s); g.fillStyle = 'rgba(10,18,24,.9)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#78e4d8'; g.stroke();
     g.textAlign = 'center'; g.textBaseline = 'middle';
     g.font = `800 ${44 * s}px Montserrat`; g.fillStyle = '#78e4d8'; g.fillText('BEFORE IT LEARNS YOUR NAME', 0, -110 * s);

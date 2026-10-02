@@ -1,14 +1,17 @@
 {
   "title": "The Server Says One",
   "character": "Max",
-  "characters": ["Max", "Unlisted"],
+  "characters": [
+    "Max",
+    "Unlisted"
+  ],
   "series": "After Hours (horror pilot 1)",
-  "seconds": 62.0,
+  "seconds": 61.9,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "script_approved",
+  "status": "scene_built",
   "finish": {
     "music": "horror/night_bed",
     "music_gain": 0.22,
