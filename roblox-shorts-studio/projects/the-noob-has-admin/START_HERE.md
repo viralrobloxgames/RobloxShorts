@@ -11,12 +11,12 @@ pack, call to action at the end.
 - Cover `delivery/The_Noob_Has_Admin_cover.jpg|png` (1080x1920, checked on a 3:4 crop, no spoiler). `delivery/post.json`.
 
 ## Narration (next)
-- Route L: Qwen3-TTS with the cloned `george` voice (references/voice-and-audio.md). Audition take first; once the user
-  approves it, put it at `audio/narration.wav` and:
+- Route L: Qwen3-TTS with the cloned `george` voice (references/voice-and-audio.md). One background run of narrate.py
+  writes `audio/narration.wav`, the word timings and a script check. Let the user listen to it; fix lines with `--redo N`.
 
 ```
 cd roblox-shorts-studio
-python3 scripts/studio.py transcribe projects/the-noob-has-admin    # word timings -> audio/alignment/captions.json
+& "$env:USERPROFILE\Qwen3-TTS\.venv\Scripts\python.exe" scripts/narrate.py projects/the-noob-has-admin   # background, ~20 min
 python3 projects/the-noob-has-admin/source/beats.py                  # retime the clip to the real words
 # set source/project.json seconds to the clip's meta.seconds; write source/sound_cues.json; preview; fit check
 node web/fit_check.mjs --clip projects/the-noob-has-admin/web/noob_clip.js    # review, then --reviewed

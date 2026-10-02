@@ -15,7 +15,7 @@ idea → story + script → local Qwen3-TTS narration (cloned George) → measur
 | Step | Tool |
 |---|---|
 | Scaffold a project | `python scripts/studio.py new --out projects/<slug> --title "<Title>" --character Max` |
-| Narration (default) | `~/Qwen3-TTS/tts.bat --file projects/<slug>/script.txt --clone george --join -o projects/<slug>/audio/qwen` (see references/voice-and-audio.md) |
+| Narration (default) | `~/Qwen3-TTS/.venv/Scripts/python.exe scripts/narrate.py projects/<slug>` (local Qwen3-TTS `george` clone, run in the background; generates, joins, times and checks) |
 | Narration (legacy ElevenLabs API) | `python scripts/voice.py generate projects/<slug>` |
 | Word timings | `python scripts/studio.py transcribe projects/<slug>` |
 | Build the scene | `python scripts/studio.py build projects/<slug>` (background Blender, no render) |
