@@ -7,7 +7,7 @@ Everything needed to make original Roblox-style block-character comedy Shorts fo
 ## The pipeline
 
 ```
-idea → story + script → ElevenLabs narration (George) → measured word timings
+idea → story + script → local Qwen3-TTS narration (cloned George) → measured word timings
      → Blender scene (baked, packed, no local render) → GarageFarm test → full farm render
      → SFX + music + word-highlight captions → verified 1080×1920 MP4 → (publish on request)
 ```
@@ -15,7 +15,8 @@ idea → story + script → ElevenLabs narration (George) → measured word timi
 | Step | Tool |
 |---|---|
 | Scaffold a project | `python scripts/studio.py new --out projects/<slug> --title "<Title>" --character Max` |
-| Narration (API route) | `python scripts/voice.py generate projects/<slug>` (or the ElevenLabs connector/website) |
+| Narration (default) | `~/Qwen3-TTS/tts.bat --file projects/<slug>/script.txt --clone george --join -o projects/<slug>/audio/qwen` (see references/voice-and-audio.md) |
+| Narration (legacy ElevenLabs API) | `python scripts/voice.py generate projects/<slug>` |
 | Word timings | `python scripts/studio.py transcribe projects/<slug>` |
 | Build the scene | `python scripts/studio.py build projects/<slug>` (background Blender, no render) |
 | Render | GarageFarm; see [references/garagefarm.md](references/garagefarm.md) |

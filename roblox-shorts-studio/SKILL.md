@@ -1,6 +1,6 @@
 ---
 name: roblox-shorts-studio
-description: Make original Roblox-style block-character comedy Shorts (TikTok / YouTube Shorts) end to end - idea, script, ElevenLabs narration, measured word timings, Blender scene authoring with the Max/Mia/Leo rig, GarageFarm rendering, sound design, word-highlight captions, final MP4 and optional publishing. Use for any request to create, continue, finish or fix a Roblox short in this repo.
+description: Make original Roblox-style block-character comedy Shorts (TikTok / YouTube Shorts) end to end - idea, script, local Qwen3-TTS narration (cloned George voice), measured word timings, Blender scene authoring with the Max/Mia/Leo rig, GarageFarm rendering, sound design, word-highlight captions, final MP4 and optional publishing. Use for any request to create, continue, finish or fix a Roblox short in this repo.
 ---
 
 # Roblox Shorts Studio
@@ -11,7 +11,7 @@ Everything needed to make a Roblox-style Short lives in this folder. Paths below
 
 - **No local 3D rendering.** The laptop can't handle it. All picture rendering happens on **GarageFarm** in the user's signed-in Brave browser. Local work is limited to scene building (background Blender, no render), numeric checks, audio, captions and ffmpeg encoding.
 - **Budget:** ask for a spending cap for each new short before its first farm job. Stay within it, and never top up credit. Record costs in `source/garagefarm_job.json`.
-- **Narration costs credits.** Save the script and get it approved before generating. Never regenerate a take that already exists. Recover it from ElevenLabs History instead.
+- **Narration is local and free now.** Story narration uses Qwen3-TTS on the laptop with the cloned `george` voice (see references/voice-and-audio.md, Route L). It takes about 20 min per minute of speech, so run it in the background and get the script approved first. ElevenLabs is only for auditioning new voices through its previews. For an old ElevenLabs take, recover it from History rather than regenerating.
 - **Downloads:** the user has pre-approved downloading their own generated outputs (ElevenLabs narration, GarageFarm frames) for the current short.
 - **Publishing happens only after the user approves that specific video.** The default deliverable is a review MP4 plus cover and captions; the cover follows the cover spec in references/publishing.md (1080x1920, all text inside the 3:4 grid crop). Once the user has watched it and approves it ("approved", "post it"), post it straight away: **TikTok first, then YouTube Shorts right after**, public, using `delivery/post.json` (from a Claude session on the user's computer through their signed-in browser for now; `scripts/publish.py` from the cloud once the platforms approve API posting - see references/publishing.md). Approval covers that one MP4 only; a re-cut needs a new approval. Never post anything unapproved, and never re-post something `published.json` marks as posted.
 - **Frame 1 shows the central action.** No title cards or slow approaches. It must read on mute within 1–2 s.
