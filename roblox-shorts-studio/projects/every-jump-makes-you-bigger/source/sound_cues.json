@@ -338,37 +338,54 @@
   "gain": 0.24749999999999997
  },
  {
+  "asset": "impact_3",
+  "start": 13.53,
+  "gain": 0.4
+ },
+ {
+  "tone": 1600,
+  "start": 13.53,
+  "gain": 0.06,
+  "dur": 0.2,
+  "sweep": -3500
+ },
+ {
   "tone": [
    392,
    370,
    392,
    370
   ],
-  "start": 13.56,
+  "start": 13.66,
   "gain": 0.06,
   "dur": 0.09,
   "square": true
  },
  {
-  "asset": "swish_2",
+  "asset": "impact_2",
   "start": 14.31,
-  "gain": 0.3
+  "gain": 0.5
  },
  {
   "tone": 500,
   "start": 14.31,
   "gain": 0.08,
-  "dur": 0.45,
+  "dur": 0.35,
   "sweep": -700
  },
  {
-  "asset": "impact_2",
-  "start": 14.76,
-  "gain": 0.45
+  "asset": "swish_2",
+  "start": 14.33,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_1",
+  "start": 14.56,
+  "gain": 0.4
  },
  {
   "tone": 160,
-  "start": 14.76,
+  "start": 14.56,
   "gain": 0.1,
   "dur": 0.5,
   "sweep": -60,
@@ -379,7 +396,7 @@
    330,
    262
   ],
-  "start": 14.81,
+  "start": 14.61,
   "gain": 0.1,
   "dur": 0.18
  },

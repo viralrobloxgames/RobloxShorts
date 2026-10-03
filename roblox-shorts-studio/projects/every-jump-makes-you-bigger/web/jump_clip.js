@@ -114,6 +114,7 @@ const CHAT = [
 // ---------- scene ----------
 let A = {}, leo, max, cam, ff, trophy, lavaTex, cpPad, cpPadMat, SHOT = 'hook', roomLight;
 const puffs = [], sparkles = [], chunks = [], cracks = [];
+let maxBlock, blockCracks; const blockChunks = [];     // Max's tiny block: cracks under him, then breaks into the lava
 
 function lavaTexture() {
   return canvasTexture(512, 512, (x, w, h) => {
@@ -162,7 +163,24 @@ export async function setup(stage) {
   for (const s of [-1, 1]) { const rim = part(LAVA[1] - LAVA[0] + 4, 3.6, 2, dark); rim.position.set((LAVA[0] + LAVA[1]) / 2, -0.4, s * 14); scene.add(rim); }
   const cols = ['red', 'blue', 'yellow', 'green', 'purple', 'orange'];
   const blocks = [[B1.x, B1.z], [26, -3], [32, 4.5], [38, -4], [44, 2], [50, -5], [24, 9], [36, -10], [47, 9]];
-  for (const [i, [x, z]] of blocks.entries()) scene.add(await put('map', `obby_block_${cols[i % cols.length]}_studs`, x, -1, z));
+  for (const [i, [x, z]] of blocks.entries()) { const o = await put('map', `obby_block_${cols[i % cols.length]}_studs`, x, -1, z); scene.add(o); if (i === 0) maxBlock = o; }
+  // Max's block also exists as four quarter chunks (shown once it breaks) and a set of crack lines on its top.
+  for (const [dx, dz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {
+    const o = await put('map', 'obby_block_red_studs', B1.x + dx, -1, B1.z + dz, { sx: 0.49, sz: 0.49 }); o.visible = false; scene.add(o);
+    blockChunks.push({ m: o, home: o.position.clone(), dir: V(dx, 0, dz), spin: V(dz * 2.2, 0.8 * dx, -dx * 2.6) });
+  }
+  blockCracks = new THREE.Group(); const bcm = new THREE.MeshBasicMaterial({ color: '#2a1414' });
+  for (const [x0, z0, x1, z1, w] of [[-1.9, 0.1, 1.9, -0.1, 0.16], [0.1, -1.9, -0.1, 1.9, 0.16], [-0.2, 0.2, -1.6, 1.5, 0.1], [0.3, -0.1, 1.7, -1.4, 0.1], [0.2, 0.3, 1.5, 1.7, 0.08], [-0.3, -0.3, -1.5, -1.6, 0.08]]) {
+    const len = Math.hypot(x1 - x0, z1 - z0), seg = new THREE.Mesh(new THREE.BoxGeometry(len, 0.05, w), bcm);
+    seg.position.set(B1.x + (x0 + x1) / 2, 0.08, B1.z + (z0 + z1) / 2); seg.rotation.y = -Math.atan2(z1 - z0, x1 - x0); blockCracks.add(seg);
+  }
+  // ...and down the front and side faces, where the camera sees them.
+  for (const [x0, y0, x1, y1] of [[0.1, 0, -0.3, -0.5], [-0.3, -0.5, 0.2, -1], [-1.2, 0, -0.9, -0.6], [1.0, 0, 1.3, -0.7]]) {
+    const len = Math.hypot(x1 - x0, y1 - y0), seg = new THREE.Mesh(new THREE.BoxGeometry(len, 0.1, 0.05), bcm);
+    seg.position.set(B1.x + (x0 + x1) / 2, (y0 + y1) / 2, B1.z + 2.02); seg.rotation.z = Math.atan2(y1 - y0, x1 - x0); blockCracks.add(seg);
+    const side = seg.clone(); side.position.set(B1.x - 2.02, (y0 + y1) / 2, B1.z + (x0 + x1) / 2); side.rotation.set(0, Math.PI / 2, Math.atan2(y1 - y0, x1 - x0)); blockCracks.add(side);
+  }
+  blockCracks.visible = false; scene.add(blockCracks);
   const islL = await put('map', 'island_large', 35, -4.4, 0, { sx: 2.6, sy: 1, sz: 1.6 }); scene.add(islL);
 
   // Mid checkpoint platform (stage 10) and the lane to the finish, with flush kill bricks and side props.
@@ -245,6 +263,8 @@ const st = (pos, rotY, layers, faceE, extra = {}) => ({ pos: pos.clone(), rotY, 
 const idle = (s, k = 0) => [[A.idle, s + k]];
 const toCam = (p) => face(p, p.clone().add(V(0, 0, 10)));
 // Distance-driven walk for a scaled actor: the cycle carries STRIDE * size studs per anim-second, so the feet stay planted.
+const BLOCK_CRACK = () => B.maxHop2 + 0.45;                                      // hop 2 lands: the block cracks
+const blockSag = (s) => (s < BLOCK_CRACK() ? 0 : 0.12 + 0.18 * inv(BLOCK_CRACK(), B.topple, s));   // it gives a little under him
 const walkAnim = (m, size, dist) => (m.u * dist) / (STRIDE * size);
 const AIR = (s) => [[A.run, 0.18], [A.idle, s, 0.35]];                  // airborne: legs mid-stride, arms low (never both up)
 
@@ -320,18 +340,17 @@ function maxState(s) {
     const d = MAX0.distanceTo(EDGE), m = travelTo(MAX0, EDGE, B.maxHop1, s, 16); b.pos = m.pos; b.rotY = m.moving ? m.heading : face(EDGE, B1);
     b.layers = m.moving ? [[A.run, walkAnim(m, 1, d)]] : idle(s); b.face = 'determined';
   } else if (s < B.topple) {
-    // Hop 1: edge -> block (pops to x2). Hop 2: straight up (x2.7) and lands half off the block.
-    const LAND2 = B1.clone().add(V(1.6, 0, 0.2));
-    const u1 = clamp((s - B.maxHop1) / 0.55), u2 = clamp((s - B.maxHop2) / 0.5);
-    b.pos = s < B.maxHop2 ? EDGE.clone().lerp(B1, easeInOut(u1)) : B1.clone().lerp(LAND2, easeOut(u2));
+    // Hop 1: edge -> block (pops to x2). Hop 2: straight up (x2.7) and lands back on it - too heavy: the block cracks.
+    const u1 = clamp((s - B.maxHop1) / 0.55);
+    b.pos = s < B.maxHop2 ? EDGE.clone().lerp(B1, easeInOut(u1)) : B1.clone();
     b.rotY = face(EDGE, B1); b.face = s < B.maxHop2 ? 'happy' : 'nervous';
     if (J.airborne) { b.floor = J.lift * 2.6; b.layers = s - J.popAt < 0.2 ? [[A.shock, 0.3]] : AIR(s); }
-    else if (s > B.maxHop2) { b.layers = [[A.shock, 0.3]]; b.rotZ = -0.06 * Math.sin((s - B.maxHop2) * 18) * clamp((s - B.maxHop2 - 0.5) * 2); b.face = 'scared'; }
+    else if (s > B.maxHop2) { b.layers = [[A.shock, 0.3]]; b.floor = -blockSag(s); b.rotZ = -0.05 * Math.sin((s - B.maxHop2) * 18); b.face = 'scared'; b.lookDown = 0.45; }
   } else if (s < B.maxRespawn) {
-    // Topples off into the lava.
-    const u = s - B.topple, LAND2 = B1.clone().add(V(1.6, 0, 0.2));
-    b.grounded = false; b.pos = LAND2.clone().add(V(u * 4, Math.max(-9, 2.6 * 0 - 0.5 * 40 * u * u), 0)); b.rotY = face(EDGE, B1);
-    b.rotZ = -Math.min(1.4, u * 3.2); b.layers = [[A.shock, 0.3]]; b.face = 'scared'; b.visible = u < 0.85;
+    // The block breaks: he drops straight down into the lava with the chunks.
+    const u = s - B.topple;
+    b.grounded = false; b.pos = B1.clone().add(V(0, Math.max(-14, -blockSag(B.topple) - 0.5 * 60 * u * u), 0)); b.rotY = face(EDGE, B1);
+    b.rotX = -Math.min(0.5, u * 1.2); b.layers = [[A.shock, 0.3]]; b.face = 'scared'; b.visible = u < 0.55;
   } else if (s < B.maxWalk) {
     b.pos = SPAWN.clone(); b.rotY = toCam(SPAWN) + 0.2; b.face = s < W.reached ? 'annoyed' : 'determined';
     if (s > B.typed[0] - 0.3) { b.layers = [[A.typing, s * 1.8]]; b.face = s < B.typed[1] + 0.3 ? 'scheming' : 'evil_grin'; b.rotY = toCam(SPAWN) - 0.15; }
@@ -395,6 +414,15 @@ export function update(t, stage) {
   place(leo, L); place(max, M);
   cam = stage.camera;
   lavaTex.offset.set((t * 0.03) % 1, (t * 0.017) % 1);
+  // Max's block: whole until he lands too big, cracked and sagging until "didn't", then four chunks drop into the lava.
+  const broke = s >= B.topple, sag = blockSag(Math.min(s, B.topple)), jit = s > BLOCK_CRACK() && !broke ? 0.04 * Math.sin(t * 90) : 0;
+  maxBlock.visible = !broke; maxBlock.position.set(B1.x + jit, -1 - sag, B1.z);
+  blockCracks.visible = s > BLOCK_CRACK() && !broke; blockCracks.position.set(jit, -sag, 0);
+  for (const c of blockChunks) {
+    const u = s - B.topple; c.m.visible = broke && u < 1.4;
+    if (!c.m.visible) continue;
+    c.m.position.copy(c.home).add(V(0, -sag, 0)).add(c.dir.clone().multiplyScalar(1.6 * u)).add(V(0, -0.5 * 30 * u * u, 0)); c.m.rotation.set(c.spin.x * u, c.spin.y * u, c.spin.z * u);
+  }
 
   // Trophy: on the pedestal until Leo grabs it, then in his hand.
   if (s < B.grab) { if (trophy.parent !== stage.scene) stage.scene.add(trophy); trophy.position.set(PEDESTAL.x, 2.4 + 0.8, PEDESTAL.z); trophy.rotation.set(0, t * 1.2, 0); trophy.scale.setScalar(1.3); }
@@ -424,7 +452,7 @@ export function update(t, stage) {
   const events = [];
   for (const lt of EVENTS.leoLand) { const J = leoJ(lt); events.push([lt, (lt < B.walk1 ? LEO0 : JUMP_AT).clone().add(V(0, 0.4, 0)), 0.5 * J.size, 0.7, '#ffffff']); }
   events.push([B.maxHop1 + 0.5, B1.clone().add(V(0, 0.3, 0)), 0.8, 0.6, '#ffffff']);
-  events.push([B.topple + 0.45, B1.clone().add(V(3.5, -1, 0.2)), 2.2, 0.9, '#ff7a2a']);
+  events.push([B.topple, B1.clone().add(V(0, 0.2, 0)), 1.2, 0.5, '#d8d0c8'], [B.topple + 0.25, B1.clone().add(V(0, -1, 0)), 2.4, 0.9, '#ff7a2a']);
   events.push([B.break, JUMP_AT.clone().add(V(0, 0.5, 0)), 6, 1.1, '#e8e8ee']);
   events.push([B.maxRespawn, SPAWN.clone().add(V(0, 0.4, 0)), 1.2, 0.6, '#ffffff'], [B.leoRespawn, CP.clone().add(V(0, 0.4, 0)), 1.2, 0.6, '#ffffff']);
   events.push([B.vhop + 0.02, SQUASH.clone().add(V(0, 3, 0)), 1.0, 0.5, '#ffe36b']);
@@ -607,8 +635,9 @@ export function overlay(g, s, t) {
   if (t > B.mont1[1] && t < W.stepped - 0.2) word(g, s, t, B.mont1[1], 0.9, 'SIZE 51', '#FFD23F', 150);
   // One step over the whole lava level: the stage counter flies.
   if (SHOT === 'step') { const n = stageOf(leo.root.position.x, 'leo', t); bigText(g, s, `STAGE ${n}`, 540, 760, 130, '#ffffff', { k: 1 + 0.05 * Math.sin(t * 20) }); }
-  word(g, s, t, B.maxHop2 + 0.5, 1.1, 'TOO BIG', '#ff4d5e', 140);
-  word(g, s, t, B.topple + 0.45, 0.9, 'OOF', '#ff7a2a', 170);
+  word(g, s, t, B.maxHop2 + 0.5, B.topple - B.maxHop2 - 0.45, 'TOO BIG', '#ff4d5e', 140);
+  word(g, s, t, BLOCK_CRACK(), 0.5, 'CRACK', '#ffffff', 120, 1010, 0.05);
+  word(g, s, t, B.topple + 0.25, 0.9, 'OOF', '#ff7a2a', 170);
   if (t > B.maxRespawn && t < W.reached - 0.4) tagOver(g, s, head(max).add(V(0, 1.7, 0)), 'CHECKPOINT: START', 'rgba(40,170,80,.92)', '#ffffff', clamp((t - B.maxRespawn) / 0.2));
   if (SHOT === 'stride') { const st = Math.min(4, 1 + Math.floor(inv(W.reached - 0.2, B.walk2end - 0.1, t) * 4)); bigText(g, s, `STEP ${st}`, 540, 760, 130, '#ffffff', { k: 1 + 0.05 * Math.sin(t * 20) }); }
   if (SHOT === 'tinyDoor' && t > W.tinyDoor - 0.1) { const p = project(V(ROOM[0], DOOR.h + 1.6, 0), s); if (p.on) { bigText(g, s, 'TINY DOOR', p.x / s, p.y / s - 120, 84, '#FFD23F', { k: pop(t, W.tinyDoor - 0.1) }); bigText(g, s, 'v', p.x / s, p.y / s - 40, 80, '#FFD23F', { k: pop(t, W.tinyDoor - 0.1) }); } }

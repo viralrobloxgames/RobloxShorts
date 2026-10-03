@@ -48,10 +48,11 @@ for i in range(4): thud(t0 + i * (t1 - t0) / 4, SIZE(50), 0.45); T([523 + 120 * 
 for i in range(5): A('click', W['tried'] - 0.25 + i * 0.15, 0.1)                            # running
 pop(B['maxHop1'], 1, 0.16); thud(B['maxHop1'] + 0.5, 2, 0.3)
 pop(B['maxHop2'], 2, 0.16); thud(B['maxHop2'] + 0.45, 2.7, 0.3)
-T([392, 370, 392, 370], B['maxHop2'] + 0.5, 0.06, 0.09, square=True)                          # teetering
-A('swish_2', B['topple'], 0.3); T(500, B['topple'], 0.08, 0.45, sweep=-700)
-A('impact_2', B['topple'] + 0.45, 0.45); T(160, B['topple'] + 0.45, 0.1, 0.5, sweep=-60, square=True)   # into the lava
-T([330, 262], B['topple'] + 0.5, 0.1, 0.18)                                                   # OOF
+A('impact_3', B['maxHop2'] + 0.47, 0.4); T(1600, B['maxHop2'] + 0.47, 0.06, 0.2, sweep=-3500)   # the block cracks
+T([392, 370, 392, 370], B['maxHop2'] + 0.6, 0.06, 0.09, square=True)                          # creaking / panic
+A('impact_2', B['topple'], 0.5); A('swish_2', B['topple'] + 0.02, 0.3); T(500, B['topple'], 0.08, 0.35, sweep=-700)   # it breaks
+A('impact_1', B['topple'] + 0.25, 0.4); T(160, B['topple'] + 0.25, 0.1, 0.5, sweep=-60, square=True)   # into the lava
+T([330, 262], B['topple'] + 0.3, 0.1, 0.18)                                                   # OOF
 T([1047, 1319, 1568], B['maxRespawn'], 0.08, 0.12)                                           # respawn shimmer
 # The tiny door, can't fit, shrink = reset.
 A('swish_1', B['peek'], 0.35); T(300, B['peek'] + 0.1, 0.06, 0.6, sweep=-150)
