@@ -19,9 +19,10 @@ Why it should work:
 - **Series hook:** "Next game: every step makes you faster" makes Part 2 a new game with the same cast.
 - 174 words, about 70 s in George voice C (Part 5 was 169 words for 68 s), so over 65 s for Creator Rewards. US spelling.
 
-Scale note: the HUD counts jumps (JUMPS 50 · SIZE x51). On screen, the growth is visible but capped (about 8x at 50
-jumps, about 14x at 100) so the giant still fits the shots. Every walk and stomp uses `web/lib/locomotion.js` with stride scaled by size (no
-walking on the spot). No two-arms-up poses: the victory jump is a single fist pump (`waveArm`) then `proud`.
+Scale note: the leaderstats show Stage and Size (= jumps + 1). On screen the first jump doubles you, then growth slows
+(`SIZE(j) = 2 j^0.42`: about 10x at 50 jumps, about 14x at 100) so the giant still fits the shots. Every walk and stomp uses `web/lib/locomotion.js` with stride scaled by size (no
+walking on the spot). No two-arms-up poses: hops use a mid-stride leg pose with arms low, pops use `shock` (arms at shoulder height), the
+fast-forward uses `proud`; the victory hop holds the trophy (`tool_hold`).
 
 ## Beats (hook first)
 
@@ -38,12 +39,14 @@ walking on the spot). No two-arms-up poses: the victory jump is a single fist pu
    wider than the block, he wobbles and slides off into the lava. Poof, he respawns at the start pad, normal size.
    HUD: "CHECKPOINT: START".
    *"Max tried it too. On a tiny block. He grew. The block didn't. Back to his last checkpoint. The start."*
-5. **The tiny door (20-27 s).** Leo's four giant strides to the finish (last checkpoint, right at the door, flashes green
-   under his foot). The finish is a tiny normal-size door in a wall, with the trophy on a podium just inside. Leo crouches
-   and presses one huge eye to the doorway (interior shot: the trophy, and a giant eye filling the door).
+5. **The tiny door (19-25 s).** Leo's four giant strides to the end of the lane. The finish is a tiny room with a
+   normal-size door, a glass front and a glass roof, the trophy on a pedestal inside. Leo leans right over it (low shot
+   from the porch: the tiny door, his huge face above it), then the inside view up through the glass roof: the trophy,
+   and a giant face looking down. "CAN'T FIT".
    *"Leo reached the finish in four steps. But the finish was a tiny door. He could see the trophy. He couldn't fit."*
-6. **The block (27-33 s).** A pop-up sign: "SHRINK = RESET". Leo shakes his head, then sits down cross-legged in front
-   of the door, arms folded, smug face. He completely covers it.
+6. **The block (26-32 s).** A pop-up card: "SHRINK = RESET". Leo shakes his head, walks to the door, and sits down with
+   his back against it, right on the last checkpoint pad, which lights up: "CHECKPOINT 20" (this plants the twist). He
+   completely covers the door. "BLOCKED".
    *"The only way to shrink? Reset. So Leo sat in front of the door. If he couldn't win, nobody could."*
 7. **The bait (33-40 s).** Back at the start, tiny Max types in chat: "bet u cant hit 100 jumps". Giant Leo reads it,
    narrows his eyes, stands up. Chat: "watch me".
