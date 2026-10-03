@@ -20,7 +20,7 @@ sexual references. Story, research and beats: `source/story.md`. Script: `script
 
 - Review of the 5 s talking sample (2026-10-03): text on Max's face, nose "looks goofy", too many pop-ups, George
   doesn't suit a noir detective. Fixed: the nose is one smooth swept skin-coloured surface (no lime-green blobs; the
-  gamepass glow is a faint green tint). The title is one compact block above Max's head, framed with headroom, gone before
+  gamepass glow is only a very faint green tint; the smell wisps carry the power). The title is one compact block above Max's head, framed with headroom, gone before
   the gamepass card. Pop-ups cut to the ones that add something the captions don't say: title, gamepass card, case file,
   the three character lines (Leo, Skye, Mia), the TEMPTATIONS counter (only when it changes, then DONUTS EATEN), ACHOO!,
   CASE CLOSED, CTA. No always-on HUD, smell icons, HP bars or object tags. One pop-up on screen at a time.

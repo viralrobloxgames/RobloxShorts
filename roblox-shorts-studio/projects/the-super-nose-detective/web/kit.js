@@ -47,7 +47,7 @@ export function makeNose(actor, skin = '#F0B774') {
   return pivot;
 }
 export function setNose(nose, { glow = 0, inflate = 0, twitch = 0 } = {}) {
-  nose.userData.mat.emissiveIntensity = glow * 0.15;
+  nose.userData.mat.emissiveIntensity = glow * 0.06;
   nose.scale.setScalar(1 + inflate);
   nose.rotation.set(-0.05 * inflate + twitch * 0.08, twitch * 0.12, 0);
 }
