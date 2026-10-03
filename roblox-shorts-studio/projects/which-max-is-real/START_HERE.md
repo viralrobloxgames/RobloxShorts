@@ -5,9 +5,12 @@ Script approved 2026-10-03 (162 words). Web route; cast Max, the copy (Max mirro
 
 ## How it works
 - `web/timeline.js`: every actor's state as a pure function of real time, keyed to narration words (`web/beats.js`
-  from `source/beats.py`). Mirror physics as in Part 1: the copy moves the opposite way along the line between them, so
-  Max walking backwards walks it back towards the EXIT door. The backwards sprint is one eased curve (slow motion that
-  never rewinds). The door starts open (the copy came through it in Part 1's blackout).
+  from `source/beats.py`). **Staged in the lobby** (v2, after review: the 12-stud corridor forced cameras too close in
+  portrait). Mirror physics as in Part 1: Max walks backwards (+z) and the mirror walks back (-z) to the EXIT door, which
+  here opens INTO the lobby (door root rotated 180). One ceiling light dies per step; red glitch while it fights; it is
+  dragged then flung into the corridor; Mia slams the door and holds it while it rattles.
+- `source/score.py` -> `audio/score.wav`: original synthesized suspense score timed to the events (drone, cluster pad,
+  heartbeat on the steps, risers, stingers, sprint toms, real silence at "it stopped"); it is the finish music bed.
 - `web/finale_clip.js`: set, cameras (`SHOTS`), lights, overlays (player list, LEFT/RIGHT, MIRROR line, hand rings,
   star ring, REAL/COPY, delay readout, CTA). `web/cover_clip.js`: the cover.
 - `source/sound_cues.py`: SFX from the same events.
@@ -15,7 +18,7 @@ Script approved 2026-10-03 (162 words). Web route; cast Max, the copy (Max mirro
 ## Build / render
 ```
 cd roblox-shorts-studio
-python3 projects/which-max-is-real/source/beats.py && python3 projects/which-max-is-real/source/sound_cues.py
+python3 projects/which-max-is-real/source/beats.py && python3 projects/which-max-is-real/source/score.py && python3 projects/which-max-is-real/source/sound_cues.py
 python3 scripts/finish.py projects/which-max-is-real
 node web/fit_check.mjs --clip projects/which-max-is-real/web/finale_clip.js        # then --reviewed
 node web/render.mjs --clip projects/which-max-is-real/web/finale_clip.js --out projects/which-max-is-real/renders/web --workers 3 --resume
