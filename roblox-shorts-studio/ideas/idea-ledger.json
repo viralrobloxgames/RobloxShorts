@@ -119,10 +119,20 @@
       "title": "Three Seconds",
       "series": "standalone story",
       "created": "2026-10-03",
-      "status": "script_draft_awaiting_approval",
+      "status": "dropped",
       "logline": "Leo can stop time, but only for three seconds, which is never enough. When a piano falls toward Mia and she's twenty steps away, he uses his three seconds to throw the dodgeball that once hit him and knocks her clear. Mia asks if he just stopped time. 'Three seconds is cute. I get four.' She freezes him and eats his fries, which is where they kept going.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/three-seconds"
+      "project": "projects/three-seconds",
+      "notes": "Dropped 2026-10-03: the 'I get four' twist was a last-second new rule and the downside was only 'too short'. Replaced by Forty Floors."
+    },
+    {
+      "title": "Forty Floors",
+      "series": "standalone story",
+      "created": "2026-10-03",
+      "status": "script_draft_awaiting_approval",
+      "logline": "You're falling forty floors, and you can swap places with anything alive you can see. Swapping saves you but drops the window cleaner in your place, so you swap back. Everyone in sight would fall instead of you, until you see a pigeon. It takes your fall and opens its wings; the window cleaner you spared lowers his platform and pulls you in.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/forty-floors"
     }
   ],
   "statuses": [
@@ -135,6 +145,7 @@
     "farm_render_running",
     "farm_render_downloaded_awaiting_encode",
     "delivered_local_review",
-    "published"
+    "published",
+    "dropped"
   ]
 }
