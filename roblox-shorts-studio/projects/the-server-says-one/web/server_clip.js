@@ -179,7 +179,7 @@ export function update(t, stage) {
     case 'fake': fit(stage, [max, ent], 0.15, 0.32, { maxD: 13 }); break;
     case 'fakeCopy': fit(stage, [ent, max], 0.55, 0.1, { maxD: 9, pad: 0.9, aim: V(0.4, 0, -1.2) }); break;
     case 'cut': fit(stage, [max, ent], 0.75, 0.14, { maxD: 10, pad: 1.0 }); break;
-    case 'cutLow': { const p = torso(max); look(stage, V(4.8, 1.1, -3.2), p.clone().lerp(torso(ent), 0.25), 46, 0.05); break; }
+    case 'cutLow': fit(stage, [max, ent], 1.15, 0.1, { maxD: 11, pad: 1.0 }); break;
     case 'finishing': fit(stage, [ent, max], lerp(0.2, 1.0, easeInOut(u)), 0.12, { maxD: 10, pad: 0.95 }); break;    // bullet time
     case 'ran': fit(stage, [max, ent], 0.45, 0.16, { maxD: 13, pad: 1.0 }); break;
     case 'barge': look(stage, V(4.8, 4.4, 17), V(0, 3.6, -8), 22); break;                                     // long lens down the lobby

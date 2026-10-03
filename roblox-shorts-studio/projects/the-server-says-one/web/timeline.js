@@ -1,8 +1,8 @@
 // The Server Says One (After Hours pilot 1): story timeline shared by web/server_clip.js and source/sound_cues.py.
 // Pure (no three.js), so node can import it. Positions are [x, z] in studs (lobby floor y = 0, back wall z = -8, EXIT door
 // at x = 0 in the back wall, corridor behind it). Everything is a function of GAME time g; game time equals real time
-// except during the chase, where each shot plays its own slow-motion window (CHASE) and windows may overlap
-// (the same instant seen from two angles).
+// except during the chase, which plays in continuous slow motion: one smooth, always-forward curve from real to game
+// time (SLOWMO), pinned so each action lands on its narration word. Camera cuts never rewind the action.
 //
 // The Unlisted's one rule: it is Max's MIRROR image, half a second late (D). Facing him, a mirror copies sideways moves
 // in the same direction but moves along the line between them the opposite way; "every copy brings it one step closer"
@@ -41,7 +41,7 @@ const FACING = Math.PI;                                                    // to
 export const G = {
   wave: [W.wave - 0.15, W.wave + 1.05],
   step: W.step - 0.12, back: W.every - 0.2,
-  lunge: K + 0.2, cut: K + 0.75,
+  lunge: K + 0.2, cut: K + 1.2,          // holds the fake (a standoff), cuts right on "cut"
 };
 G.lungeEnd = G.lunge + dist(M2, MF) / RUN;
 const run = (g) => along(PATH, G.cut, g, RUN);
@@ -55,7 +55,7 @@ G.push = [G.arrive + 0.02, G.arrive + 0.24];
 G.slam = [G.push[0] + 0.06, G.push[0] + 0.2];     // door 80 deg -> shut
 G.turnBack = [G.slam[1] + 0.12, G.slam[1] + 0.3];
 G.backUp = G.turnBack[1];
-G.hit = K + 3.6;                                    // the copy hits the closed door
+G.hit = G.slam[1] + 1.26;                                    // the copy hits the closed door
 G.leanArrive = G.backUp + dist(PATH.at(-1), BACK) / WALK;
 
 export function maxAt(g) {
@@ -111,7 +111,7 @@ export function copyAt(g) {
   if (c !== undefined && s.layers[0][0] === 'idle') s.layers = [['walk', (2 * CSTEP * smooth(inv(c, c + CDUR, g))) / STRIDE, 0.4], ['idle', g, 0.6]];   // a short step: shorter swing
   if (g >= G.through) {                                   // Max is gone: nothing left to copy
     s.layers = [['idle', 0]]; s.face = 'revealed';
-    s.headTurn = smooth(inv(G.slam[0] - 0.05, G.slam[0] + 0.3, g));      // the head goes first...
+    s.headTurn = smooth(inv(G.slam[1] - 0.07, G.slam[1] + 0.16, g));      // the head goes first...
     const frozen = mirror(maxAt(G.through - D).pos, G.through);
     const runStart = G.hit - dist(frozen, DF) / RUN;
     const r = along([frozen, DF], runStart, g, RUN);
@@ -134,35 +134,41 @@ export function doorAt(g) {
 }
 
 // ---------- real time -> game time ----------
-// Chase shots: [id, real start, real end, game start, game end]. Each plays its own window in slow motion with a speed
-// ramp (fast in, slowing down); windows overlap where the same instant is shown again from a second angle.
-const mid = (a, b, u = 0.5) => a + (b - a) * u;
+// Chase shots: [id, real start, real end]. They only choose the camera; the action runs on one clock.
 export const CHASE = [
-  ['fake', W.fake - 0.3, W.fakeCopy - 0.3, K, K + 0.62],
-  ['fakeCopy', W.fakeCopy - 0.3, W.cut - 0.25, K + 0.45, K + 0.98],
-  ['cut', W.cut - 0.25, mid(W.cut, W.finishing, 0.45), K + 0.68, K + 1.12],
-  ['cutLow', mid(W.cut, W.finishing, 0.45), W.finishing - 0.3, K + 0.88, K + 1.3],
-  ['finishing', W.finishing - 0.3, W.ran - 0.2, K + 0.7, K + 1.05],
-  ['ran', W.ran - 0.2, mid(W.ran, W.dove, 0.55), K + 1.15, K + 1.62],
-  ['barge', mid(W.ran, W.dove, 0.55), W.dove - 0.3, K + 1.45, G.through - 0.1],
-  ['dove', W.dove - 0.3, W.slammed - 0.25, G.through - 0.16, G.slam[1] + 0.05],
-  ['slam', W.slammed - 0.25, W.hit - 0.12, G.slam[0] - 0.25, G.hit - 0.12],
+  ['fake', W.fake - 0.3, W.fakeCopy - 0.3], ['fakeCopy', W.fakeCopy - 0.3, W.cut - 0.25],
+  ['cut', W.cut - 0.25, (W.cut + W.finishing) / 2], ['cutLow', (W.cut + W.finishing) / 2, W.finishing - 0.3],
+  ['finishing', W.finishing - 0.3, W.ran - 0.2], ['ran', W.ran - 0.2, (W.ran + W.dove) / 2],
+  ['barge', (W.ran + W.dove) / 2, W.dove - 0.3], ['dove', W.dove - 0.3, W.slammed + 0.25], ['slam', W.slammed + 0.25, W.hit - 0.12],
 ];
-const POST = W.hit - 0.12;
-const ramp = (u) => 0.45 * u + 0.55 * (1 - (1 - u) ** 2);
+// Real time -> game time during the chase: anchors [real, game], joined by a monotone cubic (Fritsch-Carlson), so the
+// speed changes smoothly and time never runs backwards. Slope 1 on both ends meets real time.
+const SLOWMO = [
+  [K, K], [W.fake + 0.3, G.lunge + 0.12],                    // Max lunges left on "faked"
+  [W.fakeCopy + 0.45, G.lunge + D + 0.12],                   // the copy lunges on "It faked left"
+  [W.cut + 0.1, G.cut + 0.03],                               // Max cuts right on "cut"
+  [W.sprinted + 0.3, G.cut + 0.22],                          // "...sprinted": Max running past it, still mid-fake
+  [W.ran + 0.3, G.cut + D + 0.2],                            // "Then it ran": the copy sprints (the wrong way)
+  [W.dove + 0.1, G.barge + 0.04],                            // "dove": the shoulder barge
+  [W.slammed + 0.35, G.slam[1] + 0.02],                      // "slammed"
+  [W.hit, G.hit],                                            // "hit"
+];
+const slope = SLOWMO.map((p, i) => {
+  if (i === 0 || i === SLOWMO.length - 1) return 1;
+  const d0 = (p[1] - SLOWMO[i - 1][1]) / (p[0] - SLOWMO[i - 1][0]), d1 = (SLOWMO[i + 1][1] - p[1]) / (SLOWMO[i + 1][0] - p[0]);
+  return d0 * d1 <= 0 ? 0 : (2 * d0 * d1) / (d0 + d1);       // harmonic mean keeps it monotone
+});
 export function gameAt(t) {
-  if (t < CHASE[0][1]) return t;
-  for (const [id, a, b, g0, g1] of CHASE) if (t < b) return lerp(g0, g1, id === 'slam' ? (t - a) / (b - a) : ramp((t - a) / (b - a)));
-  return G.hit - 0.12 + (t - POST);
+  if (t <= SLOWMO[0][0]) return t;
+  if (t >= SLOWMO.at(-1)[0]) return G.hit + (t - W.hit);
+  let i = 0; while (t > SLOWMO[i + 1][0]) i++;
+  const [x0, y0] = SLOWMO[i], [x1, y1] = SLOWMO[i + 1], h = x1 - x0, u = (t - x0) / h;
+  const h00 = 2 * u ** 3 - 3 * u ** 2 + 1, h10 = u ** 3 - 2 * u ** 2 + u, h01 = -2 * u ** 3 + 3 * u ** 2, h11 = u ** 3 - u ** 2;
+  return h00 * y0 + h10 * h * slope[i] + h01 * y1 + h11 * h * slope[i + 1];
 }
 export const shotOf = (t) => (CHASE.find(([, a, b]) => t >= a && t < b) || [null])[0];
-// Inverse of the ramp (bisection), so a game event can be placed in real time within a given shot.
-const realIn = (id, g) => {
-  const [, a, b, g0, g1] = CHASE.find((c) => c[0] === id), f = id === 'slam' ? (u) => u : ramp, want = (g - g0) / (g1 - g0);
-  let lo = 0, hi = 1; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (f(m) < want) lo = m; else hi = m; }
-  return a + (b - a) * lo;
-};
-const postReal = (g) => POST + (g - (G.hit - 0.12));
+// Game time -> real time (bisection over the monotone curve), for sound cues and overlays.
+const realAt = (g) => { let lo = 0, hi = W.end + 5; for (let i = 0; i < 50; i++) { const m = (lo + hi) / 2; if (gameAt(m) < g) lo = m; else hi = m; } return lo; };
 
 // ---------- the ending (real time) ----------
 export const COPY_MAX = [-0.6, -30.5];              // the second "Max", at the far end of the corridor
@@ -183,10 +189,10 @@ export const E = {
 // Real times of game events, for sound cues and overlays.
 export const EVENTS = {
   wave: G.wave[0], copyWave: G.wave[0] + D, step: G.step, copyStep: G.step + D, back: G.back, copyBack: G.back + D,
-  creeps: CREEP, lunge: realIn('fake', G.lunge), copyLunge: realIn('fakeCopy', G.lunge + D),
-  cut: realIn('cut', G.cut), copyRun: realIn('ran', G.cut + D),
-  barge: realIn('dove', G.barge), copyLungeAgain: realIn('finishing', G.lunge + D), slam: realIn('slam', G.slam[1]), freeze: realIn('slam', G.slam[0] - 0.05),
-  copyCharge: realIn('slam', G.hit - 0.9), hit: postReal(G.hit),
+  creeps: CREEP, lunge: realAt(G.lunge), copyLunge: realAt(G.lunge + D),
+  cut: realAt(G.cut), copyRun: realAt(G.cut + D),
+  barge: realAt(G.barge), copyLungeAgain: realAt(G.lunge + D), slam: realAt(G.slam[1]), freeze: realAt(G.slam[1] - 0.07),
+  copyCharge: realAt(G.hit - 0.9), hit: realAt(G.hit),
   ...E, end: W.end,
 };
 export { K };
