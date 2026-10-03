@@ -16,7 +16,7 @@ decide the twist.
 
 | Part | Video | Story | Sets up | Results |
 |---|---|---|---|---|
-| 1 | `projects/every-jump-makes-you-bigger` | Leo jumps 50 times and strides to the finish, a tiny door. He blocks it; Max baits him to 100 jumps, the floor breaks, Leo falls out of the map and respawns at his last checkpoint next to the door, tiny again. Leo wins, then does a victory jump in a very small room. | Next game: every step makes you faster | rendering (George voice C, 65.3 s) |
+| 1 | `projects/every-jump-makes-you-bigger` | Leo jumps 50 times and strides to the finish, a tiny door. He blocks it; Max baits him to 100 jumps, the floor breaks, Leo falls out of the map and respawns at his last checkpoint next to the door, tiny again. Leo wins, then does a victory jump in a very small room. | Next game: every step makes you faster | delivered (George voice C, 65.3 s), awaiting approval |
 
 ## Devices to keep
 - Rule sign on frame 1, Roblox leaderstats (Stage / Size) and a round timer all video, "+1 SIZE" pops, x10 fast-forward

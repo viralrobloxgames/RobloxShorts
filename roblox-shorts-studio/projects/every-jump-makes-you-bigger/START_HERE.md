@@ -12,6 +12,7 @@ take-01, 65.0 s, checked), call to action at the end. 65.3 s (1,960 frames).
   respawn there. Beats anchored to narration words via `source/beats.py`; SFX from `source/sound_cues.py` (mirrors the
   clip's `B` block - change both together).
 - No accessories, so the fit check has 0 pairs (passed, reviewed).
+- `delivery/Every_Jump_Makes_You_Bigger.mp4` (1080x1920, 65.3 s, 1,960 frames, validated).
 - Cover `delivery/Every_Jump_Makes_You_Bigger_cover.{png,jpg}` (3:4-safe), `delivery/post.json`.
 
 ## Next
