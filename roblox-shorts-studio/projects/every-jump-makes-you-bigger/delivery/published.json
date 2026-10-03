@@ -1,0 +1,8 @@
+{
+  "file": "Every_Jump_Makes_You_Bigger.mp4",
+  "sha256": "b5b5ba705b3739e9a7074a6c492e3ac76a14e913ee83792731d67ba9f7ff3d2d",
+  "approved": {"by": "user", "at": "2026-10-03", "how": "approved in chat; posted as a standalone (no 'Part 1' in caption, title or cover; the video itself still shows the PART 1 tag and the part-2 end card)"},
+  "scheduled_for": "2026-10-03T17:15:00+01:00",
+  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "uploaded image (no PART 1 badge)"},
+  "youtube": {"status": "scheduled", "method": "YouTube Studio web, Schedule", "url": "https://youtube.com/shorts/T7ktgwX3NNg", "video_id": "T7ktgwX3NNg", "made_for_kids": false, "altered_content": false, "thumbnail": "cover.jpg uploaded; Shorts shelf frame (Select from video, last frame) still to set once the scrubber is offered"}
+}
