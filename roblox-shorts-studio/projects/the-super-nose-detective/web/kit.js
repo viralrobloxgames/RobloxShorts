@@ -2,7 +2,6 @@
 // the nose and the sunglasses sit in front of the face, clear of hair, checked in the look test from every side).
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { ConvexGeometry } from 'three/addons/geometries/ConvexGeometry.js';
 import { part, canvasTexture } from '../../../web/lib/world.js';
 import { packTexture } from '../../../web/lib/robloxPack.js';
 
@@ -21,33 +20,34 @@ export async function wearOutfit(actor, file) {
   });
 }
 
-// Max's Super Nose: a long, slightly hooked block-style nose between the eyes and the mouth (head-local coords:
-// head bone pivot is the neck at y 4; the face is the +Z side at z 0.6; eyes at y ~0.78, mouth at ~0.26).
-// Returns the group (on the Head bone) with userData.glow (0..1 green gamepass glow) and .inflate (sneeze swell).
+// Max's Super Nose: one big, smooth cartoon nose (a single swept skin-coloured surface: a tall bridge from between the eyes,
+// drooping out to a round bulb) between the eyes and the mouth (head-local coords: head bone pivot is the neck
+// at y 4; the face is the +Z side at z 0.6; eyes at y ~0.78, mouth at ~0.26). The gamepass power shows as a gentle green
+// tint (plus the smell wisps in the clip), never a lime-green nose. Returns the pivot (on the Head bone); userData.mat.
 export function makeNose(actor, skin = '#F0B774') {
-  const g = new THREE.Group(); g.name = 'SuperNose';
-  const m = std(skin, { roughness: 0.5, emissive: new THREE.Color('#39ff6a'), emissiveIntensity: 0 });
-  const dark = std(new THREE.Color(skin).multiplyScalar(0.55));
-  const root = V(0, 0.6, 0.58);
-  // A wedge: tall and wide where it meets the face (between the eyes), tapering forward and drooping down to the tip.
-  const pts = [];
-  for (const s of [-1, 1]) pts.push(V(0.12 * s, 0.74, 0.57), V(0.24 * s, 0.47, 0.57), V(0.09 * s, 0.72, 0.68),
-    V(0.1 * s, 0.56, 1.2), V(0.12 * s, 0.41, 1.18), V(0.17 * s, 0.41, 0.95));
-  const wedge = mesh(new ConvexGeometry(pts), m); g.add(wedge);
-  const bulb = mesh(new THREE.SphereGeometry(0.175, 24, 16), m); bulb.position.set(0, 0.47, 1.18); bulb.scale.set(1.15, 1, 1); g.add(bulb);
-  for (const s of [-1, 1]) {
-    const wing = mesh(new THREE.SphereGeometry(0.13, 16, 12), m); wing.position.set(0.16 * s, 0.45, 1.0); wing.scale.set(1, 0.9, 1.2); g.add(wing);
-    const hole = mesh(new THREE.SphereGeometry(0.05, 10, 8), dark); hole.position.set(0.075 * s, 0.38, 1.15); hole.scale.set(1, 0.5, 1.3); g.add(hole);
+  const root = V(0, 0.56, 0.56), L = 0.46;
+  const m = std(skin, { roughness: 0.55, emissive: new THREE.Color('#39ff6a'), emissiveIntensity: 0 });
+  const dark = std(new THREE.Color(skin).multiplyScalar(0.45));
+  // Radius along the nose (d 0 = face, 1 = tip): a tall bridge at the face, a slimmer middle, a round bulb, a soft tip.
+  const prof = new THREE.SplineCurve([[0.2, -0.03], [0.19, 0.0], [0.135, 0.3], [0.13, 0.5], [0.155, 0.72], [0.12, 0.92], [0.001, 1.0]]
+    .map(([r, d]) => new THREE.Vector2(r, d * L))).getPoints(48);
+  const geo = new THREE.LatheGeometry(prof, 40), P = geo.attributes.position, v = new THREE.Vector3();
+  const centreY = (d) => 0.08 - 0.13 * d * d;                 // the bridge starts high between the eyes and droops to the tip
+  const tall = (d) => 1.15 - 0.2 * d;                         // taller than wide at the bridge, round at the bulb
+  for (let i = 0; i < P.count; i++) {
+    v.fromBufferAttribute(P, i); const d = THREE.MathUtils.clamp(v.y / L, 0, 1);
+    P.setXYZ(i, v.x * 0.92, centreY(d) - v.z * tall(d), Math.max(-0.02, v.y));   // lathe axis -> forward (a proper rotation)
   }
-  g.userData = { mat: m, base: root.clone(), glow: 0, inflate: 0 };
-  // Pivot the whole nose at its root so it can swell and twitch from the face.
-  const pivot = new THREE.Group(); pivot.position.copy(root); g.position.copy(root).negate(); pivot.add(g);
-  pivot.userData = g.userData;
+  geo.computeVertexNormals();
+  const g = new THREE.Group(); g.name = 'SuperNose'; g.add(mesh(geo, m));
+  for (const sx of [-1, 1]) { const h = mesh(new THREE.SphereGeometry(0.034, 10, 8), dark); h.position.set(0.055 * sx, centreY(0.8) - 0.125, 0.8 * L); h.scale.set(1, 0.4, 1.5); g.add(h); }
+  const pivot = new THREE.Group(); pivot.position.copy(root); pivot.add(g);
+  pivot.userData = { mat: m, base: root.clone(), glow: 0, inflate: 0 };
   actor.bones.Head.add(pivot);
   return pivot;
 }
 export function setNose(nose, { glow = 0, inflate = 0, twitch = 0 } = {}) {
-  nose.userData.mat.emissiveIntensity = glow * 0.9;
+  nose.userData.mat.emissiveIntensity = glow * 0.15;
   nose.scale.setScalar(1 + inflate);
   nose.rotation.set(-0.05 * inflate + twitch * 0.08, twitch * 0.12, 0);
 }

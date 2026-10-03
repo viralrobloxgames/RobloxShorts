@@ -18,8 +18,19 @@ sexual references. Story, research and beats: `source/story.md`. Script: `script
   `finish.music` points at the funk bed (gain 0.08).
 - Cover: `web/cover_clip.js` -> `delivery/The_Super_Nose_Detective_cover.jpg/.png` (3:4 crop checked). `delivery/post.json`.
 
+- Review of the 5 s talking sample (2026-10-03): text on Max's face, nose "looks goofy", too many pop-ups, George
+  doesn't suit a noir detective. Fixed: the nose is one smooth swept skin-coloured surface (no lime-green blobs; the
+  gamepass glow is a faint green tint). The title is one compact block above Max's head, framed with headroom, gone before
+  the gamepass card. Pop-ups cut to the ones that add something the captions don't say: title, gamepass card, case file,
+  the three character lines (Leo, Skye, Mia), the TEMPTATIONS counter (only when it changes, then DONUTS EATEN), ACHOO!,
+  CASE CLOSED, CTA. No always-on HUD, smell icons, HP bars or object tags. One pop-up on screen at a time.
+  The tempt2 and bite close-ups have headroom so the counter is clear of Max's head.
+
 ## Next
-- Finish the full render (`--resume`), encode, review (contact sheet), deliver. Post only after the user approves.
+- New detective voice: auditions in progress (Qwen3-TTS VoiceDesign, cloud). When the user picks one: make it a
+  reusable clone sample, re-narrate, then fix_captions -> beats -> lipsync -> sound_cues -> finish; re-render the cover.
+- Full render from scratch (the old partial render was deleted: stale nose), encode, review, deliver. Post only after
+  the user approves.
 
 ## Re-render / re-encode
 ```

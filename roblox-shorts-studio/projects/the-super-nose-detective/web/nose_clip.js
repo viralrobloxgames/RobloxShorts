@@ -48,7 +48,6 @@ const B = {
   slide: W.slid - 0.1, tempt3: W.tempting3 - 0.4, principle: W.always - 0.3, bite: W.fighting - 0.15, closed: W.closed - 0.35,
   twitch: W.twitched - 0.35, cta: W.follow - 0.1,
 };
-const resisted = (s) => (s < B.r1 ? 0 : s < B.r2 ? 1 : 2);
 
 const SHOTS = [
   [0, 'hook'], [W.super - 0.2, 'gamepass'], [W.smell - 0.25, 'wisps'], [W.map - 0.2, 'map'], [B.caseIn, 'caseEmpty'], [B.chief, 'chief'],
@@ -367,7 +366,7 @@ function place(a, x) {
 const local = (a, x, y, z) => { a.root.updateMatrixWorld(true); return V(x, y, z).applyMatrix4(a.root.matrixWorld); };
 const handR = (a) => { a.bones['Arm.R'].updateMatrixWorld(true); return V(0, -2.05, 0).applyMatrix4(a.bones['Arm.R'].matrixWorld); };
 const headAt = (a, y = 0.5) => { a.bones.Head.updateMatrixWorld(true); return V(0, y, 0).applyMatrix4(a.bones.Head.matrixWorld); };
-const noseTip = () => { nose.updateMatrixWorld(true); return V(0, -0.2, 0.62).applyMatrix4(nose.matrixWorld); };
+const noseTip = () => { nose.updateMatrixWorld(true); return V(0, -0.06, 0.44).applyMatrix4(nose.matrixWorld); };
 
 // ---------- samples ----------
 const ACTION = () => [[B.slam - 0.2, B.slam + 0.4], [B.drive, B.party], [B.throw, B.throw + 0.6], [B.achoo - 0.1, B.splash + 0.6], [B.driveBack, B.office], [B.bite - 0.2, B.bite + 0.4]];
@@ -467,7 +466,7 @@ export function update(t, stage) {
   stage.bloom.strength = 0.35;
   switch (shot.id) {
     case 'hook': { const k = easeInOut(seg(s, B.logo - 0.12, B.logo + 0.08));    // crash zoom onto the nose on "this"
-      look(mh.clone().add(V(lerp(2.6, 1.8, k), lerp(-0.8, -0.55, k), lerp(5.4, 3.8, k))).add(jolt(B.logo, 0.12, 0.4)), mh.clone().add(V(lerp(-0.75, -0.1, k), lerp(-0.75, -0.3, k), lerp(0.6, 0.9, k))), lerp(40, 38, k), 25); break; }
+      look(mh.clone().add(V(lerp(2.6, 1.8, k), lerp(-0.8, -0.55, k), lerp(5.4, 3.8, k))).add(jolt(B.logo, 0.12, 0.4)), mh.clone().add(V(lerp(-0.75, -0.1, k), lerp(-0.6, 0.35, k), lerp(0.6, 0.9, k))), lerp(40, 40, k), 25); break; }
     case 'gamepass': look(mh.clone().add(V(2.4, -0.8, 5.0)), mh.clone().add(V(-0.2, -0.75, 0.6)), 40); break;
     case 'wisps': look(V(-5, 5.5, 15), V(4, 3.5, 1), 50, 30); break;
     case 'map': look(V(lerp(-60, -40, u), 110, lerp(-40, -20, u)), V(0, 0, 150), 48, 200); break;
@@ -481,7 +480,7 @@ export function update(t, stage) {
     case 'drive': { const c = C.pos; look(c.clone().add(V(10, 4.5, 8)), c.clone().add(V(0, 2.4, 1)), 46, 30); break; }
     case 'party': look(V(14, 12, 300), V(-6, 2, 334), 50, 50); break;
     case 'mia': look(MIA_AT.clone().add(V(6, 3.4, -9.5)), MIA_AT.clone().add(V(0, 1.2, 0)), 40); break;
-    case 'tempt2': look(mh.clone().add(V(-4, 0.4, 3.6)), mh.clone().add(V(0, -0.8, 0)), 40); break;
+    case 'tempt2': look(mh.clone().add(V(-4, 0.6, 3.6)), mh.clone().add(V(0, 0.0, 0)), 40); break;             // headroom for the counter
     case 'suspect': { const nh = headAt(noob), k = easeInOut(seg(s, W.guy1, W.guy1 + 0.2)); look(nh.clone().add(V(-2.5, lerp(-2.6, -0.8, k), lerp(-9, -4.5, k))), nh.clone().add(V(0, -0.6 + 0.4 * k, 0)), 40); break; }
     case 'stare': look(mh.clone().add(V(-0.6, 0.05, 2.6)), mh.clone().add(V(0, 0, 0.5)), 34); break;
     case 'fight': look(V(12.5, 6.2, lerp(312, 314.5, u)), V(7.6, 3.4, 329), 42, 30); break;
@@ -495,7 +494,7 @@ export function update(t, stage) {
     case 'talk': look(lh.clone().add(V(2.4, 0.4, 6)), lh.clone().add(V(0, -0.9, 0)), 40); break;
     case 'slide': look(DESK.clone().add(V(5.2, 8, 3)), DESK.clone().add(V(0, DESK_TOP, 0.4)), 44); break;
     case 'tempt3': { const k = easeInOut(u); look(DESK.clone().add(V(lerp(-1.6, -1.0, k), DESK_TOP + lerp(0.9, 1.3, k), lerp(-0.6, 0.2, k))), mh.clone().add(V(0, -0.8 + 0.3 * k, 0)).lerp(heldDonut.position, 0.25 * (1 - k)), 40); break; }
-    case 'principle': case 'bite': look(mh.clone().add(V(2.4, -0.4, -5.4)), mh.clone().add(V(0.4, -1.0, -0.8)), 40); break;
+    case 'principle': case 'bite': look(mh.clone().add(V(2.4, 0.0, -5.6)), mh.clone().add(V(0.4, -0.1, -0.8)), 40); break;   // headroom for the counter
     case 'closed': look(OFF.clone().add(V(-1, 6.5, 15)), OFF.clone().add(V(5, 4, -1.5)), 44); break;
     case 'twitch': look(mh.clone().add(V(2.2, 0.15, -4.2)), mh.clone().add(V(0.2, -0.2, -0.6)), 38); break;
     case 'cta': look(OFF.clone().add(V(4, 9, 22)), OFF.clone().add(V(-4, 2.5, 0)), 48, 35); break;
@@ -524,12 +523,6 @@ function pill(g, s, x, y, text, bg, fg = '#ffffff', size = 40, k = 1) {
   roundRect(g, 0, 0, w, (size + 34) * s, 20 * s); g.fillStyle = bg; g.fill(); g.fillStyle = fg; g.textBaseline = 'middle'; g.textAlign = 'left'; g.fillText(text, 20 * s, ((size + 34) / 2 + 3) * s); g.restore();
   return w / s;
 }
-function tagOver(g, s, p3, text, bg, k = 1, dy = 0) {
-  const p = project(p3, s); if (!p.on) return;
-  g.save(); g.translate(p.x, p.y + dy * s); g.scale(k, k); g.font = `${38 * s}px "Luckiest Guy"`; const w = g.measureText(text).width + 34 * s;
-  roundRect(g, -w / 2, -30 * s, w, 60 * s, 16 * s); g.fillStyle = bg; g.fill(); g.fillStyle = '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(text, 0, 3 * s);
-  g.beginPath(); g.moveTo(-12 * s, 30 * s); g.lineTo(12 * s, 30 * s); g.lineTo(0, 50 * s); g.fillStyle = bg; g.fill(); g.restore();
-}
 // Speech bubble above a character (projected head), clamped clear of the captions and the right-hand UI.
 function bubble(g, s, t, head3, lines, t0, t1, { bg = '#ffffff', fg = '#152435', heart = false, size = 50 } = {}) {
   if (t < t0 || t > t1) return; const p = project(head3, s); if (!p.on) return;
@@ -546,11 +539,10 @@ function bubble(g, s, t, head3, lines, t0, t1, { bg = '#ffffff', fg = '#152435',
   g.restore();
 }
 function logo(g, s, t) {
-  const a = t - B.logo, end = W.super + 0.05; if (a < 0 || t > end) return;
+  const a = t - B.logo, end = W.super - 0.2; if (a < 0 || t > end) return;
   const k = a < 0.14 ? lerp(2.4, 1, easeIn(a / 0.14)) : 1 + 0.04 * Math.exp(-(a - 0.14) * 8) * Math.sin((a - 0.14) * 50), al = fade(t, B.logo, end - B.logo);
-  bigText(g, s, 'DETECTIVE', 520, 380, 64, '#ffffff', { k, alpha: al, rot: -0.06 });
-  bigText(g, s, 'MAX', 470, 470, 150, '#FFD23F', { k, alpha: al, rot: -0.06, stroke: '#1a1208', sw: 0.18 });
-  bigText(g, s, 'SNIFFWELL', 520, 600, 150, '#FFD23F', { k, alpha: al, rot: -0.06, stroke: '#1a1208', sw: 0.18 });
+  bigText(g, s, 'DETECTIVE', 540, 300, 56, '#ffffff', { k, alpha: al, rot: -0.04 });
+  bigText(g, s, 'MAX SNIFFWELL', 540, 395, 100, '#FFD23F', { k, alpha: al, rot: -0.04, stroke: '#1a1208', sw: 0.18 });
 }
 function gamepass(g, s, t) {
   if (t < B.pass + 0.1 || t > W.smell - 0.1) return; const k = pop(t, B.pass + 0.1, 0.25, 2), a = fade(t, B.pass, W.smell - 0.1 - B.pass);
@@ -573,66 +565,29 @@ function caseFile(g, s, t) {
   g.fillStyle = '#3a2a10'; g.font = `${48 * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('CASE #1', 0, -130 * s);
   g.font = `${76 * s}px "Luckiest Guy"`; g.fillStyle = '#b8860b'; g.fillText('THE GOLDEN DONUT', 0, -40 * s);
   g.restore();
-  if (t > W.stole - 0.05) bigText(g, s, 'STOLEN', 600, 640, 110, '#e0303a', { k: pop(t, Math.max(W.stole, W.donut1 - 0.1), 0.12, 4), rot: -0.15, stroke: '#5a0a10', alpha: a });
 }
-function smellIcon(g, s, t, at, kind, x, y) {
-  if (t < at || t > B.trailOn) return; const k = pop(t, at, 0.2, 3); g.save(); g.translate(x * s, y * s); g.scale(k, k); g.rotate(Math.sin(t * 3 + x) * 0.06);
-  g.beginPath(); g.arc(0, 0, 105 * s, 0, 7); g.fillStyle = 'rgba(24,60,36,.9)'; g.fill(); g.lineWidth = 7 * s; g.strokeStyle = '#5dff8a'; g.stroke();
-  if (kind === 'cologne') { roundRect(g, -40 * s, -20 * s, 80 * s, 85 * s, 16 * s); g.fillStyle = '#c18cff'; g.fill(); g.fillStyle = '#ffd23f'; g.fillRect(-16 * s, -52 * s, 32 * s, 32 * s); g.fillStyle = '#ffffff'; g.globalAlpha = 0.5; g.fillRect(-28 * s, -10 * s, 12 * s, 60 * s); }
-  if (kind === 'bad') { g.fillStyle = '#ff4d5e'; g.font = `${130 * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('?!', 0, 12 * s); }
-  if (kind === 'tue') { roundRect(g, -55 * s, -50 * s, 110 * s, 110 * s, 12 * s); g.fillStyle = '#ffffff'; g.fill(); g.fillStyle = '#e0303a'; g.fillRect(-55 * s, -50 * s, 110 * s, 30 * s); g.fillStyle = '#152435'; g.font = `${44 * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('TUE', 0, 22 * s); g.fillStyle = '#ffd23f'; g.beginPath(); g.arc(46 * s, -62 * s, 24 * s, 0, 7); g.fill(); g.fillStyle = 'rgba(24,60,36,1)'; g.beginPath(); g.arc(58 * s, -70 * s, 20 * s, 0, 7); g.fill(); }
-  g.restore();
+// One small pill, only when the running gag changes: +1 resisted (twice), then the payoff after the bite. No always-on HUD.
+function counter(g, s, t) {
+  const show = (at, hold) => t > at && t < at + hold;
+  let text, bg = 'rgba(214,52,110,.92)', at;
+  if (show(B.r1 - 0.05, 1.6)) { text = 'TEMPTATIONS RESISTED: 1'; at = B.r1 - 0.05; }
+  else if (show(B.r2 - 0.05, 1.6)) { text = 'TEMPTATIONS RESISTED: 2'; at = B.r2 - 0.05; }
+  else if (show(B.bite + 0.1, B.closed - B.bite - 0.15)) {
+    at = B.bite + 0.1; const glitch = t < B.bite + 0.45;
+    text = glitch ? (Math.floor(t * 30) % 2 ? 'TEMPTATIONS RESIS?#!' : 'TEMPTATIONS RESISTED: 2') : 'DONUTS EATEN: 1'; if (!glitch) bg = 'rgba(232,170,40,.95)';
+  } else return;
+  g.save(); g.font = `${36 * s}px "Luckiest Guy"`; const w = g.measureText(text).width + 40 * s; g.restore();
+  pill(g, s, 540 - w / s / 2, 250, text, bg, '#ffffff', 36, pop(t, at, 0.2, 2.5));
 }
-function hpBars(g, s, t) {
-  if (!win(t, B.fight, B.socks)) return;
-  const bar = (x, label, hp, col) => { pill(g, s, x, 300, label, 'rgba(21,36,53,.9)', '#ffffff', 34); roundRect(g, x * s, 380 * s, 360 * s, 34 * s, 12 * s); g.fillStyle = 'rgba(21,36,53,.85)'; g.fill(); roundRect(g, (x + 4) * s, 384 * s, 352 * hp * s, 26 * s, 10 * s); g.fillStyle = col; g.fill(); };
-  bar(60, 'MAX', 1 - 0.15 * seg(t, B.throw + 0.4, B.throw + 0.6), '#3cdc6a');
-  bar(500, 'SUNGLASSES GUY', 1 - seg(t, B.splash - 0.1, B.splash + 0.2), '#ff4d5e');
-  if (t > B.splash && t < B.splash + 1) bigText(g, s, '-100', 700, 470 - 80 * (t - B.splash), 90, '#ff4d5e', { alpha: 1 - (t - B.splash) });
-}
-function hud(g, s, t) {
-  if (t < B.caseIn || t > B.cta) return;
-  pill(g, s, 60, 250, 'CASE #1: GOLDEN DONUT', 'rgba(21,36,53,.88)', '#FFD23F', 36);
-  let y = 330;
-  if (t > B.r1 - 0.05 && !win(t, B.fight, B.socks)) {
-    const n = resisted(t), eaten = t > B.bite + 0.1, glitch = win(t, B.bite + 0.1, B.bite + 0.45);
-    const text = eaten && !glitch ? 'DONUTS EATEN: 1' : glitch && Math.floor(t * 30) % 2 ? 'TEMPTATIONS RESIS?#!' : `TEMPTATIONS RESISTED: ${n}`;
-    const k = 1 + 0.3 * (1 - clamp((t - (n === 1 ? B.r1 : B.r2)) / 0.3)) * (t < B.r2 + 0.3 ? 1 : 0);
-    pill(g, s, 60, y, text, eaten ? 'rgba(232,170,40,.95)' : 'rgba(214,52,110,.92)', '#ffffff', 36, k);
-    if (win(t, B.tempt3, B.bite) && Math.floor(t * 3) % 2) bigText(g, s, '...', 640, y + 32, 64, '#ffffff');
-    y += 80;
-  }
-  if (win(t, B.trailOn, B.office + 0.6)) {
-    let m;
-    if (t < B.socks) m = Math.round(lerp(1200, 0, clamp((t - B.trailOn) / (W.ended - B.trailOn)))); else if (t < B.trailBack) m = 0;
-    else m = Math.round(lerp(1200, 0, seg(t, B.trailBack, B.office)));
-    if (t > B.socks && t < B.trailBack) m = 0;
-    pill(g, s, 60, y, `TRAIL: ${m.toLocaleString('en-US')} M`, 'rgba(30,140,70,.92)', '#ffffff', 36);
-  }
-}
+// Pop-ups are kept few and never stacked: only ones that add something the captions don't already say.
 export function overlay(g, s, t) {
-  hud(g, s, t);
+  counter(g, s, t);
   logo(g, s, t); gamepass(g, s, t); caseFile(g, s, t);
   if (SHOT === 'chief') bubble(g, s, t, headAt(leo, 1), ['NOT A WORD', 'TO THE PRESS!'], W.wanted - 0.2, B.scene, { size: 54 });
   if (SHOT === 'skye') bubble(g, s, t, headAt(skye, 1), ['I like your vibe.', 'Are you single?'], W.girl - 0.1, B.scene + 20, { heart: true });
-  if (SHOT === 'tempt1' && t > B.stop1) tagOver(g, s, headAt(max, 1.6), 'ON A CASE', 'rgba(21,36,53,.92)', pop(t, B.stop1, 0.2, 2.5));
-  if (SHOT === 'clue') { tagOver(g, s, bag.position.clone().add(V(0, 3.0, 0)), 'CLUE: 1 SOCK', 'rgba(224,48,58,.95)', pop(t, W.sock1 - 0.1, 0.2, 2.5)); }
-  smellIcon(g, s, t, W.cologne - 0.1, 'cologne', 230, 560); smellIcon(g, s, t, W.decisions - 0.15, 'bad', 540, 470); smellIcon(g, s, t, W.tuesday - 0.1, 'tue', 830 - 60, 600);
   if (SHOT === 'mia') bubble(g, s, t, headAt(mia, 1), ['Love the nose, detective.', 'Stay for a swim?'], W.liked - 0.15, B.miaShot + 20, { heart: true, size: 44 });
-  if (SHOT === 'tempt2' && t > B.stop2) tagOver(g, s, headAt(max, 1.6), 'ON A CASE', 'rgba(21,36,53,.92)', pop(t, B.stop2, 0.2, 2.5));
-  if (SHOT === 'suspect' && t > W.guy1) tagOver(g, s, noob.root.position.clone().add(V(0, 0.4, 0)), 'TRAIL ENDS', 'rgba(30,140,70,.92)', pop(t, W.guy1, 0.2, 2.5));
-  hpBars(g, s, t);
-  word(g, s, t, B.throw + 0.1, 0.8, 'PEPPER!', '#ff8a3a', 120, 520, 0.05);
-  word(g, s, t, B.achoo, 1.0, 'ACHOO!', '#9dffb8', 190, 640, -0.08);
-  if (SHOT === 'socks' && t > W.socks - 0.2) { tagOver(g, s, local(noob, 0.5, 0.2, 0).add(V(0, 2.2, 0)), 'SOCK ✓', 'rgba(30,140,70,.92)', pop(t, W.socks - 0.2, 0.2, 2.5)); tagOver(g, s, local(noob, -0.5, 0.2, 0).add(V(0, 3.4, 0)), 'SOCK ✓', 'rgba(30,140,70,.92)', pop(t, W.socks, 0.2, 2.5)); }
-  if (SHOT === 'socks' && t > W.guy2 - 0.1) bigText(g, s, 'NOT MY GUY', 540, 520, 110, '#ffffff', { k: pop(t, W.guy2 - 0.1, 0.18, 2.5), rot: -0.05 });
-  if (SHOT === 'feet') tagOver(g, s, local(leo, -0.5, 2.0, 2.3), '1 SOCK', 'rgba(224,48,58,.95)', pop(t, B.feet + 0.2, 0.2, 2.5));
-  if (SHOT === 'faceS') tagOver(g, s, headAt(leo, 1.4), 'SPRINKLES', 'rgba(224,48,58,.95)', pop(t, W.sprinkles, 0.2, 2.5));
-  if (SHOT === 'halfS') tagOver(g, s, leoDonut.position.clone().add(V(0, 0.9, 0)), '½ GOLDEN DONUT', 'rgba(224,48,58,.95)', pop(t, W.half, 0.2, 2.5));
-  if (SHOT === 'talk') bubble(g, s, t, headAt(leo, 1), ['This case is', 'going away.'], W.said - 0.15, B.slide + 5);
-  if (SHOT === 'slide') bubble(g, s, t, headAt(leo, 1), ["Here's your cut."], W.cut - 0.4, B.tempt3 + 5);
-  if (t > B.closed) { const k = t - B.closed < 0.12 ? lerp(2.6, 1, easeIn((t - B.closed) / 0.12)) : 1; if (t < B.twitch + 0.3) { g.save(); g.globalAlpha = 0.92; bigText(g, s, 'CASE CLOSED', 540, 720, 140, '#e0303a', { k, rot: -0.14, stroke: '#ffffff', sw: 0.12 }); g.restore(); } }
-  if (t > B.twitch + 0.1 && t < B.cta) word(g, s, t, B.twitch + 0.1, B.cta - B.twitch, '!', '#5dff8a', 220, 560);
+  word(g, s, t, B.achoo, 1.0, 'ACHOO!', '#9dffb8', 190, 400, -0.08);
+  if (t > B.closed) { const k = t - B.closed < 0.12 ? lerp(2.6, 1, easeIn((t - B.closed) / 0.12)) : 1; if (t < B.twitch + 0.3) { g.save(); g.globalAlpha = 0.92; bigText(g, s, 'CASE CLOSED', 540, 400, 130, '#e0303a', { k, rot: -0.14, stroke: '#ffffff', sw: 0.12 }); g.restore(); } }
   // Call to action.
   if (t >= B.cta) {
     const a = t - B.cta, k2 = easeOutBack(clamp(a / 0.3), 1.8);

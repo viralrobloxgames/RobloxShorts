@@ -30,7 +30,7 @@ A('impact_4', B['logo'], 0.55); sting(B['logo'], (165, 196, 247), 0.14)
 # Gamepass: purchase click + chime; the smells everywhere (soft shimmer).
 A('click', B['pass_'] + 0.1, 0.35); T([784, 988, 1175, 1568], B['pass_'] + 0.45, 0.1, 0.08)
 T(600, W['smell'] - 0.2, 0.05, 1.6, sweep=500); sniffs(W['smell'] - 0.1, 2, 0.4, 0.4)
-# The empty case: alarm; STOLEN stamp.
+# The empty case: alarm; a hit on "stole".
 for i in range(10): T([880, 660][i % 2], B['caseIn'] + 0.1 + i * 0.22, 0.035, 0.18, square=True)
 A('impact_2', W['stole'], 0.5)
 # Chief: the desk slam.
@@ -38,10 +38,9 @@ A('impact_3', B['slam'], 0.6); A('drum_hit', B['slam'], 0.5)
 # Skye: a love chime on "single"; "Tempting." then the stop and the counter.
 love(W['girl'] - 0.1); love(W['single'] + 0.1)
 T(330, W['tempting1'], 0.05, 0.5, sweep=-60); denied(B['stop1']); ding(B['r1'])
-# The clue and the sniff with its three smells.
+# The clue and the sniff.
 sting(B['clue'], (220, 262, 330), 0.1)
 sniffs(B['sniff'] + 0.1, 4, 0.6, 0.55)
-for w in ('cologne', 'decisions', 'tuesday'): A('swish_1', W[w] - 0.12, 0.25); T(988, W[w] - 0.1, 0.07, 0.1)
 # The trail lights up; the drive; the pool party.
 T(300, B['trailOn'], 0.08, 0.7, sweep=1400); A('swish_3', B['trailOn'], 0.35)
 engine(B['drive'] - 0.1, B['party'] + 0.1); T(1800, B['party'] - 0.05, 0.05, 0.45, sweep=-900)            # tyre squeal
@@ -55,7 +54,7 @@ A('swish_2', B['throw'], 0.5); A('impact_1', B['throw'] + 0.45, 0.25)
 T(180, B['throw'] + 0.4, 0.06, B['achoo'] - B['throw'] - 0.45, sweep=500)
 A('achoo.wav', B['achoo'] - 0.47, 0.9); A('impact_4', B['achoo'], 0.6); A('drum_hit', B['achoo'], 0.5)
 T(1400, B['achoo'] + 0.05, 0.07, 0.7, sweep=-900); A('splash.wav', B['splash'], 0.8); A('impact_1', B['splash'], 0.3)
-# Both socks: two dings; "not my guy"; the trail turns back.
+# Both socks: two dings as the camera finds them; "not my guy"; the trail turns back.
 ding(W['socks'] - 0.2); ding(W['socks']); T([262, 196], W['guy2'], 0.08, 0.2, square=True)
 T(300, B['trailBack'], 0.07, 0.6, sweep=1200); sniffs(B['trailBack'] - 0.3, 2, 0.3, 0.4)
 engine(B['driveBack'], B['office'] - 0.05); T(1800, B['office'] - 0.25, 0.05, 0.35, sweep=-900)
