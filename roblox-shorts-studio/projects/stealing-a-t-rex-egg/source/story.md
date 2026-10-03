@@ -13,62 +13,72 @@ game's model.
 
 Why it should work:
 - Frame 1 reads on mute: a giant sleeping T-rex (Zzz), a glowing giant egg under its chin, Leo tiptoeing in.
-- A payoff every 3-5 s: wake-up roar, chase, BONK ragdoll flings (each one higher), a "TRIES" counter, a decoy dance,
-  the tail jump, a slam at the safe-zone line, the hatch.
-- Rules are planted before they pay off: carry drag ("giant eggs make you slow") makes the decoy plan necessary, and
-  the safe zone stopping the T-rex is shown once before the final run.
-- **Twist with a fair plant:** Mia is visible in the background of the chase and montage shots, tiptoeing in and out
-  with eggs while the T-rex chases the boys. The nest's egg count visibly drops in every nest shot (12 -> 0). On a
-  rewatch it's all there.
-- Every beat is physical: flings, chases, a dance, the tail stomp. No standing around.
-- 165 words, about 67 s in George voice C. US spelling.
+- Something new every 3-5 s, and every attempt fails in a *different* way: the slow carry, a headbutt, a higher
+  fling, a bush disguise that gets eaten, a bear trap Max steps in himself, the decoy dance, the tail jump. A
+  "TRIES" counter climbs the whole first half.
+- Rules are planted before they pay off: carry drag ("giant eggs make you slow") is why they need a decoy; the safe zone
+  stopping the T-rex is shown working before the ending breaks it ("safe zones stop guardians - not moms").
+- **Two twists, both planted.** (1) Mia: visible in the background of the chase shots tiptoeing off with eggs, and
+  the nest's egg counter drops in every nest shot (13 -> 1). (2) The mom: the safe-zone rule we just saw work is the
+  one the ending breaks - for a mom, not a guardian.
+- **The ending loops to the opening:** frame 1 is the T-rex asleep on "the best egg"; the last shot is the T-rex
+  asleep in the same pose on its new "egg": Mia, curled up in the nest among twelve babies, arms folded.
+- Cliffhanger: Part 2, "Steal Mia Back", with the boys' teamwork needed again.
+- 181 words, about 72 s in George voice C. US spelling.
 
 ## Beats (hook first)
 
-1. **HOOK (0-3 s).** Dusk-lit prehistoric biome. A huge sleeping T-rex curled around a nest of eggs; one giant golden
-   egg glows under its chin. "Zzz" puffs. Leo tiptoes in from the foreground. HUD: biome name "PREHISTORIC", Leo's
-   speed, "GUARDIAN: ASLEEP".
+1. **HOOK (0-3 s).** Prehistoric biome. A huge sleeping T-rex curled around a nest; one giant golden egg glows under
+   its chin; "Zzz" puffs. Leo tiptoes in. HUD: "PREHISTORIC", "GUARDIAN: ASLEEP", nest counter "EGGS 13".
    *"This T-rex is sleeping on the best egg in Steal an Egg."*
-2. **Grab (3-6 s).** Leo hugs the giant egg to his chest (carry pose). One eye of the
-   T-rex snaps open. HUD flips to "GUARDIAN: AWAKE".
+2. **Grab (3-6 s).** Leo hugs the giant egg (carry pose). One T-rex eye snaps open: "GUARDIAN: AWAKE".
    *"Leo tiptoed in and grabbed it. The T-rex woke up."*
-3. **Carry drag (6-9 s).** The T-rex stands up and ROARS (jaw wide, camera shake). Leo runs, but slowly: "SPEED -80%"
-   tag, his legs pedal and he barely moves. The safe zone glows far away.
+3. **Carry drag (6-9 s).** The T-rex stands and ROARS (camera shake). Leo runs, but the egg makes him slow: "SPEED
+   -80%". His legs pedal; he barely moves.
    *"Problem: giant eggs make you slow."*
-4. **BONK 1 (9-11 s).** The T-rex catches him: a headbutt, Leo ragdolls through the air, the egg drops and rolls back
-   to the nest. "BONK".
+4. **BONK 1 (9-11 s).** Headbutt: Leo ragdolls through the air, the egg rolls back to the nest. "TRIES 1".
    *"Bonk. Leo went flying."*
-5. **Max tries (11-15 s).** Max laughs at Leo in the grass, then sprints in, grabs the egg, and gets flung even
-   higher (cut to him tiny against the sky).
+5. **Max tries (11-15 s).** Max laughs at Leo in the grass, sprints in, grabs it, and gets flung even higher (tiny
+   against the sky). "TRIES 2". Mia tiptoes past in the background with an egg (plant 1).
    *"Max laughed. Then Max tried. Bonk. Max went flying higher."*
-6. **Ten tries (15-19 s).** Fast montage: TRIES 3... 10, each a different fling (tail swipe, stomp bounce, nudge).
-   In the background of two shots, Mia tiptoes past with an egg (plant). They lie side by side, dazed, and look at each
-   other.
-   *"Ten tries later, they had one idea left. Teamwork."*
-7. **The plan (19-23 s).** A quick chalk-style plan card: Max = DECOY, Leo = EGG. Fist bump.
-   *"Max would distract the T-rex. Leo would grab the egg."*
-8. **The decoy (23-28 s).** Max runs in waving one arm and dancing; the T-rex chases him in a big circle around the
-   nest. (Mia slips past in the background again, with an egg.)
-   *"Max ran in waving, dancing, anything. It worked. The T-rex chased Max in circles."*
-9. **The run (28-33 s).** Leo grabs the giant egg and waddles away: "SPEED -80%" again. The T-rex stops, sniffs, and
-   turns its head towards Leo. Tension sting.
-   *"Leo grabbed the egg and ran. Slowly. Then the T-rex turned around."*
-10. **The sacrifice (33-39 s).** Max sprints in and jumps on the T-rex's tail. It spins round: BONK, Max flies
-    (third and highest fling, over the camera). "MAX: TOOK ONE FOR THE TEAM".
-    *"So Max did the bravest thing he's ever done. He jumped on its tail. Bonk. Max went flying. Again."*
-11. **Safe zone (39-44 s).** Leo staggers over the glowing line into the base. The T-rex lunges and slams into the
-    invisible wall; it can't follow. "SAFE".
+6. **Try 3: the bush (15-19 s).** Leo shuffles towards the nest inside a leafy bush disguise. The T-rex sniffs...
+   CHOMP: it eats the bush, leaving Leo standing there in the open. BONK. "TRIES 3".
+   *"Try three: a bush disguise. It ate the bush."*
+7. **Try 7: the bear trap (19-23 s).** "TRIES 7". Max sets a bear trap on the path (a real Steal an Egg item), grabs
+   the egg and runs, the T-rex chasing... and Max runs straight into his own trap. SNAP. BONK. (Mia in the background
+   again, plant 2.)
+   *"Try seven: a bear trap. Max stepped in it."*
+8. **Teamwork (23-26 s).** The two lie side by side, dazed, look at each other; a fist bump. Plan card: MAX = DECOY,
+   LEO = EGG.
+   *"So they tried something new. Teamwork."*
+9. **The decoy (26-31 s).** Max runs in waving one arm and dancing; the T-rex chases him in a big circle around the
+   nest.
+   *"Max ran in waving, dancing, anything. The T-rex chased him in circles."*
+10. **The run (31-36 s).** Leo grabs the giant egg and waddles ("SPEED -80%") for the glowing safe-zone line far away.
+    The T-rex stops, sniffs, turns its head towards Leo. Tension sting.
+    *"Leo grabbed the egg and waddled for the safe zone. Then the T-rex turned around."*
+11. **The sacrifice (36-40 s).** Max leaps onto the T-rex's tail; it whips round: BONK, Max's third and highest
+    fling, over the camera.
+    *"So Max jumped on its tail. Bonk. Max went flying. Again."*
+12. **Safe zone (40-45 s).** Leo staggers over the glowing line. The T-rex lunges and smacks into the invisible
+    wall; "SAFE". It backs off, back to its nest. (This shows the rule working.)
     *"But Leo made it. Safe zone. The T-rex couldn't follow."*
-12. **The hatch (44-50 s).** Leo places the egg in their garden; Max limps back. It cracks, and out pops a tiny baby
-    T-rex. Money tag: "+$1/s". The boys look at each other.
-    *"Their first egg. They'd earned it. It hatched into a baby T-rex worth one dollar a second."*
-13. **The twist (50-62 s).** Pan to the next plot: MIA's base, twelve eggs lined up glowing, a money counter racing.
-    Mia waves one hand. Quick replay strip of the background plants (Mia tiptoeing past each chase). Back at the nest,
-    the T-rex looks down: empty nest. "NEST: 0 EGGS".
-    *"Then they saw Mia's base. Twelve T-rex eggs. While the T-rex was busy chasing them, Mia just walked in and took
-    them. Every. Single. Time."*
-14. **CTA (62-67 s).** The T-rex slowly turns its head towards Mia's base (cliffhanger). End card "PART 2: THE T-REX
-    WANTS ITS EGGS BACK?" + @viralrobloxgames + FOLLOW.
+13. **The hatch (45-50 s).** Their egg cracks: a tiny baby T-rex, "+$1/s". Max limps in, singed, and they high-five.
+    *"Their egg hatched. A baby T-rex. One dollar a second."*
+14. **Twist 1: Mia (50-56 s).** Pan to the next plot: MIA's base, twelve T-rex eggs in a row, glowing, a money
+    counter racing. Mia gives a little one-hand wave. Quick replay strip of the plants (Mia sneaking past each chase);
+    the nest counter hits "EGGS 0".
+    *"Then they saw Mia's base. Twelve T-rex eggs. While the T-rex chased them, Mia took the rest."*
+15. **Twist 2: Mom (56-65 s).** All twelve eggs crack at once: twelve babies squeak and cry. Far away, the T-rex's
+    eyes open. She walks to the safe zone... and straight through it ("SAFE ZONE: GUARDIANS ONLY"). The boys freeze as
+    she steps over them. She scoops up the babies, and Mia, by the hoodie, in her jaws.
+    *"Then all twelve hatched at once. And cried. Turns out safe zones stop guardians. Not moms. Mom walked right in,
+    took her babies... and Mia."*
+16. **The loop (65-70 s).** Same shot and pose as frame 1: the T-rex asleep around the nest, Zzz, babies curled up
+    around her, and under her chin where the golden egg was, Mia, arms folded, annoyed. HUD: "BEST EGG: MIA".
+    *"Now the T-rex is sleeping on a new egg."*
+17. **CTA (70-72 s).** End card "PART 2: STEAL MIA BACK" + @viralrobloxgames + FOLLOW. The boys' baby T-rex peeks up
+    at the camera.
     *"Follow Viral Roblox Games for part two."*
 
 ## Build notes
@@ -77,6 +87,8 @@ Why it should work:
   breathing, wake, roar, run cycle driven by distance, headbutt, tail spin, turn-and-sniff), eggs (speckled ellipsoids,
   one giant golden), nest, ferns/palms/rocks/volcano backdrop, safe-zone boundary (glowing green wall), base plots
   with name signs, a baby T-rex.
+- Extra props: a leafy bush disguise (fits round Leo, eaten in one chomp), a bear trap (open/snapped), twelve
+  baby T-rexes, a carry pose for Mia in the jaws (held by the hoodie, never through her head).
 - Ragdoll flings: arc + spin with `shock` pose (no two-arms-up), dust on landing. Carry pose: `hold` with the egg
   in front. Max's wave: `waveArm` (one arm).
 - No accessories unless a later choice adds one (fit check otherwise has 0 pairs).
