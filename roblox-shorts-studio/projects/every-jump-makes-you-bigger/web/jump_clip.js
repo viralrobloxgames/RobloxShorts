@@ -492,7 +492,7 @@ export function update(t, stage) {
       look(stage, V(157, lerp(40, 10, k), 120).add(shake(B.break, 2.5, 0.6)), V(156, lerp(30, -40, k), 0), 44, 100); break;
     }
     case 'maxGiant': frame(stage, V(0, 3 + MS * 2.4, 3).add(M.floor ? rumble(0.2) : V(0, 0, 0)), 0.12, 0.08, lerp(14, 70, easeInOut(u)), 40, 80); break;
-    case 'maxStomp': { const p = max.root.position; look(stage, V(p.x - 20, 30, 108), V(p.x + 10, 24, 0), 44, 90); break; }
+    case 'maxStomp': { const p = max.root.position; look(stage, V(p.x - 14, 32, 140), V(p.x + 10, 27, 0), 44, 100); break; }
     case 'leoRespawn': frame(stage, CP.clone().add(V(0, 3, 0)), 0.15, 0.08, lerp(10, 11.5, u), 40); break;
     case 'maxShock': { look(stage, V(184, 2.5, 10), V(150, 17, -3), 74, 70); break; }   // low behind tiny Leo, up at giant Max
     case 'walkIn': look(stage, V(180, 3.8, 15), V(179.5, 4.0, -0.5), 46, 20); break;
@@ -619,7 +619,7 @@ export function overlay(g, s, t) {
     roundRect(g, -380 * s, -80 * s, 760 * s, 160 * s, 40 * s); g.fillStyle = '#ffffff'; g.fill(); g.lineWidth = 8 * s; g.strokeStyle = '#152435'; g.stroke();
     g.font = `${78 * s}px "Luckiest Guy"`; g.fillStyle = '#152435'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('SHRINK = RESET', 0, 6 * s); g.restore();
   }
-  word(g, s, t, W.nobody - 0.1, 1.2, 'BLOCKED', '#ff4d5e', 150);
+  word(g, s, t, W.nobody - 0.1, 1.2, 'BLOCKED', '#ff4d5e', 150, 1060);
   if (t > B.mont2[0] && t < B.landed99 - 0.2) { /* the fast-forward counter covers 51 -> 98 */ }
   word(g, s, t, B.landed99 - 0.05, 1.0, '99', '#FFD23F', 220);
   word(g, s, t, W.cracked - 0.05, 0.9, 'CRACK', '#ffffff', 130, 980, 0.05);
