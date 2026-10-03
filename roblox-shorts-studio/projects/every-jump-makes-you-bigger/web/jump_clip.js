@@ -143,7 +143,6 @@ export async function setup(stage) {
   // Start platform + spawn + the rule sign.
   const grass = '#5fb44a', stone = '#a3a9b6', dark = '#6b7385';
   const start = part(30, 4, 26, grass, { studs: true }); start.position.set(0, 0, 0); scene.add(start);
-  scene.add(await put('map', 'spawn_location', 0, -0.98, 0));
   // The rule, on a two-line board so it reads whole in the opening close-up.
   const rule = sign(' ', { w: 14, h: 6.4, post: 9, bg: '#152435', accent: '#ffd23f' }); rule.position.set(-4, 0, -15); scene.add(rule);
   const ruleTex = canvasTexture(1024, 468, (x, w, h) => {
