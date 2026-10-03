@@ -168,7 +168,7 @@ const postReal = (g) => POST + (g - (G.hit - 0.12));
 export const COPY_MAX = [-0.6, -30.5];              // the second "Max", at the far end of the corridor
 // After the blackout: two identical Maxes side by side, facing us. Canon (secret until part 2): the real Max is on the
 // LEFT. The copy is his mirror image, so the star on its hoodie is on the wrong side - the one tell for rewatchers.
-export const TWINS = { real: [-2.0, -21], copy: [2.0, -21] };
+export const TWINS = { real: [-2.45, -21], copy: [2.45, -21] };
 export const E = {
   stepOff: W.checked - 0.5,                         // Max steps off the door to check the list
   flicker: [W.two - 0.35, W.two + 0.35],            // the list jumps to two

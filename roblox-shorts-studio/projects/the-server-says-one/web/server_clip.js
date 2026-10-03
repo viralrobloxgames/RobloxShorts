@@ -35,7 +35,7 @@ export async function setup(stage) {
   const { scene } = stage;
   horrorLighting(stage, 'normal');
   const MAXFACES = ['nervous', 'confused', 'scared', 'suspicious', 'determined', 'angry', 'shocked', 'neutral', 'blink'];
-  [max, copy, ent] = await Promise.all([loadRobloxCharacter('Max', { expressions: MAXFACES }), loadRobloxCharacter('Max', { expressions: ['neutral', 'shocked'] }), horrorEntity()]);
+  [max, copy, ent] = await Promise.all([loadRobloxCharacter('Max', { expressions: MAXFACES }), loadRobloxCharacter('Max', { expressions: ['neutral', 'shocked', 'scared'] }), horrorEntity()]);
   scene.add(max.root, copy.root, ent.root);
   for (const n of ['idle', 'walk', 'run', 'push', 'shock']) A[n] = await loadAnimation(n);
 
@@ -191,9 +191,9 @@ export function update(t, stage) {
     case 'list': frame(stage, mh.clone().add(V(0, -0.2, 0)), Math.PI + 0.25, 0.08, lerp(4.2, 3.6, u), 36); break;
     case 'two': frame(stage, mh.clone().add(V(0, -0.1, 0)), Math.PI - 0.15, 0.04, lerp(3.4, 2.7, u), 34, 0.04 * Math.sin(t * 31) * (t < W.two + 0.4 ? 1 : 0)); break;
     case 'reveal': case 'dark': look(stage, V(2.9, 5.1, -9.0), head(copy).add(V(0, -1.6, 0)).lerp(V(0.4, 4.4, -11), 0.1), 46); break;   // over his shoulder: the far end
-    case 'twins': look(stage, V(0, 4.3, lerp(-9.0, -10.2, u)), V(0, 3.0, -21), 58); break;                     // two of him
-    case 'question': look(stage, V(0, 4.2, lerp(-10.4, -11.4, u)), V(0, 3.3, -21), 52); break;
-    default: look(stage, V(0, 4.2, lerp(-11.4, -11.9, clamp((t - E.cta) / 3))), V(0, 3.2, -21), 52); }
+    case 'twins': look(stage, V(0, 4.4, lerp(-8.9, -9.7, u)), V(0, 4.6, -21), 60); break;                     // two of him
+    case 'question': look(stage, V(0, 4.4, lerp(-9.7, -10.1, u)), V(0, 4.9, -21), 60); break;
+    default: look(stage, V(0, 4.4, lerp(-10.1, -10.4, clamp((t - E.cta) / 3))), V(0, 4.9, -21), 60);
   }
   cam = stage.camera;
 }
