@@ -84,6 +84,7 @@ Ready to start pilot production when H01–H09 have passed their acceptance chec
 | Episode | State | Canon established | Results |
 |---|---|---|---|
 | Part 1: **The Server Says One** (`projects/the-server-says-one`) | Re-cut with an open ending, 2026-10-02 | The Unlisted is the observed player's mirror image, 0.5 s late; each copy creeps it closer; it can only copy what it has seen (freezes when Max leaves its sight). Escape: fake left, cut right, slam the EXIT door; it hits the door. Open ending: the list reads two players (Max, Max); lights out; two identical Maxes side by side, no longer late. CTA: "Which Max is real? Left or right? Comment below" + follow for part 2. **Secret canon for part 2: the real Max is on the LEFT; the copy is a mirror image, so its hoodie star is on the wrong side (the rewatch clue).** | Not posted yet |
+| Part 2: **Which Max Is Real?** (`projects/which-max-is-real`) | Script draft, 2026-10-03 | Answers Part 1: Mia's test 'raise your right hand' exposes the mirror (right Max raises his left; star callback). New rule shown: it is late only while learning a new person. Cliffhanger: Leo waves instead of closing the door; it learns Leo (list: Max, Mia, Leo, Leo). CTA: 'What test would you use to catch it?' + follow for part 3. | Not produced |
 | Duplicate player | Proposed | None yet | Not produced |
 | Night shift | Proposed | None yet | Not produced |
 
