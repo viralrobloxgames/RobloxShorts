@@ -1,0 +1,20 @@
+{
+  "title": "The Super Nose Detective",
+  "character": "Max",
+  "characters": [
+    "Max",
+    "Leo",
+    "Mia",
+    "Noob"
+  ],
+  "seconds": 74.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "script_draft_awaiting_approval; then narration (George voice C), then web scene",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {}
+  }
+}
