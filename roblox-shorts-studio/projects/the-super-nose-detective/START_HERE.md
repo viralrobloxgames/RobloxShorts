@@ -1,8 +1,8 @@
 # The Super Nose Detective (Case 1): resume notes
 
-PG Roblox parody of the 70s Miami detective series Dick Snifford (logicbent). Max is Detective Max Sniffwell, with
+Roblox parody of the 70s Miami detective series Dick Snifford (logicbent). Max is Detective Max Sniffwell, with
 the Super Nose gamepass. First-person noir narration in George voice C. Web route. Story, research and beats:
-`source/story.md`. Script: `script.txt` (185 words, about 72-75 s).
+`source/story.md`. Script: `script.txt` (197 words, about 75-78 s). Content line: flirting is fine, no swearing or sexual references.
 
 ## Done
 - Research: watched the pilot (transcript + contact sheet) and read the coverage; notes in `source/story.md`.
