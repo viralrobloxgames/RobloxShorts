@@ -35,13 +35,15 @@ export const M1 = [0.7, -17.4], MJUMP = [[-3.0, -13.5], [-2.6, -16.2], M1];   //
 export const STEP = 1.2;
 export const STEPS = [W.step1, W.step2, W.another1, W.another2];          // both step: Max back, the mirror back too
 export const LAST = W.oneStep + 0.35;                                       // Max steps again; it doesn't
-export const SPRINT = [W.sprinted - 0.1, W.through + 0.25];                 // the backwards sprint (slow motion)
+export const SPRINT = [W.sprinted - 0.1, W.through + 0.6];                  // Max's sprint .. the copy lands in the lobby
+export const PULL = [W.sprinted + 0.15, W.through - 0.1];                   // the mirror drags it, fighting, to the doorway
+export const FLING = [W.through - 0.1, W.through + 0.55];                  // then it's flung through
 export const MAX_FAR = -30.0, COPY_FAR = -1.2;
 export const WAVE_AT = [0.2, -10.6];
 const stepped = (t, list) => list.reduce((acc, s) => acc + STEP * smooth(inv(s, s + 0.3, t)), 0);
 const stepping = (t, list) => list.find((s) => t > s && t < s + 0.3);
 // Sprint progress: a single eased curve, fast off the mark then slowing as the copy crosses the doorway.
-const sprintP = (t) => { const u = inv(...SPRINT, t); return 0.35 * u + 0.65 * (1 - (1 - u) ** 2); };
+const COPY_PULLED = -8.7;
 
 export const T = {
   sync: W.late - 0.1,
@@ -75,8 +77,8 @@ export function maxAt(t) {
     s.layers = st !== undefined ? [['walk', -back / STRIDE, 0.6], ['idle', t, 0.4]] : [['idle', t]];   // backwards, legs keyed to distance
   }
   if (t >= SPRINT[0]) {
-    const z0 = M1[1] - STEP * 5, p = sprintP(t), z = lerp(z0, MAX_FAR, p);
-    s.pos = [M1[0], z]; s.heading = 0; s.layers = p < 1 ? [['run', -(z0 - z) / STRIDE]] : [['idle', t]];
+    const z0 = M1[1] - STEP * 5, r = along([[M1[0], z0], [M1[0], MAX_FAR]], SPRINT[0], t, RUN);   // full speed, backwards
+    s.pos = r.pos; s.heading = 0; s.layers = r.moving ? [['run', -r.anim]] : [['idle', t]];
   }
   if (t >= T.maxWalk) {
     const w = along([[M1[0], MAX_FAR], WAVE_AT], T.maxWalk, t, WALK);
@@ -110,10 +112,12 @@ export function copyAt(t) {
     s.face = 'angry'; s.shake = smooth(inv(LAST, LAST + 0.4, t));
   }
   if (t >= SPRINT[0]) {                                      // a mirror has to follow: flung back through the doorway
-    const z0 = C1[1] + STEP * 4, p = sprintP(t), z = lerp(z0, COPY_FAR, p);
-    s.pos = [M1[0], z]; s.face = 'shocked'; s.shake = 0;
-    s.layers = [['run', -(z - z0) / STRIDE]];
-    s.fall = smooth(inv(0.62, 1, p));                        // tips over backwards once it's through
+    const z0 = C1[1] + STEP * 4, pull = smooth(inv(...PULL, t)), fl = inv(...FLING, t);
+    // Dragged: feet braced (no walk cycle), shaking, towards the doorway; then flung, tipping over onto its back.
+    const z = fl > 0 ? lerp(COPY_PULLED, COPY_FAR, 1 - (1 - fl) ** 2) : lerp(z0, COPY_PULLED, pull);
+    s.pos = [M1[0], z]; s.face = fl > 0 ? 'shocked' : 'angry'; s.shake = fl > 0 ? 0 : 0.7;
+    s.layers = [['idle', 0]]; s.lean = fl > 0 ? 0 : 0.18 * pull;
+    s.fall = smooth(inv(0.35, 1, fl));
   }
   return s;
 }
@@ -149,6 +153,6 @@ const copyThrough = (() => { let lo = SPRINT[0], hi = SPRINT[1]; for (let i = 0;
 export const EVENTS = {
   lightOn: W.mia - 0.1, sync: T.sync, raise: T.raise[0], headTurn: T.headTurn[0], bodyTurn: T.bodyTurn[0], stalk: T.stalk[0],
   jump: T.jump, land: along(MJUMP, T.jump, 0, RUN).arrive, steps: STEPS, last: LAST, fight: LAST + 0.1,
-  sprint: SPRINT[0], through: copyThrough, fall: SPRINT[1] - 0.05, slam: T.slam[1], gone: T.gone,
+  sprint: SPRINT[0], through: copyThrough, fall: FLING[1] - 0.05, slam: T.slam[1], gone: T.gone,
   waved: W.waved - 0.1, nothing: W.nothing, cta: W.what - 0.1, end: W.end,
 };

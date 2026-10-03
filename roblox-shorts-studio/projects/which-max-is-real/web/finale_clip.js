@@ -24,7 +24,7 @@ const { T, EVENTS: E } = TL;
 const SHOTS = [
   [0, 'hook'], [W.mia - 0.25, 'mia'], [W.mirrors - 0.3, 'mirror'], [W.order - 0.3, 'order'], [W.leftMax - 0.4, 'hands'],
   [W.star - 0.3, 'star'], [W.saidLeft - 0.25, 'answer'], [W.stared - 0.3, 'stare'], [W.came - 0.25, 'came'],
-  [W.whispered - 0.25, 'whisper'], [W.step1 - 0.35, 'steps'], [W.oneStep - 0.3, 'stopped'], [W.sprinted - 0.25, 'sprint'],
+  [W.whispered - 0.25, 'whisper'], [W.step1 - 0.35, 'steps'], [W.oneStep - 0.3, 'stopped'], [W.sprinted - 0.25, 'sprint'], [W.hasTo - 0.35, 'pull'],
   [W.slammed - 0.6, 'slam'], [W.updated - 0.25, 'list'], [W.waved - 0.35, 'wave'], [W.nothing - 0.15, 'nothing'],
   [E.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
@@ -73,6 +73,7 @@ function place(a, s, t) {
   if (s.raise) raiseArm(a, s.raise);
   if (s.wave) waveArm(a, t, 'R');
   if (s.headTurn) a.bones.Head.rotateY(Math.PI * s.headTurn);
+  if (s.lean) a.root.rotateX(s.lean);                                                           // braced, leaning away
   if (s.shake) { a.bones.Head.rotateZ(0.12 * s.shake * Math.sin(t * 47)); a.root.position.x += 0.06 * s.shake * Math.sin(t * 61); a.bones.Torso.rotateZ(0.04 * s.shake * Math.sin(t * 37)); }
   a.root.updateMatrixWorld(true);
   if (s.fall) { a.root.rotateX(-Math.PI / 2 * s.fall); a.root.position.y = 0.5 * s.fall; }   // tips over onto its back
@@ -103,7 +104,7 @@ function fit(stage, actors, az, el, { fov = 40, pad = 1.1, maxD = 5.4, aim = V(0
 }
 const jolt = (t, k) => V(k * Math.sin(t * 83), k * Math.cos(t * 71), 0);
 const shake = (t, at, k, dur = 0.35) => (t > at && t < at + dur ? jolt(t, k * (1 - (t - at) / dur)) : V(0, 0, 0));
-export function samples(t) { const id = shotAt(SHOTS, t).shot.id; return ['came', 'sprint'].includes(id) ? 3 : 1; }
+export function samples(t) { const id = shotAt(SHOTS, t).shot.id; return ['came', 'sprint', 'pull'].includes(id) ? 3 : 1; }
 export function shutter(t) { return samples(t) > 1 ? 0.5 : 0; }
 const hash = (n) => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
 const flickerAt = (t, rate = 18) => (hash(Math.floor(t * rate)) > 0.55 ? 1 : 0.15);
@@ -131,14 +132,15 @@ export function update(t, stage) {
     case 'star': frame(stage, star(copy), 0.05, 0.02, lerp(4.2, 2.6, easeInOut(u)), 40); break;
     case 'answer': look(stage, V(-0.8, 4.4, -3.0), V(-0.8, 3.8, -13.5), 58); break;
     case 'stare': frame(stage, ch.clone().add(V(0, -0.2, 0)), 0.1, 0.03, lerp(3.4, 2.8, u), 40); break;          // the head turns all the way round
-    case 'came': fit(stage, [copy, max], -Math.PI / 2 + 0.35, 0.12, { maxD: 5.0, pad: 1.0 }); break;           // side on: it goes for Mia, Max cuts in
+    case 'came': fit(stage, [copy, max], Math.PI / 2 - 0.3, 0.12, { maxD: 5.0, pad: 1.0 }); break;           // side on: it goes for Mia, Max cuts in
     case 'whisper': look(stage, V(-4.6, 4.3, -16.4), V(2.2, 3.9, -19.8), 48); break;
-    case 'steps': look(stage, mh.clone().add(V(1.7, 0.9, -3.6)), ch.clone().add(V(0, -0.8, 0)), 46); break;      // over Max's shoulder: it backs towards the door
+    case 'steps': look(stage, mh.clone().add(V(-1.8, 0.9, -3.8)), ch.clone().add(V(0, -0.8, 0)), 46); break;      // over Max's shoulder: it backs towards the door
     case 'stopped': frame(stage, ch.clone().add(V(0, -0.4, 0)).add(shake(t, E.last, 0.08, 2)), Math.PI, 0.03, lerp(4.2, 3.0, u), 40); break;
-    case 'sprint': look(stage, V(2.6, 3.4, 7.5).add(shake(t, E.through, 0.15)), V(0.7, 3.0, lerp(-9, -4, easeInOut(u))), 44); break;   // lobby side: it flies out
-    case 'slam': look(stage, V(-3.6, 4.4, -21.5).add(shake(t, E.slam, 0.15)), V(1.6, 3.6, -11), 50); break;
+    case 'sprint': look(stage, V(2.2, 4.8, -6.4), V(0.7, 3.2, -22), 40); break;                                  // over its shoulder: Max sprints backwards
+    case 'pull': look(stage, V(2.6, 3.4, 7.5).add(shake(t, E.through, 0.15)), V(0.7, 3.2, lerp(-8.5, -4, easeInOut(clamp((t - E.through + 0.3) / 0.8)))), lerp(28, 42, easeInOut(clamp((t - E.through + 0.3) / 0.8)))); break;   // lobby side: dragged, then flung out
+    case 'slam': look(stage, V(-3.2, 4.4, -23.0).add(shake(t, E.slam, 0.15)), V(2.0, 3.6, -11.6), 56); break;
     case 'list': look(stage, V(-2.6, 4.4, -24), V(1.2, 3.8, -14), 46); break;
-    case 'wave': look(stage, mh.clone().add(V(2.6, 0.9, -6.8)), V(0, 3.8, -8), 46); break;
+    case 'wave': look(stage, V(2.4, 4.6, -19.5), V(0.2, 3.8, -9), 44); break;
     default: look(stage, V(-3.2, 4.6, lerp(8, 6.5, clamp((t - E.nothing) / 6))), V(0, 3.6, -8), 40);          // lobby side: nothing there
   }
   cam = stage.camera;
@@ -195,7 +197,7 @@ function bigText(g, s, text, x, y, size, color, k = 1, sub = null) {
 export function overlay(g, s, t) {
   const tense = t > W.came - 0.3 && t < W.slammed + 0.4;
   vignette(g, s, tense ? 0.55 : 0.45, tense ? '40,0,8' : '0,0,0');
-  if (SHOT === 'sprint') speedLines(g, s, t, 0.3, { cx: 540, cy: 900 });
+  if (SHOT === 'sprint' || (SHOT === 'pull' && t > E.through - 0.1 && t < E.through + 0.6)) speedLines(g, s, t, 0.3, { cx: 540, cy: 900 });
   // Name tags: both Maxes say "Max" until the copy is exposed.
   if (t < W.nothing - 0.15) { nameTag(g, s, max, 'Max'); if (mia.root.visible && t > E.lightOn + 0.3) nameTag(g, s, mia, 'Mia'); if (copy.root.visible && !(TL.copyAt(t).fall > 0.3)) nameTag(g, s, copy, 'Max'); }
 

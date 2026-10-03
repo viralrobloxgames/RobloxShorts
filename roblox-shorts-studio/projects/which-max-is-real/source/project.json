@@ -1,18 +1,25 @@
 {
   "title": "Which Max Is Real",
   "character": "Max",
-  "characters": ["Max", "Mia", "Leo", "Unlisted"],
+  "characters": [
+    "Max",
+    "Mia",
+    "Leo",
+    "Unlisted"
+  ],
   "series": "After Hours horror (part 2)",
-  "seconds": 62,
+  "seconds": 65.8333,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "script_approved",
+  "status": "narration_done",
   "finish": {
     "music": "horror/night_bed",
     "music_gain": 0.22,
     "caption_highlight": "&H00D8E478",
-    "word_fixes": {}
+    "word_fixes": {
+      "MAX'S": "MAXES"
+    }
   }
 }
