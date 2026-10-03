@@ -1,0 +1,22 @@
+{
+ "item": "egg_maiasaura",
+ "category": "props",
+ "sourceName": "Maiasaura",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Maiasaura",
+ "size": [
+  4.4598,
+  6.1941,
+  4.46
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_maiasaura"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

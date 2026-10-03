@@ -1,0 +1,35 @@
+{
+ "item": "irex",
+ "category": "creatures",
+ "sourceName": "IRex",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.IRex",
+ "size": [
+  18,
+  23.152,
+  55.3789
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "LowerTorso",
+  "RightLowerLeg",
+  "RightFoot",
+  "Tail",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperLeg",
+  "LeftFoot",
+  "LeftLowerLeg",
+  "LeftUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 148,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,36 @@
+{
+ "item": "ice_mammoth",
+ "category": "creatures",
+ "sourceName": "Ice Mammoth",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Ice Mammoth",
+ "size": [
+  15.1085,
+  8.2379,
+  6.4707
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Torso",
+  "Cube.795",
+  "Cube.818",
+  "Cube.793",
+  "Cube.813",
+  "Cube.809",
+  "Cube.806"
+ ],
+ "joints": 7,
+ "bones": 32,
+ "parts": 7,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://114968431245726",
+  "rbxassetid://117284778571001",
+  "rbxassetid://119330731282145",
+  "rbxassetid://121393735957672",
+  "rbxassetid://121571275991080",
+  "rbxassetid://127466887521135",
+  "rbxassetid://135903403854434"
+ ],
+ "textureIds": []
+}

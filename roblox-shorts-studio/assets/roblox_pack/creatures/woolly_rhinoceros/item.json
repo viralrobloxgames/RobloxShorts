@@ -1,0 +1,53 @@
+{
+ "item": "woolly_rhinoceros",
+ "category": "creatures",
+ "sourceName": "WoollyRhinoceros",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.WoollyRhinoceros",
+ "size": [
+  8.5009,
+  10.7623,
+  16.8784
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "head",
+  "mouth",
+  "ear_R",
+  "ear_L",
+  "leg_L",
+  "arm_L",
+  "arm_R",
+  "leg_R",
+  "torso",
+  "tail01",
+  "tail03",
+  "tail04",
+  "tail02"
+ ],
+ "joints": 13,
+ "bones": 0,
+ "parts": 63,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://104979446109474",
+  "rbxassetid://105833711965999",
+  "rbxassetid://106802438000943",
+  "rbxassetid://109603398752921",
+  "rbxassetid://109924784893461",
+  "rbxassetid://113321477645140",
+  "rbxassetid://115709010013831",
+  "rbxassetid://118521625612262",
+  "rbxassetid://123277954843900",
+  "rbxassetid://124387095903616",
+  "rbxassetid://125673005190172",
+  "rbxassetid://133642239730250",
+  "rbxassetid://6058592765",
+  "rbxassetid://72729969443432",
+  "rbxassetid://74803405661730",
+  "rbxassetid://76392195449658",
+  "rbxassetid://83178926378697",
+  "rbxassetid://87455816855417"
+ ],
+ "textureIds": []
+}

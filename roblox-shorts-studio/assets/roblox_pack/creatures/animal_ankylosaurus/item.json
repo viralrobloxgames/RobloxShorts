@@ -1,0 +1,26 @@
+{
+ "item": "animal_ankylosaurus",
+ "category": "creatures",
+ "sourceName": "Ankylosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Ankylosaurus",
+ "size": [
+  18.8156,
+  6.5071,
+  6.4482
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_ankylosaurus"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://84817224801695"
+ ],
+ "textureIds": [
+  "rbxassetid://107108250947299"
+ ]
+}

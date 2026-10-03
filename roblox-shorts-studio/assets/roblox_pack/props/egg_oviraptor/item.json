@@ -1,0 +1,22 @@
+{
+ "item": "egg_oviraptor",
+ "category": "props",
+ "sourceName": "Oviraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Oviraptor",
+ "size": [
+  2.9415,
+  4.4121,
+  2.9414
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_oviraptor"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

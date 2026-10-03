@@ -1,0 +1,26 @@
+{
+ "item": "animal_lion",
+ "category": "creatures",
+ "sourceName": "Lion",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Lion",
+ "size": [
+  11.8098,
+  7.1934,
+  5.791
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_lion"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://105515155355085"
+ ],
+ "textureIds": [
+  "rbxassetid://96218641047622"
+ ]
+}

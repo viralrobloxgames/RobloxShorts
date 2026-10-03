@@ -1,0 +1,31 @@
+{
+ "item": "diplodocus",
+ "category": "creatures",
+ "sourceName": "Diplodocus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Diplodocus",
+ "size": [
+  23.1117,
+  34.675,
+  38.1304
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftUpperArm",
+  "Tail",
+  "RightUpperLeg",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "RightUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 87,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,45 @@
+# Materials for triceratops_3. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_473c34
+Kd 0.2784 0.2353 0.2039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_5a4c42
+Kd 0.3529 0.2980 0.2588
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_766457
+Kd 0.4627 0.3922 0.3412
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_37383e_neon
+Kd 0.2157 0.2196 0.2431
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.2157 0.2196 0.2431
+d 1.0000
+illum 2
+
+newmtl c_a0a0a0_neon
+Kd 0.6275 0.6275 0.6275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6275 0.6275 0.6275
+d 1.0000
+illum 2
+
+newmtl c_2a2a30_neon
+Kd 0.1647 0.1647 0.1882
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.1647 0.1647 0.1882
+d 1.0000
+illum 2

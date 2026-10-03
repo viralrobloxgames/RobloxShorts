@@ -1,0 +1,22 @@
+{
+ "item": "egg_microraptor",
+ "category": "props",
+ "sourceName": "Microraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Microraptor",
+ "size": [
+  2.9732,
+  3.9641,
+  2.9736
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_microraptor"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

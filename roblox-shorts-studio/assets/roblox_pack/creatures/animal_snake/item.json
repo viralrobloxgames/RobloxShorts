@@ -1,0 +1,26 @@
+{
+ "item": "animal_snake",
+ "category": "creatures",
+ "sourceName": "Snake",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Snake",
+ "size": [
+  12.2231,
+  1.8977,
+  1.9717
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_snake"
+ ],
+ "joints": 0,
+ "bones": 6,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://84202455129295"
+ ],
+ "textureIds": [
+  "rbxassetid://126277464523509"
+ ]
+}

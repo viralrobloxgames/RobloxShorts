@@ -1,0 +1,56 @@
+# Materials for egg_epic. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_a6d4cd
+Kd 0.6510 0.8314 0.8039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6e8d88
+Kd 0.4314 0.5529 0.5333
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_8eb6b0
+Kd 0.5569 0.7137 0.6902
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_5dffd7_shiny
+Kd 0.3647 1.0000 0.8431
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_89ffdd_shiny
+Kd 0.5373 1.0000 0.8667
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_158096_shiny
+Kd 0.0824 0.5020 0.5882
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_27becc_shiny
+Kd 0.1529 0.7451 0.8000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_baffe8_shiny
+Kd 0.7294 1.0000 0.9098
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2

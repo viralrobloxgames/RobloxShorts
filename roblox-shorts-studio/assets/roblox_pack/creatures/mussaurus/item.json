@@ -1,0 +1,31 @@
+{
+ "item": "mussaurus",
+ "category": "creatures",
+ "sourceName": "Mussaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Mussaurus",
+ "size": [
+  3.75,
+  11.2502,
+  15.75
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "LeftUpperLeg",
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperArm",
+  "LowerTorso",
+  "RightUpperArm",
+  "RightUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 27,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,28 @@
+{
+ "item": "lod_tyrannosaurus",
+ "category": "creatures",
+ "sourceName": "PetLOD/Tyrannosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Tyrannosaurus",
+ "size": [
+  25.809,
+  12.093,
+  9.2627
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_tyrannosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://106629234113801",
+  "rbxassetid://108885422697850",
+  "rbxassetid://75589320318879",
+  "rbxassetid://96299318202984",
+  "rbxassetid://98949972067805"
+ ],
+ "textureIds": []
+}

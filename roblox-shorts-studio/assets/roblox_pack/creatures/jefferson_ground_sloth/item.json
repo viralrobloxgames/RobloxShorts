@@ -1,0 +1,54 @@
+{
+ "item": "jefferson_ground_sloth",
+ "category": "creatures",
+ "sourceName": "Jefferson Ground Sloth",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Jefferson Ground Sloth",
+ "size": [
+  11.6257,
+  5.8456,
+  3.8799
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Cube.012",
+  "Cube.003",
+  "Cube.013",
+  "Cube.002",
+  "Cube.004",
+  "Cube.016",
+  "Cube.006",
+  "Cube.005",
+  "Cube.015",
+  "Cube.009",
+  "Cube.011",
+  "Cube.014",
+  "Cube.008",
+  "Cube.010"
+ ],
+ "joints": 14,
+ "bones": 26,
+ "parts": 14,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://106313951975156",
+  "rbxassetid://111180794815472",
+  "rbxassetid://112108354080598",
+  "rbxassetid://112127247524808",
+  "rbxassetid://121512526963659",
+  "rbxassetid://122721159593380",
+  "rbxassetid://127452336853458",
+  "rbxassetid://128978097643702",
+  "rbxassetid://134570006138800",
+  "rbxassetid://134714529448931",
+  "rbxassetid://74337720405110",
+  "rbxassetid://75506215614676",
+  "rbxassetid://76248678470815",
+  "rbxassetid://98571124770537"
+ ],
+ "textureIds": [
+  "rbxassetid://103834477744678",
+  "rbxassetid://136467690344207",
+  "rbxassetid://98671537438619"
+ ]
+}

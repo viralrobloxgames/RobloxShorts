@@ -1,0 +1,22 @@
+{
+ "item": "egg_brutal_dinosaur",
+ "category": "props",
+ "sourceName": "BrutalDinosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.BrutalDinosaur",
+ "size": [
+  7.1046,
+  10.9797,
+  7.1045
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_brutal_dinosaur"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 9,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

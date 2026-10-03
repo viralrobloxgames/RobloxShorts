@@ -1,0 +1,26 @@
+{
+ "item": "animal_triple_cobra",
+ "category": "creatures",
+ "sourceName": "TripleCobra",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.TripleCobra",
+ "size": [
+  18.6339,
+  6.2515,
+  6.2285
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_triple_cobra"
+ ],
+ "joints": 0,
+ "bones": 22,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://126212785801836"
+ ],
+ "textureIds": [
+  "rbxassetid://119564378726111"
+ ]
+}

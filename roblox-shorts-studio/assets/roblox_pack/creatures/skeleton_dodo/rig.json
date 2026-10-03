@@ -1,0 +1,2122 @@
+{
+ "name": "skeleton_dodo",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Skeleton Dodo",
+ "sourceName": "Skeleton Dodo",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  4.5461,
+  4.2665,
+  4.6206
+ ],
+ "root": "Meshes/set_10_dodo_013 (1)",
+ "feetCentre": [
+  -0.0,
+  0,
+  1.01
+ ],
+ "bodies": [
+  {
+   "name": "Head",
+   "parent": "Neck",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    3.5774,
+    -1.0127,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    3.8274,
+    -1.5425,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    2.1489,
+    0.8442,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.1489,
+    0.8442,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "LeftAltLeg",
+   "parent": "LeftLeg",
+   "joint": "LeftAltLeg",
+   "pivot": [
+    -0.6077,
+    1.4551,
+    0.7837,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.6077,
+    1.155,
+    0.9839,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftAltLegBottom",
+   "parent": "LeftAltLeg",
+   "joint": "LeftAltLeg",
+   "pivot": [
+    -0.6077,
+    0.5786,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.6077,
+    0.4586,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftArm",
+   "parent": "Meshes/set_10_trex_029",
+   "joint": "LeftArm",
+   "pivot": [
+    -0.4351,
+    1.9597,
+    0.0254,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.925,
+    2.2297,
+    -0.0947,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftFoot",
+   "parent": "LeftAltLegBottom",
+   "joint": "LeftFoot",
+   "pivot": [
+    -0.6301,
+    0.152,
+    1.0103,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.6301,
+    0.152,
+    0.8203,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "LeftLeg",
+   "pivot": [
+    -0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_10_dodo_013 (1)",
+   "parent": "RightAltLeg",
+   "joint": "RightAltLeg",
+   "pivot": [
+    0.6077,
+    0.5786,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.6147,
+    0.2861,
+    1.0942,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_10_trex_029",
+   "parent": "Torso",
+   "joint": "Meshes/set_10_trex_029",
+   "pivot": [
+    0.0,
+    2.1089,
+    0.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.1089,
+    0.0361,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_10_trex_030 (1)",
+   "parent": "Meshes/set_10_trex_029",
+   "joint": "Meshes/set_10_trex_030 (1)",
+   "pivot": [
+    0.0,
+    2.4293,
+    -0.3198,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.7593,
+    -0.5298,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Neck",
+   "parent": "Meshes/set_10_trex_030 (1)",
+   "joint": "Neck",
+   "pivot": [
+    0.0,
+    3.092,
+    -0.6865,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    3.322,
+    -0.7666,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightAltLeg",
+   "parent": "RightLeg",
+   "joint": "RightAltLeg",
+   "pivot": [
+    0.6077,
+    1.4551,
+    0.7837,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.6077,
+    1.155,
+    0.9839,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightArm",
+   "parent": "Meshes/set_10_trex_029",
+   "joint": "RightArm",
+   "pivot": [
+    0.455,
+    1.9497,
+    0.0254,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.925,
+    2.2297,
+    -0.0947,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightFoot",
+   "parent": "Meshes/set_10_dodo_013 (1)",
+   "joint": "RightFoot",
+   "pivot": [
+    0.6296,
+    0.152,
+    1.0103,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.6296,
+    0.152,
+    0.8203,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "RightLeg",
+   "pivot": [
+    0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "Torso",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    2.4294,
+    1.2046,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.5594,
+    1.7544,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    0.0,
+    2.1489,
+    0.8442,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.1489,
+    0.8442,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "RightFoot",
+   "part0": "Meshes/set_10_dodo_013 (1)",
+   "part1": "RightFoot",
+   "c0": [
+    0.0149,
+    -0.1341,
+    -0.0841,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.19,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.6296,
+    0.152,
+    1.0103,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftArm",
+   "part0": "Meshes/set_10_trex_029",
+   "part1": "LeftArm",
+   "c0": [
+    -0.4351,
+    -0.1492,
+    -0.011,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0.49,
+    -0.27,
+    0.12,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.4351,
+    1.9597,
+    0.0254,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_10_trex_030 (1)",
+   "part0": "Meshes/set_10_trex_029",
+   "part1": "Meshes/set_10_trex_030 (1)",
+   "c0": [
+    0,
+    0.3204,
+    -0.3563,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.33,
+    0.21,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    2.4293,
+    -0.3198,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightArm",
+   "part0": "Meshes/set_10_trex_029",
+   "part1": "RightArm",
+   "c0": [
+    0.455,
+    -0.1592,
+    -0.011,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    -0.47,
+    -0.28,
+    0.12,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.455,
+    1.9497,
+    0.0254,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightAltLeg",
+   "part0": "RightAltLeg",
+   "part1": "Meshes/set_10_dodo_013 (1)",
+   "c0": [
+    0,
+    -0.5764,
+    0.2166,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.12,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.6077,
+    0.5786,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftAltLeg",
+   "part0": "LeftAltLeg",
+   "part1": "LeftAltLegBottom",
+   "c0": [
+    0,
+    -0.5764,
+    0.2166,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.12,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.6077,
+    0.5786,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "LeftLeg",
+   "c0": [
+    -0.5862,
+    -0.1808,
+    0.1089,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    2.1489,
+    0.8442,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "RightLeg",
+   "c0": [
+    0.5862,
+    -0.1808,
+    0.1089,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Neck",
+   "part1": "Head",
+   "c0": [
+    0,
+    0.2554,
+    -0.2462,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.25,
+    0.53,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    3.5774,
+    -1.0127,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_10_trex_029",
+   "part0": "Torso",
+   "part1": "Meshes/set_10_trex_029",
+   "c0": [
+    0,
+    -0.04,
+    -0.4578,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.35,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    2.1089,
+    0.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Torso",
+   "part1": "Tail",
+   "c0": [
+    0,
+    0.2806,
+    0.3603,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.13,
+    -0.55,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    2.4294,
+    1.2046,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Neck",
+   "part0": "Meshes/set_10_trex_030 (1)",
+   "part1": "Neck",
+   "c0": [
+    0,
+    0.3328,
+    -0.1565,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.23,
+    0.08,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    3.092,
+    -0.6865,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightAltLeg",
+   "part0": "RightLeg",
+   "part1": "RightAltLeg",
+   "c0": [
+    0.0215,
+    -0.5132,
+    -0.1691,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.3,
+    -0.2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.6077,
+    1.4551,
+    0.7837,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftAltLeg",
+   "part0": "LeftLeg",
+   "part1": "LeftAltLeg",
+   "c0": [
+    -0.0215,
+    -0.5132,
+    -0.1691,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.3,
+    -0.2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.6077,
+    1.4551,
+    0.7837,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftFoot",
+   "part0": "LeftAltLegBottom",
+   "part1": "LeftFoot",
+   "c0": [
+    -0.0154,
+    -0.1341,
+    -0.0841,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.19,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.6301,
+    0.152,
+    1.0103,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "Meshes/set_10_dodo_013 (1)",
+    "side": 1
+   },
+   {
+    "body": "LeftAltLegBottom",
+    "side": -1
+   },
+   {
+    "body": "LeftLeg",
+    "side": -1
+   },
+   {
+    "body": "RightLeg",
+    "side": 1
+   },
+   {
+    "body": "RightAltLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftAltLeg",
+    "side": -1
+   }
+  ],
+  "front": [
+   {
+    "body": "LeftArm",
+    "side": -1
+   },
+   {
+    "body": "RightArm",
+    "side": 1
+   }
+  ],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head",
+   "Neck"
+  ],
+  "jaw": [],
+  "root": null,
+  "downstream": [
+   "RightFoot",
+   "LeftFoot"
+  ]
+ },
+ "parts": [
+  {
+   "object": "Meshes/set_10_dodo_013 (1)",
+   "name": "RightAltLegBottom",
+   "class": "MeshPart",
+   "size": [
+    0.1708,
+    0.6971,
+    0.3681
+   ],
+   "cframe": [
+    0.6077,
+    0.4586,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://79502888690974"
+  },
+  {
+   "object": "Meshes/set_10_dodo_013 (1)",
+   "name": "Meshes/set_10_dodo_013 (1)",
+   "class": "MeshPart",
+   "size": [
+    0.4215,
+    0.5601,
+    0.4652
+   ],
+   "cframe": [
+    0.6147,
+    0.2861,
+    1.0942,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120651740829220"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/set_10_dodo_004 (1)",
+   "class": "MeshPart",
+   "size": [
+    0.4757,
+    0.4586,
+    1.2416
+   ],
+   "cframe": [
+    0.0,
+    3.3799,
+    -1.5356,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://95075212322825"
+  },
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    1.0321,
+    0.615,
+    1.112
+   ],
+   "cframe": [
+    0.0,
+    2.5594,
+    1.7544,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://111371987486592"
+  },
+  {
+   "object": "Meshes/set_10_trex_029",
+   "name": "Meshes/set_10_trex_029",
+   "class": "MeshPart",
+   "size": [
+    1.1871,
+    1.2512,
+    0.7766
+   ],
+   "cframe": [
+    0.0,
+    2.1089,
+    0.0361,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://93808716345235"
+  },
+  {
+   "object": "RightFoot",
+   "name": "RightFoot",
+   "class": "MeshPart",
+   "size": [
+    0.6929,
+    0.304,
+    0.6259
+   ],
+   "cframe": [
+    0.6296,
+    0.152,
+    0.8203,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://100355635383386"
+  },
+  {
+   "object": "RightAltLeg",
+   "name": "RightAltLeg",
+   "class": "MeshPart",
+   "size": [
+    0.1885,
+    1.0998,
+    0.704
+   ],
+   "cframe": [
+    0.6077,
+    1.155,
+    0.9839,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://119791696637125"
+  },
+  {
+   "object": "RightArm",
+   "name": "RightArm",
+   "class": "MeshPart",
+   "size": [
+    0.8747,
+    0.2788,
+    0.5564
+   ],
+   "cframe": [
+    0.925,
+    2.2297,
+    -0.0947,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://102132943380405"
+  },
+  {
+   "object": "LeftArm",
+   "name": "LeftArm",
+   "class": "MeshPart",
+   "size": [
+    0.8747,
+    0.2788,
+    0.5564
+   ],
+   "cframe": [
+    -0.925,
+    2.2297,
+    -0.0947,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://119214555976903"
+  },
+  {
+   "object": "LeftAltLeg",
+   "name": "LeftAltLeg",
+   "class": "MeshPart",
+   "size": [
+    0.1885,
+    1.0998,
+    0.704
+   ],
+   "cframe": [
+    -0.6077,
+    1.155,
+    0.9839,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://74520042829268"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "LeftFoot",
+   "class": "MeshPart",
+   "size": [
+    0.6921,
+    0.304,
+    0.6259
+   ],
+   "cframe": [
+    -0.6301,
+    0.152,
+    0.8203,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://88426941782146"
+  },
+  {
+   "object": "Neck",
+   "name": "Neck",
+   "class": "MeshPart",
+   "size": [
+    0.4111,
+    0.6546,
+    0.5486
+   ],
+   "cframe": [
+    0.0,
+    3.322,
+    -0.7666,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://131938322881600"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    1.1871,
+    1.2893,
+    1.0086
+   ],
+   "cframe": [
+    0.0,
+    2.1489,
+    0.8442,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107683581839174"
+  },
+  {
+   "object": "Meshes/set_10_trex_030 (1)",
+   "name": "Meshes/set_10_trex_030 (1)",
+   "class": "MeshPart",
+   "size": [
+    0.4511,
+    0.8036,
+    0.6517
+   ],
+   "cframe": [
+    0.0,
+    2.7593,
+    -0.5298,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://137518599127180"
+  },
+  {
+   "object": "RightArm",
+   "name": "Meshes/set_10_dodo_011 (1)",
+   "class": "MeshPart",
+   "size": [
+    1.1672,
+    0.3173,
+    0.5655
+   ],
+   "cframe": [
+    1.6895,
+    2.3912,
+    -0.061,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://118989930751537"
+  },
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    0.4811,
+    0.8781,
+    1.5355
+   ],
+   "cframe": [
+    0.0,
+    3.8274,
+    -1.5425,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120019347846078"
+  },
+  {
+   "object": "RightLeg",
+   "name": "RightLeg",
+   "class": "MeshPart",
+   "size": [
+    0.2308,
+    1.1055,
+    0.5173
+   ],
+   "cframe": [
+    0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107492452474885"
+  },
+  {
+   "object": "Meshes/set_10_trex_029",
+   "name": "Meshes/set_10_dodo_002 (1)",
+   "class": "MeshPart",
+   "size": [
+    0.5952,
+    0.3917,
+    0.113
+   ],
+   "cframe": [
+    0.3484,
+    2.3344,
+    0.1089,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://132488874584417"
+  },
+  {
+   "object": "Meshes/set_10_trex_029",
+   "name": "Meshes/set_10_dodo_014 (1)",
+   "class": "MeshPart",
+   "size": [
+    0.5952,
+    0.3917,
+    0.113
+   ],
+   "cframe": [
+    -0.3484,
+    2.3344,
+    0.1089,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://122772286881630"
+  },
+  {
+   "object": "LeftArm",
+   "name": "Meshes/set_10_dodo_010 (1)",
+   "class": "MeshPart",
+   "size": [
+    1.1672,
+    0.3173,
+    0.5655
+   ],
+   "cframe": [
+    -1.6895,
+    2.3912,
+    -0.061,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://88050296323008"
+  },
+  {
+   "object": "LeftLeg",
+   "name": "LeftLeg",
+   "class": "MeshPart",
+   "size": [
+    0.2308,
+    1.1055,
+    0.5173
+   ],
+   "cframe": [
+    -0.5862,
+    1.9681,
+    0.9531,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://125390036825258"
+  },
+  {
+   "object": "LeftAltLegBottom",
+   "name": "Meshes/set_10_dodo_016 (1)",
+   "class": "MeshPart",
+   "size": [
+    0.4215,
+    0.5601,
+    0.4652
+   ],
+   "cframe": [
+    -0.6147,
+    0.2861,
+    1.0942,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://119815391317886"
+  },
+  {
+   "object": "LeftAltLegBottom",
+   "name": "LeftAltLegBottom",
+   "class": "MeshPart",
+   "size": [
+    0.1708,
+    0.6971,
+    0.3681
+   ],
+   "cframe": [
+    -0.6077,
+    0.4586,
+    1.2007,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://94075470062728"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

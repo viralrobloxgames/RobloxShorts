@@ -1,0 +1,26 @@
+{
+ "item": "animal_horse",
+ "category": "creatures",
+ "sourceName": "Horse",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Horse",
+ "size": [
+  6.4929,
+  5.2188,
+  2.2041
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_horse"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://121836011516772"
+ ],
+ "textureIds": [
+  "rbxassetid://102547605938786"
+ ]
+}

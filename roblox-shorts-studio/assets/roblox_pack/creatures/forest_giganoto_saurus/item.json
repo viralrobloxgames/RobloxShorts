@@ -1,0 +1,38 @@
+{
+ "item": "forest_giganoto_saurus",
+ "category": "creatures",
+ "sourceName": "ForestGiganotoSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.ForestGiganotoSaurus",
+ "size": [
+  17.8643,
+  21.5442,
+  32.0542
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftFoot",
+  "RightLowerArm",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "Tail",
+  "RightFoot",
+  "LeftUpperLeg",
+  "LeftUpperArm",
+  "LeftLowerArm",
+  "Mouth",
+  "RightUpperLeg",
+  "RightLowerLeg",
+  "LeftLowerLeg",
+  "LowerTorso",
+  "RightUpperArm"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 102,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,35 @@
+{
+ "item": "tregina",
+ "category": "creatures",
+ "sourceName": "TRegina",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.TRegina",
+ "size": [
+  14.4576,
+  17.1016,
+  30.0713
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightFoot",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "LeftLowerLeg",
+  "RightLowerLeg",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "Tail",
+  "LeftFoot",
+  "RightUpperLeg",
+  "LowerTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 108,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

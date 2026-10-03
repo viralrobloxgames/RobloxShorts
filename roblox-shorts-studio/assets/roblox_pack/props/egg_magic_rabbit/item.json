@@ -1,0 +1,42 @@
+{
+ "item": "egg_magic_rabbit",
+ "category": "props",
+ "sourceName": "Eggs/MagicRabbitEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/MagicRabbitEgg",
+ "size": [
+  7.5425,
+  9.8329,
+  5.8418
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E3_2",
+  "E1U",
+  "E1U_decal1",
+  "E2U",
+  "E1D",
+  "E3",
+  "E2D"
+ ],
+ "joints": 7,
+ "bones": 0,
+ "parts": 27,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://100438636890191",
+  "rbxassetid://117839892650556",
+  "rbxassetid://121383458674799",
+  "rbxassetid://128458711018898",
+  "rbxassetid://133483614083299",
+  "rbxassetid://72815261708792",
+  "rbxassetid://73689622119791",
+  "rbxassetid://80863662846445",
+  "rbxassetid://80923697656587",
+  "rbxassetid://82345107778210",
+  "rbxassetid://95885254330145",
+  "rbxassetid://98622986671545",
+  "rbxassetid://98818126827259"
+ ],
+ "textureIds": []
+}

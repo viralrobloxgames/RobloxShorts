@@ -1,0 +1,36 @@
+{
+ "item": "egg_ultra",
+ "category": "props",
+ "sourceName": "Eggs/UltraEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/UltraEgg",
+ "size": [
+  7.302,
+  12.0355,
+  16.7549
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E1U",
+  "E1U_decal1",
+  "E1D",
+  "E2D",
+  "E3",
+  "E2U"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 13,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://110329828502881",
+  "rbxassetid://114441407308116",
+  "rbxassetid://131246084859659",
+  "rbxassetid://133513976413216",
+  "rbxassetid://133979212809867",
+  "rbxassetid://77481880648253",
+  "rbxassetid://82094513647324",
+  "rbxassetid://99969364189496"
+ ],
+ "textureIds": []
+}

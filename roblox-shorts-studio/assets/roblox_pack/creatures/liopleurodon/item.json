@@ -1,0 +1,31 @@
+{
+ "item": "liopleurodon",
+ "category": "creatures",
+ "sourceName": "Liopleurodon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Liopleurodon",
+ "size": [
+  19.5309,
+  6.4844,
+  30.4282
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "Tail",
+  "LowerTorso",
+  "LeftUpperArm",
+  "RightUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperLeg",
+  "UpperTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 135,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

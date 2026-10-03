@@ -1,0 +1,28 @@
+{
+ "item": "lod_plesiosaur",
+ "category": "creatures",
+ "sourceName": "PetLOD/Plesiosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Plesiosaur",
+ "size": [
+  28.2618,
+  6.7598,
+  10.7725
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_plesiosaur"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://103670848333027",
+  "rbxassetid://119675542837925",
+  "rbxassetid://124360246589046",
+  "rbxassetid://72991300575383",
+  "rbxassetid://97414503983270"
+ ],
+ "textureIds": []
+}

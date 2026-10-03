@@ -1,0 +1,40 @@
+{
+ "item": "yangchuanosaurus",
+ "category": "creatures",
+ "sourceName": "Yangchuanosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Yangchuanosaurus",
+ "size": [
+  14.5245,
+  16.9817,
+  24.374
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "RightLowerLeg",
+  "LeftLowerLeg",
+  "LeftUpperArm",
+  "RightUpperLeg",
+  "LowerTorso",
+  "RightUpperArm",
+  "RightLowerArm",
+  "LeftUpperLeg",
+  "RightFoot",
+  "Tail",
+  "LeftFoot",
+  "Mouth",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "Head_decal3",
+  "Head_decal4",
+  "LeftLowerArm"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 69,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

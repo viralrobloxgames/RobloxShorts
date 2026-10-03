@@ -1,0 +1,21 @@
+# Materials for t_rex. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_cacbd1
+Kd 0.7922 0.7961 0.8196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_694028
+Kd 0.4118 0.2510 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

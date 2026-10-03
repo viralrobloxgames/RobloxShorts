@@ -1,0 +1,31 @@
+{
+ "item": "apatosaurus",
+ "category": "creatures",
+ "sourceName": "Apatosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Apatosaurus",
+ "size": [
+  12.5,
+  27.8396,
+  58.3789
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "RightUpperLeg",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperArm",
+  "Tail",
+  "LowerTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 103,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

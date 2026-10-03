@@ -1,0 +1,58 @@
+# Materials for cyber_t_rex. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_e2a4fc
+Kd 0.8863 0.6431 0.9882
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_b479aa_neon
+Kd 0.7059 0.4745 0.6667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.7059 0.4745 0.6667
+d 1.0000
+illum 2
+
+newmtl c_402f48
+Kd 0.2510 0.1843 0.2824
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_5f456a
+Kd 0.3725 0.2706 0.4157
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_43314b
+Kd 0.2627 0.1922 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_3f2e46
+Kd 0.2471 0.1804 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_9d72af_neon
+Kd 0.6157 0.4471 0.6863
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6157 0.4471 0.6863
+d 1.0000
+illum 2

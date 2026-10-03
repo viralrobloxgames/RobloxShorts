@@ -1,0 +1,26 @@
+{
+ "item": "animal_goat",
+ "category": "creatures",
+ "sourceName": "Goat",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Goat",
+ "size": [
+  5.4371,
+  4.022,
+  1.8154
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_goat"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://140263368990065"
+ ],
+ "textureIds": [
+  "rbxassetid://134848268276238"
+ ]
+}

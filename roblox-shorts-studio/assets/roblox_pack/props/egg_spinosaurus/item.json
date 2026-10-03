@@ -1,0 +1,22 @@
+{
+ "item": "egg_spinosaurus",
+ "category": "props",
+ "sourceName": "Spinosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Spinosaurus",
+ "size": [
+  6.3941,
+  9.8818,
+  6.3945
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_spinosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 9,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,261 @@
+{
+ "name": "animal_snake",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Snake",
+ "sourceName": "Snake",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  12.2231,
+  1.8977,
+  1.9717
+ ],
+ "root": "A_26",
+ "feetCentre": null,
+ "bodies": [],
+ "joints": [],
+ "bones": [
+  {
+   "name": "joint1",
+   "parent": "A_26",
+   "parentIsBone": false,
+   "cframe": [
+    0,
+    -0.3414,
+    0.3014,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.3014,
+    0.6074,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint5",
+   "parent": "joint1",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    -1.5276,
+    0,
+    -1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -1.2262,
+    0.6074,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint6",
+   "parent": "joint5",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    -1.4222,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -2.6484,
+    0.6074,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint2",
+   "parent": "joint1",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    1.8041,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    2.1055,
+    0.6074,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint3",
+   "parent": "joint2",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    1.8173,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    3.9228,
+    0.6074,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint4",
+   "parent": "joint3",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    1.9094,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    5.8322,
+    0.6074,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0
+   ]
+  }
+ ],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [],
+  "front": [],
+  "tail": [],
+  "head": [],
+  "jaw": [],
+  "root": null,
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "animal_snake",
+   "name": "A_26",
+   "class": "MeshPart",
+   "size": [
+    1.9719,
+    1.8977,
+    12.2231
+   ],
+   "cframe": [
+    0.0,
+    0.9489,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    163,
+    162,
+    165
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://84202455129295"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

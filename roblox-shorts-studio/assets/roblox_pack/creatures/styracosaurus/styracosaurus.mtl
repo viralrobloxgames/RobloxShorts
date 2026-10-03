@@ -1,0 +1,79 @@
+# Materials for styracosaurus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_74869d
+Kd 0.4549 0.5255 0.6157
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_9fadc0
+Kd 0.6235 0.6784 0.7529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_645f9f
+Kd 0.3922 0.3725 0.6235
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_d3be96
+Kd 0.8275 0.7451 0.5882
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_be6862
+Kd 0.7451 0.4078 0.3843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd styracosaurus_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd styracosaurus_head_decal2.png
+
+newmtl c_fef3bb
+Kd 0.9961 0.9529 0.7333
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

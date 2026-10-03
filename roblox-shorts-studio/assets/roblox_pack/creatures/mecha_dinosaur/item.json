@@ -1,0 +1,38 @@
+{
+ "item": "mecha_dinosaur",
+ "category": "creatures",
+ "sourceName": "MechaDinosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.MechaDinosaur",
+ "size": [
+  19,
+  27.5,
+  38.3164
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightLowerArm",
+  "RightFoot",
+  "RightUpperLeg",
+  "LeftFoot",
+  "UpperTorso",
+  "LeftLowerLeg",
+  "LeftLowerArm",
+  "LeftUpperArm",
+  "LeftUpperLeg",
+  "LowerTorso",
+  "RightLowerLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm",
+  "Mouth",
+  "Tail"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 110,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

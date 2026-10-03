@@ -1,0 +1,60 @@
+{
+ "item": "sabertooth_squirrel",
+ "category": "creatures",
+ "sourceName": "Sabertooth Squirrel",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Sabertooth Squirrel",
+ "size": [
+  4.5373,
+  3.7576,
+  2.2832
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "mesh_20.001",
+  "mesh_20.006",
+  "mesh_20.035",
+  "mesh_20.030",
+  "mesh_20.037",
+  "mesh_20.007",
+  "mesh_20.038",
+  "mesh_20.039",
+  "mesh_20.034",
+  "mesh_20",
+  "mesh_20.040",
+  "mesh_20.041",
+  "mesh_20.043",
+  "mesh_20.042",
+  "mesh_20.036",
+  "mesh_20.046",
+  "mesh_20.045",
+  "mesh_20.044"
+ ],
+ "joints": 18,
+ "bones": 25,
+ "parts": 18,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100242366230033",
+  "rbxassetid://108561094809658",
+  "rbxassetid://111099674032069",
+  "rbxassetid://113955867170471",
+  "rbxassetid://119885727316438",
+  "rbxassetid://125319505029468",
+  "rbxassetid://127055602685942",
+  "rbxassetid://128743943607152",
+  "rbxassetid://131872175954313",
+  "rbxassetid://132933969015156",
+  "rbxassetid://133872358726020",
+  "rbxassetid://134584321553406",
+  "rbxassetid://138647778965227",
+  "rbxassetid://79899705609103",
+  "rbxassetid://82440260720880",
+  "rbxassetid://87678152860491",
+  "rbxassetid://90327795903085",
+  "rbxassetid://90453391378737"
+ ],
+ "textureIds": [
+  "rbxassetid://107468073849044"
+ ]
+}

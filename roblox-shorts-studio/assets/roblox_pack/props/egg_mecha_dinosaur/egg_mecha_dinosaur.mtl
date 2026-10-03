@@ -1,0 +1,23 @@
+# Materials for egg_mecha_dinosaur. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_9fa1ac
+Kd 0.6235 0.6314 0.6745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff0000_neon_a50
+Kd 1.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.0000 0.0000
+d 0.5000
+illum 2
+
+newmtl c_f8f8f8_neon
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.9725 0.9725 0.9725
+d 1.0000
+illum 2

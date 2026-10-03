@@ -1,0 +1,26 @@
+{
+ "item": "egg_designer_4",
+ "category": "props",
+ "sourceName": "Egg4",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Egg4",
+ "size": [
+  5.153,
+  8.1548,
+  6.4775
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_designer_4"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://99570083220854"
+ ],
+ "textureIds": [
+  "rbxassetid://116097725441927"
+ ]
+}

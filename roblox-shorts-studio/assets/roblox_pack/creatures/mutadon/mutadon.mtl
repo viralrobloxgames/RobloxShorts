@@ -1,0 +1,58 @@
+# Materials for mutadon. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_506d54
+Kd 0.3137 0.4275 0.3294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a8bd99
+Kd 0.6588 0.7412 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_27462d
+Kd 0.1529 0.2745 0.1765
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffb000
+Kd 1.0000 0.6902 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd mutadon_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd mutadon_head_decal2.png

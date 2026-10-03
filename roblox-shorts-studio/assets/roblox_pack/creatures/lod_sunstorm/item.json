@@ -1,0 +1,27 @@
+{
+ "item": "lod_sunstorm",
+ "category": "creatures",
+ "sourceName": "PetLOD/Sunstorm",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Sunstorm",
+ "size": [
+  10.8827,
+  12.8656,
+  8.8896
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_sunstorm"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 4,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://111753385704013",
+  "rbxassetid://82097464778902",
+  "rbxassetid://91756438561455",
+  "rbxassetid://91987531348567"
+ ],
+ "textureIds": []
+}

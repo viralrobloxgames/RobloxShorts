@@ -117,6 +117,43 @@ The head uses a skin swatch inside the same atlas, so swapping the atlas recolou
 `tools/build_characters.py` is the alternative path: it builds the same folders from a rendered Studio export (Studio's
 own 1024x512 atlas). Use it once the export runs while Studio is the active window.
 
+## Creatures and eggs (from the user's game)
+
+`creatures/<name>/` and `props/egg_<name>/` come from the user's own place **"Hunt For Eggs!"**
+(`ServerStorage.Assets.Prehistoric`): the guardians, pets and eggs of the game the Steal an Egg shorts parody. They are
+that game's models (Toolbox packs), not Roblox-made and not original to this pack; see CREDITS.md.
+
+```
+creatures/trex/               the game's T-Rex guardian: hero of "Stealing a T-Rex Egg"
+  trex.obj/.mtl               one OBJ object per rigid BODY (torso, neck2, neck1, head, mouth, arm_L, ..., tail04)
+  rig.json                    bodies (parent, joint pivot, rest CFrame), Motor6Ds (C0/C1), attachments, parts, gait groups
+  item.json                   source model, size, mesh and texture asset IDs
+creatures/<name>/             the other ~100 dinosaurs and animals, same layout
+creatures/index.json          every creature: path, size, joints, description
+props/egg_<name>/             ~70 eggs; the rigged ones (egg_basic, egg_rare, ...) split into E1U/E2U/E3/E2D/E1D to hatch
+```
+
+- **Scale and pivot:** native game scale (the T-rex is 9.3 x 12.1 x 25.8 studs, next to a 5-stud R6 character), bottom
+  centre at the origin, head towards **-Z** (measured from the head and tail parts; `catalog.json` says when a model has
+  neither and is left as authored).
+- **One object per body:** every part welded to a Motor6D-driven part is merged into that part's object, so a rig is
+  a small tree of rigid objects. `rig.json` `bodies[].pivot` is the joint's rest frame in model space: to pose a body
+  (and its children) apply `pivot * Transform * pivot^-1`, which is Roblox's `Part0 * C0 * Transform * C1^-1`.
+- **Animation:** these rigs ship no Animation or KeyframeSequence. The game animates them from code
+  (`ReplicatedStorage.CreatureGait`, writing `Motor6D.Transform`): legs swing +-26 deg in antiphase about the joint's X,
+  arms +-16 deg, the tail sways +-11 deg about Y at half the stride rate, the head bobs 6 deg at twice the rate and the root
+  bobs. `rig.json` `gait` lists which bodies are back legs, front limbs, tail, head/neck, jaw and root, so the web
+  renderer can run the same cycle and add its own poses (sleep, roar, headbutt, jaw open).
+- **Skinned animals** (bones instead of Motor6Ds: condor, dire wolf, dodo, mammoths, ...) export as their rest pose;
+  the bone list is in `rig.json` but OBJ carries no skin weights, so treat them as static props or move them whole.
+- **Not exported:** CSG unions do not come through Studio's OBJ export, so the three eggs built from them (corn, bowser,
+  void) are left out.
+
+Rebuild: `tools/luau/stage_creatures.luau` (stage + manifest + Export Selection), `tools/save_export_dialog.ps1`,
+`tools/pull_studio_log.py manifests --prefix manifest_<batch>`, `tools/build_creatures.py`, then
+`tools/build_creature_catalog.py` (run it after `build_catalog.py`, which rewrites catalog.json and CREDITS.md).
+`tools/studio_grab.ps1` screenshots the Studio window when the MCP screen capture times out.
+
 ## Faces (32)
 
 **Glam style** (`faces/glam/`, made by `tools/make_glam_faces.py` from the eye and mouth layers): the same 32 expressions with lashes, eye sparkle, blush and berry lips, eyes in the same place. Skye (the ViralRoblox News presenter) uses it; `FACE_STYLE` in `web/lib/robloxPack.js` and `tools/build_characters_local.py` picks it per character.

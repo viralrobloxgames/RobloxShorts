@@ -1,0 +1,2016 @@
+{
+ "name": "spinosaurus_3",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Spinosaurus",
+ "sourceName": "Spinosaurus",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  4.2502,
+  9.9221,
+  24.3652
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "Head",
+   "parent": "Neck",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    7.3223,
+    -7.9473,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    7.4111,
+    -9.6348,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    5.724,
+    -1.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    5.724,
+    -1.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Jaw",
+   "parent": "Head",
+   "joint": "Jaw",
+   "pivot": [
+    0.0,
+    6.7341,
+    -9.4766,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    6.4677,
+    -10.4536,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftArm",
+   "parent": "Torso",
+   "joint": "LeftArm",
+   "pivot": [
+    -1.408,
+    6.0254,
+    -4.7939,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.408,
+    4.9596,
+    -4.9717,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLeg",
+   "parent": "Torso",
+   "joint": "LeftLeg",
+   "pivot": [
+    -1.2189,
+    5.4155,
+    0.168,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.2189,
+    3.3729,
+    0.0791,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.127",
+   "parent": "LeftArm",
+   "joint": "Meshes/AzureChanges_Cube.127",
+   "pivot": [
+    -1.3484,
+    3.556,
+    -5.5718,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.3484,
+    3.0232,
+    -5.6606,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.128",
+   "parent": "LeftLeg",
+   "joint": "Meshes/AzureChanges_Cube.128",
+   "pivot": [
+    -1.4429,
+    0.2385,
+    0.2886,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.4429,
+    0.2385,
+    -0.0669,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.134",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    7.2399,
+    -11.0342,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    7.2399,
+    -11.0342,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.233",
+   "parent": "RightLeg",
+   "joint": "Meshes/AzureChanges_Cube.233",
+   "pivot": [
+    1.4429,
+    0.2385,
+    0.2886,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.4429,
+    0.2385,
+    -0.0669,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.235",
+   "parent": "RightArm",
+   "joint": "Meshes/AzureChanges_Cube.235",
+   "pivot": [
+    1.3484,
+    3.4673,
+    -5.5718,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.3484,
+    3.0232,
+    -5.6606,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Neck",
+   "parent": "Torso",
+   "joint": "Neck",
+   "pivot": [
+    0.0,
+    6.301,
+    -5.3779,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    6.9227,
+    -6.8877,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightArm",
+   "parent": "Torso",
+   "joint": "RightArm",
+   "pivot": [
+    1.408,
+    6.0254,
+    -4.7939,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.408,
+    4.9596,
+    -4.9717,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLeg",
+   "parent": "Torso",
+   "joint": "RightLeg",
+   "pivot": [
+    1.2189,
+    5.4155,
+    0.168,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.2189,
+    3.3729,
+    0.0791,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "Torso",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    5.5651,
+    2.0195,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    5.5651,
+    7.082,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    0.0,
+    5.1023,
+    -1.4043,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    5.724,
+    -1.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "Meshes/AzureChanges_Cube.233",
+   "part0": "RightLeg",
+   "part1": "Meshes/AzureChanges_Cube.233",
+   "c0": [
+    0.224,
+    -3.1344,
+    0.2092,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.3552,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.4429,
+    0.2385,
+    0.2886,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Neck",
+   "part1": "Head",
+   "c0": [
+    0,
+    0.3996,
+    -1.0596,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.0888,
+    1.6874,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    7.3223,
+    -7.9473,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.128",
+   "part0": "LeftLeg",
+   "part1": "Meshes/AzureChanges_Cube.128",
+   "c0": [
+    -0.224,
+    -3.1344,
+    0.2092,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.3552,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.4429,
+    0.2385,
+    0.2886,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    -0.6217,
+    0.3552,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.6217,
+    0.3552,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    5.1023,
+    -1.4043,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Jaw",
+   "part0": "Head",
+   "part1": "Jaw",
+   "c0": [
+    0,
+    -0.6771,
+    0.158,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.2664,
+    0.9769,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    6.7341,
+    -9.4766,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.235",
+   "part0": "RightArm",
+   "part1": "Meshes/AzureChanges_Cube.235",
+   "c0": [
+    -0.0596,
+    -1.4923,
+    -0.6001,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.4441,
+    0.0888,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.3484,
+    3.4673,
+    -5.5718,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/AzureChanges_Cube.127",
+   "part0": "LeftArm",
+   "part1": "Meshes/AzureChanges_Cube.127",
+   "c0": [
+    0.0596,
+    -1.4035,
+    -0.6001,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.5329,
+    0.0888,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.3484,
+    3.556,
+    -5.5718,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightLeg",
+   "part0": "Torso",
+   "part1": "RightLeg",
+   "c0": [
+    1.2189,
+    -0.3084,
+    1.9278,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    2.0427,
+    0.0888,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.2189,
+    5.4155,
+    0.168,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Torso",
+   "part1": "Tail",
+   "c0": [
+    0,
+    -0.1589,
+    3.7796,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -5.0623,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    5.5651,
+    2.0195,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftArm",
+   "part0": "Torso",
+   "part1": "LeftArm",
+   "c0": [
+    -1.408,
+    0.3014,
+    -3.0342,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.0657,
+    0.1776,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.408,
+    6.0254,
+    -4.7939,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightArm",
+   "part0": "Torso",
+   "part1": "RightArm",
+   "c0": [
+    1.4079,
+    0.3014,
+    -3.0342,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.0657,
+    0.1776,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.408,
+    6.0254,
+    -4.7939,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLeg",
+   "part0": "Torso",
+   "part1": "LeftLeg",
+   "c0": [
+    -1.2189,
+    -0.3084,
+    1.9278,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    2.0427,
+    0.0888,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.2189,
+    5.4155,
+    0.168,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Neck",
+   "part0": "Torso",
+   "part1": "Neck",
+   "c0": [
+    0,
+    0.577,
+    -3.6179,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.6217,
+    1.5098,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    6.301,
+    -5.3779,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "RightLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftLeg",
+    "side": -1
+   }
+  ],
+  "front": [
+   {
+    "body": "LeftArm",
+    "side": -1
+   },
+   {
+    "body": "RightArm",
+    "side": 1
+   }
+  ],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head",
+   "Neck"
+  ],
+  "jaw": [
+   "Jaw"
+  ],
+  "root": "Torso",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "RightLeg",
+   "name": "RightLeg",
+   "class": "MeshPart",
+   "size": [
+    1.6367,
+    6.7459,
+    3.1398
+   ],
+   "cframe": [
+    1.2189,
+    3.3729,
+    0.0791,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://126646093380706"
+  },
+  {
+   "object": "Meshes/AzureChanges_Cube.233",
+   "name": "Meshes/AzureChanges_Cube.233",
+   "class": "MeshPart",
+   "size": [
+    1.3644,
+    0.4579,
+    1.2083
+   ],
+   "cframe": [
+    1.4429,
+    0.2385,
+    -0.0669,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107987276255742"
+  },
+  {
+   "object": "Neck",
+   "name": "Neck",
+   "class": "MeshPart",
+   "size": [
+    1.9178,
+    2.9485,
+    3.5488
+   ],
+   "cframe": [
+    0.0,
+    6.9227,
+    -6.8877,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://122656980575550"
+  },
+  {
+   "object": "Neck",
+   "name": "Meshes/AzureChanges_Cube.239",
+   "class": "MeshPart",
+   "size": [
+    1.9178,
+    1.1949,
+    3.5488
+   ],
+   "cframe": [
+    0.0,
+    6.0459,
+    -6.8877,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://80543641926406"
+  },
+  {
+   "object": "LeftLeg",
+   "name": "LeftLeg",
+   "class": "MeshPart",
+   "size": [
+    1.6367,
+    6.7459,
+    3.1398
+   ],
+   "cframe": [
+    -1.2189,
+    3.3729,
+    0.0791,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://130938399418323"
+  },
+  {
+   "object": "Meshes/AzureChanges_Cube.128",
+   "name": "Meshes/AzureChanges_Cube.128",
+   "class": "MeshPart",
+   "size": [
+    1.3644,
+    0.4579,
+    1.2083
+   ],
+   "cframe": [
+    -1.4429,
+    0.2385,
+    -0.0669,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://75181410740309"
+  },
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    1.8391,
+    1.9267,
+    10.2007
+   ],
+   "cframe": [
+    0.0,
+    5.5651,
+    7.082,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120835541481323"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/AzureChanges_Cube.238",
+   "class": "MeshPart",
+   "size": [
+    1.8391,
+    0.7161,
+    10.1877
+   ],
+   "cframe": [
+    0.0,
+    4.9598,
+    7.0757,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://130169437718411"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/AzureChanges_Cube.139",
+   "class": "MeshPart",
+   "size": [
+    0.559,
+    1.0662,
+    2.5875
+   ],
+   "cframe": [
+    0.0,
+    6.1954,
+    3.6855,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    112,
+    58,
+    44
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://89498913191665"
+  },
+  {
+   "object": "HumanoidRootPart",
+   "name": "HumanoidRootPart",
+   "class": "MeshPart",
+   "size": [
+    3.302,
+    4.0607,
+    7.7579
+   ],
+   "cframe": [
+    0.0,
+    5.724,
+    -1.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://128484791755092"
+  },
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    2.0956,
+    2.4124,
+    5.0956
+   ],
+   "cframe": [
+    0.0,
+    7.4111,
+    -9.6348,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://117537786044785"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/AzureChanges_Cube.138",
+   "class": "MeshPart",
+   "size": [
+    0.4737,
+    1.8254,
+    2.6291
+   ],
+   "cframe": [
+    0.0,
+    7.9755,
+    -7.415,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    112,
+    58,
+    44
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://124386130021820"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/AzureChanges_Cube.137",
+   "class": "MeshPart",
+   "size": [
+    1.8774,
+    0.4669,
+    0.3057
+   ],
+   "cframe": [
+    0.0,
+    8.2163,
+    -8.7051,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    55,
+    56,
+    62
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://86720611036296"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/AzureChanges_Cube.135",
+   "class": "MeshPart",
+   "size": [
+    1.8774,
+    0.467,
+    0.4732
+   ],
+   "cframe": [
+    0.0,
+    8.2163,
+    -8.8989,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    17,
+    17,
+    17
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://128534952376215"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/AzureChanges_Cube.265",
+   "class": "MeshPart",
+   "size": [
+    1.3198,
+    0.7451,
+    1.116
+   ],
+   "cframe": [
+    0.0,
+    6.9497,
+    -11.1377,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://101855767679154"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/AzureChanges_Cube.136",
+   "class": "MeshPart",
+   "size": [
+    1.8774,
+    0.4334,
+    0.2312
+   ],
+   "cframe": [
+    0.0,
+    8.1997,
+    -8.5576,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    160,
+    160,
+    160
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://88121017931689"
+  },
+  {
+   "object": "Jaw",
+   "name": "Jaw",
+   "class": "MeshPart",
+   "size": [
+    1.4934,
+    1.1488,
+    2.6563
+   ],
+   "cframe": [
+    0.0,
+    6.4677,
+    -10.4536,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://122609781404183"
+  },
+  {
+   "object": "Jaw",
+   "name": "Meshes/AzureChanges_Cube.133",
+   "class": "MeshPart",
+   "size": [
+    1.4668,
+    0.7451,
+    1.0585
+   ],
+   "cframe": [
+    0.0,
+    6.6182,
+    -10.9521,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://130982368199503"
+  },
+  {
+   "object": "Jaw",
+   "name": "Meshes/AzureChanges_Cube.132",
+   "class": "MeshPart",
+   "size": [
+    1.2065,
+    0.5315,
+    1.822
+   ],
+   "cframe": [
+    0.0,
+    6.4808,
+    -10.6934,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    70,
+    43,
+    34
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://125639612808617"
+  },
+  {
+   "object": "RightArm",
+   "name": "RightArm",
+   "class": "MeshPart",
+   "size": [
+    0.8125,
+    3.0761,
+    1.5387
+   ],
+   "cframe": [
+    1.408,
+    4.9596,
+    -4.9717,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://80855410231411"
+  },
+  {
+   "object": "Meshes/AzureChanges_Cube.235",
+   "name": "Meshes/AzureChanges_Cube.235",
+   "class": "MeshPart",
+   "size": [
+    1.1696,
+    1.2012,
+    0.7311
+   ],
+   "cframe": [
+    1.3484,
+    3.0232,
+    -5.6606,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://121116585185571"
+  },
+  {
+   "object": "LeftArm",
+   "name": "LeftArm",
+   "class": "MeshPart",
+   "size": [
+    0.8125,
+    3.0761,
+    1.5387
+   ],
+   "cframe": [
+    -1.408,
+    4.9596,
+    -4.9717,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://94936058648912"
+  },
+  {
+   "object": "Meshes/AzureChanges_Cube.127",
+   "name": "Meshes/AzureChanges_Cube.127",
+   "class": "MeshPart",
+   "size": [
+    1.1696,
+    1.2012,
+    0.7311
+   ],
+   "cframe": [
+    -1.3484,
+    3.0232,
+    -5.6606,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://94044178424032"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    3.302,
+    4.0607,
+    7.7579
+   ],
+   "cframe": [
+    0.0,
+    5.724,
+    -1.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    117,
+    72,
+    57
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://128484791755092"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/AzureChanges_Cube.129",
+   "class": "MeshPart",
+   "size": [
+    0.5152,
+    4.2678,
+    10.1267
+   ],
+   "cframe": [
+    0.0,
+    7.7882,
+    -1.6641,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    112,
+    58,
+    44
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://116031766451120"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/AzureChanges_Cube.237",
+   "class": "MeshPart",
+   "size": [
+    3.302,
+    1.6614,
+    7.6204
+   ],
+   "cframe": [
+    0.0,
+    4.5243,
+    -1.8286,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    177,
+    109,
+    86
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109894240742829"
+  },
+  {
+   "object": "Meshes/AzureChanges_Cube.134",
+   "name": "Meshes/AzureChanges_Cube.134",
+   "class": "MeshPart",
+   "size": [
+    1.2049,
+    0.1847,
+    1.6359
+   ],
+   "cframe": [
+    0.0,
+    7.2399,
+    -11.0342,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    70,
+    43,
+    34
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://124988533818765"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

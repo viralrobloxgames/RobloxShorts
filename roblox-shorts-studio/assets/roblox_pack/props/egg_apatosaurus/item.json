@@ -1,0 +1,22 @@
+{
+ "item": "egg_apatosaurus",
+ "category": "props",
+ "sourceName": "Apatosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Apatosaurus",
+ "size": [
+  4.7364,
+  7.7505,
+  4.7363
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_apatosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 10,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

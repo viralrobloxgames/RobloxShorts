@@ -1,0 +1,26 @@
+{
+ "item": "animal_kitsune",
+ "category": "creatures",
+ "sourceName": "Kitsune",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Kitsune",
+ "size": [
+  8.8972,
+  5.3691,
+  5.7969
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_kitsune"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://91870677715192"
+ ],
+ "textureIds": [
+  "rbxassetid://114158721950230"
+ ]
+}

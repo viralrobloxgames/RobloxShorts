@@ -1,0 +1,312 @@
+# Materials for elderfrost_mammoth. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_elderfrost_mammoth_i025p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p001x.png
+
+newmtl tex_elderfrost_mammoth_i025p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p002x.png
+
+newmtl tex_elderfrost_mammoth_i025p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p003x.png
+
+newmtl tex_elderfrost_mammoth_i025p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p004x.png
+
+newmtl tex_elderfrost_mammoth_i025p005x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p005x.png
+
+newmtl tex_elderfrost_mammoth_i025p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p006x.png
+
+newmtl tex_elderfrost_mammoth_i025p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p007x.png
+
+newmtl tex_elderfrost_mammoth_i025p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p008x.png
+
+newmtl tex_elderfrost_mammoth_i025p009x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p009x.png
+
+newmtl tex_elderfrost_mammoth_i025p010x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p010x.png
+
+newmtl tex_elderfrost_mammoth_i025p011x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p011x.png
+
+newmtl tex_elderfrost_mammoth_i025p012x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p012x.png
+
+newmtl tex_elderfrost_mammoth_i025p013x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p013x.png
+
+newmtl tex_elderfrost_mammoth_i025p014x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p014x.png
+
+newmtl tex_elderfrost_mammoth_i025p015x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p015x.png
+
+newmtl tex_elderfrost_mammoth_i025p016x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p016x.png
+
+newmtl tex_elderfrost_mammoth_i025p017x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p017x.png
+
+newmtl tex_elderfrost_mammoth_i025p018x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p018x.png
+
+newmtl tex_elderfrost_mammoth_i025p019x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p019x.png
+
+newmtl tex_elderfrost_mammoth_i025p020x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p020x.png
+
+newmtl tex_elderfrost_mammoth_i025p021x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p021x.png
+
+newmtl tex_elderfrost_mammoth_i025p022x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p022x.png
+
+newmtl tex_elderfrost_mammoth_i025p023x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p023x.png
+
+newmtl tex_elderfrost_mammoth_i025p024x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p024x.png
+
+newmtl tex_elderfrost_mammoth_i025p025x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p025x.png
+
+newmtl tex_elderfrost_mammoth_i025p026x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p026x.png
+
+newmtl tex_elderfrost_mammoth_i025p027x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p027x.png
+
+newmtl tex_elderfrost_mammoth_i025p028x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p028x.png
+
+newmtl tex_elderfrost_mammoth_i025p029x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p029x.png
+
+newmtl tex_elderfrost_mammoth_i025p030x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p030x.png
+
+newmtl tex_elderfrost_mammoth_i025p031x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p031x.png
+
+newmtl tex_elderfrost_mammoth_i025p032x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p032x.png
+
+newmtl tex_elderfrost_mammoth_i025p033x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p033x.png
+
+newmtl tex_elderfrost_mammoth_i025p034x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p034x.png
+
+newmtl tex_elderfrost_mammoth_i025p035x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p035x.png
+
+newmtl tex_elderfrost_mammoth_i025p036x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p036x.png
+
+newmtl tex_elderfrost_mammoth_i025p037x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p037x.png
+
+newmtl tex_elderfrost_mammoth_i025p038x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p038x.png
+
+newmtl tex_elderfrost_mammoth_i025p039x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd elderfrost_mammoth_i025p039x.png

@@ -1,0 +1,27 @@
+{
+ "item": "animal_giraffee",
+ "category": "creatures",
+ "sourceName": "Giraffee",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Giraffee",
+ "size": [
+  5.7127,
+  13.0959,
+  4.3232
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_giraffee"
+ ],
+ "joints": 0,
+ "bones": 23,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://133129836911710"
+ ],
+ "textureIds": [
+  "rbxassetid://107344047225522",
+  "rbxassetid://112199754969782"
+ ]
+}

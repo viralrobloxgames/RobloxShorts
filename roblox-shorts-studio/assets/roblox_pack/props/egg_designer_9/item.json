@@ -1,0 +1,26 @@
+{
+ "item": "egg_designer_9",
+ "category": "props",
+ "sourceName": "Egg9",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Egg9",
+ "size": [
+  6.9337,
+  8.5024,
+  7.0371
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_designer_9"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 3,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://111785381194860",
+  "rbxassetid://127848876083784",
+  "rbxassetid://76658860727892"
+ ],
+ "textureIds": []
+}

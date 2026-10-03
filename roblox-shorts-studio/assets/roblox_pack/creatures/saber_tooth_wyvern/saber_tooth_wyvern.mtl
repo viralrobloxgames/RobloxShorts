@@ -1,0 +1,128 @@
+# Materials for saber_tooth_wyvern. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_saber_tooth_wyvern_i003p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p001x.png
+
+newmtl tex_saber_tooth_wyvern_i003p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p002x.png
+
+newmtl tex_saber_tooth_wyvern_i003p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p003x.png
+
+newmtl tex_saber_tooth_wyvern_i003p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p004x.png
+
+newmtl tex_saber_tooth_wyvern_i003p005x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p005x.png
+
+newmtl tex_saber_tooth_wyvern_i003p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p006x.png
+
+newmtl tex_saber_tooth_wyvern_i003p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p007x.png
+
+newmtl tex_saber_tooth_wyvern_i003p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p008x.png
+
+newmtl tex_saber_tooth_wyvern_i003p009x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p009x.png
+
+newmtl tex_saber_tooth_wyvern_i003p010x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p010x.png
+
+newmtl tex_saber_tooth_wyvern_i003p011x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p011x.png
+
+newmtl tex_saber_tooth_wyvern_i003p012x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p012x.png
+
+newmtl tex_saber_tooth_wyvern_i003p013x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p013x.png
+
+newmtl tex_saber_tooth_wyvern_i003p014x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p014x.png
+
+newmtl tex_saber_tooth_wyvern_i003p015x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p015x.png
+
+newmtl tex_saber_tooth_wyvern_i003p016x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd saber_tooth_wyvern_i003p016x.png

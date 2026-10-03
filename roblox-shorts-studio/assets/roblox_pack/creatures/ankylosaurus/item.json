@@ -1,0 +1,31 @@
+{
+ "item": "ankylosaurus",
+ "category": "creatures",
+ "sourceName": "Ankylosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Ankylosaurus",
+ "size": [
+  11.25,
+  10.6251,
+  28.125
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftUpperArm",
+  "RightUpperLeg",
+  "RightUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "Tail"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 59,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,51 @@
+# Materials for liopleurodon. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_74869d
+Kd 0.4549 0.5255 0.6157
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c7d4e4
+Kd 0.7804 0.8314 0.8941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a34b4b
+Kd 0.6392 0.2941 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8d96d
+Kd 0.9725 0.8510 0.4275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd liopleurodon_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd liopleurodon_head_decal2.png

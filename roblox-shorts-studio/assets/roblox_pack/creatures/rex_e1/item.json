@@ -1,0 +1,44 @@
+{
+ "item": "rex_e1",
+ "category": "creatures",
+ "sourceName": "Rex_E1",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Rex_E1",
+ "size": [
+  7.5024,
+  9.7527,
+  14.1445
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "arm_L",
+  "arm_R",
+  "leg_L",
+  "leg_R",
+  "tail01",
+  "torso",
+  "tail02",
+  "mouth",
+  "head",
+  "tail04",
+  "tail03"
+ ],
+ "joints": 11,
+ "bones": 0,
+ "parts": 94,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://104039950269337",
+  "rbxassetid://115370721788932",
+  "rbxassetid://123342887696620",
+  "rbxassetid://124494635187591",
+  "rbxassetid://131611389523998",
+  "rbxassetid://132120678696403",
+  "rbxassetid://138859301254654",
+  "rbxassetid://84668841569268",
+  "rbxassetid://88022798316738",
+  "rbxassetid://96548746264565",
+  "rbxassetid://98831098608848"
+ ],
+ "textureIds": []
+}

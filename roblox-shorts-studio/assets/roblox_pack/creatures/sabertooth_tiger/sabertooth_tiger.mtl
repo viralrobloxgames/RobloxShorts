@@ -1,0 +1,35 @@
+# Materials for sabertooth_tiger. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_a54703
+Kd 0.6471 0.2784 0.0118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffd29e
+Kd 1.0000 0.8235 0.6196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff6d05
+Kd 1.0000 0.4275 0.0196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffffff
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_aa5e3b
+Kd 0.6667 0.3686 0.2314
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

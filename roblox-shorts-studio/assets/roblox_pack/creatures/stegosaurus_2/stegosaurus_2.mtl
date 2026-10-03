@@ -1,0 +1,63 @@
+# Materials for stegosaurus_2. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_a34b4b
+Kd 0.6392 0.2941 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_dcbc81
+Kd 0.8627 0.7373 0.5059
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6c584b
+Kd 0.4235 0.3451 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_5a4c42
+Kd 0.3529 0.2980 0.2588
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_506d54
+Kd 0.3137 0.4275 0.3294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_425a45
+Kd 0.2588 0.3529 0.2706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

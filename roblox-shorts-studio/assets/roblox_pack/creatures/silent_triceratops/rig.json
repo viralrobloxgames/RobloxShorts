@@ -1,0 +1,1278 @@
+{
+ "name": "silent_triceratops",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Silent Triceratops",
+ "sourceName": "Silent Triceratops",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  7.8949,
+  8.7891,
+  14.7437
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "BackLeftLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "BackLeftLeg",
+   "pivot": [
+    -1.8404,
+    3.1173,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.8404,
+    1.8073,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "BackRightLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "BackRightLeg",
+   "pivot": [
+    1.8404,
+    3.1173,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.8404,
+    1.8073,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "ForwardLeftLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "ForwardLeftLeg",
+   "pivot": [
+    -2.0938,
+    3.3248,
+    -2.0347,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -2.0938,
+    1.8248,
+    -2.4546,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "ForwardRightLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "ForwardRightLeg",
+   "pivot": [
+    2.0938,
+    3.3248,
+    -2.0347,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    2.0938,
+    1.8248,
+    -2.4546,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Head",
+   "parent": "Torso",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    4.1128,
+    -3.3589,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.1128,
+    -5.1587,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    3.0984,
+    -0.1143,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    3.0984,
+    -0.1143,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "Meshes/batch_last_1_Silent_Triceratops_004",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    1.4545,
+    2.3262,
+    1.7026,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.4545,
+    2.3262,
+    1.7026,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "Torso",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    2.9965,
+    2.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.9965,
+    5.0498,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    0.0,
+    3.0984,
+    -0.1143,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    3.0984,
+    -0.1143,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "BackLeftLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "BackLeftLeg",
+   "c0": [
+    -1.8404,
+    0.0188,
+    1.8893,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.31,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.8404,
+    3.1173,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    3.0984,
+    -0.1143,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "ForwardRightLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "ForwardRightLeg",
+   "c0": [
+    2.0938,
+    0.2264,
+    -1.9202,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.5,
+    0.42,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    2.0938,
+    3.3248,
+    -2.0347,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "BackRightLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "BackRightLeg",
+   "c0": [
+    1.8404,
+    0.0188,
+    1.8893,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.31,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.8404,
+    3.1173,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "ForwardLeftLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "ForwardLeftLeg",
+   "c0": [
+    -2.0938,
+    0.2264,
+    -1.9202,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.5,
+    0.42,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -2.0938,
+    3.3248,
+    -2.0347,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Torso",
+   "part1": "Head",
+   "c0": [
+    0,
+    1.0144,
+    -3.2444,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    1.8,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.1128,
+    -3.3589,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Torso",
+   "part1": "Tail",
+   "c0": [
+    0,
+    -0.102,
+    2.874,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -2.29,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    2.9965,
+    2.7598,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "BackLeftLeg",
+    "side": -1
+   },
+   {
+    "body": "ForwardRightLeg",
+    "side": 1
+   },
+   {
+    "body": "BackRightLeg",
+    "side": 1
+   },
+   {
+    "body": "ForwardLeftLeg",
+    "side": -1
+   }
+  ],
+  "front": [],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head"
+  ],
+  "jaw": [],
+  "root": "Torso",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "ForwardRightLeg",
+   "name": "ForwardRightLeg",
+   "class": "MeshPart",
+   "size": [
+    1.3591,
+    3.6496,
+    2.3277
+   ],
+   "cframe": [
+    2.0938,
+    1.8248,
+    -2.4546,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://116789773049337"
+  },
+  {
+   "object": "BackRightLeg",
+   "name": "BackRightLeg",
+   "class": "MeshPart",
+   "size": [
+    1.2616,
+    3.6144,
+    2.0566
+   ],
+   "cframe": [
+    1.8404,
+    1.8073,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://132387769912158"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_005",
+   "class": "MeshPart",
+   "size": [
+    4.638,
+    2.7249,
+    5.013
+   ],
+   "cframe": [
+    0.0,
+    3.8879,
+    0.3374,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    162,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://122312862094931"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_016",
+   "class": "MeshPart",
+   "size": [
+    2.219,
+    1.9412,
+    2.9369
+   ],
+   "cframe": [
+    0.0,
+    2.8481,
+    4.8672,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    162,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://110537263921422"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_002",
+   "class": "MeshPart",
+   "size": [
+    7.103,
+    4.9878,
+    2.6999
+   ],
+   "cframe": [
+    0.0,
+    5.3422,
+    -2.9883,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    39,
+    44,
+    52
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://138706063560861"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_019",
+   "class": "MeshPart",
+   "size": [
+    2.9127,
+    0.418,
+    0.7014
+   ],
+   "cframe": [
+    0.0,
+    4.7897,
+    -4.7671,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    172,
+    115,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://105471174258823"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_014",
+   "class": "MeshPart",
+   "size": [
+    0.8952,
+    0.8413,
+    0.8551
+   ],
+   "cframe": [
+    0.0,
+    4.9421,
+    -6.8555,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://126063496116862"
+  },
+  {
+   "object": "ForwardLeftLeg",
+   "name": "ForwardLeftLeg",
+   "class": "MeshPart",
+   "size": [
+    1.3591,
+    3.6496,
+    2.3277
+   ],
+   "cframe": [
+    -2.0938,
+    1.8248,
+    -2.4546,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://84115263642622"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_009",
+   "class": "MeshPart",
+   "size": [
+    0.8952,
+    1.4174,
+    3.4857
+   ],
+   "cframe": [
+    0.0,
+    3.4791,
+    5.0444,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://136863164444629"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_015",
+   "class": "MeshPart",
+   "size": [
+    2.6575,
+    1.9346,
+    1.004
+   ],
+   "cframe": [
+    0.0236,
+    6.1191,
+    -5.3145,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://83286944838241"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_011",
+   "class": "MeshPart",
+   "size": [
+    5.8329,
+    3.3819,
+    1.0705
+   ],
+   "cframe": [
+    0.0,
+    5.6731,
+    -3.2856,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    162,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://78761462009741"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    4.5749,
+    4.5797,
+    6.511
+   ],
+   "cframe": [
+    0.0,
+    3.0984,
+    -0.1143,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://119878060317962"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_010",
+   "class": "MeshPart",
+   "size": [
+    5.4957,
+    2.7675,
+    5.1715
+   ],
+   "cframe": [
+    0.0,
+    4.5505,
+    0.1851,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://131459149845355"
+  },
+  {
+   "object": "Meshes/batch_last_1_Silent_Triceratops_004",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_004",
+   "class": "MeshPart",
+   "size": [
+    0.001,
+    1.4008,
+    1.1908
+   ],
+   "cframe": [
+    1.4545,
+    2.3262,
+    1.7026,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://82816924654277"
+  },
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    2.5143,
+    3.111,
+    4.4266
+   ],
+   "cframe": [
+    0.0,
+    4.1128,
+    -5.1587,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://82328441919372"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_020",
+   "class": "MeshPart",
+   "size": [
+    2.7466,
+    0.6913,
+    1.1602
+   ],
+   "cframe": [
+    0.0,
+    4.7483,
+    -4.7671,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    0,
+    0,
+    0
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://92282113044862"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/batch_last_1_Silent_Triceratops_006",
+   "class": "MeshPart",
+   "size": [
+    7.8949,
+    5.605,
+    1.6425
+   ],
+   "cframe": [
+    0.0,
+    5.9866,
+    -2.6558,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://115708308161356"
+  },
+  {
+   "object": "BackLeftLeg",
+   "name": "BackLeftLeg",
+   "class": "MeshPart",
+   "size": [
+    1.2616,
+    3.6144,
+    2.0566
+   ],
+   "cframe": [
+    -1.8404,
+    1.8073,
+    1.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109347101501679"
+  },
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    2.5792,
+    2.9068,
+    4.6436
+   ],
+   "cframe": [
+    0.0,
+    2.9965,
+    5.0498,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    49,
+    56,
+    66
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://84621124360148"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

@@ -1,0 +1,22 @@
+{
+ "item": "egg_machine_dinosaur",
+ "category": "props",
+ "sourceName": "MachineDinosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.MachineDinosaur",
+ "size": [
+  6.4587,
+  10.334,
+  10.9795
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_machine_dinosaur"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 19,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,26 @@
+{
+ "item": "animal_bull",
+ "category": "creatures",
+ "sourceName": "Bull",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Bull",
+ "size": [
+  8.277,
+  5.7466,
+  2.9922
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_bull"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100281513727526"
+ ],
+ "textureIds": [
+  "rbxassetid://119452042146187"
+ ]
+}

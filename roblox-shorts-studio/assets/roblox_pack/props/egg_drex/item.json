@@ -1,0 +1,22 @@
+{
+ "item": "egg_drex",
+ "category": "props",
+ "sourceName": "DRex",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.DRex",
+ "size": [
+  4.3058,
+  7.1045,
+  4.3057
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_drex"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 19,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

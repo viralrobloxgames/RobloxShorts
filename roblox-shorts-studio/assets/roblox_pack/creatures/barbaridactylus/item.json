@@ -1,0 +1,31 @@
+{
+ "item": "barbaridactylus",
+ "category": "creatures",
+ "sourceName": "Barbaridactylus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Barbaridactylus",
+ "size": [
+  17.1,
+  12.9363,
+  13.6943
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LowerTorso",
+  "Tail",
+  "LeftUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperArm",
+  "UpperTorso",
+  "RightUpperLeg",
+  "RightUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 55,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

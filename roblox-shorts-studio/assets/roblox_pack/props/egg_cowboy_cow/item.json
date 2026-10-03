@@ -1,0 +1,35 @@
+{
+ "item": "egg_cowboy_cow",
+ "category": "props",
+ "sourceName": "Eggs/CowboyCowEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/CowboyCowEgg",
+ "size": [
+  9.7096,
+  8.0059,
+  8.457
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E3",
+  "E1U",
+  "E2U",
+  "E1D",
+  "E2D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 20,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://100438636890191",
+  "rbxassetid://107699226154841",
+  "rbxassetid://108348016617474",
+  "rbxassetid://119479243944843",
+  "rbxassetid://138050235104072",
+  "rbxassetid://76061670639982",
+  "rbxassetid://86695680600955",
+  "rbxassetid://93952056497652"
+ ],
+ "textureIds": []
+}

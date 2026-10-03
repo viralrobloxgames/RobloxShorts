@@ -1,0 +1,1826 @@
+{
+ "name": "colossal_mammoth",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Colossal Mammoth",
+ "sourceName": "Colossal Mammoth",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  13.9286,
+  17.5922,
+  31.6294
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": [
+  0.0,
+  0,
+  8.386
+ ],
+ "bodies": [
+  {
+   "name": "Head",
+   "parent": "Torso",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    10.8373,
+    -5.04,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    7.5373,
+    -8.3398,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    9.6237,
+    2.9639,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    9.6237,
+    2.9639,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "LeftArm",
+   "parent": "Torso",
+   "joint": "LeftArm",
+   "pivot": [
+    -4.8806,
+    8.9469,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -4.8806,
+    8.247,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftFoot",
+   "parent": "LeftLeg",
+   "joint": "LeftFoot",
+   "pivot": [
+    -4.8806,
+    3.1966,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -4.8806,
+    1.7965,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftHand",
+   "parent": "LeftArm",
+   "joint": "LeftHand",
+   "pivot": [
+    -4.8806,
+    5.0269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -4.8806,
+    2.6269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLeg",
+   "parent": "Torso",
+   "joint": "LeftLeg",
+   "pivot": [
+    -4.8806,
+    8.4951,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -4.8806,
+    6.8952,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightArm",
+   "parent": "Torso",
+   "joint": "RightArm",
+   "pivot": [
+    4.8806,
+    8.9469,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    4.8806,
+    8.247,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightFoot",
+   "parent": "RightLeg",
+   "joint": "RightFoot",
+   "pivot": [
+    4.8806,
+    3.1966,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    4.8806,
+    1.7965,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightHand",
+   "parent": "RightArm",
+   "joint": "RightHand",
+   "pivot": [
+    4.8806,
+    5.0269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    4.8806,
+    2.6269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLeg",
+   "parent": "Torso",
+   "joint": "RightLeg",
+   "pivot": [
+    4.8806,
+    8.4951,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    4.8806,
+    6.8952,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "Torso",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    11.0548,
+    10.5386,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    7.1548,
+    13.1387,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    0.0,
+    9.6237,
+    2.9639,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    9.6237,
+    2.9639,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "RightFoot",
+   "part0": "RightLeg",
+   "part1": "RightFoot",
+   "c0": [
+    0,
+    -3.6986,
+    -0.655,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.4,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    4.8806,
+    3.1966,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftArm",
+   "part0": "Torso",
+   "part1": "LeftArm",
+   "c0": [
+    -4.8806,
+    -0.6768,
+    -3.6479,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.7,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -4.8806,
+    8.9469,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Torso",
+   "part1": "Tail",
+   "c0": [
+    0,
+    1.4311,
+    7.5748,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    3.9,
+    -2.6,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    11.0548,
+    10.5386,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightArm",
+   "part0": "Torso",
+   "part1": "RightArm",
+   "c0": [
+    4.8806,
+    -0.6768,
+    -3.6479,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.7,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    4.8806,
+    8.9469,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightLeg",
+   "part0": "Torso",
+   "part1": "RightLeg",
+   "c0": [
+    4.8806,
+    -1.1286,
+    6.0774,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    4.8806,
+    8.4951,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLeg",
+   "part0": "Torso",
+   "part1": "LeftLeg",
+   "c0": [
+    -4.8806,
+    -1.1286,
+    6.0774,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -4.8806,
+    8.4951,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Torso",
+   "part1": "Head",
+   "c0": [
+    0,
+    1.2135,
+    -8.0037,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    3.3,
+    3.3,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    10.8373,
+    -5.04,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftHand",
+   "part0": "LeftArm",
+   "part1": "LeftHand",
+   "c0": [
+    0,
+    -3.22,
+    -1.0776,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    2.4,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -4.8806,
+    5.0269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    9.6237,
+    2.9639,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightHand",
+   "part0": "RightArm",
+   "part1": "RightHand",
+   "c0": [
+    0,
+    -3.22,
+    -1.0776,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    2.4,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    4.8806,
+    5.0269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftFoot",
+   "part0": "LeftLeg",
+   "part1": "LeftFoot",
+   "c0": [
+    0,
+    -3.6986,
+    -0.655,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.4,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -4.8806,
+    3.1966,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "RightLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftLeg",
+    "side": -1
+   }
+  ],
+  "front": [
+   {
+    "body": "LeftArm",
+    "side": -1
+   },
+   {
+    "body": "RightArm",
+    "side": 1
+   }
+  ],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head"
+  ],
+  "jaw": [],
+  "root": "Torso",
+  "downstream": [
+   "RightFoot",
+   "LeftHand",
+   "RightHand",
+   "LeftFoot"
+  ]
+ },
+ "parts": [
+  {
+   "object": "RightFoot",
+   "name": "RightFoot",
+   "class": "MeshPart",
+   "size": [
+    3.2007,
+    3.3535,
+    4.1974
+   ],
+   "cframe": [
+    4.8806,
+    1.7965,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    72,
+    149,
+    217
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107227775030436"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Meshes/mamoth_2_colosal_mammoth_011.002",
+   "class": "MeshPart",
+   "size": [
+    2.7854,
+    0.667,
+    1.3009
+   ],
+   "cframe": [
+    4.8884,
+    0.3335,
+    7.9453,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    56,
+    72,
+    108
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://127191003018295"
+  },
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    7.0163,
+    13.5293,
+    8.3375
+   ],
+   "cframe": [
+    0.0,
+    7.5373,
+    -8.3398,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    146,
+    226,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://99707511554898"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/mamoth_2_colosal_mammoth_005",
+   "class": "MeshPart",
+   "size": [
+    8.025,
+    6.3644,
+    7.6399
+   ],
+   "cframe": [
+    0.0,
+    6.8031,
+    -10.9614,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://104345480245928"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/mamoth_2_colosal_mammoth_009",
+   "class": "MeshPart",
+   "size": [
+    4.7908,
+    0.9272,
+    1.1195
+   ],
+   "cframe": [
+    0.0,
+    12.3631,
+    -7.9463,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    0,
+    0,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://88635906710050"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/mamoth_2_colosal_mammoth_005.001",
+   "class": "MeshPart",
+   "size": [
+    8.025,
+    5.3099,
+    2.0892
+   ],
+   "cframe": [
+    0.0,
+    7.3963,
+    -14.77,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    119,
+    146,
+    158
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://74446660459776"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/mamoth_2_colosal_mammoth_008.001",
+   "class": "MeshPart",
+   "size": [
+    1.1021,
+    13.0982,
+    5.3431
+   ],
+   "cframe": [
+    0.0,
+    7.3217,
+    -9.8374,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    111,
+    224,
+    255
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://116327510052812"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/mamoth_2_colosal_mammoth_008.002",
+   "class": "MeshPart",
+   "size": [
+    6.0495,
+    2.4832,
+    2.6987
+   ],
+   "cframe": [
+    0.0,
+    12.8113,
+    -7.5205,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    31,
+    59,
+    77
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://71745339623386"
+  },
+  {
+   "object": "RightLeg",
+   "name": "RightLeg",
+   "class": "MeshPart",
+   "size": [
+    2.5181,
+    7.4167,
+    5.4365
+   ],
+   "cframe": [
+    4.8806,
+    6.8952,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    57,
+    89,
+    100
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://114886556246159"
+  },
+  {
+   "object": "RightLeg",
+   "name": "Meshes/mamoth_2_colosal_mammoth_011.003",
+   "class": "MeshPart",
+   "size": [
+    0.001,
+    4.7767,
+    3.0762
+   ],
+   "cframe": [
+    5.829,
+    6.902,
+    8.7861,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    94,
+    179,
+    232
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://123993433184227"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    9.9215,
+    12.2341,
+    16.0164
+   ],
+   "cframe": [
+    0.0,
+    9.6237,
+    2.9639,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    84,
+    157,
+    222
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://124592971957006"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/mamoth_2_colosal_mammoth_006.002",
+   "class": "MeshPart",
+   "size": [
+    9.9215,
+    10.231,
+    7.4863
+   ],
+   "cframe": [
+    0.0,
+    9.411,
+    5.6504,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    94,
+    179,
+    232
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://104742006567271"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/mamoth_2_colosal_mammoth_002",
+   "class": "MeshPart",
+   "size": [
+    13.9286,
+    8.3187,
+    9.2124
+   ],
+   "cframe": [
+    0.0,
+    13.4329,
+    -1.4395,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    119,
+    146,
+    158
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://88976966840586"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/mamoth_2_colosal_mammoth_006",
+   "class": "MeshPart",
+   "size": [
+    8.657,
+    10.1504,
+    18.6903
+   ],
+   "cframe": [
+    0.0,
+    7.9048,
+    3.1978,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    146,
+    226,
+    255
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://124310456116805"
+  },
+  {
+   "object": "LeftHand",
+   "name": "LeftHand",
+   "class": "MeshPart",
+   "size": [
+    3.2007,
+    5.1647,
+    4.6434
+   ],
+   "cframe": [
+    -4.8806,
+    2.6269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    72,
+    149,
+    217
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://78550202839730"
+  },
+  {
+   "object": "LeftHand",
+   "name": "Meshes/mamoth_2_colosal_mammoth_004.002",
+   "class": "MeshPart",
+   "size": [
+    2.7854,
+    0.667,
+    1.3009
+   ],
+   "cframe": [
+    -4.8884,
+    0.3335,
+    -4.2017,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    56,
+    72,
+    108
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://123710953269595"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "LeftFoot",
+   "class": "MeshPart",
+   "size": [
+    3.2007,
+    3.3535,
+    4.1974
+   ],
+   "cframe": [
+    -4.8806,
+    1.7965,
+    8.3862,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    72,
+    149,
+    217
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://125224175103862"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Meshes/mamoth_2_colosal_mammoth_003.002",
+   "class": "MeshPart",
+   "size": [
+    2.7854,
+    0.667,
+    1.3009
+   ],
+   "cframe": [
+    -4.8884,
+    0.3335,
+    7.9453,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    56,
+    72,
+    108
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107838080784489"
+  },
+  {
+   "object": "RightHand",
+   "name": "RightHand",
+   "class": "MeshPart",
+   "size": [
+    3.2007,
+    5.1647,
+    4.6434
+   ],
+   "cframe": [
+    4.8806,
+    2.6269,
+    -1.7617,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    72,
+    149,
+    217
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://90202657079886"
+  },
+  {
+   "object": "RightHand",
+   "name": "Meshes/mamoth_2_colosal_mammoth_001.002",
+   "class": "MeshPart",
+   "size": [
+    2.7854,
+    0.667,
+    1.3009
+   ],
+   "cframe": [
+    4.8884,
+    0.3335,
+    -4.2017,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    56,
+    72,
+    108
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://75257556613085"
+  },
+  {
+   "object": "LeftArm",
+   "name": "LeftArm",
+   "class": "MeshPart",
+   "size": [
+    2.5181,
+    6.2441,
+    5.0208
+   ],
+   "cframe": [
+    -4.8806,
+    8.247,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    57,
+    89,
+    100
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://81343484542026"
+  },
+  {
+   "object": "LeftArm",
+   "name": "Meshes/mamoth_2_colosal_mammoth_004.003",
+   "class": "MeshPart",
+   "size": [
+    0.001,
+    3.7284,
+    2.5875
+   ],
+   "cframe": [
+    -5.829,
+    8.1464,
+    -0.3833,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    94,
+    179,
+    232
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://102929315396521"
+  },
+  {
+   "object": "RightArm",
+   "name": "RightArm",
+   "class": "MeshPart",
+   "size": [
+    2.5181,
+    6.2441,
+    5.0208
+   ],
+   "cframe": [
+    4.8806,
+    8.247,
+    -0.6841,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    57,
+    89,
+    100
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://100310614968666"
+  },
+  {
+   "object": "RightArm",
+   "name": "Meshes/mamoth_2_colosal_mammoth_001.003",
+   "class": "MeshPart",
+   "size": [
+    0.001,
+    3.7284,
+    2.5875
+   ],
+   "cframe": [
+    5.829,
+    8.1464,
+    -0.3833,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    94,
+    179,
+    232
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://121919890513246"
+  },
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    1.118,
+    8.525,
+    5.3525
+   ],
+   "cframe": [
+    0.0,
+    7.1548,
+    13.1387,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    57,
+    89,
+    100
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://80074288023440"
+  },
+  {
+   "object": "LeftLeg",
+   "name": "LeftLeg",
+   "class": "MeshPart",
+   "size": [
+    2.5181,
+    7.4167,
+    5.4365
+   ],
+   "cframe": [
+    -4.8806,
+    6.8952,
+    9.041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    57,
+    89,
+    100
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://101567020183677"
+  },
+  {
+   "object": "LeftLeg",
+   "name": "Meshes/mamoth_2_colosal_mammoth_003.003",
+   "class": "MeshPart",
+   "size": [
+    0.001,
+    4.7767,
+    3.0762
+   ],
+   "cframe": [
+    -5.829,
+    6.902,
+    8.7861,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    94,
+    179,
+    232
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://115694388117479"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

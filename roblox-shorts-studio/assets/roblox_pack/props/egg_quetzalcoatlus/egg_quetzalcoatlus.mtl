@@ -1,0 +1,14 @@
+# Materials for egg_quetzalcoatlus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffcc99
+Kd 1.0000 0.8000 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff9494
+Kd 1.0000 0.5804 0.5804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

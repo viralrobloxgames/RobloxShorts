@@ -1,0 +1,492 @@
+{
+ "name": "animal_owl",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Owl",
+ "sourceName": "Owl",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  1.6242,
+  2.7681,
+  1.7285
+ ],
+ "root": "A_36",
+ "feetCentre": null,
+ "bodies": [],
+ "joints": [],
+ "bones": [
+  {
+   "name": "joint1",
+   "parent": "A_36",
+   "parentIsBone": false,
+   "cframe": [
+    0,
+    -0.4491,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.0,
+    0.9349,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint5",
+   "parent": "joint1",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0.3004,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.0,
+    1.2354,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint6",
+   "parent": "joint5",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0.2578,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.0,
+    1.493,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint2",
+   "parent": "joint1",
+   "parentIsBone": true,
+   "cframe": [
+    -0.1964,
+    -0.1469,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.0,
+    0.788,
+    0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint3",
+   "parent": "joint2",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    -0.351,
+    -0.0664,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -0.0664,
+    0.437,
+    0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint4",
+   "parent": "joint3",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    -0.2912,
+    0.0664,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.0,
+    0.1459,
+    0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint10",
+   "parent": "joint4",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    -0.1,
+    -0.1343,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -0.1343,
+    0.0459,
+    0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint11",
+   "parent": "joint10",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    -0.1541,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -0.2885,
+    0.0459,
+    0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint24",
+   "parent": "joint1",
+   "parentIsBone": true,
+   "cframe": [
+    0.1964,
+    -0.1469,
+    0,
+    -0.9905,
+    0,
+    -0.1377,
+    0.0256,
+    -0.9826,
+    -0.1841,
+    -0.1353,
+    -0.1858,
+    0.9732
+   ],
+   "world": [
+    0.0,
+    0.788,
+    -0.1963,
+    -0.1353,
+    -0.1858,
+    0.9732,
+    0.0256,
+    -0.9826,
+    -0.1841,
+    0.9905,
+    0.0,
+    0.1377
+   ]
+  },
+  {
+   "name": "joint25",
+   "parent": "joint24",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0.3572,
+    0,
+    -0.9905,
+    0.0256,
+    -0.1353,
+    0,
+    -0.9826,
+    -0.1858,
+    -0.1377,
+    -0.1841,
+    0.9732
+   ],
+   "world": [
+    -0.0664,
+    0.437,
+    -0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint26",
+   "parent": "joint25",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    -0.2912,
+    0.0664,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    0.0,
+    0.1459,
+    -0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint27",
+   "parent": "joint26",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    -0.1,
+    -0.1343,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -0.1343,
+    0.0459,
+    -0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "joint28",
+   "parent": "joint27",
+   "parentIsBone": true,
+   "cframe": [
+    0,
+    0,
+    -0.1541,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "world": [
+    -0.2885,
+    0.0459,
+    -0.1963,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [],
+  "front": [],
+  "tail": [],
+  "head": [],
+  "jaw": [],
+  "root": null,
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "animal_owl",
+   "name": "A_36",
+   "class": "MeshPart",
+   "size": [
+    1.7284,
+    2.7681,
+    1.6242
+   ],
+   "cframe": [
+    0.0,
+    1.384,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    163,
+    162,
+    165
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://75282998514940"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

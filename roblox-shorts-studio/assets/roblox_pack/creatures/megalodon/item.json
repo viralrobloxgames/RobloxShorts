@@ -1,0 +1,43 @@
+{
+ "item": "megalodon",
+ "category": "creatures",
+ "sourceName": "Megalodon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Megalodon",
+ "size": [
+  14.6951,
+  10.036,
+  25.3813
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Jaw",
+  "TailTip",
+  "RightArm",
+  "Torso",
+  "Tail",
+  "LeftArm",
+  "Head"
+ ],
+ "joints": 7,
+ "bones": 0,
+ "parts": 14,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://102230205412845",
+  "rbxassetid://102391171992081",
+  "rbxassetid://107911664191144",
+  "rbxassetid://108522209948071",
+  "rbxassetid://111341625150830",
+  "rbxassetid://115173864146057",
+  "rbxassetid://119484008521703",
+  "rbxassetid://122506666419486",
+  "rbxassetid://126966374470856",
+  "rbxassetid://127081071844996",
+  "rbxassetid://131733350141820",
+  "rbxassetid://87376368402580",
+  "rbxassetid://93102871961843",
+  "rbxassetid://99717574939750"
+ ],
+ "textureIds": []
+}

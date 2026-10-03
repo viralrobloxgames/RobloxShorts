@@ -1,0 +1,26 @@
+{
+ "item": "animal_t_rex",
+ "category": "creatures",
+ "sourceName": "T-Rex",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.T-Rex",
+ "size": [
+  20.5025,
+  11.2566,
+  7.2266
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_t_rex"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://99116452527855"
+ ],
+ "textureIds": [
+  "rbxassetid://95989624898218"
+ ]
+}

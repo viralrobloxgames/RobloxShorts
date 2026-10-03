@@ -1,0 +1,22 @@
+{
+ "item": "egg_velociraptor",
+ "category": "props",
+ "sourceName": "Velociraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Velociraptor",
+ "size": [
+  3.4877,
+  4.6501,
+  3.4873
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_velociraptor"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

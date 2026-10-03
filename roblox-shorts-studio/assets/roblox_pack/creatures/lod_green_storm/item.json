@@ -1,0 +1,27 @@
+{
+ "item": "lod_green_storm",
+ "category": "creatures",
+ "sourceName": "PetLOD/GreenStorm",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/GreenStorm",
+ "size": [
+  24.4655,
+  17.9092,
+  11.6016
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_green_storm"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://133998815831172",
+  "rbxassetid://71403602362132",
+  "rbxassetid://74041514377552",
+  "rbxassetid://98925447457926"
+ ],
+ "textureIds": []
+}

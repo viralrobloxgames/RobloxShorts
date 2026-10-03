@@ -1,0 +1,43 @@
+# Materials for silent_triceratops. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_313842
+Kd 0.1922 0.2196 0.2588
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffa200
+Kd 1.0000 0.6353 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_272c34
+Kd 0.1529 0.1725 0.2039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ac7300_neon
+Kd 0.6745 0.4510 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6745 0.4510 0.0000
+d 1.0000
+illum 2
+
+newmtl c_ffffff
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

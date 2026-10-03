@@ -1,0 +1,56 @@
+# Materials for pterodactyl. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_2f5331
+Kd 0.1843 0.3255 0.1922
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_3e3e3e
+Kd 0.2431 0.2431 0.2431
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_286f32
+Kd 0.1569 0.4353 0.1961
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_264428
+Kd 0.1490 0.2667 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_d7c59a
+Kd 0.8431 0.7725 0.6039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_750000
+Kd 0.4588 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff5959
+Kd 1.0000 0.3490 0.3490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

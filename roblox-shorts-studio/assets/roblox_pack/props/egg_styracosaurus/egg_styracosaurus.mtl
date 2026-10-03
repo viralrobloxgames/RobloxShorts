@@ -1,0 +1,14 @@
+# Materials for egg_styracosaurus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffcc99
+Kd 1.0000 0.8000 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_645f9f
+Kd 0.3922 0.3725 0.6235
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

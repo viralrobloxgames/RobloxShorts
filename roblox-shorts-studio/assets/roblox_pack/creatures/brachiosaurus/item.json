@@ -1,0 +1,31 @@
+{
+ "item": "brachiosaurus",
+ "category": "creatures",
+ "sourceName": "Brachiosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Brachiosaurus",
+ "size": [
+  10.5,
+  33.25,
+  29.75
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "Tail",
+  "UpperTorso",
+  "LeftUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2"
+ ],
+ "joints": 8,
+ "bones": 0,
+ "parts": 58,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

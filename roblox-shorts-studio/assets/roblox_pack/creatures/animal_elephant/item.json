@@ -1,0 +1,26 @@
+{
+ "item": "animal_elephant",
+ "category": "creatures",
+ "sourceName": "Elephant",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Elephant",
+ "size": [
+  11.6341,
+  7.0479,
+  8.0938
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_elephant"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://106589579035595"
+ ],
+ "textureIds": [
+  "rbxassetid://103147593986317"
+ ]
+}

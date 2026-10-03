@@ -1,0 +1,27 @@
+{
+ "item": "lod_spinosaurus",
+ "category": "creatures",
+ "sourceName": "PetLOD/Spinosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Spinosaurus",
+ "size": [
+  27.786,
+  10.4121,
+  6.5566
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_spinosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://122498075621887",
+  "rbxassetid://133800101976099",
+  "rbxassetid://87108520177429",
+  "rbxassetid://98280320875678"
+ ],
+ "textureIds": []
+}

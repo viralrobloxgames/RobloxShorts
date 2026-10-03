@@ -1,0 +1,22 @@
+{
+ "item": "egg_therizinosaurus",
+ "category": "props",
+ "sourceName": "Therizinosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Therizinosaurus",
+ "size": [
+  6.6477,
+  8.7627,
+  6.6475
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_therizinosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 6,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,26 @@
+{
+ "item": "animal_velicoraptor",
+ "category": "creatures",
+ "sourceName": "Velicoraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Velicoraptor",
+ "size": [
+  24.3899,
+  16.8889,
+  6.6553
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_velicoraptor"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://75338003755844"
+ ],
+ "textureIds": [
+  "rbxassetid://113839708668626"
+ ]
+}

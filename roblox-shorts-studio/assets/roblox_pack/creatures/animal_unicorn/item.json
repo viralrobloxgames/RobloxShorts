@@ -1,0 +1,26 @@
+{
+ "item": "animal_unicorn",
+ "category": "creatures",
+ "sourceName": "Unicorn",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Unicorn",
+ "size": [
+  6.8041,
+  5.9016,
+  2.2549
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_unicorn"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://114102285933511"
+ ],
+ "textureIds": [
+  "rbxassetid://117079477640808"
+ ]
+}

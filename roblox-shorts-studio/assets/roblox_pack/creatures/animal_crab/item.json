@@ -1,0 +1,26 @@
+{
+ "item": "animal_crab",
+ "category": "creatures",
+ "sourceName": "Crab",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Crab",
+ "size": [
+  2.5332,
+  1.3562,
+  2.9268
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_crab"
+ ],
+ "joints": 0,
+ "bones": 15,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://125452588928575"
+ ],
+ "textureIds": [
+  "rbxassetid://136918005603940"
+ ]
+}

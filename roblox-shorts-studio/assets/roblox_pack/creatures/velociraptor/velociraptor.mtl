@@ -1,0 +1,65 @@
+# Materials for velociraptor. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_fef3bb
+Kd 0.9961 0.9529 0.7333
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_527cae
+Kd 0.3216 0.4863 0.6824
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_002060
+Kd 0.0000 0.1255 0.3765
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_335882
+Kd 0.2000 0.3451 0.5098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6e99ca
+Kd 0.4314 0.6000 0.7922
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd velociraptor_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd velociraptor_head_decal2.png

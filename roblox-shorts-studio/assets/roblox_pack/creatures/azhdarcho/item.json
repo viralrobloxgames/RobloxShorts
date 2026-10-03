@@ -1,0 +1,31 @@
+{
+ "item": "azhdarcho",
+ "category": "creatures",
+ "sourceName": "Azhdarcho",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Azhdarcho",
+ "size": [
+  25.5198,
+  9.3501,
+  20.4004
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Tail",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LowerTorso",
+  "RightUpperLeg",
+  "LeftUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 56,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

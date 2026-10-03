@@ -1,0 +1,35 @@
+# Materials for lod_pastel_dragon. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_e58b9e
+Kd 0.8980 0.5451 0.6196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_fafe83
+Kd 0.9804 0.9961 0.5137
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_d7ffbd
+Kd 0.8431 1.0000 0.7412
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

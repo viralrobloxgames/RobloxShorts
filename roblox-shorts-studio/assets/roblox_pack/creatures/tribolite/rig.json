@@ -1,0 +1,1988 @@
+{
+ "name": "tribolite",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Tribolite",
+ "sourceName": "Tribolite",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  5.4052,
+  1.7314,
+  3.353
+ ],
+ "root": "Meshes/set_4_Tribolite_037",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "Meshes/set_4_Tribolite_001",
+   "parent": "Meshes/set_4_Tribolite_037",
+   "joint": "Meshes/set_4_Tribolite_001",
+   "pivot": [
+    -1.2317,
+    0.5865,
+    -0.4419,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    -1.9317,
+    0.9465,
+    -0.4419,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_004",
+   "parent": "Torso",
+   "joint": "Meshes/set_4_Tribolite_004",
+   "pivot": [
+    0.7164,
+    0.4363,
+    0.7246,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    2.2464,
+    0.4363,
+    0.7246,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_005",
+   "parent": "Torso",
+   "joint": "Meshes/set_4_Tribolite_005",
+   "pivot": [
+    0.7371,
+    0.4363,
+    -0.8379,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.7371,
+    0.4363,
+    -0.8379,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_020",
+   "parent": "Meshes/set_4_Tribolite_037",
+   "joint": "Meshes/set_4_Tribolite_020",
+   "pivot": [
+    -1.3008,
+    0.3102,
+    -0.4277,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    -1.3008,
+    0.3102,
+    -0.4277,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_021",
+   "parent": "Meshes/set_4_Tribolite_037",
+   "joint": "Meshes/set_4_Tribolite_021",
+   "pivot": [
+    -1.3008,
+    0.3102,
+    0.4282,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    -1.3008,
+    0.3102,
+    0.4282,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_028",
+   "parent": "Meshes/set_4_Tribolite_037",
+   "joint": "Meshes/set_4_Tribolite_028",
+   "pivot": [
+    -1.2317,
+    0.5865,
+    0.4424,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    -1.9317,
+    0.9465,
+    0.4424,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_037",
+   "parent": "Torso",
+   "joint": "Head",
+   "pivot": [
+    -0.8037,
+    0.5919,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    -0.9608,
+    0.4902,
+    -0.5459,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Root",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.3691,
+    -0.0895,
+    0.0254,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.3691,
+    -0.0895,
+    0.0254,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "Torso",
+   "parent": "Root",
+   "joint": "Torso",
+   "pivot": [
+    0.4781,
+    0.9395,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.4781,
+    0.9395,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "Meshes/set_4_Tribolite_020",
+   "part0": "Meshes/set_4_Tribolite_037",
+   "part1": "Meshes/set_4_Tribolite_020",
+   "c0": [
+    -0.1182,
+    -0.1801,
+    -0.34,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.3008,
+    0.3102,
+    -0.4277,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_021",
+   "part0": "Meshes/set_4_Tribolite_037",
+   "part1": "Meshes/set_4_Tribolite_021",
+   "c0": [
+    0.1182,
+    -0.1801,
+    -0.34,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.3008,
+    0.3102,
+    0.4282,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_005",
+   "part0": "Torso",
+   "part1": "Meshes/set_4_Tribolite_005",
+   "c0": [
+    0.8381,
+    -0.5031,
+    0.259,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.7371,
+    0.4363,
+    -0.8379,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_004",
+   "part0": "Torso",
+   "part1": "Meshes/set_4_Tribolite_004",
+   "c0": [
+    -0.7244,
+    -0.5031,
+    0.2383,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -1.53,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.7164,
+    0.4363,
+    0.7246,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Torso",
+   "part1": "Meshes/set_4_Tribolite_037",
+   "c0": [
+    0,
+    -0.3475,
+    -1.2818,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.33,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.8037,
+    0.5919,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Torso",
+   "part0": "Root",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.4781,
+    0.9395,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_001",
+   "part0": "Meshes/set_4_Tribolite_037",
+   "part1": "Meshes/set_4_Tribolite_001",
+   "c0": [
+    0.4421,
+    -0.0053,
+    -0.098,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.36,
+    0.7,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.2317,
+    0.5865,
+    -0.4419,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Meshes/set_4_Tribolite_028",
+   "part0": "Meshes/set_4_Tribolite_037",
+   "part1": "Meshes/set_4_Tribolite_028",
+   "c0": [
+    -0.4421,
+    -0.0053,
+    -0.098,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.36,
+    0.7,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.2317,
+    0.5865,
+    0.4424,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [],
+  "front": [],
+  "tail": [],
+  "head": [
+   "Meshes/set_4_Tribolite_037"
+  ],
+  "jaw": [],
+  "root": "Meshes/set_4_Tribolite_028",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_010",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.5178
+   ],
+   "cframe": [
+    -0.2881,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://101906318496275"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_036",
+   "class": "MeshPart",
+   "size": [
+    2.1659,
+    0.455,
+    0.5304
+   ],
+   "cframe": [
+    1.5086,
+    0.8923,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://126183634549004"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_014",
+   "class": "MeshPart",
+   "size": [
+    1.601,
+    0.4993,
+    2.3065
+   ],
+   "cframe": [
+    0.7262,
+    0.9373,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://100549928659327"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_037",
+   "name": "Meshes/set_4_Tribolite_037",
+   "class": "MeshPart",
+   "size": [
+    0.6348,
+    0.6043,
+    0.5148
+   ],
+   "cframe": [
+    -0.9608,
+    0.4902,
+    -0.5459,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109646250134096"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_020",
+   "name": "Meshes/set_4_Tribolite_019",
+   "class": "MeshPart",
+   "size": [
+    0.1724,
+    0.2463,
+    0.2084
+   ],
+   "cframe": [
+    -1.3935,
+    0.1232,
+    -0.4277,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://92039749475297"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_020",
+   "name": "Meshes/set_4_Tribolite_020",
+   "class": "MeshPart",
+   "size": [
+    0.1724,
+    0.1276,
+    0.3938
+   ],
+   "cframe": [
+    -1.3008,
+    0.3102,
+    -0.4277,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://97006491285945"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_022",
+   "class": "MeshPart",
+   "size": [
+    1.0382,
+    0.6976,
+    2.9487
+   ],
+   "cframe": [
+    0.7438,
+    0.6034,
+    -0.9546,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://86614231829446"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_005",
+   "name": "Meshes/set_4_Tribolite_005",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    3.931
+   ],
+   "cframe": [
+    0.7371,
+    0.4363,
+    -0.8379,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://93487099419013"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_001",
+   "name": "Meshes/set_4_Tribolite_001",
+   "class": "MeshPart",
+   "size": [
+    0.5251,
+    0.7329,
+    1.5419
+   ],
+   "cframe": [
+    -1.9317,
+    0.9465,
+    -0.4419,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://94806776281916"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_040",
+   "class": "MeshPart",
+   "size": [
+    0.2273,
+    0.7073,
+    0.8112
+   ],
+   "cframe": [
+    0.891,
+    1.3145,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://137682183673212"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_032",
+   "class": "MeshPart",
+   "size": [
+    0.2073,
+    0.719,
+    0.6328
+   ],
+   "cframe": [
+    -0.032,
+    1.3687,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://102162875703390"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_009",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.4286
+   ],
+   "cframe": [
+    1.4032,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://78811645180972"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_024",
+   "class": "MeshPart",
+   "size": [
+    0.171,
+    0.5322,
+    0.6104
+   ],
+   "cframe": [
+    1.7679,
+    1.2454,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://132768306501015"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_037",
+   "name": "Meshes/set_4_Tribolite_041",
+   "class": "MeshPart",
+   "size": [
+    0.6348,
+    0.6043,
+    0.5148
+   ],
+   "cframe": [
+    -0.9608,
+    0.4902,
+    0.5464,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109857422481250"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_033",
+   "class": "MeshPart",
+   "size": [
+    1.0382,
+    0.6976,
+    2.9487
+   ],
+   "cframe": [
+    0.7438,
+    0.6034,
+    0.9551,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://125148833776031"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_002",
+   "class": "MeshPart",
+   "size": [
+    0.1279,
+    0.3514,
+    0.5524
+   ],
+   "cframe": [
+    2.2197,
+    1.1366,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://82938960380699"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_029",
+   "class": "MeshPart",
+   "size": [
+    0.2073,
+    0.6452,
+    0.74
+   ],
+   "cframe": [
+    1.296,
+    1.3042,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://101427158426767"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_034",
+   "class": "MeshPart",
+   "size": [
+    1.6075,
+    0.342,
+    3.2041
+   ],
+   "cframe": [
+    0.631,
+    0.6235,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://123479019322339"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_028",
+   "name": "Meshes/set_4_Tribolite_028",
+   "class": "MeshPart",
+   "size": [
+    0.5251,
+    0.7329,
+    1.5419
+   ],
+   "cframe": [
+    -1.9317,
+    0.9465,
+    0.4424,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://101332635231637"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_008",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.3414
+   ],
+   "cframe": [
+    0.4123,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://96049837336412"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_021",
+   "name": "Meshes/set_4_Tribolite_021",
+   "class": "MeshPart",
+   "size": [
+    0.1724,
+    0.1276,
+    0.3938
+   ],
+   "cframe": [
+    -1.3008,
+    0.3102,
+    0.4282,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120091078341022"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_007",
+   "class": "MeshPart",
+   "size": [
+    1.449,
+    0.8283,
+    0.9125
+   ],
+   "cframe": [
+    -0.7721,
+    0.4363,
+    0.7246,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://77738917060522"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    2.2907,
+    0.4205,
+    0.5305
+   ],
+   "cframe": [
+    0.4781,
+    0.9395,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://75956595407929"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_012",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.5178
+   ],
+   "cframe": [
+    1.7624,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://72346117356854"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_038",
+   "class": "MeshPart",
+   "size": [
+    2.2073,
+    0.4544,
+    0.5304
+   ],
+   "cframe": [
+    -0.0371,
+    0.8928,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://132063117769779"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_026",
+   "class": "MeshPart",
+   "size": [
+    0.1379,
+    0.5355,
+    0.3038
+   ],
+   "cframe": [
+    -0.5265,
+    1.2089,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://137691870501401"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_013",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.3414
+   ],
+   "cframe": [
+    1.0619,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://110926661802965"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_023",
+   "class": "MeshPart",
+   "size": [
+    1.9628,
+    0.4616,
+    0.5305
+   ],
+   "cframe": [
+    -0.5523,
+    0.8223,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://87399315697854"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_003",
+   "class": "MeshPart",
+   "size": [
+    1.6175,
+    0.4515,
+    0.5051
+   ],
+   "cframe": [
+    2.2281,
+    0.5975,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://136337108184822"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_037",
+   "name": "Meshes/set_4_Tribolite_017",
+   "class": "MeshPart",
+   "size": [
+    0.5194,
+    0.139,
+    0.1016
+   ],
+   "cframe": [
+    -1.4295,
+    0.2773,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    215,
+    197,
+    154
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://85936562313276"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_037",
+   "name": "Meshes/set_4_Tribolite_016",
+   "class": "MeshPart",
+   "size": [
+    1.4314,
+    0.1793,
+    0.0915
+   ],
+   "cframe": [
+    -1.2536,
+    0.479,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    17,
+    17,
+    17
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://118237074923136"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_004",
+   "class": "MeshPart",
+   "size": [
+    1.449,
+    0.8283,
+    0.9125
+   ],
+   "cframe": [
+    2.2464,
+    0.4363,
+    0.7246,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://114050907547010"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_011",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.3414
+   ],
+   "cframe": [
+    0.7316,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://121722231061506"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_004",
+   "name": "Meshes/set_4_Tribolite_006",
+   "class": "MeshPart",
+   "size": [
+    1.6765,
+    0.8283,
+    0.4286
+   ],
+   "cframe": [
+    0.0711,
+    0.4363,
+    0.8384,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://133644266515388"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_037",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    0.7678,
+    0.5215,
+    0.702
+   ],
+   "cframe": [
+    -1.1337,
+    0.5919,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://108460783157312"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_037",
+   "name": "Meshes/set_4_Tribolite_027",
+   "class": "MeshPart",
+   "size": [
+    0.6572,
+    0.2252,
+    0.6009
+   ],
+   "cframe": [
+    -1.1337,
+    0.23,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://102311368443776"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_035",
+   "class": "MeshPart",
+   "size": [
+    0.2285,
+    0.711,
+    0.8154
+   ],
+   "cframe": [
+    0.4997,
+    1.376,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://92044248626477"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_025",
+   "class": "MeshPart",
+   "size": [
+    1.8905,
+    0.4625,
+    0.5304
+   ],
+   "cframe": [
+    2.0276,
+    0.8186,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://93991516608243"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_031",
+   "class": "MeshPart",
+   "size": [
+    2.2877,
+    0.4208,
+    0.5304
+   ],
+   "cframe": [
+    0.9934,
+    0.9392,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    157,
+    109,
+    81
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120141017334696"
+  },
+  {
+   "object": "Meshes/set_4_Tribolite_021",
+   "name": "Meshes/set_4_Tribolite_018",
+   "class": "MeshPart",
+   "size": [
+    0.1724,
+    0.2463,
+    0.2084
+   ],
+   "cframe": [
+    -1.3935,
+    0.1232,
+    0.4282,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://130944331156952"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/set_4_Tribolite_015",
+   "class": "MeshPart",
+   "size": [
+    1.8835,
+    0.3189,
+    2.1786
+   ],
+   "cframe": [
+    0.7295,
+    1.0209,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    109,
+    76,
+    56
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://77856378579155"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

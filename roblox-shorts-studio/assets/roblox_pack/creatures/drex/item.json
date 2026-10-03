@@ -1,0 +1,35 @@
+{
+ "item": "drex",
+ "category": "creatures",
+ "sourceName": "DRex",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.DRex",
+ "size": [
+  17.2,
+  23.7137,
+  60.439
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftUpperArm",
+  "Tail",
+  "LowerTorso",
+  "RightFoot",
+  "LeftFoot",
+  "UpperTorso",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "RightLowerLeg",
+  "RightUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftLowerLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 136,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

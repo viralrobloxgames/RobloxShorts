@@ -1,0 +1,65 @@
+# Materials for parasaurolophus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_4b974b
+Kd 0.2941 0.5922 0.2941
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a4bd47
+Kd 0.6431 0.7412 0.2784
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a05f35
+Kd 0.6275 0.3725 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd parasaurolophus_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd parasaurolophus_head_decal2.png
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_506d54
+Kd 0.3137 0.4275 0.3294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

@@ -1,0 +1,45 @@
+{
+ "item": "dodo",
+ "category": "creatures",
+ "sourceName": "Dodo",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Dodo",
+ "size": [
+  4.7973,
+  4.7229,
+  2.1396
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Cube.006",
+  "Cube.002",
+  "Cube.005",
+  "Cube.003",
+  "Cube.004",
+  "Cube.007",
+  "Cube.008",
+  "Cube"
+ ],
+ "joints": 8,
+ "bones": 37,
+ "parts": 8,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://111793969258292",
+  "rbxassetid://126817332757093",
+  "rbxassetid://135005897371576",
+  "rbxassetid://136846124556983",
+  "rbxassetid://71813714859153",
+  "rbxassetid://75895126391244",
+  "rbxassetid://78243982682703",
+  "rbxassetid://85603719579798"
+ ],
+ "textureIds": [
+  "rbxassetid://112749299628977",
+  "rbxassetid://116078688899196",
+  "rbxassetid://138413911528007",
+  "rbxassetid://83940500598537",
+  "rbxassetid://95179934821466",
+  "rbxassetid://98550033659563"
+ ]
+}

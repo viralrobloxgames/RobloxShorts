@@ -1,0 +1,40 @@
+{
+ "item": "huayang_saurus",
+ "category": "creatures",
+ "sourceName": "HuayangSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.HuayangSaurus",
+ "size": [
+  11,
+  12.1819,
+  26.2559
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftLowerArm",
+  "Mouth",
+  "LowerTorso",
+  "LeftHand",
+  "RightUpperArm",
+  "RightHand",
+  "LeftUpperArm",
+  "LeftUpperLeg",
+  "RightLowerArm",
+  "RightUpperLeg",
+  "RightLowerLeg",
+  "RightFoot",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftLowerLeg",
+  "LeftFoot",
+  "Tail"
+ ],
+ "joints": 17,
+ "bones": 0,
+ "parts": 119,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

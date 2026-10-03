@@ -1,0 +1,26 @@
+{
+ "item": "animal_frog",
+ "category": "creatures",
+ "sourceName": "Frog",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Frog",
+ "size": [
+  1.7244,
+  1.7839,
+  1.4268
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_frog"
+ ],
+ "joints": 0,
+ "bones": 24,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://92249234997922"
+ ],
+ "textureIds": [
+  "rbxassetid://114421698238467"
+ ]
+}

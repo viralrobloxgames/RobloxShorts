@@ -1,0 +1,28 @@
+{
+ "item": "lod_pastel_dragon",
+ "category": "creatures",
+ "sourceName": "PetLOD/PastelDragon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/PastelDragon",
+ "size": [
+  15.4976,
+  8.3367,
+  6.8428
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_pastel_dragon"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://115414871162648",
+  "rbxassetid://116581276471956",
+  "rbxassetid://138622551910718",
+  "rbxassetid://76066597051658",
+  "rbxassetid://93418932597319"
+ ],
+ "textureIds": []
+}

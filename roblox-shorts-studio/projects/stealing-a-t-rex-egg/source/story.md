@@ -8,8 +8,8 @@ guardians with "bait and switch": one pulls the guardian away while the other gr
 games.gg biome guide, stealanegg.pro steal/escape guide, player.one popularity article.
 
 Cast: **Leo** (main: goes first, carries the egg), **Max** (rival turned decoy, flung three times), **Mia** (the
-twist: a background thief the whole video). All original assets: the T-rex is a new blocky R6-style build, not the
-game's model.
+twist: a background thief the whole video). The T-rex and eggs are the models from the user's own egg game
+(`assets/roblox_pack/creatures/trex`, `props/egg_prism` as the best egg, `props/egg_trex` in the nest).
 
 Why it should work:
 - Frame 1 reads on mute: a giant sleeping T-rex (Zzz), a glowing giant egg under its chin, Leo tiptoeing in.

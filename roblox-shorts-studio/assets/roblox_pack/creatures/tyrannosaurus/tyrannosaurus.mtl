@@ -1,0 +1,79 @@
+# Materials for tyrannosaurus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_da8541
+Kd 0.8549 0.5216 0.2549
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8d96d
+Kd 0.9725 0.8510 0.4275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_e29b40
+Kd 0.8863 0.6078 0.2510
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_aa5500
+Kd 0.6667 0.3333 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c7ac78
+Kd 0.7804 0.6745 0.4706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_fef3bb
+Kd 0.9961 0.9529 0.7333
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_564236
+Kd 0.3373 0.2588 0.2118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd tyrannosaurus_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd tyrannosaurus_head_decal2.png

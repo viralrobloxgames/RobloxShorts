@@ -1,0 +1,8 @@
+# Materials for animal_pony. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_animal_pony_i027p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd animal_pony_i027p001x.png

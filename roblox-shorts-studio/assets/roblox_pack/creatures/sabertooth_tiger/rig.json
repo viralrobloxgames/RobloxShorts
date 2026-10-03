@@ -1,0 +1,1170 @@
+{
+ "name": "sabertooth_tiger",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Sabertooth Tiger",
+ "sourceName": "Sabertooth Tiger",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  3.2134,
+  5.1838,
+  10.2705
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "BackLeftLeg",
+   "parent": "Torso",
+   "joint": "BackLeftLeg",
+   "pivot": [
+    -0.8712,
+    2.4812,
+    1.2983,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.8712,
+    1.5712,
+    1.1685,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "BackRightLeg",
+   "parent": "Torso",
+   "joint": "BackRightLeg",
+   "pivot": [
+    0.8712,
+    2.4812,
+    1.2983,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.8712,
+    1.5712,
+    1.1685,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "FrontLeftLeg",
+   "parent": "Torso",
+   "joint": "FrontLeftLeg",
+   "pivot": [
+    -0.871,
+    2.1443,
+    -2.1201,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.871,
+    1.2343,
+    -2.25,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "FrontRightLeg",
+   "parent": "Torso",
+   "joint": "FrontRightLeg",
+   "pivot": [
+    0.8708,
+    2.1443,
+    -2.1201,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.8708,
+    1.2343,
+    -2.25,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Head",
+   "parent": "Torso",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    3.366,
+    -2.4805,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    3.886,
+    -2.6104,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    2.8199,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.8199,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "Tail",
+   "parent": "Torso",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    3.1736,
+    1.4951,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.5236,
+    3.1851,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    0.0,
+    2.2999,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    2.8199,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    -0.52,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.52,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    2.2999,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "BackRightLeg",
+   "part0": "Torso",
+   "part1": "BackRightLeg",
+   "c0": [
+    0.8712,
+    -0.3388,
+    1.7993,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.91,
+    0.13,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.8712,
+    2.4812,
+    1.2983,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "FrontLeftLeg",
+   "part0": "Torso",
+   "part1": "FrontLeftLeg",
+   "c0": [
+    -0.8709,
+    -0.6757,
+    -1.6192,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.91,
+    0.13,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.871,
+    2.1443,
+    -2.1201,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Torso",
+   "part1": "Head",
+   "c0": [
+    0,
+    0.5461,
+    -1.9791,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.52,
+    0.13,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    3.366,
+    -2.4805,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "FrontRightLeg",
+   "part0": "Torso",
+   "part1": "FrontRightLeg",
+   "c0": [
+    0.8709,
+    -0.6757,
+    -1.6192,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.91,
+    0.13,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.8708,
+    2.1443,
+    -2.1201,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Torso",
+   "part1": "Tail",
+   "c0": [
+    0,
+    0.3536,
+    1.996,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.65,
+    -1.69,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    3.1736,
+    1.4951,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "BackLeftLeg",
+   "part0": "Torso",
+   "part1": "BackLeftLeg",
+   "c0": [
+    -0.8712,
+    -0.3388,
+    1.7993,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.91,
+    0.13,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.8712,
+    2.4812,
+    1.2983,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [
+  {
+   "name": "RideAttachment",
+   "body": "Torso",
+   "cframe": [
+    0.0,
+    3.8199,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "BackRightLeg",
+    "side": 1
+   },
+   {
+    "body": "FrontLeftLeg",
+    "side": -1
+   },
+   {
+    "body": "FrontRightLeg",
+    "side": 1
+   },
+   {
+    "body": "BackLeftLeg",
+    "side": -1
+   }
+  ],
+  "front": [],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head"
+  ],
+  "jaw": [],
+  "root": "Torso",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    3.2134,
+    2.5956,
+    5.0495
+   ],
+   "cframe": [
+    0.0,
+    3.886,
+    -2.6104,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://135423865958417"
+  },
+  {
+   "object": "Head",
+   "name": "Teef",
+   "class": "MeshPart",
+   "size": [
+    1.2883,
+    1.0219,
+    0.745
+   ],
+   "cframe": [
+    0.0,
+    2.1846,
+    -4.6313,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    210,
+    158
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://97703155888550"
+  },
+  {
+   "object": "Head",
+   "name": "Eyebrows",
+   "class": "MeshPart",
+   "size": [
+    2.2082,
+    0.5936,
+    0.4217
+   ],
+   "cframe": [
+    0.0,
+    4.1488,
+    -4.3975,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109009759701597"
+  },
+  {
+   "object": "Head",
+   "name": "Tuff",
+   "class": "MeshPart",
+   "size": [
+    2.6277,
+    1.557,
+    3.0116
+   ],
+   "cframe": [
+    0.0,
+    3.2191,
+    -3.5215,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    109,
+    5
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://79435707388973"
+  },
+  {
+   "object": "Head",
+   "name": "Eyes",
+   "class": "MeshPart",
+   "size": [
+    1.9404,
+    0.4396,
+    0.0042
+   ],
+   "cframe": [
+    0.0,
+    3.7849,
+    -4.3325,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://104830243108948"
+  },
+  {
+   "object": "BackRightLeg",
+   "name": "BackRightLeg",
+   "class": "MeshPart",
+   "size": [
+    0.8196,
+    3.1422,
+    1.5913
+   ],
+   "cframe": [
+    0.8712,
+    1.5712,
+    1.1685,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://123272071880397"
+  },
+  {
+   "object": "BackRightLeg",
+   "name": "Claw",
+   "class": "MeshPart",
+   "size": [
+    0.6553,
+    0.4878,
+    0.6987
+   ],
+   "cframe": [
+    0.855,
+    0.2612,
+    0.3804,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    170,
+    94,
+    59
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://140447651997459"
+  },
+  {
+   "object": "FrontRightLeg",
+   "name": "FrontRightLeg",
+   "class": "MeshPart",
+   "size": [
+    0.8164,
+    2.4685,
+    1.2699
+   ],
+   "cframe": [
+    0.8708,
+    1.2343,
+    -2.25,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://96477891283707"
+  },
+  {
+   "object": "FrontRightLeg",
+   "name": "Claw",
+   "class": "MeshPart",
+   "size": [
+    0.6553,
+    0.4878,
+    0.6987
+   ],
+   "cframe": [
+    0.8549,
+    0.2612,
+    -3.0439,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    170,
+    94,
+    59
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://122572344173936"
+  },
+  {
+   "object": "FrontLeftLeg",
+   "name": "FrontLeftLeg",
+   "class": "MeshPart",
+   "size": [
+    0.8164,
+    2.4685,
+    1.2699
+   ],
+   "cframe": [
+    -0.871,
+    1.2343,
+    -2.25,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://110275025294133"
+  },
+  {
+   "object": "FrontLeftLeg",
+   "name": "Claw",
+   "class": "MeshPart",
+   "size": [
+    0.6553,
+    0.4878,
+    0.6987
+   ],
+   "cframe": [
+    -0.855,
+    0.2612,
+    -3.0439,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    170,
+    94,
+    59
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://108039990156217"
+  },
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    1.0799,
+    2.2016,
+    3.9003
+   ],
+   "cframe": [
+    0.0,
+    2.5236,
+    3.1851,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://126716691596733"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    2.5118,
+    1.7917,
+    4.808
+   ],
+   "cframe": [
+    0.0,
+    2.8199,
+    -0.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://84769391154953"
+  },
+  {
+   "object": "Torso",
+   "name": "Tummy",
+   "class": "MeshPart",
+   "size": [
+    1.2559,
+    1.1095,
+    4.6028
+   ],
+   "cframe": [
+    0.0,
+    2.4789,
+    -0.3984,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    109,
+    5
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://134035871447948"
+  },
+  {
+   "object": "BackLeftLeg",
+   "name": "BackLeftLeg",
+   "class": "MeshPart",
+   "size": [
+    0.8196,
+    3.1422,
+    1.5913
+   ],
+   "cframe": [
+    -0.8712,
+    1.5712,
+    1.1685,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    165,
+    71,
+    3
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://88482874651918"
+  },
+  {
+   "object": "BackLeftLeg",
+   "name": "Claw",
+   "class": "MeshPart",
+   "size": [
+    0.6553,
+    0.4878,
+    0.6987
+   ],
+   "cframe": [
+    -0.8549,
+    0.2612,
+    0.3804,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    170,
+    94,
+    59
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://98789411872603"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

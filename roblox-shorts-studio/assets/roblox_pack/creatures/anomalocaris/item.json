@@ -1,0 +1,31 @@
+{
+ "item": "anomalocaris",
+ "category": "creatures",
+ "sourceName": "Anomalocaris",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Anomalocaris",
+ "size": [
+  8.9513,
+  6.9541,
+  16.4238
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperLeg",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "UpperTorso",
+  "RightUpperLeg",
+  "LowerTorso",
+  "Tail"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 55,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

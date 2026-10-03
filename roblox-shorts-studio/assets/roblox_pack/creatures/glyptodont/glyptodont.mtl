@@ -1,0 +1,63 @@
+# Materials for glyptodont. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_a3a2a5
+Kd 0.6392 0.6353 0.6471
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl tex_glyptodont_i026p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p002x.png
+
+newmtl tex_glyptodont_i026p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p003x.png
+
+newmtl tex_glyptodont_i026p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p004x.png
+
+newmtl tex_glyptodont_i026p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p006x.png
+
+newmtl tex_glyptodont_i026p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p007x.png
+
+newmtl tex_glyptodont_i026p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p008x.png
+
+newmtl tex_glyptodont_i026p009x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd glyptodont_i026p009x.png

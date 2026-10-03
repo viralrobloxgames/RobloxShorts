@@ -1,0 +1,26 @@
+{
+ "item": "animal_cow",
+ "category": "creatures",
+ "sourceName": "Cow",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Cow",
+ "size": [
+  6.8362,
+  5.1782,
+  2.8994
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_cow"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://127377186780289"
+ ],
+ "textureIds": [
+  "rbxassetid://121746143270260"
+ ]
+}

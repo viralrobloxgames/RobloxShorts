@@ -1,0 +1,35 @@
+{
+ "item": "spinosaurus",
+ "category": "creatures",
+ "sourceName": "Spinosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Spinosaurus",
+ "size": [
+  14,
+  21.875,
+  44.625
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightFoot",
+  "LowerTorso",
+  "RightUpperArm",
+  "LeftUpperLeg",
+  "LeftLowerLeg",
+  "LeftFoot",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "Tail",
+  "LeftUpperArm",
+  "RightUpperLeg",
+  "RightLowerLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 79,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

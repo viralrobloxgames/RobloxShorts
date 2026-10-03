@@ -1,0 +1,22 @@
+{
+ "item": "egg_giganotosaurus",
+ "category": "props",
+ "sourceName": "Giganotosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Giganotosaurus",
+ "size": [
+  4.7364,
+  7.3198,
+  4.7363
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_giganotosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 9,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,56 @@
+{
+ "item": "dire_wolf",
+ "category": "creatures",
+ "sourceName": "Dire Wolf",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Dire Wolf",
+ "size": [
+  4.0275,
+  6.0616,
+  11.3364
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "dire_wolf_head.001",
+  "dire_wolf_head.002",
+  "dire_wolf_leg.004",
+  "dire_wolf_leg.002",
+  "dire_wolf_leg.005",
+  "dire_wolf_leg.003",
+  "dire_wolf_fur",
+  "dire_wolf_leg.006",
+  "dire_wolf_ear",
+  "dire_wolf_eye.001",
+  "dire_wolf_head",
+  "dire_wolf_body_lower",
+  "dire_wolf_tail.001",
+  "dire_wolf_leg.007",
+  "dire_wolf_body_upper",
+  "dire_wolf_tail"
+ ],
+ "joints": 16,
+ "bones": 28,
+ "parts": 16,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://103372861565965",
+  "rbxassetid://105210875453794",
+  "rbxassetid://105692519850322",
+  "rbxassetid://111164863214248",
+  "rbxassetid://112090987225169",
+  "rbxassetid://112437507308013",
+  "rbxassetid://113881656688673",
+  "rbxassetid://115541434886545",
+  "rbxassetid://116491952725610",
+  "rbxassetid://125500574688621",
+  "rbxassetid://75036007994756",
+  "rbxassetid://75171383059767",
+  "rbxassetid://83996952189772",
+  "rbxassetid://88503297461024",
+  "rbxassetid://88748038483635",
+  "rbxassetid://98483721257308"
+ ],
+ "textureIds": [
+  "rbxassetid://100875515898064"
+ ]
+}

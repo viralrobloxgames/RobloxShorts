@@ -1,0 +1,28 @@
+{
+ "item": "lod_green_drake",
+ "category": "creatures",
+ "sourceName": "PetLOD/GreenDrake",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/GreenDrake",
+ "size": [
+  6.012,
+  7.2881,
+  4.4897
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_green_drake"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://120149731382427",
+  "rbxassetid://120376396513980",
+  "rbxassetid://73976712109909",
+  "rbxassetid://88475808389864",
+  "rbxassetid://93943094833160"
+ ],
+ "textureIds": []
+}

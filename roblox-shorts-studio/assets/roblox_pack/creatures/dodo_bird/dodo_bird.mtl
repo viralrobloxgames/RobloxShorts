@@ -1,0 +1,66 @@
+# Materials for dodo_bird. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_2e2a31
+Kd 0.1804 0.1647 0.1922
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1c1a1e
+Kd 0.1098 0.1020 0.1176
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_242126
+Kd 0.1412 0.1294 0.1490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_750000
+Kd 0.4588 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_4f4854
+Kd 0.3098 0.2824 0.3294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffb000
+Kd 1.0000 0.6902 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a0a0a0_neon
+Kd 0.6275 0.6275 0.6275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6275 0.6275 0.6275
+d 1.0000
+illum 2
+
+newmtl c_111111_neon
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.0667 0.0667 0.0667
+d 1.0000
+illum 2
+
+newmtl c_37383e_neon
+Kd 0.2157 0.2196 0.2431
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.2157 0.2196 0.2431
+d 1.0000
+illum 2

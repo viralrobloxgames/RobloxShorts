@@ -1,0 +1,26 @@
+{
+ "item": "animal_golden_retriver",
+ "category": "creatures",
+ "sourceName": "GoldenRetriver",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.GoldenRetriver",
+ "size": [
+  5.6119,
+  4.2039,
+  2.8564
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_golden_retriver"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://123302738893402"
+ ],
+ "textureIds": [
+  "rbxassetid://79165646779285"
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "item": "triceratops_2",
+ "category": "creatures",
+ "sourceName": "Triceratops",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Triceratops",
+ "size": [
+  5.8872,
+  7.3602,
+  12.9229
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "head",
+  "arm_L_Hand",
+  "leg_L_Hand",
+  "arm_R_Hand",
+  "leg_R_Hand",
+  "tail02",
+  "tail01",
+  "tail03",
+  "torso",
+  "leg_R",
+  "arm_L",
+  "arm_R_Lower",
+  "leg_L",
+  "arm_L_Lower",
+  "leg_L_Lower",
+  "arm_R",
+  "leg_R_Lower"
+ ],
+ "joints": 17,
+ "bones": 0,
+ "parts": 44,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://109811633370029",
+  "rbxassetid://110611012229816",
+  "rbxassetid://110702877485239",
+  "rbxassetid://120815874479308",
+  "rbxassetid://133698232245372",
+  "rbxassetid://136234105569942",
+  "rbxassetid://138709285198804",
+  "rbxassetid://140528805101626",
+  "rbxassetid://70679162522958",
+  "rbxassetid://81083588493634"
+ ],
+ "textureIds": []
+}

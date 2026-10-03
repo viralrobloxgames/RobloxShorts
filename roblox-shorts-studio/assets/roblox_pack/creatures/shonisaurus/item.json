@@ -1,0 +1,31 @@
+{
+ "item": "shonisaurus",
+ "category": "creatures",
+ "sourceName": "Shonisaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Shonisaurus",
+ "size": [
+  16.5594,
+  17.7465,
+  44.0645
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperLeg",
+  "Tail",
+  "RightUpperArm",
+  "RightUpperLeg",
+  "LowerTorso",
+  "LeftUpperArm",
+  "UpperTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 92,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

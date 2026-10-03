@@ -1,0 +1,44 @@
+{
+ "item": "pterosaur",
+ "category": "creatures",
+ "sourceName": "Pterosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Pterosaur",
+ "size": [
+  23.3489,
+  5.1525,
+  13.3457
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "head",
+  "mouth",
+  "LeafR1",
+  "torso",
+  "LeafL1",
+  "leg_R",
+  "leg_L",
+  "tail",
+  "leg_R_lower",
+  "leg_L_lower",
+  "neck1",
+  "tail02"
+ ],
+ "joints": 12,
+ "bones": 0,
+ "parts": 40,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://103059880438250",
+  "rbxassetid://108446902251498",
+  "rbxassetid://112126555166020",
+  "rbxassetid://129472308445333",
+  "rbxassetid://134559962015214",
+  "rbxassetid://75917733225131",
+  "rbxassetid://78702810694337",
+  "rbxassetid://78846156389346",
+  "rbxassetid://81898499097887",
+  "rbxassetid://99771752343137"
+ ],
+ "textureIds": []
+}

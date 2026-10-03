@@ -1,0 +1,26 @@
+{
+ "item": "animal_pony",
+ "category": "creatures",
+ "sourceName": "Pony",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Pony",
+ "size": [
+  6.9312,
+  5.3235,
+  2.2334
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_pony"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://117590423894560"
+ ],
+ "textureIds": [
+  "rbxassetid://137778171997998"
+ ]
+}

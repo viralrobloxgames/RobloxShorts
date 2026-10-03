@@ -1,0 +1,26 @@
+{
+ "item": "animal_goldfish",
+ "category": "creatures",
+ "sourceName": "Goldfish",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Goldfish",
+ "size": [
+  2.6279,
+  2.0408,
+  2.0361
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_goldfish"
+ ],
+ "joints": 0,
+ "bones": 10,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://131944727994572"
+ ],
+ "textureIds": [
+  "rbxassetid://135807535853465"
+ ]
+}

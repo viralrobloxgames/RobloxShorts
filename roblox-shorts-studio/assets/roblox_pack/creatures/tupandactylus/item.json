@@ -1,0 +1,31 @@
+{
+ "item": "tupandactylus",
+ "category": "creatures",
+ "sourceName": "Tupandactylus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Tupandactylus",
+ "size": [
+  13.5,
+  7.8123,
+  9
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperArm",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "UpperTorso",
+  "RightUpperArm",
+  "LowerTorso",
+  "Color1"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 39,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,22 @@
+{
+ "item": "egg_tupandactylus",
+ "category": "props",
+ "sourceName": "Tupandactylus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Tupandactylus",
+ "size": [
+  2.5835,
+  3.4446,
+  2.583
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_tupandactylus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

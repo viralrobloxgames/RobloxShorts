@@ -1,0 +1,26 @@
+{
+ "item": "egg_prismatic",
+ "category": "props",
+ "sourceName": "Eggs/PrismaticEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/PrismaticEgg",
+ "size": [
+  5.0936,
+  8.5221,
+  3.7393
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E1U",
+  "E2U",
+  "E2D",
+  "E3",
+  "E1D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 15,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

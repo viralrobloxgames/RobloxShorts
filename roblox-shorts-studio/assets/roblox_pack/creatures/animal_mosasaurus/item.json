@@ -1,0 +1,26 @@
+{
+ "item": "animal_mosasaurus",
+ "category": "creatures",
+ "sourceName": "Mosasaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Mosasaurus",
+ "size": [
+  21.0478,
+  6.5129,
+  7.6855
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_mosasaurus"
+ ],
+ "joints": 0,
+ "bones": 19,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://95065795755757"
+ ],
+ "textureIds": [
+  "rbxassetid://114890548845718"
+ ]
+}

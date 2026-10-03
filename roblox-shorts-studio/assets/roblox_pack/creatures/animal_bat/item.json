@@ -1,0 +1,26 @@
+{
+ "item": "animal_bat",
+ "category": "creatures",
+ "sourceName": "Bat",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Bat",
+ "size": [
+  1.2182,
+  3.2329,
+  4.7461
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_bat"
+ ],
+ "joints": 0,
+ "bones": 18,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://107331860729275"
+ ],
+ "textureIds": [
+  "rbxassetid://83367745138611"
+ ]
+}

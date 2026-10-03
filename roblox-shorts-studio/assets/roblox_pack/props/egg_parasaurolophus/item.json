@@ -1,0 +1,22 @@
+{
+ "item": "egg_parasaurolophus",
+ "category": "props",
+ "sourceName": "Parasaurolophus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Parasaurolophus",
+ "size": [
+  5.2316,
+  7.2661,
+  5.2314
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_parasaurolophus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

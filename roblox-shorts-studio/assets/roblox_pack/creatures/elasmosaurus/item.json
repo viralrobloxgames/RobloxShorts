@@ -1,0 +1,31 @@
+{
+ "item": "elasmosaurus",
+ "category": "creatures",
+ "sourceName": "Elasmosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Elasmosaurus",
+ "size": [
+  29.6428,
+  9.9569,
+  50.9009
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Tail",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "LeftUpperArm",
+  "RightUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm",
+  "LowerTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 167,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,22 @@
+{
+ "item": "egg_huayang_saurus",
+ "category": "props",
+ "sourceName": "HuayangSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.HuayangSaurus",
+ "size": [
+  4.3058,
+  4.3059,
+  4.3057
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_huayang_saurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 4,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

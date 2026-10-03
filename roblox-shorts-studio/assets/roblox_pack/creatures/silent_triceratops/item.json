@@ -1,0 +1,49 @@
+{
+ "item": "silent_triceratops",
+ "category": "creatures",
+ "sourceName": "Silent Triceratops",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Silent Triceratops",
+ "size": [
+  7.8949,
+  8.7891,
+  14.7437
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "ForwardRightLeg",
+  "BackRightLeg",
+  "Torso",
+  "Tail",
+  "Head",
+  "ForwardLeftLeg",
+  "Meshes/batch_last_1_Silent_Triceratops_004",
+  "BackLeftLeg"
+ ],
+ "joints": 7,
+ "bones": 0,
+ "parts": 19,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://105471174258823",
+  "rbxassetid://109347101501679",
+  "rbxassetid://110537263921422",
+  "rbxassetid://115708308161356",
+  "rbxassetid://116789773049337",
+  "rbxassetid://119878060317962",
+  "rbxassetid://122312862094931",
+  "rbxassetid://126063496116862",
+  "rbxassetid://131459149845355",
+  "rbxassetid://132387769912158",
+  "rbxassetid://136863164444629",
+  "rbxassetid://138706063560861",
+  "rbxassetid://78761462009741",
+  "rbxassetid://82328441919372",
+  "rbxassetid://82816924654277",
+  "rbxassetid://83286944838241",
+  "rbxassetid://84115263642622",
+  "rbxassetid://84621124360148",
+  "rbxassetid://92282113044862"
+ ],
+ "textureIds": []
+}

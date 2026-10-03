@@ -1,0 +1,31 @@
+{
+ "item": "dimetrodon",
+ "category": "creatures",
+ "sourceName": "Dimetrodon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Dimetrodon",
+ "size": [
+  3.5,
+  4.75,
+  10.25
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LowerTorso",
+  "RightUpperLeg",
+  "LeftUpperLeg",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "UpperTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 44,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

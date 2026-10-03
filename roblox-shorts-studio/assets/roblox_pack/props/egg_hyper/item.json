@@ -1,0 +1,26 @@
+{
+ "item": "egg_hyper",
+ "category": "props",
+ "sourceName": "Eggs/HyperEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/HyperEgg",
+ "size": [
+  3.8445,
+  9.1104,
+  8.5981
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E1U",
+  "E1D",
+  "E3",
+  "E2U",
+  "E2D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 25,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

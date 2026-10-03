@@ -1,0 +1,28 @@
+{
+ "item": "egg_designer_3",
+ "category": "props",
+ "sourceName": "Egg3",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Egg3",
+ "size": [
+  6.0839,
+  8.8351,
+  5.6084
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_designer_3"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 3,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://120513974432407",
+  "rbxassetid://124198675676791",
+  "rbxassetid://81740642560936"
+ ],
+ "textureIds": [
+  "rbxassetid://139236760274559"
+ ]
+}

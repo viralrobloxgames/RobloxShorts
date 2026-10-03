@@ -1,0 +1,26 @@
+{
+ "item": "animal_owl",
+ "category": "creatures",
+ "sourceName": "Owl",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Owl",
+ "size": [
+  1.6242,
+  2.7681,
+  1.7285
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_owl"
+ ],
+ "joints": 0,
+ "bones": 13,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://75282998514940"
+ ],
+ "textureIds": [
+  "rbxassetid://73633942007688"
+ ]
+}

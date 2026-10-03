@@ -1,0 +1,3895 @@
+{
+ "name": "barosaurus_skeleton_fossil",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Barosaurus Skeleton Fossil",
+ "sourceName": "Barosaurus Skeleton Fossil",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  7.1045,
+  20.5607,
+  32.8896
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "Head",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    18.7156,
+    -12.1128,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    19.2756,
+    -14.1929,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    -0.0005,
+    5.5725,
+    -3.9902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.0005,
+    5.5725,
+    -3.9902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "LeftAltArm",
+   "parent": "LeftArm",
+   "joint": "LeftAltArm",
+   "pivot": [
+    -2.4893,
+    4.1831,
+    -6.5376,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -2.4893,
+    3.3931,
+    -5.7275,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftAltLeg",
+   "parent": "LeftLeg",
+   "joint": "LeftAltLeg",
+   "pivot": [
+    -1.7156,
+    3.4369,
+    1.2041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.7156,
+    2.7069,
+    2.124,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftArm",
+   "parent": "HumanoidRootPart",
+   "joint": "LeftArm",
+   "pivot": [
+    -2.415,
+    6.2927,
+    -5.3652,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -2.415,
+    5.6827,
+    -5.8354,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "LeftLeg",
+   "pivot": [
+    -1.6414,
+    5.2579,
+    2.4272,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.6414,
+    4.6479,
+    1.957,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "parent": "RightAltArm",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "pivot": [
+    2.4893,
+    2.3734,
+    -4.7412,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    2.4893,
+    1.5934,
+    -4.9614,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "parent": "RightAltLeg",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "pivot": [
+    1.7156,
+    1.429,
+    3.147,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.7156,
+    1.1589,
+    2.897,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_009",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_009",
+   "pivot": [
+    2.4966,
+    0.4473,
+    -5.3315,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    2.4966,
+    0.4473,
+    -6.1313,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_010",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_010",
+   "pivot": [
+    -1.7227,
+    0.3597,
+    2.4951,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.7227,
+    0.3597,
+    1.6953,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_011",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_011",
+   "pivot": [
+    1.7227,
+    0.3597,
+    2.4551,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.7227,
+    0.3597,
+    1.6953,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "parent": "LeftAltArm",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "pivot": [
+    -2.4893,
+    2.1134,
+    -4.6816,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -2.4893,
+    1.5934,
+    -4.9614,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "parent": "LeftAltLeg",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "pivot": [
+    -1.7156,
+    1.469,
+    3.2168,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.7156,
+    1.1589,
+    2.897,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_019",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_019",
+   "pivot": [
+    -2.4966,
+    0.4473,
+    -5.3413,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -2.4966,
+    0.4473,
+    -6.1313,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "pivot": [
+    0.0,
+    17.7251,
+    -10.8462,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    18.1552,
+    -11.3164,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "pivot": [
+    0.0,
+    15.8184,
+    -9.6875,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    16.8784,
+    -10.1675,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "pivot": [
+    0.0,
+    13.7603,
+    -9.0303,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    14.6503,
+    -9.3301,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "pivot": [
+    0.0,
+    11.4019,
+    -8.5688,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    12.3918,
+    -8.7788,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "parent": "Neck",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "pivot": [
+    0.0,
+    8.8086,
+    -7.7002,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    9.8885,
+    -8.3203,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "parent": "Torso",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "pivot": [
+    -0.0002,
+    5.6449,
+    -1.6421,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.0002,
+    5.6449,
+    -0.1221,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "pivot": [
+    0.0012,
+    5.722,
+    1.4644,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0012,
+    5.722,
+    2.3545,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "parent": "Tail",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "pivot": [
+    0.0,
+    4.9989,
+    5.3652,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.9989,
+    6.145,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "pivot": [
+    0.0,
+    4.1663,
+    9.9736,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.1663,
+    10.6138,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "pivot": [
+    0.0,
+    4.2599,
+    11.4517,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.2599,
+    11.9116,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "pivot": [
+    0.0,
+    4.3883,
+    12.6685,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.3883,
+    13.3984,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_035",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_035",
+   "pivot": [
+    0.0,
+    4.4802,
+    14.3672,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.4802,
+    15.3672,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "joint": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "pivot": [
+    0.0,
+    4.6149,
+    7.0239,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    4.4448,
+    8.3838,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Neck",
+   "parent": "Torso",
+   "joint": "Neck",
+   "pivot": [
+    -0.0024,
+    5.9858,
+    -5.7686,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.0024,
+    6.8759,
+    -7.1084,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightAltArm",
+   "parent": "RightArm",
+   "joint": "RightAltArm",
+   "pivot": [
+    2.4893,
+    4.1631,
+    -6.6177,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    2.4893,
+    3.3931,
+    -5.7275,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightAltLeg",
+   "parent": "RightLeg",
+   "joint": "RightAltLeg",
+   "pivot": [
+    1.7156,
+    3.5769,
+    1.2739,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.7156,
+    2.7069,
+    2.124,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightArm",
+   "parent": "HumanoidRootPart",
+   "joint": "RightArm",
+   "pivot": [
+    2.415,
+    6.2927,
+    -5.3652,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    2.415,
+    5.6827,
+    -5.8354,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "RightLeg",
+   "pivot": [
+    1.6414,
+    5.2579,
+    2.4272,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.6414,
+    4.6479,
+    1.957,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    5.6621,
+    3.4258,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    5.6621,
+    4.2959,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    -0.0005,
+    5.5725,
+    -3.9902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.0005,
+    5.5725,
+    -3.9902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "part0": "Tail",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "c0": [
+    0,
+    -0.6632,
+    1.0695,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -0.78,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.9989,
+    5.3652,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "c0": [
+    0,
+    1.5132,
+    -0.2487,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.99,
+    0.21,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    11.4019,
+    -8.5688,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "c0": [
+    0,
+    1.1682,
+    -0.3578,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -1.06,
+    0.48,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    15.8184,
+    -9.6875,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightAltLeg",
+   "part0": "RightLeg",
+   "part1": "RightAltLeg",
+   "c0": [
+    0.0742,
+    -1.071,
+    -0.683,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.87,
+    -0.85,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.7156,
+    3.5769,
+    1.2739,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "part0": "RightAltLeg",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "c0": [
+    0,
+    -1.2781,
+    1.0232,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.27,
+    0.25,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.7156,
+    1.429,
+    3.147,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "part0": "LeftAltArm",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "c0": [
+    0,
+    -1.2798,
+    1.0462,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.52,
+    0.28,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -2.4893,
+    2.1134,
+    -4.6816,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_010",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_010",
+   "c0": [
+    -0.0071,
+    -0.7991,
+    -0.4018,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.8,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.7227,
+    0.3597,
+    2.4951,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "part0": "RightAltArm",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "c0": [
+    0,
+    -1.0198,
+    0.9862,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.78,
+    0.22,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    2.4893,
+    2.3734,
+    -4.7412,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Neck",
+   "part0": "Torso",
+   "part1": "Neck",
+   "c0": [
+    -0.002,
+    0.4134,
+    -1.7782,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.89,
+    1.34,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.0024,
+    5.9858,
+    -5.7686,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "part0": "Torso",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "c0": [
+    0.0002,
+    0.0725,
+    2.3482,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -1.52,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.0002,
+    5.6449,
+    -1.6421,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_009",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_009",
+   "c0": [
+    0.0073,
+    -1.146,
+    -0.3698,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.8,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    2.4966,
+    0.4473,
+    -5.3315,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "c0": [
+    0.0015,
+    0.0771,
+    1.5869,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -0.89,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0012,
+    5.722,
+    1.4644,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "c0": [
+    0,
+    -0.2785,
+    1.5903,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -0.64,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.1663,
+    9.9736,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftAltLeg",
+   "part0": "LeftLeg",
+   "part1": "LeftAltLeg",
+   "c0": [
+    -0.0742,
+    -1.211,
+    -0.753,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.73,
+    -0.92,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.7156,
+    3.4369,
+    1.2041,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "c0": [
+    0,
+    0.8467,
+    -0.6788,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.43,
+    0.47,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    17.7251,
+    -10.8462,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "part1": "Tail",
+   "c0": [
+    -0.0012,
+    -0.0599,
+    1.0711,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -0.87,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    5.6621,
+    3.4258,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "c0": [
+    0,
+    -0.3841,
+    0.8785,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.17,
+    -1.36,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.6149,
+    7.0239,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_035",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_035",
+   "c0": [
+    0,
+    0.0919,
+    0.9689,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.4802,
+    14.3672,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "c0": [
+    0,
+    1.3684,
+    -0.2509,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.89,
+    0.3,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    13.7603,
+    -9.0303,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "part0": "LeftAltLeg",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "c0": [
+    0,
+    -1.2381,
+    1.0932,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.31,
+    0.32,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.7156,
+    1.469,
+    3.2168,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_019",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_019",
+   "c0": [
+    -0.0073,
+    -1.146,
+    -0.3797,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.79,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -2.4966,
+    0.4473,
+    -5.3413,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_011",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_011",
+   "c0": [
+    0.0071,
+    -0.7991,
+    -0.4417,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.76,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.7227,
+    0.3597,
+    2.4551,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftAltArm",
+   "part0": "LeftArm",
+   "part1": "LeftAltArm",
+   "c0": [
+    -0.0742,
+    -1.4997,
+    -0.7022,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.79,
+    -0.81,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -2.4893,
+    4.1831,
+    -6.5376,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightAltArm",
+   "part0": "RightArm",
+   "part1": "RightAltArm",
+   "c0": [
+    0.0742,
+    -1.5197,
+    -0.7822,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.77,
+    -0.89,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    2.4893,
+    4.1631,
+    -6.6177,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "part1": "Head",
+   "c0": [
+    0,
+    0.5604,
+    -0.7964,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.56,
+    2.08,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    18.7156,
+    -12.1128,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightArm",
+   "part0": "HumanoidRootPart",
+   "part1": "RightArm",
+   "c0": [
+    2.4155,
+    0.7203,
+    -1.3751,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.61,
+    0.47,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    2.415,
+    6.2927,
+    -5.3652,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "RightLeg",
+   "c0": [
+    1.6418,
+    -0.3145,
+    6.4172,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.61,
+    0.47,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.6414,
+    5.2579,
+    2.4272,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "LeftLeg",
+   "c0": [
+    -1.6409,
+    -0.3145,
+    6.4172,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.61,
+    0.47,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.6414,
+    5.2579,
+    2.4272,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.0005,
+    5.5725,
+    -3.9902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftArm",
+   "part0": "HumanoidRootPart",
+   "part1": "LeftArm",
+   "c0": [
+    -2.4145,
+    0.7203,
+    -1.3751,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.61,
+    0.47,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -2.415,
+    6.2927,
+    -5.3652,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "part0": "Neck",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "c0": [
+    0.0024,
+    1.9327,
+    -0.5916,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -1.08,
+    0.62,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    8.8086,
+    -7.7002,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "c0": [
+    0,
+    0.1284,
+    0.757,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -0.73,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.3883,
+    12.6685,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "part0": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "part1": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "c0": [
+    0,
+    0.0937,
+    0.8375,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -0.46,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    4.2599,
+    11.4517,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "RightAltLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftAltLeg",
+    "side": -1
+   },
+   {
+    "body": "RightLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftLeg",
+    "side": -1
+   }
+  ],
+  "front": [
+   {
+    "body": "LeftAltArm",
+    "side": -1
+   },
+   {
+    "body": "RightAltArm",
+    "side": 1
+   },
+   {
+    "body": "RightArm",
+    "side": 1
+   },
+   {
+    "body": "LeftArm",
+    "side": -1
+   }
+  ],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Neck",
+   "Head"
+  ],
+  "jaw": [],
+  "root": "Torso",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    1.5787,
+    2.3382,
+    1.939
+   ],
+   "cframe": [
+    0.0,
+    5.6621,
+    4.2959,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://132240282307936"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_025",
+   "class": "MeshPart",
+   "size": [
+    1.9811,
+    2.9132,
+    2.6828
+   ],
+   "cframe": [
+    0.0,
+    9.8885,
+    -8.3203,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://139760152022271"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_023",
+   "class": "MeshPart",
+   "size": [
+    1.9811,
+    2.5168,
+    2.3638
+   ],
+   "cframe": [
+    0.0,
+    14.6503,
+    -9.3301,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://95315712711642"
+  },
+  {
+   "object": "RightLeg",
+   "name": "RightLeg",
+   "class": "MeshPart",
+   "size": [
+    0.7975,
+    2.3302,
+    1.9571
+   ],
+   "cframe": [
+    1.6414,
+    4.6479,
+    1.957,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://121191771183914"
+  },
+  {
+   "object": "RightAltLeg",
+   "name": "RightAltLeg",
+   "class": "MeshPart",
+   "size": [
+    0.6513,
+    2.6232,
+    2.4823
+   ],
+   "cframe": [
+    1.7156,
+    2.7069,
+    2.124,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://108181381137035"
+  },
+  {
+   "object": "LeftAltArm",
+   "name": "LeftAltArm",
+   "class": "MeshPart",
+   "size": [
+    0.6513,
+    3.0838,
+    2.4322
+   ],
+   "cframe": [
+    -2.4893,
+    3.3931,
+    -5.7275,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://82517375084023"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_018",
+   "class": "MeshPart",
+   "size": [
+    0.5902,
+    1.8101,
+    1.272
+   ],
+   "cframe": [
+    -1.7156,
+    1.1589,
+    2.897,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://88890472331880"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_019",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_019",
+   "class": "MeshPart",
+   "size": [
+    2.1114,
+    0.6832,
+    2.3869
+   ],
+   "cframe": [
+    -2.4966,
+    0.4473,
+    -6.1313,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://89718740772675"
+  },
+  {
+   "object": "RightAltArm",
+   "name": "RightAltArm",
+   "class": "MeshPart",
+   "size": [
+    0.6513,
+    3.0838,
+    2.4322
+   ],
+   "cframe": [
+    2.4893,
+    3.3931,
+    -5.7275,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://78900761369455"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    5.7234,
+    6.6391,
+    4.797
+   ],
+   "cframe": [
+    -0.0005,
+    5.5725,
+    -3.9902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://130655529813731"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_013",
+   "class": "MeshPart",
+   "size": [
+    1.9121,
+    1.1164,
+    4.1123
+   ],
+   "cframe": [
+    0.0,
+    17.5225,
+    -14.1953,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120559065642513"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_004",
+   "class": "MeshPart",
+   "size": [
+    0.5902,
+    2.4932,
+    1.2078
+   ],
+   "cframe": [
+    2.4893,
+    1.5934,
+    -4.9614,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://112797103792950"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_028",
+   "class": "MeshPart",
+   "size": [
+    5.381,
+    6.1217,
+    3.0247
+   ],
+   "cframe": [
+    -0.0002,
+    5.6449,
+    -0.1221,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://82586008383971"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_017",
+   "class": "MeshPart",
+   "size": [
+    1.7267,
+    0.5182,
+    2.6286
+   ],
+   "cframe": [
+    0.0,
+    17.787,
+    -14.8755,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://129890934115407"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_036",
+   "class": "MeshPart",
+   "size": [
+    1.4892,
+    2.0798,
+    3.0603
+   ],
+   "cframe": [
+    0.0,
+    4.4448,
+    8.3838,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://127018623957371"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_011",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_011",
+   "class": "MeshPart",
+   "size": [
+    2.1114,
+    0.7195,
+    2.3869
+   ],
+   "cframe": [
+    1.7227,
+    0.3597,
+    1.6953,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109394415766632"
+  },
+  {
+   "object": "LeftLeg",
+   "name": "LeftLeg",
+   "class": "MeshPart",
+   "size": [
+    0.7975,
+    2.3302,
+    1.9571
+   ],
+   "cframe": [
+    -1.6414,
+    4.6479,
+    1.957,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://103709787023586"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_022",
+   "class": "MeshPart",
+   "size": [
+    1.9811,
+    2.5139,
+    2.2858
+   ],
+   "cframe": [
+    0.0,
+    16.8784,
+    -10.1675,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://139345295772745"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_029",
+   "class": "MeshPart",
+   "size": [
+    3.2245,
+    3.6668,
+    1.9875
+   ],
+   "cframe": [
+    0.0012,
+    5.722,
+    2.3545,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://112344682823565"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_031",
+   "class": "MeshPart",
+   "size": [
+    1.5333,
+    2.1432,
+    1.8891
+   ],
+   "cframe": [
+    0.0,
+    4.9989,
+    6.145,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107350398661391"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_034",
+   "class": "MeshPart",
+   "size": [
+    0.8461,
+    0.9718,
+    1.8081
+   ],
+   "cframe": [
+    0.0,
+    4.3883,
+    13.3984,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://76646816023365"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_024",
+   "class": "MeshPart",
+   "size": [
+    1.9811,
+    2.5774,
+    2.4353
+   ],
+   "cframe": [
+    0.0,
+    12.3918,
+    -8.7788,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://80760890267396"
+  },
+  {
+   "object": "LeftAltLeg",
+   "name": "LeftAltLeg",
+   "class": "MeshPart",
+   "size": [
+    0.6513,
+    2.6232,
+    2.4823
+   ],
+   "cframe": [
+    -1.7156,
+    2.7069,
+    2.124,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://107005347611904"
+  },
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    2.0139,
+    2.57,
+    4.5041
+   ],
+   "cframe": [
+    0.0,
+    19.2756,
+    -14.1929,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://95733475532810"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_009",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_009",
+   "class": "MeshPart",
+   "size": [
+    2.1114,
+    0.6832,
+    2.3869
+   ],
+   "cframe": [
+    2.4966,
+    0.4473,
+    -6.1313,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://126687231028301"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_015",
+   "class": "MeshPart",
+   "size": [
+    0.5902,
+    2.4932,
+    1.2078
+   ],
+   "cframe": [
+    -2.4893,
+    1.5934,
+    -4.9614,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://105869155667269"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_008",
+   "class": "MeshPart",
+   "size": [
+    0.5902,
+    1.8101,
+    1.272
+   ],
+   "cframe": [
+    1.7156,
+    1.1589,
+    2.897,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://102813605339147"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_010",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_010",
+   "class": "MeshPart",
+   "size": [
+    2.1114,
+    0.7195,
+    2.3869
+   ],
+   "cframe": [
+    -1.7227,
+    0.3597,
+    1.6953,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://75007185556193"
+  },
+  {
+   "object": "LeftArm",
+   "name": "LeftArm",
+   "class": "MeshPart",
+   "size": [
+    0.7975,
+    2.9495,
+    1.8893
+   ],
+   "cframe": [
+    -2.415,
+    5.6827,
+    -5.8354,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://70914551310362"
+  },
+  {
+   "object": "RightArm",
+   "name": "RightArm",
+   "class": "MeshPart",
+   "size": [
+    0.7975,
+    2.9495,
+    1.8893
+   ],
+   "cframe": [
+    2.415,
+    5.6827,
+    -5.8354,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://81877224517326"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_016",
+   "class": "MeshPart",
+   "size": [
+    1.7819,
+    0.5308,
+    2.9391
+   ],
+   "cframe": [
+    0.0,
+    18.1372,
+    -14.7642,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://123413367624920"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_021",
+   "class": "MeshPart",
+   "size": [
+    1.9811,
+    2.126,
+    1.7995
+   ],
+   "cframe": [
+    0.0,
+    18.1552,
+    -11.3164,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://140522904330943"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_035",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_035",
+   "class": "MeshPart",
+   "size": [
+    0.6432,
+    0.7393,
+    2.1551
+   ],
+   "cframe": [
+    0.0,
+    4.4802,
+    15.3672,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://127015511588506"
+  },
+  {
+   "object": "Neck",
+   "name": "Neck",
+   "class": "MeshPart",
+   "size": [
+    3.8499,
+    4.7296,
+    2.6845
+   ],
+   "cframe": [
+    -0.0024,
+    6.8759,
+    -7.1084,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://76837664727127"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_033",
+   "class": "MeshPart",
+   "size": [
+    1.0683,
+    1.2378,
+    1.1994
+   ],
+   "cframe": [
+    0.0,
+    4.2599,
+    11.9116,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://74057587488886"
+  },
+  {
+   "object": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "name": "Meshes/set_12_Barosaurus_Skeleton_032",
+   "class": "MeshPart",
+   "size": [
+    1.2165,
+    1.3975,
+    1.425
+   ],
+   "cframe": [
+    0.0,
+    4.1663,
+    10.6138,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    235,
+    210
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://119272869240557"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

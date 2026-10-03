@@ -1,0 +1,22 @@
+{
+ "item": "egg_irex",
+ "category": "props",
+ "sourceName": "IRex",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.IRex",
+ "size": [
+  4.7364,
+  7.7505,
+  4.7363
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_irex"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 10,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

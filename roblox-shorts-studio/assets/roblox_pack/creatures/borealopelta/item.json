@@ -1,0 +1,31 @@
+{
+ "item": "borealopelta",
+ "category": "creatures",
+ "sourceName": "Borealopelta",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Borealopelta",
+ "size": [
+  21.3572,
+  12.767,
+  35.2207
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "LeftUpperArm",
+  "LowerTorso",
+  "Tail",
+  "LeftUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperLeg",
+  "UpperTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 124,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

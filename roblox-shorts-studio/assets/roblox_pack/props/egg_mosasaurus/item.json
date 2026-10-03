@@ -1,0 +1,22 @@
+{
+ "item": "egg_mosasaurus",
+ "category": "props",
+ "sourceName": "Mosasaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Mosasaurus",
+ "size": [
+  7.0494,
+  10.8945,
+  7.0498
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_mosasaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 9,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

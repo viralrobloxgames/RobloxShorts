@@ -1,0 +1,27 @@
+{
+ "item": "egg_designer_8",
+ "category": "props",
+ "sourceName": "Egg8",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Egg8",
+ "size": [
+  4.3199,
+  6.4114,
+  4.875
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_designer_8"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://91717216610217",
+  "rbxassetid://96480318672933"
+ ],
+ "textureIds": [
+  "rbxassetid://136517408843597"
+ ]
+}

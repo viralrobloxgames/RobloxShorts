@@ -1,0 +1,35 @@
+# Materials for lod_pachycephalosaur. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_f9e999
+Kd 0.9765 0.9137 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_b8b8b8
+Kd 0.7216 0.7216 0.7216
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c7ac78
+Kd 0.7804 0.6745 0.4706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_e7ac58
+Kd 0.9059 0.6745 0.3451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

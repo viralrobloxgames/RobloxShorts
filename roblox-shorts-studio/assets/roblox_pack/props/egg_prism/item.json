@@ -1,0 +1,27 @@
+{
+ "item": "egg_prism",
+ "category": "props",
+ "sourceName": "PrismEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.PrismEgg",
+ "size": [
+  4.16,
+  5.1565,
+  4.1543
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_prism",
+  "egg_prism_shimmer"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://105555653499606"
+ ],
+ "textureIds": [
+  "rbxassetid://113103560203007"
+ ]
+}

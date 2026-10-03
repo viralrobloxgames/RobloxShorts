@@ -1,0 +1,48 @@
+{
+ "item": "t_rex",
+ "category": "creatures",
+ "sourceName": "T Rex",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.T Rex",
+ "size": [
+  8.5957,
+  13.6027,
+  31.4492
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Head",
+  "RightFoot",
+  "RightArm",
+  "Tail",
+  "LeftLeg",
+  "RightLeg",
+  "Neck",
+  "Neck2",
+  "Torso",
+  "LeftFoot",
+  "LeftArm",
+  "BaseTail"
+ ],
+ "joints": 12,
+ "bones": 0,
+ "parts": 14,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://103533160300011",
+  "rbxassetid://110114409349006",
+  "rbxassetid://112757831195569",
+  "rbxassetid://114127598833852",
+  "rbxassetid://114908923451765",
+  "rbxassetid://119251582312281",
+  "rbxassetid://119802126461937",
+  "rbxassetid://120945923478826",
+  "rbxassetid://133151327780830",
+  "rbxassetid://140382445517259",
+  "rbxassetid://74254576275688",
+  "rbxassetid://87968974048345",
+  "rbxassetid://90231875530481",
+  "rbxassetid://90430764914964"
+ ],
+ "textureIds": []
+}

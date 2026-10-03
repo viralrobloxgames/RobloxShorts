@@ -1,0 +1,14 @@
+# Materials for egg_tupandactylus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_da8541
+Kd 0.8549 0.5216 0.2549
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff5959
+Kd 1.0000 0.3490 0.3490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

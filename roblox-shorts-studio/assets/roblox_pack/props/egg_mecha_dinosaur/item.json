@@ -1,0 +1,22 @@
+{
+ "item": "egg_mecha_dinosaur",
+ "category": "props",
+ "sourceName": "MechaDinosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.MechaDinosaur",
+ "size": [
+  7.433,
+  7.4329,
+  7.4336
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_mecha_dinosaur"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 10,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}
