@@ -1,0 +1,24 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 2136.14it/s]
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 1/29 2.7s in 52s: Two Maxes. Same face. Same name.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 2/29 1.1s in 15s: One of them is a copy.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 3/29 1.4s in 15s: And it wasn't late anymore.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 4/29 2.2s in 18s: But Mia had been spectating the whole time.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
