@@ -1,0 +1,8 @@
+{
+  "file": "The_Server_Says_One.mp4",
+  "sha256": "2575dde362bdbdbb9b2b4436b282d8152d81be94ab2ff5eafe147ef2732c7335",
+  "approved": {"by": "user", "at": "2026-10-03", "how": "approved in chat for the 22:30 slot"},
+  "scheduled_for": "2026-10-03T22:30:00+01:00",
+  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "uploaded image", "caption": "The server said 1 player online... now there are two Maxes 😨 Which one is real? LEFT or RIGHT 👇 #roblox #robloxhorror #robloxstory #scary #fyp"},
+  "youtube": {"status": "scheduled", "method": "YouTube Studio web, Schedule", "url": "https://youtube.com/shorts/Hc751s9SVcc", "video_id": "Hc751s9SVcc", "made_for_kids": false, "altered_content": false, "thumbnail": "cover.jpg uploaded before scheduling; Shorts shelf frame (Select from video, last frame) still to set once the scrubber is offered"}
+}
