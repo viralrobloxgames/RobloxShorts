@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { ConvexGeometry } from 'three/addons/geometries/ConvexGeometry.js';
 import { part, canvasTexture } from '../../../web/lib/world.js';
+import { packTexture } from '../../../web/lib/robloxPack.js';
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const std = (color, o = {}) => new THREE.MeshStandardMaterial({ color, roughness: 0.55, ...o });
@@ -30,13 +31,13 @@ export function makeNose(actor, skin = '#F0B774') {
   const root = V(0, 0.6, 0.58);
   // A wedge: tall and wide where it meets the face (between the eyes), tapering forward and drooping down to the tip.
   const pts = [];
-  for (const s of [-1, 1]) pts.push(V(0.12 * s, 0.74, 0.57), V(0.25 * s, 0.4, 0.57), V(0.09 * s, 0.72, 0.68),
-    V(0.1 * s, 0.5, 1.22), V(0.13 * s, 0.33, 1.2), V(0.18 * s, 0.33, 0.95));
+  for (const s of [-1, 1]) pts.push(V(0.12 * s, 0.74, 0.57), V(0.24 * s, 0.47, 0.57), V(0.09 * s, 0.72, 0.68),
+    V(0.1 * s, 0.56, 1.2), V(0.12 * s, 0.41, 1.18), V(0.17 * s, 0.41, 0.95));
   const wedge = mesh(new ConvexGeometry(pts), m); g.add(wedge);
-  const bulb = mesh(new THREE.SphereGeometry(0.19, 24, 16), m); bulb.position.set(0, 0.4, 1.2); bulb.scale.set(1.15, 1, 1); g.add(bulb);
+  const bulb = mesh(new THREE.SphereGeometry(0.175, 24, 16), m); bulb.position.set(0, 0.47, 1.18); bulb.scale.set(1.15, 1, 1); g.add(bulb);
   for (const s of [-1, 1]) {
-    const wing = mesh(new THREE.SphereGeometry(0.13, 16, 12), m); wing.position.set(0.17 * s, 0.38, 1.0); wing.scale.set(1, 0.9, 1.2); g.add(wing);
-    const hole = mesh(new THREE.SphereGeometry(0.05, 10, 8), dark); hole.position.set(0.08 * s, 0.3, 1.17); hole.scale.set(1, 0.5, 1.3); g.add(hole);
+    const wing = mesh(new THREE.SphereGeometry(0.13, 16, 12), m); wing.position.set(0.16 * s, 0.45, 1.0); wing.scale.set(1, 0.9, 1.2); g.add(wing);
+    const hole = mesh(new THREE.SphereGeometry(0.05, 10, 8), dark); hole.position.set(0.075 * s, 0.38, 1.15); hole.scale.set(1, 0.5, 1.3); g.add(hole);
   }
   g.userData = { mat: m, base: root.clone(), glow: 0, inflate: 0 };
   // Pivot the whole nose at its root so it can swell and twitch from the face.
@@ -161,4 +162,21 @@ export function palm(h = 16, seed = 0) {
   for (let i = 0; i < 7; i++) { const s = part(1.3 - i * 0.07, h / 7 + 0.1, 1.3 - i * 0.07, i % 2 ? '#8a5a32' : '#7a4e2a', { center: true }); s.position.set(Math.sin(i * 0.4 + seed) * 0.25 * i, (i + 0.5) * h / 7, 0); g.add(s); }
   for (let i = 0; i < 7; i++) { const a = (i / 7) * Math.PI * 2 + seed, leaf = part(1.4, 0.25, 6.5, i % 2 ? '#3f9a4a' : '#2f8a3e', { center: true }); leaf.position.set(Math.cos(a) * 2.8, h + 0.3 - 0.6, Math.sin(a) * 2.8); leaf.rotation.set(0.4, -a + Math.PI / 2, 0); g.add(leaf); }
   return g;
+}
+
+// Lip-sync for a pack character with the default face style: the expression's eyes layer + a mouth layer, composited once
+// per pair. talk(expr, code) with code from web/lipsync.js: c closed, s small, w wide, o round, e teeth, n flat, - rest.
+const REST_OWN = new Set(['happy', 'laugh', 'shocked', 'scared', 'surprised', 'smug', 'sleeping', 'love', 'evil_grin']);
+const MOUTH = { c: 'mouth_closed', s: 'mouth_small', w: 'mouth_wide', o: 'mouth_o', e: 'mouth_e', n: 'neutral' };
+export async function makeTalkingFace(actor, exprs) {
+  const eyes = {}, mouths = {}, cache = new Map();
+  await Promise.all(exprs.map(async (e) => { eyes[e] = (await packTexture(`faces/layers/eyes/${e}.png`)).image; mouths[e] = (await packTexture(`faces/layers/mouth/${e}.png`)).image; }));
+  await Promise.all(Object.values(MOUTH).map(async (m) => { mouths[m] = (await packTexture(`faces/layers/mouth/${m}.png`)).image; }));
+  return (expr, code) => {
+    if (!eyes[expr]) return false;
+    const rest = REST_OWN.has(expr) ? expr : 'neutral';          // between sentences: a calm flat mouth unless the expression's mouth is the point
+    const m = code === '-' || !MOUTH[code] ? rest : MOUTH[code], key = expr + '|' + m;
+    if (!cache.has(key)) cache.set(key, canvasTexture(1024, 1024, (g) => { g.drawImage(eyes[expr], 0, 0, 1024, 1024); g.drawImage(mouths[m], 0, 0, 1024, 1024); }));
+    actor.face.material.map = cache.get(key); actor.face.material.needsUpdate = true; return true;
+  };
 }

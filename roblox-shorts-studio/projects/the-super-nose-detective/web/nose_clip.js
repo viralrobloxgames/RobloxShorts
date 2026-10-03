@@ -13,8 +13,12 @@ import { roundRect, speedLines, flash } from '../../../web/lib/overlay.js';
 import { loadRobloxCharacter, loadAnimation, robloxPose } from '../../../web/lib/robloxPack.js';
 import { waveArm } from '../../../web/lib/gestures.js';
 import { travel, travelTo, STRIDE } from '../../../web/lib/locomotion.js';
-import { wearOutfit, makeNose, setNose, makeSunglasses, donut, sock, evidenceBag, convertible, rollWheels, policeCar, flashLights, tape, palm } from './kit.js';
+import { makeTalkingFace, wearOutfit, makeNose, setNose, makeSunglasses, donut, sock, evidenceBag, convertible, rollWheels, policeCar, flashLights, tape, palm } from './kit.js';
 import { W } from './beats.js';
+import { LIPS } from './lipsync.js';
+const lipAt = (t) => LIPS[Math.floor(t * 30 + 1e-6)] || '-';
+const FLAP = 'swnoesnwcsoe';
+let talkMax, talkLeo, talkMia;
 
 export const meta = { seconds: Math.ceil((W.end + 0.7) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'The Super Nose Detective' };
 export const sky = { zenith: '#3b2c78', horizon: '#ff9e7a', below: '#f2d2b8', fog: '#f0b49c', sunDir: new THREE.Vector3(0.62, 0.32, 0.55), sunColor: '#ffd2a0' };
@@ -190,6 +194,9 @@ export async function setup(stage) {
   await wearOutfit(max, 'max_miami.png'); await wearOutfit(leo, 'leo_chief.png'); await wearOutfit(skye, 'skye_70s.png');
   nose = makeNose(max);
   makeSunglasses(noob); makeSunglasses(mia, '#ffffff', '#ff5d9a');
+  talkMax = await makeTalkingFace(max, ['determined', 'suspicious', 'smug', 'surprised', 'neutral', 'sleeping', 'scared', 'shocked', 'annoyed', 'nervous', 'happy', 'laugh']);
+  talkLeo = await makeTalkingFace(leo, ['angry', 'annoyed', 'smug', 'evil_grin', 'shocked', 'laugh', 'happy']);
+  talkMia = await makeTalkingFace(mia, ['love']);
   // Leo's plants: sprinkles on his face, one striped sock (right foot), the other foot bare.
   const SPR = ['#ff5d7a', '#7fe3dd', '#ffffff', '#ffd23f', '#a56dff'];
   for (let i = 0; i < 7; i++) { const sp = new THREE.Mesh(new THREE.CapsuleGeometry(0.028, 0.08, 2, 6), new THREE.MeshStandardMaterial({ color: SPR[i % 5] })); sp.position.set(-0.32 + i * 0.1 + (i % 2) * 0.03, 0.22 + (i % 3) * 0.06, 0.625); sp.rotation.z = i * 1.3; leo.bones.Head.add(sp); }
@@ -249,8 +256,11 @@ function inCar(b, s, lean = 0.3) {
 function maxState(s) {
   const b = st(MAX_SCENE, 0, idle(s), 'determined');
   if (s < B.scene) {                                              // crime scene: sniffing the bag; turning to the wisps
-    b.layers = [[A.hold, 0.3]]; b.bag = 'nose'; b.nod = 0.1; b.face = s < B.logo ? 'suspicious' : 'determined';
-    if (win(s, W.smell - 0.25, B.caseIn)) { b.layers = [[A.look_up, 0.3]]; b.bag = null; b.rotY = 0.5 * Math.sin((s - W.smell) * 1.6); b.face = 'smug'; }
+    const look = easeInOut(seg(s, 0.45, 0.95));                   // sniffing the bag at his right, then turns to camera
+    b.layers = idle(s); b.arms.push(['R', 2.05, 0.22]); b.bag = 'side'; b.headTurn = -0.45 * (1 - look); b.nod = 0.22 * (1 - look);
+    b.face = s < 0.5 ? 'sleeping' : s < B.logo ? 'suspicious' : 'determined';
+    if (s > B.pass) b.face = 'smug';
+    if (win(s, W.smell - 0.25, B.caseIn)) { b.layers = [[A.look_up, 0.3]]; b.arms = []; b.bag = null; b.headTurn = 0; b.nod = 0; b.rotY = 0.5 * Math.sin((s - W.smell) * 1.6); b.face = 'smug'; }
   } else if (s < B.clue) {                                        // Skye: turns to her, thinks, raises a hand
     b.rotY = face(MAX_SCENE, SKYE_AT); b.face = s > W.single ? 'surprised' : 'neutral';
     if (s > B.think1) { b.layers = [[A.think, 0.4]]; b.face = 'suspicious'; }
@@ -316,7 +326,7 @@ function skyeState(s) {
 function miaState(s) {
   const bob = 0.12 * Math.sin(s * 2.2), b = st(MIA_AT, face(MIA_AT, MAXP), [[A.sit, 0.5]], 'love', { grounded: false });
   b.pos = MIA_AT.clone().setY(WATER_Y - 0.65 + bob); b.rotZ = 0.05 * Math.sin(s * 1.7);
-  if (s > W.liked - 0.1 && s < W.stay + 0.6) b.wave = 'R';
+  if (s > W.liked - 0.1 && s < W.stay + 0.6) { b.wave = 'R'; b.talk = true; }
   if (s > B.r2 - 0.1) { b.face = 'sad'; b.wave = null; }
   return b;
 }
@@ -342,11 +352,15 @@ function place(a, x) {
   for (const [side, ang, spread] of x.arms) armFwd(a, side, ang, spread);
   if (x.wave) waveArm(a, tNow, x.wave);
   if (x.headShake) a.bones.Head.rotation.y += x.headShake;
+  if (x.headTurn) a.bones.Head.rotation.y += x.headTurn;
   if (x.nod) a.bones.Head.rotation.x += x.nod;
   if (x.talk) a.bones.Head.rotation.x += 0.06 * Math.sin(tNow * 17);
   if (x.feetUp) { a.bones['Leg.L'].rotation.x -= 1.25; a.bones['Leg.R'].rotation.x -= 1.05; }
   if (x.grounded) { a.root.updateMatrixWorld(true); a.root.position.y += x.floor - soleHeight(a); }
   setExpression(a, x.face === 'think' ? 'suspicious' : x.face);
+  if (a === max) talkMax(x.face, lipAt(tNow));                   // Max narrates: his mouth follows the voice
+  else if (x.talk && a === leo) talkLeo(x.face, FLAP[Math.floor(tNow * 10) % FLAP.length]);
+  else if (x.talk && a === mia) talkMia('love', FLAP[Math.floor(tNow * 10) % FLAP.length]);
   a.root.updateMatrixWorld(true);
 }
 // A point in an actor's space (x right, y up, z forward) in world space.
@@ -367,7 +381,7 @@ export function update(t, stage) {
   place(max, M); place(leo, L); place(skye, S); place(mia, MI); place(noob, N);
   // Nose: glows with the gamepass and when sniffing/following; swells for the sneeze; twitches at the end.
   const sniffPulse = (a, b) => (win(s, a, b) ? 0.07 * Math.max(0, Math.sin((s - a) * 9)) : 0);
-  let glow = seg(s, B.pass, B.pass + 0.5) * (1 - seg(s, B.caseIn - 0.3, B.caseIn));
+  let glow = Math.max(0.75 * seg(s, B.logo, B.logo + 0.15), seg(s, B.pass, B.pass + 0.5)) * (1 - seg(s, B.caseIn - 0.3, B.caseIn));
   if (win(s, B.sniff, B.drive) || win(s, B.trailBack - 0.2, B.trailBack + 1)) glow = 0.8 + 0.2 * Math.sin(s * 12);
   if (s > B.twitch) glow = 0.9 + 0.1 * Math.sin(s * 15);
   const swell = win(s, B.throw + 0.4, B.achoo) ? 0.55 * easeIn(seg(s, B.throw + 0.4, B.achoo - 0.05)) + 0.04 * Math.sin(s * 40) : win(s, B.achoo, B.achoo + 0.25) ? 0.55 * (1 - seg(s, B.achoo, B.achoo + 0.25)) : 0;
@@ -384,7 +398,8 @@ export function update(t, stage) {
 
   // The evidence bag (with the sock): in Max's hands at nose height while sniffing; on show for the clue.
   bag.visible = !!M.bag;
-  if (M.bag) { const z = M.bag === 'show' ? 1.95 : 1.75; bag.position.copy(local(max, 0, M.bag === 'show' ? 2.55 : 1.75 + 0.06 * Math.sin(s * 9), z)); bag.rotation.set(0, max.root.rotation.y + (M.bag === 'show' ? 0.4 * Math.sin(s * 1.2) : 0), 0); }
+  if (M.bag === 'side') { bag.position.copy(handR(max)).add(V(-0.15, -2.42, 0.25)); bag.rotation.set(0, max.root.rotation.y + 0.3, 0); }
+  else if (M.bag) { const z = M.bag === 'show' ? 1.95 : 1.75; bag.position.copy(local(max, 0, M.bag === 'show' ? 2.55 : 1.75 + 0.06 * Math.sin(s * 9), z)); bag.rotation.set(0, max.root.rotation.y + (M.bag === 'show' ? 0.4 * Math.sin(s * 1.2) : 0), 0); }
 
   // Donut halves: Leo's (eaten through the reveal), the one slid across, then in Max's hand and bitten.
   const inOffice = s > B.office - 0.1;
@@ -452,8 +467,8 @@ export function update(t, stage) {
   stage.bloom.strength = 0.35;
   switch (shot.id) {
     case 'hook': { const k = easeInOut(seg(s, B.logo - 0.12, B.logo + 0.08));    // crash zoom onto the nose on "this"
-      look(mh.clone().add(V(lerp(6.0, 4.0, k), lerp(-0.3, -0.2, k), lerp(4.2, 3.0, k))).add(jolt(B.logo, 0.12, 0.4)), mh.clone().add(V(0, lerp(-1.0, -0.4, k), 1.1)), lerp(44, 38, k), 25); break; }
-    case 'gamepass': look(mh.clone().add(V(3.4, 0.3, 2.6)), mh.clone().add(V(0, -0.6, 0.9)), 40); break;
+      look(mh.clone().add(V(lerp(2.6, 1.8, k), lerp(-0.8, -0.55, k), lerp(5.4, 3.8, k))).add(jolt(B.logo, 0.12, 0.4)), mh.clone().add(V(lerp(-0.75, -0.1, k), lerp(-0.75, -0.3, k), lerp(0.6, 0.9, k))), lerp(40, 38, k), 25); break; }
+    case 'gamepass': look(mh.clone().add(V(2.4, -0.8, 5.0)), mh.clone().add(V(-0.2, -1.3, 0.6)), 40); break;
     case 'wisps': look(V(-5, 5.5, 15), V(4, 3.5, 1), 50, 30); break;
     case 'map': look(V(lerp(-60, -40, u), 110, lerp(-40, -20, u)), V(0, 0, 150), 48, 200); break;
     case 'caseEmpty': look(CASE_AT.clone().add(V(5, 9, 15)), CASE_AT.clone().add(V(0, 7.2, 0)), 44); break;
@@ -539,7 +554,7 @@ function logo(g, s, t) {
 }
 function gamepass(g, s, t) {
   if (t < B.pass + 0.1 || t > W.smell - 0.1) return; const k = pop(t, B.pass + 0.1, 0.25, 2), a = fade(t, B.pass, W.smell - 0.1 - B.pass);
-  g.save(); g.globalAlpha = a; g.translate(540 * s, 820 * s); g.scale(k, k);
+  g.save(); g.globalAlpha = a; g.translate(540 * s, 960 * s); g.scale(0.85 * k, 0.85 * k);
   roundRect(g, -380 * s, -230 * s, 760 * s, 460 * s, 30 * s); g.fillStyle = 'rgba(30,32,38,.95)'; g.fill(); g.lineWidth = 4 * s; g.strokeStyle = '#4b4f5a'; g.stroke();
   g.fillStyle = '#ffffff'; g.font = `800 ${34 * s}px Montserrat`; g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillText('Gamepass', -340 * s, -180 * s);
   g.beginPath(); g.arc(-220 * s, -10 * s, 110 * s, 0, 7); g.fillStyle = '#1e7a3c'; g.fill(); g.fillStyle = '#7dffa0';
