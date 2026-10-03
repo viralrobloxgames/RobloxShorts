@@ -272,32 +272,32 @@ export function update(t, stage) {
   const kick = shake(t, T.hit1, 0.18, 0.4).add(shake(t, T.kick2, 0.06, 0.3));
   switch (shot.id) {
     case 'hook': look(stage, V(lerp(2.2, 1.4, u), lerp(5.6, 5.2, u), -6.4), V(0, 2.8, 16), lerp(54, 46, easeInOut(u))); break;   // through the net: Mia, the ball, Leo
-    case 'stakes': look(stage, mh.clone().add(V(1.2, 0.2, lerp(7.5, 6.2, u))), mh.clone().add(V(0, -0.5, 0)), 40); break;
+    case 'stakes': look(stage, mh.clone().add(V(1.8, 0.4, lerp(12, 10.5, u))), mh.clone().add(V(0, -1.6, 0)), 40); break;
     case 'cup': look(stage, V(lerp(-10.4, -11.0, u), 6.8, 3.2), V(-14.5, 5.6, -3.2), 36); break;
-    case 'miss': look(stage, lh.clone().add(V(1.6, 0.1, lerp(-6.4, -5.2, u))), lh.clone().add(V(0, -0.4, 0)), 40); break;
-    case 'season': look(stage, lh.clone().add(V(2.2, -3.0, -5.2)), lh.clone().add(V(0, -0.3, 0)), 46); break;          // hero angle, low
-    case 'watched': look(stage, mh.clone().add(V(0.3, 0.1, lerp(4.0, 3.2, u))), mh.clone().add(V(0, -0.15, 0)), 36); break;
-    case 'replayA1': case 'replayB1': look(stage, lh.clone().add(V(0.4, 0.2, -4.4)), lh.clone().add(V(0, -0.3, 0)), 38); break;
-    case 'replayA2': case 'replayB2': look(stage, V(0, 8.5, -9.5), V(0, 2.2, 10), 52); break;
-    case 'flick': look(stage, lh.clone().add(V(-0.4, 0.1, -3.6)), lh.clone().add(V(0, -0.25, 0)), 36); break;          // his eyes, from the goal side
+    case 'miss': look(stage, lh.clone().add(V(2.4, 0.2, lerp(-11, -9.5, u))), lh.clone().add(V(0, -1.6, 0)), 40); break;
+    case 'season': look(stage, lh.clone().add(V(3.2, -3.0, -9.0)), lh.clone().add(V(0, -1.2, 0)), 46); break;          // hero angle, low
+    case 'watched': look(stage, mh.clone().add(V(0.8, 0.3, lerp(9.0, 7.8, u))), mh.clone().add(V(0, -1.2, 0)), 40); break;
+    case 'replayA1': case 'replayB1': look(stage, lh.clone().add(V(1.4, 0.3, -8.5)), lh.clone().add(V(0, -1.3, 0)), 40); break;
+    case 'replayA2': case 'replayB2': look(stage, V(0, 12.0, -19.0), V(0, 2.2, 10), 50); break;
+    case 'flick': look(stage, lh.clone().add(V(-0.6, 0.1, -4.8)), lh.clone().add(V(0, -0.45, 0)), 36); break;          // his eyes, from the goal side
     case 'dive': look(stage, V(lerp(-2.4, -1.6, u), lerp(7.6, 6.6, u), -9.2), V(2.6, 1.8, lerp(7, 5, u)), 48); break;   // slow motion, from behind the goal
-    case 'slap': look(stage, V(10.8, 2.0, 6.5).add(kick), V(6.2, 1.3, 1.0), 40); break;
+    case 'slap': look(stage, V(17.0, 3.8, 12.5).add(kick), V(5.2, 1.6, 1.0), 42); break;
     case 'storm': look(stage, V(-7.5, 6.2, 21).add(kick), V(5.5, 2.4, 3.5), 46); break;
-    case 'whistle': { const rh = headP(noob); look(stage, rh.clone().add(V(4.2, 0.2, 2.2)), rh.clone().add(V(0, -0.5, 0)), 40); break; }
-    case 'freeze': look(stage, V(14.5, 1.6, -0.6), V(1.5, 1.6, 6.5), 40); break;                                      // along the goal line
-    case 'reading': look(stage, lh.clone().add(V(1.5, 0.15, -4.4)), lh.clone().add(V(0, -0.3, 0)), 38); break;
+    case 'whistle': { const rh = headP(noob); look(stage, rh.clone().add(V(11.0, 1.0, -6.5)), rh.clone().add(V(0, -1.4, 0)), 42); break; }
+    case 'freeze': look(stage, V(5.5, 8.0, 23.0), V(2.6, 1.2, 0.8), 44); break;                                         // the goal line and her boots
+    case 'reading': look(stage, lh.clone().add(V(2.8, 0.5, -11.5)), lh.clone().add(V(0, -1.5, 0)), 42); break;
     case 'anywhere': look(stage, V(0.2, 4.9, 0.9), lh.clone().add(V(0, -1.2, 0)), lerp(26, 22, u)); break;             // Mia's eyes
-    case 'closes': look(stage, lh.clone().add(V(0.9, 0.05, -2.6)), lh.clone().add(V(0, -0.1, 0)), 34); break;
-    case 'noclue': look(stage, V(0, 5.2, -6.2), V(0, 3.0, 14), 56); break;
-    case 'hardest': look(stage, mh.clone().add(V(-0.8, 0.1, lerp(5.6, 4.2, u))), mh.clone().add(V(0, -0.4, 0)), 38); break;
-    case 'line': look(stage, V(2.6, 0.8, lerp(3.6, 3.0, u)), V(0, 0.55, 0.3), 42); break;
-    case 'run2': look(stage, lh.clone().add(V(3.4, 0.4, -5.4)), lh.clone().add(V(0, -0.8, 0)), 42); break;
-    case 'scuff': look(stage, V(2.8, 1.0, 15.2).add(kick), V(-0.1, 0.7, 18.7), 42); break;
-    case 'roll': look(stage, V(b.x + 0.9, 1.0, Math.max(b.z + 3.4, 6)), V(0.2, 1.5, 0), 40); break;                        // behind the ball, low
-    case 'boot': look(stage, V(2.0, 0.85, lerp(4.6, 4.2, u)), V(0.3, 0.55, 1.1), 36); break;
-    case 'opens': look(stage, lh.clone().add(V(-0.6, 0.1, -3.4)), lh.clone().add(V(0, -0.2, 0)), 36); break;
+    case 'closes': look(stage, lh.clone().add(V(1.0, 0.1, -4.4)), lh.clone().add(V(0, -0.45, 0)), 36); break;
+    case 'noclue': look(stage, V(0.6, 6.0, 27.5), V(0, 3.0, 0), 52); break;
+    case 'hardest': look(stage, mh.clone().add(V(-1.4, 0.3, lerp(10, 8.5, u))), mh.clone().add(V(0, -1.4, 0)), 40); break;
+    case 'line': look(stage, V(5.0, 1.8, lerp(9.5, 8.5, u)), V(0, 2.2, 0.3), 44); break;
+    case 'run2': look(stage, lh.clone().add(V(5.5, 0.8, -9.0)), lh.clone().add(V(0, -1.5, 0)), 44); break;
+    case 'scuff': look(stage, V(9.5, 3.0, 8.0).add(kick), V(-0.3, 2.2, 18.9), 46); break;
+    case 'roll': look(stage, V(b.x + 2.4, 2.2, Math.max(b.z + 7, 10)), V(0.2, 2.4, 0), 44); break;                        // behind the ball, low
+    case 'boot': look(stage, V(4.6, 2.0, lerp(8.5, 7.8, u)), V(0.3, 1.8, 0.9), 42); break;
+    case 'opens': look(stage, lh.clone().add(V(-2.4, 0.8, -12.0)), lh.clone().add(V(0, -1.4, 0)), 42); break;
     case 'net': look(stage, V(6.4, 4.6, -3.7), V(-0.5, 3.4, 19), 40); break;                                            // the still net, Leo waiting
-    case 'season2': look(stage, lh.clone().add(V(1.0, 0.6, -4.2)), lh.clone().add(V(0, -0.5, 0)), 38); break;
+    case 'season2': look(stage, lh.clone().add(V(2.2, 0.9, -10.5)), lh.clone().add(V(0, -1.4, 0)), 42); break;
     case 'see': look(stage, V(lerp(13, 12, u), 7.2, 23), V(1, 2.4, 9), 50); break;
     default: { const k = easeInOut(clamp(u * 1.4)); look(stage, V(lerp(12, 9, k), lerp(7.2, 10, k), lerp(23, 26, k)), V(1, 2.4, 9), 50); }
   }
