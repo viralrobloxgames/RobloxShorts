@@ -166,7 +166,7 @@ export function update(t, stage) {
     }
     case 'face': {         // push in on the blank face, then tilt to the light in its chest
       const k = easeInOut(inv(W.light - 0.35, W.light + 0.25, t));
-      frame(stage, eh.clone().lerp(torso(ent).add(V(0, 0.2, 0)), k), 0, 0.03, lerp(lerp(3.4, 2.7, u), 3.4, k), 32); break;
+      orbit(stage, eh.clone().lerp(torso(ent).add(V(0, 0.2, 0)), k), 0, 0.03, lerp(lerp(4.6, 3.8, u), 4.6, k), 52); break;   // in front of Max: stays clear of his head
     }
     case 'wave': look(stage, V(5.6, 3.8, 13.6), V(-0.8, 3.0, -1.5), 46); break;                                // behind Max: the wave, the copy beyond
     case 'waveBack': frame(stage, torso(ent).add(V(0, 0.6, 0)), 0.35, 0.06, lerp(7, 6.2, u), 36); break;     // ...it waves back, late

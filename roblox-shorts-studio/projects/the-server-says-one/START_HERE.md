@@ -22,8 +22,11 @@ the real Max is on the LEFT; the copy is a mirror image (`mirror: true`, hoodie 
 - Sound: 69 cues from the horror kit (motif, footsteps, door, latch, heartbeat, reveal hits) over `horror/night_bed`.
 - Fit check: no accessories (0 pairs), reviewed. Cover `delivery/The_Server_Says_One_cover.{png,jpg}`; `post.json`.
 
+## Delivered
+- `delivery/The_Server_Says_One.mp4` (65.5 s, 1080x1920, validated), cover, captions, `post.json`.
+
 ## Next
-- Finish the render, encode, review the contact sheet, deliver. Post only after the user approves the MP4.
+- Post only after the user approves this MP4 (TikTok, then YouTube). Then plan Part 2: reveal which Max is real (LEFT).
 
 ## Re-render / re-encode
 ```
