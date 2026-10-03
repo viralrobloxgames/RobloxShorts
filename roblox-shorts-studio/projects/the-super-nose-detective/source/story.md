@@ -36,10 +36,15 @@ Format choices:
 - **The twist is planted:** the Chief has sprinkles on his face and keeps one foot behind his desk in beat 3; the
   sock has sprinkles on it in the sniff close-up. The red herring has both socks. The trail loops back to the
   station, which is where the video started.
-- 197 words, about 75-78 s in George voice C with noir pauses (over 60 s for Creator Rewards). US spelling.
+- Final script (v3, approved 2026-10-03, "about 65 seconds"): 169 words, 63.5 s of George voice C narration, 64.2 s video.
+  v3 cut "This nose never forgets", "You don't throw pepper at this nose" and the pizza beat, and the CTA is "Follow Viral
+  Roblox Games for the next case." `script.txt` is the source of truth; the build is `web/nose_clip.js` (beats from words).
 - Possible series: "Super Nose Detective, Case N". Case 2 is teased by the last shot.
 
 ## Beats (hook first)
+
+(Planned against script v2; the v3 build follows the same order with the cuts above. Two changes in the build: the
+feet are shown under the desk (striped sock vs bare foot), and the Noob floats in the pool with both socked feet up.)
 
 1. **HOOK (0-4 s).** Crash zoom onto Max's giant block nose, already mid-sniff over a sock held up in an evidence
    bag. Yellow 70s logo slams in over the action: "DETECTIVE MAX SNIFFWELL". Night, police lights, crime-scene tape.
@@ -92,8 +97,8 @@ Format choices:
     *"I've always been a man of principle. But some donuts just aren't worth fighting for. Case closed."*
 15. **Cliffhanger (68-71 s).** Max's nose twitches and glows again; a new green trail lights up out of the door.
     *"Then my nose twitched. A new case."*
-16. **CTA (71-74 s).** End card "CASE 2" + @viralrobloxgames + FOLLOW, the yellow logo again.
-    *"Follow Viral Roblox Games for case two."*
+16. **CTA.** End card "NEXT CASE..." + @viralrobloxgames + FOLLOW, over the new trail leading out of the office.
+    *"Follow Viral Roblox Games for the next case."*
 
 ## Build notes (web route)
 

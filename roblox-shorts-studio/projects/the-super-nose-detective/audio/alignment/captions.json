@@ -1,0 +1,1236 @@
+[
+ {
+  "start": 0.0,
+  "end": 1.56,
+  "text": "Some detectives use fingerprints,",
+  "words": [
+   {
+    "start": 0.0,
+    "end": 0.36,
+    "word": " Some"
+   },
+   {
+    "start": 0.36,
+    "end": 0.74,
+    "word": " detectives"
+   },
+   {
+    "start": 0.74,
+    "end": 1.08,
+    "word": " use"
+   },
+   {
+    "start": 1.08,
+    "end": 1.56,
+    "word": " fingerprints,"
+   }
+  ]
+ },
+ {
+  "start": 2.18,
+  "end": 2.88,
+  "text": "I use this.",
+  "words": [
+   {
+    "start": 2.18,
+    "end": 2.32,
+    "word": " I"
+   },
+   {
+    "start": 2.32,
+    "end": 2.58,
+    "word": " use"
+   },
+   {
+    "start": 2.58,
+    "end": 2.88,
+    "word": " this."
+   }
+  ]
+ },
+ {
+  "start": 3.42,
+  "end": 4.74,
+  "text": "The super nose gamepass,",
+  "words": [
+   {
+    "start": 3.42,
+    "end": 3.6,
+    "word": " The"
+   },
+   {
+    "start": 3.6,
+    "end": 3.92,
+    "word": " super"
+   },
+   {
+    "start": 3.92,
+    "end": 4.16,
+    "word": " nose"
+   },
+   {
+    "start": 4.16,
+    "end": 4.74,
+    "word": " gamepass,"
+   }
+  ]
+ },
+ {
+  "start": 5.12,
+  "end": 6.04,
+  "text": "I can smell anything",
+  "words": [
+   {
+    "start": 5.12,
+    "end": 5.3,
+    "word": " I"
+   },
+   {
+    "start": 5.3,
+    "end": 5.44,
+    "word": " can"
+   },
+   {
+    "start": 5.44,
+    "end": 5.72,
+    "word": " smell"
+   },
+   {
+    "start": 5.72,
+    "end": 6.04,
+    "word": " anything"
+   }
+  ]
+ },
+ {
+  "start": 6.04,
+  "end": 6.6,
+  "text": "on the map.",
+  "words": [
+   {
+    "start": 6.04,
+    "end": 6.26,
+    "word": " on"
+   },
+   {
+    "start": 6.26,
+    "end": 6.36,
+    "word": " the"
+   },
+   {
+    "start": 6.36,
+    "end": 6.6,
+    "word": " map."
+   }
+  ]
+ },
+ {
+  "start": 7.22,
+  "end": 8.2,
+  "text": "The case somebody stole",
+  "words": [
+   {
+    "start": 7.22,
+    "end": 7.36,
+    "word": " The"
+   },
+   {
+    "start": 7.36,
+    "end": 7.56,
+    "word": " case"
+   },
+   {
+    "start": 7.56,
+    "end": 7.9,
+    "word": " somebody"
+   },
+   {
+    "start": 7.9,
+    "end": 8.2,
+    "word": " stole"
+   }
+  ]
+ },
+ {
+  "start": 8.2,
+  "end": 9.14,
+  "text": "the golden donut.",
+  "words": [
+   {
+    "start": 8.2,
+    "end": 8.4,
+    "word": " the"
+   },
+   {
+    "start": 8.4,
+    "end": 8.68,
+    "word": " golden"
+   },
+   {
+    "start": 8.68,
+    "end": 9.14,
+    "word": " donut."
+   }
+  ]
+ },
+ {
+  "start": 9.74,
+  "end": 10.5,
+  "text": "The chief wanted it",
+  "words": [
+   {
+    "start": 9.74,
+    "end": 9.82,
+    "word": " The"
+   },
+   {
+    "start": 9.82,
+    "end": 10.02,
+    "word": " chief"
+   },
+   {
+    "start": 10.02,
+    "end": 10.3,
+    "word": " wanted"
+   },
+   {
+    "start": 10.3,
+    "end": 10.5,
+    "word": " it"
+   }
+  ]
+ },
+ {
+  "start": 10.5,
+  "end": 10.78,
+  "text": "back,",
+  "words": [
+   {
+    "start": 10.5,
+    "end": 10.78,
+    "word": " back,"
+   }
+  ]
+ },
+ {
+  "start": 11.16,
+  "end": 11.44,
+  "text": "tonight.",
+  "words": [
+   {
+    "start": 11.16,
+    "end": 11.44,
+    "word": " tonight."
+   }
+  ]
+ },
+ {
+  "start": 12.26,
+  "end": 13.08,
+  "text": "At the scene a",
+  "words": [
+   {
+    "start": 12.26,
+    "end": 12.44,
+    "word": " At"
+   },
+   {
+    "start": 12.44,
+    "end": 12.6,
+    "word": " the"
+   },
+   {
+    "start": 12.6,
+    "end": 12.9,
+    "word": " scene"
+   },
+   {
+    "start": 12.9,
+    "end": 13.08,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 13.08,
+  "end": 14.0,
+  "text": "girl asked if I",
+  "words": [
+   {
+    "start": 13.08,
+    "end": 13.32,
+    "word": " girl"
+   },
+   {
+    "start": 13.32,
+    "end": 13.68,
+    "word": " asked"
+   },
+   {
+    "start": 13.68,
+    "end": 13.86,
+    "word": " if"
+   },
+   {
+    "start": 13.86,
+    "end": 14.0,
+    "word": " I"
+   }
+  ]
+ },
+ {
+  "start": 14.0,
+  "end": 14.54,
+  "text": "was single.",
+  "words": [
+   {
+    "start": 14.0,
+    "end": 14.16,
+    "word": " was"
+   },
+   {
+    "start": 14.16,
+    "end": 14.54,
+    "word": " single."
+   }
+  ]
+ },
+ {
+  "start": 15.26,
+  "end": 15.6,
+  "text": "Tempting,",
+  "words": [
+   {
+    "start": 15.26,
+    "end": 15.6,
+    "word": " Tempting,"
+   }
+  ]
+ },
+ {
+  "start": 15.8,
+  "end": 16.3,
+  "text": "but I'm on a",
+  "words": [
+   {
+    "start": 15.8,
+    "end": 15.9,
+    "word": " but"
+   },
+   {
+    "start": 15.9,
+    "end": 16.08,
+    "word": " I'm"
+   },
+   {
+    "start": 16.08,
+    "end": 16.18,
+    "word": " on"
+   },
+   {
+    "start": 16.18,
+    "end": 16.3,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 16.3,
+  "end": 16.56,
+  "text": "case.",
+  "words": [
+   {
+    "start": 16.3,
+    "end": 16.56,
+    "word": " case."
+   }
+  ]
+ },
+ {
+  "start": 17.12,
+  "end": 17.88,
+  "text": "The only clue,",
+  "words": [
+   {
+    "start": 17.12,
+    "end": 17.28,
+    "word": " The"
+   },
+   {
+    "start": 17.28,
+    "end": 17.54,
+    "word": " only"
+   },
+   {
+    "start": 17.54,
+    "end": 17.88,
+    "word": " clue,"
+   }
+  ]
+ },
+ {
+  "start": 18.18,
+  "end": 18.72,
+  "text": "one sock.",
+  "words": [
+   {
+    "start": 18.18,
+    "end": 18.36,
+    "word": " one"
+   },
+   {
+    "start": 18.36,
+    "end": 18.72,
+    "word": " sock."
+   }
+  ]
+ },
+ {
+  "start": 19.58,
+  "end": 20.02,
+  "text": "Cheap cologne,",
+  "words": [
+   {
+    "start": 19.58,
+    "end": 19.7,
+    "word": " Cheap"
+   },
+   {
+    "start": 19.7,
+    "end": 20.02,
+    "word": " cologne,"
+   }
+  ]
+ },
+ {
+  "start": 20.26,
+  "end": 20.78,
+  "text": "bad decisions,",
+  "words": [
+   {
+    "start": 20.26,
+    "end": 20.38,
+    "word": " bad"
+   },
+   {
+    "start": 20.38,
+    "end": 20.78,
+    "word": " decisions,"
+   }
+  ]
+ },
+ {
+  "start": 21.22,
+  "end": 21.82,
+  "text": "and just a hint",
+  "words": [
+   {
+    "start": 21.22,
+    "end": 21.34,
+    "word": " and"
+   },
+   {
+    "start": 21.34,
+    "end": 21.5,
+    "word": " just"
+   },
+   {
+    "start": 21.5,
+    "end": 21.68,
+    "word": " a"
+   },
+   {
+    "start": 21.68,
+    "end": 21.82,
+    "word": " hint"
+   }
+  ]
+ },
+ {
+  "start": 21.82,
+  "end": 22.66,
+  "text": "of Tuesday night.",
+  "words": [
+   {
+    "start": 21.82,
+    "end": 22.02,
+    "word": " of"
+   },
+   {
+    "start": 22.02,
+    "end": 22.24,
+    "word": " Tuesday"
+   },
+   {
+    "start": 22.24,
+    "end": 22.66,
+    "word": " night."
+   }
+  ]
+ },
+ {
+  "start": 23.18,
+  "end": 24.04,
+  "text": "The trail led through",
+  "words": [
+   {
+    "start": 23.18,
+    "end": 23.32,
+    "word": " The"
+   },
+   {
+    "start": 23.32,
+    "end": 23.58,
+    "word": " trail"
+   },
+   {
+    "start": 23.58,
+    "end": 23.82,
+    "word": " led"
+   },
+   {
+    "start": 23.82,
+    "end": 24.04,
+    "word": " through"
+   }
+  ]
+ },
+ {
+  "start": 24.04,
+  "end": 24.76,
+  "text": "a pool party.",
+  "words": [
+   {
+    "start": 24.04,
+    "end": 24.16,
+    "word": " a"
+   },
+   {
+    "start": 24.16,
+    "end": 24.34,
+    "word": " pool"
+   },
+   {
+    "start": 24.34,
+    "end": 24.76,
+    "word": " party."
+   }
+  ]
+ },
+ {
+  "start": 25.78,
+  "end": 26.76,
+  "text": "Mia liked my nose,",
+  "words": [
+   {
+    "start": 25.78,
+    "end": 25.94,
+    "word": " Mia"
+   },
+   {
+    "start": 25.94,
+    "end": 26.14,
+    "word": " liked"
+   },
+   {
+    "start": 26.14,
+    "end": 26.38,
+    "word": " my"
+   },
+   {
+    "start": 26.38,
+    "end": 26.76,
+    "word": " nose,"
+   }
+  ]
+ },
+ {
+  "start": 27.18,
+  "end": 28.06,
+  "text": "asked me to stay.",
+  "words": [
+   {
+    "start": 27.18,
+    "end": 27.34,
+    "word": " asked"
+   },
+   {
+    "start": 27.34,
+    "end": 27.6,
+    "word": " me"
+   },
+   {
+    "start": 27.6,
+    "end": 27.76,
+    "word": " to"
+   },
+   {
+    "start": 27.76,
+    "end": 28.06,
+    "word": " stay."
+   }
+  ]
+ },
+ {
+  "start": 28.8,
+  "end": 29.12,
+  "text": "Tempting,",
+  "words": [
+   {
+    "start": 28.8,
+    "end": 29.12,
+    "word": " Tempting,"
+   }
+  ]
+ },
+ {
+  "start": 29.12,
+  "end": 29.88,
+  "text": "but I'm on a",
+  "words": [
+   {
+    "start": 29.12,
+    "end": 29.4,
+    "word": " but"
+   },
+   {
+    "start": 29.4,
+    "end": 29.6,
+    "word": " I'm"
+   },
+   {
+    "start": 29.6,
+    "end": 29.7,
+    "word": " on"
+   },
+   {
+    "start": 29.7,
+    "end": 29.88,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 29.88,
+  "end": 30.06,
+  "text": "case.",
+  "words": [
+   {
+    "start": 29.88,
+    "end": 30.06,
+    "word": " case."
+   }
+  ]
+ },
+ {
+  "start": 30.74,
+  "end": 31.5,
+  "text": "It ended at a",
+  "words": [
+   {
+    "start": 30.74,
+    "end": 30.96,
+    "word": " It"
+   },
+   {
+    "start": 30.96,
+    "end": 31.18,
+    "word": " ended"
+   },
+   {
+    "start": 31.18,
+    "end": 31.38,
+    "word": " at"
+   },
+   {
+    "start": 31.38,
+    "end": 31.5,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 31.5,
+  "end": 32.36,
+  "text": "guy in sunglasses.",
+  "words": [
+   {
+    "start": 31.5,
+    "end": 31.7,
+    "word": " guy"
+   },
+   {
+    "start": 31.7,
+    "end": 31.92,
+    "word": " in"
+   },
+   {
+    "start": 31.92,
+    "end": 32.36,
+    "word": " sunglasses."
+   }
+  ]
+ },
+ {
+  "start": 33.18,
+  "end": 33.96,
+  "text": "He threw pepper,",
+  "words": [
+   {
+    "start": 33.18,
+    "end": 33.32,
+    "word": " He"
+   },
+   {
+    "start": 33.32,
+    "end": 33.56,
+    "word": " threw"
+   },
+   {
+    "start": 33.56,
+    "end": 33.96,
+    "word": " pepper,"
+   }
+  ]
+ },
+ {
+  "start": 34.24,
+  "end": 34.82,
+  "text": "big mistake.",
+  "words": [
+   {
+    "start": 34.24,
+    "end": 34.34,
+    "word": " big"
+   },
+   {
+    "start": 34.34,
+    "end": 34.82,
+    "word": " mistake."
+   }
+  ]
+ },
+ {
+  "start": 35.58,
+  "end": 36.38,
+  "text": "Achoo. into the",
+  "words": [
+   {
+    "start": 35.58,
+    "end": 35.96,
+    "word": " Achoo."
+   },
+   {
+    "start": 35.96,
+    "end": 36.2,
+    "word": " into"
+   },
+   {
+    "start": 36.2,
+    "end": 36.38,
+    "word": " the"
+   }
+  ]
+ },
+ {
+  "start": 36.38,
+  "end": 36.68,
+  "text": "pool,",
+  "words": [
+   {
+    "start": 36.38,
+    "end": 36.68,
+    "word": " pool,"
+   }
+  ]
+ },
+ {
+  "start": 37.18,
+  "end": 37.96,
+  "text": "but he had both",
+  "words": [
+   {
+    "start": 37.18,
+    "end": 37.42,
+    "word": " but"
+   },
+   {
+    "start": 37.42,
+    "end": 37.54,
+    "word": " he"
+   },
+   {
+    "start": 37.54,
+    "end": 37.72,
+    "word": " had"
+   },
+   {
+    "start": 37.72,
+    "end": 37.96,
+    "word": " both"
+   }
+  ]
+ },
+ {
+  "start": 37.96,
+  "end": 38.28,
+  "text": "socks,",
+  "words": [
+   {
+    "start": 37.96,
+    "end": 38.28,
+    "word": " socks,"
+   }
+  ]
+ },
+ {
+  "start": 38.74,
+  "end": 39.34,
+  "text": "not my guy.",
+  "words": [
+   {
+    "start": 38.74,
+    "end": 38.84,
+    "word": " not"
+   },
+   {
+    "start": 38.84,
+    "end": 39.04,
+    "word": " my"
+   },
+   {
+    "start": 39.04,
+    "end": 39.34,
+    "word": " guy."
+   }
+  ]
+ },
+ {
+  "start": 39.98,
+  "end": 40.92,
+  "text": "The trail led back",
+  "words": [
+   {
+    "start": 39.98,
+    "end": 40.14,
+    "word": " The"
+   },
+   {
+    "start": 40.14,
+    "end": 40.44,
+    "word": " trail"
+   },
+   {
+    "start": 40.44,
+    "end": 40.68,
+    "word": " led"
+   },
+   {
+    "start": 40.68,
+    "end": 40.92,
+    "word": " back"
+   }
+  ]
+ },
+ {
+  "start": 40.92,
+  "end": 41.82,
+  "text": "to the chief's office.",
+  "words": [
+   {
+    "start": 40.92,
+    "end": 41.08,
+    "word": " to"
+   },
+   {
+    "start": 41.08,
+    "end": 41.26,
+    "word": " the"
+   },
+   {
+    "start": 41.26,
+    "end": 41.54,
+    "word": " chief's"
+   },
+   {
+    "start": 41.54,
+    "end": 41.82,
+    "word": " office."
+   }
+  ]
+ },
+ {
+  "start": 42.58,
+  "end": 43.14,
+  "text": "One sock,",
+  "words": [
+   {
+    "start": 42.58,
+    "end": 42.8,
+    "word": " One"
+   },
+   {
+    "start": 42.8,
+    "end": 43.14,
+    "word": " sock,"
+   }
+  ]
+ },
+ {
+  "start": 43.38,
+  "end": 44.4,
+  "text": "sprinkles on his face,",
+  "words": [
+   {
+    "start": 43.38,
+    "end": 43.8,
+    "word": " sprinkles"
+   },
+   {
+    "start": 43.8,
+    "end": 43.94,
+    "word": " on"
+   },
+   {
+    "start": 43.94,
+    "end": 44.1,
+    "word": " his"
+   },
+   {
+    "start": 44.1,
+    "end": 44.4,
+    "word": " face,"
+   }
+  ]
+ },
+ {
+  "start": 44.92,
+  "end": 45.82,
+  "text": "and half a golden",
+  "words": [
+   {
+    "start": 44.92,
+    "end": 45.18,
+    "word": " and"
+   },
+   {
+    "start": 45.18,
+    "end": 45.4,
+    "word": " half"
+   },
+   {
+    "start": 45.4,
+    "end": 45.56,
+    "word": " a"
+   },
+   {
+    "start": 45.56,
+    "end": 45.82,
+    "word": " golden"
+   }
+  ]
+ },
+ {
+  "start": 45.82,
+  "end": 46.26,
+  "text": "donut.",
+  "words": [
+   {
+    "start": 45.82,
+    "end": 46.26,
+    "word": " donut."
+   }
+  ]
+ },
+ {
+  "start": 46.84,
+  "end": 47.5,
+  "text": "He said the case",
+  "words": [
+   {
+    "start": 46.84,
+    "end": 46.94,
+    "word": " He"
+   },
+   {
+    "start": 46.94,
+    "end": 47.08,
+    "word": " said"
+   },
+   {
+    "start": 47.08,
+    "end": 47.26,
+    "word": " the"
+   },
+   {
+    "start": 47.26,
+    "end": 47.5,
+    "word": " case"
+   }
+  ]
+ },
+ {
+  "start": 47.5,
+  "end": 48.3,
+  "text": "was going away,",
+  "words": [
+   {
+    "start": 47.5,
+    "end": 47.68,
+    "word": " was"
+   },
+   {
+    "start": 47.68,
+    "end": 47.88,
+    "word": " going"
+   },
+   {
+    "start": 47.88,
+    "end": 48.3,
+    "word": " away,"
+   }
+  ]
+ },
+ {
+  "start": 48.86,
+  "end": 49.76,
+  "text": "and slid me my",
+  "words": [
+   {
+    "start": 48.86,
+    "end": 49.12,
+    "word": " and"
+   },
+   {
+    "start": 49.12,
+    "end": 49.34,
+    "word": " slid"
+   },
+   {
+    "start": 49.34,
+    "end": 49.54,
+    "word": " me"
+   },
+   {
+    "start": 49.54,
+    "end": 49.76,
+    "word": " my"
+   }
+  ]
+ },
+ {
+  "start": 49.76,
+  "end": 50.02,
+  "text": "cut.",
+  "words": [
+   {
+    "start": 49.76,
+    "end": 50.02,
+    "word": " cut."
+   }
+  ]
+ },
+ {
+  "start": 51.3,
+  "end": 51.78,
+  "text": "Tempting.",
+  "words": [
+   {
+    "start": 51.3,
+    "end": 51.78,
+    "word": " Tempting."
+   }
+  ]
+ },
+ {
+  "start": 52.7,
+  "end": 53.74,
+  "text": "I've always been a",
+  "words": [
+   {
+    "start": 52.7,
+    "end": 53.18,
+    "word": " I've"
+   },
+   {
+    "start": 53.18,
+    "end": 53.42,
+    "word": " always"
+   },
+   {
+    "start": 53.42,
+    "end": 53.6,
+    "word": " been"
+   },
+   {
+    "start": 53.6,
+    "end": 53.74,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 53.74,
+  "end": 54.44,
+  "text": "man of principle,",
+  "words": [
+   {
+    "start": 53.74,
+    "end": 53.92,
+    "word": " man"
+   },
+   {
+    "start": 53.92,
+    "end": 54.1,
+    "word": " of"
+   },
+   {
+    "start": 54.1,
+    "end": 54.44,
+    "word": " principle,"
+   }
+  ]
+ },
+ {
+  "start": 55.24,
+  "end": 56.28,
+  "text": "but some donuts just",
+  "words": [
+   {
+    "start": 55.24,
+    "end": 55.42,
+    "word": " but"
+   },
+   {
+    "start": 55.42,
+    "end": 55.66,
+    "word": " some"
+   },
+   {
+    "start": 55.66,
+    "end": 56.08,
+    "word": " donuts"
+   },
+   {
+    "start": 56.08,
+    "end": 56.28,
+    "word": " just"
+   }
+  ]
+ },
+ {
+  "start": 56.28,
+  "end": 57.42,
+  "text": "aren't worth fighting for.",
+  "words": [
+   {
+    "start": 56.28,
+    "end": 56.52,
+    "word": " aren't"
+   },
+   {
+    "start": 56.52,
+    "end": 56.72,
+    "word": " worth"
+   },
+   {
+    "start": 56.72,
+    "end": 57.06,
+    "word": " fighting"
+   },
+   {
+    "start": 57.06,
+    "end": 57.42,
+    "word": " for."
+   }
+  ]
+ },
+ {
+  "start": 57.42,
+  "end": 58.64,
+  "text": "Case closed.",
+  "words": [
+   {
+    "start": 57.42,
+    "end": 58.12,
+    "word": " Case"
+   },
+   {
+    "start": 58.12,
+    "end": 58.64,
+    "word": " closed."
+   }
+  ]
+ },
+ {
+  "start": 59.38,
+  "end": 60.52,
+  "text": "Then my nose twitched.",
+  "words": [
+   {
+    "start": 59.38,
+    "end": 59.64,
+    "word": " Then"
+   },
+   {
+    "start": 59.64,
+    "end": 59.8,
+    "word": " my"
+   },
+   {
+    "start": 59.8,
+    "end": 60.08,
+    "word": " nose"
+   },
+   {
+    "start": 60.08,
+    "end": 60.52,
+    "word": " twitched."
+   }
+  ]
+ },
+ {
+  "start": 61.36,
+  "end": 62.88,
+  "text": "Follow Viral Roblox Games for",
+  "words": [
+   {
+    "start": 61.36,
+    "end": 61.48,
+    "word": " Follow"
+   },
+   {
+    "start": 61.48,
+    "end": 62.6,
+    "word": " Viral Roblox Games"
+   },
+   {
+    "start": 62.6,
+    "end": 62.88,
+    "word": " for"
+   }
+  ]
+ },
+ {
+  "start": 62.88,
+  "end": 63.5,
+  "text": "the next case.",
+  "words": [
+   {
+    "start": 62.88,
+    "end": 62.98,
+    "word": " the"
+   },
+   {
+    "start": 62.98,
+    "end": 63.22,
+    "word": " next"
+   },
+   {
+    "start": 63.22,
+    "end": 63.5,
+    "word": " case."
+   }
+  ]
+ }
+]

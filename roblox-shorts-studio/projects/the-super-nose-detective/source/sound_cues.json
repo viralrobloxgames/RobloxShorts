@@ -1,7 +1,673 @@
 [
-  {
-    "asset": "swish_1",
-    "start": 0.0,
-    "gain": 0.3
-  }
+ {
+  "asset": "sniff.wav",
+  "start": 0.15,
+  "gain": 0.45
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 0.7,
+  "gain": 0.45
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 1.25,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_4",
+  "start": 2.53,
+  "gain": 0.55
+ },
+ {
+  "tone": [
+   165,
+   196,
+   247
+  ],
+  "start": 2.53,
+  "gain": 0.14,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 2.53,
+  "gain": 0.45
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 2.93,
+  "gain": 0.5
+ },
+ {
+  "asset": "click",
+  "start": 3.55,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   784,
+   988,
+   1175,
+   1568
+  ],
+  "start": 3.9,
+  "gain": 0.1,
+  "dur": 0.08
+ },
+ {
+  "tone": 600,
+  "start": 5.24,
+  "gain": 0.05,
+  "dur": 1.6,
+  "sweep": 500
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 5.34,
+  "gain": 0.4
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 5.74,
+  "gain": 0.4
+ },
+ {
+  "tone": 880,
+  "start": 7.16,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 660,
+  "start": 7.38,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 880,
+  "start": 7.6,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 660,
+  "start": 7.82,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "asset": "impact_2",
+  "start": 7.9,
+  "gain": 0.5
+ },
+ {
+  "tone": 880,
+  "start": 8.04,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 660,
+  "start": 8.26,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 880,
+  "start": 8.48,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 660,
+  "start": 8.7,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 880,
+  "start": 8.92,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "tone": 660,
+  "start": 9.14,
+  "gain": 0.035,
+  "dur": 0.18,
+  "square": true
+ },
+ {
+  "asset": "impact_3",
+  "start": 11.11,
+  "gain": 0.6
+ },
+ {
+  "asset": "drum_hit",
+  "start": 11.11,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 12.98,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 14.26,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 330,
+  "start": 15.26,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   392,
+   311
+  ],
+  "start": 15.75,
+  "gain": 0.09,
+  "dur": 0.14,
+  "square": true
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 16.3,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   220,
+   262,
+   330
+  ],
+  "start": 16.98,
+  "gain": 0.1,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 16.98,
+  "gain": 0.45
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 19.38,
+  "gain": 0.55
+ },
+ {
+  "asset": "swish_1",
+  "start": 19.58,
+  "gain": 0.25
+ },
+ {
+  "tone": 988,
+  "start": 19.6,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 19.98,
+  "gain": 0.55
+ },
+ {
+  "asset": "swish_1",
+  "start": 20.26,
+  "gain": 0.25
+ },
+ {
+  "tone": 988,
+  "start": 20.28,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 20.58,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 21.18,
+  "gain": 0.55
+ },
+ {
+  "asset": "swish_1",
+  "start": 21.9,
+  "gain": 0.25
+ },
+ {
+  "tone": 988,
+  "start": 21.92,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "tone": 300,
+  "start": 23.02,
+  "gain": 0.08,
+  "dur": 0.7,
+  "sweep": 1400
+ },
+ {
+  "asset": "swish_3",
+  "start": 23.02,
+  "gain": 0.35
+ },
+ {
+  "tone": 70,
+  "start": 23.57,
+  "gain": 0.08,
+  "dur": 1.3200000000000003,
+  "sweep": 60,
+  "square": true
+ },
+ {
+  "asset": "swish_4",
+  "start": 23.57,
+  "gain": 0.35
+ },
+ {
+  "asset": "splash.wav",
+  "start": 24.34,
+  "gain": 0.15
+ },
+ {
+  "tone": 1800,
+  "start": 24.74,
+  "gain": 0.05,
+  "dur": 0.45,
+  "sweep": -900
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 25.79,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 330,
+  "start": 28.8,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   392,
+   311
+  ],
+  "start": 29.33,
+  "gain": 0.09,
+  "dur": 0.14,
+  "square": true
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 29.88,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   147,
+   156,
+   165
+  ],
+  "start": 31.5,
+  "gain": 0.14,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 31.5,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   110,
+   117,
+   123
+  ],
+  "start": 31.92,
+  "gain": 0.14,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 31.92,
+  "gain": 0.45
+ },
+ {
+  "asset": "swish_2",
+  "start": 33.37,
+  "gain": 0.5
+ },
+ {
+  "tone": 180,
+  "start": 33.77,
+  "gain": 0.06,
+  "dur": 1.760000000000001,
+  "sweep": 500
+ },
+ {
+  "asset": "impact_1",
+  "start": 33.82,
+  "gain": 0.25
+ },
+ {
+  "asset": "achoo.wav",
+  "start": 35.11,
+  "gain": 0.9
+ },
+ {
+  "asset": "impact_4",
+  "start": 35.58,
+  "gain": 0.6
+ },
+ {
+  "asset": "drum_hit",
+  "start": 35.58,
+  "gain": 0.5
+ },
+ {
+  "tone": 1400,
+  "start": 35.63,
+  "gain": 0.07,
+  "dur": 0.7,
+  "sweep": -900
+ },
+ {
+  "asset": "splash.wav",
+  "start": 36.33,
+  "gain": 0.8
+ },
+ {
+  "asset": "impact_1",
+  "start": 36.33,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 37.76,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 37.96,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 38.89,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   262,
+   196
+  ],
+  "start": 39.04,
+  "gain": 0.08,
+  "dur": 0.2,
+  "square": true
+ },
+ {
+  "tone": 300,
+  "start": 39.19,
+  "gain": 0.07,
+  "dur": 0.6,
+  "sweep": 1200
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 39.19,
+  "gain": 0.4
+ },
+ {
+  "tone": 70,
+  "start": 39.84,
+  "gain": 0.08,
+  "dur": 0.990000000000002,
+  "sweep": 60,
+  "square": true
+ },
+ {
+  "asset": "swish_4",
+  "start": 39.84,
+  "gain": 0.35
+ },
+ {
+  "tone": 1800,
+  "start": 40.63,
+  "gain": 0.05,
+  "dur": 0.35,
+  "sweep": -900
+ },
+ {
+  "tone": [
+   196,
+   208,
+   220
+  ],
+  "start": 41.48,
+  "gain": 0.1,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 41.48,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_2",
+  "start": 42.48,
+  "gain": 0.4
+ },
+ {
+  "tone": 1568,
+  "start": 42.48,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "impact_2",
+  "start": 43.38,
+  "gain": 0.4
+ },
+ {
+  "tone": 1568,
+  "start": 43.38,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "impact_2",
+  "start": 45.18,
+  "gain": 0.4
+ },
+ {
+  "tone": 1568,
+  "start": 45.18,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "swish_1",
+  "start": 49.02,
+  "gain": 0.4
+ },
+ {
+  "asset": "click",
+  "start": 49.62,
+  "gain": 0.3
+ },
+ {
+  "tone": 110,
+  "start": 50.9,
+  "gain": 0.05,
+  "dur": 2.0,
+  "sweep": 20,
+  "square": true
+ },
+ {
+  "asset": "impact_1",
+  "start": 56.57,
+  "gain": 0.35
+ },
+ {
+  "asset": "click",
+  "start": 56.62,
+  "gain": 0.3
+ },
+ {
+  "tone": 2093,
+  "start": 56.67,
+  "gain": 0.05,
+  "dur": 0.06,
+  "square": true
+ },
+ {
+  "asset": "click",
+  "start": 56.72,
+  "gain": 0.25
+ },
+ {
+  "tone": 523,
+  "start": 56.75,
+  "gain": 0.05,
+  "dur": 0.06,
+  "square": true
+ },
+ {
+  "tone": 2093,
+  "start": 56.83,
+  "gain": 0.05,
+  "dur": 0.06,
+  "square": true
+ },
+ {
+  "tone": 523,
+  "start": 56.91,
+  "gain": 0.05,
+  "dur": 0.06,
+  "square": true
+ },
+ {
+  "asset": "impact_4",
+  "start": 57.77,
+  "gain": 0.6
+ },
+ {
+  "asset": "drum_hit",
+  "start": 57.77,
+  "gain": 0.55
+ },
+ {
+  "tone": [
+   247,
+   294,
+   370
+  ],
+  "start": 57.82,
+  "gain": 0.12,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 57.82,
+  "gain": 0.45
+ },
+ {
+  "tone": 400,
+  "start": 59.83,
+  "gain": 0.08,
+  "dur": 0.4,
+  "sweep": 900
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 60.13,
+  "gain": 0.5
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 60.43,
+  "gain": 0.5
+ },
+ {
+  "tone": 300,
+  "start": 60.63,
+  "gain": 0.07,
+  "dur": 0.6,
+  "sweep": 1400
+ },
+ {
+  "asset": "swish_3",
+  "start": 61.21,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568
+  ],
+  "start": 61.26,
+  "gain": 0.12,
+  "dur": 0.18
+ }
 ]

@@ -8,14 +8,16 @@
     "Skye",
     "Noob"
   ],
-  "seconds": 78.0,
+  "seconds": 64.2,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "script_draft_awaiting_approval; then narration (George voice C), then web scene",
+  "status": "narration_done; rendering",
   "finish": {
-    "music": "playful_history_music",
+    "music": "projects/the-super-nose-detective/audio/music_funk.wav",
+    "music_gain": 0.08,
     "word_fixes": {}
-  }
+  },
+  "series": "super nose detective (case 1)"
 }
