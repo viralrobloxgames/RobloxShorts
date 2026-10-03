@@ -1,0 +1,395 @@
+[
+ {
+  "asset": "impact_1",
+  "start": 0.05,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 14.08,
+  "gain": 0.05,
+  "dur": 0.12
+ },
+ {
+  "asset": "drum_hit",
+  "start": 14.664,
+  "gain": 0.35
+ },
+ {
+  "asset": "swish_2",
+  "start": 14.714,
+  "gain": 0.3
+ },
+ {
+  "asset": "drum_hit",
+  "start": 16.246,
+  "gain": 0.35
+ },
+ {
+  "asset": "swish_2",
+  "start": 16.296,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   1568
+  ],
+  "start": 17.96,
+  "gain": 0.07,
+  "dur": 0.15
+ },
+ {
+  "asset": "swish_4",
+  "start": 19.426,
+  "gain": 0.5
+ },
+ {
+  "asset": "drum_hit",
+  "start": 20.812,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_2",
+  "start": 22.63,
+  "gain": 0.6
+ },
+ {
+  "asset": "swish_1",
+  "start": 22.68,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_3",
+  "start": 23.281,
+  "gain": 0.2
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 24.57,
+  "gain": 0.35
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 24.73,
+  "gain": 0.35
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 24.89,
+  "gain": 0.35
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.05,
+  "gain": 0.35
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.21,
+  "gain": 0.35
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.37,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.43,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.49,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.55,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.61,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.67,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.73,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.79,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.85,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.91,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 27.97,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 28.03,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 28.09,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 28.15,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 28.21,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 28.27,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "asset": "horror/shutter",
+  "start": 28.29,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   330,
+   262
+  ],
+  "start": 30.0,
+  "gain": 0.07,
+  "dur": 0.35,
+  "square": true
+ },
+ {
+  "asset": "horror/shutter",
+  "start": 31.47,
+  "gain": 0.25
+ },
+ {
+  "tone": 220,
+  "start": 35.98,
+  "gain": 0.05,
+  "dur": 0.6,
+  "sweep": -80
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 44.94,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 45.0,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 45.06,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 45.12,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "tone": [
+   2850,
+   3020
+  ],
+  "start": 45.18,
+  "gain": 0.05,
+  "dur": 0.05
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 46.863,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.163,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.463,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.763,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 48.063,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_4",
+  "start": 48.6,
+  "gain": 0.55
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 48.62,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 49.5,
+  "gain": 0.12
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 50.4,
+  "gain": 0.105
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 51.3,
+  "gain": 0.09
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 52.2,
+  "gain": 0.075
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 53.1,
+  "gain": 0.06
+ },
+ {
+  "asset": "click",
+  "start": 54.29,
+  "gain": 0.5
+ },
+ {
+  "asset": "impact_1",
+  "start": 54.3,
+  "gain": 0.2
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784
+  ],
+  "start": 64.28,
+  "gain": 0.05,
+  "dur": 0.3
+ },
+ {
+  "tone": [
+   988,
+   1319
+  ],
+  "start": 66.0,
+  "gain": 0.05,
+  "dur": 0.12
+ }
+]

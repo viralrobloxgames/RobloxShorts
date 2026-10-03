@@ -12,11 +12,14 @@
   "width": 1080,
   "height": 1920,
   "platform": "TikTok (>60 s) + YouTube Shorts",
-  "status": "script_draft_awaiting_approval",
+  "status": "rendering",
   "finish": {
     "word_fixes": {
       "EVERYONE": "EVERY ONE",
       "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
-    }
+    },
+    "music": "projects/the-last-penalty/audio/score.wav",
+    "music_gain": 0.3,
+    "caption_highlight": "&H006BE38B"
   }
 }
