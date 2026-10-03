@@ -1,6 +1,6 @@
 {
   "source": "narration.wav",
-  "duration": 71.3600625,
+  "duration": 71.2000625,
   "segments": [
     {
       "start": 0.0,
@@ -924,7 +924,7 @@
     },
     {
       "start": 58.64,
-      "end": 61.94,
+      "end": 61.96,
       "text": " Turns out safe zones stop guardians, not mums.",
       "words": [
         {
@@ -959,19 +959,19 @@
         },
         {
           "start": 61.4,
-          "end": 61.5,
+          "end": 61.52,
           "word": " not"
         },
         {
-          "start": 61.5,
-          "end": 61.94,
+          "start": 61.52,
+          "end": 61.96,
           "word": " mums."
         }
       ]
     },
     {
       "start": 62.88,
-      "end": 65.1,
+      "end": 65.12,
       "text": " Mum walked right in, took her babies and Mia.",
       "words": [
         {
@@ -1006,24 +1006,24 @@
         },
         {
           "start": 64.36,
-          "end": 64.66,
+          "end": 64.64,
           "word": " babies"
         },
         {
-          "start": 64.66,
+          "start": 64.64,
           "end": 64.9,
           "word": " and"
         },
         {
           "start": 64.9,
-          "end": 65.1,
+          "end": 65.12,
           "word": " Mia."
         }
       ]
     },
     {
       "start": 65.86,
-      "end": 68.2,
+      "end": 68.22,
       "text": " Now, the T-Rex is sleeping on a new egg.",
       "words": [
         {
@@ -1073,40 +1073,35 @@
         },
         {
           "start": 67.92,
-          "end": 68.2,
+          "end": 68.22,
           "word": " egg."
         }
       ]
     },
     {
-      "start": 68.96,
-      "end": 71.22,
-      "text": " Follow Viral Roblox Games for part two.",
+      "start": 69.0,
+      "end": 70.92,
+      "text": " Follow Viral Roblox Games for more.",
       "words": [
         {
-          "start": 68.96,
+          "start": 69.0,
           "end": 69.12,
           "word": " Follow"
         },
         {
           "start": 69.12,
-          "end": 70.32,
+          "end": 70.34,
           "word": " ViralRobloxGames"
         },
         {
-          "start": 70.32,
-          "end": 70.6,
+          "start": 70.34,
+          "end": 70.62,
           "word": " for"
         },
         {
-          "start": 70.6,
-          "end": 70.82,
-          "word": " part"
-        },
-        {
-          "start": 70.82,
-          "end": 71.22,
-          "word": " two."
+          "start": 70.62,
+          "end": 70.92,
+          "word": " more."
         }
       ]
     }
