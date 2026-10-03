@@ -23,14 +23,14 @@ const { T, EVENTS: E } = TL;
 // ---------- shots (real time) ----------
 const SHOTS = [
   [0, 'hook'], [W.mia - 0.25, 'mia'], [W.mirrors - 0.3, 'mirror'], [W.order - 0.3, 'order'], [W.leftMax - 0.4, 'hands'],
-  [W.star - 0.3, 'star'], [W.saidLeft - 0.25, 'answer'], [W.stared - 0.3, 'stare'], [W.came - 0.25, 'came'],
-  [W.whispered - 0.25, 'whisper'], [W.step1 - 0.35, 'steps'], [W.oneStep - 0.3, 'stopped'], [W.sprinted - 0.25, 'sprint'], [W.hasTo - 0.35, 'pull'],
-  [W.slammed - 0.6, 'slam'], [W.updated - 0.25, 'list'], [W.waved - 0.35, 'wave'], [W.nothing - 0.15, 'nothing'],
-  [E.cta, 'cta'],
+  [W.star - 0.3, 'star'], [W.saidLeft - 0.25, 'answer'], [W.stared - 0.3, 'stare'], [E.lunge - 0.08, 'came'],
+  [W.whispered - 0.25, 'whisper'], [W.step1 - 0.35, 'steps'], [W.oneStep - 0.3, 'stopped'], [W.sprinted - 0.25, 'sprint'],
+  [E.through - 0.45, 'pull'], [W.slammed - 0.6, 'slam'], [W.updated - 0.25, 'list'], [W.waved - 0.35, 'wave'],
+  [W.nothing - 0.15, 'nothing'], [E.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 
 // ---------- scene ----------
-let A = {}, max, copy, mia, door, cam, SHOT = 'hook', lamps = {};
+let A = {}, max, copy, mia, door, cam, SHOT = 'hook', lamps = {}, fixtures = [];
 export async function setup(stage) {
   const { scene } = stage;
   horrorLighting(stage, 'normal');
@@ -54,13 +54,20 @@ export async function setup(stage) {
   }
   replacePanel(lobby, 'ExitFace', 'EXIT  →', { background: '#0f3a2c', foreground: '#7dffb8' });
   replacePanel(lobby, 'NoticeFace', 'PLAYERS ONLINE\n2');
-  const d = await horrorAsset('horror_door'); door = d; d.root.position.set(0, 0, TL.DOOR_Z); scene.add(d.root);
+  lobby.traverse((o) => { if (o.name.startsWith('Bench')) o.visible = false; });      // clear room for the door's swing
+  const d = await horrorAsset('horror_door'); door = d; d.root.position.set(0, 0, TL.DOOR_Z); d.root.rotation.y = Math.PI; scene.add(d.root);   // opens into the lobby
+  const ceil = part(20.4, 0.3, 16.4, '#141c22', { radius: 0.02, clearcoat: 0 }); ceil.position.set(0, 9.3, 0); scene.add(ceil);
   const corridor = (await horrorAsset('horror_corridor')).root; corridor.position.set(0, 0, -21); scene.add(corridor);
   const apron = part(22, 0.35, 14, '#1e2a33', { radius: 0.02, clearcoat: 0 }); apron.position.set(0, 0, 15); scene.add(apron);
 
   const pl = (name, color, x, y, z, i, dist = 26) => { const l = new THREE.PointLight(color, i, dist, 1.4); l.position.set(x, y, z); scene.add(l); lamps[name] = l; l.userData.base = i; };
   pl('lobbyL', '#ffcf8a', -7, 7.2, -6.8, 70); pl('lobbyR', '#ffcf8a', 7, 7.2, -6.8, 70); pl('lobbyFront', '#9fd8e6', 0, 7.5, 6, 35);
   pl('cor1', '#ffd9a0', 0, 8.0, -13, 55, 20); pl('cor2', '#ffd9a0', 0, 8.0, -21, 40, 20); pl('cor3', '#d8f3ff', 0, 8.0, -27, 30, 16);
+  // Ceiling lights over the walk-back: they go out one per step.
+  for (const [i, z] of [6.0, 2.5, -1.0, -4.5].entries()) {
+    const fx = (await horrorAsset('horror_ceiling_light')).root; fx.position.set(0.7, 8.95, z); fx.rotation.y = Math.PI / 2; scene.add(fx); fixtures.push(fx);
+    pl('cl' + i, '#fff1d6', 0.7, 8.3, z, 45, 14);
+  }
 }
 
 // ---------- actors ----------
@@ -73,6 +80,7 @@ function place(a, s, t) {
   if (s.raise) raiseArm(a, s.raise);
   if (s.wave) waveArm(a, t, 'R');
   if (s.headTurn) a.bones.Head.rotateY(Math.PI * s.headTurn);
+  if (s.tilt) a.bones.Head.rotateZ(1.25 * s.tilt);                                                 // tips sideways, too far
   if (s.lean) a.root.rotateX(s.lean);                                                           // braced, leaning away
   if (s.shake) { a.bones.Head.rotateZ(0.12 * s.shake * Math.sin(t * 47)); a.root.position.x += 0.06 * s.shake * Math.sin(t * 61); a.bones.Torso.rotateZ(0.04 * s.shake * Math.sin(t * 37)); }
   a.root.updateMatrixWorld(true);
@@ -104,44 +112,57 @@ function fit(stage, actors, az, el, { fov = 40, pad = 1.1, maxD = 5.4, aim = V(0
 }
 const jolt = (t, k) => V(k * Math.sin(t * 83), k * Math.cos(t * 71), 0);
 const shake = (t, at, k, dur = 0.35) => (t > at && t < at + dur ? jolt(t, k * (1 - (t - at) / dur)) : V(0, 0, 0));
-export function samples(t) { const id = shotAt(SHOTS, t).shot.id; return ['came', 'sprint', 'pull'].includes(id) ? 3 : 1; }
+export function samples(t) { const id = shotAt(SHOTS, t).shot.id; return ['came', 'pull'].includes(id) ? 3 : 1; }
 export function shutter(t) { return samples(t) > 1 ? 0.5 : 0; }
 const hash = (n) => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
 const flickerAt = (t, rate = 18) => (hash(Math.floor(t * rate)) > 0.55 ? 1 : 0.15);
+const smooth01 = (u) => u * u * (3 - 2 * u);
 
 export function update(t, stage) {
   const { shot, u } = shotAt(SHOTS, t); SHOT = shot.id;
   place(max, TL.maxAt(t), t); place(copy, TL.copyAt(t), t); place(mia, TL.miaAt(t), t);
   door.controls.door(TL.doorAt(t));
 
-  const tense = t > W.came - 0.3 && t < W.slammed + 0.4;
+  const tense = t > W.stared - 0.3 && t < W.slammed + 0.4, fight = t > E.last && t < E.through;
   horrorLighting(stage, tense ? 'warning' : 'normal');
-  for (const l of Object.values(lamps)) l.intensity = l.userData.base;
-  lamps.cor3.intensity = t < E.lightOn ? 0 : lamps.cor3.userData.base * (t < E.lightOn + 0.3 ? flickerAt(t, 24) : 1);   // Mia in the dark
-  if (t > E.last && t < E.sprint) lamps.cor1.intensity *= 0.4 + 0.6 * flickerAt(t, 14);                                 // it fights the mirror
-  if (t > E.nothing + 0.6 && t < E.nothing + 0.9) { lamps.lobbyL.intensity *= flickerAt(t, 20); lamps.lobbyR.intensity *= flickerAt(t + 1, 20); }
+  for (const l of Object.values(lamps)) { l.intensity = l.userData.base; l.color.set(l.userData.color || (l.userData.color = '#' + l.color.getHexString())); }
+  lamps.cor3.intensity = 0;
+  // Mia: her light slams on. The walk-back: one light dies per step. The fight: red, pulsing.
+  if (t < E.lightOn) lamps.lobbyFront.intensity = 0; else if (t < E.lightOn + 0.3) lamps.lobbyFront.intensity *= flickerAt(t, 24);
+  TL.LIGHTS_OUT.forEach((at, i) => {
+    const name = ['cl0', 'cl1', 'cl2', 'lobbyFront', 'cl3'][i];
+    if (t > at + 0.2 && t < E.slam + 0.8) lamps[name].intensity *= t < at + 0.45 ? flickerAt(t, 26) * 0.6 : 0.02;
+  });
+  if (fight) for (const n of ['lobbyL', 'lobbyR']) { lamps[n].color.set('#ff3b3b'); lamps[n].intensity *= 0.6 + 0.6 * Math.abs(Math.sin(t * 7)); }
+  if (t > E.slam + 0.8) for (const n of ['cl0', 'cl1', 'cl2', 'cl3', 'lobbyFront']) lamps[n].intensity *= smooth01(clamp((t - E.slam - 0.8) / 0.6));   // back on: it's over
+  if (t > E.nothing + 0.6 && t < E.nothing + 0.9) { lamps.cor1.intensity *= flickerAt(t, 20); lamps.cor2.intensity *= flickerAt(t + 1, 20); }
+  for (const [i, fx] of fixtures.entries()) fx.visible = true;
   stage.bloom.strength = 0.35;
 
   const mh = head(max), ch = head(copy), ih = head(mia);
+  const kick = shake(t, E.lunge + 0.1, 0.35, 0.45).add(shake(t, E.land, 0.25)).add(shake(t, E.slam, 0.3, 0.4)).add(shake(t, E.rattle[0], 0.12, 0.5));
   switch (shot.id) {
-    case 'hook': look(stage, V(-0.8, 4.4, lerp(-1.2, -2.4, u)), V(-0.8, 3.4, -13.5), 62); break;           // through the doorway: two Maxes
-    case 'mia': look(stage, V(-0.7, 4.6, -12.4), ih.clone().add(V(0, -0.8, 0)), lerp(34, 28, u)); break;     // between their heads: someone at the far end
-    case 'mirror': look(stage, V(-0.8, 4.4, -2.6), V(-0.8, 3.6, -13.5), 58); break;
-    case 'order': frame(stage, ih.clone().add(V(0, -0.3, 0)), 0.12, 0.04, 2.8, 50); break;
-    case 'hands': look(stage, V(-0.8, 4.6, -4.2), V(-0.8, 4.6, -13.5), 56); break;
-    case 'star': frame(stage, star(copy), 0.05, 0.02, lerp(4.2, 2.6, easeInOut(u)), 40); break;
-    case 'answer': look(stage, V(-0.8, 4.4, -3.0), V(-0.8, 3.8, -13.5), 58); break;
-    case 'stare': frame(stage, ch.clone().add(V(0, -0.2, 0)), 0.1, 0.03, lerp(3.4, 2.8, u), 40); break;          // the head turns all the way round
-    case 'came': fit(stage, [copy, max], Math.PI / 2 - 0.3, 0.12, { maxD: 5.0, pad: 1.0 }); break;           // side on: it goes for Mia, Max cuts in
-    case 'whisper': look(stage, V(-4.6, 4.3, -16.4), V(2.2, 3.9, -19.8), 48); break;
-    case 'steps': look(stage, mh.clone().add(V(-1.8, 0.9, -3.8)), ch.clone().add(V(0, -0.8, 0)), 46); break;      // over Max's shoulder: it backs towards the door
-    case 'stopped': frame(stage, ch.clone().add(V(0, -0.4, 0)).add(shake(t, E.last, 0.08, 2)), Math.PI, 0.03, lerp(4.2, 3.0, u), 40); break;
-    case 'sprint': look(stage, V(2.2, 4.8, -6.4), V(0.7, 3.2, -22), 40); break;                                  // over its shoulder: Max sprints backwards
-    case 'pull': look(stage, V(2.6, 3.4, 7.5).add(shake(t, E.through, 0.15)), V(0.7, 3.2, lerp(-8.5, -4, easeInOut(clamp((t - E.through + 0.3) / 0.8)))), lerp(28, 42, easeInOut(clamp((t - E.through + 0.3) / 0.8)))); break;   // lobby side: dragged, then flung out
-    case 'slam': look(stage, V(-3.2, 4.4, -23.0).add(shake(t, E.slam, 0.15)), V(2.0, 3.6, -11.6), 56); break;
-    case 'list': look(stage, V(-2.6, 4.4, -24), V(1.2, 3.8, -14), 46); break;
-    case 'wave': look(stage, V(2.4, 4.6, -19.5), V(0.2, 3.8, -9), 44); break;
-    default: look(stage, V(-3.2, 4.6, lerp(8, 6.5, clamp((t - E.nothing) / 6))), V(0, 3.6, -8), 40);          // lobby side: nothing there
+    case 'hook': look(stage, V(-0.5, 4.6, lerp(17.5, 15.5, u)), V(-0.5, 3.6, -1.5), 58); break;                // wide: two Maxes in the lobby
+    case 'mia': look(stage, V(-0.5, 4.9, -6.6), ih.clone().add(V(0, -0.6, 0)), lerp(36, 30, u)); break;        // between their heads: someone at the front
+    case 'mirror': look(stage, V(-0.5, 4.6, 16.5), V(-0.5, 3.6, -1.5), 56); break;
+    case 'order': frame(stage, ih.clone().add(V(0, -0.4, 0)), Math.PI, 0.05, 3.4, 48); break;
+    case 'hands': look(stage, V(-0.5, 5.0, 18.5), V(-0.5, 4.3, -1.5), 58); break;
+    case 'star': frame(stage, star(copy), 0.05, 0.02, lerp(4.6, 2.8, easeInOut(u)), 40); break;
+    case 'answer': look(stage, V(-0.5, 4.8, 17.5), V(-0.5, 3.9, -1.5), 56); break;
+    case 'stare': frame(stage, ch.clone().add(V(0, -0.3, 0)), 0.08, 0.03, lerp(3.6, 2.6, easeInOut(u)), 40); break;    // the head tips over
+    case 'came': {                                                                                               // the lunge: crash zoom
+      const k = easeOut(clamp((t - E.lunge) / 0.25));
+      look(stage, V(8.8, 4.2, lerp(6.5, 5.0, k)).add(kick), V(0.4, 3.4, 1.6), lerp(60, 44, k)); break;
+    }
+    case 'whisper': look(stage, V(9.2, 5.0, 16.5), V(3.2, 3.4, 3.0), 46); break;                              // wide: Mia whispers, Max and it face off      // over Mia's shoulder
+    case 'steps': look(stage, mh.clone().add(V(-1.8, 1.0, 4.2)), ch.clone().add(V(0, -0.9, 0)), 48); break;      // over Max's shoulder: it backs to the door
+    case 'stopped': frame(stage, ch.clone().add(V(0, -0.5, 0)).add(shake(t, E.last, 0.08, 2)), 0, 0.03, lerp(4.6, 3.0, u), 40); break;
+    case 'sprint': look(stage, V(-8.4, 6.2, 23), V(0.7, 2.6, 1.0), 50); break;                                    // wide: Max sprints back, it's yanked
+    case 'pull': look(stage, V(-2.6, 3.8, -24.5).add(kick), V(0.7, 3.0, lerp(-7.5, -12, easeInOut(clamp((t - E.through + 0.2) / 0.8)))), 40); break;   // corridor side: flung through
+    case 'slam': look(stage, V(5.0, 4.6, 8.0).add(kick), V(-3.9, 3.4, -4.4), 54); break;                          // Mia slams it; it rattles
+    case 'list': look(stage, V(-0.5, 5.2, 21), V(0, 3.4, 0), 50); break;
+    case 'wave': look(stage, mh.clone().add(V(2.8, 1.2, 9.5)), V(0, 3.6, -8), 48); break;
+    default: look(stage, V(-2.2, 4.6, lerp(-27, -25.5, clamp((t - E.nothing) / 6))), V(0, 3.6, -8), 40);        // the other side: nothing there
   }
   cam = stage.camera;
 }
@@ -219,7 +240,7 @@ export function overlay(g, s, t) {
   if (t > W.late - 0.1 && t < W.late + 1.3 && SHOT === 'hook') bigText(g, s, '0.0s DELAY', 540, 560, 84, '#ffffff', easeOutBack(clamp((t - W.late + 0.1) / 0.2), 2));
   // It mirrors you: a dashed mirror line between them.
   if (SHOT === 'mirror' && t > W.mirrors - 0.1) {
-    const a = project(V(-0.8, 0.2, -13.5), s), b = project(V(-0.8, 7.0, -13.5), s), k = clamp((t - W.mirrors + 0.1) / 0.4);
+    const a = project(V(-0.5, 0.2, -1.5), s), b = project(V(-0.5, 7.0, -1.5), s), k = clamp((t - W.mirrors + 0.1) / 0.4);
     g.save(); g.strokeStyle = '#78e4d8'; g.lineWidth = 8 * s; g.setLineDash([28 * s, 18 * s]); g.shadowColor = '#78e4d8'; g.shadowBlur = 16 * s;
     g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(a.x + (b.x - a.x) * k, a.y + (b.y - a.y) * k); g.stroke(); g.restore();
     bigText(g, s, 'MIRROR', 540, 520, 96, '#78e4d8', easeOutBack(clamp((t - W.mirrors - 0.2) / 0.2), 2));
@@ -242,6 +263,15 @@ export function overlay(g, s, t) {
     label(g, s, head(copy).add(V(0, 1.5, 0)), vals[Math.floor(t * 9) % vals.length], { edge: '#ff4d5e', fg: '#ff4d5e', size: 50, dy: (hash(Math.floor(t * 30)) - 0.5) * 12 });
   }
   if (t > E.slam && t < E.slam + 0.25) flash(g, s, 0.35 * (1 - (t - E.slam) / 0.25), '#ffffff');
+  if (t > E.lunge + 0.08 && t < E.lunge + 0.3) flash(g, s, 0.4 * (1 - (t - E.lunge - 0.08) / 0.22), '#ffffff');    // the lunge
+  if (t > E.last && t < E.through) {                                                                                  // fighting the mirror: red, glitching
+    const k = clamp((t - E.last) / 0.6); vignette(g, s, 0.55 * k * (0.7 + 0.3 * Math.sin(t * 9)), '170,0,20');
+    const f = Math.floor(t * 24);
+    for (let i = 0; i < 5; i++) if (hash(f * 7 + i) > 0.45) {
+      const y = hash(f * 13 + i) * 1920, h = 8 + 50 * hash(f * 17 + i);
+      g.fillStyle = i % 2 ? 'rgba(255,40,60,.22)' : 'rgba(120,228,216,.18)'; g.fillRect(0, y * s, 1080 * s, h * s);
+    }
+  }
   if (t > E.gone - 0.05 && t < E.gone + 0.25) flash(g, s, 0.3, '#78e4d8');
 
   // Call to action: what next + follow.

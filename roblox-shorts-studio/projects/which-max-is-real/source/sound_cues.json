@@ -2,14 +2,7 @@
  {
   "asset": "horror/entity_connect",
   "start": 0.05,
-  "gain": 0.55
- },
- {
-  "tone": 52,
-  "start": 0.05,
-  "gain": 0.6,
-  "dur": 0.16,
-  "sweep": -60
+  "gain": 0.5
  },
  {
   "tone": [
@@ -23,11 +16,11 @@
  {
   "asset": "horror/latch",
   "start": 6.68,
-  "gain": 0.5
+  "gain": 0.6
  },
  {
-  "asset": "horror/reveal_hit",
-  "start": 6.73,
+  "asset": "horror/torch_click",
+  "start": 6.7,
   "gain": 0.5
  },
  {
@@ -74,11 +67,6 @@
   "square": true
  },
  {
-  "asset": "horror/tension_rise",
-  "start": 20.9,
-  "gain": 0.35
- },
- {
   "tone": [
    784,
    988,
@@ -89,11 +77,11 @@
   "dur": 0.12
  },
  {
-  "tone": 320,
-  "start": 25.14,
-  "gain": 0.06,
-  "dur": 0.6,
-  "sweep": -200
+  "tone": 260,
+  "start": 25.19,
+  "gain": 0.07,
+  "dur": 0.5,
+  "sweep": -120
  },
  {
   "asset": "horror/entity_connect",
@@ -101,208 +89,169 @@
   "gain": 0.5
  },
  {
+  "asset": "swish_4",
+  "start": 26.91,
+  "gain": 0.6
+ },
+ {
   "asset": "horror/footstep",
   "start": 26.96,
-  "gain": 0.4
+  "gain": 0.5
  },
  {
   "asset": "horror/footstep",
-  "start": 27.16,
-  "gain": 0.4
+  "start": 27.04,
+  "gain": 0.5
  },
  {
-  "asset": "horror/footstep",
-  "start": 27.36,
+  "asset": "swish_3",
+  "start": 27.03,
   "gain": 0.4
- },
- {
-  "asset": "swish_4",
-  "start": 28.27,
-  "gain": 0.45
  },
  {
   "asset": "impact_2",
-  "start": 28.66,
-  "gain": 0.45
+  "start": 27.46,
+  "gain": 0.55
  },
  {
   "asset": "horror/footstep",
-  "start": 28.66,
-  "gain": 0.5
+  "start": 27.46,
+  "gain": 0.55
  },
  {
   "asset": "horror/footstep",
   "start": 32.98,
-  "gain": 0.45
- },
- {
-  "asset": "horror/footstep",
-  "start": 33.02,
-  "gain": 0.38
- },
- {
-  "tone": 52,
-  "start": 32.86,
-  "gain": 0.6,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "asset": "horror/footstep",
-  "start": 34.16,
-  "gain": 0.45
- },
- {
-  "asset": "horror/footstep",
-  "start": 34.2,
-  "gain": 0.38
- },
- {
-  "tone": 52,
-  "start": 34.04,
-  "gain": 0.6,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "asset": "horror/footstep",
-  "start": 36.38,
-  "gain": 0.45
- },
- {
-  "asset": "horror/footstep",
-  "start": 36.42,
-  "gain": 0.38
- },
- {
-  "tone": 52,
-  "start": 36.26,
-  "gain": 0.6,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "asset": "horror/footstep",
-  "start": 37.5,
-  "gain": 0.45
- },
- {
-  "asset": "horror/footstep",
-  "start": 37.54,
-  "gain": 0.38
- },
- {
-  "tone": 52,
-  "start": 37.38,
-  "gain": 0.6,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "asset": "horror/footstep",
-  "start": 38.83,
-  "gain": 0.45
- },
- {
-  "tone": 52,
-  "start": 38.71,
-  "gain": 0.7,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "asset": "horror/radio_static",
-  "start": 38.81,
-  "gain": 0.3
- },
- {
-  "asset": "horror/tension_rise",
-  "start": 38.81,
-  "gain": 0.55
- },
- {
-  "tone": 52,
-  "start": 39.21,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "tone": 52,
-  "start": 39.76,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "tone": 52,
-  "start": 40.31,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "tone": 52,
-  "start": 40.86,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "tone": 52,
-  "start": 41.41,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "tone": 52,
-  "start": 41.96,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "tone": 52,
-  "start": 42.51,
-  "gain": 0.5,
-  "dur": 0.16,
-  "sweep": -60
- },
- {
-  "asset": "swish_4",
-  "start": 43,
   "gain": 0.5
  },
  {
   "asset": "horror/footstep",
-  "start": 43.1,
+  "start": 33.02,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 33.08,
   "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 33.1,
+  "gain": 0.08
  },
  {
   "asset": "horror/footstep",
-  "start": 43.28,
-  "gain": 0.45
+  "start": 34.16,
+  "gain": 0.5
  },
  {
   "asset": "horror/footstep",
-  "start": 43.46,
+  "start": 34.2,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 34.26,
   "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 34.28,
+  "gain": 0.08
  },
  {
   "asset": "horror/footstep",
-  "start": 43.64,
+  "start": 36.38,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 36.42,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 36.48,
   "gain": 0.45
  },
  {
-  "asset": "impact_4",
-  "start": 47.731,
-  "gain": 0.55
+  "asset": "horror/radio_static",
+  "start": 36.5,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 37.5,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 37.54,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 37.6,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 37.62,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 38.83,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 38.87,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 38.93,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 38.95,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 39.36,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.05,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.2,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.35,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.5,
+  "gain": 0.5
  },
  {
   "asset": "horror/door_creak",
-  "start": 47.731,
-  "gain": 0.4
+  "start": 43.65,
+  "gain": 0.35
+ },
+ {
+  "asset": "impact_4",
+  "start": 47.738,
+  "gain": 0.6
  },
  {
   "asset": "impact_1",
@@ -310,26 +259,49 @@
   "gain": 0.6
  },
  {
-  "asset": "drum_hit",
-  "start": 48.3,
+  "asset": "horror/footstep",
+  "start": 46.838,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.088,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.338,
   "gain": 0.4
  },
  {
   "asset": "impact_4",
   "start": 49.52,
-  "gain": 0.7
+  "gain": 0.8
  },
  {
   "asset": "horror/latch",
   "start": 49.56,
+  "gain": 0.8
+ },
+ {
+  "asset": "impact_1",
+  "start": 50.07,
   "gain": 0.7
  },
  {
-  "tone": 52,
-  "start": 49.52,
-  "gain": 0.8,
-  "dur": 0.16,
-  "sweep": -60
+  "asset": "horror/latch",
+  "start": 50.12,
+  "gain": 0.5
+ },
+ {
+  "asset": "impact_1",
+  "start": 50.39,
+  "gain": 0.55
+ },
+ {
+  "asset": "horror/latch",
+  "start": 50.44,
+  "gain": 0.4
  },
  {
   "asset": "click",
@@ -354,10 +326,5 @@
   "asset": "horror/room_hum",
   "start": 57.84,
   "gain": 0.35
- },
- {
-  "asset": "horror/entity_connect",
-  "start": 59.34,
-  "gain": 0.25
  }
 ]

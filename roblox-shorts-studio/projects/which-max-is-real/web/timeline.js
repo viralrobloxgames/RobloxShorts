@@ -1,8 +1,8 @@
 // Which Max Is Real? (After Hours, Part 2 of 2: the finale). Story timeline shared by web/finale_clip.js and
-// source/sound_cues.py. Pure (no three.js). Positions are [x, z] in studs, in Part 1's set: lobby (z > -8), the EXIT door
-// in the back wall at x = 0 (z = -8, hinge at x = +3, open 100 degrees into the corridor), corridor z -8 .. -34.
-// Everything is real time t, keyed to narration words (W). The one slow-motion stretch (the backwards sprint) is a
-// single monotone curve, so nothing ever rewinds between camera angles.
+// source/sound_cues.py / source/score.py. Pure (no three.js). Positions are [x, z] in studs, in Part 1's set, staged in
+// the LOBBY (20 studs wide, open front: room for wide portrait shots): back wall with the EXIT door at z = -8, x = 0
+// (here hinged at x = -3 and opening INTO the lobby), the corridor beyond it, the lobby front at z = +8 and the apron
+// to z = +22. Everything is real time t, keyed to narration words (W); nothing ever rewinds between camera angles.
 //
 // Canon from Part 1: the copy is its target's MIRROR image (scale.x = -1: its hoodie star is on the wrong side). It
 // copies sideways moves in the same direction and moves along the line between them the opposite way. It has learned
@@ -27,62 +27,60 @@ function along(pts, t0, t, speed) {
 }
 
 // ---------- the set ----------
-export const DOOR_Z = -8, DOOR_OPEN = 1;
-export const TL = [-3.0, -13.5], TR = [1.4, -13.5];          // the twins (real Max LEFT, copy RIGHT), facing the doorway
-export const MIA0 = [-0.5, -27], MIA1 = [-0.5, -22], MIA2 = [3.6, -21.5], MIA_SLAM = [4.8, -15.0];
-export const C1 = [0.9, -14.6];                               // the copy stalks one step towards Mia
-export const M1 = [0.7, -17.4], MJUMP = [[-3.0, -13.5], [-2.6, -16.2], M1];   // Max jumps round it, between them
-export const STEP = 1.2;
+export const DOOR_Z = -8, DOOR_OPEN = 1, HINGE = [-3, -8];
+export const DOOR_EDGE = [HINGE[0] + 6 * Math.cos((100 * Math.PI) / 180), HINGE[1] + 6 * Math.sin((100 * Math.PI) / 180)];   // open: [-4.04, -2.09]
+export const TL = [-3.4, -1.5], TR = [2.4, -1.5];            // the twins (real Max LEFT, copy RIGHT), facing Mia (+z)
+export const MIA0 = [5.6, 10.5], MIA1 = [5.6, 6.6], MIA2 = [6.4, 7.8], MIA_SLAM = [-5.6, -1.6];   // watching from the front-right
+export const C1 = [0.9, 0.6];                                 // the copy lunges at Mia...
+export const M1 = [0.7, 3.4], MJUMP = [TL, [-3.3, 1.9], M1];  // ...Max dives round it, between them
+export const STEP = 1.6;
 export const STEPS = [W.step1, W.step2, W.another1, W.another2];          // both step: Max back, the mirror back too
 export const LAST = W.oneStep + 0.35;                                       // Max steps again; it doesn't
-export const SPRINT = [W.sprinted - 0.1, W.through + 0.6];                  // Max's sprint .. the copy lands in the lobby
+export const SPRINT = W.sprinted - 0.1;                                     // Max sprints backwards at full speed
 export const PULL = [W.sprinted + 0.15, W.through - 0.1];                   // the mirror drags it, fighting, to the doorway
-export const FLING = [W.through - 0.1, W.through + 0.55];                  // then it's flung through
-export const MAX_FAR = -30.0, COPY_FAR = -1.2;
-export const WAVE_AT = [0.2, -10.6];
+export const FLING = [W.through - 0.1, W.through + 0.55];                   // then it's flung through into the corridor
+export const MAX_FAR = 17.8, COPY_PULLED = -7.3, COPY_FAR = -13.5;
+export const WAVE_AT = [0.4, -4.2];
 const stepped = (t, list) => list.reduce((acc, s) => acc + STEP * smooth(inv(s, s + 0.3, t)), 0);
 const stepping = (t, list) => list.find((s) => t > s && t < s + 0.3);
-// Sprint progress: a single eased curve, fast off the mark then slowing as the copy crosses the doorway.
-const COPY_PULLED = -8.7;
 
 export const T = {
   sync: W.late - 0.1,
   raise: [W.leftMax - 0.25, W.stared - 0.35],
-  headTurn: [W.stared - 0.1, W.stared + 0.4],
-  bodyTurn: [W.came - 0.15, W.came + 0.1],
-  stalk: [W.came + 0.1, W.came + 0.6],
-  jump: W.jumped - 0.25,
-  miaWalk: W.mirrors + 0.4, miaAside: W.jumped + 0.45,
-  lock: [W.jumped + 0.4, W.jumped + 0.9],
+  tilt: [W.stared - 0.05, W.stared + 0.45],                  // its head tips sideways, too far
+  lunge: W.came + 0.05,
+  jump: W.came + 0.12,                                       // Max is already moving as it lunges
+  miaWalk: W.mirrors + 0.4, miaAside: W.jumped + 0.3,
+  lock: [W.jumped + 0.3, W.jumped + 0.8],
   gone: W.updated + 0.05,
+  miaRun: W.through - 0.05,
+  slam: [W.slammed - 0.12, W.slammed + 0.06],
 };
-T.miaRun = W.through + 0.05;
-T.slam = [W.slammed - 0.12, W.slammed + 0.06];
-T.maxWalk = W.slammed + 0.7;
+T.rattle = [T.slam[1] + 0.55, T.slam[1] + 0.95];             // it tries the door from the other side
+T.maxWalk = W.updated - 0.6;
 
 // ---------- Max ----------
 export function maxAt(t) {
   const s = { pos: TL, heading: 0, layers: [['idle', t]], face: t < T.sync ? 'scared' : 'neutral', raise: 0, wave: 0, hop: 0 };
   if (t >= T.raise[0] && t < T.raise[1]) s.raise = smooth(inv(T.raise[0], T.raise[0] + 0.2, t)) * (1 - smooth(inv(T.raise[1] - 0.2, T.raise[1], t)));
-  if (t >= W.came) s.face = 'shocked';
+  if (t >= W.stared) s.face = 'scared';
   const j = along(MJUMP, T.jump, t, RUN);
   if (t >= T.jump) {
-    s.pos = j.pos; s.heading = j.moving ? j.heading : 0; s.layers = j.moving ? [['run', j.anim]] : [['idle', t]];
-    s.hop = j.moving ? 1.1 * Math.sin(Math.PI * clamp((j.u - 0.55) / 0.45)) : 0; s.face = 'determined';
+    s.pos = j.pos; s.heading = j.moving ? j.heading : Math.PI; s.layers = j.moving ? [['run', j.anim]] : [['idle', t]];
+    s.hop = j.moving ? 1.3 * Math.sin(Math.PI * clamp((j.u - 0.5) / 0.5)) : 0; s.face = 'determined';
   }
   const back = stepped(t, [...STEPS, LAST]);
-  if (t >= STEPS[0]) {
-    s.pos = [M1[0], M1[1] - back]; s.heading = 0;
-    const st = stepping(t, [...STEPS, LAST]);
-    s.layers = st !== undefined ? [['walk', -back / STRIDE, 0.6], ['idle', t, 0.4]] : [['idle', t]];   // backwards, legs keyed to distance
+  if (t >= STEPS[0]) {                                       // walks backwards (+z), facing the copy
+    s.pos = [M1[0], M1[1] + back]; s.heading = Math.PI;
+    s.layers = stepping(t, [...STEPS, LAST]) !== undefined ? [['walk', -back / STRIDE, 0.6], ['idle', t, 0.4]] : [['idle', t]];
   }
-  if (t >= SPRINT[0]) {
-    const z0 = M1[1] - STEP * 5, r = along([[M1[0], z0], [M1[0], MAX_FAR]], SPRINT[0], t, RUN);   // full speed, backwards
-    s.pos = r.pos; s.heading = 0; s.layers = r.moving ? [['run', -r.anim]] : [['idle', t]];
+  if (t >= SPRINT) {
+    const z0 = M1[1] + STEP * 5, r = along([[M1[0], z0], [M1[0], MAX_FAR]], SPRINT, t, RUN);
+    s.pos = r.pos; s.heading = Math.PI; s.layers = r.moving ? [['run', -r.anim]] : [['idle', t]];
   }
   if (t >= T.maxWalk) {
     const w = along([[M1[0], MAX_FAR], WAVE_AT], T.maxWalk, t, WALK);
-    s.pos = w.pos; s.heading = w.moving ? w.heading : 0; s.layers = w.moving ? [['walk', w.anim]] : [['idle', t]]; s.face = 'neutral';
+    s.pos = w.pos; s.heading = Math.PI; s.layers = w.moving ? [['walk', w.anim]] : [['idle', t]]; s.face = 'neutral';
   }
   if (t >= W.waved - 0.1 && t < W.waved + 1.7) s.wave = 1;
   if (t >= W.nothing) s.face = 'sad';
@@ -92,67 +90,62 @@ export function maxAt(t) {
 // ---------- the copy ----------
 export function copyAt(t) {
   const m = maxAt(t);
-  const s = { pos: TR, heading: 0, layers: m.layers, face: 'neutral', raise: m.raise, wave: 0, hop: 0, headTurn: 0, mirror: true, visible: t < T.gone, fall: 0, shake: 0 };
+  const s = { pos: TR, heading: 0, layers: m.layers, face: 'neutral', raise: m.raise, wave: 0, hop: 0, tilt: 0, mirror: true, visible: t < T.gone, fall: 0, shake: 0, lean: 0 };
   if (t >= T.jump) s.layers = [['idle', t]];
-  if (t >= W.stared - 0.4) s.face = 'evil_grin';
-  // It turns its head all the way round to look at Mia, then its body follows.
-  s.headTurn = smooth(inv(...T.headTurn, t)) * (1 - smooth(inv(...T.bodyTurn, t)));
-  s.heading = angLerp(0, Math.PI, smooth(inv(...T.bodyTurn, t)));
-  if (t >= T.stalk[0]) {                                     // one menacing step towards her (short step: shorter swing)
-    const u = smooth(inv(...T.stalk, t)); s.pos = [lerp(TR[0], C1[0], u), lerp(TR[1], C1[1], u)];
-    if (u > 0 && u < 1) s.layers = [['walk', (u * dist(TR, C1)) / STRIDE, 0.4], ['idle', t, 0.6]];
-  }
+  if (t >= W.stared - 0.3) s.face = 'evil_grin';
+  s.tilt = smooth(inv(...T.tilt, t)) * (1 - smooth(inv(T.lunge - 0.05, T.lunge + 0.1, t)));
+  const l = along([TR, C1], T.lunge, t, RUN);                 // the lunge, full speed at Mia
+  if (t >= T.lunge) { s.pos = l.pos; s.heading = l.moving ? l.heading : 0; if (l.moving) s.layers = [['run', l.anim]]; }
   if (t >= T.lock[0]) s.pos = [lerp(C1[0], M1[0], smooth(inv(...T.lock, t))), C1[1]];   // locks onto Max's line
-  if (t >= STEPS[0]) {                                       // the mirror: Max steps back, it steps back (towards the door)
-    const fwd = stepped(t, STEPS); s.pos = [M1[0], C1[1] + fwd];
-    const st = stepping(t, STEPS);
-    s.layers = st !== undefined ? [['walk', -fwd / STRIDE, 0.6], ['idle', t, 0.4]] : [['idle', t]];
+  if (t >= STEPS[0]) {                                       // the mirror: Max steps back, it steps back (to the door)
+    const fwd = stepped(t, STEPS); s.pos = [M1[0], C1[1] - fwd]; s.heading = 0;
+    s.layers = stepping(t, STEPS) !== undefined ? [['walk', -fwd / STRIDE, 0.6], ['idle', t, 0.4]] : [['idle', t]];
   }
-  if (t >= LAST && t < SPRINT[0]) {                          // one step from the door it stops: fighting the mirror
-    s.face = 'angry'; s.shake = smooth(inv(LAST, LAST + 0.4, t));
-  }
-  if (t >= SPRINT[0]) {                                      // a mirror has to follow: flung back through the doorway
-    const z0 = C1[1] + STEP * 4, pull = smooth(inv(...PULL, t)), fl = inv(...FLING, t);
-    // Dragged: feet braced (no walk cycle), shaking, towards the doorway; then flung, tipping over onto its back.
+  if (t >= LAST && t < SPRINT) { s.face = 'angry'; s.shake = smooth(inv(LAST, LAST + 0.4, t)); }   // fighting the mirror
+  if (t >= SPRINT) {                                         // dragged, braced, to the doorway; then flung through
+    const z0 = C1[1] - STEP * 4, pull = smooth(inv(...PULL, t)), fl = inv(...FLING, t);
     const z = fl > 0 ? lerp(COPY_PULLED, COPY_FAR, 1 - (1 - fl) ** 2) : lerp(z0, COPY_PULLED, pull);
-    s.pos = [M1[0], z]; s.face = fl > 0 ? 'shocked' : 'angry'; s.shake = fl > 0 ? 0 : 0.7;
-    s.layers = [['idle', 0]]; s.lean = fl > 0 ? 0 : 0.18 * pull;
-    s.fall = smooth(inv(0.35, 1, fl));
+    s.pos = [M1[0], z]; s.face = fl > 0 ? 'shocked' : 'angry'; s.shake = fl > 0 ? 0 : 0.8;
+    s.layers = [['idle', 0]]; s.lean = fl > 0 ? 0 : 0.2 * pull; s.fall = smooth(inv(0.35, 1, fl));
   }
   return s;
 }
 
 // ---------- Mia ----------
 export function miaAt(t) {
-  const s = { pos: MIA0, heading: 0, layers: [['idle', t + 0.7]], face: 'suspicious', raise: 0, wave: 0, hop: 0, visible: t >= W.mia - 0.15 };   // spectating: unseen until her light comes on
+  const s = { pos: MIA0, heading: Math.PI, layers: [['idle', t + 0.7]], face: 'suspicious', raise: 0, wave: 0, hop: 0, visible: t >= W.mia - 0.15 };
   const w = along([MIA0, MIA1], T.miaWalk, t, WALK);
   if (t >= T.miaWalk) { s.pos = w.pos; if (w.moving) s.layers = [['walk', w.anim]]; }
   if (t >= W.order) s.face = 'determined';
-  if (t >= W.came - 0.1) s.face = 'scared';
+  if (t >= W.stared) s.face = 'scared';
   const a = along([MIA1, MIA2], T.miaAside, t, WALK);
-  if (t >= T.miaAside) { s.pos = a.pos; s.heading = a.moving ? a.heading : 0; if (a.moving) s.layers = [['walk', a.anim]]; }
+  if (t >= T.miaAside) { s.pos = a.pos; s.heading = a.moving ? a.heading : head(MIA2, [M1[0], 0]); if (a.moving) s.layers = [['walk', a.anim]]; }
   if (t >= W.whispered - 0.2) s.face = 'determined';
   const r = along([MIA2, MIA_SLAM], T.miaRun, t, RUN);
   if (t >= T.miaRun) {
-    s.pos = r.pos; s.heading = r.moving ? r.heading : head(MIA_SLAM, [4.04, -13.9]); s.layers = r.moving ? [['run', r.anim]] : [['idle', t]];
-    if (t >= T.slam[0] - 0.08 && t < T.slam[1] + 0.35) { s.layers = [['push', (t - T.slam[0] + 0.08) * 1.4, 1, false]]; s.face = 'angry'; }
+    s.pos = r.pos; s.heading = r.moving ? r.heading : head(MIA_SLAM, DOOR_EDGE); s.layers = r.moving ? [['run', r.anim]] : [['idle', t]];
+    if (t >= T.slam[0] - 0.08 && t < T.rattle[1] + 0.3) { s.layers = [['push', Math.min((t - T.slam[0] + 0.08) * 1.4, 0.3), 1, false]]; s.face = 'angry'; }   // holds it shut
   }
-  if (t >= T.slam[1] + 0.6) { s.face = 'neutral'; s.heading = angLerp(head(MIA_SLAM, [4.04, -13.9]), Math.PI, smooth(inv(T.slam[1] + 0.6, T.slam[1] + 0.9, t))); }
+  if (t >= T.rattle[1] + 0.6) { s.face = 'neutral'; s.heading = angLerp(head(MIA_SLAM, DOOR_EDGE), 0, smooth(inv(T.rattle[1] + 0.6, T.rattle[1] + 0.9, t))); }
   return s;
 }
 
-// Door: open (the copy came through it in the dark), slammed by Mia.
+// Door: open (the copy came through it in Part 1's blackout), slammed by Mia, rattled from the other side.
 export function doorAt(t) {
   if (t < T.slam[0]) return DOOR_OPEN;
   if (t < T.slam[1]) return DOOR_OPEN * (1 - inv(...T.slam, t) ** 2);
+  if (t > T.rattle[0] && t < T.rattle[1]) return 0.025 * Math.abs(Math.sin((t - T.rattle[0]) * 38));
   return 0;
 }
 
-// Real times of events, for sound cues and overlays.
-const copyThrough = (() => { let lo = SPRINT[0], hi = SPRINT[1]; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (copyAt(m).pos[1] < DOOR_Z) lo = m; else hi = m; } return lo; })();
+// Ceiling lights over the walk-back go out one per step: the dark closes in.
+export const LIGHTS_OUT = [...STEPS, LAST];
+
+// Real times of events, for sound cues, score and overlays.
+const copyThrough = (() => { let lo = SPRINT, hi = FLING[1]; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (copyAt(m).pos[1] > DOOR_Z) lo = m; else hi = m; } return lo; })();
 export const EVENTS = {
-  lightOn: W.mia - 0.1, sync: T.sync, raise: T.raise[0], headTurn: T.headTurn[0], bodyTurn: T.bodyTurn[0], stalk: T.stalk[0],
-  jump: T.jump, land: along(MJUMP, T.jump, 0, RUN).arrive, steps: STEPS, last: LAST, fight: LAST + 0.1,
-  sprint: SPRINT[0], through: copyThrough, fall: FLING[1] - 0.05, slam: T.slam[1], gone: T.gone,
+  lightOn: W.mia - 0.1, sync: T.sync, raise: T.raise[0], tilt: T.tilt[0], lunge: T.lunge, jump: T.jump,
+  land: along(MJUMP, T.jump, 0, RUN).arrive, steps: STEPS, last: LAST, fight: LAST + 0.1, sprint: SPRINT, pull: PULL[0],
+  through: copyThrough, fall: FLING[1] - 0.05, slam: T.slam[1], rattle: T.rattle, gone: T.gone,
   waved: W.waved - 0.1, nothing: W.nothing, cta: W.what - 0.1, end: W.end,
 };
