@@ -8,8 +8,9 @@ import { soleHeight } from '../../../web/lib/rig.js';
 export const meta = { seconds: 0.3, fps: 30, width: 1080, height: 1920, title: 'pose sheet' };
 const S = 1.6;
 let rex, leo, cam, A = {};
-const POSES = [['asleep', trexSleep(0), 'all'], ['idle', trexIdle(0)], ['roar', trexRoar(0.1)], ['run 0', trexRun(0)], ['run .25', trexRun(0.25)],
-  ['run .5', trexRun(0.5)], ['run .75', trexRun(0.75)], ['headbutt', trexHeadbutt(0.5)], ['rest', {}]];
+const SL = (n2, n1, h) => ({ ...trexSleep(0), neck2: [n2, 0, 0], neck1: [n1, 0, 0], head: [h, 0, 0] });
+const POSES = [['A -.45 -.25 +.5', SL(-0.45, -0.25, 0.5), 'all'], ['B -.3 -.1 +.45', SL(-0.3, -0.1, 0.45), 'all'], ['C -.55 -.2 +.8', SL(-0.55, -0.2, 0.8), 'all'],
+  ['D -.6 -.35 +1.0', SL(-0.6, -0.35, 1.0), 'all'], ['E -.2 0 +.3', SL(-0.2, 0, 0.3), 'all'], ['old', trexSleep(0), 'all']];
 export async function setup(stage) {
   stage.scene.add(part(300, 2, 300, '#6aa84f', { studs: false }));
   rex = await loadCreature('trex'); rex.root.scale.setScalar(S); stage.scene.add(rex.root);
@@ -22,6 +23,6 @@ export function update(t, stage) {
   const names = ground === 'all' ? Object.keys(rex.bodies).filter((n) => rex.bodies[n].meshes.length) : TREX_FEET;
   rex.root.position.y -= creatureLowest(rex, names);
   leo.root.position.set(-15, 0, 16); leo.root.rotation.y = 0.8; robloxPose(leo, [[A.idle, 0.2]]); leo.root.updateMatrixWorld(true); leo.root.position.y -= soleHeight(leo);
-  cam = stage.camera; cam.position.set(-46, 14, 48); cam.fov = 40; cam.updateProjectionMatrix(); cam.lookAt(-4, 9, 4); stage.aimSun(new THREE.Vector3(0, 0, 0), 40);
+  cam = stage.camera; cam.position.set(56, 7, 14); cam.fov = 36; cam.updateProjectionMatrix(); cam.lookAt(0, 5, 12); stage.aimSun(new THREE.Vector3(0, 0, 0), 40);
 }
 export function overlay(g, s, t) { const i = Math.round(t * 30) % POSES.length; g.font = `${80 * s}px "Luckiest Guy"`; g.fillStyle = '#fff'; g.strokeStyle = '#152435'; g.lineWidth = 10 * s; g.strokeText(POSES[i][0], 60 * s, 300 * s); g.fillText(POSES[i][0], 60 * s, 300 * s); }

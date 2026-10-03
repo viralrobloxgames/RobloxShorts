@@ -1,0 +1,1359 @@
+[
+ {
+  "start": 0.0,
+  "end": 0.92,
+  "text": "This T-Rex is",
+  "words": [
+   {
+    "start": 0.0,
+    "end": 0.26,
+    "word": " This"
+   },
+   {
+    "start": 0.26,
+    "end": 0.7,
+    "word": " T-Rex"
+   },
+   {
+    "start": 0.7,
+    "end": 0.92,
+    "word": " is"
+   }
+  ]
+ },
+ {
+  "start": 0.92,
+  "end": 1.74,
+  "text": "sleeping on the best",
+  "words": [
+   {
+    "start": 0.92,
+    "end": 1.2,
+    "word": " sleeping"
+   },
+   {
+    "start": 1.2,
+    "end": 1.44,
+    "word": " on"
+   },
+   {
+    "start": 1.44,
+    "end": 1.54,
+    "word": " the"
+   },
+   {
+    "start": 1.54,
+    "end": 1.74,
+    "word": " best"
+   }
+  ]
+ },
+ {
+  "start": 1.74,
+  "end": 2.68,
+  "text": "egg in Steal an",
+  "words": [
+   {
+    "start": 1.74,
+    "end": 2.04,
+    "word": " egg"
+   },
+   {
+    "start": 2.04,
+    "end": 2.26,
+    "word": " in"
+   },
+   {
+    "start": 2.26,
+    "end": 2.5,
+    "word": " Steal"
+   },
+   {
+    "start": 2.5,
+    "end": 2.68,
+    "word": " an"
+   }
+  ]
+ },
+ {
+  "start": 2.68,
+  "end": 3.02,
+  "text": "Egg.",
+  "words": [
+   {
+    "start": 2.68,
+    "end": 2.9,
+    "word": " Egg."
+   }
+  ]
+ },
+ {
+  "start": 3.68,
+  "end": 4.64,
+  "text": "Leo tiptoed in and",
+  "words": [
+   {
+    "start": 3.68,
+    "end": 3.68,
+    "word": " Leo"
+   },
+   {
+    "start": 3.68,
+    "end": 4.24,
+    "word": " tiptoed"
+   },
+   {
+    "start": 4.24,
+    "end": 4.42,
+    "word": " in"
+   },
+   {
+    "start": 4.42,
+    "end": 4.64,
+    "word": " and"
+   }
+  ]
+ },
+ {
+  "start": 4.64,
+  "end": 5.42,
+  "text": "grabbed it.",
+  "words": [
+   {
+    "start": 4.64,
+    "end": 4.86,
+    "word": " grabbed"
+   },
+   {
+    "start": 4.86,
+    "end": 5.3,
+    "word": " it."
+   }
+  ]
+ },
+ {
+  "start": 5.74,
+  "end": 6.48,
+  "text": "The T-Rex woke",
+  "words": [
+   {
+    "start": 5.74,
+    "end": 5.84,
+    "word": " The"
+   },
+   {
+    "start": 5.84,
+    "end": 6.24,
+    "word": " T-Rex"
+   },
+   {
+    "start": 6.24,
+    "end": 6.48,
+    "word": " woke"
+   }
+  ]
+ },
+ {
+  "start": 6.48,
+  "end": 7.04,
+  "text": "up.",
+  "words": [
+   {
+    "start": 6.48,
+    "end": 6.92,
+    "word": " up."
+   }
+  ]
+ },
+ {
+  "start": 7.46,
+  "end": 7.84,
+  "text": "Problem.",
+  "words": [
+   {
+    "start": 7.46,
+    "end": 7.72,
+    "word": " Problem."
+   }
+  ]
+ },
+ {
+  "start": 8.18,
+  "end": 9.2,
+  "text": "Giant eggs make you",
+  "words": [
+   {
+    "start": 8.18,
+    "end": 8.36,
+    "word": " Giant"
+   },
+   {
+    "start": 8.36,
+    "end": 8.74,
+    "word": " eggs"
+   },
+   {
+    "start": 8.74,
+    "end": 8.98,
+    "word": " make"
+   },
+   {
+    "start": 8.98,
+    "end": 9.2,
+    "word": " you"
+   }
+  ]
+ },
+ {
+  "start": 9.2,
+  "end": 9.639999999999999,
+  "text": "slow.",
+  "words": [
+   {
+    "start": 9.2,
+    "end": 9.52,
+    "word": " slow."
+   }
+  ]
+ },
+ {
+  "start": 10.2,
+  "end": 10.62,
+  "text": "Bonk.",
+  "words": [
+   {
+    "start": 10.2,
+    "end": 10.5,
+    "word": " Bonk."
+   }
+  ]
+ },
+ {
+  "start": 10.74,
+  "end": 11.84,
+  "text": "Leo went flying.",
+  "words": [
+   {
+    "start": 10.74,
+    "end": 11.1,
+    "word": " Leo"
+   },
+   {
+    "start": 11.1,
+    "end": 11.32,
+    "word": " went"
+   },
+   {
+    "start": 11.32,
+    "end": 11.72,
+    "word": " flying."
+   }
+  ]
+ },
+ {
+  "start": 12.68,
+  "end": 13.26,
+  "text": "Max laughed.",
+  "words": [
+   {
+    "start": 12.68,
+    "end": 12.78,
+    "word": " Max"
+   },
+   {
+    "start": 12.78,
+    "end": 13.14,
+    "word": " laughed."
+   }
+  ]
+ },
+ {
+  "start": 13.64,
+  "end": 14.559999999999999,
+  "text": "Then Max tried.",
+  "words": [
+   {
+    "start": 13.64,
+    "end": 13.78,
+    "word": " Then"
+   },
+   {
+    "start": 13.78,
+    "end": 14.08,
+    "word": " Max"
+   },
+   {
+    "start": 14.08,
+    "end": 14.44,
+    "word": " tried."
+   }
+  ]
+ },
+ {
+  "start": 15.06,
+  "end": 15.54,
+  "text": "Bonk.",
+  "words": [
+   {
+    "start": 15.06,
+    "end": 15.42,
+    "word": " Bonk."
+   }
+  ]
+ },
+ {
+  "start": 15.8,
+  "end": 17.0,
+  "text": "Max went flying higher.",
+  "words": [
+   {
+    "start": 15.8,
+    "end": 15.96,
+    "word": " Max"
+   },
+   {
+    "start": 15.96,
+    "end": 16.16,
+    "word": " went"
+   },
+   {
+    "start": 16.16,
+    "end": 16.5,
+    "word": " flying"
+   },
+   {
+    "start": 16.5,
+    "end": 16.88,
+    "word": " higher."
+   }
+  ]
+ },
+ {
+  "start": 17.72,
+  "end": 18.26,
+  "text": "Try three.",
+  "words": [
+   {
+    "start": 17.72,
+    "end": 17.8,
+    "word": " Try"
+   },
+   {
+    "start": 17.8,
+    "end": 18.14,
+    "word": " three."
+   }
+  ]
+ },
+ {
+  "start": 18.48,
+  "end": 19.380000000000003,
+  "text": "A bush disguise.",
+  "words": [
+   {
+    "start": 18.48,
+    "end": 18.58,
+    "word": " A"
+   },
+   {
+    "start": 18.58,
+    "end": 18.76,
+    "word": " bush"
+   },
+   {
+    "start": 18.76,
+    "end": 19.26,
+    "word": " disguise."
+   }
+  ]
+ },
+ {
+  "start": 19.72,
+  "end": 20.46,
+  "text": "It ate the bush.",
+  "words": [
+   {
+    "start": 19.72,
+    "end": 19.8,
+    "word": " It"
+   },
+   {
+    "start": 19.8,
+    "end": 19.94,
+    "word": " ate"
+   },
+   {
+    "start": 19.94,
+    "end": 20.1,
+    "word": " the"
+   },
+   {
+    "start": 20.1,
+    "end": 20.34,
+    "word": " bush."
+   }
+  ]
+ },
+ {
+  "start": 21.12,
+  "end": 21.7,
+  "text": "Try seven.",
+  "words": [
+   {
+    "start": 21.12,
+    "end": 21.2,
+    "word": " Try"
+   },
+   {
+    "start": 21.2,
+    "end": 21.58,
+    "word": " seven."
+   }
+  ]
+ },
+ {
+  "start": 21.92,
+  "end": 22.64,
+  "text": "A bear trap.",
+  "words": [
+   {
+    "start": 21.92,
+    "end": 22.04,
+    "word": " A"
+   },
+   {
+    "start": 22.04,
+    "end": 22.24,
+    "word": " bear"
+   },
+   {
+    "start": 22.24,
+    "end": 22.52,
+    "word": " trap."
+   }
+  ]
+ },
+ {
+  "start": 23.02,
+  "end": 24.2,
+  "text": "Max stepped in it.",
+  "words": [
+   {
+    "start": 23.02,
+    "end": 23.34,
+    "word": " Max"
+   },
+   {
+    "start": 23.34,
+    "end": 23.6,
+    "word": " stepped"
+   },
+   {
+    "start": 23.6,
+    "end": 23.8,
+    "word": " in"
+   },
+   {
+    "start": 23.8,
+    "end": 24.08,
+    "word": " it."
+   }
+  ]
+ },
+ {
+  "start": 24.4,
+  "end": 25.3,
+  "text": "So they tried something",
+  "words": [
+   {
+    "start": 24.4,
+    "end": 24.62,
+    "word": " So"
+   },
+   {
+    "start": 24.62,
+    "end": 24.78,
+    "word": " they"
+   },
+   {
+    "start": 24.78,
+    "end": 25.04,
+    "word": " tried"
+   },
+   {
+    "start": 25.04,
+    "end": 25.3,
+    "word": " something"
+   }
+  ]
+ },
+ {
+  "start": 25.3,
+  "end": 26.3,
+  "text": "new teamwork.",
+  "words": [
+   {
+    "start": 25.3,
+    "end": 25.7,
+    "word": " new"
+   },
+   {
+    "start": 25.7,
+    "end": 26.18,
+    "word": " teamwork."
+   }
+  ]
+ },
+ {
+  "start": 26.8,
+  "end": 27.96,
+  "text": "Max ran in waving,",
+  "words": [
+   {
+    "start": 26.8,
+    "end": 27.16,
+    "word": " Max"
+   },
+   {
+    "start": 27.16,
+    "end": 27.4,
+    "word": " ran"
+   },
+   {
+    "start": 27.4,
+    "end": 27.56,
+    "word": " in"
+   },
+   {
+    "start": 27.56,
+    "end": 27.84,
+    "word": " waving,"
+   }
+  ]
+ },
+ {
+  "start": 28.06,
+  "end": 28.52,
+  "text": "dancing,",
+  "words": [
+   {
+    "start": 28.06,
+    "end": 28.4,
+    "word": " dancing,"
+   }
+  ]
+ },
+ {
+  "start": 28.6,
+  "end": 28.96,
+  "text": "anything.",
+  "words": [
+   {
+    "start": 28.6,
+    "end": 28.84,
+    "word": " anything."
+   }
+  ]
+ },
+ {
+  "start": 29.36,
+  "end": 30.4,
+  "text": "The T-Rex chased",
+  "words": [
+   {
+    "start": 29.36,
+    "end": 29.62,
+    "word": " The"
+   },
+   {
+    "start": 29.62,
+    "end": 30.1,
+    "word": " T-Rex"
+   },
+   {
+    "start": 30.1,
+    "end": 30.4,
+    "word": " chased"
+   }
+  ]
+ },
+ {
+  "start": 30.4,
+  "end": 31.34,
+  "text": "him in circles.",
+  "words": [
+   {
+    "start": 30.4,
+    "end": 30.6,
+    "word": " him"
+   },
+   {
+    "start": 30.6,
+    "end": 30.76,
+    "word": " in"
+   },
+   {
+    "start": 30.76,
+    "end": 31.22,
+    "word": " circles."
+   }
+  ]
+ },
+ {
+  "start": 32.1,
+  "end": 32.84,
+  "text": "Leo grabbed the egg",
+  "words": [
+   {
+    "start": 32.1,
+    "end": 32.1,
+    "word": " Leo"
+   },
+   {
+    "start": 32.1,
+    "end": 32.42,
+    "word": " grabbed"
+   },
+   {
+    "start": 32.42,
+    "end": 32.64,
+    "word": " the"
+   },
+   {
+    "start": 32.64,
+    "end": 32.84,
+    "word": " egg"
+   }
+  ]
+ },
+ {
+  "start": 32.84,
+  "end": 33.68,
+  "text": "and waddled for the",
+  "words": [
+   {
+    "start": 32.84,
+    "end": 33.04,
+    "word": " and"
+   },
+   {
+    "start": 33.04,
+    "end": 33.32,
+    "word": " waddled"
+   },
+   {
+    "start": 33.32,
+    "end": 33.52,
+    "word": " for"
+   },
+   {
+    "start": 33.52,
+    "end": 33.68,
+    "word": " the"
+   }
+  ]
+ },
+ {
+  "start": 33.68,
+  "end": 34.3,
+  "text": "safe zone.",
+  "words": [
+   {
+    "start": 33.68,
+    "end": 33.88,
+    "word": " safe"
+   },
+   {
+    "start": 33.88,
+    "end": 34.18,
+    "word": " zone."
+   }
+  ]
+ },
+ {
+  "start": 35.02,
+  "end": 35.72,
+  "text": "Then the T-Rex",
+  "words": [
+   {
+    "start": 35.02,
+    "end": 35.18,
+    "word": " Then"
+   },
+   {
+    "start": 35.18,
+    "end": 35.34,
+    "word": " the"
+   },
+   {
+    "start": 35.34,
+    "end": 35.72,
+    "word": " T-Rex"
+   }
+  ]
+ },
+ {
+  "start": 35.72,
+  "end": 36.5,
+  "text": "turned around.",
+  "words": [
+   {
+    "start": 35.72,
+    "end": 36.02,
+    "word": " turned"
+   },
+   {
+    "start": 36.02,
+    "end": 36.38,
+    "word": " around."
+   }
+  ]
+ },
+ {
+  "start": 37.2,
+  "end": 38.12,
+  "text": "So Max jumped on",
+  "words": [
+   {
+    "start": 37.2,
+    "end": 37.38,
+    "word": " So"
+   },
+   {
+    "start": 37.38,
+    "end": 37.62,
+    "word": " Max"
+   },
+   {
+    "start": 37.62,
+    "end": 37.94,
+    "word": " jumped"
+   },
+   {
+    "start": 37.94,
+    "end": 38.12,
+    "word": " on"
+   }
+  ]
+ },
+ {
+  "start": 38.12,
+  "end": 38.739999999999995,
+  "text": "its tail.",
+  "words": [
+   {
+    "start": 38.12,
+    "end": 38.3,
+    "word": " its"
+   },
+   {
+    "start": 38.3,
+    "end": 38.62,
+    "word": " tail."
+   }
+  ]
+ },
+ {
+  "start": 39.36,
+  "end": 39.8,
+  "text": "Bonk.",
+  "words": [
+   {
+    "start": 39.36,
+    "end": 39.68,
+    "word": " Bonk."
+   }
+  ]
+ },
+ {
+  "start": 39.88,
+  "end": 41.32,
+  "text": "Max went flying again.",
+  "words": [
+   {
+    "start": 39.88,
+    "end": 40.2,
+    "word": " Max"
+   },
+   {
+    "start": 40.2,
+    "end": 40.4,
+    "word": " went"
+   },
+   {
+    "start": 40.4,
+    "end": 40.78,
+    "word": " flying"
+   },
+   {
+    "start": 40.78,
+    "end": 41.2,
+    "word": " again."
+   }
+  ]
+ },
+ {
+  "start": 41.82,
+  "end": 42.64,
+  "text": "But Leo made it",
+  "words": [
+   {
+    "start": 41.82,
+    "end": 41.98,
+    "word": " But"
+   },
+   {
+    "start": 41.98,
+    "end": 42.22,
+    "word": " Leo"
+   },
+   {
+    "start": 42.22,
+    "end": 42.46,
+    "word": " made"
+   },
+   {
+    "start": 42.46,
+    "end": 42.64,
+    "word": " it"
+   }
+  ]
+ },
+ {
+  "start": 42.64,
+  "end": 43.36,
+  "text": "safe zone.",
+  "words": [
+   {
+    "start": 42.64,
+    "end": 42.88,
+    "word": " safe"
+   },
+   {
+    "start": 42.88,
+    "end": 43.24,
+    "word": " zone."
+   }
+  ]
+ },
+ {
+  "start": 43.7,
+  "end": 44.54,
+  "text": "The T-Rex couldn't",
+  "words": [
+   {
+    "start": 43.7,
+    "end": 43.76,
+    "word": " The"
+   },
+   {
+    "start": 43.76,
+    "end": 44.18,
+    "word": " T-Rex"
+   },
+   {
+    "start": 44.18,
+    "end": 44.54,
+    "word": " couldn't"
+   }
+  ]
+ },
+ {
+  "start": 44.54,
+  "end": 44.96,
+  "text": "follow.",
+  "words": [
+   {
+    "start": 44.54,
+    "end": 44.84,
+    "word": " follow."
+   }
+  ]
+ },
+ {
+  "start": 45.56,
+  "end": 46.46,
+  "text": "Their egg hatched.",
+  "words": [
+   {
+    "start": 45.56,
+    "end": 45.74,
+    "word": " Their"
+   },
+   {
+    "start": 45.74,
+    "end": 46.0,
+    "word": " egg"
+   },
+   {
+    "start": 46.0,
+    "end": 46.34,
+    "word": " hatched."
+   }
+  ]
+ },
+ {
+  "start": 46.76,
+  "end": 47.82,
+  "text": "A baby T-Rex.",
+  "words": [
+   {
+    "start": 46.76,
+    "end": 46.86,
+    "word": " A"
+   },
+   {
+    "start": 46.86,
+    "end": 47.1,
+    "word": " baby"
+   },
+   {
+    "start": 47.1,
+    "end": 47.7,
+    "word": " T-Rex."
+   }
+  ]
+ },
+ {
+  "start": 48.08,
+  "end": 48.98,
+  "text": "one dollar a second.",
+  "words": [
+   {
+    "start": 48.08,
+    "end": 48.34,
+    "word": " one dollar"
+   },
+   {
+    "start": 48.34,
+    "end": 48.6,
+    "word": " a"
+   },
+   {
+    "start": 48.6,
+    "end": 48.86,
+    "word": " second."
+   }
+  ]
+ },
+ {
+  "start": 49.48,
+  "end": 50.36,
+  "text": "Then they saw Mia's",
+  "words": [
+   {
+    "start": 49.48,
+    "end": 49.62,
+    "word": " Then"
+   },
+   {
+    "start": 49.62,
+    "end": 49.78,
+    "word": " they"
+   },
+   {
+    "start": 49.78,
+    "end": 50.02,
+    "word": " saw"
+   },
+   {
+    "start": 50.02,
+    "end": 50.36,
+    "word": " Mia's"
+   }
+  ]
+ },
+ {
+  "start": 50.36,
+  "end": 50.76,
+  "text": "base.",
+  "words": [
+   {
+    "start": 50.36,
+    "end": 50.64,
+    "word": " base."
+   }
+  ]
+ },
+ {
+  "start": 51.12,
+  "end": 52.22,
+  "text": "twelve T-Rex eggs.",
+  "words": [
+   {
+    "start": 51.12,
+    "end": 51.3,
+    "word": " twelve"
+   },
+   {
+    "start": 51.3,
+    "end": 51.8,
+    "word": " T-Rex"
+   },
+   {
+    "start": 51.8,
+    "end": 52.1,
+    "word": " eggs."
+   }
+  ]
+ },
+ {
+  "start": 52.8,
+  "end": 53.56,
+  "text": "While the T-Rex",
+  "words": [
+   {
+    "start": 52.8,
+    "end": 53.02,
+    "word": " While"
+   },
+   {
+    "start": 53.02,
+    "end": 53.2,
+    "word": " the"
+   },
+   {
+    "start": 53.2,
+    "end": 53.56,
+    "word": " T-Rex"
+   }
+  ]
+ },
+ {
+  "start": 53.56,
+  "end": 54.3,
+  "text": "chased them,",
+  "words": [
+   {
+    "start": 53.56,
+    "end": 53.86,
+    "word": " chased"
+   },
+   {
+    "start": 53.86,
+    "end": 54.18,
+    "word": " them,"
+   }
+  ]
+ },
+ {
+  "start": 54.7,
+  "end": 55.5,
+  "text": "Mia took the rest.",
+  "words": [
+   {
+    "start": 54.7,
+    "end": 54.72,
+    "word": " Mia"
+   },
+   {
+    "start": 54.72,
+    "end": 54.94,
+    "word": " took"
+   },
+   {
+    "start": 54.94,
+    "end": 55.12,
+    "word": " the"
+   },
+   {
+    "start": 55.12,
+    "end": 55.38,
+    "word": " rest."
+   }
+  ]
+ },
+ {
+  "start": 55.98,
+  "end": 56.92,
+  "text": "Then all twelve hatched",
+  "words": [
+   {
+    "start": 55.98,
+    "end": 56.08,
+    "word": " Then"
+   },
+   {
+    "start": 56.08,
+    "end": 56.32,
+    "word": " all"
+   },
+   {
+    "start": 56.32,
+    "end": 56.62,
+    "word": " twelve"
+   },
+   {
+    "start": 56.62,
+    "end": 56.92,
+    "word": " hatched"
+   }
+  ]
+ },
+ {
+  "start": 56.92,
+  "end": 58.199999999999996,
+  "text": "at once and cried.",
+  "words": [
+   {
+    "start": 56.92,
+    "end": 57.14,
+    "word": " at"
+   },
+   {
+    "start": 57.14,
+    "end": 57.44,
+    "word": " once"
+   },
+   {
+    "start": 57.44,
+    "end": 57.74,
+    "word": " and"
+   },
+   {
+    "start": 57.74,
+    "end": 58.08,
+    "word": " cried."
+   }
+  ]
+ },
+ {
+  "start": 58.64,
+  "end": 59.9,
+  "text": "Turns out safe zones",
+  "words": [
+   {
+    "start": 58.64,
+    "end": 58.96,
+    "word": " Turns"
+   },
+   {
+    "start": 58.96,
+    "end": 59.22,
+    "word": " out"
+   },
+   {
+    "start": 59.22,
+    "end": 59.52,
+    "word": " safe"
+   },
+   {
+    "start": 59.52,
+    "end": 59.9,
+    "word": " zones"
+   }
+  ]
+ },
+ {
+  "start": 59.9,
+  "end": 60.94,
+  "text": "stop guardians,",
+  "words": [
+   {
+    "start": 59.9,
+    "end": 60.36,
+    "word": " stop"
+   },
+   {
+    "start": 60.36,
+    "end": 60.82,
+    "word": " guardians,"
+   }
+  ]
+ },
+ {
+  "start": 61.4,
+  "end": 62.059999999999995,
+  "text": "not moms.",
+  "words": [
+   {
+    "start": 61.4,
+    "end": 61.5,
+    "word": " not"
+   },
+   {
+    "start": 61.5,
+    "end": 61.94,
+    "word": " moms."
+   }
+  ]
+ },
+ {
+  "start": 62.88,
+  "end": 63.879999999999995,
+  "text": "Mom walked right in,",
+  "words": [
+   {
+    "start": 62.88,
+    "end": 62.88,
+    "word": " Mom"
+   },
+   {
+    "start": 62.88,
+    "end": 63.16,
+    "word": " walked"
+   },
+   {
+    "start": 63.16,
+    "end": 63.4,
+    "word": " right"
+   },
+   {
+    "start": 63.4,
+    "end": 63.76,
+    "word": " in,"
+   }
+  ]
+ },
+ {
+  "start": 63.94,
+  "end": 64.9,
+  "text": "took her babies and",
+  "words": [
+   {
+    "start": 63.94,
+    "end": 64.16,
+    "word": " took"
+   },
+   {
+    "start": 64.16,
+    "end": 64.36,
+    "word": " her"
+   },
+   {
+    "start": 64.36,
+    "end": 64.66,
+    "word": " babies"
+   },
+   {
+    "start": 64.66,
+    "end": 64.9,
+    "word": " and"
+   }
+  ]
+ },
+ {
+  "start": 64.9,
+  "end": 65.22,
+  "text": "Mia.",
+  "words": [
+   {
+    "start": 64.9,
+    "end": 65.1,
+    "word": " Mia."
+   }
+  ]
+ },
+ {
+  "start": 65.86,
+  "end": 66.22,
+  "text": "Now,",
+  "words": [
+   {
+    "start": 65.86,
+    "end": 66.1,
+    "word": " Now,"
+   }
+  ]
+ },
+ {
+  "start": 66.5,
+  "end": 67.18,
+  "text": "the T-Rex is",
+  "words": [
+   {
+    "start": 66.5,
+    "end": 66.56,
+    "word": " the"
+   },
+   {
+    "start": 66.56,
+    "end": 66.96,
+    "word": " T-Rex"
+   },
+   {
+    "start": 66.96,
+    "end": 67.18,
+    "word": " is"
+   }
+  ]
+ },
+ {
+  "start": 67.18,
+  "end": 67.92,
+  "text": "sleeping on a new",
+  "words": [
+   {
+    "start": 67.18,
+    "end": 67.44,
+    "word": " sleeping"
+   },
+   {
+    "start": 67.44,
+    "end": 67.66,
+    "word": " on"
+   },
+   {
+    "start": 67.66,
+    "end": 67.78,
+    "word": " a"
+   },
+   {
+    "start": 67.78,
+    "end": 67.92,
+    "word": " new"
+   }
+  ]
+ },
+ {
+  "start": 67.92,
+  "end": 68.32000000000001,
+  "text": "egg.",
+  "words": [
+   {
+    "start": 67.92,
+    "end": 68.2,
+    "word": " egg."
+   }
+  ]
+ },
+ {
+  "start": 68.96,
+  "end": 70.6,
+  "text": "Follow Viral Roblox Games for",
+  "words": [
+   {
+    "start": 68.96,
+    "end": 69.12,
+    "word": " Follow"
+   },
+   {
+    "start": 69.12,
+    "end": 70.32,
+    "word": " Viral Roblox Games"
+   },
+   {
+    "start": 70.32,
+    "end": 70.6,
+    "word": " for"
+   }
+  ]
+ },
+ {
+  "start": 70.6,
+  "end": 71.34,
+  "text": "part two.",
+  "words": [
+   {
+    "start": 70.6,
+    "end": 70.82,
+    "word": " part"
+   },
+   {
+    "start": 70.82,
+    "end": 71.22,
+    "word": " two."
+   }
+  ]
+ }
+]

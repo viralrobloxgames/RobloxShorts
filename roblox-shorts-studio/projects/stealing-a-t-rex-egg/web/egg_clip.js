@@ -48,7 +48,7 @@ const B = {
   hatch12: W.hatched2, hear: W.turns - 0.2, through: W.moms, grabMia: W.mia2 - 0.25, end: W.now - 0.15, cta: W.follow,
 };
 // Mia's four background raids, each taking three eggs while the T-rex is busy.
-const RAIDS = [[W.problem - 0.3, B.bonk1 + 1.7], [W.laughed - 0.1, W.higher + 0.9], [W.seven - 0.2, W.something - 0.6], [W.chased - 0.2, W.turned - 0.3]];
+const RAIDS = [[W.problem - 0.3, B.bonk1 + 1.7], [W.laughed - 0.1, W.higher + 0.9], [W.seven - 0.2, W.something - 0.6], [W.waving - 0.3, W.grabbed2 - 0.8]];
 const eggsLeft = (s) => 12 - 3 * RAIDS.filter(([a, b]) => s > (a + b) / 2).length + (s < B.grab2 ? 1 : 0);
 const tries = (s) => (s < B.bonk1 ? 0 : s < B.bonk2 ? 1 : s < W.three - 0.4 ? 2 : s < W.seven - 0.3 ? 3 : 7);
 
@@ -100,7 +100,9 @@ async function placed(kind, name, pos, k = 1, ry = 0) { const o = await packItem
 export async function setup(stage) {
   const { scene } = stage; const r = rng(7);
   scene.fog.near = 200; scene.fog.far = 800;
-  scene.add(part(320, 4, 320, '#6aa84f', { studs: true }));
+  // Plain grass all round; studs only where the action is (nest to bases) - 100k studs made every frame several times slower.
+  scene.add(part(420, 4, 420, '#6aa84f'));
+  // (Studs only on the base plots: a studded ground was most of the render time.)
   const dirt = new THREE.Mesh(new THREE.CircleGeometry(20, 48), new THREE.MeshStandardMaterial({ color: '#a68a5a', roughness: 1 })); dirt.rotation.x = -Math.PI / 2; dirt.position.set(0, 0.03, -2); dirt.receiveShadow = true; scene.add(dirt);
   const volc = new THREE.Mesh(new THREE.ConeGeometry(80, 100, 9, 1, true), new THREE.MeshStandardMaterial({ color: '#5a4a44', roughness: 1, flatShading: true })); volc.position.set(-90, 34, -240); scene.add(volc);
   const glow = new THREE.Mesh(new THREE.CylinderGeometry(10, 13, 4, 9), new THREE.MeshStandardMaterial({ color: '#ff6a1a', emissive: '#ff4a10', emissiveIntensity: 2 })); glow.position.set(-90, 83, -240); scene.add(glow);
@@ -234,7 +236,7 @@ function maxState(s) {
     const from = tailPoint(B.jump).setY(0), u = seg(s, B.jump, B.onTail), on = tailPoint(s).add(V(0, 0.4, 0));
     b.grounded = false; b.pos = u < 1 ? from.clone().lerp(on, easeOut(u)).add(V(0, 4 * Math.sin(Math.PI * u), 0)) : on; b.rotY = rexAt(s).rotY + Math.PI; b.layers = [[A.hold, 0.3]]; b.face = s > B.whip ? 'scared' : 'evil_grin';
   } else if (s < B.place + 0.2) {                      // flung the highest, over the camera
-    const at = tailPoint(B.bonk3); fling(b, s, B.bonk3, at, at.clone().add(V(34, 0, 40)), 46, 2.6);
+    const at = tailPoint(B.bonk3); fling(b, s, B.bonk3, at, at.clone().add(V(60, 0, 20)), 46, 2.0);
   } else {                                             // limps back to the base for the hatch
     const from = V(-2, 0, 66), to = PEDESTAL.clone().add(V(3.4, 0, -1.2)), d = from.distanceTo(to), m = travelTo(from, to, B.hatch - 0.1, s, 6);
     b.pos = m.pos; b.rotY = m.moving ? m.heading : face(to, PEDESTAL); b.layers = m.moving ? walkL(m, d) : idle(s); b.face = s > B.hatch ? 'happy' : 'dizzy';
@@ -249,7 +251,7 @@ function miaState(s) {
   const b = st(MIA_HIDE, face(MIA_HIDE, N), idle(s), 'scheming', { visible: false });
   const r = raidPos(s);
   if (r) { b.visible = true; b.pos = r.pos; b.rotY = r.rotY; b.layers = r.carry ? [...r.layers, [A.hold, 0.3, 0.7]] : r.layers; b.carry = r.carry; b.face = 'scheming'; }
-  if (s > B.mia - 0.5) { b.visible = true; b.pos = BASE_MIA.clone().add(V(0, 0.6, 5)); b.rotY = face(b.pos, BASE_LM); b.layers = idle(s); b.face = 'smug'; b.wave = s > W.mias && s < W.mias + 1.4; b.floor = 0.6; }
+  if (s > B.mia - 0.5) { b.visible = true; b.pos = BASE_MIA.clone().add(V(3, 0.6, -6)); b.rotY = face(b.pos, BASE_LM); b.layers = idle(s); b.face = 'smug'; b.wave = s > W.mias && s < W.mias + 1.4; b.floor = 0.6; }
   if (s > B.hatch12) { b.face = 'shocked'; b.rotY = face(b.pos, BASE_MIA); }
   if (s > B.hear) { b.face = 'scared'; b.rotY = face(b.pos, rexAt(s).pos); b.layers = [[A.shock, 0.3]]; }
   if (s > B.grabMia) {                                 // carried off by the hoodie in the T-rex's jaws
@@ -322,11 +324,11 @@ function rexAt(s) {
     if (s > B.wall) { pos = stop.clone().add(V(0, 0, -1.8 * easeOut(seg(s, B.wall, B.wall + 0.3)))); pose = mixPose(trexRoar(s), trexHeadbutt(0.2), 0.5); }
   } else if (s < B.hear) back(V(-4, 0, SAFE_Z - 14.3), W.follow1 + 0.6);
   else if (s < B.grabMia + 0.6) {                      // Mom: hears the babies, walks straight through the safe zone to Mia's base
-    const to = BASE_MIA.clone().add(V(0, 0, -11)), d = GUARD.distanceTo(to), tz = (SAFE_Z - GUARD.z) / (to.z - GUARD.z), m = travelTo(GUARD, to, B.grabMia - 0.4, s, (d * tz) / (B.through - B.hear - 0.4));
+    const to = BASE_MIA.clone().add(V(0, 0, -14)), d = GUARD.distanceTo(to), tz = (SAFE_Z - GUARD.z) / (to.z - GUARD.z), m = travel(GUARD, to, B.hear + 0.4, s, (d * tz) / (B.through - B.hear - 0.4));
     pos = m.pos; rotY = m.moving ? m.heading : face(to, BASE_MIA); pose = m.moving ? trexRun((m.u * d) / (TREX_STRIDE * REXS)) : trexIdle(s);
     if (s < B.hear + 0.4) { pos = GUARD.clone(); rotY = lerp(GUARD_ROT, face(GUARD, to), seg(s, B.hear, B.hear + 0.4)); pose = trexIdle(s); pose.neck2 = [0.25, 0, 0]; }
     if (s > B.grabMia - 0.4) pose = trexHeadbutt(seg(s, B.grabMia - 0.4, B.grabMia + 0.6) * 0.6);
-  } else if (s < B.end) { const to = BASE_MIA.clone().add(V(0, 0, -11)); pos = to; rotY = face(to, GUARD); pose = trexIdle(s); pose.mouth = [0.25, 0, 0]; }
+  } else if (s < B.end) { const to = BASE_MIA.clone().add(V(0, 0, -14)); pos = to; rotY = face(to, GUARD); pose = trexIdle(s); pose.mouth = [0.25, 0, 0]; }
   rexCache = { t: s, pos, rotY, pose };
   return rexCache;
 }
@@ -416,24 +418,25 @@ export function update(t, stage) {
   const hc = rexHead(), lp = leo.root.position, mp = max.root.position;
   stage.bloom.strength = 0.3;
   switch (shot.id) {
-    case 'hook': case 'end': look(V(lerp(19, 17, u), lerp(8.5, 8, u), lerp(20, 18, u)), V(-1.5, 3.6, 0.5), 46); break;            // the sleeping T-rex's face, the egg, Leo tiptoeing in
+    case 'hook': case 'end': { const F = V(Math.sin(SLEEP_ROT), 0, Math.cos(SLEEP_ROT)), S = V(Math.cos(SLEEP_ROT), 0, -Math.sin(SLEEP_ROT)), k = shot.id === 'hook' ? u : 1 - u;
+      look(SLEEP_AT.clone().add(S.clone().multiplyScalar(-lerp(29, 26, k))).add(F.clone().multiplyScalar(lerp(27, 24, k))).add(V(0, 6, 0)), SLEEP_AT.clone().add(F.clone().multiplyScalar(13)).add(V(1, 4.2, 2)), 46); break; }   // the sleeping T-rex's face over the nest, Leo tiptoeing in
     case 'tiptoe': look(V(16, 5.5, 22), V(1, 3, 5), 40); break;
     case 'wake': look(hc.clone().add(V(16, -2, 22)), hc.clone().add(V(0, -2, 0)).add(jolt(B.roar[0], 0.4, 1.2)), 44); break;
     case 'slow': look(V(lp.x + 34, 9, lp.z + 6), V(lp.x - 4, 7, lp.z - 6), 44); break;
     case 'bonk1': look(V(46, 13, 22).add(jolt(B.bonk1, 0.8)), V(2, 6, 14), 44); break;
-    case 'laugh': look(mp.clone().add(V(7, 3, 9)), mp.clone().add(V(-2, 2.5, 0)), 40); break;
+    case 'laugh': look(mp.clone().add(V(-5, 3.4, -7)), mp.clone().add(V(0, 2.6, 0)), 40); break;
     case 'maxTry': look(V(44, 12, 18).add(jolt(B.bonk2, 0.8)), V(2, 7, 9), 44); break;
     case 'maxFly': look(V(30, 8, 50), mp.clone().add(V(0, 2, 0)), 46); break;                       // tiny against the sky
     case 'bush': look(V(20, 6, 30), V(2, 4, 13), 42); break;
     case 'chomp': look(V(26, 9, 26).add(jolt(B.chomp, 0.5)).add(jolt(B.bonkBush, 0.7)), V(-1, 7, 10), 44); break;
     case 'trap': look(V(32, 7, 26).add(jolt(B.snap, 0.5)).add(jolt(B.bonkTrap, 0.7)), V(3, 4, 16), 44); break;
     case 'dazed': look(TEAM.clone().add(V(0, 15, 6)), TEAM.clone().add(V(0, 0.5, 0)), 40); break;  // from above: the two of them flat out
-    case 'plan': look(TEAM.clone().add(V(0, 4, 9)), TEAM.clone().add(V(0, 2.6, 0)), 40); break;
+    case 'plan': look(TEAM.clone().add(V(0, 4.5, 14)), TEAM.clone().add(V(0, 3, 0)), 44); break;
     case 'decoy': look(V(38, 10, 24), V(6, 7, -2), 44); break;
     case 'circles': look(V(0, 46, 64), V(0, 2, 0), 44, 70); break;                                // high: the rex chasing Max round the nest (Mia below)
     case 'grab2': look(V(20, 6, 18), V(1, 3, 7), 42); break;
     case 'turn': look(lp.clone().lerp(R2.pos, 0.5).add(V(36, 14, 14)), lp.clone().lerp(hc, 0.5), 48, 70); break;
-    case 'tailJump': look(R2.pos.clone().add(V(34, 12, 26)).add(jolt(B.bonk3, 0.8)), R2.pos.clone().add(V(0, 8, 0)), 46); break;
+    case 'tailJump': look(R2.pos.clone().add(V(46, 16, 36)).add(jolt(B.bonk3, 0.8)), R2.pos.clone().add(V(0, 9, 0)), 46, 70); break;
     case 'maxFly3': look(V(lerp(20, 30, u), lerp(14, 34, u), lerp(60, 80, u)), mp.clone().lerp(V(0, 30, 60), 0.3), 50, 80); break;   // over the camera
     case 'safe': look(V(30, 9, SAFE_Z + 8).add(jolt(B.wall, 0.9)), V(-4, 8, SAFE_Z - 2), 46, 60); break;
     case 'hatch': look(PEDESTAL.clone().add(V(-7, 6, 10)), PEDESTAL.clone().add(V(0.8, 3, -1)), 44); break;
@@ -442,7 +445,7 @@ export function update(t, stage) {
     case 'hatch12': look(BASE_MIA.clone().add(V(0, 8, -16)), BASE_MIA.clone().add(V(0, 2, 0)), 44); break;
     case 'mom': look(GUARD.clone().add(V(20, 8, 26)), hc.clone().add(V(0, -3, 0)), 44); break;
     case 'through': look(V(-30, 8, SAFE_Z + 22), V(4, 9, SAFE_Z), 46, 70); break;                  // past the frozen boys at the wall
-    case 'takeMia': look(BASE_MIA.clone().add(V(-30, 12, -4)), BASE_MIA.clone().add(V(0, 6, -4)), 50, 70); break;
+    case 'takeMia': look(BASE_MIA.clone().add(V(-32, 13, -10)), BASE_MIA.clone().add(V(1, 7, -7)), 50, 70); break;
     default: look(V(26, 11, 40), V(-3, 4.5, 2), 44);
   }
 }
@@ -473,7 +476,7 @@ function hud(g, s, t) {
   if (t < B.end) {
     const asleep = t < B.wake[0], label = asleep ? 'GUARDIAN: ASLEEP' : 'GUARDIAN: AWAKE';
     pill(g, s, 60, 350, label, asleep ? 'rgba(60,110,200,.9)' : Math.floor(t * 4) % 2 && t < B.bonk1 ? 'rgba(220,40,60,.95)' : 'rgba(190,50,60,.9)', '#ffffff', 34);
-    pill(g, s, 60, 432, `NEST: ${eggsLeft(t)} EGGS`, 'rgba(21,36,53,.8)', '#FFE9A8', 34);
+    pill(g, s, 60, 432, `NEST: ${eggsLeft(t)} EGG${eggsLeft(t) === 1 ? "" : "S"}`, 'rgba(21,36,53,.8)', '#FFE9A8', 34);
     const n = tries(t); if (n && t < B.dazed[1]) { const k = 1 + 0.4 * (1 - clamp((t - [0, B.bonk1, B.bonk2, W.three - 0.4, 0, 0, 0, W.seven - 0.3][n]) / 0.3)); bigText(g, s, `TRIES ${n}`, 850, 300, 70, '#ff4d5e', { k }); }
   } else pill(g, s, 60, 350, 'BEST EGG: MIA', 'rgba(167,109,255,.92)', '#ffffff', 36);
 }
@@ -494,7 +497,7 @@ export function overlay(g, s, t) {
   word(g, s, t, B.snap, 0.6, 'SNAP', '#ffffff', 170, 980, 0.06);
   if (t > B.plan[0] && t < B.plan[1]) {
     const k = pop(t, B.plan[0], 0.25, 2);
-    g.save(); g.translate(540 * s, 760 * s); g.scale(k, k); g.rotate(-0.03);
+    g.save(); g.translate(540 * s, 1000 * s); g.scale(k, k); g.rotate(-0.03);
     roundRect(g, -400 * s, -150 * s, 800 * s, 300 * s, 36 * s); g.fillStyle = 'rgba(21,36,53,.94)'; g.fill(); g.lineWidth = 8 * s; g.strokeStyle = '#FFD23F'; g.stroke();
     g.font = `${54 * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#FFD23F'; g.fillText('THE PLAN', 0, -92 * s);
     g.font = `${70 * s}px "Luckiest Guy"`; g.fillStyle = '#7FE3DD'; g.fillText('MAX = DECOY', 0, -10 * s); g.fillStyle = '#FF9E80'; g.fillText('LEO = EGG', 0, 74 * s); g.restore();
