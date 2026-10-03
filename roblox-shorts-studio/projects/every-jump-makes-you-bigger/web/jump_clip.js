@@ -459,9 +459,11 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': {           // crash zoom in on Leo mid-jump; widens as he doubles
       const k = easeOut(clamp((t - B.hookPop) / 0.3));
-      frame(stage, V(LEO0.x, lerp(6.6, 7.6, k), 0).add(landShake(EVENTS.leoLand, 0.25)), 0.05, 0.02, lerp(13, 17, k) * lerp(0.82, 1, easeOut(clamp(t / 0.3))), 38); break;
+      // Opening close-up, then the frame grows with him so his head stays below the leaderstats.
+      const y = Math.max(lerp(6.6, 7.6, k), 2.6 * LS + 2.5) + (t > 0.6 ? L.floor * 0.8 : 0), w = Math.max(lerp(13, 17, k) * lerp(0.82, 1, easeOut(clamp(t / 0.3))), 4.2 * LS + 6);
+      frame(stage, V(LEO0.x, y, 0).add(landShake(EVENTS.leoLand, 0.25)), 0.05, 0.02, w, 38); break;
     }
-    case 'spam': frame(stage, V(1.5, 4.5 + LS * 1.2, 2).add(landShake(EVENTS.leoLand, 0.3)), 0.35, 0.08, lerp(16, 19, u), 40); break;    // Max in front, Leo hopping behind
+    case 'spam': frame(stage, V(1.5, 3 + LS * 2.2, 2).add(landShake(EVENTS.leoLand, 0.3)), 0.35, 0.08, 12 + LS * 4.5, 40); break;    // Max in front, Leo hopping behind
     case 'montage': {        // low angle past Max, pulling back and tilting up as Leo grows
       const k = easeInOut(u), p = V(lerp(14, 18, k), 2.5, lerp(48, 82, k)), tg = V(LEO0.x + 2, LS * 2.6, 0).add(rumble(0.25));
       look(stage, p, tg, 56, 80); break;
