@@ -1,19 +1,29 @@
 # Stealing a T-Rex Egg (Part 1): resume notes
 
-A Steal an Egg parody with Leo, Max and Mia (see `source/story.md`, which includes research notes). Web route, Roblox R6
-pack plus the T-rex and eggs from the user's own game (`assets/roblox_pack/creatures/trex`, `props/egg_*`), George voice C
-narration, about 67 s.
+A Steal an Egg parody with Leo, Max and Mia on the game's own T-rex and eggs (`assets/roblox_pack/creatures/trex`,
+`props/egg_*`, exported from the user's place "Hunt For Eggs!"). Web route, George voice C narration (71.4 s, take-01),
+71.8 s video (2,155 frames). Story and research notes: `source/story.md`.
 
 ## Done
-- Story beats `source/story.md` (hook first) and `script.txt` (165 words).
-
-- T-rex and eggs exported from Roblox Studio into the pack (see the Result section of `STUDIO_HANDOFF.md`). The
-  hand-built `web/lib/trex.js` was rejected; do not use it.
+- Script v2 approved 2026-10-03 ("make the video"). Narration take-01; line 24 given a pause ("Now... the T-rex...").
+- `source/fix_captions.py` (text only): joins Whisper's "T" + "-Rex", fixes "Steel and" -> "Steal an", digits, "Mum" -> "Mom".
+  Run it after any re-transcribe, before `beats.py`.
+- Rig: `web/lib/creature.js` poses the pack creatures from rig.json; `web/lib/trexPoses.js` (sleep/idle/roar/run/headbutt;
+  the run is the game's own CreatureGait). `projects/stealing-a-t-rex-egg/web/rig_probe.js` is the pose/axis probe.
+- Scene `web/egg_clip.js`: beats from `source/beats.py`, SFX from `source/sound_cues.py` (mirrors the clip's `B` block).
+  Mia's four background raids (`RAIDS`) and the nest counter plant the twist; Mom walks through the safe zone.
+- Ground is plain grass (studs only on the base plots): a studded ground made each frame ~3x slower.
+- `delivery/post.json`.
 
 ## Next
-0. Load `creatures/trex` in `web/` (one group per body from `rig.json`), author sleep / wake / roar / run / headbutt on its
-   joints, and render a look test for the user.
-1. **Script approval** (ledger status `script_draft_awaiting_approval`).
-2. On approval: narration (`scripts/qwen_cloud_george_c.py`, then `scripts/narrate.py --voice george_c`), and in
-   parallel build the T-rex rig, biome and `web/<clip>.js` against word-anchored beats (`source/beats.py`, pattern from
-   `projects/every-jump-makes-you-bigger`).
+- Finish the full render, mix + encode, review, cover, deliver. Post only after the user approves.
+
+## Re-render / re-encode
+```
+cd roblox-shorts-studio
+python3 projects/stealing-a-t-rex-egg/source/fix_captions.py && python3 projects/stealing-a-t-rex-egg/source/beats.py && python3 projects/stealing-a-t-rex-egg/source/sound_cues.py
+python3 scripts/finish.py projects/stealing-a-t-rex-egg
+node web/fit_check.mjs --clip projects/stealing-a-t-rex-egg/web/egg_clip.js && node web/fit_check.mjs --clip projects/stealing-a-t-rex-egg/web/egg_clip.js --reviewed
+node web/render.mjs --clip projects/stealing-a-t-rex-egg/web/egg_clip.js --out projects/stealing-a-t-rex-egg/renders/web --workers 3 --resume
+python3 scripts/finish.py projects/stealing-a-t-rex-egg --encode --frames projects/stealing-a-t-rex-egg/renders/web
+```
