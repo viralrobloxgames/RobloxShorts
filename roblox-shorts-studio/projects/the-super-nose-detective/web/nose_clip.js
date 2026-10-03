@@ -468,7 +468,7 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': { const k = easeInOut(seg(s, B.logo - 0.12, B.logo + 0.08));    // crash zoom onto the nose on "this"
       look(mh.clone().add(V(lerp(2.6, 1.8, k), lerp(-0.8, -0.55, k), lerp(5.4, 3.8, k))).add(jolt(B.logo, 0.12, 0.4)), mh.clone().add(V(lerp(-0.75, -0.1, k), lerp(-0.75, -0.3, k), lerp(0.6, 0.9, k))), lerp(40, 38, k), 25); break; }
-    case 'gamepass': look(mh.clone().add(V(2.4, -0.8, 5.0)), mh.clone().add(V(-0.2, -1.3, 0.6)), 40); break;
+    case 'gamepass': look(mh.clone().add(V(2.4, -0.8, 5.0)), mh.clone().add(V(-0.2, -0.75, 0.6)), 40); break;
     case 'wisps': look(V(-5, 5.5, 15), V(4, 3.5, 1), 50, 30); break;
     case 'map': look(V(lerp(-60, -40, u), 110, lerp(-40, -20, u)), V(0, 0, 150), 48, 200); break;
     case 'caseEmpty': look(CASE_AT.clone().add(V(5, 9, 15)), CASE_AT.clone().add(V(0, 7.2, 0)), 44); break;
