@@ -42,7 +42,7 @@ export function poseCreature(c, pose) {
 const box = new THREE.Box3();
 export function creatureLowest(c, names) {
   c.root.updateMatrixWorld(true); let min = Infinity;
-  for (const n of names) for (const m of c.bodies[n].meshes) { box.setFromObject(m, true); min = Math.min(min, box.min.y); }
+  for (const n of names) for (const m of c.bodies[n].meshes) { box.setFromObject(m, false); min = Math.min(min, box.min.y); }
   return min;
 }
 // World position of a point given in a body's original model space (e.g. an attachment or a joint pivot).
