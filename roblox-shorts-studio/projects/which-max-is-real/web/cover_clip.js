@@ -22,10 +22,10 @@ function put(a, pos, rotY, faceE, { mirror = false, raise = false } = {}) {
 export function update(t, stage) {
   base.update(2.0, stage);
   const { max, copy, mia } = base.cast();
-  put(max, V(-2.3, 0, -13.5), 0.12, 'scared', { raise: true });
+  put(max, V(-2.3, 0, -13.5), 0.12, 'shocked', { raise: true });
   put(copy, V(2.1, 0, -13.5), -0.12, 'evil_grin', { mirror: true, raise: true });
   put(mia, V(-0.1, 0, -18.5), 0, 'suspicious');
-  const cam = stage.camera; cam.position.set(-0.1, 4.6, -3.2); cam.fov = 44; cam.up.set(0, 1, 0); cam.updateProjectionMatrix(); cam.lookAt(-0.1, 4.2, -13.5);
+  const cam = stage.camera; cam.position.set(-0.1, 4.8, 0.5); cam.fov = 46; cam.up.set(0, 1, 0); cam.updateProjectionMatrix(); cam.lookAt(-0.1, 3.4, -13.5);
   stage.aimSun(V(0, 0, -13), 20); stage.bloom.strength = 0.45;
 }
 function big(g, s, text, x, y, size, color) {

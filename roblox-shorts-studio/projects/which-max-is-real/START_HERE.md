@@ -22,5 +22,8 @@ node web/render.mjs --clip projects/which-max-is-real/web/finale_clip.js --out p
 python3 scripts/finish.py projects/which-max-is-real --encode --frames projects/which-max-is-real/renders/web
 ```
 
+## Delivered
+- `delivery/Which_Max_Is_Real.mp4` (65.8 s, 1080x1920, validated), cover, captions, `post.json`.
+
 ## Next
-- Narration -> real beats -> previews of every shot -> full render -> encode -> review -> deliver. Post only after approval.
+- Post only after the user approves (TikTok, then YouTube), after Part 1 is up.
