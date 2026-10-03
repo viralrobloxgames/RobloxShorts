@@ -1,12 +1,22 @@
 {
   "title": "The Last Penalty",
   "character": "Mia",
-  "characters": ["Mia", "Leo", "Noob", "Max"],
-  "seconds": 68,
+  "characters": [
+    "Mia",
+    "Leo",
+    "Noob",
+    "Max"
+  ],
+  "seconds": 69.8667,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok (>60 s) + YouTube Shorts",
   "status": "script_draft_awaiting_approval",
-  "finish": {"word_fixes": {}}
+  "finish": {
+    "word_fixes": {
+      "EVERYONE": "EVERY ONE",
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+    }
+  }
 }

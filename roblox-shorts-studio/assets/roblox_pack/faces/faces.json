@@ -326,6 +326,16 @@
     },
     {
       "index": 27,
+      "name": "squeezed",
+      "group": "expression",
+      "aliases": [],
+      "description": "Both eyes squeezed shut (> <), brows pinched down, gritted teeth.",
+      "file": "squeezed.png",
+      "eyes_layer": "layers/eyes/squeezed.png",
+      "mouth_layer": "layers/mouth/squeezed.png"
+    },
+    {
+      "index": 28,
       "name": "talking",
       "group": "expression",
       "aliases": [],
@@ -335,7 +345,7 @@
       "mouth_layer": "layers/mouth/talking.png"
     },
     {
-      "index": 28,
+      "index": 29,
       "name": "mouth_closed",
       "group": "lipsync",
       "aliases": [],
@@ -345,7 +355,7 @@
       "mouth_layer": "layers/mouth/mouth_closed.png"
     },
     {
-      "index": 29,
+      "index": 30,
       "name": "mouth_small",
       "group": "lipsync",
       "aliases": [],
@@ -355,7 +365,7 @@
       "mouth_layer": "layers/mouth/mouth_small.png"
     },
     {
-      "index": 30,
+      "index": 31,
       "name": "mouth_wide",
       "group": "lipsync",
       "aliases": [],
@@ -365,7 +375,7 @@
       "mouth_layer": "layers/mouth/mouth_wide.png"
     },
     {
-      "index": 31,
+      "index": 32,
       "name": "mouth_o",
       "group": "lipsync",
       "aliases": [],
@@ -375,7 +385,7 @@
       "mouth_layer": "layers/mouth/mouth_o.png"
     },
     {
-      "index": 32,
+      "index": 33,
       "name": "mouth_e",
       "group": "lipsync",
       "aliases": [],

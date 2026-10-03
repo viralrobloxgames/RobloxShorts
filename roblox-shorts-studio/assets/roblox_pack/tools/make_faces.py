@@ -438,6 +438,19 @@ def _(e, m):
     m.stroke(wave(51.0, 77.0, 91.0, 1.8, 2.0, tilt=2.0), 4.4)
 
 
+@face("squeezed", "Both eyes squeezed shut (> <), brows pinched down, gritted teeth.")
+def _(e, m):
+    x, y = EYES[0]
+    e.stroke([(x - 5.0, y - 5.0), (x + 4.2, y), (x - 5.0, y + 5.0)], 3.4)
+    x, y = EYES[1]
+    e.stroke([(x + 5.0, y - 5.0), (x - 4.2, y), (x + 5.0, y + 5.0)], 3.4)
+    brows_angry(e, w=3.6, steep=3.5, y=23.0)
+    m.poly([(52.5, 85.0), (75.5, 85.0), (75.5, 93.0), (52.5, 93.0)], WHITE)
+    for x in (58.3, 64.0, 69.7):
+        m.stroke([(x, 85.5), (x, 92.5)], 1.8)
+    m.stroke([(52.5, 85.0), (75.5, 85.0), (75.5, 93.0), (52.5, 93.0), (52.5, 85.0)], 2.8)
+
+
 @face("talking", "Default eyes, medium open mouth.")
 def _(e, m):
     eyes_default(e); open_d(m, 53.0, 75.0, 84.0, 11.5, sag=1.4)

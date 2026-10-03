@@ -1,0 +1,67 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 2540.46it/s]
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 1/26 1.7s in 46s: Last penalty of the final.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 2/26 4.5s in 31s: Save it, and your team wins the cup. Miss, and Leo's team does.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 3/26 2.5s in 21s: Leo has scored every penalty all season.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 4/26 1.5s in 17s: But you've watched every one.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 5/26 4.1s in 29s: Right before he kicks, he looks at the corner he's aiming for. Every time.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 6/26 1.4s in 17s: His eyes flick left.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 7/26 2.6s in 21s: You dive left before he even touches the ball.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 8/26 1.5s in 17s: Your glove slaps it wide.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 9/26 1.5s in 17s: Your team storms the pitch...
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 10/26 1.6s in 17s: and the referee blows his whistle.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 11/26 2.3s in 21s: You left your line too early. Retake.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 12/26 1.6s in 16s: Now Leo knows you're reading him.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 13/26 1.7s in 17s: So this time, he doesn't look anywhere.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 14/26 1.4s in 16s: He closes his eyes.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 15/26 1.6s in 17s: No clue. No corner.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 16/26 2.2s in 21s: So you do the hardest thing a keeper can do.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 17/26 1.9s in 19s: You stay on your line. And wait.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 18/26 2.6s in 21s: He runs at the ball, eyes squeezed shut...
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 19/26 1.7s in 18s: and kicks the grass right behind it.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 20/26 2.0s in 18s: The ball rolls forward. Slowly.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 21/26 1.4s in 16s: It stops against your boot.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 22/26 3.0s in 23s: Leo opens his eyes, staring at the empty corner,
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 23/26 1.7s in 17s: still waiting for the net to move.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 24/26 1.6s in 16s: Every penalty all season.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 25/26 1.4s in 15s: Every one he could see.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 26/26 3.1s in 23s: Follow Viral Roblox Games for more stories like this.

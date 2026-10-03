@@ -1,0 +1,1266 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.18,
+    "text": "Last penalty of the",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.48,
+        "word": " Last"
+      },
+      {
+        "start": 0.48,
+        "end": 0.84,
+        "word": " penalty"
+      },
+      {
+        "start": 0.84,
+        "end": 1.06,
+        "word": " of"
+      },
+      {
+        "start": 1.06,
+        "end": 1.18,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 1.18,
+    "end": 1.6600000000000001,
+    "text": "final.",
+    "words": [
+      {
+        "start": 1.18,
+        "end": 1.54,
+        "word": " final."
+      }
+    ]
+  },
+  {
+    "start": 2.3,
+    "end": 2.7800000000000002,
+    "text": "Save it.",
+    "words": [
+      {
+        "start": 2.3,
+        "end": 2.44,
+        "word": " Save"
+      },
+      {
+        "start": 2.44,
+        "end": 2.66,
+        "word": " it."
+      }
+    ]
+  },
+  {
+    "start": 3.08,
+    "end": 3.74,
+    "text": "And your team wins",
+    "words": [
+      {
+        "start": 3.08,
+        "end": 3.12,
+        "word": " And"
+      },
+      {
+        "start": 3.12,
+        "end": 3.24,
+        "word": " your"
+      },
+      {
+        "start": 3.24,
+        "end": 3.5,
+        "word": " team"
+      },
+      {
+        "start": 3.5,
+        "end": 3.74,
+        "word": " wins"
+      }
+    ]
+  },
+  {
+    "start": 3.74,
+    "end": 4.3,
+    "text": "the cup.",
+    "words": [
+      {
+        "start": 3.74,
+        "end": 3.96,
+        "word": " the"
+      },
+      {
+        "start": 3.96,
+        "end": 4.18,
+        "word": " cup."
+      }
+    ]
+  },
+  {
+    "start": 4.9,
+    "end": 5.08,
+    "text": "Miss.",
+    "words": [
+      {
+        "start": 4.9,
+        "end": 4.96,
+        "word": " Miss."
+      }
+    ]
+  },
+  {
+    "start": 5.44,
+    "end": 6.48,
+    "text": "And Leo's team does.",
+    "words": [
+      {
+        "start": 5.44,
+        "end": 5.52,
+        "word": " And"
+      },
+      {
+        "start": 5.52,
+        "end": 5.86,
+        "word": " Leo's"
+      },
+      {
+        "start": 5.86,
+        "end": 6.06,
+        "word": " team"
+      },
+      {
+        "start": 6.06,
+        "end": 6.36,
+        "word": " does."
+      }
+    ]
+  },
+  {
+    "start": 7.36,
+    "end": 8.64,
+    "text": "Leo has scored every",
+    "words": [
+      {
+        "start": 7.36,
+        "end": 7.86,
+        "word": " Leo"
+      },
+      {
+        "start": 7.86,
+        "end": 8.04,
+        "word": " has"
+      },
+      {
+        "start": 8.04,
+        "end": 8.28,
+        "word": " scored"
+      },
+      {
+        "start": 8.28,
+        "end": 8.64,
+        "word": " every"
+      }
+    ]
+  },
+  {
+    "start": 8.64,
+    "end": 9.84,
+    "text": "penalty all season.",
+    "words": [
+      {
+        "start": 8.64,
+        "end": 8.96,
+        "word": " penalty"
+      },
+      {
+        "start": 8.96,
+        "end": 9.3,
+        "word": " all"
+      },
+      {
+        "start": 9.3,
+        "end": 9.72,
+        "word": " season."
+      }
+    ]
+  },
+  {
+    "start": 10.34,
+    "end": 11.639999999999999,
+    "text": "But you've watched everyone.",
+    "words": [
+      {
+        "start": 10.34,
+        "end": 10.5,
+        "word": " But"
+      },
+      {
+        "start": 10.5,
+        "end": 10.8,
+        "word": " you've"
+      },
+      {
+        "start": 10.8,
+        "end": 11.06,
+        "word": " watched"
+      },
+      {
+        "start": 11.06,
+        "end": 11.52,
+        "word": " everyone."
+      }
+    ]
+  },
+  {
+    "start": 12.3,
+    "end": 13.5,
+    "text": "Right before he kicks,",
+    "words": [
+      {
+        "start": 12.3,
+        "end": 12.6,
+        "word": " Right"
+      },
+      {
+        "start": 12.6,
+        "end": 12.92,
+        "word": " before"
+      },
+      {
+        "start": 12.92,
+        "end": 13.1,
+        "word": " he"
+      },
+      {
+        "start": 13.1,
+        "end": 13.38,
+        "word": " kicks,"
+      }
+    ]
+  },
+  {
+    "start": 13.68,
+    "end": 14.4,
+    "text": "he looks at the",
+    "words": [
+      {
+        "start": 13.68,
+        "end": 13.88,
+        "word": " he"
+      },
+      {
+        "start": 13.88,
+        "end": 14.06,
+        "word": " looks"
+      },
+      {
+        "start": 14.06,
+        "end": 14.24,
+        "word": " at"
+      },
+      {
+        "start": 14.24,
+        "end": 14.4,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 14.4,
+    "end": 15.46,
+    "text": "corner he's aiming for",
+    "words": [
+      {
+        "start": 14.4,
+        "end": 14.64,
+        "word": " corner"
+      },
+      {
+        "start": 14.64,
+        "end": 14.92,
+        "word": " he's"
+      },
+      {
+        "start": 14.92,
+        "end": 15.14,
+        "word": " aiming"
+      },
+      {
+        "start": 15.14,
+        "end": 15.46,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 15.46,
+    "end": 16.220000000000002,
+    "text": "every time.",
+    "words": [
+      {
+        "start": 15.46,
+        "end": 15.72,
+        "word": " every"
+      },
+      {
+        "start": 15.72,
+        "end": 16.1,
+        "word": " time."
+      }
+    ]
+  },
+  {
+    "start": 17.26,
+    "end": 18.62,
+    "text": "His eyes flick left.",
+    "words": [
+      {
+        "start": 17.26,
+        "end": 17.54,
+        "word": " His"
+      },
+      {
+        "start": 17.54,
+        "end": 17.86,
+        "word": " eyes"
+      },
+      {
+        "start": 17.86,
+        "end": 18.18,
+        "word": " flick"
+      },
+      {
+        "start": 18.18,
+        "end": 18.5,
+        "word": " left."
+      }
+    ]
+  },
+  {
+    "start": 19.08,
+    "end": 20.26,
+    "text": "You dive left before",
+    "words": [
+      {
+        "start": 19.08,
+        "end": 19.26,
+        "word": " You"
+      },
+      {
+        "start": 19.26,
+        "end": 19.52,
+        "word": " dive"
+      },
+      {
+        "start": 19.52,
+        "end": 19.92,
+        "word": " left"
+      },
+      {
+        "start": 19.92,
+        "end": 20.26,
+        "word": " before"
+      }
+    ]
+  },
+  {
+    "start": 20.26,
+    "end": 21.22,
+    "text": "he even touches the",
+    "words": [
+      {
+        "start": 20.26,
+        "end": 20.4,
+        "word": " he"
+      },
+      {
+        "start": 20.4,
+        "end": 20.64,
+        "word": " even"
+      },
+      {
+        "start": 20.64,
+        "end": 20.98,
+        "word": " touches"
+      },
+      {
+        "start": 20.98,
+        "end": 21.22,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 21.22,
+    "end": 21.6,
+    "text": "ball.",
+    "words": [
+      {
+        "start": 21.22,
+        "end": 21.48,
+        "word": " ball."
+      }
+    ]
+  },
+  {
+    "start": 22.1,
+    "end": 23.12,
+    "text": "Your glove slaps it",
+    "words": [
+      {
+        "start": 22.1,
+        "end": 22.3,
+        "word": " Your"
+      },
+      {
+        "start": 22.3,
+        "end": 22.58,
+        "word": " glove"
+      },
+      {
+        "start": 22.58,
+        "end": 22.94,
+        "word": " slaps"
+      },
+      {
+        "start": 22.94,
+        "end": 23.12,
+        "word": " it"
+      }
+    ]
+  },
+  {
+    "start": 23.12,
+    "end": 23.52,
+    "text": "wide.",
+    "words": [
+      {
+        "start": 23.12,
+        "end": 23.4,
+        "word": " wide."
+      }
+    ]
+  },
+  {
+    "start": 23.96,
+    "end": 25.0,
+    "text": "Your team storms the",
+    "words": [
+      {
+        "start": 23.96,
+        "end": 24.16,
+        "word": " Your"
+      },
+      {
+        "start": 24.16,
+        "end": 24.42,
+        "word": " team"
+      },
+      {
+        "start": 24.42,
+        "end": 24.74,
+        "word": " storms"
+      },
+      {
+        "start": 24.74,
+        "end": 25.0,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 25.0,
+    "end": 25.44,
+    "text": "pitch.",
+    "words": [
+      {
+        "start": 25.0,
+        "end": 25.32,
+        "word": " pitch."
+      }
+    ]
+  },
+  {
+    "start": 26.18,
+    "end": 27.26,
+    "text": "And the referee blows",
+    "words": [
+      {
+        "start": 26.18,
+        "end": 26.5,
+        "word": " And"
+      },
+      {
+        "start": 26.5,
+        "end": 26.6,
+        "word": " the"
+      },
+      {
+        "start": 26.6,
+        "end": 26.86,
+        "word": " referee"
+      },
+      {
+        "start": 26.86,
+        "end": 27.26,
+        "word": " blows"
+      }
+    ]
+  },
+  {
+    "start": 27.26,
+    "end": 27.880000000000003,
+    "text": "his whistle.",
+    "words": [
+      {
+        "start": 27.26,
+        "end": 27.48,
+        "word": " his"
+      },
+      {
+        "start": 27.48,
+        "end": 27.76,
+        "word": " whistle."
+      }
+    ]
+  },
+  {
+    "start": 28.32,
+    "end": 29.14,
+    "text": "You left your line",
+    "words": [
+      {
+        "start": 28.32,
+        "end": 28.54,
+        "word": " You"
+      },
+      {
+        "start": 28.54,
+        "end": 28.72,
+        "word": " left"
+      },
+      {
+        "start": 28.72,
+        "end": 28.88,
+        "word": " your"
+      },
+      {
+        "start": 28.88,
+        "end": 29.14,
+        "word": " line"
+      }
+    ]
+  },
+  {
+    "start": 29.14,
+    "end": 29.86,
+    "text": "too early.",
+    "words": [
+      {
+        "start": 29.14,
+        "end": 29.36,
+        "word": " too"
+      },
+      {
+        "start": 29.36,
+        "end": 29.74,
+        "word": " early."
+      }
+    ]
+  },
+  {
+    "start": 30.0,
+    "end": 30.76,
+    "text": "Retake.",
+    "words": [
+      {
+        "start": 30.0,
+        "end": 30.64,
+        "word": " Retake."
+      }
+    ]
+  },
+  {
+    "start": 31.82,
+    "end": 32.64,
+    "text": "Now Leo knows you're",
+    "words": [
+      {
+        "start": 31.82,
+        "end": 31.84,
+        "word": " Now"
+      },
+      {
+        "start": 31.84,
+        "end": 32.08,
+        "word": " Leo"
+      },
+      {
+        "start": 32.08,
+        "end": 32.36,
+        "word": " knows"
+      },
+      {
+        "start": 32.36,
+        "end": 32.64,
+        "word": " you're"
+      }
+    ]
+  },
+  {
+    "start": 32.64,
+    "end": 33.26,
+    "text": "reading him.",
+    "words": [
+      {
+        "start": 32.64,
+        "end": 32.82,
+        "word": " reading"
+      },
+      {
+        "start": 32.82,
+        "end": 33.14,
+        "word": " him."
+      }
+    ]
+  },
+  {
+    "start": 33.62,
+    "end": 34.3,
+    "text": "So this time he",
+    "words": [
+      {
+        "start": 33.62,
+        "end": 33.76,
+        "word": " So"
+      },
+      {
+        "start": 33.76,
+        "end": 33.94,
+        "word": " this"
+      },
+      {
+        "start": 33.94,
+        "end": 34.16,
+        "word": " time"
+      },
+      {
+        "start": 34.16,
+        "end": 34.3,
+        "word": " he"
+      }
+    ]
+  },
+  {
+    "start": 34.3,
+    "end": 35.22,
+    "text": "doesn't look anywhere.",
+    "words": [
+      {
+        "start": 34.3,
+        "end": 34.56,
+        "word": " doesn't"
+      },
+      {
+        "start": 34.56,
+        "end": 34.72,
+        "word": " look"
+      },
+      {
+        "start": 34.72,
+        "end": 35.1,
+        "word": " anywhere."
+      }
+    ]
+  },
+  {
+    "start": 35.78,
+    "end": 36.86,
+    "text": "He closes his eyes.",
+    "words": [
+      {
+        "start": 35.78,
+        "end": 35.88,
+        "word": " He"
+      },
+      {
+        "start": 35.88,
+        "end": 36.12,
+        "word": " closes"
+      },
+      {
+        "start": 36.12,
+        "end": 36.42,
+        "word": " his"
+      },
+      {
+        "start": 36.42,
+        "end": 36.74,
+        "word": " eyes."
+      }
+    ]
+  },
+  {
+    "start": 38.1,
+    "end": 38.62,
+    "text": "No clue.",
+    "words": [
+      {
+        "start": 38.1,
+        "end": 38.18,
+        "word": " No"
+      },
+      {
+        "start": 38.18,
+        "end": 38.5,
+        "word": " clue."
+      }
+    ]
+  },
+  {
+    "start": 38.8,
+    "end": 39.4,
+    "text": "No corner.",
+    "words": [
+      {
+        "start": 38.8,
+        "end": 38.96,
+        "word": " No"
+      },
+      {
+        "start": 38.96,
+        "end": 39.28,
+        "word": " corner."
+      }
+    ]
+  },
+  {
+    "start": 39.98,
+    "end": 40.58,
+    "text": "So you do the",
+    "words": [
+      {
+        "start": 39.98,
+        "end": 40.18,
+        "word": " So"
+      },
+      {
+        "start": 40.18,
+        "end": 40.32,
+        "word": " you"
+      },
+      {
+        "start": 40.32,
+        "end": 40.44,
+        "word": " do"
+      },
+      {
+        "start": 40.44,
+        "end": 40.58,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 40.58,
+    "end": 41.4,
+    "text": "hardest thing a keeper",
+    "words": [
+      {
+        "start": 40.58,
+        "end": 40.86,
+        "word": " hardest"
+      },
+      {
+        "start": 40.86,
+        "end": 41.1,
+        "word": " thing"
+      },
+      {
+        "start": 41.1,
+        "end": 41.24,
+        "word": " a"
+      },
+      {
+        "start": 41.24,
+        "end": 41.4,
+        "word": " keeper"
+      }
+    ]
+  },
+  {
+    "start": 41.4,
+    "end": 42.08,
+    "text": "can do.",
+    "words": [
+      {
+        "start": 41.4,
+        "end": 41.66,
+        "word": " can"
+      },
+      {
+        "start": 41.66,
+        "end": 41.96,
+        "word": " do."
+      }
+    ]
+  },
+  {
+    "start": 42.62,
+    "end": 43.38,
+    "text": "You stay on your",
+    "words": [
+      {
+        "start": 42.62,
+        "end": 42.88,
+        "word": " You"
+      },
+      {
+        "start": 42.88,
+        "end": 43.08,
+        "word": " stay"
+      },
+      {
+        "start": 43.08,
+        "end": 43.24,
+        "word": " on"
+      },
+      {
+        "start": 43.24,
+        "end": 43.38,
+        "word": " your"
+      }
+    ]
+  },
+  {
+    "start": 43.38,
+    "end": 44.379999999999995,
+    "text": "line and wait.",
+    "words": [
+      {
+        "start": 43.38,
+        "end": 43.68,
+        "word": " line"
+      },
+      {
+        "start": 43.68,
+        "end": 43.96,
+        "word": " and"
+      },
+      {
+        "start": 43.96,
+        "end": 44.26,
+        "word": " wait."
+      }
+    ]
+  },
+  {
+    "start": 45.38,
+    "end": 46.04,
+    "text": "He runs at the",
+    "words": [
+      {
+        "start": 45.38,
+        "end": 45.54,
+        "word": " He"
+      },
+      {
+        "start": 45.54,
+        "end": 45.74,
+        "word": " runs"
+      },
+      {
+        "start": 45.74,
+        "end": 45.92,
+        "word": " at"
+      },
+      {
+        "start": 45.92,
+        "end": 46.04,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 46.04,
+    "end": 46.46,
+    "text": "ball,",
+    "words": [
+      {
+        "start": 46.04,
+        "end": 46.34,
+        "word": " ball,"
+      }
+    ]
+  },
+  {
+    "start": 46.62,
+    "end": 47.82,
+    "text": "eyes squeezed shut,",
+    "words": [
+      {
+        "start": 46.62,
+        "end": 46.84,
+        "word": " eyes"
+      },
+      {
+        "start": 46.84,
+        "end": 47.26,
+        "word": " squeezed"
+      },
+      {
+        "start": 47.26,
+        "end": 47.7,
+        "word": " shut,"
+      }
+    ]
+  },
+  {
+    "start": 48.16,
+    "end": 49.06,
+    "text": "and kicks the grass",
+    "words": [
+      {
+        "start": 48.16,
+        "end": 48.4,
+        "word": " and"
+      },
+      {
+        "start": 48.4,
+        "end": 48.6,
+        "word": " kicks"
+      },
+      {
+        "start": 48.6,
+        "end": 48.78,
+        "word": " the"
+      },
+      {
+        "start": 48.78,
+        "end": 49.06,
+        "word": " grass"
+      }
+    ]
+  },
+  {
+    "start": 49.06,
+    "end": 50.099999999999994,
+    "text": "right behind it.",
+    "words": [
+      {
+        "start": 49.06,
+        "end": 49.3,
+        "word": " right"
+      },
+      {
+        "start": 49.3,
+        "end": 49.62,
+        "word": " behind"
+      },
+      {
+        "start": 49.62,
+        "end": 49.98,
+        "word": " it."
+      }
+    ]
+  },
+  {
+    "start": 50.84,
+    "end": 52.08,
+    "text": "The ball rolls forward,",
+    "words": [
+      {
+        "start": 50.84,
+        "end": 51.02,
+        "word": " The"
+      },
+      {
+        "start": 51.02,
+        "end": 51.24,
+        "word": " ball"
+      },
+      {
+        "start": 51.24,
+        "end": 51.6,
+        "word": " rolls"
+      },
+      {
+        "start": 51.6,
+        "end": 51.96,
+        "word": " forward,"
+      }
+    ]
+  },
+  {
+    "start": 52.32,
+    "end": 52.68,
+    "text": "slowly.",
+    "words": [
+      {
+        "start": 52.32,
+        "end": 52.56,
+        "word": " slowly."
+      }
+    ]
+  },
+  {
+    "start": 53.32,
+    "end": 54.24,
+    "text": "It stops against your",
+    "words": [
+      {
+        "start": 53.32,
+        "end": 53.42,
+        "word": " It"
+      },
+      {
+        "start": 53.42,
+        "end": 53.68,
+        "word": " stops"
+      },
+      {
+        "start": 53.68,
+        "end": 53.98,
+        "word": " against"
+      },
+      {
+        "start": 53.98,
+        "end": 54.24,
+        "word": " your"
+      }
+    ]
+  },
+  {
+    "start": 54.24,
+    "end": 54.64,
+    "text": "boot.",
+    "words": [
+      {
+        "start": 54.24,
+        "end": 54.52,
+        "word": " boot."
+      }
+    ]
+  },
+  {
+    "start": 55.36,
+    "end": 57.019999999999996,
+    "text": "Leo opens his eyes,",
+    "words": [
+      {
+        "start": 55.36,
+        "end": 55.96,
+        "word": " Leo"
+      },
+      {
+        "start": 55.96,
+        "end": 56.36,
+        "word": " opens"
+      },
+      {
+        "start": 56.36,
+        "end": 56.58,
+        "word": " his"
+      },
+      {
+        "start": 56.58,
+        "end": 56.9,
+        "word": " eyes,"
+      }
+    ]
+  },
+  {
+    "start": 57.22,
+    "end": 58.04,
+    "text": "staring at the empty",
+    "words": [
+      {
+        "start": 57.22,
+        "end": 57.44,
+        "word": " staring"
+      },
+      {
+        "start": 57.44,
+        "end": 57.66,
+        "word": " at"
+      },
+      {
+        "start": 57.66,
+        "end": 57.78,
+        "word": " the"
+      },
+      {
+        "start": 57.78,
+        "end": 58.04,
+        "word": " empty"
+      }
+    ]
+  },
+  {
+    "start": 58.04,
+    "end": 58.559999999999995,
+    "text": "corner,",
+    "words": [
+      {
+        "start": 58.04,
+        "end": 58.44,
+        "word": " corner,"
+      }
+    ]
+  },
+  {
+    "start": 59.26,
+    "end": 60.0,
+    "text": "still waiting for the",
+    "words": [
+      {
+        "start": 59.26,
+        "end": 59.4,
+        "word": " still"
+      },
+      {
+        "start": 59.4,
+        "end": 59.64,
+        "word": " waiting"
+      },
+      {
+        "start": 59.64,
+        "end": 59.88,
+        "word": " for"
+      },
+      {
+        "start": 59.88,
+        "end": 60.0,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 60.0,
+    "end": 60.839999999999996,
+    "text": "net to move.",
+    "words": [
+      {
+        "start": 60.0,
+        "end": 60.14,
+        "word": " net"
+      },
+      {
+        "start": 60.14,
+        "end": 60.34,
+        "word": " to"
+      },
+      {
+        "start": 60.34,
+        "end": 60.72,
+        "word": " move."
+      }
+    ]
+  },
+  {
+    "start": 61.62,
+    "end": 63.12,
+    "text": "Every penalty all season.",
+    "words": [
+      {
+        "start": 61.62,
+        "end": 61.94,
+        "word": " Every"
+      },
+      {
+        "start": 61.94,
+        "end": 62.28,
+        "word": " penalty"
+      },
+      {
+        "start": 62.28,
+        "end": 62.62,
+        "word": " all"
+      },
+      {
+        "start": 62.62,
+        "end": 63.0,
+        "word": " season."
+      }
+    ]
+  },
+  {
+    "start": 63.76,
+    "end": 64.88000000000001,
+    "text": "Everyone he could see.",
+    "words": [
+      {
+        "start": 63.76,
+        "end": 63.96,
+        "word": " Everyone"
+      },
+      {
+        "start": 63.96,
+        "end": 64.24,
+        "word": " he"
+      },
+      {
+        "start": 64.24,
+        "end": 64.38,
+        "word": " could"
+      },
+      {
+        "start": 64.38,
+        "end": 64.76,
+        "word": " see."
+      }
+    ]
+  },
+  {
+    "start": 66.0,
+    "end": 67.76,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 66.0,
+        "end": 66.36,
+        "word": " Follow"
+      },
+      {
+        "start": 66.36,
+        "end": 67.5,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 67.5,
+        "end": 67.76,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 67.76,
+    "end": 68.96000000000001,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 67.76,
+        "end": 67.96,
+        "word": " more"
+      },
+      {
+        "start": 67.96,
+        "end": 68.26,
+        "word": " stories"
+      },
+      {
+        "start": 68.26,
+        "end": 68.54,
+        "word": " like"
+      },
+      {
+        "start": 68.54,
+        "end": 68.84,
+        "word": " this."
+      }
+    ]
+  }
+]
