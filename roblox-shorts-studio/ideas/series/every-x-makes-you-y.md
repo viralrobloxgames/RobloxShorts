@@ -17,13 +17,13 @@ decide the twist.
 | Part | Video | Story | Sets up | Results |
 |---|---|---|---|---|
 | 1 | `projects/every-jump-makes-you-bigger` | Leo jumps 50 times and strides to the finish, a tiny door. He blocks it; Max baits him to 100 jumps, the floor breaks, Leo falls out of the map and respawns at his last checkpoint next to the door, tiny again. Leo wins, then does a victory jump in a very small room. | Next game: every step makes you faster | delivered (George voice C, 65.3 s), awaiting approval |
+| 2 | `projects/every-step-makes-you-faster` | Leo runs laps of the lobby to speed 1,000, crosses the map in one second and can't stop: off the end of the map three times (speed kept on respawn). Max hops the course because jumps aren't steps (speed 16). Leo circles Max to blow him into the lava; the wind becomes a tornado that throws Max onto the finish. Max wins. Leo hits 9,999 and the anti-cheat kicks him for speed hacking. | Next game: every coin makes you heavier | script draft awaiting approval |
 
 ## Devices to keep
 - Rule sign on frame 1, Roblox leaderstats (Stage / Size) and a round timer all video, "+1 SIZE" pops, x10 fast-forward
   montages for big counts, a planted obby rule (checkpoints) as the twist.
 
 ## Ideas for later parts
-- Every step makes you faster (Part 2, teased): Leo runs so fast he laps the map and can't stop at the finish.
-- Every coin makes you heavier: the richest player sinks through the floor.
+- Every coin makes you heavier (Part 3, teased): the richest player sinks through the floor.
 - Every second you get smaller: the race against a closing door, reversed.
 - Every jump makes you higher: someone jumps out of the world into the skybox.
