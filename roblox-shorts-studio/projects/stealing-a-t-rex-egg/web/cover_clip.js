@@ -1,8 +1,7 @@
 // Cover for Stealing a T-Rex Egg (one frame, 1080x1920; everything inside the 3:4 band y 240-1680): the opening shot -
-// the sleeping T-rex's face over the glowing best egg, Leo tiptoeing in - with the headline and a PART 1 tag.
+// the sleeping T-rex's face over the glowing best egg, Leo tiptoeing in - with the headline (standalone: no part tag).
 import * as base from './egg_clip.js';
 import { W } from './beats.js';
-import { roundRect } from '../../../web/lib/overlay.js';
 export const meta = { ...base.meta, seconds: 1 };
 export const sky = base.sky;
 export async function setup(stage) { await base.setup(stage); }
@@ -17,7 +16,5 @@ function big(g, s, text, x, y, size, color, rot = 0) {
 export function overlay(g, s) {
   big(g, s, 'STEALING A', 540, 330, 120, '#ffffff', -0.04);
   big(g, s, 'T-REX EGG', 540, 470, 150, '#FFD23F', -0.04);
-  g.save(); g.translate(170 * s, 1600 * s); g.rotate(-0.08); g.font = `${54 * s}px "Luckiest Guy"`;
-  roundRect(g, -110 * s, -42 * s, 220 * s, 84 * s, 22 * s); g.fillStyle = '#FFD23F'; g.fill(); g.lineWidth = 5 * s; g.strokeStyle = '#152435'; g.stroke();
-  g.fillStyle = '#152435'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('PART 1', 0, 4 * s); g.restore();
+
 }

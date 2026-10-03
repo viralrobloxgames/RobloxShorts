@@ -34,20 +34,11 @@ Record it in `ideas/idea-ledger.json` with a title, logline, platform and status
 
 There must be a visible cause, a reaction and a physical payoff. A loop ending is a bonus: the last frame cuts back to the hook.
 
-### Series
+### Standalone, not series (user rule, 2026-10-03)
 
-Before a new idea, check `ideas/series/`. When a format's first part performs well (after at least 24 h on TikTok:
-average watch time and full-watch rate clearly above the channel's other originals), the next video is usually its next
-part. A series part:
-
-- stands alone in the first 3 s (a new viewer must understand the premise) but continues the story: same characters,
-  running gags, the previous part's ending as its setup;
-- shows a small "PART N" tag on screen, which sends viewers to the earlier parts on the profile;
-- ends on a cliffhanger into the next part, then the call to action ("Follow Viral Roblox Games for part N+1").
-
-Each series has `ideas/series/<series>.md` with its format rules, the parts made (story, what each set up, results) and
-open threads for the next part. Update it when a part is planned, delivered, and when its results come in. Stop a series
-(with a final part) when its parts stop performing.
+Every video is a complete standalone story: no "PART N" tag, no part numbers in titles or covers, no "part two" call to
+action, no cliffhanger that only pays off in another video. Only make a numbered series when the user explicitly asks for
+one. (`ideas/series/` holds the earlier series for reference only.)
 
 ### What the analytics have taught us (keep adding)
 
