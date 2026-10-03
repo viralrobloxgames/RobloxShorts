@@ -1,0 +1,17 @@
+{
+  "title": "Catching the Egg Thief",
+  "character": "Leo",
+  "characters": [
+    "Leo"
+  ],
+  "seconds": 70.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "idea; write story.md and script.txt, then narration, then author build_scene.py",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {}
+  }
+}
