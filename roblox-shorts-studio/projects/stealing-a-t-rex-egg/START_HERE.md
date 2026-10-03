@@ -13,10 +13,10 @@ A Steal an Egg parody with Leo, Max and Mia on the game's own T-rex and eggs (`a
 - Scene `web/egg_clip.js`: beats from `source/beats.py`, SFX from `source/sound_cues.py` (mirrors the clip's `B` block).
   Mia's four background raids (`RAIDS`) and the nest counter plant the twist; Mom walks through the safe zone.
 - Ground is plain grass (studs only on the base plots): a studded ground made each frame ~3x slower.
-- `delivery/post.json`.
+- `delivery/Stealing_a_T_Rex_Egg.mp4` (1080x1920, 71.8 s, 2,155 frames, validated), cover `delivery/Stealing_a_T_Rex_Egg_cover.{png,jpg}`, `delivery/post.json`.
 
 ## Next
-- Finish the full render, mix + encode, review, cover, deliver. Post only after the user approves.
+- Post only after the user approves (TikTok, then YouTube). Known nit: "NEST: 0" lingers ~0.6 s into the Mia-base hatch shot.
 
 ## Re-render / re-encode
 ```
