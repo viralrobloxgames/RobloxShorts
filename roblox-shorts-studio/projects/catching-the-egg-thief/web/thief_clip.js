@@ -479,7 +479,7 @@ export function update(t, stage) {
     case 'carry': { const sn = snout(); look(sn.clone().add(V(-7, 0, 30)), sn.clone().add(V(0, -2.5, 0)), 50, 60); break; }
     case 'hoodOff': look(V(-8.2, 4.2, 6.2), V(-3.5, 7 - 2.6 * seg(s, B.hoodOff + 0.3, B.max), 14.4), 54, 60); break;     // from inside the base, looking out at the spinosaurus
     case 'quote': look(V(-8.2, 3.8, 6.6), V(-3.5, 4.2, 14.4), 48); break;
-    case 'tread': case 'fast': look(TREAD.clone().add(V(-4, 5, 16)), TREAD.clone().add(V(5, 6, -2)), 56, 50); break;
+    case 'tread': case 'fast': look(V(-2.2, 6.4, 3.2), TREAD.clone().add(V(3, 3.8, 0.6)), 58, 50); break;           // inside the base: Max running at us, the spinosaurus behind
     case 'broke': look(TREAD.clone().add(V(-6, 7, 22)).add(jolt(B.broke, 0.6, 0.5)), TREAD.clone().add(V(7, 5, -2)), 58, 50); break;
     case 'cta': look(TREAD.clone().add(V(-6, 7, 22)), TREAD.clone().add(V(7, 5, -2)), 58, 50); break;
     default: look(V(20, 12, 30), V(0, 2, 2), 46);
@@ -566,8 +566,8 @@ export function overlay(g, s, t) {
   // The treadmill debt.
   if (t > B.tread + 0.2 && t < B.cta) {
     const v = t < B.fast ? PRICE : lerp(PRICE, 0, clamp((t - B.fast) / Math.max(0.3, B.paid - B.fast))), done = v <= 0;
-    if (t < B.broke) bigText(g, s, done ? 'PAID!' : `DEBT: ${money(v)}`, 540, 760, done ? 150 : 96, done ? '#3cff8a' : '#ff6b78', { k: done ? pop(t, B.paid, 0.2, 3) : pop(t, B.tread + 0.2, 0.2, 2) });
-    if (t > B.fast && t < B.broke) bigText(g, s, `${Math.min(4, (t - B.fast) * 4 / Math.max(0.3, B.paid - B.fast)).toFixed(1)}s`, 540, 880, 80, '#ffffff');
+    if (t < B.broke) bigText(g, s, done ? 'PAID!' : `DEBT: ${money(v)}`, 540, 520, done ? 150 : 96, done ? '#3cff8a' : '#ff6b78', { k: done ? pop(t, B.paid, 0.2, 3) : pop(t, B.tread + 0.2, 0.2, 2) });
+    if (t > B.fast && t < B.broke) bigText(g, s, `${Math.min(4, (t - B.fast) * 4 / Math.max(0.3, B.paid - B.fast)).toFixed(1)}s`, 540, 640, 80, '#ffffff');
     if (t < B.fast + 0.1 && t > B.tread + 0.4) tagOver(g, s, max.root.position.clone().add(V(0, 6.6, 0)), 'SPEED: 50,000', 'rgba(220,40,60,.95)', 1, pop(t, W.fifty2 - 0.2, 0.2, 2.5), 40);
   }
   word(g, s, t, B.broke + 0.1, 1.1, 'KABOOM', '#ff9e3d', 170, 1080, 0.06);
