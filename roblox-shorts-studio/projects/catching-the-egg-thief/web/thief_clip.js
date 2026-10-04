@@ -374,7 +374,7 @@ export function update(t, stage) {
     const sn = snout(); M.pos = sn.clone().add(V(0, -5.6, 0)); M.rotY = SPN.rotY + Math.PI; M.grounded = false;
   }
   place(max, M);
-  thiefLight.visible = max.root.visible; thiefLight.position.copy(max.root.position).add(V(2.5, 7.5, 3.5));
+  thiefLight.visible = max.root.visible && (s < B.hoodOff - 0.3 || s > B.tread);   // off under the jaw (hot spot); the base lamp lights the reveal thiefLight.position.copy(max.root.position).add(V(2.5, 7.5, 3.5));
   hood.visible = M.hood !== false;
   max.bones.Head.children.forEach((o) => { if (o.name === 'Hair') o.visible = M.hood === false; });
 
@@ -559,7 +559,7 @@ export function overlay(g, s, t) {
   word(g, s, t, W.max - 0.05, 1.3, 'MAX?!', '#ff9e80', 190, 760, -0.08);
   if (t > B.quote + 0.25 && t < B.tread) {
     const k = pop(t, B.quote + 0.25, 0.25, 2);
-    g.save(); g.translate(540 * s, 1010 * s); g.scale(k, k); g.rotate(0.02);
+    g.save(); g.translate(540 * s, 1260 * s); g.scale(k, k); g.rotate(0.02);
     roundRect(g, -400 * s, -110 * s, 800 * s, 220 * s, 40 * s); g.fillStyle = 'rgba(255,255,255,.96)'; g.fill(); g.lineWidth = 7 * s; g.strokeStyle = '#152435'; g.stroke();
     g.font = `${56 * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#152435'; g.fillText('"I WAS KEEPING', 0, -34 * s); g.fillText('THEM SAFE"', 0, 40 * s); g.restore();
   }
