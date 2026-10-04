@@ -8,12 +8,12 @@ const cfm = (c) => new THREE.Matrix4().set(c[3], c[4], c[5], c[0], c[6], c[7], c
 const RY = new THREE.Matrix4().makeRotationY(Math.PI), RYi = RY.clone().invert();
 const I = new THREE.Matrix4();
 
-export async function loadCreature(name) {
-  const obj = await packItem('creatures', name);
-  const rig = await fetch(`${PACK}creatures/${name}/rig.json`).then((r) => r.json());
+export async function loadCreature(name, kind = 'creatures') {
+  const obj = await packItem(kind, name);
+  const rig = await fetch(`${PACK}${kind}/${name}/rig.json`).then((r) => r.json());
   const root = new THREE.Group(); root.name = name; root.add(obj);
   const meshes = {};
-  obj.traverse((o) => { if (o.isMesh) { (meshes[o.name] ||= []).push(o); o.matrixAutoUpdate = false; } });
+  obj.traverse((o) => { if (o.isMesh) { (meshes[o.name.replace(/_decal\d+$/, '')] ||= []).push(o); o.matrixAutoUpdate = false; } });   // decals ride their body
   const bodies = {};
   for (const b of rig.bodies) { const P = cfm(b.pivot); bodies[b.name] = { name: b.name, parent: b.parent, P, Pi: P.clone().invert(), meshes: meshes[b.name] || [], D: new THREE.Matrix4() }; }
   const order = [], seen = new Set();
