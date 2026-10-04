@@ -140,17 +140,44 @@ export function policeCar() {
   const g = new THREE.Group(), white = std('#f2f2f2', { metalness: 0.3, roughness: 0.35 }), black = std('#1d2230', { metalness: 0.3, roughness: 0.35 }), tire = std('#1b1b1f', { roughness: 0.9 });
   g.add(mesh(new RoundedBoxGeometry(5.4, 1.4, 12, 3, 0.35), black, 0, 1.3, 0));
   g.add(mesh(new RoundedBoxGeometry(5.3, 0.9, 5.2, 3, 0.3), white, 0, 1.6, 0));
-  g.add(mesh(new RoundedBoxGeometry(4.8, 1.5, 5.0, 3, 0.4), white, 0, 2.9, -0.4));
-  const win = std('#2a3a50', { roughness: 0.1, metalness: 0.5 });
-  g.add(mesh(new THREE.BoxGeometry(4.9, 0.9, 4.0), win, 0, 3.05, -0.4));
+  // Two cabins: the original closed one (dark windows), and an open one (roof on pillars, see-through glass, taller) so a
+  // passenger in the back seat can be seen (the Chief at the end). setCabinOpen() switches; closed by default.
   const red = std('#ff2a3a', { emissive: '#ff1a2a', emissiveIntensity: 0 }), blue = std('#2a6aff', { emissive: '#1a5aff', emissiveIntensity: 0 });
-  g.add(mesh(new THREE.BoxGeometry(1.6, 0.4, 0.8), red, -0.9, 3.85, -0.4), mesh(new THREE.BoxGeometry(1.6, 0.4, 0.8), blue, 0.9, 3.85, -0.4));
+  const closed = new THREE.Group(), open = new THREE.Group(); g.add(closed, open); open.visible = false;
+  closed.add(mesh(new RoundedBoxGeometry(4.8, 1.5, 5.0, 3, 0.4), white, 0, 2.9, -0.4));
+  closed.add(mesh(new THREE.BoxGeometry(4.9, 0.9, 4.0), std('#2a3a50', { roughness: 0.1, metalness: 0.5 }), 0, 3.05, -0.4));
+  closed.add(mesh(new THREE.BoxGeometry(1.6, 0.4, 0.8), red, -0.9, 3.85, -0.4), mesh(new THREE.BoxGeometry(1.6, 0.4, 0.8), blue, 0.9, 3.85, -0.4));
+  open.add(mesh(new RoundedBoxGeometry(4.8, 0.3, 5.0, 2, 0.12), white, 0, 4.2, -0.4));
+  for (const [x, z] of [[-2.25, 1.9], [2.25, 1.9], [-2.25, -2.7], [2.25, -2.7], [-2.25, -0.4], [2.25, -0.4]]) open.add(mesh(new THREE.BoxGeometry(0.3, 2.2, 0.3), white, x, 3.1, z));
+  const glass = new THREE.MeshStandardMaterial({ color: '#7fa6c8', roughness: 0.05, metalness: 0.2, transparent: true, opacity: 0.22, depthWrite: false, side: THREE.DoubleSide });
+  for (const sx of [-1, 1]) { const pane = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 2.0), glass); pane.position.set(sx * 2.3, 3.1, -0.4); pane.rotation.y = Math.PI / 2; open.add(pane); }
+  for (const z of [2.0, -2.8]) { const pane = new THREE.Mesh(new THREE.PlaneGeometry(4.4, 2.0), glass); pane.position.set(0, 3.1, z); open.add(pane); }
+  open.add(mesh(new THREE.BoxGeometry(4.5, 0.25, 4.6), std('#2a2a30', { roughness: 0.8 }), 0, 2.05, -0.4));   // seats/floor inside
+  open.add(mesh(new THREE.BoxGeometry(1.6, 0.4, 0.8), red, -0.9, 4.55, -0.4), mesh(new THREE.BoxGeometry(1.6, 0.4, 0.8), blue, 0.9, 4.55, -0.4));
   const badge = mesh(new THREE.PlaneGeometry(1.6, 1.0), new THREE.MeshStandardMaterial({ map: canvasTexture(160, 100, (c) => { c.fillStyle = '#f2f2f2'; c.fillRect(0, 0, 160, 100); c.fillStyle = '#E8B931'; c.beginPath(); c.moveTo(80, 8); c.lineTo(120, 30); c.lineTo(110, 80); c.lineTo(80, 94); c.lineTo(50, 80); c.lineTo(40, 30); c.fill(); c.fillStyle = '#152435'; c.font = 'bold 18px sans-serif'; c.fillText('POLICE', 46, 58); }) }));
   badge.position.set(2.66, 1.7, 0); badge.rotation.y = Math.PI / 2; g.add(badge);
   for (const [x, z] of [[-2.55, 3.8], [2.55, 3.8], [-2.55, -3.8], [2.55, -3.8]]) { const w = mesh(new THREE.TorusGeometry(0.6, 0.3, 12, 24), tire, x, 0.9, z); w.rotation.y = Math.PI / 2; g.add(w); }
   const lr = new THREE.PointLight('#ff2a3a', 0, 30, 2), lb = new THREE.PointLight('#2a6aff', 0, 30, 2); lr.position.set(-1, 5, -0.4); lb.position.set(1, 5, -0.4); g.add(lr, lb);
-  g.userData = { red, blue, lr, lb };
+  g.userData = { red, blue, lr, lb, closed, open };
   return g;
+}
+// Handcuffs: two steel rings (one per wrist) and a short chain; place with setCuffs(cuffs, wristL, wristR, armQuatL, armQuatR).
+export function handcuffs() {
+  const steel = std('#c9ced6', { metalness: 0.9, roughness: 0.25 }), g = new THREE.Group(); g.name = 'Handcuffs';
+  const rings = [0, 1].map(() => { const r = mesh(new THREE.TorusGeometry(0.56, 0.07, 10, 32), steel); g.add(r); return r; });
+  const chain = mesh(new THREE.CylinderGeometry(0.035, 0.035, 1, 8), steel); g.add(chain);
+  g.userData = { rings, chain };
+  return g;
+}
+export function setCuffs(cuffs, a, b, qa, qb) {
+  const [ra, rb] = cuffs.userData.rings, ch = cuffs.userData.chain, X = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
+  ra.position.copy(a); ra.quaternion.copy(qa).multiply(X); rb.position.copy(b); rb.quaternion.copy(qb).multiply(X);
+  ch.position.copy(a).lerp(b, 0.5); ch.scale.y = Math.max(0.05, a.distanceTo(b) - 0.6);
+  ch.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), b.clone().sub(a).normalize());
+}
+export function setCabinOpen(car, isOpen) {
+  car.userData.open.visible = isOpen; car.userData.closed.visible = !isOpen;
+  car.userData.lr.position.y = car.userData.lb.position.y = isOpen ? 5.6 : 5;
 }
 export function flashLights(car, t, k = 1) {
   const a = Math.floor(t * 6) % 2 === 0 ? 1 : 0;

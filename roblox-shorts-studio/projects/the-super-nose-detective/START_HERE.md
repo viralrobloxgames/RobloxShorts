@@ -34,10 +34,15 @@ sexual references. Story, research and beats: `source/story.md`. Script: `script
 - The Mia shot was blocked by the palm at PALM_N (and then by Max): now a side angle. Cover re-angled side-on so the
   long nose reads in profile. TikTok caption now has the follow line.
 
+- Third review (2026-10-04): captions ran off screen (now split by scripts/finish.py), and "a bit open ended": new
+  ending approved ("So I took one bite. / Then I read him his rights. / You have the right to remain sprinkled."). Leo is
+  cuffed at his desk (kit.js handcuffs/setCuffs), then sits in the back of the police car outside the station (the car's
+  open cabin, setCabinOpen, only from B.arrest so earlier frames are unchanged); CASE CLOSED; the twitch; Max follows
+  the new trail back to his convertible. Skye leaves before the arrest. Whisper's invented tail after "next case" is
+  dropped by fix_captions.py. Video 73.7 s; frames from 1800 re-rendered.
+
 ## Next
-- Full render done and encoded (72.7 s, delivery/The_Super_Nose_Detective.mp4). The tempt2 shot was
-  re-angled after review (Max's think/stop gestures were filling the lens) and its frames re-rendered. Waiting on the
-  user's approval to post (TikTok, then YouTube).
+- Encode, check, deliver. Post only after the user approves (TikTok, then YouTube).
 
 ## Re-render / re-encode
 ```

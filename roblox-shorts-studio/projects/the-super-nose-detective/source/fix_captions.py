@@ -27,6 +27,14 @@ for cap in caps:
             out.append(w); i += 1
     cap['words'] = out
     if 'text' in cap: cap['text'] = ''.join(w['word'] for w in out).strip()
+# Whisper sometimes "hears" a repeat of earlier lines in the last fraction of a second (take-02 got "Case closed, then my nose
+# twitched" again at 73.0-73.2 s). The script ends on "...the next case.", so drop every word after it.
+flat = [(ci, wi) for ci, c in enumerate(caps) for wi in range(len(c['words']))]
+ends = [k for k in range(1, len(flat)) if key(caps[flat[k - 1][0]]['words'][flat[k - 1][1]]) == 'next' and key(caps[flat[k][0]]['words'][flat[k][1]]) == 'case']
+if ends:
+    ci, wi = flat[ends[0]]
+    caps[ci]['words'] = caps[ci]['words'][:wi + 1]
+    for c in caps[ci + 1:]: c['words'] = []
 caps = [c for c in caps if c['words']]
 for c in caps: c['start'], c['end'] = c['words'][0]['start'], c['words'][-1]['end']
 P.write_text(json.dumps(caps, indent=1)); print('captions fixed')

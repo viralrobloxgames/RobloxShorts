@@ -945,12 +945,12 @@
   ]
  },
  {
-  "start": 54.510000000000005,
+  "start": 54.52,
   "end": 55.44,
   "text": "He said the case",
   "words": [
    {
-    "start": 54.510000000000005,
+    "start": 54.52,
     "end": 54.78,
     "word": " He"
    },
@@ -973,7 +973,7 @@
  },
  {
   "start": 55.44,
-  "end": 56.28,
+  "end": 56.3,
   "text": "was going away,",
   "words": [
    {
@@ -988,18 +988,18 @@
    },
    {
     "start": 55.88,
-    "end": 56.28,
+    "end": 56.3,
     "word": " away,"
    }
   ]
  },
  {
-  "start": 56.82,
+  "start": 56.84,
   "end": 57.8,
   "text": "and slid me my",
   "words": [
    {
-    "start": 56.82,
+    "start": 56.84,
     "end": 57.12,
     "word": " and"
    },
@@ -1033,214 +1033,243 @@
   ]
  },
  {
-  "start": 59.12,
-  "end": 59.48,
+  "start": 59.16,
+  "end": 59.46,
   "text": "tempting.",
   "words": [
    {
-    "start": 59.12,
-    "end": 59.48,
+    "start": 59.16,
+    "end": 59.46,
     "word": " tempting."
    }
   ]
  },
  {
-  "start": 60.7,
-  "end": 61.56,
-  "text": "I've always been a",
+  "start": 60.68,
+  "end": 61.48,
+  "text": "So I took one",
   "words": [
    {
-    "start": 60.7,
-    "end": 60.96,
-    "word": " I've"
+    "start": 60.68,
+    "end": 60.92,
+    "word": " So"
    },
    {
-    "start": 60.96,
+    "start": 60.92,
+    "end": 61.06,
+    "word": " I"
+   },
+   {
+    "start": 61.06,
     "end": 61.22,
-    "word": " always"
+    "word": " took"
    },
    {
     "start": 61.22,
-    "end": 61.44,
-    "word": " been"
-   },
-   {
-    "start": 61.44,
-    "end": 61.56,
-    "word": " a"
+    "end": 61.48,
+    "word": " one"
    }
   ]
  },
  {
-  "start": 61.56,
-  "end": 62.3,
-  "text": "man of principle,",
+  "start": 61.48,
+  "end": 61.8,
+  "text": "bite,",
   "words": [
    {
-    "start": 61.56,
-    "end": 61.74,
-    "word": " man"
-   },
-   {
-    "start": 61.74,
-    "end": 61.92,
-    "word": " of"
-   },
-   {
-    "start": 61.92,
-    "end": 62.3,
-    "word": " principle,"
+    "start": 61.48,
+    "end": 61.8,
+    "word": " bite,"
    }
   ]
  },
  {
-  "start": 63.0,
-  "end": 64.22,
-  "text": "but some donuts just",
+  "start": 62.34,
+  "end": 63.12,
+  "text": "then I read him",
   "words": [
    {
-    "start": 63.0,
-    "end": 63.2,
-    "word": " but"
+    "start": 62.34,
+    "end": 62.64,
+    "word": " then"
    },
    {
-    "start": 63.2,
-    "end": 63.52,
-    "word": " some"
+    "start": 62.64,
+    "end": 62.8,
+    "word": " I"
    },
    {
-    "start": 63.52,
-    "end": 63.96,
-    "word": " donuts"
+    "start": 62.8,
+    "end": 62.96,
+    "word": " read"
    },
    {
-    "start": 63.96,
-    "end": 64.22,
-    "word": " just"
+    "start": 62.96,
+    "end": 63.12,
+    "word": " him"
    }
   ]
  },
  {
-  "start": 64.22,
-  "end": 65.38,
-  "text": "aren't worth fighting for.",
+  "start": 63.12,
+  "end": 63.58,
+  "text": "his rights.",
   "words": [
    {
-    "start": 64.22,
-    "end": 64.48,
-    "word": " aren't"
+    "start": 63.12,
+    "end": 63.3,
+    "word": " his"
    },
    {
-    "start": 64.48,
-    "end": 64.68,
-    "word": " worth"
-   },
-   {
-    "start": 64.68,
-    "end": 65.04,
-    "word": " fighting"
-   },
-   {
-    "start": 65.04,
-    "end": 65.38,
-    "word": " for."
+    "start": 63.3,
+    "end": 63.58,
+    "word": " rights."
    }
   ]
  },
  {
-  "start": 66.16,
-  "end": 66.82,
+  "start": 64.56,
+  "end": 65.26,
+  "text": "You have the right",
+  "words": [
+   {
+    "start": 64.56,
+    "end": 64.72,
+    "word": " You"
+   },
+   {
+    "start": 64.72,
+    "end": 64.9,
+    "word": " have"
+   },
+   {
+    "start": 64.9,
+    "end": 65.06,
+    "word": " the"
+   },
+   {
+    "start": 65.06,
+    "end": 65.26,
+    "word": " right"
+   }
+  ]
+ },
+ {
+  "start": 65.26,
+  "end": 66.26,
+  "text": "to remain sprinkled.",
+  "words": [
+   {
+    "start": 65.26,
+    "end": 65.44,
+    "word": " to"
+   },
+   {
+    "start": 65.44,
+    "end": 65.76,
+    "word": " remain"
+   },
+   {
+    "start": 65.76,
+    "end": 66.26,
+    "word": " sprinkled."
+   }
+  ]
+ },
+ {
+  "start": 67.16,
+  "end": 67.7,
   "text": "Case closed,",
   "words": [
    {
-    "start": 66.16,
-    "end": 66.28,
+    "start": 67.16,
+    "end": 67.24,
     "word": " Case"
    },
    {
-    "start": 66.28,
-    "end": 66.82,
+    "start": 67.24,
+    "end": 67.7,
     "word": " closed,"
    }
   ]
  },
  {
-  "start": 67.4,
-  "end": 68.62,
+  "start": 68.34,
+  "end": 69.58,
   "text": "then my nose twitched.",
   "words": [
    {
-    "start": 67.4,
-    "end": 67.64,
+    "start": 68.34,
+    "end": 68.6,
     "word": " then"
    },
    {
-    "start": 67.64,
-    "end": 67.82,
+    "start": 68.6,
+    "end": 68.78,
     "word": " my"
    },
    {
-    "start": 67.82,
-    "end": 68.1,
+    "start": 68.78,
+    "end": 69.08,
     "word": " nose"
    },
    {
-    "start": 68.1,
-    "end": 68.62,
+    "start": 69.08,
+    "end": 69.58,
     "word": " twitched."
    }
   ]
  },
  {
-  "start": 69.46,
-  "end": 70.98,
+  "start": 70.42,
+  "end": 71.96,
   "text": "Follow viral Roblox games",
   "words": [
    {
-    "start": 69.46,
-    "end": 69.64,
+    "start": 70.42,
+    "end": 70.6,
     "word": " Follow"
    },
    {
-    "start": 69.64,
-    "end": 70.1,
+    "start": 70.6,
+    "end": 71.06,
     "word": " viral"
    },
    {
-    "start": 70.1,
-    "end": 70.66,
+    "start": 71.06,
+    "end": 71.62,
     "word": " Roblox"
    },
    {
-    "start": 70.66,
-    "end": 70.98,
+    "start": 71.62,
+    "end": 71.96,
     "word": " games"
    }
   ]
  },
  {
-  "start": 70.98,
-  "end": 72.0,
+  "start": 71.96,
+  "end": 72.98,
   "text": "for the next case.",
   "words": [
    {
-    "start": 70.98,
-    "end": 71.36,
+    "start": 71.96,
+    "end": 72.32,
     "word": " for"
    },
    {
-    "start": 71.36,
-    "end": 71.48,
+    "start": 72.32,
+    "end": 72.44,
     "word": " the"
    },
    {
-    "start": 71.48,
-    "end": 71.72,
+    "start": 72.44,
+    "end": 72.7,
     "word": " next"
    },
    {
-    "start": 71.72,
-    "end": 72.0,
+    "start": 72.7,
+    "end": 72.98,
     "word": " case."
    }
   ]

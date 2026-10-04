@@ -22,7 +22,8 @@ ANCHORS = {
     'trail2': ('trail', 2), 'back': ('back', 2), 'chiefs': ('chiefs', 1), 'office': ('office', 1), 'one2': ('one', 2), 'sock2': ('sock', 2),
     'sprinkles': ('sprinkles', 1), 'face': ('face', 1), 'half': ('half', 1), 'donut2': ('donut', 2), 'said': ('said', 1),
     'going': ('going', 1), 'away': ('away', 1), 'slid': ('slid', 1), 'cut': ('cut', 1), 'tempting3': ('tempting', 3),
-    'always': ('always', 1), 'principle': ('principle', 1), 'donuts': ('donuts', 1), 'fighting': ('fighting', 1), 'closed': ('closed', 1),
+    'took': ('took', 1), 'bite': ('bite', 1), 'read': ('read', 1), 'rights': ('rights', 1), 'you': ('you', 1),
+    'remain': ('remain', 1), 'sprinkled': ('sprinkled', 1), 'closed': ('closed', 1),
     'twitched': ('twitched', 1), 'follow': ('follow', 1), 'next': ('next', 1),
 }
 NUM = {'1': 'one', '2': 'two'}

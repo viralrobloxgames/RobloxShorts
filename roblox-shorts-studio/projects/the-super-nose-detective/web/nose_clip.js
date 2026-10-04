@@ -13,7 +13,7 @@ import { roundRect, speedLines, flash } from '../../../web/lib/overlay.js';
 import { loadRobloxCharacter, loadAnimation, robloxPose } from '../../../web/lib/robloxPack.js';
 import { waveArm } from '../../../web/lib/gestures.js';
 import { travel, travelTo, STRIDE } from '../../../web/lib/locomotion.js';
-import { makeTalkingFace, wearOutfit, makeNose, setNose, makeSunglasses, donut, sock, evidenceBag, convertible, rollWheels, policeCar, flashLights, tape, palm } from './kit.js';
+import { makeTalkingFace, wearOutfit, makeNose, setNose, makeSunglasses, donut, sock, evidenceBag, convertible, rollWheels, policeCar, setCabinOpen, flashLights, tape, palm, handcuffs, setCuffs } from './kit.js';
 import { W } from './beats.js';
 import { LIPS } from './lipsync.js';
 const lipAt = (t) => LIPS[Math.floor(t * 30 + 1e-6)] || '-';
@@ -34,6 +34,11 @@ const POOL = { x0: -16, x1: 16, z0: 333, z1: 347 }, WATER_Y = -0.7;
 const CAR1 = V(-14, 0, 318), MAXP = V(-6, 0, 330.6), MIA_AT = V(-6, 0, 337.5);
 const NOOB0 = V(8, 0, 330.2), MAXF = V(8, 0, 322.2), NOOB_L = V(8, WATER_Y, 341.5), MAXE = V(8, 0, 331.6), PALM_N = V(-1.5, 0, 331.6);
 const OFF = V(-300, 0, 0), DESK = OFF.clone().add(V(6, 0, -1.5)), LEO_SIT = OFF.clone().add(V(6, 0, -4.7)), MAXD = OFF.clone().add(V(6, 0, 2.6));
+// The arrest at the station: the police car's frame (x to its badge side, z along the car). Everything happens on the -x
+// side, which faces the open plaza (the badge side is only ~12 studs from the station wall). The Chief sits in the back seat
+// (sunk so his head shows in the window); Max stands by the rear door; the next-case trail runs from him to the road.
+const COP_ROT = Math.PI / 2 + 0.25, carPt = (x, y, z) => COP.clone().add(V(x, y, z).applyAxisAngle(V(0, 1, 0), COP_ROT));
+const LEO_CAR = carPt(-0.95, 0.5, -1.5), MAXA = carPt(-3.3, 0, -5.0), NEXT1 = CAR0.clone().add(V(3.2, 0, 0)), NEXT2 = V(-5, 0, 30);
 const ENTER = OFF.clone().add(V(-9, 0, 3)), EXIT = OFF.clone().add(V(-16, 0, 4)), CASE_AT = OFF.clone().add(V(-11, 0, -7));
 const DESK_TOP = 3.25;
 
@@ -45,7 +50,8 @@ const B = {
   r2: W.case3, follow: W.case3 + 0.35, suspect: W.ended - 0.3, stare: W.sunglasses - 0.1, fight: W.threw - 0.3, throw: W.threw + 0.05,
   achoo: W.achoo, splash: W.achoo + 0.75, socks: W.both - 0.3, shake: W.guy2 - 0.2, trailBack: W.guy2 + 0.15, driveBack: W.trail2 - 0.3,
   office: W.back + 0.2, feet: W.one2 - 0.3, faceS: W.sprinkles - 0.3, halfS: W.half - 0.3, talk: W.said - 0.3,
-  slide: W.slid - 0.1, tempt3: W.tempting3 - 0.4, principle: W.always - 0.3, bite: W.fighting - 0.15, closed: W.closed - 0.35,
+  slide: W.slid - 0.1, tempt3: W.tempting3 - 0.4, principle: W.took - 0.45, bite: W.bite - 0.1, cuff: W.read - 0.45, click: W.rights - 0.05,
+  arrest: W.you - 0.35, closed: W.closed - 0.35,
   twitch: W.twitched - 0.35, cta: W.follow - 0.1,
 };
 
@@ -55,7 +61,7 @@ const SHOTS = [
   [B.party, 'party'], [B.miaShot, 'mia'], [W.tempting2 - 0.15, 'tempt2'], [B.suspect, 'suspect'], [B.stare, 'stare'], [B.fight, 'fight'],
   [B.achoo - 0.15, 'achoo'], [B.socks, 'socks'], [B.driveBack, 'driveBack'], [B.office, 'office'], [B.feet, 'feet'],
   [B.faceS, 'faceS'], [B.halfS, 'halfS'], [B.talk, 'talk'], [B.slide - 0.2, 'slide'], [B.tempt3, 'tempt3'], [B.principle, 'principle'],
-  [B.bite - 0.5, 'bite'], [B.closed, 'closed'], [B.twitch, 'twitch'], [B.cta, 'cta'],
+  [B.bite - 0.5, 'bite'], [B.cuff, 'cuff'], [B.arrest, 'arrest'], [B.closed, 'closed'], [B.twitch, 'twitch'], [B.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 
 // ---------- the smell trails ----------
@@ -64,7 +70,7 @@ const SHOTS = [
 const PATH_A = [MAX_SCENE, V(-1, 0, 12), V(2.5, 0, 40), V(-2.5, 0, 120), V(2.5, 0, 200), V(-1, 0, 280), V(-6, 0, 316), MAXP.clone().add(V(0, 0, -1.2)), V(1, 0, 327.5), NOOB0];
 const PATH_B = [NOOB0, V(13, 0, 326), V(14, 0, 318), V(4, 0, 300), V(-3, 0, 220), V(3, 0, 120), V(-2, 0, 30), V(0, 0, 4), DOOR];
 const PATH_C = [ENTER.clone().add(V(-6, 0, 0)), ENTER, OFF.clone().add(V(0, 0, 1.5)), MAXD.clone().add(V(-0.8, 0, -1)), DESK.clone().add(V(-1, 0, -0.5))];
-const PATH_D = [MAXD.clone().add(V(-1, 0, 0)), OFF.clone().add(V(-4, 0, 3.5)), EXIT, EXIT.clone().add(V(-12, 0, 1))];
+const PATH_D = [MAXA.clone().add(V(-0.6, 0, 0.4)), NEXT1, NEXT2, V(-5, 0, 80)];   // the next case: back to his car and up the road
 function makeTrail(points, width = 1.1, color = '#4dff7c') {
   const curve = new THREE.CatmullRomCurve3(points.map((p) => p.clone().setY(0.12)), false, 'centripetal');
   const len = curve.getLength(), n = Math.max(8, Math.ceil(len / 0.5)), pos = [], dist = [];
@@ -82,7 +88,7 @@ function makeTrail(points, width = 1.1, color = '#4dff7c') {
 }
 
 // ---------- scene ----------
-let A = {}, max, leo, skye, mia, noob, nose, cam, car, cop, bag, heldDonut, leoDonut, slideDonut, crumbs = [], wisps = [], pepper = [], splash = [], puffs = [];
+let A = {}, max, leo, skye, mia, noob, nose, cam, car, cop, cuffs, bag, heldDonut, leoDonut, slideDonut, crumbs = [], wisps = [], pepper = [], splash = [], puffs = [];
 let frontWall, trailA, trailB, trailC, trailD, ring, alarm, alarmLight, waterTex, floatRing, SHOT = 'hook';
 const WISP_SRC = [V(9.5, 3.5, 4.5), V(-6, 2.6, -4), V(14, 3, -3), V(6.4, 4.5, 8.6), V(-9, 2, 11)];
 const MAP_SRC = [V(-30, 0, 40), V(30, 0, 80), V(-26, 0, 140), V(28, 0, 190), V(-30, 0, 250), V(20, 0, 30), V(0, 0, 300), V(-20, 0, 330), V(26, 0, 340), V(-8, 0, 100)];
@@ -140,7 +146,8 @@ export async function setup(stage) {
   neon.children.forEach((o) => { if (o.material && o.material.emissive) o.material.emissiveIntensity = 0.9; });
   scene.add(tape(V(-7, 0, -4.5), V(7, 0, -4.5), 3.2), tape(V(-7, 0, -4.5), V(-9, 0, 4), 3.2));
   for (const p of [V(-7, 0, -4.5), V(7, 0, -4.5), V(-9, 0, 4)]) { const post = part(0.3, 3.4, 0.3, '#ff9a1f', { center: true }); post.position.copy(p).setY(1.7); scene.add(post); }
-  cop = policeCar(); cop.position.copy(COP); cop.rotation.y = Math.PI / 2 + 0.25; scene.add(cop);
+  cop = policeCar(); cop.position.copy(COP); cop.rotation.y = COP_ROT; scene.add(cop);
+  cuffs = handcuffs(); scene.add(cuffs);
   const bin = part(1.6, 2.6, 1.6, '#3f6b4a', { center: true }); bin.position.set(-6, 1.3, -4); scene.add(bin);
   const cart = new THREE.Group(); const cb = part(4, 2.2, 2.2, '#ffffff', { center: true }); cb.position.y = 2; cart.add(cb); const um = new THREE.Mesh(new THREE.ConeGeometry(2.8, 1.2, 8), new THREE.MeshStandardMaterial({ color: '#ff5d5d' })); um.position.y = 5.6; cart.add(um); const up = part(0.2, 3, 0.2, '#ccc', { center: true }); up.position.y = 4; cart.add(up); cart.position.set(14, 0, -3); scene.add(cart);
   // Street: palms both sides, pastel blocks, a few more palms by the station.
@@ -287,12 +294,20 @@ function maxState(s) {
   else {                                                        // the office
     b.face = 'suspicious'; b.rotY = Math.PI; moveTo(b, s, ENTER, MAXD, W.one2 - 0.4, 14, false, Math.PI);
     if (s > B.tempt3) b.face = 'nervous';
-    if (s > B.principle) { b.arms.push(['R', 1.55, 0.3]); b.donut = 'hand'; b.face = 'think'; b.layers = idle(s); b.face = 'smug'; }
+    if (s > B.principle) { b.arms.push(['R', 1.55, 0.3]); b.donut = 'hand'; b.layers = idle(s); b.face = 'smug'; }
     if (s > B.bite - 0.25 && s < B.bite + 0.25) { b.arms[0] = ['R', 1.95, 0.42]; b.face = 'happy'; }
     if (s > B.bite + 0.25) b.face = 'laugh';
-    if (s > B.closed) { const chew = Math.sin((s - B.closed) * 7); b.arms[0] = ['R', 1.55 + 0.4 * Math.max(0, chew), 0.3 + 0.12 * Math.max(0, chew)]; b.face = chew > 0.4 ? 'happy' : 'laugh'; }
-    if (s > B.twitch) { b.face = 'surprised'; b.arms[0] = ['R', 1.4, 0.15]; }
-    if (s > B.cta + 0.2) { b.arms = []; b.donut = 'gone'; b.face = 'determined'; moveTo(b, s, MAXD, EXIT, B.cta + 2.4, 12, false, -Math.PI / 2); }
+    if (s > B.cuff) b.face = 'determined';
+    if (s > B.arrest) {                                           // outside the station, by the police car, donut in hand
+      b.pos = MAXA.clone(); b.rotY = 2.4; b.layers = idle(s); b.face = 'smug'; b.arms = [['R', 1.0, 0.2]];
+      if (s > B.closed) { const chew = Math.sin((s - B.closed) * 7); b.arms[0] = ['R', 1.0 + 0.85 * Math.max(0, chew), 0.2 + 0.2 * Math.max(0, chew)]; b.face = chew > 0.4 ? 'happy' : 'smug'; }
+      if (s > B.twitch) { b.face = 'surprised'; b.arms = [['R', 1.0, 0.2]]; b.rotY = face(MAXA, NEXT1); }
+      if (s > B.cta + 0.2) {                                      // follows the new trail out to the road
+        b.face = 'determined'; b.arms = [];
+        const m1 = travel(MAXA, NEXT1, B.cta + 0.2, s, 12), m2 = travel(NEXT1, NEXT2, m1.arrive, s, 12), m = m1.done ? m2 : m1;
+        b.pos = m.pos; b.rotY = m.heading; b.layers = [[A.walk, m1.anim + (m1.done ? m2.anim : 0)]];
+      }
+    }
   }
   return b;
 }
@@ -310,8 +325,11 @@ function leoState(s) {
     if (s > B.talk) { b.face = 'smug'; b.arms[0] = ['R', 1.3, 0.2]; b.donut = 'lowered'; b.talk = s < B.slide + 0.6 || win(s, W.cut - 0.3, W.cut + 0.5); }
     if (win(s, B.slide - 0.05, B.slide + 0.7)) b.arms.push(['L', lerp(1.0, 1.5, easeOut(seg(s, B.slide - 0.05, B.slide + 0.5))), 0]);
     if (s > B.bite) { b.face = 'laugh'; }
-    if (s > B.closed) { const chew = Math.sin((s - B.closed) * 6 + 1); b.arms[0] = ['R', 1.6 + 0.3 * Math.max(0, chew), 0.35]; b.donut = 'mouth'; b.face = chew > 0.4 ? 'happy' : 'laugh'; }
-    if (s > B.twitch) b.face = 'smug';
+    if (s > B.cuff) { b.arms = [['L', 1.5, -0.3], ['R', 1.5, -0.3]]; b.donut = 'gone'; b.face = s > B.click ? 'shocked' : 'nervous'; b.cuffs = s > B.click; }
+    if (s > B.arrest) {                                           // in the back of the police car, cuffed
+      b.pos = LEO_CAR.clone(); b.rotY = COP_ROT; b.layers = [[A.sit, 0.5]]; b.arms = [['L', 0.75, -0.3], ['R', 0.75, -0.3]]; b.face = 'sad'; b.cuffs = true;
+      if (s > B.closed) b.face = 'annoyed';
+    }
   }
   return b;
 }
@@ -319,6 +337,7 @@ function leoState(s) {
 function skyeState(s) {
   const b = st(SKYE_AT, face(SKYE_AT, MAX_SCENE), idle(s, 0.3), 'love', { lean: -0.12 });
   if (s > W.girl - 0.1 && s < W.single + 0.8) b.wave = 'L';
+  if (s > B.arrest) b.visible = false;                         // she's gone by the arrest: keeps the police car shots clear
   if (s > B.r1 - 0.1) b.face = 'sad';
   return b;
 }
@@ -369,7 +388,7 @@ const headAt = (a, y = 0.5) => { a.bones.Head.updateMatrixWorld(true); return V(
 const noseTip = () => { nose.updateMatrixWorld(true); return nose.userData.tip.clone().applyMatrix4(nose.matrixWorld); };
 
 // ---------- samples ----------
-const ACTION = () => [[B.slam - 0.2, B.slam + 0.4], [B.drive, B.party], [B.throw, B.throw + 0.6], [B.achoo - 0.1, B.splash + 0.6], [B.driveBack, B.office], [B.bite - 0.2, B.bite + 0.4]];
+const ACTION = () => [[B.slam - 0.2, B.slam + 0.4], [B.drive, B.party], [B.throw, B.throw + 0.6], [B.achoo - 0.1, B.splash + 0.6], [B.driveBack, B.office], [B.bite - 0.2, B.bite + 0.4], [B.click - 0.1, B.click + 0.3]];
 export function samples(t) { return ACTION().some(([a, b]) => t > a && t < b) ? 3 : 1; }
 export function shutter(t) { return samples(t) > 1 ? 0.5 : 0; }
 
@@ -388,7 +407,7 @@ export function update(t, stage) {
 
   // Mia's float, the police car lights, the alarm, water.
   floatRing.position.copy(MIA_AT).setY(WATER_Y + 0.15 + 0.12 * Math.sin(s * 2.2)); floatRing.rotation.z = s * 0.2;
-  flashLights(cop, s, 1);
+  flashLights(cop, s, 1); setCabinOpen(cop, s > B.arrest);   // see-through cabin only for the arrest, so earlier shots are unchanged
   alarmLight.intensity = 120; alarmLight.target.position.copy(alarm.position).add(V(Math.cos(s * 6) * 10, -8, Math.sin(s * 6) * 10));
   waterTex.offset.set(s * 0.03, s * 0.05);
 
@@ -401,15 +420,24 @@ export function update(t, stage) {
   else if (M.bag) { const z = M.bag === 'show' ? 1.95 : 1.75; bag.position.copy(local(max, 0, M.bag === 'show' ? 2.55 : 1.75 + 0.06 * Math.sin(s * 9), z)); bag.rotation.set(0, max.root.rotation.y + (M.bag === 'show' ? 0.4 * Math.sin(s * 1.2) : 0), 0); }
 
   // Donut halves: Leo's (eaten through the reveal), the one slid across, then in Max's hand and bitten.
-  const inOffice = s > B.office - 0.1;
-  leoDonut.visible = inOffice; heldDonut.visible = inOffice && M.donut !== 'gone';
+  const inOffice = s > B.office - 0.1 && s < B.arrest;
+  leoDonut.visible = inOffice && L.donut !== 'gone'; heldDonut.visible = s > B.office - 0.1 && M.donut !== 'gone';
   if (inOffice) {
     if (L.donut === 'lowered') leoDonut.position.copy(local(leo, -0.9, 3.55, 1.6)); else leoDonut.position.copy(handR(leo).add(V(0, 0.15, 0)));
     leoDonut.rotation.set(1.2, 0.4, 0);
+  }
+  if (heldDonut.visible) {
     const from = DESK.clone().add(V(0.6, DESK_TOP + 0.12, -1.4)), to = DESK.clone().add(V(0.3, DESK_TOP + 0.12, 1.5));
     if (M.donut === 'hand') { heldDonut.position.copy(handR(max).add(V(0, 0.2, 0))); heldDonut.rotation.set(1.3, 0, 0.2); }
     else { heldDonut.position.copy(from.clone().lerp(to, easeOut(seg(s, B.slide, B.slide + 0.6)))); heldDonut.rotation.set(0, s < B.slide ? 0 : -2 * easeOut(seg(s, B.slide, B.slide + 0.6)), 0); heldDonut.visible = heldDonut.visible && s > B.slide - 0.3; }
     heldDonut.scale.setScalar(0.55 * (s > B.bite ? 0.72 : 1) * (s > B.closed + 1.2 ? 0.75 : 1));
+  }
+  cuffs.visible = !!L.cuffs;
+  if (L.cuffs) {
+    const wrist = (side) => { const bone = leo.bones[side === 'L' ? 'Arm.L' : 'Arm.R']; bone.updateMatrixWorld(true); return [V(0, -1.6, 0).applyMatrix4(bone.matrixWorld), bone.getWorldQuaternion(new THREE.Quaternion())]; };
+    const [pl, ql] = wrist('L'), [pr, qr] = wrist('R'); setCuffs(cuffs, pl, pr, ql, qr);   // after place(): wrists of this frame's pose
+    cuffs.scale.setScalar(1); const k = pop(s, B.click, 0.15, 3);
+    cuffs.userData.rings.forEach((r) => r.scale.setScalar(Math.max(0.01, k)));
   }
   crumbs.forEach((c, i) => { const u = s - B.bite; c.visible = u > 0 && u < 0.9; if (!c.visible) return; const p0 = headAt(max, 0.2); const a = i * 0.8; c.position.set(p0.x + Math.cos(a) * u * 2, p0.y - 4 * u * u + 0.5 * u, p0.z + 0.8 + Math.sin(a) * u * 1.5); c.rotation.set(u * 9, i, u * 7); });
 
@@ -424,7 +452,7 @@ export function update(t, stage) {
   trailB.reveal(0, s < B.trailBack ? 0 : s < B.driveBack ? trailB.len * 0.08 * seg(s, B.trailBack, B.driveBack) : s < B.office ? trailB.len : 0);
   trailB.mat.opacity = trailA.mat.opacity;
   trailC.reveal(0, inOffice && s < B.twitch ? trailC.len : 0); trailC.mat.opacity = 0.6;
-  trailD.reveal(0, s > B.twitch + 0.3 ? trailD.len * easeOut(seg(s, B.twitch + 0.3, B.twitch + 1.2)) : 0); trailD.mat.opacity = 0.85;
+  trailD.reveal(0, s > B.twitch + 0.3 ? trailD.len * easeOut(seg(s, B.twitch + 0.3, B.twitch + 1.6)) : 0); trailD.mat.opacity = 0.85;
 
   // Wisps: green smells rising from things at the crime scene, then all over the map.
   wisps.forEach((w, i) => {
@@ -495,15 +523,17 @@ export function update(t, stage) {
     case 'slide': look(DESK.clone().add(V(5.2, 8, 3)), DESK.clone().add(V(0, DESK_TOP, 0.4)), 44); break;
     case 'tempt3': { const k = easeInOut(u); look(DESK.clone().add(V(lerp(-1.6, -1.0, k), DESK_TOP + lerp(0.9, 1.3, k), lerp(-0.6, 0.2, k))), mh.clone().add(V(0, -0.8 + 0.3 * k, 0)).lerp(heldDonut.position, 0.25 * (1 - k)), 40); break; }
     case 'principle': case 'bite': look(mh.clone().add(V(2.4, 0.0, -5.6)), mh.clone().add(V(0.4, -0.1, -0.8)), 40); break;   // headroom for the counter
-    case 'closed': look(OFF.clone().add(V(-1, 6.5, 15)), OFF.clone().add(V(5, 4, -1.5)), 44); break;
-    case 'twitch': look(mh.clone().add(V(2.2, 0.15, -4.2)), mh.clone().add(V(0.2, -0.2, -0.6)), 38); break;
-    case 'cta': look(OFF.clone().add(V(4, 9, 22)), OFF.clone().add(V(-4, 2.5, 0)), 48, 35); break;
+    case 'cuff': { const k = easeOut(seg(s, B.click - 0.1, B.click + 0.15)); look(lh.clone().add(V(lerp(4.4, 3.8, k), lerp(0.4, 0.2, k), lerp(7.0, 6.0, k))).add(jolt(B.click, 0.1, 0.3)), lh.clone().add(V(0.2, -1.0, 0.6)), 40); break; }
+    case 'arrest': { const k = easeInOut(u), lc = headAt(leo); look(lc.clone().add(carPt(lerp(-4.2, -3.4, k), 0.4, lerp(3.4, 2.8, k)).sub(COP)), lc.clone().add(V(0, -0.4, 0)), 40, 30); break; }   // his face, through the side window
+    case 'closed': look(carPt(-16, 4.6, -3.8), headAt(leo).lerp(mh, 0.6).add(V(0, -0.6, 0)), 36, 30); break;                 // Max by the car, the Chief in the back
+    case 'twitch': { const f = V(Math.sin(max.root.rotation.y), 0, Math.cos(max.root.rotation.y)); look(mh.clone().addScaledVector(f, 5.6).add(V(0, 0.3, 0)).add(V(f.z, 0, -f.x).multiplyScalar(1.4)), mh.clone().add(V(0, -0.9, 0)), 40, 25); break; }
+    case 'cta': { const d = NEXT1.clone().sub(MAXA).normalize(); look(NEXT1.clone().addScaledVector(d, 9).add(V(d.z, 0, -d.x).multiplyScalar(6)).add(V(0, 4.5, 0)), MAXA.clone().lerp(NEXT1, 0.5).add(V(0, 5.6, 0)), 46, 40); break; }   // Max low in frame, under the CTA card                             // Max follows the new trail to his car
     default: look(V(0, 6, 25), V(0, 3, 0), 44);
   }
   // Don't let the interior set show the outdoor sky through the open side: fog off indoors.
   if (SHOT === 'feet') max.root.visible = false;            // the insert under the desk: Max stands where the camera is
   const indoors = inOffice || win(s, B.caseIn, B.scene);
-  frontWall.visible = ['tempt3', 'principle', 'bite', 'twitch'].includes(SHOT);
+  frontWall.visible = ['tempt3', 'principle', 'bite'].includes(SHOT);
   stage.scene.fog.near = indoors ? 3000 : 160; stage.scene.fog.far = indoors ? 6000 : 700;
 }
 
@@ -572,7 +602,7 @@ function counter(g, s, t) {
   let text, bg = 'rgba(214,52,110,.92)', at;
   if (show(B.r1 - 0.05, 1.6)) { text = 'TEMPTATIONS RESISTED: 1'; at = B.r1 - 0.05; }
   else if (show(B.r2 - 0.05, 1.6)) { text = 'TEMPTATIONS RESISTED: 2'; at = B.r2 - 0.05; }
-  else if (show(B.bite + 0.1, B.closed - B.bite - 0.15)) {
+  else if (show(B.bite + 0.1, B.cuff - B.bite - 0.15)) {
     at = B.bite + 0.1; const glitch = t < B.bite + 0.45;
     text = glitch ? (Math.floor(t * 30) % 2 ? 'TEMPTATIONS RESIS?#!' : 'TEMPTATIONS RESISTED: 2') : 'DONUTS EATEN: 1'; if (!glitch) bg = 'rgba(232,170,40,.95)';
   } else return;
@@ -587,7 +617,7 @@ export function overlay(g, s, t) {
   if (SHOT === 'skye') bubble(g, s, t, headAt(skye, 1), ['I like your vibe.', 'Are you single?'], W.girl - 0.1, B.scene + 20, { heart: true });
   if (SHOT === 'mia') bubble(g, s, t, headAt(mia, 1), ['Love the nose, detective.', 'Stay for a swim?'], W.liked - 0.15, B.miaShot + 20, { heart: true, size: 44 });
   word(g, s, t, B.achoo, 1.0, 'ACHOO!', '#9dffb8', 190, 400, -0.08);
-  if (t > B.closed) { const k = t - B.closed < 0.12 ? lerp(2.6, 1, easeIn((t - B.closed) / 0.12)) : 1; if (t < B.twitch + 0.3) { g.save(); g.globalAlpha = 0.92; bigText(g, s, 'CASE CLOSED', 540, 400, 130, '#e0303a', { k, rot: -0.14, stroke: '#ffffff', sw: 0.12 }); g.restore(); } }
+  if (t > B.closed) { const k = t - B.closed < 0.12 ? lerp(2.6, 1, easeIn((t - B.closed) / 0.12)) : 1; if (t < B.twitch) { g.save(); g.globalAlpha = 0.92; bigText(g, s, 'CASE CLOSED', 540, 400, 130, '#e0303a', { k, rot: -0.14, stroke: '#ffffff', sw: 0.12 }); g.restore(); } }
   // Call to action.
   if (t >= B.cta) {
     const a = t - B.cta, k2 = easeOutBack(clamp(a / 0.3), 1.8);

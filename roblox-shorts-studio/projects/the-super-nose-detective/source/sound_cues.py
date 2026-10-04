@@ -21,7 +21,8 @@ B = dict(logo=W['this'] - 0.05, pass_=W['super'] - 0.15, caseIn=W['case1'] - 0.3
          scene=W['scene'] - 0.3, stop1=W['case2'] - 0.55, r1=W['case2'], clue=W['only'] - 0.3, sniff=W['cheap'] - 0.3, trailOn=W['trail1'] - 0.3,
          drive=W['trail1'] + 0.35, party=W['party'] + 0.45, stop2=W['case3'] - 0.55, r2=W['case3'], throw=W['threw'] + 0.05, achoo=W['achoo'],
          splash=W['achoo'] + 0.75, trailBack=W['guy2'] + 0.15, driveBack=W['trail2'] - 0.3, office=W['back'] + 0.2, feet=W['one2'] - 0.3,
-         talk=W['said'] - 0.3, slide=W['slid'] - 0.1, tempt3=W['tempting3'] - 0.4, bite=W['fighting'] - 0.15, closed=W['closed'] - 0.35,
+         talk=W['said'] - 0.3, slide=W['slid'] - 0.1, tempt3=W['tempting3'] - 0.4, bite=W['bite'] - 0.1, cuff=W['read'] - 0.45,
+         click=W['rights'] - 0.05, arrest=W['you'] - 0.35, closed=W['closed'] - 0.35,
          twitch=W['twitched'] - 0.35, cta=W['follow'] - 0.1)
 
 # Hook: sniffing the bag; the logo slams on "this".
@@ -58,13 +59,16 @@ T(1400, B['achoo'] + 0.05, 0.07, 0.7, sweep=-900); A('splash.wav', B['splash'], 
 ding(W['socks'] - 0.2); ding(W['socks']); T([262, 196], W['guy2'], 0.08, 0.2, square=True)
 T(300, B['trailBack'], 0.07, 0.6, sweep=1200); sniffs(B['trailBack'] - 0.3, 2, 0.3, 0.4)
 engine(B['driveBack'], B['office'] - 0.05); T(1800, B['office'] - 0.25, 0.05, 0.35, sweep=-900)
-# The office: Leo caught; three evidence hits; the slide; tempting; the bite; CASE CLOSED; the twitch; CTA.
+# The office: Leo caught; three evidence hits; the slide; tempting; the bite; the cuffs; the arrest; CASE CLOSED; the twitch; CTA.
 sting(B['office'] + 0.6, (196, 208, 220), 0.1)
 for t in (B['feet'] + 0.2, W['sprinkles'], W['half']): A('impact_2', t, 0.4); T(1568, t, 0.05, 0.08)
 A('swish_1', B['slide'], 0.4); A('click', B['slide'] + 0.6, 0.3)
 T(110, B['tempt3'], 0.05, 2.0, sweep=20, square=True)
 A('impact_1', B['bite'], 0.35); A('click', B['bite'] + 0.05, 0.3); A('click', B['bite'] + 0.15, 0.25)
 for i in range(4): T([2093, 523][i % 2], B['bite'] + 0.1 + i * 0.08, 0.05, 0.06, square=True)         # counter glitch
+# The cuffs snap on; outside, a short siren whoop as we cut to the police car.
+A('click', B['click'], 0.6); T([2600, 1900], B['click'], 0.05, 0.05, square=True); A('impact_1', B['click'] + 0.02, 0.3)
+for i in range(2): T(650, B['arrest'] + 0.05 + i * 0.9, 0.05, 0.45, sweep=900); T(1060, B['arrest'] + 0.5 + i * 0.9, 0.05, 0.4, sweep=-900)
 A('impact_4', B['closed'], 0.6); A('drum_hit', B['closed'], 0.55); sting(B['closed'] + 0.05, (247, 294, 370), 0.12)
 T(400, B['twitch'] + 0.1, 0.08, 0.4, sweep=900); sniffs(B['twitch'] + 0.4, 2, 0.3, 0.5); T(300, B['twitch'] + 0.9, 0.07, 0.6, sweep=1400)
 A('swish_3', B['cta'] - 0.05, 0.35); T([1047, 1319, 1568], B['cta'], 0.12, 0.18)
