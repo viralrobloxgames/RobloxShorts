@@ -1,0 +1,26 @@
+{
+ "item": "animal_lizard",
+ "category": "creatures",
+ "sourceName": "Lizard",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Lizard",
+ "size": [
+  4.2491,
+  2.1533,
+  1.4678
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_lizard"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://135307314270977"
+ ],
+ "textureIds": [
+  "rbxassetid://75440041656606"
+ ]
+}

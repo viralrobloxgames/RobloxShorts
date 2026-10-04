@@ -1,0 +1,51 @@
+{
+ "item": "anomalocaris_2",
+ "category": "creatures",
+ "sourceName": "Anomalocaris",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Anomalocaris",
+ "size": [
+  7.2359,
+  3.1143,
+  16.3862
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "mouth_R",
+  "mouth_L",
+  "head",
+  "leg01_R",
+  "leg03_R",
+  "tail",
+  "leg01_L",
+  "leg02_R",
+  "torso02",
+  "leg02_L",
+  "torso03",
+  "torso01",
+  "leg03_L"
+ ],
+ "joints": 13,
+ "bones": 0,
+ "parts": 16,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://108244157585123",
+  "rbxassetid://108585381679914",
+  "rbxassetid://111582532720957",
+  "rbxassetid://123901932938178",
+  "rbxassetid://128819908090549",
+  "rbxassetid://131359349667432",
+  "rbxassetid://139390851263611",
+  "rbxassetid://71013366227528",
+  "rbxassetid://74870474116601",
+  "rbxassetid://77118054314938",
+  "rbxassetid://89052659055486",
+  "rbxassetid://92480712507874",
+  "rbxassetid://92753089639007",
+  "rbxassetid://94567229484033",
+  "rbxassetid://96156740923788",
+  "rbxassetid://98972663234656"
+ ],
+ "textureIds": []
+}

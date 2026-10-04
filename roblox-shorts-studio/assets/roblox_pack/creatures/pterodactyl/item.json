@@ -1,0 +1,50 @@
+{
+ "item": "pterodactyl",
+ "category": "creatures",
+ "sourceName": "Pterodactyl",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Pterodactyl",
+ "size": [
+  11.0891,
+  3.3096,
+  23.1934
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftWing",
+  "RightFoot",
+  "LeftFoot",
+  "Torso",
+  "Head",
+  "RightWing",
+  "LeftLeg",
+  "RightLeg"
+ ],
+ "joints": 8,
+ "bones": 0,
+ "parts": 20,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100119804923693",
+  "rbxassetid://101733705185437",
+  "rbxassetid://106258442506868",
+  "rbxassetid://111878517151781",
+  "rbxassetid://114070193924745",
+  "rbxassetid://114171930218275",
+  "rbxassetid://118915670809100",
+  "rbxassetid://124274474287551",
+  "rbxassetid://125718177739895",
+  "rbxassetid://127795167201557",
+  "rbxassetid://137268087064446",
+  "rbxassetid://138315366028419",
+  "rbxassetid://138451674536905",
+  "rbxassetid://74339981011470",
+  "rbxassetid://74583031869273",
+  "rbxassetid://75729070127040",
+  "rbxassetid://76194370396988",
+  "rbxassetid://76884890739996",
+  "rbxassetid://78548557832271",
+  "rbxassetid://94734520825629"
+ ],
+ "textureIds": []
+}

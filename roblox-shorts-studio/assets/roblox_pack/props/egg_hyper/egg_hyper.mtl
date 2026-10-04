@@ -1,0 +1,49 @@
+# Materials for egg_hyper. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_6cb841
+Kd 0.4235 0.7216 0.2549
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_52ff2f
+Kd 0.3216 1.0000 0.1843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_3bff30
+Kd 0.2314 1.0000 0.1882
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_4f862f
+Kd 0.3098 0.5255 0.1843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_b3ff61
+Kd 0.7020 1.0000 0.3804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_89e853
+Kd 0.5373 0.9098 0.3255
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_85ff36
+Kd 0.5216 1.0000 0.2118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

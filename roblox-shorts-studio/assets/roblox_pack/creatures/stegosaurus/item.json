@@ -1,0 +1,31 @@
+{
+ "item": "stegosaurus",
+ "category": "creatures",
+ "sourceName": "Stegosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Stegosaurus",
+ "size": [
+  12.6,
+  16.275,
+  31.5
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LowerTorso",
+  "UpperTorso",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2"
+ ],
+ "joints": 8,
+ "bones": 0,
+ "parts": 61,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

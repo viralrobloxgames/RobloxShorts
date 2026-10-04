@@ -1,0 +1,47 @@
+{
+ "item": "glyptodont",
+ "category": "creatures",
+ "sourceName": "Glyptodont",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Glyptodont",
+ "size": [
+  7.1065,
+  3.5282,
+  2.8613
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Cube.010",
+  "Cube.006",
+  "Cube.001",
+  "Cube.005",
+  "Cube.009",
+  "Cube.003",
+  "Cube.002",
+  "Cube.004",
+  "Cube.007",
+  "Cube.026"
+ ],
+ "joints": 10,
+ "bones": 22,
+ "parts": 10,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100356431537577",
+  "rbxassetid://110635742265359",
+  "rbxassetid://138219761228470",
+  "rbxassetid://71619572484631",
+  "rbxassetid://74537221525060",
+  "rbxassetid://80155046157375",
+  "rbxassetid://81430506037454",
+  "rbxassetid://81482648672569",
+  "rbxassetid://93592101977041",
+  "rbxassetid://99446463852317"
+ ],
+ "textureIds": [
+  "rbxassetid://131607586423745",
+  "rbxassetid://76870949748978",
+  "rbxassetid://90895932911563",
+  "rbxassetid://97890726629792"
+ ]
+}

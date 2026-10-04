@@ -1,0 +1,22 @@
+{
+ "item": "egg_diplodocus",
+ "category": "props",
+ "sourceName": "Diplodocus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Diplodocus",
+ "size": [
+  6.3941,
+  10.4631,
+  6.3945
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_diplodocus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 10,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

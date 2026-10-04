@@ -1,0 +1,26 @@
+{
+ "item": "animal_gallimimus",
+ "category": "creatures",
+ "sourceName": "Gallimimus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Gallimimus",
+ "size": [
+  21.8589,
+  13.0933,
+  5.1104
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_gallimimus"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://77339770970673"
+ ],
+ "textureIds": [
+  "rbxassetid://108459650587106"
+ ]
+}

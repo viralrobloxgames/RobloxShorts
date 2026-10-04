@@ -1,0 +1,26 @@
+{
+ "item": "animal_shark",
+ "category": "creatures",
+ "sourceName": "Shark",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Shark",
+ "size": [
+  8.9907,
+  4.8433,
+  3.9746
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_shark"
+ ],
+ "joints": 0,
+ "bones": 20,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://107807028741605"
+ ],
+ "textureIds": [
+  "rbxassetid://91744293928277"
+ ]
+}

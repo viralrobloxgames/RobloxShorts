@@ -1,0 +1,26 @@
+{
+ "item": "animal_triceratops",
+ "category": "creatures",
+ "sourceName": "Triceratops",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Triceratops",
+ "size": [
+  14.1072,
+  8.6187,
+  7.7295
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_triceratops"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://112486620653060"
+ ],
+ "textureIds": [
+  "rbxassetid://131763679284372"
+ ]
+}

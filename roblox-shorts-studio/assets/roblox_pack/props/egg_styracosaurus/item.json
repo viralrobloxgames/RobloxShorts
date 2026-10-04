@@ -1,0 +1,22 @@
+{
+ "item": "egg_styracosaurus",
+ "category": "props",
+ "sourceName": "Styracosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Styracosaurus",
+ "size": [
+  3.4877,
+  4.6501,
+  3.4873
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_styracosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

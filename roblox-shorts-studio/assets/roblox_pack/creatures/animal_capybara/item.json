@@ -1,0 +1,26 @@
+{
+ "item": "animal_capybara",
+ "category": "creatures",
+ "sourceName": "Capybara",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Capybara",
+ "size": [
+  3.9419,
+  3.5657,
+  2.0684
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_capybara"
+ ],
+ "joints": 0,
+ "bones": 24,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://90928259366840"
+ ],
+ "textureIds": [
+  "rbxassetid://93219049099865"
+ ]
+}

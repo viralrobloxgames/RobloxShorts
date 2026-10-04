@@ -1,0 +1,70 @@
+# Materials for eggshell_dinosaur. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_0f79a7
+Kd 0.0588 0.4745 0.6549
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_883e3e
+Kd 0.5333 0.2431 0.2431
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_efb838
+Kd 0.9373 0.7216 0.2196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_edeaea
+Kd 0.9294 0.9176 0.9176
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_fff3c2
+Kd 1.0000 0.9529 0.7608
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_17b9ff
+Kd 0.0902 0.7255 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_00557f
+Kd 0.0000 0.3333 0.4980
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_0d668c
+Kd 0.0510 0.4000 0.5490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_0a516f
+Kd 0.0392 0.3176 0.4353
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

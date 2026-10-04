@@ -1,0 +1,26 @@
+{
+ "item": "egg_basic",
+ "category": "props",
+ "sourceName": "Eggs/BasicEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/BasicEgg",
+ "size": [
+  1.5711,
+  2.0948,
+  1.5713
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E1U",
+  "E1D",
+  "E3",
+  "E2D",
+  "E2U"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

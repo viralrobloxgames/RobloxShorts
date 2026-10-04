@@ -1,0 +1,36 @@
+{
+ "item": "machine_dinosaur",
+ "category": "creatures",
+ "sourceName": "MachineDinosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.MachineDinosaur",
+ "size": [
+  24,
+  32.2063,
+  41.7192
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightLowerArm",
+  "Mouth",
+  "LeftUpperArm",
+  "UpperTorso",
+  "LeftUpperLeg",
+  "RightLowerLeg",
+  "Head",
+  "RightFoot",
+  "LeftLowerArm",
+  "Tail",
+  "LeftLowerLeg",
+  "LeftFoot",
+  "LowerTorso",
+  "RightUpperLeg",
+  "RightUpperArm"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 176,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

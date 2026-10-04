@@ -1,0 +1,26 @@
+{
+ "item": "animal_cobra",
+ "category": "creatures",
+ "sourceName": "Cobra",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Cobra",
+ "size": [
+  18.6339,
+  6.2515,
+  3.3584
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_cobra"
+ ],
+ "joints": 0,
+ "bones": 14,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://91877051637746"
+ ],
+ "textureIds": [
+  "rbxassetid://119564378726111"
+ ]
+}

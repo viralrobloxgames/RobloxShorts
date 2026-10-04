@@ -1,0 +1,26 @@
+{
+ "item": "animal_guienna_pig",
+ "category": "creatures",
+ "sourceName": "GuiennaPig",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.GuiennaPig",
+ "size": [
+  3.7438,
+  3.2,
+  2.4658
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_guienna_pig"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://97653226233919"
+ ],
+ "textureIds": [
+  "rbxassetid://82835438662728"
+ ]
+}

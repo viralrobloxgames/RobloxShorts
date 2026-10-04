@@ -1,0 +1,48 @@
+{
+ "item": "bronto",
+ "category": "creatures",
+ "sourceName": "Bronto",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Bronto",
+ "size": [
+  7.7455,
+  25.2092,
+  29.9995
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftLeg",
+  "Torso",
+  "Tail",
+  "Neck",
+  "LeftFoot",
+  "RightLeg",
+  "LeftHand",
+  "RightArm",
+  "RightFoot",
+  "LeftArm",
+  "Head",
+  "RightHand"
+ ],
+ "joints": 12,
+ "bones": 0,
+ "parts": 14,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://105984704006236",
+  "rbxassetid://111740105691289",
+  "rbxassetid://111918131256914",
+  "rbxassetid://112375656780595",
+  "rbxassetid://113763302934861",
+  "rbxassetid://121203967228941",
+  "rbxassetid://138323091476750",
+  "rbxassetid://138867795542201",
+  "rbxassetid://72857489976082",
+  "rbxassetid://86162397482824",
+  "rbxassetid://86389772224553",
+  "rbxassetid://90827376559792",
+  "rbxassetid://92441004022467",
+  "rbxassetid://96576072906300"
+ ],
+ "textureIds": []
+}

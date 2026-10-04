@@ -1,0 +1,28 @@
+# Materials for egg_basic. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffeecb_shiny
+Kd 1.0000 0.9333 0.7961
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_ffa355_shiny
+Kd 1.0000 0.6392 0.3333
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_ffc68f_shiny
+Kd 1.0000 0.7765 0.5608
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_ffd9ba_shiny
+Kd 1.0000 0.8510 0.7294
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2

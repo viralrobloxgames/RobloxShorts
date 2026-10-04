@@ -1,0 +1,36 @@
+{
+ "item": "tyrannosaurus",
+ "category": "creatures",
+ "sourceName": "Tyrannosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Tyrannosaurus",
+ "size": [
+  13.2001,
+  21.2,
+  27.1338
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "Tail",
+  "RightUpperLeg",
+  "RightUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "Mouth",
+  "LeftFoot",
+  "RightLowerLeg",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "RightFoot",
+  "LeftLowerLeg",
+  "LeftUpperArm"
+ ],
+ "joints": 13,
+ "bones": 0,
+ "parts": 95,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

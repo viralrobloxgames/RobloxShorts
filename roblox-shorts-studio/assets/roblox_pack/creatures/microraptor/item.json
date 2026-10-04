@@ -1,0 +1,31 @@
+{
+ "item": "microraptor",
+ "category": "creatures",
+ "sourceName": "Microraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Microraptor",
+ "size": [
+  23.1688,
+  4.4645,
+  17.4839
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftUpperArm",
+  "LowerTorso",
+  "Tail",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 67,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

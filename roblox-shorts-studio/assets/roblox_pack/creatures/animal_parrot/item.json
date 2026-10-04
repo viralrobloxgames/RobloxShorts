@@ -1,0 +1,26 @@
+{
+ "item": "animal_parrot",
+ "category": "creatures",
+ "sourceName": "Parrot",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Parrot",
+ "size": [
+  4.34,
+  2.7832,
+  1.749
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_parrot"
+ ],
+ "joints": 0,
+ "bones": 16,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://78680129469312"
+ ],
+ "textureIds": [
+  "rbxassetid://124199404507917"
+ ]
+}

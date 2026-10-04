@@ -1,0 +1,28 @@
+{
+ "item": "lod_velociraptor",
+ "category": "creatures",
+ "sourceName": "PetLOD/Velociraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Velociraptor",
+ "size": [
+  12.481,
+  4.7986,
+  3.207
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_velociraptor"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://109867143591205",
+  "rbxassetid://111949170029061",
+  "rbxassetid://117670696684268",
+  "rbxassetid://123868051900997",
+  "rbxassetid://136837336053292"
+ ],
+ "textureIds": []
+}

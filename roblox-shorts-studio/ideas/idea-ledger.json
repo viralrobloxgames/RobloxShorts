@@ -74,7 +74,7 @@
       "title": "Leo Gave Everyone Admin",
       "series": "admin for one round (part 3)",
       "created": "2026-10-01",
-      "status": "delivered_local_review",
+      "status": "published",
       "logline": "Leo means to kick everyone but types admin all; an admin war breaks out (explode, invisible-with-floating-hair, giant, rocket) while Mia quietly types one long command that strips the boys of admin and makes them dance - but she forgot the AFK noob, who still has admin and just got back from dinner.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/leo-gave-everyone-admin"
@@ -83,7 +83,7 @@
       "title": "The Noob Has Admin",
       "series": "admin for one round (part 4)",
       "created": "2026-10-02",
-      "status": "delivered_local_review",
+      "status": "published",
       "logline": "The noob gets admin and turns out to be a pro who counters everyone's signature moves; Mia never moves all round, Leo pokes her and she falls like a plank, then the noob types gg and it posts under Mia's name - the noob is Mia's alt, so in Part 3 she didn't forget him.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-noob-has-admin"
@@ -92,16 +92,52 @@
       "title": "Mia Had Two Crowns",
       "series": "admin for one round (part 5)",
       "created": "2026-10-02",
-      "status": "delivered_local_review",
+      "status": "published",
       "logline": "Leo and Max team up against Mia's two accounts, discover only one can move at a time and overwhelm her; she freezes herself on the wrong window, then typos 'admin Leo and Max' - their alliance lasts one second and they kick each other. Mia wins by accident; Skye joins the game.",
       "platform": "TikTok (>65 s) / YouTube Shorts",
       "project": "projects/mia-had-two-crowns"
     },
     {
+      "title": "Every Jump Makes You Bigger",
+      "series": "every x makes you y (posted as a standalone)",
+      "created": "2026-10-02",
+      "status": "published",
+      "logline": "In an obby where every jump makes you bigger, Leo jumps fifty times and strides to the finish, which is a tiny door. He blocks it out of spite; Max baits him into jumping to a hundred, the floor breaks and Leo falls out of the map - and respawns at his last checkpoint, right next to the door, tiny again. Leo wins, then does a victory jump in a very small room.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/every-jump-makes-you-bigger"
+    },
+    {
+      "title": "Every Step Makes You Faster",
+      "series": "every x makes you y (part 2)",
+      "created": "2026-10-03",
+      "status": "script_draft_awaiting_approval",
+      "logline": "In a game where every step makes you faster, Leo runs laps of the lobby to speed 1,000, crosses the map in one second and can't stop - off the end of the map three times. Max hops the course (jumps aren't steps) at speed 16. Leo runs circles around Max to blow him into the lava; the wind becomes a tornado that throws Max onto the finish. Leo still can't stop, hits 9,999 and the anti-cheat kicks him for speed hacking. In a speed game.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/every-step-makes-you-faster"
+    },
+    {
+      "title": "Stealing a T-Rex Egg",
+      "series": "steal an egg (part 1)",
+      "created": "2026-10-03",
+      "status": "narration_done",
+      "logline": "A Steal an Egg parody on the game's own T-rex and eggs: Leo and Max get flung four ways trying to steal the best egg (headbutt, higher, eaten bush, own bear trap), team up (Max decoys, Leo waddles the giant egg to the safe zone) and hatch a $1/s baby - while Mia, sneaking in the background all video, took the other twelve. They hatch and cry; safe zones stop guardians, not moms: Mom walks in, takes her babies and Mia. Last shot = first shot, with Mia as the egg.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/stealing-a-t-rex-egg"
+    },
+    {
+      "title": "The Super Nose Detective",
+      "series": "super nose detective (case 1)",
+      "created": "2026-10-03",
+      "status": "narration_done",
+      "logline": "A Roblox take on the 70s Miami detective parody Dick Snifford (flirting yes, no swearing or sexual references): Detective Max Sniffwell has the Super Nose gamepass and solves the stolen Golden Donut case by sniffing a sock. Skye asks if he's single and Mia asks him to stay at a pool party ('Tempting. But I'm on a case.'); he sneezes a pepper-throwing red herring into the pool and follows the trail back to Chief Leo, who has one sock, sprinkles on his face and half the donut. Leo slides him the other half, his cut. 'Tempting.' Case closed.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-super-nose-detective"
+    },
+    {
       "title": "The Server Says One",
       "series": "After Hours horror (part 1 of 2)",
       "created": "2026-10-02",
-      "status": "delivered_local_review",
+      "status": "published",
       "logline": "The server says one player online, but a faceless player stands in front of Max, copying him half a second late. It is his mirror image, and it creeps closer with every copy. Max fakes left, cuts right and slams the EXIT door; the copy, running the wrong way, hits the other side. Then the list updates: two players online. Max. And Max.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-server-says-one"
@@ -147,7 +183,7 @@
       "title": "The Last Penalty",
       "series": "standalone story",
       "created": "2026-10-03",
-      "status": "script_draft_awaiting_approval",
+      "status": "delivered_local_review",
       "logline": "You're the keeper facing the last penalty of the final. Leo always looks at the corner he's aiming for, so you dive early and save it, but it's retaken because you left your line. Knowing he's been read, Leo shuts his eyes, and you stay on your line. Unable to see, he scuffs it into the grass and it rolls to your boot.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-last-penalty"

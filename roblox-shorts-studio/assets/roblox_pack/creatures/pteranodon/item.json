@@ -1,0 +1,31 @@
+{
+ "item": "pteranodon",
+ "category": "creatures",
+ "sourceName": "Pteranodon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Pteranodon",
+ "size": [
+  22.5175,
+  8.1134,
+  15.7852
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LowerTorso",
+  "RightUpperLeg",
+  "Tail",
+  "LeftUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 46,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

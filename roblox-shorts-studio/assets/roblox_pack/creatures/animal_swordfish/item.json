@@ -1,0 +1,26 @@
+{
+ "item": "animal_swordfish",
+ "category": "creatures",
+ "sourceName": "Swordfish",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Swordfish",
+ "size": [
+  10.581,
+  3.0537,
+  2.668
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_swordfish"
+ ],
+ "joints": 0,
+ "bones": 18,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://78914770501949"
+ ],
+ "textureIds": [
+  "rbxassetid://84251424065173"
+ ]
+}

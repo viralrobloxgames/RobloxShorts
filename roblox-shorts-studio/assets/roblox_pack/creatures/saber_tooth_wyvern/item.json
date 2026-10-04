@@ -1,0 +1,56 @@
+{
+ "item": "saber_tooth_wyvern",
+ "category": "creatures",
+ "sourceName": "Saber Tooth Wyvern",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Saber Tooth Wyvern",
+ "size": [
+  36.3283,
+  15.5522,
+  44.293
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Saber Tooth Wyvern.007",
+  "Saber Tooth Wyvern.012",
+  "Saber Tooth Wyvern.014",
+  "Saber Tooth Wyvern.008",
+  "Saber Tooth Wyvern.013",
+  "Saber Tooth Wyvern.002",
+  "Saber Tooth Wyvern.001",
+  "Saber Tooth Wyvern",
+  "Saber Tooth Wyvern.005",
+  "Saber Tooth Wyvern.015",
+  "Saber Tooth Wyvern.011",
+  "Saber Tooth Wyvern.016",
+  "Saber Tooth Wyvern.003",
+  "Saber Tooth Wyvern.017",
+  "Saber Tooth Wyvern.010",
+  "Saber Tooth Wyvern.009"
+ ],
+ "joints": 16,
+ "bones": 23,
+ "parts": 16,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://103690690805818",
+  "rbxassetid://103734784401282",
+  "rbxassetid://106827814513987",
+  "rbxassetid://110705188329822",
+  "rbxassetid://110980994863599",
+  "rbxassetid://118590976077399",
+  "rbxassetid://120445243839584",
+  "rbxassetid://124524960984958",
+  "rbxassetid://124869239251935",
+  "rbxassetid://72898783887531",
+  "rbxassetid://74462428382717",
+  "rbxassetid://74796473944371",
+  "rbxassetid://81762587851681",
+  "rbxassetid://85222819251442",
+  "rbxassetid://88887837979145",
+  "rbxassetid://94325752111115"
+ ],
+ "textureIds": [
+  "rbxassetid://92789682682309"
+ ]
+}

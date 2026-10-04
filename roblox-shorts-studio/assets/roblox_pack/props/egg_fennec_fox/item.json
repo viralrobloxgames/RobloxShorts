@@ -1,0 +1,37 @@
+{
+ "item": "egg_fennec_fox",
+ "category": "props",
+ "sourceName": "Eggs/FennecFoxEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/FennecFoxEgg",
+ "size": [
+  10.7158,
+  8.3945,
+  8.9819
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E2U",
+  "E3",
+  "E2D",
+  "E1D",
+  "E1U"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 20,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100438636890191",
+  "rbxassetid://107395931919687",
+  "rbxassetid://107753211440009",
+  "rbxassetid://111823829305757",
+  "rbxassetid://113372005397490",
+  "rbxassetid://117409770745697",
+  "rbxassetid://125418358372184",
+  "rbxassetid://128004465744048",
+  "rbxassetid://134452567269174",
+  "rbxassetid://138525333683624"
+ ],
+ "textureIds": []
+}

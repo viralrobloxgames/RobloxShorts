@@ -1,0 +1,144 @@
+# Materials for sabertooth_squirrel. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_sabertooth_squirrel_i004p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p001x.png
+
+newmtl tex_sabertooth_squirrel_i004p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p002x.png
+
+newmtl tex_sabertooth_squirrel_i004p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p003x.png
+
+newmtl tex_sabertooth_squirrel_i004p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p004x.png
+
+newmtl tex_sabertooth_squirrel_i004p005x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p005x.png
+
+newmtl tex_sabertooth_squirrel_i004p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p006x.png
+
+newmtl tex_sabertooth_squirrel_i004p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p007x.png
+
+newmtl tex_sabertooth_squirrel_i004p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p008x.png
+
+newmtl tex_sabertooth_squirrel_i004p009x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p009x.png
+
+newmtl tex_sabertooth_squirrel_i004p010x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p010x.png
+
+newmtl tex_sabertooth_squirrel_i004p011x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p011x.png
+
+newmtl tex_sabertooth_squirrel_i004p012x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p012x.png
+
+newmtl tex_sabertooth_squirrel_i004p013x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p013x.png
+
+newmtl tex_sabertooth_squirrel_i004p014x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p014x.png
+
+newmtl tex_sabertooth_squirrel_i004p015x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p015x.png
+
+newmtl tex_sabertooth_squirrel_i004p016x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p016x.png
+
+newmtl tex_sabertooth_squirrel_i004p017x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p017x.png
+
+newmtl tex_sabertooth_squirrel_i004p018x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd sabertooth_squirrel_i004p018x.png

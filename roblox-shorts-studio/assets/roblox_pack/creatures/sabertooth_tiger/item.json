@@ -1,0 +1,45 @@
+{
+ "item": "sabertooth_tiger",
+ "category": "creatures",
+ "sourceName": "Sabertooth Tiger",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Sabertooth Tiger",
+ "size": [
+  3.2134,
+  5.1838,
+  10.2705
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Head",
+  "BackRightLeg",
+  "FrontRightLeg",
+  "FrontLeftLeg",
+  "Tail",
+  "Torso",
+  "BackLeftLeg"
+ ],
+ "joints": 7,
+ "bones": 0,
+ "parts": 16,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://104830243108948",
+  "rbxassetid://108039990156217",
+  "rbxassetid://109009759701597",
+  "rbxassetid://110275025294133",
+  "rbxassetid://122572344173936",
+  "rbxassetid://123272071880397",
+  "rbxassetid://126716691596733",
+  "rbxassetid://134035871447948",
+  "rbxassetid://135423865958417",
+  "rbxassetid://140447651997459",
+  "rbxassetid://79435707388973",
+  "rbxassetid://84769391154953",
+  "rbxassetid://88482874651918",
+  "rbxassetid://96477891283707",
+  "rbxassetid://97703155888550",
+  "rbxassetid://98789411872603"
+ ],
+ "textureIds": []
+}

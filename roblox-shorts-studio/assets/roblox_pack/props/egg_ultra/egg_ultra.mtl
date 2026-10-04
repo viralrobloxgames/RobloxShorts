@@ -1,0 +1,78 @@
+# Materials for egg_ultra. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_7a3f0b
+Kd 0.4784 0.2471 0.0431
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff6300
+Kd 1.0000 0.3882 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_cb4706
+Kd 0.7961 0.2784 0.0235
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff7b1c
+Kd 1.0000 0.4824 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffda0a
+Kd 1.0000 0.8549 0.0392
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl e1u_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd egg_ultra_e1u_decal1.png
+
+newmtl c_ffed27
+Kd 1.0000 0.9294 0.1529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_b54500
+Kd 0.7098 0.2706 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_df7314
+Kd 0.8745 0.4510 0.0784
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f48236
+Kd 0.9569 0.5098 0.2118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff9e49
+Kd 1.0000 0.6196 0.2863
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

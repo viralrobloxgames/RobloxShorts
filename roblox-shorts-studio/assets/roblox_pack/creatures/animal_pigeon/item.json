@@ -1,0 +1,26 @@
+{
+ "item": "animal_pigeon",
+ "category": "creatures",
+ "sourceName": "Pigeon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Pigeon",
+ "size": [
+  3.7786,
+  2.4268,
+  1.4932
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_pigeon"
+ ],
+ "joints": 0,
+ "bones": 16,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://106510620378463"
+ ],
+ "textureIds": [
+  "rbxassetid://76023900511988"
+ ]
+}

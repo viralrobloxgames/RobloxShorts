@@ -1,0 +1,26 @@
+{
+ "item": "animal_turtle",
+ "category": "creatures",
+ "sourceName": "Turtle",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Turtle",
+ "size": [
+  3.351,
+  2.3132,
+  2.1865
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_turtle"
+ ],
+ "joints": 0,
+ "bones": 24,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://78390376205457"
+ ],
+ "textureIds": [
+  "rbxassetid://104726855429070"
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "item": "nothosaurus",
+ "category": "creatures",
+ "sourceName": "Nothosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Nothosaurus",
+ "size": [
+  9.0049,
+  5.6133,
+  28.6484
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "LeftUpperLeg",
+  "LeftUpperArm",
+  "Tail",
+  "LowerTorso",
+  "RightUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 76,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

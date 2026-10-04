@@ -1,0 +1,35 @@
+{
+ "item": "giganotosaurus",
+ "category": "creatures",
+ "sourceName": "Giganotosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Giganotosaurus",
+ "size": [
+  17.5,
+  17.4725,
+  42.3291
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "LeftFoot",
+  "LeftLowerLeg",
+  "LeftUpperLeg",
+  "RightFoot",
+  "LeftUpperArm",
+  "RightUpperArm",
+  "RightUpperLeg",
+  "LowerTorso",
+  "RightLowerLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "Tail"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 98,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

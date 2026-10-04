@@ -1,0 +1,31 @@
+{
+ "item": "triceratops",
+ "category": "creatures",
+ "sourceName": "Triceratops",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Triceratops",
+ "size": [
+  12,
+  17.9641,
+  27.5
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LowerTorso",
+  "RightUpperLeg",
+  "LeftUpperLeg",
+  "LeftUpperArm",
+  "Tail",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm"
+ ],
+ "joints": 8,
+ "bones": 0,
+ "parts": 50,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

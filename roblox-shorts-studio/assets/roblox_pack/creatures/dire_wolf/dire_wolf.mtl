@@ -1,0 +1,128 @@
+# Materials for dire_wolf. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_dire_wolf_i023p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p001x.png
+
+newmtl tex_dire_wolf_i023p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p002x.png
+
+newmtl tex_dire_wolf_i023p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p003x.png
+
+newmtl tex_dire_wolf_i023p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p004x.png
+
+newmtl tex_dire_wolf_i023p005x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p005x.png
+
+newmtl tex_dire_wolf_i023p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p006x.png
+
+newmtl tex_dire_wolf_i023p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p007x.png
+
+newmtl tex_dire_wolf_i023p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p008x.png
+
+newmtl tex_dire_wolf_i023p009x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p009x.png
+
+newmtl tex_dire_wolf_i023p010x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p010x.png
+
+newmtl tex_dire_wolf_i023p011x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p011x.png
+
+newmtl tex_dire_wolf_i023p012x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p012x.png
+
+newmtl tex_dire_wolf_i023p013x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p013x.png
+
+newmtl tex_dire_wolf_i023p014x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p014x.png
+
+newmtl tex_dire_wolf_i023p015x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p015x.png
+
+newmtl tex_dire_wolf_i023p016x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dire_wolf_i023p016x.png

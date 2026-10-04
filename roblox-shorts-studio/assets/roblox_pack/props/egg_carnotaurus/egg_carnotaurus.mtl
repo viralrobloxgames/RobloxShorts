@@ -1,0 +1,21 @@
+# Materials for egg_carnotaurus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_edeaea
+Kd 0.9294 0.9176 0.9176
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ccffcc
+Kd 0.8000 1.0000 0.8000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_7c9c6b
+Kd 0.4863 0.6118 0.4196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

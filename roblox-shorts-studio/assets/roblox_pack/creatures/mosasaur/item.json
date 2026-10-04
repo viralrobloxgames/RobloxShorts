@@ -1,0 +1,53 @@
+{
+ "item": "mosasaur",
+ "category": "creatures",
+ "sourceName": "Mosasaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Mosasaur",
+ "size": [
+  14.4169,
+  8.4403,
+  40.0859
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "tail01",
+  "tail02",
+  "tail03",
+  "leg_L_Hand",
+  "leg_L_Lower",
+  "leg_L",
+  "leg_R_Lower",
+  "leg_R",
+  "leg_R_Hand",
+  "torso",
+  "arm_L_Lower",
+  "arm_R_Lower",
+  "neck",
+  "mouth",
+  "head"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 70,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://105625172523242",
+  "rbxassetid://109997353635552",
+  "rbxassetid://112741874080892",
+  "rbxassetid://115740716040232",
+  "rbxassetid://125175639077245",
+  "rbxassetid://126964481294652",
+  "rbxassetid://127538407788707",
+  "rbxassetid://70784562721815",
+  "rbxassetid://71324905172870",
+  "rbxassetid://72073900552953",
+  "rbxassetid://80205484209680",
+  "rbxassetid://82166602990591",
+  "rbxassetid://91179131916883",
+  "rbxassetid://94439939487730",
+  "rbxassetid://97156715735267",
+  "rbxassetid://99541351058962"
+ ],
+ "textureIds": []
+}

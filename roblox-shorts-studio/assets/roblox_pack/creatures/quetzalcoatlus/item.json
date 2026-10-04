@@ -1,0 +1,30 @@
+{
+ "item": "quetzalcoatlus",
+ "category": "creatures",
+ "sourceName": "Quetzalcoatlus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Quetzalcoatlus",
+ "size": [
+  27,
+  9,
+  16
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "Tail"
+ ],
+ "joints": 8,
+ "bones": 0,
+ "parts": 37,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

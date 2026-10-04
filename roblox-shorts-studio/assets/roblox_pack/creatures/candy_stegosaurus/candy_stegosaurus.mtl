@@ -1,0 +1,91 @@
+# Materials for candy_stegosaurus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffffff
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_e63f3f
+Kd 0.9020 0.2471 0.2471
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_8ec527
+Kd 0.5569 0.7725 0.1529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_fff673
+Kd 1.0000 0.9647 0.4510
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_9f3434
+Kd 0.6235 0.2039 0.2039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6f4b36
+Kd 0.4353 0.2941 0.2118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff8c00
+Kd 1.0000 0.5490 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff8c92
+Kd 1.0000 0.5490 0.5725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_00aeff
+Kd 0.0000 0.6824 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_df9e54
+Kd 0.8745 0.6196 0.3294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff8183
+Kd 1.0000 0.5059 0.5137
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_abff52
+Kd 0.6706 1.0000 0.3216
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

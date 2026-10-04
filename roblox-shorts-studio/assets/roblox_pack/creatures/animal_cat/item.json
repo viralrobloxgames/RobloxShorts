@@ -1,0 +1,26 @@
+{
+ "item": "animal_cat",
+ "category": "creatures",
+ "sourceName": "Cat",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Cat",
+ "size": [
+  4.1952,
+  3.1892,
+  1.4336
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_cat"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://104726338120813"
+ ],
+ "textureIds": [
+  "rbxassetid://134174883892558"
+ ]
+}

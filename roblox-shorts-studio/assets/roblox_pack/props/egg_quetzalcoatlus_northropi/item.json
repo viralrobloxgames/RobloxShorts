@@ -1,0 +1,22 @@
+{
+ "item": "egg_quetzalcoatlus_northropi",
+ "category": "props",
+ "sourceName": "QuetzalcoatlusNorthropi",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.QuetzalcoatlusNorthropi",
+ "size": [
+  2.5835,
+  3.4446,
+  2.583
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_quetzalcoatlus_northropi"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

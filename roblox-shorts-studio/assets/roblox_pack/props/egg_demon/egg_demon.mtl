@@ -1,0 +1,63 @@
+# Materials for egg_demon. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_b900b9
+Kd 0.7255 0.0000 0.7255
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_820082
+Kd 0.5098 0.0000 0.5098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c600c6
+Kd 0.7765 0.0000 0.7765
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_630063
+Kd 0.3882 0.0000 0.3882
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_d635ff
+Kd 0.8392 0.2078 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6b327c
+Kd 0.4196 0.1961 0.4863
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_b70eff
+Kd 0.7176 0.0549 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_9541df
+Kd 0.5843 0.2549 0.8745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff00bf
+Kd 1.0000 0.0000 0.7490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

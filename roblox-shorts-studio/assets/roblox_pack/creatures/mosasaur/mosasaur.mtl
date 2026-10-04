@@ -1,0 +1,59 @@
+# Materials for mosasaur. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_bbb3b2
+Kd 0.7333 0.7020 0.6980
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_23478b
+Kd 0.1373 0.2784 0.5451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_0d69ac_neon
+Kd 0.0510 0.4118 0.6745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.0510 0.4118 0.6745
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_970000
+Kd 0.5922 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff4e2f_neon
+Kd 1.0000 0.3059 0.1843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.3059 0.1843
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f4ff21_neon
+Kd 0.9569 1.0000 0.1294
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.9569 1.0000 0.1294
+d 1.0000
+illum 2

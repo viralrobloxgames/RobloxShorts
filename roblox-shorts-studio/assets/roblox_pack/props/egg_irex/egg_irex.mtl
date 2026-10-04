@@ -1,0 +1,35 @@
+# Materials for egg_irex. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_7c777b
+Kd 0.4863 0.4667 0.4824
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff5959
+Kd 1.0000 0.3490 0.3490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_bbb3b2
+Kd 0.7333 0.7020 0.6980
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_cdcdcd
+Kd 0.8039 0.8039 0.8039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

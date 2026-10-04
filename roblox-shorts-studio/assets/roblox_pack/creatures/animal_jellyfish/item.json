@@ -1,0 +1,26 @@
+{
+ "item": "animal_jellyfish",
+ "category": "creatures",
+ "sourceName": "Jellyfish",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Jellyfish",
+ "size": [
+  3.118,
+  8.0723,
+  2.9785
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_jellyfish"
+ ],
+ "joints": 0,
+ "bones": 19,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://117797437989153"
+ ],
+ "textureIds": [
+  "rbxassetid://80409865831559"
+ ]
+}

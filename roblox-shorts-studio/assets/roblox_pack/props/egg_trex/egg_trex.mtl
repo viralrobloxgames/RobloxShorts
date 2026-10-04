@@ -1,0 +1,21 @@
+# Materials for egg_trex. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_fef3bb
+Kd 0.9961 0.9529 0.7333
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_fdea8d
+Kd 0.9922 0.9176 0.5529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_e29b40
+Kd 0.8863 0.6078 0.2510
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

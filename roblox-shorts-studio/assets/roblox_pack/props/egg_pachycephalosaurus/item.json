@@ -1,0 +1,22 @@
+{
+ "item": "egg_pachycephalosaurus",
+ "category": "props",
+ "sourceName": "Pachycephalosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Pachycephalosaurus",
+ "size": [
+  4.4122,
+  5.8831,
+  4.4121
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_pachycephalosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

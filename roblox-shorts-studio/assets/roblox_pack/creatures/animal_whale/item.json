@@ -1,0 +1,26 @@
+{
+ "item": "animal_whale",
+ "category": "creatures",
+ "sourceName": "Whale",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Whale",
+ "size": [
+  8.6597,
+  4.8057,
+  5.585
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_whale"
+ ],
+ "joints": 0,
+ "bones": 16,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://126830485951528"
+ ],
+ "textureIds": [
+  "rbxassetid://103220591413075"
+ ]
+}

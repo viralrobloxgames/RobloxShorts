@@ -1,0 +1,31 @@
+{
+ "item": "styracosaurus",
+ "category": "creatures",
+ "sourceName": "Styracosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Styracosaurus",
+ "size": [
+  11.2564,
+  12.2941,
+  19.8003
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm",
+  "UpperTorso",
+  "LeftUpperArm",
+  "LeftUpperLeg",
+  "RightUpperLeg",
+  "LowerTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 57,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

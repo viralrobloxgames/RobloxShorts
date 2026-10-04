@@ -1,0 +1,53 @@
+{
+ "item": "dodo_bird",
+ "category": "creatures",
+ "sourceName": "Dodo Bird",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Dodo Bird",
+ "size": [
+  1.7178,
+  4.4633,
+  4.3174
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftLeg",
+  "RightWing",
+  "Torso",
+  "RightFoot",
+  "Neck",
+  "Tail",
+  "LeftWing",
+  "LeftFoot",
+  "RightLeg",
+  "Head"
+ ],
+ "joints": 10,
+ "bones": 0,
+ "parts": 24,
+ "facingKnown": true,
+ "meshIds": [
+  "rbxassetid://101660634709548",
+  "rbxassetid://102988794426055",
+  "rbxassetid://103341330892161",
+  "rbxassetid://103499689674508",
+  "rbxassetid://106460942122905",
+  "rbxassetid://107056465709334",
+  "rbxassetid://113772040561088",
+  "rbxassetid://114908864420159",
+  "rbxassetid://123204630470065",
+  "rbxassetid://124513602697631",
+  "rbxassetid://124693883681114",
+  "rbxassetid://129652647801682",
+  "rbxassetid://134657765120088",
+  "rbxassetid://138771304679651",
+  "rbxassetid://139015759165258",
+  "rbxassetid://73524000376143",
+  "rbxassetid://75214832934682",
+  "rbxassetid://75627447403839",
+  "rbxassetid://76804856163526",
+  "rbxassetid://83692648228901",
+  "rbxassetid://88826208567061"
+ ],
+ "textureIds": []
+}

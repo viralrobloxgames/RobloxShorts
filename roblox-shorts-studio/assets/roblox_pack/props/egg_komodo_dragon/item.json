@@ -1,0 +1,22 @@
+{
+ "item": "egg_komodo_dragon",
+ "category": "props",
+ "sourceName": "KomodoDragon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.KomodoDragon",
+ "size": [
+  5.9205,
+  9.1499,
+  5.9209
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_komodo_dragon"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 9,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

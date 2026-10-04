@@ -1,0 +1,26 @@
+{
+ "item": "egg_bone_dragon",
+ "category": "props",
+ "sourceName": "Eggs/BoneDragonEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/BoneDragonEgg",
+ "size": [
+  8.9175,
+  9.5339,
+  15.7051
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E2U",
+  "E2D",
+  "E1U",
+  "E3",
+  "E1D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 25,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

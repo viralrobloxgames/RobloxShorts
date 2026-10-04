@@ -1,0 +1,21 @@
+# Materials for mammoth. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_785f59
+Kd 0.4706 0.3725 0.3490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_342217
+Kd 0.2039 0.1333 0.0902
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a3a2a5
+Kd 0.6392 0.6353 0.6471
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

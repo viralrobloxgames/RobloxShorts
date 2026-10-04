@@ -1,0 +1,26 @@
+{
+ "item": "animal_brachiosaurus",
+ "category": "creatures",
+ "sourceName": "Brachiosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Brachiosaurus",
+ "size": [
+  18.4207,
+  16.2646,
+  7.1484
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_brachiosaurus"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://131684842139666"
+ ],
+ "textureIds": [
+  "rbxassetid://117504011837046"
+ ]
+}

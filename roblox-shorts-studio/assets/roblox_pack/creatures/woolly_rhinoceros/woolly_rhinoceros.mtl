@@ -1,0 +1,85 @@
+# Materials for woolly_rhinoceros. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffcc99
+Kd 1.0000 0.8000 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_af9483
+Kd 0.6863 0.5804 0.5137
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff0000_neon
+Kd 1.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.0000 0.0000
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_aa5500
+Kd 0.6667 0.3333 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_694028
+Kd 0.4118 0.2510 0.1569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_7c5c46
+Kd 0.4863 0.3608 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_970000
+Kd 0.5922 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffaf00
+Kd 1.0000 0.6863 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_2c651d
+Kd 0.1725 0.3961 0.1137
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

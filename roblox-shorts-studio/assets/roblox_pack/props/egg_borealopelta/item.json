@@ -1,0 +1,22 @@
+{
+ "item": "egg_borealopelta",
+ "category": "props",
+ "sourceName": "Borealopelta",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Borealopelta",
+ "size": [
+  4.7364,
+  6.2434,
+  4.7363
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_borealopelta"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 6,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,82 @@
+# Materials for colossal_mammoth. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_4895d9
+Kd 0.2824 0.5843 0.8510
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_38486c
+Kd 0.2196 0.2824 0.4235
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_92e2ff
+Kd 0.5725 0.8863 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffffff
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000_neon
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.0000 0.0000 0.0000
+d 1.0000
+illum 2
+
+newmtl c_77929e_neon
+Kd 0.4667 0.5725 0.6196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.4667 0.5725 0.6196
+d 1.0000
+illum 2
+
+newmtl c_6fe0ff_neon
+Kd 0.4353 0.8784 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.4353 0.8784 1.0000
+d 1.0000
+illum 2
+
+newmtl c_1f3b4d_neon
+Kd 0.1216 0.2314 0.3020
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.1216 0.2314 0.3020
+d 1.0000
+illum 2
+
+newmtl c_395964
+Kd 0.2235 0.3490 0.3922
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_5eb3e8_neon
+Kd 0.3686 0.7020 0.9098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.3686 0.7020 0.9098
+d 1.0000
+illum 2
+
+newmtl c_549dde
+Kd 0.3294 0.6157 0.8706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

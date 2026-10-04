@@ -1,0 +1,36 @@
+{
+ "item": "anshun_saurus",
+ "category": "creatures",
+ "sourceName": "AnshunSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.AnshunSaurus",
+ "size": [
+  20,
+  27.1213,
+  32
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Mouth",
+  "LeftLowerLeg",
+  "RightLowerLeg",
+  "LeftUpperArm",
+  "LowerTorso",
+  "LeftFoot",
+  "Tail",
+  "RightUpperLeg",
+  "RightUpperArm",
+  "UpperTorso",
+  "LeftUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightFoot"
+ ],
+ "joints": 13,
+ "bones": 0,
+ "parts": 72,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

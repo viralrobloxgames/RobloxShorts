@@ -1,0 +1,41 @@
+{
+ "item": "mammoth_2",
+ "category": "creatures",
+ "sourceName": "Mammoth",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Mammoth",
+ "size": [
+  17.0042,
+  12.2351,
+  10.7217
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftArm",
+  "LeftLeg",
+  "Head",
+  "Torso",
+  "RightArm",
+  "RightLeg"
+ ],
+ "joints": 6,
+ "bones": 0,
+ "parts": 13,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://101245237795247",
+  "rbxassetid://105027599809383",
+  "rbxassetid://108267041205441",
+  "rbxassetid://112768214274602",
+  "rbxassetid://123238613126891",
+  "rbxassetid://133246091052821",
+  "rbxassetid://140588674756256",
+  "rbxassetid://72740364850791",
+  "rbxassetid://73879272909825",
+  "rbxassetid://75670802204087",
+  "rbxassetid://79188451066275",
+  "rbxassetid://82794465395605",
+  "rbxassetid://97147756585964"
+ ],
+ "textureIds": []
+}

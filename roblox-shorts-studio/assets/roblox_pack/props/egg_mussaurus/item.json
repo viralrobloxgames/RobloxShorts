@@ -1,0 +1,22 @@
+{
+ "item": "egg_mussaurus",
+ "category": "props",
+ "sourceName": "Mussaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Mussaurus",
+ "size": [
+  3.4606,
+  5.1909,
+  3.4609
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_mussaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,22 @@
+{
+ "item": "egg_forest_giganoto_saurus",
+ "category": "props",
+ "sourceName": "ForestGiganotoSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.ForestGiganotoSaurus",
+ "size": [
+  10.8996,
+  7.0983,
+  10.9004
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_forest_giganoto_saurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 6,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

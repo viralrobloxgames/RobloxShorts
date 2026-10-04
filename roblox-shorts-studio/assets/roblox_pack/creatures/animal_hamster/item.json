@@ -1,0 +1,26 @@
+{
+ "item": "animal_hamster",
+ "category": "creatures",
+ "sourceName": "Hamster",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Hamster",
+ "size": [
+  1.2329,
+  2.1218,
+  1.3545
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_hamster"
+ ],
+ "joints": 0,
+ "bones": 11,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://122325665646163"
+ ],
+ "textureIds": [
+  "rbxassetid://139186575922463"
+ ]
+}

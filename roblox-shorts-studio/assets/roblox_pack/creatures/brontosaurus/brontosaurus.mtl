@@ -1,0 +1,56 @@
+# Materials for brontosaurus. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_f9e999
+Kd 0.9765 0.9137 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_c470a0
+Kd 0.7686 0.4392 0.6275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_957977
+Kd 0.5843 0.4745 0.4667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_923978
+Kd 0.5725 0.2235 0.4706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_635f62
+Kd 0.3882 0.3725 0.3843
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_cd6298
+Kd 0.8039 0.3843 0.5961
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a75e9b
+Kd 0.6549 0.3686 0.6078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

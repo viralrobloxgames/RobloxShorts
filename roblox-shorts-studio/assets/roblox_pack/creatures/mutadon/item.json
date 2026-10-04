@@ -1,0 +1,31 @@
+{
+ "item": "mutadon",
+ "category": "creatures",
+ "sourceName": "Mutadon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Mutadon",
+ "size": [
+  31.5173,
+  8.75,
+  22.5386
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "RightUpperArm",
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperLeg",
+  "LeftUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 90,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

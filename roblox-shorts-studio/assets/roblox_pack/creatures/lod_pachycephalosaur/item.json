@@ -1,0 +1,28 @@
+{
+ "item": "lod_pachycephalosaur",
+ "category": "creatures",
+ "sourceName": "PetLOD/Pachycephalosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Pachycephalosaur",
+ "size": [
+  16.8651,
+  9.335,
+  4.1484
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_pachycephalosaur"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://101206379314894",
+  "rbxassetid://102020904641866",
+  "rbxassetid://107566924043629",
+  "rbxassetid://135918215615790",
+  "rbxassetid://75150585853957"
+ ],
+ "textureIds": []
+}

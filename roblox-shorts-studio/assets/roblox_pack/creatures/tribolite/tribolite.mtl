@@ -1,0 +1,28 @@
+# Materials for tribolite. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_9d6d51
+Kd 0.6157 0.4275 0.3176
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6d4c38
+Kd 0.4275 0.2980 0.2196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_d7c59a
+Kd 0.8431 0.7725 0.6039
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

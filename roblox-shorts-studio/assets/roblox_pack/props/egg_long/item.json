@@ -1,0 +1,22 @@
+{
+ "item": "egg_long",
+ "category": "props",
+ "sourceName": "Long",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Long",
+ "size": [
+  11.6257,
+  9.0422,
+  11.626
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_long"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 11,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

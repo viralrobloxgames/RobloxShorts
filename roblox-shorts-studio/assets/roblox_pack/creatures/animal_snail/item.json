@@ -1,0 +1,26 @@
+{
+ "item": "animal_snail",
+ "category": "creatures",
+ "sourceName": "Snail",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Snail",
+ "size": [
+  4.0089,
+  2.8325,
+  1.4229
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_snail"
+ ],
+ "joints": 0,
+ "bones": 7,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://81746487594074"
+ ],
+ "textureIds": [
+  "rbxassetid://131419706420619"
+ ]
+}

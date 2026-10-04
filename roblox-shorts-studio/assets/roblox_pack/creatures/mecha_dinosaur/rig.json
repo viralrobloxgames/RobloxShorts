@@ -1,0 +1,4618 @@
+{
+ "name": "mecha_dinosaur",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.MechaDinosaur",
+ "sourceName": "MechaDinosaur",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  19,
+  27.5,
+  38.3164
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": [
+  0.0,
+  0,
+  3.734
+ ],
+ "bodies": [
+  {
+   "name": "Head",
+   "parent": "UpperTorso",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    15.0,
+    -7.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    15.0,
+    -7.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    11.9288,
+    0.52,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    11.9288,
+    0.52,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "LeftFoot",
+   "parent": "LeftLowerLeg",
+   "joint": "LeftFoot",
+   "pivot": [
+    -7.0,
+    1.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -7.0,
+    1.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLowerArm",
+   "parent": "LeftUpperArm",
+   "joint": "LeftLowerArm",
+   "pivot": [
+    -5.0,
+    11.5,
+    -5.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -5.0,
+    11.5,
+    -5.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLowerLeg",
+   "parent": "LeftUpperLeg",
+   "joint": "LeftLowerLeg",
+   "pivot": [
+    -7.0,
+    5.682,
+    0.5522,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -7.0,
+    5.682,
+    0.5522,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftUpperArm",
+   "parent": "UpperTorso",
+   "joint": "LeftUpperArm",
+   "pivot": [
+    -5.0,
+    13.0,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -5.0,
+    13.0,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftUpperLeg",
+   "parent": "LowerTorso",
+   "joint": "LeftUpperLeg",
+   "pivot": [
+    -7.0,
+    9.4142,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -7.0,
+    9.4142,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LowerTorso",
+   "parent": "HumanoidRootPart",
+   "joint": "LowerTorso",
+   "pivot": [
+    0.0,
+    9.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    9.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Mouth",
+   "parent": "Head",
+   "joint": "Mouth",
+   "pivot": [
+    0.0,
+    17.0,
+    -10.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    17.0,
+    -10.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightFoot",
+   "parent": "RightLowerLeg",
+   "joint": "RightFoot",
+   "pivot": [
+    7.0,
+    1.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    7.0,
+    1.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLowerArm",
+   "parent": "RightUpperArm",
+   "joint": "RightLowerArm",
+   "pivot": [
+    5.0,
+    11.5,
+    -5.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    5.0,
+    11.5,
+    -5.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLowerLeg",
+   "parent": "RightUpperLeg",
+   "joint": "RightLowerLeg",
+   "pivot": [
+    7.0,
+    5.682,
+    0.5522,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    7.0,
+    5.682,
+    0.5522,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightUpperArm",
+   "parent": "UpperTorso",
+   "joint": "RightUpperArm",
+   "pivot": [
+    5.0,
+    13.0,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    5.0,
+    13.0,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightUpperLeg",
+   "parent": "LowerTorso",
+   "joint": "RightUpperLeg",
+   "pivot": [
+    7.0,
+    9.4142,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    7.0,
+    9.4142,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "LowerTorso",
+   "joint": "Tail",
+   "pivot": [
+    0.0,
+    8.5491,
+    8.3813,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    8.5491,
+    8.3813,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "UpperTorso",
+   "parent": "LowerTorso",
+   "joint": "UpperTorso",
+   "pivot": [
+    0.0,
+    12.183,
+    0.0869,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    12.183,
+    0.0869,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "RightLowerLeg",
+   "part0": "RightUpperLeg",
+   "part1": "RightLowerLeg",
+   "c0": [
+    0,
+    -3.7322,
+    -3.182,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    7.0,
+    5.682,
+    0.5522,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightUpperArm",
+   "part0": "UpperTorso",
+   "part1": "RightUpperArm",
+   "c0": [
+    5,
+    0.817,
+    -3.3529,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    5.0,
+    13.0,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "UpperTorso",
+   "part1": "Head",
+   "c0": [
+    0,
+    2.817,
+    -7.2452,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    15.0,
+    -7.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftUpperArm",
+   "part0": "UpperTorso",
+   "part1": "LeftUpperArm",
+   "c0": [
+    -5,
+    0.817,
+    -3.3529,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -5.0,
+    13.0,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LowerTorso",
+   "part0": "HumanoidRootPart",
+   "part1": "LowerTorso",
+   "c0": [
+    0,
+    -2.4288,
+    3.2141,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    9.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftFoot",
+   "part0": "LeftLowerLeg",
+   "part1": "LeftFoot",
+   "c0": [
+    0,
+    -4.182,
+    3.182,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -7.0,
+    1.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLowerArm",
+   "part0": "LeftUpperArm",
+   "part1": "LeftLowerArm",
+   "c0": [
+    0,
+    -1.5,
+    -2.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -5.0,
+    11.5,
+    -5.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLowerLeg",
+   "part0": "LeftUpperLeg",
+   "part1": "LeftLowerLeg",
+   "c0": [
+    0,
+    -3.7322,
+    -3.182,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -7.0,
+    5.682,
+    0.5522,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightUpperLeg",
+   "part0": "LowerTorso",
+   "part1": "RightUpperLeg",
+   "c0": [
+    7,
+    -0.0858,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    7.0,
+    9.4142,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftUpperLeg",
+   "part0": "LowerTorso",
+   "part1": "LeftUpperLeg",
+   "c0": [
+    -7,
+    -0.0858,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -7.0,
+    9.4142,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "LowerTorso",
+   "part1": "Tail",
+   "c0": [
+    0,
+    -0.951,
+    4.6471,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    8.5491,
+    8.3813,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "UpperTorso",
+   "part0": "LowerTorso",
+   "part1": "UpperTorso",
+   "c0": [
+    0,
+    2.683,
+    -3.6471,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    12.183,
+    0.0869,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightFoot",
+   "part0": "RightLowerLeg",
+   "part1": "RightFoot",
+   "c0": [
+    0,
+    -4.182,
+    3.182,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    7.0,
+    1.5,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Mouth",
+   "part0": "Head",
+   "part1": "Mouth",
+   "c0": [
+    0,
+    2,
+    -3.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    17.0,
+    -10.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightLowerArm",
+   "part0": "RightUpperArm",
+   "part1": "RightLowerArm",
+   "c0": [
+    0,
+    -1.5,
+    -2.5,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    5.0,
+    11.5,
+    -5.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "RightUpperLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftUpperLeg",
+    "side": -1
+   }
+  ],
+  "front": [
+   {
+    "body": "RightUpperArm",
+    "side": 1
+   },
+   {
+    "body": "LeftUpperArm",
+    "side": -1
+   }
+  ],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head"
+  ],
+  "jaw": [
+   "Mouth"
+  ],
+  "root": null,
+  "downstream": [
+   "RightLowerLeg",
+   "LowerTorso",
+   "LeftFoot",
+   "LeftLowerArm",
+   "LeftLowerLeg",
+   "RightFoot",
+   "RightLowerArm"
+  ]
+ },
+ "parts": [
+  {
+   "object": "RightLowerArm",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    2,
+    3,
+    1
+   ],
+   "cframe": [
+    5.0,
+    11.0,
+    -7.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightLowerArm",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    5.0,
+    11.5,
+    -6.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightLowerArm",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    1
+   ],
+   "cframe": [
+    5.0,
+    10.0,
+    -6.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    8.5,
+    0.5,
+    -3.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    5.5,
+    1.0,
+    -2.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    5.5,
+    0.5,
+    -3.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    5,
+    2,
+    6
+   ],
+   "cframe": [
+    7.0,
+    1.0,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    7.0,
+    1.0,
+    7.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    5,
+    1,
+    2
+   ],
+   "cframe": [
+    7.0,
+    0.5,
+    -0.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    8.5,
+    1.0,
+    -2.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    7.0,
+    0.5,
+    9.2344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightFoot",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    1,
+    2
+   ],
+   "cframe": [
+    7.0,
+    1.5,
+    -0.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperLeg",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    6,
+    2
+   ],
+   "cframe": [
+    7.0,
+    10.4749,
+    4.7949,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperLeg",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    4,
+    5,
+    2
+   ],
+   "cframe": [
+    7.0,
+    9.0607,
+    3.3809,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperLeg",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    6,
+    2
+   ],
+   "cframe": [
+    7.0,
+    7.6465,
+    1.9668,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperLeg",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    3,
+    4,
+    1
+   ],
+   "cframe": [
+    7.0,
+    11.5355,
+    5.856,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    -5.5,
+    1.0,
+    -2.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    -8.5,
+    1.0,
+    -2.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    -7.0,
+    0.5,
+    9.2344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    1.0,
+    7.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    5,
+    1,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    0.5,
+    -0.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    1,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    1.5,
+    -0.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    -5.5,
+    0.5,
+    -3.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    -8.5,
+    0.5,
+    -3.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftFoot",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    5,
+    2,
+    6
+   ],
+   "cframe": [
+    -7.0,
+    1.0,
+    3.7344,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    1
+   ],
+   "cframe": [
+    2.5,
+    19.7273,
+    5.02,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    1
+   ],
+   "cframe": [
+    2.5,
+    20.2273,
+    4.1538,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    1,
+    2,
+    2
+   ],
+   "cframe": [
+    -1.0,
+    23.4773,
+    -1.4751,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    3
+   ],
+   "cframe": [
+    2.5,
+    21.7273,
+    1.5557,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    1,
+    2,
+    2
+   ],
+   "cframe": [
+    4.0,
+    23.4773,
+    -1.4751,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    6,
+    2,
+    7
+   ],
+   "cframe": [
+    0.0,
+    18.6962,
+    -0.1943,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    6
+   ],
+   "cframe": [
+    -2.5,
+    21.9773,
+    1.1226,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    1
+   ],
+   "cframe": [
+    -2.5,
+    19.7273,
+    5.02,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    1,
+    5,
+    1
+   ],
+   "cframe": [
+    0.0,
+    22.5933,
+    2.0557,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    7,
+    6,
+    8
+   ],
+   "cframe": [
+    0.0,
+    14.3661,
+    -2.6943,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    -2.5,
+    24.7762,
+    -0.7251,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    6
+   ],
+   "cframe": [
+    2.5,
+    21.9773,
+    1.1226,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    2.5,
+    22.1782,
+    -2.2251,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    5,
+    1,
+    6
+   ],
+   "cframe": [
+    0.0,
+    17.3971,
+    -0.9443,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    1,
+    2,
+    2
+   ],
+   "cframe": [
+    1.0,
+    23.4773,
+    -1.4751,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "cframe": [
+    0.0,
+    25.1914,
+    3.5557,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    -2.5,
+    22.1782,
+    -2.2251,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    5,
+    1,
+    6
+   ],
+   "cframe": [
+    0.0,
+    19.9952,
+    0.5557,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    2.5,
+    24.7762,
+    -0.7251,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    1
+   ],
+   "cframe": [
+    -2.5,
+    20.2273,
+    4.1538,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    1,
+    2,
+    2
+   ],
+   "cframe": [
+    -4.0,
+    23.4773,
+    -1.4751,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    7,
+    1,
+    8
+   ],
+   "cframe": [
+    0.0,
+    11.335,
+    -4.4443,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "UpperTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    3
+   ],
+   "cframe": [
+    -2.5,
+    21.7273,
+    1.5557,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftLowerLeg",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    7,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    3.5607,
+    1.9668,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftLowerLeg",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    1
+   ],
+   "cframe": [
+    -7.0,
+    6.3892,
+    -0.8618,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftLowerLeg",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    7,
+    1
+   ],
+   "cframe": [
+    -7.0,
+    4.6213,
+    3.0273,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftLowerArm",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    -5.0,
+    11.5,
+    -6.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftLowerArm",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    2,
+    3,
+    1
+   ],
+   "cframe": [
+    -5.0,
+    11.0,
+    -7.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftLowerArm",
+   "name": "Part",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    1
+   ],
+   "cframe": [
+    -5.0,
+    10.0,
+    -6.7656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    248,
+    248,
+    248
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperArm",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    3
+   ],
+   "cframe": [
+    -4.8928,
+    15.0,
+    -3.5625,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperArm",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    4,
+    4
+   ],
+   "cframe": [
+    -5.0,
+    12.5,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperArm",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    1,
+    2,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    12.5,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperLeg",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    6,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    10.4749,
+    4.7949,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperLeg",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    3,
+    4,
+    1
+   ],
+   "cframe": [
+    -7.0,
+    11.5355,
+    5.856,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperLeg",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    4,
+    5,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    9.0607,
+    3.3809,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LeftUpperLeg",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    6,
+    2
+   ],
+   "cframe": [
+    -7.0,
+    7.6465,
+    1.9668,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    2,
+    3
+   ],
+   "cframe": [
+    -2.5,
+    15.6962,
+    5.0024,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    3,
+    1,
+    3
+   ],
+   "cframe": [
+    -2.5,
+    12.3971,
+    7.7163,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    3,
+    1,
+    3
+   ],
+   "cframe": [
+    2.5,
+    14.3971,
+    4.2524,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    9,
+    7,
+    8
+   ],
+   "cframe": [
+    0.0,
+    9.933,
+    3.9844,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    2.5,
+    16.9952,
+    5.7524,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    3,
+    1,
+    3
+   ],
+   "cframe": [
+    2.5,
+    12.3971,
+    7.7163,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    -2.5,
+    14.9952,
+    9.2163,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    -2.5,
+    16.9952,
+    5.7524,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    2,
+    3
+   ],
+   "cframe": [
+    -2.5,
+    13.6962,
+    8.4663,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    9,
+    1,
+    8
+   ],
+   "cframe": [
+    0.0,
+    6.4689,
+    1.9844,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    2,
+    3
+   ],
+   "cframe": [
+    2.5,
+    15.6962,
+    5.0024,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    2,
+    3
+   ],
+   "cframe": [
+    2.5,
+    13.6962,
+    8.4663,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    3,
+    1,
+    3
+   ],
+   "cframe": [
+    -2.5,
+    14.3971,
+    4.2524,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "LowerTorso",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    2.5,
+    14.9952,
+    9.2163,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightLowerLeg",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    1
+   ],
+   "cframe": [
+    7.0,
+    6.389,
+    -0.8618,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightLowerLeg",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    7,
+    1
+   ],
+   "cframe": [
+    7.0,
+    4.6213,
+    3.0273,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightLowerLeg",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    7,
+    2
+   ],
+   "cframe": [
+    7.0,
+    3.5607,
+    1.9668,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.7071,
+    0.7071,
+    0.0,
+    -0.7071,
+    0.7071
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    5.0,
+    22.0,
+    -18.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    6,
+    3,
+    3
+   ],
+   "cframe": [
+    0.0,
+    23.0,
+    -17.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    1,
+    3,
+    2
+   ],
+   "cframe": [
+    -3.5,
+    23.0,
+    -18.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    1
+   ],
+   "cframe": [
+    4.5,
+    23.0,
+    -16.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    2
+   ],
+   "cframe": [
+    -5.0,
+    22.0,
+    -18.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    1
+   ],
+   "cframe": [
+    -4.5,
+    23.0,
+    -16.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    5
+   ],
+   "cframe": [
+    4.5,
+    26.0,
+    -7.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    5
+   ],
+   "cframe": [
+    -4.5,
+    26.0,
+    -7.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    -5.0,
+    23.5,
+    -18.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    14,
+    5,
+    5
+   ],
+   "cframe": [
+    0.0,
+    17.0,
+    -7.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "cframe": [
+    5.0,
+    23.5,
+    -18.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    12,
+    3,
+    3
+   ],
+   "cframe": [
+    0.0,
+    23.0,
+    -11.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    6,
+    2,
+    5
+   ],
+   "cframe": [
+    0.0,
+    25.5,
+    -7.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    12,
+    5,
+    5
+   ],
+   "cframe": [
+    0.0,
+    22.0,
+    -7.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    12,
+    3,
+    3
+   ],
+   "cframe": [
+    0.0,
+    23.0,
+    -14.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    12,
+    2,
+    3
+   ],
+   "cframe": [
+    0.0,
+    25.5,
+    -11.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color4",
+   "class": "Part",
+   "size": [
+    1,
+    3,
+    2
+   ],
+   "cframe": [
+    3.5,
+    23.0,
+    -18.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    91,
+    93,
+    105
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Head",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    12,
+    2,
+    9
+   ],
+   "cframe": [
+    0.0,
+    20.5,
+    -14.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperArm",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    1,
+    2,
+    2
+   ],
+   "cframe": [
+    7.0,
+    12.5,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperArm",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    3,
+    4,
+    4
+   ],
+   "cframe": [
+    5.0,
+    12.5,
+    -3.2656,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "RightUpperArm",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    2,
+    1,
+    3
+   ],
+   "cframe": [
+    4.8928,
+    15.0,
+    -3.5625,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Mouth",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    8,
+    2,
+    1
+   ],
+   "cframe": [
+    0.0,
+    18.5,
+    -10.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Mouth",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    10,
+    2,
+    8
+   ],
+   "cframe": [
+    0.0,
+    15.5,
+    -14.1582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Mouth",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    8,
+    1,
+    7
+   ],
+   "cframe": [
+    0.0,
+    17.0,
+    -13.6582,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    4,
+    3,
+    3
+   ],
+   "cframe": [
+    0.0,
+    7.0491,
+    10.9795,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    1
+   ],
+   "cframe": [
+    0.0,
+    5.0491,
+    14.4438,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    4,
+    4,
+    1
+   ],
+   "cframe": [
+    0.0,
+    4.5491,
+    15.3096,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    5,
+    5,
+    2
+   ],
+   "cframe": [
+    0.0,
+    5.7991,
+    13.1445,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color2",
+   "class": "Part",
+   "size": [
+    3,
+    3,
+    3
+   ],
+   "cframe": [
+    0.0,
+    3.5491,
+    17.042,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    27,
+    42,
+    53
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color3",
+   "class": "Part",
+   "size": [
+    1,
+    1,
+    2
+   ],
+   "cframe": [
+    0.0,
+    5.2811,
+    18.042,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    255,
+    0,
+    0
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    6,
+    5,
+    1
+   ],
+   "cframe": [
+    0.0,
+    7.0491,
+    10.9795,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "Tail",
+   "name": "Color1",
+   "class": "Part",
+   "size": [
+    6,
+    5,
+    2
+   ],
+   "cframe": [
+    0.0,
+    8.2991,
+    8.8145,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.866,
+    -0.5,
+    0.0,
+    0.5,
+    0.866
+   ],
+   "color": [
+    159,
+    161,
+    172
+   ],
+   "material": "Plastic"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

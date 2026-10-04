@@ -1,0 +1,79 @@
+# Materials for quetzalcoatlus_northropi. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_0989cf
+Kd 0.0353 0.5373 0.8118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_80bbdb
+Kd 0.5020 0.7333 0.8588
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_e29b40
+Kd 0.8863 0.6078 0.2510
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_0d69ac
+Kd 0.0510 0.4118 0.6745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ccffcc
+Kd 0.8000 1.0000 0.8000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl head_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd quetzalcoatlus_northropi_head_decal1.png
+
+newmtl head_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd quetzalcoatlus_northropi_head_decal2.png
+
+newmtl c_c4281c
+Kd 0.7686 0.1569 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff5959
+Kd 1.0000 0.3490 0.3490
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffcc99
+Kd 1.0000 0.8000 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_8c5b9f
+Kd 0.5490 0.3569 0.6235
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

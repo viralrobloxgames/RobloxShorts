@@ -1,0 +1,33 @@
+{
+ "item": "therizinosaurus",
+ "category": "creatures",
+ "sourceName": "Therizinosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Therizinosaurus",
+ "size": [
+  10,
+  16.25,
+  29.1377
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "LowerTorso",
+  "RightUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightLowerLeg",
+  "LeftLowerLeg",
+  "Tail",
+  "LeftUpperArm",
+  "UpperTorso",
+  "LeftUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 69,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

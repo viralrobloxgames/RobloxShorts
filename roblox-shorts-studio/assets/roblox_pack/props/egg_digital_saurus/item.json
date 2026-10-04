@@ -1,0 +1,22 @@
+{
+ "item": "egg_digital_saurus",
+ "category": "props",
+ "sourceName": "DigitalSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.DigitalSaurus",
+ "size": [
+  5.1669,
+  6.8892,
+  5.167
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_digital_saurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 7,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

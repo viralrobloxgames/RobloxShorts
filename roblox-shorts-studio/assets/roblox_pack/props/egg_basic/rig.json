@@ -1,0 +1,695 @@
+{
+ "name": "egg_basic",
+ "source": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/BasicEgg",
+ "sourceName": "Eggs/BasicEgg",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  1.5711,
+  2.0948,
+  1.5713
+ ],
+ "root": "RootPart",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "E1D",
+   "parent": "E2D",
+   "joint": "Motor6D",
+   "pivot": [
+    0.0,
+    0.262,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.0,
+    0.131,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "E1U",
+   "parent": "E2U",
+   "joint": "Motor6D",
+   "pivot": [
+    0.0,
+    1.8329,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.0,
+    1.9639,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "E2D",
+   "parent": "E3",
+   "joint": "Motor6D",
+   "pivot": [
+    0.0,
+    0.5238,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.0,
+    0.3928,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "E2U",
+   "parent": "E3",
+   "joint": "Motor6D",
+   "pivot": [
+    0.0,
+    1.571,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.0,
+    1.702,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "E3",
+   "parent": "RootPart",
+   "joint": "Motor6D",
+   "pivot": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "rest": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "hasGeometry": false
+  }
+ ],
+ "joints": [
+  {
+   "name": "Motor6D",
+   "part0": "E3",
+   "part1": "E2D",
+   "c0": [
+    0,
+    -0.5237,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.1309,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    0.5238,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Motor6D",
+   "part0": "E3",
+   "part1": "E2U",
+   "c0": [
+    0,
+    0.5237,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.1309,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    1.571,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Motor6D",
+   "part0": "RootPart",
+   "part1": "E3",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Motor6D",
+   "part0": "E2D",
+   "part1": "E1D",
+   "c0": [
+    0,
+    -0.1309,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0.1309,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    0.262,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Motor6D",
+   "part0": "E2U",
+   "part1": "E1U",
+   "c0": [
+    0,
+    0.1309,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    -0.1309,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    1.8329,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [
+  {
+   "name": "MutateFX",
+   "body": "RootPart",
+   "cframe": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "FishPT",
+   "body": "RootPart",
+   "cframe": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "Prompt",
+   "body": "RootPart",
+   "cframe": [
+    0.0,
+    0.2618,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "GUI",
+   "body": "RootPart",
+   "cframe": [
+    0.0,
+    2.4706,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [],
+  "front": [],
+  "tail": [],
+  "head": [],
+  "jaw": [],
+  "root": "E3",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "E1U",
+   "name": "E1U",
+   "class": "Part",
+   "size": [
+    1.0474,
+    0.2618,
+    1.0474
+   ],
+   "cframe": [
+    0.0,
+    1.9639,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    255,
+    238,
+    203
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "E1D",
+   "name": "E1D",
+   "class": "Part",
+   "size": [
+    1.0474,
+    0.2618,
+    1.0474
+   ],
+   "cframe": [
+    0.0,
+    0.131,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    255,
+    163,
+    85
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "E3",
+   "name": "E3",
+   "class": "Part",
+   "size": [
+    1.5711,
+    1.0474,
+    1.5711
+   ],
+   "cframe": [
+    0.0,
+    1.0474,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    255,
+    198,
+    143
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "E2D",
+   "name": "E2D",
+   "class": "Part",
+   "size": [
+    1.3092,
+    0.2618,
+    1.3092
+   ],
+   "cframe": [
+    0.0,
+    0.3928,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    255,
+    163,
+    85
+   ],
+   "material": "Plastic"
+  },
+  {
+   "object": "E2U",
+   "name": "E2U",
+   "class": "Part",
+   "size": [
+    1.3092,
+    0.2618,
+    1.3092
+   ],
+   "cframe": [
+    0.0,
+    1.702,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "color": [
+    255,
+    217,
+    186
+   ],
+   "material": "Plastic"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

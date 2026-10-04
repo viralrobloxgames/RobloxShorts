@@ -1,0 +1,44 @@
+# Materials for cameroceras. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_f2f3f3
+Kd 0.9490 0.9529 0.9529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6225d1
+Kd 0.3843 0.1451 0.8196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffffcc
+Kd 1.0000 1.0000 0.8000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl lowertorso_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd cameroceras_lowertorso_decal1.png
+
+newmtl lowertorso_decal2
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd cameroceras_lowertorso_decal2.png
+
+newmtl c_ff9494
+Kd 1.0000 0.5804 0.5804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

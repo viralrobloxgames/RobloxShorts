@@ -1,0 +1,22 @@
+{
+ "item": "egg_yangchuanosaurus",
+ "category": "props",
+ "sourceName": "Yangchuanosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Yangchuanosaurus",
+ "size": [
+  3.4446,
+  3.4446,
+  3.4443
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_yangchuanosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 4,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

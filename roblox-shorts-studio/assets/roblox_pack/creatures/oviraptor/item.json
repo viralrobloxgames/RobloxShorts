@@ -1,0 +1,33 @@
+{
+ "item": "oviraptor",
+ "category": "creatures",
+ "sourceName": "Oviraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Oviraptor",
+ "size": [
+  3.8523,
+  6.5598,
+  8.854
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LowerTorso",
+  "UpperTorso",
+  "RightUpperLeg",
+  "LeftUpperArm",
+  "LeftLowerLeg",
+  "RightUpperArm",
+  "RightLowerLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftUpperLeg",
+  "Tail"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 45,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

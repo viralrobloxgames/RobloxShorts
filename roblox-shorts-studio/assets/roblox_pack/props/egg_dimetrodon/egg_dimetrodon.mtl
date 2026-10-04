@@ -1,0 +1,7 @@
+# Materials for egg_dimetrodon. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_aba89e
+Kd 0.6706 0.6588 0.6196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

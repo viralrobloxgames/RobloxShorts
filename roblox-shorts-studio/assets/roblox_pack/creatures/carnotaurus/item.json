@@ -1,0 +1,35 @@
+{
+ "item": "carnotaurus",
+ "category": "creatures",
+ "sourceName": "Carnotaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Carnotaurus",
+ "size": [
+  10,
+  16.0446,
+  24.375
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftFoot",
+  "RightUpperLeg",
+  "LowerTorso",
+  "RightLowerLeg",
+  "LeftUpperArm",
+  "RightUpperArm",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "LeftLowerLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightFoot",
+  "Tail"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 55,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,42 @@
+{
+ "item": "egg_dumbo",
+ "category": "props",
+ "sourceName": "Eggs/DumboEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/DumboEgg",
+ "size": [
+  8.7766,
+  9.0658,
+  10.7383
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E3",
+  "E2U",
+  "E2D",
+  "E1U",
+  "E1D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 24,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100438636890191",
+  "rbxassetid://101066446859298",
+  "rbxassetid://108358740085153",
+  "rbxassetid://112161153561818",
+  "rbxassetid://112877316386702",
+  "rbxassetid://113906239530229",
+  "rbxassetid://118260247202205",
+  "rbxassetid://120718983708325",
+  "rbxassetid://127003234258542",
+  "rbxassetid://140560837137031",
+  "rbxassetid://74187792937742",
+  "rbxassetid://74790659677291",
+  "rbxassetid://85963842184612",
+  "rbxassetid://94146508703558",
+  "rbxassetid://97672564694972"
+ ],
+ "textureIds": []
+}

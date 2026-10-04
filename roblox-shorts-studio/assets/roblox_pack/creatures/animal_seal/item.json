@@ -1,0 +1,26 @@
+{
+ "item": "animal_seal",
+ "category": "creatures",
+ "sourceName": "Seal",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Seal",
+ "size": [
+  6.5378,
+  2.1467,
+  2.9277
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_seal"
+ ],
+ "joints": 0,
+ "bones": 18,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://121579563786089"
+ ],
+ "textureIds": [
+  "rbxassetid://125516394520657"
+ ]
+}

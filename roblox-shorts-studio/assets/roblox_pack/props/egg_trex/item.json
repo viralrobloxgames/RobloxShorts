@@ -1,0 +1,22 @@
+{
+ "item": "egg_trex",
+ "category": "props",
+ "sourceName": "Tyrannosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Tyrannosaurus",
+ "size": [
+  6.3941,
+  8.4285,
+  6.3945
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_trex"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 6,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

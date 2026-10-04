@@ -5,3 +5,7 @@ tools/raw_roblox_animations/
 tools/__pycache__/
 # fit check close-ups (the sheet and report are kept)
 fit_check/views/
+# Creature / egg batch manifests (megabytes; only useful together with _studio_raw; item.json and rig.json keep the data)
+tools/manifests/manifest_creatures_*.json
+tools/manifests/manifest_animals.json
+tools/manifests/manifest_eggs.json

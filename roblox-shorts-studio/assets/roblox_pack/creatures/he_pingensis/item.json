@@ -1,0 +1,36 @@
+{
+ "item": "he_pingensis",
+ "category": "creatures",
+ "sourceName": "HePingensis",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.HePingensis",
+ "size": [
+  13.5,
+  22.3457,
+  30.0513
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftUpperLeg",
+  "LeftUpperArm",
+  "LeftFoot",
+  "Tail",
+  "RightLowerArm",
+  "LeftLowerLeg",
+  "RightUpperArm",
+  "Mouth",
+  "RightFoot",
+  "RightLowerLeg",
+  "LeftLowerArm",
+  "Head",
+  "UpperTorso",
+  "RightUpperLeg",
+  "LowerTorso"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 132,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

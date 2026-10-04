@@ -1,0 +1,42 @@
+{
+ "item": "egg_little_monster",
+ "category": "props",
+ "sourceName": "Eggs/LittleMonsterEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/LittleMonsterEgg",
+ "size": [
+  4.9985,
+  6.0846,
+  6.8877
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E3",
+  "E2U",
+  "E1U",
+  "E2D",
+  "E1D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 34,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100438636890191",
+  "rbxassetid://118435483679182",
+  "rbxassetid://120090101998501",
+  "rbxassetid://120363809704253",
+  "rbxassetid://132324328410042",
+  "rbxassetid://135463455277428",
+  "rbxassetid://73865918913925",
+  "rbxassetid://83638351886206",
+  "rbxassetid://86004611953318",
+  "rbxassetid://86225672772812",
+  "rbxassetid://89590586917579",
+  "rbxassetid://90393572527698",
+  "rbxassetid://92762507633635",
+  "rbxassetid://93330305020751",
+  "rbxassetid://98709098895402"
+ ],
+ "textureIds": []
+}

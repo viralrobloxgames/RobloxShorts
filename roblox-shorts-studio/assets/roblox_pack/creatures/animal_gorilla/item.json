@@ -1,0 +1,26 @@
+{
+ "item": "animal_gorilla",
+ "category": "creatures",
+ "sourceName": "Gorilla",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Gorilla",
+ "size": [
+  8.1076,
+  7.0798,
+  5.3281
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_gorilla"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://75672403671342"
+ ],
+ "textureIds": [
+  "rbxassetid://116210730589350"
+ ]
+}

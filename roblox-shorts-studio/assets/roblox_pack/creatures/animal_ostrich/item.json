@@ -1,0 +1,26 @@
+{
+ "item": "animal_ostrich",
+ "category": "creatures",
+ "sourceName": "Ostrich",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Ostrich",
+ "size": [
+  3.4069,
+  4.5696,
+  1.7949
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_ostrich"
+ ],
+ "joints": 0,
+ "bones": 14,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://85572524437688"
+ ],
+ "textureIds": [
+  "rbxassetid://90380248657097"
+ ]
+}

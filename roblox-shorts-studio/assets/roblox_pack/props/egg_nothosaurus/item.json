@@ -1,0 +1,22 @@
+{
+ "item": "egg_nothosaurus",
+ "category": "props",
+ "sourceName": "Nothosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Nothosaurus",
+ "size": [
+  4.9024,
+  6.8091,
+  4.9023
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_nothosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

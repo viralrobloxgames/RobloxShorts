@@ -1,0 +1,1647 @@
+{
+ "name": "mutated_t_rex",
+ "source": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Mutated T-Rex",
+ "sourceName": "Mutated T-Rex",
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, +X is the creature's right, origin = bottom centre (feet on the ground). CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
+ "size": [
+  6.9003,
+  10.5824,
+  23.4229
+ ],
+ "root": "HumanoidRootPart",
+ "feetCentre": null,
+ "bodies": [
+  {
+   "name": "Head",
+   "parent": "Neck",
+   "joint": "Head",
+   "pivot": [
+    0.0,
+    8.4072,
+    -5.4922,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    8.4072,
+    -8.292,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "HumanoidRootPart",
+   "parent": null,
+   "joint": null,
+   "pivot": [
+    0.0,
+    6.6411,
+    0.3696,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    6.6411,
+    0.3696,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": false
+  },
+  {
+   "name": "LeftArm",
+   "parent": "Torso",
+   "joint": "Meshes/4_pets_RAW_Mutated_T_Rex_022",
+   "pivot": [
+    -1.8859,
+    6.9191,
+    -2.731,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -1.8859,
+    5.8291,
+    -3.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "LeftLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "LeftLeg",
+   "pivot": [
+    -2.5648,
+    6.4271,
+    1.4101,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -2.5648,
+    3.7272,
+    0.4902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Neck",
+   "parent": "NeckAlt",
+   "joint": "Neck",
+   "pivot": [
+    0.0,
+    7.9032,
+    -3.9668,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    7.9032,
+    -4.8369,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "NeckAlt",
+   "parent": "Torso",
+   "joint": "Meshes/set_10_trex_030 (1)",
+   "pivot": [
+    0.0,
+    7.0018,
+    -2.8609,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    7.0018,
+    -2.8609,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightArm",
+   "parent": "Torso",
+   "joint": "Meshes/4_pets_RAW_Mutated_T_Rex_024",
+   "pivot": [
+    1.8859,
+    6.9191,
+    -2.731,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    1.8859,
+    5.8291,
+    -3.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "RightLeg",
+   "parent": "HumanoidRootPart",
+   "joint": "RightLeg",
+   "pivot": [
+    2.5648,
+    6.4271,
+    1.4106,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    2.5648,
+    3.7272,
+    0.4907,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Tail",
+   "parent": "Torso",
+   "joint": "Tail",
+   "pivot": [
+    -0.0004,
+    7.058,
+    2.7505,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    -0.0004,
+    7.058,
+    7.2207,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  },
+  {
+   "name": "Torso",
+   "parent": "HumanoidRootPart",
+   "joint": "Torso",
+   "pivot": [
+    0.0,
+    6.6411,
+    0.3696,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "rest": [
+    0.0,
+    6.6411,
+    0.3696,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "hasGeometry": true
+  }
+ ],
+ "joints": [
+  {
+   "name": "Torso",
+   "part0": "HumanoidRootPart",
+   "part1": "Torso",
+   "c0": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    6.6411,
+    0.3696,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "RightLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "RightLeg",
+   "c0": [
+    2.5648,
+    -0.214,
+    1.0406,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    2.7,
+    0.92,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    2.5648,
+    6.4271,
+    1.4106,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "LeftLeg",
+   "part0": "HumanoidRootPart",
+   "part1": "LeftLeg",
+   "c0": [
+    -2.5648,
+    -0.214,
+    1.0406,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    2.7,
+    0.92,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -2.5648,
+    6.4271,
+    1.4101,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Head",
+   "part0": "Neck",
+   "part1": "Head",
+   "c0": [
+    0,
+    0.504,
+    -0.6551,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    2.8,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    8.4072,
+    -5.4922,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Neck",
+   "part0": "NeckAlt",
+   "part1": "Neck",
+   "c0": [
+    0,
+    0.9014,
+    -1.1065,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0.87,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    7.9032,
+    -3.9668,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_022",
+   "part0": "Torso",
+   "part1": "LeftArm",
+   "c0": [
+    -1.8859,
+    0.2779,
+    -3.1007,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.09,
+    0.77,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -1.8859,
+    6.9191,
+    -2.731,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_024",
+   "part0": "Torso",
+   "part1": "RightArm",
+   "c0": [
+    1.8859,
+    0.2779,
+    -3.1007,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    1.09,
+    0.77,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    1.8859,
+    6.9191,
+    -2.731,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Meshes/set_10_trex_030 (1)",
+   "part0": "Torso",
+   "part1": "NeckAlt",
+   "c0": [
+    0,
+    0.3607,
+    -3.2305,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    0.0,
+    7.0018,
+    -2.8609,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "Tail",
+   "part0": "Torso",
+   "part1": "Tail",
+   "c0": [
+    -0.0003,
+    0.4169,
+    2.3806,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "c1": [
+    0,
+    0,
+    -4.47,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "pivot": [
+    -0.0004,
+    7.058,
+    2.7505,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "bones": [],
+ "attachments": [],
+ "animations": [],
+ "keyframeSequences": [],
+ "gait": {
+  "back": [
+   {
+    "body": "RightLeg",
+    "side": 1
+   },
+   {
+    "body": "LeftLeg",
+    "side": -1
+   }
+  ],
+  "front": [],
+  "tail": [
+   "Tail"
+  ],
+  "head": [
+   "Head",
+   "Neck"
+  ],
+  "jaw": [],
+  "root": "Torso",
+  "downstream": []
+ },
+ "parts": [
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_012",
+   "class": "MeshPart",
+   "size": [
+    2.1995,
+    1.3872,
+    3.4392
+   ],
+   "cframe": [
+    0.0,
+    7.1326,
+    -9.7251,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    81,
+    103,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://115498385855562"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_010",
+   "class": "MeshPart",
+   "size": [
+    1.8614,
+    0.3622,
+    0.2658
+   ],
+   "cframe": [
+    0.0,
+    8.6932,
+    -11.5786,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    38,
+    49,
+    0
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://126489498920013"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_001",
+   "class": "MeshPart",
+   "size": [
+    3.1344,
+    0.482,
+    0.5928
+   ],
+   "cframe": [
+    0.0,
+    9.8322,
+    -7.8428,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    195,
+    255,
+    105
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://117583141319359"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_006",
+   "class": "MeshPart",
+   "size": [
+    4.1353,
+    1.7164,
+    1.7293
+   ],
+   "cframe": [
+    0.0,
+    5.4874,
+    -1.0274,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    137,
+    175,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://74440561576223"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_021",
+   "class": "MeshPart",
+   "size": [
+    3.0714,
+    0.6435,
+    0.7914
+   ],
+   "cframe": [
+    0.0,
+    9.7727,
+    -7.8311,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    90,
+    115,
+    0
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://128581088054135"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_007",
+   "class": "MeshPart",
+   "size": [
+    2.3675,
+    0.5292,
+    3.1268
+   ],
+   "cframe": [
+    0.0,
+    7.4142,
+    -9.9732,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    127,
+    165,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://80101394779789"
+  },
+  {
+   "object": "NeckAlt",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_014",
+   "class": "MeshPart",
+   "size": [
+    1.0609,
+    1.0815,
+    1.703
+   ],
+   "cframe": [
+    0.0,
+    8.6604,
+    -2.6856,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    69,
+    88,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://108870746198242"
+  },
+  {
+   "object": "RightArm",
+   "name": "RightArm",
+   "class": "MeshPart",
+   "size": [
+    0.6092,
+    2.8131,
+    2.2314
+   ],
+   "cframe": [
+    1.8859,
+    5.8291,
+    -3.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    90,
+    115,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://122609458806546"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_011",
+   "class": "MeshPart",
+   "size": [
+    2.7189,
+    0.8939,
+    2.8515
+   ],
+   "cframe": [
+    0.0,
+    7.2698,
+    -10.1646,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    255,
+    255,
+    255
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://121793226776386"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_015",
+   "class": "MeshPart",
+   "size": [
+    3.2576,
+    0.7746,
+    1.1099
+   ],
+   "cframe": [
+    0.0,
+    10.1951,
+    -7.7749,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    71,
+    91,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://98152917617951"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_017",
+   "class": "MeshPart",
+   "size": [
+    0.7461,
+    0.8907,
+    1.3818
+   ],
+   "cframe": [
+    0.0,
+    8.3795,
+    6.9761,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    69,
+    88,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://120742476036307"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_004",
+   "class": "MeshPart",
+   "size": [
+    0.7796,
+    3.0003,
+    1.4916
+   ],
+   "cframe": [
+    -1.7456,
+    7.0763,
+    1.2363,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    137,
+    175,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://104050141057106"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_019",
+   "class": "MeshPart",
+   "size": [
+    3.2332,
+    0.4859,
+    0.2813
+   ],
+   "cframe": [
+    0.0,
+    9.8519,
+    -7.8677,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    0,
+    0,
+    0
+   ],
+   "material": "SmoothPlastic",
+   "meshId": "rbxassetid://110135117649009"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_025",
+   "class": "MeshPart",
+   "size": [
+    1.0609,
+    1.6665,
+    4.0279
+   ],
+   "cframe": [
+    0.0,
+    8.4664,
+    1.437,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    69,
+    88,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://129883519786415"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/4_pets_RAW2_Mutated_T_Rex_009.001 (1)",
+   "class": "MeshPart",
+   "size": [
+    3.7143,
+    3.9854,
+    6.3024
+   ],
+   "cframe": [
+    -0.0004,
+    6.837,
+    6.2959,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    204,
+    54,
+    54
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://112404919721955"
+  },
+  {
+   "object": "Tail",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_005",
+   "class": "MeshPart",
+   "size": [
+    1.9553,
+    1.0136,
+    1.2966
+   ],
+   "cframe": [
+    1.1442,
+    7.8676,
+    3.6836,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    137,
+    175,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://127912198736650"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_020",
+   "class": "MeshPart",
+   "size": [
+    2.9572,
+    1.5466,
+    1.044
+   ],
+   "cframe": [
+    0.0,
+    9.4196,
+    -7.8428,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    137,
+    175,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://123220705135771"
+  },
+  {
+   "object": "Tail",
+   "name": "Tail",
+   "class": "MeshPart",
+   "size": [
+    3.9157,
+    5.064,
+    8.9815
+   ],
+   "cframe": [
+    -0.0004,
+    7.058,
+    7.2207,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    127,
+    165,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://74487338890800"
+  },
+  {
+   "object": "LeftLeg",
+   "name": "LeftLeg",
+   "class": "MeshPart",
+   "size": [
+    1.7707,
+    7.4543,
+    4.6912
+   ],
+   "cframe": [
+    -2.5648,
+    3.7272,
+    0.4902,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    105,
+    134,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://72228416820905"
+  },
+  {
+   "object": "Torso",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_016.001",
+   "class": "MeshPart",
+   "size": [
+    3.763,
+    3.2463,
+    3.5329
+   ],
+   "cframe": [
+    0.0,
+    6.8522,
+    -0.0825,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    204,
+    54,
+    54
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://126476463926488"
+  },
+  {
+   "object": "LeftArm",
+   "name": "LeftArm",
+   "class": "MeshPart",
+   "size": [
+    0.6092,
+    2.8131,
+    2.2314
+   ],
+   "cframe": [
+    -1.8859,
+    5.8291,
+    -3.501,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    90,
+    115,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://83984833216521"
+  },
+  {
+   "object": "Head",
+   "name": "Head",
+   "class": "MeshPart",
+   "size": [
+    2.9602,
+    4.1093,
+    6.7838
+   ],
+   "cframe": [
+    0.0,
+    8.4072,
+    -8.292,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    127,
+    165,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://132255229114763"
+  },
+  {
+   "object": "RightLeg",
+   "name": "RightLeg",
+   "class": "MeshPart",
+   "size": [
+    1.7707,
+    7.4543,
+    4.6912
+   ],
+   "cframe": [
+    2.5648,
+    3.7272,
+    0.4907,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    105,
+    134,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://73834586613328"
+  },
+  {
+   "object": "Head",
+   "name": "Meshes/4_pets_RAW_Mutated_T_Rex_003",
+   "class": "MeshPart",
+   "size": [
+    2.4161,
+    1.5114,
+    2.2434
+   ],
+   "cframe": [
+    0.0,
+    6.6824,
+    -9.103,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    137,
+    175,
+    0
+   ],
+   "material": "Neon",
+   "meshId": "rbxassetid://134465237636246"
+  },
+  {
+   "object": "Neck",
+   "name": "Neck",
+   "class": "MeshPart",
+   "size": [
+    2.693,
+    3.4177,
+    2.4509
+   ],
+   "cframe": [
+    0.0,
+    7.9032,
+    -4.8369,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    106,
+    135,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://110283831933701"
+  },
+  {
+   "object": "NeckAlt",
+   "name": "NeckAlt",
+   "class": "MeshPart",
+   "size": [
+    3.4265,
+    3.8877,
+    3.4077
+   ],
+   "cframe": [
+    0.0,
+    7.0018,
+    -2.8609,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    127,
+    165,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://109742759347861"
+  },
+  {
+   "object": "Torso",
+   "name": "Torso",
+   "class": "MeshPart",
+   "size": [
+    4.0628,
+    4.1692,
+    4.9222
+   ],
+   "cframe": [
+    0.0,
+    6.6411,
+    0.3696,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "color": [
+    127,
+    165,
+    0
+   ],
+   "material": "Plastic",
+   "meshId": "rbxassetid://133087826902923"
+  }
+ ],
+ "animationNote": "The model ships no Animation or KeyframeSequence. In the game it is animated from code (ReplicatedStorage.CreatureGait writes Motor6D.Transform: legs swing +-26 deg in antiphase about X, arms +-16 deg, tail sways +-11 deg about Y at half the stride rate shared down its segments, head bobs 6 deg at twice the rate, root bobs 0.55 studs with |sin|). `gait` lists the bodies each of those drives."
+}

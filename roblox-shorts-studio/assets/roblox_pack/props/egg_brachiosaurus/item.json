@@ -1,0 +1,22 @@
+{
+ "item": "egg_brachiosaurus",
+ "category": "props",
+ "sourceName": "Brachiosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Brachiosaurus",
+ "size": [
+  6.3941,
+  8.7192,
+  6.3945
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_brachiosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 6,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

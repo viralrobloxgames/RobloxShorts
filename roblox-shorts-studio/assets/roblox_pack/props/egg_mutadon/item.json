@@ -1,0 +1,22 @@
+{
+ "item": "egg_mutadon",
+ "category": "props",
+ "sourceName": "Mutadon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Mutadon",
+ "size": [
+  6.4085,
+  10.574,
+  6.4082
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_mutadon"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 19,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

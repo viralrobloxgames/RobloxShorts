@@ -1,0 +1,22 @@
+{
+ "item": "egg_anshun_saurus",
+ "category": "props",
+ "sourceName": "AnshunSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.AnshunSaurus",
+ "size": [
+  10.3339,
+  10.3337,
+  10.334
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_anshun_saurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 11,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

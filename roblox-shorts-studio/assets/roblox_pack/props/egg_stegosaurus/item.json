@@ -1,0 +1,22 @@
+{
+ "item": "egg_stegosaurus",
+ "category": "props",
+ "sourceName": "Stegosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Stegosaurus",
+ "size": [
+  5.2316,
+  7.2661,
+  5.2314
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_stegosaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

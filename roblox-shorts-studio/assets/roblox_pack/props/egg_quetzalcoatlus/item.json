@@ -1,0 +1,22 @@
+{
+ "item": "egg_quetzalcoatlus",
+ "category": "props",
+ "sourceName": "Quetzalcoatlus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Quetzalcoatlus",
+ "size": [
+  4.0138,
+  5.3518,
+  4.0137
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_quetzalcoatlus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,38 @@
+{
+ "item": "brutal_dinosaur",
+ "category": "creatures",
+ "sourceName": "BrutalDinosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.BrutalDinosaur",
+ "size": [
+  19,
+  27.5,
+  38.3164
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftUpperArm",
+  "RightLowerLeg",
+  "RightLowerArm",
+  "UpperTorso",
+  "RightUpperArm",
+  "LowerTorso",
+  "Mouth",
+  "LeftLowerLeg",
+  "RightUpperLeg",
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftFoot",
+  "RightFoot",
+  "LeftUpperLeg",
+  "LeftLowerArm"
+ ],
+ "joints": 15,
+ "bones": 0,
+ "parts": 82,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

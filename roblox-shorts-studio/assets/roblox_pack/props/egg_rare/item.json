@@ -1,0 +1,26 @@
+{
+ "item": "egg_rare",
+ "category": "props",
+ "sourceName": "Eggs/RareEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/RareEgg",
+ "size": [
+  2.3594,
+  3.1461,
+  2.3594
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E2D",
+  "E2U",
+  "E1U",
+  "E1D",
+  "E3"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

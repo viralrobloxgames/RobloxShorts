@@ -1,0 +1,79 @@
+# Materials for egg_cowboy_cow. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_8d4d3a
+Kd 0.5529 0.3020 0.2275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffaa00
+Kd 1.0000 0.6667 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_8f4c2a
+Kd 0.5608 0.2980 0.1647
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_552b07
+Kd 0.3333 0.1686 0.0275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffcc99
+Kd 1.0000 0.8000 0.6000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_14594d
+Kd 0.0784 0.3490 0.3020
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff8c69
+Kd 1.0000 0.5490 0.4118
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_987a5b
+Kd 0.5961 0.4784 0.3569
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_aa5500_neon
+Kd 0.6667 0.3333 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6667 0.3333 0.0000
+d 1.0000
+illum 2
+
+newmtl c_7d583d_neon
+Kd 0.4902 0.3451 0.2392
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.4902 0.3451 0.2392
+d 1.0000
+illum 2

@@ -1,0 +1,12 @@
+{
+  "engine": "qwen3-tts",
+  "model": "Qwen3-TTS-12Hz-1.7B-Base",
+  "voice": "george_c (clone: assets/audio/voices/george_c.wav + george_c_1.7B_xvector.npy)",
+  "take": "take-01",
+  "clips": "audio/qwen/take-01/clips",
+  "gap_seconds": 0.4,
+  "beat_seconds": 0.9,
+  "speech_end_seconds": 64.96,
+  "engine_host": "cloud session, scripts/qwen_cloud_george_c.py",
+  "post": "none"
+}

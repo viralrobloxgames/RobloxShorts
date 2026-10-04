@@ -1,0 +1,22 @@
+{
+ "item": "egg_barbaridactylus",
+ "category": "props",
+ "sourceName": "Barbaridactylus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Barbaridactylus",
+ "size": [
+  2.5835,
+  3.4446,
+  2.583
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_barbaridactylus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

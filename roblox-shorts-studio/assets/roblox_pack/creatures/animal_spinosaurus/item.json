@@ -1,0 +1,26 @@
+{
+ "item": "animal_spinosaurus",
+ "category": "creatures",
+ "sourceName": "Spinosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Spinosaurus",
+ "size": [
+  26.3975,
+  11.1355,
+  6.7861
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_spinosaurus"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://128866841784995"
+ ],
+ "textureIds": [
+  "rbxassetid://94778372894211"
+ ]
+}

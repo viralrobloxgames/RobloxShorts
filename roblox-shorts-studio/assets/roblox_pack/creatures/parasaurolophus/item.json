@@ -1,0 +1,31 @@
+{
+ "item": "parasaurolophus",
+ "category": "creatures",
+ "sourceName": "Parasaurolophus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Parasaurolophus",
+ "size": [
+  8.75,
+  18.3732,
+  27.7261
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperLeg",
+  "UpperTorso",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "Tail",
+  "Head",
+  "Head_decal1",
+  "Head_decal2"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 32,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

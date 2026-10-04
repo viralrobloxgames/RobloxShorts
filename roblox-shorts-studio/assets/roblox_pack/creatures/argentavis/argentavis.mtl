@@ -1,0 +1,52 @@
+# Materials for argentavis. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_d5733d
+Kd 0.8353 0.4510 0.2392
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_132746
+Kd 0.0745 0.1529 0.2745
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1a3560
+Kd 0.1020 0.2078 0.3765
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_254e8a
+Kd 0.1451 0.3059 0.5412
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a0a0a0_neon
+Kd 0.6275 0.6275 0.6275
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6275 0.6275 0.6275
+d 1.0000
+illum 2
+
+newmtl c_111111_neon
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.0667 0.0667 0.0667
+d 1.0000
+illum 2
+
+newmtl c_37383e_neon
+Kd 0.2157 0.2196 0.2431
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.2157 0.2196 0.2431
+d 1.0000
+illum 2

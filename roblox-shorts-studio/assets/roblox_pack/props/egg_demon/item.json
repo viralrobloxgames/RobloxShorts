@@ -1,0 +1,26 @@
+{
+ "item": "egg_demon",
+ "category": "props",
+ "sourceName": "Eggs/DemonEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/DemonEgg",
+ "size": [
+  9.2871,
+  7.9972,
+  15.7051
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E2U",
+  "E1U",
+  "E2D",
+  "E3",
+  "E1D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 27,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

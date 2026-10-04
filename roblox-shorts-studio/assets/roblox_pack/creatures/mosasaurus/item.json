@@ -1,0 +1,31 @@
+{
+ "item": "mosasaurus",
+ "category": "creatures",
+ "sourceName": "Mosasaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Mosasaurus",
+ "size": [
+  30.9377,
+  13.4597,
+  62.8984
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperLeg",
+  "LowerTorso",
+  "UpperTorso",
+  "LeftUpperArm",
+  "RightUpperArm",
+  "Tail",
+  "LeftUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 160,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

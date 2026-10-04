@@ -1,0 +1,63 @@
+# Materials for ankylosaurus_2. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_f2f3f3
+Kd 0.9490 0.9529 0.9529
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_f8f8f8
+Kd 0.9725 0.9725 0.9725
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_624732
+Kd 0.3843 0.2784 0.1961
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_e7ac58
+Kd 0.9059 0.6745 0.3451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a05f35
+Kd 0.6275 0.3725 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_6d6e6c
+Kd 0.4275 0.4314 0.4235
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_1b2a35
+Kd 0.1059 0.1647 0.2078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_111111
+Kd 0.0667 0.0667 0.0667
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_69665c
+Kd 0.4118 0.4000 0.3608
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

@@ -1,0 +1,31 @@
+{
+ "item": "quetzalcoatlus_northropi",
+ "category": "creatures",
+ "sourceName": "QuetzalcoatlusNorthropi",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.QuetzalcoatlusNorthropi",
+ "size": [
+  25.5199,
+  8.9906,
+  19.7832
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Tail",
+  "LeftUpperArm",
+  "RightUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "UpperTorso",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "RightUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 52,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

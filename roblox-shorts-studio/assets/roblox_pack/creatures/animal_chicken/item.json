@@ -1,0 +1,26 @@
+{
+ "item": "animal_chicken",
+ "category": "creatures",
+ "sourceName": "Chicken",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Chicken",
+ "size": [
+  2.7369,
+  2.6563,
+  1.8623
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_chicken"
+ ],
+ "joints": 0,
+ "bones": 14,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://101963304642606"
+ ],
+ "textureIds": [
+  "rbxassetid://132906624951225"
+ ]
+}

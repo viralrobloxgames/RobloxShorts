@@ -1,0 +1,26 @@
+{
+ "item": "animal_tiger",
+ "category": "creatures",
+ "sourceName": "Tiger",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Tiger",
+ "size": [
+  7.3183,
+  4.4441,
+  3.3838
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_tiger"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://108565501309102"
+ ],
+ "textureIds": [
+  "rbxassetid://125267775964497"
+ ]
+}

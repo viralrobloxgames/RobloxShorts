@@ -1,0 +1,26 @@
+{
+ "item": "animal_wolf",
+ "category": "creatures",
+ "sourceName": "Wolf",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Wolf",
+ "size": [
+  5.7855,
+  3.9602,
+  1.9834
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_wolf"
+ ],
+ "joints": 0,
+ "bones": 26,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://115712008848184"
+ ],
+ "textureIds": [
+  "rbxassetid://123184817129773"
+ ]
+}

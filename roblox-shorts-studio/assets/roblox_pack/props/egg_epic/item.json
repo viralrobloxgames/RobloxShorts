@@ -1,0 +1,26 @@
+{
+ "item": "egg_epic",
+ "category": "props",
+ "sourceName": "Eggs/EpicEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/EpicEgg",
+ "size": [
+  5.0846,
+  7.5858,
+  4.5645
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E1U",
+  "E3",
+  "E2U",
+  "E1D",
+  "E2D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 8,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

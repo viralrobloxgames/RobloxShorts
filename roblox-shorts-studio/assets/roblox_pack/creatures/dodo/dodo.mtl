@@ -1,0 +1,64 @@
+# Materials for dodo. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_dodo_i024p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p001x.png
+
+newmtl tex_dodo_i024p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p002x.png
+
+newmtl tex_dodo_i024p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p003x.png
+
+newmtl tex_dodo_i024p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p004x.png
+
+newmtl tex_dodo_i024p005x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p005x.png
+
+newmtl tex_dodo_i024p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p006x.png
+
+newmtl tex_dodo_i024p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p007x.png
+
+newmtl tex_dodo_i024p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd dodo_i024p008x.png

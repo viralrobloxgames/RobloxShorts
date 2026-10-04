@@ -1,0 +1,26 @@
+{
+ "item": "animal_polar_bear",
+ "category": "creatures",
+ "sourceName": "Polar Bear",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Polar Bear",
+ "size": [
+  9.2308,
+  7.2407,
+  5.4297
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_polar_bear"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://103038375337852"
+ ],
+ "textureIds": [
+  "rbxassetid://93772053353017"
+ ]
+}

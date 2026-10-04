@@ -1,0 +1,33 @@
+{
+ "item": "pachycephalosaurus",
+ "category": "creatures",
+ "sourceName": "Pachycephalosaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Pachycephalosaurus",
+ "size": [
+  6.3,
+  12.6001,
+  17.3252
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperLeg",
+  "LeftUpperLeg",
+  "Tail",
+  "RightUpperArm",
+  "UpperTorso",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftLowerLeg",
+  "RightLowerLeg",
+  "LowerTorso",
+  "LeftUpperArm"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 31,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

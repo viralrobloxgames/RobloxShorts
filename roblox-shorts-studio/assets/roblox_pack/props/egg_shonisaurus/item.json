@@ -1,0 +1,22 @@
+{
+ "item": "egg_shonisaurus",
+ "category": "props",
+ "sourceName": "Shonisaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Shonisaurus",
+ "size": [
+  3.8752,
+  5.3823,
+  3.875
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_shonisaurus"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

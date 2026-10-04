@@ -1,0 +1,36 @@
+{
+ "item": "long",
+ "category": "creatures",
+ "sourceName": "Long",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Long",
+ "size": [
+  27,
+  33.75,
+  41.25
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "LeftLowerLeg",
+  "Mouth",
+  "LeftUpperLeg",
+  "RightFoot",
+  "Tail",
+  "LeftFoot",
+  "RightUpperLeg",
+  "RightLowerLeg",
+  "LowerTorso"
+ ],
+ "joints": 13,
+ "bones": 0,
+ "parts": 86,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

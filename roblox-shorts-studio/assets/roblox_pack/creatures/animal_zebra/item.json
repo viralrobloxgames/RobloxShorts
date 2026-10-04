@@ -1,0 +1,26 @@
+{
+ "item": "animal_zebra",
+ "category": "creatures",
+ "sourceName": "Zebra",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Zebra",
+ "size": [
+  7.3496,
+  6.5315,
+  2.4355
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_zebra"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://88321517560745"
+ ],
+ "textureIds": [
+  "rbxassetid://129931654726571"
+ ]
+}

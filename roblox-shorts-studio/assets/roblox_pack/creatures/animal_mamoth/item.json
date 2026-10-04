@@ -1,0 +1,26 @@
+{
+ "item": "animal_mamoth",
+ "category": "creatures",
+ "sourceName": "Mamoth",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Mamoth",
+ "size": [
+  10.8481,
+  7.2947,
+  7.1152
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_mamoth"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://106428541499981"
+ ],
+ "textureIds": [
+  "rbxassetid://77721355152600"
+ ]
+}

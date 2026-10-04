@@ -1,0 +1,31 @@
+{
+ "item": "maiasaura",
+ "category": "creatures",
+ "sourceName": "Maiasaura",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Maiasaura",
+ "size": [
+  10.7999,
+  14.3658,
+  32.1123
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "LowerTorso",
+  "LeftUpperArm",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperLeg",
+  "Tail",
+  "LeftUpperLeg",
+  "UpperTorso"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 70,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

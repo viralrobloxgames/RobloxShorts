@@ -1,0 +1,56 @@
+{
+ "item": "saber_tooth_tiger",
+ "category": "creatures",
+ "sourceName": "Saber Tooth Tiger",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Saber Tooth Tiger",
+ "size": [
+  9.1716,
+  5.9434,
+  3.9033
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "Cube.007",
+  "Cube.060",
+  "Cube.010",
+  "nose",
+  "Cube.003",
+  "Cube.002",
+  "Cube.001",
+  "Cube.006",
+  "Cube.004",
+  "Cube.009",
+  "Cube.034",
+  "Cube.011",
+  "Cube.013",
+  "Cube.012",
+  "Cube.035",
+  "Cube.008"
+ ],
+ "joints": 16,
+ "bones": 29,
+ "parts": 16,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100667030736557",
+  "rbxassetid://105271038893992",
+  "rbxassetid://108822657375832",
+  "rbxassetid://109119921502246",
+  "rbxassetid://114565665256412",
+  "rbxassetid://123746238686298",
+  "rbxassetid://131033611332056",
+  "rbxassetid://133325752793961",
+  "rbxassetid://140076834479903",
+  "rbxassetid://77288920213025",
+  "rbxassetid://88558482626365",
+  "rbxassetid://89205027238277",
+  "rbxassetid://90838083369196",
+  "rbxassetid://93334816197219",
+  "rbxassetid://95772713673166",
+  "rbxassetid://95997402676462"
+ ],
+ "textureIds": [
+  "rbxassetid://134764423976901"
+ ]
+}

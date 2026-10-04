@@ -1,0 +1,97 @@
+# Materials for egg_magic_rabbit. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_221205
+Kd 0.1333 0.0706 0.0196
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_aa823d
+Kd 0.6667 0.5098 0.2392
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_910000
+Kd 0.5686 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffffff
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl e1u_decal1
+Kd 1.0000 1.0000 1.0000
+Ks 0.0200 0.0200 0.0200
+Ns 20
+d 0.9990
+illum 2
+map_Kd egg_magic_rabbit_e1u_decal1.png
+
+newmtl c_969696
+Kd 0.5882 0.5882 0.5882
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_bf9045_neon
+Kd 0.7490 0.5647 0.2706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.7490 0.5647 0.2706
+d 1.0000
+illum 2
+
+newmtl c_221205_shiny
+Kd 0.1333 0.0706 0.0196
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_910000_neon
+Kd 0.5686 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.5686 0.0000 0.0000
+d 1.0000
+illum 2
+
+newmtl c_e2ab52_neon
+Kd 0.8863 0.6706 0.3216
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.8863 0.6706 0.3216
+d 1.0000
+illum 2
+
+newmtl c_aa823d_neon
+Kd 0.6667 0.5098 0.2392
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.6667 0.5098 0.2392
+d 1.0000
+illum 2
+
+newmtl c_b48841_neon
+Kd 0.7059 0.5333 0.2549
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.7059 0.5333 0.2549
+d 1.0000
+illum 2

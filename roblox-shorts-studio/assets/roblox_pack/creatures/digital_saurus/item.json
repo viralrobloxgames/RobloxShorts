@@ -1,0 +1,36 @@
+{
+ "item": "digital_saurus",
+ "category": "creatures",
+ "sourceName": "DigitalSaurus",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.DigitalSaurus",
+ "size": [
+  12,
+  14.25,
+  17.25
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "UpperTorso",
+  "Mouth",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "RightLowerLeg",
+  "LeftLowerLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightUpperArm",
+  "LeftUpperArm",
+  "RightFoot",
+  "LeftFoot",
+  "Tail",
+  "RightUpperLeg"
+ ],
+ "joints": 13,
+ "bones": 0,
+ "parts": 104,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,2151 @@
+{
+ "count": 165,
+ "conventions": "1 stud = 1 unit, +Y up, front faces -Z, origin = bottom centre. One OBJ object per rigid body; rig.json gives each body's parent and joint pivot.",
+ "creatures": [
+  {
+   "name": "animal_ankylosaurus",
+   "path": "creatures/animal_ankylosaurus/animal_ankylosaurus.obj",
+   "rig": "creatures/animal_ankylosaurus/rig.json",
+   "size": [
+    18.816,
+    6.51,
+    6.44
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Ankylosaurus from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_bat",
+   "path": "creatures/animal_bat/animal_bat.obj",
+   "rig": "creatures/animal_bat/rig.json",
+   "size": [
+    1.218,
+    3.23,
+    4.74
+   ],
+   "joints": 0,
+   "bones": 18,
+   "description": "Bat from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_bear",
+   "path": "creatures/animal_bear/animal_bear.obj",
+   "rig": "creatures/animal_bear/rig.json",
+   "size": [
+    9.286,
+    7.28,
+    5.46
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Bear from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_brachiosaurus",
+   "path": "creatures/animal_brachiosaurus/animal_brachiosaurus.obj",
+   "rig": "creatures/animal_brachiosaurus/rig.json",
+   "size": [
+    18.421,
+    16.26,
+    7.14
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Brachiosaurus from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_bull",
+   "path": "creatures/animal_bull/animal_bull.obj",
+   "rig": "creatures/animal_bull/rig.json",
+   "size": [
+    8.276,
+    5.75,
+    3.0
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Bull from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_bunny",
+   "path": "creatures/animal_bunny/animal_bunny.obj",
+   "rig": "creatures/animal_bunny/rig.json",
+   "size": [
+    3.15,
+    3.88,
+    1.74
+   ],
+   "joints": 0,
+   "bones": 22,
+   "description": "Bunny from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_capybara",
+   "path": "creatures/animal_capybara/animal_capybara.obj",
+   "rig": "creatures/animal_capybara/rig.json",
+   "size": [
+    3.942,
+    3.57,
+    2.06
+   ],
+   "joints": 0,
+   "bones": 24,
+   "description": "Capybara from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_cat",
+   "path": "creatures/animal_cat/animal_cat.obj",
+   "rig": "creatures/animal_cat/rig.json",
+   "size": [
+    4.195,
+    3.19,
+    1.44
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Cat from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_chicken",
+   "path": "creatures/animal_chicken/animal_chicken.obj",
+   "rig": "creatures/animal_chicken/rig.json",
+   "size": [
+    2.737,
+    2.66,
+    1.86
+   ],
+   "joints": 0,
+   "bones": 14,
+   "description": "Chicken from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_cobra",
+   "path": "creatures/animal_cobra/animal_cobra.obj",
+   "rig": "creatures/animal_cobra/rig.json",
+   "size": [
+    18.634,
+    6.25,
+    3.36
+   ],
+   "joints": 0,
+   "bones": 14,
+   "description": "Cobra from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_cow",
+   "path": "creatures/animal_cow/animal_cow.obj",
+   "rig": "creatures/animal_cow/rig.json",
+   "size": [
+    6.836,
+    5.18,
+    2.9
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Cow from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_crab",
+   "path": "creatures/animal_crab/animal_crab.obj",
+   "rig": "creatures/animal_crab/rig.json",
+   "size": [
+    2.534,
+    1.36,
+    2.92
+   ],
+   "joints": 0,
+   "bones": 15,
+   "description": "Crab from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_crocodile",
+   "path": "creatures/animal_crocodile/animal_crocodile.obj",
+   "rig": "creatures/animal_crocodile/rig.json",
+   "size": [
+    13.124,
+    3.28,
+    3.54
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Crocodile from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_elephant",
+   "path": "creatures/animal_elephant/animal_elephant.obj",
+   "rig": "creatures/animal_elephant/rig.json",
+   "size": [
+    11.634,
+    7.05,
+    8.1
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Elephant from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_frog",
+   "path": "creatures/animal_frog/animal_frog.obj",
+   "rig": "creatures/animal_frog/rig.json",
+   "size": [
+    1.724,
+    1.78,
+    1.42
+   ],
+   "joints": 0,
+   "bones": 24,
+   "description": "Frog from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_gallimimus",
+   "path": "creatures/animal_gallimimus/animal_gallimimus.obj",
+   "rig": "creatures/animal_gallimimus/rig.json",
+   "size": [
+    21.859,
+    13.09,
+    5.12
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Gallimimus from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_giraffee",
+   "path": "creatures/animal_giraffee/animal_giraffee.obj",
+   "rig": "creatures/animal_giraffee/rig.json",
+   "size": [
+    5.712,
+    13.1,
+    4.32
+   ],
+   "joints": 0,
+   "bones": 23,
+   "description": "Giraffee from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_goat",
+   "path": "creatures/animal_goat/animal_goat.obj",
+   "rig": "creatures/animal_goat/rig.json",
+   "size": [
+    5.438,
+    4.02,
+    1.82
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Goat from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_golden_retriver",
+   "path": "creatures/animal_golden_retriver/animal_golden_retriver.obj",
+   "rig": "creatures/animal_golden_retriver/rig.json",
+   "size": [
+    5.612,
+    4.2,
+    2.86
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "GoldenRetriver from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_goldfish",
+   "path": "creatures/animal_goldfish/animal_goldfish.obj",
+   "rig": "creatures/animal_goldfish/rig.json",
+   "size": [
+    2.628,
+    2.04,
+    2.04
+   ],
+   "joints": 0,
+   "bones": 10,
+   "description": "Goldfish from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_gorilla",
+   "path": "creatures/animal_gorilla/animal_gorilla.obj",
+   "rig": "creatures/animal_gorilla/rig.json",
+   "size": [
+    8.108,
+    7.08,
+    5.32
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Gorilla from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_guienna_pig",
+   "path": "creatures/animal_guienna_pig/animal_guienna_pig.obj",
+   "rig": "creatures/animal_guienna_pig/rig.json",
+   "size": [
+    3.744,
+    3.2,
+    2.46
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "GuiennaPig from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_hamster",
+   "path": "creatures/animal_hamster/animal_hamster.obj",
+   "rig": "creatures/animal_hamster/rig.json",
+   "size": [
+    1.232,
+    2.12,
+    1.36
+   ],
+   "joints": 0,
+   "bones": 11,
+   "description": "Hamster from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_horse",
+   "path": "creatures/animal_horse/animal_horse.obj",
+   "rig": "creatures/animal_horse/rig.json",
+   "size": [
+    6.492,
+    5.22,
+    2.2
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Horse from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_jellyfish",
+   "path": "creatures/animal_jellyfish/animal_jellyfish.obj",
+   "rig": "creatures/animal_jellyfish/rig.json",
+   "size": [
+    3.118,
+    8.07,
+    2.98
+   ],
+   "joints": 0,
+   "bones": 19,
+   "description": "Jellyfish from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_kangaroo",
+   "path": "creatures/animal_kangaroo/animal_kangaroo.obj",
+   "rig": "creatures/animal_kangaroo/rig.json",
+   "size": [
+    5.552,
+    5.74,
+    3.4
+   ],
+   "joints": 0,
+   "bones": 16,
+   "description": "Kangaroo from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_kitsune",
+   "path": "creatures/animal_kitsune/animal_kitsune.obj",
+   "rig": "creatures/animal_kitsune/rig.json",
+   "size": [
+    8.898,
+    5.37,
+    5.8
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Kitsune from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_koala",
+   "path": "creatures/animal_koala/animal_koala.obj",
+   "rig": "creatures/animal_koala/rig.json",
+   "size": [
+    2.332,
+    3.13,
+    1.84
+   ],
+   "joints": 0,
+   "bones": 22,
+   "description": "Koala from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_lion",
+   "path": "creatures/animal_lion/animal_lion.obj",
+   "rig": "creatures/animal_lion/rig.json",
+   "size": [
+    11.81,
+    7.19,
+    5.8
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Lion from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_lizard",
+   "path": "creatures/animal_lizard/animal_lizard.obj",
+   "rig": "creatures/animal_lizard/rig.json",
+   "size": [
+    4.249,
+    2.15,
+    1.46
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Lizard from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_llama",
+   "path": "creatures/animal_llama/animal_llama.obj",
+   "rig": "creatures/animal_llama/rig.json",
+   "size": [
+    5.285,
+    5.45,
+    1.78
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Llama from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_mamoth",
+   "path": "creatures/animal_mamoth/animal_mamoth.obj",
+   "rig": "creatures/animal_mamoth/rig.json",
+   "size": [
+    10.848,
+    7.29,
+    7.12
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Mamoth from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_mosasaurus",
+   "path": "creatures/animal_mosasaurus/animal_mosasaurus.obj",
+   "rig": "creatures/animal_mosasaurus/rig.json",
+   "size": [
+    21.048,
+    6.51,
+    7.68
+   ],
+   "joints": 0,
+   "bones": 19,
+   "description": "Mosasaurus from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_ostrich",
+   "path": "creatures/animal_ostrich/animal_ostrich.obj",
+   "rig": "creatures/animal_ostrich/rig.json",
+   "size": [
+    3.407,
+    4.57,
+    1.8
+   ],
+   "joints": 0,
+   "bones": 14,
+   "description": "Ostrich from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_owl",
+   "path": "creatures/animal_owl/animal_owl.obj",
+   "rig": "creatures/animal_owl/rig.json",
+   "size": [
+    1.624,
+    2.77,
+    1.72
+   ],
+   "joints": 0,
+   "bones": 13,
+   "description": "Owl from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_parrot",
+   "path": "creatures/animal_parrot/animal_parrot.obj",
+   "rig": "creatures/animal_parrot/rig.json",
+   "size": [
+    4.34,
+    2.78,
+    1.74
+   ],
+   "joints": 0,
+   "bones": 16,
+   "description": "Parrot from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_pigeon",
+   "path": "creatures/animal_pigeon/animal_pigeon.obj",
+   "rig": "creatures/animal_pigeon/rig.json",
+   "size": [
+    3.779,
+    2.43,
+    1.5
+   ],
+   "joints": 0,
+   "bones": 16,
+   "description": "Pigeon from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_polar_bear",
+   "path": "creatures/animal_polar_bear/animal_polar_bear.obj",
+   "rig": "creatures/animal_polar_bear/rig.json",
+   "size": [
+    9.23,
+    7.24,
+    5.42
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Polar Bear from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_pony",
+   "path": "creatures/animal_pony/animal_pony.obj",
+   "rig": "creatures/animal_pony/rig.json",
+   "size": [
+    6.931,
+    5.32,
+    2.24
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Pony from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_seal",
+   "path": "creatures/animal_seal/animal_seal.obj",
+   "rig": "creatures/animal_seal/rig.json",
+   "size": [
+    6.538,
+    2.15,
+    2.92
+   ],
+   "joints": 0,
+   "bones": 18,
+   "description": "Seal from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_shark",
+   "path": "creatures/animal_shark/animal_shark.obj",
+   "rig": "creatures/animal_shark/rig.json",
+   "size": [
+    8.991,
+    4.84,
+    3.98
+   ],
+   "joints": 0,
+   "bones": 20,
+   "description": "Shark from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_snail",
+   "path": "creatures/animal_snail/animal_snail.obj",
+   "rig": "creatures/animal_snail/rig.json",
+   "size": [
+    4.008,
+    2.83,
+    1.42
+   ],
+   "joints": 0,
+   "bones": 7,
+   "description": "Snail from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_snake",
+   "path": "creatures/animal_snake/animal_snake.obj",
+   "rig": "creatures/animal_snake/rig.json",
+   "size": [
+    12.223,
+    1.9,
+    1.98
+   ],
+   "joints": 0,
+   "bones": 6,
+   "description": "Snake from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_spinosaurus",
+   "path": "creatures/animal_spinosaurus/animal_spinosaurus.obj",
+   "rig": "creatures/animal_spinosaurus/rig.json",
+   "size": [
+    26.398,
+    11.14,
+    6.78
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Spinosaurus from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_swordfish",
+   "path": "creatures/animal_swordfish/animal_swordfish.obj",
+   "rig": "creatures/animal_swordfish/rig.json",
+   "size": [
+    10.58,
+    3.05,
+    2.66
+   ],
+   "joints": 0,
+   "bones": 18,
+   "description": "Swordfish from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_t_rex",
+   "path": "creatures/animal_t_rex/animal_t_rex.obj",
+   "rig": "creatures/animal_t_rex/rig.json",
+   "size": [
+    20.502,
+    11.26,
+    7.22
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "T-Rex from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_tiger",
+   "path": "creatures/animal_tiger/animal_tiger.obj",
+   "rig": "creatures/animal_tiger/rig.json",
+   "size": [
+    7.318,
+    4.44,
+    3.38
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Tiger from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_triceratops",
+   "path": "creatures/animal_triceratops/animal_triceratops.obj",
+   "rig": "creatures/animal_triceratops/rig.json",
+   "size": [
+    14.107,
+    8.62,
+    7.72
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Triceratops from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_triple_cobra",
+   "path": "creatures/animal_triple_cobra/animal_triple_cobra.obj",
+   "rig": "creatures/animal_triple_cobra/rig.json",
+   "size": [
+    18.634,
+    6.25,
+    6.22
+   ],
+   "joints": 0,
+   "bones": 22,
+   "description": "TripleCobra from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_turtle",
+   "path": "creatures/animal_turtle/animal_turtle.obj",
+   "rig": "creatures/animal_turtle/rig.json",
+   "size": [
+    3.352,
+    2.31,
+    2.18
+   ],
+   "joints": 0,
+   "bones": 24,
+   "description": "Turtle from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_unicorn",
+   "path": "creatures/animal_unicorn/animal_unicorn.obj",
+   "rig": "creatures/animal_unicorn/rig.json",
+   "size": [
+    6.804,
+    5.9,
+    2.26
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Unicorn from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_velicoraptor",
+   "path": "creatures/animal_velicoraptor/animal_velicoraptor.obj",
+   "rig": "creatures/animal_velicoraptor/rig.json",
+   "size": [
+    24.39,
+    16.89,
+    6.66
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Velicoraptor from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_whale",
+   "path": "creatures/animal_whale/animal_whale.obj",
+   "rig": "creatures/animal_whale/rig.json",
+   "size": [
+    8.66,
+    4.81,
+    5.58
+   ],
+   "joints": 0,
+   "bones": 16,
+   "description": "Whale from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_wolf",
+   "path": "creatures/animal_wolf/animal_wolf.obj",
+   "rig": "creatures/animal_wolf/rig.json",
+   "size": [
+    5.785,
+    3.96,
+    1.98
+   ],
+   "joints": 0,
+   "bones": 26,
+   "description": "Wolf from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "animal_zebra",
+   "path": "creatures/animal_zebra/animal_zebra.obj",
+   "rig": "creatures/animal_zebra/rig.json",
+   "size": [
+    7.35,
+    6.53,
+    2.44
+   ],
+   "joints": 0,
+   "bones": 25,
+   "description": "Zebra from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "ankyloasarus",
+   "path": "creatures/ankyloasarus/ankyloasarus.obj",
+   "rig": "creatures/ankyloasarus/rig.json",
+   "size": [
+    8.452,
+    7.55,
+    25.96
+   ],
+   "joints": 22,
+   "bones": 0,
+   "description": "Ankyloasarus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "ankylosaurus",
+   "path": "creatures/ankylosaurus/ankylosaurus.obj",
+   "rig": "creatures/ankylosaurus/rig.json",
+   "size": [
+    11.25,
+    10.63,
+    28.12
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Ankylosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "ankylosaurus_2",
+   "path": "creatures/ankylosaurus_2/ankylosaurus_2.obj",
+   "rig": "creatures/ankylosaurus_2/rig.json",
+   "size": [
+    3.911,
+    8.24,
+    11.52
+   ],
+   "joints": 20,
+   "bones": 0,
+   "description": "Ankylosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "anomalocaris",
+   "path": "creatures/anomalocaris/anomalocaris.obj",
+   "rig": "creatures/anomalocaris/rig.json",
+   "size": [
+    8.952,
+    6.95,
+    16.42
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Anomalocaris from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "anomalocaris_2",
+   "path": "creatures/anomalocaris_2/anomalocaris_2.obj",
+   "rig": "creatures/anomalocaris_2/rig.json",
+   "size": [
+    7.236,
+    3.11,
+    16.38
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "Anomalocaris from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "anshun_saurus",
+   "path": "creatures/anshun_saurus/anshun_saurus.obj",
+   "rig": "creatures/anshun_saurus/rig.json",
+   "size": [
+    20.0,
+    27.12,
+    32.0
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "AnshunSaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "apatosaurus",
+   "path": "creatures/apatosaurus/apatosaurus.obj",
+   "rig": "creatures/apatosaurus/rig.json",
+   "size": [
+    12.5,
+    27.84,
+    58.38
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Apatosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "argentavis",
+   "path": "creatures/argentavis/argentavis.obj",
+   "rig": "creatures/argentavis/rig.json",
+   "size": [
+    15.712,
+    6.15,
+    12.36
+   ],
+   "joints": 10,
+   "bones": 0,
+   "description": "Argentavis from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "azhdarcho",
+   "path": "creatures/azhdarcho/azhdarcho.obj",
+   "rig": "creatures/azhdarcho/rig.json",
+   "size": [
+    25.52,
+    9.35,
+    20.4
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Azhdarcho from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "barbaridactylus",
+   "path": "creatures/barbaridactylus/barbaridactylus.obj",
+   "rig": "creatures/barbaridactylus/rig.json",
+   "size": [
+    17.1,
+    12.94,
+    13.7
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Barbaridactylus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "barosaurus_skeleton_fossil",
+   "path": "creatures/barosaurus_skeleton_fossil/barosaurus_skeleton_fossil.obj",
+   "rig": "creatures/barosaurus_skeleton_fossil/rig.json",
+   "size": [
+    7.105,
+    20.56,
+    32.88
+   ],
+   "joints": 33,
+   "bones": 0,
+   "description": "Barosaurus Skeleton Fossil from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "borealopelta",
+   "path": "creatures/borealopelta/borealopelta.obj",
+   "rig": "creatures/borealopelta/rig.json",
+   "size": [
+    21.358,
+    12.77,
+    35.22
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Borealopelta from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "brachiosaurus",
+   "path": "creatures/brachiosaurus/brachiosaurus.obj",
+   "rig": "creatures/brachiosaurus/rig.json",
+   "size": [
+    10.5,
+    33.25,
+    29.76
+   ],
+   "joints": 8,
+   "bones": 0,
+   "description": "Brachiosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "bronto",
+   "path": "creatures/bronto/bronto.obj",
+   "rig": "creatures/bronto/rig.json",
+   "size": [
+    7.746,
+    25.21,
+    30.0
+   ],
+   "joints": 12,
+   "bones": 0,
+   "description": "Bronto from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "brontosaurus",
+   "path": "creatures/brontosaurus/brontosaurus.obj",
+   "rig": "creatures/brontosaurus/rig.json",
+   "size": [
+    6.956,
+    17.25,
+    24.64
+   ],
+   "joints": 26,
+   "bones": 0,
+   "description": "Brontosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "brutal_dinosaur",
+   "path": "creatures/brutal_dinosaur/brutal_dinosaur.obj",
+   "rig": "creatures/brutal_dinosaur/rig.json",
+   "size": [
+    19.0,
+    27.5,
+    38.32
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "BrutalDinosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "cameroceras",
+   "path": "creatures/cameroceras/cameroceras.obj",
+   "rig": "creatures/cameroceras/rig.json",
+   "size": [
+    6.252,
+    5.36,
+    31.84
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Cameroceras from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "candy_stegosaurus",
+   "path": "creatures/candy_stegosaurus/candy_stegosaurus.obj",
+   "rig": "creatures/candy_stegosaurus/rig.json",
+   "size": [
+    5.444,
+    8.71,
+    18.2
+   ],
+   "joints": 7,
+   "bones": 0,
+   "description": "Candy Stegosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "carnotaurus",
+   "path": "creatures/carnotaurus/carnotaurus.obj",
+   "rig": "creatures/carnotaurus/rig.json",
+   "size": [
+    10.0,
+    16.04,
+    24.38
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Carnotaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "colossal_mammoth",
+   "path": "creatures/colossal_mammoth/colossal_mammoth.obj",
+   "rig": "creatures/colossal_mammoth/rig.json",
+   "size": [
+    13.928,
+    17.59,
+    31.62
+   ],
+   "joints": 11,
+   "bones": 0,
+   "description": "Colossal Mammoth from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "condor",
+   "path": "creatures/condor/condor.obj",
+   "rig": "creatures/condor/rig.json",
+   "size": [
+    2.384,
+    3.18,
+    5.9
+   ],
+   "joints": 20,
+   "bones": 22,
+   "description": "Condor from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "crystal_triceratops",
+   "path": "creatures/crystal_triceratops/crystal_triceratops.obj",
+   "rig": "creatures/crystal_triceratops/rig.json",
+   "size": [
+    9.447,
+    13.23,
+    17.54
+   ],
+   "joints": 12,
+   "bones": 0,
+   "description": "CrystalTriceratops from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "cyber_t_rex",
+   "path": "creatures/cyber_t_rex/cyber_t_rex.obj",
+   "rig": "creatures/cyber_t_rex/rig.json",
+   "size": [
+    13.352,
+    14.3,
+    31.74
+   ],
+   "joints": 25,
+   "bones": 0,
+   "description": "Cyber T-Rex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "digital_saurus",
+   "path": "creatures/digital_saurus/digital_saurus.obj",
+   "rig": "creatures/digital_saurus/rig.json",
+   "size": [
+    12.0,
+    14.25,
+    17.24
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "DigitalSaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "dimetrodon",
+   "path": "creatures/dimetrodon/dimetrodon.obj",
+   "rig": "creatures/dimetrodon/rig.json",
+   "size": [
+    3.5,
+    4.75,
+    10.24
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Dimetrodon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "dimetrodon_2",
+   "path": "creatures/dimetrodon_2/dimetrodon_2.obj",
+   "rig": "creatures/dimetrodon_2/rig.json",
+   "size": [
+    3.821,
+    8.09,
+    17.82
+   ],
+   "joints": 27,
+   "bones": 0,
+   "description": "Dimetrodon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "diplodocus",
+   "path": "creatures/diplodocus/diplodocus.obj",
+   "rig": "creatures/diplodocus/rig.json",
+   "size": [
+    23.112,
+    34.67,
+    38.13
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Diplodocus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "dire_wolf",
+   "path": "creatures/dire_wolf/dire_wolf.obj",
+   "rig": "creatures/dire_wolf/rig.json",
+   "size": [
+    4.028,
+    6.06,
+    11.34
+   ],
+   "joints": 16,
+   "bones": 28,
+   "description": "Dire Wolf from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "dodo",
+   "path": "creatures/dodo/dodo.obj",
+   "rig": "creatures/dodo/rig.json",
+   "size": [
+    4.798,
+    4.72,
+    2.14
+   ],
+   "joints": 8,
+   "bones": 37,
+   "description": "Dodo from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "dodo_bird",
+   "path": "creatures/dodo_bird/dodo_bird.obj",
+   "rig": "creatures/dodo_bird/rig.json",
+   "size": [
+    1.718,
+    4.46,
+    4.32
+   ],
+   "joints": 10,
+   "bones": 0,
+   "description": "Dodo Bird from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "drex",
+   "path": "creatures/drex/drex.obj",
+   "rig": "creatures/drex/rig.json",
+   "size": [
+    17.2,
+    23.71,
+    60.44
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "DRex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "eggshell_dinosaur",
+   "path": "creatures/eggshell_dinosaur/eggshell_dinosaur.obj",
+   "rig": "creatures/eggshell_dinosaur/rig.json",
+   "size": [
+    8.174,
+    12.08,
+    12.42
+   ],
+   "joints": 21,
+   "bones": 0,
+   "description": "EggshellDinosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "elasmosaurus",
+   "path": "creatures/elasmosaurus/elasmosaurus.obj",
+   "rig": "creatures/elasmosaurus/rig.json",
+   "size": [
+    29.642,
+    9.96,
+    50.9
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Elasmosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "elderfrost_mammoth",
+   "path": "creatures/elderfrost_mammoth/elderfrost_mammoth.obj",
+   "rig": "creatures/elderfrost_mammoth/rig.json",
+   "size": [
+    18.75,
+    14.82,
+    8.08
+   ],
+   "joints": 39,
+   "bones": 40,
+   "description": "Elderfrost Mammoth from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "forest_giganoto_saurus",
+   "path": "creatures/forest_giganoto_saurus/forest_giganoto_saurus.obj",
+   "rig": "creatures/forest_giganoto_saurus/rig.json",
+   "size": [
+    17.864,
+    21.54,
+    32.06
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "ForestGiganotoSaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "giganotosaurus",
+   "path": "creatures/giganotosaurus/giganotosaurus.obj",
+   "rig": "creatures/giganotosaurus/rig.json",
+   "size": [
+    17.5,
+    17.47,
+    42.32
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Giganotosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "glyptodont",
+   "path": "creatures/glyptodont/glyptodont.obj",
+   "rig": "creatures/glyptodont/rig.json",
+   "size": [
+    7.106,
+    3.53,
+    2.86
+   ],
+   "joints": 10,
+   "bones": 22,
+   "description": "Glyptodont from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "he_pingensis",
+   "path": "creatures/he_pingensis/he_pingensis.obj",
+   "rig": "creatures/he_pingensis/rig.json",
+   "size": [
+    13.5,
+    22.35,
+    30.06
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "HePingensis from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "huayang_saurus",
+   "path": "creatures/huayang_saurus/huayang_saurus.obj",
+   "rig": "creatures/huayang_saurus/rig.json",
+   "size": [
+    11.0,
+    12.18,
+    26.26
+   ],
+   "joints": 17,
+   "bones": 0,
+   "description": "HuayangSaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "ice_mammoth",
+   "path": "creatures/ice_mammoth/ice_mammoth.obj",
+   "rig": "creatures/ice_mammoth/rig.json",
+   "size": [
+    15.108,
+    8.24,
+    6.48
+   ],
+   "joints": 7,
+   "bones": 32,
+   "description": "Ice Mammoth from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "irex",
+   "path": "creatures/irex/irex.obj",
+   "rig": "creatures/irex/rig.json",
+   "size": [
+    18.0,
+    23.15,
+    55.38
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "IRex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "jefferson_ground_sloth",
+   "path": "creatures/jefferson_ground_sloth/jefferson_ground_sloth.obj",
+   "rig": "creatures/jefferson_ground_sloth/rig.json",
+   "size": [
+    11.626,
+    5.85,
+    3.88
+   ],
+   "joints": 14,
+   "bones": 26,
+   "description": "Jefferson Ground Sloth from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "komodo_dragon",
+   "path": "creatures/komodo_dragon/komodo_dragon.obj",
+   "rig": "creatures/komodo_dragon/rig.json",
+   "size": [
+    20.0,
+    31.68,
+    28.9
+   ],
+   "joints": 17,
+   "bones": 0,
+   "description": "KomodoDragon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "liopleurodon",
+   "path": "creatures/liopleurodon/liopleurodon.obj",
+   "rig": "creatures/liopleurodon/rig.json",
+   "size": [
+    19.53,
+    6.48,
+    30.42
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Liopleurodon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "lod_green_drake",
+   "path": "creatures/lod_green_drake/lod_green_drake.obj",
+   "rig": null,
+   "size": [
+    6.012,
+    7.29,
+    4.49
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/GreenDrake from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_green_storm",
+   "path": "creatures/lod_green_storm/lod_green_storm.obj",
+   "rig": null,
+   "size": [
+    24.466,
+    17.91,
+    11.6
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/GreenStorm from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_pachycephalosaur",
+   "path": "creatures/lod_pachycephalosaur/lod_pachycephalosaur.obj",
+   "rig": null,
+   "size": [
+    16.866,
+    9.33,
+    4.14
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Pachycephalosaur from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_pastel_dragon",
+   "path": "creatures/lod_pastel_dragon/lod_pastel_dragon.obj",
+   "rig": null,
+   "size": [
+    15.498,
+    8.34,
+    6.84
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/PastelDragon from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_plesiosaur",
+   "path": "creatures/lod_plesiosaur/lod_plesiosaur.obj",
+   "rig": null,
+   "size": [
+    28.262,
+    6.76,
+    10.78
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Plesiosaur from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_pterosaur",
+   "path": "creatures/lod_pterosaur/lod_pterosaur.obj",
+   "rig": null,
+   "size": [
+    13.337,
+    5.15,
+    23.34
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Pterosaur from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_spinosaurus",
+   "path": "creatures/lod_spinosaurus/lod_spinosaurus.obj",
+   "rig": null,
+   "size": [
+    27.786,
+    10.41,
+    6.56
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Spinosaurus from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_sunstorm",
+   "path": "creatures/lod_sunstorm/lod_sunstorm.obj",
+   "rig": null,
+   "size": [
+    10.882,
+    12.87,
+    8.88
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Sunstorm from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_tyrannosaurus",
+   "path": "creatures/lod_tyrannosaurus/lod_tyrannosaurus.obj",
+   "rig": null,
+   "size": [
+    25.81,
+    12.09,
+    9.26
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Tyrannosaurus from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "lod_velociraptor",
+   "path": "creatures/lod_velociraptor/lod_velociraptor.obj",
+   "rig": null,
+   "size": [
+    12.481,
+    4.8,
+    3.2
+   ],
+   "joints": 0,
+   "bones": 0,
+   "description": "PetLOD/Velociraptor from the game: low-detail static pet (no joints)."
+  },
+  {
+   "name": "long",
+   "path": "creatures/long/long.obj",
+   "rig": "creatures/long/rig.json",
+   "size": [
+    27.0,
+    33.75,
+    41.24
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "Long from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "machine_dinosaur",
+   "path": "creatures/machine_dinosaur/machine_dinosaur.obj",
+   "rig": "creatures/machine_dinosaur/rig.json",
+   "size": [
+    24.0,
+    32.08,
+    41.66
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "MachineDinosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "macrauchenia",
+   "path": "creatures/macrauchenia/macrauchenia.obj",
+   "rig": "creatures/macrauchenia/rig.json",
+   "size": [
+    7.55,
+    6.12,
+    1.84
+   ],
+   "joints": 19,
+   "bones": 35,
+   "description": "Macrauchenia from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "maiasaura",
+   "path": "creatures/maiasaura/maiasaura.obj",
+   "rig": "creatures/maiasaura/rig.json",
+   "size": [
+    10.8,
+    14.37,
+    32.12
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Maiasaura from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mammoth",
+   "path": "creatures/mammoth/mammoth.obj",
+   "rig": "creatures/mammoth/rig.json",
+   "size": [
+    15.35,
+    10.76,
+    7.62
+   ],
+   "joints": 33,
+   "bones": 35,
+   "description": "Mammoth from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "mammoth_2",
+   "path": "creatures/mammoth_2/mammoth_2.obj",
+   "rig": "creatures/mammoth_2/rig.json",
+   "size": [
+    17.004,
+    12.24,
+    10.72
+   ],
+   "joints": 6,
+   "bones": 0,
+   "description": "Mammoth from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mecha_dinosaur",
+   "path": "creatures/mecha_dinosaur/mecha_dinosaur.obj",
+   "rig": "creatures/mecha_dinosaur/rig.json",
+   "size": [
+    19.0,
+    27.5,
+    38.32
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "MechaDinosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "megalodon",
+   "path": "creatures/megalodon/megalodon.obj",
+   "rig": "creatures/megalodon/rig.json",
+   "size": [
+    14.051,
+    10.04,
+    25.16
+   ],
+   "joints": 7,
+   "bones": 0,
+   "description": "Megalodon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "microraptor",
+   "path": "creatures/microraptor/microraptor.obj",
+   "rig": "creatures/microraptor/rig.json",
+   "size": [
+    23.169,
+    4.46,
+    17.48
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Microraptor from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mosasaur",
+   "path": "creatures/mosasaur/mosasaur.obj",
+   "rig": "creatures/mosasaur/rig.json",
+   "size": [
+    14.416,
+    8.44,
+    40.08
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "Mosasaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mosasaurus",
+   "path": "creatures/mosasaurus/mosasaurus.obj",
+   "rig": "creatures/mosasaurus/rig.json",
+   "size": [
+    30.938,
+    13.46,
+    62.9
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Mosasaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mussaurus",
+   "path": "creatures/mussaurus/mussaurus.obj",
+   "rig": "creatures/mussaurus/rig.json",
+   "size": [
+    3.75,
+    11.25,
+    15.76
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Mussaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mutadon",
+   "path": "creatures/mutadon/mutadon.obj",
+   "rig": "creatures/mutadon/rig.json",
+   "size": [
+    31.518,
+    8.75,
+    22.54
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Mutadon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "mutated_t_rex",
+   "path": "creatures/mutated_t_rex/mutated_t_rex.obj",
+   "rig": "creatures/mutated_t_rex/rig.json",
+   "size": [
+    6.9,
+    10.58,
+    23.42
+   ],
+   "joints": 9,
+   "bones": 0,
+   "description": "Mutated T-Rex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "nothosaurus",
+   "path": "creatures/nothosaurus/nothosaurus.obj",
+   "rig": "creatures/nothosaurus/rig.json",
+   "size": [
+    9.005,
+    5.61,
+    28.64
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Nothosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "oviraptor",
+   "path": "creatures/oviraptor/oviraptor.obj",
+   "rig": "creatures/oviraptor/rig.json",
+   "size": [
+    3.852,
+    6.56,
+    8.86
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Oviraptor from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "pachycephalosaur",
+   "path": "creatures/pachycephalosaur/pachycephalosaur.obj",
+   "rig": "creatures/pachycephalosaur/rig.json",
+   "size": [
+    4.149,
+    9.34,
+    16.86
+   ],
+   "joints": 22,
+   "bones": 0,
+   "description": "Pachycephalosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "pachycephalosaurus",
+   "path": "creatures/pachycephalosaurus/pachycephalosaurus.obj",
+   "rig": "creatures/pachycephalosaurus/rig.json",
+   "size": [
+    6.3,
+    12.6,
+    17.32
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Pachycephalosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "parasaurolophus",
+   "path": "creatures/parasaurolophus/parasaurolophus.obj",
+   "rig": "creatures/parasaurolophus/rig.json",
+   "size": [
+    8.75,
+    18.37,
+    27.72
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Parasaurolophus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "plesiosaur",
+   "path": "creatures/plesiosaur/plesiosaur.obj",
+   "rig": "creatures/plesiosaur/rig.json",
+   "size": [
+    10.773,
+    6.76,
+    28.26
+   ],
+   "joints": 26,
+   "bones": 0,
+   "description": "Plesiosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "pteranodon",
+   "path": "creatures/pteranodon/pteranodon.obj",
+   "rig": "creatures/pteranodon/rig.json",
+   "size": [
+    22.518,
+    8.11,
+    15.78
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Pteranodon from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "pterodactyl",
+   "path": "creatures/pterodactyl/pterodactyl.obj",
+   "rig": "creatures/pterodactyl/rig.json",
+   "size": [
+    11.09,
+    3.31,
+    23.2
+   ],
+   "joints": 8,
+   "bones": 0,
+   "description": "Pterodactyl from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "pterosaur",
+   "path": "creatures/pterosaur/pterosaur.obj",
+   "rig": "creatures/pterosaur/rig.json",
+   "size": [
+    23.349,
+    5.15,
+    13.34
+   ],
+   "joints": 12,
+   "bones": 0,
+   "description": "Pterosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "quetzalcoatlus",
+   "path": "creatures/quetzalcoatlus/quetzalcoatlus.obj",
+   "rig": "creatures/quetzalcoatlus/rig.json",
+   "size": [
+    27.0,
+    9.0,
+    16.0
+   ],
+   "joints": 8,
+   "bones": 0,
+   "description": "Quetzalcoatlus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "quetzalcoatlus_northropi",
+   "path": "creatures/quetzalcoatlus_northropi/quetzalcoatlus_northropi.obj",
+   "rig": "creatures/quetzalcoatlus_northropi/rig.json",
+   "size": [
+    25.52,
+    8.99,
+    19.78
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "QuetzalcoatlusNorthropi from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "raptor",
+   "path": "creatures/raptor/raptor.obj",
+   "rig": "creatures/raptor/rig.json",
+   "size": [
+    5.774,
+    9.32,
+    22.68
+   ],
+   "joints": 29,
+   "bones": 0,
+   "description": "Raptor from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "rex",
+   "path": "creatures/rex/rex.obj",
+   "rig": "creatures/rex/rig.json",
+   "size": [
+    6.5,
+    9.12,
+    11.9
+   ],
+   "joints": 11,
+   "bones": 0,
+   "description": "Rex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "rex_e1",
+   "path": "creatures/rex_e1/rex_e1.obj",
+   "rig": "creatures/rex_e1/rig.json",
+   "size": [
+    7.502,
+    9.75,
+    14.14
+   ],
+   "joints": 11,
+   "bones": 0,
+   "description": "Rex_E1 from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "saber_tooth_tiger",
+   "path": "creatures/saber_tooth_tiger/saber_tooth_tiger.obj",
+   "rig": "creatures/saber_tooth_tiger/rig.json",
+   "size": [
+    9.172,
+    5.94,
+    3.9
+   ],
+   "joints": 16,
+   "bones": 29,
+   "description": "Saber Tooth Tiger from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "saber_tooth_wyvern",
+   "path": "creatures/saber_tooth_wyvern/saber_tooth_wyvern.obj",
+   "rig": "creatures/saber_tooth_wyvern/rig.json",
+   "size": [
+    36.328,
+    15.55,
+    44.3
+   ],
+   "joints": 16,
+   "bones": 23,
+   "description": "Saber Tooth Wyvern from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "sabertooth_squirrel",
+   "path": "creatures/sabertooth_squirrel/sabertooth_squirrel.obj",
+   "rig": "creatures/sabertooth_squirrel/rig.json",
+   "size": [
+    4.537,
+    3.76,
+    2.28
+   ],
+   "joints": 18,
+   "bones": 25,
+   "description": "Sabertooth Squirrel from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
+  },
+  {
+   "name": "sabertooth_tiger",
+   "path": "creatures/sabertooth_tiger/sabertooth_tiger.obj",
+   "rig": "creatures/sabertooth_tiger/rig.json",
+   "size": [
+    3.214,
+    5.18,
+    10.28
+   ],
+   "joints": 7,
+   "bones": 0,
+   "description": "Sabertooth Tiger from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "shonisaurus",
+   "path": "creatures/shonisaurus/shonisaurus.obj",
+   "rig": "creatures/shonisaurus/rig.json",
+   "size": [
+    16.56,
+    17.75,
+    44.06
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Shonisaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "silent_triceratops",
+   "path": "creatures/silent_triceratops/silent_triceratops.obj",
+   "rig": "creatures/silent_triceratops/rig.json",
+   "size": [
+    7.894,
+    8.79,
+    14.74
+   ],
+   "joints": 7,
+   "bones": 0,
+   "description": "Silent Triceratops from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "skeletal_rex",
+   "path": "creatures/skeletal_rex/skeletal_rex.obj",
+   "rig": "creatures/skeletal_rex/rig.json",
+   "size": [
+    10.334,
+    14.29,
+    31.52
+   ],
+   "joints": 31,
+   "bones": 0,
+   "description": "Skeletal Rex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "skeleton_dodo",
+   "path": "creatures/skeleton_dodo/skeleton_dodo.obj",
+   "rig": "creatures/skeleton_dodo/rig.json",
+   "size": [
+    4.546,
+    4.27,
+    4.62
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Skeleton Dodo from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "spinosaurus",
+   "path": "creatures/spinosaurus/spinosaurus.obj",
+   "rig": "creatures/spinosaurus/rig.json",
+   "size": [
+    14.0,
+    21.88,
+    44.62
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Spinosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "spinosaurus_2",
+   "path": "creatures/spinosaurus_2/spinosaurus_2.obj",
+   "rig": "creatures/spinosaurus_2/rig.json",
+   "size": [
+    6.558,
+    10.41,
+    27.78
+   ],
+   "joints": 22,
+   "bones": 0,
+   "description": "Spinosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "spinosaurus_3",
+   "path": "creatures/spinosaurus_3/spinosaurus_3.obj",
+   "rig": "creatures/spinosaurus_3/rig.json",
+   "size": [
+    4.25,
+    9.92,
+    24.36
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "Spinosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "stegosaurus",
+   "path": "creatures/stegosaurus/stegosaurus.obj",
+   "rig": "creatures/stegosaurus/rig.json",
+   "size": [
+    12.6,
+    16.28,
+    31.5
+   ],
+   "joints": 8,
+   "bones": 0,
+   "description": "Stegosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "stegosaurus_2",
+   "path": "creatures/stegosaurus_2/stegosaurus_2.obj",
+   "rig": "creatures/stegosaurus_2/rig.json",
+   "size": [
+    4.615,
+    7.81,
+    16.38
+   ],
+   "joints": 20,
+   "bones": 0,
+   "description": "Stegosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "styracosaurus",
+   "path": "creatures/styracosaurus/styracosaurus.obj",
+   "rig": "creatures/styracosaurus/rig.json",
+   "size": [
+    11.256,
+    12.29,
+    19.8
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Styracosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "t_rex",
+   "path": "creatures/t_rex/t_rex.obj",
+   "rig": "creatures/t_rex/rig.json",
+   "size": [
+    8.596,
+    13.6,
+    31.45
+   ],
+   "joints": 12,
+   "bones": 0,
+   "description": "T Rex from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "therizinosaurus",
+   "path": "creatures/therizinosaurus/therizinosaurus.obj",
+   "rig": "creatures/therizinosaurus/rig.json",
+   "size": [
+    10.0,
+    16.25,
+    29.14
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "Therizinosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "tregina",
+   "path": "creatures/tregina/tregina.obj",
+   "rig": "creatures/tregina/rig.json",
+   "size": [
+    14.458,
+    17.1,
+    30.08
+   ],
+   "joints": 16,
+   "bones": 0,
+   "description": "TRegina from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "trex",
+   "path": "creatures/trex/trex.obj",
+   "rig": "creatures/trex/rig.json",
+   "size": [
+    9.263,
+    12.09,
+    25.8
+   ],
+   "joints": 23,
+   "bones": 0,
+   "description": "The game's T-Rex guardian (green with a tan belly, red crest and neon-yellow eyes): 23 movable bodies with a jaw (mouth), two neck segments, head, 3-joint arms, 4-joint legs and a 4-segment tail. Hero creature of 'Stealing a T-Rex Egg'."
+  },
+  {
+   "name": "tribolite",
+   "path": "creatures/tribolite/tribolite.obj",
+   "rig": "creatures/tribolite/rig.json",
+   "size": [
+    5.406,
+    1.73,
+    3.36
+   ],
+   "joints": 8,
+   "bones": 0,
+   "description": "Tribolite from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "triceratops",
+   "path": "creatures/triceratops/triceratops.obj",
+   "rig": "creatures/triceratops/rig.json",
+   "size": [
+    12.0,
+    17.96,
+    27.5
+   ],
+   "joints": 8,
+   "bones": 0,
+   "description": "Triceratops from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "triceratops_2",
+   "path": "creatures/triceratops_2/triceratops_2.obj",
+   "rig": "creatures/triceratops_2/rig.json",
+   "size": [
+    5.888,
+    7.36,
+    12.92
+   ],
+   "joints": 17,
+   "bones": 0,
+   "description": "Triceratops from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "triceratops_3",
+   "path": "creatures/triceratops_3/triceratops_3.obj",
+   "rig": "creatures/triceratops_3/rig.json",
+   "size": [
+    8.682,
+    9.19,
+    18.9
+   ],
+   "joints": 9,
+   "bones": 0,
+   "description": "Triceratops from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "tupandactylus",
+   "path": "creatures/tupandactylus/tupandactylus.obj",
+   "rig": "creatures/tupandactylus/rig.json",
+   "size": [
+    13.5,
+    7.81,
+    9.0
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "Tupandactylus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "tyrannosaurus",
+   "path": "creatures/tyrannosaurus/tyrannosaurus.obj",
+   "rig": "creatures/tyrannosaurus/rig.json",
+   "size": [
+    13.2,
+    21.2,
+    27.14
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "Tyrannosaurus from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "velociraptor",
+   "path": "creatures/velociraptor/velociraptor.obj",
+   "rig": "creatures/velociraptor/rig.json",
+   "size": [
+    5.25,
+    9.0,
+    15.0
+   ],
+   "joints": 12,
+   "bones": 0,
+   "description": "Velociraptor from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "velociraptor_2",
+   "path": "creatures/velociraptor_2/velociraptor_2.obj",
+   "rig": "creatures/velociraptor_2/rig.json",
+   "size": [
+    3.207,
+    4.8,
+    12.48
+   ],
+   "joints": 22,
+   "bones": 0,
+   "description": "Velociraptor from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "woolly_rhinoceros",
+   "path": "creatures/woolly_rhinoceros/woolly_rhinoceros.obj",
+   "rig": "creatures/woolly_rhinoceros/rig.json",
+   "size": [
+    8.501,
+    10.76,
+    16.88
+   ],
+   "joints": 13,
+   "bones": 0,
+   "description": "WoollyRhinoceros from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "yangchuanosaurus",
+   "path": "creatures/yangchuanosaurus/yangchuanosaurus.obj",
+   "rig": "creatures/yangchuanosaurus/rig.json",
+   "size": [
+    14.525,
+    16.98,
+    24.38
+   ],
+   "joints": 15,
+   "bones": 0,
+   "description": "Yangchuanosaurus from the game: Motor6D rig of rigid parts."
+  }
+ ]
+}

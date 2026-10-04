@@ -1,0 +1,26 @@
+{
+ "item": "animal_llama",
+ "category": "creatures",
+ "sourceName": "Llama",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsI.NormalAnimals.Llama",
+ "size": [
+  5.2854,
+  5.4468,
+  1.7773
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "animal_llama"
+ ],
+ "joints": 0,
+ "bones": 25,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://102864948097837"
+ ],
+ "textureIds": [
+  "rbxassetid://115853396104487"
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "item": "egg_he_pingensis",
+ "category": "props",
+ "sourceName": "HePingensis",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.HePingensis",
+ "size": [
+  9.4136,
+  9.4136,
+  9.4141
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_he_pingensis"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 4,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

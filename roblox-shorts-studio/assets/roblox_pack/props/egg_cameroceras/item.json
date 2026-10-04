@@ -1,0 +1,22 @@
+{
+ "item": "egg_cameroceras",
+ "category": "props",
+ "sourceName": "Cameroceras",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Cameroceras",
+ "size": [
+  2.5835,
+  3.4446,
+  2.583
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "egg_cameroceras"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 2,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

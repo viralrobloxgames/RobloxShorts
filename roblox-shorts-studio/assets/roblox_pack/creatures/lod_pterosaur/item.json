@@ -1,0 +1,28 @@
+{
+ "item": "lod_pterosaur",
+ "category": "creatures",
+ "sourceName": "PetLOD/Pterosaur",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.PetLOD/Pterosaur",
+ "size": [
+  13.3632,
+  5.1628,
+  23.3486
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "lod_pterosaur"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 5,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://115209038556684",
+  "rbxassetid://119890305965117",
+  "rbxassetid://75354884598108",
+  "rbxassetid://85319899643452",
+  "rbxassetid://97294453830090"
+ ],
+ "textureIds": []
+}

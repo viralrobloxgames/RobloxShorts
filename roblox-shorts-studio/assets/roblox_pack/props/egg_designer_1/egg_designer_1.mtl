@@ -1,0 +1,16 @@
+# Materials for egg_designer_1. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffff00_neon
+Kd 1.0000 1.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 1.0000 0.0000
+d 1.0000
+illum 2
+
+newmtl tex_egg_designer_1_i008p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd egg_designer_1_i008p002x.png

@@ -1,0 +1,26 @@
+{
+ "item": "cameroceras",
+ "category": "creatures",
+ "sourceName": "Cameroceras",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Cameroceras",
+ "size": [
+  6.2515,
+  5.3573,
+  31.8335
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LowerTorso",
+  "LowerTorso_decal1",
+  "LowerTorso_decal2",
+  "RightUpperLeg",
+  "LeftUpperLeg"
+ ],
+ "joints": 16,
+ "bones": 0,
+ "parts": 63,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

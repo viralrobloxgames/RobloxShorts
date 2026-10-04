@@ -1,0 +1,88 @@
+# Materials for egg_fennec_fox. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_ffc98b
+Kd 1.0000 0.7882 0.5451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ff8102
+Kd 1.0000 0.5059 0.0078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_000000
+Kd 0.0000 0.0000 0.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ffffff
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_ca6602
+Kd 0.7922 0.4000 0.0078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_8c4b00_shiny
+Kd 0.5490 0.2941 0.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_ffa947_neon
+Kd 1.0000 0.6627 0.2784
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.6627 0.2784
+d 1.0000
+illum 2
+
+newmtl c_ff8102_neon
+Kd 1.0000 0.5059 0.0078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.5059 0.0078
+d 1.0000
+illum 2
+
+newmtl c_ffc98b_neon
+Kd 1.0000 0.7882 0.5451
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.7882 0.5451
+d 1.0000
+illum 2
+
+newmtl c_ca6602_neon
+Kd 0.7922 0.4000 0.0078
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.7922 0.4000 0.0078
+d 1.0000
+illum 2
+
+newmtl c_ffa947_shiny
+Kd 1.0000 0.6627 0.2784
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_ffc98b_shiny
+Kd 1.0000 0.7882 0.5451
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2

@@ -1,0 +1,35 @@
+{
+ "item": "velociraptor",
+ "category": "creatures",
+ "sourceName": "Velociraptor",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.Velociraptor",
+ "size": [
+  5.25,
+  9,
+  15
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "RightUpperArm",
+  "LowerTorso",
+  "LeftUpperLeg",
+  "Tail",
+  "LeftFoot",
+  "LeftLowerLeg",
+  "LeftUpperArm",
+  "UpperTorso",
+  "RightFoot",
+  "RightUpperLeg",
+  "Head",
+  "Head_decal1",
+  "Head_decal2",
+  "RightLowerLeg"
+ ],
+ "joints": 12,
+ "bones": 0,
+ "parts": 63,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

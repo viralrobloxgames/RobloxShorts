@@ -1,0 +1,38 @@
+{
+ "item": "komodo_dragon",
+ "category": "creatures",
+ "sourceName": "KomodoDragon",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.PrehistoricModelsII.KomodoDragon",
+ "size": [
+  20,
+  31.6771,
+  28.8916
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "LeftLowerLeg",
+  "Mouth",
+  "RightLowerLeg",
+  "Head",
+  "Tail",
+  "RightUpperLeg",
+  "RightFoot",
+  "LeftLowerArm",
+  "LeftHand",
+  "LeftUpperLeg",
+  "UpperTorso",
+  "LowerTorso",
+  "LeftUpperArm",
+  "LeftFoot",
+  "RightUpperArm",
+  "RightHand",
+  "RightLowerArm"
+ ],
+ "joints": 17,
+ "bones": 0,
+ "parts": 167,
+ "facingKnown": true,
+ "meshIds": [],
+ "textureIds": []
+}

@@ -1,0 +1,152 @@
+# Materials for macrauchenia. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl tex_macrauchenia_i028p001x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p001x.png
+
+newmtl tex_macrauchenia_i028p002x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p002x.png
+
+newmtl tex_macrauchenia_i028p003x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p003x.png
+
+newmtl tex_macrauchenia_i028p004x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p004x.png
+
+newmtl tex_macrauchenia_i028p005x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p005x.png
+
+newmtl tex_macrauchenia_i028p006x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p006x.png
+
+newmtl tex_macrauchenia_i028p007x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p007x.png
+
+newmtl tex_macrauchenia_i028p008x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p008x.png
+
+newmtl tex_macrauchenia_i028p009x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p009x.png
+
+newmtl tex_macrauchenia_i028p010x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p010x.png
+
+newmtl tex_macrauchenia_i028p011x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p011x.png
+
+newmtl tex_macrauchenia_i028p012x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p012x.png
+
+newmtl tex_macrauchenia_i028p013x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p013x.png
+
+newmtl tex_macrauchenia_i028p014x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p014x.png
+
+newmtl tex_macrauchenia_i028p015x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p015x.png
+
+newmtl tex_macrauchenia_i028p016x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p016x.png
+
+newmtl tex_macrauchenia_i028p017x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p017x.png
+
+newmtl tex_macrauchenia_i028p018x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p018x.png
+
+newmtl tex_macrauchenia_i028p019x
+Kd 1.0000 1.0000 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+map_Kd macrauchenia_i028p019x.png

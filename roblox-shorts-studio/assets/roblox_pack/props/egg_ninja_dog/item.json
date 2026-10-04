@@ -1,0 +1,38 @@
+{
+ "item": "egg_ninja_dog",
+ "category": "props",
+ "sourceName": "Eggs/NinjaDogEgg",
+ "sourcePath": "ServerStorage.Assets.Prehistoric.Eggs.Eggs/NinjaDogEgg",
+ "size": [
+  7.8201,
+  7.3412,
+  6.2998
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "E3",
+  "E1U",
+  "E2D",
+  "E2U",
+  "E1D"
+ ],
+ "joints": 5,
+ "bones": 0,
+ "parts": 23,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://100438636890191",
+  "rbxassetid://102638141355162",
+  "rbxassetid://107793580493094",
+  "rbxassetid://108503294738020",
+  "rbxassetid://118680535438031",
+  "rbxassetid://135771671823073",
+  "rbxassetid://138899551466719",
+  "rbxassetid://139768951375426",
+  "rbxassetid://71864506164415",
+  "rbxassetid://85395767051520",
+  "rbxassetid://86999207732529"
+ ],
+ "textureIds": []
+}
