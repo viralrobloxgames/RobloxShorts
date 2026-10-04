@@ -1,11 +1,11 @@
 {
   "clip": "projects/the-super-nose-detective/web/nose_clip.js",
-  "generated": "2026-10-04T07:43:02.113Z",
-  "fingerprint": "b7622a45671b59d7",
+  "generated": "2026-10-04T10:19:35.960Z",
+  "fingerprint": "40e151772d7a5a6f",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [],
   "pairs": [],
-  "reviewedAt": "2026-10-04T07:43:02.872Z"
+  "reviewedAt": "2026-10-04T10:19:36.423Z"
 }

@@ -35,7 +35,9 @@ sexual references. Story, research and beats: `source/story.md`. Script: `script
   long nose reads in profile. TikTok caption now has the follow line.
 
 ## Next
-- Full render (started 2026-10-04), encode, review, deliver. Post only after the user approves.
+- Full render done and encoded (72.7 s, delivery/The_Super_Nose_Detective.mp4, mp4 not committed). The tempt2 shot was
+  re-angled after review (Max's think/stop gestures were filling the lens) and its frames re-rendered. Waiting on the
+  user's approval to post (TikTok, then YouTube).
 
 ## Re-render / re-encode
 ```

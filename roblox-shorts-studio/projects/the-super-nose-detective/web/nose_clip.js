@@ -480,7 +480,7 @@ export function update(t, stage) {
     case 'drive': { const c = C.pos; look(c.clone().add(V(10, 4.5, 8)), c.clone().add(V(0, 2.4, 1)), 46, 30); break; }
     case 'party': look(V(14, 12, 300), V(-6, 2, 334), 50, 50); break;
     case 'mia': look(MIA_AT.clone().add(V(-10, 3.8, -6.5)), MIA_AT.clone().add(V(0.6, 2.2, -1.2)), 40); break;   // from the side: clear of Max (MAXP) and the palm at PALM_N
-    case 'tempt2': look(mh.clone().add(V(-4, 0.6, 3.6)), mh.clone().add(V(0, 0.0, 0)), 40); break;             // headroom for the counter
+    case 'tempt2': look(mh.clone().add(V(3.0, 0.5, 6.0)), mh.clone().add(V(-0.5, -0.2, 0.8)), 40); break;              // his left side: the think and stop gestures (right arm) stay out of the lens; headroom for the counter
     case 'suspect': { const nh = headAt(noob), k = easeInOut(seg(s, W.guy1, W.guy1 + 0.2)); look(nh.clone().add(V(-2.5, lerp(-2.6, -0.8, k), lerp(-9, -4.5, k))), nh.clone().add(V(0, -0.6 + 0.4 * k, 0)), 40); break; }
     case 'stare': look(mh.clone().add(V(-0.6, 0.05, 2.6)), mh.clone().add(V(0, 0, 0.5)), 34); break;
     case 'fight': look(V(12.5, 6.2, lerp(312, 314.5, u)), V(7.6, 3.4, 329), 42, 30); break;
