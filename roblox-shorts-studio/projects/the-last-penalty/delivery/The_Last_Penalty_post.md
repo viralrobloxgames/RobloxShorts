@@ -1,30 +1,23 @@
-# The Last Penalty: post text
+# The Last Penalty
 
-- Video: `The_Last_Penalty.mp4` (69.9 s)
-- Cover: `The_Last_Penalty_cover.jpg`
-- TikTok: **not posted** · YouTube: **not posted**
-- Post only after the video is approved: TikTok first, then YouTube Shorts.
+TikTok: **not posted** · YouTube: **not posted** · `The_Last_Penalty.mp4` (70 s)
 
-## TikTok
+Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
-Caption:
+## 1. TikTok description
 
 ```
 He shot the last penalty eyes closed 😳
 #roblox #robloxstory #football #penalty #fyp
 ```
 
-Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `The_Last_Penalty_cover.jpg` (or pick the last frame of `The_Last_Penalty_upload.mp4`).
-
-## YouTube Shorts
-
-Title:
+## 2. YouTube title
 
 ```
 He Shot The Last Penalty Eyes Closed 😳
 ```
 
-Description:
+## 3. YouTube description
 
 ```
 Last penalty of the final. Leo has scored every penalty all season, but he always looks at the corner he's aiming for. So the keeper reads him... until he closes his eyes.
@@ -36,10 +29,13 @@ An original animated Roblox-style story (fiction). Follow viralrobloxgames for m
 #roblox #robloxstory #shorts
 ```
 
-Tags:
+## Settings
+
+- **TikTok:** Everyone · AI-generated label ON · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
+- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
+
+YouTube tags (optional, under Show more):
 
 ```
 roblox, roblox story, roblox animation, roblox football, penalty, goalkeeper, roblox shorts, viralrobloxgames
 ```
-
-Settings: visibility **Public**; made for kids **No**; altered or synthetic content **No**; category **Gaming**. Thumbnail: `The_Last_Penalty_cover.jpg`; in Studio set the Shorts frame to the last frame (Thumbnail, Select from video).

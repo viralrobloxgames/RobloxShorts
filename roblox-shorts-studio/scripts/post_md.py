@@ -40,25 +40,25 @@ def write(project):
     status = lambda k: (pub.get(k) or {}).get('status', 'not posted')
     secs = seconds(mp4)
     t, y = post.get('tiktok', {}), post.get('youtube', {})
-    L = [f"# {meta.get('title', stem.replace('_', ' '))}: post text", '',
-         f"- Video: `{mp4.name}`" + (f" ({secs:.1f} s)" if secs else ''),
-         f"- Cover: `{stem}_cover.jpg`",
-         f"- TikTok: **{status('tiktok')}** · YouTube: **{status('youtube')}**",
-         '- Post only after the video is approved: TikTok first, then YouTube Shorts.', '']
-    if t:
-        L += ['## TikTok', '', 'Caption:', '', block(t['caption']), '',
-              f"Settings: who can watch **{'Everyone' if t.get('privacy') == 'PUBLIC_TO_EVERYONE' else t.get('privacy')}**; "
-              f"AI-generated content label **{'on' if t.get('ai_generated') else 'off'}**; comments "
-              f"{'on' if t.get('allow_comments', True) else 'off'}, duet {'on' if t.get('allow_duet', True) else 'off'}, "
-              f"stitch {'on' if t.get('allow_stitch', True) else 'off'}. Cover: upload `{stem}_cover.jpg` (or pick the last frame of "
-              f"`{stem}_upload.mp4`).", '']
-    if y:
-        L += ['## YouTube Shorts', '', 'Title:', '', block(y['title']), '', 'Description:', '', block(y['description']), '',
-              'Tags:', '', block(', '.join(y.get('tags', []))), '',
-              f"Settings: visibility **{y.get('privacy', 'public').capitalize()}**; made for kids **{'Yes' if y.get('made_for_kids') else 'No'}**; "
-              f"altered or synthetic content **{'Yes' if y.get('contains_synthetic_media') else 'No'}**; category **"
-              f"{'Gaming' if str(y.get('category_id')) == '20' else y.get('category_id')}**. Thumbnail: `{stem}_cover.jpg`; in Studio set "
-              'the Shorts frame to the last frame (Thumbnail, Select from video).', '']
+    val = mp4.with_suffix('.validation.json')
+    in_video = val.exists() and json.loads(val.read_text()).get('cover_frames')
+    cover = 'pick the **last frame** of the video' if in_video else f'upload `{stem}_cover.jpg`'
+    on = lambda x: 'ON' if x else 'OFF'
+    L = [f"# {meta.get('title', stem.replace('_', ' '))}", '',
+         f"TikTok: **{status('tiktok')}** · YouTube: **{status('youtube')}** · `{mp4.name}`" + (f" ({secs:.0f} s)" if secs else ''), '',
+         'Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.', '']
+    if t: L += ['## 1. TikTok description', '', block(t['caption']), '']
+    if y: L += ['## 2. YouTube title', '', block(y['title']), '', '## 3. YouTube description', '', block(y['description']), '']
+    L += ['## Settings', '']
+    if t: L += [f"- **TikTok:** {'Everyone' if t.get('privacy') == 'PUBLIC_TO_EVERYONE' else t.get('privacy')} · AI-generated label "
+                f"{on(t.get('ai_generated'))} · comments {on(t.get('allow_comments', True))}, duet {on(t.get('allow_duet', True))}, "
+                f"stitch {on(t.get('allow_stitch', True))} · cover: {cover}"]
+    if y: L += [f"- **YouTube:** {y.get('privacy', 'public').capitalize()} · made for kids: {'Yes' if y.get('made_for_kids') else 'No'} · "
+                f"altered content: {'Yes' if y.get('contains_synthetic_media') else 'No'} · category: "
+                f"{'Gaming' if str(y.get('category_id')) == '20' else y.get('category_id')} · Shorts frame: "
+                + ('the **last frame** (Thumbnail, Select from video)' if in_video else f'upload `{stem}_cover.jpg` as the thumbnail'), '',
+                'YouTube tags (optional, under Show more):', '', block(', '.join(y.get('tags', [])))]
+    L += ['']
     out = d / f'{stem}_post.md'
     out.write_text('\n'.join(L), encoding='utf-8')
     return out

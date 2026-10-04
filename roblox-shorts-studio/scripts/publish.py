@@ -52,7 +52,7 @@ def load(project):
     rec_path = d / 'published.json'
     rec = json.loads(rec_path.read_text()) if rec_path.is_file() else {}
     if rec.get('sha256') and rec['sha256'] != digest: die('published.json belongs to a different version of this MP4. Keep it, and deliver the new cut under a new filename.')
-    return dict(proj=proj, stem=stem, video=video, cover=cover if cover.is_file() else None, meta=m, digest=digest, rec=rec, rec_path=rec_path)
+    return dict(proj=proj, stem=stem, video=video, cover=cover if cover.is_file() else None, meta=m, digest=digest, rec=rec, rec_path=rec_path, val=val)
 
 
 def check_meta(m):
@@ -80,6 +80,8 @@ def save(c):
 def upload_copy(c):
     """The delivered MP4 plus the cover as a 0.1 s last frame (TikTok and the Shorts shelf only show a frame of the video)."""
     out = c['video'].with_name(c['stem'] + '_upload.mp4')
+    n = c['val'].get('cover_frames') or 0
+    if n: return c['video'], int((c['val']['frame_count'] - n / 2) / c['val']['fps'] * 1000)   # the cover is already the last frames
     if not c['cover']: return c['video'], None
     if not out.is_file() or out.stat().st_mtime < max(c['video'].stat().st_mtime, c['cover'].stat().st_mtime):
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(c['video']), '-loop', '1', '-framerate', '30', '-t', '0.1', '-i', str(c['cover']),

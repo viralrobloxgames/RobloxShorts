@@ -156,8 +156,19 @@ def main():
     seq = P / 'renders/encode'; shutil.rmtree(seq, ignore_errors=True); seq.mkdir(parents=True)
     for i, f in enumerate(frames, 1):
         shutil.copy2(f, seq / f'{i:04}.png')
+    # The cover is the video's last 0.5 s (after the end card): both apps pick their cover from a frame of the video,
+    # so the user just picks the last frame - nothing to upload separately (references/publishing.md).
+    cover = next((c for c in (D / f'{name}_cover.png', D / f'{name}_cover.jpg') if c.exists()), None)
+    hold = 15 if cover else 0
+    if cover:
+        subprocess.run([FF, '-y', '-v', 'error', '-i', str(cover), '-vf', 'scale=1080:1920,setsar=1', str(seq / 'cover.png')], check=True)
+        for k in range(1, hold + 1): shutil.copy2(seq / 'cover.png', seq / f'{len(frames) + k:04}.png')
+        (seq / 'cover.png').unlink()
+    else:
+        print(f'No delivery/{name}_cover.png yet: once it exists, run scripts/add_cover_frame.py {P.relative_to(ROOT)}')
     subprocess.run([sys.executable, str(S / 'export.py'), '--frames', str(seq), '--out', str(D / f'{name}.mp4'), '--fps', str(FPS),
                     '--audio', str(A / 'final_mix.wav'), '--captions', str(D / f'{name}.ass')], check=True)
+    vj = D / f'{name}.validation.json'; rep = json.loads(vj.read_text()); rep['cover_frames'] = hold; vj.write_text(json.dumps(rep, indent=2))
     if (D / 'post.json').exists():                                       # copy-ready post text next to the MP4
         subprocess.run([sys.executable, str(S / 'post_md.py'), str(P)], check=True)
 
