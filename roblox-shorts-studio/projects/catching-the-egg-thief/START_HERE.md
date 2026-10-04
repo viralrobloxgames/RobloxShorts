@@ -13,7 +13,9 @@ Story and beats: `source/story.md`. Standalone: no part tags anywhere (user rule
 - Scene `web/thief_clip.js`: beats from `source/beats.py`, SFX from `source/sound_cues.py` (mirrors the clip's `B` block).
   Night lighting; the thief is Max with a procedural hood (glowing eyes) and cloak, lit by a follow light (`thiefLight`).
   Portrait framing note: horizontal half-FOV is only ~15 deg at fov 50, so keep subjects near the look target.
-- Cover: `web/cover_clip.js` (spinosaurus carrying the thief by the hood; "CATCHING THE / EGG THIEF").
+- Cover: `web/cover_clip.js` (the hooded thief running at us with the Mythic egg, "HATCH: 0:01"; "CATCHING THE / EGG THIEF").
+- `delivery/Catching_the_Egg_Thief.mp4` (1080x1920, 69.1 s, 2,072 frames, validated), cover `delivery/Catching_the_Egg_Thief_cover.{png,jpg}`, `delivery/post.json`.
+- Re-rendered after review: chase (446-516), theft/chair (1040-1212), reveal (1561-1738), quote card moved above Max (1670-1738), treadmill (1738-1938).
 
 ## Re-render / re-encode
 ```
