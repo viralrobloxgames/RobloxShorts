@@ -42,7 +42,8 @@ sexual references. Story, research and beats: `source/story.md`. Script: `script
   dropped by fix_captions.py. Video 73.7 s; frames from 1800 re-rendered.
 
 ## Next
-- Encode, check, deliver. Post only after the user approves (TikTok, then YouTube).
+- Encoded and checked (73.7 s; captions x 110-906 on every frame; -16.9 LUFS). Waiting on the user's approval to post
+  (TikTok, then YouTube).
 
 ## Re-render / re-encode
 ```
