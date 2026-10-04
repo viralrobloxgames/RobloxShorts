@@ -100,11 +100,12 @@ function makeLaserDoor(scene) {
   scene.add(g); return g;
 }
 function makeChair() {
-  const g = new THREE.Group(), frame = new THREE.MeshStandardMaterial({ color: '#d9dde4', metalness: 0.5, roughness: 0.4 }), cloth = new THREE.MeshStandardMaterial({ color: '#2fa6c8', roughness: 0.8 });
+  const g = new THREE.Group(), frame = new THREE.MeshStandardMaterial({ color: '#d9dde4', metalness: 0.5, roughness: 0.4 }), cloth = new THREE.MeshStandardMaterial({ color: '#2fc4a0', roughness: 0.8 });
   const b = (w, h, d, x, y, z, m, rx = 0) => { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); o.rotation.x = rx; o.castShadow = true; g.add(o); };
-  b(2.2, 0.15, 2.0, 0, 1.0, 0, cloth); b(2.2, 2.2, 0.15, 0, 2.0, -1.15, cloth, -0.35);
-  for (const x of [-1.05, 1.05]) for (const z of [-0.9, 0.9]) b(0.12, 1.0, 0.12, x, 0.5, z, frame);
-  for (const x of [-1.15, 1.15]) b(0.15, 0.12, 1.9, x, 1.6, 0.1, frame);
+  b(3.0, 0.18, 2.2, 0, 1.0, 0.1, cloth); b(3.0, 3.6, 0.18, 0, 2.6, -1.25, cloth, -0.3);
+  for (let i = 0; i < 4; i++) b(3.02, 0.12, 0.2, 0, 1.3 + i * 0.85, -1.15 - i * 0.26, frame, -0.3);   // stripes on the back
+  for (const x of [-1.45, 1.45]) for (const z of [-1.0, 1.1]) b(0.14, 1.0, 0.14, x, 0.5, z, frame);
+  for (const x of [-1.55, 1.55]) b(0.18, 0.14, 2.2, x, 1.75, 0.1, frame);
   return g;
 }
 function makeTreadmill() {
@@ -247,7 +248,7 @@ function leoState(s) {
     b.pos = V(-2.4, 0, 6.2); b.rotY = face(b.pos, s < B.buy ? V(-1, 0, 16) : V(6, 0, 16)); b.layers = s < B.buy ? [[A.think, s - W.stopped]] : idle(s); b.face = s < B.buy ? 'scheming' : s < B.egg ? 'determined' : 'evil_grin';
     if (s > W.sign - 0.3) { b.rotY = face(b.pos, V(0, 0, 14)); b.layers = [[A.point_forward, 0.2]]; b.face = 'scheming'; }
   } else if (s < B.arrive + 0.2) {                      // in the lawn chair, not chasing, counting
-    b.pos = CHAIR.clone().add(V(0, 0, 0)); b.rotY = CHAIR_ROT; b.layers = [[A.sit, 0.5]]; b.floor = 0.95; b.face = s > B.hatch ? 'laugh' : 'smug';
+    b.pos = CHAIR.clone().add(V(0, 0, 0)); b.rotY = CHAIR_ROT; b.layers = [[A.sit, 0.5]]; b.floor = 0.95; b.armsDown = true; b.face = s > B.hatch ? 'laugh' : 'smug';
   } else if (s < B.tread) {                             // stands, faces the dropped thief
     const from = CHAIR.clone().add(V(1.2, 0, 1.2)), to = V(-8.6, 0, 11.4), d = from.distanceTo(to), m = travel(from, to, B.arrive + 0.2, s, 10);
     b.pos = m.pos; b.rotY = m.moving ? m.heading : face(to, DROP); b.layers = m.moving ? walkL(m, d) : idle(s); b.face = s > B.max ? 'shocked' : 'angry';
@@ -328,6 +329,7 @@ function place(a, x) {
   a.root.position.copy(x.pos); a.root.rotation.set(x.rotX || 0, x.rotY, (x.rotZ || 0) + (x.dangle || 0), 'YXZ');
   if (x.rotX || x.rotZ) { const c = V(0, 2.6, 0); a.root.position.add(c.clone().sub(c.clone().applyEuler(a.root.rotation))); }
   robloxPose(a, x.layers);
+  if (x.armsDown) { a.bones['Arm.L'].quaternion.setFromEuler(new THREE.Euler(-0.35, 0, 0.12)); a.bones['Arm.R'].quaternion.setFromEuler(new THREE.Euler(-0.35, 0, -0.12)); }   // relaxed in the chair
   if (x.grounded) { a.root.updateMatrixWorld(true); a.root.position.y += x.floor - soleHeight(a); }
   setExpression(a, x.face);
   a.root.updateMatrixWorld(true);
@@ -469,7 +471,7 @@ export function update(t, stage) {
     case 'buy': look(V(8, 7, 17), V(-1, 3, 4), 50); break;
     case 'sign': look(V(-2, 5, 17), V(2.4, 3.8, 4.6), 48); break;
     case 'theft': look(V(-17, 7, 15), V(-1, 2, 4), 52, 50); break;                                               // from behind Leo's chair
-    case 'chair': look(CHAIR.clone().add(V(6.4, 4, 6.4)), CHAIR.clone().add(V(0, 2.8, 0)), 44); break;
+    case 'chair': look(CHAIR.clone().add(V(9.5, 4.6, 10)), CHAIR.clone().add(V(0, 2.2, 0)), 46); break;
     case 'count': { const fm = mp.clone(); look(fm.clone().add(V(-9, 3.4, 3)), fm.clone().add(V(0, 2.6, 0)), 46, 40); break; }   // running at us with the egg, timer overhead
     case 'hatch': look(HATCH_AT.clone().add(V(-30, 6 + 6 * u, 18)).add(jolt(B.hatch, 0.8, 0.5)), HATCH_AT.clone().add(V(4, 4 + 8 * easeOut(seg(s, B.hatch, B.hatch + 0.7)), 0)), 54, 70); break;
     case 'owner': look(HATCH_AT.clone().add(V(-28, 4, 14)), HATCH_AT.clone().add(V(2, 10, 0)), 56, 70); break;
