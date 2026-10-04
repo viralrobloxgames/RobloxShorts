@@ -10,7 +10,8 @@ going to shoot, until he closes his eyes.
   `delivery/The_Last_Penalty_cover.png`), post metadata (`delivery/post.json`).
 - Cameras were widened after the Part 2 "too zoomed in" feedback: portrait frames are only ~0.56x as wide as tall, so
   single-character shots sit 10-13 studs back and two-character shots further.
-- Full render: `renders/web` (2096 frames). **Not posted.** Post only after the user approves this MP4.
+- 2026-10-04: full render (2096 frames) encoded to `delivery/The_Last_Penalty.mp4` (69.87 s, validated). Sent for
+  review. **Not posted.** Post only after the user approves this MP4 (TikTok first, then YouTube).
 
 ## Rebuild
 ```
