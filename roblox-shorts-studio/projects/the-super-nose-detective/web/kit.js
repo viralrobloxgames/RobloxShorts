@@ -20,29 +20,40 @@ export async function wearOutfit(actor, file) {
   });
 }
 
-// Max's Super Nose: one big, smooth cartoon nose (a single swept skin-coloured surface: a tall bridge from between the eyes,
-// drooping out to a round bulb) between the eyes and the mouth (head-local coords: head bone pivot is the neck
-// at y 4; the face is the +Z side at z 0.6; eyes at y ~0.78, mouth at ~0.26). The gamepass power shows as a gentle green
-// tint (plus the smell wisps in the clip), never a lime-green nose. Returns the pivot (on the Head bone); userData.mat.
+// Max's Super Nose: a long nose shaped like a real one (head-local coords: head bone pivot is the neck at y 4; the face is
+// the +Z side at z 0.6; eyes at y ~0.78, mouth at ~0.26). Seen from the side it's a wedge: the bridge starts between the eyes
+// and slopes down and out to a rounded tip; the underside runs back to the face just above the mouth. Each cross-section is
+// pear-shaped (a narrow ridge on top, wide and flared low down near the tip), with two nostrils underneath.
+// Skin-coloured; the gamepass power is only a faint green tint (setNose glow). Returns the pivot (on the Head bone).
 export function makeNose(actor, skin = '#F0B774') {
-  const root = V(0, 0.56, 0.56), L = 0.46;
+  const root = V(0, 0.56, 0.56), Z0 = 0.5, L = 0.8;
   const m = std(skin, { roughness: 0.55, emissive: new THREE.Color('#39ff6a'), emissiveIntensity: 0 });
-  const dark = std(new THREE.Color(skin).multiplyScalar(0.45));
-  // Radius along the nose (d 0 = face, 1 = tip): a tall bridge at the face, a slimmer middle, a round bulb, a soft tip.
-  const prof = new THREE.SplineCurve([[0.2, -0.03], [0.19, 0.0], [0.135, 0.3], [0.13, 0.5], [0.155, 0.72], [0.12, 0.92], [0.001, 1.0]]
-    .map(([r, d]) => new THREE.Vector2(r, d * L))).getPoints(48);
-  const geo = new THREE.LatheGeometry(prof, 40), P = geo.attributes.position, v = new THREE.Vector3();
-  const centreY = (d) => 0.08 - 0.13 * d * d;                 // the bridge starts high between the eyes and droops to the tip
-  const tall = (d) => 1.15 - 0.2 * d;                         // taller than wide at the bridge, round at the bulb
-  for (let i = 0; i < P.count; i++) {
-    v.fromBufferAttribute(P, i); const d = THREE.MathUtils.clamp(v.y / L, 0, 1);
-    P.setXYZ(i, v.x * 0.92, centreY(d) - v.z * tall(d), Math.max(-0.02, v.y));   // lathe axis -> forward (a proper rotation)
+  const dark = std(new THREE.Color(skin).multiplyScalar(0.4));
+  const top = (d) => 0.8 - 0.26 * d;                              // bridge line (side view)
+  const bot = (d) => 0.36 - 0.04 * d;                             // underside line (tip stays clear of the mouth)
+  const half = (d) => 0.19 - 0.09 * d + 0.04 * Math.exp(-(((d - 0.82) / 0.1) ** 2));   // half-width: wide base, slimmer, the tip lobule
+  const flare = (d) => 0.45 * Math.exp(-(((d - 0.7) / 0.13) ** 2));              // nostril wings: extra width low down near the tip
+  const DC = 0.78, R = 48, N = 40, pos = [], idx = [];
+  for (let i = 0; i <= R; i++) {
+    const d = i / R, cap = d > DC ? Math.sqrt(Math.max(0, 1 - ((d - DC) / (1 - DC)) ** 2)) : 1;
+    const yt = top(d), yb = bot(d), cy = (yt + yb) / 2, hy = ((yt - yb) / 2) * cap, hw = half(d) * cap, z = Z0 + L * d;
+    for (let j = 0; j < N; j++) {
+      const th = -Math.PI / 2 + (j / N) * Math.PI * 2, sy = Math.sin(th), cx = Math.cos(th);
+      const pinch = (1 - 0.6 * ((sy + 1) / 2) ** 1.5) * (1 + flare(d) * Math.max(0, -sy) ** 0.7);   // narrow ridge on top; wide, flared bottom
+      pos.push(hw * cx * pinch, cy + hy * sy - root.y, z - root.z);
+    }
   }
-  geo.computeVertexNormals();
+  for (let i = 0; i < R; i++) for (let j = 0; j < N; j++) {
+    const a = i * N + j, b = i * N + ((j + 1) % N), c = a + N, e = b + N; idx.push(a, b, c, b, e, c);
+  }
+  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setIndex(idx); geo.computeVertexNormals();
   const g = new THREE.Group(); g.name = 'SuperNose'; g.add(mesh(geo, m));
-  for (const sx of [-1, 1]) { const h = mesh(new THREE.SphereGeometry(0.034, 10, 8), dark); h.position.set(0.055 * sx, centreY(0.8) - 0.125, 0.8 * L); h.scale.set(1, 0.4, 1.5); g.add(h); }
+  for (const sx of [-1, 1]) {                                     // nostrils under the tip
+    const hole = mesh(new THREE.SphereGeometry(0.04, 12, 8), dark);
+    hole.position.set(sx * 0.065, bot(0.74) + 0.008 - root.y, Z0 + L * 0.74 - root.z); hole.scale.set(0.9, 0.3, 1.7); g.add(hole);
+  }
   const pivot = new THREE.Group(); pivot.position.copy(root); pivot.add(g);
-  pivot.userData = { mat: m, base: root.clone(), glow: 0, inflate: 0 };
+  pivot.userData = { mat: m, base: root.clone(), glow: 0, inflate: 0, tip: V(0, (top(1) + bot(1)) / 2 - root.y, Z0 + L - root.z) };
   actor.bones.Head.add(pivot);
   return pivot;
 }

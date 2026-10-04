@@ -35,6 +35,20 @@ from Parts 1-3 and The AFK Millionaire (about 2.2 minutes). Findings from that t
   `QWEN_TTS_DIR=<any dir> python3 scripts/narrate.py <project> --voice george_c --take take-02` joins, times and checks without regenerating.
   On the laptop the 1.7B model needs about 7 GB in float32; use bfloat16 there, or keep the 0.6B `george` setup if memory runs out.
 
+**Designed voices (new characters or series, free):** when no existing voice fits, audition voices made from a written
+description with Qwen3-TTS **VoiceDesign** (`Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign`, cloud CPU, about 30-75 s per 8 s line).
+Make 2-3 described styles, two seeds each, reading the script's opening lines; check each by transcript and pitch
+(discard takes that come out high-pitched or run sentences together) and let the user pick by ear. VoiceDesign itself is
+not consistent from line to line, so the chosen audition becomes a clone sample: save it as `assets/audio/voices/<name>.wav`
+plus `<name>.txt` (exact words) and `<name>.json` (instruct, seed, model), then narrate every line by cloning it:
+- `scripts/qwen_cloud_clone.py <project> --voice <name> --take take-0N` (1.7B-Base; writes narrate.py's clip cache)
+- `python3 scripts/tighten_clips.py <project> --voice <name> --take take-0N` (trims dead air, caps pauses inside a line at
+  0.35 s; originals kept in `clips_raw/`). Slow, dramatic voices leave a lot of silence: the noir voice went 88 s -> 72 s.
+- `QWEN_TTS_DIR=<any dir> python3 scripts/narrate.py <project> --voice <name> --take take-0N` (join, time, check).
+
+**`detective_noir`** (chosen 2026-10-04 for The Super Nose Detective): a deep, gravelly 1940s film-noir American detective,
+slow and deadpan (about 90 Hz). Use it for the detective series; George stays the admin-series narrator.
+
 ### Route A: ElevenLabs connector or signed-in website (legacy)
 
 George's ElevenLabs settings were `eleven_multilingual_v2`, speed 1.0, stability 0.5, similarity 0.75, style 0, speaker boost on. Use the connected ElevenLabs tools, or the user's signed-in ElevenLabs site in Brave. Generate from the saved `script.txt` only after approval. Download the finished take (pre-approved) to `audio/narration.mp3`, or to `audio/source/` if you will splice. Record the voice, model, settings, credits and duration in `audio/narration-source.json`. A pending request is never a reason to generate again: check History.

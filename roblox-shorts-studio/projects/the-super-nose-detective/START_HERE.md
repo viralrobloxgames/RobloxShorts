@@ -1,7 +1,7 @@
 # The Super Nose Detective (Case 1): resume notes
 
 Roblox parody of the 70s Miami detective series Dick Snifford (logicbent). Max is Detective Max Sniffwell, with the Super
-Nose gamepass. First-person noir narration in George voice C. Web route. Content line: flirting is fine, no swearing or
+Nose gamepass. First-person noir narration in the designed `detective_noir` voice (take-02). Web route. Content line: flirting is fine, no swearing or
 sexual references. Story, research and beats: `source/story.md`. Script: `script.txt` (v3, 169 words).
 
 ## Done
@@ -26,19 +26,27 @@ sexual references. Story, research and beats: `source/story.md`. Script: `script
   CASE CLOSED, CTA. No always-on HUD, smell icons, HP bars or object tags. One pop-up on screen at a time.
   The tempt2 and bite close-ups have headroom so the counter is clear of Max's head.
 
+- Second review (2026-10-04): "still needs to be a long nose, just look like an actual nose"; voice A picked. The nose
+  is now long and shaped like a real one (`makeNose` in kit.js: a swept wedge, ridge on top, flared nostrils low near a
+  drooping rounded tip, nostrils underneath; `userData.tip` for the smell effects).
+- Narration take-02 in the designed `detective_noir` voice (see references/voice-and-audio.md): cloned with
+  `scripts/qwen_cloud_clone.py`, tightened with `scripts/tighten_clips.py`, 72.0 s of speech; video 72.7 s.
+- The Mia shot was blocked by the palm at PALM_N (and then by Max): now a side angle. Cover re-angled side-on so the
+  long nose reads in profile. TikTok caption now has the follow line.
+
 ## Next
-- New detective voice: auditions in progress (Qwen3-TTS VoiceDesign, cloud). When the user picks one: make it a
-  reusable clone sample, re-narrate, then fix_captions -> beats -> lipsync -> sound_cues -> finish; re-render the cover.
-- Full render from scratch (the old partial render was deleted: stale nose), encode, review, deliver. Post only after
-  the user approves.
+- Full render (started 2026-10-04), encode, review, deliver. Post only after the user approves.
 
 ## Re-render / re-encode
 ```
 cd roblox-shorts-studio
-python3 projects/the-super-nose-detective/source/fix_captions.py && python3 projects/the-super-nose-detective/source/beats.py && python3 projects/the-super-nose-detective/source/sound_cues.py
+python3 projects/the-super-nose-detective/source/fix_captions.py && python3 projects/the-super-nose-detective/source/beats.py && python3 projects/the-super-nose-detective/source/lipsync.py && python3 projects/the-super-nose-detective/source/sound_cues.py
 python3 projects/the-super-nose-detective/source/make_audio.py
 python3 scripts/finish.py projects/the-super-nose-detective
 node web/fit_check.mjs --clip projects/the-super-nose-detective/web/nose_clip.js && node web/fit_check.mjs --clip projects/the-super-nose-detective/web/nose_clip.js --reviewed
+/tmp/claude-0/qwenv/bin/python scripts/qwen_cloud_clone.py projects/the-super-nose-detective --voice detective_noir --take take-02
+python3 scripts/tighten_clips.py projects/the-super-nose-detective --voice detective_noir --take take-02
+QWEN_TTS_DIR=/tmp/fakeqwen python3 scripts/narrate.py projects/the-super-nose-detective --voice detective_noir --take take-02
 node web/render.mjs --clip projects/the-super-nose-detective/web/nose_clip.js --out projects/the-super-nose-detective/renders/web --workers 3 --resume
 python3 scripts/finish.py projects/the-super-nose-detective --encode --frames projects/the-super-nose-detective/renders/web
 ```

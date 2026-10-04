@@ -12,9 +12,9 @@ export async function setup(stage) { await base.setup(stage); }
 export function samples() { return 6; }
 export function update(t, stage) {
   base.update(W.cologne + 0.25, stage);                   // the sniff: eyes closed, nose glowing, smell streaming in
-  const { max } = base.cast(); max.bones.Head.rotation.x -= 0.22; max.bones.Head.updateMatrixWorld(true);   // lift the sniffing nod so the face reads
+  const { max } = base.cast(); max.bones.Head.rotation.x -= 0.38; max.bones.Head.updateMatrixWorld(true);   // lift the sniffing nod so the face reads
   const h = V(0, 0.5, 0).applyMatrix4(max.bones.Head.matrixWorld);
-  const cam = stage.camera; cam.position.copy(h).add(V(3.0, -0.6, 4.6)); cam.fov = 40; cam.updateProjectionMatrix(); cam.lookAt(h.clone().add(V(0.3, 0.2, 0.9)));
+  const cam = stage.camera; cam.position.copy(h).add(V(4.9, -0.4, 2.9)); cam.fov = 40; cam.updateProjectionMatrix(); cam.lookAt(h.clone().add(V(0.1, 0.25, 0.9)));   // side-on so the long nose reads in profile
   stage.aimSun(V(h.x, 0, h.z), 20); stage.bloom.strength = 0.45;
 }
 function big(g, s, text, x, y, size, color, rot = 0, stroke = '#1a1208') {

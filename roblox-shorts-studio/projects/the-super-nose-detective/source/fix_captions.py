@@ -5,7 +5,7 @@ import json, re
 from pathlib import Path
 P = Path(__file__).resolve().parent.parent / 'audio/alignment/captions.json'
 caps = json.loads(P.read_text())
-FIX = {'viralrobloxgames': 'Viral Roblox Games', 'chiefs': "Chief's", 'meer': 'Mia', 'mir': 'Mia'}
+FIX = {'viralrobloxgames': 'Viral Roblox Games', 'supernose': 'Super Nose', 'chiefs': "Chief's", 'meer': 'Mia', 'mir': 'Mia'}
 JOIN = [(('game', 'pass'), 'gamepass'), (('at', 'chew'), 'Achoo'), (('a', 'chew'), 'Achoo'), (('ah', 'choo'), 'Achoo')]
 key = lambda w: re.sub(r"[^a-z']", '', w['word'].lower())
 # A split that falls across two caption groups: move the second half into the first group.

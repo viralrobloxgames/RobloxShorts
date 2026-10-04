@@ -366,7 +366,7 @@ function place(a, x) {
 const local = (a, x, y, z) => { a.root.updateMatrixWorld(true); return V(x, y, z).applyMatrix4(a.root.matrixWorld); };
 const handR = (a) => { a.bones['Arm.R'].updateMatrixWorld(true); return V(0, -2.05, 0).applyMatrix4(a.bones['Arm.R'].matrixWorld); };
 const headAt = (a, y = 0.5) => { a.bones.Head.updateMatrixWorld(true); return V(0, y, 0).applyMatrix4(a.bones.Head.matrixWorld); };
-const noseTip = () => { nose.updateMatrixWorld(true); return V(0, -0.06, 0.44).applyMatrix4(nose.matrixWorld); };
+const noseTip = () => { nose.updateMatrixWorld(true); return nose.userData.tip.clone().applyMatrix4(nose.matrixWorld); };
 
 // ---------- samples ----------
 const ACTION = () => [[B.slam - 0.2, B.slam + 0.4], [B.drive, B.party], [B.throw, B.throw + 0.6], [B.achoo - 0.1, B.splash + 0.6], [B.driveBack, B.office], [B.bite - 0.2, B.bite + 0.4]];
@@ -479,7 +479,7 @@ export function update(t, stage) {
     case 'trailOn': look(V(14, 14, 30), V(-2, 0, 12), 48, 40); break;
     case 'drive': { const c = C.pos; look(c.clone().add(V(10, 4.5, 8)), c.clone().add(V(0, 2.4, 1)), 46, 30); break; }
     case 'party': look(V(14, 12, 300), V(-6, 2, 334), 50, 50); break;
-    case 'mia': look(MIA_AT.clone().add(V(6, 3.4, -9.5)), MIA_AT.clone().add(V(0, 1.2, 0)), 40); break;
+    case 'mia': look(MIA_AT.clone().add(V(-10, 3.8, -6.5)), MIA_AT.clone().add(V(0.6, 2.2, -1.2)), 40); break;   // from the side: clear of Max (MAXP) and the palm at PALM_N
     case 'tempt2': look(mh.clone().add(V(-4, 0.6, 3.6)), mh.clone().add(V(0, 0.0, 0)), 40); break;             // headroom for the counter
     case 'suspect': { const nh = headAt(noob), k = easeInOut(seg(s, W.guy1, W.guy1 + 0.2)); look(nh.clone().add(V(-2.5, lerp(-2.6, -0.8, k), lerp(-9, -4.5, k))), nh.clone().add(V(0, -0.6 + 0.4 * k, 0)), 40); break; }
     case 'stare': look(mh.clone().add(V(-0.6, 0.05, 2.6)), mh.clone().add(V(0, 0, 0.5)), 34); break;
