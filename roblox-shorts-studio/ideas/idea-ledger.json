@@ -192,10 +192,20 @@
       "title": "Don't Sneeze Outside",
       "series": "standalone story",
       "created": "2026-10-04",
-      "status": "script_draft_awaiting_approval",
+      "status": "dropped",
       "logline": "Every time you sneeze, your gravity flips. Indoors you land on the ceiling; outdoors there's no ceiling. Leo blows a dandelion in Max's face and he falls up, catching a lamppost upside down; only another sneeze brings him down. Leo's pepper falls back on Leo. Mia's cat climbs the pole to his nose: he sneezes and drops to the sidewalk, safe, and the cat jumps on his chest. Ah... ah...",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/dont-sneeze-outside"
+      "project": "projects/dont-sneeze-outside",
+      "notes": "Dropped 2026-10-04: the user found it boring. Replaced by Every Lie Comes True."
+    },
+    {
+      "title": "Every Lie Comes True",
+      "series": "standalone story",
+      "created": "2026-10-04",
+      "status": "script_draft_awaiting_approval",
+      "logline": "Whatever Leo lies about comes true: a dragon eats his homework, he's the fastest kid in school, he has a million dollars. Then he crashes Max's bike and panics: 'I've never seen you before.' Max forgets him. Lying 'you're my best friend' brings Max back, but Max asks who broke the bike; Leo nearly blames the dragon (something lands on the roof) and tells the truth. 'Then you're buying me a new one.' 'Fine. I've got a million dollars.' Two true things in one day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/every-lie-comes-true"
     }
   ],
   "statuses": [
