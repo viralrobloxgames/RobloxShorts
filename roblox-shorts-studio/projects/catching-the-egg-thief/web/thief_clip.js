@@ -237,7 +237,7 @@ function leoState(s) {
     if (s > B.freeze) b.rotY = face(HIDE, STOP);
     if (s > B.pop) b.face = 'angry';
   } else if (s < B.night2) {                            // chases for one second, then gives up, panting
-    const to = HIDE.clone().add(V(-9, 0, 6)), m = travel(HIDE, to, B.chase, s, 16);
+    const to = HIDE.clone().add(V(-6, 0, 5)), m = travel(HIDE, to, B.chase, s, 16);
     b.pos = m.pos; b.rotY = m.heading; b.layers = m.moving ? runL(m, 9) : [[A.defeated, s - m.arrive]]; b.face = m.moving ? 'determined' : 'dizzy';
   } else if (s < B.night3) {                            // night 2: behind his laser door, smug, then shocked
     b.pos = V(-4, 0, 6); b.rotY = face(b.pos, V(0, 0, DOOR_Z)); b.layers = s < B.limbo[0] ? [[A.proud, 0.4]] : [[A.shock, 0.3]]; b.face = s < B.limbo[0] ? 'smug' : 'shocked';
@@ -461,7 +461,7 @@ export function update(t, stage) {
     case 'zip': look(V(16, 13, 30), V(0, 1.5, 4), 52, 50); break;                                                    // high over the base: the thief whips round the pedestals
     case 'freeze': look(STOP.clone().add(V(-3.2, 4.4, 14)), STOP.clone().add(V(-0.6, 5.0, 0)), 50); break;            // the thief with the tower of eggs
     case 'pop': look(STOP.clone().lerp(HIDE, 0.5).add(V(2, 4.4, 19)), STOP.clone().lerp(HIDE, 0.5).add(V(0, 3.8, 0)), 50); break;
-    case 'chase': look(V(-4, 4, 40), V(-12, 2, 24), 50, 50); break;
+    case 'chase': look(V(lp.x + 7, 4.2, lp.z + 15), V(lp.x - 1.5, 2.8, lp.z - 1), 50, 50); break;           // follows Leo: one second of running, then panting
     case 'laser': look(V(10, 5, 30), V(0, 3.2, 14), 46); break;
     case 'limbo': look(V(12, 1.3, 19.5), V(0, 2.0, 13.5), 48); break;                                               // side-on at the door: under the beams
     case 'capy': look(V(-5.5, 3.2, 8.5), V(0.4, 2.0, 16.6), 46); break;
@@ -528,7 +528,7 @@ export function overlay(g, s, t) {
   if (t > W.fifty - 0.15 && t < B.chase + 0.3) tagOver(g, s, max.root.position.clone().add(V(0, 7.4, 0)), 'SPEED: 50,000', 'rgba(220,40,60,.95)', 1, pop(t, W.fifty - 0.15, 0.2, 2.5), 46);
   if (t > W.nine - 0.15 && t < B.night2) tagOver(g, s, leo.root.position.clone().add(V(0, 6.6, 0)), 'SPEED: 900', 'rgba(60,110,200,.95)', 1, pop(t, W.nine - 0.15, 0.2, 2.5), 40);
   if (t > B.chase && t < B.gone - 0.05) bigText(g, s, `${(t - B.chase).toFixed(1)}s`, 540, 1080, 90, '#ffffff');
-  word(g, s, t, B.gone, 1.0, 'GONE', '#ff4d5e', 190, 780);
+  word(g, s, t, B.gone, 1.0, 'GONE', '#ff4d5e', 190, 1120);
   word(g, s, t, B.night2, 0.9, 'NIGHT 2', '#C9A6FF', 150, 760);
   word(g, s, t, W.laser - 0.1, 1.2, 'LASER DOOR', '#ff4d5e', 120, 1000);
   word(g, s, t, W.limboed - 0.1, 1.2, 'LIMBO!', '#FFD23F', 160, 760, 0.05);
