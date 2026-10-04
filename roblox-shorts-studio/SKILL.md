@@ -27,7 +27,7 @@ Everything needed to make a Roblox-style Short lives in this folder. Paths below
 
 Full detail is in [references/workflow.md](references/workflow.md). **Work in parallel:** start the narration the moment a script is approved and build the scene against estimated, word-anchored timing while it generates; while a video renders, write the next script and narrate it on the laptop (workflow.md, "Running steps in parallel"). The short version:
 
-1. **Idea:** add it to `ideas/idea-ledger.json`. Choose a Roblox-game situation with a visible cause, reaction and payoff (e.g. disaster survival, obby, tycoon, simulator, AFK, lag, admin commands).
+1. **Idea:** add it to `ideas/idea-ledger.json`. **Stories are random, engaging stories on any subject** (an everyday mystery, a strange neighbour, a lie that spirals, a twist ending), acted out by the block-character cast. They are not about Roblox games or game mechanics unless the user asks for that (user rule, 2026-10-04). Each needs a hook, rising curiosity, a reveal and a payoff.
 2. **Scaffold:** `python scripts/studio.py new --out projects/<slug> --title "<Title>" --character Max|Mia|Leo --seconds 30`.
 3. **Story and script:** write the beats in `source/story.md` (the hook first) and the narration in `script.txt`. Get approval.
 4. **Narration:** use the saved George voice (see [voice-and-audio](references/voice-and-audio.md)). Save `audio/narration.mp3` plus `audio/narration-source.json`.

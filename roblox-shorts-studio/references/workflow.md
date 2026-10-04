@@ -26,13 +26,22 @@ projects/<slug>/
 
 ## 1. Idea
 
-Record it in `ideas/idea-ledger.json` with a title, logline, platform and status. Good Roblox-short shapes include:
+Record it in `ideas/idea-ledger.json` with a title, logline, platform and status.
 
-- a game mechanic taken literally (free coin button, AFK, lag-snap, admin commands)
-- a round-based disaster
-- an overconfident character undone by the game's own rules
+### Random engaging stories, not Roblox-game plots (user rule, 2026-10-04)
 
-There must be a visible cause, a reaction and a physical payoff. A loop ending is a bonus: the last frame cuts back to the hook.
+The channel's stories are random, engaging stories on any subject, told with the Roblox-style block characters as the
+actors. Don't build the plot around Roblox games or game mechanics (tycoons, obbies, admin commands, egg stealing)
+unless the user asks for it. Good shapes:
+
+- an everyday mystery with a surprising explanation (who keeps leaving this?)
+- a small lie or bet that spirals out of control
+- a strange neighbour, job, pet or roommate
+- a story told straight that flips in its last line
+
+Every story needs a hook in the first line, a curiosity gap that keeps growing, a reveal and a payoff, plus a twist or
+punchline after the reveal when possible. It must still read visually: a visible cause, a reaction and a physical
+payoff. A loop ending is a bonus: the last frame cuts back to the hook.
 
 ### Standalone, not series (user rule, 2026-10-03)
 
