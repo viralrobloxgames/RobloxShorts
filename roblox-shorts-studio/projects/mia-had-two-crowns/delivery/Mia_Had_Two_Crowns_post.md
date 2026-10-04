@@ -10,7 +10,8 @@
 Caption:
 
 ```
-Mia had TWO admin accounts... so Leo and Max teamed up 😤 Part 5. Who wins? 👀 #roblox #robloxfunny #robloxadmin #robloxstory #fyp
+Mia had TWO admin accounts 😤 (Part 5)
+#roblox #robloxfunny #robloxadmin #robloxstory #fyp
 ```
 
 Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `Mia_Had_Two_Crowns_cover.jpg` (or pick the last frame of `Mia_Had_Two_Crowns_upload.mp4`).
@@ -20,7 +21,7 @@ Settings: who can watch **Everyone**; AI-generated content label **on**; comment
 Title:
 
 ```
-She Had 2 Admin Accounts 😤 (Part 5) #roblox #shorts
+She Had 2 Admin Accounts 😤 (Part 5)
 ```
 
 Description:

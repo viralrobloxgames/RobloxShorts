@@ -9,16 +9,25 @@ Making a video and posting it are separate steps. Post only once the user has ap
 - **TikTok:** longer than 60 s if it's aimed at Creator Rewards.
 - Audience settings are chosen deliberately. A cartoon look does not mean the video is made for kids. Declare AI-generated / synthetic content (the voice is AI) where the platform asks.
 
-## TikTok caption rule (every video)
+## Caption and title rule (every video)
 
-Keep `post.json` tiktok.caption **short**:
-- one hook line and one question to drive comments;
-- 4-6 hashtags;
-- a one-line source at the end, e.g. `Source: Roblox RDC 2026`.
+The feed shows one line; nobody taps "more". The user's screenshot (2026-10-04) showed TikTok cutting the caption
+after about 45 characters, with the hashtags hidden behind "...more" on the next line.
 
-Aim for about 150 characters at most. Don't write a paragraph summarising the video, and don't add a "Follow @..." line (the video says it).
+**TikTok** `post.json` tiktok.caption is two lines:
+1. **The hook: one line of at most 45 characters** (emoji included, no hashtags). It must make sense alone: the
+   story's hook or the comment question, e.g. `Which Max is real? LEFT or RIGHT 👇`.
+2. A new line with 4-5 hashtags (`#roblox` first). A news video may add a short `Source: ...` after the hashtags.
 
-The full explainer and source links go in the YouTube description only. The user said the 368-character News #1 caption was "WAY too long for tiktok" (2026-10-02).
+No second sentence, no summary, no "Follow @..." line (the video says it).
+
+**YouTube Shorts** title: **at most 50 characters, no hashtags**. It is the one line shown over the Short, so it is
+the same hook in title case (a part number in brackets is fine). The description can be longer, because it feeds
+search and the few who open it: hook first, two or three short lines, the comment question, then `#roblox #shorts`
+(and a topic tag) on the last line, where YouTube shows the first three above the title on the watch page.
+
+`scripts/publish.py` refuses metadata that breaks these limits. History: a 368-character News #1 caption was "WAY too
+long for tiktok" (2026-10-02); 115-185 characters was still too long (2026-10-04).
 
 ## Cover spec (every video)
 

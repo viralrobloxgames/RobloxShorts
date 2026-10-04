@@ -10,7 +10,8 @@
 Caption:
 
 ```
-He always looks where he's shooting... so he closed his eyes 😳 Would you stay on your line? #roblox #robloxstory #football #penalty #fyp
+He shot the last penalty eyes closed 😳
+#roblox #robloxstory #football #penalty #fyp
 ```
 
 Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `The_Last_Penalty_cover.jpg` (or pick the last frame of `The_Last_Penalty_upload.mp4`).
@@ -20,7 +21,7 @@ Settings: who can watch **Everyone**; AI-generated content label **on**; comment
 Title:
 
 ```
-He Took The Last Penalty With His Eyes Closed 😳⚽ #roblox #shorts
+He Shot The Last Penalty Eyes Closed 😳
 ```
 
 Description:

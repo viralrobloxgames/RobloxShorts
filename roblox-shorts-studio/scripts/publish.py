@@ -60,7 +60,10 @@ def check_meta(m):
     cap = t.get('caption', '')
     if not cap or len(cap) > 2200: die('tiktok.caption is missing or longer than 2200 characters.')
     if cap.count('#') > 5: die('tiktok.caption has more than 5 hashtags (house rule).')
+    first = cap.split('\n')[0]
+    if len(first) > 45 or '#' in first: die('tiktok.caption: the first line is all TikTok shows; keep it a hook of at most 45 characters, hashtags on the next line (house rule).')
     if not 1 <= len(y.get('title', '')) <= 100: die('youtube.title must be 1-100 characters.')
+    if len(y['title']) > 50 or '#' in y['title']: die('youtube.title: at most 50 characters and no hashtags, so it fits the Shorts feed (house rule; hashtags go in the description).')
     if len(y.get('description', '').encode()) > 5000: die('youtube.description is too long.')
     if y.get('privacy') not in ('public', 'unlisted', 'private'): die('youtube.privacy must be public, unlisted or private.')
     for k in ('made_for_kids', 'contains_synthetic_media'):

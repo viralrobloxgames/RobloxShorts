@@ -10,7 +10,8 @@
 Caption:
 
 ```
-Part 2: Mia has one test to find the real Max 👀 Did you guess right? #roblox #robloxhorror #robloxstory #scary #fyp
+Part 2: Mia finds the real Max 👀
+#roblox #robloxhorror #robloxstory #scary #fyp
 ```
 
 Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `Which_Max_Is_Real_cover.jpg` (or pick the last frame of `Which_Max_Is_Real_upload.mp4`).
@@ -20,7 +21,7 @@ Settings: who can watch **Everyone**; AI-generated content label **on**; comment
 Title:
 
 ```
-Which Max Was Real? The Mirror Test 👀 (Part 2 - Finale) #roblox #shorts
+Which Max Was Real? (Part 2 Finale) 👀
 ```
 
 Description:

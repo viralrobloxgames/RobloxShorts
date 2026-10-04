@@ -10,7 +10,8 @@
 Caption:
 
 ```
-1 player online. 2 Maxes. One of them is a copy... which is real? Comment LEFT or RIGHT 👇 #roblox #robloxhorror #robloxstory #scary #fyp
+Which Max is real? LEFT or RIGHT 👇
+#roblox #robloxhorror #robloxstory #scary #fyp
 ```
 
 Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `The_Server_Says_One_cover.jpg` (or pick the last frame of `The_Server_Says_One_upload.mp4`).
@@ -20,7 +21,7 @@ Settings: who can watch **Everyone**; AI-generated content label **on**; comment
 Title:
 
 ```
-Which Max Is Real? Comment LEFT or RIGHT 👀 (Part 1) #roblox #shorts
+Which Max Is Real? LEFT or RIGHT 👀 (Part 1)
 ```
 
 Description:

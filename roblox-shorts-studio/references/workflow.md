@@ -140,7 +140,7 @@ Follow [garagefarm.md](garagefarm.md): run a test job, review it, render the ful
 
 ## 7. Review and hand-off
 
-Watch the full MP4. Run `scripts/review/contact_sheet.py --frames renders/encode --out delivery/contact.jpg`. Check for clipping, floating feet, expression timing, prop contact, caption overlap with the HUD, and the loop cut. Update `START_HERE.md` and the ledger status (`delivered_local_review`). Write `delivery/post.json` (TikTok caption of about 150 characters at most with at most 5 hashtags, YouTube title/description/tags) alongside the hand-off, then `python3 scripts/post_md.py projects/<slug>` for the user's copy-ready `delivery/<Title>_post.md`.
+Watch the full MP4. Run `scripts/review/contact_sheet.py --frames renders/encode --out delivery/contact.jpg`. Check for clipping, floating feet, expression timing, prop contact, caption overlap with the HUD, and the loop cut. Update `START_HERE.md` and the ledger status (`delivered_local_review`). Write `delivery/post.json` (TikTok caption = one hook line of at most 45 characters, then a line of 4-5 hashtags; YouTube title at most 50 characters with no hashtags; see references/publishing.md) alongside the hand-off, then `python3 scripts/post_md.py projects/<slug>` for the user's copy-ready `delivery/<Title>_post.md`.
 
 ## 8. Post (after approval)
 

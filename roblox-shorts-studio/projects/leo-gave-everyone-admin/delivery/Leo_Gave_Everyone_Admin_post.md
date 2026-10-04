@@ -10,7 +10,8 @@
 Caption:
 
 ```
-Leo tried to kick everyone... and gave EVERYONE admin 😭 Part 3. Who gets admin next? 👀 #roblox #robloxfunny #robloxadmin #robloxstory #fyp
+Leo accidentally gave EVERYONE admin 😭
+#roblox #robloxfunny #robloxadmin #robloxstory #fyp
 ```
 
 Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `Leo_Gave_Everyone_Admin_cover.jpg` (or pick the last frame of `Leo_Gave_Everyone_Admin_upload.mp4`).
@@ -20,7 +21,7 @@ Settings: who can watch **Everyone**; AI-generated content label **on**; comment
 Title:
 
 ```
-Leo Gave Everyone Admin 😭 (Part 3) #roblox #shorts
+Leo Gave Everyone Admin 😭 (Part 3)
 ```
 
 Description:
