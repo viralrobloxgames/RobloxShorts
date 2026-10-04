@@ -1,0 +1,310 @@
+[
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 0.05,
+  "gain": 0.45
+ },
+ {
+  "asset": "sfx/roar.wav",
+  "start": 0.2,
+  "gain": 0.18
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 0.75,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/rewind.wav",
+  "start": 2.28,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 5.9,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/roar.wav",
+  "start": 7.07,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/glass.wav",
+  "start": 7.42,
+  "gain": 0.6
+ },
+ {
+  "asset": "impact_2",
+  "start": 7.42,
+  "gain": 0.5
+ },
+ {
+  "asset": "impact_4",
+  "start": 7.46,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/roar.wav",
+  "start": 7.52,
+  "gain": 0.55
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 9.83,
+  "gain": 0.6
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 10.1,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_3",
+  "start": 11.23,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 11.71,
+  "gain": 0.7
+ },
+ {
+  "asset": "impact_3",
+  "start": 11.73,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 12.13,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 12.43,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/chomp.wav",
+  "start": 12.73,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 14.46,
+  "gain": 0.6
+ },
+ {
+  "asset": "swish_4",
+  "start": 14.51,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 14.68,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 16.78,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 16.93,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 17.03,
+  "gain": 0.05,
+  "dur": 0.1
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 20.45,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   880,
+   1109,
+   1319
+  ],
+  "start": 20.98,
+  "gain": 0.04,
+  "dur": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 21.819,
+  "gain": 0.12
+ },
+ {
+  "tone": [
+   1568,
+   2093
+  ],
+  "start": 22.019,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 22.269,
+  "gain": 0.12
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 22.719,
+  "gain": 0.12
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 23.169,
+  "gain": 0.12
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 23.619,
+  "gain": 0.12
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 24.069,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/clang.wav",
+  "start": 24.74,
+  "gain": 0.6
+ },
+ {
+  "asset": "impact_1",
+  "start": 24.86,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/leaves_step",
+  "start": 24.94,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.14,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.31,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.48,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_3",
+  "start": 25.64,
+  "gain": 0.25
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.65,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 25.82,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 31.33,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   440,
+   330
+  ],
+  "start": 31.68,
+  "gain": 0.05,
+  "dur": 0.25,
+  "square": true
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 43.45,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/roar.wav",
+  "start": 52.61,
+  "gain": 0.15
+ },
+ {
+  "asset": "swish_2",
+  "start": 53.51,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 54.01,
+  "gain": 0.6
+ },
+ {
+  "asset": "impact_4",
+  "start": 54.01,
+  "gain": 0.5
+ },
+ {
+  "asset": "sfx/roar.wav",
+  "start": 54.46,
+  "gain": 0.25
+ },
+ {
+  "asset": "click",
+  "start": 55.79,
+  "gain": 0.4
+ },
+ {
+  "asset": "drum_hit",
+  "start": 61.1,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 66.36,
+  "gain": 0.12
+ },
+ {
+  "asset": "horror/desk_bell",
+  "start": 66.41,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784,
+   1047
+  ],
+  "start": 69.86,
+  "gain": 0.06,
+  "dur": 0.14
+ },
+ {
+  "tone": [
+   988,
+   1319
+  ],
+  "start": 71.37,
+  "gain": 0.05,
+  "dur": 0.12
+ }
+]
