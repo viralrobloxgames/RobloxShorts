@@ -38,15 +38,16 @@ long for tiktok" (2026-10-02); 115-185 characters was still too long (2026-10-04
   cover put the headline at y 60..450 and TikTok cut it off.)
 - Before delivering, check the crop, `ffmpeg -i <cover>.png -vf crop=1080:1440:0:240 grid.png`, and look at it: the
   whole headline has to read in that crop.
-- **The cover has to be a frame of the uploaded video.** The YouTube Shorts shelf (channel page, Shorts feed) ignores
-  an uploaded thumbnail and shows the frame chosen under Thumbnail → *Select from video*. Max Got Admin Part 2 had the
-  cover uploaded, but the shelf showed a random mid-video frame. So upload `delivery/<Title>_upload.mp4`, the approved
-  MP4 with the cover added as its last 0.1 s (`publish.py` builds it; by hand, run the ffmpeg command below), and pick
-  that last frame as the cover on both platforms. Also upload the JPG as the YouTube thumbnail for search/watch pages.
-
-  ```
-  ffmpeg -i <Title>.mp4 -loop 1 -framerate 30 -t 0.1 -i <Title>_cover.jpg -f lavfi -t 0.1 -i anullsrc=r=48000:cl=stereo -filter_complex "[0:v]fps=30,format=yuv420p,setsar=1[v0];[1:v]scale=1080:1920,fps=30,format=yuv420p,setsar=1[v1];[0:a]aresample=48000,aformat=channel_layouts=stereo[a0];[v0][a0][v1][2:a]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart <Title>_upload.mp4
-  ```
+- **The cover is inside the delivered video: its last 0.5 s.** Both apps take their cover from a frame of the video
+  (the YouTube Shorts shelf ignores an uploaded thumbnail; Max Got Admin Part 2 showed a random mid-video frame), so
+  `delivery/<Title>.mp4` itself ends with the cover held for 15 frames after the end card, and the user just picks the
+  last frame on TikTok and YouTube: no separate image upload (user request, 2026-10-04). `finish.py --encode` adds the
+  cover frames before encoding (so make the cover first) and records `"cover_frames": 15` in the validation JSON;
+  `scripts/add_cover_frame.py projects/<slug>` adds them to a video that is already encoded (never to a posted one).
+  `publish.py` uploads such a video as it is.
+- Why the end, not the start: the first second is the hook, and a still title card flashed at frame 1 reads as a
+  glitch and delays the action exactly when viewers decide to swipe; after the end card nobody is deciding anything,
+  and the half-second hold is easy to land on in both cover pickers.
 
 ## Automatic posting from the cloud (`scripts/publish.py`) - once the platform reviews pass
 

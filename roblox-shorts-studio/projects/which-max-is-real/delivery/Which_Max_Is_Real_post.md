@@ -1,30 +1,23 @@
-# Which Max Is Real: post text
+# Which Max Is Real
 
-- Video: `Which_Max_Is_Real.mp4` (65.8 s)
-- Cover: `Which_Max_Is_Real_cover.jpg`
-- TikTok: **not posted** · YouTube: **not posted**
-- Post only after the video is approved: TikTok first, then YouTube Shorts.
+TikTok: **not posted** · YouTube: **not posted** · `Which_Max_Is_Real.mp4` (66 s)
 
-## TikTok
+Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
-Caption:
+## 1. TikTok description
 
 ```
 Part 2: Mia finds the real Max 👀
 #roblox #robloxhorror #robloxstory #scary #fyp
 ```
 
-Settings: who can watch **Everyone**; AI-generated content label **on**; comments on, duet on, stitch on. Cover: upload `Which_Max_Is_Real_cover.jpg` (or pick the last frame of `Which_Max_Is_Real_upload.mp4`).
-
-## YouTube Shorts
-
-Title:
+## 2. YouTube title
 
 ```
 Which Max Was Real? (Part 2 Finale) 👀
 ```
 
-Description:
+## 3. YouTube description
 
 ```
 Two Maxes. Same face. Same name. One of them is a copy... and it isn't late anymore. Mia has one test to find out which is real.
@@ -38,10 +31,13 @@ An original animated Roblox-style horror story (fiction; the player list and the
 #roblox #robloxhorror #shorts
 ```
 
-Tags:
+## Settings
+
+- **TikTok:** Everyone · AI-generated label ON · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
+- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
+
+YouTube tags (optional, under Show more):
 
 ```
 roblox, roblox horror, roblox story, scary roblox, roblox animation, roblox shorts, horror story, viralrobloxgames
 ```
-
-Settings: visibility **Public**; made for kids **No**; altered or synthetic content **No**; category **Gaming**. Thumbnail: `Which_Max_Is_Real_cover.jpg`; in Studio set the Shorts frame to the last frame (Thumbnail, Select from video).
