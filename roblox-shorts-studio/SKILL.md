@@ -38,7 +38,7 @@ Full detail is in [references/workflow.md](references/workflow.md). **Work in pa
 9. **Sound and captions:** write `source/sound_cues.json` and optional `source/overlays.json` (HUD, title pops). Run `python scripts/studio.py finish projects/<slug>`. Caption styles are in [references/captions.md](references/captions.md).
 10. **Encode:** run `python scripts/studio.py finish projects/<slug> --encode`. It checks for frame gaps and duplicates, burns the captions, verifies the MP4 decodes, and writes `delivery/<Title>.validation.json`.
 11. **Review:** watch the whole thing and check a contact sheet (`scripts/review/contact_sheet.py`). Look for clipping, floating, expression timing, prop contact and caption readability.
-12. **Post (after the user approves):** write `delivery/post.json` with the hand-off, then on approval post it (TikTok, then YouTube) the way references/publishing.md describes. See [references/publishing.md](references/publishing.md).
+12. **Post (after the user approves):** write `delivery/post.json` with the hand-off and run `python3 scripts/post_md.py projects/<slug>` so `delivery/<Title>_post.md` (copy-ready caption, title, description, tags and settings for each platform) sits next to the MP4 for the user, then on approval post it (TikTok, then YouTube) the way references/publishing.md describes. See [references/publishing.md](references/publishing.md).
 
 Keep `START_HERE.md` in each project updated with what is done, what is next, and the job and budget state, so any session can resume.
 

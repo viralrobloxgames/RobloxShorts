@@ -1,6 +1,6 @@
 # Publishing (after the user approves the video)
 
-Making a video and posting it are separate steps. Post only once the user has approved this specific video; standing rule: then it goes to TikTok first and YouTube Shorts straight after, public. Saved preferences are never a standing instruction to publish an unapproved video. The default hand-off is the local `delivery/<Title>.mp4` plus copy-ready title, description and hashtags.
+Making a video and posting it are separate steps. Post only once the user has approved this specific video; standing rule: then it goes to TikTok first and YouTube Shorts straight after, public. Saved preferences are never a standing instruction to publish an unapproved video. The default hand-off is the local `delivery/<Title>.mp4` plus copy-ready title, description and hashtags in `delivery/<Title>_post.md`, next to the MP4 (the user asked for this on 2026-10-04 so they're easy to find). `scripts/post_md.py projects/<slug>` writes it from `post.json`; `finish.py --encode` and `publish.py` refresh it, and it must be re-run whenever `post.json` changes.
 
 ## Before any upload
 

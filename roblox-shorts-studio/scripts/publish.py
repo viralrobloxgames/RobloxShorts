@@ -16,7 +16,7 @@ Neither TikTok's API nor the YouTube Shorts shelf uses a cover image (both show 
 cover appended as its last 0.1 s; TikTok picks that frame as the cover, and YouTube also gets the cover via thumbnails.set.
 """
 from pathlib import Path
-import argparse, hashlib, json, os, re, subprocess, time
+import argparse, hashlib, json, os, re, subprocess, sys, time
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -70,6 +70,7 @@ def check_meta(m):
 
 def save(c):
     c['rec_path'].write_text(json.dumps(c['rec'], indent=2) + '\n')
+    subprocess.run([sys.executable, str(Path(__file__).resolve().parent / 'post_md.py'), str(c['proj'])], capture_output=True)   # refresh posted status
 
 
 # ---------------- TikTok (Content Posting API) ----------------

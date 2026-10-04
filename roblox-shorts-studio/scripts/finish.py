@@ -130,6 +130,8 @@ def main():
         shutil.copy2(f, seq / f'{i:04}.png')
     subprocess.run([sys.executable, str(S / 'export.py'), '--frames', str(seq), '--out', str(D / f'{name}.mp4'), '--fps', str(FPS),
                     '--audio', str(A / 'final_mix.wav'), '--captions', str(D / f'{name}.ass')], check=True)
+    if (D / 'post.json').exists():                                       # copy-ready post text next to the MP4
+        subprocess.run([sys.executable, str(S / 'post_md.py'), str(P)], check=True)
 
 
 if __name__ == '__main__':
