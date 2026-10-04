@@ -1,6 +1,6 @@
 # Catching the Egg Thief (standalone)
 
-Status: script draft, awaiting approval. No narration or rendering until approved.
+Status: script approved 2026-10-04; narration done; scene web/thief_clip.js; rendering.
 
 **Logline:** Someone robs Leo's Steal an Egg base every night. The hooded thief has 50,000 speed and Leo has 900, so a
 laser door and a capybara guard both fail. Leo stops trying to be faster and sets a trap: he spends everything on one Mythic egg
