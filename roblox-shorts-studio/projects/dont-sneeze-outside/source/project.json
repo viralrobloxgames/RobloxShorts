@@ -1,0 +1,12 @@
+{
+  "title": "Don't Sneeze Outside",
+  "character": "Max",
+  "characters": ["Max", "Leo", "Mia"],
+  "seconds": 63,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "script_draft_awaiting_approval",
+  "finish": {"word_fixes": {}}
+}

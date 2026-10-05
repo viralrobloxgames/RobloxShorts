@@ -1,0 +1,8 @@
+{
+ "made_with": "Qwen3-TTS-12Hz-1.7B-VoiceDesign (cloud, CPU)",
+ "seed": 1,
+ "language": "English",
+ "instruct": "A deep, gravelly, middle-aged American man: a hard-boiled 1940s film noir detective narrating his own story. Low, smoky, world-weary voice; slow, dry, deadpan delivery with dramatic pauses.",
+ "text": "Some detectives use fingerprints. I use this. The Super Nose gamepass. I can smell anything on the map.",
+ "chosen": "2026-10-04 by the user (audition A of three) for The Super Nose Detective"
+}

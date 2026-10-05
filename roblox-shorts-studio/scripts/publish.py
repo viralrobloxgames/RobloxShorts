@@ -16,7 +16,7 @@ Neither TikTok's API nor the YouTube Shorts shelf uses a cover image (both show 
 cover appended as its last 0.1 s; TikTok picks that frame as the cover, and YouTube also gets the cover via thumbnails.set.
 """
 from pathlib import Path
-import argparse, hashlib, json, os, re, subprocess, time
+import argparse, hashlib, json, os, re, subprocess, sys, time
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -52,7 +52,7 @@ def load(project):
     rec_path = d / 'published.json'
     rec = json.loads(rec_path.read_text()) if rec_path.is_file() else {}
     if rec.get('sha256') and rec['sha256'] != digest: die('published.json belongs to a different version of this MP4. Keep it, and deliver the new cut under a new filename.')
-    return dict(proj=proj, stem=stem, video=video, cover=cover if cover.is_file() else None, meta=m, digest=digest, rec=rec, rec_path=rec_path)
+    return dict(proj=proj, stem=stem, video=video, cover=cover if cover.is_file() else None, meta=m, digest=digest, rec=rec, rec_path=rec_path, val=val)
 
 
 def check_meta(m):
@@ -60,7 +60,10 @@ def check_meta(m):
     cap = t.get('caption', '')
     if not cap or len(cap) > 2200: die('tiktok.caption is missing or longer than 2200 characters.')
     if cap.count('#') > 5: die('tiktok.caption has more than 5 hashtags (house rule).')
+    first = cap.split('\n')[0]
+    if len(first) > 45 or '#' in first: die('tiktok.caption: the first line is all TikTok shows; keep it a hook of at most 45 characters, hashtags on the next line (house rule).')
     if not 1 <= len(y.get('title', '')) <= 100: die('youtube.title must be 1-100 characters.')
+    if len(y['title']) > 50 or '#' in y['title']: die('youtube.title: at most 50 characters and no hashtags, so it fits the Shorts feed (house rule; hashtags go in the description).')
     if len(y.get('description', '').encode()) > 5000: die('youtube.description is too long.')
     if y.get('privacy') not in ('public', 'unlisted', 'private'): die('youtube.privacy must be public, unlisted or private.')
     for k in ('made_for_kids', 'contains_synthetic_media'):
@@ -70,12 +73,15 @@ def check_meta(m):
 
 def save(c):
     c['rec_path'].write_text(json.dumps(c['rec'], indent=2) + '\n')
+    subprocess.run([sys.executable, str(Path(__file__).resolve().parent / 'post_md.py'), str(c['proj'])], capture_output=True)   # refresh posted status
 
 
 # ---------------- TikTok (Content Posting API) ----------------
 def upload_copy(c):
     """The delivered MP4 plus the cover as a 0.1 s last frame (TikTok and the Shorts shelf only show a frame of the video)."""
     out = c['video'].with_name(c['stem'] + '_upload.mp4')
+    n = c['val'].get('cover_frames') or 0
+    if n: return c['video'], int((c['val']['frame_count'] - n / 2) / c['val']['fps'] * 1000)   # the cover is already the last frames
     if not c['cover']: return c['video'], None
     if not out.is_file() or out.stat().st_mtime < max(c['video'].stat().st_mtime, c['cover'].stat().st_mtime):
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(c['video']), '-loop', '1', '-framerate', '30', '-t', '0.1', '-i', str(c['cover']),

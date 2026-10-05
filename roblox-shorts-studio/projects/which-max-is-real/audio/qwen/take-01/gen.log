@@ -1,0 +1,73 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 2136.14it/s]
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 1/29 2.7s in 52s: Two Maxes. Same face. Same name.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 2/29 1.1s in 15s: One of them is a copy.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 3/29 1.4s in 15s: And it wasn't late anymore.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 4/29 2.2s in 18s: But Mia had been spectating the whole time.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 5/29 2.6s in 21s: It doesn't copy you, she said. It mirrors you.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 6/29 1.4s in 17s: So she gave one order.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 7/29 1.2s in 15s: Raise your right hand.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 8/29 2.0s in 18s: Left Max raised his right hand.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 9/29 2.0s in 16s: Right Max raised his left.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 10/29 1.6s in 15s: Just like the star on its hoodie.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 11/29 1.7s in 16s: If you said left... you were right.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 12/29 1.4s in 15s: The copy stared at Mia.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 13/29 1.1s in 13s: Then it came for her.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 14/29 1.4s in 15s: Max jumped between them.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 15/29 2.2s in 17s: Mia whispered. Walk backwards.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 16/29 3.2s in 22s: Max stepped back. It stepped back, toward the door.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 17/29 1.8s in 17s: Another step. And another.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 18/29 1.9s in 17s: One step from the door... it stopped.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 19/29 1.3s in 15s: It was fighting the mirror.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 20/29 2.6s in 20s: So Max sprinted backwards. Full speed.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 21/29 1.4s in 15s: And a mirror has to follow.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 22/29 1.3s in 14s: Straight through the door.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 23/29 1.4s in 15s: Mia slammed it shut.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 24/29 1.4s in 14s: The player list updated.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 25/29 2.6s in 20s: Two players online. Max. Mia.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 26/29 1.9s in 17s: Max waved goodbye at the door.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 27/29 1.4s in 14s: Nothing waved back.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 28/29 2.5s in 19s: What should we make next? Comment below.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 29/29 2.6s in 19s: Follow Viral Roblox Games for more.

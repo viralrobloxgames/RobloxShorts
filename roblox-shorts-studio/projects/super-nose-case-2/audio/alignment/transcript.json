@@ -1,0 +1,848 @@
+{
+  "source": "narration.wav",
+  "duration": 61.9906875,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "text": " The vampire's sister asked if I was single, tempting, but I'm on a case.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.16,
+          "word": " The"
+        },
+        {
+          "start": 0.16,
+          "end": 0.8,
+          "word": " vampire's"
+        },
+        {
+          "start": 0.8,
+          "end": 1.06,
+          "word": " sister"
+        },
+        {
+          "start": 1.06,
+          "end": 1.48,
+          "word": " asked"
+        },
+        {
+          "start": 1.48,
+          "end": 1.7,
+          "word": " if"
+        },
+        {
+          "start": 1.7,
+          "end": 1.86,
+          "word": " I"
+        },
+        {
+          "start": 1.86,
+          "end": 2.02,
+          "word": " was"
+        },
+        {
+          "start": 2.02,
+          "end": 2.46,
+          "word": " single,"
+        },
+        {
+          "start": 3.14,
+          "end": 3.38,
+          "word": " tempting,"
+        },
+        {
+          "start": 4.08,
+          "end": 4.28,
+          "word": " but"
+        },
+        {
+          "start": 4.28,
+          "end": 4.5,
+          "word": " I'm"
+        },
+        {
+          "start": 4.5,
+          "end": 4.6,
+          "word": " on"
+        },
+        {
+          "start": 4.6,
+          "end": 4.72,
+          "word": " a"
+        },
+        {
+          "start": 4.72,
+          "end": 5.0,
+          "word": " case."
+        }
+      ]
+    },
+    {
+      "start": 5.76,
+      "end": 11.18,
+      "text": " Her brother, Count Vlad, nicest vampire in town, knocked out cold.",
+      "words": [
+        {
+          "start": 5.76,
+          "end": 5.88,
+          "word": " Her"
+        },
+        {
+          "start": 5.88,
+          "end": 6.28,
+          "word": " brother,"
+        },
+        {
+          "start": 6.98,
+          "end": 7.04,
+          "word": " Count"
+        },
+        {
+          "start": 7.04,
+          "end": 7.42,
+          "word": " Vlad,"
+        },
+        {
+          "start": 8.14,
+          "end": 8.5,
+          "word": " nicest"
+        },
+        {
+          "start": 8.5,
+          "end": 9.04,
+          "word": " vampire"
+        },
+        {
+          "start": 9.04,
+          "end": 9.34,
+          "word": " in"
+        },
+        {
+          "start": 9.34,
+          "end": 9.7,
+          "word": " town,"
+        },
+        {
+          "start": 10.14,
+          "end": 10.48,
+          "word": " knocked"
+        },
+        {
+          "start": 10.48,
+          "end": 10.78,
+          "word": " out"
+        },
+        {
+          "start": 10.78,
+          "end": 11.18,
+          "word": " cold."
+        }
+      ]
+    },
+    {
+      "start": 11.78,
+      "end": 14.58,
+      "text": " Next to his coffin, a slice of garlic bread.",
+      "words": [
+        {
+          "start": 11.78,
+          "end": 12.0,
+          "word": " Next"
+        },
+        {
+          "start": 12.0,
+          "end": 12.22,
+          "word": " to"
+        },
+        {
+          "start": 12.22,
+          "end": 12.38,
+          "word": " his"
+        },
+        {
+          "start": 12.38,
+          "end": 12.8,
+          "word": " coffin,"
+        },
+        {
+          "start": 13.22,
+          "end": 13.38,
+          "word": " a"
+        },
+        {
+          "start": 13.38,
+          "end": 13.66,
+          "word": " slice"
+        },
+        {
+          "start": 13.66,
+          "end": 13.88,
+          "word": " of"
+        },
+        {
+          "start": 13.88,
+          "end": 14.24,
+          "word": " garlic"
+        },
+        {
+          "start": 14.24,
+          "end": 14.58,
+          "word": " bread."
+        }
+      ]
+    },
+    {
+      "start": 15.48,
+      "end": 17.12,
+      "text": " Somebody knew how to stop a vampire.",
+      "words": [
+        {
+          "start": 15.48,
+          "end": 15.7,
+          "word": " Somebody"
+        },
+        {
+          "start": 15.7,
+          "end": 16.06,
+          "word": " knew"
+        },
+        {
+          "start": 16.06,
+          "end": 16.24,
+          "word": " how"
+        },
+        {
+          "start": 16.24,
+          "end": 16.36,
+          "word": " to"
+        },
+        {
+          "start": 16.36,
+          "end": 16.6,
+          "word": " stop"
+        },
+        {
+          "start": 16.6,
+          "end": 16.76,
+          "word": " a"
+        },
+        {
+          "start": 16.76,
+          "end": 17.12,
+          "word": " vampire."
+        }
+      ]
+    },
+    {
+      "start": 17.96,
+      "end": 22.62,
+      "text": " The chief offered me a burger to drop it, tempting, but I'm on a case.",
+      "words": [
+        {
+          "start": 17.96,
+          "end": 18.06,
+          "word": " The"
+        },
+        {
+          "start": 18.06,
+          "end": 18.34,
+          "word": " chief"
+        },
+        {
+          "start": 18.34,
+          "end": 18.8,
+          "word": " offered"
+        },
+        {
+          "start": 18.8,
+          "end": 18.98,
+          "word": " me"
+        },
+        {
+          "start": 18.98,
+          "end": 19.12,
+          "word": " a"
+        },
+        {
+          "start": 19.12,
+          "end": 19.38,
+          "word": " burger"
+        },
+        {
+          "start": 19.38,
+          "end": 19.64,
+          "word": " to"
+        },
+        {
+          "start": 19.64,
+          "end": 19.9,
+          "word": " drop"
+        },
+        {
+          "start": 19.9,
+          "end": 20.2,
+          "word": " it,"
+        },
+        {
+          "start": 20.62,
+          "end": 21.0,
+          "word": " tempting,"
+        },
+        {
+          "start": 21.64,
+          "end": 21.86,
+          "word": " but"
+        },
+        {
+          "start": 21.86,
+          "end": 22.08,
+          "word": " I'm"
+        },
+        {
+          "start": 22.08,
+          "end": 22.18,
+          "word": " on"
+        },
+        {
+          "start": 22.18,
+          "end": 22.3,
+          "word": " a"
+        },
+        {
+          "start": 22.3,
+          "end": 22.62,
+          "word": " case."
+        }
+      ]
+    },
+    {
+      "start": 23.3,
+      "end": 26.26,
+      "text": " So I sniffed the bread, longer than anyone should.",
+      "words": [
+        {
+          "start": 23.3,
+          "end": 23.5,
+          "word": " So"
+        },
+        {
+          "start": 23.5,
+          "end": 23.66,
+          "word": " I"
+        },
+        {
+          "start": 23.66,
+          "end": 24.14,
+          "word": " sniffed"
+        },
+        {
+          "start": 24.14,
+          "end": 24.24,
+          "word": " the"
+        },
+        {
+          "start": 24.24,
+          "end": 24.56,
+          "word": " bread,"
+        },
+        {
+          "start": 24.9,
+          "end": 25.24,
+          "word": " longer"
+        },
+        {
+          "start": 25.24,
+          "end": 25.5,
+          "word": " than"
+        },
+        {
+          "start": 25.5,
+          "end": 25.8,
+          "word": " anyone"
+        },
+        {
+          "start": 25.8,
+          "end": 26.26,
+          "word": " should."
+        }
+      ]
+    },
+    {
+      "start": 26.26,
+      "end": 30.5,
+      "text": " Extra butter, fresh garlic, and a hint of compost.",
+      "words": [
+        {
+          "start": 26.26,
+          "end": 27.26,
+          "word": " Extra"
+        },
+        {
+          "start": 27.26,
+          "end": 27.64,
+          "word": " butter,"
+        },
+        {
+          "start": 28.1,
+          "end": 28.38,
+          "word": " fresh"
+        },
+        {
+          "start": 28.38,
+          "end": 28.84,
+          "word": " garlic,"
+        },
+        {
+          "start": 29.38,
+          "end": 29.58,
+          "word": " and"
+        },
+        {
+          "start": 29.58,
+          "end": 29.7,
+          "word": " a"
+        },
+        {
+          "start": 29.7,
+          "end": 29.86,
+          "word": " hint"
+        },
+        {
+          "start": 29.86,
+          "end": 30.04,
+          "word": " of"
+        },
+        {
+          "start": 30.04,
+          "end": 30.5,
+          "word": " compost."
+        }
+      ]
+    },
+    {
+      "start": 31.26,
+      "end": 32.52,
+      "text": " This garlic was homegrown.",
+      "words": [
+        {
+          "start": 31.26,
+          "end": 31.46,
+          "word": " This"
+        },
+        {
+          "start": 31.46,
+          "end": 31.86,
+          "word": " garlic"
+        },
+        {
+          "start": 31.86,
+          "end": 32.08,
+          "word": " was"
+        },
+        {
+          "start": 32.08,
+          "end": 32.52,
+          "word": " homegrown."
+        }
+      ]
+    },
+    {
+      "start": 33.38,
+      "end": 36.46,
+      "text": " Only one guy here grows anything, the gardener,",
+      "words": [
+        {
+          "start": 33.38,
+          "end": 33.64,
+          "word": " Only"
+        },
+        {
+          "start": 33.64,
+          "end": 33.88,
+          "word": " one"
+        },
+        {
+          "start": 33.88,
+          "end": 34.12,
+          "word": " guy"
+        },
+        {
+          "start": 34.12,
+          "end": 34.38,
+          "word": " here"
+        },
+        {
+          "start": 34.38,
+          "end": 34.68,
+          "word": " grows"
+        },
+        {
+          "start": 34.68,
+          "end": 35.2,
+          "word": " anything,"
+        },
+        {
+          "start": 35.8,
+          "end": 36.02,
+          "word": " the"
+        },
+        {
+          "start": 36.02,
+          "end": 36.46,
+          "word": " gardener,"
+        }
+      ]
+    },
+    {
+      "start": 36.98,
+      "end": 38.7,
+      "text": " a garlic patch behind the roses.",
+      "words": [
+        {
+          "start": 36.98,
+          "end": 37.1,
+          "word": " a"
+        },
+        {
+          "start": 37.1,
+          "end": 37.48,
+          "word": " garlic"
+        },
+        {
+          "start": 37.48,
+          "end": 37.82,
+          "word": " patch"
+        },
+        {
+          "start": 37.82,
+          "end": 38.2,
+          "word": " behind"
+        },
+        {
+          "start": 38.2,
+          "end": 38.38,
+          "word": " the"
+        },
+        {
+          "start": 38.38,
+          "end": 38.7,
+          "word": " roses."
+        }
+      ]
+    },
+    {
+      "start": 39.88,
+      "end": 43.68,
+      "text": " Vlad kept the whole garden in the shade, 20 years of sad tomatoes.",
+      "words": [
+        {
+          "start": 39.88,
+          "end": 39.88,
+          "word": " Vlad"
+        },
+        {
+          "start": 39.88,
+          "end": 40.16,
+          "word": " kept"
+        },
+        {
+          "start": 40.16,
+          "end": 40.34,
+          "word": " the"
+        },
+        {
+          "start": 40.34,
+          "end": 40.58,
+          "word": " whole"
+        },
+        {
+          "start": 40.58,
+          "end": 40.9,
+          "word": " garden"
+        },
+        {
+          "start": 40.9,
+          "end": 41.08,
+          "word": " in"
+        },
+        {
+          "start": 41.08,
+          "end": 41.24,
+          "word": " the"
+        },
+        {
+          "start": 41.24,
+          "end": 41.56,
+          "word": " shade,"
+        },
+        {
+          "start": 42.3,
+          "end": 42.5,
+          "word": " 20"
+        },
+        {
+          "start": 42.5,
+          "end": 42.8,
+          "word": " years"
+        },
+        {
+          "start": 42.8,
+          "end": 43.02,
+          "word": " of"
+        },
+        {
+          "start": 43.02,
+          "end": 43.26,
+          "word": " sad"
+        },
+        {
+          "start": 43.26,
+          "end": 43.68,
+          "word": " tomatoes."
+        }
+      ]
+    },
+    {
+      "start": 44.38,
+      "end": 48.34,
+      "text": " So Vlad had to go, cuffs on, gloves and all.",
+      "words": [
+        {
+          "start": 44.38,
+          "end": 44.66,
+          "word": " So"
+        },
+        {
+          "start": 44.66,
+          "end": 45.0,
+          "word": " Vlad"
+        },
+        {
+          "start": 45.0,
+          "end": 45.26,
+          "word": " had"
+        },
+        {
+          "start": 45.26,
+          "end": 45.42,
+          "word": " to"
+        },
+        {
+          "start": 45.42,
+          "end": 45.84,
+          "word": " go,"
+        },
+        {
+          "start": 46.52,
+          "end": 46.64,
+          "word": " cuffs"
+        },
+        {
+          "start": 46.64,
+          "end": 47.02,
+          "word": " on,"
+        },
+        {
+          "start": 47.46,
+          "end": 47.82,
+          "word": " gloves"
+        },
+        {
+          "start": 47.82,
+          "end": 48.02,
+          "word": " and"
+        },
+        {
+          "start": 48.02,
+          "end": 48.34,
+          "word": " all."
+        }
+      ]
+    },
+    {
+      "start": 49.02,
+      "end": 51.4,
+      "text": " With the garlic gone, Vlad woke up.",
+      "words": [
+        {
+          "start": 49.02,
+          "end": 49.16,
+          "word": " With"
+        },
+        {
+          "start": 49.16,
+          "end": 49.28,
+          "word": " the"
+        },
+        {
+          "start": 49.28,
+          "end": 49.54,
+          "word": " garlic"
+        },
+        {
+          "start": 49.54,
+          "end": 50.04,
+          "word": " gone,"
+        },
+        {
+          "start": 50.48,
+          "end": 50.82,
+          "word": " Vlad"
+        },
+        {
+          "start": 50.82,
+          "end": 51.08,
+          "word": " woke"
+        },
+        {
+          "start": 51.08,
+          "end": 51.4,
+          "word": " up."
+        }
+      ]
+    },
+    {
+      "start": 52.0,
+      "end": 53.92,
+      "text": " His sister asked me to stay for dinner.",
+      "words": [
+        {
+          "start": 52.0,
+          "end": 52.16,
+          "word": " His"
+        },
+        {
+          "start": 52.16,
+          "end": 52.5,
+          "word": " sister"
+        },
+        {
+          "start": 52.5,
+          "end": 52.8,
+          "word": " asked"
+        },
+        {
+          "start": 52.8,
+          "end": 53.06,
+          "word": " me"
+        },
+        {
+          "start": 53.06,
+          "end": 53.2,
+          "word": " to"
+        },
+        {
+          "start": 53.2,
+          "end": 53.42,
+          "word": " stay"
+        },
+        {
+          "start": 53.42,
+          "end": 53.62,
+          "word": " for"
+        },
+        {
+          "start": 53.62,
+          "end": 53.92,
+          "word": " dinner."
+        }
+      ]
+    },
+    {
+      "start": 54.56,
+      "end": 58.44,
+      "text": " Then I saw the fangs, tempting, but I'm on a case.",
+      "words": [
+        {
+          "start": 54.39,
+          "end": 54.68,
+          "word": " Then"
+        },
+        {
+          "start": 54.68,
+          "end": 54.86,
+          "word": " I"
+        },
+        {
+          "start": 54.86,
+          "end": 55.08,
+          "word": " saw"
+        },
+        {
+          "start": 55.08,
+          "end": 55.28,
+          "word": " the"
+        },
+        {
+          "start": 55.28,
+          "end": 56.06,
+          "word": " fangs,"
+        },
+        {
+          "start": 56.62,
+          "end": 56.8,
+          "word": " tempting,"
+        },
+        {
+          "start": 57.52,
+          "end": 57.72,
+          "word": " but"
+        },
+        {
+          "start": 57.72,
+          "end": 57.92,
+          "word": " I'm"
+        },
+        {
+          "start": 57.92,
+          "end": 58.02,
+          "word": " on"
+        },
+        {
+          "start": 58.02,
+          "end": 58.16,
+          "word": " a"
+        },
+        {
+          "start": 58.16,
+          "end": 58.44,
+          "word": " case."
+        }
+      ]
+    },
+    {
+      "start": 59.16,
+      "end": 61.58,
+      "text": " Follow Viral Roblox games for more cases.",
+      "words": [
+        {
+          "start": 59.16,
+          "end": 59.52,
+          "word": " Follow"
+        },
+        {
+          "start": 59.52,
+          "end": 60.74,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 60.74,
+          "end": 61.04,
+          "word": " for"
+        },
+        {
+          "start": 61.04,
+          "end": 61.24,
+          "word": " more"
+        },
+        {
+          "start": 61.24,
+          "end": 61.58,
+          "word": " cases."
+        }
+      ]
+    }
+  ]
+}

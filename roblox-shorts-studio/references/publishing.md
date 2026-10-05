@@ -1,6 +1,6 @@
 # Publishing (after the user approves the video)
 
-Making a video and posting it are separate steps. Post only once the user has approved this specific video; standing rule: then it goes to TikTok first and YouTube Shorts straight after, public. Saved preferences are never a standing instruction to publish an unapproved video. The default hand-off is the local `delivery/<Title>.mp4` plus copy-ready title, description and hashtags.
+Making a video and posting it are separate steps. Post only once the user has approved this specific video; standing rule: then it goes to TikTok first and YouTube Shorts straight after, public. Saved preferences are never a standing instruction to publish an unapproved video. The default hand-off is the local `delivery/<Title>.mp4` plus copy-ready title, description and hashtags in `delivery/<Title>_post.md`, next to the MP4 (the user asked for this on 2026-10-04 so they're easy to find). `scripts/post_md.py projects/<slug>` writes it from `post.json`; `finish.py --encode` and `publish.py` refresh it, and it must be re-run whenever `post.json` changes.
 
 ## Before any upload
 
@@ -9,16 +9,25 @@ Making a video and posting it are separate steps. Post only once the user has ap
 - **TikTok:** longer than 60 s if it's aimed at Creator Rewards.
 - Audience settings are chosen deliberately. A cartoon look does not mean the video is made for kids. Declare AI-generated / synthetic content (the voice is AI) where the platform asks.
 
-## TikTok caption rule (every video)
+## Caption and title rule (every video)
 
-Keep `post.json` tiktok.caption **short**:
-- one hook line and one question to drive comments;
-- 4-6 hashtags;
-- a one-line source at the end, e.g. `Source: Roblox RDC 2026`.
+The feed shows one line; nobody taps "more". The user's screenshot (2026-10-04) showed TikTok cutting the caption
+after about 45 characters, with the hashtags hidden behind "...more" on the next line.
 
-Aim for about 150 characters at most. Don't write a paragraph summarising the video, and don't add a "Follow @..." line (the video says it).
+**TikTok** `post.json` tiktok.caption is two lines:
+1. **The hook: one line of at most 45 characters** (emoji included, no hashtags). It must make sense alone: the
+   story's hook or the comment question, e.g. `Which Max is real? LEFT or RIGHT 👇`.
+2. A new line with 4-5 hashtags (`#roblox` first). A news video may add a short `Source: ...` after the hashtags.
 
-The full explainer and source links go in the YouTube description only. The user said the 368-character News #1 caption was "WAY too long for tiktok" (2026-10-02).
+No second sentence, no summary, no "Follow @..." line (the video says it).
+
+**YouTube Shorts** title: **at most 50 characters, no hashtags**. It is the one line shown over the Short, so it is
+the same hook in title case (a part number in brackets is fine). The description can be longer, because it feeds
+search and the few who open it: hook first, two or three short lines, the comment question, then `#roblox #shorts`
+(and a topic tag) on the last line, where YouTube shows the first three above the title on the watch page.
+
+`scripts/publish.py` refuses metadata that breaks these limits. History: a 368-character News #1 caption was "WAY too
+long for tiktok" (2026-10-02); 115-185 characters was still too long (2026-10-04).
 
 ## Cover spec (every video)
 
@@ -29,15 +38,16 @@ The full explainer and source links go in the YouTube description only. The user
   cover put the headline at y 60..450 and TikTok cut it off.)
 - Before delivering, check the crop, `ffmpeg -i <cover>.png -vf crop=1080:1440:0:240 grid.png`, and look at it: the
   whole headline has to read in that crop.
-- **The cover has to be a frame of the uploaded video.** The YouTube Shorts shelf (channel page, Shorts feed) ignores
-  an uploaded thumbnail and shows the frame chosen under Thumbnail → *Select from video*. Max Got Admin Part 2 had the
-  cover uploaded, but the shelf showed a random mid-video frame. So upload `delivery/<Title>_upload.mp4`, the approved
-  MP4 with the cover added as its last 0.1 s (`publish.py` builds it; by hand, run the ffmpeg command below), and pick
-  that last frame as the cover on both platforms. Also upload the JPG as the YouTube thumbnail for search/watch pages.
-
-  ```
-  ffmpeg -i <Title>.mp4 -loop 1 -framerate 30 -t 0.1 -i <Title>_cover.jpg -f lavfi -t 0.1 -i anullsrc=r=48000:cl=stereo -filter_complex "[0:v]fps=30,format=yuv420p,setsar=1[v0];[1:v]scale=1080:1920,fps=30,format=yuv420p,setsar=1[v1];[0:a]aresample=48000,aformat=channel_layouts=stereo[a0];[v0][a0][v1][2:a]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart <Title>_upload.mp4
-  ```
+- **The cover is inside the delivered video: its last 0.5 s.** Both apps take their cover from a frame of the video
+  (the YouTube Shorts shelf ignores an uploaded thumbnail; Max Got Admin Part 2 showed a random mid-video frame), so
+  `delivery/<Title>.mp4` itself ends with the cover held for 15 frames after the end card, and the user just picks the
+  last frame on TikTok and YouTube: no separate image upload (user request, 2026-10-04). `finish.py --encode` adds the
+  cover frames before encoding (so make the cover first) and records `"cover_frames": 15` in the validation JSON;
+  `scripts/add_cover_frame.py projects/<slug>` adds them to a video that is already encoded (never to a posted one).
+  `publish.py` uploads such a video as it is.
+- Why the end, not the start: the first second is the hook, and a still title card flashed at frame 1 reads as a
+  glitch and delays the action exactly when viewers decide to swipe; after the end card nobody is deciding anything,
+  and the half-second hold is easy to land on in both cover pickers.
 
 ## Automatic posting from the cloud (`scripts/publish.py`) - once the platform reviews pass
 

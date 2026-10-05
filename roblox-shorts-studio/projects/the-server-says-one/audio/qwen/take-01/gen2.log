@@ -1,0 +1,25 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 1809.84it/s]
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 23/27 1.4s in 29s: Then the lights went out.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 24/27 2.0s in 19s: When they came back, there were two of him.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 25/27 1.7s in 21s: And this time... neither one was late.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 26/27 3.1s in 27s: Which Max is real? Left or right? Comment below.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+line 27/27 2.9s in 24s: Follow Viral Roblox Games for part two.

@@ -34,6 +34,30 @@ STYLES = [
     'Style: Out,Luckiest Guy,60,&H003F4BFF,&H003F4BFF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,1,0,1,5,0,7,70,0,345,1',
     'Style: Title,Luckiest Guy,104,&H0036D4FF,&H0036D4FF,&H00152435,&H80000000,0,0,0,0,100,100,2,0,1,9,4,8,60,60,470,1',
 ]
+# Captions never wrap (WrapStyle 2), so a caption group too wide for the screen runs off the edge. Groups are split at word
+# boundaries until each fits CAPTION_MAX_W px on screen (the Words style's room between its 90/150 px side margins, less a
+# safety margin). Burned-in width = LIBASS_SCALE x PIL's advance width at the same size (measured with libass, outline included).
+CAPTION_MAX_W, LIBASS_SCALE = 800, 0.845
+
+
+def caption_width(size):
+    """Returns text -> on-screen width in px for the Words style, or None if the font file isn't available."""
+    try:
+        from PIL import ImageFont
+        font = ImageFont.truetype(str(next((ROOT / 'assets/fonts').glob('LuckiestGuy*.ttf'))), size)
+    except Exception:
+        return None
+    return lambda text: font.getlength(text) * LIBASS_SCALE
+
+
+def fit_groups(words, width):
+    """Split a caption group (list of word dicts) into consecutive chunks that each fit on screen, as evenly as possible."""
+    text = lambda ws: ' '.join(w['word'].strip().upper() for w in ws)
+    too_wide = (lambda ws: width(text(ws)) > CAPTION_MAX_W) if width else (lambda ws: len(text(ws)) > 22)
+    if len(words) < 2 or not too_wide(words):
+        return [words]
+    cut = min(range(1, len(words)), key=lambda k: max(len(text(words[:k])), len(text(words[k:]))))
+    return fit_groups(words[:cut], width) + fit_groups(words[cut:], width)
 
 
 def ts(t):
@@ -100,10 +124,14 @@ def main():
     ass += ['', '[Events]', 'Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text']
     fixes = {k.upper(): v.upper() for k, v in opt['word_fixes'].items()}
     word = lambda x: fixes.get(x.strip().upper().strip(',.?!'), x.strip().upper())
+    width = caption_width(opt['caption_font_size'])
+    groups = []
     for cap in json.loads((A / 'alignment/captions.json').read_text(encoding='utf-8')) if voiced else []:
-        ws = cap['words']
+        chunks = fit_groups(cap['words'], width)
+        groups += [(c, chunks[k + 1][0]['start'] if k + 1 < len(chunks) else cap['end']) for k, c in enumerate(chunks)]
+    for ws, cap_end in groups:
         for i, w in enumerate(ws):
-            s, e = w['start'], ws[i + 1]['start'] if i + 1 < len(ws) else cap['end']
+            s, e = w['start'], ws[i + 1]['start'] if i + 1 < len(ws) else cap_end
             if e > s:
                 line = ' '.join((r'{\c' + opt['caption_highlight'] + '&}' if k == i else r'{\c&H00FFFFFF&}') + word(x['word']) for k, x in enumerate(ws))
                 ass.append(f'Dialogue: 1,{ts(s)},{ts(min(e, SECONDS))},Words,,0,0,0,,{line}')
@@ -128,8 +156,21 @@ def main():
     seq = P / 'renders/encode'; shutil.rmtree(seq, ignore_errors=True); seq.mkdir(parents=True)
     for i, f in enumerate(frames, 1):
         shutil.copy2(f, seq / f'{i:04}.png')
+    # The cover is the video's last 0.5 s (after the end card): both apps pick their cover from a frame of the video,
+    # so the user just picks the last frame - nothing to upload separately (references/publishing.md).
+    cover = next((c for c in (D / f'{name}_cover.png', D / f'{name}_cover.jpg') if c.exists()), None)
+    hold = 15 if cover else 0
+    if cover:
+        subprocess.run([FF, '-y', '-v', 'error', '-i', str(cover), '-vf', 'scale=1080:1920,setsar=1', str(seq / 'cover.png')], check=True)
+        for k in range(1, hold + 1): shutil.copy2(seq / 'cover.png', seq / f'{len(frames) + k:04}.png')
+        (seq / 'cover.png').unlink()
+    else:
+        print(f'No delivery/{name}_cover.png yet: once it exists, run scripts/add_cover_frame.py {P.relative_to(ROOT)}')
     subprocess.run([sys.executable, str(S / 'export.py'), '--frames', str(seq), '--out', str(D / f'{name}.mp4'), '--fps', str(FPS),
                     '--audio', str(A / 'final_mix.wav'), '--captions', str(D / f'{name}.ass')], check=True)
+    vj = D / f'{name}.validation.json'; rep = json.loads(vj.read_text()); rep['cover_frames'] = hold; vj.write_text(json.dumps(rep, indent=2))
+    if (D / 'post.json').exists():                                       # copy-ready post text next to the MP4
+        subprocess.run([sys.executable, str(S / 'post_md.py'), str(P)], check=True)
 
 
 if __name__ == '__main__':

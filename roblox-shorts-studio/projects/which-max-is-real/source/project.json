@@ -1,0 +1,25 @@
+{
+  "title": "Which Max Is Real",
+  "character": "Max",
+  "characters": [
+    "Max",
+    "Mia",
+    "Leo",
+    "Unlisted"
+  ],
+  "series": "After Hours horror (part 2)",
+  "seconds": 65.8333,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "delivered_local_review",
+  "finish": {
+    "music": "projects/which-max-is-real/audio/score.wav",
+    "music_gain": 0.42,
+    "caption_highlight": "&H00D8E478",
+    "word_fixes": {
+      "MAX'S": "MAXES"
+    }
+  }
+}

@@ -125,6 +125,110 @@
    "project": "projects/stealing-a-t-rex-egg"
   },
   {
+   "title": "The Super Nose Detective",
+   "series": "super nose detective (case 1)",
+   "created": "2026-10-03",
+   "status": "narration_done",
+   "logline": "A Roblox take on the 70s Miami detective parody Dick Snifford (flirting yes, no swearing or sexual references): Detective Max Sniffwell has the Super Nose gamepass and solves the stolen Golden Donut case by sniffing a sock. Skye asks if he's single and Mia asks him to stay at a pool party ('Tempting. But I'm on a case.'); he sneezes a pepper-throwing red herring into the pool and follows the trail back to Chief Leo, who has one sock, sprinkles on his face and half the donut. Leo slides him the other half, his cut. 'Tempting.' Case closed.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/the-super-nose-detective"
+  },
+  {
+   "title": "The Server Says One",
+   "series": "After Hours horror (part 1 of 2)",
+   "created": "2026-10-02",
+   "status": "published",
+   "logline": "The server says one player online, but a faceless player stands in front of Max, copying him half a second late. It is his mirror image, and it creeps closer with every copy. Max fakes left, cuts right and slams the EXIT door; the copy, running the wrong way, hits the other side. Then the list updates: two players online. Max. And Max.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/the-server-says-one"
+  },
+  {
+   "title": "Which Max Is Real",
+   "series": "After Hours horror (part 2 of 2, finale)",
+   "created": "2026-10-03",
+   "status": "delivered_local_review",
+   "logline": "Finale. Mia, who was spectating, realises the copy is a mirror: 'raise your right hand' exposes the right Max (the hoodie star was the clue). It lunges for her; Max walks backwards so the mirror backs toward the EXIT door, it resists one step away, Max sprints backwards and the mirror is flung through; Mia slams the door. Two players online. Max waves goodbye at the door; nothing waves back.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/which-max-is-real"
+  },
+  {
+   "title": "Three Seconds",
+   "series": "standalone story",
+   "created": "2026-10-03",
+   "status": "dropped",
+   "logline": "Leo can stop time, but only for three seconds, which is never enough. When a piano falls toward Mia and she's twenty steps away, he uses his three seconds to throw the dodgeball that once hit him and knocks her clear. Mia asks if he just stopped time. 'Three seconds is cute. I get four.' She freezes him and eats his fries, which is where they kept going.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/three-seconds",
+   "notes": "Dropped 2026-10-03: the 'I get four' twist was a last-second new rule and the downside was only 'too short'. Replaced by Forty Floors."
+  },
+  {
+   "title": "Forty Floors",
+   "series": "standalone story",
+   "created": "2026-10-03",
+   "status": "script_draft_awaiting_approval",
+   "logline": "You're falling forty floors, and you can swap places with anything alive you can see. Swapping saves you but drops the window cleaner in your place, so you swap back. Everyone in sight would fall instead of you, until you see a pigeon. It takes your fall and opens its wings; the window cleaner you spared lowers his platform and pulls you in.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/forty-floors"
+  },
+  {
+   "title": "Which Max Rejoined?",
+   "series": "After Hours horror (part 2 of 2, finale v3)",
+   "created": "2026-10-03",
+   "status": "script_draft_awaiting_approval",
+   "logline": "Two Maxes; the mirror test shows the real one is LEFT. The copy isn't late any more and keeps closing in, so Max makes it copy him leaving the game: both disconnect. Max clicks Rejoin and spawns alone, one player online... then sees the star on his hoodie is on the wrong side. The copy rejoined.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/which-max-rejoined"
+  },
+  {
+   "title": "The Last Penalty",
+   "series": "standalone story",
+   "created": "2026-10-03",
+   "status": "delivered_local_review",
+   "logline": "You're the keeper facing the last penalty of the final. Leo always looks at the corner he's aiming for, so you dive early and save it, but it's retaken because you left your line. Knowing he's been read, Leo shuts his eyes, and you stay on your line. Unable to see, he scuffs it into the grass and it rolls to your boot.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/the-last-penalty"
+  },
+  {
+   "title": "Don't Sneeze Outside",
+   "series": "standalone story",
+   "created": "2026-10-04",
+   "status": "dropped",
+   "logline": "Every time you sneeze, your gravity flips. Indoors you land on the ceiling; outdoors there's no ceiling. Leo blows a dandelion in Max's face and he falls up, catching a lamppost upside down; only another sneeze brings him down. Leo's pepper falls back on Leo. Mia's cat climbs the pole to his nose: he sneezes and drops to the sidewalk, safe, and the cat jumps on his chest. Ah... ah...",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/dont-sneeze-outside",
+   "notes": "Dropped 2026-10-04: the user found it boring. Replaced by Every Lie Comes True."
+  },
+  {
+   "title": "Every Lie Comes True",
+   "series": "standalone story",
+   "created": "2026-10-04",
+   "status": "scheduled",
+   "logline": "Whatever Leo lies about comes true: a dragon eats his homework, he's the fastest kid in school, he has a million dollars. Then he crashes Max's bike and panics: 'I've never seen you before.' Max forgets him. Lying 'you're my best friend' brings Max back, but Max asks who broke the bike; Leo nearly blames the dragon (something lands on the roof) and tells the truth. 'Then you're buying me a new one.' 'Fine. I've got a million dollars.' Two true things in one day.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/every-lie-comes-true",
+   "notes": "Approved 2026-10-05. Scheduled for 2026-10-05 19:00 UK on TikTok and YouTube (https://youtube.com/shorts/ee3fg-PsOds); see delivery/published.json."
+  },
+  {
+   "title": "The Vampire Case (Detective Max Sniffwell)",
+   "series": "super nose detective",
+   "created": "2026-10-05",
+   "status": "narration_done",
+   "project": "projects/super-nose-case-2",
+   "logline": "Count Vlad, the nicest vampire in town, is knocked out cold with a slice of garlic bread by his coffin. The Chief offers Max a burger to drop it (red herring: he is just lazy). One long sniff: butter, fresh garlic, compost, so the garlic was homegrown, and only the gardener grows anything: a garlic patch behind the roses. Motive: Vlad kept the whole garden in the shade, twenty years of sad tomatoes. Cuffs on, gloves and all; with the garlic gone Vlad wakes, and his sister asks Max to stay for dinner. Then he sees the fangs. ~62 s.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "notes": "Script v1 'The Big Cheese' (Leo breaks out of jail, cheese-covered map, donut trap, sneeze cliffhanger) rejected 2026-10-05: the series is standalone cases. v2 is a clean take on the original's Vampire Case; v2 (94 s) cut to v3 (~62 s, new hook), then v4 (one clear clue chain; camping/respawn/floating dropped), then v5 (culprit is the gardener, not Leo again) the same day."
+  },
+  {
+   "title": "Whatever Mia Draws",
+   "series": "standalone story",
+   "created": "2026-10-05",
+   "status": "narration_done",
+   "logline": "Anything Mia draws with her pencil comes to life exactly as drawn, and Mia can't draw: a stick dog, a square-wheeled bike, a stick boyfriend. Leo, the best artist in class, grabs the pencil and draws a perfect lion. Mia's wobbly cage holds but has no roof; her stick boyfriend gets batted like a toy, which shows her it's just a big cat. She scribbles a ball of yarn and the lion rolls over purring. For once, Mia drew something perfectly. Leo wants another go: 'No. You're too good.'",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/whatever-mia-draws",
+   "notes": "Script v1 (196 words, ~78 s) too long; v2 cut to 153 words (~62-63 s, the new 61-65 s rule) 2026-10-05. Awaiting approval."
+  },
+  {
    "title": "Catching the Egg Thief",
    "series": "standalone",
    "created": "2026-10-03",
@@ -162,6 +266,7 @@
   "farm_render_running",
   "farm_render_downloaded_awaiting_encode",
   "delivered_local_review",
-  "published"
+  "published",
+  "dropped"
  ]
 }

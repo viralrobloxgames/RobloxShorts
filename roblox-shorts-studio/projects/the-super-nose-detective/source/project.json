@@ -1,0 +1,23 @@
+{
+  "title": "The Super Nose Detective",
+  "character": "Max",
+  "characters": [
+    "Max",
+    "Leo",
+    "Mia",
+    "Skye",
+    "Noob"
+  ],
+  "seconds": 73.7,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "narration_done; rendering",
+  "finish": {
+    "music": "projects/the-super-nose-detective/audio/music_funk.wav",
+    "music_gain": 0.08,
+    "word_fixes": {}
+  },
+  "series": "super nose detective (case 1)"
+}

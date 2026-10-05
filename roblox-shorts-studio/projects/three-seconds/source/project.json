@@ -1,0 +1,12 @@
+{
+  "title": "Three Seconds",
+  "character": "Leo",
+  "characters": ["Leo", "Mia", "Max"],
+  "seconds": 66,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "script_draft_awaiting_approval",
+  "finish": {"word_fixes": {}}
+}

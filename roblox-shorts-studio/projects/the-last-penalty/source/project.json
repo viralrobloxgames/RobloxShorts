@@ -1,0 +1,25 @@
+{
+  "title": "The Last Penalty",
+  "character": "Mia",
+  "characters": [
+    "Mia",
+    "Leo",
+    "Noob",
+    "Max"
+  ],
+  "seconds": 69.8667,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "delivered_local_review",
+  "finish": {
+    "word_fixes": {
+      "EVERYONE": "EVERY ONE",
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+    },
+    "music": "projects/the-last-penalty/audio/score.wav",
+    "music_gain": 0.3,
+    "caption_highlight": "&H006BE38B"
+  }
+}

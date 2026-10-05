@@ -1,0 +1,330 @@
+[
+ {
+  "asset": "horror/entity_connect",
+  "start": 0.05,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   880,
+   880
+  ],
+  "start": 5.2,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "horror/latch",
+  "start": 6.68,
+  "gain": 0.6
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 6.7,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   523,
+   659
+  ],
+  "start": 6.98,
+  "gain": 0.06,
+  "dur": 0.12
+ },
+ {
+  "tone": 300,
+  "start": 11.12,
+  "gain": 0.06,
+  "dur": 0.6,
+  "sweep": 300
+ },
+ {
+  "asset": "swish_1",
+  "start": 15.79,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_1",
+  "start": 15.81,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   988
+  ],
+  "start": 16.04,
+  "gain": 0.08,
+  "dur": 0.12
+ },
+ {
+  "tone": [
+   392
+  ],
+  "start": 19.8,
+  "gain": 0.08,
+  "dur": 0.25,
+  "square": true
+ },
+ {
+  "tone": [
+   784,
+   988,
+   1319
+  ],
+  "start": 23.26,
+  "gain": 0.07,
+  "dur": 0.12
+ },
+ {
+  "tone": 260,
+  "start": 25.19,
+  "gain": 0.07,
+  "dur": 0.5,
+  "sweep": -120
+ },
+ {
+  "asset": "horror/entity_connect",
+  "start": 25.54,
+  "gain": 0.5
+ },
+ {
+  "asset": "swish_4",
+  "start": 26.91,
+  "gain": 0.6
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 26.96,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 27.04,
+  "gain": 0.5
+ },
+ {
+  "asset": "swish_3",
+  "start": 27.03,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_2",
+  "start": 27.46,
+  "gain": 0.55
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 27.46,
+  "gain": 0.55
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 32.98,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 33.02,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 33.08,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 33.1,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 34.16,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 34.2,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 34.26,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 34.28,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 36.38,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 36.42,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 36.48,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 36.5,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 37.5,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 37.54,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 37.6,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 37.62,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 38.83,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 38.87,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/torch_click",
+  "start": 38.93,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 38.95,
+  "gain": 0.08
+ },
+ {
+  "asset": "horror/radio_static",
+  "start": 39.36,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.05,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.2,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.35,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 43.5,
+  "gain": 0.5
+ },
+ {
+  "asset": "horror/door_creak",
+  "start": 43.65,
+  "gain": 0.35
+ },
+ {
+  "asset": "impact_4",
+  "start": 47.738,
+  "gain": 0.6
+ },
+ {
+  "asset": "impact_1",
+  "start": 48.3,
+  "gain": 0.6
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 46.838,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.088,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.338,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_4",
+  "start": 49.52,
+  "gain": 0.8
+ },
+ {
+  "asset": "horror/latch",
+  "start": 49.56,
+  "gain": 0.8
+ },
+ {
+  "asset": "impact_1",
+  "start": 50.07,
+  "gain": 0.7
+ },
+ {
+  "asset": "horror/latch",
+  "start": 50.12,
+  "gain": 0.5
+ },
+ {
+  "asset": "impact_1",
+  "start": 50.39,
+  "gain": 0.55
+ },
+ {
+  "asset": "horror/latch",
+  "start": 50.44,
+  "gain": 0.4
+ },
+ {
+  "asset": "click",
+  "start": 51.64,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/disconnect",
+  "start": 51.64,
+  "gain": 0.6
+ },
+ {
+  "tone": [
+   660,
+   523
+  ],
+  "start": 52.84,
+  "gain": 0.05,
+  "dur": 0.15
+ },
+ {
+  "asset": "horror/room_hum",
+  "start": 57.84,
+  "gain": 0.35
+ }
+]
