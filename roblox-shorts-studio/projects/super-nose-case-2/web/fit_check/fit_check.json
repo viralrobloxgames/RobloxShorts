@@ -1,11 +1,11 @@
 {
   "clip": "projects/super-nose-case-2/web/vampire_clip.js",
-  "generated": "2026-10-05T15:23:38.552Z",
-  "fingerprint": "fe9c0b2887bc7554",
+  "generated": "2026-10-05T18:11:00.142Z",
+  "fingerprint": "49b922e6cd3e8e29",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [],
   "pairs": [],
-  "reviewedAt": "2026-10-05T15:23:39.063Z"
+  "reviewedAt": "2026-10-05T18:11:00.639Z"
 }

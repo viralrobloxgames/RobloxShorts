@@ -36,7 +36,12 @@ original: `source/story.md`. Script: `script.txt`. Research: `source/research/` 
   - Max turns to face the Chief (the old lerp turned him away).
   - held props at the palm grip (`gripR/gripL`); two-handed shears posed from both hands every frame (`shears`/`setShears`,
     snipping), dropped to the grass at the cuffs. Every hold checked in close-up: `web/hold_check.js`.
-- Full re-render running (1870 frames), then encode, blank-frame scan, review, deliver to main.
+- Re-rendered and delivered 2026-10-05 (second cut): 62.8 s incl. the cover tail, no blank frames
+  (`scripts/review/blank_frames.py`), captions x 134-884, -16.9 LUFS. The blank-frame scan caught one more after the
+  re-render: the sniff camera sat where the sister stands (her dress crossed the lens when she turned away); moved in
+  close on Max's left and re-rendered just those 82 frames with `web/changed_frames.mjs` (6 min).
+  `renders/web/frame_hashes.json` holds the fingerprints: further fixes re-render only what they change.
+  **Waiting on the user's approval to post** (TikTok, then YouTube).
 
 ## Re-render / re-encode
 ```

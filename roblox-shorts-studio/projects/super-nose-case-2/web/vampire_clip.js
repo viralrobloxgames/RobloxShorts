@@ -401,7 +401,7 @@ export function update(t, stage) {
     case 'stopV': look(OFF.clone().add(V(-2.2, 6.2, -9.5)), OFF.clone().add(V(-1.6, 3.7, 0.5)), 46, 25); break;   // reverse: over the coffin at Max and the sister
     case 'chief': look(OFF.clone().add(V(2.2, 5.6, 15.5)), OFF.clone().add(V(2.2, 3.9, 1.2)), 44, 25); break;
     case 'tempt2': look(local(max, 5.6, 4.5, 2.0), local(max, 0, 4.1, 0.8), 40, 20); break;
-    case 'sniff': { const k = easeInOut(u), at = (x, y, z) => MAXH.clone().add(V(x, y, z).applyAxisAngle(V(0, 1, 0), Math.PI - 0.15)); look(at(lerp(5.8, 4.8, k), 4.4, 1.1), at(0, 4.15, 0.75), lerp(38, 34, k), 15); break; }   // fixed to where he ends up, not his turning body (it swept through the set)   // his right profile, the nose in the bread; the sister leaning away behind
+    case 'sniff': { const k = easeInOut(u), at = (x, y, z) => MAXH.clone().add(V(x, y, z).applyAxisAngle(V(0, 1, 0), Math.PI - 0.15)); look(at(lerp(4.2, 3.6, k), 4.4, 0.8), at(0, 4.15, 0.75), lerp(40, 36, k), 15); break; }   // his left profile, fixed to where he ends up; close in, so the sister (~5.8 out on this side) is behind the camera   // his right profile, the nose in the bread; the sister leaning away behind
     case 'i1': { const c = bread.position.clone(); look(c.clone().addScaledVector(fwdOf(max), 2.6).addScaledVector(rightOf(max), 0.6).add(V(0, 1.6, 0)), c.clone().add(V(0, 0.2, 0)), 34, 10); break; }
     case 'i2': { const c = wp(bread.userData.clove); look(c.clone().addScaledVector(fwdOf(max), 1.7).addScaledVector(rightOf(max), -0.5).add(V(0, 1.1, 0)), c, 30, 10); break; }
     case 'i3': { const c = wp(bread.userData.crumb); look(c.clone().addScaledVector(fwdOf(max), 1.6).add(V(0, 0.85, 0)), c, 28, 10); break; }
