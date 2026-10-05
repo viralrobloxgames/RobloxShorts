@@ -12,7 +12,8 @@ hurt, no crime beyond a dodged freight bill that was waived), it has built-in co
 paint label, upside down in the sun, walking out of an airport in a suit, forgetting to text your friend), a warm
 motive (his daughter's birthday), and a neat reversal at the end.
 
-Script: `../script.txt` (160 words with the CTA, one sentence per line). Expect ~62-65 s at George's pace. If the
+Script: `../script.txt` (160 words with the CTA, one sentence per line; the payoff line is split in two so the voice
+pauses on "In the end,"). Expect ~62-65 s at George's pace. If the
 take runs long, cut "Inside: " -> drop the pillow/torch list to "Inside: two bottles.", then "in the burning sun".
 Cast: Max plays the athlete (javelin on his back in the opening, a suit for Perth); Leo is the friend with the hammer;
 Mia is his wife at the door in Adelaide; a small kid (a scaled-down Noob or Skye) is the daughter; Skye and Noob are
@@ -43,8 +44,8 @@ the cargo handlers, the Bombay ground crew and the reporter. Route: web (three.j
   the story went around the world (Lethbridge News Now / AP 2017 retelling).
 - The airline waived the cost: "the airline forgave his debt" (Atlas Obscura) / "was pressured into allowing him to fly
   for free" (Lethbridge News Now). Narration: "the airline drops the bill", and the payoff "he never paid for one".
-- Shown in post copy only: Spiers and McSorley lost touch for decades and met again in 2016; their story is told in
-  "Out of the Box" by Marcus and Julie McSorley. Not in the narration or post copy: his later drug-smuggling
+- Post copy only: the story is told in "Out of the Box" by Marcus and Julie McSorley (a later reunion is reported in
+  some retellings but wasn't verified, so it is left out). Not in the narration or post copy: his later drug-smuggling
   conviction (off-tone and not needed).
 
 ## Beats
@@ -87,7 +88,7 @@ the cargo handlers, the Bombay ground crew and the reporter. Route: web (three.j
 - Cover idea: Max's face peeking out of a cracked-open crate stencilled "PAINT" and "C.O.D.", a plane above;
   headline "HE MAILED HIMSELF / HOME" inside y 240-1680.
 - Post copy: title "He Mailed Himself Home In A Box (True Story)"; description names Reg Spiers, London to Perth,
-  October 1964, John McSorley, and the 2016 reunion.
+  October 1964, and John McSorley.
 
 ## Sources
 - Yahoo News Australia, the man who posted himself from London to Australia: https://au.news.yahoo.com/the-epic-story-of-the-man-who-posted-himself-from-london-to-australia-26592850.html
