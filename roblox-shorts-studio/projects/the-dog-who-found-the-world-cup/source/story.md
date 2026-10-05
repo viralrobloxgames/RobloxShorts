@@ -17,10 +17,11 @@ Topical: the 2026 World Cup was this summer and the 60th anniversary of 1966 is 
 Script: `../script.txt` (160 words with the CTA, one sentence per line). Mona Lisa (160 words) measured 59.9 s of
 speech, so expect ~60-62 s plus the end card. If the take runs short of 61 s with the card, put back "out" in line 1
 ("drags a parcel out from under a hedge"). If long, cut "One " -> "A ", then "day and night", then "clean".
-Cast: Max plays the owner (flat cap, work jacket: he was a Thames lighterman); Pickles is a black-and-white collie
-(**not in the pack yet: needs a rigged `animal_dog`**, built like the other `animal_*` creatures); Mia and Skye are
-the guards; Noob is the middleman at the handover; Leo is the detective at the police station; the rest are players
-and crowd. Route: web.
+Cast (as built): Max plays the owner (work jacket: he was a Thames lighterman); Pickles is the pack golden retriever cut
+into parts and recoloured as a black-and-white collie (`animal_collie_parts`, tools/cut_collie.py); Skye is the guard;
+Leo the football boss on the phone and the captain; the Noob the middleman; Mia the undercover officer and the
+detective; recoloured Noobs are visitors, the night guard, police, the desk sergeant, players and dinner guests.
+Route: web. (No hats: the pack has no flat cap, and every accessory would need a fit check.)
 
 ## The facts (kept accurate; sources below)
 - Sunday 20 March 1966, four months before the 1966 World Cup in England, the Jules Rimet Trophy was stolen from a
