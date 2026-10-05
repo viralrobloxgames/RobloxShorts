@@ -63,6 +63,12 @@ if (args.every) frames = frames.filter((f) => (f - 1) % Number(args.every) === 0
 // --resume: skip frames already written (lets a long render pick up where it stopped).
 if (args.resume) frames = frames.filter((f) => !fs.existsSync(path.join(out, `web_${String(f).padStart(4, '0')}.png`)));
 
+// Each written frame's fingerprint goes into <out>/frame_hashes.json, so web/changed_frames.mjs can later tell which frames
+// an edit changed (full-quality renders only: not for --scale/--samples previews).
+const record = !args.scale && !args.samples, hashFile = path.join(out, 'frame_hashes.json');
+const saved = record && fs.existsSync(hashFile) ? JSON.parse(fs.readFileSync(hashFile, 'utf8')) : null;
+const hashes = saved && saved.clip === args.clip ? saved.hashes : {};
+const flushHashes = () => { if (record) fs.writeFileSync(hashFile, JSON.stringify({ clip: args.clip, total, hashes })); };
 const workers = Math.max(1, Number(args.workers || 1));
 const pages = [first, ...(await Promise.all(Array.from({ length: workers - 1 }, openPage)))];
 const t0 = Date.now(); let done = 0;
@@ -71,14 +77,16 @@ await Promise.all(pages.map(async (page) => {
   while (queue.length) {
     const f = queue.shift();
     const url = await page.evaluate(([f, s]) => window.renderFrame(f, s ? { samples: s } : {}), [f, args.samples ? Number(args.samples) : 0]);
+    if (record) hashes[f] = await page.evaluate((f) => window.frameState(f), f);
     const file = path.join(out, `web_${String(f).padStart(4, '0')}.png`);
     fs.writeFileSync(file + '.part', Buffer.from(url.split(',')[1], 'base64')); fs.renameSync(file + '.part', file);
-    done++;
+    done++; if (record && done % 50 === 0) flushHashes();
     if (done % 10 === 0 || done === frames.length) {
       const s = (Date.now() - t0) / 1000;
       console.log(`${done}/${frames.length} frames, ${(s / done).toFixed(2)} s/frame, ~${Math.round((s / done) * (frames.length - done))} s left`);
     }
   }
 }));
+flushHashes();
 await browser.close(); server.close();
 console.log(`Wrote ${frames.length} frames to ${out} (${meta.seconds}s clip, ${total} frames total)`);
