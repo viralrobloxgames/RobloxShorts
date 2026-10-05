@@ -80,7 +80,7 @@ export function crate() {
     LG(x, 'PAINT', W / 2, 110, 150, '#1b1b1b');
     x.font = '800 44px Montserrat'; x.textAlign = 'center'; x.fillStyle = '#1b1b1b'; x.fillText('THIS WAY UP', W / 2, 250);
     for (const ax of [70, W - 70]) { x.beginPath(); x.moveTo(ax, 190); x.lineTo(ax + 34, 250); x.lineTo(ax + 12, 250); x.lineTo(ax + 12, 330); x.lineTo(ax - 12, 330); x.lineTo(ax - 12, 250); x.lineTo(ax - 34, 250); x.closePath(); x.fill(); }
-    x.font = '700 34px Montserrat'; x.fillText('FRAGILE  ·  HANDLE WITH CARE', W / 2, 345);
+    x.font = '700 28px Montserrat'; x.fillText('FRAGILE · HANDLE WITH CARE', W / 2, 345);
   }, { transparent: true, roughness: 0.85 });
   sten.position.set(0, h / 2 + 0.05, t / 2 + 0.005); front.add(sten);
   // the cut-out square (Perth): a separate piece of the front that falls out
