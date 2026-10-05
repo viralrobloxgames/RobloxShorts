@@ -1,0 +1,23 @@
+{
+ "item": "gift_chest",
+ "category": "props",
+ "sourceName": "GiftChest",
+ "sourcePath": "Workspace._ShortsStage.Sources.GiftChest",
+ "size": [
+  5.1798,
+  4.28,
+  3.5787
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "gift_chest"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 12,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": [],
+ "note": "Workspace.FreeGiftChest.Chest, turned square to the axes after export; stand-in for the Prism Chest (a 2D pop-up in the game)"
+}

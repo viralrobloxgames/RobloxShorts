@@ -1,0 +1,22 @@
+{
+ "item": "prism_plinth",
+ "category": "props",
+ "sourceName": "PrismPlinth",
+ "sourcePath": "Workspace._ShortsStage.Sources.PrismPlinth",
+ "size": [
+  26.8,
+  5.5457,
+  26.7998
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "prism_plinth"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 18,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

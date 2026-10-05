@@ -1,5 +1,5 @@
 {
- "count": 165,
+ "count": 166,
  "conventions": "1 stud = 1 unit, +Y up, front faces -Z, origin = bottom centre. One OBJ object per rigid body; rig.json gives each body's parent and joint pivot.",
  "creatures": [
   {
@@ -1678,6 +1678,19 @@
    "joints": 26,
    "bones": 0,
    "description": "Plesiosaur from the game: Motor6D rig of rigid parts."
+  },
+  {
+   "name": "prism_kitsune",
+   "path": "creatures/prism_kitsune/prism_kitsune.obj",
+   "rig": "creatures/prism_kitsune/rig.json",
+   "size": [
+    16.942,
+    15.69,
+    26.0
+   ],
+   "joints": 0,
+   "bones": 27,
+   "description": "Kitsune from the game: skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json)."
   },
   {
    "name": "pteranodon",

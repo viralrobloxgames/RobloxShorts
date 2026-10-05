@@ -26,7 +26,10 @@ original: `source/story.md`. Script: `script.txt`. Research: `source/research/` 
 - Fit check: 0 pairs (no pack accessories), reviewed.
 
 ## Next
-- Full render running into `renders/web` (1870 frames), then encode, review, deliver to main.
+- Delivered 2026-10-05: `delivery/The_Vampire_Case.mp4` (62.8 s incl. the 0.5 s cover tail, 1080x1920, -16.9 LUFS,
+  captions x 134-884 on every frame). The first render was interrupted by a container restart after the clip had been
+  edited mid-render, so it was re-rendered from frame 1. **Waiting on the user's approval to post** (TikTok, then
+  YouTube); copy-ready text in `delivery/The_Vampire_Case_post.md`.
 
 ## Re-render / re-encode
 ```

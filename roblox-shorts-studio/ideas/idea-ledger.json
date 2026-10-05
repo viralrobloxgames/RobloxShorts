@@ -222,7 +222,7 @@
    "title": "Whatever Mia Draws",
    "series": "standalone story",
    "created": "2026-10-05",
-   "status": "narration_done",
+   "status": "scheduled",
    "logline": "Anything Mia draws with her pencil comes to life exactly as drawn, and Mia can't draw: a stick dog, a square-wheeled bike, a stick boyfriend. Leo, the best artist in class, grabs the pencil and draws a perfect lion. Mia's wobbly cage holds but has no roof; her stick boyfriend gets batted like a toy, which shows her it's just a big cat. She scribbles a ball of yarn and the lion rolls over purring. For once, Mia drew something perfectly. Leo wants another go: 'No. You're too good.'",
    "platform": "TikTok (>60 s) / YouTube Shorts",
    "project": "projects/whatever-mia-draws",
@@ -232,7 +232,7 @@
    "title": "Catching the Egg Thief",
    "series": "standalone",
    "created": "2026-10-03",
-   "status": "approved_ready_to_post",
+   "status": "scheduled",
    "logline": "Steal an Egg base-defense heist: a hooded 50,000-speed thief robs Leo (900 speed) every night; laser door and capybara guard fail. Leo spends everything on one Mythic egg with a 60 s hatch timer and a Do Not Steal sign; it hatches in the thief's arms into a giant spinosaurus that knows its owner and carries the thief back by the hood. It's Max. He repays on the treadmill in four seconds and breaks it.",
    "platform": "TikTok (>65 s) / YouTube Shorts",
    "project": "projects/catching-the-egg-thief"
@@ -259,11 +259,21 @@
    "title": "Feeding the Prism Kitsune",
    "series": "standalone story (Hunt For Eggs! promo)",
    "created": "2026-10-05",
-   "status": "script_draft_awaiting_approval",
+   "status": "script_approved",
    "logline": "The Prism Kitsune falls out of the sky in Hunt For Eggs! and only eats Prism eggs. Leo learns five feeds make a Prism Chest; Max grinds the patrol and the Prism Alpha for the 5% Prism Blade and gets boosts; Mia takes the eggs and pulls the Blade from her first chest. Ends: 'Play Hunt for Eggs today. Link in bio!'",
    "platform": "TikTok (>60 s) / YouTube Shorts",
    "project": "projects/feeding-the-prism-kitsune",
    "notes": "Event ends 10:20 BST Fri 9 Oct 2026: post by Thu 8 Oct."
+  },
+  {
+   "title": "The Backwards Umbrella",
+   "series": "standalone story",
+   "created": "2026-10-05",
+   "status": "rendering",
+   "logline": "When Leo's umbrella is open it rains everywhere except under it. He soaks his friends, shares it (the Noob doesn't fit), keeps it shut - until Max's barbecue goes up in flames and the rain saves the park. Mia ducks under: 'Room for one more?'",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/the-backwards-umbrella",
+   "notes": "Park set, rain and fire effects; web route."
   }
  ],
  "statuses": [
