@@ -50,12 +50,12 @@
  },
  {
   "start": 1.8,
-  "end": 2.22,
+  "end": 2.24,
   "text": "job,",
   "words": [
    {
     "start": 1.8,
-    "end": 2.1,
+    "end": 2.12,
     "word": " job,"
    }
   ]
@@ -84,7 +84,7 @@
  },
  {
   "start": 3.76,
-  "end": 4.54,
+  "end": 4.52,
   "text": "Every day a player",
   "words": [
    {
@@ -104,18 +104,18 @@
    },
    {
     "start": 4.32,
-    "end": 4.54,
+    "end": 4.52,
     "word": " player"
    }
   ]
  },
  {
-  "start": 4.54,
+  "start": 4.52,
   "end": 5.32,
   "text": "steals it.",
   "words": [
    {
-    "start": 4.54,
+    "start": 4.52,
     "end": 4.82,
     "word": " steals"
    },
@@ -252,1090 +252,1090 @@
   ]
  },
  {
-  "start": 10.7,
+  "start": 10.68,
   "end": 11.1,
   "text": "bonk.",
   "words": [
    {
-    "start": 10.7,
+    "start": 10.68,
     "end": 10.98,
     "word": " bonk."
    }
   ]
  },
  {
-  "start": 11.78,
-  "end": 12.84,
+  "start": 11.46,
+  "end": 12.34,
   "text": "I can't cross that",
   "words": [
    {
-    "start": 11.78,
-    "end": 12.16,
+    "start": 11.46,
+    "end": 11.66,
     "word": " I"
    },
    {
-    "start": 12.16,
-    "end": 12.46,
+    "start": 11.66,
+    "end": 11.96,
     "word": " can't"
    },
    {
-    "start": 12.46,
-    "end": 12.6,
+    "start": 11.96,
+    "end": 12.1,
     "word": " cross"
    },
    {
-    "start": 12.6,
-    "end": 12.84,
+    "start": 12.1,
+    "end": 12.34,
     "word": " that"
    }
   ]
  },
  {
-  "start": 12.84,
-  "end": 13.26,
+  "start": 12.34,
+  "end": 12.76,
   "text": "line,",
   "words": [
    {
-    "start": 12.84,
-    "end": 13.14,
+    "start": 12.34,
+    "end": 12.64,
     "word": " line,"
    }
   ]
  },
  {
-  "start": 13.72,
-  "end": 14.58,
+  "start": 13.22,
+  "end": 14.1,
   "text": "nobody ever told me",
   "words": [
    {
-    "start": 13.72,
-    "end": 13.86,
+    "start": 13.22,
+    "end": 13.36,
     "word": " nobody"
    },
    {
-    "start": 13.86,
-    "end": 14.16,
+    "start": 13.36,
+    "end": 13.66,
     "word": " ever"
    },
    {
-    "start": 14.16,
-    "end": 14.38,
+    "start": 13.66,
+    "end": 13.86,
     "word": " told"
    },
    {
-    "start": 14.38,
-    "end": 14.58,
+    "start": 13.86,
+    "end": 14.1,
     "word": " me"
    }
   ]
  },
  {
-  "start": 14.58,
-  "end": 15.0,
+  "start": 14.1,
+  "end": 14.5,
   "text": "why.",
   "words": [
    {
-    "start": 14.58,
-    "end": 14.88,
+    "start": 14.1,
+    "end": 14.38,
     "word": " why."
    }
   ]
  },
  {
-  "start": 15.44,
-  "end": 16.38,
+  "start": 14.94,
+  "end": 15.88,
   "text": "This month they stole",
   "words": [
    {
-    "start": 15.44,
-    "end": 15.66,
+    "start": 14.94,
+    "end": 15.16,
     "word": " This"
    },
    {
-    "start": 15.66,
-    "end": 15.88,
+    "start": 15.16,
+    "end": 15.38,
     "word": " month"
    },
    {
-    "start": 15.88,
-    "end": 16.12,
+    "start": 15.38,
+    "end": 15.62,
     "word": " they"
    },
    {
-    "start": 16.12,
-    "end": 16.38,
+    "start": 15.62,
+    "end": 15.88,
     "word": " stole"
    }
   ]
  },
  {
-  "start": 16.38,
-  "end": 17.380000000000003,
-  "text": "four hundred eggs,",
+  "start": 15.88,
+  "end": 16.880000000000003,
+  "text": "four hundred eggs.",
   "words": [
    {
-    "start": 16.38,
-    "end": 16.88,
+    "start": 15.88,
+    "end": 16.38,
     "word": " four hundred"
    },
    {
-    "start": 16.88,
-    "end": 17.26,
-    "word": " eggs,"
-   }
-  ]
- },
- {
-  "start": 17.9,
-  "end": 18.62,
-  "text": "my boss gave me",
-  "words": [
-   {
-    "start": 17.9,
-    "end": 18.02,
-    "word": " my"
-   },
-   {
-    "start": 18.02,
-    "end": 18.24,
-    "word": " boss"
-   },
-   {
-    "start": 18.24,
-    "end": 18.46,
-    "word": " gave"
-   },
-   {
-    "start": 18.46,
-    "end": 18.62,
-    "word": " me"
-   }
-  ]
- },
- {
-  "start": 18.62,
-  "end": 19.66,
-  "text": "a one star review.",
-  "words": [
-   {
-    "start": 18.62,
-    "end": 18.74,
-    "word": " a"
-   },
-   {
-    "start": 18.74,
-    "end": 18.92,
-    "word": " one"
-   },
-   {
-    "start": 18.92,
-    "end": 19.16,
-    "word": " star"
-   },
-   {
-    "start": 19.16,
-    "end": 19.54,
-    "word": " review."
-   }
-  ]
- },
- {
-  "start": 20.68,
-  "end": 21.38,
-  "text": "So I got a",
-  "words": [
-   {
-    "start": 20.68,
-    "end": 20.96,
-    "word": " So"
-   },
-   {
-    "start": 20.96,
-    "end": 21.12,
-    "word": " I"
-   },
-   {
-    "start": 21.12,
-    "end": 21.24,
-    "word": " got"
-   },
-   {
-    "start": 21.24,
-    "end": 21.38,
-    "word": " a"
-   }
-  ]
- },
- {
-  "start": 21.38,
-  "end": 21.94,
-  "text": "disguise,",
-  "words": [
-   {
-    "start": 21.38,
-    "end": 21.82,
-    "word": " disguise,"
-   }
-  ]
- },
- {
-  "start": 22.32,
-  "end": 22.84,
-  "text": "sunglasses,",
-  "words": [
-   {
-    "start": 22.32,
-    "end": 22.72,
-    "word": " sunglasses,"
-   }
-  ]
- },
- {
-  "start": 23.18,
-  "end": 23.720000000000002,
-  "text": "a hoodie,",
-  "words": [
-   {
-    "start": 23.18,
-    "end": 23.26,
-    "word": " a"
-   },
-   {
-    "start": 23.26,
-    "end": 23.6,
-    "word": " hoodie,"
-   }
-  ]
- },
- {
-  "start": 23.84,
-  "end": 24.6,
-  "text": "a name tag that",
-  "words": [
-   {
-    "start": 23.84,
-    "end": 23.96,
-    "word": " a"
-   },
-   {
-    "start": 23.96,
-    "end": 24.12,
-    "word": " name"
-   },
-   {
-    "start": 24.12,
-    "end": 24.38,
-    "word": " tag"
-   },
-   {
-    "start": 24.38,
-    "end": 24.6,
-    "word": " that"
-   }
-  ]
- },
- {
-  "start": 24.6,
-  "end": 25.3,
-  "text": "says player,",
-  "words": [
-   {
-    "start": 24.6,
-    "end": 24.84,
-    "word": " says"
-   },
-   {
-    "start": 24.84,
-    "end": 25.18,
-    "word": " player,"
-   }
-  ]
- },
- {
-  "start": 25.74,
-  "end": 26.68,
-  "text": "the safe zone read",
-  "words": [
-   {
-    "start": 25.74,
-    "end": 25.96,
-    "word": " the"
-   },
-   {
-    "start": 25.96,
-    "end": 26.18,
-    "word": " safe"
-   },
-   {
-    "start": 26.18,
-    "end": 26.44,
-    "word": " zone"
-   },
-   {
-    "start": 26.44,
-    "end": 26.68,
-    "word": " read"
-   }
-  ]
- },
- {
-  "start": 26.68,
-  "end": 27.540000000000003,
-  "text": "my name tag,",
-  "words": [
-   {
-    "start": 26.68,
-    "end": 26.9,
-    "word": " my"
-   },
-   {
-    "start": 26.9,
-    "end": 27.1,
-    "word": " name"
-   },
-   {
-    "start": 27.1,
-    "end": 27.42,
-    "word": " tag,"
-   }
-  ]
- },
- {
-  "start": 27.68,
-  "end": 28.44,
-  "text": "and let me through.",
-  "words": [
-   {
-    "start": 27.68,
-    "end": 27.82,
-    "word": " and"
-   },
-   {
-    "start": 27.82,
-    "end": 27.96,
-    "word": " let"
-   },
-   {
-    "start": 27.96,
-    "end": 28.14,
-    "word": " me"
-   },
-   {
-    "start": 28.14,
-    "end": 28.44,
-    "word": " through."
-   }
-  ]
- },
- {
-  "start": 28.44,
-  "end": 29.64,
-  "text": "Behind it,",
-  "words": [
-   {
-    "start": 28.44,
-    "end": 29.26,
-    "word": " Behind"
-   },
-   {
-    "start": 29.26,
-    "end": 29.52,
-    "word": " it,"
-   }
-  ]
- },
- {
-  "start": 29.88,
-  "end": 30.16,
-  "text": "bases,",
-  "words": [
-   {
-    "start": 29.88,
-    "end": 30.04,
-    "word": " bases,"
-   }
-  ]
- },
- {
-  "start": 30.68,
-  "end": 31.48,
-  "text": "hundreds of them,",
-  "words": [
-   {
-    "start": 30.68,
-    "end": 30.86,
-    "word": " hundreds"
-   },
-   {
-    "start": 30.86,
-    "end": 31.12,
-    "word": " of"
-   },
-   {
-    "start": 31.12,
-    "end": 31.36,
-    "word": " them,"
-   }
-  ]
- },
- {
-  "start": 31.62,
-  "end": 32.599999999999994,
-  "text": "full of my eggs.",
-  "words": [
-   {
-    "start": 31.62,
-    "end": 31.84,
-    "word": " full"
-   },
-   {
-    "start": 31.84,
-    "end": 32.0,
-    "word": " of"
-   },
-   {
-    "start": 32.0,
-    "end": 32.14,
-    "word": " my"
-   },
-   {
-    "start": 32.14,
-    "end": 32.48,
+    "start": 16.38,
+    "end": 16.76,
     "word": " eggs."
    }
   ]
  },
  {
-  "start": 33.38,
-  "end": 34.16,
+  "start": 17.38,
+  "end": 18.12,
+  "text": "My boss gave me",
+  "words": [
+   {
+    "start": 17.38,
+    "end": 17.52,
+    "word": " My"
+   },
+   {
+    "start": 17.52,
+    "end": 17.74,
+    "word": " boss"
+   },
+   {
+    "start": 17.74,
+    "end": 17.96,
+    "word": " gave"
+   },
+   {
+    "start": 17.96,
+    "end": 18.12,
+    "word": " me"
+   }
+  ]
+ },
+ {
+  "start": 18.12,
+  "end": 19.14,
+  "text": "a one star review.",
+  "words": [
+   {
+    "start": 18.12,
+    "end": 18.24,
+    "word": " a"
+   },
+   {
+    "start": 18.24,
+    "end": 18.42,
+    "word": " one"
+   },
+   {
+    "start": 18.42,
+    "end": 18.66,
+    "word": " star"
+   },
+   {
+    "start": 18.66,
+    "end": 19.02,
+    "word": " review."
+   }
+  ]
+ },
+ {
+  "start": 19.74,
+  "end": 20.38,
+  "text": "So I got a",
+  "words": [
+   {
+    "start": 19.74,
+    "end": 19.96,
+    "word": " So"
+   },
+   {
+    "start": 19.96,
+    "end": 20.12,
+    "word": " I"
+   },
+   {
+    "start": 20.12,
+    "end": 20.22,
+    "word": " got"
+   },
+   {
+    "start": 20.22,
+    "end": 20.38,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 20.38,
+  "end": 20.92,
+  "text": "disguise,",
+  "words": [
+   {
+    "start": 20.38,
+    "end": 20.8,
+    "word": " disguise,"
+   }
+  ]
+ },
+ {
+  "start": 21.32,
+  "end": 21.84,
+  "text": "sunglasses,",
+  "words": [
+   {
+    "start": 21.32,
+    "end": 21.72,
+    "word": " sunglasses,"
+   }
+  ]
+ },
+ {
+  "start": 22.2,
+  "end": 22.720000000000002,
+  "text": "a hoodie,",
+  "words": [
+   {
+    "start": 22.2,
+    "end": 22.26,
+    "word": " a"
+   },
+   {
+    "start": 22.26,
+    "end": 22.6,
+    "word": " hoodie,"
+   }
+  ]
+ },
+ {
+  "start": 22.84,
+  "end": 23.6,
+  "text": "a name tag that",
+  "words": [
+   {
+    "start": 22.84,
+    "end": 22.96,
+    "word": " a"
+   },
+   {
+    "start": 22.96,
+    "end": 23.12,
+    "word": " name"
+   },
+   {
+    "start": 23.12,
+    "end": 23.38,
+    "word": " tag"
+   },
+   {
+    "start": 23.38,
+    "end": 23.6,
+    "word": " that"
+   }
+  ]
+ },
+ {
+  "start": 23.6,
+  "end": 24.18,
+  "text": "says player.",
+  "words": [
+   {
+    "start": 23.6,
+    "end": 23.84,
+    "word": " says"
+   },
+   {
+    "start": 23.84,
+    "end": 24.18,
+    "word": " player."
+   }
+  ]
+ },
+ {
+  "start": 24.18,
+  "end": 25.68,
+  "text": "The safe zone read",
+  "words": [
+   {
+    "start": 24.18,
+    "end": 24.94,
+    "word": " The"
+   },
+   {
+    "start": 24.94,
+    "end": 25.18,
+    "word": " safe"
+   },
+   {
+    "start": 25.18,
+    "end": 25.44,
+    "word": " zone"
+   },
+   {
+    "start": 25.44,
+    "end": 25.68,
+    "word": " read"
+   }
+  ]
+ },
+ {
+  "start": 25.68,
+  "end": 26.540000000000003,
+  "text": "my name tag,",
+  "words": [
+   {
+    "start": 25.68,
+    "end": 25.9,
+    "word": " my"
+   },
+   {
+    "start": 25.9,
+    "end": 26.12,
+    "word": " name"
+   },
+   {
+    "start": 26.12,
+    "end": 26.42,
+    "word": " tag,"
+   }
+  ]
+ },
+ {
+  "start": 26.58,
+  "end": 27.560000000000002,
+  "text": "and let me through.",
+  "words": [
+   {
+    "start": 26.58,
+    "end": 26.82,
+    "word": " and"
+   },
+   {
+    "start": 26.82,
+    "end": 26.96,
+    "word": " let"
+   },
+   {
+    "start": 26.96,
+    "end": 27.16,
+    "word": " me"
+   },
+   {
+    "start": 27.16,
+    "end": 27.44,
+    "word": " through."
+   }
+  ]
+ },
+ {
+  "start": 28.02,
+  "end": 28.66,
+  "text": "Behind it,",
+  "words": [
+   {
+    "start": 28.02,
+    "end": 28.28,
+    "word": " Behind"
+   },
+   {
+    "start": 28.28,
+    "end": 28.54,
+    "word": " it,"
+   }
+  ]
+ },
+ {
+  "start": 28.84,
+  "end": 29.16,
+  "text": "bases,",
+  "words": [
+   {
+    "start": 28.84,
+    "end": 29.04,
+    "word": " bases,"
+   }
+  ]
+ },
+ {
+  "start": 29.66,
+  "end": 30.48,
+  "text": "hundreds of them,",
+  "words": [
+   {
+    "start": 29.66,
+    "end": 29.84,
+    "word": " hundreds"
+   },
+   {
+    "start": 29.84,
+    "end": 30.12,
+    "word": " of"
+   },
+   {
+    "start": 30.12,
+    "end": 30.36,
+    "word": " them,"
+   }
+  ]
+ },
+ {
+  "start": 30.62,
+  "end": 31.540000000000003,
+  "text": "full of my eggs.",
+  "words": [
+   {
+    "start": 30.62,
+    "end": 30.84,
+    "word": " full"
+   },
+   {
+    "start": 30.84,
+    "end": 31.0,
+    "word": " of"
+   },
+   {
+    "start": 31.0,
+    "end": 31.14,
+    "word": " my"
+   },
+   {
+    "start": 31.14,
+    "end": 31.42,
+    "word": " eggs."
+   }
+  ]
+ },
+ {
+  "start": 32.36,
+  "end": 33.16,
   "text": "Leo's base had the",
   "words": [
    {
-    "start": 33.38,
-    "end": 33.62,
+    "start": 32.36,
+    "end": 32.64,
     "word": " Leo's"
    },
    {
-    "start": 33.62,
-    "end": 33.82,
+    "start": 32.64,
+    "end": 32.82,
     "word": " base"
    },
    {
-    "start": 33.82,
-    "end": 34.02,
+    "start": 32.82,
+    "end": 33.02,
     "word": " had"
    },
    {
-    "start": 34.02,
-    "end": 34.16,
+    "start": 33.02,
+    "end": 33.16,
     "word": " the"
    }
   ]
  },
  {
-  "start": 34.16,
-  "end": 34.58,
+  "start": 33.16,
+  "end": 33.559999999999995,
   "text": "most,",
   "words": [
    {
-    "start": 34.16,
-    "end": 34.46,
+    "start": 33.16,
+    "end": 33.44,
     "word": " most,"
    }
   ]
  },
  {
-  "start": 34.76,
-  "end": 35.36,
+  "start": 33.78,
+  "end": 34.36,
   "text": "so I took them",
   "words": [
    {
-    "start": 34.76,
-    "end": 34.94,
+    "start": 33.78,
+    "end": 33.94,
     "word": " so"
    },
    {
-    "start": 34.94,
-    "end": 35.06,
+    "start": 33.94,
+    "end": 34.06,
     "word": " I"
    },
    {
-    "start": 35.06,
-    "end": 35.18,
+    "start": 34.06,
+    "end": 34.18,
     "word": " took"
    },
    {
-    "start": 35.18,
-    "end": 35.36,
+    "start": 34.18,
+    "end": 34.36,
     "word": " them"
    }
   ]
  },
  {
-  "start": 35.36,
-  "end": 36.0,
+  "start": 34.36,
+  "end": 35.0,
   "text": "all back.",
   "words": [
    {
-    "start": 35.36,
-    "end": 35.58,
+    "start": 34.36,
+    "end": 34.58,
     "word": " all"
    },
    {
-    "start": 35.58,
-    "end": 35.88,
+    "start": 34.58,
+    "end": 34.88,
     "word": " back."
    }
   ]
  },
  {
-  "start": 36.54,
-  "end": 37.5,
+  "start": 35.48,
+  "end": 36.5,
   "text": "Leo chased me.",
   "words": [
    {
-    "start": 36.54,
-    "end": 36.74,
+    "start": 35.48,
+    "end": 35.74,
     "word": " Leo"
    },
    {
-    "start": 36.74,
-    "end": 37.06,
+    "start": 35.74,
+    "end": 36.04,
     "word": " chased"
    },
    {
-    "start": 37.06,
-    "end": 37.38,
+    "start": 36.04,
+    "end": 36.38,
     "word": " me."
    }
   ]
  },
  {
-  "start": 37.86,
-  "end": 38.44,
+  "start": 36.84,
+  "end": 37.44,
   "text": "Have you ever tried",
   "words": [
    {
-    "start": 37.86,
-    "end": 37.94,
+    "start": 36.84,
+    "end": 36.94,
     "word": " Have"
    },
    {
-    "start": 37.94,
-    "end": 38.04,
+    "start": 36.94,
+    "end": 37.04,
     "word": " you"
    },
    {
-    "start": 38.04,
-    "end": 38.22,
+    "start": 37.04,
+    "end": 37.22,
     "word": " ever"
    },
    {
-    "start": 38.22,
-    "end": 38.44,
+    "start": 37.22,
+    "end": 37.44,
     "word": " tried"
    }
   ]
  },
  {
-  "start": 38.44,
-  "end": 39.16,
+  "start": 37.44,
+  "end": 38.16,
   "text": "to stop a T",
   "words": [
    {
-    "start": 38.44,
-    "end": 38.6,
+    "start": 37.44,
+    "end": 37.6,
     "word": " to"
    },
    {
-    "start": 38.6,
-    "end": 38.84,
+    "start": 37.6,
+    "end": 37.84,
     "word": " stop"
    },
    {
-    "start": 38.84,
-    "end": 39.02,
+    "start": 37.84,
+    "end": 38.02,
     "word": " a"
    },
    {
-    "start": 39.02,
-    "end": 39.16,
+    "start": 38.02,
+    "end": 38.16,
     "word": " T"
    }
   ]
  },
  {
-  "start": 39.16,
-  "end": 39.44,
+  "start": 38.16,
+  "end": 38.44,
   "text": "-Rex?",
   "words": [
    {
-    "start": 39.16,
-    "end": 39.32,
+    "start": 38.16,
+    "end": 38.32,
     "word": "-Rex?"
    }
   ]
  },
  {
-  "start": 40.54,
-  "end": 41.4,
+  "start": 39.04,
+  "end": 39.9,
   "text": "Back home I sat",
   "words": [
    {
-    "start": 40.54,
-    "end": 40.78,
+    "start": 39.04,
+    "end": 39.26,
     "word": " Back"
    },
    {
-    "start": 40.78,
-    "end": 41.04,
+    "start": 39.26,
+    "end": 39.52,
     "word": " home"
    },
    {
-    "start": 41.04,
-    "end": 41.22,
+    "start": 39.52,
+    "end": 39.72,
     "word": " I"
    },
    {
-    "start": 41.22,
-    "end": 41.4,
+    "start": 39.72,
+    "end": 39.9,
     "word": " sat"
    }
   ]
  },
  {
-  "start": 41.4,
-  "end": 42.559999999999995,
+  "start": 39.9,
+  "end": 41.04,
   "text": "on four hundred eggs,",
   "words": [
    {
-    "start": 41.4,
-    "end": 41.6,
+    "start": 39.9,
+    "end": 40.12,
     "word": " on"
    },
    {
-    "start": 41.6,
-    "end": 42.08,
+    "start": 40.12,
+    "end": 40.58,
     "word": " four hundred"
    },
    {
-    "start": 42.08,
-    "end": 42.44,
+    "start": 40.58,
+    "end": 40.92,
     "word": " eggs,"
    }
   ]
  },
  {
-  "start": 42.6,
-  "end": 43.339999999999996,
+  "start": 41.1,
+  "end": 41.82,
   "text": "five stars.",
   "words": [
    {
-    "start": 42.6,
-    "end": 42.78,
+    "start": 41.1,
+    "end": 41.28,
     "word": " five"
    },
    {
-    "start": 42.78,
-    "end": 43.22,
+    "start": 41.28,
+    "end": 41.7,
     "word": " stars."
    }
   ]
  },
  {
-  "start": 43.96,
-  "end": 44.94,
+  "start": 42.44,
+  "end": 43.44,
   "text": "Then they all hatched",
   "words": [
    {
-    "start": 43.96,
-    "end": 44.16,
+    "start": 42.44,
+    "end": 42.68,
     "word": " Then"
    },
    {
-    "start": 44.16,
-    "end": 44.34,
+    "start": 42.68,
+    "end": 42.84,
     "word": " they"
    },
    {
-    "start": 44.34,
-    "end": 44.64,
+    "start": 42.84,
+    "end": 43.14,
     "word": " all"
    },
    {
-    "start": 44.64,
-    "end": 44.94,
+    "start": 43.14,
+    "end": 43.44,
     "word": " hatched"
    }
   ]
  },
  {
-  "start": 44.94,
-  "end": 45.66,
+  "start": 43.44,
+  "end": 44.14,
   "text": "at once.",
   "words": [
    {
-    "start": 44.94,
-    "end": 45.16,
+    "start": 43.44,
+    "end": 43.66,
     "word": " at"
    },
    {
-    "start": 45.16,
-    "end": 45.54,
+    "start": 43.66,
+    "end": 44.02,
     "word": " once."
    }
   ]
  },
  {
-  "start": 46.2,
-  "end": 47.839999999999996,
+  "start": 44.68,
+  "end": 46.32,
   "text": "four hundred baby T-Rexes.",
   "words": [
    {
-    "start": 46.2,
-    "end": 46.54,
+    "start": 44.68,
+    "end": 45.06,
     "word": " four hundred"
    },
    {
-    "start": 46.54,
-    "end": 46.96,
+    "start": 45.06,
+    "end": 45.44,
     "word": " baby"
    },
    {
-    "start": 46.96,
-    "end": 47.72,
+    "start": 45.44,
+    "end": 46.2,
     "word": " T-Rexes."
    }
   ]
  },
  {
-  "start": 48.26,
-  "end": 49.36,
+  "start": 46.76,
+  "end": 47.84,
   "text": "Now I had four hundred",
   "words": [
    {
-    "start": 48.26,
-    "end": 48.48,
+    "start": 46.76,
+    "end": 46.98,
     "word": " Now"
    },
    {
-    "start": 48.48,
-    "end": 48.68,
+    "start": 46.98,
+    "end": 47.18,
     "word": " I"
    },
    {
-    "start": 48.68,
-    "end": 48.86,
+    "start": 47.18,
+    "end": 47.36,
     "word": " had"
    },
    {
-    "start": 48.86,
-    "end": 49.36,
+    "start": 47.36,
+    "end": 47.84,
     "word": " four hundred"
    }
   ]
  },
  {
-  "start": 49.36,
-  "end": 49.839999999999996,
+  "start": 47.84,
+  "end": 48.339999999999996,
   "text": "jobs.",
   "words": [
    {
-    "start": 49.36,
-    "end": 49.72,
+    "start": 47.84,
+    "end": 48.22,
     "word": " jobs."
    }
   ]
  },
  {
-  "start": 50.96,
-  "end": 51.839999999999996,
+  "start": 49.02,
+  "end": 49.82,
   "text": "So I quit.",
   "words": [
    {
-    "start": 50.96,
-    "end": 51.3,
+    "start": 49.02,
+    "end": 49.3,
     "word": " So"
    },
    {
-    "start": 51.3,
-    "end": 51.46,
+    "start": 49.3,
+    "end": 49.48,
     "word": " I"
    },
    {
-    "start": 51.46,
-    "end": 51.72,
+    "start": 49.48,
+    "end": 49.7,
     "word": " quit."
    }
   ]
  },
  {
-  "start": 52.36,
-  "end": 53.2,
+  "start": 50.34,
+  "end": 51.22,
   "text": "Leo hired me to",
   "words": [
    {
-    "start": 52.36,
-    "end": 52.54,
+    "start": 50.34,
+    "end": 50.56,
     "word": " Leo"
    },
    {
-    "start": 52.54,
-    "end": 52.86,
+    "start": 50.56,
+    "end": 50.86,
     "word": " hired"
    },
    {
-    "start": 52.86,
-    "end": 53.04,
+    "start": 50.86,
+    "end": 51.04,
     "word": " me"
    },
    {
-    "start": 53.04,
-    "end": 53.2,
+    "start": 51.04,
+    "end": 51.22,
     "word": " to"
    }
   ]
  },
  {
-  "start": 53.2,
-  "end": 54.46,
+  "start": 51.22,
+  "end": 52.3,
   "text": "guard his base instead.",
   "words": [
    {
-    "start": 53.2,
-    "end": 53.4,
+    "start": 51.22,
+    "end": 51.4,
     "word": " guard"
    },
    {
-    "start": 53.4,
-    "end": 53.6,
+    "start": 51.4,
+    "end": 51.6,
     "word": " his"
    },
    {
-    "start": 53.6,
-    "end": 53.86,
+    "start": 51.6,
+    "end": 51.86,
     "word": " base"
    },
    {
-    "start": 53.86,
-    "end": 54.34,
+    "start": 51.86,
+    "end": 52.3,
     "word": " instead."
    }
   ]
  },
  {
-  "start": 54.86,
-  "end": 56.099999999999994,
+  "start": 52.3,
+  "end": 54.08,
   "text": "Now I get snacks,",
   "words": [
    {
-    "start": 54.86,
-    "end": 55.14,
+    "start": 52.3,
+    "end": 52.84,
     "word": " Now"
    },
    {
-    "start": 55.14,
-    "end": 55.34,
+    "start": 52.84,
+    "end": 53.34,
     "word": " I"
    },
    {
-    "start": 55.34,
-    "end": 55.52,
+    "start": 53.34,
+    "end": 53.52,
     "word": " get"
    },
    {
-    "start": 55.52,
-    "end": 55.98,
+    "start": 53.52,
+    "end": 53.96,
     "word": " snacks,"
    }
   ]
  },
  {
-  "start": 56.28,
-  "end": 56.76,
+  "start": 54.3,
+  "end": 54.76,
   "text": "a treadmill,",
   "words": [
    {
-    "start": 56.28,
-    "end": 56.34,
+    "start": 54.3,
+    "end": 54.34,
     "word": " a"
    },
    {
-    "start": 56.34,
-    "end": 56.64,
+    "start": 54.34,
+    "end": 54.64,
     "word": " treadmill,"
    }
   ]
  },
  {
-  "start": 57.0,
-  "end": 57.8,
+  "start": 55.0,
+  "end": 55.8,
   "text": "and brainrot videos",
   "words": [
    {
-    "start": 57.0,
-    "end": 57.12,
+    "start": 55.0,
+    "end": 55.12,
     "word": " and"
    },
    {
-    "start": 57.12,
-    "end": 57.48,
+    "start": 55.12,
+    "end": 55.48,
     "word": " brainrot"
    },
    {
-    "start": 57.48,
-    "end": 57.8,
+    "start": 55.48,
+    "end": 55.8,
     "word": " videos"
    }
   ]
  },
  {
-  "start": 57.8,
-  "end": 58.46,
+  "start": 55.8,
+  "end": 56.46,
   "text": "all day.",
   "words": [
    {
-    "start": 57.8,
-    "end": 58.06,
+    "start": 55.8,
+    "end": 56.06,
     "word": " all"
    },
    {
-    "start": 58.06,
-    "end": 58.34,
+    "start": 56.06,
+    "end": 56.34,
     "word": " day."
    }
   ]
  },
  {
-  "start": 59.1,
-  "end": 59.92,
+  "start": 57.1,
+  "end": 57.92,
   "text": "Best job I've ever",
   "words": [
    {
-    "start": 59.1,
-    "end": 59.26,
+    "start": 57.1,
+    "end": 57.26,
     "word": " Best"
    },
    {
-    "start": 59.26,
-    "end": 59.48,
+    "start": 57.26,
+    "end": 57.48,
     "word": " job"
    },
    {
-    "start": 59.48,
-    "end": 59.74,
+    "start": 57.48,
+    "end": 57.74,
     "word": " I've"
    },
    {
-    "start": 59.74,
-    "end": 59.92,
+    "start": 57.74,
+    "end": 57.92,
     "word": " ever"
    }
   ]
  },
  {
-  "start": 59.92,
-  "end": 60.379999999999995,
+  "start": 57.92,
+  "end": 58.379999999999995,
   "text": "had.",
   "words": [
    {
-    "start": 59.92,
-    "end": 60.26,
+    "start": 57.92,
+    "end": 58.26,
     "word": " had."
    }
   ]
  },
  {
-  "start": 61.22,
-  "end": 62.0,
+  "start": 58.84,
+  "end": 59.5,
   "text": "And my egg,",
   "words": [
    {
-    "start": 61.22,
-    "end": 61.44,
+    "start": 58.84,
+    "end": 58.92,
     "word": " And"
    },
    {
-    "start": 61.44,
-    "end": 61.6,
+    "start": 58.92,
+    "end": 59.1,
     "word": " my"
    },
    {
-    "start": 61.6,
-    "end": 61.88,
+    "start": 59.1,
+    "end": 59.38,
     "word": " egg,"
    }
   ]
  },
  {
-  "start": 62.14,
-  "end": 62.86,
+  "start": 59.64,
+  "end": 60.36,
   "text": "my kids guard it",
   "words": [
    {
-    "start": 62.14,
-    "end": 62.18,
+    "start": 59.64,
+    "end": 59.68,
     "word": " my"
    },
    {
-    "start": 62.18,
-    "end": 62.4,
+    "start": 59.68,
+    "end": 59.9,
     "word": " kids"
    },
    {
-    "start": 62.4,
-    "end": 62.7,
+    "start": 59.9,
+    "end": 60.2,
     "word": " guard"
    },
    {
-    "start": 62.7,
-    "end": 62.86,
+    "start": 60.2,
+    "end": 60.36,
     "word": " it"
    }
   ]
  },
  {
-  "start": 62.86,
-  "end": 63.26,
+  "start": 60.36,
+  "end": 60.76,
   "text": "now.",
   "words": [
    {
-    "start": 62.86,
-    "end": 63.14,
+    "start": 60.36,
+    "end": 60.64,
     "word": " now."
    }
   ]
  },
  {
-  "start": 63.76,
-  "end": 65.66,
+  "start": 61.26,
+  "end": 63.16,
   "text": "Follow Viral Roblox Games for",
   "words": [
    {
-    "start": 63.76,
-    "end": 64.1,
+    "start": 61.26,
+    "end": 61.6,
     "word": " Follow"
    },
    {
-    "start": 64.1,
-    "end": 65.34,
+    "start": 61.6,
+    "end": 62.84,
     "word": " Viral Roblox Games"
    },
    {
-    "start": 65.34,
-    "end": 65.66,
+    "start": 62.84,
+    "end": 63.16,
     "word": " for"
    }
   ]
  },
  {
-  "start": 65.66,
-  "end": 66.08,
+  "start": 63.16,
+  "end": 63.58,
   "text": "more.",
   "words": [
    {
-    "start": 65.66,
-    "end": 65.96,
+    "start": 63.16,
+    "end": 63.46,
     "word": " more."
    }
   ]
