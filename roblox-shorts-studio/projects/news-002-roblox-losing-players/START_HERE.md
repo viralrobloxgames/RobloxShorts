@@ -40,4 +40,4 @@ python ../../scripts/finish.py . --encode --frames renders/frames
 ```
 
 ## Next
-- The user reviews `delivery/Roblox_Is_Losing_Players.mp4`. Nothing is posted without their OK; posting follows `references/publishing.md`.
+- **Approved 2026-10-05 and on the post list** (`delivery/published.json`, sha256 recorded). Next: "schedule the next post" from a session on the user's computer (references/scheduling-workflow.md), slot A 19:00 UK.
