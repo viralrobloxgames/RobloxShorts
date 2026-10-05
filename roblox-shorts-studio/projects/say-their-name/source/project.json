@@ -1,0 +1,23 @@
+{
+  "title": "Say Their Name",
+  "character": "Leo",
+  "characters": [
+    "Leo",
+    "Max",
+    "Mia",
+    "Noob"
+  ],
+  "seconds": 63.43,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "rendering",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+    },
+    "music_gain": 0.07
+  }
+}

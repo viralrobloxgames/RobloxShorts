@@ -7,12 +7,12 @@
     "Mia",
     "Noob"
   ],
-  "seconds": 64.0667,
+  "seconds": 64.1333,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "narration_done; scene web/guardian_clip.js",
+  "status": "delivered_local_review",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}

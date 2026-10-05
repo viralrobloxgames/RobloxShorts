@@ -2,7 +2,7 @@
 // T-rex and eggs (creatures/trex, props/egg_trex). Beat times come from web/beats.js (source/beats.py: narration word
 // timings), so the clip retimes itself.
 // The T-rex loses its egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, puts on
-// sunglasses, a hoodie and a "Player" name tag, is waved through the safe zone and takes every egg back from the bases
+// sunglasses, a fake moustache and a "Player" name tag, is waved through the safe zone and takes every egg back from the bases
 // (Leo bonks off him). All 400 hatch at once, so he quits to guard Leo's base from a treadmill with snacks and brainrot
 // videos; his kids guard the egg now (a baby bonks the wall in the last shot).
 import * as THREE from 'three';
@@ -36,7 +36,7 @@ const JOB = V(0, 0, 86), TV_AT = V(-27, 0, 86);                  // treadmill jo
 const B = {
   grab: W.steals + 0.05, run: W.steals + 0.35, chase: W.chase - 0.3, cross: W.safe + 0.1, bonk: W.bonk,
   day2: W.cross - 0.3, stolen: W.month - 0.2, review: W.boss - 0.1,
-  glasses: W.sunglasses - 0.05, hoodie: W.hoodie - 0.05, tag: W.tag - 0.05, scan: W.read - 0.2, through: W.through - 0.1,
+  glasses: W.sunglasses - 0.05, stache: W.moustache - 0.05, tag: W.tag - 0.05, scan: W.read - 0.2, through: W.through - 0.1,
   bases: W.behind - 0.25, leo: W.leos - 0.25, took: W.took - 0.1, leoRun: W.chased - 0.3, leoBonk: W.stop + 0.1,
   home: W.home - 0.3, five: W.stars - 0.2, wobble: W.hatched - 0.8, hatch: W.hatched + 0.05, swarm: W.baby - 0.2,
   quit: W.quit - 0.2, hired: W.hired, job: W.snacks - 0.35, best: W.best - 0.25, kids: W.kids - 0.6, cta: W.follow,
@@ -51,7 +51,7 @@ const SHOTS = [
 
 // ---------- scene ----------
 let A = {}, rex, babies = [], leo, max, mia, noob, cam, heroEgg, pedEggs = [], backEggs = [], moundEggs = [], farEggs = [], wall, wallMat, scanMat, scan,
-  glasses, hoodie, tread, treadBelt, tv, tvCtx, tvTex, snacks, SHOT = 'hook', BODIES;
+  glasses, stache, tread, treadBelt, tv, tvCtx, tvTex, snacks, SHOT = 'hook', BODIES;
 const puffs = [], shells = [];
 
 function palm(scene, x, z, h, r) {
@@ -152,12 +152,28 @@ export async function setup(stage) {
     const bar = new THREE.Mesh(new THREE.BoxGeometry(4.8, 0.3, 0.4), blk); bar.position.set(0, 0.5, -1.0); glasses.add(bar);
     for (const sx of [-1, 1]) { const lens = new THREE.Mesh(new THREE.BoxGeometry(0.35, 1.15, 1.9), blk); lens.position.set(sx * 2.25, 0, -0.1); glasses.add(lens); const arm = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.25, 2.2), blk); arm.position.set(sx * 2.25, 0.35, 1.9); glasses.add(arm); } }
   glasses.position.set(0, 11.2, -7.9); attachToBody(rex, 'head', glasses);
-  hoodie = new THREE.Group(); { const red = new THREE.MeshStandardMaterial({ color: '#e0423a', roughness: 0.8 }), white = new THREE.MeshStandardMaterial({ color: '#f4f4f4' });
-    const body = new THREE.Mesh(new THREE.BoxGeometry(4.9, 7.4, 9.9), red); body.position.set(0, 7.6, -1.4); hoodie.add(body);
-    const hood = new THREE.Mesh(new THREE.BoxGeometry(3.8, 2.4, 3.2), red); hood.position.set(0, 10.6, 2.4); hoodie.add(hood);
-    const pocket = new THREE.Mesh(new THREE.BoxGeometry(5.0, 2.2, 4), new THREE.MeshStandardMaterial({ color: '#c3352e' })); pocket.position.set(0, 5.4, -3.2); hoodie.add(pocket);
-    for (const sx of [-0.7, 0.7]) { const st = new THREE.Mesh(new THREE.BoxGeometry(0.2, 2.2, 0.2), white); st.position.set(sx, 9.4, -6.4); hoodie.add(st); } }
-  attachToBody(rex, 'torso', hoodie);
+  // The second disguise piece (the user's pick: a fake moustache; 'cap' and 'hood' kept for comparison stills).
+  // All three sit on the head in OBJ model space (front is -Z; snout tip z -12.9, head top y 12.1, eye ~ (+-2.1, 11.2, -7.8)).
+  const kind = globalThis.DISGUISE || 'moustache', mk = (m, x, y, z) => { m.position.set(x, y, z); return m; };
+  stache = new THREE.Group();
+  if (kind === 'moustache') { const hair = new THREE.MeshStandardMaterial({ color: '#3b2414', roughness: 0.9 });
+    stache.add(mk(new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.5, 0.5), hair), 0, 0, 0));
+    for (const sx of [-1, 1]) { const wing = mk(new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.42, 0.45), hair), sx * 1.25, -0.18, 0.05); wing.rotation.z = sx * 0.5; stache.add(wing);
+      stache.add(mk(new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.55, 0.4), hair), sx * 1.75, 0.08, 0.05)); }
+    stache.position.set(0, 8.75, -13.05); }
+  else if (kind === 'cap') { const red = new THREE.MeshStandardMaterial({ color: '#2f6fe0', roughness: 0.7 });
+    const crown = new THREE.Mesh(new THREE.BoxGeometry(3.9, 1.4, 4.0), red); crown.position.set(0, 0.7, 0); stache.add(crown);
+    const brim = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.22, 2.4), red); brim.position.set(0, 0.1, 3.0); stache.add(brim);
+    const btn = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.3, 0.5), new THREE.MeshStandardMaterial({ color: '#ffffff' })); btn.position.set(0, 1.5, 0); stache.add(btn);
+    stache.position.set(0, 12.0, -8.6); }
+  else { const red = new THREE.MeshStandardMaterial({ color: '#e0423a', roughness: 0.8 }), white = new THREE.MeshStandardMaterial({ color: '#f4f4f4' });
+    stache.add(mk(new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.5, 4.6), red), 0, 1.2, 0.4));
+    for (const sx of [-1, 1]) stache.add(mk(new THREE.Mesh(new THREE.BoxGeometry(0.45, 2.6, 4.6), red), sx * 2.45, 0, 0.4));
+    stache.add(mk(new THREE.Mesh(new THREE.BoxGeometry(4.9, 2.6, 0.45), red), 0, 0, 2.6));
+    for (const sx of [-0.9, 0.9]) stache.add(mk(new THREE.Mesh(new THREE.BoxGeometry(0.2, 1.8, 0.2), white), sx, -1.9, -1.6));
+    stache.position.set(0, 11.0, -7.6); }
+  stache.traverse((o) => { if (o.isMesh) o.castShadow = true; });
+  attachToBody(rex, 'head', stache);
   for (let i = 0; i < 12; i++) { const e = eggProto.clone(); e.scale.setScalar(0.3 / REXS); e.position.set((i % 3 - 1) * 1.3, 11.2 + Math.floor(i / 6) * 1.2, -3 + Math.floor(i / 3) % 2 * 2.4 + (i % 2) * 0.6); e.rotation.y = i; attachToBody(rex, 'torso', e); backEggs.push(e); }
   for (let i = 0; i < 26; i++) { const b = await loadCreature('trex'); b.root.scale.setScalar(BABY); scene.add(b.root); babies.push(b); }
 
@@ -292,9 +308,9 @@ export function update(t, stage) {
   const M = maxState(s), MI = miaState(s), NO = noobState(s), L = leoState(s);
   place(max, M); place(mia, MI); place(noob, NO); place(leo, L);
   glasses.visible = s > B.glasses; glasses.scale.setScalar(s < B.glasses + 0.25 ? easeOutBack(seg(s, B.glasses, B.glasses + 0.25), 2.5) : 1);
-  hoodie.visible = s > B.hoodie && s < B.home; hoodie.scale.setScalar(s < B.hoodie + 0.25 ? Math.max(0.01, easeOutBack(seg(s, B.hoodie, B.hoodie + 0.25), 2.5)) : 1);
+  stache.visible = s > B.stache && s < B.home;
   rex.attached.forEach((a) => a.obj.updateMatrixWorld(true));
-  if (glasses.visible || hoodie.visible) poseCreature(rex, R.pose);
+  if (glasses.visible || stache.visible) poseCreature(rex, R.pose);
 
   // The egg: on the nest / in Max's hands / back on the nest the next day.
   const hand = (a) => a.root.position.clone().add(V(Math.sin(a.root.rotation.y) * 1.6, 0.9, Math.cos(a.root.rotation.y) * 1.6));
@@ -420,7 +436,7 @@ export function overlay(g, s, t) {
   if (t > B.day2 && t < B.stolen) { bigText(g, s, '?', project(rexHead().add(V(0, 6, 0)), s).x / s, project(rexHead().add(V(0, 6, 0)), s).y / s, 160, '#ffffff', { k: pop(t, B.day2 + 0.2, 0.2, 3) }); word(g, s, t, B.day2 + 0.1, 0.9, 'DAY 2', '#7FE3DD', 110, 1080); word(g, s, t, B.day2 + 1.1, 0.9, 'DAY 3', '#7FE3DD', 110, 1080); }
   if (t > B.stolen + 0.2 && t < B.review) bigText(g, s, String(Math.floor(lerp(0, 400, easeOut(seg(t, B.stolen + 0.2, B.review - 0.2))))), 540, 900, 260, '#ff4d5e', { k: pop(t, B.stolen + 0.2, 0.2, 2) });
   if (t > B.review && t < W.disguise - 0.3) card(g, s, t, B.review, 'GUARDIAN REVIEW', 1, '"KEEPS BONKING THE WALL"', '#ff6b78');
-  word(g, s, t, B.glasses, 0.8, 'SUNGLASSES', '#ffffff', 110, 1100); word(g, s, t, B.hoodie, 0.8, 'HOODIE', '#ff6b78', 130, 1100);
+  word(g, s, t, B.glasses, 0.8, 'SUNGLASSES', '#ffffff', 110, 1100); word(g, s, t, B.stache, 0.8, globalThis.DISGUISE === 'cap' ? 'CAP' : globalThis.DISGUISE === 'hood' ? 'HOODIE' : 'MOUSTACHE', '#ff9e3d', 120, 1100);
   if (rex.root.visible && t > B.tag && t < B.home) tagOver(g, s, rexHead().add(V(0, 5.5, 0)), 'Player', 'rgba(0,0,0,.35)', 1, pop(t, B.tag, 0.2, 2.5), 48);
   if (t > B.scan + 0.1 && t < B.through + 0.6) bigText(g, s, t < B.through - 0.1 ? 'SCANNING...' : 'PLAYER: OK!', 540, 760, 110, t < B.through - 0.1 ? '#ffffff' : '#3cff8a', { k: pop(t, t < B.through - 0.1 ? B.scan + 0.1 : B.through - 0.1, 0.2, 2) });
   if (t > W.full - 0.2 && t < B.leo) { word(g, s, t, W.full - 0.2, B.leo - W.full + 0.2, 'MY EGGS!', '#FFD23F', 150, 1080); }

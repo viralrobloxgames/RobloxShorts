@@ -1,0 +1,1335 @@
+[
+ {
+  "tone": 1400,
+  "start": 0.0,
+  "gain": 0.07,
+  "dur": 1.6099999999999999,
+  "sweep": -1100
+ },
+ {
+  "asset": "impact_4",
+  "start": 1.61,
+  "gain": 0.75
+ },
+ {
+  "tone": 55,
+  "start": 1.61,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "tone": 45,
+  "start": 1.61,
+  "gain": 0.2,
+  "dur": 0.7,
+  "square": true
+ },
+ {
+  "asset": "impact_2",
+  "start": 1.63,
+  "gain": 0.55
+ },
+ {
+  "asset": "drum_hit",
+  "start": 1.65,
+  "gain": 0.45
+ },
+ {
+  "asset": "swish_3",
+  "start": 1.71,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   784,
+   988,
+   1175,
+   1568
+  ],
+  "start": 1.76,
+  "gain": 0.08,
+  "dur": 0.12
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 1.81,
+  "gain": 0.09,
+  "dur": 0.07
+ },
+ {
+  "tone": 70,
+  "start": 4.27,
+  "gain": 0.12,
+  "dur": 0.9,
+  "square": true,
+  "sweep": 30
+ },
+ {
+  "tone": 90,
+  "start": 4.57,
+  "gain": 0.08,
+  "dur": 0.6,
+  "square": true,
+  "sweep": -20
+ },
+ {
+  "asset": "click",
+  "start": 5.53,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   1319,
+   1568
+  ],
+  "start": 5.56,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "asset": "click",
+  "start": 5.94,
+  "gain": 0.2
+ },
+ {
+  "tone": [
+   1319,
+   1568
+  ],
+  "start": 5.97,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784,
+   1047
+  ],
+  "start": 7.57,
+  "gain": 0.06,
+  "dur": 0.35
+ },
+ {
+  "tone": 400,
+  "start": 7.77,
+  "gain": 0.04,
+  "dur": 2.5,
+  "sweep": 300
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 9.35,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 220,
+  "start": 9.4,
+  "gain": 0.105,
+  "dur": 0.8,
+  "sweep": -110,
+  "square": true
+ },
+ {
+  "asset": "horror/reveal_hit",
+  "start": 9.4,
+  "gain": 0.24499999999999997
+ },
+ {
+  "tone": 120,
+  "start": 9.42,
+  "gain": 0.13999999999999999,
+  "dur": 0.8800000000000001,
+  "sweep": -50,
+  "square": true
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 9.85,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "asset": "swish_2",
+  "start": 11.73,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_1",
+  "start": 11.83,
+  "gain": 0.35
+ },
+ {
+  "asset": "swish_4",
+  "start": 12.05,
+  "gain": 0.35
+ },
+ {
+  "asset": "impact_3",
+  "start": 12.07,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_2",
+  "start": 12.23,
+  "gain": 0.3
+ },
+ {
+  "asset": "click",
+  "start": 12.25,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1319,
+   1568
+  ],
+  "start": 12.28,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "asset": "impact_1",
+  "start": 12.33,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 12.35,
+  "gain": 0.09,
+  "dur": 0.07
+ },
+ {
+  "asset": "swish_1",
+  "start": 14.16,
+  "gain": 0.2
+ },
+ {
+  "asset": "impact_3",
+  "start": 14.92,
+  "gain": 0.33
+ },
+ {
+  "tone": 260,
+  "start": 14.92,
+  "gain": 0.1375,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1000,
+  "start": 15.0,
+  "gain": 0.06,
+  "dur": 0.1
+ },
+ {
+  "asset": "swish_1",
+  "start": 15.76,
+  "gain": 0.2
+ },
+ {
+  "asset": "impact_3",
+  "start": 16.26,
+  "gain": 0.276
+ },
+ {
+  "tone": 260,
+  "start": 16.26,
+  "gain": 0.11500000000000002,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 976.0,
+  "start": 16.34,
+  "gain": 0.06,
+  "dur": 0.1
+ },
+ {
+  "asset": "swish_1",
+  "start": 16.38,
+  "gain": 0.2
+ },
+ {
+  "asset": "impact_3",
+  "start": 16.88,
+  "gain": 0.222
+ },
+ {
+  "tone": 260,
+  "start": 16.88,
+  "gain": 0.0925,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "asset": "swish_1",
+  "start": 16.88,
+  "gain": 0.2
+ },
+ {
+  "tone": 952.0,
+  "start": 16.96,
+  "gain": 0.06,
+  "dur": 0.1
+ },
+ {
+  "asset": "impact_3",
+  "start": 17.38,
+  "gain": 0.1815
+ },
+ {
+  "tone": 260,
+  "start": 17.38,
+  "gain": 0.075625,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 934.0,
+  "start": 17.46,
+  "gain": 0.06,
+  "dur": 0.1
+ },
+ {
+  "tone": [
+   392,
+   349,
+   330
+  ],
+  "start": 17.7,
+  "gain": 0.06,
+  "dur": 0.2,
+  "square": true
+ },
+ {
+  "asset": "swish_1",
+  "start": 18.35,
+  "gain": 0.2
+ },
+ {
+  "asset": "impact_3",
+  "start": 18.8,
+  "gain": 0.33
+ },
+ {
+  "tone": 260,
+  "start": 18.8,
+  "gain": 0.1375,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1000,
+  "start": 18.88,
+  "gain": 0.06,
+  "dur": 0.1
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 18.9,
+  "gain": 0.11,
+  "dur": 0.1
+ },
+ {
+  "asset": "swish_3",
+  "start": 19.2,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_4",
+  "start": 19.5,
+  "gain": 0.4
+ },
+ {
+  "tone": 55,
+  "start": 19.5,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "asset": "horror/latch",
+  "start": 20.65,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 20.7,
+  "gain": 0.1,
+  "dur": 0.11
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   1568,
+   2093,
+   2637
+  ],
+  "start": 20.92,
+  "gain": 0.07,
+  "dur": 0.06
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 21.1,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 600,
+  "start": 23.21,
+  "gain": 0.04,
+  "dur": 1.4,
+  "sweep": 900
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 25.13,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 25.53,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "asset": "drum_hit",
+  "start": 26.6,
+  "gain": 0.5
+ },
+ {
+  "asset": "impact_1",
+  "start": 26.62,
+  "gain": 0.35
+ },
+ {
+  "asset": "swish_2",
+  "start": 28.02,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   523,
+   659
+  ],
+  "start": 28.07,
+  "gain": 0.07,
+  "dur": 0.15,
+  "square": true
+ },
+ {
+  "asset": "swish_3",
+  "start": 31.51,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_4",
+  "start": 33.03,
+  "gain": 0.5
+ },
+ {
+  "tone": 55,
+  "start": 33.03,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "asset": "impact_3",
+  "start": 33.32,
+  "gain": 0.16
+ },
+ {
+  "asset": "impact_3",
+  "start": 33.89,
+  "gain": 0.16
+ },
+ {
+  "asset": "impact_3",
+  "start": 34.46,
+  "gain": 0.16
+ },
+ {
+  "asset": "impact_3",
+  "start": 35.03,
+  "gain": 0.16
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 35.03,
+  "gain": 0.08,
+  "dur": 0.07
+ },
+ {
+  "tone": 1175,
+  "start": 35.03,
+  "gain": 0.06,
+  "dur": 0.12
+ },
+ {
+  "asset": "impact_3",
+  "start": 35.6,
+  "gain": 0.16
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 36.097,
+  "gain": 0.08,
+  "dur": 0.07
+ },
+ {
+  "tone": 1175,
+  "start": 36.097,
+  "gain": 0.06,
+  "dur": 0.12
+ },
+ {
+  "asset": "impact_3",
+  "start": 36.17,
+  "gain": 0.16
+ },
+ {
+  "tone": [
+   880,
+   660
+  ],
+  "start": 36.52,
+  "gain": 0.07,
+  "dur": 0.2,
+  "square": true
+ },
+ {
+  "tone": [
+   880,
+   660
+  ],
+  "start": 37.02,
+  "gain": 0.07,
+  "dur": 0.2,
+  "square": true
+ },
+ {
+  "tone": [
+   880,
+   660
+  ],
+  "start": 37.52,
+  "gain": 0.07,
+  "dur": 0.2,
+  "square": true
+ },
+ {
+  "tone": [
+   880,
+   660
+  ],
+  "start": 38.02,
+  "gain": 0.07,
+  "dur": 0.2,
+  "square": true
+ },
+ {
+  "tone": 1600,
+  "start": 38.83,
+  "gain": 0.07,
+  "dur": 0.45,
+  "sweep": -1300
+ },
+ {
+  "asset": "impact_4",
+  "start": 39.28,
+  "gain": 0.8
+ },
+ {
+  "tone": 55,
+  "start": 39.28,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "tone": 40,
+  "start": 39.28,
+  "gain": 0.22,
+  "dur": 0.8,
+  "square": true
+ },
+ {
+  "asset": "impact_2",
+  "start": 39.3,
+  "gain": 0.6
+ },
+ {
+  "asset": "drum_hit",
+  "start": 39.33,
+  "gain": 0.5
+ },
+ {
+  "tone": 220,
+  "start": 39.58,
+  "gain": 0.165,
+  "dur": 1.2,
+  "sweep": -110,
+  "square": true
+ },
+ {
+  "asset": "horror/reveal_hit",
+  "start": 39.58,
+  "gain": 0.385
+ },
+ {
+  "tone": 120,
+  "start": 39.6,
+  "gain": 0.22000000000000003,
+  "dur": 1.32,
+  "sweep": -50,
+  "square": true
+ },
+ {
+  "asset": "swish_2",
+  "start": 40.34,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 40.46,
+  "gain": 0.18
+ },
+ {
+  "asset": "swish_2",
+  "start": 40.65,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 40.77,
+  "gain": 0.18
+ },
+ {
+  "asset": "swish_2",
+  "start": 40.96,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 41.08,
+  "gain": 0.18
+ },
+ {
+  "asset": "swish_2",
+  "start": 41.27,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 41.39,
+  "gain": 0.18
+ },
+ {
+  "asset": "swish_2",
+  "start": 41.58,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 41.7,
+  "gain": 0.18
+ },
+ {
+  "asset": "swish_2",
+  "start": 41.89,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 42.01,
+  "gain": 0.18
+ },
+ {
+  "asset": "swish_2",
+  "start": 42.2,
+  "gain": 0.22
+ },
+ {
+  "asset": "impact_1",
+  "start": 42.32,
+  "gain": 0.18
+ },
+ {
+  "asset": "impact_2",
+  "start": 42.39,
+  "gain": 0.65
+ },
+ {
+  "asset": "drum_hit",
+  "start": 42.42,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 42.44,
+  "gain": 0.1,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093,
+   2637
+  ],
+  "start": 42.47,
+  "gain": 0.1,
+  "dur": 0.08
+ },
+ {
+  "asset": "click",
+  "start": 42.89,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 42.96,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 43.03,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 43.1,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 43.17,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 43.24,
+  "gain": 0.15
+ },
+ {
+  "tone": [
+   784,
+   988
+  ],
+  "start": 44.62,
+  "gain": 0.07,
+  "dur": 0.12
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 46.11,
+  "gain": 0.25
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 46.53,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   523,
+   392
+  ],
+  "start": 46.71,
+  "gain": 0.07,
+  "dur": 0.25,
+  "square": true
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 46.95,
+  "gain": 0.25
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.37,
+  "gain": 0.25
+ },
+ {
+  "asset": "impact_3",
+  "start": 48.302,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 48.302,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 900,
+  "start": 48.352,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 48.484,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 48.484,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 990,
+  "start": 48.534,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 48.666,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 48.666,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1080,
+  "start": 48.716,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 48.848,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 48.848,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1170,
+  "start": 48.898,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 49.03,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 49.03,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1260,
+  "start": 49.08,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "swish_3",
+  "start": 49.18,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_4",
+  "start": 49.48,
+  "gain": 0.4
+ },
+ {
+  "tone": 55,
+  "start": 49.48,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "asset": "horror/latch",
+  "start": 49.63,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 49.68,
+  "gain": 0.1,
+  "dur": 0.11
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 50.08,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784
+  ],
+  "start": 50.2,
+  "gain": 0.07,
+  "dur": 0.12
+ },
+ {
+  "asset": "impact_3",
+  "start": 51.398,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 51.398,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "asset": "impact_3",
+  "start": 51.426,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 51.426,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 900,
+  "start": 51.448,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 51.454,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 51.454,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 990,
+  "start": 51.476,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 51.482,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 51.482,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1080,
+  "start": 51.504,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 51.51,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 51.51,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "asset": "swish_3",
+  "start": 51.51,
+  "gain": 0.3
+ },
+ {
+  "tone": 1170,
+  "start": 51.532,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "tone": 1260,
+  "start": 51.56,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_4",
+  "start": 51.81,
+  "gain": 0.4
+ },
+ {
+  "tone": 55,
+  "start": 51.81,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "asset": "horror/latch",
+  "start": 51.96,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 52.01,
+  "gain": 0.1,
+  "dur": 0.11
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 52.41,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   392,
+   330,
+   262
+  ],
+  "start": 52.46,
+  "gain": 0.06,
+  "dur": 0.22,
+  "square": true
+ },
+ {
+  "asset": "impact_3",
+  "start": 53.264,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 53.264,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 900,
+  "start": 53.314,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 53.338,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 53.338,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 990,
+  "start": 53.388,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 53.412,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 53.412,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1080,
+  "start": 53.462,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 53.486,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 53.486,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1170,
+  "start": 53.536,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "impact_3",
+  "start": 53.56,
+  "gain": 0.132
+ },
+ {
+  "tone": 260,
+  "start": 53.56,
+  "gain": 0.055,
+  "dur": 0.22,
+  "sweep": -160
+ },
+ {
+  "tone": 1260,
+  "start": 53.61,
+  "gain": 0.05,
+  "dur": 0.07
+ },
+ {
+  "asset": "swish_3",
+  "start": 53.66,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_4",
+  "start": 53.96,
+  "gain": 0.4
+ },
+ {
+  "tone": 55,
+  "start": 53.96,
+  "gain": 0.14,
+  "dur": 0.3,
+  "square": true
+ },
+ {
+  "asset": "horror/latch",
+  "start": 54.06,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 54.11,
+  "gain": 0.1,
+  "dur": 0.11
+ },
+ {
+  "tone": 500,
+  "start": 54.26,
+  "gain": 0.07,
+  "dur": 1.0,
+  "sweep": 1200
+ },
+ {
+  "tone": [
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 54.51,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093,
+   2637,
+   3136
+  ],
+  "start": 54.86,
+  "gain": 0.11,
+  "dur": 0.1
+ },
+ {
+  "asset": "drum_hit",
+  "start": 54.86,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/reveal_hit",
+  "start": 54.96,
+  "gain": 0.3
+ },
+ {
+  "asset": "click",
+  "start": 56.01,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 56.51,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 57.01,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 57.51,
+  "gain": 0.12
+ },
+ {
+  "asset": "drum_hit",
+  "start": 57.98,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_1",
+  "start": 58.0,
+  "gain": 0.3
+ },
+ {
+  "asset": "click",
+  "start": 58.01,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 58.51,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 59.01,
+  "gain": 0.12
+ },
+ {
+  "asset": "swish_3",
+  "start": 59.1,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568
+  ],
+  "start": 59.15,
+  "gain": 0.12,
+  "dur": 0.18
+ }
+]
