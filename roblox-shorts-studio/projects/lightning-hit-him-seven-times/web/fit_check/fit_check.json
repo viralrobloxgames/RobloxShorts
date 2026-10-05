@@ -1,0 +1,100 @@
+{
+  "clip": "projects/lightning-hit-him-seven-times/web/lightning_clip.js",
+  "generated": "2026-10-05T20:48:02.975Z",
+  "fingerprint": "60a25c2e93440a0a",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Max",
+      "options": {
+        "expressions": [
+          "happy",
+          "neutral",
+          "surprised",
+          "scared",
+          "shocked",
+          "determined",
+          "smug",
+          "sad",
+          "dizzy",
+          "knocked_out",
+          "laugh",
+          "cool",
+          "singed",
+          "nobrow_scared",
+          "nobrow_sad",
+          "nobrow_determined",
+          "nobrow_surprised",
+          "nobrow_shocked",
+          "nobrow_smug",
+          "nobrow_confused",
+          "nobrow_annoyed",
+          "confused",
+          "annoyed"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "ranger_hat"
+      ]
+    },
+    {
+      "character": "Leo",
+      "options": {
+        "expressions": [
+          "happy",
+          "neutral",
+          "surprised",
+          "scared",
+          "nervous",
+          "shocked"
+        ],
+        "scale": 1,
+        "hairLift": 0.16
+      },
+      "accessories": [
+        "ranger_hat"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Max",
+      "accessory": "ranger_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.3,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.001,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Leo",
+      "accessory": "ranger_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.5,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.014,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-05T20:48:03.719Z"
+}

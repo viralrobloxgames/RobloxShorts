@@ -354,11 +354,11 @@
       "title": "Lightning Hit Him Seven Times",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "farm_render_running",
       "logline": "True story: a Shenandoah park ranger is hit by lightning seven times (1942-77) and survives them all; it finds him in a lookout tower, his truck, his yard, his office; he carries a water can for his hair, outruns a storm cloud only to be hit when he steps out, his boss walks off when lightning flashes, and on strike seven a bear steals his fish. The record still stands.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/lightning-hit-him-seven-times",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 62.1 s (George voice C, cloud); web route in production. Picked through general research, not from OddFrame's list. Roy Sullivan, Guinness 'most lightning strikes survived'. HUD strike tally, cartoon bolts, new ranger_hat accessory, the pack bear cut into parts (animal_bear_parts)."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 62.1 s (George voice C, cloud); video 63.9 s + 0.5 s cover. Web route, 28 shots, STRIKES 0/7 counter; full web render running. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
     }
   ],
   "statuses": [

@@ -27,8 +27,8 @@ export const FOREST = V(0, 0, 0), TOWER = V(300, 0, 0), ROAD = V(0, 0, 300), YAR
 export const BENCH = V(26, 0, -4);                   // forest: the bench faces +z
 export const TOWER_DOOR = V(300, 6, 3.6);           // tower: the door (on the hilltop, which is at y 6)
 export const HILL_Y = 6;
-export const STATION_IN = V(0, 0, -340);            // the office interior (its open side faces +z)
-export const POND_SPOT = V(300, 0.6, 305);          // where Max stands to fish (facing -z, the water)
+export const STATION_IN = V(0, 0, -640);            // the office interior (its open side faces +z), away from any trees
+export const POND_SPOT = V(300, 0, 306);            // where Max stands to fish (facing -z, the water); bank z 4..7 local
 export const ROAD_Z = 300, CLIFF_Z = 309;
 
 // ======================================================= ground and trees ============================================
@@ -81,8 +81,8 @@ export function forest(scene) {
   for (let i = 0; i < 40; i++) { const r = rng(40 + i); g.add(box(0.5 + r(), 0.25, 0.4 + r() * 0.6, std('#7d7f86', { roughness: 0.9 }), -60 + i * 3.1 + r(), 0.12, 2.2 + r() * 0.8)); }
   // bench at BENCH, seat 1.6 high, facing +z
   const b = bench(); b.position.copy(BENCH); g.add(b);
-  g.userData.trees = pines(g, scatter(5, 0, -6, 70, 26, 150, (x, z) => (Math.abs(z) < 4.5) || (Math.abs(x - BENCH.x) < 6 && z > -9 && z < 2) || (x * x + z * z < 120)));
-  g.userData.treesFront = pines(g, scatter(6, 0, 30, 70, 12, 45, (x, z) => Math.abs(z) < 6, 1.1));
+  g.userData.trees = pines(g, scatter(5, 0, -19, 70, 14, 130, (x, z) => (z > -4.5) || (Math.abs(x - BENCH.x) < 6 && z > -9) || (x * x + z * z < 120)));   // behind the trail only: the cameras stand at z 6..21
+  g.userData.treesFront = pines(g, scatter(6, 0, 44, 70, 6, 40, () => false, 1.1));            // well behind the cameras at z 6..21
   return g;
 }
 export function bench() {
@@ -143,14 +143,14 @@ export function road(scene) {
   const cliff = box(400, 60, 2, rock, 0, -30, CLIFF_Z); g.add(cliff);
   const valley = new THREE.Mesh(new THREE.PlaneGeometry(600, 400), std('#4f7a3a', { roughness: 0.95 })); valley.rotation.x = -Math.PI / 2; valley.position.set(0, -55, CLIFF_Z + 200); g.add(valley);
   for (let i = 0; i < 9; i++) { const r = rng(90 + i); const m = new THREE.Mesh(new THREE.ConeGeometry(40 + r() * 30, 50 + r() * 40, 5), std('#55607a', { roughness: 1, flatShading: true })); m.position.set(-200 + i * 50 + r() * 20, -55 + 20, CLIFF_Z + 260 + r() * 60); g.add(m); }
-  g.userData.trees = pines(g, scatter(9, 0, ROAD_Z - 30, 200, 22, 230, (x, z) => z > ROAD_Z - 8));
+  g.userData.trees = pines(g, scatter(9, 0, ROAD_Z - 30, 200, 22, 230, (x, z) => z > ROAD_Z - 8 || (x > 40 && x < 95 && z > ROAD_Z - 34) || (x > -40 && x < 10 && z > ROAD_Z - 16)));
   // a scenic lookout pull-off sign where the truck stops in strike five
   const s = label(4, 1.1, 512, 140, (c, w, h) => { c.fillStyle = '#5a3a20'; c.fillRect(0, 0, w, h); c.strokeStyle = '#f3e3c0'; c.lineWidth = 8; c.strokeRect(8, 8, w - 16, h - 16); LG(c, 'SCENIC VIEW', w / 2, h / 2 + 4, 70, '#f3e3c0'); });
   s.position.set(66, 3.2, ROAD_Z - 6.2); g.add(s); g.add(box(0.25, 3, 0.25, std('#5a3a20'), 64.8, 1.5, ROAD_Z - 6.3), box(0.25, 3, 0.25, std('#5a3a20'), 67.2, 1.5, ROAD_Z - 6.3));
   return g;
 }
 // The roadside tree that strike two hits first (a lone tall pine at the road's uphill edge).
-export const STRIKE_TREE = V(-14, 0, ROAD_Z - 6.5);
+export const STRIKE_TREE = V(-8, 0, ROAD_Z - 6.2);
 
 // The ranger truck: faces +x, driver's side on -z with the window open. Origin on the ground under the cab centre.
 // Max sits at SEAT (local) and holds the wheel at WHEEL (local).
@@ -162,22 +162,23 @@ export function truck() {
   g.add(box(4.6, 1.8, 4.4, green, -3.4, 2.5, 0));                                  // bed
   g.add(box(4.0, 1.7, 4.4, green, 3.3, 2.45, 0));                                  // hood
   g.add(box(0.2, 0.6, 3.6, std('#c9ccd0', { metalness: 0.7, roughness: 0.3 }), 5.35, 2.0, 0));   // grille
-  // cab: x -1.1..1.3, floor at 1.6, roof at 5.2. Driver's side (-z) has a door with an open window.
+  // cab: x -1.1..1.3, floor at 1.6, roof at 6.4 (tall, so Max fits with his hat on). Driver's side (-z): the door's top
+  // half is an open window.
   const cab = new THREE.Group(); g.add(cab);
-  cab.add(box(2.4, 1.6, 0.2, green, 0.1, 2.4, 2.1));                               // passenger door (low part)
-  cab.add(box(2.4, 1.6, 0.2, green, 0.1, 2.4, -2.1));                              // driver door (low part)
-  cab.add(box(0.2, 1.4, 4.2, green, -1.1, 3.9, 0));                                // back wall
-  cab.add(box(2.6, 0.3, 4.4, white, 0.1, 5.2, 0));                                 // roof
-  for (const [x, z] of [[-1.05, -2.1], [1.25, -2.1], [-1.05, 2.1], [1.25, 2.1]]) cab.add(box(0.22, 2.0, 0.22, green, x, 4.1, z));   // pillars
-  const ws = box(0.1, 1.9, 4.0, glass, 1.3, 4.15, 0); ws.rotation.z = -0.25; ws.castShadow = false; cab.add(ws);   // windscreen
-  cab.add(box(2.2, 1.6, 0.1, glass, 0.1, 4.1, 2.12));                               // passenger window (closed)
+  cab.add(box(2.4, 1.4, 0.2, green, 0.1, 2.3, 2.1));                               // passenger door (low part)
+  cab.add(box(2.4, 1.4, 0.2, green, 0.1, 2.3, -2.1));                              // driver door (low part)
+  cab.add(box(0.2, 3.3, 4.2, green, -1.1, 4.6, 0));                                // back wall
+  cab.add(box(2.6, 0.3, 4.4, white, 0.1, 6.4, 0));                                 // roof
+  for (const [x, z] of [[-1.05, -2.1], [1.25, -2.1], [-1.05, 2.1], [1.25, 2.1]]) cab.add(box(0.22, 3.3, 0.22, green, x, 4.6, z));   // pillars
+  const ws = box(0.1, 3.2, 4.0, glass, 1.45, 4.6, 0); ws.rotation.z = -0.2; ws.castShadow = false; cab.add(ws);   // windscreen
+  cab.add(box(2.2, 3.1, 0.1, glass, 0.1, 4.6, 2.12));                               // passenger window (closed)
   // door decal
   const d = label(1.9, 0.9, 512, 240, (c, w, h) => { c.fillStyle = '#2f6b45'; c.fillRect(0, 0, w, h); c.fillStyle = '#f2d16b'; c.beginPath(); c.moveTo(w / 2, 20); c.lineTo(w / 2 + 70, 80); c.lineTo(w / 2 + 70, 160); c.lineTo(w / 2, 220); c.lineTo(w / 2 - 70, 160); c.lineTo(w / 2 - 70, 80); c.closePath(); c.fill(); LG(c, 'PARK', 105, 120, 64, '#ffffff'); LG(c, 'RANGER', 400, 120, 64, '#ffffff'); }, { roughness: 0.5 });
   d.position.set(0.1, 2.45, -2.21); d.rotation.y = Math.PI; g.add(d);
   // seat and steering wheel inside
-  g.add(box(1.4, 0.5, 3.6, std('#3a3330', { roughness: 0.8 }), -0.4, 2.15, 0), box(0.4, 1.8, 3.6, std('#3a3330', { roughness: 0.8 }), -0.95, 3.2, 0));
-  const wheel = new THREE.Mesh(new THREE.TorusGeometry(0.42, 0.07, 8, 24), dark); wheel.position.set(0.95, 3.35, -1.0); wheel.rotation.y = Math.PI / 2; wheel.rotation.x = 0.0; wheel.rotation.z = 0; g.add(wheel);
-  const col = cyl(0.06, 0.06, 0.9, dark, 8, 1.2, 3.1, -1.0); col.rotation.z = 0.9; g.add(col);
+  g.add(box(1.4, 0.4, 3.6, std('#3a3330', { roughness: 0.8 }), -0.4, 1.6, 0), box(0.4, 2.2, 3.6, std('#3a3330', { roughness: 0.8 }), -0.95, 2.9, 0));
+  g.add(box(0.6, 1.0, 4.0, dark, 1.15, 3.0, 0));                                     // dashboard
+  const wheel = new THREE.Mesh(new THREE.TorusGeometry(0.45, 0.08, 8, 24), dark); wheel.position.set(0.85, 3.25, -1.0); wheel.rotation.y = Math.PI / 2; wheel.rotation.x = -0.35; g.add(wheel);
   // wheels
   const wheels = [];
   for (const [x, z] of [[3.3, -2.25], [3.3, 2.25], [-3.6, -2.25], [-3.6, 2.25]]) {
@@ -187,8 +188,8 @@ export function truck() {
     wheels.push(w);
   }
   // light bar on the roof
-  g.add(box(0.5, 0.25, 2.4, std('#ffb000', { emissive: '#ff9000', emissiveIntensity: 0.6 }), 0.1, 5.5, 0));
-  g.userData = { wheels, SEAT: V(-0.35, 2.4, -1.0), WHEEL: V(0.95, 3.35, -1.0), DOOR: V(0.1, 0, -2.2) };
+  g.add(box(0.5, 0.25, 2.4, std('#ffb000', { emissive: '#ff9000', emissiveIntensity: 0.6 }), 0.1, 6.7, 0));
+  g.userData = { wheels, ws, SEAT: V(-0.35, 1.8, -1.0), WHEEL: V(0.85, 3.25, -1.0), DOOR: V(0.1, 0, -2.2) };
   return g;
 }
 
@@ -242,12 +243,12 @@ export function station(scene) {
   inn.add(box(4.9, 0.3, 0.4, std('#5a3a20'), 3.8, 3.4, -5.6), box(0.25, 3.2, 0.3, std('#5a3a20'), 3.8, 5, -5.6), box(4.9, 0.25, 0.3, std('#5a3a20'), 3.8, 6.6, -5.6));
   // desk with papers and a radio
   const deskM = std('#6b4a2e', { roughness: 0.7 });
-  inn.add(box(5.5, 0.3, 2.6, deskM, -1.5, 2.6, -3.0)); for (const x of [-4, 1]) for (const z of [-4.1, -1.9]) inn.add(box(0.3, 2.6, 0.3, deskM, x, 1.3, z));
+  inn.add(box(5.5, 0.3, 2.4, deskM, -1.5, 2.6, -2.8), box(5.5, 2.3, 0.15, deskM, -1.5, 1.3, -1.7)); for (const x of [-4, 1]) inn.add(box(0.3, 2.6, 2.2, deskM, x, 1.3, -2.8));
   inn.add(box(1.4, 0.06, 1.0, std('#f4f1e8'), -2.4, 2.8, -2.7), box(1.0, 0.7, 0.6, std('#30363c', { metalness: 0.4, roughness: 0.5 }), 0.4, 3.1, -3.4));
   inn.add(box(0.1, 0.4, 0.05, std('#c0c4c8'), 0.75, 3.6, -3.4));
-  // chair (Max sits on it, facing -z toward the desk)
-  inn.add(box(1.8, 0.3, 1.8, std('#3a3330'), -1.5, 1.6, -0.3), box(1.8, 2.0, 0.25, std('#3a3330'), -1.5, 2.7, 0.65));
-  for (const x of [-2.2, -0.8]) for (const z of [-1.0, 0.4]) inn.add(box(0.2, 1.5, 0.2, std('#22252a'), x, 0.75, z));
+  // chair behind the desk (Max sits on it facing +z, toward the camera); its back against the wall side
+  inn.add(box(1.8, 0.3, 1.6, std('#3a3330'), -1.5, 1.6, -5.0), box(1.8, 2.0, 0.25, std('#3a3330'), -1.5, 2.7, -5.75));
+  for (const x of [-2.2, -0.8]) for (const z of [-5.6, -4.4]) inn.add(box(0.2, 1.5, 0.2, std('#22252a'), x, 0.75, z));
   // ceiling lamp
   inn.add(cyl(0.05, 0.05, 1.4, std('#22252a'), 6, -1.5, 8.1, -1.5));
   const shade = cyl(0.4, 1.0, 0.7, std('#2f5a35', { roughness: 0.5 }), 16, -1.5, 7.2, -1.5); inn.add(shade);
@@ -259,7 +260,7 @@ export function station(scene) {
   map.position.set(-4.5, 5.6, -5.75); inn.add(map);
   const lamp = new THREE.PointLight('#ffd9a0', 0, 30, 1.6); lamp.position.set(-1.5, 6.5, -1.5); inn.add(lamp);
   const winLight = new THREE.PointLight('#b9c9ff', 0, 30, 1.5); winLight.position.set(3.8, 5, -4.5); inn.add(winLight);
-  return { group: g, exterior: ex, interior: inn, lamp, winLight, bulb: V(STATION_IN.x - 1.5, 6.8, STATION_IN.z - 1.5), peg: V(STATION_IN.x - 7.25, 6.05, STATION_IN.z - 1.5), chair: V(STATION_IN.x - 1.5, 1.75, STATION_IN.z - 0.3), window: win };
+  return { group: g, exterior: ex, interior: inn, lamp, winLight, bulb: V(STATION_IN.x - 1.5, 6.8, STATION_IN.z - 1.5), peg: V(STATION_IN.x - 7.25, 6.05, STATION_IN.z - 1.5), chair: V(STATION_IN.x - 1.5, 1.75, STATION_IN.z - 5.0), window: win };
 }
 
 // The pond: water disc, a muddy bank, reeds (where the bear comes through), rocks, and pines behind.
@@ -274,6 +275,8 @@ export function pond(scene) {
   const reedGeo = []; const rr = rng(77);
   for (let i = 0; i < 140; i++) { const x = (rr() < 0.5 ? -1 : 1) * (7 + rr() * 14), z = 3 + rr() * 4 - Math.abs(x) * 0.12; const h = 1.6 + rr() * 1.6; const c = new THREE.CylinderGeometry(0.05, 0.09, h, 5); c.translate(x, h / 2, z); reedGeo.push(c); }
   const reeds = new THREE.Mesh(mergeGeometries(reedGeo), reedM); reeds.castShadow = true; g.add(reeds);
+  // a tree stump by the fishing spot (the catch goes on it), local (3.0, -0.6) from the spot at local (0, 6)
+  g.add(cyl(0.85, 0.95, 1.8, std('#7a5634', { roughness: 0.9 }), 14, 3.0, 0.9, 5.4), cyl(0.82, 0.82, 0.04, std('#c9a66b', { roughness: 0.8 }), 14, 3.0, 1.81, 5.4));
   // a log to sit the fish bucket by and the rod rest
   const lg = cyl(0.6, 0.6, 5, std('#6b4a2e', { roughness: 0.9 }), 12, -4.5, 0.6, 7.5); lg.rotation.z = Math.PI / 2; g.add(lg);
   g.userData.trees = pines(g, scatter(19, 0, -10, 70, 50, 90, (x, z) => (x * x / 1.96 + (z + 12) * (z + 12)) < 30 * 30 || (Math.abs(x) < 26 && z > -4 && z < 30)));

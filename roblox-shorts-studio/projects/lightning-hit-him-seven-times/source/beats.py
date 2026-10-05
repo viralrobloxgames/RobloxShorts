@@ -23,11 +23,11 @@ ANCHORS = {
     'soon': ('soon', 1), 'nobody': ('nobody', 1), 'stand': ('stand', 1), 'near': ('near', 1),
     'when': ('when', 1), 'lightning3': ('lightning', 3), 'flashes': ('flashes', 1), 'far': ('far', 1), 'boss': ('boss', 1), 'says': ('says', 1),
     'ill': ('ill', 1), 'later': ('later', 1),
-    's6': ('strike', 6), 'gets': ('gets', 1), 'ankle': ('ankle', 1),
+    's6': ('strike', 6), 'gets': ('gets', 2), 'ankle': ('ankle', 1),
     's7': ('strike', 7), 'fishing': ('fishing', 1),
     'hair3': ('hair', 3), 'catches': ('catches', 1), 'bear': ('bear', 1), 'walks': ('walks', 1), 'steal': ('steal', 1), 'fish': ('fish', 1),
     'chases': ('chases', 1), 'still': ('still', 1), 'smoking': ('smoking', 1),
-    'seven2': ('seven', 2), 'strikes': ('strikes', 1), 'survived': ('survived', 1), 'all': ('all', 1),
+    'seven2': ('seven', 3), 'strikes': ('strikes', 1), 'survived': ('survived', 1), 'all': ('all', 1),
     'record': ('record', 1), 'stands': ('stands', 1),
     'follow': ('follow', 1),
 }
