@@ -5,128 +5,123 @@
   "gain": 0.38
  },
  {
-  "asset": "sfx/rain.wav",
-  "start": 5.5,
-  "gain": 0.38
- },
- {
   "asset": "sfx/pop.wav",
-  "start": 7.01,
+  "start": 6.09,
   "gain": 0.45
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 7.08,
+  "start": 6.16,
   "gain": 0.38
  },
  {
   "asset": "sfx/thunder.wav",
-  "start": 7.18,
+  "start": 6.26,
   "gain": 0.4
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 12.53,
+  "start": 11.61,
   "gain": 0.38
  },
  {
   "asset": "sfx/shake.wav",
-  "start": 15.26,
+  "start": 14.03,
   "gain": 0.4
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 16.34,
+  "start": 15.13,
   "gain": 0.3
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 20.97,
+  "start": 18.7,
   "gain": 0.45
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 21.04,
+  "start": 18.77,
   "gain": 0.38
  },
  {
   "asset": "sfx/thunder.wav",
-  "start": 21.14,
+  "start": 18.87,
   "gain": 0.4
  },
  {
   "asset": "horror/footstep",
-  "start": 21.22,
+  "start": 18.95,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 21.5,
+  "start": 19.23,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 21.78,
+  "start": 19.51,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 22.06,
+  "start": 19.79,
   "gain": 0.12
  },
  {
   "asset": "sfx/boing.wav",
-  "start": 25.02,
+  "start": 22.97,
   "gain": 0.45
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 26.49,
+  "start": 24.22,
   "gain": 0.38
  },
  {
   "asset": "sfx/thunder.wav",
-  "start": 27.41,
+  "start": 25.01,
   "gain": 0.6
  },
  {
   "asset": "sfx/zap.wav",
-  "start": 27.43,
+  "start": 25.03,
   "gain": 0.6
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 28.74,
+  "start": 25.89,
   "gain": 0.3
  },
  {
   "asset": "horror/footstep",
-  "start": 28.81,
+  "start": 25.96,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 29.21,
+  "start": 26.36,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 29.61,
+  "start": 26.76,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 30.01,
+  "start": 27.16,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 30.41,
+  "start": 27.56,
   "gain": 0.12
  },
  {
   "asset": "horror/footstep",
-  "start": 30.81,
+  "start": 27.96,
   "gain": 0.12
  },
  {
@@ -135,237 +130,237 @@
    659,
    784
   ],
-  "start": 32.19,
+  "start": 28.76,
   "gain": 0.04,
   "dur": 0.14
  },
  {
   "asset": "swish_2",
-  "start": 34.52,
+  "start": 30.99,
   "gain": 0.35
  },
  {
   "asset": "click",
-  "start": 35.07,
+  "start": 31.54,
   "gain": 0.3
  },
  {
   "asset": "sfx/fwoomp.wav",
-  "start": 37.82,
+  "start": 33.55,
   "gain": 0.75
  },
  {
   "asset": "impact_2",
-  "start": 37.84,
+  "start": 33.57,
   "gain": 0.35
  },
  {
   "asset": "sfx/fire.wav",
-  "start": 38.22,
+  "start": 33.95,
   "gain": 0.3
  },
  {
   "asset": "swish_3",
-  "start": 39.75,
+  "start": 35.18,
   "gain": 0.3
  },
  {
   "asset": "sfx/fwoomp.wav",
-  "start": 40.1,
+  "start": 35.53,
   "gain": 0.35
  },
  {
   "asset": "sfx/fwoomp.wav",
-  "start": 40.81,
+  "start": 36.36,
   "gain": 0.3
  },
  {
   "asset": "swish_4",
-  "start": 40.92,
+  "start": 36.85,
   "gain": 0.3
  },
  {
   "asset": "sfx/fwoomp.wav",
-  "start": 41.47,
+  "start": 37.4,
   "gain": 0.45
  },
  {
   "asset": "sfx/fire.wav",
-  "start": 41.77,
+  "start": 37.5,
   "gain": 0.3
  },
  {
   "asset": "horror/footstep",
-  "start": 43.81,
+  "start": 39.29,
   "gain": 0.14
  },
  {
   "asset": "horror/footstep",
-  "start": 43.92,
+  "start": 39.4,
   "gain": 0.14
  },
  {
   "asset": "horror/footstep",
-  "start": 44.03,
+  "start": 39.51,
   "gain": 0.14
  },
  {
   "asset": "horror/footstep",
-  "start": 44.14,
+  "start": 39.62,
   "gain": 0.14
  },
  {
   "asset": "horror/footstep",
-  "start": 44.25,
+  "start": 39.73,
   "gain": 0.14
  },
  {
   "asset": "horror/footstep",
-  "start": 44.36,
+  "start": 39.84,
   "gain": 0.14
  },
  {
   "asset": "horror/footstep",
-  "start": 44.47,
+  "start": 39.95,
+  "gain": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 40.06,
+  "gain": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 40.17,
+  "gain": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 40.28,
+  "gain": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 40.39,
+  "gain": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 40.5,
+  "gain": 0.14
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 40.61,
   "gain": 0.14
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 44.47,
+  "start": 40.65,
   "gain": 0.35
  },
  {
   "asset": "horror/footstep",
-  "start": 44.58,
+  "start": 40.72,
   "gain": 0.14
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 44.6,
+  "start": 40.78,
   "gain": 0.45
  },
  {
+  "asset": "horror/footstep",
+  "start": 40.83,
+  "gain": 0.14
+ },
+ {
   "asset": "sfx/rain.wav",
-  "start": 44.67,
+  "start": 40.85,
   "gain": 0.38
  },
  {
   "asset": "horror/footstep",
-  "start": 44.69,
+  "start": 40.94,
   "gain": 0.14
  },
  {
   "asset": "sfx/thunder.wav",
-  "start": 44.77,
+  "start": 40.95,
   "gain": 0.4
  },
  {
-  "asset": "horror/footstep",
-  "start": 44.8,
-  "gain": 0.14
- },
- {
-  "asset": "horror/footstep",
-  "start": 44.91,
-  "gain": 0.14
- },
- {
-  "asset": "horror/footstep",
-  "start": 45.02,
-  "gain": 0.14
- },
- {
-  "asset": "horror/footstep",
-  "start": 45.13,
-  "gain": 0.14
- },
- {
-  "asset": "horror/footstep",
-  "start": 45.24,
-  "gain": 0.14
- },
- {
   "asset": "sfx/fire.wav",
-  "start": 45.32,
-  "gain": 0.3
- },
- {
-  "asset": "horror/footstep",
-  "start": 45.35,
-  "gain": 0.14
- },
- {
-  "asset": "horror/footstep",
-  "start": 45.46,
-  "gain": 0.14
- },
- {
-  "asset": "sfx/fire.wav",
-  "start": 48.87,
+  "start": 41.05,
   "gain": 0.3
  },
  {
   "asset": "sfx/hiss.wav",
-  "start": 48.97,
+  "start": 44.43,
   "gain": 0.65
  },
  {
+  "asset": "sfx/fire.wav",
+  "start": 44.6,
+  "gain": 0.3
+ },
+ {
   "asset": "sfx/hiss.wav",
-  "start": 49.47,
+  "start": 44.93,
   "gain": 0.4
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 50.12,
+  "start": 46.3,
   "gain": 0.38
  },
  {
   "asset": "sfx/applause.wav",
-  "start": 50.74,
+  "start": 46.94,
   "gain": 0.6
  },
  {
   "asset": "sfx/applause.wav",
-  "start": 53.14,
+  "start": 49.34,
   "gain": 0.35
  },
  {
   "asset": "horror/footstep",
-  "start": 55.24,
+  "start": 50.74,
   "gain": 0.1
  },
  {
   "asset": "horror/footstep",
-  "start": 55.49,
+  "start": 50.99,
+  "gain": 0.1
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 51.24,
+  "gain": 0.1
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 51.49,
   "gain": 0.1
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 55.57,
+  "start": 51.75,
   "gain": 0.38
- },
- {
-  "asset": "horror/footstep",
-  "start": 55.74,
-  "gain": 0.1
- },
- {
-  "asset": "horror/footstep",
-  "start": 55.99,
-  "gain": 0.1
  },
  {
   "tone": [
    784,
    1047
   ],
-  "start": 59.31,
+  "start": 54.44,
   "gain": 0.04,
   "dur": 0.12
  },
  {
   "asset": "sfx/rain.wav",
-  "start": 61.02,
+  "start": 57.2,
   "gain": 0.38
  },
  {
@@ -373,13 +368,8 @@
    988,
    1319
   ],
-  "start": 62.84,
+  "start": 57.53,
   "gain": 0.05,
   "dur": 0.12
- },
- {
-  "asset": "sfx/rain.wav",
-  "start": 66.47,
-  "gain": 0.38
  }
 ]

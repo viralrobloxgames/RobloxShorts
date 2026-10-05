@@ -38,7 +38,7 @@ const L0 = LAWN.clone();                                              // the law
 const MAX0 = L0.clone().add(V(3.5, 0, 0.9)), MIA0 = L0.clone().add(V(-3.5, 0, 0.9)), NOOB0 = L0.clone().add(V(6.8, 0, -1.6));
 const MAX_UNDER = L0.clone().add(V(1.85, 0, 0.15)), MIA_UNDER = L0.clone().add(V(-1.85, 0, 0.15));
 const NOOB_TRY = L0.clone().add(V(3.6, 0, 0.35)), NOOB_OUT = L0.clone().add(V(5.6, 0, 1.2));
-const DOG0 = L0.clone().add(V(-7.6, 0, -1.2));
+const DOG0 = L0.clone().add(V(-7.5, 0, 3.5));
 const WALK0 = L0.clone().add(V(-6, 0, 3)), WALK1 = L0.clone().add(V(10, 0, 3));   // "keeps it closed": strolls past them
 const LEO_B = V(6.5, 0, 8.5);                                         // at the barbecue
 const MAX_GRILL = GRILL.clone().add(V(2.0, 0, 0.2)), MIA_B = V(2.2, 0, 4.4), NOOB_B = CASTLE.clone().add(V(0.6, 0, 1.2));
@@ -195,7 +195,7 @@ function noobAt(s) {
 }
 // The crowd: spots round the table and the castle, running to a ring round Leo when the fire spreads.
 const CROWD = Array.from({ length: 13 }, (_, i) => {
-  const spots = [[-2.8, 4.2, Math.PI], [0.2, 4.6, Math.PI], [-1.5, -4.4, 0], [1.8, -4.3, 0], [4.8, 2.6, -1.9], [-4.4, -3.6, 0.3], [-10.5, 4.5, 2.4],
+  const spots = [[-2.8, 4.2, Math.PI], [0.2, 4.6, Math.PI], [-1.5, -4.4, 0], [1.8, -4.3, 0], [4.8, 2.6, -1.9], [-4.4, -3.6, 0.3], [-12.5, -2.0, 1.4],
     [6.5, -3.2, -2.4], [13.2, -4.0, -1.0], [3.2, -8.5, 0.6], [11.5, -2.2, -2.2], [-6.5, -2.5, 1.2], [7.6, 1.2, -0.8]][i];
   const ang = [-2.3, -2.7, 3.0, 2.5, -2.0, 2.2, -1.6, 1.8, 2.9, -2.95, 1.45, -1.3, 2.75][i], r = 5.4 + (i % 4) * 1.15;
   return { p0: V(spots[0], 0, spots[1]), h0: spots[2], ring: ringAt(ang, r), delay: (i * 0.13) % 0.45, cheer: i % 3 };
@@ -327,7 +327,7 @@ export function update(t, stage) {
   // the dog (lawn only): soaked, then shakes itself
   dog.root.visible = lawn && s < T.close2 + 0.2;
   const shakeK = s > W.soaked4 + 0.05 && s < W.soaked4 + 0.95 ? Math.sin((s - W.soaked4) * 40) * 0.32 * Math.sin(Math.PI * (s - W.soaked4 - 0.05) / 0.9) : 0;
-  dog.root.position.copy(DOG0); dog.root.rotation.set(0, 0.7, 0); dog.root.rotateZ(shakeK); dog.root.scale.setScalar(0.9);
+  dog.root.position.copy(DOG0); dog.root.rotation.set(0, -0.93, 0); dog.root.rotateX(shakeK); dog.root.scale.setScalar(0.9);   // the pack dog faces +X at rest: three-quarter to the camera; shakes about its long axis
   WETF.get(dog)(wetness('dog', () => DOG0, 1, s) * (s > W.soaked4 + 0.9 ? 0.55 : 1));
   SPRAY.update(s, Math.abs(shakeK) > 0.05 ? [{ p: DOG0.clone().add(V(0, 1.8, 0)), size: 0.35, k: 0.9, w: 1.6, n: 1 }] : []);
   // the Noob's private thunderstorm
@@ -349,7 +349,7 @@ export function update(t, stage) {
     case 'sky': tg = look(stage, V(L0.x - 1, 3.0, L0.z + 17.5), L0.clone().add(V(0, 5.2, -2)), 50); break;                                  // blue sky; it opens; the storm rolls in
     case 'max': tg = look(stage, mp.clone().add(V(-2.2, 4.4, 5.8)), mp.clone().add(V(0, 4.1, 0)), 36); break;
     case 'mia': tg = look(stage, ip.clone().add(V(2.2, 4.4, 5.8)), ip.clone().add(V(0, 4.1, 0)), 36); break;
-    case 'dog': tg = look(stage, DOG0.clone().add(V(3.5, 3.0, 8.0)), DOG0.clone().add(V(0, 1.8, 0)), 40); break;
+    case 'dog': tg = look(stage, DOG0.clone().add(V(2.6, 2.6, 10.0)), DOG0.clone().add(V(0, 1.9, 0)), 36); break;
     case 'closes': tg = look(stage, L0.clone().add(V(-1.5, 3.6, 9.5)), L0.clone().add(V(0, 4.4, 0)), 44); break;
     case 'share': tg = look(stage, L0.clone().add(V(0.5, 4.8, 14.5)), L0.clone().add(V(0.6, 3.8, 0)), 46); break;
     case 'noob': tg = look(stage, L0.clone().add(V(5.0, 4.6, 14.0)), L0.clone().add(V(3.4, 3.8, 0.4)), 46); break;
@@ -357,13 +357,13 @@ export function update(t, stage) {
     case 'after': tg = look(stage, lp.clone().add(V(-3.5, 4.4, 12.5)), lp.clone().add(V(1.8, 3.2, -1)), 46); break;
     case 'bbq': tg = look(stage, V(lerp(4, 1, u), lerp(15, 13, u), 31), V(1, 2.4, -1.5), 50); break;
     case 'flip': tg = look(stage, GRILL.clone().add(V(-2.8, 4.8, 8.8)).add(boomShake), GRILL.clone().add(V(1.1, 4.0, 0)), 46); break;
-    case 'spread': tg = look(stage, V(-2, 10, 22).add(shake(t, T.toCastle, 0.2, 0.4)), V(1, 3, -2.5), 54); break;
+    case 'spread': tg = look(stage, V(-6, 17, 19).add(shake(t, T.toCastle, 0.2, 0.4)), V(0.5, 2, -3), 56); break;
     case 'screams': tg = look(stage, V(lerp(9, 7, u), 6.5, 24), V(3, 3, 2), 52); break;
     case 'open2': tg = look(stage, LEO_B.clone().add(V(0.8, 1.6, 7.5)), LEO_B.clone().add(V(0, 5.2, 0)), 52); break;                       // low, heroic
     case 'rain': tg = look(stage, V(-13, 6.8, 10), V(-3.5, 3.4, 0.5), 52); break;
     case 'cheer': tg = look(stage, LEO_B.clone().add(V(0, 7, 19)), LEO_B.clone().add(V(0, 3.4, -1.5)), 48); break;
     case 'duck': tg = look(stage, LEO_B.clone().add(V(-2.4, 4.8, 13.5)), LEO_B.clone().add(V(-1.8, 3.6, 0)), 48); break;
-    case 'room': tg = look(stage, LEO_B.clone().add(V(-0.4, 4.6, 8.0)), LEO_B.clone().add(V(-0.5, 4.3, 0)), 40); break;
+    case 'room': { const mid = lp.clone().lerp(ip, 0.5); tg = look(stage, mid.clone().add(V(0, 4.8, 12.5)), mid.clone().setY(4.2), 42); break; }
     case 'wide': case 'cta': tg = look(stage, LEO_B.clone().add(V(lerp(1.5, 0, u), lerp(7, 9, u), lerp(17, 21, u))), LEO_B.clone().add(V(0, 3.0, -2)), 50); break;
     default: tg = look(stage, V(0, 8, 24), V(0, 3, 0), 50);
   }
