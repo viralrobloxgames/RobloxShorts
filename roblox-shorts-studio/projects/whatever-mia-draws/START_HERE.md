@@ -30,11 +30,11 @@ Leo grabs it and draws a perfect lion; Mia's wobbly cage has no roof; a scribble
   bonk synthesized) -> `source/sound_cues.py` -> `source/sound_cues.json` (81 cues).
 - Cover: `web/cover_clip.js` (the lion mid-roar, WHATEVER SHE DRAWS / COMES ALIVE, "HE DREW IT TOO WELL") ->
   `delivery/Whatever_Mia_Draws_cover.png|jpg`. Post copy: `delivery/post.json`. Fit check: 0 pairs, reviewed.
-- Full render started 2026-10-05 (`renders/web`, 1904 frames, --resume safe).
+- Full render done 2026-10-05 (`renders/web`, 1904 frames, verified). Encoded: `delivery/Whatever_Mia_Draws.mp4`,
+  63.97 s incl. the 0.5 s cover at the end, -17.1 LUFS, validated; `_post.md` written. Preview sent for approval.
 
 ## Next
-1. Encode: `python3 scripts/finish.py projects/whatever-mia-draws --encode --frames projects/whatever-mia-draws/renders/web`
-   (appends the cover as the last 0.5 s, writes `_post.md`); review a contact sheet; send the preview for approval.
+1. User review of the full video. Re-encode after any fix: `python3 scripts/finish.py projects/whatever-mia-draws --encode --frames projects/whatever-mia-draws/renders/web`.
 2. Post only after the user approves this MP4 (TikTok first, then YouTube).
 
 ## Commands
