@@ -31,7 +31,7 @@ An original animated Roblox-style detective story (fiction). Follow viralrobloxg
 
 ## Settings
 
-- **TikTok:** Everyone · AI-generated label ON · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
+- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
 - **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
 
 YouTube tags (optional, under Show more):
