@@ -17,10 +17,11 @@
       "title": "The Free Coin Trap",
       "series": "roblox",
       "created": "2026-09-17",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
       "platform": "YouTube Shorts / TikTok",
-      "project": "examples/the-free-coin-trap"
+      "project": "examples/the-free-coin-trap",
+      "notes": "On TikTok since 2026-09-17 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The AFK Champion",
@@ -254,10 +255,11 @@
       "title": "The Guardian Quits",
       "series": "standalone",
       "created": "2026-10-05",
-      "status": "delivered_local_review",
+      "status": "scheduled",
       "logline": "Steal an Egg told by the guardian: a T-rex loses his egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, disguises himself as a 'Player' to cross the safe zone and steals every egg back from the bases (Leo bonks off him). All 400 hatch into baby T-rexes, so he quits to be Leo's base guard on a brainrot treadmill; his kids now bonk the wall.",
       "platform": "TikTok (>65 s) / YouTube Shorts",
-      "project": "projects/the-guardian-quits"
+      "project": "projects/the-guardian-quits",
+      "notes": "Scheduled 2026-10-09 19:00 UK on TikTok and YouTube; YouTube thumbnail is a stand-in frame, swap in the cover once channel verification clears."
     },
     {
       "title": "Feeding the Prism Kitsune",
@@ -293,11 +295,11 @@
       "title": "Say Their Name",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "delivered_local_review",
+      "status": "scheduled",
       "logline": "In this obby, saying a player's name teleports them next to you; first to the top wins a million coins. Leo and Max keep summoning each other down, Leo's 'Steve' name tag fails, Mia summons both boys into mid-air over the lava - then tries the Noob, whose username takes so long to say he wins first, and her '...nine' teleports him to her holding a million coins.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/say-their-name",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route. Scheduled 2026-10-09 22:30 UK on TikTok. YouTube NOT uploaded yet (daily upload limit 2026-10-05): see delivery/published.json."
     },
     {
       "title": "He Bought Google For 12 Dollars",

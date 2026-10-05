@@ -1,0 +1,22 @@
+{
+  "file": "Say_Their_Name.mp4",
+  "sha256": "bc5e60e3aad1523f2d20d46afe8650b3bdc2f82102c75b4780b914c6c3488177",
+  "approved": {
+    "by": "user",
+    "at": "2026-10-05",
+    "how": "\"schedule the next two for friday\" in chat"
+  },
+  "scheduled_for": "2026-10-09T22:30:00+01:00",
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "on, passed (no issues found)"
+  },
+  "youtube": {
+    "status": "not_posted",
+    "note": "TODO: YouTube daily upload limit reached 2026-10-05 (about 9 uploads that day). Upload and schedule for 2026-10-09 22:30 UK once the limit resets or the channel verification clears; set the cover (Say_Their_Name_cover.jpg) before scheduling."
+  }
+}
