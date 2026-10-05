@@ -317,6 +317,16 @@
       "project": "projects/the-clown-case",
       "platform": "tiktok+youtube",
       "logline": "The mayoral candidate (a literal clown) has had his wife kidnapped on election day. One sniff of the ransom note: waffle cone, hot fudge, mint choc chip. At Big Scoop's Ice Cream Max finds her running the till: she faked it to buy an ice cream truck. He drags her back anyway; the clown wins; Max gets a black eye and a free sundae. Tempting."
+    },
+    {
+      "title": "Copy the Crown",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "Every player copies whoever wears the crown; whoever has it when the timer ends wins a million coins. Leo walks Max off the edge into the lava, walks backwards so Max can never catch him, and makes the whole server dance. Mia flatters him into a bow, bows too, bonks the crown off his head and takes it; with three seconds left she steps back, and so do Leo and Max, who have been walking backwards all game: splash, splash.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/copy-the-crown",
+      "notes": "Script v1 (150 words) and beats 2026-10-05; awaiting approval. Round lava arena, crown_admin hand-off, synced copy moves; web route."
     }
   ],
   "statuses": [
