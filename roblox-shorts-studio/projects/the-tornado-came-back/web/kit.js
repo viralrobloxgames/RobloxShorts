@@ -98,8 +98,8 @@ export function airbase(scene) {
   beacon.add(cyl(0.8, 0.9, 1.2, lampM, 16)); beacon.add(cyl(0.95, 0.95, 0.2, std('#2a2d33'), 16, 0, -0.7, 0));
   const beam = new THREE.SpotLight('#ff3030', 0, 60, 0.5, 0.5, 1.2); beam.position.set(0, 0, 0); beacon.add(beam); beam.target.position.set(10, -6, 0); beacon.add(beam.target);
   // wind sock
-  g.add(cyl(0.15, 0.15, 10, std('#d8d8d8', { metalness: 0.5 }), 8, -40, 5, 56));
-  const sock = new THREE.Mesh(new THREE.ConeGeometry(0.9, 5, 12, 1, true), std('#ff6a1a', { side: THREE.DoubleSide })); sock.rotation.z = Math.PI / 2; sock.position.set(-37.5, 9.4, 56); g.add(sock);
+  g.add(cyl(0.15, 0.15, 10, std('#d8d8d8', { metalness: 0.5 }), 8, 60, 5, 56));
+  const sock = new THREE.Mesh(new THREE.ConeGeometry(0.9, 5, 12, 1, true), std('#ff6a1a', { side: THREE.DoubleSide })); sock.rotation.z = Math.PI / 2; sock.position.set(62.5, 9.4, 56); g.add(sock);
   // perimeter fence along the road, the gate
   const fenceM = std('#8d9096', { metalness: 0.4, roughness: 0.5 });
   for (let x = -420; x <= 160; x += 8) if (Math.abs(x - GATE.x) > 12) g.add(box(0.25, 4, 0.25, fenceM, x, 2, GATE.z - 8));
@@ -190,8 +190,11 @@ export function shelter() {
   const g = new THREE.Group(), conc = std('#b8b4a8', { roughness: 0.9 });
   const mound = new THREE.Mesh(new THREE.SphereGeometry(16, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), std('#6f8f3e', { roughness: 0.95 }));
   mound.scale.set(1.2, 0.5, 1); mound.position.set(0, 0, 10); mound.receiveShadow = true; g.add(mound);
-  g.add(box(10, 7.5, 3, conc, 0, 3.75, 1.2));
-  g.add(box(6, 5.5, 0.2, std('#0b0b0d', { roughness: 1 }), 0, 2.75, -0.35));                  // the dark way in
+  // the entrance: a concrete portal with a dark tunnel behind it (6 wide, 5.5 tall, 7 deep), so people walk out of it
+  const dark = std('#121214', { roughness: 1 });
+  g.add(box(2, 7.5, 3, conc, -4, 3.75, 1.2), box(2, 7.5, 3, conc, 4, 3.75, 1.2), box(6, 2, 3, conc, 0, 6.5, 1.2));
+  g.add(box(0.4, 5.5, 7, dark, -3.2, 2.75, 3.5), box(0.4, 5.5, 7, dark, 3.2, 2.75, 3.5), box(6.8, 0.4, 7, dark, 0, 5.7, 3.5), box(6.8, 5.5, 0.4, dark, 0, 2.75, 7.0));
+  const tf = new THREE.Mesh(new THREE.PlaneGeometry(6, 7), dark); tf.rotation.x = -Math.PI / 2; tf.position.set(0, 0.04, 3.5); g.add(tf);
   g.add(box(11, 0.8, 3.4, conc, 0, 7.6, 1.2));
   const sgn = label(7, 1.5, 560, 120, (c, w, h) => { c.fillStyle = '#e8c23a'; c.fillRect(0, 0, w, h); c.fillStyle = '#16141f'; for (let i = -2; i < 14; i++) { c.beginPath(); c.moveTo(i * 40, 0); c.lineTo(i * 40 + 20, 0); c.lineTo(i * 40 - 20, h); c.lineTo(i * 40 - 40, h); c.closePath(); c.globalAlpha = 0.18; c.fill(); } c.globalAlpha = 1; LG(c, 'SHELTER', w / 2, h / 2 + 4, 84, '#16141f'); });
   sgn.position.set(0, 6.4, -0.4); sgn.rotation.y = Math.PI; g.add(sgn);
@@ -401,15 +404,15 @@ export function drawChart(c, w, h, date, ghost = false) {
 export function office(scene) {
   const g = new THREE.Group(); g.position.copy(OFFICE); scene.add(g);
   const floorM = std('#6e6152', { roughness: 0.85 }), wl = std('#c9c2ad', { roughness: 0.85 }), trim = std('#2b3550', { roughness: 0.6 });
-  g.add(box(24, 0.3, 16, floorM, 0, -0.15, 0));
-  for (let x = -11; x <= 11; x += 2) g.add(box(0.06, 0.02, 16, std('#5a4e42'), x, 0.01, 0));
+  g.add(box(24, 0.3, 40, floorM, 0, -0.13, 12));                                             // runs out past the open side (under the cameras)
+  for (let x = -11; x <= 11; x += 2) g.add(box(0.06, 0.02, 40, std('#5a4e42'), x, 0.03, 12));
   g.add(box(24, 11, 0.4, wl, 0, 5.5, -8), box(0.4, 11, 16, wl, 12, 5.5, 0), box(24, 0.4, 16, wl, 0, 11, 0));
   g.add(box(0.4, 11, 6.6, wl, -12, 5.5, -4.7), box(0.4, 11, 6.0, wl, -12, 5.5, 5.0), box(0.4, 4.6, 3.4, wl, -12, 8.7, 0.3));
   const corr = std('#3a3530', { roughness: 1 });
   g.add(box(8, 0.3, 3.4, corr, -16.2, -0.15, 0.3), box(8, 0.3, 3.4, corr, -16.2, 6.55, 0.3), box(8, 6.4, 0.3, corr, -16.2, 3.2, -1.55), box(8, 6.4, 0.3, corr, -16.2, 3.2, 2.15), box(0.3, 6.4, 3.4, std('#26221e', { roughness: 1 }), -20.2, 3.2, 0.3));
   g.add(box(24, 1.2, 0.5, trim, 0, 0.6, -7.8));                                              // skirting
   // the map board on the back wall (left of centre): today's chart, plus a ghost chart (March 20) that slides over it
-  const mapX = -4.2, mapY = 6.0;
+  const mapX = -3.2, mapY = 6.0;
   g.add(box(10.6, 6.8, 0.3, std('#3b2a1a'), mapX, mapY, -7.7));
   const chartTex = canvasTexture(1024, 640, (c, w, h) => drawChart(c, w, h, 'MARCH 25'));
   const chart = new THREE.Mesh(new THREE.PlaneGeometry(10, 6.25), std('#ffffff', { map: chartTex, roughness: 0.8 })); chart.position.set(mapX, mapY, -7.5); g.add(chart);
@@ -417,18 +420,18 @@ export function office(scene) {
   const ghost = new THREE.Mesh(new THREE.PlaneGeometry(10, 6.25), new THREE.MeshBasicMaterial({ map: ghostTex, transparent: true, opacity: 0.0, depthWrite: false, toneMapped: false })); ghost.position.set(mapX, mapY, -7.42); g.add(ghost);
   const mapSign = label(6, 0.9, 640, 96, (c, w, h) => { c.fillStyle = '#2b3550'; c.fillRect(0, 0, w, h); LG(c, 'WEATHER MAP', w / 2, h / 2 + 4, 70, '#f2f0e6'); }); mapSign.position.set(mapX, mapY + 4.0, -7.6); g.add(mapSign);
   // notice board on the far left of the back wall, with the ruling pinned up
-  const cork = label(4.6, 3.6, 512, 400, (c, w, h) => {
+  const cork = label(3.4, 3.6, 512, 540, (c, w, h) => {
     c.fillStyle = '#b98b5c'; c.fillRect(0, 0, w, h); const r = rng(5); for (let i = 0; i < 2500; i++) { c.fillStyle = `rgba(90,60,30,${r() * 0.25})`; c.fillRect(r() * w, r() * h, 3, 3); }
-    c.fillStyle = '#f4f1e8'; c.fillRect(330, 40, 140, 110); c.fillStyle = '#e8e2c8'; c.fillRect(40, 280, 150, 90); c.fillStyle = '#ffd23f'; c.fillRect(350, 260, 120, 110);
+    c.fillStyle = '#e8e2c8'; c.fillRect(30, 440, 150, 80); c.fillStyle = '#ffd23f'; c.fillRect(360, 430, 120, 90);
     c.strokeStyle = '#5a3a20'; c.lineWidth = 14; c.strokeRect(0, 0, w, h);
-  }); cork.position.set(-9.4, 5.8, -7.75); g.add(cork);
+  }); cork.position.set(-10.2, 5.8, -7.75); g.add(cork);
   const notice = label(2.4, 3.0, 480, 600, (c, w, h) => {
     c.fillStyle = '#fbf8ef'; c.fillRect(0, 0, w, h); c.strokeStyle = '#2b3550'; c.lineWidth = 10; c.strokeRect(14, 14, w - 28, h - 28);
     MS(c, 'OFFICIAL RULING', w / 2, 70, 34, '#2b3550'); c.fillStyle = '#2b3550'; c.fillRect(50, 100, w - 100, 5);
     SLAB(c, 'TORNADOES', w / 2, 175, 60, '#16141f'); SLAB(c, 'ARE', w / 2, 250, 46, '#16141f'); SLAB(c, 'IMPOSSIBLE', w / 2, 320, 60, '#c8202b'); SLAB(c, 'TO PREDICT', w / 2, 395, 56, '#c8202b');
     for (let i = 0; i < 5; i++) { c.fillStyle = 'rgba(40,40,40,.25)'; c.fillRect(60, 450 + i * 22, w - 120 - (i % 2) * 70, 9); }
-  }); notice.position.set(-9.6, 5.7, -7.5); g.add(notice);
-  g.add(sph(0.12, std('#c8202b', { roughness: 0.4 }), -9.6, 7.05, -7.42, 10));
+  }); notice.position.set(-10.2, 5.9, -7.6); g.add(notice);
+  g.add(sph(0.12, std('#c8202b', { roughness: 0.4 }), -10.2, 7.25, -7.52, 10));
   // calendar on the back wall right
   const calTex = {};
   for (const d of [20, 21, 22, 23, 24, 25]) calTex[d] = canvasTexture(256, 300, (c, w, h) => { c.fillStyle = '#fbf8ef'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8202b'; c.fillRect(0, 0, w, 80); LG(c, 'MARCH', w / 2, 44, 56, '#ffffff'); SLAB(c, String(d), w / 2, 180, 130, '#16141f'); MS(c, '1948', w / 2, 270, 30, '#5a4a3a'); });
@@ -453,26 +456,26 @@ export function office(scene) {
   const DESK = V(3.0, 0, -1.6);
   g.add(box(7.5, 0.35, 3.2, deskM, DESK.x, 3.0, DESK.z));
   g.add(box(7.5, 2.8, 0.2, deskM, DESK.x, 1.5, DESK.z + 1.5)); for (const x of [-3.5, 3.5]) g.add(box(0.3, 3.0, 3.0, deskM, DESK.x + x, 1.5, DESK.z));
-  const tw = typewriter(); tw.position.set(DESK.x + 1.2, 3.18, DESK.z + 0.3); g.add(tw);
+  const tw = typewriter(); tw.position.set(DESK.x + 2.4, 3.18, DESK.z + 0.3); tw.rotation.y = -0.25; g.add(tw);
   // file folders in stacks (shown one by one in the montage)
   const files = [];
   const fm = [std('#d8b878', { roughness: 0.8 }), std('#c9a35f', { roughness: 0.8 }), std('#e3c98e', { roughness: 0.8 })];
-  for (let i = 0; i < 18; i++) { const st = i % 3, lvl = Math.floor(i / 3); const f = box(1.6, 0.32, 1.15, fm[i % 3], DESK.x - 2.8 + st * 1.75, 3.35 + lvl * 0.34, DESK.z - 0.7 + (lvl % 2) * 0.06); f.rotation.y = (rng(i)() - 0.5) * 0.3; g.add(f); files.push(f); }
+  for (let i = 0; i < 18; i++) { const st = i % 3, lvl = Math.floor(i / 3); const f = box(1.6, 0.32, 1.15, fm[i % 3], DESK.x + [-3.2, 3.2, -3.2][st], 3.35 + (lvl + (st === 2 ? 6 : 0)) * 0.3, DESK.z + [-0.9, -0.9, 0.5][st] * (st === 2 ? 1 : 1) + (st === 2 ? 0 : 0)); f.rotation.y = (rng(i)() - 0.5) * 0.3; g.add(f); files.push(f); }
   const mugs = [];
   for (let i = 0; i < 5; i++) { const m = cyl(0.22, 0.2, 0.5, std(['#f4f1e8', '#2b3550', '#c8202b', '#f4f1e8', '#5b6338'][i]), 12, DESK.x + 2.6 - i * 0.55, 3.43, DESK.z + 0.9 - (i % 2) * 0.4); g.add(m); mugs.push(m); }
   // chair behind the desk
   g.add(box(1.8, 0.3, 1.6, std('#3a3330'), DESK.x + 1.2, 1.7, DESK.z - 2.6), box(1.8, 2.2, 0.25, std('#3a3330'), DESK.x + 1.2, 2.9, DESK.z - 3.35));
   // a second chair for Leo at the desk's left end
-  g.add(box(1.6, 0.3, 1.6, std('#3a3330'), DESK.x - 2.8, 1.7, DESK.z - 2.6), box(1.6, 2.2, 0.25, std('#3a3330'), DESK.x - 2.8, 2.9, DESK.z - 3.35));
+  g.add(box(1.6, 0.3, 1.6, std('#3a3330'), DESK.x - 1.6, 1.7, DESK.z - 2.6), box(1.6, 2.2, 0.25, std('#3a3330'), DESK.x - 1.6, 2.9, DESK.z - 3.35));
   // radar console in the back right corner, screen facing -x+z
-  const radar = radarConsole(); radar.group.position.set(9.0, 0, -5.4); radar.group.rotation.y = -0.65; g.add(radar.group);
+  const radar = radarConsole(); radar.group.position.set(10.0, 0, -6.0); radar.group.rotation.y = -0.65; g.add(radar.group);
   // ceiling lamp
   g.add(cyl(0.05, 0.05, 1.4, std('#22252a'), 6, 0, 10.3, -1.5));
   g.add(cyl(0.5, 1.2, 0.8, std('#2b3550', { roughness: 0.5 }), 16, 0, 9.4, -1.5));
   const bulb = sph(0.32, std('#fff3c4', { emissive: '#ffd27a', emissiveIntensity: 2 }), 0, 9.0, -1.5, 12); g.add(bulb);
   const lamp = new THREE.PointLight('#ffe2b0', 0, 40, 1.4); lamp.position.set(0, 8.6, -1.0); g.add(lamp);
   const winLight = new THREE.PointLight('#b9c9ff', 0, 30, 1.5); winLight.position.set(10, 5.6, -2.5); g.add(winLight);
-  const radarLight = new THREE.PointLight('#5dff8a', 0, 9, 1.6); radarLight.position.copy(OFFICE).add(V(7.6, 4.6, -4.2)); scene.add(radarLight);
+  const radarLight = new THREE.PointLight('#5dff8a', 0, 9, 1.6); radarLight.position.copy(OFFICE).add(V(8.6, 4.6, -4.6)); scene.add(radarLight);
   // a sign over the map board
   g.userData = { chart, ghost, cal, calTex, hourH, minH, door, tw, files, mugs, radar, lamp, winLight, radarLight, bulb, winM, DESK, mapX, mapY };
   return g;
@@ -485,9 +488,10 @@ function paperTex(kind) {
     c.fillStyle = '#2b3550'; c.font = '800 30px Montserrat'; c.textAlign = 'center'; c.fillText('WEATHER FORECAST', w / 2, 60);
     c.fillRect(40, 80, w - 80, 4);
     c.font = '30px "Courier New", monospace'; c.textAlign = 'left'; c.fillStyle = '#16141f';
-    const lines = kind === 'banned' ? ['TONIGHT: SEVERE', 'LOCAL STORMS.', '', 'POSSIBLE', ''] : kind === 'forecast' ? ['MARCH 25, 1948', '2:50 P.M.', '', 'TORNADO', 'FORECAST:', 'THIS BASE,', '5 TO 6 P.M.'] : ['', '', '', '', ''];
+    const lines = kind === 'banned' || kind === 'struck' ? ['TONIGHT: SEVERE', 'LOCAL STORMS.', '', 'POSSIBLE', ''] : kind === 'forecast' ? ['MARCH 25, 1948', '2:50 P.M.', '', 'TORNADO', 'FORECAST:', 'THIS BASE,', '5 TO 6 P.M.'] : ['', '', '', '', ''];
     lines.forEach((l, i) => c.fillText(l, 50, 150 + i * 52));
-    if (kind === 'banned') { c.font = 'bold 54px "Courier New", monospace'; c.fillStyle = '#16141f'; c.fillText('TORNADO', 50, 150 + 4 * 52 + 6); }
+    if (kind === 'banned' || kind === 'struck') { c.font = 'bold 54px "Courier New", monospace'; c.fillStyle = '#16141f'; c.fillText('TORNADO', 50, 150 + 4 * 52 + 6); }
+    if (kind === 'struck') { c.strokeStyle = '#d81e24'; c.lineWidth = 12; c.lineCap = 'round'; c.beginPath(); c.moveTo(40, 150 + 4 * 52 - 10); c.lineTo(300, 150 + 4 * 52 - 22); c.stroke(); c.beginPath(); c.moveTo(44, 150 + 4 * 52 + 14); c.lineTo(296, 150 + 4 * 52 - 2); c.stroke(); }
     if (kind === 'forecast') { c.font = 'bold 58px "Courier New", monospace'; c.fillStyle = '#c8202b'; c.fillText('TORNADO', 50, 150 + 3 * 52 + 6); }
   });
 }
@@ -497,7 +501,7 @@ export function typewriter() {
   const top = box(2.4, 0.5, 1.0, body, 0, 0.7, -0.4); g.add(top);
   for (let r = 0; r < 4; r++) for (let k = 0; k < 9; k++) g.add(cyl(0.08, 0.08, 0.06, key, 8, -0.95 + k * 0.24 + (r % 2) * 0.12, 0.55 + r * 0.06, 0.65 - r * 0.2));
   g.add(cyl(0.18, 0.18, 2.8, std('#16141f', { roughness: 0.5 }), 14, 0, 1.05, -0.55).rotateZ(Math.PI / 2));
-  const papers = { banned: paperTex('banned'), forecast: paperTex('forecast'), blank: paperTex('blank') };
+  const papers = { banned: paperTex('banned'), struck: paperTex('struck'), forecast: paperTex('forecast'), blank: paperTex('blank') };
   const sheet = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 2.25), std('#ffffff', { map: papers.blank, roughness: 0.8, side: THREE.DoubleSide }));
   sheet.position.set(0, 2.1, -0.62); sheet.rotation.x = -0.25; g.add(sheet);
   g.userData = { sheet, papers };
@@ -526,7 +530,8 @@ export function radarConsole() {
   // knobs
   for (const x of [-1, 0, 1]) g.add(cyl(0.16, 0.16, 0.2, std('#16141f'), 12, x, 2.4, 1.25).rotateX(Math.PI / 2));
   const update = (t, k) => { sweep.rotation.z = -t * 4.0; squall.position.x = 0.35 * (1 - k); squall.scale.setScalar(1 - 0.25 * k); };
-  return { group: g, update, screenAt: () => scope.getWorldPosition(V()) };
+  const normal = () => { scope.updateMatrixWorld(true); return V(0, 0, 1).transformDirection(scope.matrixWorld); };
+  return { group: g, update, screenAt: () => scope.getWorldPosition(V()), normal };
 }
 
 // ======================================================= the elevator (daydream) =====================================
@@ -546,15 +551,19 @@ export function elevator(scene) {
   const dial = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 2.0), std('#ffffff', { map: dialTex, roughness: 0.5, metalness: 0.2 })); dial.position.set(0, 8.6, -7.8); g.add(dial);
   const arrow = new THREE.Group(); arrow.position.set(0, 7.75, -7.75); g.add(arrow);
   arrow.add(box(0.08, 1.2, 0.04, std('#16141f'), 0, 0.6, 0));
-  // the gate: a folding brass lattice across the open front (z 0), slides from the right (x) to close
-  const gate = new THREE.Group(); g.add(gate);
-  for (let i = 0; i < 13; i++) gate.add(box(0.1, 9.6, 0.1, brass, -4.4 + i * 0.7, 4.9, 0));
-  for (let i = 0; i < 12; i++) { const d = box(0.06, 1.0, 0.06, brass, -4.05 + i * 0.7, 2.5, 0.02); d.rotation.z = 0.6; gate.add(d); const d2 = d.clone(); d2.position.y = 7.4; d2.rotation.z = -0.6; gate.add(d2); }
-  const setGate = (k) => { gate.scale.x = Math.max(0.02, k); gate.position.x = 4.4 * (1 - k); };
+  // the doors: two brass panels that slide in from the sides to close (setGate(k): 0 open, 1 shut)
+  const doorM = std('#b8913c', { roughness: 0.3, metalness: 0.85 });
+  const doors = [-1, 1].map((sd) => { const d = new THREE.Group(); g.add(d); d.add(box(4.5, 9.8, 0.3, doorM, 0, 4.9, 0.2)); d.add(box(0.12, 9.6, 0.36, std('#7a5a20', { metalness: 0.8, roughness: 0.4 }), -sd * 2.2, 4.9, 0.2)); for (const y of [2.5, 7.3]) d.add(box(3.4, 0.12, 0.36, std('#7a5a20', { metalness: 0.8, roughness: 0.4 }), 0, y, 0.2)); d.userData.sd = sd; return d; });
+  const setGate = (k) => { for (const d of doors) d.position.set(d.userData.sd * (2.25 + 4.6 * (1 - k)), 0, 0); };
+  // the frame round the opening
+  g.add(box(1.2, 10.4, 0.6, wood, -5.1, 5.2, 0.2), box(1.2, 10.4, 0.6, wood, 5.1, 5.2, 0.2), box(11.4, 1.0, 0.6, wood, 0, 10.4, 0.2));
+  const lobby = std('#d9c9a3', { roughness: 0.8 });                                          // the lobby wall the doors slide behind
+  g.add(box(9, 14, 0.4, lobby, -10.2, 7, 0.6), box(9, 14, 0.4, lobby, 10.2, 7, 0.6), box(11.4, 3.2, 0.4, lobby, 0, 12.5, 0.6));
   setGate(0);
   const light = new THREE.PointLight('#ffd9a0', 0, 30, 1.5); light.position.set(0, 9, -3); g.add(light);
+  const lobbyLight = new THREE.PointLight('#ffe2b8', 0, 30, 1.4); lobbyLight.position.set(0, 9, 7); g.add(lobbyLight); light.userData.lobby = lobbyLight;
   g.add(sph(0.4, std('#fff3c4', { emissive: '#ffd27a', emissiveIntensity: 2 }), 0, 9.7, -4, 12));
-  return { group: g, arrow, setGate, buttons, light, panel: V(ELEVATOR.x + 4.15, 4.35, ELEVATOR.z - 2.2) };
+  return { group: g, arrow, setGate, doors, buttons, light, panel: V(ELEVATOR.x + 4.15, 4.35, ELEVATOR.z - 2.2) };
 }
 
 // ======================================================= the phone on the table ======================================
@@ -568,7 +577,6 @@ export function table(scene) {
   phone.add(box(2.0, 4.1, 0.24, std('#16181c', { roughness: 0.3, metalness: 0.5 }), 0, 0, 0));
   const scr = canvasTexture(400, 820, (c, w, h) => {
     const gr = c.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, '#1d2a4a'); gr.addColorStop(1, '#0c1222'); c.fillStyle = gr; c.fillRect(0, 0, w, h);
-    MS(c, '6:00', w / 2, 120, 96, '#ffffff');
     c.fillStyle = 'rgba(245,245,250,.96)'; c.beginPath(); c.roundRect(24, 260, w - 48, 300, 34); c.fill();
     c.fillStyle = '#e02b2b'; c.beginPath(); c.arc(70, 310, 22, 0, 7); c.fill(); MS(c, '!', 70, 312, 30, '#ffffff');
     MS(c, 'EMERGENCY ALERT', 106, 312, 26, '#16141f', 'left');
