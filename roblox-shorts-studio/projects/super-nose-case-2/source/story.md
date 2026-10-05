@@ -6,7 +6,7 @@ Standalone case (no numbering, no cliffhanger; see ideas/series/super-nose-detec
 catchphrase three times, one long decisive sniff, a three-item smell list that holds the clue, and a corrupt Chief at
 leisure as the red herring, and the real culprit planted in the background of the first shot. Same voice (`detective_noir`), same outfit everywhere.
 
-**Target 62 s** (user, 2026-10-05): `script.txt` is 148 words, ~62 s at Case 1's pace (172 words, 73.7 s). Something
+**Target 62 s** (user, 2026-10-05): `script.txt` is 148 words; the narration measured 62.0 s of speech (video ~63.3 s with the end card and cover). Something
 new on screen every 2-3 s.
 
 History: v1 "The Big Cheese" rejected (not standalone). v2 (221 words, ~94 s) too long, and its hook ("Tempting. But I'm
@@ -34,7 +34,7 @@ gardener's tomatoes have been sad for twenty years.
 
 ## Beats
 
-1. **Hook (0-3 s).** Frame 1: the haunted mansion's door swings open; Vlad's pale sister, fangs, bubble "Are you
+1. **Hook (0-3 s).** Frame 1: the haunted mansion's open front door; Vlad's pale sister, fangs, bubble "Are you
    single?" Max in profile, nose first. **Plant:** behind Max, in the gloomy shaded garden, the gardener (straw hat,
    green gloves, hedge clippers) snips a hedge and glares at the house; a row of droopy grey tomato plants beside him.
    *"The vampire's sister asked if I was single. Tempting. But I'm on a case."*
@@ -61,8 +61,8 @@ gardener's tomatoes have been sad for twenty years.
    Gloves and all."*
 9. **Vlad wakes (48-52 s).** The evidence bag seals the garlic bread; the green stink lines fade; Vlad's eyes snap open
    and he sits up in the coffin. *"With the garlic gone, Vlad woke up."*
-10. **Ending (52-60 s).** The family gathers round Max, warm and grateful, table set, bubble "Stay for dinner?" Max
-    smiles... then they all smile back with fangs. *"His family asked me to stay for dinner. Then I saw the fangs.
+10. **Ending (52-60 s).** Vlad sits up; his sister comes over, bubble "Stay for dinner?" Max smiles... then she and
+    Vlad grin at him with their fangs out. *"His sister asked me to stay for dinner. Then I saw the fangs.
     Tempting. But I'm on a case."* Max backs out the door and sprints down the beach.
 11. **CTA (60-62 s).** *"Follow Viral Roblox Games for more cases."* End card @viralrobloxgames.
 
@@ -71,3 +71,5 @@ Content line: no swearing, no alcohol, flirting stays at "Are you single?". Nobo
 ## Cover
 Lock-up lower left ("Detective" / "MAX SNIFFWELL" / "The Vampire Case") over Count Vlad in his coffin with the garlic
 bread on its edge, Max's nose in profile at the frame edge, inside the 3:4 band.
+
+**v5 approved 2026-10-05** with one change: "His sister asked me to stay for dinner" (was "His family").

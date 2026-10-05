@@ -8,14 +8,16 @@
     "Vlad's sister",
     "Gardener"
   ],
-  "seconds": 62.0,
+  "seconds": 62.33,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "script v5 (62 s, gardener culprit) awaiting approval; then narration, then author build_scene.py",
+  "status": "narration_done; rendering",
   "finish": {
-    "music": "playful_history_music",
+    "music": "projects/the-super-nose-detective/audio/music_funk.wav",
+    "music_gain": 0.08,
     "word_fixes": {}
-  }
+  },
+  "series": "super nose detective"
 }

@@ -14,4 +14,4 @@ are everyone's weakness; Chief Leo is corrupt or lazy but not the culprit every 
 | Case | Project | What it established | Results |
 |---|---|---|---|
 | 1. The Golden Donut | projects/the-super-nose-detective | The gamepass, the green smell trail, Leo stole the donut, bribe, bite, Leo arrested. Ends: "Then my nose twitched." | Posted 2026-10-04. YouTube ~1k views (user, 2026-10-05). TikTok not recorded. |
-| The Vampire Case | projects/super-nose-case-2 | v1 "The Big Cheese" rejected 2026-10-05 (not standalone). v2: clean take on the original's Vampire Case on the Jacuzzi Case rules (research/dick-snifford-episodes-watched.md). v5: ~62 s, garlic bread -> compost -> the gardener (Leo is the lazy red herring); script awaiting approval. | - |
+| The Vampire Case | projects/super-nose-case-2 | v1 "The Big Cheese" rejected 2026-10-05 (not standalone). v2: clean take on the original's Vampire Case on the Jacuzzi Case rules (research/dick-snifford-episodes-watched.md). v5 approved 2026-10-05: garlic bread -> compost -> the gardener (Leo is the lazy red herring). Narrated (62.0 s), rendering. | - |

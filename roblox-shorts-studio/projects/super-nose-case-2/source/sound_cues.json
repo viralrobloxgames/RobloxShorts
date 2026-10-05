@@ -1,7 +1,454 @@
 [
-  {
-    "asset": "swish_1",
-    "start": 0.0,
-    "gain": 0.3
-  }
+ {
+  "asset": "horror/door_creak",
+  "start": 0.0,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 0.9,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 2.12,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 330,
+  "start": 3.14,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   392,
+   311
+  ],
+  "start": 4.17,
+  "gain": 0.09,
+  "dur": 0.14,
+  "square": true
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 4.72,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "swish_3",
+  "start": 5.12,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/reveal_hit",
+  "start": 6.78,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   784,
+   988
+  ],
+  "start": 8.04,
+  "gain": 0.05,
+  "dur": 0.12
+ },
+ {
+  "tone": [
+   784,
+   988,
+   1175
+  ],
+  "start": 9.14,
+  "gain": 0.05,
+  "dur": 0.12
+ },
+ {
+  "asset": "swish_1",
+  "start": 10.04,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 10.19,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": 1368,
+  "start": 10.31,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": 1168,
+  "start": 10.43,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   220,
+   262,
+   330
+  ],
+  "start": 11.73,
+  "gain": 0.1,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 11.73,
+  "gain": 0.45
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 16.81,
+  "gain": 0.25
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 17.13,
+  "gain": 0.25
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 17.45,
+  "gain": 0.25
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 17.77,
+  "gain": 0.25
+ },
+ {
+  "tone": 900,
+  "start": 19.12,
+  "gain": 0.04,
+  "dur": 0.12,
+  "sweep": 600
+ },
+ {
+  "tone": 330,
+  "start": 20.62,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   392,
+   311
+  ],
+  "start": 21.75,
+  "gain": 0.09,
+  "dur": 0.14,
+  "square": true
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 22.3,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 23.81,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 24.23,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 24.65,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 25.07,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 25.49,
+  "gain": 0.55
+ },
+ {
+  "asset": "impact_2",
+  "start": 26.21,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 26.21,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "impact_2",
+  "start": 28.05,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 28.05,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "impact_2",
+  "start": 29.65,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 29.65,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   247,
+   294,
+   370
+  ],
+  "start": 32.08,
+  "gain": 0.11,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 32.08,
+  "gain": 0.45
+ },
+ {
+  "asset": "swish_2",
+  "start": 33.18,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/reveal_hit",
+  "start": 35.97,
+  "gain": 0.55
+ },
+ {
+  "asset": "impact_4",
+  "start": 36.02,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   147,
+   156,
+   165
+  ],
+  "start": 37.38,
+  "gain": 0.12,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 37.38,
+  "gain": 0.45
+ },
+ {
+  "tone": 110,
+  "start": 39.68,
+  "gain": 0.05,
+  "dur": 2.6,
+  "sweep": -10,
+  "square": true
+ },
+ {
+  "asset": "horror/tension_rise",
+  "start": 39.68,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   392,
+   370,
+   349,
+   330
+  ],
+  "start": 43.16,
+  "gain": 0.07,
+  "dur": 0.18
+ },
+ {
+  "asset": "horror/latch",
+  "start": 45.42,
+  "gain": 0.4
+ },
+ {
+  "asset": "click",
+  "start": 46.47,
+  "gain": 0.6
+ },
+ {
+  "tone": [
+   2600,
+   1900
+  ],
+  "start": 46.47,
+  "gain": 0.05,
+  "dur": 0.05,
+  "square": true
+ },
+ {
+  "asset": "impact_4",
+  "start": 46.49,
+  "gain": 0.5
+ },
+ {
+  "asset": "drum_hit",
+  "start": 46.52,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   247,
+   294,
+   370
+  ],
+  "start": 46.57,
+  "gain": 0.12,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 46.57,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_1",
+  "start": 46.87,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_4",
+  "start": 49.34,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784,
+   1047
+  ],
+  "start": 50.72,
+  "gain": 0.07,
+  "dur": 0.1
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 53.52,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "asset": "horror/reveal_hit",
+  "start": 55.13,
+  "gain": 0.6
+ },
+ {
+  "asset": "impact_3",
+  "start": 55.15,
+  "gain": 0.45
+ },
+ {
+  "tone": 330,
+  "start": 56.62,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 57.96,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 58.16,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 58.18,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 58.4,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 58.62,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 58.84,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_3",
+  "start": 58.96,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568
+  ],
+  "start": 59.01,
+  "gain": 0.12,
+  "dur": 0.18
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 59.06,
+  "gain": 0.3
+ }
 ]
