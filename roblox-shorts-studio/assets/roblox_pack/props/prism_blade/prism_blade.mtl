@@ -1,0 +1,116 @@
+# Materials for prism_blade. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_d2d7eb_shiny
+Kd 0.8235 0.8431 0.9216
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_965aff_neon
+Kd 0.5882 0.3529 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.5882 0.3529 1.0000
+d 1.0000
+illum 2
+
+newmtl c_5ae6ff_shiny
+Kd 0.3529 0.9020 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_e1e6f5_shiny
+Kd 0.8824 0.9020 0.9608
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_5ae6ff_neon
+Kd 0.3529 0.9020 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.3529 0.9020 1.0000
+d 1.0000
+illum 2
+
+newmtl c_ff78dc_neon
+Kd 1.0000 0.4706 0.8627
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 1.0000 0.4706 0.8627
+d 1.0000
+illum 2
+
+newmtl c_5ae6ff_shiny_a85
+Kd 0.3529 0.9020 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_78aaff_shiny_a85
+Kd 0.4706 0.6667 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_965aff_shiny_a85
+Kd 0.5882 0.3529 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_c86ef5_shiny_a85
+Kd 0.7843 0.4314 0.9608
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_ff78dc_shiny_a85
+Kd 1.0000 0.4706 0.8627
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_ffaac8_shiny_a85
+Kd 1.0000 0.6667 0.7843
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_ffeb96_shiny_a85
+Kd 1.0000 0.9216 0.5882
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_a0ffd2_shiny_a85
+Kd 0.6275 1.0000 0.8235
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 0.8500
+illum 2
+
+newmtl c_ebfaff_shiny
+Kd 0.9216 0.9804 1.0000
+Ks 0.4500 0.4500 0.4500
+Ns 120
+d 1.0000
+illum 2
+
+newmtl c_f5faff_neon
+Kd 0.9608 0.9804 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.9608 0.9804 1.0000
+d 1.0000
+illum 2
