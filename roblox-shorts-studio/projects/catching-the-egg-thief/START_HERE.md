@@ -27,4 +27,4 @@ node web/render.mjs --clip projects/catching-the-egg-thief/web/thief_clip.js --o
 python3 scripts/finish.py projects/catching-the-egg-thief --encode --frames projects/catching-the-egg-thief/renders/web
 node web/render.mjs --clip projects/catching-the-egg-thief/web/cover_clip.js --out projects/catching-the-egg-thief/renders/cover --frames 1
 ```
-**Approved by the user 2026-10-05; ready to post** (TikTok first, then YouTube): upload `delivery/Catching_the_Egg_Thief_upload.mp4` (cover as the last frame, checked), caption/title/tags from `delivery/post.json` (AI label off), thumbnail `delivery/Catching_the_Egg_Thief_cover.jpg`. Follow references/publishing.md → Posting through the user's browser; story Shorts go in slot B (22:30 UK) unless the user says now.
+**Approved by the user 2026-10-05; ready to post** (TikTok first, then YouTube): upload `delivery/Catching_the_Egg_Thief.mp4` (its last 0.5 s is the cover: pick the last frame on both apps), copy text from `delivery/Catching_the_Egg_Thief_post.md` (AI label off). Follow references/publishing.md → Posting through the user's browser; story Shorts go in slot B (22:30 UK) unless the user says now.
