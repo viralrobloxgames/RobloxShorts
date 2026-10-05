@@ -55,7 +55,16 @@ const LEO_CASH = [0, 0, 32], MIA_YARD = [-5, 0, 35];
 const TREE = [13, 0, 21.6], BIKE_HIT = [9.65, 0, 21.6], RIDE0 = [-40, 0, 21.6];
 const LEO_C = [9.4, 0, 23.4], MAX_C = [5.4, 0, 23.9], MAX_RACK = [-8, 0, 17.5];
 const LEO_HUG = [9.0, 0, 23.6], MAX_HUG = [6.6, 0, 22.6];
+// The hug: face to face on a diagonal, Max on the camera side (Leo's backpack would hide him the other way round):
+// Leo laughs over Max's shoulder, his hands on Max's back. Max steps back to MAX_HUG when he lets go, so everything
+// after the hug is unchanged.
+const MAX_IN = [7.5, 0, 24.85], HUG_YAW = Math.atan2(LEO_HUG[0] - MAX_IN[0], LEO_HUG[2] - MAX_IN[2]);
+const hugSway = (s) => 0.07 * Math.sin((s - T.hug) * 5.5);
 const ROOFSPOT = [-3, ROOF + 1.1, -3.5];
+// Where the dragon's jaw tip goes for the two bites (homework on Leo's desk, the teacher's desk top).
+const HW_AT = V(-3.3, FY + 3.25, -4.6), TD_TOP = V(-8.2, FY + 3.0, -5.0);
+const HOVER_HW = HW_AT.clone().add(V(0.2, 2.4, -1.4)), BITE_HW = HW_AT.clone().add(V(0, 0.3, -0.15)), PULL_HW = HW_AT.clone().add(V(0.4, 4.2, -3.2));
+const HOVER_TD = TD_TOP.clone().add(V(0.3, 2.6, -1.6)), BITE_TD = TD_TOP.clone().add(V(0, 0.25, 0));
 
 // ---------- scene ----------
 let A = {}, leo, max, mia, skye, noob, dragon, dragonRig, room, sch, yd, bk, bills, stack, pack, cam, SHOT = 'cold', talk = {}, dust = [], leaves = [];
@@ -168,8 +177,16 @@ function leoAt(s) {
   if (s >= W.sorry + 0.4) x.face = 'sad';
   if (s >= W.lies2 - 0.1) x.face = 'determined';
   if (s >= T.remember + 0.15) x.face = 'happy';
-  if (s >= T.hug - 0.25) { const u = smooth(inv(T.hug - 0.25, T.hug + 0.15, s)); x.pos = VA(LEO_C).lerp(VA(LEO_HUG), u); x.heading = lerp(-Math.PI / 2 + 0.55, 0.15, u); x.face = 'laugh'; }
-  if (s >= T.see) { x.face = 'nervous'; x.heading = 0.25 - 0.9 * smooth(inv(T.see + 0.3, T.see + 0.6, s)); x.pos = VA(LEO_HUG); }
+  if (s >= T.hug - 0.25) {                                   // turns to Max and hugs him back (arms round his waist)
+    const u = smooth(inv(T.hug - 0.25, T.hug + 0.15, s)), arms = smooth(inv(T.hug - 0.05, T.hug + 0.35, s));
+    x.pos = VA(LEO_C).lerp(VA(LEO_HUG), u); x.heading = lerp(-Math.PI / 2 + 0.55, HUG_YAW - Math.PI, u) + hugSway(s) * arms; x.face = 'laugh';
+    x.hugArms = [arms, -0.95, -0.22]; x.lean = 0.07 * arms;
+  }
+  if (s >= T.see) {
+    const r = smooth(inv(T.see, T.see + 0.45, s)); x.face = 'nervous'; x.pos = VA(LEO_HUG); x.lean = 0.07 * (1 - r);
+    x.hugArms = [1 - smooth(inv(T.see, T.see + 0.25, s)), -0.95, -0.22];
+    x.heading = lerp(HUG_YAW - Math.PI, 0.25, r) - 0.9 * smooth(inv(T.see + 0.3, T.see + 0.6, s));
+  }
   if (s >= W.almost - 0.1) { x.face = 'scheming'; x.heading = -0.85; }
   if (s >= T.land) { x.face = 'scared'; x.pitch = -0.45 * smooth(inv(T.land, T.land + 0.25, s)); x.layers = [['shock', s - T.land, 1, false]]; }
   if (s >= T.shut) { x.face = 'squeezed'; x.mouthShut = true; x.pitch = -0.2 * (1 - smooth(inv(T.shut + 0.2, T.shut + 0.6, s))); x.layers = [['idle', s]]; }
@@ -213,14 +230,18 @@ function maxAt(s) {
   if (s >= W.sorry - 0.1) x.face = 'neutral';
   if (s >= T.remember) x.face = 'surprised';
   if (s >= W.grins - 0.1) x.face = 'laugh';
-  if (s >= T.hug - 0.25) {
-    const u = smooth(inv(T.hug - 0.25, T.hug + 0.15, s));
-    x.pos = VA(MAX_C).lerp(VA(MAX_HUG), u); x.heading = lerp(Math.PI / 2 - 0.55, 0.1, u); x.hug = u;
-    x.layers = u < 1 ? [['walk', u * 2.1 / STRIDE * 1.2]] : [['idle', s]];
+  if (s >= T.hug - 0.25) {                                   // walks in and wraps both arms over Leo's shoulders
+    const u = smooth(inv(T.hug - 0.25, T.hug + 0.2, s)), arms = smooth(inv(T.hug - 0.1, T.hug + 0.3, s));
+    const d = Math.hypot(MAX_IN[0] - MAX_C[0], MAX_IN[2] - MAX_C[2]);
+    x.pos = VA(MAX_C).lerp(VA(MAX_IN), u); x.heading = lerp(Math.PI / 2 - 0.55, HUG_YAW, u) + hugSway(s) * arms;
+    x.hugArms = [arms, -1.62, -0.42]; x.lean = 0.09 * arms;
+    x.layers = u < 1 ? [['walk', u * d / STRIDE * 1.2]] : [['idle', s]];
   }
-  if (s >= T.see) {
-    const u = smooth(inv(T.see, T.see + 0.3, s)); x.hug = 1 - u; x.face = 'shocked';
-    x.heading = lerp(0.1, head(MAX_HUG, BIKE_HIT), u); x.pos = VA(MAX_HUG);
+  if (s >= T.see) {                                          // lets go, steps back and turns to the bike
+    const u = smooth(inv(T.see, T.see + 0.3, s)), back = smooth(inv(T.see + 0.05, T.see + 0.45, s)); x.face = 'shocked';
+    x.hugArms = [1 - smooth(inv(T.see, T.see + 0.22, s)), -1.62, -0.42]; x.lean = 0.09 * (1 - u);
+    x.heading = lerp(HUG_YAW, head(MAX_HUG, BIKE_HIT), u); x.pos = VA(MAX_IN).lerp(VA(MAX_HUG), back);
+    x.layers = back > 0 && back < 1 ? [['walk', back * 1.5 / STRIDE]] : [['idle', s]];
   }
   if (s >= W.bro - 0.15) { const u = smooth(inv(W.bro - 0.15, W.bro + 0.15, s)); x.heading = lerp(head(MAX_HUG, BIKE_HIT), Math.PI / 2 - 0.2, u); x.face = 'suspicious'; }
   if (s >= T.land) { x.face = 'scared'; x.pitch = -0.45 * smooth(inv(T.land, T.land + 0.25, s)); x.heading = Math.PI / 2 - 0.6; x.layers = [['shock', s - T.land, 1, false]]; }
@@ -281,15 +302,22 @@ function dragonAt(s) {
     const k = s - T.boom;
     d.pos.set(-3, 2.6, lerp(-19.6, -20.6, smooth(inv(0, 0.5, k))));
     d.open = 0.9 * Math.sin(Math.PI * clamp((k - 0.05) / 0.9));                   // roar
-    if (s >= T.hw - 0.6) {                                                         // homework: down to Leo's desk, snap
-      const u = smooth(inv(T.hw - 0.6, T.hw - 0.2, s));
-      d.pos.set(lerp(-3, -2.4, u), lerp(2.6, 1.3, u), lerp(-20.6, -19.4, u)); d.pitch = 0.12 * u;
-      d.open = s < T.hw ? 0.85 * smooth(inv(T.hw - 0.55, T.hw - 0.3, s)) * (1 - smooth(inv(T.hw - 0.1, T.hw, s))) : 0.25 * Math.max(0, Math.sin((s - T.hw) * 14)) * (s < T.hw + 0.6 ? 1 : 0);
+    // The bites: the jaw tip is aimed at a point (placeDragon moves the whole rig so the tip lands there), nose down,
+    // so the head stays above the desks: hover with the mouth open, strike down, snap shut, pull back up chewing.
+    if (s >= T.hw - 0.6) {                                                         // homework: off Leo's desk
+      const w = smooth(inv(T.hw - 0.6, T.hw - 0.3, s)), hit = smooth(inv(T.hw - 0.24, T.hw - 0.03, s)), back = smooth(inv(T.hw + 0.05, T.hw + 0.7, s));
+      d.aim = HOVER_HW.clone().lerp(BITE_HW, hit).lerp(PULL_HW, back); d.aimW = w;
+      d.pitch = 0.32 * w * (1 - back) + 0.16 * back;
+      d.open = s < T.hw ? lerp(d.open, 1.0, smooth(inv(T.hw - 0.55, T.hw - 0.3, s))) * (1 - smooth(inv(T.hw - 0.07, T.hw, s)))
+        : 0.2 * Math.max(0, Math.sin((s - T.hw) * 15)) * (s < T.hw + 0.9 ? 1 : 0);
     }
-    if (s >= T.dsk - 0.75) {                                                       // the teacher's desk: across, open wide, bite, lift
-      const u = smooth(inv(T.dsk - 0.75, T.dsk - 0.2, s)), up = smooth(inv(T.dsk + 0.15, T.dsk + 0.7, s));
-      d.pos.set(lerp(-2.4, -8.2, u), lerp(1.3, 1.0, u) + 2.2 * up, lerp(-19.4, -17.0, u) - 1.2 * up); d.pitch = lerp(0.12, 0.2, u) - 0.25 * up;
-      d.open = s < T.dsk ? 1.0 * smooth(inv(T.dsk - 0.6, T.dsk - 0.25, s)) * (1 - smooth(inv(T.dsk - 0.06, T.dsk, s))) + (s >= T.dsk - 0.06 ? 0 : 0) : 0.32 + 0.18 * Math.sin((s - T.dsk) * 11);
+    if (s >= T.dsk - 0.75) {                                                       // the teacher's desk: bite the top, rip it up, shake
+      const go = smooth(inv(T.dsk - 0.75, T.dsk - 0.32, s)), hit = smooth(inv(T.dsk - 0.3, T.dsk - 0.03, s)), up = smooth(inv(T.dsk + 0.08, T.dsk + 0.6, s));
+      d.aim = PULL_HW.clone().lerp(HOVER_TD, go).lerp(BITE_TD, hit).add(V(0, 2.6 * up, -1.3 * up)); d.aimW = 1;
+      if (s > T.dsk) d.aim.add(V(0.35 * Math.sin((s - T.dsk) * 19) * Math.exp(-(s - T.dsk) * 1.2), 0.15 * Math.sin((s - T.dsk) * 23), 0));
+      d.pitch = lerp(0.16, 0.36, go) - 0.22 * up;
+      d.open = s < T.dsk ? 1.0 * smooth(inv(T.dsk - 0.62, T.dsk - 0.3, s)) * (1 - smooth(inv(T.dsk - 0.06, T.dsk, s))) * 0.9 + 0.1 * (1 - go)
+        : 0.12 + 0.06 * Math.sin((s - T.dsk) * 11);                                   // jaws clamped on the desk top
     }
     return d;
   }
@@ -318,7 +346,10 @@ function place(a, x, tNow) {
   for (const [side, up, fwd] of x.arms) setArm(a, side, up, fwd);
   if (x.wave) waveArm(a, tNow, 'R');
   if (x.palm) setArm(a, 'R', 0.15 * x.palm, -1.35 * x.palm);
-  if (x.hug) setArm(a, 'L', 1.62 * x.hug, -0.1 * x.hug);
+  if (x.hugArms && x.hugArms[0] > 0) {                       // both arms forward and angled in round the other one
+    const [k, fwd, inward] = x.hugArms;
+    setArm(a, 'L', inward * k, fwd * k); setArm(a, 'R', inward * k, fwd * k);
+  }
   if (x.cash === 'hand' || x.cash === 'give') setArm(a, 'R', 0.15, -1.1);
   if (x.cash === true) setArm(a, 'R', 0.15, -0.9);
   if (x.ride !== undefined) {                                  // standing on the pedals, hands on the bars
@@ -356,6 +387,10 @@ function placeDragon(s) {
   poseCreature(dragon, { 'Saber Tooth Wyvern': hinge(0.38 * o, [0, -1, 3.3]), 'Saber Tooth Wyvern.013': hinge(-0.5 * o, [0, 0, 1.8]) });
   dragonRig.updateMatrixWorld(true);
   mouthP = creaturePoint(dragon, 'Saber Tooth Wyvern.013', -17.0, 10.9, 0);
+  if (d.aim && d.aimW > 0) {                                     // move the rig so the jaw tip lands on the aim point
+    dragonRig.position.addScaledVector(d.aim.clone().sub(mouthP), d.aimW); dragonRig.updateMatrixWorld(true);
+    mouthP = creaturePoint(dragon, 'Saber Tooth Wyvern.013', -17.0, 10.9, 0);
+  }
 }
 
 // Classroom bits: glass, shards, chunks, homework, teacher's desk.
@@ -382,16 +417,22 @@ function placeRoom(s) {
     c.mesh.rotation.set(c.spin.x * f.tt * 0.5, c.spin.y * f.tt * 0.5, c.spin.z * f.tt * 0.5);
   }
   room.frame.visible = tau < 0;
-  // homework: on the desk, snatched up into the jaws at T.hw
-  const hw = room.homework, u = inv(T.hw - 0.22, T.hw - 0.02, s);
-  hw.visible = s < T.hw;
-  hw.position.copy(hw.userData.rest).lerp(mouthP, easeIn(u)); hw.rotation.set(-Math.PI / 2 + 2.2 * u, 0, Math.PI / 2 + 3 * u);
-  // the teacher's desk: bitten and lifted in the jaws
+  // homework: on the desk until the jaws close on it, then held in the teeth, flapping, and swallowed
+  const hw = room.homework, held = s >= T.hw - 0.04, gone = smooth(inv(T.hw + 0.35, T.hw + 0.55, s));
+  hw.visible = s < T.hw + 0.55;
+  if (!held) { hw.position.copy(hw.userData.rest); hw.rotation.set(-Math.PI / 2, 0, Math.PI / 2); hw.scale.setScalar(1); }
+  else {
+    const k = s - T.hw;
+    hw.position.copy(mouthP).add(V(0.15, -0.35, 0.45)); hw.rotation.set(-0.9 + 0.3 * Math.sin(k * 21), 0.4 * Math.sin(k * 13), 1.3);
+    hw.scale.setScalar(1 - gone);
+  }
+  // the teacher's desk: the jaws clamp the top, the desk hangs from that point and swings with the shake
   const td = room.teacherDesk;
   if (s < T.dsk) { td.position.copy(td.userData.rest); td.rotation.set(0, 0, 0); }
   else {
-    const off = V(0.2, -3.2, 0.3);
-    td.position.copy(mouthP).add(off); td.rotation.set(0.35 + 0.08 * Math.sin((s - T.dsk) * 11), 0.2, 0.15);
+    const k = s - T.dsk, grip = BITE_TD.clone().sub(td.userData.rest);        // the bitten point, in the desk's frame
+    td.rotation.set(0.25 * smooth(clamp(k / 0.5)) + 0.07 * Math.sin(k * 9), 0.15 * Math.sin(k * 5), 0.12 * Math.sin(k * 11) * Math.exp(-k));
+    td.position.copy(mouthP).sub(grip.applyEuler(td.rotation)).add(V(0, -0.1, 0));
   }
 }
 
@@ -506,7 +547,7 @@ export function update(t, stage) {
     case 'stranger': look(stage, V(lerp(7.2, 7.6, u), 4.4, lerp(37.5, 36.5, u)), mid.clone().add(V(0, -0.8, 0)), 44, 25); break;
     case 'friend': look(stage, L.clone().add(V(-4.6, 0.3, 5.4)), L.clone().add(V(0, -0.6, 0)), 38, 20); break;
     case 'remember': look(stage, V(lerp(7.6, 7.4, u), 4.4, lerp(36.5, 35, u)), mid.clone().add(V(0, -0.8, 0)), 44, 25); break;
-    case 'hug': look(stage, V(7.8, 4.2, lerp(36, 34.5, u)), V(7.8, 3.0, 23.2), 40, 25); break;
+    case 'hug': look(stage, V(lerp(11.6, 11.2, u), 4.4, lerp(35, 34, u)), V(8.0, 3.1, 24.0), 42, 25); break;    // over Max's shoulder at Leo
     case 'sees': look(stage, V(2, 4.6, 33), V(8.4, 2.0, 22.4), 48, 25); break;
     case 'almost': look(stage, L.clone().add(V(-3.8, 0.2, 5.6)), L.clone().add(V(0, -0.5, 0)), 38, 20); break;
     case 'land': look(stage, V(7.5, 1.8, 34).add(land), V(4.5, 14, 12), 66, 40); break;
