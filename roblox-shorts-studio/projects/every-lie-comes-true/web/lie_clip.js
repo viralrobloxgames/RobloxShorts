@@ -55,11 +55,13 @@ const LEO_CASH = [0, 0, 32], MIA_YARD = [-5, 0, 35];
 const TREE = [13, 0, 21.6], BIKE_HIT = [9.65, 0, 21.6], RIDE0 = [-40, 0, 21.6];
 const LEO_C = [9.4, 0, 23.4], MAX_C = [5.4, 0, 23.9], MAX_RACK = [-8, 0, 17.5];
 const LEO_HUG = [9.0, 0, 23.6], MAX_HUG = [6.6, 0, 22.6];
-// The hug: face to face on a diagonal, Max on the camera side (Leo's backpack would hide him the other way round):
-// Leo laughs over Max's shoulder, his hands on Max's back. Max steps back to MAX_HUG when he lets go, so everything
-// after the hug is unchanged.
-const MAX_IN = [7.5, 0, 24.85], HUG_YAW = Math.atan2(LEO_HUG[0] - MAX_IN[0], LEO_HUG[2] - MAX_IN[2]);
-const hugSway = (s) => 0.07 * Math.sin((s - T.hug) * 5.5);
+// The hug: square on, 1.3 apart (Max faces +x, Leo -x), seen from the side (+z). Criss-cross arms so the blocky R6
+// arms interlock instead of colliding: each has his left arm high over the other's shoulder (40 degrees up) and his
+// right arm low round the waist (35 down). Heads turn to the camera, cheek to cheek; the pair sways as one.
+// Max steps back to MAX_HUG when he lets go, so everything after the hug is unchanged.
+const MAX_IN = [LEO_HUG[0] - 1.3, 0, LEO_HUG[2]], HUG_MID = V(LEO_HUG[0] - 0.65, 0, LEO_HUG[2]);
+const hugSway = (s) => 0.06 * Math.sin((s - T.hug) * 5.5), HUG_ROLL = -0.2;   // sideways lean: heads past each other
+const swayed = (p, a) => VA(p).sub(HUG_MID).applyAxisAngle(V(0, 1, 0), a).add(HUG_MID);
 const ROOFSPOT = [-3, ROOF + 1.1, -3.5];
 // Where the dragon's jaw tip goes for the two bites (homework on Leo's desk, the teacher's desk top).
 const HW_AT = V(-3.3, FY + 3.25, -4.6), TD_TOP = V(-8.2, FY + 3.0, -5.0);
@@ -177,15 +179,15 @@ function leoAt(s) {
   if (s >= W.sorry + 0.4) x.face = 'sad';
   if (s >= W.lies2 - 0.1) x.face = 'determined';
   if (s >= T.remember + 0.15) x.face = 'happy';
-  if (s >= T.hug - 0.25) {                                   // turns to Max and hugs him back (arms round his waist)
-    const u = smooth(inv(T.hug - 0.25, T.hug + 0.15, s)), arms = smooth(inv(T.hug - 0.05, T.hug + 0.35, s));
-    x.pos = VA(LEO_C).lerp(VA(LEO_HUG), u); x.heading = lerp(-Math.PI / 2 + 0.55, HUG_YAW - Math.PI, u) + hugSway(s) * arms; x.face = 'laugh';
-    x.hugArms = [arms, -0.95, -0.22]; x.lean = 0.07 * arms;
+  if (s >= T.hug - 0.25) {                                   // turns square to Max and hugs him back
+    const u = smooth(inv(T.hug - 0.25, T.hug + 0.15, s)), arms = smooth(inv(T.hug - 0.05, T.hug + 0.35, s)), sw = hugSway(s) * arms;
+    x.pos = swayed(VA(LEO_C).lerp(VA(LEO_HUG), u), sw); x.heading = lerp(-Math.PI / 2 + 0.55, -Math.PI / 2, u) + sw; x.face = 'laugh';
+    x.hugPose = arms; x.yaw = -0.55 * arms; x.roll = HUG_ROLL * arms;
   }
   if (s >= T.see) {
-    const r = smooth(inv(T.see, T.see + 0.45, s)); x.face = 'nervous'; x.pos = VA(LEO_HUG); x.lean = 0.07 * (1 - r);
-    x.hugArms = [1 - smooth(inv(T.see, T.see + 0.25, s)), -0.95, -0.22];
-    x.heading = lerp(HUG_YAW - Math.PI, 0.25, r) - 0.9 * smooth(inv(T.see + 0.3, T.see + 0.6, s));
+    const r = smooth(inv(T.see, T.see + 0.45, s)), held = 1 - smooth(inv(T.see, T.see + 0.25, s)); x.face = 'nervous'; x.pos = VA(LEO_HUG);
+    x.hugPose = held; x.yaw = -0.55 * held; x.roll = HUG_ROLL * held;
+    x.heading = lerp(-Math.PI / 2, 0.25, r) - 0.9 * smooth(inv(T.see + 0.3, T.see + 0.6, s));
   }
   if (s >= W.almost - 0.1) { x.face = 'scheming'; x.heading = -0.85; }
   if (s >= T.land) { x.face = 'scared'; x.pitch = -0.45 * smooth(inv(T.land, T.land + 0.25, s)); x.layers = [['shock', s - T.land, 1, false]]; }
@@ -230,17 +232,17 @@ function maxAt(s) {
   if (s >= W.sorry - 0.1) x.face = 'neutral';
   if (s >= T.remember) x.face = 'surprised';
   if (s >= W.grins - 0.1) x.face = 'laugh';
-  if (s >= T.hug - 0.25) {                                   // walks in and wraps both arms over Leo's shoulders
-    const u = smooth(inv(T.hug - 0.25, T.hug + 0.2, s)), arms = smooth(inv(T.hug - 0.1, T.hug + 0.3, s));
+  if (s >= T.hug - 0.25) {                                   // walks in and hugs him: left arm over the shoulder, right round the waist
+    const u = smooth(inv(T.hug - 0.25, T.hug + 0.2, s)), arms = smooth(inv(T.hug - 0.1, T.hug + 0.3, s)), sw = hugSway(s) * arms;
     const d = Math.hypot(MAX_IN[0] - MAX_C[0], MAX_IN[2] - MAX_C[2]);
-    x.pos = VA(MAX_C).lerp(VA(MAX_IN), u); x.heading = lerp(Math.PI / 2 - 0.55, HUG_YAW, u) + hugSway(s) * arms;
-    x.hugArms = [arms, -1.62, -0.42]; x.lean = 0.09 * arms;
+    x.pos = swayed(VA(MAX_C).lerp(VA(MAX_IN), u), sw); x.heading = lerp(Math.PI / 2 - 0.55, Math.PI / 2, u) + sw;
+    x.hugPose = arms; x.yaw = 0.4 * arms; x.roll = HUG_ROLL * 0.75 * arms;
     x.layers = u < 1 ? [['walk', u * d / STRIDE * 1.2]] : [['idle', s]];
   }
   if (s >= T.see) {                                          // lets go, steps back and turns to the bike
-    const u = smooth(inv(T.see, T.see + 0.3, s)), back = smooth(inv(T.see + 0.05, T.see + 0.45, s)); x.face = 'shocked';
-    x.hugArms = [1 - smooth(inv(T.see, T.see + 0.22, s)), -1.62, -0.42]; x.lean = 0.09 * (1 - u);
-    x.heading = lerp(HUG_YAW, head(MAX_HUG, BIKE_HIT), u); x.pos = VA(MAX_IN).lerp(VA(MAX_HUG), back);
+    const u = smooth(inv(T.see, T.see + 0.3, s)), back = smooth(inv(T.see + 0.05, T.see + 0.45, s)), held = 1 - smooth(inv(T.see, T.see + 0.22, s)); x.face = 'shocked';
+    x.hugPose = held; x.yaw = 0.4 * held; x.roll = HUG_ROLL * 0.75 * held;
+    x.heading = lerp(Math.PI / 2, head(MAX_HUG, BIKE_HIT), u); x.pos = VA(MAX_IN).lerp(VA(MAX_HUG), back);
     x.layers = back > 0 && back < 1 ? [['walk', back * 1.5 / STRIDE]] : [['idle', s]];
   }
   if (s >= W.bro - 0.15) { const u = smooth(inv(W.bro - 0.15, W.bro + 0.15, s)); x.heading = lerp(head(MAX_HUG, BIKE_HIT), Math.PI / 2 - 0.2, u); x.face = 'suspicious'; }
@@ -346,9 +348,8 @@ function place(a, x, tNow) {
   for (const [side, up, fwd] of x.arms) setArm(a, side, up, fwd);
   if (x.wave) waveArm(a, tNow, 'R');
   if (x.palm) setArm(a, 'R', 0.15 * x.palm, -1.35 * x.palm);
-  if (x.hugArms && x.hugArms[0] > 0) {                       // both arms forward and angled in round the other one
-    const [k, fwd, inward] = x.hugArms;
-    setArm(a, 'L', inward * k, fwd * k); setArm(a, 'R', inward * k, fwd * k);
+  if (x.hugPose > 0) {                                        // criss-cross: left arm up over the shoulder, right arm down round the waist
+    const k = x.hugPose; setArm(a, 'L', -0.1 * k, -2.25 * k); setArm(a, 'R', 0, -0.97 * k);
   }
   if (x.cash === 'hand' || x.cash === 'give') setArm(a, 'R', 0.15, -1.1);
   if (x.cash === true) setArm(a, 'R', 0.15, -0.9);
@@ -361,6 +362,7 @@ function place(a, x, tNow) {
   if (x.yaw) a.bones.Head.rotateY(x.yaw);
   if (x.pitch) a.bones.Head.rotateX(x.pitch);
   if (x.lean) a.root.rotateX(x.lean);
+  if (x.roll) a.root.rotateZ(x.roll);
   if (x.lie) a.root.rotateX(-Math.PI / 2 * x.lie);
   a.root.updateMatrixWorld(true);
   if (x.y !== undefined) a.root.position.y = x.y;
@@ -547,7 +549,7 @@ export function update(t, stage) {
     case 'stranger': look(stage, V(lerp(7.2, 7.6, u), 4.4, lerp(37.5, 36.5, u)), mid.clone().add(V(0, -0.8, 0)), 44, 25); break;
     case 'friend': look(stage, L.clone().add(V(-4.6, 0.3, 5.4)), L.clone().add(V(0, -0.6, 0)), 38, 20); break;
     case 'remember': look(stage, V(lerp(7.6, 7.4, u), 4.4, lerp(36.5, 35, u)), mid.clone().add(V(0, -0.8, 0)), 44, 25); break;
-    case 'hug': look(stage, V(lerp(11.6, 11.2, u), 4.4, lerp(35, 34, u)), V(8.0, 3.1, 24.0), 42, 25); break;    // over Max's shoulder at Leo
+    case 'hug': { const r = lerp(11.8, 10.6, easeInOut(u)), q = 290 * Math.PI / 180; look(stage, V(8.35 + r * Math.sin(q), 7.4, 23.6 + r * Math.cos(q)), V(8.0, 3.5, 23.6), 42, 25); break; }   // over Max's shoulder: Leo's face
     case 'sees': look(stage, V(2, 4.6, 33), V(8.4, 2.0, 22.4), 48, 25); break;
     case 'almost': look(stage, L.clone().add(V(-3.8, 0.2, 5.6)), L.clone().add(V(0, -0.5, 0)), 38, 20); break;
     case 'land': look(stage, V(7.5, 1.8, 34).add(land), V(4.5, 14, 12), 66, 40); break;
