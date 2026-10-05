@@ -166,14 +166,14 @@ def build(raw_dir, obj_name, manifest_path, pack_dir, only=None):
                                "CFrames are Roblox components [x,y,z,R00,R01,R02,R10,R11,R12,R20,R21,R22] (row-major) in this model space. "
                                "Each OBJ object is one body. To pose: Part1 = Part0 * C0 * Transform * C1^-1, or simply rotate a body (and its "
                                "children) about its `pivot` (the joint's rest frame in model space: apply pivot * Transform * pivot^-1).",
-                "size": item["size"], "root": item["root"], "feetCentre": feet_centre(bodies), "bodies": bodies,
+                "size": item["size"], "root": item.get("root"), "feetCentre": feet_centre(bodies), "bodies": bodies,
                 "joints": [{"name": j["name"], "part0": j["part0"], "part1": j["part1"], "c0": j["c0"], "c1": j["c1"],
                             "pivot": comp(M @ cf_matrix(j["world"]))} for j in item["joints"]],
                 "bones": [{"name": b["name"], "parent": b["parent"], "parentIsBone": b["parentIsBone"], "cframe": b["cframe"],
                            "world": comp(M @ cf_matrix(b["world"]))} for b in item["bones"]],
                 "attachments": [{"name": a["name"], "body": a["body"], "cframe": comp(M @ cf_matrix(a["world"]))} for a in item["attachments"]],
                 "animations": item["animations"], "keyframeSequences": item["keyframeSequences"],
-                "gait": classify(item["joints"], item["root"]),
+                "gait": classify(item["joints"], item.get("root")),
                 "parts": [{"object": p["body"], "name": p["name"], "class": p["class"], "size": p["size"], "cframe": comp(M @ cf_matrix(p["cframe"])),
                            "color": p["color"], "material": p["material"], **({"meshId": p["meshId"]} if p.get("meshId") else {}),
                            **({"textureId": p["textureId"]} if p.get("textureId") else {})} for p in item["parts"]],

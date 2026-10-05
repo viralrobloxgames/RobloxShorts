@@ -1,0 +1,23 @@
+# Materials for prism_plinth. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_462d78
+Kd 0.2745 0.1765 0.4706
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_5ae6ff_neon
+Kd 0.3529 0.9020 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.3529 0.9020 1.0000
+d 1.0000
+illum 2
+
+newmtl c_965aff_neon
+Kd 0.5882 0.3529 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.5882 0.3529 1.0000
+d 1.0000
+illum 2
