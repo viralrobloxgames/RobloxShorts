@@ -2,7 +2,8 @@
 HatAttachment, Roblox front = -Z) with smooth vertex normals:
 
   officer_cap  - a general's peaked service cap: blue band, a crown that flares out to a wide flat top, a glossy black
-                 visor at the front with a gold edge, a gold chin cord and a gold eagle badge over the visor.
+                 visor at the front with a gold edge, a gold chin cord and a gold eagle badge over the visor; the band's lower
+                 edge rises at the front so the visor clears the eyes and brows of every face.
   pillbox_hat  - an elevator operator's / bellhop's pillbox: a short red drum with gold bands, a gold top button and a
                  thin black chin strap at the back.
 
@@ -53,8 +54,10 @@ class Mesh:
         tris = self.F.setdefault(obj, [])
         for a, b, c2, d in quads: tris += [(a, b, c2), (a, c2, d)]
 
-    def write(self, name, desc, mats, order):
+    def write(self, name, desc, mats, order, tilt=0.0):
         out = ROOT / name; out.mkdir(parents=True, exist_ok=True)
+        if tilt:                         # tip the hat back: the front (-Z) rises, so a low fringe or high brows stay clear
+            c, sn = math.cos(tilt), math.sin(tilt); self.V = [(x, y * c - z * sn, y * sn + z * c) for x, y, z in self.V]
         sub = lambda p, q: (p[0] - q[0], p[1] - q[1], p[2] - q[2])
         cross = lambda u, w: (u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0])
         # smooth normals per object: vertices are never shared between objects, so each object shades on its own
@@ -93,13 +96,19 @@ m = Mesh()
 # crown: a profile revolved around y (r, y); the band is straight, then it flares out to a wide, slightly domed top.
 # Oval (a little deeper front to back, like a real service cap's top).
 prof = [(0.66, -0.06), (0.67, 0.10), (0.68, 0.26), (0.74, 0.36), (0.86, 0.46), (0.95, 0.53), (0.97, 0.58), (0.95, 0.62), (0.80, 0.665), (0.45, 0.69), (0.0, 0.70)]
+# the band's lower edge rises toward the front (up to LIFT at -Z), so the cap seats on the hair at the back and sides but
+# leaves the brows clear (every face, including the angry ones with high brows)
+LIFT = 0.16
+def edge_y(x, z): return -0.06 + LIFT * max(0.0, -z / math.hypot(x, z)) ** 1.5 if (x or z) else -0.06
 rows = [ring(r, y, rz=r * 1.06) for r, y in prof[:-1]]
+rows = [[(x, max(y, edge_y(x, z) + 0.16 * i), z) for x, y, z in row] if i < 2 else row for i, row in enumerate(rows)]
 b = m.grid('Crown', rows)
 m.fan('Crown', (0.0, prof[-1][1], 0.0), b + (len(rows) - 1) * N, N, flip=True)
-# inside: close the bottom of the band (faces down)
-m.fan('Crown', (0.0, -0.06, 0.0), b, N)
+# (the underside stays open: the head fills it, and a closing disc would slope with the raised front edge and read as
+# part of the hat to the fitter, lifting it off the head)
 # band: a darker strip just outside the crown's straight part
 band = [ring(0.675, y, rz=0.675 * 1.06) for y in (-0.05, 0.25)]
+band[0] = [(x, edge_y(x, z) + 0.01, z) for x, y, z in band[0]]
 band = [[(x * 1.015, y, z * 1.015) for x, y, z in r] for r in band]
 band = [band[0], band[1], [(x * 0.99, y, z * 0.99) for x, y, z in band[1]]]
 m.grid('Band', band)
@@ -108,9 +117,9 @@ VI = 25
 def visor_pt(a, k, under=False):
     """a: angle across the front (-1..1), k: 0 at the band .. 1 at the edge."""
     th = -math.pi / 2 + a * math.radians(72)
-    r0 = 0.68; reach = 0.48 * (1 - 0.55 * a * a)                    # longest at the centre, tapering to the sides
+    r0 = 0.68; reach = 0.40 * (1 - 0.55 * a * a)                    # longest at the centre, tapering to the sides
     r = r0 + reach * k
-    y = -0.02 - 0.20 * k - 0.06 * k * k - (0.035 if under else 0.0)
+    y = 0.10 + LIFT - 0.035 * k - (0.035 if under else 0.0)           # nearly flat, off the raised front of the band
     return (r * math.cos(th), y, r * math.sin(th) * 1.06)
 cols = [i / (VI - 1) * 2 - 1 for i in range(VI)]
 top = [[visor_pt(a, k) for a in cols] for k in (0.0, 0.33, 0.66, 1.0)]
@@ -122,17 +131,17 @@ edge = [[visor_pt(a, 1.0)[0] * 1.0, visor_pt(a, 1.0)[1] + 0.012, visor_pt(a, 1.0
 edge2 = [[p[0] * 1.02, p[1] - 0.05, p[2] * 1.02] for p in edge]
 m.grid('Gold', [[tuple(p) for p in edge], [tuple(p) for p in edge2]], wrap=False)
 # chin cord: a gold strip across the front of the band, just above the visor
-cord = [[(0.70 * math.cos(-math.pi / 2 + a * math.radians(70)), y, 0.70 * 1.06 * math.sin(-math.pi / 2 + a * math.radians(70))) for a in cols] for y in (0.02, 0.09)]
+cord = [[(0.70 * math.cos(-math.pi / 2 + a * math.radians(70)), y, 0.70 * 1.06 * math.sin(-math.pi / 2 + a * math.radians(70))) for a in cols] for y in (0.13 + LIFT, 0.20 + LIFT)]
 cord.append([(x * 0.985, y, z * 0.985) for x, y, z in cord[1]])
 m.grid('Gold', cord, wrap=False)
 for s in (-1, 1):                                                      # the cord's two buttons at the sides
     th = -math.pi / 2 + s * math.radians(70)
-    m.box('Gold', (0.71 * math.cos(th), 0.055, 0.71 * 1.06 * math.sin(th)), (0.08, 0.08, 0.08))
+    m.box('Gold', (0.71 * math.cos(th), 0.165 + LIFT * 0.4, 0.71 * 1.06 * math.sin(th)), (0.08, 0.08, 0.08))
 # eagle badge on the front of the crown: a wide gold plate with two raised wings and a centre shield
 fz = -0.88 * 1.0
-m.box('Gold', (0.0, 0.38, fz + 0.02), (0.30, 0.12, 0.04), rot_x=-0.55)
-m.box('Gold', (0.0, 0.42, fz + 0.0), (0.12, 0.20, 0.05), rot_x=-0.55)
-for s in (-1, 1): m.box('Gold', (s * 0.14, 0.43, fz + 0.04), (0.12, 0.06, 0.04), rot_x=-0.55)
+m.box('Gold', (0.0, 0.42, fz + 0.02), (0.30, 0.12, 0.04), rot_x=-0.55)
+m.box('Gold', (0.0, 0.46, fz + 0.0), (0.12, 0.20, 0.05), rot_x=-0.55)
+for s in (-1, 1): m.box('Gold', (s * 0.14, 0.47, fz + 0.04), (0.12, 0.06, 0.04), rot_x=-0.55)
 BLUE = (0.18, 0.24, 0.38); DARK = (0.08, 0.10, 0.16); BLACK = (0.03, 0.03, 0.035); GOLD = (0.95, 0.74, 0.25)
 m.write('officer_cap', "Original general's peaked service cap (blue, black visor, gold cord and eagle badge).",
         {'crown': (BLUE, 0.05, 14), 'band': (DARK, 0.04, 12), 'visor': (BLACK, 0.55, 90), 'gold': (GOLD, 0.6, 60)},
