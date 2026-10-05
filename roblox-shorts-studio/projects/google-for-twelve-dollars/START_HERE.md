@@ -32,5 +32,9 @@ node web/render.mjs --clip projects/google-for-twelve-dollars/web/cover_clip.js 
 python3 scripts/finish.py projects/google-for-twelve-dollars --encode --frames projects/google-for-twelve-dollars/renders/web
 ```
 
+- Full render done (1931 frames, ~3 s/frame, 4 workers). Encoded: `delivery/He_Bought_Google_For_12_Dollars.mp4`, 64.9 s incl. the
+  0.5 s cover, -17.0 LUFS, validated; `_post.md` written. Review fixes: captions lowered (`caption_margin_v` 360, under the
+  laptop screen in the POV shots), squint lids opened (470 px each, frames of that window re-rendered).
+
 ## Next
-1. Full render (running), encode, review contact sheet, deliver for the user's review. Post only after approval.
+1. User review of the full video. Post only after approval (TikTok, then YouTube); then `published.json` with the sha256.

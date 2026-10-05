@@ -36,5 +36,10 @@ python3 scripts/finish.py projects/paperclip-for-a-house --encode --frames proje
 python3 scripts/review/blank_frames.py projects/paperclip-for-a-house/delivery/He_Traded_A_Paperclip_For_A_House.mp4
 ```
 
+- Full render done (1835 frames, ~2.4 s/frame on 4 workers), encoded: `delivery/He_Traded_A_Paperclip_For_A_House.mp4`
+  **61.7 s incl. cover**, 1850 frames, fully decoded, -17.0 LUFS; blank-frame check clean; contact sheet reviewed.
+  Captions: "6 ,000" -> "6,000" and "two -story" -> "two-story" merged in captions.json. Post sheet: `_post.md`.
+- Disk note: finish.py copies every frame to renders/encode (~2 GB); delete renders/encode after encoding.
+
 ## Next
-1. Full render (running), encode, blank-frame check, review contact sheet, deliver for the user's review. Post only after approval.
+1. **Awaiting the user's approval.** On approval post TikTok first, then YouTube (references/publishing.md).
