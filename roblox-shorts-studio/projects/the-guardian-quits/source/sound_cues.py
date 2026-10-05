@@ -16,7 +16,7 @@ def bonk(t, g=1.0): A('impact_3', t, 0.6 * g); A('drum_hit', t, 0.5 * g); T([156
 def pop(t, g=0.3): A('click', t, g); T([1319, 1568], t + 0.03, 0.07, 0.1)
 
 B = dict(grab=W['steals'] + 0.05, run=W['steals'] + 0.35, chase=W['chase'] - 0.3, cross=W['safe'] + 0.1, bonk=W['bonk'], day2=W['cross'] - 0.3,
-         stolen=W['month'] - 0.2, review=W['boss'] - 0.1, glasses=W['sunglasses'] - 0.05, hoodie=W['hoodie'] - 0.05, tag=W['tag'] - 0.05,
+         stolen=W['month'] - 0.2, review=W['boss'] - 0.1, glasses=W['sunglasses'] - 0.05, stache=W['moustache'] - 0.05, tag=W['tag'] - 0.05,
          scan=W['read'] - 0.2, through=W['through'] - 0.1, bases=W['behind'] - 0.25, leo=W['leos'] - 0.25, took=W['took'] - 0.1,
          leoRun=W['chased'] - 0.3, leoBonk=W['stop'] + 0.1, home=W['home'] - 0.3, five=W['stars'] - 0.2, wobble=W['hatched'] - 0.8,
          hatch=W['hatched'] + 0.05, swarm=W['baby'] - 0.2, quit=W['quit'] - 0.2, hired=W['hired'], job=W['snacks'] - 0.35, best=W['best'] - 0.25,
@@ -36,7 +36,7 @@ t = B['stolen'] + 0.2
 while t < B['review'] - 0.2: T(1800 + 400 * ((t * 10) % 2), t, 0.03, 0.04); t += 0.07
 A('drum_hit', B['review'], 0.4); T([392, 330, 262], B['review'] + 0.2, 0.09, 0.3, square=True)
 # Disguise pieces pop on; the scanner; through.
-for k in ('glasses', 'hoodie', 'tag'): A('swish_3', B[k], 0.3); pop(B[k] + 0.05, 0.25)
+for k in ('glasses', 'stache', 'tag'): A('swish_3', B[k], 0.3); pop(B[k] + 0.05, 0.25)
 T(400, B['scan'] + 0.1, 0.05, B['through'] - B['scan'] - 0.2, sweep=800)
 T([784, 988, 1175, 1568], B['through'], 0.12, 0.14); A('swish_2', B['through'] + 0.1, 0.35)
 steps(B['through'] + 0.2, B['through'] + 1.6, 0.5, 0.3)

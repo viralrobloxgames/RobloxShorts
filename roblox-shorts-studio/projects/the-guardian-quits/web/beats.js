@@ -15,7 +15,7 @@ export const W = {
  "star": 18.42,
  "disguise": 20.38,
  "sunglasses": 21.32,
- "hoodie": 22.26,
+ "moustache": 22.63,
  "tag": 23.12,
  "player2": 23.84,
  "read": 25.44,
