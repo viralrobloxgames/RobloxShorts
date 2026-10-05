@@ -1,0 +1,28 @@
+# Materials for postman_kepi. Kd/Ks are sRGB. Original procedural hat (tools/make_service_caps.py).
+newmtl body
+Kd 0.1000 0.1400 0.2800
+Ks 0.0500 0.0500 0.0500
+Ns 14
+d 1.0000
+illum 2
+
+newmtl band
+Kd 0.7000 0.1000 0.1200
+Ks 0.0500 0.0500 0.0500
+Ns 14
+d 1.0000
+illum 2
+
+newmtl visor
+Kd 0.0300 0.0300 0.0350
+Ks 0.5500 0.5500 0.5500
+Ns 90
+d 1.0000
+illum 2
+
+newmtl brass
+Kd 0.8600 0.6600 0.2600
+Ks 0.6000 0.6000 0.6000
+Ns 60
+d 1.0000
+illum 2
