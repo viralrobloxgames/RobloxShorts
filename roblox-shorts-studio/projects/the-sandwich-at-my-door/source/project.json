@@ -1,0 +1,19 @@
+{
+  "title": "The Sandwich at My Door",
+  "character": "Leo",
+  "characters": [
+    "Leo",
+    "Mia",
+    "Max"
+  ],
+  "seconds": 72.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "script_draft_awaiting_approval",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {}
+  }
+}

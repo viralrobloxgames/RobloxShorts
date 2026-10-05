@@ -1,0 +1,54 @@
+{
+ "episode": 2,
+ "topic": "Roblox daily players down from 152M to 123M; stock down ~70%; Jefferies Underperform; reasons",
+ "researched": "2026-10-05",
+ "sources": [
+  {
+   "name": "Roblox Q2 2026 shareholder letter (SEC Form 8-K exhibit 99.1)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001315098/000162828026051059/ex991-robloxq22026earnin.htm",
+   "publisher": "Roblox Corporation",
+   "published": "2026-07-30",
+   "used_for": ["123 million DAUs", "DAUs up 10% year over year", "near-term impact on younger cohorts larger than anticipated", "bookings up 8%"]
+  },
+  {
+   "name": "Music Ally: Roblox ended Q2 2026 with 123 million daily active users",
+   "url": "https://musically.com/2026/07/31/roblox-ended-q2-2026-with-123-million-daily-active-users/",
+   "published": "2026-07-31",
+   "used_for": ["DAUs by quarter 152M, 144M, 132M, 123M", "age checks limit chat", "CEO blames seasonality"]
+  },
+  {
+   "name": "Tech Insider: Roblox standalone apps, DAUs slip to 123M",
+   "url": "https://tech-insider.org/roblox-standalone-apps-dau-decline-2026/",
+   "published": "2026-09-25",
+   "used_for": ["third consecutive quarter of falling DAUs", "Q3 2025 peak 152M"]
+  },
+  {
+   "name": "Tradingpedia: Roblox shares drop after Jefferies cuts rating and target",
+   "url": "https://www.tradingpedia.com/2026/09/28/roblox-shares-drop-after-jefferies-cuts-rating-and-target/",
+   "published": "2026-09-28",
+   "used_for": ["Jefferies Hold to Underperform, $38 target"]
+  },
+  {
+   "name": "TIKR: Roblox stock is down 70% from its high after a Jefferies downgrade",
+   "url": "https://www.tikr.com/blog/roblox-stock-is-down-70-from-its-high-after-a-jefferies-downgrade-and-a-child-safety-lawsuit-ruling",
+   "used_for": ["down 70% from $142 high", "second source for the Jefferies cut"]
+  },
+  {
+   "name": "Yahoo Finance: Roblox has 123 million players and still lost $70 billion",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/roblox-123-million-players-still-161105891.html",
+   "published": "2026-08-05",
+   "used_for": ["CFO: shift of engagement away from 2025's viral hits"]
+  },
+  {
+   "name": "Insider Monkey / Yahoo Finance: Roblox has lost two thirds of its value",
+   "url": "https://www.insidermonkey.com/news/roblox-rblx-has-lost-two-thirds-of-its-value-is-the-user-growth-still-real-1847937/?amp=1",
+   "used_for": ["closed at $44.12 on 2026-10-02"]
+  },
+  {
+   "name": "Roblox Newsroom: RDC 2026: The World Needs More Play",
+   "url": "https://about.roblox.com/newsroom/2026/09/rdc-2026-the-world-needs-more-play",
+   "published": "2026-09-11",
+   "used_for": ["web player in Chrome by end of 2026"]
+  }
+ ]
+}

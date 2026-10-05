@@ -1163,17 +1163,17 @@
  },
  {
   "start": 61.4,
-  "end": 62.059999999999995,
+  "end": 62.08,
   "text": "not moms.",
   "words": [
    {
     "start": 61.4,
-    "end": 61.5,
+    "end": 61.52,
     "word": " not"
    },
    {
-    "start": 61.5,
-    "end": 61.94,
+    "start": 61.52,
+    "end": 61.96,
     "word": " moms."
    }
   ]
@@ -1222,11 +1222,11 @@
    },
    {
     "start": 64.36,
-    "end": 64.66,
+    "end": 64.64,
     "word": " babies"
    },
    {
-    "start": 64.66,
+    "start": 64.64,
     "end": 64.9,
     "word": " and"
    }
@@ -1234,12 +1234,12 @@
  },
  {
   "start": 64.9,
-  "end": 65.22,
+  "end": 65.24000000000001,
   "text": "Mia.",
   "words": [
    {
     "start": 64.9,
-    "end": 65.1,
+    "end": 65.12,
     "word": " Mia."
    }
   ]
@@ -1307,52 +1307,47 @@
  },
  {
   "start": 67.92,
-  "end": 68.32000000000001,
+  "end": 68.34,
   "text": "egg.",
   "words": [
    {
     "start": 67.92,
-    "end": 68.2,
+    "end": 68.22,
     "word": " egg."
    }
   ]
  },
  {
-  "start": 68.96,
-  "end": 70.6,
+  "start": 69.0,
+  "end": 70.62,
   "text": "Follow Viral Roblox Games for",
   "words": [
    {
-    "start": 68.96,
+    "start": 69.0,
     "end": 69.12,
     "word": " Follow"
    },
    {
     "start": 69.12,
-    "end": 70.32,
+    "end": 70.34,
     "word": " Viral Roblox Games"
    },
    {
-    "start": 70.32,
-    "end": 70.6,
+    "start": 70.34,
+    "end": 70.62,
     "word": " for"
    }
   ]
  },
  {
-  "start": 70.6,
-  "end": 71.34,
-  "text": "part two.",
+  "start": 70.62,
+  "end": 71.04,
+  "text": "more.",
   "words": [
    {
-    "start": 70.6,
-    "end": 70.82,
-    "word": " part"
-   },
-   {
-    "start": 70.82,
-    "end": 71.22,
-    "word": " two."
+    "start": 70.62,
+    "end": 70.92,
+    "word": " more."
    }
   ]
  }

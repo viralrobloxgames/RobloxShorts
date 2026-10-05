@@ -6,15 +6,14 @@
     "Max",
     "Mia"
   ],
-  "seconds": 71.8333,
+  "seconds": 71.5333,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "narration_done",
+  "status": "delivered_local_review",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}
-  },
-  "series": "steal-an-egg (part 1)"
+  }
 }

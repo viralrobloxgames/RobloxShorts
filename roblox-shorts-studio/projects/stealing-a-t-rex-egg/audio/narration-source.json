@@ -6,7 +6,7 @@
   "clips": "audio/qwen/take-01/clips",
   "gap_seconds": 0.4,
   "beat_seconds": 0.9,
-  "speech_end_seconds": 71.36,
+  "speech_end_seconds": 71.2,
   "engine_host": "cloud session, scripts/qwen_cloud_george_c.py",
   "post": "source/fix_captions.py (caption text only)"
 }

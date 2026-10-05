@@ -1,0 +1,991 @@
+{
+  "source": "narration.wav",
+  "duration": 63.6000625,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.2,
+      "text": " I'm a T-Rex, and I have one job, guard this egg. Every day a player steals it.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.32,
+          "word": " I'm"
+        },
+        {
+          "start": 0.32,
+          "end": 0.44,
+          "word": " a"
+        },
+        {
+          "start": 0.44,
+          "end": 0.62,
+          "word": " T"
+        },
+        {
+          "start": 0.62,
+          "end": 0.82,
+          "word": "-Rex,"
+        },
+        {
+          "start": 1.18,
+          "end": 1.26,
+          "word": " and"
+        },
+        {
+          "start": 1.26,
+          "end": 1.38,
+          "word": " I"
+        },
+        {
+          "start": 1.38,
+          "end": 1.54,
+          "word": " have"
+        },
+        {
+          "start": 1.54,
+          "end": 1.8,
+          "word": " one"
+        },
+        {
+          "start": 1.8,
+          "end": 2.12,
+          "word": " job,"
+        },
+        {
+          "start": 2.64,
+          "end": 2.64,
+          "word": " guard"
+        },
+        {
+          "start": 2.64,
+          "end": 2.92,
+          "word": " this"
+        },
+        {
+          "start": 2.92,
+          "end": 3.18,
+          "word": " egg."
+        },
+        {
+          "start": 3.76,
+          "end": 3.98,
+          "word": " Every"
+        },
+        {
+          "start": 3.98,
+          "end": 4.18,
+          "word": " day"
+        },
+        {
+          "start": 4.18,
+          "end": 4.32,
+          "word": " a"
+        },
+        {
+          "start": 4.32,
+          "end": 4.52,
+          "word": " player"
+        },
+        {
+          "start": 4.52,
+          "end": 4.82,
+          "word": " steals"
+        },
+        {
+          "start": 4.82,
+          "end": 5.2,
+          "word": " it."
+        }
+      ]
+    },
+    {
+      "start": 5.76,
+      "end": 10.98,
+      "text": " Every day I chase them across the jungle, and every day they make it to the safe zone, bonk.",
+      "words": [
+        {
+          "start": 5.76,
+          "end": 6.08,
+          "word": " Every"
+        },
+        {
+          "start": 6.08,
+          "end": 6.3,
+          "word": " day"
+        },
+        {
+          "start": 6.3,
+          "end": 6.48,
+          "word": " I"
+        },
+        {
+          "start": 6.48,
+          "end": 6.7,
+          "word": " chase"
+        },
+        {
+          "start": 6.7,
+          "end": 6.92,
+          "word": " them"
+        },
+        {
+          "start": 6.92,
+          "end": 7.16,
+          "word": " across"
+        },
+        {
+          "start": 7.16,
+          "end": 7.4,
+          "word": " the"
+        },
+        {
+          "start": 7.4,
+          "end": 7.62,
+          "word": " jungle,"
+        },
+        {
+          "start": 8.26,
+          "end": 8.36,
+          "word": " and"
+        },
+        {
+          "start": 8.36,
+          "end": 8.68,
+          "word": " every"
+        },
+        {
+          "start": 8.68,
+          "end": 8.88,
+          "word": " day"
+        },
+        {
+          "start": 8.88,
+          "end": 9.04,
+          "word": " they"
+        },
+        {
+          "start": 9.04,
+          "end": 9.24,
+          "word": " make"
+        },
+        {
+          "start": 9.24,
+          "end": 9.4,
+          "word": " it"
+        },
+        {
+          "start": 9.4,
+          "end": 9.5,
+          "word": " to"
+        },
+        {
+          "start": 9.5,
+          "end": 9.64,
+          "word": " the"
+        },
+        {
+          "start": 9.64,
+          "end": 9.84,
+          "word": " safe"
+        },
+        {
+          "start": 9.84,
+          "end": 10.16,
+          "word": " zone,"
+        },
+        {
+          "start": 10.68,
+          "end": 10.98,
+          "word": " bonk."
+        }
+      ]
+    },
+    {
+      "start": 11.46,
+      "end": 18.12,
+      "text": " I can't cross that line, nobody ever told me why. This month they stole 400 eggs. My boss gave me",
+      "words": [
+        {
+          "start": 11.46,
+          "end": 11.66,
+          "word": " I"
+        },
+        {
+          "start": 11.66,
+          "end": 11.96,
+          "word": " can't"
+        },
+        {
+          "start": 11.96,
+          "end": 12.1,
+          "word": " cross"
+        },
+        {
+          "start": 12.1,
+          "end": 12.34,
+          "word": " that"
+        },
+        {
+          "start": 12.34,
+          "end": 12.64,
+          "word": " line,"
+        },
+        {
+          "start": 13.22,
+          "end": 13.36,
+          "word": " nobody"
+        },
+        {
+          "start": 13.36,
+          "end": 13.66,
+          "word": " ever"
+        },
+        {
+          "start": 13.66,
+          "end": 13.86,
+          "word": " told"
+        },
+        {
+          "start": 13.86,
+          "end": 14.1,
+          "word": " me"
+        },
+        {
+          "start": 14.1,
+          "end": 14.38,
+          "word": " why."
+        },
+        {
+          "start": 14.94,
+          "end": 15.16,
+          "word": " This"
+        },
+        {
+          "start": 15.16,
+          "end": 15.38,
+          "word": " month"
+        },
+        {
+          "start": 15.38,
+          "end": 15.62,
+          "word": " they"
+        },
+        {
+          "start": 15.62,
+          "end": 15.88,
+          "word": " stole"
+        },
+        {
+          "start": 15.88,
+          "end": 16.38,
+          "word": " 400"
+        },
+        {
+          "start": 16.38,
+          "end": 16.76,
+          "word": " eggs."
+        },
+        {
+          "start": 17.38,
+          "end": 17.52,
+          "word": " My"
+        },
+        {
+          "start": 17.52,
+          "end": 17.74,
+          "word": " boss"
+        },
+        {
+          "start": 17.74,
+          "end": 17.96,
+          "word": " gave"
+        },
+        {
+          "start": 17.96,
+          "end": 18.12,
+          "word": " me"
+        }
+      ]
+    },
+    {
+      "start": 18.12,
+      "end": 24.18,
+      "text": " a one star review. So I got a disguise, sunglasses, a hoodie, a name tag that says player.",
+      "words": [
+        {
+          "start": 18.12,
+          "end": 18.24,
+          "word": " a"
+        },
+        {
+          "start": 18.24,
+          "end": 18.42,
+          "word": " one"
+        },
+        {
+          "start": 18.42,
+          "end": 18.66,
+          "word": " star"
+        },
+        {
+          "start": 18.66,
+          "end": 19.02,
+          "word": " review."
+        },
+        {
+          "start": 19.74,
+          "end": 19.96,
+          "word": " So"
+        },
+        {
+          "start": 19.96,
+          "end": 20.12,
+          "word": " I"
+        },
+        {
+          "start": 20.12,
+          "end": 20.22,
+          "word": " got"
+        },
+        {
+          "start": 20.22,
+          "end": 20.38,
+          "word": " a"
+        },
+        {
+          "start": 20.38,
+          "end": 20.8,
+          "word": " disguise,"
+        },
+        {
+          "start": 21.32,
+          "end": 21.72,
+          "word": " sunglasses,"
+        },
+        {
+          "start": 22.2,
+          "end": 22.26,
+          "word": " a"
+        },
+        {
+          "start": 22.26,
+          "end": 22.6,
+          "word": " hoodie,"
+        },
+        {
+          "start": 22.84,
+          "end": 22.96,
+          "word": " a"
+        },
+        {
+          "start": 22.96,
+          "end": 23.12,
+          "word": " name"
+        },
+        {
+          "start": 23.12,
+          "end": 23.38,
+          "word": " tag"
+        },
+        {
+          "start": 23.38,
+          "end": 23.6,
+          "word": " that"
+        },
+        {
+          "start": 23.6,
+          "end": 23.84,
+          "word": " says"
+        },
+        {
+          "start": 23.84,
+          "end": 24.18,
+          "word": " player."
+        }
+      ]
+    },
+    {
+      "start": 24.18,
+      "end": 30.36,
+      "text": " The safe zone read my name tag, and let me through. Behind it, bases, hundreds of them,",
+      "words": [
+        {
+          "start": 24.18,
+          "end": 24.94,
+          "word": " The"
+        },
+        {
+          "start": 24.94,
+          "end": 25.18,
+          "word": " safe"
+        },
+        {
+          "start": 25.18,
+          "end": 25.44,
+          "word": " zone"
+        },
+        {
+          "start": 25.44,
+          "end": 25.68,
+          "word": " read"
+        },
+        {
+          "start": 25.68,
+          "end": 25.9,
+          "word": " my"
+        },
+        {
+          "start": 25.9,
+          "end": 26.12,
+          "word": " name"
+        },
+        {
+          "start": 26.12,
+          "end": 26.42,
+          "word": " tag,"
+        },
+        {
+          "start": 26.58,
+          "end": 26.82,
+          "word": " and"
+        },
+        {
+          "start": 26.82,
+          "end": 26.96,
+          "word": " let"
+        },
+        {
+          "start": 26.96,
+          "end": 27.16,
+          "word": " me"
+        },
+        {
+          "start": 27.16,
+          "end": 27.44,
+          "word": " through."
+        },
+        {
+          "start": 28.02,
+          "end": 28.28,
+          "word": " Behind"
+        },
+        {
+          "start": 28.28,
+          "end": 28.54,
+          "word": " it,"
+        },
+        {
+          "start": 28.84,
+          "end": 29.04,
+          "word": " bases,"
+        },
+        {
+          "start": 29.66,
+          "end": 29.84,
+          "word": " hundreds"
+        },
+        {
+          "start": 29.84,
+          "end": 30.12,
+          "word": " of"
+        },
+        {
+          "start": 30.12,
+          "end": 30.36,
+          "word": " them,"
+        }
+      ]
+    },
+    {
+      "start": 30.62,
+      "end": 37.22,
+      "text": " full of my eggs. Leo's base had the most, so I took them all back. Leo chased me. Have you ever",
+      "words": [
+        {
+          "start": 30.62,
+          "end": 30.84,
+          "word": " full"
+        },
+        {
+          "start": 30.84,
+          "end": 31.0,
+          "word": " of"
+        },
+        {
+          "start": 31.0,
+          "end": 31.14,
+          "word": " my"
+        },
+        {
+          "start": 31.14,
+          "end": 31.42,
+          "word": " eggs."
+        },
+        {
+          "start": 32.36,
+          "end": 32.64,
+          "word": " Leo's"
+        },
+        {
+          "start": 32.64,
+          "end": 32.82,
+          "word": " base"
+        },
+        {
+          "start": 32.82,
+          "end": 33.02,
+          "word": " had"
+        },
+        {
+          "start": 33.02,
+          "end": 33.16,
+          "word": " the"
+        },
+        {
+          "start": 33.16,
+          "end": 33.44,
+          "word": " most,"
+        },
+        {
+          "start": 33.78,
+          "end": 33.94,
+          "word": " so"
+        },
+        {
+          "start": 33.94,
+          "end": 34.06,
+          "word": " I"
+        },
+        {
+          "start": 34.06,
+          "end": 34.18,
+          "word": " took"
+        },
+        {
+          "start": 34.18,
+          "end": 34.36,
+          "word": " them"
+        },
+        {
+          "start": 34.36,
+          "end": 34.58,
+          "word": " all"
+        },
+        {
+          "start": 34.58,
+          "end": 34.88,
+          "word": " back."
+        },
+        {
+          "start": 35.48,
+          "end": 35.74,
+          "word": " Leo"
+        },
+        {
+          "start": 35.74,
+          "end": 36.04,
+          "word": " chased"
+        },
+        {
+          "start": 36.04,
+          "end": 36.38,
+          "word": " me."
+        },
+        {
+          "start": 36.84,
+          "end": 36.94,
+          "word": " Have"
+        },
+        {
+          "start": 36.94,
+          "end": 37.04,
+          "word": " you"
+        },
+        {
+          "start": 37.04,
+          "end": 37.22,
+          "word": " ever"
+        }
+      ]
+    },
+    {
+      "start": 37.22,
+      "end": 44.02,
+      "text": " tried to stop a T-Rex? Back home I sat on 400 eggs, five stars. Then they all hatched at once.",
+      "words": [
+        {
+          "start": 37.22,
+          "end": 37.44,
+          "word": " tried"
+        },
+        {
+          "start": 37.44,
+          "end": 37.6,
+          "word": " to"
+        },
+        {
+          "start": 37.6,
+          "end": 37.84,
+          "word": " stop"
+        },
+        {
+          "start": 37.84,
+          "end": 38.02,
+          "word": " a"
+        },
+        {
+          "start": 38.02,
+          "end": 38.16,
+          "word": " T"
+        },
+        {
+          "start": 38.16,
+          "end": 38.32,
+          "word": "-Rex?"
+        },
+        {
+          "start": 39.04,
+          "end": 39.26,
+          "word": " Back"
+        },
+        {
+          "start": 39.26,
+          "end": 39.52,
+          "word": " home"
+        },
+        {
+          "start": 39.52,
+          "end": 39.72,
+          "word": " I"
+        },
+        {
+          "start": 39.72,
+          "end": 39.9,
+          "word": " sat"
+        },
+        {
+          "start": 39.9,
+          "end": 40.12,
+          "word": " on"
+        },
+        {
+          "start": 40.12,
+          "end": 40.58,
+          "word": " 400"
+        },
+        {
+          "start": 40.58,
+          "end": 40.92,
+          "word": " eggs,"
+        },
+        {
+          "start": 41.1,
+          "end": 41.28,
+          "word": " five"
+        },
+        {
+          "start": 41.28,
+          "end": 41.7,
+          "word": " stars."
+        },
+        {
+          "start": 42.44,
+          "end": 42.68,
+          "word": " Then"
+        },
+        {
+          "start": 42.68,
+          "end": 42.84,
+          "word": " they"
+        },
+        {
+          "start": 42.84,
+          "end": 43.14,
+          "word": " all"
+        },
+        {
+          "start": 43.14,
+          "end": 43.44,
+          "word": " hatched"
+        },
+        {
+          "start": 43.44,
+          "end": 43.66,
+          "word": " at"
+        },
+        {
+          "start": 43.66,
+          "end": 44.02,
+          "word": " once."
+        }
+      ]
+    },
+    {
+      "start": 44.68,
+      "end": 52.3,
+      "text": " 400 baby T-Rexes. Now I had 400 jobs. So I quit. Leo hired me to guard his base instead.",
+      "words": [
+        {
+          "start": 44.68,
+          "end": 45.06,
+          "word": " 400"
+        },
+        {
+          "start": 45.06,
+          "end": 45.44,
+          "word": " baby"
+        },
+        {
+          "start": 45.44,
+          "end": 45.72,
+          "word": " T"
+        },
+        {
+          "start": 45.72,
+          "end": 46.2,
+          "word": "-Rexes."
+        },
+        {
+          "start": 46.76,
+          "end": 46.98,
+          "word": " Now"
+        },
+        {
+          "start": 46.98,
+          "end": 47.18,
+          "word": " I"
+        },
+        {
+          "start": 47.18,
+          "end": 47.36,
+          "word": " had"
+        },
+        {
+          "start": 47.36,
+          "end": 47.84,
+          "word": " 400"
+        },
+        {
+          "start": 47.84,
+          "end": 48.22,
+          "word": " jobs."
+        },
+        {
+          "start": 49.02,
+          "end": 49.3,
+          "word": " So"
+        },
+        {
+          "start": 49.3,
+          "end": 49.48,
+          "word": " I"
+        },
+        {
+          "start": 49.48,
+          "end": 49.7,
+          "word": " quit."
+        },
+        {
+          "start": 50.34,
+          "end": 50.56,
+          "word": " Leo"
+        },
+        {
+          "start": 50.56,
+          "end": 50.86,
+          "word": " hired"
+        },
+        {
+          "start": 50.86,
+          "end": 51.04,
+          "word": " me"
+        },
+        {
+          "start": 51.04,
+          "end": 51.22,
+          "word": " to"
+        },
+        {
+          "start": 51.22,
+          "end": 51.4,
+          "word": " guard"
+        },
+        {
+          "start": 51.4,
+          "end": 51.6,
+          "word": " his"
+        },
+        {
+          "start": 51.6,
+          "end": 51.86,
+          "word": " base"
+        },
+        {
+          "start": 51.86,
+          "end": 52.3,
+          "word": " instead."
+        }
+      ]
+    },
+    {
+      "start": 52.3,
+      "end": 58.26,
+      "text": " Now I get snacks, a treadmill, and brain rot videos all day. Best job I've ever had.",
+      "words": [
+        {
+          "start": 52.3,
+          "end": 52.84,
+          "word": " Now"
+        },
+        {
+          "start": 52.84,
+          "end": 53.34,
+          "word": " I"
+        },
+        {
+          "start": 53.34,
+          "end": 53.52,
+          "word": " get"
+        },
+        {
+          "start": 53.52,
+          "end": 53.96,
+          "word": " snacks,"
+        },
+        {
+          "start": 54.3,
+          "end": 54.34,
+          "word": " a"
+        },
+        {
+          "start": 54.34,
+          "end": 54.64,
+          "word": " treadmill,"
+        },
+        {
+          "start": 55.0,
+          "end": 55.12,
+          "word": " and"
+        },
+        {
+          "start": 55.12,
+          "end": 55.28,
+          "word": " brain"
+        },
+        {
+          "start": 55.28,
+          "end": 55.48,
+          "word": " rot"
+        },
+        {
+          "start": 55.48,
+          "end": 55.8,
+          "word": " videos"
+        },
+        {
+          "start": 55.8,
+          "end": 56.06,
+          "word": " all"
+        },
+        {
+          "start": 56.06,
+          "end": 56.34,
+          "word": " day."
+        },
+        {
+          "start": 57.1,
+          "end": 57.26,
+          "word": " Best"
+        },
+        {
+          "start": 57.26,
+          "end": 57.48,
+          "word": " job"
+        },
+        {
+          "start": 57.48,
+          "end": 57.74,
+          "word": " I've"
+        },
+        {
+          "start": 57.74,
+          "end": 57.92,
+          "word": " ever"
+        },
+        {
+          "start": 57.92,
+          "end": 58.26,
+          "word": " had."
+        }
+      ]
+    },
+    {
+      "start": 58.84,
+      "end": 63.46,
+      "text": " And my egg, my kids guard it now. Follow Viral Roblox Games for more.",
+      "words": [
+        {
+          "start": 58.84,
+          "end": 58.92,
+          "word": " And"
+        },
+        {
+          "start": 58.92,
+          "end": 59.1,
+          "word": " my"
+        },
+        {
+          "start": 59.1,
+          "end": 59.38,
+          "word": " egg,"
+        },
+        {
+          "start": 59.64,
+          "end": 59.68,
+          "word": " my"
+        },
+        {
+          "start": 59.68,
+          "end": 59.9,
+          "word": " kids"
+        },
+        {
+          "start": 59.9,
+          "end": 60.2,
+          "word": " guard"
+        },
+        {
+          "start": 60.2,
+          "end": 60.36,
+          "word": " it"
+        },
+        {
+          "start": 60.36,
+          "end": 60.64,
+          "word": " now."
+        },
+        {
+          "start": 61.26,
+          "end": 61.6,
+          "word": " Follow"
+        },
+        {
+          "start": 61.6,
+          "end": 62.84,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 62.84,
+          "end": 63.16,
+          "word": " for"
+        },
+        {
+          "start": 63.16,
+          "end": 63.46,
+          "word": " more."
+        }
+      ]
+    }
+  ]
+}
