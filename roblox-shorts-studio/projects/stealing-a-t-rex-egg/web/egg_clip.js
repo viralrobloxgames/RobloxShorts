@@ -1,4 +1,4 @@
-// Stealing a T-Rex Egg (Part 1): a Steal an Egg parody. Web renderer + Roblox R6 pack + the game's own T-rex and eggs
+// Stealing a T-Rex Egg (standalone): a Steal an Egg parody. Web renderer + Roblox R6 pack + the game's own T-rex and eggs
 // (creatures/trex, props/egg_*). Beat times come from web/beats.js (source/beats.py: narration word timings via script
 // alignment, or an estimate until the narration exists), so the clip retimes itself.
 // Leo and Max each get flung by the T-rex guarding the best egg (headbutt, higher fling, eaten bush, own bear trap), team
@@ -471,8 +471,7 @@ function tagOver(g, s, p3, text, bg, alpha = 1, k = 1) {
   roundRect(g, -w / 2, -28 * s, w, 56 * s, 16 * s); g.fillStyle = bg; g.fill(); g.fillStyle = '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(text, 0, 3 * s); g.restore();
 }
 function hud(g, s, t) {
-  const w1 = pill(g, s, 60, 250, 'PREHISTORIC', 'rgba(21,36,53,.88)');
-  g.save(); g.font = `${40 * s}px "Luckiest Guy"`; const tw = g.measureText('PART 1').width + 40 * s; roundRect(g, (60 + w1 + 18) * s, 258 * s, tw, 66 * s, 18 * s); g.fillStyle = '#FFD23F'; g.fill(); g.fillStyle = '#152435'; g.textBaseline = 'middle'; g.fillText('PART 1', (60 + w1 + 38) * s, 293 * s); g.restore();
+  pill(g, s, 60, 250, 'PREHISTORIC', 'rgba(21,36,53,.88)');      // standalone story: no PART tag (user rule)
   if (t < B.end) {
     const asleep = t < B.wake[0], label = asleep ? 'GUARDIAN: ASLEEP' : 'GUARDIAN: AWAKE';
     pill(g, s, 60, 350, label, asleep ? 'rgba(60,110,200,.9)' : Math.floor(t * 4) % 2 && t < B.bonk1 ? 'rgba(220,40,60,.95)' : 'rgba(190,50,60,.9)', '#ffffff', 34);
@@ -523,7 +522,7 @@ export function overlay(g, s, t) {
     roundRect(g, -150 * s, 70 * s, 300 * s, 90 * s, 22 * s); g.fillStyle = '#fe2c55'; g.fill();
     g.font = `${54 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('FOLLOW', 0, 118 * s);
     g.restore();
-    bigText(g, s, 'PART 2: STEAL MIA BACK', 540, 520, 62, '#FFD23F', { k: k2 });
+    bigText(g, s, 'FOLLOW FOR MORE', 540, 520, 66, '#FFD23F', { k: k2 });
     bigText(g, s, '@viralrobloxgames', 540, 625, 66, '#ffffff', { k: k2 });
   }
   flash(g, s, [B.bonk1, B.bonk2, B.bonkBush, B.bonkTrap, B.bonk3].some((b) => t >= b && t < b + 0.1) ? 0.35 : 0, '#ffffff');

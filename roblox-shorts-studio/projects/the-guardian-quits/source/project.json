@@ -1,0 +1,20 @@
+{
+  "title": "The Guardian Quits",
+  "character": "Leo",
+  "characters": [
+    "Leo",
+    "Max",
+    "Mia",
+    "Noob"
+  ],
+  "seconds": 66.5667,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "narration_done; scene web/guardian_clip.js",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {}
+  }
+}

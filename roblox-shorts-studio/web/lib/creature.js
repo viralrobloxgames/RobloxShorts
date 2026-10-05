@@ -8,18 +8,18 @@ const cfm = (c) => new THREE.Matrix4().set(c[3], c[4], c[5], c[0], c[6], c[7], c
 const RY = new THREE.Matrix4().makeRotationY(Math.PI), RYi = RY.clone().invert();
 const I = new THREE.Matrix4();
 
-export async function loadCreature(name) {
-  const obj = await packItem('creatures', name);
-  const rig = await fetch(`${PACK}creatures/${name}/rig.json`).then((r) => r.json());
+export async function loadCreature(name, kind = 'creatures') {
+  const obj = await packItem(kind, name);
+  const rig = await fetch(`${PACK}${kind}/${name}/rig.json`).then((r) => r.json());
   const root = new THREE.Group(); root.name = name; root.add(obj);
   const meshes = {};
-  obj.traverse((o) => { if (o.isMesh) { (meshes[o.name] ||= []).push(o); o.matrixAutoUpdate = false; } });
+  obj.traverse((o) => { if (o.isMesh) { (meshes[o.name.replace(/_decal\d+$/, '')] ||= []).push(o); o.matrixAutoUpdate = false; } });   // decals ride their body
   const bodies = {};
   for (const b of rig.bodies) { const P = cfm(b.pivot); bodies[b.name] = { name: b.name, parent: b.parent, P, Pi: P.clone().invert(), meshes: meshes[b.name] || [], D: new THREE.Matrix4() }; }
   const order = [], seen = new Set();
   const visit = (n) => { if (seen.has(n)) return; const b = bodies[n]; if (b.parent) visit(b.parent); seen.add(n); order.push(n); };
   Object.keys(bodies).forEach(visit);
-  const c = { name, root, obj, rig, bodies, order, gait: rig.gait, size: rig.size };
+  const c = { name, root, obj, rig, bodies, order, gait: rig.gait, size: rig.size, attached: [] };
   poseCreature(c, {});
   return c;
 }
@@ -37,6 +37,15 @@ export function poseCreature(c, pose) {
     } else b.D.copy(parent);
     for (const m of b.meshes) { m.matrix.copy(RY).multiply(b.D).multiply(RYi); m.matrixWorldNeedsUpdate = true; }
   }
+  for (const a of c.attached) { a.obj.matrix.copy(RY).multiply(c.bodies[a.body].D).multiply(a.L); a.obj.matrixWorldNeedsUpdate = true; }
+}
+// Attach an object (hat, glasses, a pile on its back) to a body so it follows the pose. Give the object's position /
+// rotation / scale in the creature's original model space (rig.json / OBJ coordinates: front is -Z) before calling.
+export function attachToBody(c, body, obj) {
+  obj.updateMatrix(); const L = obj.matrix.clone();
+  obj.matrixAutoUpdate = false; c.obj.add(obj); c.attached.push({ obj, body, L });
+  poseCreature(c, {});
+  return obj;
 }
 // Lowest world-space point of the given bodies (e.g. the feet), for grounding.
 const box = new THREE.Box3();

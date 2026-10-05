@@ -26,28 +26,28 @@ projects/<slug>/
 
 ## 1. Idea
 
-Record it in `ideas/idea-ledger.json` with a title, logline, platform and status. Good Roblox-short shapes include:
+Record it in `ideas/idea-ledger.json` with a title, logline, platform and status.
 
-- a game mechanic taken literally (free coin button, AFK, lag-snap, admin commands)
-- a round-based disaster
-- an overconfident character undone by the game's own rules
+### Random engaging stories, not Roblox-game plots (user rule, 2026-10-04)
 
-There must be a visible cause, a reaction and a physical payoff. A loop ending is a bonus: the last frame cuts back to the hook.
+The channel's stories are random, engaging stories on any subject, told with the Roblox-style block characters as the
+actors. Don't build the plot around Roblox games or game mechanics (tycoons, obbies, admin commands, egg stealing)
+unless the user asks for it. Good shapes:
 
-### Series
+- an everyday mystery with a surprising explanation (who keeps leaving this?)
+- a small lie or bet that spirals out of control
+- a strange neighbour, job, pet or roommate
+- a story told straight that flips in its last line
 
-Before a new idea, check `ideas/series/`. When a format's first part performs well (after at least 24 h on TikTok:
-average watch time and full-watch rate clearly above the channel's other originals), the next video is usually its next
-part. A series part:
+Every story needs a hook in the first line, a curiosity gap that keeps growing, a reveal and a payoff, plus a twist or
+punchline after the reveal when possible. It must still read visually: a visible cause, a reaction and a physical
+payoff. A loop ending is a bonus: the last frame cuts back to the hook.
 
-- stands alone in the first 3 s (a new viewer must understand the premise) but continues the story: same characters,
-  running gags, the previous part's ending as its setup;
-- shows a small "PART N" tag on screen, which sends viewers to the earlier parts on the profile;
-- ends on a cliffhanger into the next part, then the call to action ("Follow Viral Roblox Games for part N+1").
+### Standalone, not series (user rule, 2026-10-03)
 
-Each series has `ideas/series/<series>.md` with its format rules, the parts made (story, what each set up, results) and
-open threads for the next part. Update it when a part is planned, delivered, and when its results come in. Stop a series
-(with a final part) when its parts stop performing.
+Every video is a complete standalone story: no "PART N" tag, no part numbers in titles or covers, no "part two" call to
+action, no cliffhanger that only pays off in another video. Only make a numbered series when the user explicitly asks for
+one. (`ideas/series/` holds the earlier series for reference only.)
 
 ### What the analytics have taught us (keep adding)
 

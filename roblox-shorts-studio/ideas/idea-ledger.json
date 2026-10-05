@@ -117,9 +117,9 @@
     },
     {
       "title": "Stealing a T-Rex Egg",
-      "series": "steal an egg (part 1)",
+      "series": "standalone",
       "created": "2026-10-03",
-      "status": "narration_done",
+      "status": "published",
       "logline": "A Steal an Egg parody on the game's own T-rex and eggs: Leo and Max get flung four ways trying to steal the best egg (headbutt, higher, eaten bush, own bear trap), team up (Max decoys, Leo waddles the giant egg to the safe zone) and hatch a $1/s baby - while Mia, sneaking in the background all video, took the other twelve. They hatch and cry; safe zones stop guardians, not moms: Mom walks in, takes her babies and Mia. Last shot = first shot, with Mia as the egg.",
       "platform": "TikTok (>65 s) / YouTube Shorts",
       "project": "projects/stealing-a-t-rex-egg"
@@ -227,6 +227,33 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/whatever-mia-draws",
       "notes": "Script v1 (196 words, ~78 s) too long; v2 cut to 153 words (~62-63 s, the new 61-65 s rule) 2026-10-05. Awaiting approval."
+    },
+    {
+      "title": "Catching the Egg Thief",
+      "series": "standalone",
+      "created": "2026-10-03",
+      "status": "delivered_local_review",
+      "logline": "Steal an Egg base-defense heist: a hooded 50,000-speed thief robs Leo (900 speed) every night; laser door and capybara guard fail. Leo spends everything on one Mythic egg with a 60 s hatch timer and a Do Not Steal sign; it hatches in the thief's arms into a giant spinosaurus that knows its owner and carries the thief back by the hood. It's Max. He repays on the treadmill in four seconds and breaks it.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/catching-the-egg-thief"
+    },
+    {
+      "title": "The Sandwich at My Door",
+      "series": "standalone",
+      "created": "2026-10-04",
+      "status": "script_draft_awaiting_approval",
+      "logline": "Every morning someone leaves Leo, who lives alone, a perfect sandwich and a caring note; on day 20 the note says 'Stop asking people. Just eat.' A hidden camera shows Leo himself sleepwalking at 3 a.m., making it and knocking on his own door. His thank-you note gets the reply 'We're out of bread.' Now he shops, his sleeping self cooks: best roommate ever.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/the-sandwich-at-my-door"
+    },
+    {
+      "title": "The Guardian Quits",
+      "series": "standalone",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "Steal an Egg told by the guardian: a T-rex loses his egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, disguises himself as a 'Player' to cross the safe zone and steals every egg back from the bases (Leo bonks off him). All 400 hatch into baby T-rexes, so he quits to be Leo's base guard on a brainrot treadmill; his kids now bonk the wall.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/the-guardian-quits"
     }
   ],
   "statuses": [
