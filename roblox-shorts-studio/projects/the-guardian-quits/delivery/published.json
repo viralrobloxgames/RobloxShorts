@@ -1,0 +1,27 @@
+{
+  "file": "The_Guardian_Quits.mp4",
+  "sha256": "6d9e77fbbe13f4682ba535f6d6deeceb3e46366938bb3b0fcab8cef41fa735e9",
+  "approved": {
+    "by": "user",
+    "at": "2026-10-05",
+    "how": "\"schedule the next two for friday\" in chat"
+  },
+  "scheduled_for": "2026-10-09T19:00:00+01:00",
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "switched off (still running after 9 min)"
+  },
+  "youtube": {
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "url": "https://youtube.com/shorts/8UyHKsMzjG0",
+    "video_id": "8UyHKsMzjG0",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "STAND-IN: auto frame (\"MOUSTACHE\"). Custom thumbnail upload was blocked 2026-10-05 (channel video verification in review, ~24 h). TODO before 9 Oct: upload The_Guardian_Quits_cover.jpg as the thumbnail."
+  }
+}

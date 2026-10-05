@@ -17,10 +17,11 @@
       "title": "The Free Coin Trap",
       "series": "roblox",
       "created": "2026-09-17",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
       "platform": "YouTube Shorts / TikTok",
-      "project": "examples/the-free-coin-trap"
+      "project": "examples/the-free-coin-trap",
+      "notes": "On TikTok since 2026-09-17 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The AFK Champion",
@@ -254,10 +255,11 @@
       "title": "The Guardian Quits",
       "series": "standalone",
       "created": "2026-10-05",
-      "status": "delivered_local_review",
+      "status": "scheduled",
       "logline": "Steal an Egg told by the guardian: a T-rex loses his egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, disguises himself as a 'Player' to cross the safe zone and steals every egg back from the bases (Leo bonks off him). All 400 hatch into baby T-rexes, so he quits to be Leo's base guard on a brainrot treadmill; his kids now bonk the wall.",
       "platform": "TikTok (>65 s) / YouTube Shorts",
-      "project": "projects/the-guardian-quits"
+      "project": "projects/the-guardian-quits",
+      "notes": "Scheduled 2026-10-09 19:00 UK on TikTok and YouTube; YouTube thumbnail is a stand-in frame, swap in the cover once channel verification clears."
     },
     {
       "title": "Feeding the Prism Kitsune",
@@ -293,11 +295,11 @@
       "title": "Say Their Name",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "scheduled",
       "logline": "In this obby, saying a player's name teleports them next to you; first to the top wins a million coins. Leo and Max keep summoning each other down, Leo's 'Steve' name tag fails, Mia summons both boys into mid-air over the lava - then tries the Noob, whose username takes so long to say he wins first, and her '...nine' teleports him to her holding a million coins.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/say-their-name",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route. Scheduled 2026-10-09 22:30 UK on TikTok. YouTube NOT uploaded yet (daily upload limit 2026-10-05): see delivery/published.json."
     },
     {
       "title": "He Bought Google For 12 Dollars",
@@ -327,6 +329,36 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/copy-the-crown",
       "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered for review 2026-10-05: delivery/Copy_the_Crown.mp4 (62.0 s incl. 0.5 s cover, -16.9 LUFS). Awaiting approval to post."
+    },
+    {
+      "title": "He Traded A Paperclip For A House",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: in 2005-06 a man traded one red paperclip up through 14 trades; his 'dumbest trade ever' (an afternoon with a rock star for a snow globe) got him a movie role from a snow-globe-collecting actor, and a tiny Canadian town traded him a two-storey house for the role.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/paperclip-for-a-house",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; full web render running."
+    },
+    {
+      "title": "He Ordered A Fighter Jet From Pepsi",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1996 a student saw a Pepsi ad offer a fighter jet for 7,000,000 points, found extra points cost 10 cents, got five investors to front $700,000 and mailed the check; Pepsi sent it back with coupons, a judge ruled no reasonable person would believe the offer, and Pepsi re-ran the ad at 700,000,000 points with 'just kidding'.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/fighter-jet-from-pepsi",
+      "notes": "Taken from OddFrame's Pepsi Points fighter jet Short (26K views, one of their top Shorts) at the user's request ('make another story'); own script and staging. Web route; jet landing at a school as the hook, small-print zoom, number rolls, returned check and coupons, courtroom, 700,000,000 + JUST KIDDING payoff."
+    },
+    {
+      "title": "Lightning Hit Him Seven Times",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: a Shenandoah park ranger is hit by lightning seven times (1942-77) and survives them all; it finds him in a lookout tower, his truck, his yard, his office; he carries a water can for his hair, outruns a storm cloud only to be hit when he steps out, his boss walks off when lightning flashes, and on strike seven a bear steals his fish. The record still stands.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/lightning-hit-him-seven-times",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 62.1 s (George voice C, cloud); web route in production. Picked through general research, not from OddFrame's list. Roy Sullivan, Guinness 'most lightning strikes survived'. HUD strike tally, cartoon bolts, new ranger_hat accessory, the pack bear cut into parts (animal_bear_parts)."
     }
   ],
   "statuses": [
