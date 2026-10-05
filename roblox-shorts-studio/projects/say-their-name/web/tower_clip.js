@@ -543,3 +543,4 @@ export function overlay(g, s, t) {
 
 export const cast = () => ({ leo, max, mia, noob });
 export const TIMES = T;
+export const PLACES = { LEDGE_END, SIDE, radial: radial(LEDGE_STEP) };
