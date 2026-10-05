@@ -1,0 +1,1163 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.8,
+    "text": "In this game,",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.2,
+        "word": " In"
+      },
+      {
+        "start": 0.2,
+        "end": 0.4,
+        "word": " this"
+      },
+      {
+        "start": 0.4,
+        "end": 0.68,
+        "word": " game,"
+      }
+    ]
+  },
+  {
+    "start": 0.9,
+    "end": 1.7,
+    "text": "if you say someone's",
+    "words": [
+      {
+        "start": 0.9,
+        "end": 1.04,
+        "word": " if"
+      },
+      {
+        "start": 1.04,
+        "end": 1.14,
+        "word": " you"
+      },
+      {
+        "start": 1.14,
+        "end": 1.32,
+        "word": " say"
+      },
+      {
+        "start": 1.32,
+        "end": 1.7,
+        "word": " someone's"
+      }
+    ]
+  },
+  {
+    "start": 1.7,
+    "end": 2.08,
+    "text": "name,",
+    "words": [
+      {
+        "start": 1.7,
+        "end": 1.96,
+        "word": " name,"
+      }
+    ]
+  },
+  {
+    "start": 2.36,
+    "end": 3.4,
+    "text": "they teleport next to",
+    "words": [
+      {
+        "start": 2.36,
+        "end": 2.52,
+        "word": " they"
+      },
+      {
+        "start": 2.52,
+        "end": 2.88,
+        "word": " teleport"
+      },
+      {
+        "start": 2.88,
+        "end": 3.18,
+        "word": " next"
+      },
+      {
+        "start": 3.18,
+        "end": 3.4,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 3.4,
+    "end": 3.7800000000000002,
+    "text": "you.",
+    "words": [
+      {
+        "start": 3.4,
+        "end": 3.66,
+        "word": " you."
+      }
+    ]
+  },
+  {
+    "start": 4.08,
+    "end": 4.72,
+    "text": "First to the top",
+    "words": [
+      {
+        "start": 4.08,
+        "end": 4.3,
+        "word": " First"
+      },
+      {
+        "start": 4.3,
+        "end": 4.48,
+        "word": " to"
+      },
+      {
+        "start": 4.48,
+        "end": 4.6,
+        "word": " the"
+      },
+      {
+        "start": 4.6,
+        "end": 4.72,
+        "word": " top"
+      }
+    ]
+  },
+  {
+    "start": 4.72,
+    "end": 5.56,
+    "text": "of the tower wins",
+    "words": [
+      {
+        "start": 4.72,
+        "end": 4.86,
+        "word": " of"
+      },
+      {
+        "start": 4.86,
+        "end": 4.98,
+        "word": " the"
+      },
+      {
+        "start": 4.98,
+        "end": 5.26,
+        "word": " tower"
+      },
+      {
+        "start": 5.26,
+        "end": 5.56,
+        "word": " wins"
+      }
+    ]
+  },
+  {
+    "start": 5.56,
+    "end": 6.62,
+    "text": "a million coins.",
+    "words": [
+      {
+        "start": 5.56,
+        "end": 5.76,
+        "word": " a"
+      },
+      {
+        "start": 5.76,
+        "end": 5.96,
+        "word": " million"
+      },
+      {
+        "start": 5.96,
+        "end": 6.5,
+        "word": " coins."
+      }
+    ]
+  },
+  {
+    "start": 7.56,
+    "end": 8.18,
+    "text": "Leo is one jump",
+    "words": [
+      {
+        "start": 7.56,
+        "end": 7.56,
+        "word": " Leo"
+      },
+      {
+        "start": 7.56,
+        "end": 7.72,
+        "word": " is"
+      },
+      {
+        "start": 7.72,
+        "end": 7.96,
+        "word": " one"
+      },
+      {
+        "start": 7.96,
+        "end": 8.18,
+        "word": " jump"
+      }
+    ]
+  },
+  {
+    "start": 8.18,
+    "end": 8.899999999999999,
+    "text": "from the top.",
+    "words": [
+      {
+        "start": 8.18,
+        "end": 8.4,
+        "word": " from"
+      },
+      {
+        "start": 8.4,
+        "end": 8.56,
+        "word": " the"
+      },
+      {
+        "start": 8.56,
+        "end": 8.78,
+        "word": " top."
+      }
+    ]
+  },
+  {
+    "start": 9.6,
+    "end": 10.36,
+    "text": "Max at the bottom,",
+    "words": [
+      {
+        "start": 9.6,
+        "end": 9.64,
+        "word": " Max"
+      },
+      {
+        "start": 9.64,
+        "end": 9.82,
+        "word": " at"
+      },
+      {
+        "start": 9.82,
+        "end": 9.96,
+        "word": " the"
+      },
+      {
+        "start": 9.96,
+        "end": 10.24,
+        "word": " bottom,"
+      }
+    ]
+  },
+  {
+    "start": 10.44,
+    "end": 10.68,
+    "text": "Leo.",
+    "words": [
+      {
+        "start": 10.44,
+        "end": 10.56,
+        "word": " Leo."
+      }
+    ]
+  },
+  {
+    "start": 11.28,
+    "end": 12.26,
+    "text": "Pop Leo's back at",
+    "words": [
+      {
+        "start": 11.28,
+        "end": 11.44,
+        "word": " Pop"
+      },
+      {
+        "start": 11.44,
+        "end": 11.9,
+        "word": " Leo's"
+      },
+      {
+        "start": 11.9,
+        "end": 12.1,
+        "word": " back"
+      },
+      {
+        "start": 12.1,
+        "end": 12.26,
+        "word": " at"
+      }
+    ]
+  },
+  {
+    "start": 12.26,
+    "end": 12.739999999999998,
+    "text": "the bottom.",
+    "words": [
+      {
+        "start": 12.26,
+        "end": 12.36,
+        "word": " the"
+      },
+      {
+        "start": 12.36,
+        "end": 12.62,
+        "word": " bottom."
+      }
+    ]
+  },
+  {
+    "start": 13.4,
+    "end": 14.219999999999999,
+    "text": "Max climbs.",
+    "words": [
+      {
+        "start": 13.4,
+        "end": 13.76,
+        "word": " Max"
+      },
+      {
+        "start": 13.76,
+        "end": 14.1,
+        "word": " climbs."
+      }
+    ]
+  },
+  {
+    "start": 14.58,
+    "end": 15.159999999999998,
+    "text": "Leo yells.",
+    "words": [
+      {
+        "start": 14.58,
+        "end": 14.72,
+        "word": " Leo"
+      },
+      {
+        "start": 14.72,
+        "end": 15.04,
+        "word": " yells."
+      }
+    ]
+  },
+  {
+    "start": 15.48,
+    "end": 16.1,
+    "text": "Max pop.",
+    "words": [
+      {
+        "start": 15.48,
+        "end": 15.68,
+        "word": " Max"
+      },
+      {
+        "start": 15.68,
+        "end": 15.98,
+        "word": " pop."
+      }
+    ]
+  },
+  {
+    "start": 16.54,
+    "end": 16.98,
+    "text": "Up.",
+    "words": [
+      {
+        "start": 16.54,
+        "end": 16.86,
+        "word": " Up."
+      }
+    ]
+  },
+  {
+    "start": 17.16,
+    "end": 17.62,
+    "text": "Leo.",
+    "words": [
+      {
+        "start": 17.16,
+        "end": 17.5,
+        "word": " Leo."
+      }
+    ]
+  },
+  {
+    "start": 17.74,
+    "end": 18.040000000000003,
+    "text": "Down.",
+    "words": [
+      {
+        "start": 17.74,
+        "end": 17.92,
+        "word": " Down."
+      }
+    ]
+  },
+  {
+    "start": 18.16,
+    "end": 18.44,
+    "text": "Up.",
+    "words": [
+      {
+        "start": 18.16,
+        "end": 18.32,
+        "word": " Up."
+      }
+    ]
+  },
+  {
+    "start": 18.78,
+    "end": 19.46,
+    "text": "Max down.",
+    "words": [
+      {
+        "start": 18.78,
+        "end": 19.0,
+        "word": " Max"
+      },
+      {
+        "start": 19.0,
+        "end": 19.34,
+        "word": " down."
+      }
+    ]
+  },
+  {
+    "start": 19.96,
+    "end": 21.12,
+    "text": "So Leo changes his",
+    "words": [
+      {
+        "start": 19.96,
+        "end": 20.26,
+        "word": " So"
+      },
+      {
+        "start": 20.26,
+        "end": 20.5,
+        "word": " Leo"
+      },
+      {
+        "start": 20.5,
+        "end": 20.9,
+        "word": " changes"
+      },
+      {
+        "start": 20.9,
+        "end": 21.12,
+        "word": " his"
+      }
+    ]
+  },
+  {
+    "start": 21.12,
+    "end": 22.26,
+    "text": "name tag to Steve.",
+    "words": [
+      {
+        "start": 21.12,
+        "end": 21.34,
+        "word": " name"
+      },
+      {
+        "start": 21.34,
+        "end": 21.6,
+        "word": " tag"
+      },
+      {
+        "start": 21.6,
+        "end": 21.84,
+        "word": " to"
+      },
+      {
+        "start": 21.84,
+        "end": 22.14,
+        "word": " Steve."
+      }
+    ]
+  },
+  {
+    "start": 22.74,
+    "end": 23.540000000000003,
+    "text": "Leo nothing.",
+    "words": [
+      {
+        "start": 22.74,
+        "end": 23.18,
+        "word": " Leo"
+      },
+      {
+        "start": 23.18,
+        "end": 23.42,
+        "word": " nothing."
+      }
+    ]
+  },
+  {
+    "start": 23.86,
+    "end": 24.42,
+    "text": "He's climbing.",
+    "words": [
+      {
+        "start": 23.86,
+        "end": 24.0,
+        "word": " He's"
+      },
+      {
+        "start": 24.0,
+        "end": 24.3,
+        "word": " climbing."
+      }
+    ]
+  },
+  {
+    "start": 25.0,
+    "end": 26.0,
+    "text": "Max squints at the",
+    "words": [
+      {
+        "start": 25.0,
+        "end": 25.32,
+        "word": " Max"
+      },
+      {
+        "start": 25.32,
+        "end": 25.7,
+        "word": " squints"
+      },
+      {
+        "start": 25.7,
+        "end": 25.88,
+        "word": " at"
+      },
+      {
+        "start": 25.88,
+        "end": 26.0,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 26.0,
+    "end": 26.42,
+    "text": "tag.",
+    "words": [
+      {
+        "start": 26.0,
+        "end": 26.3,
+        "word": " tag."
+      }
+    ]
+  },
+  {
+    "start": 26.6,
+    "end": 27.3,
+    "text": "Steve pop.",
+    "words": [
+      {
+        "start": 26.6,
+        "end": 26.92,
+        "word": " Steve"
+      },
+      {
+        "start": 26.92,
+        "end": 27.18,
+        "word": " pop."
+      }
+    ]
+  },
+  {
+    "start": 27.89,
+    "end": 28.98,
+    "text": "Mia steps out onto",
+    "words": [
+      {
+        "start": 27.89,
+        "end": 28.18,
+        "word": " Mia"
+      },
+      {
+        "start": 28.18,
+        "end": 28.48,
+        "word": " steps"
+      },
+      {
+        "start": 28.48,
+        "end": 28.74,
+        "word": " out"
+      },
+      {
+        "start": 28.74,
+        "end": 28.98,
+        "word": " onto"
+      }
+    ]
+  },
+  {
+    "start": 28.98,
+    "end": 29.72,
+    "text": "a ledge over the",
+    "words": [
+      {
+        "start": 28.98,
+        "end": 29.12,
+        "word": " a"
+      },
+      {
+        "start": 29.12,
+        "end": 29.34,
+        "word": " ledge"
+      },
+      {
+        "start": 29.34,
+        "end": 29.56,
+        "word": " over"
+      },
+      {
+        "start": 29.56,
+        "end": 29.72,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 29.72,
+    "end": 30.060000000000002,
+    "text": "lava.",
+    "words": [
+      {
+        "start": 29.72,
+        "end": 29.94,
+        "word": " lava."
+      }
+    ]
+  },
+  {
+    "start": 30.7,
+    "end": 32.0,
+    "text": "Turns around and says",
+    "words": [
+      {
+        "start": 30.7,
+        "end": 30.92,
+        "word": " Turns"
+      },
+      {
+        "start": 30.92,
+        "end": 31.32,
+        "word": " around"
+      },
+      {
+        "start": 31.32,
+        "end": 31.82,
+        "word": " and"
+      },
+      {
+        "start": 31.82,
+        "end": 32.0,
+        "word": " says"
+      }
+    ]
+  },
+  {
+    "start": 32.0,
+    "end": 32.86,
+    "text": "sweetly.",
+    "words": [
+      {
+        "start": 32.0,
+        "end": 32.74,
+        "word": " sweetly."
+      }
+    ]
+  },
+  {
+    "start": 32.9,
+    "end": 33.22,
+    "text": "Max.",
+    "words": [
+      {
+        "start": 32.9,
+        "end": 33.1,
+        "word": " Max."
+      }
+    ]
+  },
+  {
+    "start": 34.7,
+    "end": 35.279999999999994,
+    "text": "Pop pop.",
+    "words": [
+      {
+        "start": 34.7,
+        "end": 34.8,
+        "word": " Pop"
+      },
+      {
+        "start": 34.8,
+        "end": 35.16,
+        "word": " pop."
+      }
+    ]
+  },
+  {
+    "start": 35.76,
+    "end": 36.58,
+    "text": "They appear next to",
+    "words": [
+      {
+        "start": 35.76,
+        "end": 35.86,
+        "word": " They"
+      },
+      {
+        "start": 35.86,
+        "end": 36.1,
+        "word": " appear"
+      },
+      {
+        "start": 36.1,
+        "end": 36.36,
+        "word": " next"
+      },
+      {
+        "start": 36.36,
+        "end": 36.58,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 36.58,
+    "end": 36.9,
+    "text": "her.",
+    "words": [
+      {
+        "start": 36.58,
+        "end": 36.78,
+        "word": " her."
+      }
+    ]
+  },
+  {
+    "start": 37.18,
+    "end": 37.9,
+    "text": "In mid -air.",
+    "words": [
+      {
+        "start": 37.18,
+        "end": 37.3,
+        "word": " In"
+      },
+      {
+        "start": 37.3,
+        "end": 37.48,
+        "word": " mid"
+      },
+      {
+        "start": 37.48,
+        "end": 37.78,
+        "word": "-air."
+      }
+    ]
+  },
+  {
+    "start": 38.56,
+    "end": 39.559999999999995,
+    "text": "Straight into the lava.",
+    "words": [
+      {
+        "start": 38.56,
+        "end": 38.78,
+        "word": " Straight"
+      },
+      {
+        "start": 38.78,
+        "end": 39.0,
+        "word": " into"
+      },
+      {
+        "start": 39.0,
+        "end": 39.18,
+        "word": " the"
+      },
+      {
+        "start": 39.18,
+        "end": 39.44,
+        "word": " lava."
+      }
+    ]
+  },
+  {
+    "start": 40.4,
+    "end": 41.24,
+    "text": "Now it's Mia against",
+    "words": [
+      {
+        "start": 40.4,
+        "end": 40.46,
+        "word": " Now"
+      },
+      {
+        "start": 40.46,
+        "end": 40.72,
+        "word": " it's"
+      },
+      {
+        "start": 40.72,
+        "end": 40.9,
+        "word": " Mia"
+      },
+      {
+        "start": 40.9,
+        "end": 41.24,
+        "word": " against"
+      }
+    ]
+  },
+  {
+    "start": 41.24,
+    "end": 42.16,
+    "text": "one noob.",
+    "words": [
+      {
+        "start": 41.24,
+        "end": 41.58,
+        "word": " one"
+      },
+      {
+        "start": 41.58,
+        "end": 42.04,
+        "word": " noob."
+      }
+    ]
+  },
+  {
+    "start": 42.38,
+    "end": 43.24,
+    "text": "Three steps from the",
+    "words": [
+      {
+        "start": 42.38,
+        "end": 42.54,
+        "word": " Three"
+      },
+      {
+        "start": 42.54,
+        "end": 42.82,
+        "word": " steps"
+      },
+      {
+        "start": 42.82,
+        "end": 43.06,
+        "word": " from"
+      },
+      {
+        "start": 43.06,
+        "end": 43.24,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 43.24,
+    "end": 43.58,
+    "text": "top.",
+    "words": [
+      {
+        "start": 43.24,
+        "end": 43.46,
+        "word": " top."
+      }
+    ]
+  },
+  {
+    "start": 44.12,
+    "end": 44.46,
+    "text": "Easy.",
+    "words": [
+      {
+        "start": 44.12,
+        "end": 44.34,
+        "word": " Easy."
+      }
+    ]
+  },
+  {
+    "start": 44.98,
+    "end": 45.66,
+    "text": "She reads his name",
+    "words": [
+      {
+        "start": 44.98,
+        "end": 45.02,
+        "word": " She"
+      },
+      {
+        "start": 45.02,
+        "end": 45.24,
+        "word": " reads"
+      },
+      {
+        "start": 45.24,
+        "end": 45.44,
+        "word": " his"
+      },
+      {
+        "start": 45.44,
+        "end": 45.66,
+        "word": " name"
+      }
+    ]
+  },
+  {
+    "start": 45.66,
+    "end": 46.14,
+    "text": "tag.",
+    "words": [
+      {
+        "start": 45.66,
+        "end": 46.02,
+        "word": " tag."
+      }
+    ]
+  },
+  {
+    "start": 46.96,
+    "end": 48.44,
+    "text": "X underscore dark shadow",
+    "words": [
+      {
+        "start": 46.96,
+        "end": 46.96,
+        "word": " X"
+      },
+      {
+        "start": 46.96,
+        "end": 47.6,
+        "word": " underscore"
+      },
+      {
+        "start": 47.6,
+        "end": 47.98,
+        "word": " dark"
+      },
+      {
+        "start": 47.98,
+        "end": 48.44,
+        "word": " shadow"
+      }
+    ]
+  },
+  {
+    "start": 48.44,
+    "end": 50.12,
+    "text": "dragon slayer underscore X",
+    "words": [
+      {
+        "start": 48.44,
+        "end": 48.78,
+        "word": " dragon"
+      },
+      {
+        "start": 48.78,
+        "end": 49.26,
+        "word": " slayer"
+      },
+      {
+        "start": 49.26,
+        "end": 49.76,
+        "word": " underscore"
+      },
+      {
+        "start": 49.76,
+        "end": 50.12,
+        "word": " X"
+      }
+    ]
+  },
+  {
+    "start": 50.12,
+    "end": 51.059999999999995,
+    "text": "X 2000.",
+    "words": [
+      {
+        "start": 50.12,
+        "end": 50.5,
+        "word": " X"
+      },
+      {
+        "start": 50.5,
+        "end": 50.94,
+        "word": " 2000."
+      }
+    ]
+  },
+  {
+    "start": 51.82,
+    "end": 53.36,
+    "text": "And the noob jumps.",
+    "words": [
+      {
+        "start": 51.82,
+        "end": 51.82,
+        "word": " And"
+      },
+      {
+        "start": 51.82,
+        "end": 52.52,
+        "word": " the"
+      },
+      {
+        "start": 52.52,
+        "end": 52.84,
+        "word": " noob"
+      },
+      {
+        "start": 52.84,
+        "end": 53.24,
+        "word": " jumps."
+      }
+    ]
+  },
+  {
+    "start": 54.04,
+    "end": 54.339999999999996,
+    "text": "Nine.",
+    "words": [
+      {
+        "start": 54.04,
+        "end": 54.22,
+        "word": " Nine."
+      }
+    ]
+  },
+  {
+    "start": 54.88,
+    "end": 55.14,
+    "text": "Pop.",
+    "words": [
+      {
+        "start": 54.88,
+        "end": 55.14,
+        "word": " Pop."
+      }
+    ]
+  },
+  {
+    "start": 55.14,
+    "end": 56.56,
+    "text": "He appears next to",
+    "words": [
+      {
+        "start": 55.14,
+        "end": 55.76,
+        "word": " He"
+      },
+      {
+        "start": 55.76,
+        "end": 56.08,
+        "word": " appears"
+      },
+      {
+        "start": 56.08,
+        "end": 56.36,
+        "word": " next"
+      },
+      {
+        "start": 56.36,
+        "end": 56.56,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 56.56,
+    "end": 56.919999999999995,
+    "text": "her,",
+    "words": [
+      {
+        "start": 56.56,
+        "end": 56.8,
+        "word": " her,"
+      }
+    ]
+  },
+  {
+    "start": 56.94,
+    "end": 58.199999999999996,
+    "text": "holding a million coins.",
+    "words": [
+      {
+        "start": 56.94,
+        "end": 57.2,
+        "word": " holding"
+      },
+      {
+        "start": 57.2,
+        "end": 57.36,
+        "word": " a"
+      },
+      {
+        "start": 57.36,
+        "end": 57.56,
+        "word": " million"
+      },
+      {
+        "start": 57.56,
+        "end": 58.08,
+        "word": " coins."
+      }
+    ]
+  },
+  {
+    "start": 58.98,
+    "end": 60.66,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 58.98,
+        "end": 59.22,
+        "word": " Follow"
+      },
+      {
+        "start": 59.22,
+        "end": 60.4,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 60.4,
+        "end": 60.66,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 60.66,
+    "end": 61.94,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 60.66,
+        "end": 60.86,
+        "word": " more"
+      },
+      {
+        "start": 60.86,
+        "end": 61.24,
+        "word": " stories"
+      },
+      {
+        "start": 61.24,
+        "end": 61.5,
+        "word": " like"
+      },
+      {
+        "start": 61.5,
+        "end": 61.82,
+        "word": " this."
+      }
+    ]
+  }
+]

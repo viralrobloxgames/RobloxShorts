@@ -1,0 +1,11 @@
+{
+  "engine": "qwen3-tts",
+  "model": "Qwen3-TTS-12Hz-1.7B-Base",
+  "voice": "george_c (voice C: 20.8 s ICL sample + mean x-vector)",
+  "take": "take-01",
+  "clips": "audio/qwen/take-01/clips",
+  "gap_seconds": 0.4,
+  "beat_seconds": 0.5,
+  "speech_end_seconds": 62.04,
+  "tightened": "scripts/tighten_clips.py (54.4 s -> 53.4 s of clips; originals in clips_raw/)"
+}
