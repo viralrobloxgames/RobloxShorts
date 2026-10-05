@@ -19,7 +19,7 @@ export async function loadCreature(name, kind = 'creatures') {
   const order = [], seen = new Set();
   const visit = (n) => { if (seen.has(n)) return; const b = bodies[n]; if (b.parent) visit(b.parent); seen.add(n); order.push(n); };
   Object.keys(bodies).forEach(visit);
-  const c = { name, root, obj, rig, bodies, order, gait: rig.gait, size: rig.size };
+  const c = { name, root, obj, rig, bodies, order, gait: rig.gait, size: rig.size, attached: [] };
   poseCreature(c, {});
   return c;
 }
@@ -37,6 +37,15 @@ export function poseCreature(c, pose) {
     } else b.D.copy(parent);
     for (const m of b.meshes) { m.matrix.copy(RY).multiply(b.D).multiply(RYi); m.matrixWorldNeedsUpdate = true; }
   }
+  for (const a of c.attached) { a.obj.matrix.copy(RY).multiply(c.bodies[a.body].D).multiply(a.L); a.obj.matrixWorldNeedsUpdate = true; }
+}
+// Attach an object (hat, glasses, a pile on its back) to a body so it follows the pose. Give the object's position /
+// rotation / scale in the creature's original model space (rig.json / OBJ coordinates: front is -Z) before calling.
+export function attachToBody(c, body, obj) {
+  obj.updateMatrix(); const L = obj.matrix.clone();
+  obj.matrixAutoUpdate = false; c.obj.add(obj); c.attached.push({ obj, body, L });
+  poseCreature(c, {});
+  return obj;
 }
 // Lowest world-space point of the given bodies (e.g. the feet), for grounding.
 const box = new THREE.Box3();
