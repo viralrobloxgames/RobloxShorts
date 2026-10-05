@@ -6,12 +6,12 @@
     "Mia",
     "Leo"
   ],
-  "seconds": 94.0,
+  "seconds": 62.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "script v2 awaiting approval; then narration, then author build_scene.py",
+  "status": "script v3 (62 s cut) awaiting approval; then narration, then author build_scene.py",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}

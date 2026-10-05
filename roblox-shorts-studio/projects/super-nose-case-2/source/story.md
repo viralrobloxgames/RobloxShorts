@@ -2,68 +2,57 @@
 
 Standalone case (no numbering, no cliffhanger; see ideas/series/super-nose-detective.md). A clean take on the original's
 **Vampire Case** (2nd biggest episode, 820K Instagram views), built on the **Jacuzzi Case** rules from
-`research/dick-snifford-episodes-watched.md`: catchphrase three times with the last one cut short, title card at ~6 s,
-one long decisive sniff by ~0:30, a three-item smell list, a corrupt Chief at leisure, an ending where the picture
-contradicts the narration. Same voice (`detective_noir`), same outfit in every scene.
+`research/dick-snifford-episodes-watched.md`: flirt and catchphrase in the first seconds, title card at ~3 s, the
+catchphrase three times with the last cut short, one long decisive sniff, a three-item smell list, a corrupt Chief at
+leisure, and an ending where the picture contradicts the narration. Same voice (`detective_noir`), same outfit everywhere.
 
-Script v1 ("The Big Cheese": Leo breaks out of jail, cheese-covered map, donut trap, sneeze cliffhanger) was rejected
-2026-10-05 because the series is standalone cases. v2: `script.txt`, 221 words, ~94 s at Case 1's pace.
+**Target 62 s** (user, 2026-10-05): `script.txt` is 148 words, ~63 s at Case 1's pace (172 words, 73.7 s). Something
+new on screen every 2-3 s.
 
-## What we kept from the original, and what we changed
+History: v1 "The Big Cheese" rejected (not standalone). v2 (221 words, ~94 s) too long, and its hook ("Tempting. But I'm
+on a case." / "I wasn't on a case.") didn't make sense. v3 opens on the flirt like the Jacuzzi Case and drops the
+birthday cake, the phone call, the sister's flashback speech, the tail and "They're verified."
 
-| Original (Vampire Case) | Ours |
-|---|---|
-| Hangover after a party | Eleven slices of Mia's birthday cake (catchphrase in the hook: "I wasn't on a case.") |
-| Chief phones in, whisky on the desk | Chief Leo phones from a pool floatie, wants it closed before his barbecue |
-| Sniffs the corpse's mouth: "garlic" | Sniffs Count Vlad's mouth (knocked out, not dead): "Garlic bread." + three-item list |
-| Brides vouch for him; kind-vampire flashbacks | His sister vouches; flashbacks: carries noobs over lava, shares his umbrella (sun), finds lost puppies |
-| Hunter puts two stakes on the bar; detective thinks "fence posts" | Two stakes and a hammer at the smoothie shack; "I don't do camping." Then "It took me four minutes." |
-| Gunshot at the ceiling stops the staking | Stake knocked away, cuffs on |
-| "These ones pay their taxes" | "They're verified." (verified badge over their heads) |
-| Vampire gets up and leaves the country | Vlad respawns and leaves the server |
-| Detective's feet float toward the brides | His family asks him to stay for dinner; "Tempting." His shoes leave the floor |
-
-Content line: no swearing, no alcohol, no romance beyond "asked if I was single". The stake is cartoon and never lands.
+## Reference frames (user uploads, `research/`)
+- `jacuzzi-key-frames.jpg`: lock-up lower left over the live aerial crime scene (8 s); the sniff with the officer
+  pressed in beside him (25 s); a fingertip on the nose in extreme close-up (33 s); standing over the hot tub (58 s);
+  the tag on the boat hull (93 s).
+- `election-key-frames.jpg`: lock-up over his back walking down a corridor (28 s); the clown played straight (45 s);
+  the note held under the nose in profile (58 s); sour cream on the nose tip (73 s); the battered coda with a drink (173 s).
+- What we take: the lock-up over a moving live shot, the nose in profile filling the frame for every sniff, a bystander
+  pressed in beside him, and food stuck on the nose as a silent gag (smoothie foam at the shack).
 
 ## Beats
 
-1. **Cold open (0-5 s).** Night party in the plaza, string lights, Max dancing badly with a paper hat on. Mia holds out a
-   plate with one more slice. *"Last night was Mia's birthday. She offered me one more slice. Tempting. But I'm on a
-   case."* Hard cut to Max already eating it. *"I wasn't on a case."* Screen smears to black.
-2. **Title card (~6-9 s).** Morning bedroom, ceiling fan, Max face-down on the bed in full outfit, frosting on the tip of
-   his nose. Lock-up lower left: "Detective" / "MAX SNIFFWELL" / "The Vampire Case". Phone rings; he gropes for it.
-3. **The call (9-17 s).** Split screen: Leo on a pool floatie with sunglasses and a smoothie. *"Eleven slices later, the
-   Chief called. A vampire, knocked out cold at the haunted mansion. Nobody cares, he said. Close it before my
-   barbecue."* Leo bubble: "BBQ at 6."
-4. **Scene (17-22 s).** A gothic mansion absurdly placed on the sunny beach between palm trees. Inside: candles, Count
-   Vlad flat on the rug, cape, little "KO" stars over his head. Officer holds up his player card. *"Count Vlad. No
-   clues."*
-5. **The sniff (22-31 s).** Extreme close-up: Max kneels and lowers the nose right to Vlad's open mouth, held a beat too
-   long; the officer turns away. *"So I got close. Closer than anyone should."* Pause. *"Garlic bread."* A crust on the
-   rug. *"Extra butter. Thrown hard. And a hint of someone who hates vampires."*
-6. **Kind-vampire flashbacks (31-41 s).** Vlad's sister (pale, black dress) in the doorway. Warm-tinted flashbacks: Vlad
-   carrying a Noob across a lava obby, holding an umbrella over a kid in the sun, handing back a puppy. *"His sister said
-   he was the nicest guy on the server. He carried noobs over lava. Shared his umbrella. Found lost puppies."*
-7. **Temptation 2 (41-46 s).** Sister leans in, bubble "Are you single?" Max holds up one hand. *"She asked if I was
-   single. Tempting. But I'm on a case."*
-8. **The tail (46-52 s).** Max's pink convertible on the coast road; a black car in the mirror. Smoothie shack; a scruffy
-   stranger in a long coat sits beside him. *"A car had been tailing me all day. I stopped for a smoothie. The driver sat
-   beside me."*
-9. **Stakes (52-62 s).** He stands two sharpened stakes on the counter, then a hammer. Max looks at them blankly.
-   *"He set down two wooden stakes. And a hammer. Two vampires left, he said. Help me finish the job. I told him I don't
-   do camping."* Stranger leaves. Max sips. Counter in the corner ticks 0:00 -> 4:00. *"He left. It took me four
-   minutes."* Max spits out the smoothie.
-10. **Save (62-70 s).** Convertible skids up to the mansion. The hunter raised over a coffin with the stake; Max knocks
-    it away, cuffs snap on. *"At the mansion, he stood over a coffin. Stake down. Cuffs on."*
-11. **Verified (70-76 s).** Hunter bubble "Why protect VAMPIRES?" Push in on Vlad's family: blue verified ticks over
-    their heads. *"He asked why a cop would protect vampires. Simple. They're verified."*
-12. **Respawn (76-83 s).** Vlad respawns in a column of light, packs a coffin-shaped suitcase; "Vlad left the game" pops
-    up in the chat. *"Then Vlad respawned. Nobody here was nice to him. So he left the server."*
-13. **Ending (83-92 s).** The family in the doorway, candles. Bubble: "Stay for dinner?" Max: *"His family asked me to
-    stay for dinner. Tempting."* Close on his white loafers rising off the floor toward them. *"Some cases you close.
-    This one stays out of the report."*
-14. **CTA (92-94 s).** *"Follow Viral Roblox Games for more cases."* End card @viralrobloxgames.
+1. **Hook (0-3 s).** Frame 1: the haunted mansion's door swings open on the sunny beach; Vlad's pale sister, fangs,
+   bubble "Are you single?" Max in profile, nose first. *"The vampire's sister asked if I was single. Tempting. But I'm
+   on a case."*
+2. **Title card (~3-6 s).** Lock-up lower left ("Detective" / "MAX SNIFFWELL" / "The Vampire Case") over Max walking
+   past her into the candlelit hall.
+3. **The victim (6-12 s).** Count Vlad flat on the rug, cape, KO stars. Three 1 s flashback cuts under the line: Vlad
+   carrying a Noob over lava, holding an umbrella over a kid, handing back a puppy. *"Count Vlad. Nicest vampire on the
+   server. Knocked out cold."*
+4. **The Chief (12-17 s).** Leo on a pool floatie by the barbecue, holds out a burger on a spatula. *"The Chief offered
+   me a burger to drop it. Tempting. But I'm on a case."*
+5. **The sniff (17-27 s).** Extreme close-up, nose in profile: Max lowers it to Vlad's open mouth and holds it a beat too
+   long while the officer leans away. *"So I got close. Closer than anyone should."* Beat. *"Garlic bread."* Insert: a
+   buttery crust on the rug. *"Extra butter. Thrown hard. And a hint of someone who hates vampires."*
+6. **The stranger (27-37 s).** Smoothie shack; Max with pink foam on the tip of his nose (doesn't notice). A scruffy man in
+   a long coat sits down and stands two sharpened stakes on the counter, then a hammer. *"At the smoothie shack, a
+   stranger sat down. Two wooden stakes. One hammer. Two vampires left, he said. Help me finish the job."*
+7. **Camping (37-42 s).** Max nods politely. *"I told him I don't do camping."* The stranger leaves. Clock on the wall
+   whips 0:00 -> 4:00, Max mid-sip, eyes go wide, smoothie spray. *"It took me four minutes."*
+8. **The save (42-47 s).** Pink convertible skids up to the mansion; hunter raised over a coffin; Max knocks the stake
+   away, cuffs snap. *"At the mansion, he stood over a coffin. Stake down. Cuffs on."*
+9. **Respawn (47-53 s).** Vlad respawns in a column of light, zips up a coffin-shaped suitcase; chat pop-up "Vlad left
+   the game". *"Then Vlad respawned. Nobody was nice to him. So he left the server."*
+10. **Ending (53-60 s).** The family in the doorway, candles, bubble "Stay for dinner?" *"His family asked me to stay for
+    dinner. Tempting."* Close on his white loafers rising off the floor toward them. *"Some cases you close. This one
+    stays out of the report."*
+11. **CTA (60-62 s).** *"Follow Viral Roblox Games for more cases."* End card @viralrobloxgames.
+
+Content line: no swearing, no alcohol, flirting stays at "Are you single?". The stake is cartoon and never lands.
 
 ## Cover
-Lock-up lower left ("Detective" / "MAX SNIFFWELL" / "The Vampire Case") over Count Vlad (cape, pale, verified tick) with
-Max's nose in profile at the edge, inside the 3:4 band.
+Lock-up lower left ("Detective" / "MAX SNIFFWELL" / "The Vampire Case") over Count Vlad (cape, pale, fangs) with Max's
+nose in profile at the edge, inside the 3:4 band.
