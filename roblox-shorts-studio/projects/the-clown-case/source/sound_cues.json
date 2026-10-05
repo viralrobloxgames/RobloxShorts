@@ -1,7 +1,515 @@
 [
-  {
-    "asset": "swish_1",
-    "start": 0.0,
-    "gain": 0.3
-  }
+ {
+  "asset": "swish_1",
+  "start": 0.0,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 0.26,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 2.24,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 330,
+  "start": 3.16,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   392,
+   311
+  ],
+  "start": 4.13,
+  "gain": 0.09,
+  "dur": 0.14,
+  "square": true
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 4.68,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "swish_3",
+  "start": 4.93,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_2",
+  "start": 5.37,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   1800,
+   2200
+  ],
+  "start": 5.82,
+  "gain": 0.03,
+  "dur": 0.06
+ },
+ {
+  "asset": "click",
+  "start": 9.38,
+  "gain": 0.35
+ },
+ {
+  "tone": 300,
+  "start": 9.6,
+  "gain": 0.025,
+  "dur": 0.8,
+  "sweep": -40
+ },
+ {
+  "asset": "impact_1",
+  "start": 10.5,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 10.65,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "impact_4",
+  "start": 11.67,
+  "gain": 0.45
+ },
+ {
+  "asset": "drum_hit",
+  "start": 11.67,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   233,
+   220
+  ],
+  "start": 11.82,
+  "gain": 0.07,
+  "dur": 0.12,
+  "square": true
+ },
+ {
+  "tone": [
+   233,
+   220
+  ],
+  "start": 12.02,
+  "gain": 0.07,
+  "dur": 0.12,
+  "square": true
+ },
+ {
+  "tone": [
+   233,
+   220
+  ],
+  "start": 13.49,
+  "gain": 0.05,
+  "dur": 0.12,
+  "square": true
+ },
+ {
+  "asset": "swish_4",
+  "start": 14.96,
+  "gain": 0.3
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 18.28,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 18.7,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 19.12,
+  "gain": 0.55
+ },
+ {
+  "asset": "impact_2",
+  "start": 19.5,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 19.5,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 19.54,
+  "gain": 0.55
+ },
+ {
+  "asset": "sniff.wav",
+  "start": 19.96,
+  "gain": 0.55
+ },
+ {
+  "asset": "impact_2",
+  "start": 20.82,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 20.82,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "asset": "impact_2",
+  "start": 22.31,
+  "gain": 0.3
+ },
+ {
+  "tone": 1568,
+  "start": 22.31,
+  "gain": 0.05,
+  "dur": 0.08
+ },
+ {
+  "tone": 140,
+  "start": 23.67,
+  "gain": 0.04,
+  "dur": 2.8099999999999987,
+  "sweep": 30,
+  "square": true
+ },
+ {
+  "asset": "swish_1",
+  "start": 23.77,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   247,
+   294,
+   370
+  ],
+  "start": 23.82,
+  "gain": 0.11,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 23.82,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   147,
+   156,
+   165
+  ],
+  "start": 28.94,
+  "gain": 0.1,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 28.94,
+  "gain": 0.45
+ },
+ {
+  "asset": "swish_2",
+  "start": 31.48,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568,
+   2093
+  ],
+  "start": 31.58,
+  "gain": 0.07,
+  "dur": 0.07
+ },
+ {
+  "tone": 900,
+  "start": 32.23,
+  "gain": 0.05,
+  "dur": 0.1,
+  "sweep": -500
+ },
+ {
+  "tone": 330,
+  "start": 32.94,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   392,
+   311
+  ],
+  "start": 33.89,
+  "gain": 0.09,
+  "dur": 0.14,
+  "square": true
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 34.44,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "asset": "swish_3",
+  "start": 35.26,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/desk_bell",
+  "start": 39.2,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   220,
+   262,
+   330
+  ],
+  "start": 40.44,
+  "gain": 0.12,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 40.44,
+  "gain": 0.45
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784,
+   659
+  ],
+  "start": 43.34,
+  "gain": 0.05,
+  "dur": 0.1
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 44.36,
+  "gain": 0.3
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 44.66,
+  "gain": 0.3
+ },
+ {
+  "asset": "swish_4",
+  "start": 45.91,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_3",
+  "start": 46.44,
+  "gain": 0.6
+ },
+ {
+  "tone": 180,
+  "start": 46.44,
+  "gain": 0.06,
+  "dur": 0.3,
+  "sweep": -80
+ },
+ {
+  "asset": "impact_1",
+  "start": 46.47,
+  "gain": 0.4
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.2,
+  "gain": 0.22
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.52,
+  "gain": 0.22
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 47.84,
+  "gain": 0.22
+ },
+ {
+  "asset": "horror/footstep",
+  "start": 48.16,
+  "gain": 0.22
+ },
+ {
+  "tone": [
+   523,
+   659,
+   784
+  ],
+  "start": 48.73,
+  "gain": 0.05,
+  "dur": 0.2
+ },
+ {
+  "asset": "swish_2",
+  "start": 51.89,
+  "gain": 0.4
+ },
+ {
+  "asset": "drum_hit",
+  "start": 52.34,
+  "gain": 0.5
+ },
+ {
+  "tone": [
+   262,
+   330,
+   392
+  ],
+  "start": 52.34,
+  "gain": 0.12,
+  "dur": 0.09,
+  "square": true
+ },
+ {
+  "asset": "drum_hit",
+  "start": 52.34,
+  "gain": 0.45
+ },
+ {
+  "asset": "click",
+  "start": 52.49,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 52.62,
+  "gain": 0.15
+ },
+ {
+  "tone": [
+   233,
+   220
+  ],
+  "start": 52.69,
+  "gain": 0.07,
+  "dur": 0.12,
+  "square": true
+ },
+ {
+  "asset": "click",
+  "start": 52.75,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 52.88,
+  "gain": 0.15
+ },
+ {
+  "asset": "click",
+  "start": 53.01,
+  "gain": 0.15
+ },
+ {
+  "tone": [
+   392,
+   370,
+   349,
+   330
+  ],
+  "start": 53.32,
+  "gain": 0.06,
+  "dur": 0.18
+ },
+ {
+  "asset": "swish_1",
+  "start": 54.32,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   1319,
+   1760
+  ],
+  "start": 55.12,
+  "gain": 0.09,
+  "dur": 0.08
+ },
+ {
+  "tone": 330,
+  "start": 56.16,
+  "gain": 0.05,
+  "dur": 0.5,
+  "sweep": -60
+ },
+ {
+  "tone": [
+   1200,
+   400,
+   1600
+  ],
+  "start": 56.51,
+  "gain": 0.05,
+  "dur": 0.05,
+  "square": true
+ },
+ {
+  "asset": "swish_3",
+  "start": 57.14,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1047,
+   1319,
+   1568
+  ],
+  "start": 57.19,
+  "gain": 0.12,
+  "dur": 0.18
+ }
 ]

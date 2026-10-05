@@ -2,16 +2,24 @@
   "title": "The Clown Case",
   "character": "Max",
   "characters": [
-    "Max"
+    "Max",
+    "Skye",
+    "Leo (Chief)",
+    "Giggles (candidate)",
+    "Wife",
+    "Big Scoop",
+    "Crew"
   ],
-  "seconds": 63.0,
+  "seconds": 61.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "idea; write story.md and script.txt, then narration, then author build_scene.py",
+  "status": "narration_done; building scenes",
   "finish": {
-    "music": "playful_history_music",
+    "music": "projects/the-super-nose-detective/audio/music_funk.wav",
+    "music_gain": 0.08,
     "word_fixes": {}
-  }
+  },
+  "series": "super nose detective"
 }

@@ -1,0 +1,900 @@
+{
+  "source": "narration.wav",
+  "duration": 60.269375,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.94,
+      "text": " A girl at the beach bar asked if I was single, tempting, but I'm on a case.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.16,
+          "word": " A"
+        },
+        {
+          "start": 0.16,
+          "end": 0.38,
+          "word": " girl"
+        },
+        {
+          "start": 0.38,
+          "end": 0.6,
+          "word": " at"
+        },
+        {
+          "start": 0.6,
+          "end": 0.7,
+          "word": " the"
+        },
+        {
+          "start": 0.7,
+          "end": 0.94,
+          "word": " beach"
+        },
+        {
+          "start": 0.94,
+          "end": 1.26,
+          "word": " bar"
+        },
+        {
+          "start": 1.26,
+          "end": 1.6,
+          "word": " asked"
+        },
+        {
+          "start": 1.6,
+          "end": 1.82,
+          "word": " if"
+        },
+        {
+          "start": 1.82,
+          "end": 1.98,
+          "word": " I"
+        },
+        {
+          "start": 1.98,
+          "end": 2.14,
+          "word": " was"
+        },
+        {
+          "start": 2.14,
+          "end": 2.56,
+          "word": " single,"
+        },
+        {
+          "start": 3.16,
+          "end": 3.56,
+          "word": " tempting,"
+        },
+        {
+          "start": 4.08,
+          "end": 4.24,
+          "word": " but"
+        },
+        {
+          "start": 4.24,
+          "end": 4.44,
+          "word": " I'm"
+        },
+        {
+          "start": 4.44,
+          "end": 4.54,
+          "word": " on"
+        },
+        {
+          "start": 4.54,
+          "end": 4.68,
+          "word": " a"
+        },
+        {
+          "start": 4.68,
+          "end": 4.94,
+          "word": " case."
+        }
+      ]
+    },
+    {
+      "start": 5.62,
+      "end": 8.34,
+      "text": " Somebody kidnapped the candidate's wife on election day.",
+      "words": [
+        {
+          "start": 5.62,
+          "end": 5.98,
+          "word": " Somebody"
+        },
+        {
+          "start": 5.98,
+          "end": 6.42,
+          "word": " kidnapped"
+        },
+        {
+          "start": 6.42,
+          "end": 6.68,
+          "word": " the"
+        },
+        {
+          "start": 6.68,
+          "end": 7.2,
+          "word": " candidate's"
+        },
+        {
+          "start": 7.2,
+          "end": 7.42,
+          "word": " wife"
+        },
+        {
+          "start": 7.42,
+          "end": 7.64,
+          "word": " on"
+        },
+        {
+          "start": 7.64,
+          "end": 7.94,
+          "word": " election"
+        },
+        {
+          "start": 7.94,
+          "end": 8.34,
+          "word": " day."
+        }
+      ]
+    },
+    {
+      "start": 8.9,
+      "end": 10.76,
+      "text": " The chief wanted her back by the speech.",
+      "words": [
+        {
+          "start": 8.9,
+          "end": 9.08,
+          "word": " The"
+        },
+        {
+          "start": 9.08,
+          "end": 9.28,
+          "word": " chief"
+        },
+        {
+          "start": 9.28,
+          "end": 9.62,
+          "word": " wanted"
+        },
+        {
+          "start": 9.62,
+          "end": 9.82,
+          "word": " her"
+        },
+        {
+          "start": 9.82,
+          "end": 10.06,
+          "word": " back"
+        },
+        {
+          "start": 10.06,
+          "end": 10.24,
+          "word": " by"
+        },
+        {
+          "start": 10.24,
+          "end": 10.4,
+          "word": " the"
+        },
+        {
+          "start": 10.4,
+          "end": 10.76,
+          "word": " speech."
+        }
+      ]
+    },
+    {
+      "start": 11.42,
+      "end": 14.38,
+      "text": " The candidate was a clown, not a figure of speech.",
+      "words": [
+        {
+          "start": 11.42,
+          "end": 11.62,
+          "word": " The"
+        },
+        {
+          "start": 11.62,
+          "end": 12.02,
+          "word": " candidate"
+        },
+        {
+          "start": 12.02,
+          "end": 12.3,
+          "word": " was"
+        },
+        {
+          "start": 12.3,
+          "end": 12.44,
+          "word": " a"
+        },
+        {
+          "start": 12.44,
+          "end": 12.76,
+          "word": " clown,"
+        },
+        {
+          "start": 13.18,
+          "end": 13.46,
+          "word": " not"
+        },
+        {
+          "start": 13.46,
+          "end": 13.64,
+          "word": " a"
+        },
+        {
+          "start": 13.64,
+          "end": 13.84,
+          "word": " figure"
+        },
+        {
+          "start": 13.84,
+          "end": 14.04,
+          "word": " of"
+        },
+        {
+          "start": 14.04,
+          "end": 14.38,
+          "word": " speech."
+        }
+      ]
+    },
+    {
+      "start": 15.0,
+      "end": 16.98,
+      "text": " The ransom note wanted $10,000.",
+      "words": [
+        {
+          "start": 15.0,
+          "end": 15.16,
+          "word": " The"
+        },
+        {
+          "start": 15.16,
+          "end": 15.46,
+          "word": " ransom"
+        },
+        {
+          "start": 15.46,
+          "end": 15.78,
+          "word": " note"
+        },
+        {
+          "start": 15.78,
+          "end": 16.1,
+          "word": " wanted"
+        },
+        {
+          "start": 16.1,
+          "end": 16.5,
+          "word": " $10"
+        },
+        {
+          "start": 16.5,
+          "end": 16.98,
+          "word": ",000."
+        }
+      ]
+    },
+    {
+      "start": 17.8,
+      "end": 23.24,
+      "text": " I sniffed it, waffle cone, hot fudge, and a hint of mint chalk chip.",
+      "words": [
+        {
+          "start": 17.8,
+          "end": 18.18,
+          "word": " I"
+        },
+        {
+          "start": 18.18,
+          "end": 18.66,
+          "word": " sniffed"
+        },
+        {
+          "start": 18.66,
+          "end": 18.8,
+          "word": " it,"
+        },
+        {
+          "start": 19.5,
+          "end": 19.68,
+          "word": " waffle"
+        },
+        {
+          "start": 19.68,
+          "end": 20.14,
+          "word": " cone,"
+        },
+        {
+          "start": 20.6,
+          "end": 20.82,
+          "word": " hot"
+        },
+        {
+          "start": 20.82,
+          "end": 21.32,
+          "word": " fudge,"
+        },
+        {
+          "start": 21.72,
+          "end": 21.9,
+          "word": " and"
+        },
+        {
+          "start": 21.9,
+          "end": 22.02,
+          "word": " a"
+        },
+        {
+          "start": 22.02,
+          "end": 22.18,
+          "word": " hint"
+        },
+        {
+          "start": 22.18,
+          "end": 22.36,
+          "word": " of"
+        },
+        {
+          "start": 22.36,
+          "end": 22.58,
+          "word": " mint"
+        },
+        {
+          "start": 22.58,
+          "end": 22.9,
+          "word": " chalk"
+        },
+        {
+          "start": 22.9,
+          "end": 23.24,
+          "word": " chip."
+        }
+      ]
+    },
+    {
+      "start": 23.92,
+      "end": 26.22,
+      "text": " Only one place in town smells like that.",
+      "words": [
+        {
+          "start": 23.92,
+          "end": 24.16,
+          "word": " Only"
+        },
+        {
+          "start": 24.16,
+          "end": 24.44,
+          "word": " one"
+        },
+        {
+          "start": 24.44,
+          "end": 24.72,
+          "word": " place"
+        },
+        {
+          "start": 24.72,
+          "end": 24.96,
+          "word": " in"
+        },
+        {
+          "start": 24.96,
+          "end": 25.2,
+          "word": " town"
+        },
+        {
+          "start": 25.2,
+          "end": 25.54,
+          "word": " smells"
+        },
+        {
+          "start": 25.54,
+          "end": 25.84,
+          "word": " like"
+        },
+        {
+          "start": 25.84,
+          "end": 26.22,
+          "word": " that."
+        }
+      ]
+    },
+    {
+      "start": 26.74,
+      "end": 29.8,
+      "text": " Big scoop's ice cream, full of suspicious guys.",
+      "words": [
+        {
+          "start": 26.68,
+          "end": 26.94,
+          "word": " Big"
+        },
+        {
+          "start": 26.94,
+          "end": 27.5,
+          "word": " scoop's"
+        },
+        {
+          "start": 27.5,
+          "end": 27.66,
+          "word": " ice"
+        },
+        {
+          "start": 27.66,
+          "end": 28.08,
+          "word": " cream,"
+        },
+        {
+          "start": 28.4,
+          "end": 28.76,
+          "word": " full"
+        },
+        {
+          "start": 28.76,
+          "end": 28.94,
+          "word": " of"
+        },
+        {
+          "start": 28.94,
+          "end": 29.3,
+          "word": " suspicious"
+        },
+        {
+          "start": 29.3,
+          "end": 29.8,
+          "word": " guys."
+        }
+      ]
+    },
+    {
+      "start": 30.46,
+      "end": 34.78,
+      "text": " The owner offered me a free sundae, tempting, but I'm on a case.",
+      "words": [
+        {
+          "start": 30.46,
+          "end": 30.6,
+          "word": " The"
+        },
+        {
+          "start": 30.6,
+          "end": 30.82,
+          "word": " owner"
+        },
+        {
+          "start": 30.82,
+          "end": 31.22,
+          "word": " offered"
+        },
+        {
+          "start": 31.22,
+          "end": 31.4,
+          "word": " me"
+        },
+        {
+          "start": 31.4,
+          "end": 31.58,
+          "word": " a"
+        },
+        {
+          "start": 31.58,
+          "end": 31.78,
+          "word": " free"
+        },
+        {
+          "start": 31.78,
+          "end": 32.36,
+          "word": " sundae,"
+        },
+        {
+          "start": 32.94,
+          "end": 33.36,
+          "word": " tempting,"
+        },
+        {
+          "start": 33.86,
+          "end": 34.0,
+          "word": " but"
+        },
+        {
+          "start": 34.0,
+          "end": 34.2,
+          "word": " I'm"
+        },
+        {
+          "start": 34.2,
+          "end": 34.32,
+          "word": " on"
+        },
+        {
+          "start": 34.32,
+          "end": 34.44,
+          "word": " a"
+        },
+        {
+          "start": 34.44,
+          "end": 34.78,
+          "word": " case."
+        }
+      ]
+    },
+    {
+      "start": 35.46,
+      "end": 39.44,
+      "text": " Out back, I found the wife, not tied up, running the till.",
+      "words": [
+        {
+          "start": 35.46,
+          "end": 35.56,
+          "word": " Out"
+        },
+        {
+          "start": 35.56,
+          "end": 35.92,
+          "word": " back,"
+        },
+        {
+          "start": 36.34,
+          "end": 36.5,
+          "word": " I"
+        },
+        {
+          "start": 36.5,
+          "end": 36.7,
+          "word": " found"
+        },
+        {
+          "start": 36.7,
+          "end": 36.88,
+          "word": " the"
+        },
+        {
+          "start": 36.88,
+          "end": 37.14,
+          "word": " wife,"
+        },
+        {
+          "start": 37.6,
+          "end": 37.82,
+          "word": " not"
+        },
+        {
+          "start": 37.82,
+          "end": 38.06,
+          "word": " tied"
+        },
+        {
+          "start": 38.06,
+          "end": 38.34,
+          "word": " up,"
+        },
+        {
+          "start": 38.74,
+          "end": 38.94,
+          "word": " running"
+        },
+        {
+          "start": 38.94,
+          "end": 39.2,
+          "word": " the"
+        },
+        {
+          "start": 39.2,
+          "end": 39.44,
+          "word": " till."
+        }
+      ]
+    },
+    {
+      "start": 40.18,
+      "end": 41.32,
+      "text": " She'd faked the kidnapping.",
+      "words": [
+        {
+          "start": 40.18,
+          "end": 40.44,
+          "word": " She'd"
+        },
+        {
+          "start": 40.44,
+          "end": 40.7,
+          "word": " faked"
+        },
+        {
+          "start": 40.7,
+          "end": 40.92,
+          "word": " the"
+        },
+        {
+          "start": 40.92,
+          "end": 41.32,
+          "word": " kidnapping."
+        }
+      ]
+    },
+    {
+      "start": 41.96,
+      "end": 43.7,
+      "text": " The ransom was for an ice cream truck.",
+      "words": [
+        {
+          "start": 41.96,
+          "end": 42.08,
+          "word": " The"
+        },
+        {
+          "start": 42.08,
+          "end": 42.38,
+          "word": " ransom"
+        },
+        {
+          "start": 42.38,
+          "end": 42.62,
+          "word": " was"
+        },
+        {
+          "start": 42.62,
+          "end": 42.82,
+          "word": " for"
+        },
+        {
+          "start": 42.82,
+          "end": 42.92,
+          "word": " an"
+        },
+        {
+          "start": 42.92,
+          "end": 43.08,
+          "word": " ice"
+        },
+        {
+          "start": 43.08,
+          "end": 43.34,
+          "word": " cream"
+        },
+        {
+          "start": 43.34,
+          "end": 43.7,
+          "word": " truck."
+        }
+      ]
+    },
+    {
+      "start": 44.3,
+      "end": 45.26,
+      "text": " Her crew objected.",
+      "words": [
+        {
+          "start": 44.3,
+          "end": 44.46,
+          "word": " Her"
+        },
+        {
+          "start": 44.46,
+          "end": 44.72,
+          "word": " crew"
+        },
+        {
+          "start": 44.72,
+          "end": 45.26,
+          "word": " objected."
+        }
+      ]
+    },
+    {
+      "start": 45.78,
+      "end": 48.12,
+      "text": " One flying sundae later, I took her back anyway.",
+      "words": [
+        {
+          "start": 45.78,
+          "end": 45.96,
+          "word": " One"
+        },
+        {
+          "start": 45.96,
+          "end": 46.34,
+          "word": " flying"
+        },
+        {
+          "start": 46.34,
+          "end": 46.8,
+          "word": " sundae"
+        },
+        {
+          "start": 46.8,
+          "end": 47.1,
+          "word": " later,"
+        },
+        {
+          "start": 47.1,
+          "end": 47.3,
+          "word": " I"
+        },
+        {
+          "start": 47.3,
+          "end": 47.46,
+          "word": " took"
+        },
+        {
+          "start": 47.46,
+          "end": 47.6,
+          "word": " her"
+        },
+        {
+          "start": 47.6,
+          "end": 47.82,
+          "word": " back"
+        },
+        {
+          "start": 47.82,
+          "end": 48.12,
+          "word": " anyway."
+        }
+      ]
+    },
+    {
+      "start": 48.82,
+      "end": 52.3,
+      "text": " She gave the speech with a very big smile, the clown won.",
+      "words": [
+        {
+          "start": 48.82,
+          "end": 48.98,
+          "word": " She"
+        },
+        {
+          "start": 48.98,
+          "end": 49.16,
+          "word": " gave"
+        },
+        {
+          "start": 49.16,
+          "end": 49.34,
+          "word": " the"
+        },
+        {
+          "start": 49.34,
+          "end": 49.62,
+          "word": " speech"
+        },
+        {
+          "start": 49.62,
+          "end": 49.8,
+          "word": " with"
+        },
+        {
+          "start": 49.8,
+          "end": 49.92,
+          "word": " a"
+        },
+        {
+          "start": 49.92,
+          "end": 50.1,
+          "word": " very"
+        },
+        {
+          "start": 50.1,
+          "end": 50.36,
+          "word": " big"
+        },
+        {
+          "start": 50.36,
+          "end": 50.8,
+          "word": " smile,"
+        },
+        {
+          "start": 51.46,
+          "end": 51.7,
+          "word": " the"
+        },
+        {
+          "start": 51.7,
+          "end": 51.94,
+          "word": " clown"
+        },
+        {
+          "start": 51.94,
+          "end": 52.3,
+          "word": " won."
+        }
+      ]
+    },
+    {
+      "start": 53.1,
+      "end": 56.6,
+      "text": " I got a black eye and a free sundae, tempting.",
+      "words": [
+        {
+          "start": 52.79,
+          "end": 53.14,
+          "word": " I"
+        },
+        {
+          "start": 53.14,
+          "end": 53.26,
+          "word": " got"
+        },
+        {
+          "start": 53.26,
+          "end": 53.42,
+          "word": " a"
+        },
+        {
+          "start": 53.42,
+          "end": 53.66,
+          "word": " black"
+        },
+        {
+          "start": 53.66,
+          "end": 54.02,
+          "word": " eye"
+        },
+        {
+          "start": 54.02,
+          "end": 54.6,
+          "word": " and"
+        },
+        {
+          "start": 54.6,
+          "end": 54.72,
+          "word": " a"
+        },
+        {
+          "start": 54.72,
+          "end": 54.96,
+          "word": " free"
+        },
+        {
+          "start": 54.96,
+          "end": 56.0,
+          "word": " sundae,"
+        },
+        {
+          "start": 56.16,
+          "end": 56.6,
+          "word": " tempting."
+        }
+      ]
+    },
+    {
+      "start": 57.34,
+      "end": 59.88,
+      "text": " Follow Viral Roblox games for more cases.",
+      "words": [
+        {
+          "start": 57.34,
+          "end": 57.72,
+          "word": " Follow"
+        },
+        {
+          "start": 57.72,
+          "end": 59.04,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 59.04,
+          "end": 59.34,
+          "word": " for"
+        },
+        {
+          "start": 59.34,
+          "end": 59.54,
+          "word": " more"
+        },
+        {
+          "start": 59.54,
+          "end": 59.88,
+          "word": " cases."
+        }
+      ]
+    }
+  ]
+}
