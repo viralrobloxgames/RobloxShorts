@@ -33,7 +33,10 @@ The theft turned the painting into the most famous in the world. Max plays the t
 - Sound: `source/sound_cues.py` -> `source/sound_cues.json` (56 cues). Music: playful_history_music.
 - Cover: `web/cover_clip.js` (Max holding the painting, a peg behind him; HE STOLE THE / MONA LISA / AND MADE HER /
   FAMOUS), `delivery/He_Stole_The_Mona_Lisa_cover.jpg|png`, grid check `_cover_grid.jpg`. Post copy: `delivery/post.json`.
-- Full render running (renders/web, 4 workers, ~3.5 s/frame, ~1h50m).
+- Full render done (1857 frames, renders/web, not in git). Encoded `delivery/He_Stole_The_Mona_Lisa.mp4`: 62.4 s incl. the
+  0.5 s cover, 1080x1920, 1872 frames all decoded, -16.8 LUFS, captions burned; post sheet `delivery/He_Stole_The_Mona_Lisa_post.md`.
+  `blank_frames.py` lists 18.4 s and 24.2-25.6 s: the intended empty-wall close-ups (four empty pegs, LA JOCONDE plaque,
+  STOLEN! stamp), looked at, kept. **Delivered for review (2026-10-05); not posted.**
 
 ## Commands
 ```
@@ -46,4 +49,4 @@ python3 scripts/post_md.py projects/he-stole-the-mona-lisa
 ```
 
 ## Next
-1. Finish the render, encode, blank-frame check, review contact sheet, deliver for the user's review. Post only after approval.
+1. Wait for the user's review. Post only after approval (TikTok first, then YouTube Shorts), using `delivery/post.json`.
