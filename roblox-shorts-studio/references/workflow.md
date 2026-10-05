@@ -87,13 +87,13 @@ Rough cost of one 65 s web-route Short: narration 10-20 min, scene + cover + pos
 
 ## 2. Story and script
 
-Write `source/story.md` as numbered beats. **Beat 1 is the hook: the central action is already happening on frame 1.** Then write `script.txt`. Short, punchy lines work best. The last line is always the call to action (see SKILL.md hard rules), after the payoff. For about 20 s aim for 45–60 words; for about 64 s aim for 150–170 words. Adjust to the real voice. Get the script approved before spending credits. Status in the ledger: `script_draft_awaiting_approval` → `script_approved`.
+Write `source/story.md` as numbered beats. **Beat 1 is the hook: the central action is already happening on frame 1.** Then write `script.txt`. Short, punchy lines work best. The last line is always the call to action (see SKILL.md hard rules), after the payoff. For about 20 s aim for 45–60 words; videos are **61–65 s** (user rule), so aim for 145–160 words including the CTA (George measures about 2.5 words/s). Adjust to the real voice. Get the script approved before spending credits. Status in the ledger: `script_draft_awaiting_approval` → `script_approved`.
 
 ## 3. Narration and timings
 
 See [voice-and-audio.md](voice-and-audio.md). Timings come from the finished recording, never a guessed reading rate. After `studio.py transcribe`, read `audio/alignment/captions.json` against the script. Fix misheard words with `finish.word_fixes` in `project.json` (e.g. `{"BY": "BYE"}`). Don't edit timings by hand.
 
-Set `seconds` = speech end + ~0.5 s tail (frames = `round(seconds * 30)`). **TikTok Creator Rewards requires more than 60 s.** If the take is short, generate only the extra lines and splice them in at measured silences, as `examples/the-afk-champion/source/assemble_narration.py` does. Don't regenerate the whole script.
+Set `seconds` = speech end + ~0.5 s tail (frames = `round(seconds * 30)`). **The video must be 61–65 s** (over 60 s for TikTok Creator Rewards; longer only for a good reason agreed with the user). If the take is short, generate only the extra lines and splice them in at measured silences, as `examples/the-afk-champion/source/assemble_narration.py` does. Don't regenerate the whole script.
 
 ## 4. Shots and scene
 

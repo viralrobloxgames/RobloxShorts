@@ -4,7 +4,8 @@ Standalone story (one part). Anything Mia draws with her pencil comes to life ex
 Leo grabs it and draws a perfect lion; Mia's wobbly cage has no roof; a scribble (a ball of yarn) saves the day.
 
 ## State
-- 2026-10-05: script draft (`script.txt`, 196 words with the CTA, expect ~76-79 s) and beats (`source/story.md`).
+- 2026-10-05: script draft v1 (196 words, ~78 s) too long; cut to v2 (`script.txt`, 153 words with the CTA,
+  expect ~61 s speech, 62-63 s video, inside the 61-65 s rule). Beats in `source/story.md`.
   **Awaiting approval.** Nothing narrated or built yet.
 
 ## Next

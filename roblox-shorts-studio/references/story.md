@@ -7,7 +7,9 @@ series. Based on the user's original `auto-shorts-story` skill (below) with chan
 - **Spoken call to action (user, 2026-10-03):** every script ends with a spoken line specific to the page, e.g.
   "Follow Viral Roblox Games for more stories like this.", after the payoff, plus the end card. This replaces the
   skill's "no engagement demand after the payoff" for that one line only; nothing else goes after the payoff.
-- TikTok Creator Rewards needs more than 60 s, so aim for the top of the word range (about 150-170 words) and measure.
+- **Length (user, 2026-10-05):** videos are 61-65 s (over 60 s for TikTok Creator Rewards), so aim for about 145-160
+  spoken words including the CTA, and measure. Longer needs a good reason, written in `source/story.md`. Keep it snappy:
+  cut words the picture already shows before cutting a beat.
 - Characters: "you" or the lead is played by one of the cast (Max, Mia, Leo, Skye, Noob); use names only when they help.
 
 ---
@@ -20,7 +22,7 @@ Write an original spoken script that is interesting to hear and practical to sho
 
 For "give me a script," return one complete narration, with short paragraphs and no shot labels, timestamps, emoji or production directions inside the spoken body. Include source notes separately when factual claims require them. If the member asks for two stories, deliver two distinct complete scripts. For a narrow line change, change that line; when asked for the whole script, provide the full revised version.
 
-A useful default is about 120–170 spoken words for a roughly 40–60-second Short. Actual timing depends on delivery and must be measured when audio exists. Do not pad to an exact word count or promise an exact runtime from text alone. Offer alternatives only when asked or when the premise is materially undecided.
+A useful default is about 120–170 spoken words for a roughly 40–60-second Short (this channel: 145–160 words for 61–65 s; see the override above). Actual timing depends on delivery and must be measured when audio exists. Do not pad to an exact word count or promise an exact runtime from text alone. Offer alternatives only when asked or when the premise is materially undecided.
 
 ## Pick the story mode from the request
 
