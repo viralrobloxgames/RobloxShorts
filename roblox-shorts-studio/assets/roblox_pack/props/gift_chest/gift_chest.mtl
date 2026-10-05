@@ -1,0 +1,29 @@
+# Materials for gift_chest. Kd/Ks/Ke are sRGB. Textures sit next to this file.
+newmtl c_d69e2e
+Kd 0.8392 0.6196 0.1804
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_60d6ff_neon
+Kd 0.3765 0.8392 1.0000
+Ks 0.0500 0.0500 0.0500
+Ns 20
+Ke 0.3765 0.8392 1.0000
+d 1.0000
+illum 2
+
+newmtl c_ffd65c
+Kd 1.0000 0.8392 0.3608
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2
+
+newmtl c_a0701c
+Kd 0.6275 0.4392 0.1098
+Ks 0.0500 0.0500 0.0500
+Ns 20
+d 1.0000
+illum 2

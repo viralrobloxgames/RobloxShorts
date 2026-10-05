@@ -1,0 +1,26 @@
+{
+ "item": "prism_kitsune",
+ "category": "creatures",
+ "sourceName": "Kitsune",
+ "sourcePath": "Workspace._ShortsStage.Sources.PrismFeeder.Kitsune",
+ "size": [
+  16.9413,
+  15.6899,
+  26
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": true,
+ "objects": [
+  "prism_kitsune"
+ ],
+ "joints": 0,
+ "bones": 27,
+ "parts": 1,
+ "facingKnown": false,
+ "meshIds": [
+  "rbxassetid://91870677715192"
+ ],
+ "textureIds": [
+  "rbxassetid://122745222235976"
+ ]
+}

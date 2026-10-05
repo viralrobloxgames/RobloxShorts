@@ -143,9 +143,9 @@ Roblox puts these images in its own default Baseplate template, but the asset cr
 
 ## Creatures and eggs (from the user's game)
 
-`creatures/*` (165 models) and `props/egg_*` (73 eggs) were exported from the user's own Roblox place "Hunt For Eggs!" (placeId 129859645860144), ServerStorage.Assets.Prehistoric, the game the 'Steal an Egg' shorts are about. They are the models that game uses for its guardians, pets and eggs (Toolbox model packs the user added to their game, including the folder "Prehistoric Animals Pack - Uqel"); they are **not Roblox-made and not original to this pack**. Use them for videos about this game.
+`creatures/*` (166 models) and `props/egg_*` (73 eggs) were exported from the user's own Roblox place "Hunt For Eggs!" (placeId 129859645860144), ServerStorage.Assets.Prehistoric, the game the 'Steal an Egg' shorts are about. They are the models that game uses for its guardians, pets and eggs (Toolbox model packs the user added to their game, including the folder "Prehistoric Animals Pack - Uqel"); they are **not Roblox-made and not original to this pack**. Use them for videos about this game.
 
-The models reference 1395 mesh assets and 84 texture assets; every ID is listed per item in `catalog.json` (`source.meshIds`, `source.textureIds`) and in each item's `item.json`.
+The models reference 1395 mesh assets and 85 texture assets; every ID is listed per item in `catalog.json` (`source.meshIds`, `source.textureIds`) and in each item's `item.json`.
 
 | Item | Studio model | Built as | Mesh IDs | Texture IDs |
 |---|---|---|---|---|
@@ -278,6 +278,7 @@ The models reference 1395 mesh assets and 84 texture assets; every ID is listed 
 | creatures/pachycephalosaurus | Pachycephalosaurus | Motor6D rig of rigid parts | 0 | 0 |
 | creatures/parasaurolophus | Parasaurolophus | Motor6D rig of rigid parts | 0 | 0 |
 | creatures/plesiosaur | Plesiosaur | Motor6D rig of rigid parts | 7 | 0 |
+| creatures/prism_kitsune | Kitsune | skinned mesh with bones (exported in its rest pose; the bones are listed in rig.json) | 1 | 1 |
 | creatures/pteranodon | Pteranodon | Motor6D rig of rigid parts | 0 | 0 |
 | creatures/pterodactyl | Pterodactyl | Motor6D rig of rigid parts | 20 | 0 |
 | creatures/pterosaur | Pterosaur | Motor6D rig of rigid parts | 10 | 0 |

@@ -9,24 +9,48 @@
    "source_event": "RDC 2026 (2026-09-11)",
    "status": "delivered_local_review",
    "project": "projects/news-001-roblox-in-your-browser"
+  },
+  {
+   "n": 2,
+   "date": "2026-10-05",
+   "topic": "Roblox losing players: DAUs 152M (Q3 2025) to 123M (Q2 2026), stock down ~70%, Jefferies Underperform (2026-09-28)",
+   "source_event": "Roblox Q2 2026 shareholder letter (2026-07-30) and Jefferies downgrade (2026-09-28)",
+   "status": "scheduled",
+   "project": "projects/news-002-roblox-losing-players"
   }
  ],
  "candidates": [
+  {
+   "topic": "YouTube videos removed from game pages (2026-09-30); game videos go to Moments; tap any avatar in Moments to buy its items (October 2026). Script drafted as News #2 v1 (git history), replaced by the bigger player-drop story",
+   "source": "https://devforum.roblox.com/t/youtube-videos-will-be-removed-from-game-detail-pages/4879633"
+  },
   {
    "topic": "Roblox Plus free private servers cut to one per game (from 2026-09-21)",
    "source": "https://devforum.roblox.com/t/changes-to-roblox-plus-private-server-limits/4739922"
   },
   {
-   "topic": "Moments: tap any avatar in a clip to buy its items (October 2026)",
-   "source": "https://about.roblox.com/newsroom/2026/09/rdc-2026-the-world-needs-more-play"
-  },
-  {
-   "topic": "YouTube videos removed from game pages (from 2026-09-30)",
-   "source": "https://devforum.roblox.com/t/youtube-videos-will-be-removed-from-game-detail-pages/4879633"
-  },
-  {
    "topic": "Flee the Facility passes 6 billion visits (2026-09-12)",
    "source": "https://roblox.fandom.com/wiki/Timeline_of_Roblox_history/2026"
+  },
+  {
+   "topic": "Mabalacat City (Pampanga, Philippines) bans Roblox in computer shops (2026-10-05); only one source so far, pulls PH viewers",
+   "source": "https://newsbytes.ph/2026/10/05/pampanga-town-bans-roblox-in-computer-shops-over-violence-concerns/"
+  },
+  {
+   "topic": "Roblox Terms of Use update effective 2026-11-01 (simplified wording, Roblox as merchant of record, EEA withdrawal right)",
+   "source": "https://devforum.roblox.com/t/updates-to-the-roblox-terms-of-use-november-2026/4907620"
+  },
+  {
+   "topic": "Buy game passes and developer products outside the game (game page store, homepage, search), rolling out",
+   "source": "https://devforum.roblox.com/t/players-can-now-find-in-game-items-outside-your-game/4888425"
+  },
+  {
+   "topic": "Roblox Halloween 2026: Dandy's World (Oct 2-Nov 6), Adopt Me (Oct 3), Horse Life (Oct 9), Fisch FischFright 3 (Oct 17)",
+   "source": "https://www.sportskeeda.com/roblox-news/roblox-halloween-spotlight-event-all-confirmed-games"
+  },
+  {
+   "topic": "Tower Defense Simulator co-creator sues the game's developer for $35M (filed 2026-09-18): oral 30-40% deal, fired by email, engineers paid in Robux",
+   "source": "https://www.dexerto.com/roblox/roblox-creator-sues-for-35m-after-business-partner-he-met-on-discord-fired-him-by-email-3411863/"
   }
  ]
 }

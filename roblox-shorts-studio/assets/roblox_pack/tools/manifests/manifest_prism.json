@@ -1,0 +1,2944 @@
+{
+ "batch": "prism",
+ "items": [
+  {
+   "single": true,
+   "pivotKind": "bottom_centre",
+   "faceYaw": 3.1416,
+   "joints": [],
+   "folder": "creatures/prism_kitsune",
+   "item": "prism_kitsune",
+   "category": "creatures",
+   "size": [
+    16.9413,
+    15.6899,
+    26
+   ],
+   "sourceName": "Kitsune",
+   "attachments": [
+    {
+     "world": [
+      -210,
+      2007.845,
+      5200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "name": "Attachment",
+     "body": "prism_kitsune"
+    }
+   ],
+   "bones": [
+    {
+     "parentIsBone": false,
+     "name": "joint1",
+     "parent": "Torso",
+     "cframe": [
+      0,
+      -1.4395,
+      -0.6711,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2006.4055,
+      5199.3286,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint2",
+     "parent": "joint1",
+     "cframe": [
+      -2.5744,
+      -1.3447,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2005.0608,
+      5199.3286,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint3",
+     "parent": "joint2",
+     "cframe": [
+      0,
+      -2.0006,
+      -0.1968,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2003.0602,
+      5199.1318,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint4",
+     "parent": "joint3",
+     "cframe": [
+      0,
+      -2.017,
+      0.5248,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2001.0431,
+      5199.6567,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint5",
+     "parent": "joint4",
+     "cframe": [
+      0,
+      -0.8199,
+      -0.5084,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2000.2231,
+      5199.1484,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint6",
+     "parent": "joint5",
+     "cframe": [
+      0,
+      0,
+      -1.0167,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2000.2233,
+      5198.1318,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint17",
+     "parent": "joint1",
+     "cframe": [
+      0,
+      0.6378,
+      2.9898,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2007.0433,
+      5202.3184,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint18",
+     "parent": "joint17",
+     "cframe": [
+      0,
+      -0.4639,
+      2.8448,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2006.5795,
+      5205.1636,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint7",
+     "parent": "joint1",
+     "cframe": [
+      0,
+      -0.0656,
+      -2.3942,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2006.34,
+      5196.9346,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint16",
+     "parent": "joint7",
+     "cframe": [
+      0,
+      0.5654,
+      -2.7678,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2006.9053,
+      5194.167,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint11",
+     "parent": "joint16",
+     "cframe": [
+      -2.5744,
+      -1.8229,
+      0.0948,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2005.0824,
+      5194.2617,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint12",
+     "parent": "joint11",
+     "cframe": [
+      0,
+      -2.2974,
+      -0.3786,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2002.7849,
+      5193.8833,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint13",
+     "parent": "joint12",
+     "cframe": [
+      0,
+      -1.7622,
+      0.4308,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2001.0227,
+      5194.314,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint14",
+     "parent": "joint13",
+     "cframe": [
+      0,
+      -0.6005,
+      -0.6918,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2000.4222,
+      5193.6221,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint15",
+     "parent": "joint14",
+     "cframe": [
+      0,
+      0,
+      -1.0312,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -212.5744,
+      2000.4222,
+      5192.5908,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint9",
+     "parent": "joint16",
+     "cframe": [
+      0,
+      0.6973,
+      -2.8406,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2007.6027,
+      5191.3262,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint10",
+     "parent": "joint9",
+     "cframe": [
+      0,
+      0.2296,
+      -2.8042,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -210,
+      2007.8323,
+      5188.522,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint24",
+     "parent": "joint16",
+     "cframe": [
+      2.5744,
+      -1.8229,
+      0.0948,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ],
+     "world": [
+      -207.4256,
+      2005.0824,
+      5194.2617,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint25",
+     "parent": "joint24",
+     "cframe": [
+      0,
+      2.2974,
+      0.3785,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2002.7849,
+      5193.8833,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint26",
+     "parent": "joint25",
+     "cframe": [
+      0,
+      1.7622,
+      -0.4308,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2001.0227,
+      5194.314,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint27",
+     "parent": "joint26",
+     "cframe": [
+      0,
+      0.6005,
+      0.6918,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2000.4222,
+      5193.6221,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint28",
+     "parent": "joint27",
+     "cframe": [
+      0,
+      0,
+      1.0312,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2000.4222,
+      5192.5908,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint19",
+     "parent": "joint1",
+     "cframe": [
+      2.5744,
+      -1.3447,
+      0,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ],
+     "world": [
+      -207.4256,
+      2005.0608,
+      5199.3286,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint20",
+     "parent": "joint19",
+     "cframe": [
+      0,
+      2.0006,
+      0.1968,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2003.0602,
+      5199.1323,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint21",
+     "parent": "joint20",
+     "cframe": [
+      0,
+      2.017,
+      -0.5248,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2001.0431,
+      5199.6567,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint22",
+     "parent": "joint21",
+     "cframe": [
+      0,
+      0.8199,
+      0.5084,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2000.2231,
+      5199.1484,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "parentIsBone": true,
+     "name": "joint23",
+     "parent": "joint22",
+     "cframe": [
+      0,
+      0,
+      1.0167,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "world": [
+      -207.4256,
+      2000.2233,
+      5198.1318,
+      1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    }
+   ],
+   "keyframeSequences": [],
+   "animations": [],
+   "bodies": [],
+   "parts": [
+    {
+     "reflectance": 0,
+     "color": [
+      163,
+      162,
+      165
+     ],
+     "class": "MeshPart",
+     "surfaceAppearance": {
+      "colorMap": "rbxassetid://122745222235976",
+      "normalMap": "rbxassetid://97031944267237"
+     },
+     "body": "prism_kitsune",
+     "textureId": "",
+     "transparency": 0,
+     "name": "Torso",
+     "meshId": "rbxassetid://91870677715192",
+     "material": "Plastic",
+     "cframe": [
+      -210,
+      2007.845,
+      5200,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "size": [
+      16.9413,
+      15.69,
+      26
+     ],
+     "tag": "i001p001x"
+    }
+   ],
+   "facingKnown": false,
+   "pivot": [
+    -210,
+    2000,
+    5200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "sourcePath": "Workspace._ShortsStage.Sources.PrismFeeder.Kitsune"
+  },
+  {
+   "single": true,
+   "pivotKind": "bottom_centre",
+   "faceYaw": 0,
+   "joints": [],
+   "folder": "props/prism_plinth",
+   "item": "prism_plinth",
+   "category": "props",
+   "size": [
+    26.8,
+    5.5457,
+    26.7998
+   ],
+   "sourceName": "PrismPlinth",
+   "root": "Plinth",
+   "attachments": [],
+   "bones": [],
+   "keyframeSequences": [],
+   "animations": [],
+   "bodies": [],
+   "parts": [
+    {
+     "reflectance": 0,
+     "color": [
+      70,
+      45,
+      120
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Plinth",
+     "size": [
+      1.4,
+      26,
+      26
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -150,
+      2000.7,
+      5200,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i002p001x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Rim",
+     "size": [
+      0.5,
+      26.8,
+      26.8
+     ],
+     "material": "Neon",
+     "cframe": [
+      -150,
+      2001.05,
+      5200,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i002p002x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.8,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -145.5032,
+      2002.9949,
+      5211.1719,
+      -0.5675,
+      -0.0596,
+      0.8212,
+      0.0102,
+      0.9968,
+      0.0794,
+      -0.8233,
+      0.0534,
+      -0.5651
+     ],
+     "shape": "Block",
+     "tag": "i002p003x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      2.6,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -145.099,
+      2002.2776,
+      5210.7197,
+      -0.9504,
+      0.3088,
+      -0.0365,
+      0.2995,
+      0.8776,
+      -0.3744,
+      -0.0836,
+      -0.3667,
+      -0.9266
+     ],
+     "shape": "Block",
+     "tag": "i002p004x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      4.4,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -154.7877,
+      2003.2761,
+      5211.3145,
+      -0.9788,
+      -0.1029,
+      0.1772,
+      -0.079,
+      0.9874,
+      0.137,
+      -0.189,
+      0.1201,
+      -0.9746
+     ],
+     "shape": "Block",
+     "tag": "i002p005x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -154.3187,
+      2002.4362,
+      5210.3506,
+      -0.6475,
+      0.2104,
+      -0.7324,
+      0.5475,
+      0.797,
+      -0.255,
+      0.5301,
+      -0.5661,
+      -0.6313
+     ],
+     "shape": "Block",
+     "tag": "i002p006x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -161.1982,
+      2002.6696,
+      5204.8491,
+      -0.8167,
+      -0.0858,
+      -0.5707,
+      -0.1825,
+      0.9765,
+      0.1143,
+      0.5475,
+      0.1975,
+      -0.8132
+     ],
+     "shape": "Block",
+     "tag": "i002p007x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -161.0945,
+      2001.9363,
+      5204.1426,
+      0.0347,
+      -0.0113,
+      -0.9993,
+      0.6426,
+      0.7661,
+      0.0137,
+      0.7655,
+      -0.6426,
+      0.0338
+     ],
+     "shape": "Block",
+     "tag": "i002p008x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.8,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -161.1162,
+      2002.9529,
+      5195.7925,
+      -0.1762,
+      -0.0185,
+      -0.9842,
+      -0.2397,
+      0.9705,
+      0.0247,
+      0.9547,
+      0.2403,
+      -0.1754
+     ],
+     "shape": "Block",
+     "tag": "i002p009x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      2.6,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -161.3129,
+      2002.203,
+      5194.8564,
+      0.6966,
+      -0.2263,
+      -0.6808,
+      0.5291,
+      0.803,
+      0.2744,
+      0.4846,
+      -0.5513,
+      0.6791
+     ],
+     "shape": "Block",
+     "tag": "i002p010x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      4.4,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -154.4789,
+      2003.2485,
+      5189.3379,
+      0.5675,
+      0.0596,
+      -0.8212,
+      -0.2172,
+      0.9729,
+      -0.0794,
+      0.7942,
+      0.2234,
+      0.5651
+     ],
+     "shape": "Block",
+     "tag": "i002p011x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -154.9937,
+      2002.5519,
+      5188.4639,
+      0.9504,
+      -0.3088,
+      0.0365,
+      0.2735,
+      0.886,
+      0.3744,
+      -0.1479,
+      -0.3458,
+      0.9266
+     ],
+     "shape": "Block",
+     "tag": "i002p012x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -145.2741,
+      2002.677,
+      5189.1172,
+      0.9788,
+      0.1029,
+      -0.1772,
+      -0.128,
+      0.9823,
+      -0.137,
+      0.1599,
+      0.1567,
+      0.9746
+     ],
+     "shape": "Block",
+     "tag": "i002p013x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -145.5551,
+      2002.0767,
+      5188.811,
+      0.6475,
+      -0.2104,
+      0.7324,
+      0.0256,
+      0.9666,
+      0.255,
+      -0.7616,
+      -0.1464,
+      0.6313
+     ],
+     "shape": "Block",
+     "tag": "i002p014x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.8,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -138.7761,
+      2002.989,
+      5195.5347,
+      0.8167,
+      0.0858,
+      0.5707,
+      -0.0245,
+      0.9931,
+      -0.1143,
+      -0.5766,
+      0.0793,
+      0.8132
+     ],
+     "shape": "Block",
+     "tag": "i002p015x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      2.6,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -138.9022,
+      2002.3975,
+      5195.3379,
+      -0.0347,
+      0.0113,
+      0.9993,
+      -0.0695,
+      0.9975,
+      -0.0137,
+      -0.997,
+      -0.0699,
+      -0.0338
+     ],
+     "shape": "Block",
+     "tag": "i002p016x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      4.4,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -138.8783,
+      2003.2985,
+      5204.6616,
+      0.1762,
+      0.0185,
+      0.9842,
+      0.0327,
+      0.9992,
+      -0.0247,
+      -0.9838,
+      0.0365,
+      0.1754
+     ],
+     "shape": "Block",
+     "tag": "i002p017x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_plinth",
+     "transparency": 0,
+     "name": "Crystal",
+     "size": [
+      0.9,
+      3.2,
+      0.9
+     ],
+     "material": "Neon",
+     "cframe": [
+      -138.6192,
+      2002.6488,
+      5204.3828,
+      -0.6966,
+      0.2263,
+      0.6808,
+      0.044,
+      0.9606,
+      -0.2744,
+      -0.7161,
+      -0.1612,
+      -0.6791
+     ],
+     "shape": "Block",
+     "tag": "i002p018x"
+    }
+   ],
+   "facingKnown": false,
+   "pivot": [
+    -150,
+    2000,
+    5200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "sourcePath": "Workspace._ShortsStage.Sources.PrismPlinth"
+  },
+  {
+   "single": true,
+   "pivotKind": "bottom_centre",
+   "faceYaw": 0,
+   "joints": [],
+   "folder": "props/prism_blade",
+   "item": "prism_blade",
+   "category": "props",
+   "size": [
+    2.1078,
+    6.2,
+    0.4839
+   ],
+   "sourceName": "PrismBlade",
+   "root": "Handle",
+   "attachments": [],
+   "bones": [],
+   "keyframeSequences": [],
+   "animations": [],
+   "bodies": [],
+   "parts": [
+    {
+     "reflectance": 0,
+     "color": [
+      210,
+      215,
+      235
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Handle",
+     "size": [
+      1.2,
+      0.3,
+      0.3
+     ],
+     "material": "Metal",
+     "cframe": [
+      -90,
+      2001.05,
+      5200.0078,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i003p001x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Wrap",
+     "size": [
+      0.07,
+      0.33,
+      0.33
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90,
+      2000.65,
+      5200.0078,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i003p002x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Wrap",
+     "size": [
+      0.07,
+      0.33,
+      0.33
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90,
+      2001.05,
+      5200.0078,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i003p003x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Wrap",
+     "size": [
+      0.07,
+      0.33,
+      0.33
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90,
+      2001.4501,
+      5200.0078,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Cylinder",
+     "tag": "i003p004x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Pommel",
+     "size": [
+      0.46,
+      0.46,
+      0.46
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2000.2301,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i003p005x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      225,
+      230,
+      245
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Guard",
+     "size": [
+      0.7,
+      0.22,
+      0.22
+     ],
+     "material": "Metal",
+     "cframe": [
+      -90.42,
+      2001.77,
+      5200.0078,
+      0.9781,
+      0.2079,
+      0,
+      -0.2079,
+      0.9781,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p006x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Prism",
+     "size": [
+      0.26,
+      0.46,
+      0.26
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90.82,
+      2001.89,
+      5200.0078,
+      0.6645,
+      -0.2418,
+      0.7071,
+      0.342,
+      0.9397,
+      0,
+      -0.6645,
+      0.2418,
+      0.7071
+     ],
+     "shape": "Block",
+     "tag": "i003p007x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      225,
+      230,
+      245
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Guard",
+     "size": [
+      0.7,
+      0.22,
+      0.22
+     ],
+     "material": "Metal",
+     "cframe": [
+      -89.58,
+      2001.77,
+      5200.0078,
+      0.9781,
+      -0.2079,
+      0,
+      0.2079,
+      0.9781,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p008x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      120,
+      220
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Prism",
+     "size": [
+      0.26,
+      0.46,
+      0.26
+     ],
+     "material": "Neon",
+     "cframe": [
+      -89.18,
+      2001.89,
+      5200.0078,
+      0.6645,
+      0.2418,
+      0.7071,
+      -0.342,
+      0.9397,
+      0,
+      -0.6645,
+      -0.2418,
+      0.7071
+     ],
+     "shape": "Block",
+     "tag": "i003p009x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      120,
+      220
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Gem",
+     "size": [
+      0.3,
+      0.3,
+      0.3
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90,
+      2001.77,
+      5199.9077,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Ball",
+     "tag": "i003p010x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.6,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2002.1001,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p011x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      120,
+      170,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.66,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2002.52,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p012x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.7,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2002.9401,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p013x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      200,
+      110,
+      245
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.7,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2003.3601,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p014x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      255,
+      120,
+      220
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.68,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2003.78,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p015x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      255,
+      170,
+      200
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.64,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2004.2001,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p016x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      255,
+      235,
+      150
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.58,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2004.62,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p017x"
+    },
+    {
+     "reflectance": 0.3,
+     "color": [
+      160,
+      255,
+      210
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0.15,
+     "name": "Blade",
+     "size": [
+      0.52,
+      0.462,
+      0.14
+     ],
+     "material": "Glass",
+     "cframe": [
+      -90,
+      2005.04,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p018x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      235,
+      250,
+      255
+     ],
+     "class": "WedgePart",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Blade",
+     "material": "Glass",
+     "cframe": [
+      -89.87,
+      2005.7251,
+      5200.0078,
+      0,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+     ],
+     "size": [
+      0.14,
+      0.95,
+      0.26
+     ],
+     "tag": "i003p019x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      235,
+      250,
+      255
+     ],
+     "class": "WedgePart",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Blade",
+     "material": "Glass",
+     "cframe": [
+      -90.13,
+      2005.7251,
+      5200.0078,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     "size": [
+      0.14,
+      0.95,
+      0.26
+     ],
+     "tag": "i003p020x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      245,
+      250,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Core",
+     "size": [
+      0.08,
+      3.2,
+      0.18
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90,
+      2003.55,
+      5200.0078,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "shape": "Block",
+     "tag": "i003p021x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      90,
+      230,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Shard",
+     "size": [
+      0.14,
+      0.3,
+      0.14
+     ],
+     "material": "Neon",
+     "cframe": [
+      -89.28,
+      2002.75,
+      5200.0078,
+      0.6409,
+      -0.2988,
+      0.7071,
+      0.4226,
+      0.9063,
+      0,
+      -0.6409,
+      0.2988,
+      0.7071
+     ],
+     "shape": "Block",
+     "tag": "i003p022x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      120,
+      220
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Shard",
+     "size": [
+      0.14,
+      0.3,
+      0.14
+     ],
+     "material": "Neon",
+     "cframe": [
+      -90.76,
+      2003.75,
+      5200.0078,
+      0.6409,
+      -0.2988,
+      0.7071,
+      0.4226,
+      0.9063,
+      0,
+      -0.6409,
+      0.2988,
+      0.7071
+     ],
+     "shape": "Block",
+     "tag": "i003p023x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      150,
+      90,
+      255
+     ],
+     "class": "Part",
+     "body": "prism_blade",
+     "transparency": 0,
+     "name": "Shard",
+     "size": [
+      0.14,
+      0.3,
+      0.14
+     ],
+     "material": "Neon",
+     "cframe": [
+      -89.34,
+      2004.65,
+      5200.0078,
+      0.6409,
+      -0.2988,
+      0.7071,
+      0.4226,
+      0.9063,
+      0,
+      -0.6409,
+      0.2988,
+      0.7071
+     ],
+     "shape": "Block",
+     "tag": "i003p024x"
+    }
+   ],
+   "facingKnown": false,
+   "pivot": [
+    -90,
+    2000.0001,
+    5200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "sourcePath": "Workspace._ShortsStage.Sources.PrismBlade"
+  },
+  {
+   "single": true,
+   "pivotKind": "bottom_centre",
+   "faceYaw": 0,
+   "joints": [],
+   "folder": "props/gift_chest",
+   "item": "gift_chest",
+   "category": "props",
+   "size": [
+    6.0584,
+    4.2841,
+    6.0586
+   ],
+   "sourceName": "GiftChest",
+   "root": "Body",
+   "attachments": [],
+   "bones": [],
+   "keyframeSequences": [],
+   "animations": [],
+   "bodies": [],
+   "parts": [
+    {
+     "reflectance": 0,
+     "color": [
+      214,
+      158,
+      46
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "LidTop",
+     "size": [
+      5.1638,
+      1.4025,
+      3.3788
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -30,
+      2003.5446,
+      5200,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p001x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      96,
+      214,
+      255
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Gem",
+     "size": [
+      0.5865,
+      0.5865,
+      0.255
+     ],
+     "material": "Neon",
+     "cframe": [
+      -31.1946,
+      2003.6146,
+      5198.8057,
+      -0.5,
+      0.5,
+      -0.7071,
+      0.7071,
+      0.7071,
+      0,
+      0.5,
+      -0.5,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p002x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      214,
+      92
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "LidBand",
+     "size": [
+      0.3825,
+      1.479,
+      3.4808
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -30.8565,
+      2003.5446,
+      5200.8564,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p003x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      214,
+      92
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "LidBand",
+     "size": [
+      0.3825,
+      1.479,
+      3.4808
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -29.1435,
+      2003.5446,
+      5199.1436,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p004x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      160,
+      112,
+      28
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Post",
+     "size": [
+      0.4335,
+      2.856,
+      0.4335
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -29.3689,
+      2001.4408,
+      5197.2773,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p005x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      214,
+      92
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Band",
+     "size": [
+      0.3825,
+      2.8815,
+      3.417
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -30.8565,
+      2001.4408,
+      5200.8564,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p006x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      214,
+      158,
+      46
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Body",
+     "size": [
+      5.1,
+      2.805,
+      3.315
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -30,
+      2001.4408,
+      5200,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p007x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      214,
+      92
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Band",
+     "size": [
+      0.3825,
+      2.8815,
+      3.417
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -29.1435,
+      2001.4408,
+      5199.1436,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p008x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      255,
+      214,
+      92
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Lock",
+     "size": [
+      0.765,
+      0.8925,
+      0.306
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -31.1901,
+      2002.7795,
+      5198.8101,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p009x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      160,
+      112,
+      28
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Post",
+     "size": [
+      0.4335,
+      2.856,
+      0.4335
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -30.6311,
+      2001.4408,
+      5202.7227,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p010x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      160,
+      112,
+      28
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Post",
+     "size": [
+      0.4335,
+      2.856,
+      0.4335
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -32.7227,
+      2001.4408,
+      5200.6309,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p011x"
+    },
+    {
+     "reflectance": 0,
+     "color": [
+      160,
+      112,
+      28
+     ],
+     "class": "Part",
+     "body": "gift_chest",
+     "transparency": 0,
+     "name": "Post",
+     "size": [
+      0.4335,
+      2.856,
+      0.4335
+     ],
+     "material": "SmoothPlastic",
+     "cframe": [
+      -27.2773,
+      2001.4408,
+      5199.3691,
+      -0.7071,
+      0,
+      -0.7071,
+      0,
+      1,
+      0,
+      0.7071,
+      0,
+      -0.7071
+     ],
+     "shape": "Block",
+     "tag": "i004p012x"
+    }
+   ],
+   "facingKnown": false,
+   "pivot": [
+    -30,
+    2000,
+    5200,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "sourcePath": "Workspace._ShortsStage.Sources.GiftChest"
+  }
+ ]
+}

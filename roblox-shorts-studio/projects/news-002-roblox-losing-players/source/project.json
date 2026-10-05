@@ -1,0 +1,21 @@
+{
+  "title": "Roblox Is Losing Players",
+  "series": "ViralRoblox News #2",
+  "character": "Skye",
+  "characters": [
+    "Skye"
+  ],
+  "seconds": 64.4,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "review_cut",
+  "finish": {
+    "music": "projects/news-002-roblox-losing-players/audio/music_bed.wav",
+    "caption_margin_v": 450,
+    "caption_font_size": 72,
+    "word_fixes": {},
+    "music_gain": 1.0
+  }
+}

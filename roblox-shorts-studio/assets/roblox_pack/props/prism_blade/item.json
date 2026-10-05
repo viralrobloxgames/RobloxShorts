@@ -1,0 +1,22 @@
+{
+ "item": "prism_blade",
+ "category": "props",
+ "sourceName": "PrismBlade",
+ "sourcePath": "Workspace._ShortsStage.Sources.PrismBlade",
+ "size": [
+  2.1078,
+  6.2,
+  0.4839
+ ],
+ "pivotKind": "bottom_centre",
+ "rigged": false,
+ "objects": [
+  "prism_blade"
+ ],
+ "joints": 0,
+ "bones": 0,
+ "parts": 24,
+ "facingKnown": false,
+ "meshIds": [],
+ "textureIds": []
+}

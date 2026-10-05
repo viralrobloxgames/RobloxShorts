@@ -33,13 +33,14 @@ def main():
     p.add_argument('project', type=Path); p.add_argument('--voice', default='george'); p.add_argument('--take', default='take-01')
     p.add_argument('--redo', default='', help='comma list of line numbers to regenerate')
     p.add_argument('--beat', type=float, default=0.9, help='pause in seconds at a blank line in script.txt')
+    p.add_argument('--gap', type=float, default=GAP, help='pause in seconds between lines (default 0.4)')
     a = p.parse_args(); o = a.project.resolve(); cfg = load()
     raw = [l.strip() for l in (o / 'script.txt').read_text(encoding='utf-8-sig').splitlines()]
     lines = [l for l in raw if l]
     pause = []  # pause after each line: --beat if a blank line follows it, else GAP
     for i, l in enumerate(raw):
         if l:
-            pause.append(GAP)
+            pause.append(a.gap)
         elif pause:
             pause[-1] = a.beat
     take = o / 'audio/qwen' / a.take; clips = take / 'clips'; clips.mkdir(parents=True, exist_ok=True)
@@ -71,7 +72,7 @@ def main():
     dur = len(full) / sr
     (o / 'audio/narration-source.json').write_text(json.dumps({
         'engine': 'qwen3-tts', 'model': 'Qwen3-TTS-12Hz-0.6B-Base', 'voice': f'{a.voice} (local clone)', 'take': a.take,
-        'clips': f'audio/qwen/{a.take}/clips', 'gap_seconds': GAP, 'beat_seconds': a.beat, 'speech_end_seconds': round(dur, 2)}, indent=2), encoding='utf-8')
+        'clips': f'audio/qwen/{a.take}/clips', 'gap_seconds': a.gap, 'beat_seconds': a.beat, 'speech_end_seconds': round(dur, 2)}, indent=2), encoding='utf-8')
 
     py = cfg.get('transcription_python') if cfg.get('transcription_python') and Path(cfg['transcription_python']).is_file() else sys.executable
     r = subprocess.run([py, str(S / 'transcribe.py'), str(o / 'audio/narration.wav'), '--output', str(o / 'audio/alignment'), '--force'],

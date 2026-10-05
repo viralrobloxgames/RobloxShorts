@@ -1,0 +1,1100 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.28,
+    "text": "Leo's new umbrella keeps",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.46,
+        "word": " Leo's"
+      },
+      {
+        "start": 0.46,
+        "end": 0.64,
+        "word": " new"
+      },
+      {
+        "start": 0.64,
+        "end": 0.98,
+        "word": " umbrella"
+      },
+      {
+        "start": 0.98,
+        "end": 1.28,
+        "word": " keeps"
+      }
+    ]
+  },
+  {
+    "start": 1.28,
+    "end": 2.44,
+    "text": "him perfectly dry.",
+    "words": [
+      {
+        "start": 1.28,
+        "end": 1.52,
+        "word": " him"
+      },
+      {
+        "start": 1.52,
+        "end": 1.86,
+        "word": " perfectly"
+      },
+      {
+        "start": 1.86,
+        "end": 2.32,
+        "word": " dry."
+      }
+    ]
+  },
+  {
+    "start": 2.98,
+    "end": 4.1,
+    "text": "Everyone else gets soaked.",
+    "words": [
+      {
+        "start": 2.98,
+        "end": 3.22,
+        "word": " Everyone"
+      },
+      {
+        "start": 3.22,
+        "end": 3.44,
+        "word": " else"
+      },
+      {
+        "start": 3.44,
+        "end": 3.64,
+        "word": " gets"
+      },
+      {
+        "start": 3.64,
+        "end": 3.98,
+        "word": " soaked."
+      }
+    ]
+  },
+  {
+    "start": 4.64,
+    "end": 5.7,
+    "text": "The sky is blue,",
+    "words": [
+      {
+        "start": 4.64,
+        "end": 4.82,
+        "word": " The"
+      },
+      {
+        "start": 4.82,
+        "end": 5.1,
+        "word": " sky"
+      },
+      {
+        "start": 5.1,
+        "end": 5.28,
+        "word": " is"
+      },
+      {
+        "start": 5.28,
+        "end": 5.58,
+        "word": " blue,"
+      }
+    ]
+  },
+  {
+    "start": 5.92,
+    "end": 6.74,
+    "text": "he opens it,",
+    "words": [
+      {
+        "start": 5.92,
+        "end": 6.06,
+        "word": " he"
+      },
+      {
+        "start": 6.06,
+        "end": 6.38,
+        "word": " opens"
+      },
+      {
+        "start": 6.38,
+        "end": 6.64,
+        "word": " it,"
+      }
+    ]
+  },
+  {
+    "start": 6.74,
+    "end": 7.54,
+    "text": "and a storm rolls",
+    "words": [
+      {
+        "start": 6.74,
+        "end": 6.86,
+        "word": " and"
+      },
+      {
+        "start": 6.86,
+        "end": 6.96,
+        "word": " a"
+      },
+      {
+        "start": 6.96,
+        "end": 7.28,
+        "word": " storm"
+      },
+      {
+        "start": 7.28,
+        "end": 7.54,
+        "word": " rolls"
+      }
+    ]
+  },
+  {
+    "start": 7.54,
+    "end": 7.98,
+    "text": "in.",
+    "words": [
+      {
+        "start": 7.54,
+        "end": 7.86,
+        "word": " in."
+      }
+    ]
+  },
+  {
+    "start": 8.26,
+    "end": 9.08,
+    "text": "Over everyone,",
+    "words": [
+      {
+        "start": 8.26,
+        "end": 8.46,
+        "word": " Over"
+      },
+      {
+        "start": 8.46,
+        "end": 8.96,
+        "word": " everyone,"
+      }
+    ]
+  },
+  {
+    "start": 9.12,
+    "end": 9.959999999999999,
+    "text": "except Leo.",
+    "words": [
+      {
+        "start": 9.12,
+        "end": 9.46,
+        "word": " except"
+      },
+      {
+        "start": 9.46,
+        "end": 9.84,
+        "word": " Leo."
+      }
+    ]
+  },
+  {
+    "start": 10.64,
+    "end": 11.52,
+    "text": "Max is soaked.",
+    "words": [
+      {
+        "start": 10.64,
+        "end": 10.84,
+        "word": " Max"
+      },
+      {
+        "start": 10.84,
+        "end": 11.04,
+        "word": " is"
+      },
+      {
+        "start": 11.04,
+        "end": 11.4,
+        "word": " soaked."
+      }
+    ]
+  },
+  {
+    "start": 12.02,
+    "end": 12.76,
+    "text": "Mia is soaked.",
+    "words": [
+      {
+        "start": 12.02,
+        "end": 12.02,
+        "word": " Mia"
+      },
+      {
+        "start": 12.02,
+        "end": 12.32,
+        "word": " is"
+      },
+      {
+        "start": 12.32,
+        "end": 12.64,
+        "word": " soaked."
+      }
+    ]
+  },
+  {
+    "start": 13.04,
+    "end": 13.98,
+    "text": "A passing dog is",
+    "words": [
+      {
+        "start": 13.04,
+        "end": 13.18,
+        "word": " A"
+      },
+      {
+        "start": 13.18,
+        "end": 13.52,
+        "word": " passing"
+      },
+      {
+        "start": 13.52,
+        "end": 13.76,
+        "word": " dog"
+      },
+      {
+        "start": 13.76,
+        "end": 13.98,
+        "word": " is"
+      }
+    ]
+  },
+  {
+    "start": 13.98,
+    "end": 14.42,
+    "text": "soaked.",
+    "words": [
+      {
+        "start": 13.98,
+        "end": 14.3,
+        "word": " soaked."
+      }
+    ]
+  },
+  {
+    "start": 14.8,
+    "end": 15.84,
+    "text": "Leo closes it,",
+    "words": [
+      {
+        "start": 14.8,
+        "end": 15.06,
+        "word": " Leo"
+      },
+      {
+        "start": 15.06,
+        "end": 15.4,
+        "word": " closes"
+      },
+      {
+        "start": 15.4,
+        "end": 15.72,
+        "word": " it,"
+      }
+    ]
+  },
+  {
+    "start": 15.94,
+    "end": 16.84,
+    "text": "the sun comes straight",
+    "words": [
+      {
+        "start": 15.94,
+        "end": 16.06,
+        "word": " the"
+      },
+      {
+        "start": 16.06,
+        "end": 16.26,
+        "word": " sun"
+      },
+      {
+        "start": 16.26,
+        "end": 16.56,
+        "word": " comes"
+      },
+      {
+        "start": 16.56,
+        "end": 16.84,
+        "word": " straight"
+      }
+    ]
+  },
+  {
+    "start": 16.84,
+    "end": 17.3,
+    "text": "back.",
+    "words": [
+      {
+        "start": 16.84,
+        "end": 17.18,
+        "word": " back."
+      }
+    ]
+  },
+  {
+    "start": 17.96,
+    "end": 19.14,
+    "text": "So he tries sharing.",
+    "words": [
+      {
+        "start": 17.96,
+        "end": 18.18,
+        "word": " So"
+      },
+      {
+        "start": 18.18,
+        "end": 18.32,
+        "word": " he"
+      },
+      {
+        "start": 18.32,
+        "end": 18.6,
+        "word": " tries"
+      },
+      {
+        "start": 18.6,
+        "end": 19.02,
+        "word": " sharing."
+      }
+    ]
+  },
+  {
+    "start": 19.7,
+    "end": 20.74,
+    "text": "Max and Mia squeeze",
+    "words": [
+      {
+        "start": 19.7,
+        "end": 19.96,
+        "word": " Max"
+      },
+      {
+        "start": 19.96,
+        "end": 20.16,
+        "word": " and"
+      },
+      {
+        "start": 20.16,
+        "end": 20.38,
+        "word": " Mia"
+      },
+      {
+        "start": 20.38,
+        "end": 20.74,
+        "word": " squeeze"
+      }
+    ]
+  },
+  {
+    "start": 20.74,
+    "end": 21.580000000000002,
+    "text": "under dry.",
+    "words": [
+      {
+        "start": 20.74,
+        "end": 21.1,
+        "word": " under"
+      },
+      {
+        "start": 21.1,
+        "end": 21.46,
+        "word": " dry."
+      }
+    ]
+  },
+  {
+    "start": 22.12,
+    "end": 23.240000000000002,
+    "text": "The noob doesn't fit.",
+    "words": [
+      {
+        "start": 22.12,
+        "end": 22.3,
+        "word": " The"
+      },
+      {
+        "start": 22.3,
+        "end": 22.54,
+        "word": " noob"
+      },
+      {
+        "start": 22.54,
+        "end": 22.92,
+        "word": " doesn't"
+      },
+      {
+        "start": 22.92,
+        "end": 23.12,
+        "word": " fit."
+      }
+    ]
+  },
+  {
+    "start": 23.5,
+    "end": 24.28,
+    "text": "The noob gets his",
+    "words": [
+      {
+        "start": 23.5,
+        "end": 23.62,
+        "word": " The"
+      },
+      {
+        "start": 23.62,
+        "end": 23.9,
+        "word": " noob"
+      },
+      {
+        "start": 23.9,
+        "end": 24.1,
+        "word": " gets"
+      },
+      {
+        "start": 24.1,
+        "end": 24.28,
+        "word": " his"
+      }
+    ]
+  },
+  {
+    "start": 24.28,
+    "end": 25.6,
+    "text": "own private thunderstorm.",
+    "words": [
+      {
+        "start": 24.28,
+        "end": 24.46,
+        "word": " own"
+      },
+      {
+        "start": 24.46,
+        "end": 24.88,
+        "word": " private"
+      },
+      {
+        "start": 24.88,
+        "end": 25.48,
+        "word": " thunderstorm."
+      }
+    ]
+  },
+  {
+    "start": 26.06,
+    "end": 26.96,
+    "text": "After that,",
+    "words": [
+      {
+        "start": 26.06,
+        "end": 26.36,
+        "word": " After"
+      },
+      {
+        "start": 26.36,
+        "end": 26.84,
+        "word": " that,"
+      }
+    ]
+  },
+  {
+    "start": 27.2,
+    "end": 28.14,
+    "text": "Leo keeps it closed.",
+    "words": [
+      {
+        "start": 27.2,
+        "end": 27.2,
+        "word": " Leo"
+      },
+      {
+        "start": 27.2,
+        "end": 27.48,
+        "word": " keeps"
+      },
+      {
+        "start": 27.48,
+        "end": 27.7,
+        "word": " it"
+      },
+      {
+        "start": 27.7,
+        "end": 28.02,
+        "word": " closed."
+      }
+    ]
+  },
+  {
+    "start": 28.76,
+    "end": 29.58,
+    "text": "Then comes the park",
+    "words": [
+      {
+        "start": 28.76,
+        "end": 28.92,
+        "word": " Then"
+      },
+      {
+        "start": 28.92,
+        "end": 29.14,
+        "word": " comes"
+      },
+      {
+        "start": 29.14,
+        "end": 29.32,
+        "word": " the"
+      },
+      {
+        "start": 29.32,
+        "end": 29.58,
+        "word": " park"
+      }
+    ]
+  },
+  {
+    "start": 29.58,
+    "end": 30.18,
+    "text": "barbecue.",
+    "words": [
+      {
+        "start": 29.58,
+        "end": 30.06,
+        "word": " barbecue."
+      }
+    ]
+  },
+  {
+    "start": 30.9,
+    "end": 32.06,
+    "text": "Max flips one burger,",
+    "words": [
+      {
+        "start": 30.9,
+        "end": 31.04,
+        "word": " Max"
+      },
+      {
+        "start": 31.04,
+        "end": 31.3,
+        "word": " flips"
+      },
+      {
+        "start": 31.3,
+        "end": 31.6,
+        "word": " one"
+      },
+      {
+        "start": 31.6,
+        "end": 31.94,
+        "word": " burger,"
+      }
+    ]
+  },
+  {
+    "start": 32.22,
+    "end": 33.02,
+    "text": "and the grill goes",
+    "words": [
+      {
+        "start": 32.22,
+        "end": 32.36,
+        "word": " and"
+      },
+      {
+        "start": 32.36,
+        "end": 32.48,
+        "word": " the"
+      },
+      {
+        "start": 32.48,
+        "end": 32.72,
+        "word": " grill"
+      },
+      {
+        "start": 32.72,
+        "end": 33.02,
+        "word": " goes"
+      }
+    ]
+  },
+  {
+    "start": 33.02,
+    "end": 34.059999999999995,
+    "text": "up like a volcano.",
+    "words": [
+      {
+        "start": 33.02,
+        "end": 33.26,
+        "word": " up"
+      },
+      {
+        "start": 33.26,
+        "end": 33.46,
+        "word": " like"
+      },
+      {
+        "start": 33.46,
+        "end": 33.6,
+        "word": " a"
+      },
+      {
+        "start": 33.6,
+        "end": 33.94,
+        "word": " volcano."
+      }
+    ]
+  },
+  {
+    "start": 34.6,
+    "end": 35.56,
+    "text": "The flames jump to",
+    "words": [
+      {
+        "start": 34.6,
+        "end": 34.76,
+        "word": " The"
+      },
+      {
+        "start": 34.76,
+        "end": 35.08,
+        "word": " flames"
+      },
+      {
+        "start": 35.08,
+        "end": 35.36,
+        "word": " jump"
+      },
+      {
+        "start": 35.36,
+        "end": 35.56,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 35.56,
+    "end": 36.12,
+    "text": "the table,",
+    "words": [
+      {
+        "start": 35.56,
+        "end": 35.68,
+        "word": " the"
+      },
+      {
+        "start": 35.68,
+        "end": 36.0,
+        "word": " table,"
+      }
+    ]
+  },
+  {
+    "start": 36.36,
+    "end": 37.059999999999995,
+    "text": "the napkins,",
+    "words": [
+      {
+        "start": 36.36,
+        "end": 36.46,
+        "word": " the"
+      },
+      {
+        "start": 36.46,
+        "end": 36.94,
+        "word": " napkins,"
+      }
+    ]
+  },
+  {
+    "start": 37.38,
+    "end": 38.379999999999995,
+    "text": "the bouncy castle.",
+    "words": [
+      {
+        "start": 37.38,
+        "end": 37.5,
+        "word": " the"
+      },
+      {
+        "start": 37.5,
+        "end": 37.92,
+        "word": " bouncy"
+      },
+      {
+        "start": 37.92,
+        "end": 38.26,
+        "word": " castle."
+      }
+    ]
+  },
+  {
+    "start": 39.02,
+    "end": 39.879999999999995,
+    "text": "Everyone screams.",
+    "words": [
+      {
+        "start": 39.02,
+        "end": 39.34,
+        "word": " Everyone"
+      },
+      {
+        "start": 39.34,
+        "end": 39.76,
+        "word": " screams."
+      }
+    ]
+  },
+  {
+    "start": 40.44,
+    "end": 41.699999999999996,
+    "text": "Leo opens the umbrella.",
+    "words": [
+      {
+        "start": 40.44,
+        "end": 40.7,
+        "word": " Leo"
+      },
+      {
+        "start": 40.7,
+        "end": 41.08,
+        "word": " opens"
+      },
+      {
+        "start": 41.08,
+        "end": 41.24,
+        "word": " the"
+      },
+      {
+        "start": 41.24,
+        "end": 41.58,
+        "word": " umbrella."
+      }
+    ]
+  },
+  {
+    "start": 42.52,
+    "end": 43.44,
+    "text": "Rain hammers the whole",
+    "words": [
+      {
+        "start": 42.52,
+        "end": 42.66,
+        "word": " Rain"
+      },
+      {
+        "start": 42.66,
+        "end": 43.08,
+        "word": " hammers"
+      },
+      {
+        "start": 43.08,
+        "end": 43.24,
+        "word": " the"
+      },
+      {
+        "start": 43.24,
+        "end": 43.44,
+        "word": " whole"
+      }
+    ]
+  },
+  {
+    "start": 43.44,
+    "end": 43.94,
+    "text": "park,",
+    "words": [
+      {
+        "start": 43.44,
+        "end": 43.82,
+        "word": " park,"
+      }
+    ]
+  },
+  {
+    "start": 44.14,
+    "end": 45.14,
+    "text": "the grill hisses,",
+    "words": [
+      {
+        "start": 44.14,
+        "end": 44.28,
+        "word": " the"
+      },
+      {
+        "start": 44.28,
+        "end": 44.58,
+        "word": " grill"
+      },
+      {
+        "start": 44.58,
+        "end": 45.02,
+        "word": " hisses,"
+      }
+    ]
+  },
+  {
+    "start": 45.42,
+    "end": 46.339999999999996,
+    "text": "the fire's gone.",
+    "words": [
+      {
+        "start": 45.42,
+        "end": 45.6,
+        "word": " the"
+      },
+      {
+        "start": 45.6,
+        "end": 45.96,
+        "word": " fire's"
+      },
+      {
+        "start": 45.96,
+        "end": 46.22,
+        "word": " gone."
+      }
+    ]
+  },
+  {
+    "start": 47.04,
+    "end": 48.16,
+    "text": "Thirty soaking wet,",
+    "words": [
+      {
+        "start": 47.04,
+        "end": 47.3,
+        "word": " Thirty"
+      },
+      {
+        "start": 47.3,
+        "end": 47.74,
+        "word": " soaking"
+      },
+      {
+        "start": 47.74,
+        "end": 48.04,
+        "word": " wet,"
+      }
+    ]
+  },
+  {
+    "start": 48.22,
+    "end": 49.14,
+    "text": "people cheer for the",
+    "words": [
+      {
+        "start": 48.22,
+        "end": 48.48,
+        "word": " people"
+      },
+      {
+        "start": 48.48,
+        "end": 48.8,
+        "word": " cheer"
+      },
+      {
+        "start": 48.8,
+        "end": 49.02,
+        "word": " for"
+      },
+      {
+        "start": 49.02,
+        "end": 49.14,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 49.14,
+    "end": 50.019999999999996,
+    "text": "one dry boy.",
+    "words": [
+      {
+        "start": 49.14,
+        "end": 49.34,
+        "word": " one"
+      },
+      {
+        "start": 49.34,
+        "end": 49.64,
+        "word": " dry"
+      },
+      {
+        "start": 49.64,
+        "end": 49.9,
+        "word": " boy."
+      }
+    ]
+  },
+  {
+    "start": 50.62,
+    "end": 51.7,
+    "text": "Mia ducks under the",
+    "words": [
+      {
+        "start": 50.62,
+        "end": 50.94,
+        "word": " Mia"
+      },
+      {
+        "start": 50.94,
+        "end": 51.3,
+        "word": " ducks"
+      },
+      {
+        "start": 51.3,
+        "end": 51.56,
+        "word": " under"
+      },
+      {
+        "start": 51.56,
+        "end": 51.7,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 51.7,
+    "end": 52.16,
+    "text": "umbrella.",
+    "words": [
+      {
+        "start": 51.7,
+        "end": 52.04,
+        "word": " umbrella."
+      }
+    ]
+  },
+  {
+    "start": 52.8,
+    "end": 53.64,
+    "text": "Room for one more.",
+    "words": [
+      {
+        "start": 52.8,
+        "end": 52.88,
+        "word": " Room"
+      },
+      {
+        "start": 52.88,
+        "end": 53.06,
+        "word": " for"
+      },
+      {
+        "start": 53.06,
+        "end": 53.24,
+        "word": " one"
+      },
+      {
+        "start": 53.24,
+        "end": 53.52,
+        "word": " more."
+      }
+    ]
+  },
+  {
+    "start": 54.24,
+    "end": 55.12,
+    "text": "Leo moves over.",
+    "words": [
+      {
+        "start": 54.24,
+        "end": 54.34,
+        "word": " Leo"
+      },
+      {
+        "start": 54.34,
+        "end": 54.66,
+        "word": " moves"
+      },
+      {
+        "start": 54.66,
+        "end": 55.0,
+        "word": " over."
+      }
+    ]
+  },
+  {
+    "start": 55.64,
+    "end": 56.879999999999995,
+    "text": "Everyone else stays wet.",
+    "words": [
+      {
+        "start": 55.64,
+        "end": 55.88,
+        "word": " Everyone"
+      },
+      {
+        "start": 55.88,
+        "end": 56.12,
+        "word": " else"
+      },
+      {
+        "start": 56.12,
+        "end": 56.42,
+        "word": " stays"
+      },
+      {
+        "start": 56.42,
+        "end": 56.76,
+        "word": " wet."
+      }
+    ]
+  },
+  {
+    "start": 57.58,
+    "end": 59.26,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 57.58,
+        "end": 57.84,
+        "word": " Follow"
+      },
+      {
+        "start": 57.84,
+        "end": 59.0,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 59.0,
+        "end": 59.26,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 59.26,
+    "end": 60.419999999999995,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 59.26,
+        "end": 59.44,
+        "word": " more"
+      },
+      {
+        "start": 59.44,
+        "end": 59.78,
+        "word": " stories"
+      },
+      {
+        "start": 59.78,
+        "end": 60.02,
+        "word": " like"
+      },
+      {
+        "start": 60.02,
+        "end": 60.3,
+        "word": " this."
+      }
+    ]
+  }
+]
