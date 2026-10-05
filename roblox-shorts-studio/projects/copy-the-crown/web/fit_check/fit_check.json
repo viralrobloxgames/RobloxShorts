@@ -1,0 +1,172 @@
+{
+  "clip": "projects/copy-the-crown/web/crown_clip.js",
+  "generated": "2026-10-05T19:10:17.041Z",
+  "fingerprint": "27cb61f5a01fd723",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "neutral",
+          "happy",
+          "laugh",
+          "smug",
+          "cool",
+          "shocked",
+          "scared",
+          "surprised",
+          "nervous",
+          "determined",
+          "sad",
+          "love",
+          "annoyed",
+          "angry",
+          "shouting",
+          "suspicious",
+          "confused",
+          "dizzy",
+          "evil_grin",
+          "wink",
+          "talking",
+          "scheming",
+          "blink",
+          "knocked_out"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "crown_admin"
+      ]
+    },
+    {
+      "character": "Leo",
+      "options": {
+        "expressions": [
+          "neutral",
+          "happy",
+          "laugh",
+          "smug",
+          "cool",
+          "shocked",
+          "scared",
+          "surprised",
+          "nervous",
+          "determined",
+          "sad",
+          "love",
+          "annoyed",
+          "angry",
+          "shouting",
+          "suspicious",
+          "confused",
+          "dizzy",
+          "evil_grin",
+          "wink",
+          "talking",
+          "scheming",
+          "blink",
+          "knocked_out"
+        ],
+        "scale": 1,
+        "hairLift": 0.16
+      },
+      "accessories": [
+        "crown_admin"
+      ]
+    },
+    {
+      "character": "Mia",
+      "options": {
+        "expressions": [
+          "neutral",
+          "happy",
+          "laugh",
+          "smug",
+          "cool",
+          "shocked",
+          "scared",
+          "surprised",
+          "nervous",
+          "determined",
+          "sad",
+          "love",
+          "annoyed",
+          "angry",
+          "shouting",
+          "suspicious",
+          "confused",
+          "dizzy",
+          "evil_grin",
+          "wink",
+          "talking",
+          "scheming",
+          "blink",
+          "knocked_out"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "crown_admin"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Noob",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.119,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Leo",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.64,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.019,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Mia",
+      "accessory": "crown_admin",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.16,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.007,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-05T19:10:25.335Z"
+}

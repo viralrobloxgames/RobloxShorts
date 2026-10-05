@@ -1,0 +1,27 @@
+{
+  "file": "The_Backwards_Umbrella.mp4",
+  "sha256": "918fc9935ad5ac8c2d05037a05f8f28ee5d6b9b23765dfc54b62da5a22c50ad1",
+  "approved": {
+    "by": "user",
+    "at": "2026-10-05",
+    "how": "named in chat 2026-10-05 for scheduling tomorrow evening (\"schedule in posts for videos 1,4,3\")"
+  },
+  "scheduled_for": "2026-10-06T22:30:00+01:00",
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "on, passed (no issues found)"
+  },
+  "youtube": {
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "url": "https://youtube.com/shorts/VQeLqpGRcZ0",
+    "video_id": "VQeLqpGRcZ0",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "cover.jpg uploaded before scheduling"
+  }
+}

@@ -52,6 +52,48 @@ window.renderFrame = (frame, opts = {}) => {
   if (clip.overlay) clip.overlay(g, stage.scale, t);
   return out.toDataURL('image/png');
 };
+// Frame fingerprint without rendering: everything that decides what a frame looks like (camera, every visible mesh's
+// world transform, shape and material, lights, fog, bloom, the sample/shutter settings and the 2D overlay drawn small).
+// web/changed_frames.mjs compares these with the last render's to find exactly which frames an edit changed.
+const ov = document.createElement('canvas'); ov.width = 108; ov.height = 192; const og = ov.getContext('2d');
+const r6 = (x) => Math.round(x * 1e4) / 1e4;
+const view = new THREE.Frustum(), shade = new THREE.Frustum(), m4 = new THREE.Matrix4(), bs = new THREE.Sphere();
+window.frameState = (frame) => {
+  const t = (frame - 1) / meta.fps, samples = clip.samples ? clip.samples(t) : 4, shutter = clip.shutter ? clip.shutter(t) : 0;
+  const parts = [samples, r6(shutter)];
+  const ts = samples > 1 ? [t + (0.5 / samples - 0.5) * shutter / meta.fps, t, t + ((samples - 0.5) / samples - 0.5) * shutter / meta.fps] : [t];
+  for (const tt of ts) {
+    clip.update(tt, stage);
+    stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
+    parts.push('C', ...stage.camera.matrixWorld.elements.map(r6), r6(stage.camera.fov));
+    // Only what can change the picture: things inside the camera's view, or inside the sun's shadow box if they cast
+    // shadows (an object far off-screen, like a prop in another set, doesn't count).
+    const sc = stage.sun.shadow.camera; sc.updateMatrixWorld(true);
+    view.setFromProjectionMatrix(m4.multiplyMatrices(stage.camera.projectionMatrix, stage.camera.matrixWorldInverse));
+    shade.setFromProjectionMatrix(m4.multiplyMatrices(sc.projectionMatrix, sc.matrixWorldInverse));
+    stage.scene.traverseVisible((o) => {
+      if (o.isLight) { parts.push('L', r6(o.intensity), o.color.getHexString(), ...o.matrixWorld.elements.map(r6)); return; }
+      if (!(o.isMesh || o.isSprite || o.isPoints || o.isLine)) return;
+      const geo = o.geometry; if (geo && !geo.boundingSphere) geo.computeBoundingSphere();
+      if (geo?.boundingSphere && o.frustumCulled !== false) {   // always-drawn things (frustumCulled off) always count
+        bs.copy(geo.boundingSphere).applyMatrix4(o.matrixWorld); if (o.isSkinnedMesh) bs.radius = bs.radius * 1.5 + 3;   // posed limbs reach past the bind-pose bounds
+        if (!view.intersectsSphere(bs) && !(o.castShadow && shade.intersectsSphere(bs))) return;
+      }
+      parts.push('M', ...o.matrixWorld.elements.map(r6), geo ? geo.attributes.position?.count : 0, geo?.boundingSphere ? r6(geo.boundingSphere.radius) : 0);
+      for (const m of [].concat(o.material || [])) parts.push(m.color ? m.color.getHexString() : '', m.emissive ? m.emissive.getHexString() + r6(m.emissiveIntensity) : '', r6(m.opacity ?? 1), m.map ? m.map.image?.width + 'x' + m.map.image?.height : '');
+      if (o.isSkinnedMesh) for (const b of o.skeleton.bones) parts.push(...b.matrixWorld.elements.map(r6));
+    });
+    const f = stage.scene.fog; parts.push('F', f ? r6(f.near) + ',' + r6(f.far) : '', r6(stage.bloom?.strength ?? 0));
+  }
+  clip.update(t, stage);
+  og.clearRect(0, 0, ov.width, ov.height); if (clip.overlay) clip.overlay(og, 0.1, t);
+  const px = og.getImageData(0, 0, ov.width, ov.height).data;
+  let h1 = 0x811c9dc5, h2 = 0x01000193;                            // two FNV-style hashes over the state and the overlay
+  const str = parts.join('|');
+  for (let i = 0; i < str.length; i++) { h1 = Math.imul(h1 ^ str.charCodeAt(i), 16777619); h2 = Math.imul(h2 ^ str.charCodeAt(i), 2246822519); }
+  for (let i = 0; i < px.length; i += 4) { const v = (px[i] >> 3) | ((px[i + 1] >> 3) << 5) | ((px[i + 3] >> 3) << 10); h1 = Math.imul(h1 ^ v, 16777619); h2 = Math.imul(h2 ^ v, 2246822519); }
+  return (h1 >>> 0).toString(16).padStart(8, '0') + (h2 >>> 0).toString(16).padStart(8, '0');
+};
 window.clipMeta = meta;
 window.clipModule = clip; window.clipStage = stage;     // for tools that query a clip (e.g. which frames see an object)
 window.ready = true;

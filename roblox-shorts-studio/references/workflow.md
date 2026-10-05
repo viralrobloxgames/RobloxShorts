@@ -65,6 +65,26 @@ one. (`ideas/series/` holds the earlier series for reference only.)
   at a glance. No flash-forwards, rewinds or intro cards. (The AFK Millionaire's first post lost ~70% by 0:06.)
 - An on-screen countdown or progress counter for the whole video, and a new visual payoff every 3-5 s.
 - Give the main character agency; the twist can be on them.
+- Review checklist before delivery (user feedback on The Vampire Case, 2026-10-05): run the hold check (web/lib/holdcheck.js)
+  before the full render; after the encode run scripts/review/blank_frames.py; in the contact sheet check that characters in a
+  conversation face each other and that the hook shows both faces.
+
+## Fixing part of a rendered video: re-render only the changed frames (since 2026-10-05)
+
+A full 1080p render is the slow step (about 5 s per frame on the cloud CPU, 2-3 h for a 62 s video), so never re-render
+everything for a fix. Every full render saves a fingerprint of each frame (`<render dir>/frame_hashes.json`: camera,
+every visible mesh's transform/shape/material, bones, lights, fog, bloom, samples and the overlay). After editing the clip:
+
+```
+node web/changed_frames.mjs --clip <clip> --out <render dir>            # ~10 s: lists the changed frame ranges
+node web/changed_frames.mjs --clip <clip> --out <render dir> --delete   # deletes just those PNGs
+node web/render.mjs --clip <clip> --out <render dir> --workers 3 --resume   # renders just those
+```
+
+Check the listed ranges make sense for the edit (a burger nudge on The Vampire Case flagged exactly the 207 frames the
+burger is on screen). A change to something every frame sees (the sky, a shared prop in every shot, a narration retime)
+still means everything, so batch fixes and retime only when needed. Renders made before this tool have no fingerprints:
+run `--save` right after such a render if its PNGs match the clip.
 
 ## Running steps in parallel (standard since 2026-10-02)
 

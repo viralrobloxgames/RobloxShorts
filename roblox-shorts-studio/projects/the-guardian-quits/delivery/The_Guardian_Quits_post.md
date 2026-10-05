@@ -19,7 +19,7 @@ The T-Rex Guardian Quits Steal an Egg 🦖 #roblox #shorts
 ## 3. YouTube description
 
 ```
-Every day a player steals his egg and every day he bonks the safe-zone wall. After 400 stolen eggs and a one-star review, the T-rex puts on sunglasses, a hoodie and a name tag that says "Player"... 🦖🥚
+Every day a player steals his egg and every day he bonks the safe-zone wall. After 400 stolen eggs and a one-star review, the T-rex puts on sunglasses, a fake moustache and a name tag that says "Player"... 🦖🥚
 
 Would you hire him? Follow viralrobloxgames for more!
 

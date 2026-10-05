@@ -51,7 +51,7 @@ def write(project):
     if y: L += ['## 2. YouTube title', '', block(y['title']), '', '## 3. YouTube description', '', block(y['description']), '']
     L += ['## Settings', '']
     if t: L += [f"- **TikTok:** {'Everyone' if t.get('privacy') == 'PUBLIC_TO_EVERYONE' else t.get('privacy')} · AI-generated label "
-                f"{on(t.get('ai_generated'))} · comments {on(t.get('allow_comments', True))}, duet {on(t.get('allow_duet', True))}, "
+                f"OFF (the user's standing choice, references/scheduling-workflow.md) · comments {on(t.get('allow_comments', True))}, duet {on(t.get('allow_duet', True))}, "
                 f"stitch {on(t.get('allow_stitch', True))} · cover: {cover}"]
     if y: L += [f"- **YouTube:** {y.get('privacy', 'public').capitalize()} · made for kids: {'Yes' if y.get('made_for_kids') else 'No'} · "
                 f"altered content: {'Yes' if y.get('contains_synthetic_media') else 'No'} · category: "

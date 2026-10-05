@@ -69,13 +69,40 @@ export function strawHat(actor) {
   actor.bones.Head.add(g); return g;
 }
 // Hedge clippers (handles toward -Y, blades +Y), held at a hand.
-export function clippers() {
-  const g = new THREE.Group(), steel = std('#c9ced6', { metalness: 0.9, roughness: 0.25 }), red = std('#c8283c');
-  for (const sx of [-1, 1]) {
-    const h = mesh(new THREE.CylinderGeometry(0.07, 0.07, 1.0, 8), red, sx * 0.1, -0.4, 0); h.rotation.z = sx * 0.12; g.add(h);
-    const b = mesh(new THREE.BoxGeometry(0.08, 1.5, 0.22), steel, sx * 0.05, 0.85, 0); b.rotation.z = -sx * 0.08; g.add(b);
-  }
-  g.add(mesh(new THREE.SphereGeometry(0.1, 10, 8), steel, 0, 0.1, 0));
+// Two-handed hedge shears, posed every frame from the gardener's actual hands (setShears): each red handle runs from one
+// hand to the pivot, so the grips are always in the hands whatever the arm pose; the steel blades point forward and
+// open and close for the snips.
+export function shears() {
+  const g = new THREE.Group(), steel = std('#c9ced6', { metalness: 0.9, roughness: 0.25 }), red = std('#c8283c', { roughness: 0.5 });
+  const handles = [0, 1].map(() => { const h = mesh(new THREE.CylinderGeometry(0.09, 0.09, 1, 10), red); g.add(h); return h; });
+  const blades = [0, 1].map(() => { const b = mesh(new THREE.BoxGeometry(0.1, 1, 0.26), steel); g.add(b); return b; });
+  const pivot = mesh(new THREE.SphereGeometry(0.13, 10, 8), steel); g.add(pivot);
+  g.userData = { handles, blades, pivot };
+  return g;
+}
+const _Y = new THREE.Vector3(0, 1, 0);
+const stretch = (m, a, b, extra = 0) => { const d = b.clone().sub(a), len = d.length(); m.position.copy(a).lerp(b, 0.5); m.scale.set(1, len + extra, 1); m.quaternion.setFromUnitVectors(_Y, d.normalize()); };
+// hL/hR: world points inside the left/right hands; fwd: the holder's forward; open 0..1.
+export function setShears(g, hL, hR, fwd, open = 0, bladeLen = 1.9) {
+  const { handles, blades, pivot } = g.userData, side = hR.clone().sub(hL).setY(0).normalize();
+  const P = hL.clone().lerp(hR, 0.5).addScaledVector(fwd, 0.85);
+  pivot.position.copy(P);
+  stretch(handles[0], hL, P, 0.1); stretch(handles[1], hR, P, 0.1);
+  for (const [i, sx] of [[0, -1], [1, 1]]) { const tip = P.clone().addScaledVector(fwd, bladeLen).addScaledVector(side, sx * open * 0.45); stretch(blades[i], P, tip); }
+}
+// A "LOST DOG" poster on a little post (a dog drawn on it), for the flashback.
+export function lostPoster() {
+  const g = new THREE.Group();
+  g.add(mesh(new THREE.BoxGeometry(0.18, 5.2, 0.18), std('#7a5a3a'), 0, 2.6, -0.05));
+  const tex = canvasTexture(256, 340, (c) => {
+    c.fillStyle = '#fff6dc'; c.fillRect(0, 0, 256, 340); c.fillStyle = '#c8283c'; c.font = 'bold 54px sans-serif'; c.textAlign = 'center';
+    c.fillText('LOST', 128, 66); c.fillText('DOG', 128, 122);
+    c.fillStyle = '#d9a352'; c.fillRect(58, 170, 120, 66); c.fillRect(160, 146, 58, 56); c.fillRect(70, 236, 22, 44); c.fillRect(146, 236, 22, 44);
+    c.fillStyle = '#8a5a2a'; c.fillRect(170, 136, 16, 30); c.fillStyle = '#111'; c.fillRect(200, 166, 10, 10);
+    c.fillStyle = '#333'; c.font = 'bold 26px sans-serif'; c.fillText('PLEASE HELP', 128, 318);
+  });
+  const sheet = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 2.25), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.8 }));
+  sheet.position.set(0, 4.0, 0.06); g.add(sheet);
   return g;
 }
 export function tomato(scale = 1, sad = false) {
