@@ -19,9 +19,27 @@ Leo grabs it and draws a perfect lion; Mia's wobbly cage has no roof; a scribble
   the page (sketch -> colour), roars, stalks Leo to the board, Mia's no-roof cage drops, it swats the bars, leaps out,
   bats the stick boyfriend twice, play-bows ("just a big cat"), Mia scribbles a ball of yarn, it pounces and rolls over
   purring. Classroom and drawn props: `web/kit.js`. Beats: `source/beats.py` -> `web/beats.js`.
-- Preview of the lion section sent to the user for the animation check before building the rest.
+- Lion preview sent; user: "the animation on the lion is good", but the drawing made no sense (pencil moving on its own,
+  Leo inside the desk). Fixed: drawers stand at the desk's east edge (`LEO_DESK`/`MIA_DRAW` -1.5, 2.4, lean 0.24) and
+  the pencil is held by real arm IK (`reachArm` puts the right hand over the moving tip; the pencil runs tip -> hand).
+- Rest built: hook (Mia draws the stick dog, it hops off the page), fetch, square-wheeled bike (BONK x2, ridden across
+  the open floor by the board), stick boyfriend thumbs-up, Leo grabs the pencil ("Watch and learn." bubble), the
+  ending (Leo runs back round the cage, "No. You're too good." bubble, over-the-shoulder shots), CTA end card.
+  The drawn dog's flat head always turns to the camera.
+- Sound: `source/sfx_assets.py` (roar/clang/thud/whoosh/chime/flutter copied from Every Lie Comes True; pencil, purr,
+  bonk synthesized) -> `source/sound_cues.py` -> `source/sound_cues.json` (81 cues).
+- Cover: `web/cover_clip.js` (the lion mid-roar, WHATEVER SHE DRAWS / COMES ALIVE, "HE DREW IT TOO WELL") ->
+  `delivery/Whatever_Mia_Draws_cover.png|jpg`. Post copy: `delivery/post.json`. Fit check: 0 pairs, reviewed.
+- Full render started 2026-10-05 (`renders/web`, 1904 frames, --resume safe).
 
 ## Next
-1. User feedback on the lion animation.
-2. Build the rest: the hook and montage (stick dog fetching, square-wheeled bike, stick boyfriend), Leo grabbing the
-   pencil ("Watch and learn." bubble), and the button ("No. You're too good." bubble) + CTA end card; cover; full render.
+1. Encode: `python3 scripts/finish.py projects/whatever-mia-draws --encode --frames projects/whatever-mia-draws/renders/web`
+   (appends the cover as the last 0.5 s, writes `_post.md`); review a contact sheet; send the preview for approval.
+2. Post only after the user approves this MP4 (TikTok first, then YouTube).
+
+## Commands
+```
+python3 source/beats.py && python3 source/sfx_assets.py && python3 source/sound_cues.py      # from the project dir
+node web/render.mjs --clip projects/whatever-mia-draws/web/mia_clip.js --out projects/whatever-mia-draws/renders/web --workers 4 --resume
+node web/render.mjs --clip projects/whatever-mia-draws/web/cover_clip.js --out <dir> --frames 1   # cover
+```

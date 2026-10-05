@@ -40,12 +40,13 @@ Object.assign(T, {
 // Drawers stand at the desk's east edge on the paper's left (their right hand over the paper), leaning in a little.
 const LEO_DESK = V(-1.5, 0, 2.4), MIA_DESK = V(0.4, 0, 3.4), MIA_DRAW = V(-1.5, 0, 2.4), LEO_GRAB = V(-1.1, 0, -0.1);
 const LEO_ASK = V(-2.6, 0, 4.5), LEO_ROUTE = [V(-20.6, 0, -1.0), V(-17.0, 0, 5.6), V(-6.0, 0, 5.6), V(-2.6, 0, 4.5)];   // round the cage, past the lion
-const DOG_F0 = V(-6.8, 0, 2.6), STICK_LAND = V(-10.5, 0, 6.8), DOG_RET = V(-2.6, 0, 4.6), DOG_SIT = V(-5.2, 0, 11.6);
-const BIKE0 = V(13, 0, 4.4), BIKE1 = V(1.5, 0, 4.4);
+const DOG_F0 = V(-6.0, 0, 3.4), STICK_LAND = V(-10.5, 0, 6.8), DOG_RET = V(-2.6, 0, 4.6), DOG_SIT = V(-5.2, 0, 11.6);
+const BIKE0 = V(-10, 0, -11), BIKE1 = V(-10, 0, 9);           // across the open floor by the board (the lion's space later)
+const DOG_S = 1.5;                                        // the drawn dog, full size on the floor
 const LEO_PIN = V(-20.6, 0, -1.0);                       // backed against the board
 const L_LAND = V(-9.5, 0, 6.5), L_STALK = V(-12, 0, -0.8), L_OUT = V(-15.5, 0, 8.0);
 const L_BAT2 = V(-11.8, 0, 8.2), L_PLAY = V(-12.2, 0, 9.6), L_POUNCE = V(-8.8, 0, 9.5);
-const BF0 = V(-0.4, 0, 4.8), BF1 = V(-17.6, 0, 3.6), BF2 = V(-9.0, 0, 6.6), BF3 = V(-1.6, 0, 6.2);
+const BF_END = V(-6.6, 0, 11.2), BF0 = V(-0.4, 0, 4.8), BF1 = V(-17.6, 0, 3.6), BF2 = V(-9.0, 0, 6.6), BF3 = V(-1.6, 0, 6.2);
 const Y_DROP = V(-5.4, 0, 2.0), Y_END = V(-7.0, 0, 9.4);
 const DRAW_SCALE = 0.184;                                 // the page drawing's size (lion length 2.17 on the paper)
 const DOOR = V(21.5, 0, 9);
@@ -196,6 +197,7 @@ function bfAt(s) {
       if (s >= T.bat2 + 0.9) { st.pose = { spin: 0, lift: -1.1, armL: [0, 0.35], armR: [-2.6, -0.2] }; st.heading = headTo(BF3, V(0, 0, 30)); }   // sitting, thumbs up
     }
   }
+  if (s >= W.once - 0.2) { st.pos = BF_END.clone(); st.y = 0; st.heading = headTo(BF_END, MIA_DRAW); st.pose = { spin: 0, lift: -1.1, armL: [0, 0.35], armR: [-2.6, -0.2] }; }   // ending: sat by the dog, out of the way
   return st;
 }
 
@@ -272,13 +274,13 @@ function miaAt(s) {
   if (s < T.bike0) {                                       // draws a stick dog; it fetches
     const x = base(MIA_DRAW, -Math.PI / 2, 'happy');
     x.draw = s < T.dogPop; x.lean = x.draw ? 0.24 : 0; x.face = x.draw ? 'determined' : 'smug';
-    if (s >= T.dogPop) { x.yaw = -0.4; x.layers = [['proud', s - T.dogPop, 1, false]]; }
-    if (s >= W.dog - 0.3) { x.heading = -Math.PI / 2 - 0.5; x.layers = [['idle', s]]; x.face = 'happy'; x.yaw = 0; }
+    if (s >= T.dogPop) { x.heading = angLerp(-Math.PI / 2, headTo(MIA_DRAW, DOG_F0), smooth(inv(T.dogPop, T.dogPop + 0.5, s))); x.layers = [['proud', s - T.dogPop, 1, false]]; }
+    if (s >= W.dog - 0.3) { x.heading = headTo(MIA_DRAW, STICK_LAND); x.layers = [['idle', s]]; x.face = 'happy'; x.yaw = 0; }
     const th = s - (T.throw - 0.3); if (th > 0 && th < 0.6) x.arms = [['L', 0.2, lerp(0.8, -2.0, smooth(clamp(th / 0.3)))]];   // overarm throw (left hand)
     return x;
   }
   if (s < T.bike1) {                                       // on her square-wheeled bike
-    const bk = bikeAt(s), x = base(bk.pos.clone().add(V(0.45, 0, 0)), -Math.PI / 2, 'happy'); x.layers = [['sit', 0.5]]; x.onBike = true; x.lift = bk.lift; x.arms = [['L', 0.15, -1.25], ['R', 0.15, -1.25]];
+    const bk = bikeAt(s), x = base(bk.pos.clone().add(V(0, 0, -0.45)), 0, 'happy'); x.layers = [['sit', 0.5]]; x.onBike = true; x.lift = bk.lift; x.arms = [['L', 0.15, -1.25], ['R', 0.15, -1.25]];
     if (s > W.bonk1 - 0.05) x.face = 'shocked';
     return x;
   }
@@ -323,11 +325,11 @@ function runner(seat, s, delay, face) {
 
 // ---------- the dog, the fetch stick, the bike ----------
 function dogAt(s) {
-  const st = { pos: DOG_F0.clone(), heading: Math.PI / 2, y: 0, pose: { wag: s }, visible: (s >= T.dogPop && s < T.leoUp) || s >= W.once - 0.2, scale: 1, carry: false };
+  const st = { pos: DOG_F0.clone(), heading: Math.PI / 2, y: 0, pose: { wag: s }, visible: (s >= T.dogPop && s < T.leoUp) || s >= W.once - 0.2, scale: DOG_S, carry: false };
   if (s >= W.once - 0.2) { st.pos = DOG_SIT.clone(); st.heading = headTo(DOG_SIT, L_POUNCE); return st; }
   if (s < T.dogPop + 0.6) {                                // hops off the page onto the floor, growing to full size
     const u = inv(T.dogPop, T.dogPop + 0.6, s); st.pos = PAPER.clone().lerp(DOG_F0, smooth(u)); st.pos.y = 0;
-    st.y = lerp(DESK_TOP, 0, smooth(u)) + 1.6 * Math.sin(Math.PI * u); st.scale = lerp(0.35, 1, smooth(u)); st.heading = -Math.PI / 2; st.pose = { wag: s, run: s * 3 };
+    st.y = lerp(DESK_TOP, 0, smooth(u)) + 1.6 * Math.sin(Math.PI * u); st.scale = DOG_S * lerp(0.25, 1, smooth(u)); st.heading = -Math.PI / 2; st.pose = { wag: s, run: s * 3 };
     return st;
   }
   if (s < T.throw + 0.25) { st.heading = headTo(DOG_F0, MIA_DRAW); return st; }
@@ -507,7 +509,7 @@ export function update(t, stage) {
     else { const m = V(0, 1.15, 1.25).applyMatrix4(dog.root.matrixWorld); stk.position.copy(m); stk.rotation.set(0, D.heading + Math.PI / 2, 0); }   // in its mouth
   }
   const BK = bikeAt(s); bike.root.visible = BK.visible;
-  if (BK.visible) { bike.root.position.copy(BK.pos).add(V(0, SQ + BK.lift, 0)); bike.root.rotation.set(0, -Math.PI / 2, 0); for (const w of bike.wheels) w.rotation.x = BK.ang; }
+  if (BK.visible) { bike.root.position.copy(BK.pos).add(V(0, SQ + BK.lift, 0)); bike.root.rotation.set(0, 0, 0); for (const w of bike.wheels) w.rotation.x = BK.ang; }
   // flying papers at the roar
   for (const p of room.papers) {
     const k = s - T.roar - 0.1, d = p.userData;
@@ -523,15 +525,18 @@ export function update(t, stage) {
   const mp = mia.root.position.clone(), lpo = leo.root.position.clone();
   switch (shot.id) {                                       // every camera inside the room (x -22..22, z -14..14)
     case 'hook': { const c = PAPER.clone(); const k = smooth(inv(T.dogPop - 0.1, T.dogPop + 0.6, t));
-      look(stage, V(c.x - lerp(2.4, 6.4, k), c.y + lerp(2.9, 2.6, k), c.z + lerp(0.2, 1.6, k)), c.clone().add(V(0.25, 0, 0)).lerp(V(-6.2, 1.6, 2.4), k), 46); break; }   // the drawing, then the dog hopping off
-    case 'rule': look(stage, V(-10.5, 4.6, 5.2), V(-3.6, 2.6, 2.4), 46); break;                                                // the dog (four sticks) and proud Mia
-    case 'fetch': look(stage, V(-1.0, 6.5, 13.4), V(-6.6, 1.6, 4.6), 58); break;
-    case 'bike': { const bp = bike.root.position; look(stage, V(bp.x + 2.5, 4.4, 12.8), V(bp.x - 0.5, 2.6, bp.z), 52); break; }      // tracking alongside
+      look(stage, V(c.x - 2.4, c.y + 2.9, c.z + 0.2).lerp(V(-4.6, 4.2, 12.6), k), c.clone().add(V(0.25, 0, 0)).lerp(V(-5.2, 1.9, 3.0), k), lerp(46, 54, k)); break; }   // the drawing, then (from the side) the dog hopping off   // the drawing, then the dog hopping off
+    case 'rule': look(stage, V(-9.5, 4.6, 12.4), V(-3.8, 2.6, 2.8), 54); break;                                                // the dog (four sticks) and proud Mia
+    case 'fetch': { const dp = dog.root.position, k = smooth(inv(T.throw, T.throw + 0.8, t));         // Mia throws, then it follows the dog
+      const tg = mp.clone().lerp(dp, 0.5).lerp(dp, k).setY(lerp(2.6, 1.4, k)); look(stage, V(tg.x + lerp(-4.5, 3.5, k), lerp(4.8, 3.8, k), Math.min(13.6, tg.z + lerp(10, 7.0, k))), tg, lerp(58, 46, k)); break; }
+    case 'bike': { const bp = bike.root.position; look(stage, V(-19.5, 4.6, Math.min(13.6, bp.z + 6.5)), V(bp.x, 3.4, bp.z), 46); break; }       // tracking alongside, from the board side
     case 'bf': look(stage, V(-9.0, 5.0, 6.0), V(-1.0, 3.4, 3.6), 44); break;
     case 'leo': look(stage, V(-10.5, 6.5, 2.0), lpo.clone().lerp(mp, 0.4).add(V(0, 3.2, 0)), 50); break;
     case 'watch': look(stage, lpo.clone().add(V(-5.8, 4.8, 1.6)), lpo.clone().add(V(0, 4.0, 0)), 38); break;
-    case 'ask': look(stage, V(-9.0, 5.2, 8.2), V(-2.2, 3.4, 3.6), 46); break;
-    case 'no': look(stage, V(-6.8, 4.8, 7.4), V(-2.0, 3.9, 3.4), 40); break;
+    case 'ask': case 'no': {                              // over the shoulder, offset to the side so neither blocks the other
+      const no = shot.id === 'no', d = lpo.clone().sub(mp).setY(0).normalize(), n = V(-d.z, 0, d.x); if (n.z < 0) n.negate();
+      const cp = no ? lpo.clone().addScaledVector(d, 4.5).addScaledVector(n, 4.5) : mp.clone().addScaledVector(d, -4.5).addScaledVector(n, 4.2);
+      cp.z = Math.min(cp.z, 13.6); cp.y = 4.7; look(stage, cp, (no ? mp : lpo).clone().setY(3.9), 40); break; }
     case 'cta': look(stage, V(lerp(5, 4, u), 8.8, 13.4), V(-8, 2.6, 4), 64); break;
     case 'draw': look(stage, V(lerp(-10.8, -10.2, u), 6.8, 3.6), V(-3.2, 3.8, 0.8), 40); break;                                 // Leo drawing, from the board side
     case 'page': { const c = PAPER.clone(); look(stage, V(c.x - lerp(2.6, 2.3, u), c.y + lerp(3.5, 3.2, u), c.z), c.clone().add(V(0.25, 0, 0)), 46); break; }   // across the desk at the drawing, Leo behind it
@@ -557,6 +562,9 @@ export function update(t, stage) {
     default: look(stage, V(4, 7, 13), V(-6, 3, 2), 50);
   }
   cam = stage.camera;
+  if (dog.root.visible) {                                  // the dog's head is a flat drawn circle: it always turns to the camera
+    const hp = dog.head.getWorldPosition(V()), tilt = dog.head.rotation.z; dog.head.lookAt(cam.position.x, hp.y, cam.position.z); dog.head.rotateZ(tilt);
+  }
 }
 
 // ---------- overlay ----------
