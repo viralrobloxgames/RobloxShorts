@@ -308,7 +308,7 @@ function maxState(s) {
     if (s > B.again) { b.rotY = face(FEED, V(0, 0, 12)); b.layers = [[A.point_forward, 0.3]]; b.face = 'nervous'; }
     if (s > B.coins2 + 0.15) { b.rotY = face(FEED, CHEST_AT.clone().add(V(0, 0, 3))); b.layers = [[A.defeated, 0.8]]; b.face = 'sad'; }
   } else if (s < B.hurry) {                              // watches Mia's chest: shock
-    b.pos = V(3.6, 0, 24.5); b.rotY = face(b.pos, CHEST_AT); b.layers = [[A.defeated, 0.8]]; b.face = 'sad';
+    b.pos = V(0.6, 0, 21); b.rotY = face(b.pos, CHEST_AT); b.layers = [[A.defeated, 0.8]]; b.face = 'sad';
     if (s > B.rise) { b.layers = [[A.shock, 0.35]]; b.face = 'shocked'; }
   } else return H.hide(b);
   return b;
@@ -430,7 +430,7 @@ export function update(t, stage) {
   blade.visible = (s > B.maxLook && s < B.hopShot) || s > B.cta;
   const bk = s > B.cta ? 2.3 : 2.3 * easeOutBack(seg(s, B.maxLook + 0.2, B.maxLook + 0.7), 1.8);
   blade.scale.setScalar(Math.max(0.001, bk)); blade.position.copy(BLADE_AT).add(V(0, 0.5 * Math.sin(s * 2.2), 0)); blade.rotation.set(0, s * 1.6, 0.12);
-  if (s > B.cta) { blade.position.set(8.2, 3.2 + 0.5 * Math.sin(s * 2.2), 14); blade.scale.setScalar(1.6); }
+  if (s > B.cta) { blade.position.set(6.8, 3.2 + 0.5 * Math.sin(s * 2.2), 15); blade.scale.setScalar(1.5); }
   blade2.visible = s > B.rise && s < B.hurry;
   if (blade2.visible) { const u = easeOut(seg(s, B.rise, B.rise + 0.9)); blade2.position.copy(CHEST_AT).add(V(0, lerp(1.2, 5.6, u), 0.2)); blade2.rotation.set(0, s * 2.5, 0); blade2.scale.setScalar(0.85 * lerp(0.6, 1, u)); }
 
@@ -517,7 +517,7 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': look(V(lerp(-6, -4, u), 3.6, 54).add(jolt(B.land, 1.2, 0.5)), V(0, lerp(17, 10, easeInOut(seg(s, 0, B.land + 0.3))), 4), 58, 50); break;     // low behind the trio: it drops onto the plinth
     case 'blown': look(V(7, 4.5, 50), V(0, 8, 6), 52, 40); break;                                                     // the trio blown back, the Kitsune behind
-    case 'hungry': look(V(lerp(5, 3.5, u), 9.5, 33), V(0, 8.6, 10), 44, 40); break;                                      // close on its face
+    case 'hungry': look(V(lerp(5, 3.5, u), 9.5, 34), V(0, 11.5, 10), 44, 40); break;                                      // close on its face
     case 'dawn': look(DAWN_BEAST.clone().add(V(-14, 4, 30)), DAWN_BEAST.clone().add(V(-5, 6.5, 0)), 50, 50); break;          // the crystal beast in its beam
     case 'fight': look(V(97, 4.5, 66), V(97, 4.2, 39), 50, 40); break;
     case 'feed1': look(V(14, 5, 34), V(1, 6.5, 14), 46, 40); break;                                                       // Leo at the feed spot, the face above
@@ -526,7 +526,7 @@ export function update(t, stage) {
     case 'feed4': look(V(3, 2.4, 29), V(2.5, 6.5, 14), 48, 40); break;
     case 'nothing': look(V(-14, 6, 40), V(0, 6, 12), 46, 40); break;
     case 'feed5': look(V(14, 5, 34), V(1, 6.5, 14), 46, 40); break;
-    case 'chest': look(V(0, 5, 37), V(-0.5, 3.6, 19), 50, 40); break;                                                       // the chest drops between Leo and the Kitsune
+    case 'chest': look(V(-0.5, 7, 54), V(-0.5, 4.6, 19), 50, 40); break;                                                       // the chest drops between Leo and the Kitsune
     case 'maxLook': look(V(9, 3, 29), V(16, 8, 6), 52, 40); break;                                                      // behind Max, looking up at the Blade
     case 'blade': look(V(9, 7, 36), V(13, 11.5, 4), 48, 40); break;                                                        // the Blade turning beside the Kitsune, Max below
     case 'need': look(V(5, 4.6, 33), V(7.5, 4, 20), 40, 30); break;                                                       // Max, sword ready
@@ -538,7 +538,7 @@ export function update(t, stage) {
     case 'burst': look(V(16, 6, 66).add(jolt(B.burst, 1.0, 0.5)), V(-2, 6, 34), 56, 60); break;
     case 'maxTwo': look(V(9, 3.8, 42), V(3.2, 3.4, 30), 42, 40); break;
     case 'miaTower': look(V(9, 4.5, 46), V(4, 5, 31), 50, 40); break;
-    case 'maxFeed': case 'again': look(V(2, 5, 42), V(1.2, 5.2, 17), 50, 40); break;
+    case 'maxFeed': case 'again': look(V(-0.5, 7, 55), V(-0.5, 5.8, 17), 50, 40); break;
     case 'miaChest': look(V(1.5, 4.6, 39), V(-2.5, 4.6, 21), 48, 40); break;
     case 'deadline': look(V(lerp(10, 8, u), 3, 40), V(0, lerp(10, 13, easeInOut(seg(s, B.look, B.look + 0.8))), 6), 50, 40); break;
     case 'cta': look(V(4, 5, 50), V(3, 9, 6), 48, 40); break;                                                            // end card: the Kitsune and the Blade below the card
@@ -583,8 +583,9 @@ function drawMeter(g, s, t, n, y = 430) {
   g.restore();
   bigText(g, s, 'FEED ME', 540, y - 34, 44, '#ffffff', { stroke: '#1a1440' });
 }
-function speech(g, s, p3, lines, k = 1, dir = 1) {
-  const p = project(p3, s); if (!p.on) return;
+function speech(g, s, p3, lines, k = 1, dir = 1) { const p = project(p3, s); if (p.on) speechAt(g, s, p.x / s, p.y / s, lines, k, dir); }
+function speechAt(g, s, x, y, lines, k = 1, dir = 1) {
+  const p = { x: x * s, y: y * s };
   g.save(); g.translate(p.x, p.y); g.scale(k, k);
   const w = 560, h = 70 * lines.length + 50;
   roundRect(g, -w / 2 * s, -h * s, w * s, h * s, 36 * s); g.fillStyle = 'rgba(255,255,255,.97)'; g.fill(); g.lineWidth = 7 * s; g.strokeStyle = '#1a1440'; g.stroke();
@@ -606,7 +607,7 @@ export function overlay(g, s, t) {
   // Hook.
   banner(g, s, t, B.land, ['THE PRISM KITSUNE', 'ARRIVES'], 640, { hold: B.hungry - B.land });
   if (meterOn(t)) drawMeter(g, s, t, meter(t), SHOT === 'hungry' ? 470 : 470);
-  if (t > B.speech && t < B.dawn) speech(g, s, kitPoint(V(-5.5, 6.5, 12)), ["I'M SO", 'HUNGRY...'], pop(t, B.speech, 0.25, 2), 1);
+  if (t > B.speech && t < B.dawn) speechAt(g, s, 560, 800, ["I'M SO HUNGRY..."], pop(t, B.speech, 0.25, 2), 1);
   if (t > W.only - 0.1 && t < B.dawn) bigText(g, s, 'ONLY PRISM EGGS!', 540, 1370, 76, CYAN, { k: pop(t, W.eats - 0.1, 0.2, 2.5), alpha: t > W.eats - 0.1 ? 1 : 0 });
   // Dawn.
   word(g, s, t, B.dawn + 0.1, 1.6, 'DAWN', '#ffcf9a', 150, 700);
