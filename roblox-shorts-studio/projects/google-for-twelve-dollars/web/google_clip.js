@@ -304,13 +304,14 @@ function light(stage, mode) {
   const L = {
     night: { sun: 0.0, hemi: 0.16, hemiC: '#5a6aa8', env: 0.14, fill: 0.1, rim: 0.3, glow: 11, ceil: 0, moon: 40, sky: ['#4f8fe6', '#d7ecff'] },
     space: { sun: 3.4, hemi: 0.12, hemiC: '#6a7ab8', env: 0.15, fill: 0.15, rim: 0.9, glow: 0, ceil: 0, moon: 0, sky: ['#02030c', '#0a1238'] },
-    office: { sun: 0.4, hemi: 0.75, hemiC: '#eef4ff', env: 0.6, fill: 0.5, rim: 0.6, glow: 0, ceil: 0, moon: 0, sky: ['#4f8fe6', '#d7ecff'] },
+    office: { sun: 0.0, hemi: 0.42, hemiC: '#e6ecf7', env: 0.32, fill: 0.35, rim: 0.4, glow: 0, ceil: 0, moon: 0, sky: ['#4f8fe6', '#d7ecff'] },
     day: { sun: 3.1, hemi: 0.55, hemiC: '#d9ecff', env: 0.55, fill: 0.7, rim: 1.1, glow: 0, ceil: 0, moon: 0, sky: ['#4f8fe6', '#d7ecff'] },
     morning: { sun: 0.0, hemi: 0.6, hemiC: '#fff4e0', env: 0.55, fill: 0.55, rim: 0.6, glow: 6, ceil: 70, moon: 0, sky: ['#4f8fe6', '#d7ecff'] },
   }[mode];
   stage.sun.intensity = L.sun; stage.hemi.intensity = L.hemi; stage.hemi.color.set(L.hemiC); sc.environmentIntensity = L.env;
   stage.fill.intensity = L.fill; stage.rim.intensity = L.rim; R.glow.intensity = L.glow; R.ceilingLight.intensity = L.ceil; R.moon.intensity = L.moon;
-  O.lamp.intensity = mode === 'office' ? 90 : 0;
+  O.lamp.intensity = mode === 'office' ? 38 : 0;
+  stage.ao.blendIntensity = mode === 'office' ? 0.0 : 0.85;           // AO breaks up into a shimmering dot pattern on the big flat office screen
   u.zenith.value.set(L.sky[0]); u.horizon.value.set(L.sky[1]); u.below.value.set(mode === 'space' ? '#02030c' : '#f0f6ff');
   sc.fog.color.set(mode === 'space' ? '#02030c' : '#e8f2ff'); sc.fog.near = mode === 'space' ? 600 : 90; sc.fog.far = mode === 'space' ? 2000 : 520;
   R.setDay(mode === 'morning');
@@ -387,12 +388,12 @@ export function update(t, stage) {
     case 'pov4': pov(lerp(3.4, 3.15, u), 0.3, 60); break;
     case 'refund': look(stage, V(6.4, 4.6, 4.2), V(1.6, 3.9, -4.4), 48); break;
     case 'pov5': pov(3.35, 0.3, 60); break;
-    case 'office': look(stage, OFFICE.clone().add(V(lerp(9, 4.5, u), lerp(6.2, 7.8, u), lerp(8, 6.5, u))), OFFICE.clone().add(V(lerp(2.5, 0.0, u), lerp(4.4, 7.0, u), -4.5)), 52, 20); break;
+    case 'office': look(stage, OFFICE.clone().add(V(lerp(7.5, 4.5, u), lerp(6.6, 7.4, u), lerp(8.5, 7.5, u))), OFFICE.clone().add(V(lerp(1.5, 0.0, u), lerp(5.2, 6.8, u), -4.5)), 52, 20); break;
     case 'noob': look(stage, V(-3.5, 5.2, 4.5), V(5.0, 3.8, -2.6), 50); break;
     case 'cheque': { const c = CQ.group.getWorldPosition(V()), d = V(0, 0, 1).applyQuaternion(CQ.group.getWorldQuaternion(new THREE.Quaternion())); look(stage, c.clone().addScaledVector(d, lerp(11, 10.4, u)), c, 50, 12); break; }
     case 'give': look(stage, V(4.4, 5.3, 8.6), V(4.6, 3.9, -3.0), 46); break;
     case 'school': look(stage, SCHOOL.clone().add(V(lerp(4, 0, u), lerp(4.5, 5.5, u), lerp(30, 26, u))), SCHOOL.clone().add(V(0, 5.5, 0)), 52, 30); break;
-    case 'double': look(stage, OFFICE.clone().add(V(0, 7.6, lerp(13, 11.5, u))), OFFICE.clone().add(V(0, 6.4, -4)), 56, 20); break;
+    case 'double': look(stage, OFFICE.clone().add(V(0, 6.6, lerp(13, 11.8, u))), OFFICE.clone().add(V(0, 6.2, -4)), 56, 20); break;
     case 'final': case 'cta': look(stage, V(lerp(3.4, 2.6, u), 5.0, lerp(7.8, 7.0, u)), lp.clone().add(V(-1.5, 4.6, -1.0)), 48); break;
     default: look(stage, V(5, 6, 6), V(0, 4, -5), 50);
   }

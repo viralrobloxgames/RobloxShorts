@@ -16,7 +16,7 @@ ANCHORS = {
     'cancelled': ('cancelled', 1), 'twelve2': ('twelve', 2), 'refunded': ('refunded', 1), 'wants': ('wants', 1), 'back': ('back', 1),
     'reports': ('reports', 1), 'security': ('security', 1), 'send': ('send', 1), 'reward': ('reward', 1), 'six1': ('six', 1),
     'thirteen': ('thirteen', 1), 'write': ('write', 1), 'squint': ('squint', 1),
-    'd1': ('six', 2), 'd2': ('zero', 1), 'd3': ('zero', 2), 'd4': ('six', 3), 'd5': ('one', 2), 'd6': ('three', 1),
+    'd1': ('six', 3), 'd2': ('zero', 1), 'd3': ('zero', 2), 'd4': ('six', 4), 'd5': ('one', 3), 'd6': ('three', 1),   # 'six' 1-2 and 'one' 1-2 come earlier in the script
     'l1': ('g', 1), 'l2': ('o', 1), 'l3': ('o', 2), 'l4': ('g', 2), 'l5': ('l', 1), 'l6': ('e', 1),
     'doesnt': ('doesnt', 1), 'asks': ('asks', 1), 'charity': ('charity', 1), 'schools': ('schools', 1), 'india': ('india', 1),
     'doubles': ('doubles', 1), 'over': ('over', 1), 'twelve3': ('twelve', 3), 'twelve4': ('twelve', 4), 'website4': ('website', 4),
