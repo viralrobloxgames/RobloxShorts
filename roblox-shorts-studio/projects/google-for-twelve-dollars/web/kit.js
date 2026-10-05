@@ -115,7 +115,7 @@ export function bedroom(scene) {
   const door = box(0.25, 7.4, 5.2, std('#c0763a'), 0, 3.7, -2.6); doorPivot.add(door);
   const knob = new THREE.Mesh(new THREE.SphereGeometry(0.18, 12, 8), std('#ffd23f', { metalness: 0.7, roughness: 0.3 })); knob.position.set(-0.2, 3.6, -4.7); doorPivot.add(knob);
   // lights: the screen glow on Leo, a ceiling lamp (off at night), moonlight through the window
-  const glow = new THREE.PointLight('#bfdcff', 0, 14, 1.6); glow.position.set(-0.4, 4.6, -5.6); g.add(glow);
+  const glow = new THREE.PointLight('#bfdcff', 0, 14, 1.6); glow.position.set(-0.4, 4.7, -7.0); g.add(glow);
   const ceiling = new THREE.PointLight('#fff1d6', 0, 40, 1.2); ceiling.position.set(0, 10.2, 0); g.add(ceiling);
   const moon = new THREE.SpotLight('#7f9cff', 0, 40, 0.6, 0.6, 1); moon.position.set(2.3, 9, -14); moon.target.position.set(0, 0, 2); g.add(moon, moon.target);
   return {

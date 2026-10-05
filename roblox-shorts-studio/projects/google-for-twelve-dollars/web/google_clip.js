@@ -114,7 +114,7 @@ function leoAt(s) {
     if (s >= W.write - 0.2) x.face = 'squeezed';
     if (s >= W.l1) x.face = 'surprised';
     if (s >= T.give) { x.face = 'happy'; x.arms = [['L', 0.1, -1.3 * smooth(inv(T.give, T.give + 0.3, s))], ['R', 0.1, -1.3 * smooth(inv(T.give, T.give + 0.3, s))]]; }
-    if (s >= T.point) { x.arms = []; x.layers = [['point_forward', s - T.point, 1, false]]; x.face = 'love'; x.heading = Math.PI / 2 - 0.5; }
+    if (s >= T.point) { x.arms = []; x.layers = [['point_forward', s - T.point, 1, false]]; x.face = 'love'; x.heading = 0.6; }
     return x;
   }
   const x = base(V(0.8, 0, -2.2), 0.15, 'happy');          // morning: holds the $12 coin up next to the $12,012 screen
@@ -367,7 +367,7 @@ export function update(t, stage) {
   const fk = easeOutBack(clamp((s - T.flag) / 0.3), 1.8);
   G.flag.visible = fk > 0.01; G.flag.position.set(1.6, GLOBE_R - 0.2, -0.8); G.flag.scale.setScalar(Math.max(0.01, fk)); G.wave(s);
   // doors
-  R.door.rotation.y = 1.5 * smooth(inv(T.noobIn - 0.5, T.noobIn + 0.1, s)) * (s < T.final ? 1 : 0);
+  R.door.rotation.y = 1.5 * smooth(inv(T.noobIn - 0.5, T.noobIn + 0.1, s)) * (1 - smooth(inv(W.write - 1.0, W.write - 0.4, s)));
   S.doors.forEach((d, i) => { d.rotation.y = (i ? -1 : 1) * 1.4 * smooth(inv(W.charity - 0.4, W.charity + 0.2, s)); });
   O.button.position.y = 0.42 - 0.18 * (s > T.press - 0.05 && s < T.press + 0.25 ? 1 : 0);
 
@@ -379,7 +379,7 @@ export function update(t, stage) {
     case 'hook': pov(lerp(3.5, 3.3, u), 0.3, 60); break;
     case 'wide': look(stage, V(lerp(5.2, 4.6, u), 6.4, lerp(3.2, 2.4, u)), V(-0.2, 4.0, -6.2), 52); break;                          // over the shoulder, night window, clock
     case 'pov1': pov(lerp(3.5, 3.25, u), 0.3, 60); break;
-    case 'face': look(stage, V(5.6, 6.0, -7.7), V(0, 4.8, -5.0), 40); break;                                                         // from behind the laptop: his lit face
+    case 'face': look(stage, V(1.5, 6.9, -8.8), V(0, 4.6, -4.9), 52); break;                                                         // from behind the laptop: his lit face
     case 'pov2': pov(3.35, 0.3, 60); break;
     case 'globe': { const a = lerp(0.25, 0.75, u), r = lerp(17, 14, u); look(stage, TOP.clone().add(V(1.0 + Math.sin(a) * r, lerp(1.6, 3.0, u), Math.cos(a) * r)), TOP.clone().add(V(1.0, 2.6, 0)), 50, 20); break; }
     case 'pov3': pov(3.35, 0.3, 60); break;
@@ -390,10 +390,10 @@ export function update(t, stage) {
     case 'office': look(stage, OFFICE.clone().add(V(lerp(9, 4.5, u), lerp(6.2, 7.8, u), lerp(8, 6.5, u))), OFFICE.clone().add(V(lerp(2.5, 0.0, u), lerp(4.4, 7.0, u), -4.5)), 52, 20); break;
     case 'noob': look(stage, V(-3.5, 5.2, 4.5), V(5.0, 3.8, -2.6), 50); break;
     case 'cheque': { const c = CQ.group.getWorldPosition(V()), d = V(0, 0, 1).applyQuaternion(CQ.group.getWorldQuaternion(new THREE.Quaternion())); look(stage, c.clone().addScaledVector(d, lerp(11, 10.4, u)), c, 50, 12); break; }
-    case 'give': look(stage, V(3.6, 5.4, 8.2), V(4.7, 3.9, -3.0), 46); break;
+    case 'give': look(stage, V(4.4, 5.3, 8.6), V(4.6, 3.9, -3.0), 46); break;
     case 'school': look(stage, SCHOOL.clone().add(V(lerp(4, 0, u), lerp(4.5, 5.5, u), lerp(30, 26, u))), SCHOOL.clone().add(V(0, 5.5, 0)), 52, 30); break;
     case 'double': look(stage, OFFICE.clone().add(V(0, 7.6, lerp(13, 11.5, u))), OFFICE.clone().add(V(0, 6.4, -4)), 56, 20); break;
-    case 'final': case 'cta': look(stage, V(lerp(3.4, 2.6, u), 5.0, lerp(7.8, 7.0, u)), lp.clone().add(V(-0.6, 4.4, -1.0)), 46); break;
+    case 'final': case 'cta': look(stage, V(lerp(3.4, 2.6, u), 5.0, lerp(7.8, 7.0, u)), lp.clone().add(V(-1.5, 4.6, -1.0)), 48); break;
     default: look(stage, V(5, 6, 6), V(0, 4, -5), 50);
   }
   cam = stage.camera;
