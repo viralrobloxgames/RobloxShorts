@@ -1,0 +1,21 @@
+{
+  "title": "Roblox Deleted YouTube",
+  "series": "ViralRoblox News #2",
+  "character": "Skye",
+  "characters": [
+    "Skye"
+  ],
+  "seconds": 63.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok + YouTube Shorts",
+  "status": "script_draft",
+  "finish": {
+    "music": "projects/news-002-roblox-deleted-youtube-videos/audio/music_bed.wav",
+    "caption_margin_v": 450,
+    "caption_font_size": 72,
+    "word_fixes": {},
+    "music_gain": 1.0
+  }
+}
