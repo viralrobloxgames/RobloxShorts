@@ -35,10 +35,11 @@
       "title": "Admin For One Round",
       "series": "roblox",
       "created": "2026-09-30",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
       "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-      "project": "projects/admin-for-one-round"
+      "project": "projects/admin-for-one-round",
+      "notes": "On TikTok since 2026-09-30 22:35 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The AFK Millionaire",
@@ -128,10 +129,11 @@
       "title": "The Super Nose Detective",
       "series": "super nose detective (case 1)",
       "created": "2026-10-03",
-      "status": "narration_done",
+      "status": "posted",
       "logline": "A Roblox take on the 70s Miami detective parody Dick Snifford (flirting yes, no swearing or sexual references): Detective Max Sniffwell has the Super Nose gamepass and solves the stolen Golden Donut case by sniffing a sock. Skye asks if he's single and Mia asks him to stay at a pool party ('Tempting. But I'm on a case.'); he sneezes a pepper-throwing red herring into the pool and follows the trail back to Chief Leo, who has one sock, sprinkles on his face and half the donut. Leo slides him the other half, his cut. 'Tempting.' Case closed.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/the-super-nose-detective"
+      "project": "projects/the-super-nose-detective",
+      "notes": "Posted by the user on TikTok 2026-10-04 16:30 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The Server Says One",
@@ -146,10 +148,11 @@
       "title": "Which Max Is Real",
       "series": "After Hours horror (part 2 of 2, finale)",
       "created": "2026-10-03",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Finale. Mia, who was spectating, realises the copy is a mirror: 'raise your right hand' exposes the right Max (the hoodie star was the clue). It lunges for her; Max walks backwards so the mirror backs toward the EXIT door, it resists one step away, Max sprints backwards and the mirror is flung through; Mia slams the door. Two players online. Max waves goodbye at the door; nothing waves back.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/which-max-is-real"
+      "project": "projects/which-max-is-real",
+      "notes": "Posted by the user on TikTok 2026-10-04 23:37 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "Three Seconds",
@@ -183,10 +186,11 @@
       "title": "The Last Penalty",
       "series": "standalone story",
       "created": "2026-10-03",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "You're the keeper facing the last penalty of the final. Leo always looks at the corner he's aiming for, so you dive early and save it, but it's retaken because you left your line. Knowing he's been read, Leo shuts his eyes, and you stay on your line. Unable to see, he scuffs it into the grass and it rolls to your boot.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/the-last-penalty"
+      "project": "projects/the-last-penalty",
+      "notes": "Posted by the user on TikTok 2026-10-04 22:01 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "Don't Sneeze Outside",
@@ -212,7 +216,7 @@
       "title": "The Vampire Case (Detective Max Sniffwell)",
       "series": "super nose detective",
       "created": "2026-10-05",
-      "status": "approved_for_posting",
+      "status": "scheduled",
       "project": "projects/super-nose-case-2",
       "logline": "Count Vlad, the nicest vampire in town, is knocked out cold with a slice of garlic bread by his coffin. The Chief offers Max a burger to drop it (red herring: he is just lazy). One long sniff: butter, fresh garlic, compost, so the garlic was homegrown, and only the gardener grows anything: a garlic patch behind the roses. Motive: Vlad kept the whole garden in the shade, twenty years of sad tomatoes. Cuffs on, gloves and all; with the garlic gone Vlad wakes, and his sister asks Max to stay for dinner. Then he sees the fangs. ~62 s.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
@@ -269,7 +273,7 @@
       "title": "The Backwards Umbrella",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "rendered_awaiting_approval",
+      "status": "scheduled",
       "logline": "When Leo's umbrella is open it rains everywhere except under it. He soaks his friends, shares it (the Noob doesn't fit), keeps it shut - until Max's barbecue goes up in flames and the rain saves the park. Mia ducks under: 'Room for one more?'",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-backwards-umbrella",
@@ -326,6 +330,8 @@
     "farm_render_downloaded_awaiting_encode",
     "delivered_local_review",
     "published",
-    "dropped"
+    "dropped",
+    "posted",
+    "scheduled"
   ]
 }

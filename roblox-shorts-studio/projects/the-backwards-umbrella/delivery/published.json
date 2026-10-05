@@ -1,12 +1,12 @@
 {
-  "file": "The_Vampire_Case.mp4",
-  "sha256": "b858d5cee838339481683dd1dcb8b69a512924db2da33ec99c1094199958e29c",
+  "file": "The_Backwards_Umbrella.mp4",
+  "sha256": "918fc9935ad5ac8c2d05037a05f8f28ee5d6b9b23765dfc54b62da5a22c50ad1",
   "approved": {
     "by": "user",
     "at": "2026-10-05",
-    "how": "\"approved\" in chat (second cut)"
+    "how": "named in chat 2026-10-05 for scheduling tomorrow evening (\"schedule in posts for videos 1,4,3\")"
   },
-  "scheduled_for": "2026-10-06T20:45:00+01:00",
+  "scheduled_for": "2026-10-06T22:30:00+01:00",
   "tiktok": {
     "status": "scheduled",
     "method": "TikTok Studio web, Schedule",
@@ -18,8 +18,8 @@
   "youtube": {
     "status": "scheduled",
     "method": "YouTube Studio web, Schedule",
-    "url": "https://youtube.com/shorts/Cg9QBdu_cLE",
-    "video_id": "Cg9QBdu_cLE",
+    "url": "https://youtube.com/shorts/VQeLqpGRcZ0",
+    "video_id": "VQeLqpGRcZ0",
     "made_for_kids": false,
     "altered_content": false,
     "thumbnail": "cover.jpg uploaded before scheduling"
