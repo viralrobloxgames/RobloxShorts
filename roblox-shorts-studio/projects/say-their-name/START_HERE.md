@@ -18,10 +18,13 @@ wins before she finishes, and her "...nine" teleports him to her, holding a mill
   "Max? Leo?" still works by the rule.
 - Fit check: no accessories (0 pairs), reviewed.
 - Sound: `source/sfx_assets.py` -> `source/sound_cues.py` -> `source/sound_cues.json`.
-- Full render started 2026-10-05 into `renders/web` (1903 frames).
+- Full render done 2026-10-05 (`renders/web`, 1903 frames, 2.6 s/frame). Encoded: `delivery/Say_Their_Name.mp4`,
+  63.9 s incl. the 0.5 s cover at the end, -16.6 LUFS, validated; `_post.md` written. Caption word fixes: 2000 -> TWO
+  THOUSAND, -AIR -> AIR. Sent for review.
 
 ## Next
-1. Finish the render, cover (`web/cover_clip.js`), sound cues, encode, post copy; send for review.
+1. User review of the full video. Re-encode after any fix:
+   `python3 scripts/finish.py projects/say-their-name --encode --frames projects/say-their-name/renders/web`.
    Post only after approval (TikTok, then YouTube).
 
 ## Commands

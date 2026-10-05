@@ -1,6 +1,6 @@
 # The Guardian Quits
 
-TikTok: **not posted** · YouTube: **not posted** · `The_Guardian_Quits.mp4` (65 s)
+TikTok: **scheduled** · YouTube: **scheduled** · `The_Guardian_Quits.mp4` (65 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
@@ -28,8 +28,8 @@ Would you hire him? Follow viralrobloxgames for more!
 
 ## Settings
 
-- **TikTok:** Everyone · AI-generated label OFF · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
-- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
+- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: upload `The_Guardian_Quits_cover.jpg`
+- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: upload `The_Guardian_Quits_cover.jpg` as the thumbnail
 
 YouTube tags (optional, under Show more):
 
