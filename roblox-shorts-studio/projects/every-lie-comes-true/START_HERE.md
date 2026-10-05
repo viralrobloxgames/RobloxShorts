@@ -13,6 +13,8 @@ Approved 2026-10-04 ("Approved, make the video").
   `source/sound_cues.py` -> `source/sound_cues.json`; music bed `playful_history_music`.
 - Cover: `web/cover_clip.js` -> `delivery/Every_Lie_Comes_True_cover.png|jpg` (3:4 crop checked).
 - Post text: `delivery/post.json` (+ `_post.md` from `scripts/post_md.py`).
+- 2026-10-05: full web render (2280 frames, two browser processes ~2 h), encoded to `delivery/Every_Lie_Comes_True.mp4`
+  (76.5 s incl. the 0.5 s cover hold, validated, -17 LUFS). Sent for review.
 - **Not posted.** Post only after the user approves this MP4 (TikTok first, then YouTube).
 
 ## Rebuild
