@@ -1,0 +1,5 @@
+// Disguise comparison still (moustache). Not part of the short.
+import * as base from './guardian_clip.js';
+export const meta = base.meta, sky = base.sky;
+export async function setup(stage) { globalThis.DISGUISE = 'moustache'; await base.setup(stage); }
+export const update = base.update, overlay = base.overlay, samples = () => 1, shutter = () => 0;
