@@ -19,7 +19,7 @@ Approved 2026-10-04 ("Approved, make the video").
   in its teeth, the teacher's desk clamped by its top and lifted) instead of the head sinking through the desks; the
   hug is a bear-hug lift (level R6 hugs always clip: rigid arms hinged below the shoulder top), shot over Max's
   shoulder. Frames 1-90, 268-392, 1338-1468 re-rendered; re-encoded (76.5 s, cover in the last 0.5 s).
-- **Not posted.** Post only after the user approves this MP4 (TikTok first, then YouTube).
+- **Approved for posting 2026-10-05** ("Much better, approved"; recorded by sha256 in `delivery/published.json`). Not posted yet: TikTok first, then YouTube, from the user's signed-in browser (`delivery/Every_Lie_Comes_True_post.md`).
 
 ## Rebuild
 ```
