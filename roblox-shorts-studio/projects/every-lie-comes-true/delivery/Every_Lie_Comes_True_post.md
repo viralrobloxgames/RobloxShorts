@@ -7,7 +7,7 @@ Tap the copy button on each box. Post only after the video is approved: TikTok f
 ## 1. TikTok description
 
 ```
-Every lie he tells comes true... even the bad ones 😳
+Every lie he tells comes true... 😳
 #roblox #robloxstory #robloxanimation #story #fyp
 ```
 

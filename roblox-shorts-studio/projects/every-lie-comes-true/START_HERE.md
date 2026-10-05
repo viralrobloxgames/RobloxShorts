@@ -15,6 +15,10 @@ Approved 2026-10-04 ("Approved, make the video").
 - Post text: `delivery/post.json` (+ `_post.md` from `scripts/post_md.py`).
 - 2026-10-05: full web render (2280 frames, two browser processes ~2 h), encoded to `delivery/Every_Lie_Comes_True.mp4`
   (76.5 s incl. the 0.5 s cover hold, validated, -17 LUFS). Sent for review.
+- 2026-10-05 fixes after review: the dragon's bites aim its jaw tip from above (homework bitten off Leo's desk and held
+  in its teeth, the teacher's desk clamped by its top and lifted) instead of the head sinking through the desks; the
+  hug is a bear-hug lift (level R6 hugs always clip: rigid arms hinged below the shoulder top), shot over Max's
+  shoulder. Frames 1-90, 268-392, 1338-1468 re-rendered; re-encoded (76.5 s, cover in the last 0.5 s).
 - **Not posted.** Post only after the user approves this MP4 (TikTok first, then YouTube).
 
 ## Rebuild
