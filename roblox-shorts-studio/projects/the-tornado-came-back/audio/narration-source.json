@@ -1,0 +1,11 @@
+{
+  "engine": "qwen3-tts",
+  "model": "Qwen3-TTS-12Hz-1.7B-Base",
+  "voice": "george_c (cloud, scripts/qwen_cloud_george_c.py)",
+  "take": "take-01",
+  "clips": "audio/qwen/take-01/clips",
+  "gap_seconds": 0.4,
+  "beat_seconds": 0.9,
+  "speech_end_seconds": 61.05,
+  "note": "tighten_clips.py (max gap 0.35); joined at the default gap 0.4 / beat 0.9: 61.05 s of speech, words end 60.88 s; video = speech + 2.0 s end card (62.9 s) + 0.5 s cover = 63.4 s"
+}

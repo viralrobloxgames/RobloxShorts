@@ -1,0 +1,28 @@
+# Materials for officer_cap. Kd/Ks are sRGB. Original procedural hat (tools/make_service_caps.py).
+newmtl crown
+Kd 0.1800 0.2400 0.3800
+Ks 0.0500 0.0500 0.0500
+Ns 14
+d 1.0000
+illum 2
+
+newmtl band
+Kd 0.0800 0.1000 0.1600
+Ks 0.0400 0.0400 0.0400
+Ns 12
+d 1.0000
+illum 2
+
+newmtl visor
+Kd 0.0300 0.0300 0.0350
+Ks 0.5500 0.5500 0.5500
+Ns 90
+d 1.0000
+illum 2
+
+newmtl gold
+Kd 0.9500 0.7400 0.2500
+Ks 0.6000 0.6000 0.6000
+Ns 60
+d 1.0000
+illum 2

@@ -10,10 +10,40 @@ The theft turned the painting into the most famous in the world. Max plays the t
 `source/story.md`.
 
 ## State
-- 2026-10-05: script v1 (160 words with the CTA) in `script.txt`, beats in `source/story.md`. **Awaiting approval.**
-- Web route planned (three.js). Needs a white smock (or a recoloured shirt), a museum gallery set, a painting prop.
+- 2026-10-05: script v1 (160 words) **approved** ("approved, make the video").
+- Narration: George voice C (cloud, `scripts/qwen_cloud_george_c.py --take take-01`), `tighten_clips.py` (48.0 -> 47.4 s),
+  joined with `narrate.py --voice george_c --beat 0.9 --gap 0.5` = **59.9 s speech** (words end 59.88 s). Video = speech +
+  2.0 s end card = 61.9 s (1857 frames), + 0.5 s cover = **62.4 s**. Transcript matches the script; Whisper hears "queue"
+  as "cue", fixed in captions with `word_fixes` ("CUE": "QUEUE").
+- Web route: `web/mona_clip.js` (22 shots), `web/kit.js` (the Salon Carre gallery with the four pegs, the service
+  staircase with the cut-out doorway, the museum front with FERME/CLOSED, the police office with the DISPARUE poster, the
+  thief's room with the hollow table (cut away on the camera side), the Florence shop with the red dome in the window,
+  the Louvre today; props: framed and bare painting, frame + glass case, toolbox, key, brush, easel, notebook, pencil,
+  magnifier, candlestick phone with a liftable earpiece, trunk, phones, newspapers). Clothing shells (`dress()` in
+  kit.js, boxes on the torso and upper-arm bones, hands bare): Max's white smock, Skye's guard uniform, Mia's trench,
+  Leo's waistcoat (Florence), police uniforms and a striped shirt on recoloured Noobs. No pack accessories (fit check: 0
+  pairs, reviewed).
+- The painting image is the public-domain Wikimedia Commons scan (C2RMF retouched, 500 px thumbnail) in `web/tex/`.
+- Overlays: PARIS, 1911 tag, LOUVRE STAFF / FORMER badge, padlock, NEXT MORNING, circles on the real peg positions
+  (projected), the guard's thought (camera + painting), STOLEN!, CLOSED FOR A WEEK, 60 POLICE counter, QUESTIONED: PABLO
+  PICASSO, SHE'S RIGHT HERE! arrow, THE MUSEUM REOPENS, four spinning newspaper fronts, 2 YEARS LATER / Florence, REAL,
+  ARRESTED!, 1911 sepia flashback, TODAY / THE MOST FAMOUS / PAINTING ON EARTH, CTA card.
+- Hold check: `web/hold_check.js` (20 close-ups, looked at; brush turned forward so it no longer runs up the forearm,
+  phones turned so the screens face the holders, the palette dropped because it cut through Leo's forearm).
+- Sound: `source/sound_cues.py` -> `source/sound_cues.json` (56 cues). Music: playful_history_music.
+- Cover: `web/cover_clip.js` (Max holding the painting, a peg behind him; HE STOLE THE / MONA LISA / AND MADE HER /
+  FAMOUS), `delivery/He_Stole_The_Mona_Lisa_cover.jpg|png`, grid check `_cover_grid.jpg`. Post copy: `delivery/post.json`.
+- Full render running (renders/web, 4 workers, ~3.5 s/frame, ~1h50m).
+
+## Commands
+```
+python3 source/beats.py && python3 source/sound_cues.py      # from the project dir
+node web/render.mjs --clip projects/he-stole-the-mona-lisa/web/mona_clip.js --out projects/he-stole-the-mona-lisa/renders/web --workers 4 --resume
+node web/render.mjs --clip projects/he-stole-the-mona-lisa/web/cover_clip.js --out projects/he-stole-the-mona-lisa/renders/cover --frames 1 --skip-fit-check
+python3 scripts/finish.py projects/he-stole-the-mona-lisa --encode --frames projects/he-stole-the-mona-lisa/renders/web
+python3 scripts/review/blank_frames.py projects/he-stole-the-mona-lisa/delivery/He_Stole_The_Mona_Lisa.mp4
+python3 scripts/post_md.py projects/he-stole-the-mona-lisa
+```
 
 ## Next
-1. Get the script approved.
-2. Narration with George voice C, measure, set `seconds`, then beats -> web clip, previews, hold check, fit check,
-   full render, encode, blank-frame check, review, cover, post copy.
+1. Finish the render, encode, blank-frame check, review contact sheet, deliver for the user's review. Post only after approval.

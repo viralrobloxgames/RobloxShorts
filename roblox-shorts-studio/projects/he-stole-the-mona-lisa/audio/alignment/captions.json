@@ -1,0 +1,1121 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.66,
+    "text": "A man in a",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.16,
+        "word": " A"
+      },
+      {
+        "start": 0.16,
+        "end": 0.4,
+        "word": " man"
+      },
+      {
+        "start": 0.4,
+        "end": 0.56,
+        "word": " in"
+      },
+      {
+        "start": 0.56,
+        "end": 0.66,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 0.66,
+    "end": 1.82,
+    "text": "white work smock lifts",
+    "words": [
+      {
+        "start": 0.66,
+        "end": 0.84,
+        "word": " white"
+      },
+      {
+        "start": 0.84,
+        "end": 1.16,
+        "word": " work"
+      },
+      {
+        "start": 1.16,
+        "end": 1.56,
+        "word": " smock"
+      },
+      {
+        "start": 1.56,
+        "end": 1.82,
+        "word": " lifts"
+      }
+    ]
+  },
+  {
+    "start": 1.82,
+    "end": 2.78,
+    "text": "the Mona Lisa off",
+    "words": [
+      {
+        "start": 1.82,
+        "end": 2.04,
+        "word": " the"
+      },
+      {
+        "start": 2.04,
+        "end": 2.3,
+        "word": " Mona"
+      },
+      {
+        "start": 2.3,
+        "end": 2.5,
+        "word": " Lisa"
+      },
+      {
+        "start": 2.5,
+        "end": 2.78,
+        "word": " off"
+      }
+    ]
+  },
+  {
+    "start": 2.78,
+    "end": 3.38,
+    "text": "the wall.",
+    "words": [
+      {
+        "start": 2.78,
+        "end": 2.94,
+        "word": " the"
+      },
+      {
+        "start": 2.94,
+        "end": 3.26,
+        "word": " wall."
+      }
+    ]
+  },
+  {
+    "start": 4.08,
+    "end": 5.04,
+    "text": "Nobody stops him.",
+    "words": [
+      {
+        "start": 4.08,
+        "end": 4.28,
+        "word": " Nobody"
+      },
+      {
+        "start": 4.28,
+        "end": 4.6,
+        "word": " stops"
+      },
+      {
+        "start": 4.6,
+        "end": 4.92,
+        "word": " him."
+      }
+    ]
+  },
+  {
+    "start": 5.26,
+    "end": 5.92,
+    "text": "He used to work",
+    "words": [
+      {
+        "start": 5.26,
+        "end": 5.34,
+        "word": " He"
+      },
+      {
+        "start": 5.34,
+        "end": 5.54,
+        "word": " used"
+      },
+      {
+        "start": 5.54,
+        "end": 5.7,
+        "word": " to"
+      },
+      {
+        "start": 5.7,
+        "end": 5.92,
+        "word": " work"
+      }
+    ]
+  },
+  {
+    "start": 5.92,
+    "end": 6.4,
+    "text": "here.",
+    "words": [
+      {
+        "start": 5.92,
+        "end": 6.28,
+        "word": " here."
+      }
+    ]
+  },
+  {
+    "start": 7.28,
+    "end": 8.26,
+    "text": "On a back staircase,",
+    "words": [
+      {
+        "start": 7.28,
+        "end": 7.34,
+        "word": " On"
+      },
+      {
+        "start": 7.34,
+        "end": 7.46,
+        "word": " a"
+      },
+      {
+        "start": 7.46,
+        "end": 7.68,
+        "word": " back"
+      },
+      {
+        "start": 7.68,
+        "end": 8.14,
+        "word": " staircase,"
+      }
+    ]
+  },
+  {
+    "start": 8.5,
+    "end": 9.34,
+    "text": "he dumps the frame",
+    "words": [
+      {
+        "start": 8.5,
+        "end": 8.66,
+        "word": " he"
+      },
+      {
+        "start": 8.66,
+        "end": 8.9,
+        "word": " dumps"
+      },
+      {
+        "start": 8.9,
+        "end": 9.1,
+        "word": " the"
+      },
+      {
+        "start": 9.1,
+        "end": 9.34,
+        "word": " frame"
+      }
+    ]
+  },
+  {
+    "start": 9.34,
+    "end": 9.94,
+    "text": "and glass.",
+    "words": [
+      {
+        "start": 9.34,
+        "end": 9.5,
+        "word": " and"
+      },
+      {
+        "start": 9.5,
+        "end": 9.82,
+        "word": " glass."
+      }
+    ]
+  },
+  {
+    "start": 10.68,
+    "end": 11.76,
+    "text": "Then a locked door.",
+    "words": [
+      {
+        "start": 10.68,
+        "end": 10.86,
+        "word": " Then"
+      },
+      {
+        "start": 10.86,
+        "end": 11.04,
+        "word": " a"
+      },
+      {
+        "start": 11.04,
+        "end": 11.26,
+        "word": " locked"
+      },
+      {
+        "start": 11.26,
+        "end": 11.64,
+        "word": " door."
+      }
+    ]
+  },
+  {
+    "start": 12.44,
+    "end": 13.36,
+    "text": "A plumber walks by",
+    "words": [
+      {
+        "start": 12.44,
+        "end": 12.56,
+        "word": " A"
+      },
+      {
+        "start": 12.56,
+        "end": 12.78,
+        "word": " plumber"
+      },
+      {
+        "start": 12.78,
+        "end": 13.06,
+        "word": " walks"
+      },
+      {
+        "start": 13.06,
+        "end": 13.36,
+        "word": " by"
+      }
+    ]
+  },
+  {
+    "start": 13.36,
+    "end": 14.4,
+    "text": "and opens it for",
+    "words": [
+      {
+        "start": 13.36,
+        "end": 13.76,
+        "word": " and"
+      },
+      {
+        "start": 13.76,
+        "end": 14.04,
+        "word": " opens"
+      },
+      {
+        "start": 14.04,
+        "end": 14.2,
+        "word": " it"
+      },
+      {
+        "start": 14.2,
+        "end": 14.4,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 14.4,
+    "end": 14.799999999999999,
+    "text": "him.",
+    "words": [
+      {
+        "start": 14.4,
+        "end": 14.68,
+        "word": " him."
+      }
+    ]
+  },
+  {
+    "start": 15.74,
+    "end": 16.82,
+    "text": "Next morning an artist",
+    "words": [
+      {
+        "start": 15.74,
+        "end": 15.92,
+        "word": " Next"
+      },
+      {
+        "start": 15.92,
+        "end": 16.26,
+        "word": " morning"
+      },
+      {
+        "start": 16.26,
+        "end": 16.46,
+        "word": " an"
+      },
+      {
+        "start": 16.46,
+        "end": 16.82,
+        "word": " artist"
+      }
+    ]
+  },
+  {
+    "start": 16.82,
+    "end": 17.92,
+    "text": "comes to paint her.",
+    "words": [
+      {
+        "start": 16.82,
+        "end": 17.08,
+        "word": " comes"
+      },
+      {
+        "start": 17.08,
+        "end": 17.3,
+        "word": " to"
+      },
+      {
+        "start": 17.3,
+        "end": 17.5,
+        "word": " paint"
+      },
+      {
+        "start": 17.5,
+        "end": 17.8,
+        "word": " her."
+      }
+    ]
+  },
+  {
+    "start": 18.46,
+    "end": 19.560000000000002,
+    "text": "Four empty hooks.",
+    "words": [
+      {
+        "start": 18.46,
+        "end": 18.74,
+        "word": " Four"
+      },
+      {
+        "start": 18.74,
+        "end": 19.1,
+        "word": " empty"
+      },
+      {
+        "start": 19.1,
+        "end": 19.44,
+        "word": " hooks."
+      }
+    ]
+  },
+  {
+    "start": 20.08,
+    "end": 21.1,
+    "text": "The guards shrug.",
+    "words": [
+      {
+        "start": 20.08,
+        "end": 20.3,
+        "word": " The"
+      },
+      {
+        "start": 20.3,
+        "end": 20.62,
+        "word": " guards"
+      },
+      {
+        "start": 20.62,
+        "end": 20.98,
+        "word": " shrug."
+      }
+    ]
+  },
+  {
+    "start": 21.52,
+    "end": 22.98,
+    "text": "She's probably being photographed.",
+    "words": [
+      {
+        "start": 21.52,
+        "end": 21.74,
+        "word": " She's"
+      },
+      {
+        "start": 21.74,
+        "end": 22.0,
+        "word": " probably"
+      },
+      {
+        "start": 22.0,
+        "end": 22.36,
+        "word": " being"
+      },
+      {
+        "start": 22.36,
+        "end": 22.86,
+        "word": " photographed."
+      }
+    ]
+  },
+  {
+    "start": 24.06,
+    "end": 24.8,
+    "text": "She isn't.",
+    "words": [
+      {
+        "start": 24.06,
+        "end": 24.28,
+        "word": " She"
+      },
+      {
+        "start": 24.28,
+        "end": 24.68,
+        "word": " isn't."
+      }
+    ]
+  },
+  {
+    "start": 25.66,
+    "end": 26.66,
+    "text": "The museum shuts for",
+    "words": [
+      {
+        "start": 25.66,
+        "end": 25.76,
+        "word": " The"
+      },
+      {
+        "start": 25.76,
+        "end": 26.1,
+        "word": " museum"
+      },
+      {
+        "start": 26.1,
+        "end": 26.42,
+        "word": " shuts"
+      },
+      {
+        "start": 26.42,
+        "end": 26.66,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 26.66,
+    "end": 27.12,
+    "text": "a week.",
+    "words": [
+      {
+        "start": 26.66,
+        "end": 26.78,
+        "word": " a"
+      },
+      {
+        "start": 26.78,
+        "end": 27.0,
+        "word": " week."
+      }
+    ]
+  },
+  {
+    "start": 27.84,
+    "end": 29.1,
+    "text": "Sixty police search it.",
+    "words": [
+      {
+        "start": 27.84,
+        "end": 28.1,
+        "word": " Sixty"
+      },
+      {
+        "start": 28.1,
+        "end": 28.46,
+        "word": " police"
+      },
+      {
+        "start": 28.46,
+        "end": 28.72,
+        "word": " search"
+      },
+      {
+        "start": 28.72,
+        "end": 28.98,
+        "word": " it."
+      }
+    ]
+  },
+  {
+    "start": 29.400000000000002,
+    "end": 31.1,
+    "text": "They even question Picasso.",
+    "words": [
+      {
+        "start": 29.400000000000002,
+        "end": 29.68,
+        "word": " They"
+      },
+      {
+        "start": 29.68,
+        "end": 30.0,
+        "word": " even"
+      },
+      {
+        "start": 30.0,
+        "end": 30.42,
+        "word": " question"
+      },
+      {
+        "start": 30.42,
+        "end": 30.98,
+        "word": " Picasso."
+      }
+    ]
+  },
+  {
+    "start": 31.78,
+    "end": 32.76,
+    "text": "A detective visits the",
+    "words": [
+      {
+        "start": 31.78,
+        "end": 31.8,
+        "word": " A"
+      },
+      {
+        "start": 31.8,
+        "end": 32.1,
+        "word": " detective"
+      },
+      {
+        "start": 32.1,
+        "end": 32.52,
+        "word": " visits"
+      },
+      {
+        "start": 32.52,
+        "end": 32.76,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 32.76,
+    "end": 34.0,
+    "text": "thief's room and writes",
+    "words": [
+      {
+        "start": 32.76,
+        "end": 33.14,
+        "word": " thief's"
+      },
+      {
+        "start": 33.14,
+        "end": 33.32,
+        "word": " room"
+      },
+      {
+        "start": 33.32,
+        "end": 33.76,
+        "word": " and"
+      },
+      {
+        "start": 33.76,
+        "end": 34.0,
+        "word": " writes"
+      }
+    ]
+  },
+  {
+    "start": 34.0,
+    "end": 35.14,
+    "text": "his report leaning on",
+    "words": [
+      {
+        "start": 34.0,
+        "end": 34.2,
+        "word": " his"
+      },
+      {
+        "start": 34.2,
+        "end": 34.62,
+        "word": " report"
+      },
+      {
+        "start": 34.62,
+        "end": 34.9,
+        "word": " leaning"
+      },
+      {
+        "start": 34.9,
+        "end": 35.14,
+        "word": " on"
+      }
+    ]
+  },
+  {
+    "start": 35.14,
+    "end": 36.02,
+    "text": "the table she's hidden",
+    "words": [
+      {
+        "start": 35.14,
+        "end": 35.28,
+        "word": " the"
+      },
+      {
+        "start": 35.28,
+        "end": 35.56,
+        "word": " table"
+      },
+      {
+        "start": 35.56,
+        "end": 35.86,
+        "word": " she's"
+      },
+      {
+        "start": 35.86,
+        "end": 36.02,
+        "word": " hidden"
+      }
+    ]
+  },
+  {
+    "start": 36.02,
+    "end": 36.559999999999995,
+    "text": "in.",
+    "words": [
+      {
+        "start": 36.02,
+        "end": 36.44,
+        "word": " in."
+      }
+    ]
+  },
+  {
+    "start": 37.34,
+    "end": 38.599999999999994,
+    "text": "When the museum reopens,",
+    "words": [
+      {
+        "start": 37.34,
+        "end": 37.46,
+        "word": " When"
+      },
+      {
+        "start": 37.46,
+        "end": 37.58,
+        "word": " the"
+      },
+      {
+        "start": 37.58,
+        "end": 37.9,
+        "word": " museum"
+      },
+      {
+        "start": 37.9,
+        "end": 38.48,
+        "word": " reopens,"
+      }
+    ]
+  },
+  {
+    "start": 38.7,
+    "end": 39.84,
+    "text": "crowds cue to stare",
+    "words": [
+      {
+        "start": 38.7,
+        "end": 38.94,
+        "word": " crowds"
+      },
+      {
+        "start": 38.94,
+        "end": 39.3,
+        "word": " cue"
+      },
+      {
+        "start": 39.3,
+        "end": 39.54,
+        "word": " to"
+      },
+      {
+        "start": 39.54,
+        "end": 39.84,
+        "word": " stare"
+      }
+    ]
+  },
+  {
+    "start": 39.84,
+    "end": 40.86,
+    "text": "at the empty wall.",
+    "words": [
+      {
+        "start": 39.84,
+        "end": 40.0,
+        "word": " at"
+      },
+      {
+        "start": 40.0,
+        "end": 40.12,
+        "word": " the"
+      },
+      {
+        "start": 40.12,
+        "end": 40.36,
+        "word": " empty"
+      },
+      {
+        "start": 40.36,
+        "end": 40.74,
+        "word": " wall."
+      }
+    ]
+  },
+  {
+    "start": 41.42,
+    "end": 42.14,
+    "text": "Her face is in",
+    "words": [
+      {
+        "start": 41.42,
+        "end": 41.56,
+        "word": " Her"
+      },
+      {
+        "start": 41.56,
+        "end": 41.82,
+        "word": " face"
+      },
+      {
+        "start": 41.82,
+        "end": 41.98,
+        "word": " is"
+      },
+      {
+        "start": 41.98,
+        "end": 42.14,
+        "word": " in"
+      }
+    ]
+  },
+  {
+    "start": 42.14,
+    "end": 43.239999999999995,
+    "text": "newspapers everywhere.",
+    "words": [
+      {
+        "start": 42.14,
+        "end": 42.56,
+        "word": " newspapers"
+      },
+      {
+        "start": 42.56,
+        "end": 43.12,
+        "word": " everywhere."
+      }
+    ]
+  },
+  {
+    "start": 44.24,
+    "end": 44.96,
+    "text": "Two years later,",
+    "words": [
+      {
+        "start": 44.24,
+        "end": 44.44,
+        "word": " Two"
+      },
+      {
+        "start": 44.44,
+        "end": 44.64,
+        "word": " years"
+      },
+      {
+        "start": 44.64,
+        "end": 44.96,
+        "word": " later,"
+      }
+    ]
+  },
+  {
+    "start": 44.96,
+    "end": 45.76,
+    "text": "he tries to sell",
+    "words": [
+      {
+        "start": 44.96,
+        "end": 45.14,
+        "word": " he"
+      },
+      {
+        "start": 45.14,
+        "end": 45.36,
+        "word": " tries"
+      },
+      {
+        "start": 45.36,
+        "end": 45.56,
+        "word": " to"
+      },
+      {
+        "start": 45.56,
+        "end": 45.76,
+        "word": " sell"
+      }
+    ]
+  },
+  {
+    "start": 45.76,
+    "end": 46.46,
+    "text": "her in Italy.",
+    "words": [
+      {
+        "start": 45.76,
+        "end": 45.92,
+        "word": " her"
+      },
+      {
+        "start": 45.92,
+        "end": 46.04,
+        "word": " in"
+      },
+      {
+        "start": 46.04,
+        "end": 46.34,
+        "word": " Italy."
+      }
+    ]
+  },
+  {
+    "start": 46.92,
+    "end": 47.98,
+    "text": "The dealer checks she's",
+    "words": [
+      {
+        "start": 46.92,
+        "end": 47.12,
+        "word": " The"
+      },
+      {
+        "start": 47.12,
+        "end": 47.34,
+        "word": " dealer"
+      },
+      {
+        "start": 47.34,
+        "end": 47.64,
+        "word": " checks"
+      },
+      {
+        "start": 47.64,
+        "end": 47.98,
+        "word": " she's"
+      }
+    ]
+  },
+  {
+    "start": 47.98,
+    "end": 48.36,
+    "text": "real,",
+    "words": [
+      {
+        "start": 47.98,
+        "end": 48.24,
+        "word": " real,"
+      }
+    ]
+  },
+  {
+    "start": 48.56,
+    "end": 49.64,
+    "text": "then calls the police.",
+    "words": [
+      {
+        "start": 48.56,
+        "end": 48.76,
+        "word": " then"
+      },
+      {
+        "start": 48.76,
+        "end": 49.06,
+        "word": " calls"
+      },
+      {
+        "start": 49.06,
+        "end": 49.24,
+        "word": " the"
+      },
+      {
+        "start": 49.24,
+        "end": 49.52,
+        "word": " police."
+      }
+    ]
+  },
+  {
+    "start": 50.64,
+    "end": 51.6,
+    "text": "He stole a painting",
+    "words": [
+      {
+        "start": 50.64,
+        "end": 50.92,
+        "word": " He"
+      },
+      {
+        "start": 50.92,
+        "end": 51.14,
+        "word": " stole"
+      },
+      {
+        "start": 51.14,
+        "end": 51.32,
+        "word": " a"
+      },
+      {
+        "start": 51.32,
+        "end": 51.6,
+        "word": " painting"
+      }
+    ]
+  },
+  {
+    "start": 51.6,
+    "end": 53.08,
+    "text": "hardly anyone talked about.",
+    "words": [
+      {
+        "start": 51.6,
+        "end": 51.9,
+        "word": " hardly"
+      },
+      {
+        "start": 51.9,
+        "end": 52.34,
+        "word": " anyone"
+      },
+      {
+        "start": 52.34,
+        "end": 52.62,
+        "word": " talked"
+      },
+      {
+        "start": 52.62,
+        "end": 52.96,
+        "word": " about."
+      }
+    ]
+  },
+  {
+    "start": 53.6,
+    "end": 54.44,
+    "text": "He handed back the",
+    "words": [
+      {
+        "start": 53.6,
+        "end": 53.8,
+        "word": " He"
+      },
+      {
+        "start": 53.8,
+        "end": 54.02,
+        "word": " handed"
+      },
+      {
+        "start": 54.02,
+        "end": 54.28,
+        "word": " back"
+      },
+      {
+        "start": 54.28,
+        "end": 54.44,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 54.44,
+    "end": 55.48,
+    "text": "most famous painting in",
+    "words": [
+      {
+        "start": 54.44,
+        "end": 54.6,
+        "word": " most"
+      },
+      {
+        "start": 54.6,
+        "end": 54.94,
+        "word": " famous"
+      },
+      {
+        "start": 54.94,
+        "end": 55.3,
+        "word": " painting"
+      },
+      {
+        "start": 55.3,
+        "end": 55.48,
+        "word": " in"
+      }
+    ]
+  },
+  {
+    "start": 55.48,
+    "end": 56.08,
+    "text": "the world.",
+    "words": [
+      {
+        "start": 55.48,
+        "end": 55.58,
+        "word": " the"
+      },
+      {
+        "start": 55.58,
+        "end": 55.96,
+        "word": " world."
+      }
+    ]
+  },
+  {
+    "start": 56.82,
+    "end": 58.84,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 56.82,
+        "end": 57.4,
+        "word": " Follow"
+      },
+      {
+        "start": 57.4,
+        "end": 58.58,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 58.58,
+        "end": 58.84,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 58.84,
+    "end": 60.0,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 58.84,
+        "end": 59.02,
+        "word": " more"
+      },
+      {
+        "start": 59.02,
+        "end": 59.36,
+        "word": " stories"
+      },
+      {
+        "start": 59.36,
+        "end": 59.6,
+        "word": " like"
+      },
+      {
+        "start": 59.6,
+        "end": 59.88,
+        "word": " this."
+      }
+    ]
+  }
+]
