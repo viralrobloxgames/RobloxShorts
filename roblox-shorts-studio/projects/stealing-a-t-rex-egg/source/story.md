@@ -1,4 +1,4 @@
-# Stealing a T-Rex Egg (Part 1)
+# Stealing a T-Rex Egg (standalone)
 
 A parody of **Steal an Egg** (Roblox, released August 2026, 1M+ concurrent players): sneak into a biome, grab an egg,
 and the guardian wakes and chases you. Get caught and you ragdoll, get flung and drop the egg. Reach the safe zone at
@@ -23,13 +23,13 @@ Why it should work:
   one the ending breaks - for a mom, not a guardian.
 - **The ending loops to the opening:** frame 1 is the T-rex asleep on "the best egg"; the last shot is the T-rex
   asleep in the same pose on its new "egg": Mia, curled up in the nest among twelve babies, arms folded.
-- Cliffhanger: Part 2, "Steal Mia Back", with the boys' teamwork needed again.
+- Standalone (user rule): the loop to the opening shot is the ending; no part tag, no "part two" call to action.
 - 181 words, about 72 s in George voice C. US spelling.
 
 ## Beats (hook first)
 
 1. **HOOK (0-3 s).** Prehistoric biome. A huge sleeping T-rex curled around a nest; one giant golden egg glows under
-   its chin; "Zzz" puffs. Leo tiptoes in. HUD: "PREHISTORIC", "GUARDIAN: ASLEEP", nest counter "EGGS 13".
+   its chin; "Zzz" puffs. Leo tiptoes in. HUD: "PREHISTORIC", "GUARDIAN: ASLEEP", nest counter "EGGS 13". No PART tag (standalone).
    *"This T-rex is sleeping on the best egg in Steal an Egg."*
 2. **Grab (3-6 s).** Leo hugs the giant egg (carry pose). One T-rex eye snaps open: "GUARDIAN: AWAKE".
    *"Leo tiptoed in and grabbed it. The T-rex woke up."*
@@ -77,9 +77,9 @@ Why it should work:
 16. **The loop (65-70 s).** Same shot and pose as frame 1: the T-rex asleep around the nest, Zzz, babies curled up
     around her, and under her chin where the golden egg was, Mia, arms folded, annoyed. HUD: "BEST EGG: MIA".
     *"Now the T-rex is sleeping on a new egg."*
-17. **CTA (70-72 s).** End card "PART 2: STEAL MIA BACK" + @viralrobloxgames + FOLLOW. The boys' baby T-rex peeks up
+17. **CTA (70-72 s).** End card "FOLLOW FOR MORE" + @viralrobloxgames + FOLLOW (no part tag: standalone). The boys' baby T-rex peeks up
     at the camera.
-    *"Follow Viral Roblox Games for part two."*
+    *"Follow Viral Roblox Games for more."*
 
 ## Build notes
 

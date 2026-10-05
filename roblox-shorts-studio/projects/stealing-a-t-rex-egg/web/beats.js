@@ -53,7 +53,7 @@ export const W = {
  "cried": 57.74,
  "turns": 58.64,
  "guardians": 60.36,
- "moms": 61.5,
+ "moms": 61.52,
  "walked": 62.88,
  "took2": 63.94,
  "babies": 64.36,
@@ -61,6 +61,6 @@ export const W = {
  "now": 65.86,
  "sleeping2": 67.18,
  "new": 67.78,
- "follow": 68.96,
- "end": 71.22
+ "follow": 69.0,
+ "end": 70.92
 };
