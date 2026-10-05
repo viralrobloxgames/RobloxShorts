@@ -354,11 +354,11 @@
       "title": "Lightning Hit Him Seven Times",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "farm_render_running",
+      "status": "delivered_local_review",
       "logline": "True story: a Shenandoah park ranger is hit by lightning seven times (1942-77) and survives them all; it finds him in a lookout tower, his truck, his yard, his office; he carries a water can for his hair, outruns a storm cloud only to be hit when he steps out, his boss walks off when lightning flashes, and on strike seven a bear steals his fish. The record still stands.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/lightning-hit-him-seven-times",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 62.1 s (George voice C, cloud); video 63.9 s + 0.5 s cover. Web route, 28 shots, STRIKES 0/7 counter; full web render running. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered 2026-10-05 for review: delivery/Lightning_Hit_Him_Seven_Times.mp4 (64.4 s incl. 0.5 s cover, 1932 frames, -17.0 LUFS), cover, post.json/_post.md. Narration 62.1 s (George voice C, cloud). Web route, 28 shots, STRIKES 0/7 counter. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
     },
     {
       "title": "The Tornado Came Back",
@@ -379,6 +379,56 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-stole-the-mona-lisa",
       "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; delivered for review: 62.4 s MP4 with cover, captions, post sheet. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
+    },
+    {
+      "title": "The Dog Who Found The World Cup",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: in March 1966 the World Cup is stolen from a guarded glass case in London, four months before England hosts the tournament. A ransom arrest catches only a middleman. A week later a collie called Pickles drags a newspaper parcel from under a hedge; his owner fears a bomb, tears it and reads 'Brazil, West Germany, Uruguay'. Police make the owner their main suspect; that summer England win and Pickles licks the players' plates at the victory dinner. Seventeen years later the trophy is stolen again in Brazil. This time there's no Pickles, and it's never been found.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-dog-who-found-the-world-cup",
+      "notes": "Approved 2026-10-05 ('Make it'). Narration 62.1 s (George voice C); video 64.5 s with end card and cover. Web route; new pack creature animal_collie_parts (retriever cut and recoloured). Full web render running. Pickles, David Corbett, theft 20 Mar 1966, found 27 Mar 1966, stolen again in Rio 19 Dec 1983."
+    },
+    {
+      "title": "He Mailed Himself Home",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: in 1964 an Australian athlete, broke in London, has his friend nail him into a crate labelled paint, sent cash on delivery to a company that doesn't exist. Fog in London, upside down on the tarmac in Bombay; 63 hours later he cuts his way out in Perth, walks out of the airport in his suit and hitchhikes home for his daughter's birthday. He forgets to tell his friend he survived; the friend calls a newspaper, the world finds out, and the airline drops the bill. He couldn't afford a ticket, and he never paid for one.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/mailed-himself-home",
+      "notes": "Approved 2026-10-05 (\"Make the video\"). Narration 61.3 s (George voice C, cloud); video 63.4 s + 0.5 s cover. Web route, 24 shots; full web render running. Picked through general research, not from OddFrame's list (Reg Spiers, John McSorley, 17-20 Oct 1964; named only in the post copy)."
+    },
+    {
+      "title": "He Flew A Lawn Chair",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1982 a man who was never allowed to be a pilot ties 42 weather balloons to a lawn chair, meaning to float a hundred feet up on a rope. The rope snaps; he shoots to 16,000 feet, freezing, and two airline pilots radio the tower about a man in a lawn chair. He pops a few balloons with a pellet gun, drops the gun, drifts into power lines and blacks out a neighbourhood, lands unhurt, and the police are waiting. 'A man can't just sit around.' He's fined for flying an aircraft without calling the tower; the aircraft is a lawn chair, and today it sits in the Air and Space Museum.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-flew-a-lawn-chair",
+      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum."
+    },
+    {
+      "title": "He Flew The Wrong Way",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story (1938): refused permission to fly the Atlantic, Douglas Corrigan files a flight plan to California, flies 28 hours east to Dublin, says \"Just got in from New York. Where am I?\" and blames his compass; his punishment ends the day his ship gets home, New York gives him a bigger parade than Lindbergh's, and he never admits a thing.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-flew-the-wrong-way",
+      "notes": "Overnight run 2026-10-05: the user named this story and waived script approval for the run (write, then make the video; posting still needs approval). Script v1 156 words. Web route."
+    },
+    {
+      "title": "He Won The Marathon By Car",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-marathon-car-ride",
+      "notes": "Overnight run 2026-10-05: story picked by the user; script approval waived for this run (posting still needs approval). Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration. Web route."
     }
   ],
   "statuses": [

@@ -1,0 +1,11 @@
+{
+  "engine": "qwen3-tts",
+  "model": "Qwen3-TTS-12Hz-1.7B-Base (cloud, scripts/qwen_cloud_george_c.py, seed 77; tighten_clips.py)",
+  "voice": "george_c (local clone)",
+  "take": "take-01",
+  "clips": "audio/qwen/take-01/clips",
+  "gap_seconds": 0.5,
+  "beat_seconds": 0.9,
+  "speech_end_seconds": 61.54,
+  "notes": "Line 19 of v1 (\"In the end, he never paid for one.\") read too fast twice; split into two lines in script.txt, and the clip \"he never paid for one.\" was slowed with ffmpeg atempo=0.8 after tighten_clips.py (re-running tighten_clips restores the fast original: re-apply the stretch)."
+}

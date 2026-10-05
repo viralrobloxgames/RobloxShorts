@@ -30,7 +30,10 @@ boss. Facts, beats and sources: `source/story.md`.
   Umbrella, Every Lie Comes True and Copy the Crown). Music: playful_history_music. Mix -16.9 LUFS.
 - Cover: `web/cover_clip.js` (the hook strike: bolt, hat flying, HIT BY LIGHTNING / 7 TIMES / AND SURVIVED),
   `delivery/Lightning_Hit_Him_Seven_Times_cover.jpg|png`, grid check `_cover_grid.jpg`. Post copy: `delivery/post.json`.
-- Full render running (renders/web, 4 workers, ~3.4 s/frame).
+- Full render done (renders/web, 1917 frames, 4 workers, ~2.8 s/frame, about 1.5 h; frame_hashes.json saved, so a fix
+  re-renders only the changed frames with web/changed_frames.mjs). Encoded: `delivery/Lightning_Hit_Him_Seven_Times.mp4`,
+  64.4 s incl. the 0.5 s cover hold, 1932 frames, fully decoded, -17.0 LUFS / -1.3 dB peak; blank-frame check: no runs
+  flagged; contact sheet reviewed. **Awaiting the user's review.** Post only after approval (TikTok, then YouTube).
 
 ## Commands
 ```
@@ -43,4 +46,5 @@ python3 scripts/post_md.py projects/lightning-hit-him-seven-times
 ```
 
 ## Next
-1. Finish the render, encode, blank-frame check, review contact sheet, deliver for the user's review. Post only after approval.
+1. The user's review. On approval: post TikTok first, then YouTube Shorts (references/publishing.md), with delivery/post.json.
+2. Once delivered and approved, delete renders/ (git-ignored, ~5 GB) before the next render on this machine.
