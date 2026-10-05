@@ -1375,6 +1375,86 @@
     "decalTextures": null
    },
    "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "ranger_hat",
+   "path": "accessories/ranger_hat/ranger_hat.obj",
+   "description": "Tan park ranger campaign hat: wide flat brim, four-dent pinched crown, dark band (original).",
+   "objects": [
+    "Brim",
+    "Crown",
+    "Band"
+   ],
+   "dimensions": {
+    "min": [
+     -1.22,
+     -0.08,
+     -1.22
+    ],
+    "max": [
+     1.22,
+     0.8,
+     1.22
+    ],
+    "size": [
+     2.44,
+     0.88,
+     2.44
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_ranger_hat.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "ranger_hat_burnt",
+   "path": "accessories/ranger_hat_burnt/ranger_hat_burnt.obj",
+   "description": "Scorched copy of ranger_hat for display props (not worn; no fit rule).",
+   "objects": [
+    "Brim",
+    "Crown",
+    "Band"
+   ],
+   "dimensions": {
+    "min": [
+     -1.22,
+     -0.08,
+     -1.22
+    ],
+    "max": [
+     1.22,
+     0.8,
+     1.22
+    ],
+    "size": [
+     2.44,
+     0.88,
+     2.44
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_ranger_hat.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
   }
  ],
  "props": [
