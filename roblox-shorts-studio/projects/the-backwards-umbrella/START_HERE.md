@@ -17,12 +17,14 @@ saves the park. Mia ducks under: "Room for one more?"
 - Sound: `source/sfx_assets.py` (synthesized rain loop, thunder, zap, fwoomp, fire loop, hiss, pop, boing, applause,
   shake) -> `source/sound_cues.py` -> `source/sound_cues.json`.
 - Cover: `web/cover_clip.js` (Leo dry in the downpour, HIS UMBRELLA / RAINS ON / EVERYONE ELSE). Post copy: `delivery/post.json`.
-- Full render started 2026-10-05 (`renders/web`, 1857 frames, --resume safe).
+- Full render done 2026-10-05 (`renders/web`, 1857 frames, verified). Encoded: `delivery/The_Backwards_Umbrella.mp4`,
+  62.4 s incl. the 0.5 s cover at the end, -16.6 LUFS, validated; `_post.md` written. Preview sent for approval.
+- Disk: the encode filled the disk; the render frames of Whatever Mia Draws and Every Lie Comes True (both scheduled,
+  MP4s in delivery/) were deleted to make room. Re-render them from their clips if ever needed.
 
 ## Next
-1. Cover at full size -> `delivery/The_Backwards_Umbrella_cover.png|jpg`; encode:
-   `python3 scripts/finish.py projects/the-backwards-umbrella --encode --frames projects/the-backwards-umbrella/renders/web`;
-   contact sheet review; send the preview for approval. Post only after approval (TikTok, then YouTube).
+1. User review of the full video. Re-encode after any fix: `python3 scripts/finish.py projects/the-backwards-umbrella --encode --frames projects/the-backwards-umbrella/renders/web`.
+   Post only after approval (TikTok, then YouTube).
 
 ## Commands
 ```
