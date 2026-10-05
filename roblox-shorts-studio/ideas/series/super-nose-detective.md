@@ -9,9 +9,9 @@ projects/super-nose-case-2/source/research/dick-snifford-episodes.md).
 
 Noir parody: Detective Max Sniffwell and the Super Nose gamepass ("I can smell anything on the map"). Narrated by
 `detective_noir` (designed voice). Running gags: "Tempting. But I'm on a case."; three-part noir smell lists; donuts
-are everyone's weakness; Chief Leo is the corrupt one; Case 1 ended "Then my nose..."; from now on each case ends on two lines of narration that the last picture contradicts (no cliffhanger).
+are everyone's weakness; Chief Leo is corrupt or lazy but not the culprit every time (user, 2026-10-05: vary the culprit); Case 1 ended "Then my nose..."; from now on each case ends on two lines of narration that the last picture contradicts (no cliffhanger).
 
 | Case | Project | What it established | Results |
 |---|---|---|---|
 | 1. The Golden Donut | projects/the-super-nose-detective | The gamepass, the green smell trail, Leo stole the donut, bribe, bite, Leo arrested. Ends: "Then my nose twitched." | Posted 2026-10-04. YouTube ~1k views (user, 2026-10-05). TikTok not recorded. |
-| The Vampire Case | projects/super-nose-case-2 | v1 "The Big Cheese" rejected 2026-10-05 (not standalone). v2: clean take on the original's Vampire Case on the Jacuzzi Case rules (research/dick-snifford-episodes-watched.md). v4: ~62 s, garlic bread -> barbecue + sunscreen -> Chief Leo; script awaiting approval. | - |
+| The Vampire Case | projects/super-nose-case-2 | v1 "The Big Cheese" rejected 2026-10-05 (not standalone). v2: clean take on the original's Vampire Case on the Jacuzzi Case rules (research/dick-snifford-episodes-watched.md). v5: ~62 s, garlic bread -> compost -> the gardener (Leo is the lazy red herring); script awaiting approval. | - |
