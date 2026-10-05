@@ -6,7 +6,7 @@ he pets it. He throws the gloves away; Mia catches them and pats his head: "Good
 
 ## State
 - 2026-10-05: script v1 (`script.txt`, 154 words with the CTA) and beats (`source/story.md`) written.
-  **Awaiting script approval.**
+  **Dropped 2026-10-05** (user: not a great concept); replaced by `projects/say-their-name`.
 
 ## Next
 1. Script approval (or edits).
