@@ -1,0 +1,1158 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.22,
+    "text": "A dog named Pickles",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.18,
+        "word": " A"
+      },
+      {
+        "start": 0.18,
+        "end": 0.42,
+        "word": " dog"
+      },
+      {
+        "start": 0.42,
+        "end": 0.8,
+        "word": " named"
+      },
+      {
+        "start": 0.8,
+        "end": 1.22,
+        "word": " Pickles"
+      }
+    ]
+  },
+  {
+    "start": 1.22,
+    "end": 2.32,
+    "text": "drags a parcel from",
+    "words": [
+      {
+        "start": 1.22,
+        "end": 1.62,
+        "word": " drags"
+      },
+      {
+        "start": 1.62,
+        "end": 1.76,
+        "word": " a"
+      },
+      {
+        "start": 1.76,
+        "end": 2.06,
+        "word": " parcel"
+      },
+      {
+        "start": 2.06,
+        "end": 2.32,
+        "word": " from"
+      }
+    ]
+  },
+  {
+    "start": 2.32,
+    "end": 3.16,
+    "text": "under a hedge.",
+    "words": [
+      {
+        "start": 2.32,
+        "end": 2.56,
+        "word": " under"
+      },
+      {
+        "start": 2.56,
+        "end": 2.7,
+        "word": " a"
+      },
+      {
+        "start": 2.7,
+        "end": 3.04,
+        "word": " hedge."
+      }
+    ]
+  },
+  {
+    "start": 3.78,
+    "end": 4.76,
+    "text": "Inside is the stolen",
+    "words": [
+      {
+        "start": 3.78,
+        "end": 4.12,
+        "word": " Inside"
+      },
+      {
+        "start": 4.12,
+        "end": 4.34,
+        "word": " is"
+      },
+      {
+        "start": 4.34,
+        "end": 4.52,
+        "word": " the"
+      },
+      {
+        "start": 4.52,
+        "end": 4.76,
+        "word": " stolen"
+      }
+    ]
+  },
+  {
+    "start": 4.76,
+    "end": 5.5,
+    "text": "World Cup.",
+    "words": [
+      {
+        "start": 4.76,
+        "end": 5.1,
+        "word": " World"
+      },
+      {
+        "start": 5.1,
+        "end": 5.38,
+        "word": " Cup."
+      }
+    ]
+  },
+  {
+    "start": 6.56,
+    "end": 7.4,
+    "text": "One week earlier,",
+    "words": [
+      {
+        "start": 6.56,
+        "end": 6.7,
+        "word": " One"
+      },
+      {
+        "start": 6.7,
+        "end": 6.88,
+        "word": " week"
+      },
+      {
+        "start": 6.88,
+        "end": 7.28,
+        "word": " earlier,"
+      }
+    ]
+  },
+  {
+    "start": 7.54,
+    "end": 8.22,
+    "text": "it's on show in",
+    "words": [
+      {
+        "start": 7.54,
+        "end": 7.68,
+        "word": " it's"
+      },
+      {
+        "start": 7.68,
+        "end": 7.84,
+        "word": " on"
+      },
+      {
+        "start": 7.84,
+        "end": 8.06,
+        "word": " show"
+      },
+      {
+        "start": 8.06,
+        "end": 8.22,
+        "word": " in"
+      }
+    ]
+  },
+  {
+    "start": 8.22,
+    "end": 8.639999999999999,
+    "text": "London,",
+    "words": [
+      {
+        "start": 8.22,
+        "end": 8.52,
+        "word": " London,"
+      }
+    ]
+  },
+  {
+    "start": 8.9,
+    "end": 10.04,
+    "text": "four months before England",
+    "words": [
+      {
+        "start": 8.9,
+        "end": 9.08,
+        "word": " four"
+      },
+      {
+        "start": 9.08,
+        "end": 9.34,
+        "word": " months"
+      },
+      {
+        "start": 9.34,
+        "end": 9.7,
+        "word": " before"
+      },
+      {
+        "start": 9.7,
+        "end": 10.04,
+        "word": " England"
+      }
+    ]
+  },
+  {
+    "start": 10.04,
+    "end": 11.159999999999998,
+    "text": "hosts the tournament.",
+    "words": [
+      {
+        "start": 10.04,
+        "end": 10.42,
+        "word": " hosts"
+      },
+      {
+        "start": 10.42,
+        "end": 10.7,
+        "word": " the"
+      },
+      {
+        "start": 10.7,
+        "end": 11.04,
+        "word": " tournament."
+      }
+    ]
+  },
+  {
+    "start": 12.12,
+    "end": 12.72,
+    "text": "Guards watch it day",
+    "words": [
+      {
+        "start": 12.12,
+        "end": 12.12,
+        "word": " Guards"
+      },
+      {
+        "start": 12.12,
+        "end": 12.36,
+        "word": " watch"
+      },
+      {
+        "start": 12.36,
+        "end": 12.56,
+        "word": " it"
+      },
+      {
+        "start": 12.56,
+        "end": 12.72,
+        "word": " day"
+      }
+    ]
+  },
+  {
+    "start": 12.72,
+    "end": 13.299999999999999,
+    "text": "and night.",
+    "words": [
+      {
+        "start": 12.72,
+        "end": 12.88,
+        "word": " and"
+      },
+      {
+        "start": 12.88,
+        "end": 13.18,
+        "word": " night."
+      }
+    ]
+  },
+  {
+    "start": 13.86,
+    "end": 14.559999999999999,
+    "text": "On Sunday,",
+    "words": [
+      {
+        "start": 13.86,
+        "end": 14.04,
+        "word": " On"
+      },
+      {
+        "start": 14.04,
+        "end": 14.44,
+        "word": " Sunday,"
+      }
+    ]
+  },
+  {
+    "start": 14.58,
+    "end": 15.32,
+    "text": "the glass case is",
+    "words": [
+      {
+        "start": 14.58,
+        "end": 14.64,
+        "word": " the"
+      },
+      {
+        "start": 14.64,
+        "end": 14.88,
+        "word": " glass"
+      },
+      {
+        "start": 14.88,
+        "end": 15.12,
+        "word": " case"
+      },
+      {
+        "start": 15.12,
+        "end": 15.32,
+        "word": " is"
+      }
+    ]
+  },
+  {
+    "start": 15.32,
+    "end": 15.78,
+    "text": "empty.",
+    "words": [
+      {
+        "start": 15.32,
+        "end": 15.66,
+        "word": " empty."
+      }
+    ]
+  },
+  {
+    "start": 16.74,
+    "end": 18.2,
+    "text": "A ransom demand arrives,",
+    "words": [
+      {
+        "start": 16.74,
+        "end": 16.86,
+        "word": " A"
+      },
+      {
+        "start": 16.86,
+        "end": 17.16,
+        "word": " ransom"
+      },
+      {
+        "start": 17.16,
+        "end": 17.64,
+        "word": " demand"
+      },
+      {
+        "start": 17.64,
+        "end": 18.08,
+        "word": " arrives,"
+      }
+    ]
+  },
+  {
+    "start": 18.54,
+    "end": 19.560000000000002,
+    "text": "£15 ,000.",
+    "words": [
+      {
+        "start": 18.54,
+        "end": 18.88,
+        "word": " £15"
+      },
+      {
+        "start": 18.88,
+        "end": 19.44,
+        "word": ",000."
+      }
+    ]
+  },
+  {
+    "start": 20.24,
+    "end": 21.32,
+    "text": "Police arrest a man",
+    "words": [
+      {
+        "start": 20.24,
+        "end": 20.6,
+        "word": " Police"
+      },
+      {
+        "start": 20.6,
+        "end": 20.98,
+        "word": " arrest"
+      },
+      {
+        "start": 20.98,
+        "end": 21.16,
+        "word": " a"
+      },
+      {
+        "start": 21.16,
+        "end": 21.32,
+        "word": " man"
+      }
+    ]
+  },
+  {
+    "start": 21.32,
+    "end": 22.220000000000002,
+    "text": "at the handover.",
+    "words": [
+      {
+        "start": 21.32,
+        "end": 21.46,
+        "word": " at"
+      },
+      {
+        "start": 21.46,
+        "end": 21.58,
+        "word": " the"
+      },
+      {
+        "start": 21.58,
+        "end": 22.1,
+        "word": " handover."
+      }
+    ]
+  },
+  {
+    "start": 22.68,
+    "end": 23.42,
+    "text": "He says he's only",
+    "words": [
+      {
+        "start": 22.68,
+        "end": 22.86,
+        "word": " He"
+      },
+      {
+        "start": 22.86,
+        "end": 23.04,
+        "word": " says"
+      },
+      {
+        "start": 23.04,
+        "end": 23.24,
+        "word": " he's"
+      },
+      {
+        "start": 23.24,
+        "end": 23.42,
+        "word": " only"
+      }
+    ]
+  },
+  {
+    "start": 23.42,
+    "end": 24.14,
+    "text": "a middleman.",
+    "words": [
+      {
+        "start": 23.42,
+        "end": 23.6,
+        "word": " a"
+      },
+      {
+        "start": 23.6,
+        "end": 24.02,
+        "word": " middleman."
+      }
+    ]
+  },
+  {
+    "start": 24.6,
+    "end": 25.42,
+    "text": "The trophy is still",
+    "words": [
+      {
+        "start": 24.6,
+        "end": 24.72,
+        "word": " The"
+      },
+      {
+        "start": 24.72,
+        "end": 24.96,
+        "word": " trophy"
+      },
+      {
+        "start": 24.96,
+        "end": 25.22,
+        "word": " is"
+      },
+      {
+        "start": 25.22,
+        "end": 25.42,
+        "word": " still"
+      }
+    ]
+  },
+  {
+    "start": 25.42,
+    "end": 25.880000000000003,
+    "text": "missing.",
+    "words": [
+      {
+        "start": 25.42,
+        "end": 25.76,
+        "word": " missing."
+      }
+    ]
+  },
+  {
+    "start": 26.52,
+    "end": 27.9,
+    "text": "Then Pickles goes for",
+    "words": [
+      {
+        "start": 26.52,
+        "end": 27.04,
+        "word": " Then"
+      },
+      {
+        "start": 27.04,
+        "end": 27.44,
+        "word": " Pickles"
+      },
+      {
+        "start": 27.44,
+        "end": 27.66,
+        "word": " goes"
+      },
+      {
+        "start": 27.66,
+        "end": 27.9,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 27.9,
+    "end": 28.5,
+    "text": "his walk.",
+    "words": [
+      {
+        "start": 27.9,
+        "end": 28.02,
+        "word": " his"
+      },
+      {
+        "start": 28.02,
+        "end": 28.38,
+        "word": " walk."
+      }
+    ]
+  },
+  {
+    "start": 29.04,
+    "end": 30.02,
+    "text": "His owner fears it's",
+    "words": [
+      {
+        "start": 29.04,
+        "end": 29.14,
+        "word": " His"
+      },
+      {
+        "start": 29.14,
+        "end": 29.42,
+        "word": " owner"
+      },
+      {
+        "start": 29.42,
+        "end": 29.76,
+        "word": " fears"
+      },
+      {
+        "start": 29.76,
+        "end": 30.02,
+        "word": " it's"
+      }
+    ]
+  },
+  {
+    "start": 30.02,
+    "end": 30.44,
+    "text": "a bomb.",
+    "words": [
+      {
+        "start": 30.02,
+        "end": 30.12,
+        "word": " a"
+      },
+      {
+        "start": 30.12,
+        "end": 30.32,
+        "word": " bomb."
+      }
+    ]
+  },
+  {
+    "start": 30.96,
+    "end": 31.98,
+    "text": "He tears the paper.",
+    "words": [
+      {
+        "start": 30.96,
+        "end": 31.08,
+        "word": " He"
+      },
+      {
+        "start": 31.08,
+        "end": 31.34,
+        "word": " tears"
+      },
+      {
+        "start": 31.34,
+        "end": 31.54,
+        "word": " the"
+      },
+      {
+        "start": 31.54,
+        "end": 31.86,
+        "word": " paper."
+      }
+    ]
+  },
+  {
+    "start": 32.56,
+    "end": 32.96,
+    "text": "Brazil,",
+    "words": [
+      {
+        "start": 32.56,
+        "end": 32.84,
+        "word": " Brazil,"
+      }
+    ]
+  },
+  {
+    "start": 33.44,
+    "end": 34.16,
+    "text": "West Germany,",
+    "words": [
+      {
+        "start": 33.44,
+        "end": 33.56,
+        "word": " West"
+      },
+      {
+        "start": 33.56,
+        "end": 34.04,
+        "word": " Germany,"
+      }
+    ]
+  },
+  {
+    "start": 34.5,
+    "end": 34.879999999999995,
+    "text": "Uruguay.",
+    "words": [
+      {
+        "start": 34.5,
+        "end": 34.76,
+        "word": " Uruguay."
+      }
+    ]
+  },
+  {
+    "start": 35.98,
+    "end": 36.62,
+    "text": "He takes it to",
+    "words": [
+      {
+        "start": 35.98,
+        "end": 36.16,
+        "word": " He"
+      },
+      {
+        "start": 36.16,
+        "end": 36.34,
+        "word": " takes"
+      },
+      {
+        "start": 36.34,
+        "end": 36.5,
+        "word": " it"
+      },
+      {
+        "start": 36.5,
+        "end": 36.62,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 36.62,
+    "end": 37.12,
+    "text": "the police.",
+    "words": [
+      {
+        "start": 36.62,
+        "end": 36.74,
+        "word": " the"
+      },
+      {
+        "start": 36.74,
+        "end": 37.0,
+        "word": " police."
+      }
+    ]
+  },
+  {
+    "start": 37.78,
+    "end": 38.5,
+    "text": "They make him their",
+    "words": [
+      {
+        "start": 37.78,
+        "end": 37.96,
+        "word": " They"
+      },
+      {
+        "start": 37.96,
+        "end": 38.16,
+        "word": " make"
+      },
+      {
+        "start": 38.16,
+        "end": 38.34,
+        "word": " him"
+      },
+      {
+        "start": 38.34,
+        "end": 38.5,
+        "word": " their"
+      }
+    ]
+  },
+  {
+    "start": 38.5,
+    "end": 39.279999999999994,
+    "text": "main suspect.",
+    "words": [
+      {
+        "start": 38.5,
+        "end": 38.72,
+        "word": " main"
+      },
+      {
+        "start": 38.72,
+        "end": 39.16,
+        "word": " suspect."
+      }
+    ]
+  },
+  {
+    "start": 39.82,
+    "end": 40.74,
+    "text": "They question him until",
+    "words": [
+      {
+        "start": 39.82,
+        "end": 40.0,
+        "word": " They"
+      },
+      {
+        "start": 40.0,
+        "end": 40.24,
+        "word": " question"
+      },
+      {
+        "start": 40.24,
+        "end": 40.5,
+        "word": " him"
+      },
+      {
+        "start": 40.5,
+        "end": 40.74,
+        "word": " until"
+      }
+    ]
+  },
+  {
+    "start": 40.74,
+    "end": 41.8,
+    "text": "half past two in",
+    "words": [
+      {
+        "start": 40.74,
+        "end": 40.98,
+        "word": " half"
+      },
+      {
+        "start": 40.98,
+        "end": 41.28,
+        "word": " past"
+      },
+      {
+        "start": 41.28,
+        "end": 41.62,
+        "word": " two"
+      },
+      {
+        "start": 41.62,
+        "end": 41.8,
+        "word": " in"
+      }
+    ]
+  },
+  {
+    "start": 41.8,
+    "end": 42.339999999999996,
+    "text": "the morning.",
+    "words": [
+      {
+        "start": 41.8,
+        "end": 41.88,
+        "word": " the"
+      },
+      {
+        "start": 41.88,
+        "end": 42.22,
+        "word": " morning."
+      }
+    ]
+  },
+  {
+    "start": 43.44,
+    "end": 44.04,
+    "text": "That summer,",
+    "words": [
+      {
+        "start": 43.44,
+        "end": 43.6,
+        "word": " That"
+      },
+      {
+        "start": 43.6,
+        "end": 43.92,
+        "word": " summer,"
+      }
+    ]
+  },
+  {
+    "start": 44.1,
+    "end": 44.88,
+    "text": "England win the World",
+    "words": [
+      {
+        "start": 44.1,
+        "end": 44.26,
+        "word": " England"
+      },
+      {
+        "start": 44.26,
+        "end": 44.54,
+        "word": " win"
+      },
+      {
+        "start": 44.54,
+        "end": 44.68,
+        "word": " the"
+      },
+      {
+        "start": 44.68,
+        "end": 44.88,
+        "word": " World"
+      }
+    ]
+  },
+  {
+    "start": 44.88,
+    "end": 45.239999999999995,
+    "text": "Cup.",
+    "words": [
+      {
+        "start": 44.88,
+        "end": 45.12,
+        "word": " Cup."
+      }
+    ]
+  },
+  {
+    "start": 45.76,
+    "end": 47.0,
+    "text": "The players invite Pickles",
+    "words": [
+      {
+        "start": 45.76,
+        "end": 45.9,
+        "word": " The"
+      },
+      {
+        "start": 45.9,
+        "end": 46.16,
+        "word": " players"
+      },
+      {
+        "start": 46.16,
+        "end": 46.54,
+        "word": " invite"
+      },
+      {
+        "start": 46.54,
+        "end": 47.0,
+        "word": " Pickles"
+      }
+    ]
+  },
+  {
+    "start": 47.0,
+    "end": 48.04,
+    "text": "to their victory dinner.",
+    "words": [
+      {
+        "start": 47.0,
+        "end": 47.16,
+        "word": " to"
+      },
+      {
+        "start": 47.16,
+        "end": 47.32,
+        "word": " their"
+      },
+      {
+        "start": 47.32,
+        "end": 47.58,
+        "word": " victory"
+      },
+      {
+        "start": 47.58,
+        "end": 47.92,
+        "word": " dinner."
+      }
+    ]
+  },
+  {
+    "start": 48.58,
+    "end": 49.44,
+    "text": "He licks their plates",
+    "words": [
+      {
+        "start": 48.58,
+        "end": 48.72,
+        "word": " He"
+      },
+      {
+        "start": 48.72,
+        "end": 48.96,
+        "word": " licks"
+      },
+      {
+        "start": 48.96,
+        "end": 49.16,
+        "word": " their"
+      },
+      {
+        "start": 49.16,
+        "end": 49.44,
+        "word": " plates"
+      }
+    ]
+  },
+  {
+    "start": 49.44,
+    "end": 49.96,
+    "text": "clean.",
+    "words": [
+      {
+        "start": 49.44,
+        "end": 49.84,
+        "word": " clean."
+      }
+    ]
+  },
+  {
+    "start": 51.08,
+    "end": 52.199999999999996,
+    "text": "17 years later,",
+    "words": [
+      {
+        "start": 51.08,
+        "end": 51.46,
+        "word": " 17"
+      },
+      {
+        "start": 51.46,
+        "end": 51.7,
+        "word": " years"
+      },
+      {
+        "start": 51.7,
+        "end": 52.08,
+        "word": " later,"
+      }
+    ]
+  },
+  {
+    "start": 52.32,
+    "end": 53.2,
+    "text": "the trophy is stolen",
+    "words": [
+      {
+        "start": 52.32,
+        "end": 52.42,
+        "word": " the"
+      },
+      {
+        "start": 52.42,
+        "end": 52.7,
+        "word": " trophy"
+      },
+      {
+        "start": 52.7,
+        "end": 52.9,
+        "word": " is"
+      },
+      {
+        "start": 52.9,
+        "end": 53.2,
+        "word": " stolen"
+      }
+    ]
+  },
+  {
+    "start": 53.2,
+    "end": 54.279999999999994,
+    "text": "again in Brazil.",
+    "words": [
+      {
+        "start": 53.2,
+        "end": 53.6,
+        "word": " again"
+      },
+      {
+        "start": 53.6,
+        "end": 53.84,
+        "word": " in"
+      },
+      {
+        "start": 53.84,
+        "end": 54.16,
+        "word": " Brazil."
+      }
+    ]
+  },
+  {
+    "start": 54.68,
+    "end": 55.74,
+    "text": "This time there's no",
+    "words": [
+      {
+        "start": 54.68,
+        "end": 55.0,
+        "word": " This"
+      },
+      {
+        "start": 55.0,
+        "end": 55.3,
+        "word": " time"
+      },
+      {
+        "start": 55.3,
+        "end": 55.54,
+        "word": " there's"
+      },
+      {
+        "start": 55.54,
+        "end": 55.74,
+        "word": " no"
+      }
+    ]
+  },
+  {
+    "start": 55.74,
+    "end": 56.32,
+    "text": "Pickles.",
+    "words": [
+      {
+        "start": 55.74,
+        "end": 56.2,
+        "word": " Pickles."
+      }
+    ]
+  },
+  {
+    "start": 56.88,
+    "end": 58.019999999999996,
+    "text": "It's never been found.",
+    "words": [
+      {
+        "start": 56.88,
+        "end": 57.06,
+        "word": " It's"
+      },
+      {
+        "start": 57.06,
+        "end": 57.22,
+        "word": " never"
+      },
+      {
+        "start": 57.22,
+        "end": 57.48,
+        "word": " been"
+      },
+      {
+        "start": 57.48,
+        "end": 57.9,
+        "word": " found."
+      }
+    ]
+  },
+  {
+    "start": 59.04,
+    "end": 60.84,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 59.04,
+        "end": 59.36,
+        "word": " Follow"
+      },
+      {
+        "start": 59.36,
+        "end": 60.6,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 60.6,
+        "end": 60.84,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 60.84,
+    "end": 62.099999999999994,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 60.84,
+        "end": 61.04,
+        "word": " more"
+      },
+      {
+        "start": 61.04,
+        "end": 61.38,
+        "word": " stories"
+      },
+      {
+        "start": 61.38,
+        "end": 61.66,
+        "word": " like"
+      },
+      {
+        "start": 61.66,
+        "end": 61.98,
+        "word": " this."
+      }
+    ]
+  }
+]

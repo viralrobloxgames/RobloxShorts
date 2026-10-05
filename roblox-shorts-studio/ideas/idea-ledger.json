@@ -384,11 +384,11 @@
       "title": "The Dog Who Found The World Cup",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_draft_awaiting_approval",
+      "status": "farm_render_running",
       "logline": "True story: in March 1966 the World Cup is stolen from a guarded glass case in London, four months before England hosts the tournament. A ransom arrest catches only a middleman. A week later a collie called Pickles drags a newspaper parcel from under a hedge; his owner fears a bomb, tears it and reads 'Brazil, West Germany, Uruguay'. Police make the owner their main suspect; that summer England win and Pickles licks the players' plates at the victory dinner. Seventeen years later the trophy is stolen again in Brazil. This time there's no Pickles, and it's never been found.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-dog-who-found-the-world-cup",
-      "notes": "Script v1 160 words with the CTA. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Pickles, David Corbett, theft 20 Mar 1966, found 27 Mar 1966, stolen again in Rio 19 Dec 1983. Cartoon-safe dog hero; topical after the 2026 World Cup and the 1966 60th anniversary. Needs a rigged collie (animal_dog) in the pack."
+      "notes": "Approved 2026-10-05 ('Make it'). Narration 62.1 s (George voice C); video 64.5 s with end card and cover. Web route; new pack creature animal_collie_parts (retriever cut and recoloured). Full web render running. Pickles, David Corbett, theft 20 Mar 1966, found 27 Mar 1966, stolen again in Rio 19 Dec 1983."
     }
   ],
   "statuses": [
