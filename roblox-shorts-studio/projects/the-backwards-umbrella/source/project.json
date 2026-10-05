@@ -1,18 +1,18 @@
 {
-  "title": "Whatever Mia Draws",
-  "character": "Mia",
+  "title": "The Backwards Umbrella",
+  "character": "Leo",
   "characters": [
-    "Mia",
     "Leo",
     "Max",
+    "Mia",
     "Noob"
   ],
-  "seconds": 63.467,
+  "seconds": 63.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok (>60 s) + YouTube Shorts",
-  "status": "approved_scheduled",
+  "status": "script_draft_awaiting_approval",
   "finish": {
     "word_fixes": {
       "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
