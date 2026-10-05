@@ -36,7 +36,7 @@ const T = {
   give: W.dollars2 + 0.15, cta: W.follow - 0.15,
 };
 // The cold open shows the dragon chewing the teacher's desk, then rewinds into the story.
-const COLD_STORY = T.dsk + 0.35, REW = 0.4;
+const COLD_STORY = T.dsk + 0.75, REW = 0.4;
 function story(t) {
   if (t >= T.cold) return t;
   const hold = (x) => Math.min(COLD_STORY + x * 0.3, T.track - 0.05);
@@ -493,7 +493,7 @@ export function update(t, stage) {
     case 'lie1': look(stage, L.clone().add(V(-6.4, 0.8, 2.6)), L.clone().add(V(0, -0.9, -0.6)), 42); break;
     case 'boom': look(stage, V(7.5, FY + 4.8, 5.5).add(boom), V(-4, FY + 4.4, -7), lerp(56, 50, u)); break;
     case 'hw': look(stage, V(-8.5, FY + 6.6, 1.5).add(boom.multiplyScalar(0.3)), V(-2.5, FY + 3.6, -5.5), 46); break;
-    case 'desk': look(stage, V(lerp(-6.0, -5.2, u), FY + 6.2, 6.5), V(-8, FY + 4.4, -5.5), 52); break;
+    case 'desk': look(stage, V(lerp(-2.8, -2.3, u), FY + 6.4, 5.2), V(-8, FY + 4.4, -5.5), 52); break;
     case 'track': look(stage, V(-22, 3.6, lerp(30, 31, u)), V(-31, 3.0, 45), 44, 30); break;
     case 'zoom': { const lp = leo.root.position; look(stage, V(-10, 6, 22), V(clamp(lp.x, -31, 40), 2.5, 44), 52, 50); break; }
     case 'cash': look(stage, V(LEO_CASH[0] + 2.5, 4.6, LEO_CASH[2] + lerp(13, 11.5, u)), V(LEO_CASH[0], 4.6, LEO_CASH[2]), 48, 20); break;
