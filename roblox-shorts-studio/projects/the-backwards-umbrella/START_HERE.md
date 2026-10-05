@@ -18,7 +18,7 @@ saves the park. Mia ducks under: "Room for one more?"
   shake) -> `source/sound_cues.py` -> `source/sound_cues.json`.
 - Cover: `web/cover_clip.js` (Leo dry in the downpour, HIS UMBRELLA / RAINS ON / EVERYONE ELSE). Post copy: `delivery/post.json`.
 - Full render done 2026-10-05 (`renders/web`, 1857 frames, verified). Encoded: `delivery/The_Backwards_Umbrella.mp4`,
-  62.4 s incl. the 0.5 s cover at the end, -16.6 LUFS, validated; `_post.md` written. Preview sent for approval.
+  62.4 s incl. the 0.5 s cover at the end, -16.6 LUFS, validated; `_post.md` written. Preview sent for approval. v2: Mia moved clear of Leo's umbrella arm (squeeze + ending), Max a half step behind; rain/fire loops cut on cue. Frames 552-800 and 1500-1857 re-rendered, re-encoded (62.4 s).
 - Disk: the encode filled the disk; the render frames of Whatever Mia Draws and Every Lie Comes True (both scheduled,
   MP4s in delivery/) were deleted to make room. Re-render them from their clips if ever needed.
 
