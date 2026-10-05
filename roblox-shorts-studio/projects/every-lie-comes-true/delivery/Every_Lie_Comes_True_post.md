@@ -1,6 +1,6 @@
 # Every Lie Comes True
 
-TikTok: **not posted** · YouTube: **not posted** · `Every_Lie_Comes_True.mp4` (76 s)
+TikTok: **scheduled 5 Oct 19:00** · YouTube: **scheduled 5 Oct 19:00** (https://youtube.com/shorts/ee3fg-PsOds) · `Every_Lie_Comes_True.mp4` (76 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
