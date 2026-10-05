@@ -411,7 +411,7 @@ function smellIcons(g, s, t) {
 }
 export function overlay(g, s, t) {
   counter(g, s, t); smellIcons(g, s, t);
-  if (t > B.title && t < B.title + 3.2) lockup(g, s, { alpha: Math.min(1, (t - B.title) / 0.25, (B.title + 3.2 - t) / 0.3), k: pop(t, B.title, 0.3, 1.6), caseName: 'The Clown Case' });
+  if (t > B.title && t < B.title + 3.2) lockup(g, s, { alpha: Math.min(1, (t - B.title) / 0.25, (B.title + 3.2 - t) / 0.3), k: pop(t, B.title, 0.3, 1.6), caseName: 'The Clown Case', y: 1490 });   // below the caption band
   if (SHOT === 'hook') bubble(g, s, t, headAt(sky2, 1), ['Are you single,', 'detective?'], W.girl - 0.1, W.tempting1 - 0.1, { heart: true });
   if (SHOT === 'working') bubble(g, s, t, headAt(gig, 1.2), ['Is it', 'working?'], B.working + 0.05, B.note, { size: 56 });
   if (SHOT === 'offer') bubble(g, s, t, headAt(scoop, 1), ['On the', 'house!'], W.owner, W.tempting2 - 0.15, { size: 56 });

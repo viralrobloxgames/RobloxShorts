@@ -58,13 +58,15 @@ window.renderFrame = (frame, opts = {}) => {
 const ov = document.createElement('canvas'); ov.width = 108; ov.height = 192; const og = ov.getContext('2d');
 const r6 = (x) => Math.round(x * 1e4) / 1e4;
 const view = new THREE.Frustum(), shade = new THREE.Frustum(), m4 = new THREE.Matrix4(), bs = new THREE.Sphere();
-window.frameState = (frame) => {
+window.frameState = (frame, raw = false) => {   // raw: the unhashed state string, for debugging a mismatch
   const t = (frame - 1) / meta.fps, samples = clip.samples ? clip.samples(t) : 4, shutter = clip.shutter ? clip.shutter(t) : 0;
   const parts = [samples, r6(shutter)];
   const ts = samples > 1 ? [t + (0.5 / samples - 0.5) * shutter / meta.fps, t, t + ((samples - 0.5) / samples - 0.5) * shutter / meta.fps] : [t];
   for (const tt of ts) {
     clip.update(tt, stage);
     stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
+    stage.sun.shadow.updateMatrices(stage.sun);   // place the shadow camera now: three.js only does it while rendering, so without this the
+                                                  // fingerprint depended on whether (and what) the page had rendered before
     parts.push('C', ...stage.camera.matrixWorld.elements.map(r6), r6(stage.camera.fov));
     // Only what can change the picture: things inside the camera's view, or inside the sun's shadow box if they cast
     // shadows (an object far off-screen, like a prop in another set, doesn't count).
@@ -90,6 +92,7 @@ window.frameState = (frame) => {
   const px = og.getImageData(0, 0, ov.width, ov.height).data;
   let h1 = 0x811c9dc5, h2 = 0x01000193;                            // two FNV-style hashes over the state and the overlay
   const str = parts.join('|');
+  if (raw) return str;
   for (let i = 0; i < str.length; i++) { h1 = Math.imul(h1 ^ str.charCodeAt(i), 16777619); h2 = Math.imul(h2 ^ str.charCodeAt(i), 2246822519); }
   for (let i = 0; i < px.length; i += 4) { const v = (px[i] >> 3) | ((px[i + 1] >> 3) << 5) | ((px[i + 3] >> 3) << 10); h1 = Math.imul(h1 ^ v, 16777619); h2 = Math.imul(h2 ^ v, 2246822519); }
   return (h1 >>> 0).toString(16).padStart(8, '0') + (h2 >>> 0).toString(16).padStart(8, '0');

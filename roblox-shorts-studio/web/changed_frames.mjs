@@ -1,7 +1,8 @@
 // Which frames did an edit change? Re-render only those.
 //
 //   node web/changed_frames.mjs --clip <clip> --out <render dir>            list the changed frames (no rendering)
-//   node web/changed_frames.mjs --clip <clip> --out <render dir> --delete   ...and delete their PNGs, then:
+//   node web/changed_frames.mjs --clip <clip> --out <render dir> --delete   ...and delete their PNGs (refuses when every
+//     frame changed, which points at a fingerprint problem rather than an edit; --force overrides), then:
 //   node web/render.mjs --clip <clip> --out <render dir> --workers 3 --resume   renders just those
 //   node web/changed_frames.mjs --clip <clip> --out <render dir> --save     record the current clip as what's rendered
 //
@@ -48,6 +49,12 @@ const ranges = []; for (const f of changed) { const r = ranges[ranges.length - 1
 const fps = meta.fps, fmt = (f) => ((f - 1) / fps).toFixed(2);
 console.log(`${changed.length} of ${total} frames changed${extra.length ? `, ${extra.length} past the new end` : ''}:`);
 for (const [a, b] of ranges) console.log(`  ${a}-${b}  (${fmt(a)}-${fmt(b)} s)`);
+if (args.delete && Object.keys(saved.hashes).length && changed.length === total && !args.force) {
+  // Every frame changed although fingerprints exist: far more likely a fingerprint bug or the wrong --out than a real
+  // edit (moving one title card changes ~100 frames). Deleting would throw away the whole render, so ask for --force.
+  console.error('Refusing to delete: every frame changed. Check the clip and --out (or pass --force if you really edited every frame).');
+  process.exit(4);
+}
 if (args.delete) {
   for (const f of changed) fs.rmSync(png(f), { force: true });
   for (const n of extra) fs.rmSync(path.join(out, n), { force: true });

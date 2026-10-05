@@ -1,11 +1,11 @@
 {
   "clip": "projects/the-clown-case/web/clown_clip.js",
-  "generated": "2026-10-05T19:22:19.355Z",
-  "fingerprint": "34ad9c7bf22070ba",
+  "generated": "2026-10-05T21:27:14.711Z",
+  "fingerprint": "b5889190b8d084b8",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [],
   "pairs": [],
-  "reviewedAt": "2026-10-05T19:23:17.833Z"
+  "reviewedAt": "2026-10-05T21:27:15.219Z"
 }
