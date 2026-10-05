@@ -1,399 +1,399 @@
 {
- "schema_version": 1,
- "ideas": [
-  {
-   "title": "After Hours (working title): Roblox horror pilots",
-   "series": "roblox-horror",
-   "created": "2026-10-02",
-   "status": "idea",
-   "logline": "Standalone suspense stories with Max, Mia and Leo: an unlisted player copies them across an empty server, a duplicate-player encounter and a night shift.",
-   "platform": "TikTok / YouTube Shorts",
-   "project": "references/horror-series.md",
-   "research": "references/horror-research-2026-10-02.md",
-   "asset_plan": "assets/roblox_pack/HORROR_ASSETS.md",
-   "notes": "Working name, entity and pilot premises are not approved scripts; no videos produced. First pass of the asset kit built and reviewed 2026-10-02 (see the build status in the asset plan)."
-  },
-  {
-   "title": "The Free Coin Trap",
-   "series": "roblox",
-   "created": "2026-09-17",
-   "status": "posted",
-   "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
-   "platform": "YouTube Shorts / TikTok",
-   "project": "examples/the-free-coin-trap",
-   "notes": "On TikTok since 2026-09-17 (seen in TikTok Studio 2026-10-05)."
-  },
-  {
-   "title": "The AFK Champion",
-   "series": "roblox",
-   "created": "2026-09-17",
-   "status": "farm_render_downloaded_awaiting_encode",
-   "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
-   "platform": "TikTok (>60 s for Creator Rewards)",
-   "project": "examples/the-afk-champion"
-  },
-  {
-   "title": "Admin For One Round",
-   "series": "roblox",
-   "created": "2026-09-30",
-   "status": "posted",
-   "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "projects/admin-for-one-round",
-   "notes": "On TikTok since 2026-09-30 22:35 (seen in TikTok Studio 2026-10-05)."
-  },
-  {
-   "title": "The AFK Millionaire",
-   "series": "roblox",
-   "created": "2026-09-30",
-   "status": "published",
-   "logline": "Last one in the circle wins a million coins: Leo, Max and Mia take each other out with tricks while the noob never moves, because he was eating dinner.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "projects/the-afk-millionaire"
-  },
-  {
-   "title": "Max Got Admin For One Round",
-   "series": "admin for one round (part 2)",
-   "created": "2026-10-01",
-   "status": "posted",
-   "logline": "Max gets admin and spends the round trying to get rid of Leo; every command backfires, the ban lands one second too late, and next round Leo gets admin again.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/max-got-admin"
-  },
-  {
-   "title": "ViralRoblox News (daily series)",
-   "series": "roblox-news",
-   "created": "2026-10-01",
-   "status": "delivered_local_review",
-   "logline": "Daily 65-75 s Roblox news Short with one recurring girl news presenter, a fixed branded news booth, a fixed cover layout and a 'Follow ViralRobloxGames' call to action every episode.",
-   "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-   "project": "references/news-series.md",
-   "episodes": [
-    "projects/news-001-roblox-in-your-browser"
-   ]
-  },
-  {
-   "title": "Leo Gave Everyone Admin",
-   "series": "admin for one round (part 3)",
-   "created": "2026-10-01",
-   "status": "published",
-   "logline": "Leo means to kick everyone but types admin all; an admin war breaks out (explode, invisible-with-floating-hair, giant, rocket) while Mia quietly types one long command that strips the boys of admin and makes them dance - but she forgot the AFK noob, who still has admin and just got back from dinner.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/leo-gave-everyone-admin"
-  },
-  {
-   "title": "The Noob Has Admin",
-   "series": "admin for one round (part 4)",
-   "created": "2026-10-02",
-   "status": "published",
-   "logline": "The noob gets admin and turns out to be a pro who counters everyone's signature moves; Mia never moves all round, Leo pokes her and she falls like a plank, then the noob types gg and it posts under Mia's name - the noob is Mia's alt, so in Part 3 she didn't forget him.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-noob-has-admin"
-  },
-  {
-   "title": "Mia Had Two Crowns",
-   "series": "admin for one round (part 5)",
-   "created": "2026-10-02",
-   "status": "published",
-   "logline": "Leo and Max team up against Mia's two accounts, discover only one can move at a time and overwhelm her; she freezes herself on the wrong window, then typos 'admin Leo and Max' - their alliance lasts one second and they kick each other. Mia wins by accident; Skye joins the game.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/mia-had-two-crowns"
-  },
-  {
-   "title": "Every Jump Makes You Bigger",
-   "series": "every x makes you y (posted as a standalone)",
-   "created": "2026-10-02",
-   "status": "published",
-   "logline": "In an obby where every jump makes you bigger, Leo jumps fifty times and strides to the finish, which is a tiny door. He blocks it out of spite; Max baits him into jumping to a hundred, the floor breaks and Leo falls out of the map - and respawns at his last checkpoint, right next to the door, tiny again. Leo wins, then does a victory jump in a very small room.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/every-jump-makes-you-bigger"
-  },
-  {
-   "title": "Every Step Makes You Faster",
-   "series": "every x makes you y (part 2)",
-   "created": "2026-10-03",
-   "status": "script_draft_awaiting_approval",
-   "logline": "In a game where every step makes you faster, Leo runs laps of the lobby to speed 1,000, crosses the map in one second and can't stop - off the end of the map three times. Max hops the course (jumps aren't steps) at speed 16. Leo runs circles around Max to blow him into the lava; the wind becomes a tornado that throws Max onto the finish. Leo still can't stop, hits 9,999 and the anti-cheat kicks him for speed hacking. In a speed game.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/every-step-makes-you-faster"
-  },
-  {
-   "title": "Stealing a T-Rex Egg",
-   "series": "standalone",
-   "created": "2026-10-03",
-   "status": "published",
-   "logline": "A Steal an Egg parody on the game's own T-rex and eggs: Leo and Max get flung four ways trying to steal the best egg (headbutt, higher, eaten bush, own bear trap), team up (Max decoys, Leo waddles the giant egg to the safe zone) and hatch a $1/s baby - while Mia, sneaking in the background all video, took the other twelve. They hatch and cry; safe zones stop guardians, not moms: Mom walks in, takes her babies and Mia. Last shot = first shot, with Mia as the egg.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/stealing-a-t-rex-egg"
-  },
-  {
-   "title": "The Super Nose Detective",
-   "series": "super nose detective (case 1)",
-   "created": "2026-10-03",
-   "status": "posted",
-   "logline": "A Roblox take on the 70s Miami detective parody Dick Snifford (flirting yes, no swearing or sexual references): Detective Max Sniffwell has the Super Nose gamepass and solves the stolen Golden Donut case by sniffing a sock. Skye asks if he's single and Mia asks him to stay at a pool party ('Tempting. But I'm on a case.'); he sneezes a pepper-throwing red herring into the pool and follows the trail back to Chief Leo, who has one sock, sprinkles on his face and half the donut. Leo slides him the other half, his cut. 'Tempting.' Case closed.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-super-nose-detective",
-   "notes": "Posted by the user on TikTok 2026-10-04 16:30 (seen in TikTok Studio 2026-10-05)."
-  },
-  {
-   "title": "The Server Says One",
-   "series": "After Hours horror (part 1 of 2)",
-   "created": "2026-10-02",
-   "status": "published",
-   "logline": "The server says one player online, but a faceless player stands in front of Max, copying him half a second late. It is his mirror image, and it creeps closer with every copy. Max fakes left, cuts right and slams the EXIT door; the copy, running the wrong way, hits the other side. Then the list updates: two players online. Max. And Max.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-server-says-one"
-  },
-  {
-   "title": "Which Max Is Real",
-   "series": "After Hours horror (part 2 of 2, finale)",
-   "created": "2026-10-03",
-   "status": "posted",
-   "logline": "Finale. Mia, who was spectating, realises the copy is a mirror: 'raise your right hand' exposes the right Max (the hoodie star was the clue). It lunges for her; Max walks backwards so the mirror backs toward the EXIT door, it resists one step away, Max sprints backwards and the mirror is flung through; Mia slams the door. Two players online. Max waves goodbye at the door; nothing waves back.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/which-max-is-real",
-   "notes": "Posted by the user on TikTok 2026-10-04 23:37 (seen in TikTok Studio 2026-10-05)."
-  },
-  {
-   "title": "Three Seconds",
-   "series": "standalone story",
-   "created": "2026-10-03",
-   "status": "dropped",
-   "logline": "Leo can stop time, but only for three seconds, which is never enough. When a piano falls toward Mia and she's twenty steps away, he uses his three seconds to throw the dodgeball that once hit him and knocks her clear. Mia asks if he just stopped time. 'Three seconds is cute. I get four.' She freezes him and eats his fries, which is where they kept going.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/three-seconds",
-   "notes": "Dropped 2026-10-03: the 'I get four' twist was a last-second new rule and the downside was only 'too short'. Replaced by Forty Floors."
-  },
-  {
-   "title": "Forty Floors",
-   "series": "standalone story",
-   "created": "2026-10-03",
-   "status": "script_draft_awaiting_approval",
-   "logline": "You're falling forty floors, and you can swap places with anything alive you can see. Swapping saves you but drops the window cleaner in your place, so you swap back. Everyone in sight would fall instead of you, until you see a pigeon. It takes your fall and opens its wings; the window cleaner you spared lowers his platform and pulls you in.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/forty-floors"
-  },
-  {
-   "title": "Which Max Rejoined?",
-   "series": "After Hours horror (part 2 of 2, finale v3)",
-   "created": "2026-10-03",
-   "status": "script_draft_awaiting_approval",
-   "logline": "Two Maxes; the mirror test shows the real one is LEFT. The copy isn't late any more and keeps closing in, so Max makes it copy him leaving the game: both disconnect. Max clicks Rejoin and spawns alone, one player online... then sees the star on his hoodie is on the wrong side. The copy rejoined.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/which-max-rejoined"
-  },
-  {
-   "title": "The Last Penalty",
-   "series": "standalone story",
-   "created": "2026-10-03",
-   "status": "posted",
-   "logline": "You're the keeper facing the last penalty of the final. Leo always looks at the corner he's aiming for, so you dive early and save it, but it's retaken because you left your line. Knowing he's been read, Leo shuts his eyes, and you stay on your line. Unable to see, he scuffs it into the grass and it rolls to your boot.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-last-penalty",
-   "notes": "Posted by the user on TikTok 2026-10-04 22:01 (seen in TikTok Studio 2026-10-05)."
-  },
-  {
-   "title": "Don't Sneeze Outside",
-   "series": "standalone story",
-   "created": "2026-10-04",
-   "status": "dropped",
-   "logline": "Every time you sneeze, your gravity flips. Indoors you land on the ceiling; outdoors there's no ceiling. Leo blows a dandelion in Max's face and he falls up, catching a lamppost upside down; only another sneeze brings him down. Leo's pepper falls back on Leo. Mia's cat climbs the pole to his nose: he sneezes and drops to the sidewalk, safe, and the cat jumps on his chest. Ah... ah...",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/dont-sneeze-outside",
-   "notes": "Dropped 2026-10-04: the user found it boring. Replaced by Every Lie Comes True."
-  },
-  {
-   "title": "Every Lie Comes True",
-   "series": "standalone story",
-   "created": "2026-10-04",
-   "status": "scheduled",
-   "logline": "Whatever Leo lies about comes true: a dragon eats his homework, he's the fastest kid in school, he has a million dollars. Then he crashes Max's bike and panics: 'I've never seen you before.' Max forgets him. Lying 'you're my best friend' brings Max back, but Max asks who broke the bike; Leo nearly blames the dragon (something lands on the roof) and tells the truth. 'Then you're buying me a new one.' 'Fine. I've got a million dollars.' Two true things in one day.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/every-lie-comes-true",
-   "notes": "Approved 2026-10-05. Scheduled for 2026-10-05 19:00 UK on TikTok and YouTube (https://youtube.com/shorts/ee3fg-PsOds); see delivery/published.json."
-  },
-  {
-   "title": "The Vampire Case (Detective Max Sniffwell)",
-   "series": "super nose detective",
-   "created": "2026-10-05",
-   "status": "scheduled",
-   "project": "projects/super-nose-case-2",
-   "logline": "Count Vlad, the nicest vampire in town, is knocked out cold with a slice of garlic bread by his coffin. The Chief offers Max a burger to drop it (red herring: he is just lazy). One long sniff: butter, fresh garlic, compost, so the garlic was homegrown, and only the gardener grows anything: a garlic patch behind the roses. Motive: Vlad kept the whole garden in the shade, twenty years of sad tomatoes. Cuffs on, gloves and all; with the garlic gone Vlad wakes, and his sister asks Max to stay for dinner. Then he sees the fangs. ~62 s.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "notes": "Script v1 'The Big Cheese' (Leo breaks out of jail, cheese-covered map, donut trap, sneeze cliffhanger) rejected 2026-10-05: the series is standalone cases. v2 is a clean take on the original's Vampire Case; v2 (94 s) cut to v3 (~62 s, new hook), then v4 (one clear clue chain; camping/respawn/floating dropped), then v5 (culprit is the gardener, not Leo again) the same day."
-  },
-  {
-   "title": "Whatever Mia Draws",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "scheduled",
-   "logline": "Anything Mia draws with her pencil comes to life exactly as drawn, and Mia can't draw: a stick dog, a square-wheeled bike, a stick boyfriend. Leo, the best artist in class, grabs the pencil and draws a perfect lion. Mia's wobbly cage holds but has no roof; her stick boyfriend gets batted like a toy, which shows her it's just a big cat. She scribbles a ball of yarn and the lion rolls over purring. For once, Mia drew something perfectly. Leo wants another go: 'No. You're too good.'",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/whatever-mia-draws",
-   "notes": "Script v1 (196 words, ~78 s) too long; v2 cut to 153 words (~62-63 s, the new 61-65 s rule) 2026-10-05. Awaiting approval."
-  },
-  {
-   "title": "Catching the Egg Thief",
-   "series": "standalone",
-   "created": "2026-10-03",
-   "status": "scheduled",
-   "logline": "Steal an Egg base-defense heist: a hooded 50,000-speed thief robs Leo (900 speed) every night; laser door and capybara guard fail. Leo spends everything on one Mythic egg with a 60 s hatch timer and a Do Not Steal sign; it hatches in the thief's arms into a giant spinosaurus that knows its owner and carries the thief back by the hood. It's Max. He repays on the treadmill in four seconds and breaks it.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/catching-the-egg-thief"
-  },
-  {
-   "title": "The Sandwich at My Door",
-   "series": "standalone",
-   "created": "2026-10-04",
-   "status": "script_draft_awaiting_approval",
-   "logline": "Every morning someone leaves Leo, who lives alone, a perfect sandwich and a caring note; on day 20 the note says 'Stop asking people. Just eat.' A hidden camera shows Leo himself sleepwalking at 3 a.m., making it and knocking on his own door. His thank-you note gets the reply 'We're out of bread.' Now he shops, his sleeping self cooks: best roommate ever.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/the-sandwich-at-my-door"
-  },
-  {
-   "title": "The Guardian Quits",
-   "series": "standalone",
-   "created": "2026-10-05",
-   "status": "scheduled",
-   "logline": "Steal an Egg told by the guardian: a T-rex loses his egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, disguises himself as a 'Player' to cross the safe zone and steals every egg back from the bases (Leo bonks off him). All 400 hatch into baby T-rexes, so he quits to be Leo's base guard on a brainrot treadmill; his kids now bonk the wall.",
-   "platform": "TikTok (>65 s) / YouTube Shorts",
-   "project": "projects/the-guardian-quits",
-   "notes": "Scheduled 2026-10-09 19:00 UK on TikTok and YouTube; YouTube thumbnail is a stand-in frame, swap in the cover once channel verification clears."
-  },
-  {
-   "title": "Feeding the Prism Kitsune",
-   "series": "standalone story (Hunt For Eggs! promo)",
-   "created": "2026-10-05",
-   "status": "scheduled",
-   "logline": "The Prism Kitsune falls out of the sky in Hunt For Eggs! and only eats Prism eggs. Leo learns five feeds make a Prism Chest; Max grinds the patrol and the Prism Alpha for the 5% Prism Blade and gets boosts; Mia takes the eggs and pulls the Blade from her first chest. Ends: 'Play Hunt for Eggs today. Link in bio!'",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/feeding-the-prism-kitsune",
-   "notes": "Event ends 10:20 BST Fri 9 Oct 2026: post by Thu 8 Oct."
-  },
-  {
-   "title": "The Backwards Umbrella",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "scheduled",
-   "logline": "When Leo's umbrella is open it rains everywhere except under it. He soaks his friends, shares it (the Noob doesn't fit), keeps it shut - until Max's barbecue goes up in flames and the rain saves the park. Mia ducks under: 'Room for one more?'",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-backwards-umbrella",
-   "notes": "Park set, rain and fire effects; web route."
-  },
-  {
-   "title": "Anything Leo Pets",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "dropped",
-   "logline": "Anything Leo pets with his gloves follows him forever: a puppy, kitten, goat and angry duck follow him to school and he can't lose them, so he stops petting things - until the zoo lion charges Max and Mia and he pets it. He throws the gloves away; Mia catches them, pats his head ('Good boy') and Leo becomes the pet.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/anything-leo-pets",
-   "notes": "Animal parade (pack retriever, cat, goat, lion; duck stand-in); web route. Dropped 2026-10-05: user didn't like the concept."
-  },
-  {
-   "title": "Say Their Name",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "scheduled",
-   "logline": "In this obby, saying a player's name teleports them next to you; first to the top wins a million coins. Leo and Max keep summoning each other down, Leo's 'Steve' name tag fails, Mia summons both boys into mid-air over the lava - then tries the Noob, whose username takes so long to say he wins first, and her '...nine' teleports him to her holding a million coins.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/say-their-name",
-   "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route. Scheduled 2026-10-09 22:30 UK on TikTok. YouTube NOT uploaded yet (daily upload limit 2026-10-05): see delivery/published.json."
-  },
-  {
-   "title": "He Bought Google For 12 Dollars",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "delivered_local_review",
-   "logline": "True story: in 2015 a former Google employee bought google.com for $12 on Google's own domain shop and owned it for a minute; Google cancelled it, paid a $6,006.13 bug reward (the digits spell GOOGLE) and doubled it when he gave it to a charity running free schools in India.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/google-for-twelve-dollars",
-   "notes": "Taken from OddFrame's top Short ('He Owned Google For A Minute', 32K views) at the user's request; own script and staging. Web route; laptop screen UI, digits-to-GOOGLE morph."
-  },
-  {
-   "title": "Detective Max Sniffwell: The Clown Case",
-   "series": "super nose detective (standalone)",
-   "created": "2026-10-05",
-   "status": "script_draft_awaiting_approval",
-   "project": "projects/the-clown-case",
-   "platform": "tiktok+youtube",
-   "logline": "The mayoral candidate (a literal clown) has had his wife kidnapped on election day. One sniff of the ransom note: waffle cone, hot fudge, mint choc chip. At Big Scoop's Ice Cream Max finds her running the till: she faked it to buy an ice cream truck. He drags her back anyway; the clown wins; Max gets a black eye and a free sundae. Tempting."
-  },
-  {
-   "title": "Copy the Crown",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "delivered_local_review",
-   "logline": "Every player copies whoever wears the crown; whoever has it when the timer ends wins a million coins. Leo walks Max off the edge into the lava, walks backwards so Max can never catch him, and makes the whole server dance. Mia flatters him into a bow, bows too, bonks the crown off his head and takes it; with three seconds left she steps back, and so do Leo and Max, who have been walking backwards all game: splash, splash.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/copy-the-crown",
-   "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered for review 2026-10-05: delivery/Copy_the_Crown.mp4 (62.0 s incl. 0.5 s cover, -16.9 LUFS). Awaiting approval to post."
-  },
-  {
-   "title": "He Traded A Paperclip For A House",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "farm_render_running",
-   "logline": "True story: in 2005-06 a man traded one red paperclip up through 14 trades; his 'dumbest trade ever' (an afternoon with a rock star for a snow globe) got him a movie role from a snow-globe-collecting actor, and a tiny Canadian town traded him a two-storey house for the role.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/paperclip-for-a-house",
-   "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; full web render running."
-  },
-  {
-   "title": "He Ordered A Fighter Jet From Pepsi",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "script_draft_awaiting_approval",
-   "logline": "True story: in 1996 a student saw a Pepsi ad offer a fighter jet for 7,000,000 points, found extra points cost 10 cents, got five investors to front $700,000 and mailed the check; Pepsi sent it back with coupons, a judge ruled no reasonable person would believe the offer, and Pepsi re-ran the ad at 700,000,000 points with 'just kidding'.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/fighter-jet-from-pepsi",
-   "notes": "Taken from OddFrame's Pepsi Points fighter jet Short (26K views, one of their top Shorts) at the user's request ('make another story'); own script and staging. Web route; jet landing at a school as the hook, small-print zoom, number rolls, returned check and coupons, courtroom, 700,000,000 + JUST KIDDING payoff."
-  },
-  {
-   "title": "Lightning Hit Him Seven Times",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "farm_render_running",
-   "logline": "True story: a Shenandoah park ranger is hit by lightning seven times (1942-77) and survives them all; it finds him in a lookout tower, his truck, his yard, his office; he carries a water can for his hair, outruns a storm cloud only to be hit when he steps out, his boss walks off when lightning flashes, and on strike seven a bear steals his fish. The record still stands.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/lightning-hit-him-seven-times",
-   "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 62.1 s (George voice C, cloud); video 63.9 s + 0.5 s cover. Web route, 28 shots, STRIKES 0/7 counter; full web render running. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
-  },
-  {
-   "title": "The Tornado Came Back",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "script_draft_awaiting_approval",
-   "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/the-tornado-came-back",
-   "notes": "User request 2026-10-05: 'Make a story about tornados'. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Maj. Ernest Fawbush, Capt. Robert Miller, Maj. Gen. Fred Borum; named only in the post copy. Web route planned; tornado funnel, 1940s planes, hangars, radar scope, general's cap and elevator cap to build."
-  },
-  {
-   "title": "He Stole The Mona Lisa",
-   "series": "standalone story",
-   "created": "2026-10-05",
-   "status": "script_draft_awaiting_approval",
-   "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
-   "platform": "TikTok (>60 s) / YouTube Shorts",
-   "project": "projects/he-stole-the-mona-lisa",
-   "notes": "Script v1 160 words with the CTA. Picked through general research, not from OddFrame's list. Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913. Heist genre, cartoon-safe, reframing payoff; topical after the October 2025 Louvre robbery."
-  }
- ],
- "statuses": [
-  "idea",
-  "script_draft_awaiting_approval",
-  "script_approved",
-  "narration_done",
-  "scene_built",
-  "farm_test_review",
-  "farm_render_running",
-  "farm_render_downloaded_awaiting_encode",
-  "delivered_local_review",
-  "published",
-  "dropped",
-  "posted",
-  "scheduled"
- ]
+  "schema_version": 1,
+  "ideas": [
+    {
+      "title": "After Hours (working title): Roblox horror pilots",
+      "series": "roblox-horror",
+      "created": "2026-10-02",
+      "status": "idea",
+      "logline": "Standalone suspense stories with Max, Mia and Leo: an unlisted player copies them across an empty server, a duplicate-player encounter and a night shift.",
+      "platform": "TikTok / YouTube Shorts",
+      "project": "references/horror-series.md",
+      "research": "references/horror-research-2026-10-02.md",
+      "asset_plan": "assets/roblox_pack/HORROR_ASSETS.md",
+      "notes": "Working name, entity and pilot premises are not approved scripts; no videos produced. First pass of the asset kit built and reviewed 2026-10-02 (see the build status in the asset plan)."
+    },
+    {
+      "title": "The Free Coin Trap",
+      "series": "roblox",
+      "created": "2026-09-17",
+      "status": "posted",
+      "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
+      "platform": "YouTube Shorts / TikTok",
+      "project": "examples/the-free-coin-trap",
+      "notes": "On TikTok since 2026-09-17 (seen in TikTok Studio 2026-10-05)."
+    },
+    {
+      "title": "The AFK Champion",
+      "series": "roblox",
+      "created": "2026-09-17",
+      "status": "farm_render_downloaded_awaiting_encode",
+      "logline": "Leo is AFK for five rounds of a disaster-survival game and keeps surviving by accident until Max and Mia try to get him kicked.",
+      "platform": "TikTok (>60 s for Creator Rewards)",
+      "project": "examples/the-afk-champion"
+    },
+    {
+      "title": "Admin For One Round",
+      "series": "roblox",
+      "created": "2026-09-30",
+      "status": "posted",
+      "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "projects/admin-for-one-round",
+      "notes": "On TikTok since 2026-09-30 22:35 (seen in TikTok Studio 2026-10-05)."
+    },
+    {
+      "title": "The AFK Millionaire",
+      "series": "roblox",
+      "created": "2026-09-30",
+      "status": "published",
+      "logline": "Last one in the circle wins a million coins: Leo, Max and Mia take each other out with tricks while the noob never moves, because he was eating dinner.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "projects/the-afk-millionaire"
+    },
+    {
+      "title": "Max Got Admin For One Round",
+      "series": "admin for one round (part 2)",
+      "created": "2026-10-01",
+      "status": "posted",
+      "logline": "Max gets admin and spends the round trying to get rid of Leo; every command backfires, the ban lands one second too late, and next round Leo gets admin again.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/max-got-admin"
+    },
+    {
+      "title": "ViralRoblox News (daily series)",
+      "series": "roblox-news",
+      "created": "2026-10-01",
+      "status": "delivered_local_review",
+      "logline": "Daily 65-75 s Roblox news Short with one recurring girl news presenter, a fixed branded news booth, a fixed cover layout and a 'Follow ViralRobloxGames' call to action every episode.",
+      "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
+      "project": "references/news-series.md",
+      "episodes": [
+        "projects/news-001-roblox-in-your-browser"
+      ]
+    },
+    {
+      "title": "Leo Gave Everyone Admin",
+      "series": "admin for one round (part 3)",
+      "created": "2026-10-01",
+      "status": "published",
+      "logline": "Leo means to kick everyone but types admin all; an admin war breaks out (explode, invisible-with-floating-hair, giant, rocket) while Mia quietly types one long command that strips the boys of admin and makes them dance - but she forgot the AFK noob, who still has admin and just got back from dinner.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/leo-gave-everyone-admin"
+    },
+    {
+      "title": "The Noob Has Admin",
+      "series": "admin for one round (part 4)",
+      "created": "2026-10-02",
+      "status": "published",
+      "logline": "The noob gets admin and turns out to be a pro who counters everyone's signature moves; Mia never moves all round, Leo pokes her and she falls like a plank, then the noob types gg and it posts under Mia's name - the noob is Mia's alt, so in Part 3 she didn't forget him.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-noob-has-admin"
+    },
+    {
+      "title": "Mia Had Two Crowns",
+      "series": "admin for one round (part 5)",
+      "created": "2026-10-02",
+      "status": "published",
+      "logline": "Leo and Max team up against Mia's two accounts, discover only one can move at a time and overwhelm her; she freezes herself on the wrong window, then typos 'admin Leo and Max' - their alliance lasts one second and they kick each other. Mia wins by accident; Skye joins the game.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/mia-had-two-crowns"
+    },
+    {
+      "title": "Every Jump Makes You Bigger",
+      "series": "every x makes you y (posted as a standalone)",
+      "created": "2026-10-02",
+      "status": "published",
+      "logline": "In an obby where every jump makes you bigger, Leo jumps fifty times and strides to the finish, which is a tiny door. He blocks it out of spite; Max baits him into jumping to a hundred, the floor breaks and Leo falls out of the map - and respawns at his last checkpoint, right next to the door, tiny again. Leo wins, then does a victory jump in a very small room.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/every-jump-makes-you-bigger"
+    },
+    {
+      "title": "Every Step Makes You Faster",
+      "series": "every x makes you y (part 2)",
+      "created": "2026-10-03",
+      "status": "script_draft_awaiting_approval",
+      "logline": "In a game where every step makes you faster, Leo runs laps of the lobby to speed 1,000, crosses the map in one second and can't stop - off the end of the map three times. Max hops the course (jumps aren't steps) at speed 16. Leo runs circles around Max to blow him into the lava; the wind becomes a tornado that throws Max onto the finish. Leo still can't stop, hits 9,999 and the anti-cheat kicks him for speed hacking. In a speed game.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/every-step-makes-you-faster"
+    },
+    {
+      "title": "Stealing a T-Rex Egg",
+      "series": "standalone",
+      "created": "2026-10-03",
+      "status": "published",
+      "logline": "A Steal an Egg parody on the game's own T-rex and eggs: Leo and Max get flung four ways trying to steal the best egg (headbutt, higher, eaten bush, own bear trap), team up (Max decoys, Leo waddles the giant egg to the safe zone) and hatch a $1/s baby - while Mia, sneaking in the background all video, took the other twelve. They hatch and cry; safe zones stop guardians, not moms: Mom walks in, takes her babies and Mia. Last shot = first shot, with Mia as the egg.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/stealing-a-t-rex-egg"
+    },
+    {
+      "title": "The Super Nose Detective",
+      "series": "super nose detective (case 1)",
+      "created": "2026-10-03",
+      "status": "posted",
+      "logline": "A Roblox take on the 70s Miami detective parody Dick Snifford (flirting yes, no swearing or sexual references): Detective Max Sniffwell has the Super Nose gamepass and solves the stolen Golden Donut case by sniffing a sock. Skye asks if he's single and Mia asks him to stay at a pool party ('Tempting. But I'm on a case.'); he sneezes a pepper-throwing red herring into the pool and follows the trail back to Chief Leo, who has one sock, sprinkles on his face and half the donut. Leo slides him the other half, his cut. 'Tempting.' Case closed.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-super-nose-detective",
+      "notes": "Posted by the user on TikTok 2026-10-04 16:30 (seen in TikTok Studio 2026-10-05)."
+    },
+    {
+      "title": "The Server Says One",
+      "series": "After Hours horror (part 1 of 2)",
+      "created": "2026-10-02",
+      "status": "published",
+      "logline": "The server says one player online, but a faceless player stands in front of Max, copying him half a second late. It is his mirror image, and it creeps closer with every copy. Max fakes left, cuts right and slams the EXIT door; the copy, running the wrong way, hits the other side. Then the list updates: two players online. Max. And Max.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-server-says-one"
+    },
+    {
+      "title": "Which Max Is Real",
+      "series": "After Hours horror (part 2 of 2, finale)",
+      "created": "2026-10-03",
+      "status": "posted",
+      "logline": "Finale. Mia, who was spectating, realises the copy is a mirror: 'raise your right hand' exposes the right Max (the hoodie star was the clue). It lunges for her; Max walks backwards so the mirror backs toward the EXIT door, it resists one step away, Max sprints backwards and the mirror is flung through; Mia slams the door. Two players online. Max waves goodbye at the door; nothing waves back.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/which-max-is-real",
+      "notes": "Posted by the user on TikTok 2026-10-04 23:37 (seen in TikTok Studio 2026-10-05)."
+    },
+    {
+      "title": "Three Seconds",
+      "series": "standalone story",
+      "created": "2026-10-03",
+      "status": "dropped",
+      "logline": "Leo can stop time, but only for three seconds, which is never enough. When a piano falls toward Mia and she's twenty steps away, he uses his three seconds to throw the dodgeball that once hit him and knocks her clear. Mia asks if he just stopped time. 'Three seconds is cute. I get four.' She freezes him and eats his fries, which is where they kept going.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/three-seconds",
+      "notes": "Dropped 2026-10-03: the 'I get four' twist was a last-second new rule and the downside was only 'too short'. Replaced by Forty Floors."
+    },
+    {
+      "title": "Forty Floors",
+      "series": "standalone story",
+      "created": "2026-10-03",
+      "status": "script_draft_awaiting_approval",
+      "logline": "You're falling forty floors, and you can swap places with anything alive you can see. Swapping saves you but drops the window cleaner in your place, so you swap back. Everyone in sight would fall instead of you, until you see a pigeon. It takes your fall and opens its wings; the window cleaner you spared lowers his platform and pulls you in.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/forty-floors"
+    },
+    {
+      "title": "Which Max Rejoined?",
+      "series": "After Hours horror (part 2 of 2, finale v3)",
+      "created": "2026-10-03",
+      "status": "script_draft_awaiting_approval",
+      "logline": "Two Maxes; the mirror test shows the real one is LEFT. The copy isn't late any more and keeps closing in, so Max makes it copy him leaving the game: both disconnect. Max clicks Rejoin and spawns alone, one player online... then sees the star on his hoodie is on the wrong side. The copy rejoined.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/which-max-rejoined"
+    },
+    {
+      "title": "The Last Penalty",
+      "series": "standalone story",
+      "created": "2026-10-03",
+      "status": "posted",
+      "logline": "You're the keeper facing the last penalty of the final. Leo always looks at the corner he's aiming for, so you dive early and save it, but it's retaken because you left your line. Knowing he's been read, Leo shuts his eyes, and you stay on your line. Unable to see, he scuffs it into the grass and it rolls to your boot.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-last-penalty",
+      "notes": "Posted by the user on TikTok 2026-10-04 22:01 (seen in TikTok Studio 2026-10-05)."
+    },
+    {
+      "title": "Don't Sneeze Outside",
+      "series": "standalone story",
+      "created": "2026-10-04",
+      "status": "dropped",
+      "logline": "Every time you sneeze, your gravity flips. Indoors you land on the ceiling; outdoors there's no ceiling. Leo blows a dandelion in Max's face and he falls up, catching a lamppost upside down; only another sneeze brings him down. Leo's pepper falls back on Leo. Mia's cat climbs the pole to his nose: he sneezes and drops to the sidewalk, safe, and the cat jumps on his chest. Ah... ah...",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/dont-sneeze-outside",
+      "notes": "Dropped 2026-10-04: the user found it boring. Replaced by Every Lie Comes True."
+    },
+    {
+      "title": "Every Lie Comes True",
+      "series": "standalone story",
+      "created": "2026-10-04",
+      "status": "scheduled",
+      "logline": "Whatever Leo lies about comes true: a dragon eats his homework, he's the fastest kid in school, he has a million dollars. Then he crashes Max's bike and panics: 'I've never seen you before.' Max forgets him. Lying 'you're my best friend' brings Max back, but Max asks who broke the bike; Leo nearly blames the dragon (something lands on the roof) and tells the truth. 'Then you're buying me a new one.' 'Fine. I've got a million dollars.' Two true things in one day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/every-lie-comes-true",
+      "notes": "Approved 2026-10-05. Scheduled for 2026-10-05 19:00 UK on TikTok and YouTube (https://youtube.com/shorts/ee3fg-PsOds); see delivery/published.json."
+    },
+    {
+      "title": "The Vampire Case (Detective Max Sniffwell)",
+      "series": "super nose detective",
+      "created": "2026-10-05",
+      "status": "scheduled",
+      "project": "projects/super-nose-case-2",
+      "logline": "Count Vlad, the nicest vampire in town, is knocked out cold with a slice of garlic bread by his coffin. The Chief offers Max a burger to drop it (red herring: he is just lazy). One long sniff: butter, fresh garlic, compost, so the garlic was homegrown, and only the gardener grows anything: a garlic patch behind the roses. Motive: Vlad kept the whole garden in the shade, twenty years of sad tomatoes. Cuffs on, gloves and all; with the garlic gone Vlad wakes, and his sister asks Max to stay for dinner. Then he sees the fangs. ~62 s.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "notes": "Script v1 'The Big Cheese' (Leo breaks out of jail, cheese-covered map, donut trap, sneeze cliffhanger) rejected 2026-10-05: the series is standalone cases. v2 is a clean take on the original's Vampire Case; v2 (94 s) cut to v3 (~62 s, new hook), then v4 (one clear clue chain; camping/respawn/floating dropped), then v5 (culprit is the gardener, not Leo again) the same day."
+    },
+    {
+      "title": "Whatever Mia Draws",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "scheduled",
+      "logline": "Anything Mia draws with her pencil comes to life exactly as drawn, and Mia can't draw: a stick dog, a square-wheeled bike, a stick boyfriend. Leo, the best artist in class, grabs the pencil and draws a perfect lion. Mia's wobbly cage holds but has no roof; her stick boyfriend gets batted like a toy, which shows her it's just a big cat. She scribbles a ball of yarn and the lion rolls over purring. For once, Mia drew something perfectly. Leo wants another go: 'No. You're too good.'",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/whatever-mia-draws",
+      "notes": "Script v1 (196 words, ~78 s) too long; v2 cut to 153 words (~62-63 s, the new 61-65 s rule) 2026-10-05. Awaiting approval."
+    },
+    {
+      "title": "Catching the Egg Thief",
+      "series": "standalone",
+      "created": "2026-10-03",
+      "status": "scheduled",
+      "logline": "Steal an Egg base-defense heist: a hooded 50,000-speed thief robs Leo (900 speed) every night; laser door and capybara guard fail. Leo spends everything on one Mythic egg with a 60 s hatch timer and a Do Not Steal sign; it hatches in the thief's arms into a giant spinosaurus that knows its owner and carries the thief back by the hood. It's Max. He repays on the treadmill in four seconds and breaks it.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/catching-the-egg-thief"
+    },
+    {
+      "title": "The Sandwich at My Door",
+      "series": "standalone",
+      "created": "2026-10-04",
+      "status": "script_draft_awaiting_approval",
+      "logline": "Every morning someone leaves Leo, who lives alone, a perfect sandwich and a caring note; on day 20 the note says 'Stop asking people. Just eat.' A hidden camera shows Leo himself sleepwalking at 3 a.m., making it and knocking on his own door. His thank-you note gets the reply 'We're out of bread.' Now he shops, his sleeping self cooks: best roommate ever.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/the-sandwich-at-my-door"
+    },
+    {
+      "title": "The Guardian Quits",
+      "series": "standalone",
+      "created": "2026-10-05",
+      "status": "scheduled",
+      "logline": "Steal an Egg told by the guardian: a T-rex loses his egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, disguises himself as a 'Player' to cross the safe zone and steals every egg back from the bases (Leo bonks off him). All 400 hatch into baby T-rexes, so he quits to be Leo's base guard on a brainrot treadmill; his kids now bonk the wall.",
+      "platform": "TikTok (>65 s) / YouTube Shorts",
+      "project": "projects/the-guardian-quits",
+      "notes": "Scheduled 2026-10-09 19:00 UK on TikTok and YouTube; YouTube thumbnail is a stand-in frame, swap in the cover once channel verification clears."
+    },
+    {
+      "title": "Feeding the Prism Kitsune",
+      "series": "standalone story (Hunt For Eggs! promo)",
+      "created": "2026-10-05",
+      "status": "scheduled",
+      "logline": "The Prism Kitsune falls out of the sky in Hunt For Eggs! and only eats Prism eggs. Leo learns five feeds make a Prism Chest; Max grinds the patrol and the Prism Alpha for the 5% Prism Blade and gets boosts; Mia takes the eggs and pulls the Blade from her first chest. Ends: 'Play Hunt for Eggs today. Link in bio!'",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/feeding-the-prism-kitsune",
+      "notes": "Event ends 10:20 BST Fri 9 Oct 2026: post by Thu 8 Oct."
+    },
+    {
+      "title": "The Backwards Umbrella",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "scheduled",
+      "logline": "When Leo's umbrella is open it rains everywhere except under it. He soaks his friends, shares it (the Noob doesn't fit), keeps it shut - until Max's barbecue goes up in flames and the rain saves the park. Mia ducks under: 'Room for one more?'",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-backwards-umbrella",
+      "notes": "Park set, rain and fire effects; web route."
+    },
+    {
+      "title": "Anything Leo Pets",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "dropped",
+      "logline": "Anything Leo pets with his gloves follows him forever: a puppy, kitten, goat and angry duck follow him to school and he can't lose them, so he stops petting things - until the zoo lion charges Max and Mia and he pets it. He throws the gloves away; Mia catches them, pats his head ('Good boy') and Leo becomes the pet.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/anything-leo-pets",
+      "notes": "Animal parade (pack retriever, cat, goat, lion; duck stand-in); web route. Dropped 2026-10-05: user didn't like the concept."
+    },
+    {
+      "title": "Say Their Name",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "scheduled",
+      "logline": "In this obby, saying a player's name teleports them next to you; first to the top wins a million coins. Leo and Max keep summoning each other down, Leo's 'Steve' name tag fails, Mia summons both boys into mid-air over the lava - then tries the Noob, whose username takes so long to say he wins first, and her '...nine' teleports him to her holding a million coins.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/say-their-name",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route. Scheduled 2026-10-09 22:30 UK on TikTok. YouTube NOT uploaded yet (daily upload limit 2026-10-05): see delivery/published.json."
+    },
+    {
+      "title": "He Bought Google For 12 Dollars",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: in 2015 a former Google employee bought google.com for $12 on Google's own domain shop and owned it for a minute; Google cancelled it, paid a $6,006.13 bug reward (the digits spell GOOGLE) and doubled it when he gave it to a charity running free schools in India.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/google-for-twelve-dollars",
+      "notes": "Taken from OddFrame's top Short ('He Owned Google For A Minute', 32K views) at the user's request; own script and staging. Web route; laptop screen UI, digits-to-GOOGLE morph."
+    },
+    {
+      "title": "Detective Max Sniffwell: The Clown Case",
+      "series": "super nose detective (standalone)",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "project": "projects/the-clown-case",
+      "platform": "tiktok+youtube",
+      "logline": "The mayoral candidate (a literal clown) has had his wife kidnapped on election day. One sniff of the ransom note: waffle cone, hot fudge, mint choc chip. At Big Scoop's Ice Cream Max finds her running the till: she faked it to buy an ice cream truck. He drags her back anyway; the clown wins; Max gets a black eye and a free sundae. Tempting."
+    },
+    {
+      "title": "Copy the Crown",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "Every player copies whoever wears the crown; whoever has it when the timer ends wins a million coins. Leo walks Max off the edge into the lava, walks backwards so Max can never catch him, and makes the whole server dance. Mia flatters him into a bow, bows too, bonks the crown off his head and takes it; with three seconds left she steps back, and so do Leo and Max, who have been walking backwards all game: splash, splash.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/copy-the-crown",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered for review 2026-10-05: delivery/Copy_the_Crown.mp4 (62.0 s incl. 0.5 s cover, -16.9 LUFS). Awaiting approval to post."
+    },
+    {
+      "title": "He Traded A Paperclip For A House",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: in 2005-06 a man traded one red paperclip up through 14 trades; his 'dumbest trade ever' (an afternoon with a rock star for a snow globe) got him a movie role from a snow-globe-collecting actor, and a tiny Canadian town traded him a two-storey house for the role.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/paperclip-for-a-house",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; full web render running."
+    },
+    {
+      "title": "He Ordered A Fighter Jet From Pepsi",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1996 a student saw a Pepsi ad offer a fighter jet for 7,000,000 points, found extra points cost 10 cents, got five investors to front $700,000 and mailed the check; Pepsi sent it back with coupons, a judge ruled no reasonable person would believe the offer, and Pepsi re-ran the ad at 700,000,000 points with 'just kidding'.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/fighter-jet-from-pepsi",
+      "notes": "Taken from OddFrame's Pepsi Points fighter jet Short (26K views, one of their top Shorts) at the user's request ('make another story'); own script and staging. Web route; jet landing at a school as the hook, small-print zoom, number rolls, returned check and coupons, courtroom, 700,000,000 + JUST KIDDING payoff."
+    },
+    {
+      "title": "Lightning Hit Him Seven Times",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: a Shenandoah park ranger is hit by lightning seven times (1942-77) and survives them all; it finds him in a lookout tower, his truck, his yard, his office; he carries a water can for his hair, outruns a storm cloud only to be hit when he steps out, his boss walks off when lightning flashes, and on strike seven a bear steals his fish. The record still stands.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/lightning-hit-him-seven-times",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 62.1 s (George voice C, cloud); video 63.9 s + 0.5 s cover. Web route, 28 shots, STRIKES 0/7 counter; full web render running. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
+    },
+    {
+      "title": "The Tornado Came Back",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-tornado-came-back",
+      "notes": "User request 2026-10-05: 'Make a story about tornados'. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Maj. Ernest Fawbush, Capt. Robert Miller, Maj. Gen. Fred Borum; named only in the post copy. Web route planned; tornado funnel, 1940s planes, hangars, radar scope, general's cap and elevator cap to build."
+    },
+    {
+      "title": "He Stole The Mona Lisa",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-stole-the-mona-lisa",
+      "notes": "Script v1 160 words with the CTA. Picked through general research, not from OddFrame's list. Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913. Heist genre, cartoon-safe, reframing payoff; topical after the October 2025 Louvre robbery."
+    }
+  ],
+  "statuses": [
+    "idea",
+    "script_draft_awaiting_approval",
+    "script_approved",
+    "narration_done",
+    "scene_built",
+    "farm_test_review",
+    "farm_render_running",
+    "farm_render_downloaded_awaiting_encode",
+    "delivered_local_review",
+    "published",
+    "dropped",
+    "posted",
+    "scheduled"
+  ]
 }
