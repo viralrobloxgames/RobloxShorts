@@ -1,11 +1,11 @@
 {
   "clip": "projects/the-backwards-umbrella/web/umbrella_clip.js",
-  "generated": "2026-10-05T14:58:25.327Z",
-  "fingerprint": "cadfe98b992a1c45",
+  "generated": "2026-10-05T16:31:50.174Z",
+  "fingerprint": "00d1caf5493911c2",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
   "wardrobe": [],
   "pairs": [],
-  "reviewedAt": "2026-10-05T14:58:25.941Z"
+  "reviewedAt": "2026-10-05T16:31:50.729Z"
 }

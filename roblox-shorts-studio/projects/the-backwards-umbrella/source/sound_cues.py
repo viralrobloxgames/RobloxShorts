@@ -17,14 +17,14 @@ H = lambda n, t, g=0.35: A('horror/' + n, t, g)
 TN = lambda f, t, g=0.08, d=0.1, **k: c.append({'tone': f, 'start': round(t, 3), 'gain': g, 'dur': d, **k})
 
 
-def loop(name, a, b, length, g):                         # a looped effect from a to b (clips overlap by 0.25 s)
+def loop(name, a, b, length, g):                         # a looped effect from a to b (clips overlap by 0.25 s; the last is cut at b)
     t = a
-    while t < b - 0.3: S(name, t, g); t += length - 0.25
+    while t < b - 0.3: S(name, t, g); c[-1]['dur'] = round(min(length, b - t), 3); t += length - 0.25
 
 
 # Rain while it is open (the 6 s loop is 5.7 s long once its seam is trimmed).
 for a, b in [(0, T['sunny']), (T['open1'], T['close1']), (T['open1b'], T['close2']), (T['open2'], END)]:
-    loop('rain', a + 0.05, b + 0.3, 5.7, 0.38)
+    loop('rain', a + 0.05, b + 0.35, 5.7, 0.38)                 # stops as the storm clears (it fades over 0.4 s after the close)
 for at in (T['open1'], T['open1b'], T['open2']):
     S('pop', at - 0.02, 0.45); S('thunder', at + 0.15, 0.4)
 S('pop', T['close1'] - 0.05, 0.3); S('pop', T['close2'] - 0.05, 0.3)
