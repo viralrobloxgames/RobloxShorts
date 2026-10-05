@@ -1,11 +1,34 @@
 {
   "clip": "projects/the-tornado-came-back/web/tornado_clip.js",
-  "generated": "2026-10-05T21:53:50.400Z",
-  "fingerprint": "1f25421048d143ce",
+  "generated": "2026-10-05T21:57:32.784Z",
+  "fingerprint": "4966c5a3a08e0a10",
   "tolerance_studs": 0.02,
   "passed": true,
-  "reviewed": false,
+  "reviewed": true,
   "wardrobe": [
+    {
+      "character": "Mia",
+      "options": {
+        "expressions": [
+          "angry",
+          "neutral",
+          "happy",
+          "annoyed",
+          "shouting",
+          "suspicious",
+          "determined",
+          "surprised",
+          "talking",
+          "scared",
+          "smug"
+        ],
+        "scale": 1,
+        "hairLift": 0.2
+      },
+      "accessories": [
+        "officer_cap"
+      ]
+    },
     {
       "character": "Max",
       "options": {
@@ -30,49 +53,9 @@
       "accessories": [
         "pillbox_hat"
       ]
-    },
-    {
-      "character": "Mia",
-      "options": {
-        "expressions": [
-          "angry",
-          "neutral",
-          "happy",
-          "annoyed",
-          "shouting",
-          "suspicious",
-          "determined",
-          "surprised",
-          "talking",
-          "scared",
-          "smug"
-        ],
-        "scale": 1,
-        "hairLift": 0.2
-      },
-      "accessories": [
-        "officer_cap"
-      ]
     }
   ],
   "pairs": [
-    {
-      "character": "Max",
-      "accessory": "pillbox_hat",
-      "mode": "seat",
-      "scale": 1,
-      "stretch": 1,
-      "offset": [
-        0,
-        1.48,
-        0
-      ],
-      "hideHair": false,
-      "depth": 0,
-      "count": 0,
-      "passed": true,
-      "note": ""
-    },
     {
       "character": "Mia",
       "accessory": "officer_cap",
@@ -89,6 +72,24 @@
       "count": 0,
       "passed": true,
       "note": ""
+    },
+    {
+      "character": "Max",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.48,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": ""
     }
-  ]
+  ],
+  "reviewedAt": "2026-10-05T21:57:46.287Z"
 }

@@ -2,6 +2,7 @@
 // The hook moment: the funnel tearing through the planes at night, a fighter in the air, Max and Leo running for it.
 import * as THREE from 'three';
 import * as base from './tornado_clip.js';
+import { setExpression } from '../../../web/lib/rig.js';
 
 export const meta = { ...base.meta, seconds: 1 };
 export const sky = base.sky;
@@ -10,6 +11,7 @@ export async function setup(stage) { await base.setup(stage); }
 export function samples() { return 6; }
 export function update(t, stage) {
   base.update(1.45, stage);                              // a lightning flash lights the funnel; both faces read
+  const { max, leo } = base.cast(); setExpression(max, 'shocked'); setExpression(leo, 'scared');
   const cam = stage.camera;
   cam.position.set(-92.6, 3.5, 71.5); cam.fov = 58; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();
   cam.lookAt(V(-93, 11.5, 0));
