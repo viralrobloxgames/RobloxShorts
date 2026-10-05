@@ -1,0 +1,14 @@
+# Materials for pillbox_hat. Kd/Ks are sRGB. Original procedural hat (tools/make_service_caps.py).
+newmtl body
+Kd 0.7200 0.1000 0.1200
+Ks 0.0600 0.0600 0.0600
+Ns 16
+d 1.0000
+illum 2
+
+newmtl gold
+Kd 0.9500 0.7400 0.2500
+Ks 0.6000 0.6000 0.6000
+Ns 60
+d 1.0000
+illum 2

@@ -1,0 +1,930 @@
+{
+  "source": "narration.wav",
+  "duration": 61.049375,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.48,
+      "text": " A tornado wrecks 50 planes at an air base.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.22,
+          "word": " A"
+        },
+        {
+          "start": 0.22,
+          "end": 0.62,
+          "word": " tornado"
+        },
+        {
+          "start": 0.62,
+          "end": 1.02,
+          "word": " wrecks"
+        },
+        {
+          "start": 1.02,
+          "end": 1.36,
+          "word": " 50"
+        },
+        {
+          "start": 1.36,
+          "end": 1.7,
+          "word": " planes"
+        },
+        {
+          "start": 1.7,
+          "end": 1.92,
+          "word": " at"
+        },
+        {
+          "start": 1.92,
+          "end": 2.06,
+          "word": " an"
+        },
+        {
+          "start": 2.06,
+          "end": 2.22,
+          "word": " air"
+        },
+        {
+          "start": 2.22,
+          "end": 2.48,
+          "word": " base."
+        }
+      ]
+    },
+    {
+      "start": 3.1,
+      "end": 6.02,
+      "text": " Five days later, two weathermen say it's coming back.",
+      "words": [
+        {
+          "start": 3.1,
+          "end": 3.34,
+          "word": " Five"
+        },
+        {
+          "start": 3.34,
+          "end": 3.54,
+          "word": " days"
+        },
+        {
+          "start": 3.54,
+          "end": 4.0,
+          "word": " later,"
+        },
+        {
+          "start": 4.36,
+          "end": 4.5,
+          "word": " two"
+        },
+        {
+          "start": 4.5,
+          "end": 4.86,
+          "word": " weathermen"
+        },
+        {
+          "start": 4.86,
+          "end": 5.16,
+          "word": " say"
+        },
+        {
+          "start": 5.16,
+          "end": 5.34,
+          "word": " it's"
+        },
+        {
+          "start": 5.34,
+          "end": 5.56,
+          "word": " coming"
+        },
+        {
+          "start": 5.56,
+          "end": 6.02,
+          "word": " back."
+        }
+      ]
+    },
+    {
+      "start": 7.16,
+      "end": 8.96,
+      "text": " Tornadoes were called impossible to predict.",
+      "words": [
+        {
+          "start": 7.16,
+          "end": 7.48,
+          "word": " Tornadoes"
+        },
+        {
+          "start": 7.48,
+          "end": 7.7,
+          "word": " were"
+        },
+        {
+          "start": 7.7,
+          "end": 7.94,
+          "word": " called"
+        },
+        {
+          "start": 7.94,
+          "end": 8.32,
+          "word": " impossible"
+        },
+        {
+          "start": 8.32,
+          "end": 8.62,
+          "word": " to"
+        },
+        {
+          "start": 8.62,
+          "end": 8.96,
+          "word": " predict."
+        }
+      ]
+    },
+    {
+      "start": 9.56,
+      "end": 12.04,
+      "text": " The weather service wasn't even allowed to use the word.",
+      "words": [
+        {
+          "start": 9.56,
+          "end": 9.7,
+          "word": " The"
+        },
+        {
+          "start": 9.7,
+          "end": 9.9,
+          "word": " weather"
+        },
+        {
+          "start": 9.9,
+          "end": 10.26,
+          "word": " service"
+        },
+        {
+          "start": 10.26,
+          "end": 10.58,
+          "word": " wasn't"
+        },
+        {
+          "start": 10.58,
+          "end": 10.84,
+          "word": " even"
+        },
+        {
+          "start": 10.84,
+          "end": 11.12,
+          "word": " allowed"
+        },
+        {
+          "start": 11.12,
+          "end": 11.32,
+          "word": " to"
+        },
+        {
+          "start": 11.32,
+          "end": 11.54,
+          "word": " use"
+        },
+        {
+          "start": 11.54,
+          "end": 11.72,
+          "word": " the"
+        },
+        {
+          "start": 11.72,
+          "end": 12.04,
+          "word": " word."
+        }
+      ]
+    },
+    {
+      "start": 13.0,
+      "end": 14.38,
+      "text": " But the general is furious.",
+      "words": [
+        {
+          "start": 13.0,
+          "end": 13.3,
+          "word": " But"
+        },
+        {
+          "start": 13.3,
+          "end": 13.42,
+          "word": " the"
+        },
+        {
+          "start": 13.42,
+          "end": 13.7,
+          "word": " general"
+        },
+        {
+          "start": 13.7,
+          "end": 13.96,
+          "word": " is"
+        },
+        {
+          "start": 13.96,
+          "end": 14.38,
+          "word": " furious."
+        }
+      ]
+    },
+    {
+      "start": 15.04,
+      "end": 17.56,
+      "text": " If you can forecast rain, why not tornadoes?",
+      "words": [
+        {
+          "start": 15.04,
+          "end": 15.16,
+          "word": " If"
+        },
+        {
+          "start": 15.16,
+          "end": 15.26,
+          "word": " you"
+        },
+        {
+          "start": 15.26,
+          "end": 15.4,
+          "word": " can"
+        },
+        {
+          "start": 15.4,
+          "end": 15.84,
+          "word": " forecast"
+        },
+        {
+          "start": 15.84,
+          "end": 16.26,
+          "word": " rain,"
+        },
+        {
+          "start": 16.74,
+          "end": 16.84,
+          "word": " why"
+        },
+        {
+          "start": 16.84,
+          "end": 17.02,
+          "word": " not"
+        },
+        {
+          "start": 17.02,
+          "end": 17.56,
+          "word": " tornadoes?"
+        }
+      ]
+    },
+    {
+      "start": 18.7,
+      "end": 20.78,
+      "text": " So they dig through old tornado records.",
+      "words": [
+        {
+          "start": 18.7,
+          "end": 18.96,
+          "word": " So"
+        },
+        {
+          "start": 18.96,
+          "end": 19.12,
+          "word": " they"
+        },
+        {
+          "start": 19.12,
+          "end": 19.32,
+          "word": " dig"
+        },
+        {
+          "start": 19.32,
+          "end": 19.56,
+          "word": " through"
+        },
+        {
+          "start": 19.56,
+          "end": 19.86,
+          "word": " old"
+        },
+        {
+          "start": 19.86,
+          "end": 20.28,
+          "word": " tornado"
+        },
+        {
+          "start": 20.28,
+          "end": 20.78,
+          "word": " records."
+        }
+      ]
+    },
+    {
+      "start": 21.32,
+      "end": 24.58,
+      "text": " On day five, the weather map looks exactly like the night it hit.",
+      "words": [
+        {
+          "start": 21.32,
+          "end": 21.52,
+          "word": " On"
+        },
+        {
+          "start": 21.52,
+          "end": 21.7,
+          "word": " day"
+        },
+        {
+          "start": 21.7,
+          "end": 22.12,
+          "word": " five,"
+        },
+        {
+          "start": 22.22,
+          "end": 22.34,
+          "word": " the"
+        },
+        {
+          "start": 22.34,
+          "end": 22.52,
+          "word": " weather"
+        },
+        {
+          "start": 22.52,
+          "end": 22.74,
+          "word": " map"
+        },
+        {
+          "start": 22.74,
+          "end": 23.02,
+          "word": " looks"
+        },
+        {
+          "start": 23.02,
+          "end": 23.46,
+          "word": " exactly"
+        },
+        {
+          "start": 23.46,
+          "end": 23.78,
+          "word": " like"
+        },
+        {
+          "start": 23.78,
+          "end": 23.94,
+          "word": " the"
+        },
+        {
+          "start": 23.94,
+          "end": 24.14,
+          "word": " night"
+        },
+        {
+          "start": 24.14,
+          "end": 24.34,
+          "word": " it"
+        },
+        {
+          "start": 24.34,
+          "end": 24.58,
+          "word": " hit."
+        }
+      ]
+    },
+    {
+      "start": 25.5,
+      "end": 27.6,
+      "text": " The odds of another one hitting the same base?",
+      "words": [
+        {
+          "start": 25.5,
+          "end": 25.78,
+          "word": " The"
+        },
+        {
+          "start": 25.78,
+          "end": 25.94,
+          "word": " odds"
+        },
+        {
+          "start": 25.94,
+          "end": 26.1,
+          "word": " of"
+        },
+        {
+          "start": 26.1,
+          "end": 26.32,
+          "word": " another"
+        },
+        {
+          "start": 26.32,
+          "end": 26.58,
+          "word": " one"
+        },
+        {
+          "start": 26.58,
+          "end": 26.8,
+          "word": " hitting"
+        },
+        {
+          "start": 26.8,
+          "end": 27.02,
+          "word": " the"
+        },
+        {
+          "start": 27.02,
+          "end": 27.26,
+          "word": " same"
+        },
+        {
+          "start": 27.26,
+          "end": 27.6,
+          "word": " base?"
+        }
+      ]
+    },
+    {
+      "start": 28.12,
+      "end": 28.98,
+      "text": " Billions to one.",
+      "words": [
+        {
+          "start": 28.12,
+          "end": 28.56,
+          "word": " Billions"
+        },
+        {
+          "start": 28.56,
+          "end": 28.72,
+          "word": " to"
+        },
+        {
+          "start": 28.72,
+          "end": 28.98,
+          "word": " one."
+        }
+      ]
+    },
+    {
+      "start": 30.02,
+      "end": 31.5,
+      "text": " The general stares at the radar.",
+      "words": [
+        {
+          "start": 30.02,
+          "end": 30.24,
+          "word": " The"
+        },
+        {
+          "start": 30.24,
+          "end": 30.52,
+          "word": " general"
+        },
+        {
+          "start": 30.52,
+          "end": 30.88,
+          "word": " stares"
+        },
+        {
+          "start": 30.88,
+          "end": 31.06,
+          "word": " at"
+        },
+        {
+          "start": 31.06,
+          "end": 31.18,
+          "word": " the"
+        },
+        {
+          "start": 31.18,
+          "end": 31.5,
+          "word": " radar."
+        }
+      ]
+    },
+    {
+      "start": 32.24,
+      "end": 33.72,
+      "text": " Another tornado, yes or no?",
+      "words": [
+        {
+          "start": 32.24,
+          "end": 32.5,
+          "word": " Another"
+        },
+        {
+          "start": 32.5,
+          "end": 32.96,
+          "word": " tornado,"
+        },
+        {
+          "start": 33.16,
+          "end": 33.28,
+          "word": " yes"
+        },
+        {
+          "start": 33.28,
+          "end": 33.48,
+          "word": " or"
+        },
+        {
+          "start": 33.48,
+          "end": 33.72,
+          "word": " no?"
+        }
+      ]
+    },
+    {
+      "start": 34.66,
+      "end": 35.4,
+      "text": " They say yes.",
+      "words": [
+        {
+          "start": 34.66,
+          "end": 34.88,
+          "word": " They"
+        },
+        {
+          "start": 34.88,
+          "end": 35.1,
+          "word": " say"
+        },
+        {
+          "start": 35.1,
+          "end": 35.4,
+          "word": " yes."
+        }
+      ]
+    },
+    {
+      "start": 36.66,
+      "end": 37.82,
+      "text": " Planes roll into hangers.",
+      "words": [
+        {
+          "start": 36.66,
+          "end": 36.86,
+          "word": " Planes"
+        },
+        {
+          "start": 36.86,
+          "end": 37.16,
+          "word": " roll"
+        },
+        {
+          "start": 37.16,
+          "end": 37.44,
+          "word": " into"
+        },
+        {
+          "start": 37.44,
+          "end": 37.82,
+          "word": " hangers."
+        }
+      ]
+    },
+    {
+      "start": 38.48,
+      "end": 39.58,
+      "text": " Everyone heads for shelter.",
+      "words": [
+        {
+          "start": 38.48,
+          "end": 38.76,
+          "word": " Everyone"
+        },
+        {
+          "start": 38.76,
+          "end": 39.02,
+          "word": " heads"
+        },
+        {
+          "start": 39.02,
+          "end": 39.3,
+          "word": " for"
+        },
+        {
+          "start": 39.3,
+          "end": 39.58,
+          "word": " shelter."
+        }
+      ]
+    },
+    {
+      "start": 40.28,
+      "end": 43.78,
+      "text": " One weatherman goes home, wondering if he can get a job running an elevator.",
+      "words": [
+        {
+          "start": 40.28,
+          "end": 40.48,
+          "word": " One"
+        },
+        {
+          "start": 40.48,
+          "end": 40.86,
+          "word": " weatherman"
+        },
+        {
+          "start": 40.86,
+          "end": 41.14,
+          "word": " goes"
+        },
+        {
+          "start": 41.14,
+          "end": 41.5,
+          "word": " home,"
+        },
+        {
+          "start": 41.94,
+          "end": 42.1,
+          "word": " wondering"
+        },
+        {
+          "start": 42.1,
+          "end": 42.34,
+          "word": " if"
+        },
+        {
+          "start": 42.34,
+          "end": 42.46,
+          "word": " he"
+        },
+        {
+          "start": 42.46,
+          "end": 42.58,
+          "word": " can"
+        },
+        {
+          "start": 42.58,
+          "end": 42.72,
+          "word": " get"
+        },
+        {
+          "start": 42.72,
+          "end": 42.88,
+          "word": " a"
+        },
+        {
+          "start": 42.88,
+          "end": 43.06,
+          "word": " job"
+        },
+        {
+          "start": 43.06,
+          "end": 43.32,
+          "word": " running"
+        },
+        {
+          "start": 43.32,
+          "end": 43.52,
+          "word": " an"
+        },
+        {
+          "start": 43.52,
+          "end": 43.78,
+          "word": " elevator."
+        }
+      ]
+    },
+    {
+      "start": 44.94,
+      "end": 47.36,
+      "text": " At six o'clock, a tornado hits the base again.",
+      "words": [
+        {
+          "start": 44.94,
+          "end": 45.24,
+          "word": " At"
+        },
+        {
+          "start": 45.24,
+          "end": 45.48,
+          "word": " six"
+        },
+        {
+          "start": 45.48,
+          "end": 45.64,
+          "word": " o"
+        },
+        {
+          "start": 45.64,
+          "end": 45.86,
+          "word": "'clock,"
+        },
+        {
+          "start": 46.02,
+          "end": 46.06,
+          "word": " a"
+        },
+        {
+          "start": 46.06,
+          "end": 46.34,
+          "word": " tornado"
+        },
+        {
+          "start": 46.34,
+          "end": 46.64,
+          "word": " hits"
+        },
+        {
+          "start": 46.64,
+          "end": 46.82,
+          "word": " the"
+        },
+        {
+          "start": 46.82,
+          "end": 47.02,
+          "word": " base"
+        },
+        {
+          "start": 47.02,
+          "end": 47.36,
+          "word": " again."
+        }
+      ]
+    },
+    {
+      "start": 48.08,
+      "end": 49.1,
+      "text": " Almost the same spot.",
+      "words": [
+        {
+          "start": 48.08,
+          "end": 48.26,
+          "word": " Almost"
+        },
+        {
+          "start": 48.26,
+          "end": 48.5,
+          "word": " the"
+        },
+        {
+          "start": 48.5,
+          "end": 48.7,
+          "word": " same"
+        },
+        {
+          "start": 48.7,
+          "end": 49.1,
+          "word": " spot."
+        }
+      ]
+    },
+    {
+      "start": 50.1,
+      "end": 51.42,
+      "text": " This time, they were ready.",
+      "words": [
+        {
+          "start": 50.1,
+          "end": 50.38,
+          "word": " This"
+        },
+        {
+          "start": 50.38,
+          "end": 50.64,
+          "word": " time,"
+        },
+        {
+          "start": 50.78,
+          "end": 51.02,
+          "word": " they"
+        },
+        {
+          "start": 51.02,
+          "end": 51.16,
+          "word": " were"
+        },
+        {
+          "start": 51.16,
+          "end": 51.42,
+          "word": " ready."
+        }
+      ]
+    },
+    {
+      "start": 52.02,
+      "end": 54.76,
+      "text": " The first official tornado forecast ever came true.",
+      "words": [
+        {
+          "start": 52.02,
+          "end": 52.2,
+          "word": " The"
+        },
+        {
+          "start": 52.2,
+          "end": 52.42,
+          "word": " first"
+        },
+        {
+          "start": 52.42,
+          "end": 52.84,
+          "word": " official"
+        },
+        {
+          "start": 52.84,
+          "end": 53.28,
+          "word": " tornado"
+        },
+        {
+          "start": 53.28,
+          "end": 53.8,
+          "word": " forecast"
+        },
+        {
+          "start": 53.8,
+          "end": 54.1,
+          "word": " ever"
+        },
+        {
+          "start": 54.1,
+          "end": 54.36,
+          "word": " came"
+        },
+        {
+          "start": 54.36,
+          "end": 54.76,
+          "word": " true."
+        }
+      ]
+    },
+    {
+      "start": 55.28,
+      "end": 56.82,
+      "text": " And tornado warnings were born.",
+      "words": [
+        {
+          "start": 55.089999999999996,
+          "end": 55.44,
+          "word": " And"
+        },
+        {
+          "start": 55.44,
+          "end": 55.86,
+          "word": " tornado"
+        },
+        {
+          "start": 55.86,
+          "end": 56.26,
+          "word": " warnings"
+        },
+        {
+          "start": 56.26,
+          "end": 56.48,
+          "word": " were"
+        },
+        {
+          "start": 56.48,
+          "end": 56.82,
+          "word": " born."
+        }
+      ]
+    },
+    {
+      "start": 57.86,
+      "end": 60.88,
+      "text": " Follow Viral Roblox Games for more stories like this.",
+      "words": [
+        {
+          "start": 57.86,
+          "end": 58.32,
+          "word": " Follow"
+        },
+        {
+          "start": 58.32,
+          "end": 59.56,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 59.56,
+          "end": 59.8,
+          "word": " for"
+        },
+        {
+          "start": 59.8,
+          "end": 59.98,
+          "word": " more"
+        },
+        {
+          "start": 59.98,
+          "end": 60.34,
+          "word": " stories"
+        },
+        {
+          "start": 60.34,
+          "end": 60.6,
+          "word": " like"
+        },
+        {
+          "start": 60.6,
+          "end": 60.88,
+          "word": " this."
+        }
+      ]
+    }
+  ]
+}
