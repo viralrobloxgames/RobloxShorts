@@ -1,7 +1,27 @@
 {
   "file": "Roblox_Is_Losing_Players.mp4",
   "sha256": "49330618dd841e4e538fa598f0b40e9a2436d509f834d9f9403889254230c9d6",
-  "approved": {"by": "user", "at": "2026-10-05", "how": "approved in chat and added to the post list; not yet scheduled. Suggested slot: A 19:00 UK (news slot; 2026-10-05's 19:00 already has Every Lie Comes True)"},
-  "tiktok": {"status": "not_posted"},
-  "youtube": {"status": "not_posted"}
+  "approved": {
+    "by": "user",
+    "at": "2026-10-05",
+    "how": "approved in chat and added to the post list; slot given in chat 2026-10-05: 10:30pm tonight"
+  },
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "switched off (still running after 6 min)"
+  },
+  "youtube": {
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "url": "https://youtube.com/shorts/FIgfCf51rrY",
+    "video_id": "FIgfCf51rrY",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "cover frame picked in Select from video before scheduling"
+  },
+  "scheduled_for": "2026-10-05T22:30:00+01:00"
 }
