@@ -356,7 +356,7 @@ export function update(t, stage) {
     case 'reach': { const tg = mid(lh, mh).add(V(0, -0.2, 0)); orbit(stage, tg, 1.15, 0.08, 13, 40, 22); break; }
     case 'backSide': orbit(stage, V(-1.5, 0, -0.5), 0.1, 0.72, lerp(38, 40, u), 50, 30); break;
     case 'never': faceCam(stage, max, 0.15, lerp(7.5, 6.5, u), 0.02, 40, 0.1); break;
-    case 'spin1': faceCam(stage, leo, 0.2, 8.5, 0.05, 44, -0.6); break;
+    case 'spin1': orbit(stage, lh.clone().add(V(0, -0.6, 0)), 0.2, 0.05, 8.5, 44, 20); break;      // fixed angle: Leo spins, the camera doesn't
     case 'spinWide': orbit(stage, V(0, 0, 0), 0.15 + 0.1 * u, 0.95, 40, 52, 32); break;
     case 'danceWide': orbit(stage, V(-2, 2, -4), 0.4 + 0.3 * u, 0.52, 27, 50, 32); break;
     case 'dance1': faceCam(stage, leo, 0.35, 10, 0.08, 46, -1.2); break;

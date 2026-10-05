@@ -18,6 +18,7 @@
     "word_fixes": {
       "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
     },
-    "music_gain": 0.07
+    "music_gain": 0.07,
+    "caption_margin_v": 360
   }
 }

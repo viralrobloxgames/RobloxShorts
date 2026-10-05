@@ -163,18 +163,18 @@ export function globe(scene) {
 export const OFFICE_SEAT = { Max: V(OFFICE.x - 3.4, 0, OFFICE.z - 1.0), Mia: V(OFFICE.x + 3.4, 0, OFFICE.z - 1.0) };
 export function office(scene) {
   const g = new THREE.Group(); g.name = 'office'; g.position.copy(OFFICE); scene.add(g);
-  const ft = canvasTexture(512, 512, (x, w, h) => { x.fillStyle = '#c9ced8'; x.fillRect(0, 0, w, h); x.strokeStyle = 'rgba(80,90,110,.35)'; x.lineWidth = 3; for (let i = 0; i <= 4; i++) { x.beginPath(); x.moveTo(i * 128, 0); x.lineTo(i * 128, h); x.moveTo(0, i * 128); x.lineTo(w, i * 128); x.stroke(); } });
+  const ft = canvasTexture(512, 512, (x, w, h) => { x.fillStyle = '#9aa3b4'; x.fillRect(0, 0, w, h); x.strokeStyle = 'rgba(60,68,86,.35)'; x.lineWidth = 3; for (let i = 0; i <= 4; i++) { x.beginPath(); x.moveTo(i * 128, 0); x.lineTo(i * 128, h); x.moveTo(0, i * 128); x.lineTo(w, i * 128); x.stroke(); } });
   ft.wrapS = ft.wrapT = THREE.RepeatWrapping; ft.repeat.set(5, 5);
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 26), std('#ffffff', { map: ft, roughness: 0.4 })); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; g.add(floor);
-  const wallM = std('#eef1f6', { roughness: 0.85 }), accent = std('#34a853', { roughness: 0.6 }), dark = std('#1d2230', { roughness: 0.4 });
-  g.add(box(30, 12, 0.6, wallM, 0, 6, -9.5), box(0.6, 12, 22, wallM, -15, 6, 1), box(0.6, 12, 22, wallM, 15, 6, 1), box(30.6, 0.4, 22, std('#f7f8fb'), 0, 12.2, 1));
+  const wallM = std('#b8c2d4', { roughness: 0.9 }), accent = std('#2f8f4a', { roughness: 0.6 }), dark = std('#1d2230', { roughness: 0.4 });
+  g.add(box(30, 12, 0.6, wallM, 0, 6, -9.5), box(0.6, 12, 22, wallM, -15, 6, 1), box(0.6, 12, 22, wallM, 15, 6, 1), box(30.6, 0.4, 22, std('#9ea6b4'), 0, 12.2, 1));
   g.add(box(30, 0.6, 0.2, accent, 0, 0.3, -9.15));
   // wall screen
   const wall = liveTexture(1280, 560);
-  const ws = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), new THREE.MeshBasicMaterial({ map: wall.texture, toneMapped: false })); ws.position.set(0, 7.2, -9.15); g.add(ws);
-  g.add(box(16.6, 7.6, 0.2, dark, 0, 7.2, -9.3));
+  const ws = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), new THREE.MeshBasicMaterial({ map: wall.texture, color: '#a9aeb8', toneMapped: false })); ws.position.set(0, 7.2, -9.15); g.add(ws);
+  g.add(box(16.6, 7.6, 0.2, dark, 0, 7.2, -9.25));
   // desks, monitors, chairs
-  const deskM = std('#f2f2f2', { roughness: 0.35 }), legM = std('#5a6478', { roughness: 0.4, metalness: 0.4 });
+  const deskM = std('#d4d8df', { roughness: 0.5 }), legM = std('#5a6478', { roughness: 0.4, metalness: 0.4 });
   const monitors = {};
   for (const [n, sx] of [['Max', -3.4], ['Mia', 3.4]]) {
     const d = new THREE.Group(); d.position.set(sx, 0, -3.1); g.add(d);
@@ -182,7 +182,7 @@ export function office(scene) {
     const mon = liveTexture(800, 480);
     const m = new THREE.Group(); m.position.set(0, 3.22, -0.5); d.add(m);
     m.add(box(0.5, 0.12, 0.5, dark, 0, 0.06, 0), box(0.15, 0.9, 0.15, dark, 0, 0.5, 0), box(3.3, 2.05, 0.14, dark, 0, 1.95, 0));
-    const scr = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 1.86), new THREE.MeshBasicMaterial({ map: mon.texture, toneMapped: false })); scr.position.set(0, 1.95, 0.075); m.add(scr);
+    const scr = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 1.86), new THREE.MeshBasicMaterial({ map: mon.texture, color: '#b4b8c0', toneMapped: false })); scr.position.set(0, 1.95, 0.075); m.add(scr);
     monitors[n] = { tex: mon, group: m };
     d.add(box(1.8, 0.08, 0.6, dark, 0, 3.27, 0.4));                                                                    // keyboard
     const ch = new THREE.Group(); ch.position.set(sx, 0, -1.0 + 0.55); g.add(ch);
@@ -194,7 +194,7 @@ export function office(scene) {
   const cap = cyl(0.45, 0.45, 0.3, new THREE.MeshStandardMaterial({ color: '#e63946', emissive: '#e63946', emissiveIntensity: 0.4, roughness: 0.3 }), 24); cap.position.y = 0.42; btn.add(cap);
   // plants and a water cooler
   for (const x of [-12.5, 12.5]) { const p = new THREE.Group(); p.position.set(x, 0, -7.5); g.add(p); p.add(cyl(0.8, 0.6, 1.6, std('#e9e1cf'))); p.children[0].position.y = 0.8; for (let i = 0; i < 6; i++) { const l = new THREE.Mesh(new THREE.SphereGeometry(0.9, 10, 8), std('#3c9a3f')); l.position.set(Math.sin(i) * 0.5, 2.2 + (i % 3) * 0.5, Math.cos(i) * 0.5); l.castShadow = true; p.add(l); } }
-  const lamp = new THREE.PointLight('#ffffff', 0, 40, 1.1); lamp.position.set(0, 11, 0); g.add(lamp);
+  const lamp = new THREE.PointLight('#ffffff', 0, 40, 1.1); lamp.position.set(0, 8.6, 4); g.add(lamp);
   return { group: g, wall, monitors, button: cap, lamp };
 }
 

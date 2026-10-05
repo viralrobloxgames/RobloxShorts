@@ -20,11 +20,14 @@ walking backwards all game: splash, splash.
 - Fit check: Noob, Leo, Mia + crown_admin, all PASS, sheet reviewed. No held props (no hold check needed).
 - Sound: `source/sfx_assets.py` -> `source/sound_cues.py` -> `source/sound_cues.json`.
 - Cover: `web/cover_clip.js` -> `delivery/Copy_the_Crown_cover.jpg|png` (3:4 crop checked). Post copy: `delivery/post.json`.
-- Full render started 2026-10-05 into `renders/web` (1845 frames).
+- Full render done 2026-10-05 (`renders/web`, 1845 frames, git-ignored). Review fix: the Leo-spin close-up (`spin1`)
+  camera followed his heading, so the world spun round him and the Noob's body crossed the lens (blank-frame scan flagged
+  frame 809); now a fixed angle, frames 758-828 re-rendered.
+- **Delivered for review:** `delivery/Copy_the_Crown.mp4` (62.0 s incl. the 0.5 s cover, 1860 frames, fully decoded,
+  -16.9 LUFS), blank-frame scan clean, contact sheet reviewed; post sheet `delivery/Copy_the_Crown_post.md`.
 
 ## Next
-1. Finish the render, encode (`finish.py --encode`, adds the cover as the last 0.5 s), blank-frame scan, contact
-   sheet review, `post_md.py`; send for review. Post only after approval (TikTok, then YouTube).
+1. User review. Post only after approval of this MP4 (TikTok, then YouTube).
 
 ## Commands
 ```
