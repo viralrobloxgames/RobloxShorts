@@ -15,9 +15,14 @@ below is read from the game's `ReplicatedStorage.GameConfig` (`PrismFeed`, `Pris
   Prism eggs (at least 2, 0.75 per player) that anyone can grab.
 
 Cast: **Leo** (learns the rules), **Max** (wants the Blade, grinds for it), **Mia** (takes the eggs, gets the Blade
-from her first chest: the same thief gag as Stealing a T-Rex Egg). Assets already in the pack:
-`creatures/animal_kitsune` (the game's own Kitsune, one skinned mesh, 27 bones, rest pose), `props/egg_prism`,
-`props/egg_prismatic`. Still to export from Studio: the Prism Chest, the Prism Blade, the plinth, a crystal-studded beast.
+from her first chest: the same thief gag as Stealing a T-Rex Egg). Assets in the pack (exported from the game
+2026-10-05, previews in `assets/roblox_pack/previews/`): `creatures/prism_kitsune` (the giant plinth Kitsune with its own
+prism texture, one skinned mesh in rest pose, 16.9 x 15.7 x 26 studs, faces -Z), `props/prism_plinth` (violet drum, neon
+rim, 16 crystals, 26.8 across), `props/prism_blade` (6.2 studs tall, hilt at the origin), `props/gift_chest` (the game's
+gift chest, 5.2 x 4.3 x 3.6, lock towards -Z: the stand-in for the Prism Chest, which is a 2D pop-up in the game),
+`props/egg_prism` (Prism eggs) and `creatures/animal_kitsune` (the small hatched pet). A Prism beast is any pack creature
+plus four neon block crystals on its back, alternating (90,230,255) and (150,90,255), as the game's BeastService adds them.
+Script approved 2026-10-05.
 
 158 words, about 63 s in George voice C (over the 60 s Creator Rewards line). US spelling.
 
