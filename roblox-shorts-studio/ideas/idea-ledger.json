@@ -374,11 +374,21 @@
       "title": "He Stole The Mona Lisa",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_draft_awaiting_approval",
+      "status": "script_approved",
       "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-stole-the-mona-lisa",
-      "notes": "Script v1 160 words with the CTA. Picked through general research, not from OddFrame's list. Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913. Heist genre, cartoon-safe, reframing payoff; topical after the October 2025 Louvre robbery."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; full web render running. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
+    },
+    {
+      "title": "The Dog Who Found The World Cup",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in March 1966 the World Cup is stolen from a guarded glass case in London, four months before England hosts the tournament. A ransom arrest catches only a middleman. A week later a collie called Pickles drags a newspaper parcel from under a hedge; his owner fears a bomb, tears it and reads 'Brazil, West Germany, Uruguay'. Police make the owner their main suspect; that summer England win and Pickles licks the players' plates at the victory dinner. Seventeen years later the trophy is stolen again in Brazil. This time there's no Pickles, and it's never been found.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-dog-who-found-the-world-cup",
+      "notes": "Script v1 160 words with the CTA. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Pickles, David Corbett, theft 20 Mar 1966, found 27 Mar 1966, stolen again in Rio 19 Dec 1983. Cartoon-safe dog hero; topical after the 2026 World Cup and the 1966 60th anniversary. Needs a rigged collie (animal_dog) in the pack."
     }
   ],
   "statuses": [

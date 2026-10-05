@@ -168,10 +168,10 @@ export function office(scene) {
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 26), std('#ffffff', { map: ft, roughness: 0.4 })); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; g.add(floor);
   const wallM = std('#b8c2d4', { roughness: 0.9 }), accent = std('#2f8f4a', { roughness: 0.6 }), dark = std('#1d2230', { roughness: 0.4 });
   g.add(box(30, 12, 0.6, wallM, 0, 6, -9.5), box(0.6, 12, 22, wallM, -15, 6, 1), box(0.6, 12, 22, wallM, 15, 6, 1), box(30.6, 0.4, 22, std('#9ea6b4'), 0, 12.2, 1));
-  g.add(box(30, 0.6, 0.2, accent, 0, 0.3, -9.15));
+  g.add(box(30, 0.6, 0.2, accent, 0, 0.3, -9.12));
   // wall screen
   const wall = liveTexture(1280, 560);
-  const ws = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), new THREE.MeshBasicMaterial({ map: wall.texture, color: '#a9aeb8', toneMapped: false })); ws.position.set(0, 7.2, -9.15); g.add(ws);
+  const ws = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), new THREE.MeshBasicMaterial({ map: wall.texture, color: '#a9aeb8', toneMapped: false })); ws.position.set(0, 7.2, -9.1); g.add(ws);                 // wall front is z -9.2, the frame's front -9.15: no two faces share a depth (z-fighting flickered)
   g.add(box(16.6, 7.6, 0.2, dark, 0, 7.2, -9.25));
   // desks, monitors, chairs
   const deskM = std('#d4d8df', { roughness: 0.5 }), legM = std('#5a6478', { roughness: 0.4, metalness: 0.4 });
@@ -182,7 +182,7 @@ export function office(scene) {
     const mon = liveTexture(800, 480);
     const m = new THREE.Group(); m.position.set(0, 3.22, -0.5); d.add(m);
     m.add(box(0.5, 0.12, 0.5, dark, 0, 0.06, 0), box(0.15, 0.9, 0.15, dark, 0, 0.5, 0), box(3.3, 2.05, 0.14, dark, 0, 1.95, 0));
-    const scr = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 1.86), new THREE.MeshBasicMaterial({ map: mon.texture, color: '#b4b8c0', toneMapped: false })); scr.position.set(0, 1.95, 0.075); m.add(scr);
+    const scr = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 1.86), new THREE.MeshBasicMaterial({ map: mon.texture, color: '#b4b8c0', toneMapped: false })); scr.position.set(0, 1.95, 0.09); m.add(scr);
     monitors[n] = { tex: mon, group: m };
     d.add(box(1.8, 0.08, 0.6, dark, 0, 3.27, 0.4));                                                                    // keyboard
     const ch = new THREE.Group(); ch.position.set(sx, 0, -1.0 + 0.55); g.add(ch);

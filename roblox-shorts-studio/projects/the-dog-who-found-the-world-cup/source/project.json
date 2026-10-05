@@ -1,5 +1,5 @@
 {
-  "title": "He Stole The Mona Lisa",
+  "title": "The Dog Who Found The World Cup",
   "character": "Max",
   "characters": [
     "Max",
@@ -8,17 +8,16 @@
     "Skye",
     "Noob"
   ],
-  "seconds": 61.88,
+  "seconds": 63.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok (>60 s) + YouTube Shorts",
-  "status": "narration_done; web scene in progress",
+  "status": "script_draft_awaiting_approval",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {
-      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES",
-      "CUE": "QUEUE"
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
     }
   }
 }
