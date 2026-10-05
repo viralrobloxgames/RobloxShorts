@@ -370,7 +370,7 @@ export function update(t, stage) {
     case 'scan': look(V(26, 8, SAFE_Z + 14), V(3, 10, SAFE_Z - 4), 54, 60); break;
     case 'bases': look(V(lerp(20, 10, u), lerp(70, 64, u), lerp(20, 30, u)), V(0, 0, 92), 52, 90); break;   // aerial: rows of bases full of his eggs
     case 'leoBase': look(LEO_BASE.clone().add(V(36, 24, 16)), LEO_BASE.clone().add(V(-3, 5, -7)), 56, 60); break;
-    case 'leoChase': look(V(rp.x + 30, 9, rp.z + 6).add(jolt(B.leoBonk, 0.6)), V(rp.x + 3, 6, rp.z + 4), 52, 60); break;
+    case 'leoChase': look(V(rp.x + 46, 14, rp.z + 22).add(jolt(B.leoBonk, 0.6)), V(rp.x + 2, 6, rp.z + 8), 54, 70); break;
     case 'home': case 'hatch': case 'swarm': case 'quit': look(V(lerp(20, 24, u), 9, 26).add(jolt(B.hatch, 0.8, 0.5)), V(0, 6, 1), 50, 50); break;
     case 'hired': look(JOB.clone().add(V(26, 8, 22)), JOB.clone().add(V(4, 6, 2)), 52, 60); break;
     case 'job': look(JOB.clone().add(V(-8, 10, 42)), JOB.clone().add(V(-15, 8, 0)), 56, 60); break;   // the T-rex on the treadmill, the TV, snacks
