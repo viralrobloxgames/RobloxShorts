@@ -420,7 +420,7 @@ export function overlay(g, s, t) {
   countdown(g, s, t);
   if (SHOT === 'hook') bigText(g, s, '1:00 AM', 540, 360, 110, '#ffd23f', easeOutBack(clamp(t / 0.2), 1.8), -0.04);
   if (SHOT === 'cheque' && t > W.squint - 0.05 && t < W.l1 + 0.2) {   // squint: eyelids close in from top and bottom
-    const k = smooth(inv(W.squint - 0.05, W.squint + 0.3, t)) * (1 - smooth(inv(W.l1 - 0.1, W.l1 + 0.2, t))), lid = 640 * k;
+    const k = smooth(inv(W.squint - 0.05, W.squint + 0.3, t)) * (1 - smooth(inv(W.l1 - 0.1, W.l1 + 0.2, t))), lid = 470 * k;
     g.fillStyle = '#0b0b10'; g.fillRect(0, 0, 1080 * s, lid * s); g.fillRect(0, (1920 - lid) * s, 1080 * s, lid * s);
   }
   if (SHOT === 'cheque' && t > W.l6 + 0.15) bigText(g, s, 'GOOGLE!', 540, 1450, 150, '#ffd23f', easeOutBack(clamp((t - W.l6 - 0.15) / 0.2), 2), -0.05);
