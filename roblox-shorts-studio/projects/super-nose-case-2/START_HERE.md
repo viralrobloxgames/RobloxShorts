@@ -26,10 +26,17 @@ original: `source/story.md`. Script: `script.txt`. Research: `source/research/` 
 - Fit check: 0 pairs (no pack accessories), reviewed.
 
 ## Next
-- Delivered 2026-10-05: `delivery/The_Vampire_Case.mp4` (62.8 s incl. the 0.5 s cover tail, 1080x1920, -16.9 LUFS,
-  captions x 134-884 on every frame). The first render was interrupted by a container restart after the clip had been
-  edited mid-render, so it was re-rendered from frame 1. **Waiting on the user's approval to post** (TikTok, then
-  YouTube); copy-ready text in `delivery/The_Vampire_Case_post.md`.
+- First cut delivered 2026-10-05. User review: blank frames, hook didn't show the faces, the "nicest vampire" puppy scene
+  was random, Max didn't face the Chief for the burger, the gardener didn't hold his tool. Fixed in `web/vampire_clip.js`:
+  - blank frames (found with `scripts/review/blank_frames.py`): the sniff camera swept through the set while Max turned
+    (now fixed to his end pose), the "homegrown" camera sat inside the coffin (now front-left 3/4), the Chief's jacket
+    filled the first sniff frames (he's gone by then), and the run-out showed an empty table (camera at the exit now).
+  - hook: the sister one step out of the doorway, both cheated 3/4 to a side camera with a quick push-in.
+  - flashback: one shot; a crying kid by a LOST DOG poster (`lostPoster`), Vlad hands her the puppy, she lights up.
+  - Max turns to face the Chief (the old lerp turned him away).
+  - held props at the palm grip (`gripR/gripL`); two-handed shears posed from both hands every frame (`shears`/`setShears`,
+    snipping), dropped to the grass at the cuffs. Every hold checked in close-up: `web/hold_check.js`.
+- Full re-render running (1870 frames), then encode, blank-frame scan, review, deliver to main.
 
 ## Re-render / re-encode
 ```

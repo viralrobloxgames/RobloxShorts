@@ -65,6 +65,9 @@ one. (`ideas/series/` holds the earlier series for reference only.)
   at a glance. No flash-forwards, rewinds or intro cards. (The AFK Millionaire's first post lost ~70% by 0:06.)
 - An on-screen countdown or progress counter for the whole video, and a new visual payoff every 3-5 s.
 - Give the main character agency; the twist can be on them.
+- Review checklist before delivery (user feedback on The Vampire Case, 2026-10-05): run the hold check (web/lib/holdcheck.js)
+  before the full render; after the encode run scripts/review/blank_frames.py; in the contact sheet check that characters in a
+  conversation face each other and that the hook shows both faces.
 
 ## Running steps in parallel (standard since 2026-10-02)
 
