@@ -149,9 +149,9 @@ export async function setup(stage) {
   rex = await loadCreature('trex'); rex.root.scale.setScalar(REXS); scene.add(rex.root);
   BODIES = Object.keys(rex.bodies).filter((n) => rex.bodies[n].meshes.length);
   glasses = new THREE.Group(); { const blk = new THREE.MeshStandardMaterial({ color: '#0b0c10', metalness: 0.6, roughness: 0.15 });
-    const bar = new THREE.Mesh(new THREE.BoxGeometry(4.7, 0.35, 0.5), blk); bar.position.set(0, 0.35, -2.1); glasses.add(bar);
-    for (const sx of [-1, 1]) { const lens = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.0, 2.2), blk); lens.position.set(sx * 2.25, 0, -1.0); glasses.add(lens); const arm = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.25, 2.6), blk); arm.position.set(sx * 2.25, 0.3, 1.2); glasses.add(arm); } }
-  glasses.position.set(0, 10.25, -9.9); attachToBody(rex, 'head', glasses);
+    const bar = new THREE.Mesh(new THREE.BoxGeometry(4.8, 0.3, 0.4), blk); bar.position.set(0, 0.5, -1.0); glasses.add(bar);
+    for (const sx of [-1, 1]) { const lens = new THREE.Mesh(new THREE.BoxGeometry(0.35, 1.15, 1.9), blk); lens.position.set(sx * 2.25, 0, -0.1); glasses.add(lens); const arm = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.25, 2.2), blk); arm.position.set(sx * 2.25, 0.35, 1.9); glasses.add(arm); } }
+  glasses.position.set(0, 11.2, -7.9); attachToBody(rex, 'head', glasses);
   hoodie = new THREE.Group(); { const red = new THREE.MeshStandardMaterial({ color: '#e0423a', roughness: 0.8 }), white = new THREE.MeshStandardMaterial({ color: '#f4f4f4' });
     const body = new THREE.Mesh(new THREE.BoxGeometry(4.9, 7.4, 9.9), red); body.position.set(0, 7.6, -1.4); hoodie.add(body);
     const hood = new THREE.Mesh(new THREE.BoxGeometry(3.8, 2.4, 3.2), red); hood.position.set(0, 10.6, 2.4); hoodie.add(hood);
@@ -187,7 +187,7 @@ function fling(b, s, t0, a, to, h, dur, faceE = 'scared') {
 const GRAB = V(1.2, 0, 7.4), CROSS = V(3, 0, SAFE_Z + 7);
 function maxState(s) {
   const b = st(V(18, 0, 18), face(V(18, 0, 18), GRAB), idle(s), 'scheming');
-  if (s < B.grab) { const from = V(9, 0, 20), m = travelTo(from, GRAB, B.grab - 0.1, s, 5); b.pos = m.pos; b.rotY = m.moving ? m.heading : face(GRAB, EGG_HOME); b.layers = m.moving ? walkL(m, from.distanceTo(GRAB)) : [[A.hold, 0.3]]; return b; }
+  if (s < B.grab) { const from = V(7, 0, 14), m = travelTo(from, GRAB, B.grab - 0.1, s, 5); b.pos = m.pos; b.rotY = m.moving ? m.heading : face(GRAB, EGG_HOME); b.layers = m.moving ? walkL(m, from.distanceTo(GRAB)) : [[A.hold, 0.3]]; return b; }
   if (s < B.day2) {
     const d = GRAB.distanceTo(CROSS), m = travel(GRAB, CROSS, B.run, s, d / (B.cross + 0.3 - B.run));
     b.pos = m.pos; b.rotY = m.moving ? m.heading : face(CROSS, V(3, 0, SAFE_Z - 20)); b.layers = m.moving ? [[A.run, (m.u * d) / STRIDE], [A.hold, 0.3, 0.6]] : [[A.laugh_big, s]]; b.face = m.moving ? 'scared' : 'laugh'; b.egg = true;
@@ -267,7 +267,8 @@ function rexAt(s) {
   else if (s < B.kids) {                                                                              // the job
     pos = JOB.clone().add(V(0, 1.7, 0)); rotY = -Math.PI / 2; const ph = (s - B.quit) * 0.55; pose = trexRun(ph); for (const k of ['leg_L', 'leg_R']) pose[k] = pose[k].map((x) => x * 0.55);
     pose.neck2 = [0.05, 0, 0]; pose.head = [0.05 + 0.04 * Math.sin(s * 2), 0.08 * Math.sin(s * 1.3), 0]; pose.mouth = [0.25, 0, 0];
-    if (s < B.hired + 0.5) { pos = LEO_BASE.clone().add(V(-6, 0, 14)); rotY = Math.PI / 2; pose = trexIdle(s); }
+    if (s < B.hired - 0.1) { const r = walk(V(0, 0, 0), V(12, 0, 30), B.quit + 0.2, s, 9); pos = r.pos; rotY = r.rotY; pose = r.pose; }   // walks off the mound, away from the babies
+    else if (s < B.hired + 0.5) { pos = LEO_BASE.clone().add(V(-6, 0, 14)); rotY = Math.PI / 2; pose = trexIdle(s); }
   }
   else { pos = JOB.clone().add(V(0, 1.7, 0)); rotY = -Math.PI / 2; pose = trexRun((s - B.quit) * 0.55); }
   rexCache = { t: s, pos, rotY, pose, sit };
@@ -314,7 +315,7 @@ export function update(t, stage) {
   moundEggs.forEach((e, i) => { e.visible = s > B.home - 0.1 && s < B.hatch; e.rotation.set(s > B.wobble ? 0.18 * Math.sin(s * 40 + i) : 0, i, 0); });
   shells.forEach((c, i) => { const u = s - B.hatch; c.visible = u > 0 && u < 1.4; if (!c.visible) return; const a = moundEggs[i % moundEggs.length].position; c.position.copy(a).add(c.userData.v.clone().multiplyScalar(u * 0.6)).add(V(0, -9 * u * u * 0.6, 0)); c.position.y = Math.max(0.1, c.position.y); c.rotation.set(u * 6 + i, u * 5, 0); });
   babies.forEach((b, i) => {
-    const showA = s > B.hatch && s < B.quit + 0.2, showB = s > B.kids - 0.1;
+    const showA = s > B.hatch && s < B.hired - 0.1, showB = s > B.kids - 0.1;
     b.root.visible = showA || (showB && i < 6);
     if (!b.root.visible) return;
     if (showA) {
@@ -360,7 +361,7 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': look(V(lerp(22, 20, u), 7.5, 30), V(-2, 7, 0), 48, 50); break;                 // the T-rex over its egg, Max creeping in
     case 'steal': look(V(20, 6, 24), V(0, 5, 4), 46); break;
-    case 'chase': look(V(rp.x + 34, 10, rp.z + 8), V(rp.x + 2, 7, rp.z + 10), 50, 60); break;
+    case 'chase': look(rp.clone().add(V(7, 15, -16)), mp.clone().add(V(0, 3, 0)), 52, 60); break;         // over the T-rex's shoulder, Max running for the line
     case 'bonk': look(V(30, 10, SAFE_Z + 10).add(jolt(B.bonk, 0.9)), V(2, 10, SAFE_Z - 6), 50, 60); break;
     case 'line': look(V(-22, 9, SAFE_Z + 18), V(2, 9, SAFE_Z - 4), 52, 60); break;              // from the safe side: the rex at the line, Mia and the Noob strolling past
     case 'stolen': look(V(9, 6, 16), V(0, 2, 0), 44); break;                                      // the empty nest
@@ -368,12 +369,11 @@ export function update(t, stage) {
     case 'disguise': look(hc.clone().add(V(8, -3, 28)), hc.clone().add(V(0, -5, 0)), 46); break;
     case 'scan': look(V(26, 8, SAFE_Z + 14), V(3, 10, SAFE_Z - 4), 54, 60); break;
     case 'bases': look(V(lerp(20, 10, u), lerp(70, 64, u), lerp(20, 30, u)), V(0, 0, 92), 52, 90); break;   // aerial: rows of bases full of his eggs
-    case 'leoBase': look(LEO_BASE.clone().add(V(30, 15, -2)), LEO_BASE.clone().add(V(-4, 7, -10)), 54, 60); break;
+    case 'leoBase': look(LEO_BASE.clone().add(V(36, 24, 16)), LEO_BASE.clone().add(V(-3, 5, -7)), 56, 60); break;
     case 'leoChase': look(V(rp.x + 30, 9, rp.z + 6).add(jolt(B.leoBonk, 0.6)), V(rp.x + 3, 6, rp.z + 4), 52, 60); break;
-    case 'home': case 'hatch': case 'swarm': look(V(lerp(20, 24, u), 9, 26).add(jolt(B.hatch, 0.8, 0.5)), V(0, 6, 1), 50, 50); break;
-    case 'quit': look(LEO_BASE.clone().add(V(14, 7, 34)), LEO_BASE.clone().add(V(-4, 6, 14)), 50, 50); break;
+    case 'home': case 'hatch': case 'swarm': case 'quit': look(V(lerp(20, 24, u), 9, 26).add(jolt(B.hatch, 0.8, 0.5)), V(0, 6, 1), 50, 50); break;
     case 'hired': look(JOB.clone().add(V(26, 8, 22)), JOB.clone().add(V(4, 6, 2)), 52, 60); break;
-    case 'job': look(JOB.clone().add(V(10, 9, 36)), JOB.clone().add(V(-8, 9, 0)), 52, 60); break;   // the T-rex on the treadmill, the TV, snacks
+    case 'job': look(JOB.clone().add(V(-8, 10, 42)), JOB.clone().add(V(-15, 8, 0)), 56, 60); break;   // the T-rex on the treadmill, the TV, snacks
     case 'best': look(hc.clone().add(V(10, -1, 20)), hc.clone().add(V(-2, -3, 0)), 46); break;
     case 'kids': case 'cta': { const b0 = babies[0].root.position; look(V(18, 5, b0.z - 4).add(jolt(babyBonk(), 0.4)), V(2, 2.5, b0.z + 4), 50, 60); break; }
     default: look(V(26, 11, 40), V(-3, 4.5, 2), 46);
