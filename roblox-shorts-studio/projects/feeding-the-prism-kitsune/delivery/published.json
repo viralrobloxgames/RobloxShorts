@@ -1,0 +1,8 @@
+{
+  "file": "Feeding_the_Prism_Kitsune.mp4",
+  "sha256": "1b5ed58efb5dec4a6be9c1b92c2e0e7d966e071dcde8bc2161696f3ed1b84d26",
+  "approved": {"by": "user", "at": "2026-10-05", "how": "\"schedule post the prism kitsune video today at 9pm on both platforms\" in chat"},
+  "scheduled_for": "2026-10-05T21:00:00+01:00",
+  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "last frame of the video (Edit cover)", "content_check_lite": "on, passed (no issues found)"},
+  "youtube": {"status": "scheduled", "method": "YouTube Studio web, Schedule", "url": "https://youtube.com/shorts/5pzaKnX-IKU", "video_id": "5pzaKnX-IKU", "made_for_kids": false, "altered_content": false, "thumbnail": "cover.jpg uploaded before scheduling (Select from video offered three stills, none the cover frame)"}
+}
