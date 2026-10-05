@@ -124,14 +124,6 @@
   "gain": 0.35
  },
  {
-  "tone": [
-   1100
-  ],
-  "start": 12.86,
-  "gain": 0.07,
-  "dur": 0.09
- },
- {
   "asset": "sfx/pop.wav",
   "start": 13.4,
   "gain": 0.45
@@ -340,14 +332,6 @@
   "tone": [
    660
   ],
-  "start": 36.04,
-  "gain": 0.07,
-  "dur": 0.09
- },
- {
-  "tone": [
-   990
-  ],
   "start": 40.66,
   "gain": 0.07,
   "dur": 0.09
@@ -370,6 +354,22 @@
  },
  {
   "tone": [
+   990
+  ],
+  "start": 42.58,
+  "gain": 0.07,
+  "dur": 0.09
+ },
+ {
+  "tone": [
+   1100
+  ],
+  "start": 43.24,
+  "gain": 0.07,
+  "dur": 0.09
+ },
+ {
+  "tone": [
    1210
   ],
   "start": 43.96,
@@ -377,34 +377,58 @@
   "dur": 0.09
  },
  {
-  "asset": "sfx/flutter.wav",
-  "start": 45.33,
-  "gain": 0.25
+  "tone": [
+   1568,
+   2093
+  ],
+  "start": 45.36,
+  "gain": 0.06,
+  "dur": 0.07
  },
  {
-  "asset": "sfx/flutter.wav",
-  "start": 45.61,
-  "gain": 0.25
+  "tone": [
+   1658,
+   2213
+  ],
+  "start": 45.64,
+  "gain": 0.06,
+  "dur": 0.07
  },
  {
-  "asset": "sfx/flutter.wav",
-  "start": 46.23,
-  "gain": 0.25
+  "tone": [
+   1748,
+   2333
+  ],
+  "start": 46.26,
+  "gain": 0.06,
+  "dur": 0.07
  },
  {
-  "asset": "sfx/flutter.wav",
-  "start": 46.69,
-  "gain": 0.25
+  "tone": [
+   1838,
+   2453
+  ],
+  "start": 46.72,
+  "gain": 0.06,
+  "dur": 0.07
  },
  {
-  "asset": "sfx/flutter.wav",
-  "start": 47.15,
-  "gain": 0.25
+  "tone": [
+   1928,
+   2573
+  ],
+  "start": 47.18,
+  "gain": 0.06,
+  "dur": 0.07
  },
  {
-  "asset": "sfx/flutter.wav",
-  "start": 47.53,
-  "gain": 0.25
+  "tone": [
+   2018,
+   2693
+  ],
+  "start": 47.56,
+  "gain": 0.06,
+  "dur": 0.07
  },
  {
   "asset": "sfx/chime.wav",
@@ -417,12 +441,17 @@
   "gain": 0.25
  },
  {
-  "asset": "sfx/applause.wav",
-  "start": 52.06,
-  "gain": 0.25
+  "tone": [
+   784,
+   988,
+   1175
+  ],
+  "start": 52.26,
+  "gain": 0.05,
+  "dur": 0.25
  },
  {
-  "asset": "sfx/applause.wav",
+  "asset": "sfx/chime.wav",
   "start": 55.02,
   "gain": 0.3
  },
