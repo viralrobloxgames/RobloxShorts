@@ -1455,6 +1455,86 @@
     "decalTextures": null
    },
    "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "officer_cap",
+   "path": "accessories/officer_cap/officer_cap.obj",
+   "description": "General's peaked service cap: blue crown with a wide flat top, black visor with a gold edge, gold chin cord and eagle badge (original).",
+   "objects": [
+    "Crown",
+    "Band",
+    "Visor",
+    "Gold"
+   ],
+   "dimensions": {
+    "min": [
+     -0.97,
+     -0.06,
+     -1.168
+    ],
+    "max": [
+     0.97,
+     0.7,
+     1.028
+    ],
+    "size": [
+     1.94,
+     0.76,
+     2.196
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_service_caps.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "pillbox_hat",
+   "path": "accessories/pillbox_hat/pillbox_hat.obj",
+   "description": "Elevator operator's pillbox hat: short red drum, gold bands, top button and front badge (original).",
+   "objects": [
+    "Body",
+    "Gold"
+   ],
+   "dimensions": {
+    "min": [
+     -0.53,
+     -0.03,
+     -0.55
+    ],
+    "max": [
+     0.53,
+     0.555,
+     0.53
+    ],
+    "size": [
+     1.06,
+     0.585,
+     1.08
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_service_caps.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
   }
  ],
  "props": [
@@ -7867,7 +7947,7 @@
  "counts": {
   "characters": 7,
   "faces_per_character": 32,
-  "accessories": 12,
+  "accessories": 16,
   "props": 94,
   "map": 53,
   "animations": 63,

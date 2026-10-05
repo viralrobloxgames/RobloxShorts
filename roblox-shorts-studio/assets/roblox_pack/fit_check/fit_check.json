@@ -1,6 +1,6 @@
 {
   "clip": null,
-  "generated": "2026-10-05T20:43:26.173Z",
+  "generated": "2026-10-05T22:00:04.731Z",
   "fingerprint": null,
   "tolerance_studs": 0.02,
   "passed": true,
@@ -13,6 +13,8 @@
         "crown_admin",
         "top_hat",
         "ranger_hat",
+        "officer_cap",
+        "pillbox_hat",
         "cap",
         "beanie",
         "headphones",
@@ -32,6 +34,8 @@
         "crown_admin",
         "top_hat",
         "ranger_hat",
+        "officer_cap",
+        "pillbox_hat",
         "cap",
         "beanie",
         "headphones",
@@ -51,6 +55,8 @@
         "crown_admin",
         "top_hat",
         "ranger_hat",
+        "officer_cap",
+        "pillbox_hat",
         "cap",
         "beanie",
         "headphones",
@@ -70,6 +76,8 @@
         "crown_admin",
         "top_hat",
         "ranger_hat",
+        "officer_cap",
+        "pillbox_hat",
         "cap",
         "beanie",
         "headphones",
@@ -89,6 +97,8 @@
         "crown_admin",
         "top_hat",
         "ranger_hat",
+        "officer_cap",
+        "pillbox_hat",
         "cap",
         "beanie",
         "headphones",
@@ -150,6 +160,40 @@
       ],
       "hideHair": false,
       "depth": -0.014,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Leo",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.46,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.001,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Leo",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.48,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.01,
       "count": 0,
       "passed": true,
       "note": ""
@@ -377,6 +421,40 @@
     },
     {
       "character": "Max",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.4,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.019,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Max",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.48,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Max",
       "accessory": "cap",
       "mode": "cover",
       "scale": 1.1,
@@ -592,6 +670,40 @@
       ],
       "hideHair": false,
       "depth": 0.001,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Mia",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.06,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.017,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Mia",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.28,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.012,
       "count": 0,
       "passed": true,
       "note": ""
@@ -819,6 +931,40 @@
     },
     {
       "character": "Noob",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.105,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Noob",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.005,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Noob",
       "accessory": "cap",
       "mode": "cover",
       "scale": 1,
@@ -1034,6 +1180,40 @@
       ],
       "hideHair": false,
       "depth": 0.001,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.08,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.007,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Skye",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.32,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.016,
       "count": 0,
       "passed": true,
       "note": ""

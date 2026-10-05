@@ -1,0 +1,24 @@
+{
+  "title": "He Stole The Mona Lisa",
+  "character": "Max",
+  "characters": [
+    "Max",
+    "Leo",
+    "Mia",
+    "Skye",
+    "Noob"
+  ],
+  "seconds": 61.88,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "narration_done; web scene in progress",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES",
+      "CUE": "QUEUE"
+    }
+  }
+}

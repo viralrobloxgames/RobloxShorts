@@ -305,7 +305,7 @@
       "title": "He Bought Google For 12 Dollars",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_draft_awaiting_approval",
+      "status": "delivered_local_review",
       "logline": "True story: in 2015 a former Google employee bought google.com for $12 on Google's own domain shop and owned it for a minute; Google cancelled it, paid a $6,006.13 bug reward (the digits spell GOOGLE) and doubled it when he gave it to a charity running free schools in India.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/google-for-twelve-dollars",
@@ -334,11 +334,11 @@
       "title": "He Traded A Paperclip For A House",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "farm_render_running",
+      "status": "delivered_local_review",
       "logline": "True story: in 2005-06 a man traded one red paperclip up through 14 trades; his 'dumbest trade ever' (an afternoon with a rock star for a snow globe) got him a movie role from a snow-globe-collecting actor, and a tiny Canadian town traded him a two-storey house for the role.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/paperclip-for-a-house",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; full web render running."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; encoded 61.7 s (incl. cover), awaiting approval."
     },
     {
       "title": "He Ordered A Fighter Jet From Pepsi",
@@ -359,6 +359,46 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/lightning-hit-him-seven-times",
       "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered 2026-10-05 for review: delivery/Lightning_Hit_Him_Seven_Times.mp4 (64.4 s incl. 0.5 s cover, 1932 frames, -17.0 LUFS), cover, post.json/_post.md. Narration 62.1 s (George voice C, cloud). Web route, 28 shots, STRIKES 0/7 counter. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
+    },
+    {
+      "title": "The Tornado Came Back",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-tornado-came-back",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 61.0 s (George voice C, cloud). User request 2026-10-05: 'Make a story about tornados'. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Maj. Ernest Fawbush, Capt. Robert Miller, Maj. Gen. Fred Borum; named only in the post copy. Web route planned; tornado funnel, 1940s planes, hangars, radar scope, general's cap and elevator cap to build."
+    },
+    {
+      "title": "He Stole The Mona Lisa",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-stole-the-mona-lisa",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; full web render running. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
+    },
+    {
+      "title": "The Dog Who Found The World Cup",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in March 1966 the World Cup is stolen from a guarded glass case in London, four months before England hosts the tournament. A ransom arrest catches only a middleman. A week later a collie called Pickles drags a newspaper parcel from under a hedge; his owner fears a bomb, tears it and reads 'Brazil, West Germany, Uruguay'. Police make the owner their main suspect; that summer England win and Pickles licks the players' plates at the victory dinner. Seventeen years later the trophy is stolen again in Brazil. This time there's no Pickles, and it's never been found.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-dog-who-found-the-world-cup",
+      "notes": "Script v1 160 words with the CTA. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Pickles, David Corbett, theft 20 Mar 1966, found 27 Mar 1966, stolen again in Rio 19 Dec 1983. Cartoon-safe dog hero; topical after the 2026 World Cup and the 1966 60th anniversary. Needs a rigged collie (animal_dog) in the pack."
+    },
+    {
+      "title": "He Mailed Himself Home",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1964 an Australian athlete, broke in London, has his friend nail him into a crate labelled paint, sent cash on delivery to a company that doesn't exist. Fog in London, upside down on the tarmac in Bombay; 63 hours later he cuts his way out in Perth, walks out of the airport in his suit and hitchhikes home for his daughter's birthday. He forgets to tell his friend he survived; the friend calls a newspaper, the world finds out, and the airline drops the bill. He couldn't afford a ticket, and he never paid for one.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/mailed-himself-home",
+      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Reg Spiers, John McSorley, 17-20 Oct 1964; named only in the post copy). Script v1 160 words with the CTA. Web route planned; crate with cut-away side, Air India-style cargo plane, cargo shed, newspapers, C.O.D. invoice."
     }
   ],
   "statuses": [
