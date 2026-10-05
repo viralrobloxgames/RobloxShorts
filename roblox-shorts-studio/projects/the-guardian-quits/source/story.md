@@ -1,6 +1,6 @@
 # The Guardian Quits (standalone)
 
-Status: approved 2026-10-05 with the guardian changed to a T-rex ("change it to a t rex and then make it").
+Status: delivered for review 2026-10-05 (T-rex version, 64.6 s).
 
 **Logline:** Steal an Egg told by the guardian. A T-rex guards one egg in the Prehistoric jungle and loses it every
 day at the safe-zone wall (BONK). After 400 stolen eggs and a one-star review, he puts on sunglasses, a hoodie and a
