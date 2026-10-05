@@ -20,7 +20,7 @@ def story_card():
     """The chart shot, fully grown, cropped to its panel (no PiP)."""
     s0, s1, k, a = next(s for s in SHOTS if s[2] == 'chart' and s[3]['upto'] == 3)
     f = chart_frame(s0 + 2.0, s0, s1, a)
-    return f.crop((52, 332, 1028, 1108))
+    return f.crop((52, 492, 1028, 1113))
 
 
 def main():
@@ -40,10 +40,10 @@ def main():
     d.rounded_rectangle((bx, 322, bx + 220, 402), 16, fill=RED); d.text((bx + 110, 364), 'NEWS', font=font(LG, 60), fill=WHITE, anchor='mm')
     d.rounded_rectangle((850, 322, 995, 402), 16, fill=WHITE); d.text((922, 364), '#2', font=font(LG, 62), fill=PLUM, anchor='mm')
     # story card in a TV frame, top right
-    card = story_card().resize((470, 372), Image.LANCZOS)
-    tv = Image.new('RGBA', (510, 438), (0, 0, 0, 0)); td = ImageDraw.Draw(tv)
-    td.rounded_rectangle((0, 0, 509, 412), 26, fill=(12, 6, 18), outline=HOT, width=8)
-    td.polygon([(225, 412), (285, 412), (300, 437), (210, 437)], fill=(12, 6, 18))
+    card = story_card().resize((470, 299), Image.LANCZOS)
+    tv = Image.new('RGBA', (510, 365), (0, 0, 0, 0)); td = ImageDraw.Draw(tv)
+    td.rounded_rectangle((0, 0, 509, 339), 26, fill=(12, 6, 18), outline=HOT, width=8)
+    td.polygon([(225, 339), (285, 339), (300, 364), (210, 364)], fill=(12, 6, 18))
     tv.paste(card, (20, 20))
     tv = tv.rotate(5, expand=True, resample=Image.BICUBIC)
     sh = Image.new('RGBA', tv.size, (0, 0, 0, 0)); sh.paste((0, 0, 0, 140), (0, 0), tv.split()[3]); sh = sh.filter(ImageFilter.GaussianBlur(12))

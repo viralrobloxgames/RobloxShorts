@@ -9,6 +9,7 @@ review/poses/
 **/audio/music.wav
 **/audio/final_mix.wav
 **/audio/silence.wav
+**/audio/music_bed.wav
 **/audio/takes/
 examples/*/assets/fonts/
 *.validation.json

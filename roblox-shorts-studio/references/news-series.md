@@ -122,6 +122,20 @@ Studio can't be filmed through the MCP, so Skye is pose-to-pose and the picture 
 5. **Music:** use the series bed, `assets/audio/news_breaking_paulyudin.mp3` (Pixabay, chosen by the user), ducked by `build_music.py`, with `finish.music` set to `audio/music_bed.wav` and `music_gain` 1.0.
 6. **Finish:** run `finish.py --encode --frames renders/frames` (captions burned in with `caption_margin_v` 450), then `make_cover.py`, then `post.json`, then review with the user.
 
+### Cloud route (proven on #2, 2026-10-05)
+
+A whole episode can be made in a cloud session with no laptop and no Studio; see `projects/news-002-roblox-losing-players/START_HERE.md`.
+- Narration: `scripts/qwen_cloud_clone.py <project> --voice brittney`, then `tighten_clips.py`, then `narrate.py --beat 0.5 --gap 0.2`.
+  The Brittney clone reads 159 words in about 58 s of speech, so with the default gaps (0.4 s, beat 0.9 s) a 160-word script runs
+  ~67 s; the tighter gaps put it at 63.5 s.
+- Skye: `source/skye2d.py` lip-syncs the Studio stills (her own glam_doll mouth textures, matched and recoloured), with blinks and
+  camera moves. Her body doesn't move, and the stills still have the old white countertop and no Wide camera.
+- To get real animation without a laptop step per episode: record, once, reusable Skye loops per camera in Studio (idle/talk body
+  motion, a wave, shocked) with a **mouthless** face. `perform.luau` knows the head transform each frame, so the cloud can paste the
+  mouth shapes onto the moving head. That turns every later episode into a cloud-only job.
+- Chromium in the cloud needs the proxy CA in its NSS store (`certutil -d sql:$HOME/.pki/nssdb -A ...` for each cert in
+  `/root/.ccr/ca-bundle.crt`) before `web/news_shot.mjs` can load https pages. sec.gov refuses automated browsers.
+
 ## Daily research and production pipeline
 
 **Morning scheduled task** (no posting, no paid generation):

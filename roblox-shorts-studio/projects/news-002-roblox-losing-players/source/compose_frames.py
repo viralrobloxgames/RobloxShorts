@@ -44,7 +44,7 @@ def at(word, after=0.0):
     """Start time of the first word (case-insensitive, punctuation stripped) at or after `after` seconds."""
     key = word.lower().strip(',.?!')
     for w in WORDS:
-        if w['start'] >= after - 1e-6 and w['word'].lower().strip(',.?!') == key:
+        if w['start'] >= after - 1e-6 and w['word'].strip().lower().strip(',.?!') == key:
             return w['start']
     raise KeyError(word)
 
@@ -52,17 +52,17 @@ def at(word, after=0.0):
 def end(word, after=0.0):
     key = word.lower().strip(',.?!')
     for w in WORDS:
-        if w['start'] >= after - 1e-6 and w['word'].lower().strip(',.?!') == key:
+        if w['start'] >= after - 1e-6 and w['word'].strip().lower().strip(',.?!') == key:
             return w['end']
     raise KeyError(word)
 
 
 T = dict(breaking=0.30, million=at('million'), this=at('this'))
 T.update(viralnews_end=end('news', T['this']))
-T.update(last=at('last', T['this']), peak=at('152', T['this']) if any(w['word'].strip(',.') == '152' for w in WORDS) else at('million', T['this']),
+T.update(last=at('last', T['this']), peak=at('152', T['this']),
          now=at('now', T['this']))
 T.update(three=at("that's", T['now']), wall=at('and', T['now']))
-T.update(stock=at("roblox's", T['wall']), seventy=at('70', T['wall']) if any(w['word'].strip(',.') == '70' for w in WORDS) else at('percent', T['wall']),
+T.update(stock=at("roblox's", T['wall']), seventy=at('70%', T['wall']),
          sept=at('on', T['wall']), jefferies=at('jefferies', T['wall']))
 T.update(why=at('so', T['jefferies']))
 T.update(age=at('roblox', T['why']), younger=at('younger', T['why']), viral=at("last", T['why']))
@@ -77,7 +77,7 @@ T.update(skye=at("i'm", T['comment']), last_word=WORDS[-1]['end'])
 CUT = 0.08  # cut slightly ahead of the line so the picture leads the voice
 SHOTS = [  # (start, end, kind, args)
     (0.0, T['this'] - CUT, 'skye', {'cam': 'M', 'push': (1.0, 1.08)}),
-    (T['this'] - CUT, T['last'] - CUT, 'skye', {'cam': 'M', 'push': (1.04, 1.0)}),
+    (T['this'] - CUT, T['last'] - CUT, 'skye', {'cam': 'C', 'push': (1.04, 1.0)}),
     (T['last'] - CUT, T['now'] - CUT, 'chart', {'upto': 0}),
     (T['now'] - CUT, T['three'] - CUT, 'card', {'img': 'cards/dau123'}),
     (T['three'] - CUT, T['wall'] - CUT, 'chart', {'upto': 3}),
@@ -99,8 +99,8 @@ SHOTS = [  # (start, end, kind, args)
 POPS = [  # (start, end, kind, args)
     (T['million'], T['this'] - CUT, 'stamp', {'text': '-29 MILLION', 'xy': (540, 1150), 'rot': -5}),
     (T['this'] + 0.1, T['viralnews_end'] + 0.25, 'sting', {}),
-    (T['peak'], T['now'] - CUT, 'chip', {'text': '152 MILLION A DAY', 'xy': (540, 1170), 'big': True}),
-    (T['three'] + 0.25, T['wall'] - CUT, 'stamp', {'text': '3 DROPS IN A ROW', 'xy': (540, 1170), 'rot': -4}),
+    (T['peak'], T['now'] - CUT, 'chip', {'text': '152 MILLION A DAY', 'xy': (540, 1180), 'big': True}),
+    (T['three'] + 0.25, T['wall'] - CUT, 'stamp', {'text': '3 DROPS IN A ROW', 'xy': (540, 1180), 'rot': -4}),
     (T['seventy'], T['sept'] - CUT, 'stamp', {'text': '-70%', 'xy': (800, 1120), 'rot': -8}),
     (T['jefferies'] + 0.4, T['why'] - CUT, 'stamp', {'text': 'COULD FALL FURTHER', 'xy': (540, 1170), 'rot': -4}),
     (T['why'] + 0.1, T['age'] - CUT, 'chip', {'text': 'WHY?', 'xy': (540, 420), 'big': True}),
@@ -161,7 +161,7 @@ def envelope():
 
 
 def word_at(t):
-    return next((w['word'].lower().strip(',.?!') for w in WORDS if w['start'] <= t < w['end']), None)
+    return next((w['word'].strip().lower().strip(',.?!') for w in WORDS if w['start'] <= t < w['end']), None)
 
 
 def mouth(t):
@@ -268,15 +268,15 @@ DAU = [("Q3 '25", 152), ("Q4 '25", 144), ("Q1 '26", 132), ("Q2 '26", 123)]
 def chart_frame(t, s0, s1, args):
     """Daily players by quarter: one series, zero baseline, bars grow in; the bar being talked about is full strength."""
     frame = backdrop().copy()
-    x0, y0, x1, y1 = 60, 340, 1020, 1100
+    x0, y0, x1, y1 = 60, 500, 1020, 1105
     dy = panel(frame, t, s0, (x0, y0, x1, y1), PLUM_D)
     d = ImageDraw.Draw(frame, 'RGBA')
-    d.text((W // 2, y0 + dy + 70), 'ROBLOX DAILY PLAYERS', font=font(LG, 66), fill=WHITE, anchor='mm')
-    base = y1 + dy - 110; top = y0 + dy + 170; scale = (base - top) / 160
+    d.text((W // 2, y0 + dy + 64), 'ROBLOX DAILY PLAYERS', font=font(LG, 62), fill=WHITE, anchor='mm')
+    base = y1 + dy - 90; top = y0 + dy + 160; scale = (base - top) / 160
     d.line((x0 + 50, base, x1 - 50, base), fill=(255, 255, 255, 120), width=3)
     bw, gap = 170, 44; left = W // 2 - (4 * bw + 3 * gap) // 2
     for k, (q, v) in enumerate(DAU):
-        grow = ease_out(min(1.0, max(0.0, ((t - s0) * FPS - 4 - k * 4) / 10)))
+        grow = 1.0 if args['upto'] == 3 else ease_out(min(1.0, max(0.0, ((t - s0) * FPS - 4 - k * 4) / 10)))
         hgt = v * scale * grow; bx = left + k * (bw + gap)
         on = k == args['upto'] or (args['upto'] == 3 and k in (0, 3))
         col = HOT + (255,) if on else HOT + (120,)
