@@ -171,3 +171,51 @@ export function yarnBall(r = 0.85) {
   const tail = line([V(0, -r * 0.6, r * 0.75), V(0.4, -r * 0.95, r * 1.3), V(1.0, -r, r * 1.6), V(1.6, -r * 0.98, r * 1.5)], 0.05, 21, 0.04, std('#d7263d'));
   g.add(tail); return { group: g, ball, r };
 }
+
+// Stick dog, as Mia draws it: a stick body, four stick legs, a round head with dot eyes and a stick tail. 1.6 long,
+// ~1.5 tall; faces +Z. Pivots: legs at the body, tail at the back, head at the front.
+export function stickDog() {
+  const root = new THREE.Group(), body = new THREE.Group(); body.position.y = 1.0; root.add(body);
+  body.add(line([V(0, 0, -0.8), V(0.03, 0.02, 0), V(0, 0, 0.8)], 0.07, 31));
+  const legs = [];
+  for (const [z, sd] of [[-0.75, 32], [-0.65, 33], [0.65, 34], [0.75, 35]]) { const l = new THREE.Group(); l.position.set(0, 0, z); l.add(line([V(0, 0, 0), V(0.02, -0.5, 0), V(0, -1.0, 0)], 0.06, sd)); body.add(l); legs.push(l); }
+  const head = new THREE.Group(); head.position.set(0, 0.35, 0.95); body.add(head);
+  head.add(line(ring(0.34, 0, 36, 0.04, 14).map((p) => V(p.x, p.z, 0)), 0.06, 37, 0.02));
+  for (const x of [-0.12, 0.12]) { const e = new THREE.Mesh(new THREE.SphereGeometry(0.05, 8, 6), PENCIL_M); e.position.set(x, 0.07, 0.05); head.add(e); }
+  head.add(line([V(-0.2, 0.25, 0), V(-0.3, 0.5, 0), V(-0.08, 0.32, 0)], 0.04, 38, 0.01), line([V(0.2, 0.25, 0), V(0.3, 0.5, 0), V(0.08, 0.32, 0)], 0.04, 39, 0.01));
+  const tail = new THREE.Group(); tail.position.set(0, 0, -0.8); body.add(tail); tail.add(line([V(0, 0, 0), V(0, 0.35, -0.2), V(0, 0.6, -0.3)], 0.05, 40));
+  return { root, body, legs, head, tail };
+}
+// pose: { run (distance), wag (time), tilt (head), carry: stick mesh in its mouth }
+export function poseDog(d, p = {}) {
+  const w = p.run !== undefined ? Math.sin(p.run * 5) : 0;
+  d.legs.forEach((l, i) => { l.rotation.x = (i % 2 ? -1 : 1) * 0.6 * w; });
+  d.tail.rotation.z = p.wag !== undefined ? 0.6 * Math.sin(p.wag * 18) : 0;
+  d.head.rotation.z = p.tilt || 0;
+  d.body.position.y = 1.0 + (p.run !== undefined ? 0.08 * Math.abs(Math.sin(p.run * 5)) : 0);
+}
+// The fetch stick: one wobbly pencil line (it looks a lot like the dog).
+export function fetchStick() { const g = new THREE.Group(); g.add(line([V(0, 0, -0.7), V(0.03, 0.02, 0), V(0, 0, 0.7)], 0.07, 41)); return g; }
+
+// Bike with square wheels: a pencil-line frame, a seat and bars; wheels are squares that roll corner to corner.
+// Faces +Z. wheels[] rotate about X; the whole bike bounces with the square's axle height (see bikeRoll).
+export const SQ = 0.85;                                   // half side of a square wheel
+export function squareBike() {
+  const root = new THREE.Group(), frame = new THREE.Group(); root.add(frame);
+  const wheels = [];
+  for (const z of [-1.5, 1.5]) {
+    const w = new THREE.Group(); w.position.set(0, 0, z);
+    w.add(line([V(0, -SQ, -SQ), V(0, -SQ, SQ), V(0, SQ, SQ), V(0, SQ, -SQ), V(0, -SQ, -SQ)], 0.08, 50 + z, 0.05));
+    w.add(line([V(0, 0, 0), V(0, -SQ, -SQ)], 0.04, 52 + z, 0.02), line([V(0, 0, 0), V(0, SQ, SQ)], 0.04, 53 + z, 0.02));
+    frame.add(w); wheels.push(w);
+  }
+  frame.add(line([V(0, 0, -1.5), V(0, 1.4, -0.3), V(0, 1.3, 1.1), V(0, 0, 1.5)], 0.08, 55), line([V(0, 0, -1.5), V(0, 0.1, 0.2), V(0, 1.4, -0.3)], 0.07, 56));
+  frame.add(line([V(0, 1.3, 1.1), V(0, 2.2, 1.3)], 0.07, 57), line([V(-0.6, 2.2, 1.3), V(0.6, 2.2, 1.35)], 0.07, 58));
+  frame.add(line([V(0, 1.4, -0.3), V(0, 1.9, -0.45)], 0.07, 59), line([V(-0.3, 1.95, -0.7), V(0.3, 1.95, -0.2)], 0.1, 60));
+  return { root, frame, wheels };
+}
+// Rolling a square wheel a distance d: rotation angle, axle lift above SQ (the BONK), and whether it is on a corner.
+export function bikeRoll(d) {
+  const ang = d / SQ, q = ((ang % (Math.PI / 2)) + Math.PI / 2) % (Math.PI / 2) - Math.PI / 4;   // -45..45 deg within a face
+  return { ang, lift: SQ / Math.cos(q) - SQ };
+}

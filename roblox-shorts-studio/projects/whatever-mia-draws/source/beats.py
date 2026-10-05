@@ -9,7 +9,7 @@ import json, re, difflib
 from pathlib import Path
 P = Path(__file__).resolve().parent.parent
 ANCHORS = {
-    'anything': ('anything', 1), 'exactly': ('exactly', 1), 'cant': ('cant', 1), 'dog': ('dog', 1), 'fetches': ('fetches', 1),
+    'anything': ('anything', 1), 'life': ('life', 1), 'still': ('still', 1), 'wheels': ('wheels', 1), 'very': ('very', 1), 'exactly': ('exactly', 1), 'cant': ('cant', 1), 'dog': ('dog', 1), 'fetches': ('fetches', 1),
     'bike': ('bike', 1), 'square': ('square', 1), 'bonk1': ('bonk', 1), 'bonk2': ('bonk', 2), 'boyfriend': ('boyfriend', 1),
     'supportive': ('supportive', 1), 'then': ('then', 1), 'leo': ('leo', 1), 'grabs1': ('grabs', 1), 'pencil2': ('pencil', 2),
     'watch': ('watch', 1), 'learn': ('learn', 1), 'draws1': ('draws', 1), 'lion1': ('lion', 1), 'every1': ('every', 1),

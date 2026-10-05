@@ -1,7 +1,7 @@
 // Whatever Mia Draws. Web renderer + Roblox R6 pack. Anything drawn with Mia's pencil comes to life exactly as drawn;
 // Leo draws a perfect lion, Mia's cage has no roof, her stick boyfriend gets batted about, and a scribble (a ball of
 // yarn) saves the day. Beats: web/beats.js (source/beats.py). Sets and drawn props: web/kit.js. Lion: web/lion.js.
-// Built so far: the lion section (Leo draws it -> it purrs with the yarn), W.draws1 .. W.wants.
+// Drawers really draw: their arm reaches the pencil grip above the point being drawn (reachArm), the pencil in hand.
 import * as THREE from 'three';
 import { setExpression } from '../../../web/lib/rig.js';
 import { clamp, lerp, inv, smooth, easeInOut, easeOut, easeIn, easeOutBack, shotAt } from '../../../web/lib/anim.js';
@@ -9,7 +9,7 @@ import { loadRobloxCharacter, loadAnimation, robloxPose } from '../../../web/lib
 import { STRIDE } from '../../../web/lib/locomotion.js';
 import { roundRect } from '../../../web/lib/overlay.js';
 import { W } from './beats.js';
-import { classroom, drawingPaper, pencil, stickFigure, poseStick, cage, yarnBall, PAPER, SEATS, DESK_TOP } from './kit.js';
+import { classroom, drawingPaper, pencil, stickFigure, poseStick, cage, yarnBall, stickDog, poseDog, fetchStick, squareBike, bikeRoll, SQ, PAPER, SEATS, DESK_TOP } from './kit.js';
 import { makeLion, placeLion, gait, lionDrawing, LION_SCALE } from './lion.js';
 
 export const meta = { seconds: Math.ceil((W.end + 1.6) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'Whatever Mia Draws' };
@@ -28,25 +28,33 @@ const T = {
   scrib: W.scribbles - 0.15, yarn: W.ball, pounce: W.pounces - 0.2, roll: W.purrs - 0.25, slide: W.purrs, end: W.wants - 0.15,
 };
 T.bfIn = T.bfGo + 2.0; T.yarnDown = T.yarn + 0.38; T.yarnStop = T.pounce - 0.15;
+// the opening montage and the button
+Object.assign(T, {
+  dogPop: W.life - 0.3, throw: W.dog + 0.25, fetchGet: W.fetches - 0.45, fetchBack: W.fetches + 0.45,
+  bike0: W.bike - 0.25, bike1: W.boyfriend - 0.35, bfShow: W.boyfriend - 0.35, thumbs: W.supportive - 0.3,
+  leoUp: W.then - 0.1, grab1: W.grabs1, step: W.grabs1 + 0.35, watch: W.watch,
+  leoBack: W.once + 0.15, ask: W.wants - 0.1, no: W.no - 0.1, cta: W.follow - 0.15,
+});
 
 // ---------- places ----------
-const LEO_DESK = V(-1.8, 0, 0.1), MIA_DESK = V(-1.6, 0, 2.7), MIA_DRAW = V(-1.8, 0, 1.0);
+// Drawers stand at the desk's east edge on the paper's left (their right hand over the paper), leaning in a little.
+const LEO_DESK = V(-1.5, 0, 2.4), MIA_DESK = V(0.4, 0, 3.4), MIA_DRAW = V(-1.5, 0, 2.4), LEO_GRAB = V(-1.1, 0, -0.1);
+const LEO_ASK = V(-2.6, 0, 4.5), LEO_ROUTE = [V(-20.6, 0, -1.0), V(-17.0, 0, 5.6), V(-6.0, 0, 5.6), V(-2.6, 0, 4.5)];   // round the cage, past the lion
+const DOG_F0 = V(-6.8, 0, 2.6), STICK_LAND = V(-10.5, 0, 6.8), DOG_RET = V(-2.6, 0, 4.6), DOG_SIT = V(-5.2, 0, 11.6);
+const BIKE0 = V(13, 0, 4.4), BIKE1 = V(1.5, 0, 4.4);
 const LEO_PIN = V(-20.6, 0, -1.0);                       // backed against the board
 const L_LAND = V(-9.5, 0, 6.5), L_STALK = V(-12, 0, -0.8), L_OUT = V(-15.5, 0, 8.0);
 const L_BAT2 = V(-11.8, 0, 8.2), L_PLAY = V(-12.2, 0, 9.6), L_POUNCE = V(-8.8, 0, 9.5);
-const BF0 = V(-1.0, 0, 4.6), BF1 = V(-17.6, 0, 3.6), BF2 = V(-9.0, 0, 6.6), BF3 = V(-1.6, 0, 6.2);
+const BF0 = V(-0.4, 0, 4.8), BF1 = V(-17.6, 0, 3.6), BF2 = V(-9.0, 0, 6.6), BF3 = V(-1.6, 0, 6.2);
 const Y_DROP = V(-5.4, 0, 2.0), Y_END = V(-7.0, 0, 9.4);
 const DRAW_SCALE = 0.184;                                 // the page drawing's size (lion length 2.17 on the paper)
 const DOOR = V(21.5, 0, 9);
 const sitAt = (n) => V(SEATS[n][0] + 1.55, 0, SEATS[n][1]);
 
 // ---------- scene ----------
-let A = {}, leo, mia, max, noob, lion, room, paper, pen, bf, cg, yarn, cam, SHOT = 'draw', DRAWING;
-const FACES = {
-  Leo: ['smug', 'happy', 'shocked', 'scared', 'nervous', 'determined', 'neutral', 'surprised', 'squeezed', 'laugh'],
-  Mia: ['neutral', 'happy', 'shocked', 'scared', 'surprised', 'determined', 'smug'],
-  Max: ['neutral', 'happy', 'shocked', 'scared'], Noob: ['neutral', 'shocked', 'scared'],
-};
+let A = {}, leo, mia, max, noob, lion, room, paper, pen, bf, cg, yarn, dog, stk, bike, cam, SHOT = 'hook', DRAWING;
+const ALL_FACES = ['neutral', 'happy', 'laugh', 'smug', 'cool', 'shocked', 'scared', 'surprised', 'nervous', 'determined', 'sad', 'love', 'annoyed', 'squeezed'];
+const FACES = { Leo: ALL_FACES, Mia: ALL_FACES, Max: ALL_FACES, Noob: ALL_FACES };
 export async function setup(stage) {
   const { scene } = stage;
   stage.renderer.localClippingEnabled = true;
@@ -60,6 +68,7 @@ export async function setup(stage) {
   bf = stickFigure(); scene.add(bf.root);
   cg = cage(); scene.add(cg.group);
   yarn = yarnBall(); scene.add(yarn.group);
+  dog = stickDog(); scene.add(dog.root); stk = fetchStick(); scene.add(stk); bike = squareBike(); scene.add(bike.root);
 }
 
 // ---------- the lion ----------
@@ -172,8 +181,8 @@ function lionAt(s) {
 
 // ---------- the stick boyfriend ----------
 function bfAt(s) {
-  const st = { pos: BF0.clone(), heading: -Math.PI / 2, pose: {}, visible: true };
-  if (s < T.bfGo) return st;
+  const st = { pos: BF0.clone(), heading: -Math.PI / 2 + 0.6, pose: {}, visible: s >= T.bfShow };
+  if (s < T.bfGo) { if (s >= T.thumbs && s < T.leoUp) st.pose = { armR: [-2.5, -0.15] }; return st; }   // very supportive: a thumbs up
   const d = BF0.distanceTo(BF1), u = clamp((s - T.bfGo) / (T.bfIn - T.bfGo));
   st.pos = BF0.clone().lerp(BF1, u); st.heading = headTo(BF0, BF1); st.pose = { walk: u * d * 0.9 };
   if (u >= 1) { st.heading = headTo(BF1, L_OUT); st.pose = { armR: [-1.4, -0.2], armL: [0, 0.35] }; }    // one arm out: "stop"
@@ -207,30 +216,87 @@ function along(from, to, t0, s, speed) {
   const a = VA(from), b = VA(to), d = a.distanceTo(b), u = clamp((s - t0) * speed / Math.max(d, 1e-3));
   return { pos: a.clone().lerp(b, u), moving: u > 0 && u < 1, done: u >= 1, heading: Math.atan2(b.x - a.x, b.z - a.z), anim: (u * d) / STRIDE };
 }
+function route(pts, t0, s, speed) {                      // walk a polyline at a steady speed
+  let d = Math.max(0, (s - t0) * speed);
+  for (let i = 0; i < pts.length - 1; i++) {
+    const l = pts[i].distanceTo(pts[i + 1]);
+    if (d <= l) return { pos: pts[i].clone().lerp(pts[i + 1], d / l), heading: headTo(pts[i], pts[i + 1]), moving: s > t0, done: false, anim: (s - t0) * speed / STRIDE };
+    d -= l;
+  }
+  const n = pts.length; return { pos: pts[n - 1].clone(), heading: headTo(pts[n - 2], pts[n - 1]), moving: false, done: true, anim: 0 };
+}
+const FACE_MIA = headTo(LEO_ASK, MIA_DRAW), FACE_LEO = headTo(MIA_DRAW, LEO_ASK);
 function leoAt(s) {
+  if (s < T.grab1) {                                       // the class artist at his desk, then over to Mia for the pencil
+    const seat = sitAt('A'), x = base(seat, -Math.PI / 2, 'smug');
+    if (s < T.leoUp) { x.layers = [['sit', 0.5]]; x.y = 0.32; return x; }
+    const m = along(seat, LEO_GRAB, T.leoUp + 0.2, s, 7.5);
+    x.pos = m.pos; x.heading = m.moving ? m.heading : headTo(LEO_GRAB, MIA_DRAW); x.face = 'cool'; x.layers = m.moving ? [['walk', m.anim]] : [['idle', s]];
+    if (s < T.leoUp + 0.2) { x.layers = [['sit', 0.5 + (s - T.leoUp)]]; x.y = 0.32 + 2 * (s - T.leoUp); }
+    if (m.done) x.arms = [['R', 0.1, -1.3]];               // reaching for the pencil in Mia's hand
+    return x;
+  }
   const x = base(LEO_DESK, -Math.PI / 2, 'smug');
+  if (s < T.draw - 0.3) {                                  // steps into Mia's place at the desk, pencil in hand
+    const u = smooth(inv(T.step, T.step + 0.7, s)); x.pos = LEO_GRAB.clone().lerp(LEO_DESK, u); x.heading = -Math.PI / 2; x.face = 'cool';
+    x.layers = u > 0 && u < 1 ? [['walk', u * 2.6 / STRIDE]] : [['idle', s]];
+    if (s >= T.watch - 0.1) { x.face = 'smug'; x.yaw = 0.25; }
+    return x;
+  }
   if (s < T.run) {
-    x.lean = 0.28; x.draw = s >= T.draw && s < T.drawn + 0.15;
-    if (s >= T.alive) { x.face = 'surprised'; x.lean = 0.28 * (1 - smooth(inv(T.alive, T.alive + 0.4, s))); x.yaw = -0.5 * smooth(inv(T.alive + 0.3, T.land, s)); }
+    x.lean = 0.24; x.draw = s >= T.draw && s < T.drawn + 0.15; x.face = x.draw ? 'determined' : 'smug';
+    if (s >= T.alive) { x.face = 'surprised'; x.lean = 0.24 * (1 - smooth(inv(T.alive, T.alive + 0.4, s))); x.yaw = -0.5 * smooth(inv(T.alive + 0.3, T.land, s)); }
     if (s >= T.roar) { x.face = 'scared'; x.layers = [['shock', s - T.roar, 1, false]]; }
     return x;
   }
-  const m = along(LEO_DESK, LEO_PIN, T.run, s, 10);
-  x.pos = m.pos; x.heading = m.moving ? m.heading : Math.PI / 2; x.face = 'scared';
-  x.layers = m.moving ? [['run', m.anim]] : [['shock', 0.6]];
-  if (s >= T.slide) {                                      // safe: slides down the board to the floor
-    const k = smooth(inv(T.slide, T.slide + 0.6, s)); x.face = k > 0.6 ? 'happy' : 'nervous';
-    if (k > 0) { x.layers = [['sit', 0.5]]; x.y = lerp(0.9, -1.1, k); }
+  if (s < T.leoBack) {
+    const m = along(LEO_DESK, LEO_PIN, T.run, s, 10);
+    x.pos = m.pos; x.heading = m.moving ? m.heading : Math.PI / 2; x.face = 'scared';
+    x.layers = m.moving ? [['run', m.anim]] : [['shock', 0.6]];
+    if (s >= T.slide) {                                    // safe: slides down the board to the floor
+      const k = smooth(inv(T.slide, T.slide + 0.6, s)); x.face = k > 0.6 ? 'happy' : 'nervous';
+      if (k > 0) { x.layers = [['sit', 0.5]]; x.y = lerp(0.9, -1.1, k); }
+    }
+    return x;
   }
+  // wants another go: up, round the cage and past the lion to Mia, hand out for the pencil
+  const m = route(LEO_ROUTE, T.leoBack + 0.3, s, 8.5);
+  x.pos = m.pos; x.heading = m.done ? FACE_MIA : m.heading; x.face = 'happy';
+  x.layers = s < T.leoBack + 0.3 ? [['sit', 0.5]] : m.moving && !m.done ? [['run', m.anim]] : [['idle', s]];
+  if (s < T.leoBack + 0.3) x.y = lerp(-1.1, 0.4, smooth(inv(T.leoBack, T.leoBack + 0.3, s)));
+  if (m.done) { x.face = 'cool'; x.arms = [['R', 0.1, -1.35]]; }
+  if (s >= T.no + 0.15) { x.face = 'sad'; x.arms = []; }
   return x;
 }
 function miaAt(s) {
-  const x = base(MIA_DESK, -Math.PI / 2 - 0.35, 'neutral');
+  if (s < T.bike0) {                                       // draws a stick dog; it fetches
+    const x = base(MIA_DRAW, -Math.PI / 2, 'happy');
+    x.draw = s < T.dogPop; x.lean = x.draw ? 0.24 : 0; x.face = x.draw ? 'determined' : 'smug';
+    if (s >= T.dogPop) { x.yaw = -0.4; x.layers = [['proud', s - T.dogPop, 1, false]]; }
+    if (s >= W.dog - 0.3) { x.heading = -Math.PI / 2 - 0.5; x.layers = [['idle', s]]; x.face = 'happy'; x.yaw = 0; }
+    const th = s - (T.throw - 0.3); if (th > 0 && th < 0.6) x.arms = [['L', 0.2, lerp(0.8, -2.0, smooth(clamp(th / 0.3)))]];   // overarm throw (left hand)
+    return x;
+  }
+  if (s < T.bike1) {                                       // on her square-wheeled bike
+    const bk = bikeAt(s), x = base(bk.pos.clone().add(V(0.45, 0, 0)), -Math.PI / 2, 'happy'); x.layers = [['sit', 0.5]]; x.onBike = true; x.lift = bk.lift; x.arms = [['L', 0.15, -1.25], ['R', 0.15, -1.25]];
+    if (s > W.bonk1 - 0.05) x.face = 'shocked';
+    return x;
+  }
+  if (s < T.grab1 + 0.15) {                                // with her stick boyfriend; Leo comes for the pencil
+    const x = base(MIA_DRAW, -Math.PI / 2 + 0.5, 'happy');
+    if (s >= T.thumbs) { x.face = 'love'; x.yaw = 0.5; }
+    if (s >= T.leoUp + 1.0) { x.face = 'neutral'; x.heading = -Math.PI / 2 - 0.9; x.yaw = 0; }
+    x.hold = true;
+    return x;
+  }
+  const x = base(MIA_DESK, headTo(MIA_DESK, PAPER), 'surprised');
+  if (s < T.step + 0.8) { const u = smooth(inv(T.grab1 + 0.15, T.step + 0.8, s)); x.pos = MIA_DRAW.clone().lerp(MIA_DESK, u); x.layers = u > 0 && u < 1 ? [['walk', u * 2.2 / STRIDE]] : [['idle', s]]; }
+  if (s >= T.draw) x.face = 'neutral';
   if (s >= T.alive) x.face = 'shocked';
   if (s >= T.roar) { x.face = 'scared'; x.layers = [['shock', s - T.roar, 1, false]]; }
   if (s >= T.grab - 0.4) {                                 // snatches the pencil, draws the cage
     const u = smooth(inv(T.grab - 0.4, T.grab + 0.1, s)); x.pos = MIA_DESK.clone().lerp(MIA_DRAW, u); x.heading = -Math.PI / 2; x.face = 'determined'; x.layers = [['idle', s]];
-    x.draw = s >= T.cageDraw - 0.2 && s < T.cage + 0.05; x.lean = x.draw ? 0.25 : 0.1;
+    x.draw = s >= T.cageDraw - 0.2 && s < T.cage + 0.05; x.lean = x.draw ? 0.24 : 0.1; x.hold = !x.draw && s >= T.grab;
   }
   if (s >= T.cage + 0.1) { x.face = 'happy'; x.lean = 0; x.yaw = -0.6; }
   if (s >= T.roof) x.face = 'shocked';
@@ -238,22 +304,57 @@ function miaAt(s) {
   if (s >= T.bfGo) x.face = 'surprised';
   if (s >= T.stops - 0.1) { x.face = 'neutral'; x.yaw = -0.7; }
   if (s >= T.one) { x.face = 'smug'; x.yaw = -0.3; x.arms = [['R', 0.25, -1.9]]; }      // one idea: pencil up
-  if (s >= T.scrib - 0.25) { x.face = 'determined'; x.arms = []; x.yaw = 0; x.draw = s < T.yarn; x.lean = x.draw ? 0.25 : 0; x.scribble = true; }
+  if (s >= T.scrib - 0.25) { x.face = 'determined'; x.arms = []; x.yaw = 0; x.draw = s < T.yarn; x.lean = x.draw ? 0.24 : 0; x.scribble = true; x.hold = !x.draw; }
   if (s >= T.yarn) { x.face = 'happy'; x.yaw = -0.55; }
   if (s >= T.roll + 0.3) { x.face = 'happy'; x.layers = [['proud', s - T.roll - 0.3, 1, false]]; }
+  if (s >= T.ask - 0.5) {                                  // Leo wants another go: she turns to him, pulls the pencil back
+    x.heading = angLerp(-Math.PI / 2, FACE_LEO, smooth(inv(T.ask - 0.5, T.ask, s))); x.layers = [['idle', s]]; x.face = 'neutral'; x.yaw = 0;
+    if (s >= T.no - 0.15) { const k = smooth(inv(T.no - 0.15, T.no + 0.1, s)); x.arms = [['R', 0.2 + 0.25 * k, lerp(-0.2, 0.9, k)]]; x.face = 'cool'; }   // pencil pulled back behind her
+  }
   return x;
 }
 function runner(seat, s, delay, face) {
   const sat = sitAt(seat), x = base(sat, -Math.PI / 2, 'neutral');
-  if (s < T.run + delay) { x.layers = [['sit', 0.5]]; x.y = 0.32; if (s >= T.roar) x.face = 'shocked'; return x; }
+  if (s < T.run + delay) { x.layers = [['sit', 0.5]]; x.y = 0.32; if (s >= T.roar) x.face = 'shocked'; else if (s < T.leoUp) x.face = 'happy'; return x; }
   const m = along(sat, DOOR, T.run + delay, s, 11);
   x.pos = m.pos; x.heading = m.heading; x.face = face; x.layers = [['run', m.anim]]; x.visible = !m.done;
   return x;
 }
 
+// ---------- the dog, the fetch stick, the bike ----------
+function dogAt(s) {
+  const st = { pos: DOG_F0.clone(), heading: Math.PI / 2, y: 0, pose: { wag: s }, visible: (s >= T.dogPop && s < T.leoUp) || s >= W.once - 0.2, scale: 1, carry: false };
+  if (s >= W.once - 0.2) { st.pos = DOG_SIT.clone(); st.heading = headTo(DOG_SIT, L_POUNCE); return st; }
+  if (s < T.dogPop + 0.6) {                                // hops off the page onto the floor, growing to full size
+    const u = inv(T.dogPop, T.dogPop + 0.6, s); st.pos = PAPER.clone().lerp(DOG_F0, smooth(u)); st.pos.y = 0;
+    st.y = lerp(DESK_TOP, 0, smooth(u)) + 1.6 * Math.sin(Math.PI * u); st.scale = lerp(0.35, 1, smooth(u)); st.heading = -Math.PI / 2; st.pose = { wag: s, run: s * 3 };
+    return st;
+  }
+  if (s < T.throw + 0.25) { st.heading = headTo(DOG_F0, MIA_DRAW); return st; }
+  if (s < T.fetchGet) {                                     // chases the stick
+    const m = along(DOG_F0, STICK_LAND, T.throw + 0.25, s, 10); st.pos = m.pos; st.heading = m.heading; st.pose = { run: (s - T.throw) * 10, wag: s }; return st;
+  }
+  const m = along(STICK_LAND, DOG_RET, T.fetchGet + 0.15, s, 10);
+  st.pos = m.pos; st.heading = m.moving ? m.heading : headTo(DOG_RET, MIA_DRAW); st.carry = true; st.pose = m.moving ? { run: (s - T.fetchGet) * 10, wag: s } : { wag: s, tilt: 0.25 };
+  return st;
+}
+function bikeAt(s) {
+  const d = clamp((s - T.bike0) * 3.4, 0, BIKE0.distanceTo(BIKE1)), r = bikeRoll(d);
+  let jolt = 0; for (const at of [W.bonk1, W.bonk2]) { const k = s - at; if (k > 0 && k < 0.18) jolt += 0.45 * Math.sin(Math.PI * k / 0.18); }
+  return { pos: BIKE0.clone().lerp(BIKE1, d / BIKE0.distanceTo(BIKE1)), ang: r.ang, lift: r.lift + jolt, visible: s >= T.bike0 - 0.3 && s < T.bike1 };
+}
+
 // ---------- posing ----------
-const EUL = new THREE.Euler(), box3 = new THREE.Box3();
+const EUL = new THREE.Euler(), box3 = new THREE.Box3(), QI = new THREE.Quaternion();
 function setArm(a, side, up, fwd = 0.08) { EUL.set(fwd, 0, side === 'L' ? up : -up, 'XYZ'); a.bones['Arm.' + side].quaternion.setFromEuler(EUL); }
+const HAND = { L: V(0.5, -1.5, 0.15), R: V(-0.5, -1.5, 0.15) };
+const handP = (a, side = 'R') => a.bones['Arm.' + side].localToWorld(HAND[side].clone());
+// Point the arm so the hand reaches toward a world point (the arm is rigid: the hand lands on the line to it).
+function reachArm(a, side, target) {
+  const b = a.bones['Arm.' + side]; a.root.updateMatrixWorld(true);
+  const piv = b.getWorldPosition(V()), q = b.parent.getWorldQuaternion(QI).invert();
+  b.quaternion.setFromUnitVectors(HAND[side].clone().normalize(), target.clone().sub(piv).applyQuaternion(q).normalize()); b.updateMatrixWorld(true);
+}
 function place(a, x, tNow) {
   a.root.visible = x.visible !== false;
   if (!a.root.visible) return;
@@ -261,62 +362,97 @@ function place(a, x, tNow) {
   a.root.position.copy(p); a.root.rotation.set(0, x.heading, 0); a.root.scale.setScalar(1);
   robloxPose(a, x.layers.map(([n, at, w = 1, loop]) => [A[n], at, w, loop]));
   for (const [side, up, fwd] of x.arms) setArm(a, side, up, fwd);
-  if (x.draw) setArm(a, 'R', 0.12 + 0.05 * Math.sin(tNow * (x.scribble ? 31 : 13)), -1.15 + 0.08 * Math.sin(tNow * (x.scribble ? 23 : 9)));
+  if (x.hold && !x.arms.length) setArm(a, 'R', 0.08, -0.75);                // pencil held forward
   if (x.yaw) a.bones.Head.rotateY(x.yaw);
   if (x.lean) a.root.rotateX(x.lean);
   a.root.updateMatrixWorld(true);
-  if (x.y !== undefined) a.root.position.y = x.y; else a.root.position.y -= a.soleHeight() - p.y;
+  if (x.onBike) a.root.position.y = 1.3 + x.lift;                  // on the seat (axle SQ + 1.95 up) else if (x.y !== undefined) a.root.position.y = x.y; else a.root.position.y -= a.soleHeight() - p.y;
   a.root.updateMatrixWorld(true);
   setExpression(a, x.face);
 }
-const handP = (a, side = 'R') => a.bones['Arm.' + side].localToWorld(V(side === 'L' ? 0.5 : -0.5, -1.75, 0.2));
 
-// The pencil: in the drawer's hand with its tip on the drawing point, or lying on the desk.
-function placePencil(s, lx, ix) {
-  let tip = null, hand = null;
-  if (s < T.run && lx.draw) {                              // Leo: the tip follows the drawing front across the page
-    const r = easeInOut(inv(T.draw + 0.1, T.drawn, s)), q = PAPER.clone().add(V(0.55 * Math.sin(s * 9) * Math.abs(Math.sin(s * 2.3)), 0, lerp(1.08, -1.08, r)));
-    tip = q.add(V(0, 0.02, 0)); hand = handP(leo);
-  } else if (s >= T.grab && ix.draw) {                     // Mia: wobbly bars, or a scribble
-    const k = s * (ix.scribble ? 24 : 11); tip = PAPER.clone().add(V(0.45 * Math.sin(k), 0.02, 0.6 * Math.sin(k * 0.71 + 1))); hand = handP(mia);
-  } else if (s >= T.grab) { hand = handP(mia); tip = hand.clone().add(V(-0.2, -0.6, 0.1)); }
-  if (!tip) { pen.position.copy(PAPER).add(V(0.7, 0.1, 0.4)); pen.rotation.set(Math.PI / 2, 0, 0.3); return; }   // lying on the desk
-  pen.position.copy(tip); const dir = hand.clone().sub(tip).normalize(); pen.quaternion.setFromUnitVectors(V(0, 1, 0), dir);
+// ---------- drawings on Mia's paper: strokes (canvas px) that the paper and the pencil tip both follow ----------
+const CW = 512, CH = 680;
+const cv2w = (cx, cy) => V(PAPER.x + (cx / CW - 0.5) * 1.9, PAPER.y + 0.03, PAPER.z + (cy / CH - 0.5) * 2.5);
+const img2cv = (pl) => pl.map(([ix, iy]) => [CW / 2 - iy, CH / 2 + ix]);   // drawn upright for the drawer (Leo/Mia at +x)
+const circle = (cx, cy, r, n = 16, j = 0) => Array.from({ length: n + 1 }, (_, i) => [cx + Math.cos(i / n * 6.283) * (r + j * Math.sin(i * 2.7)), cy + Math.sin(i / n * 6.283) * (r + j * Math.sin(i * 2.7))]);
+const DOG_STROKES = [
+  [[-120, 0], [0, 6], [120, 0]], [[-100, 0], [-108, 105]], [[-62, 0], [-52, 108]], [[62, 2], [56, 108]], [[100, 0], [112, 104]],
+  circle(168, -46, 46, 16, 3), [[-120, 0], [-150, -40], [-168, -70]], [[152, -56], [154, -50]], [[182, -56], [184, -50]],
+].map(img2cv);
+const CAGE_STROKES = [circle(0, 160, 1, 24).map(([x, y], i) => [Math.cos(i / 24 * 6.283) * 190, 160 + Math.sin(i / 24 * 6.283) * 34]),
+  ...Array.from({ length: 11 }, (_, i) => { const x = -170 + i * 34; return [[x, 160], [x + 12, 70], [x - 10, -20], [x + 8, -110], [x, -160]]; }),
+  circle(0, -160, 1, 24).map(([x, y], i) => [Math.cos(i / 24 * 6.283) * 190, -160 + Math.sin(i / 24 * 6.283) * 34])].map(img2cv);
+const SCRIB_STROKES = [(() => { const pts = []; let a = 0; for (let i = 0; i <= 360; i++) { a += 0.47; const r = 70 + 60 * Math.sin(i * 0.23) + 22 * Math.sin(i * 1.7); pts.push([Math.cos(a) * r, Math.sin(a * 1.07) * r * 1.05]); } return pts; })()].map(img2cv);
+function strokeLen(st) { let L = 0; for (const pl of st) for (let i = 1; i < pl.length; i++) L += Math.hypot(pl[i][0] - pl[i - 1][0], pl[i][1] - pl[i - 1][1]); return L; }
+const LEN = new Map([[DOG_STROKES, strokeLen(DOG_STROKES)], [CAGE_STROKES, strokeLen(CAGE_STROKES)], [SCRIB_STROKES, strokeLen(SCRIB_STROKES)]]);
+// The first r (0..1) of a drawing: the partial strokes, and where the pencil tip is.
+function partial(st, r) {
+  let left = r * LEN.get(st); const out = []; let tip = st[0][0];
+  for (const pl of st) {
+    if (left <= 0) break; const cur = [pl[0]]; tip = pl[0];
+    for (let i = 1; i < pl.length && left > 0; i++) {
+      const l = Math.hypot(pl[i][0] - pl[i - 1][0], pl[i][1] - pl[i - 1][1]), k = Math.min(1, left / l);
+      tip = [pl[i - 1][0] + (pl[i][0] - pl[i - 1][0]) * k, pl[i - 1][1] + (pl[i][1] - pl[i - 1][1]) * k]; cur.push(tip); left -= l;
+    }
+    out.push(cur);
+  }
+  return { out, tip };
 }
-
-// Mia's paper: blank -> the wobbly cage being drawn -> blank (it came to life) -> a scribble -> blank (yarn).
+const DRAWS = () => [
+  { st: DOG_STROKES, a: 0.05, b: T.dogPop - 0.05, who: 'mia', key: 'dog' },
+  { st: CAGE_STROKES, a: T.cageDraw - 0.2, b: T.cage - 0.05, who: 'mia', key: 'cage' },
+  { st: SCRIB_STROKES, a: T.scrib - 0.2, b: T.yarn - 0.05, who: 'mia', key: 'scrib' },
+];
 function drawPaper(s) {
   if (s >= T.draw && s < T.alive) {                        // Leo's lion: the pencil drawing appears nose first
     const r = easeInOut(inv(T.draw + 0.1, T.drawn, s)), n = Math.round(r * 80);
     paper.draw('lion' + n, (c, w, h) => {
       const Wd = DRAWING.width, Hd = DRAWING.height, sx = Wd * (1 - n / 80);
-      c.save(); c.translate(w / 2, h / 2); c.rotate(Math.PI / 2);              // feet toward Leo, nose toward +z
+      c.save(); c.translate(w / 2, h / 2); c.rotate(Math.PI / 2);              // feet toward the drawer, nose toward +z
       if (n > 0) c.drawImage(DRAWING, sx, 0, Wd - sx, Hd, -320 + 640 * (1 - n / 80), -200, 640 * n / 80, 400);
       c.restore();
     });
-  } else if (s >= T.cageDraw && s < T.cage) {
-    const n = Math.floor(clamp((s - T.cageDraw) / (T.cage - T.cageDraw)) * 12);
-    paper.draw('cage' + n, (c, w, h) => {
-      c.lineWidth = 7; c.beginPath(); c.ellipse(w / 2, h * 0.78, w * 0.32, h * 0.06, 0, 0, 7); c.stroke();
-      for (let i = 0; i < n; i++) { const x = w * 0.2 + (i / 11) * w * 0.6; c.beginPath(); c.moveTo(x, h * 0.78); c.bezierCurveTo(x + 18, h * 0.6, x - 18, h * 0.4, x + 6, h * 0.22); c.stroke(); }
-    });
-  } else if (s >= T.scrib && s < T.yarn) {
-    const n = Math.floor(clamp((s - T.scrib) / (T.yarn - T.scrib)) * 40);
-    paper.draw('scrib' + n, (c, w, h) => {
-      c.lineWidth = 7; c.strokeStyle = '#2d2d33'; c.beginPath(); let a = 0;
-      for (let i = 0; i <= n * 9; i++) { a += 0.47; const r = 80 + 70 * Math.sin(i * 0.23) + 25 * Math.sin(i * 1.7); const px = w / 2 + Math.cos(a) * r, py = h / 2 + Math.sin(a * 1.07) * r * 1.1; i ? c.lineTo(px, py) : c.moveTo(px, py); }
-      c.stroke();
-    });
-  } else paper.draw('blank');
+    return;
+  }
+  for (const d of DRAWS()) if (s >= d.a && s < d.b + 0.1) {
+    const r = clamp((s - d.a) / (d.b - d.a)), n = Math.round(r * 60);
+    paper.draw(d.key + n, (c) => { c.lineWidth = 7; for (const pl of partial(d.st, n / 60).out) { c.beginPath(); pl.forEach(([x, y], i) => (i ? c.lineTo(x, y) : c.moveTo(x, y))); c.stroke(); } });
+    return;
+  }
+  paper.draw('blank');
+}
+// Where the pencil tip is while someone draws (null when nobody is drawing).
+function drawTip(s) {
+  if (s >= T.draw && s < T.drawn + 0.15) {
+    const r = easeInOut(inv(T.draw + 0.1, T.drawn, s));
+    return { who: leo, tip: PAPER.clone().add(V(0.5 * Math.sin(s * 9) * Math.abs(Math.sin(s * 2.3)), 0.03, lerp(1.08, -1.08, r))) };
+  }
+  for (const d of DRAWS()) if (s >= d.a && s < d.b) { const [x, y] = partial(d.st, clamp((s - d.a) / (d.b - d.a))).tip; return { who: mia, tip: cv2w(x, y) }; }
+  return null;
+}
+// The pencil: drawing (tip on the paper, the drawer's arm reaching it), held, or lying on the desk.
+function placePencil(s, lx, ix) {
+  pen.visible = !(s >= T.bike0 && s < T.bike1);
+  const d = drawTip(s);
+  if (d) {
+    reachArm(d.who, 'R', d.tip.clone().add(V(0.32, 0.5, 0.05)));            // grip just above the tip, toward the drawer
+    const hand = handP(d.who); pen.position.copy(d.tip); pen.quaternion.setFromUnitVectors(V(0, 1, 0), hand.sub(d.tip).normalize()); return;
+  }
+  const holder = s < T.grab1 ? mia : s < T.run ? leo : s >= T.grab ? mia : null;
+  if (!holder) { pen.position.copy(PAPER).add(V(0.75, 0.1, -0.2)); pen.rotation.set(Math.PI / 2, 0, 0.35); return; }   // dropped on the desk
+  const b = holder.bones['Arm.R'], hand = handP(holder), along = b.localToWorld(V(-0.5, -2.2, 0.2)).sub(hand).normalize();
+  pen.position.copy(hand).addScaledVector(along, 0.4); pen.quaternion.setFromUnitVectors(V(0, 1, 0), along.negate());
 }
 
 // ---------- shots (real time) ----------
 const SHOTS = [
-  [0, 'draw'], [W.every1 - 0.15, 'page'], [W.every2 - 0.12, 'tooth'], [T.alive - 0.1, 'alive'], [T.roar - 0.15, 'roar'],
+  [0, 'hook'], [W.exactly - 0.15, 'rule'], [W.dog - 0.2, 'fetch'], [T.bike0 - 0.05, 'bike'], [T.bfShow, 'bf'], [T.leoUp - 0.1, 'leo'],
+  [W.watch - 0.25, 'watch'], [W.draws1 - 0.3, 'draw'], [W.every1 - 0.15, 'page'], [W.every2 - 0.12, 'tooth'], [T.alive - 0.1, 'alive'], [T.roar - 0.15, 'roar'],
   [T.run + 0.25, 'screams'], [W.lion2 - 0.1, 'corner'], [T.grab - 0.3, 'grab'], [T.cage - 0.1, 'cage'], [W.bars - 0.15, 'bars'],
   [T.roof - 0.1, 'roof'], [T.crouch - 0.1, 'leap'], [W.stick2 - 0.15, 'steps'], [T.bat1 - 0.35, 'bats'], [T.stops - 0.15, 'stops'],
   [T.cat - 0.1, 'cat'], [W.one - 0.25, 'idea'], [T.scrib - 0.1, 'scribble'], [T.yarn + 0.15, 'yarn'], [T.pounce - 0.3, 'pounce'],
-  [W.once - 0.15, 'perfect'],
+  [W.once - 0.15, 'perfect'], [T.ask - 0.25, 'ask'], [T.no - 0.25, 'no'], [T.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 function look(stage, p, tg, fov = 40, ext = 26) {
   const c = stage.camera; c.position.copy(p); c.fov = fov; c.updateProjectionMatrix(); c.up.set(0, 1, 0); c.lookAt(tg);
@@ -360,6 +496,18 @@ export function update(t, stage) {
     else { yarn.group.position.copy(Y.pos); yarn.group.rotation.set(0, 0, -Y.roll); }
     yarn.group.scale.setScalar(Y.scale ?? 1);
   }
+  // the dog, the fetch stick, the bike
+  const D = dogAt(s); dog.root.visible = D.visible;
+  if (D.visible) { dog.root.position.copy(D.pos).add(V(0, D.y, 0)); dog.root.rotation.set(0, D.heading, 0); dog.root.scale.setScalar(D.scale); poseDog(dog, D.pose); dog.root.updateMatrixWorld(true); }
+  stk.visible = s >= W.dog - 0.4 && s < T.bike0;
+  if (stk.visible) {
+    if (s < T.throw) { stk.position.copy(handP(mia, 'L')); stk.rotation.set(0, 0.4, 0.3); }
+    else if (s < T.throw + 0.5) { const u = (s - T.throw) / 0.5, h0 = V(MIA_DRAW.x - 0.8, 3.4, MIA_DRAW.z); stk.position.copy(h0.lerp(STICK_LAND.clone().add(V(0, 0.08, 0)), u)).add(V(0, 3.5 * Math.sin(Math.PI * u), 0)); stk.rotation.set(u * 9, u * 4, 0); }
+    else if (!D.carry) { stk.position.copy(STICK_LAND).add(V(0, 0.08, 0)); stk.rotation.set(0, 0.7, 0); }
+    else { const m = V(0, 1.15, 1.25).applyMatrix4(dog.root.matrixWorld); stk.position.copy(m); stk.rotation.set(0, D.heading + Math.PI / 2, 0); }   // in its mouth
+  }
+  const BK = bikeAt(s); bike.root.visible = BK.visible;
+  if (BK.visible) { bike.root.position.copy(BK.pos).add(V(0, SQ + BK.lift, 0)); bike.root.rotation.set(0, -Math.PI / 2, 0); for (const w of bike.wheels) w.rotation.x = BK.ang; }
   // flying papers at the roar
   for (const p of room.papers) {
     const k = s - T.roar - 0.1, d = p.userData;
@@ -372,7 +520,19 @@ export function update(t, stage) {
   // ---------- cameras ----------
   const roarShake = shake(t, T.roar + 0.1, 0.35, 0.8), landShake = shake(t, T.out, 0.3, 0.4), cageShake = shake(t, T.cageLand, 0.25, 0.35);
   const lp = lion.rig.position.clone();
+  const mp = mia.root.position.clone(), lpo = leo.root.position.clone();
   switch (shot.id) {                                       // every camera inside the room (x -22..22, z -14..14)
+    case 'hook': { const c = PAPER.clone(); const k = smooth(inv(T.dogPop - 0.1, T.dogPop + 0.6, t));
+      look(stage, V(c.x - lerp(2.4, 6.4, k), c.y + lerp(2.9, 2.6, k), c.z + lerp(0.2, 1.6, k)), c.clone().add(V(0.25, 0, 0)).lerp(V(-6.2, 1.6, 2.4), k), 46); break; }   // the drawing, then the dog hopping off
+    case 'rule': look(stage, V(-10.5, 4.6, 5.2), V(-3.6, 2.6, 2.4), 46); break;                                                // the dog (four sticks) and proud Mia
+    case 'fetch': look(stage, V(-1.0, 6.5, 13.4), V(-6.6, 1.6, 4.6), 58); break;
+    case 'bike': { const bp = bike.root.position; look(stage, V(bp.x + 2.5, 4.4, 12.8), V(bp.x - 0.5, 2.6, bp.z), 52); break; }      // tracking alongside
+    case 'bf': look(stage, V(-9.0, 5.0, 6.0), V(-1.0, 3.4, 3.6), 44); break;
+    case 'leo': look(stage, V(-10.5, 6.5, 2.0), lpo.clone().lerp(mp, 0.4).add(V(0, 3.2, 0)), 50); break;
+    case 'watch': look(stage, lpo.clone().add(V(-5.8, 4.8, 1.6)), lpo.clone().add(V(0, 4.0, 0)), 38); break;
+    case 'ask': look(stage, V(-9.0, 5.2, 8.2), V(-2.2, 3.4, 3.6), 46); break;
+    case 'no': look(stage, V(-6.8, 4.8, 7.4), V(-2.0, 3.9, 3.4), 40); break;
+    case 'cta': look(stage, V(lerp(5, 4, u), 8.8, 13.4), V(-8, 2.6, 4), 64); break;
     case 'draw': look(stage, V(lerp(-10.8, -10.2, u), 6.8, 3.6), V(-3.2, 3.8, 0.8), 40); break;                                 // Leo drawing, from the board side
     case 'page': { const c = PAPER.clone(); look(stage, V(c.x - lerp(2.6, 2.3, u), c.y + lerp(3.5, 3.2, u), c.z), c.clone().add(V(0.25, 0, 0)), 46); break; }   // across the desk at the drawing, Leo behind it
     case 'tooth': { const c = PAPER.clone().add(V(0.15, 0, 0.75)); look(stage, V(c.x - 1.3, c.y + lerp(1.9, 1.6, u), c.z + 0.2), c, 44); break; }
@@ -417,17 +577,46 @@ function sparkles(g, s, p3, t, k) {                      // the "comes to life" 
   }
 }
 function heart(g, s, x, y, r, a) { g.save(); g.globalAlpha = a; g.translate(x * s, y * s); g.fillStyle = '#ff5c8a'; g.beginPath(); g.moveTo(0, r * 0.35 * s); g.bezierCurveTo(-r * s, -r * 0.4 * s, -r * 0.4 * s, -r * 1.1 * s, 0, -r * 0.45 * s); g.bezierCurveTo(r * 0.4 * s, -r * 1.1 * s, r * s, -r * 0.4 * s, 0, r * 0.35 * s); g.fill(); g.restore(); }
+function bubble(g, s, p3, text, t0, t, { size = 64, edge = '#9b5cff', y = null } = {}) {
+  const k = easeOutBack(clamp((t - t0) / 0.22), 1.8); if (k <= 0) return;
+  const p = project(p3); g.save(); g.font = `${size * s}px "Luckiest Guy"`;
+  const w = g.measureText(text).width / s + 80, h = size * 1.15 + 50, bx = clamp(p.x, 70 + w / 2, 1010 - w / 2), by = clamp(y ?? p.y - 250, 330 + h / 2, 1050 - h / 2);
+  g.translate(bx * s, by * s); g.scale(k, k);
+  const tx = clamp(p.x - bx, -w / 2 + 50, w / 2 - 50);
+  g.beginPath(); g.moveTo((tx - 32) * s, (h / 2 - 4) * s); g.lineTo(clamp(p.x - bx, -w, w) * 0.85 * s, (h / 2 + 70) * s); g.lineTo((tx + 32) * s, (h / 2 - 4) * s); g.closePath();
+  g.fillStyle = '#ffffff'; g.fill(); g.lineWidth = 7 * s; g.strokeStyle = edge; g.stroke();
+  roundRect(g, (-w / 2) * s, (-h / 2) * s, w * s, h * s, 34 * s); g.fillStyle = '#ffffff'; g.fill(); g.stroke();
+  g.fillStyle = '#16182a'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(text, 0, 4 * s); g.restore();
+}
 export function overlay(g, s, t) {
   const st = LST;
+  if (t > T.dogPop - 0.1 && t < T.dogPop + 0.7) sparkles(g, s, dog.root.position.clone().add(V(0, 1, 0)), t, Math.sin(Math.PI * inv(T.dogPop - 0.1, T.dogPop + 0.7, t)) * 0.6);
+  if (SHOT === 'bike') for (const at of [W.bonk1, W.bonk2]) if (t > at && t < at + 0.7) bigText(g, s, 'BONK!', at === W.bonk1 ? 360 : 700, at === W.bonk1 ? 560 : 680, 120, '#ffd23f', easeOutBack(clamp((t - at) / 0.15), 2.2), at === W.bonk1 ? -0.12 : 0.1);
+  if (SHOT === 'watch' && t > W.watch - 0.05) bubble(g, s, leo.root.position.clone().add(V(0, 5.4, 0)), 'Watch and learn.', W.watch - 0.05, t, { y: 470 });
+  if (SHOT === 'no' && t > W.no - 0.05) bubble(g, s, mia.root.position.clone().add(V(0, 5.4, 0)), "No. You're too good.", W.no - 0.05, t, { size: 58, edge: '#ff5c8a', y: 470 });
+  if (t >= T.cta) {                                        // call to action
+    const k2 = easeOutBack(clamp((t - T.cta) / 0.3), 1.6);
+    g.save(); g.translate(540 * s, 440 * s); g.scale(k2, k2);
+    roundRect(g, -440 * s, -170 * s, 880 * s, 340 * s, 36 * s); g.fillStyle = 'rgba(12,16,32,.92)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#ffd23f'; g.stroke();
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.font = `${60 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('MORE STORIES LIKE THIS', 0, -100 * s);
+    g.font = `800 ${46 * s}px Montserrat`; g.fillStyle = '#ffd23f'; g.fillText('@viralrobloxgames', 0, -26 * s);
+    roundRect(g, -170 * s, 50 * s, 340 * s, 84 * s, 20 * s); g.fillStyle = '#fe2c55'; g.fill();
+    g.font = `${52 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('FOLLOW', 0, 95 * s);
+    g.restore();
+  }
   if (st && t > T.alive - 0.1 && t < T.land + 0.5) sparkles(g, s, lion.rig.position.clone().add(V(0, 2.5, 0)), t, Math.sin(Math.PI * inv(T.alive - 0.1, T.land + 0.5, t)));
   if (SHOT === 'roar' && t > T.roar + 0.05) bigText(g, s, 'ROAR!', 540, 520, 190, '#ffd23f', easeOutBack(clamp((t - T.roar - 0.05) / 0.2), 2.2), -0.06);
   if (SHOT === 'cage' && t > T.cageLand) bigText(g, s, 'CLANG!', 540, 520, 130, '#ffffff', easeOutBack(clamp((t - T.cageLand) / 0.2), 2));
   if (SHOT === 'roof' && t > W.roof - 0.1) bigText(g, s, 'NO ROOF', 540, 1300, 130, '#ff5c5c', easeOutBack(clamp((t - W.roof + 0.1) / 0.2), 2), 0.04);
   if (SHOT === 'bats') for (const at of [T.bat1, T.bat2]) if (t > at + 0.1 && t < at + 0.8) bigText(g, s, 'BOP!', 380 + (at === T.bat2 ? 300 : 0), 640, 110, '#ffffff', easeOutBack(clamp((t - at - 0.1) / 0.15), 2), -0.1);
   if (SHOT === 'yarn' && t > T.yarn + 0.15 && t < T.yarn + 1.2) sparkles(g, s, yarn.group.position.clone(), t, 0.7);
-  if ((SHOT === 'pounce' || SHOT === 'perfect') && t > T.roll + 0.4) {
+  if ((SHOT === 'pounce' || SHOT === 'perfect') && t > T.roll + 0.4 && t < T.ask - 0.25) {
     const p = project(lion.rig.position.clone().add(V(0, 3.2, 0)));
     bigText(g, s, 'PURRR...', clamp(p.x, 260, 820), clamp(p.y - 260, 400, 1400), 92, '#ffb3cf', easeOutBack(clamp((t - T.roll - 0.4) / 0.25), 2), -0.05);
     for (let i = 0; i < 5; i++) { const k = ((t * 0.6 + i / 5) % 1); heart(g, s, p.x + Math.sin(i * 2.1 + t) * 120, p.y - 120 - k * 300, 30 + 10 * Math.sin(i), 1 - k); }
   }
 }
+
+export const cast = () => ({ leo, mia, max, noob, lion, dog, bf, cg, yarn, room });
+export const TIMES = T;
