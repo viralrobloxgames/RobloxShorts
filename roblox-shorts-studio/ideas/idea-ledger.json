@@ -337,6 +337,16 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/paperclip-for-a-house",
       "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; full web render running."
+    },
+    {
+      "title": "He Ordered A Fighter Jet From Pepsi",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1996 a student saw a Pepsi ad offer a fighter jet for 7,000,000 points, found extra points cost 10 cents, got five investors to front $700,000 and mailed the check; Pepsi sent it back with coupons, a judge ruled no reasonable person would believe the offer, and Pepsi re-ran the ad at 700,000,000 points with 'just kidding'.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/fighter-jet-from-pepsi",
+      "notes": "Taken from OddFrame's Pepsi Points fighter jet Short (26K views, one of their top Shorts) at the user's request ('make another story'); own script and staging. Web route; jet landing at a school as the hook, small-print zoom, number rolls, returned check and coupons, courtroom, 700,000,000 + JUST KIDDING payoff."
     }
   ],
   "statuses": [
