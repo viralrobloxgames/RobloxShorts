@@ -488,7 +488,7 @@ export function update(t, stage) {
   const L = headP(leo), M = headP(max), boom = shake(t, T.boom, 0.45, 0.6), land = shake(t, T.land, 0.6, 0.7), crash = shake(t, T.crash, 0.25, 0.4);
   const mid = L.clone().lerp(M, 0.5);
   switch (shot.id) {
-    case 'cold': look(stage, V(lerp(-2.6, -3.2, u), FY + 11, lerp(6.5, 5.5, u)), V(-5, FY + 3, -4.5), 56); break;
+    case 'cold': look(stage, V(lerp(-2.4, -2.9, u), FY + 3.8, lerp(4.4, 3.6, u)), V(-8, FY + 5.5, -6.5), 58); break;
     case 'ask': look(stage, V(lerp(10.5, 9.5, u), FY + 6.6, 6.5), V(-5, FY + 3.4, -2), 50); break;
     case 'lie1': look(stage, L.clone().add(V(-6.4, 0.8, 2.6)), L.clone().add(V(0, -0.9, -0.6)), 42); break;
     case 'boom': look(stage, V(7.5, FY + 4.8, 5.5).add(boom), V(-4, FY + 4.4, -7), lerp(56, 50, u)); break;
