@@ -269,11 +269,31 @@
    "title": "The Backwards Umbrella",
    "series": "standalone story",
    "created": "2026-10-05",
-   "status": "rendering",
+   "status": "rendered_awaiting_approval",
    "logline": "When Leo's umbrella is open it rains everywhere except under it. He soaks his friends, shares it (the Noob doesn't fit), keeps it shut - until Max's barbecue goes up in flames and the rain saves the park. Mia ducks under: 'Room for one more?'",
    "platform": "TikTok (>60 s) / YouTube Shorts",
    "project": "projects/the-backwards-umbrella",
    "notes": "Park set, rain and fire effects; web route."
+  },
+  {
+   "title": "Anything Leo Pets",
+   "series": "standalone story",
+   "created": "2026-10-05",
+   "status": "dropped",
+   "logline": "Anything Leo pets with his gloves follows him forever: a puppy, kitten, goat and angry duck follow him to school and he can't lose them, so he stops petting things - until the zoo lion charges Max and Mia and he pets it. He throws the gloves away; Mia catches them, pats his head ('Good boy') and Leo becomes the pet.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/anything-leo-pets",
+   "notes": "Animal parade (pack retriever, cat, goat, lion; duck stand-in); web route. Dropped 2026-10-05: user didn't like the concept."
+  },
+  {
+   "title": "Say Their Name",
+   "series": "standalone story",
+   "created": "2026-10-05",
+   "status": "script_draft_awaiting_approval",
+   "logline": "In this obby, saying a player's name teleports them next to you; first to the top wins a million coins. Leo and Max keep summoning each other down, Leo's 'Steve' name tag fails, Mia summons both boys into mid-air over the lava - then tries the Noob, whose username takes so long to say he wins first, and her '...nine' teleports him to her holding a million coins.",
+   "platform": "TikTok (>60 s) / YouTube Shorts",
+   "project": "projects/say-their-name",
+   "notes": "Obby tower and lava from the pack, big name tags, teleport puff; web route."
   }
  ],
  "statuses": [

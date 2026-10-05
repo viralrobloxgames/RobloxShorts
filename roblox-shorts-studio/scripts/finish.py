@@ -92,6 +92,9 @@ def main():
             if not src.is_file():
                 raise SystemExit(f'Sound cue asset not found: {c["asset"]}')
             buf = cache.setdefault(src, load(src))
+            if c.get('dur'):                                  # cut an asset short (e.g. a loop that must stop on cue), 0.15 s fade-out
+                n = min(len(buf), int(c['dur'] * SR)); f = min(n, int(0.15 * SR))
+                buf = buf[:n].copy(); buf[n - f:] *= np.linspace(1, 0, f, dtype=np.float32)
         else:
             hz = c['tone'] if isinstance(c['tone'], list) else [c['tone']]
             buf = np.concatenate([tone(h, c.get('dur', .15), c.get('sweep', 0), c.get('square', False)) for h in hz])

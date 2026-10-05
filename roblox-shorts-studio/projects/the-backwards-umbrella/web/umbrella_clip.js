@@ -36,15 +36,15 @@ const storm = (t) => OPEN.reduce((k, [a, b]) => Math.max(k, (a < 0 ? 1 : smooth(
 // ---------- places ----------
 const L0 = LAWN.clone();                                              // the lawn: Leo opens it here
 const MAX0 = L0.clone().add(V(3.5, 0, 0.9)), MIA0 = L0.clone().add(V(-3.5, 0, 0.9)), NOOB0 = L0.clone().add(V(6.8, 0, -1.6));
-const MAX_UNDER = L0.clone().add(V(1.85, 0, 0.15)), MIA_UNDER = L0.clone().add(V(-1.85, 0, 0.15));
-const NOOB_TRY = L0.clone().add(V(3.6, 0, 0.35)), NOOB_OUT = L0.clone().add(V(5.6, 0, 1.2));
+const MAX_UNDER = L0.clone().add(V(2.2, 0, -1.1)), MIA_UNDER = L0.clone().add(V(-3.2, 0, 0.2));   // squeezed in: Mia beside his umbrella arm, Max a half step behind (no arms through each other)
+const NOOB_TRY = L0.clone().add(V(4.3, 0, 0.45)), NOOB_OUT = L0.clone().add(V(5.6, 0, 1.2));
 const DOG0 = L0.clone().add(V(-7.5, 0, 3.5));
 const WALK0 = L0.clone().add(V(-6, 0, 3)), WALK1 = L0.clone().add(V(10, 0, 3));   // "keeps it closed": strolls past them
 const LEO_B = V(6.5, 0, 8.5);                                         // at the barbecue
 const MAX_GRILL = GRILL.clone().add(V(2.0, 0, 0.2)), MIA_B = V(2.2, 0, 4.4), NOOB_B = CASTLE.clone().add(V(0.6, 0, 1.2));
 const ringAt = (a, r) => LEO_B.clone().add(V(Math.sin(a) * r, 0, Math.cos(a) * r));
 const MAX_R = ringAt(2.0, 5.2), MIA_R = ringAt(-1.75, 5.0), NOOB_R = ringAt(2.6, 7.4);
-const MIA_UNDER2 = LEO_B.clone().add(V(-1.75, 0, 0.1)), LEO_MOVED = LEO_B.clone().add(V(0.9, 0, 0));
+const MIA_UNDER2 = LEO_B.clone().add(V(-3.2, 0, 0.1)), LEO_MOVED = LEO_B.clone().add(V(0.6, 0, 0));   // beside his umbrella arm, clear of it
 
 // ---------- scene ----------
 let A = {}, leo, max, mia, noob, skye, extras = [], dog, P, B, U, R, R2, FIRE, STEAM, SPRAY, nCloud, nBolt, ceiling, spatula, cam, SHOT = 'hook', WETF = new Map(), setWorldWet;
@@ -212,14 +212,14 @@ function crowdAt(i, s) {
 }
 
 // ---------- wetness: integrated from the weather in fixed steps (exposed + raining -> soaks; sun or cover -> dries) ----------
-const umbCentre = (s) => { const x = leoAt(s); return VA(x.pos).add(V(Math.sin(x.heading) * 0.75, 0, Math.cos(x.heading) * 0.75)); };
+const umbCentre = (s) => { const x = leoAt(s), h = x.heading; return VA(x.pos).add(V(Math.sin(h) * 0.75 - Math.cos(h) * 1.0, 0, Math.cos(h) * 0.75 + Math.sin(h) * 1.0)); };   // over his right hand
 const wetCache = new Map();
 function wetness(key, posAt, w0, s) {
   const k = key + '@' + s.toFixed(3); if (wetCache.has(k)) return wetCache.get(k);
   let w = w0; const dt = 0.1;
   for (let t = 0; t < s; t += dt) {
     const st = storm(t), p = posAt(t);
-    const under = openK(t) > 0.5 && p.distanceTo(umbCentre(t)) < UMB_R * 0.95 && (p.y ?? 0) < 4;
+    const under = openK(t) > 0.5 && p.distanceTo(umbCentre(t)) < UMB_R * 1.25 && (p.y ?? 0) < 4;
     if (st > 0.5 && !under) w = Math.min(1, w + dt / 0.7); else w = Math.max(0, w - dt / (under ? 0.9 : 2.2));
   }
   wetCache.set(k, w); if (wetCache.size > 4000) wetCache.clear(); return w;
@@ -351,7 +351,7 @@ export function update(t, stage) {
     case 'mia': tg = look(stage, ip.clone().add(V(2.2, 4.4, 5.8)), ip.clone().add(V(0, 4.1, 0)), 36); break;
     case 'dog': tg = look(stage, DOG0.clone().add(V(2.6, 2.6, 10.0)), DOG0.clone().add(V(0, 1.9, 0)), 36); break;
     case 'closes': tg = look(stage, L0.clone().add(V(-1.5, 3.6, 9.5)), L0.clone().add(V(0, 4.4, 0)), 44); break;
-    case 'share': tg = look(stage, L0.clone().add(V(0.5, 4.8, 14.5)), L0.clone().add(V(0.6, 3.8, 0)), 46); break;
+    case 'share': tg = look(stage, L0.clone().add(V(-0.4, 4.8, 16.5)), L0.clone().add(V(-0.4, 3.7, -0.3)), 48); break;
     case 'noob': tg = look(stage, L0.clone().add(V(5.0, 4.6, 14.0)), L0.clone().add(V(3.4, 3.8, 0.4)), 46); break;
     case 'thunder': tg = look(stage, np.clone().add(V(1.5, 0, 9.5)).setY(5.4).add(zapShake), np.clone().setY(6.4), 52); break;
     case 'after': tg = look(stage, lp.clone().add(V(-3.5, 4.4, 12.5)), lp.clone().add(V(1.8, 3.2, -1)), 46); break;
@@ -368,7 +368,7 @@ export function update(t, stage) {
     default: tg = look(stage, V(0, 8, 24), V(0, 3, 0), 50);
   }
   cam = stage.camera;
-  const dry = ok > 0.3 ? [{ x: cc.x, z: cc.z, r: UMB_R * ok, top: cc.y }] : [];
+  const dry = ok > 0.3 ? [{ x: cc.x, z: cc.z, r: UMB_R * 1.25 * ok, top: cc.y }] : [];   // a little wider than the canopy: whoever squeezes in at its edge stays dry
   R.update(s, { centre: V(tg.x, 0, tg.z).lerp(cam.position.clone().setY(0), 0.35), amount: st, dry, R: 22, H: 22 });
 }
 

@@ -12,7 +12,7 @@ ANCHORS = {
     'job': ('job', 1), 'guard': ('guard', 1), 'steals': ('steals', 1), 'chase': ('chase', 1), 'jungle': ('jungle', 1),
     'safe': ('safe', 1), 'bonk': ('bonk', 1), 'cross': ('cross', 1), 'nobody': ('nobody', 1), 'month': ('month', 1),
     'four': ('four', 1), 'boss': ('boss', 1), 'star': ('star', 1), 'disguise': ('disguise', 1), 'sunglasses': ('sunglasses', 1),
-    'hoodie': ('hoodie', 1), 'tag': ('tag', 1), 'player2': ('player', 2), 'read': ('read', 1), 'through': ('through', 1),
+    'moustache': ('moustache', 1), 'tag': ('tag', 1), 'player2': ('player', 2), 'read': ('read', 1), 'through': ('through', 1),
     'behind': ('behind', 1), 'bases': ('bases', 1), 'full': ('full', 1), 'leos': ('leos', 1), 'most': ('most', 1), 'took': ('took', 1),
     'chased': ('chased', 1), 'stop': ('stop', 1), 'home': ('home', 1), 'sat': ('sat', 1), 'stars': ('stars', 1), 'hatched': ('hatched', 1),
     'once': ('once', 1), 'baby': ('baby', 1), 'jobs': ('jobs', 1), 'quit': ('quit', 1), 'hired': ('hired', 1), 'snacks': ('snacks', 1),
