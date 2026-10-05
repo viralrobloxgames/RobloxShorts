@@ -1,52 +1,69 @@
-# The Super Nose Detective, Case 2: The Big Cheese
+# Detective Max Sniffwell: The Vampire Case
 
-Series part 2 (Case 1 did okay: about 1k YouTube views, user asked for another, 2026-10-05). Same voice (`detective_noir`),
-same cast and running gags; Case 1's ending (Chief Leo arrested) is this case's setup.
+Standalone case (no numbering, no cliffhanger; see ideas/series/super-nose-detective.md). A clean take on the original's
+**Vampire Case** (2nd biggest episode, 820K Instagram views), built on the **Jacuzzi Case** rules from
+`research/dick-snifford-episodes-watched.md`: catchphrase three times with the last one cut short, title card at ~6 s,
+one long decisive sniff by ~0:30, a three-item smell list, a corrupt Chief at leisure, an ending where the picture
+contradicts the narration. Same voice (`detective_noir`), same outfit in every scene.
 
-## What changes from Case 1 (the improvements)
+Script v1 ("The Big Cheese": Leo breaks out of jail, cheese-covered map, donut trap, sneeze cliffhanger) was rejected
+2026-10-05 because the series is standalone cases. v2: `script.txt`, 221 words, ~94 s at Case 1's pace.
 
-- **The hook has impact in the first second** (workflow.md analytics): the smell physically knocks Max off his feet: he
-  sniffs, a green stink wave hits him, he flies back into a row of bins. Case 1 opened on a slow sniff and a title card.
-- **The power has a downside** (story.md "power with a downside"): one rule, the Super Nose follows the strongest smell
-  on the map, and Leo uses it against him by covering the whole map in stolen cheese. Each trail Max follows fixes
-  nothing and exposes more of the problem, until he flips the rule: instead of chasing Leo's smell, he gives Leo a smell
-  he can't resist. Case 1's nose just worked.
-- **Tighter:** about 155 words (~66 s in the noir voice; Case 1 ran 73.7 s), a new place or gag every 3-4 s.
-- **A whole-video counter:** CHEESE TRAILS FOUND (1 -> 12 -> 47), then the stake-out timer (0:00 -> 0:11).
-- **Running gags kept and flipped:** "Tempting. But I'm on a case." (Mia, perfume shop); the three-part smell line
-  (streets, cars, a very confused pigeon); Leo's donut weakness (Case 1's sprinkles) becomes the trap; the catchphrase
-  is turned on Leo ("Tempting, Leo?").
-- **Cliffhanger into Case 3:** the cheese finally breaks the nose: he sneezes and can't smell a thing.
+## What we kept from the original, and what we changed
 
-## Beats (hook first)
+| Original (Vampire Case) | Ours |
+|---|---|
+| Hangover after a party | Eleven slices of Mia's birthday cake (catchphrase in the hook: "I wasn't on a case.") |
+| Chief phones in, whisky on the desk | Chief Leo phones from a pool floatie, wants it closed before his barbecue |
+| Sniffs the corpse's mouth: "garlic" | Sniffs Count Vlad's mouth (knocked out, not dead): "Garlic bread." + three-item list |
+| Brides vouch for him; kind-vampire flashbacks | His sister vouches; flashbacks: carries noobs over lava, shares his umbrella (sun), finds lost puppies |
+| Hunter puts two stakes on the bar; detective thinks "fence posts" | Two stakes and a hammer at the smoothie shack; "I don't do camping." Then "It took me four minutes." |
+| Gunshot at the ceiling stops the staking | Stake knocked away, cuffs on |
+| "These ones pay their taxes" | "They're verified." (verified badge over their heads) |
+| Vampire gets up and leaves the country | Vlad respawns and leaves the server |
+| Detective's feet float toward the brides | His family asks him to stay for dinner; "Tempting." His shoes leave the floor |
 
-1. **HOOK (0-3 s).** Frame 1: Max mid-sniff in the plaza, nose glowing; a green stink shockwave rolls out of an alley,
-   hits him, he flies back into a row of bins (camera shake, bins scatter). *"Some smells you follow. This one knocked me
-   off my feet."*
-2. **The case (3-8 s).** Smash cut: the museum's empty cheese dome ("WORLD'S STINKIEST CHEESE"), then a jail cell with
-   bent bars and a Leo-shaped hole, tiny sprinkles on the floor. *"Somebody stole the stinkiest cheese in the city. And
-   Chief Leo just broke out of jail."*
-3. **The sniff (8-15 s).** Max sniffs; the gamepass glow; yellow-green cheese wisps rise from everything: the street,
-   parked cars, a pigeon (which coughs). Counter: CHEESE TRAILS FOUND 1 -> 12 -> 47; overhead map shot covered in
-   tangled green lines. *"I sniffed for Leo. Nothing. Just cheese. Cheese on the streets. Cheese on the cars. Cheese on
-   a very confused pigeon. Every trail on the map smelled the same."*
-4. **The realisation (15-17 s).** Push-in on Max's face. *"Smart. He'd buried his scent."*
-5. **Perfume shop / temptation (17-24 s).** Max follows the strongest trail into a pink perfume shop. Mia behind the
-   counter sprays a bottle right into his nose; speech bubble "Like it, detective?" Max staggers, holds up one hand.
-   *"I followed the strongest trail to a perfume shop. Mia sprayed my nose. Asked if I liked it. Tempting. But I'm on a
-   case."*
-6. **Montage of failures (24-31 s).** Three fast cuts, each a real move along a trail: a sock factory (a mountain of
-   socks, callback), a sewer grate (Max's head pops out), his own pink convertible (a cheese wheel on the driver's
-   seat). *"The next trail led to a sock factory. Then the sewers. Then my own car. My nose was useless."*
-7. **The flip (31-38 s).** Max straightens his collar. A Golden Donut on a plate in the middle of the empty plaza,
-   spotlight, steam; Max hides in a bin with only the nose poking out. Stake-out timer starts 0:00.
-   *"So I stopped chasing his smell, and gave him one. One fresh Golden Donut. Middle of the plaza. Sprinkles. Warm
-   glaze. Pure temptation."*
-8. **The catch (38-46 s).** Timer runs; at 0:11 Leo (in a terrible disguise: trench coat, sunglasses, a cheese wheel
-   under one arm) sprints in and dives for the donut. Max bursts out of the bin; the cuffs snap on. Leo's face, sprinkles
-   on his lips. *"He lasted eleven seconds. Tempting, Leo? Case closed."* CASE CLOSED stamp.
-9. **Cliffhanger (46-54 s).** Max takes a victory sniff of the air... sneezes; his nose glow flickers out (gamepass
-   pop-up: "SUPER NOSE: ERROR"). Close-up, worried. *"Then I sneezed. And for the first time, I couldn't smell a thing."*
-10. **CTA.** *"Follow Viral Roblox Games for case three."* End card: NEXT CASE... @viralrobloxgames.
+Content line: no swearing, no alcohol, no romance beyond "asked if I was single". The stake is cartoon and never lands.
 
-Content line: no swearing, no sexual references; Mia's flirting stays light (perfume, "Like it, detective?").
+## Beats
+
+1. **Cold open (0-5 s).** Night party in the plaza, string lights, Max dancing badly with a paper hat on. Mia holds out a
+   plate with one more slice. *"Last night was Mia's birthday. She offered me one more slice. Tempting. But I'm on a
+   case."* Hard cut to Max already eating it. *"I wasn't on a case."* Screen smears to black.
+2. **Title card (~6-9 s).** Morning bedroom, ceiling fan, Max face-down on the bed in full outfit, frosting on the tip of
+   his nose. Lock-up lower left: "Detective" / "MAX SNIFFWELL" / "The Vampire Case". Phone rings; he gropes for it.
+3. **The call (9-17 s).** Split screen: Leo on a pool floatie with sunglasses and a smoothie. *"Eleven slices later, the
+   Chief called. A vampire, knocked out cold at the haunted mansion. Nobody cares, he said. Close it before my
+   barbecue."* Leo bubble: "BBQ at 6."
+4. **Scene (17-22 s).** A gothic mansion absurdly placed on the sunny beach between palm trees. Inside: candles, Count
+   Vlad flat on the rug, cape, little "KO" stars over his head. Officer holds up his player card. *"Count Vlad. No
+   clues."*
+5. **The sniff (22-31 s).** Extreme close-up: Max kneels and lowers the nose right to Vlad's open mouth, held a beat too
+   long; the officer turns away. *"So I got close. Closer than anyone should."* Pause. *"Garlic bread."* A crust on the
+   rug. *"Extra butter. Thrown hard. And a hint of someone who hates vampires."*
+6. **Kind-vampire flashbacks (31-41 s).** Vlad's sister (pale, black dress) in the doorway. Warm-tinted flashbacks: Vlad
+   carrying a Noob across a lava obby, holding an umbrella over a kid in the sun, handing back a puppy. *"His sister said
+   he was the nicest guy on the server. He carried noobs over lava. Shared his umbrella. Found lost puppies."*
+7. **Temptation 2 (41-46 s).** Sister leans in, bubble "Are you single?" Max holds up one hand. *"She asked if I was
+   single. Tempting. But I'm on a case."*
+8. **The tail (46-52 s).** Max's pink convertible on the coast road; a black car in the mirror. Smoothie shack; a scruffy
+   stranger in a long coat sits beside him. *"A car had been tailing me all day. I stopped for a smoothie. The driver sat
+   beside me."*
+9. **Stakes (52-62 s).** He stands two sharpened stakes on the counter, then a hammer. Max looks at them blankly.
+   *"He set down two wooden stakes. And a hammer. Two vampires left, he said. Help me finish the job. I told him I don't
+   do camping."* Stranger leaves. Max sips. Counter in the corner ticks 0:00 -> 4:00. *"He left. It took me four
+   minutes."* Max spits out the smoothie.
+10. **Save (62-70 s).** Convertible skids up to the mansion. The hunter raised over a coffin with the stake; Max knocks
+    it away, cuffs snap on. *"At the mansion, he stood over a coffin. Stake down. Cuffs on."*
+11. **Verified (70-76 s).** Hunter bubble "Why protect VAMPIRES?" Push in on Vlad's family: blue verified ticks over
+    their heads. *"He asked why a cop would protect vampires. Simple. They're verified."*
+12. **Respawn (76-83 s).** Vlad respawns in a column of light, packs a coffin-shaped suitcase; "Vlad left the game" pops
+    up in the chat. *"Then Vlad respawned. Nobody here was nice to him. So he left the server."*
+13. **Ending (83-92 s).** The family in the doorway, candles. Bubble: "Stay for dinner?" Max: *"His family asked me to
+    stay for dinner. Tempting."* Close on his white loafers rising off the floor toward them. *"Some cases you close.
+    This one stays out of the report."*
+14. **CTA (92-94 s).** *"Follow Viral Roblox Games for more cases."* End card @viralrobloxgames.
+
+## Cover
+Lock-up lower left ("Detective" / "MAX SNIFFWELL" / "The Vampire Case") over Count Vlad (cape, pale, verified tick) with
+Max's nose in profile at the edge, inside the 3:4 band.

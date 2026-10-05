@@ -1,15 +1,17 @@
 {
-  "title": "The Super Nose Detective Case 2",
+  "title": "The Vampire Case",
   "character": "Max",
   "characters": [
-    "Max"
+    "Max",
+    "Mia",
+    "Leo"
   ],
-  "seconds": 66.0,
+  "seconds": 94.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "platform": "TikTok + YouTube Shorts",
-  "status": "idea; write story.md and script.txt, then narration, then author build_scene.py",
+  "status": "script v2 awaiting approval; then narration, then author build_scene.py",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {}

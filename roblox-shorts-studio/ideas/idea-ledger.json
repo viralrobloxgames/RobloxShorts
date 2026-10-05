@@ -189,12 +189,34 @@
       "project": "projects/the-last-penalty"
     },
     {
-      "title": "The Super Nose Detective: Case 2 (The Big Cheese)",
-      "series": "super nose detective (case 2)",
+      "title": "Don't Sneeze Outside",
+      "series": "standalone story",
+      "created": "2026-10-04",
+      "status": "dropped",
+      "logline": "Every time you sneeze, your gravity flips. Indoors you land on the ceiling; outdoors there's no ceiling. Leo blows a dandelion in Max's face and he falls up, catching a lamppost upside down; only another sneeze brings him down. Leo's pepper falls back on Leo. Mia's cat climbs the pole to his nose: he sneezes and drops to the sidewalk, safe, and the cat jumps on his chest. Ah... ah...",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/dont-sneeze-outside",
+      "notes": "Dropped 2026-10-04: the user found it boring. Replaced by Every Lie Comes True."
+    },
+    {
+      "title": "Every Lie Comes True",
+      "series": "standalone story",
+      "created": "2026-10-04",
+      "status": "delivered_local_review",
+      "logline": "Whatever Leo lies about comes true: a dragon eats his homework, he's the fastest kid in school, he has a million dollars. Then he crashes Max's bike and panics: 'I've never seen you before.' Max forgets him. Lying 'you're my best friend' brings Max back, but Max asks who broke the bike; Leo nearly blames the dragon (something lands on the roof) and tells the truth. 'Then you're buying me a new one.' 'Fine. I've got a million dollars.' Two true things in one day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/every-lie-comes-true",
+      "notes": "Delivered 2026-10-05 for review: delivery/Every_Lie_Comes_True.mp4 (76.5 s). Not posted."
+    },
+    {
+      "title": "The Vampire Case (Detective Max Sniffwell)",
+      "series": "super nose detective",
       "created": "2026-10-05",
       "status": "script_draft_awaiting_approval",
       "project": "projects/super-nose-case-2",
-      "logline": "Chief Leo breaks out of jail and buries his scent under the city's stinkiest cheese, so every trail the Super Nose finds smells the same. Max stops chasing his smell and gives him one: a Golden Donut in the middle of the plaza. Leo lasts eleven seconds. Then Max sneezes and can't smell a thing (cliffhanger into Case 3)."
+      "logline": "After eleven slices of birthday cake, Max is called to a haunted mansion on the beach: Count Vlad, the nicest vampire on the server, is knocked out cold and the Chief doesn't care. One long sniff of his mouth: garlic bread. A stranger tailing Max lays two wooden stakes on the counter and asks for help finishing the job; Max thinks he means camping. He works it out four minutes later, stops the hunter at the coffin, Vlad respawns and leaves the server because nobody was nice to him, and his family asks Max to stay for dinner. 'Tempting.' His shoes leave the floor.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "notes": "Script v1 'The Big Cheese' (Leo breaks out of jail, cheese-covered map, donut trap, sneeze cliffhanger) rejected 2026-10-05: the series is standalone cases. v2 is a clean take on the original's Vampire Case."
     }
   ],
   "statuses": [
