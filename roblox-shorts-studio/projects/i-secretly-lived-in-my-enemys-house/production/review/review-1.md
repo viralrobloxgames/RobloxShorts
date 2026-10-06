@@ -48,6 +48,32 @@ right tell. Spider drop insert (0:24.5) reads well. Levels even (-12.8 to -15.5)
 7. **VO "And this morning, he started a war" over a MONDAY 12:15 PM stamp. COULD.** Morning vs lunchtime (the stamp is
    right per the script). Fix, audio only: retake that VO line as "And today, he started a war" (same length).
 
+## Ch02 "Twelve Pancakes" (TUESDAY 6:04 AM), 2006 frames, 66.9 s
+
+Stitched from main (ch02_a 1-903 + ch02_b 904-2006): seam clean, A/V -0.03 s, -14.0 LUFS. blank_frames: none.
+Card clean over the ladder shot; hallway -> kitchen wide reads (Skye on the stairs, Dad at the stove); pancake steal
+from her side (0:29-0:30) and the pancake-stack foreground (0:17) are good; classroom end matches the boundary (Max
+upright, Skye walking off with one arm up). Levels even (-12.6 to -15.4, whispers -18/-19). Dad's voice is right.
+Max's voice: judged once "MAX voice replaced in ch02" lands (orchestrator).
+
+1. **0:14.2-0:16.2 (frames 427-487), Max's entrance is four cuts in two seconds, starting with a 5-frame flash.
+   MUST.** 0:14.20 a Max CU for ~5 frames (smiling, on "Dad, something was in my room"), 0:14.37 Max at the foot of
+   the stairs, 0:14.87 Max behind the island as Lily walks in, 0:16.03 Dad's yellow arm wipes across the lens, 0:16.2
+   the three-shot. It reads as a glitch and the smile contradicts "I didn't sleep at all". Fix: drop the 0:14.2 CU;
+   one shot of Max shuffling in from the stairs (face `tired`/`nervous`, not smiling) held to ~0:15.5, Lily enters in
+   it, then the three-shot. Keep Dad's arm out of the lens.
+2. **0:42.5-0:47.1 (frames 1276-1414), "Best. Pancake. Ever." is a 4.6 s frozen frame. SHOULD.** Skye at the back
+   door with the pancake lying on her flat hand block, which covers the lower half of her face; nothing moves, no
+   bite on "Ever" (the gate asked for one). Fix: pancake up at her chin with her face clear, a bite on "Ever"
+   (~0:46.6), and a small push-in or her stepping out of the door during the hold.
+3. **0:36.9-0:40.4 (frames 1108-1211), Lily's face is hidden for "Ghost, ghost, ghost, ghost." SHOULD.** She's
+   turned to Max with her head down; we get hair and a cheek. It's her funniest line and her deadpan is the joke.
+   Cheat her 3/4 to camera (face `smug`), Max's annoyed face behind her.
+4. **1:01.8-1:03.0 (frames 1855-1891), Max smiles on "How do you know that?". SHOULD.** Boundary says `suspicious`,
+   and a grin here tips the twist (he already knows). Face `suspicious` through the line.
+5. **0:11.5-0:14.0 (frames 346-420), Skye's whisper CU behind the island is underlit** (dark-brown face, same as
+   Ch1 #3). SHOULD: warm fill from the kitchen lights so her skin matches daytime Skye.
+
 ## Ch04 "Cinnamon" (WEDNESDAY 12:15 PM), 1833 frames, 61.1 s
 
 Stitched from main 15:05Z (ch04_a + ch04_b, commit 32dbd17): seam at frame 825 clean, A/V diff 0.0, -14.2 LUFS
