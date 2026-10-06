@@ -18,7 +18,7 @@ ANCHORS = {
     'newspaper': ('newspaper', 1), 'special': ('special', 1), 'train': ('train', 1), 'races': ('races', 1), 'america': ('america', 1),
     'seventytwo': ('seventytwo', 1), 'six': ('six', 1), 'hours': ('hours', 1), 'eleven': ('eleven', 1), 'minutes': ('minutes', 1),
     'beat2': ('beat', 2), 'book3': ('book', 3), 'eight': ('eight', 1),
-    'rival2': ('rival', 2), 'home': ('home', 1), 'four': ('four', 1), 'half': ('half', 1), 'later': ('later', 1),
+    'rival2': ('rival', 2), 'home': ('home', 1), 'four': ('four', 1), 'half': ('half', 1), 'later': ('later', 2),
     'follow': ('follow', 1),
 }
 norm = lambda w: re.sub(r"[^a-z0-9]", '', w.lower())

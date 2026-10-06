@@ -112,17 +112,17 @@ function miaAt(s) {
       break;
     }
     case 'sail': {
-      x = st(onShip(K.DECK_SPOT), ship.rotation.y, 'happy'); x.arms = BAG_L; x.wave = true; x.pos.y = onShip(K.DECK_SPOT).y;
+      x = st(onShip(K.DECK_SPOT), ship.rotation.y, 'happy'); x.bag = 'L'; x.arms = BAG_L; x.wave = true; x.pos.y = onShip(K.DECK_SPOT).y;
       if (s > W.dress - 0.2) x.face = 'laugh';
       break;
     }
     case 'verne': {
-      x = st(AM(-2.2, 4.4), 0.9, 'happy'); moveTo(x, AM(-9, 7), AM(-2.0, 2.6), T.verne, s, 12, 0.85); x.arms = x.moving ? BAG_L : BAG_L;
+      x = st(AM(-2.2, 4.4), 0.9, 'happy'); moveTo(x, AM(-9, 7), AM(-2.0, 2.6), T.verne, s, 12, 0.85); x.bag = 'L'; x.arms = BAG_L;
       if (!x.moving && s > W.meet) x.face = 'laugh';
       break;
     }
     case 'route': case 'race': case 'cta': {
-      x = st(onShip(K.DECK_SPOT), 0, SHOT === 'race' ? 'determined' : 'happy'); x.arms = BAG_L;
+      x = st(onShip(K.DECK_SPOT), 0, SHOT === 'race' ? 'determined' : 'happy'); x.bag = 'L'; x.arms = BAG_L;
       if (SHOT === 'cta') { x.wave = true; x.face = 'happy'; }
       break;
     }
@@ -132,7 +132,7 @@ function miaAt(s) {
       break;
     }
     case 'storm': {
-      x = st(onShip(K.DECK_SPOT.clone().add(V(-1, 0, -0.4))), -0.2, 'scared'); x.arms = [...BAG_L, ['R', 0.5, -0.9]];
+      x = st(onShip(K.DECK_SPOT.clone().add(V(-1, 0, -0.4))), -0.2, 'scared'); x.bag = 'L'; x.arms = [...BAG_L, ['R', 0.5, -0.9]];
       if (s > W.two2 - 0.2) x.face = 'annoyed';
       break;
     }
@@ -215,6 +215,8 @@ function place(a, x) {
 }
 // the palm (measured on the pack mesh): (-+0.5, -1.3, 0) in the arm bone frame
 const grip = (a, sd = 'R') => { a.bones['Arm.' + sd].updateMatrixWorld(true); return V(sd === 'R' ? -0.5 : 0.5, -1.3, 0).applyMatrix4(a.bones['Arm.' + sd].matrixWorld); };
+// just past the fist, for things held out in front of a raised arm (book, telegram)
+const tip = (a, sd = 'R') => { a.bones['Arm.' + sd].updateMatrixWorld(true); return V(sd === 'R' ? -0.5 : 0.5, -1.75, 0).applyMatrix4(a.bones['Arm.' + sd].matrixWorld); };
 const headPos = (a) => { a.bones.Head.updateMatrixWorld(true); return V(0, 0.55, 0).applyMatrix4(a.bones.Head.matrixWorld); };
 
 // ---------- shots ----------
@@ -267,8 +269,8 @@ export function update(t, stage) {
   // props in hands
   const mx = miaAt(s);
   P.bag.visible = !!mx.bag && mia.root.visible; if (P.bag.visible) { P.bag.position.copy(grip(mia, 'L')); P.bag.rotation.set(0, mia.root.rotation.y, 0); }
-  P.tele.visible = !!mx.tele && mia.root.visible; if (P.tele.visible) { P.tele.position.copy(grip(mia, 'R')); P.tele.rotation.set(-0.35, mia.root.rotation.y, 0); }
-  P.book.visible = max.root.visible; if (P.book.visible) { P.book.position.copy(grip(max, 'R')); P.book.rotation.set(0, max.root.rotation.y, 0); }
+  P.tele.visible = !!mx.tele && mia.root.visible; if (P.tele.visible) { P.tele.position.copy(tip(mia, 'R')).add(V(0, -0.3, 0)); P.tele.rotation.set(-0.2, mia.root.rotation.y, 0); }
+  P.book.visible = max.root.visible; if (P.book.visible) { P.book.position.copy(tip(max, 'R')).add(V(0, -0.45, 0)); P.book.rotation.set(0, max.root.rotation.y, 0); }
   // the "80" crossed out at the end
   S.cross.visible = SHOT === 'book' && s > W.eight - 0.15;
   // smoke from the funnels or the locomotive
