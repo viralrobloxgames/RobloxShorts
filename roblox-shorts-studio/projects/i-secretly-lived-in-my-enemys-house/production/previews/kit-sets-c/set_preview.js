@@ -94,8 +94,8 @@ export function update(t, stage) {
     const a = actors[k], m = set.marks[markName]; if (!m) throw new Error(`no mark ${setId}.${markName}`);
     a.root.visible = true; pose(a, kind || (m.sit ? 'sit' : m.crouch ? 'crouch' : ''));
     a.root.position.copy(m.pos); a.root.rotation.set(0, m.heading, 0);
-    if (m.sit) a.root.position.y = m.seatTop - 2 * a.scale;
-    if (m.floorSit) { pose(a, 'sit'); a.root.position.y = m.pos.y - 2 * a.scale; }
+    if (m.sit) a.root.position.y = m.seatTop - 1.5 * a.scale;
+    if (m.floorSit) { pose(a, 'sit'); a.root.position.y = m.pos.y - 1.5 * a.scale; }
     else if (kind === 'crouch' || m.crouch || m.crawl) a.root.position.y = m.pos.y - 1.5 * a.scale;
   }
   const c = set.cams[camName]; if (!c) throw new Error(`no cam ${setId}.${camName}`);

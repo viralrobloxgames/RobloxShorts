@@ -1,4 +1,4 @@
-STATUS: WORKING
+STATUS: READY
 
 Template ready: `web/ch_template.js`. Kit API + pipeline usage: `web/kit/README.md`.
 - Done and on main: kit index.js, sets/index.js, stage.js, lighting.js, camera.js, overlay.js, ch_template.js,
@@ -8,4 +8,5 @@ Template ready: `web/ch_template.js`. Kit API + pipeline usage: `web/kit/README.
   (wall 4:31 -> 3:00); copied frames identical to a no-skip render within renderer noise; two-segment encode + stitch:
   stream copy, seams frame-exact, A/V 0.000 s, -14.1 LUFS / -1.0 dBTP.
 - Requests answered in production/requests.md (practicals, beam fromProp, chinLight, clearShot fix, endScreen space).
-- Next: watch requests; READY once docs are complete.
+- Template checked on the real bedroom + classroom sets (set cams for the closet, walls hidden automatically).
+- Next: answer production/requests.md every ~20 min; available for a render or stitch job.
