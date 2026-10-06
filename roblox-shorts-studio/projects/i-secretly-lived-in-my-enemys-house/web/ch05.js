@@ -99,7 +99,7 @@ export async function setup(stage) {
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.lily, 'lily_day');
   A = await K.loadAnims(['idle', 'walk', 'climb', 'sit', 'shrug', 'point', 'talk']);
-  for (const id of ['hobby_horse', 'teapot', 'cup']) { P[id] = K.makeProp(id); stage.scene.add(P[id]); }
+  for (const id of ['hobby_horse', 'teapot', 'cup', 'cracker_packet']) { P[id] = K.makeProp(id); stage.scene.add(P[id]); }
   P.cupLily = K.makeProp('cup'); stage.scene.add(P.cupLily);
   T.grab = lilyPath().t2;
 }
@@ -179,7 +179,7 @@ export function update(t, stage) {
   const tea = t >= T.tea, bpOff = t >= T.backpackOff;
   K.setState({
     chapter: 5, hatch: 'open', tea, backpack: bpOff, hobbyHorse: t >= lilyPath().t2 + GRAB * 0.5 ? 'none' : 'boxes',
-    hide: tea ? ['teapot', 'cup_1'] : [],
+    hide: tea ? (lilyPours(t) ? ['teapot', 'cup_1'] : ['cup_1']) : t < at(2, 0.3) ? ['crackers'] : [],
   });
   K.dress(C.skye, bpOff ? 'skye_hoodie' : ['skye_hoodie', 'backpack']);
   K.applyLight(stage, 'attic_afternoon', { set });
@@ -211,6 +211,7 @@ function blockNest(t, idle) {
   const kneelUp = t >= at(6, -0.15) && t < at(7, 0.3);           // up on her knees to plead
   floorSit(C.skye, { pos: nest.pos, heading: -1.3 + (K.faceTo(nest, M.hatchHead()) + 1.3) * turn }, kneelUp ? 'kneel_up' : 'sit_cross');
   headYaw(C.skye, 0.2 * (1 - turn));
+  if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L');              // the cracker packet in her left hand
   if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'R', 0.8 + 0.2 * Math.sin(t * 14));   // "Boo" (one arm)
   if (t >= at(4) && t < end(4, 0.2)) K.gesture(C.skye, 'thumb_to_chest', 'R');                          // "modern ghost"
   if (kneelUp) { K.gesture(C.skye, 'hand_hold', 'L'); K.gesture(C.skye, 'hold_out', 'R', 0.55); K.gesture(C.skye, 'hold_out', 'L', 0.55); }
@@ -241,6 +242,7 @@ function blockNest(t, idle) {
   const lilyHasHorse = t >= L5.t2 + GRAB * 0.5 && t < T.horseGive;
   K.hold(P.hobby_horse, lilyHasHorse ? C.lily : C.skye, 'R');
   P.hobby_horse.visible = t >= L5.t2 + GRAB * 0.5;
+  K.hold(P.cracker_packet, C.skye, 'L'); P.cracker_packet.visible = t < at(2, 0.3);
   P.teapot.visible = P.cup.visible = P.cupLily.visible = false;
 }
 
@@ -257,19 +259,24 @@ function blockTea(t, idle) {
   if (sip(at(18), end(18, 0.5))) K.gesture(C.skye, 'cup_hold', 'R', 1);                          // "Professionally." (a sip)
   if (sip(at(20), end(20))) K.gesture(C.skye, 'hand_over_mouth', 'L', 0.6);                       // gossip
   K.gesture(C.skye, 'hand_hold', 'L');
-  P.hobby_horse.visible = true; K.hold(P.hobby_horse, C.skye, 'L');
+  // the hobby horse lies across her lap (head to her right), flat on her crossed legs
+  if (P.hobby_horse.parent !== STAGE.scene) STAGE.scene.add(P.hobby_horse);
+  K.place(P.hobby_horse, W(-3.5, 0.85, 0.5), Math.PI / 2, { flat: true }); P.hobby_horse.visible = true;
   P.cup.visible = true; K.hold(P.cup, C.skye, 'R');
   // Lily: teapot in her right hand (pours on "More tea, horse?" and at the end), her teddy beside her on the floor
-  const pour = sip(at(11, -0.2), end(11, 0.3)) || sip(at(24), end(24)) || t >= at(29, 1.6);
-  K.gesture(C.lily, pour ? 'hold_out' : 'cup_hold', 'R', pour ? 1 : 0.6);
+  const pour = lilyPours(t);
+  // pouring: arm out level so the pot clears the box; between pours the pot stands on the box (the set's teapot)
+  if (pour) K.gesture(C.lily, [-95, 0, 6], 'R');
   if (sip(at(23), end(23))) { K.gesture(C.lily, 'hold_out', 'L', 0.5); }                        // "I told him that." (a little shrug)
-  P.teapot.visible = true; K.hold(P.teapot, C.lily, 'R');
-  P.cupLily.visible = false;
+  K.hold(P.teapot, C.lily, 'R'); P.teapot.rotateX(0.5); P.teapot.visible = pour;
+  P.cupLily.visible = false; P.cracker_packet.visible = false;
   K.holdTeddy(C.lily, 'free');
   const tm = K.mark('attic', 'tea_teddy_lily'), td = C.lily.teddy;
   if (td.parent !== STAGE.scene) STAGE.scene.add(td);
   td.position.copy(tm.pos); td.rotation.set(0, tm.heading, 0); td.scale.setScalar(C.lily.scale);
 }
+
+const lilyPours = (t) => (t >= at(11, -0.2) && t < end(11, 0.3)) || (t >= at(24) && t < end(24)) || t >= at(29, 1.6);
 
 // floor poses from the cast (sit_cross, kneel, kneel_up): the pose's drop puts the seat on the floor
 function floorSit(actor, mark, pose) {
@@ -287,3 +294,23 @@ function headYaw(actor, yaw) { if (yaw) actor.bones.Head.quaternion.premultiply(
 export function overlay(g, s, t) {
   K.dayCard(g, s, t, CARD);
 }
+
+// ---------- held props, for web/ch05_hold.js: [t, who, hand, label] ----------
+export const HOLDS = () => {
+  const over = { up: 3.2, dist: 4.2, side: -1.5 };             // over the tea box (it hides the hands from eye level)
+  return [
+    [0.5, 'skye', 'L', 'cracker_packet (nest)'],
+    [0.5, 'lily', 'R', 'teddy hug (hatch)', { up: 3.0, dist: 4.0 }],
+    [T.climb + T.climbDur + 0.3, 'lily', 'L', 'teddy at her side (walking)'],
+    [at(6, 0.2), 'lily', 'R', 'hobby_horse (walking)'],
+    [at(9, 0.8), 'lily', 'R', 'hobby_horse held out', { side: 2.5, dist: 4.5 }],
+    [at(10, 1.4), 'skye', 'R', 'hobby_horse (Skye)', { up: 2.0 }],
+    [at(11, 0.3), 'lily', 'R', 'teapot pouring', over],
+    [at(12, 0.3), 'skye', 'R', 'cup held out', over],
+    [at(14, 0.3), 'skye', 'R', 'cup resting', over],
+    [at(15, 0.2), 'lily', 'R', 'teapot resting', over],
+    [at(18, 0.3), 'skye', 'R', 'cup sip', over],
+    [at(29, 1.8), 'skye', 'R', 'cup out (end)', over],
+    [at(29, 1.8), 'lily', 'R', 'teapot (end)', over],
+  ];
+};

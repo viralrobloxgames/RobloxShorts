@@ -1,0 +1,46 @@
+{
+ "voice": "lily_kid",
+ "text": "And you have to be the horse.",
+ "seed": 56309,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "And",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "you",
+   "start": 0.24,
+   "end": 0.4
+  },
+  {
+   "word": "have",
+   "start": 0.4,
+   "end": 0.64
+  },
+  {
+   "word": "to",
+   "start": 0.64,
+   "end": 0.82
+  },
+  {
+   "word": "be",
+   "start": 0.82,
+   "end": 0.94
+  },
+  {
+   "word": "the",
+   "start": 0.94,
+   "end": 1.1
+  },
+  {
+   "word": "horse.",
+   "start": 1.1,
+   "end": 1.36
+  }
+ ],
+ "words_md5": "a870ed48d9b4616ad539e44ea52e2f62",
+ "whisper": "small.en"
+}

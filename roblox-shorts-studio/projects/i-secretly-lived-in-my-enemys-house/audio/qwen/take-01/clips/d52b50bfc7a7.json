@@ -1,0 +1,76 @@
+{
+ "voice": "brittney",
+ "text": "Dear Max. The ghost was me. Sorry. Also, your dad's pancakes are amazing.",
+ "seed": 70333,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Dear",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "Max,",
+   "start": 0.34,
+   "end": 0.62
+  },
+  {
+   "word": "the",
+   "start": 0.9,
+   "end": 0.96
+  },
+  {
+   "word": "ghost",
+   "start": 0.96,
+   "end": 1.14
+  },
+  {
+   "word": "was",
+   "start": 1.14,
+   "end": 1.36
+  },
+  {
+   "word": "me.",
+   "start": 1.36,
+   "end": 1.6
+  },
+  {
+   "word": "Sorry.",
+   "start": 1.88,
+   "end": 2.02
+  },
+  {
+   "word": "Also,",
+   "start": 2.62,
+   "end": 2.62
+  },
+  {
+   "word": "your",
+   "start": 2.92,
+   "end": 3.02
+  },
+  {
+   "word": "dad's",
+   "start": 3.02,
+   "end": 3.46
+  },
+  {
+   "word": "pancakes",
+   "start": 3.46,
+   "end": 3.82
+  },
+  {
+   "word": "are",
+   "start": 3.82,
+   "end": 4.1
+  },
+  {
+   "word": "amazing.",
+   "start": 4.1,
+   "end": 4.4
+  }
+ ],
+ "words_md5": "2df95777c0ecb73021940459e18c837f",
+ "whisper": "small.en"
+}

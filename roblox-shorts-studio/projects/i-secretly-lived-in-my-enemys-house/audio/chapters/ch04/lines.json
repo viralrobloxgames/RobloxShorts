@@ -1,0 +1,267 @@
+{
+ "chapter": 4,
+ "header": "CH04 | WEDNESDAY | 12:15 PM | Cinnamon",
+ "duration": 60.885,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Wednesday. Day three. I hadn't brushed my hair since Monday, and something terrible was happening. Max was being nice.",
+   "start": 0.0,
+   "end": 6.68,
+   "clip": "audio/qwen/take-01/clips/27a7fcb928a3.wav",
+   "seed": 98985
+  },
+  {
+   "index": 2,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Hey, Skye. Want my cookie? You can have it.",
+   "start": 6.93,
+   "end": 10.142,
+   "clip": "audio/qwen/take-01/clips/e40709ce1cf5.wav",
+   "seed": 44086
+  },
+  {
+   "index": 3,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "What's wrong with it?",
+   "start": 10.392,
+   "end": 11.524,
+   "clip": "audio/qwen/take-01/clips/197e923f4724.wav",
+   "seed": 70879
+  },
+  {
+   "index": 4,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Nothing. It's a cookie.",
+   "start": 11.774,
+   "end": 13.546,
+   "clip": "audio/qwen/take-01/clips/e1229ba3f164.wav",
+   "seed": 54536
+  },
+  {
+   "index": 5,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Did you lick it?",
+   "start": 13.796,
+   "end": 14.836,
+   "clip": "audio/qwen/take-01/clips/387efae29062.wav",
+   "seed": 2599
+  },
+  {
+   "index": 6,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "No! I'm just being nice.",
+   "start": 15.086,
+   "end": 16.978,
+   "clip": "audio/qwen/take-01/clips/389544de3c40.wav",
+   "seed": 8305
+  },
+  {
+   "index": 7,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Since when are you nice to me?",
+   "start": 17.228,
+   "end": 18.868,
+   "clip": "audio/qwen/take-01/clips/fe5b8b09bf76.wav",
+   "seed": 70656
+  },
+  {
+   "index": 8,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Since a ghost told me to. It's a long story.",
+   "start": 19.118,
+   "end": 22.687,
+   "clip": "audio/qwen/take-01/clips/045d41e4aeb2.wav",
+   "seed": 86094
+  },
+  {
+   "index": 9,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "It wrote on our fridge. In my little sister's magnet letters.",
+   "start": 22.937,
+   "end": 26.637,
+   "clip": "audio/qwen/take-01/clips/4fd3106410a9.wav",
+   "seed": 31453
+  },
+  {
+   "index": 10,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Wow. Spooky. What did it say?",
+   "start": 26.887,
+   "end": 28.967,
+   "clip": "audio/qwen/take-01/clips/7d4400c585be.wav",
+   "seed": 9485
+  },
+  {
+   "index": 11,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "That's private.",
+   "start": 29.217,
+   "end": 30.296,
+   "clip": "audio/qwen/take-01/clips/8c89de855cc5.wav",
+   "seed": 10411
+  },
+  {
+   "index": 12,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Why is there a cobweb in your hair?",
+   "start": 31.146,
+   "end": 33.15,
+   "clip": "audio/qwen/take-01/clips/e71418a9f36e.wav",
+   "seed": 44037
+  },
+  {
+   "index": 13,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "It's fashion.",
+   "start": 33.4,
+   "end": 34.2,
+   "clip": "audio/qwen/take-01/clips/04188311e14d.wav",
+   "seed": 68496
+  },
+  {
+   "index": 14,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "And why do you smell like my dad's pancakes?",
+   "start": 34.45,
+   "end": 37.099,
+   "clip": "audio/qwen/take-01/clips/7cc9df29354b.wav",
+   "seed": 78220
+  },
+  {
+   "index": 15,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Lots of people have pancakes.",
+   "start": 37.349,
+   "end": 39.509,
+   "clip": "audio/qwen/take-01/clips/3b396fac8db7.wav",
+   "seed": 81404
+  },
+  {
+   "index": 16,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "With cinnamon?",
+   "start": 39.759,
+   "end": 40.643,
+   "clip": "audio/qwen/take-01/clips/65eaa03e426f.wav",
+   "seed": 79277
+  },
+  {
+   "index": 17,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Cinnamon is a very popular spice, Max.",
+   "start": 40.893,
+   "end": 43.84,
+   "clip": "audio/qwen/take-01/clips/5dacc00c2209.wav",
+   "seed": 39149
+  },
+  {
+   "index": 18,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Right. Hey, I tried cutting the crusts off my sandwich. You were right. It's better.",
+   "start": 44.09,
+   "end": 50.054,
+   "clip": "audio/qwen/take-01/clips/e5969ad722a3.wav",
+   "seed": 46375
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Since when do you cut off your crusts?",
+   "start": 50.304,
+   "end": 52.304,
+   "clip": "audio/qwen/take-01/clips/3389cffd4627.wav",
+   "seed": 77692
+  },
+  {
+   "index": 20,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Since this week. Want half?",
+   "start": 52.554,
+   "end": 54.675,
+   "clip": "audio/qwen/take-01/clips/e0f419dc3b4d.wav",
+   "seed": 42630
+  },
+  {
+   "index": 21,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Why is my face hot? Stop it, face. He's the enemy.",
+   "start": 55.725,
+   "end": 60.285,
+   "clip": "audio/qwen/take-01/clips/e859224b2dc9.wav",
+   "seed": 27247
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the classroom at lunchtime. Skye at her desk, hair messy, a cobweb in it. Max walks over with his lunch.",
+   "until": 0.0
+  },
+  {
+   "after_line": 11,
+   "at": 30.296,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Max leans in, frowning at her hair.",
+   "until": 31.146
+  },
+  {
+   "after_line": 20,
+   "at": 54.675,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Skye takes half. Max goes back to his desk. Skye stares after him.",
+   "until": 55.725
+  }
+ ]
+}

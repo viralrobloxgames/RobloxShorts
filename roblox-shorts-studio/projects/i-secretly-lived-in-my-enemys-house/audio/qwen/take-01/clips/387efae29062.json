@@ -3,5 +3,29 @@
  "text": "Did you lick it?",
  "seed": 2599,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Did",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "you",
+   "start": 0.34,
+   "end": 0.5
+  },
+  {
+   "word": "lick",
+   "start": 0.5,
+   "end": 0.7
+  },
+  {
+   "word": "it?",
+   "start": 0.7,
+   "end": 0.88
+  }
+ ],
+ "words_md5": "7b5b2934c911f3d07acc3f809e65dd14",
+ "whisper": "small.en"
 }

@@ -1,0 +1,21 @@
+{
+ "voice": "max_kid",
+ "text": "That's private.",
+ "seed": 10411,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "That's",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "private.",
+   "start": 0.38,
+   "end": 0.7
+  }
+ ],
+ "words_md5": "ec650c97bfd45676f479437daf960af1",
+ "whisper": "small.en"
+}

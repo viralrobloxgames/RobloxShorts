@@ -1,0 +1,36 @@
+{
+ "voice": "max_kid",
+ "text": "Since this week. Want half?",
+ "seed": 42630,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Since",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "this",
+   "start": 0.32,
+   "end": 0.56
+  },
+  {
+   "word": "week,",
+   "start": 0.56,
+   "end": 0.94
+  },
+  {
+   "word": "want",
+   "start": 1.44,
+   "end": 1.52
+  },
+  {
+   "word": "half?",
+   "start": 1.52,
+   "end": 1.8
+  }
+ ],
+ "words_md5": "625c1055af139c947788146f4cb0ea2c",
+ "whisper": "small.en"
+}

@@ -1,0 +1,21 @@
+{
+ "voice": "lily_kid",
+ "text": "Are you?",
+ "seed": 33169,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Are",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "you?",
+   "start": 0.22,
+   "end": 0.48
+  }
+ ],
+ "words_md5": "3eb9b6288ca0c7ffc997e7ce3c9e1d43",
+ "whisper": "small.en"
+}

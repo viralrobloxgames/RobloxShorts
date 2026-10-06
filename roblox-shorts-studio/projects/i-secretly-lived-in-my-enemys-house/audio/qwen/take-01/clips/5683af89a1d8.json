@@ -1,0 +1,7 @@
+{
+ "voice": "max_kid",
+ "text": "Hey. So. Do you want to go to the Halloween dance with me?",
+ "seed": 69884,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

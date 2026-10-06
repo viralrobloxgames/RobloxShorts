@@ -1,0 +1,61 @@
+{
+ "voice": "george_c",
+ "text": "Hang on. I made twelve pancakes. Why are there eleven?",
+ "seed": 73811,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Hang",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "on,",
+   "start": 0.3,
+   "end": 0.58
+  },
+  {
+   "word": "I",
+   "start": 0.82,
+   "end": 0.98
+  },
+  {
+   "word": "made",
+   "start": 0.98,
+   "end": 1.16
+  },
+  {
+   "word": "12",
+   "start": 1.16,
+   "end": 1.44
+  },
+  {
+   "word": "pancakes,",
+   "start": 1.44,
+   "end": 1.92
+  },
+  {
+   "word": "why",
+   "start": 2.52,
+   "end": 2.54
+  },
+  {
+   "word": "are",
+   "start": 2.54,
+   "end": 2.64
+  },
+  {
+   "word": "there",
+   "start": 2.64,
+   "end": 2.8
+  },
+  {
+   "word": "11?",
+   "start": 2.8,
+   "end": 3.02
+  }
+ ],
+ "words_md5": "7272bdae4a53115d40132798c3f5c228",
+ "whisper": "small.en"
+}

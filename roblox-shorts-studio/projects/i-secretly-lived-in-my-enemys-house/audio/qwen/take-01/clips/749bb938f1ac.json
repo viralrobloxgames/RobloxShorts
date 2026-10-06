@@ -1,0 +1,26 @@
+{
+ "voice": "george_c",
+ "text": "For a week?",
+ "seed": 42118,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "for",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "a",
+   "start": 0.2,
+   "end": 0.34
+  },
+  {
+   "word": "week?",
+   "start": 0.34,
+   "end": 0.52
+  }
+ ],
+ "words_md5": "cc8623221ebba8dc86b23622c0231756",
+ "whisper": "small.en"
+}

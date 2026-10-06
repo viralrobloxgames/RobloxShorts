@@ -1,0 +1,51 @@
+{
+ "voice": "max_kid",
+ "text": "Dad! I'll clean the attic. Your football's starting!",
+ "seed": 50343,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Dad,",
+   "start": 0.0,
+   "end": 0.46
+  },
+  {
+   "word": "I'll",
+   "start": 0.96,
+   "end": 1.2
+  },
+  {
+   "word": "clean",
+   "start": 1.2,
+   "end": 1.4
+  },
+  {
+   "word": "the",
+   "start": 1.4,
+   "end": 1.62
+  },
+  {
+   "word": "attic.",
+   "start": 1.62,
+   "end": 1.94
+  },
+  {
+   "word": "Your",
+   "start": 2.46,
+   "end": 2.56
+  },
+  {
+   "word": "football's",
+   "start": 2.56,
+   "end": 3.16
+  },
+  {
+   "word": "starting.",
+   "start": 3.16,
+   "end": 3.5
+  }
+ ],
+ "words_md5": "a88b081b4dfe4fc3fd7ef118873630b8",
+ "whisper": "small.en"
+}

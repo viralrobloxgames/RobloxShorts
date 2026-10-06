@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "Ghost, ghost, ghost, ghost.",
+ "seed": 28577,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Ghost,",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "ghost,",
+   "start": 1.32,
+   "end": 1.32
+  },
+  {
+   "word": "ghost,",
+   "start": 2.08,
+   "end": 2.26
+  },
+  {
+   "word": "ghost.",
+   "start": 3.1,
+   "end": 3.12
+  }
+ ],
+ "words_md5": "ef61f6672e88a7ecad883c6fe778fd12",
+ "whisper": "small.en"
+}

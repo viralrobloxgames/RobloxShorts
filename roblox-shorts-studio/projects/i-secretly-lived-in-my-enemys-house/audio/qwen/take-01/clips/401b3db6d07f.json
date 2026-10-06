@@ -1,0 +1,81 @@
+{
+ "voice": "brittney",
+ "text": "Friday. Day five. Dad kept his promise. And this time, he brought backup.",
+ "seed": 1354,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Friday",
+   "start": 0.0,
+   "end": 0.56
+  },
+  {
+   "word": "day",
+   "start": 0.56,
+   "end": 0.82
+  },
+  {
+   "word": "five",
+   "start": 0.82,
+   "end": 1.16
+  },
+  {
+   "word": "dad",
+   "start": 1.16,
+   "end": 1.52
+  },
+  {
+   "word": "kept",
+   "start": 1.52,
+   "end": 1.78
+  },
+  {
+   "word": "his",
+   "start": 1.78,
+   "end": 1.96
+  },
+  {
+   "word": "promise",
+   "start": 1.96,
+   "end": 2.28
+  },
+  {
+   "word": "and",
+   "start": 2.28,
+   "end": 2.72
+  },
+  {
+   "word": "this",
+   "start": 2.72,
+   "end": 2.88
+  },
+  {
+   "word": "time",
+   "start": 2.88,
+   "end": 3.16
+  },
+  {
+   "word": "he",
+   "start": 3.16,
+   "end": 3.36
+  },
+  {
+   "word": "brought",
+   "start": 3.36,
+   "end": 3.52
+  },
+  {
+   "word": "back",
+   "start": 3.52,
+   "end": 3.82
+  },
+  {
+   "word": "up",
+   "start": 3.82,
+   "end": 4.02
+  }
+ ],
+ "words_md5": "7b5511c045aa1436f1109357131be70b",
+ "whisper": "small.en"
+}

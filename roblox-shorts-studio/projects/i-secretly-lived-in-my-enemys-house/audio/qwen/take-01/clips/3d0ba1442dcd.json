@@ -1,0 +1,66 @@
+{
+ "voice": "max_kid",
+ "text": "So. The Halloween dance. Do you want to go? With me?",
+ "seed": 750,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "So,",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "the",
+   "start": 1.12,
+   "end": 1.3
+  },
+  {
+   "word": "Halloween",
+   "start": 1.3,
+   "end": 1.68
+  },
+  {
+   "word": "dance,",
+   "start": 1.68,
+   "end": 2.12
+  },
+  {
+   "word": "do",
+   "start": 2.64,
+   "end": 2.86
+  },
+  {
+   "word": "you",
+   "start": 2.86,
+   "end": 2.98
+  },
+  {
+   "word": "want",
+   "start": 2.98,
+   "end": 3.08
+  },
+  {
+   "word": "to",
+   "start": 3.08,
+   "end": 3.2
+  },
+  {
+   "word": "go",
+   "start": 3.2,
+   "end": 3.4
+  },
+  {
+   "word": "with",
+   "start": 3.4,
+   "end": 3.66
+  },
+  {
+   "word": "me?",
+   "start": 3.66,
+   "end": 3.9
+  }
+ ],
+ "words_md5": "314b9c7ef61875f66113ddf0e589ac7c",
+ "whisper": "small.en"
+}

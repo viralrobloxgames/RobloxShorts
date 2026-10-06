@@ -1,0 +1,41 @@
+{
+ "voice": "lily_kid",
+ "text": "Like when Dad talks about pancakes.",
+ "seed": 86132,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Like",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "when",
+   "start": 0.26,
+   "end": 0.44
+  },
+  {
+   "word": "dad",
+   "start": 0.44,
+   "end": 0.7
+  },
+  {
+   "word": "talks",
+   "start": 0.7,
+   "end": 0.98
+  },
+  {
+   "word": "about",
+   "start": 0.98,
+   "end": 1.26
+  },
+  {
+   "word": "pancakes.",
+   "start": 1.26,
+   "end": 1.76
+  }
+ ],
+ "words_md5": "78f54e81814d9ea59f178d308a4a505d",
+ "whisper": "small.en"
+}
