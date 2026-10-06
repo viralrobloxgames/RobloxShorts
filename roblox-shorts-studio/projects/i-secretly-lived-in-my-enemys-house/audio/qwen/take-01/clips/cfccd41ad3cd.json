@@ -3,5 +3,19 @@
  "text": "Pumpkin girl?",
  "seed": 18465,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "pumpkin",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "girl.",
+   "start": 0.32,
+   "end": 0.7
+  }
+ ],
+ "words_md5": "610bde909e757c66d0e66013ff40526f",
+ "whisper": "small.en"
 }

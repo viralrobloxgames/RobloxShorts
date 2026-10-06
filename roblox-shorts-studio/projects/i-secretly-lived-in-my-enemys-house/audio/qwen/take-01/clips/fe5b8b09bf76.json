@@ -1,7 +1,46 @@
 {
  "voice": "brittney",
  "text": "Since when are you nice to me?",
- "seed": 69656,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "seed": 70656,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Since",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "when",
+   "start": 0.4,
+   "end": 0.66
+  },
+  {
+   "word": "are",
+   "start": 0.66,
+   "end": 0.78
+  },
+  {
+   "word": "you",
+   "start": 0.78,
+   "end": 0.9
+  },
+  {
+   "word": "nice",
+   "start": 0.9,
+   "end": 1.12
+  },
+  {
+   "word": "to",
+   "start": 1.12,
+   "end": 1.32
+  },
+  {
+   "word": "me?",
+   "start": 1.32,
+   "end": 1.46
+  }
+ ],
+ "words_md5": "a2c5a8550060380be2c2c70d097f9b5b",
+ "whisper": "small.en"
 }

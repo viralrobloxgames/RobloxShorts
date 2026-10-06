@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Nice decoration. Very realistic.",
+ "seed": 62460,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Nice",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "decoration,",
+   "start": 0.4,
+   "end": 1.02
+  },
+  {
+   "word": "very",
+   "start": 1.56,
+   "end": 1.9
+  },
+  {
+   "word": "realistic.",
+   "start": 1.9,
+   "end": 2.38
+  }
+ ],
+ "words_md5": "d9e1377d70827837a942bf63e5b46169",
+ "whisper": "small.en"
+}

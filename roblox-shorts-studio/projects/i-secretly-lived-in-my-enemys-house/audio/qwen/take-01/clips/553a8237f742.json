@@ -1,0 +1,36 @@
+{
+ "voice": "lily_kid",
+ "text": "Then why are you crying?",
+ "seed": 85615,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Then",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "why",
+   "start": 0.24,
+   "end": 0.52
+  },
+  {
+   "word": "are",
+   "start": 0.52,
+   "end": 0.7
+  },
+  {
+   "word": "you",
+   "start": 0.7,
+   "end": 0.82
+  },
+  {
+   "word": "crying?",
+   "start": 0.82,
+   "end": 1.16
+  }
+ ],
+ "words_md5": "f010bfc2f69725c81dede86c70ff92a5",
+ "whisper": "small.en"
+}

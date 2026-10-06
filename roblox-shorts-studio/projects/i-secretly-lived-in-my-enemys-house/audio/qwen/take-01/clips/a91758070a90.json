@@ -3,5 +3,29 @@
  "text": "I'm a ghost. Boo.",
  "seed": 81637,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I'm",
+   "start": 0.0,
+   "end": 0.46
+  },
+  {
+   "word": "a",
+   "start": 0.46,
+   "end": 0.56
+  },
+  {
+   "word": "ghost,",
+   "start": 0.56,
+   "end": 0.86
+  },
+  {
+   "word": "boo.",
+   "start": 1.42,
+   "end": 1.46
+  }
+ ],
+ "words_md5": "94c3d7ec07301a6321ab0860824e7efe",
+ "whisper": "small.en"
 }

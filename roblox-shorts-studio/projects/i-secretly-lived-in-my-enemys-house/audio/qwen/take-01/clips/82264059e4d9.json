@@ -1,0 +1,71 @@
+{
+ "voice": "lily_kid",
+ "text": "I won't tell. If you come to my tea party. Every day.",
+ "seed": 29549,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "won't",
+   "start": 0.22,
+   "end": 0.54
+  },
+  {
+   "word": "tell,",
+   "start": 0.54,
+   "end": 0.82
+  },
+  {
+   "word": "if",
+   "start": 1.26,
+   "end": 1.5
+  },
+  {
+   "word": "you",
+   "start": 1.5,
+   "end": 1.66
+  },
+  {
+   "word": "come",
+   "start": 1.66,
+   "end": 1.86
+  },
+  {
+   "word": "to",
+   "start": 1.86,
+   "end": 2.02
+  },
+  {
+   "word": "my",
+   "start": 2.02,
+   "end": 2.24
+  },
+  {
+   "word": "tea",
+   "start": 2.24,
+   "end": 2.52
+  },
+  {
+   "word": "party,",
+   "start": 2.52,
+   "end": 3.06
+  },
+  {
+   "word": "every",
+   "start": 3.44,
+   "end": 3.74
+  },
+  {
+   "word": "day.",
+   "start": 3.74,
+   "end": 4.2
+  }
+ ],
+ "words_md5": "c29dce0c2fbb10771596bf47ecfa05bd",
+ "whisper": "small.en"
+}

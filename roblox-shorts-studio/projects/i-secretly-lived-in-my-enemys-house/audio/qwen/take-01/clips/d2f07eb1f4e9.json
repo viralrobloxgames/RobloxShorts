@@ -1,0 +1,46 @@
+{
+ "voice": "lily_kid",
+ "text": "You don't really want to do that.",
+ "seed": 24203,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "don't",
+   "start": 0.18,
+   "end": 0.46
+  },
+  {
+   "word": "really",
+   "start": 0.46,
+   "end": 0.6
+  },
+  {
+   "word": "want",
+   "start": 0.6,
+   "end": 0.86
+  },
+  {
+   "word": "to",
+   "start": 0.86,
+   "end": 1.04
+  },
+  {
+   "word": "do",
+   "start": 1.04,
+   "end": 1.22
+  },
+  {
+   "word": "that.",
+   "start": 1.22,
+   "end": 1.5
+  }
+ ],
+ "words_md5": "7d113bf1a3fec52523606671fd25520d",
+ "whisper": "small.en"
+}

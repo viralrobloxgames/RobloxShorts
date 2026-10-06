@@ -1,0 +1,46 @@
+{
+ "voice": "lily_kid",
+ "text": "Why are you living in our attic?",
+ "seed": 16187,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Why",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "are",
+   "start": 0.3,
+   "end": 0.48
+  },
+  {
+   "word": "you",
+   "start": 0.48,
+   "end": 0.66
+  },
+  {
+   "word": "living",
+   "start": 0.66,
+   "end": 0.88
+  },
+  {
+   "word": "in",
+   "start": 0.88,
+   "end": 1.1
+  },
+  {
+   "word": "our",
+   "start": 1.1,
+   "end": 1.26
+  },
+  {
+   "word": "attic?",
+   "start": 1.26,
+   "end": 1.52
+  }
+ ],
+ "words_md5": "fe1d37a1f5a500f90cec7ceaace7faac",
+ "whisper": "small.en"
+}

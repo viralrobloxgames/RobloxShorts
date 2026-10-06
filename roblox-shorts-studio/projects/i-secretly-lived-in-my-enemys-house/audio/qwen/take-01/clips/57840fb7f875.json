@@ -1,0 +1,46 @@
+{
+ "voice": "brittney",
+ "text": "Worse. Your brother thinks I'm the worst.",
+ "seed": 35516,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Worse,",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "your",
+   "start": 0.64,
+   "end": 0.72
+  },
+  {
+   "word": "brother",
+   "start": 0.72,
+   "end": 0.9
+  },
+  {
+   "word": "thinks",
+   "start": 0.9,
+   "end": 1.12
+  },
+  {
+   "word": "I'm",
+   "start": 1.12,
+   "end": 1.4
+  },
+  {
+   "word": "the",
+   "start": 1.4,
+   "end": 1.48
+  },
+  {
+   "word": "worst.",
+   "start": 1.48,
+   "end": 1.66
+  }
+ ],
+ "words_md5": "b5caa2a1589af0fe8632ba36d6331172",
+ "whisper": "small.en"
+}

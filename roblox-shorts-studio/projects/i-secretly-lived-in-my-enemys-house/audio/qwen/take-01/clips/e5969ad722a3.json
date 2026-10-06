@@ -1,0 +1,86 @@
+{
+ "voice": "max_kid",
+ "text": "Right. Hey, I tried cutting the crusts off my sandwich. You were right. It's better.",
+ "seed": 46375,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Right.",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "Hey,",
+   "start": 0.82,
+   "end": 1.1
+  },
+  {
+   "word": "I",
+   "start": 1.4,
+   "end": 1.6
+  },
+  {
+   "word": "tried",
+   "start": 1.6,
+   "end": 1.78
+  },
+  {
+   "word": "cutting",
+   "start": 1.78,
+   "end": 2.06
+  },
+  {
+   "word": "the",
+   "start": 2.06,
+   "end": 2.3
+  },
+  {
+   "word": "crusts",
+   "start": 2.3,
+   "end": 2.8
+  },
+  {
+   "word": "off",
+   "start": 2.8,
+   "end": 2.86
+  },
+  {
+   "word": "my",
+   "start": 2.86,
+   "end": 3.1
+  },
+  {
+   "word": "sandwich.",
+   "start": 3.1,
+   "end": 3.54
+  },
+  {
+   "word": "You",
+   "start": 4.12,
+   "end": 4.26
+  },
+  {
+   "word": "were",
+   "start": 4.26,
+   "end": 4.4
+  },
+  {
+   "word": "right.",
+   "start": 4.4,
+   "end": 4.7
+  },
+  {
+   "word": "It's",
+   "start": 5.18,
+   "end": 5.38
+  },
+  {
+   "word": "better.",
+   "start": 5.38,
+   "end": 5.64
+  }
+ ],
+ "words_md5": "bac71ac606b9ca0a29fda3581bc0cc3b",
+ "whisper": "small.en"
+}

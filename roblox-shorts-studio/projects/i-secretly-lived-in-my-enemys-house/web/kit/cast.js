@@ -624,17 +624,19 @@ export function blush(actor, amount = 1) {
 }
 
 // ---------- poses ----------
-// Named poses as bone angles (degrees, the rig.js pose() convention: limbs x < 0 swings forward, Arm.R z > 0 / Arm.L z < 0
-// raises the arm sideways; Torso x > 0 leans forward; Head x < 0 looks up, y turns, z tilts). `drop` lowers the root
-// (studs at scale 1, multiplied by the actor's scale): sitting poses put the hips 1.5 above the root (legs horizontal),
-// so a seat at height h needs root.y = h - drop... see seatY(). One arm at most goes above the shoulder (SKILL.md).
+// Named poses as bone angles (degrees, the rig.js pose() convention, Euler 'ZYX': limbs x < 0 raises forward; with the arm
+// down, Arm.R z > 0 / Arm.L z < 0 raises it sideways; once raised forward, Arm.R y < 0 / Arm.L y > 0 swings the hand
+// inward across the body. Hand targets were solved numerically so fists sit in front of the face/chest, not inside it.
+// Torso x > 0 leans forward; Head x < 0 looks up, y turns, z tilts). `drop` lowers the root (studs at scale 1, times
+// the actor's scale): sitting poses put the hips 1.5 above the root (legs horizontal); see seatY(). One arm at most goes
+// above the shoulder (SKILL.md).
 export const POSES = {
   stand: {},
   sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-18, 0, -4], 'Arm.R': [-18, 0, 4] },
   sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-8, 0, -3], 'Arm.R': [-8, 0, 3] },
   sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-55, 0, -6], 'Arm.R': [-55, 0, 6] },
-  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-62, 0, 12], 'Arm.R': [-62, 0, -12] },
-  chin_on_hand: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [10, 0, 0], Head: [-4, 0, 6], 'Arm.R': [-128, 0, -14], 'Arm.L': [-60, 0, 10] },
+  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-62, 14, 0], 'Arm.R': [-62, -14, 0] },
+  chin_on_hand: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [10, 0, 0], Head: [-4, 0, 6], 'Arm.R': [-136, -18, 56], 'Arm.L': [-60, 12, 0] },
   sit_cross: { 'Leg.L': [-90, 30, 0], 'Leg.R': [-90, -30, 0], 'Arm.L': [-30, 0, -6], 'Arm.R': [-30, 0, 6], drop: 1.5 },
   kneel: { 'Leg.L': [90, 0, -3], 'Leg.R': [90, 0, 3], Torso: [-4, 0, 0], 'Arm.L': [-14, 0, -4], 'Arm.R': [-14, 0, 4], drop: 1.5 },
   kneel_up: { 'Leg.L': [62, 0, -3], 'Leg.R': [62, 0, 3], Torso: [-2, 0, 0], 'Arm.L': [-10, 0, -4], 'Arm.R': [-10, 0, 4], drop: 0.6 },
@@ -642,20 +644,20 @@ export const POSES = {
   lie_back: { Root: [-90, 0, 0], 'Arm.L': [0, 0, -8], 'Arm.R': [0, 0, 8] },
   shock: { 'Arm.L': [-12, 0, -78], 'Arm.R': [-12, 0, 78], Head: [-8, 0, 0], Torso: [-4, 0, 0] },
   scarecrow: { 'Arm.L': [0, 0, -90], 'Arm.R': [0, 0, 90] },
-  arms_folded: { 'Arm.L': [-72, 0, 30], 'Arm.R': [-66, 0, -30] },
-  hug_teddy: { 'Arm.L': [-48, 0, 26], 'Arm.R': [-42, 0, -26] },
+  arms_folded: { 'Arm.L': [-70, 46, -8], 'Arm.R': [-74, -46, 8] },
+  hug_teddy: { 'Arm.L': [-56, 42, 0], 'Arm.R': [-56, -42, 0] },
   shrug: { 'Arm.L': [-24, 0, -30], 'Arm.R': [-24, 0, 30], Head: [0, 0, 10] },
   lean_in: { Torso: [16, 0, 0], Head: [-10, 0, 0] },
   lean_back: { Torso: [-10, 0, 0], Head: [6, 0, 0] },
-  ear_to_door: { Torso: [10, 0, -14], Head: [0, 0, -16], 'Arm.L': [-60, 0, -10] },
+  ear_to_door: { Torso: [10, 0, -14], Head: [0, 0, -16], 'Arm.L': [-60, 10, 0] },
   hip_bend: { Torso: [42, 0, 0], Head: [-34, 0, 0] },
 };
 // One-arm gestures: side 'R' or 'L' (mirrored). Layer them over any pose.
 export const ARM_GESTURES = {
-  point: [-88, 0, 10], point_up: [-150, 0, 6], reach_up: [-162, 0, 8], finger_up: [-120, 0, -6], knock: [-82, 0, -4], tap: [-62, 0, -6],
-  hand_over_mouth: [-128, 0, -38], eye_wipe: [-138, 0, -30], thumb_to_chest: [-70, 0, -44], hand_on_hip: [-6, 0, 34],
-  hand_on_neck: [-34, 0, 148], hair_pat: [-30, 0, 156], phone_ear: [-22, 0, 160], chin_hand: [-128, 0, -14], hold_out: [-64, 0, 4],
-  flashlight_chin: [-112, 0, -32], wave: [-6, 0, 128], hand_hold: [-24, 0, 8], cup_hold: [-70, 0, -10],
+  point: [-88, 0, 10], point_up: [-150, 0, 6], reach_up: [-162, 0, 8], finger_up: [-120, 0, -6], knock: [-82, -6, 0], tap: [-62, -8, 0],
+  hand_over_mouth: [-130, -36, 24], eye_wipe: [-144, 12, 56], thumb_to_chest: [-82, -48, 4], hand_on_hip: [-6, 0, 34],
+  hand_on_neck: [-34, 0, 148], hair_pat: [-30, 0, 156], phone_ear: [-22, 0, 160], chin_hand: [-136, -18, 56], hold_out: [-64, 0, 4],
+  flashlight_chin: [-106, -44, 16], wave: [-6, 0, 128], hand_hold: [-24, 0, 8], cup_hold: [-70, -12, 0],
 };
 const D2R = Math.PI / 180, _e = new THREE.Euler(), _q = new THREE.Quaternion();
 const LIMB = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI), LIMB_INV = LIMB.clone().invert();

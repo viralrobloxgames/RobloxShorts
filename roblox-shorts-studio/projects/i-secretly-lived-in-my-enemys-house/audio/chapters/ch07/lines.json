@@ -1,0 +1,332 @@
+{
+ "chapter": 7,
+ "header": "CH07 | FRIDAY | 4:05 PM | The Pumpkin Girl",
+ "duration": 73.289,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Friday. Day five. Dad kept his promise. And this time, he brought backup.",
+   "start": 0.0,
+   "end": 4.08,
+   "clip": "audio/qwen/take-01/clips/401b3db6d07f.wav",
+   "seed": 1354
+  },
+  {
+   "index": 2,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Where do I hide? There's nowhere to hide!",
+   "start": 4.33,
+   "end": 7.29,
+   "clip": "audio/qwen/take-01/clips/102f845c1fb7.wav",
+   "seed": 60817
+  },
+  {
+   "index": 3,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Quick! Be a decoration!",
+   "start": 7.54,
+   "end": 9.765,
+   "clip": "audio/qwen/take-01/clips/4409daeb32b3.wav",
+   "seed": 59047
+  },
+  {
+   "index": 4,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "A what?",
+   "start": 10.015,
+   "end": 10.982,
+   "clip": "audio/qwen/take-01/clips/afb4dd6a2a6d.wav",
+   "seed": 15178
+  },
+  {
+   "index": 5,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Stand still. Don't breathe. Think pumpkin thoughts.",
+   "start": 11.832,
+   "end": 15.903,
+   "clip": "audio/qwen/take-01/clips/e0ba93d5b490.wav",
+   "seed": 27904
+  },
+  {
+   "index": 6,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Right, ghost. It's you, me, and the vacuum.",
+   "start": 16.753,
+   "end": 19.346,
+   "clip": "audio/qwen/take-01/clips/1a056a25d743.wav",
+   "seed": 5399
+  },
+  {
+   "index": 7,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Lily? What are you doing up here?",
+   "start": 19.596,
+   "end": 21.251,
+   "clip": "audio/qwen/take-01/clips/984728f1ac6b.wav",
+   "seed": 79765
+  },
+  {
+   "index": 8,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Tea party. With the decorations.",
+   "start": 21.501,
+   "end": 24.006,
+   "clip": "audio/qwen/take-01/clips/12d5bbf9eed8.wav",
+   "seed": 34440
+  },
+  {
+   "index": 9,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "You put the Halloween stuff out already? It's not even Halloween.",
+   "start": 24.256,
+   "end": 27.66,
+   "clip": "audio/qwen/take-01/clips/d472e79089c7.wav",
+   "seed": 23124
+  },
+  {
+   "index": 10,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "I like to plan ahead.",
+   "start": 27.91,
+   "end": 29.599,
+   "clip": "audio/qwen/take-01/clips/21bd540d86e4.wav",
+   "seed": 11233
+  },
+  {
+   "index": 11,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "That's my girl. Let's see. Skeleton. Witch. Giant pumpkin girl.",
+   "start": 29.849,
+   "end": 34.888,
+   "clip": "audio/qwen/take-01/clips/0daab5e7a6bd.wav",
+   "seed": 95746
+  },
+  {
+   "index": 12,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Hmm. I don't remember buying a pumpkin girl.",
+   "start": 35.138,
+   "end": 37.913,
+   "clip": "audio/qwen/take-01/clips/66db756934d6.wav",
+   "seed": 40930
+  },
+  {
+   "index": 13,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Very realistic. Bit dusty. Smells like cinnamon.",
+   "start": 38.963,
+   "end": 42.241,
+   "clip": "audio/qwen/take-01/clips/672b6ee5a12b.wav",
+   "seed": 61403
+  },
+  {
+   "index": 14,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Lily, why do the decorations smell like cinnamon?",
+   "start": 42.491,
+   "end": 45.354,
+   "clip": "audio/qwen/take-01/clips/e7ea92cdbaee.wav",
+   "seed": 98943
+  },
+  {
+   "index": 15,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "They're festive.",
+   "start": 45.604,
+   "end": 46.491,
+   "clip": "audio/qwen/take-01/clips/cd9ebc445767.wav",
+   "seed": 75593
+  },
+  {
+   "index": 16,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Well, she's filthy. Hold still, pumpkin girl. Time for a good hoover.",
+   "start": 46.741,
+   "end": 50.913,
+   "clip": "audio/qwen/take-01/clips/8752751ea80d.wav",
+   "seed": 68546
+  },
+  {
+   "index": 17,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "offscreen",
+   "text": "Dad! I'll clean the attic. Your football's starting!",
+   "start": 51.763,
+   "end": 55.527,
+   "clip": "audio/qwen/take-01/clips/67003aabc06a.wav",
+   "seed": 50343
+  },
+  {
+   "index": 18,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Already? You're a good lad, Max.",
+   "start": 55.777,
+   "end": 57.442,
+   "clip": "audio/qwen/take-01/clips/f5799290ef1e.wav",
+   "seed": 87519
+  },
+  {
+   "index": 19,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Nice decoration. Very realistic.",
+   "start": 58.892,
+   "end": 61.659,
+   "clip": "audio/qwen/take-01/clips/459dcfbd5755.wav",
+   "seed": 62460
+  },
+  {
+   "index": 20,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Lily. Dinner. Five minutes.",
+   "start": 61.909,
+   "end": 64.593,
+   "clip": "audio/qwen/take-01/clips/b60be35ebfe9.wav",
+   "seed": 30672
+  },
+  {
+   "index": 21,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "I almost got hoovered.",
+   "start": 65.643,
+   "end": 66.763,
+   "clip": "audio/qwen/take-01/clips/786627d81edc.wav",
+   "seed": 90548
+  },
+  {
+   "index": 22,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "He fixed your pumpkin.",
+   "start": 67.013,
+   "end": 68.289,
+   "clip": "audio/qwen/take-01/clips/31affe33efb3.wav",
+   "seed": 56395
+  },
+  {
+   "index": 23,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "He didn't notice. Boys never notice anything.",
+   "start": 68.539,
+   "end": 71.739,
+   "clip": "audio/qwen/take-01/clips/bca3ba42e80c.wav",
+   "seed": 62759
+  },
+  {
+   "index": 24,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Sure.",
+   "start": 71.989,
+   "end": 72.689,
+   "clip": "audio/qwen/take-01/clips/0506aa770019.wav",
+   "seed": 29463
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the attic in the afternoon. Skye and Lily mid tea party. The ladder creaks below; the hatch starts to lift.",
+   "until": 0.0
+  },
+  {
+   "after_line": 4,
+   "at": 10.982,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Lily jams a plastic pumpkin bucket on Skye's head. Skye freezes in a scarecrow pose between a skeleton and a witch.",
+   "until": 11.832
+  },
+  {
+   "after_line": 5,
+   "at": 15.903,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Dad climbs in, dragging a vacuum cleaner.",
+   "until": 16.753
+  },
+  {
+   "after_line": 12,
+   "at": 37.913,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Dad leans in, nose to nose with Skye. She doesn't blink.",
+   "until": 38.963
+  },
+  {
+   "after_line": 16,
+   "at": 50.913,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "He raises the vacuum nozzle toward her face.",
+   "until": 51.763
+  },
+  {
+   "after_line": 18,
+   "at": 57.442,
+   "pause": 1.2,
+   "scene_change": false,
+   "text": "Dad climbs down. Max climbs up, looks at the pumpkin girl for a long moment, and straightens the pumpkin on her head.",
+   "until": 58.892
+  },
+  {
+   "after_line": 20,
+   "at": 64.593,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Max climbs down.",
+   "until": 65.643
+  }
+ ]
+}

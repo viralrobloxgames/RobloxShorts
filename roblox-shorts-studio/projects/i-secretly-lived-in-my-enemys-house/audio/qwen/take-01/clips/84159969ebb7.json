@@ -3,5 +3,29 @@
  "text": "I'm a modern ghost.",
  "seed": 56358,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I'm",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "a",
+   "start": 0.28,
+   "end": 0.36
+  },
+  {
+   "word": "modern",
+   "start": 0.36,
+   "end": 0.58
+  },
+  {
+   "word": "ghost.",
+   "start": 0.58,
+   "end": 0.9
+  }
+ ],
+ "words_md5": "811cfbec550821b457463529f8637e70",
+ "whisper": "small.en"
 }
