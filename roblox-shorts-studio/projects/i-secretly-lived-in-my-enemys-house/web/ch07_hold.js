@@ -9,5 +9,5 @@ export const { meta, sky, setup, update, overlay } = holdCheck(base, [
   [T.jam - 0.15, 'lily', 'L', 'pumpkin bucket (reaching up to Skye)', { dist: 1.6, side: 2.6, up: 1.2 }],
   [T.jam - 0.15, 'lily', 'R', 'teddy (hop)', { dist: 3.2, side: 1.2, up: 0.6 }],
   [T.lilyCome + 2.5, 'lily', 'R', 'teddy (beside Skye, end)'],
-  [T.nozzle + 0.6, 'dad', 'R', 'vacuum nozzle (raised at her face)', { dist: 2.0, side: 1.0, up: 0.5 }],
+  [T.nozzle + 0.6, 'dad', 'L', 'vacuum nozzle (raised at her face)', { dist: -0.5, side: 3.0, up: 2.6 }],
 ]);
