@@ -82,11 +82,12 @@ function times() {
   T.nozzle = at(16, 1.6);                // he raises the nozzle
   T.hum = end(16, 0.15);
   T.humOff = at(17, 0.05);
-  T.dadGo = at(18, 0.4);                 // walks to the hatch
-  T.dadDown = end(18, -0.25);
-  T.maxUp = end(18, 0.35);
-  T.maxOut = at(19, -0.25);
-  T.fix = at(19, 1.9);                   // straightens the pumpkin
+  T.dadGo = end(18, -0.5);              // says his line to the hatch, then hurries off (runs)
+  T.dadDown = end(18, 0.25);
+  T.maxUp = end(18, 0.55);
+  T.maxOut = at(19, -0.45);
+  T.fix = at(19, 1.6);                   // straightens the pumpkin (after a ~0.8 s look)
+  T.lookAt = at(19, 0.5);                // arrives in front of her and looks
   T.maxGo = end(20, 0.05);
   T.maxDown = end(20, 1.65);
   T.lilyCome = at(21, -0.2);             // Lily walks over to Skye
@@ -136,7 +137,9 @@ function walkPath(actor, pts, t0, t, { idleAt = 0, endHeading } = {}) {
 }
 // behind the pumpkin girl (Max straightens the bucket from behind her, his face to the camera over her shoulder)
 const behind = () => { const p = M.pose(), h = p.heading; return { pos: p.pos.clone().add(V(-Math.sin(h) * 1.05 + Math.cos(h) * 0.95, 0, -Math.cos(h) * 1.05 - Math.sin(h) * 0.95)), heading: h }; };   // behind her left shoulder
-const maxRoute = () => [M.climb(), pt(D(9.0), -1.0), pt(D(9.0), -4.8), behind()];
+// in front of her, facing her (review-2 #18: he looks, then both hands turn the bucket straight, in shot)
+const inFront = () => { const p = M.pose(), h = p.heading; const pos = p.pos.clone().add(V(Math.sin(h) * 1.5 - Math.cos(h) * 0.6, 0, Math.cos(h) * 1.5 + Math.sin(h) * 0.6)); return { pos, heading: Math.atan2(p.pos.x - pos.x, p.pos.z - pos.z) }; };
+const maxRoute = () => [M.climb(), inFront()];
 
 // ---------- blocking per character ----------
 function poseSkye(t, idle) {
@@ -231,7 +234,6 @@ function poseDad(t, idle) {
     const lk = sm(T.lean, T.lean + 0.5, t) * (1 - sm(T.unlean, T.unlean + 0.4, t));
     headTurn(d, 0.35 * lk);                                   // his face cheated toward the camera as he leans in
     if (lk > 0) K.posture(d, 'hip_bend', { mix: 0.4 * lk, reset: false });
-    if (t > at(12) && t < end(12)) K.gesture(d, 'chin_hand', 'R', sm(at(12), at(12, 0.3), t)); // chin stroke
     if (t > at(14) && t < at(16)) headTurn(d, 0.75 * sm(at(14), at(14, 0.3), t) * (1 - sm(at(16), at(16, 0.3), t)));
     // the nozzle: right arm forward, raised toward her face
     const nz = sm(T.nozzle, T.nozzle + 0.5, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
@@ -239,7 +241,7 @@ function poseDad(t, idle) {
     if (t > T.humOff) headTurn(d, 1.2 * sm(T.humOff, T.humOff + 0.35, t));               // toward the hatch
     return;
   }
-  if (t < T.dadDown) { K.walk(d, A, front, climb, T.dadGo, t, { idleAt: idle }); return; }
+  if (t < T.dadDown) { K.walk(d, A, front, climb, T.dadGo, t, { idleAt: idle, speed: 16 }); return; }
   if (t < T.maxUp + 0.2) {
     const k = 1 - sm(T.dadDown, T.maxUp, t);
     climbAt(d, climb, 0, k);
@@ -261,14 +263,14 @@ function poseMax(t, idle) {
   }
   if (t < T.maxGo) {
     const r = maxRoute(), bh = r[r.length - 1];
-    const m = walkPath(x, r, T.maxOut, t, { idleAt: idle, endHeading: towards(bh, M.pose()) + 0.9 });   // turned to the camera over her shoulder   // round the witch to behind her
+    const m = walkPath(x, r, T.maxOut, t, { idleAt: idle, endHeading: bh.heading });
     if (!m.done) return;
-    const fx = sm(T.fix - 0.3, T.fix, t) * (1 - sm(T.fix + 0.5, T.fix + 0.8, t));
-    if (fx > 0) K.gesture(x, 'reach_up', 'R', fx);          // one hand up to the back of the bucket
-    if (t > at(20)) x.root.rotation.y = lerp(towards(bh, M.pose()) + 0.9, towards(bh, M.teaLily()), sm(at(20), at(20, 0.3), t));
+    const fx = sm(T.fix - 0.3, T.fix, t) * (1 - sm(T.fix + 0.6, T.fix + 0.9, t));
+    if (fx > 0) { K.gesture(x, [-152, 0, 26], 'L', fx); K.gesture(x, [-100, 0, 20], 'R', fx); }   // far hand on the top of the bucket, near hand at its side (below his face)   // both hands on the bucket (forward, below his head)
+    if (t > at(20, -0.35)) x.root.rotation.y = lerp(bh.heading, towards(bh, M.teaLily()), sm(at(20, -0.35), at(20, -0.05), t));
     return;
   }
-  if (t < T.maxDown) { walkPath(x, maxRoute().reverse(), T.maxGo, t, { idleAt: idle }); return; }
+  if (t < T.maxDown) { walkPath(x, [inFront(), pt(D(7.6), 1.5), M.climb()], T.maxGo, t, { idleAt: idle }); return; }   // wide of the camera
   const k = 1 - sm(T.maxDown, T.maxDown + 0.6, t);
   climbAt(x, climb, 0, k); if (k <= 0.01) x.root.visible = false;
 }
@@ -317,10 +319,10 @@ const SHOTS = [
   { line: 3, off: 0, id: 'lily_quick', cam: (s) => K.setCam(s, { pos: W(-2.6, 10.6, 4.2), target: W(-3.0, 4.2, 3.0), fov: 42 }) },
   { line: 4, off: 0, id: 'skye_what', cam: (s) => K.camOn(s, C.skye, 'mcu') },
   { line: 4, off: 0.5, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(D(2.6), 4.6, 4.4), target: W(D(5.9), -3.5, 3.0), fov: 44 }) },
-  { line: 6, off: -0.8, id: 'dad_rises', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
+  { line: 6, off: 0, id: 'dad_rises', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 7, off: 0, id: 'dad_lily', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.4 }) },
   { line: 8, off: 0, id: 'lily_tea', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
-  { line: 9, off: 0, id: 'dad_halloween', cam: (s) => K.setCam(s, { pos: W(-2.0, -1.0, 4.4), target: W(4.6, 3.0, 3.9), fov: 42 }) },
+  { line: 9, off: 0, id: 'dad_halloween', cam: (s) => K.setCam(s, { pos: W(-2.0, -1.0, 4.6), target: W(4.6, 3.0, 4.6), fov: 32 }) },   // waist-up: his hip and the vacuum out of the window light
   { line: 10, off: 0, id: 'lily_plan', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
   { line: 11, off: 0, id: 'row', cam: (s) => K.setCam(s, { pos: W(D(-1.6), 1.6, 4.6), target: W(D(5.0), -2.4, 3.2), fov: 46 }) },
   { line: 12, off: 0, id: 'two_hmm', cam: TWO },
@@ -331,13 +333,13 @@ const SHOTS = [
   { line: 16, off: 0, id: 'hoover', cam: TWO },
   { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => K.setCam(s, { pos: W(D(2.4), -1.4, 4.9), target: W(D(5.4), -3.3, 4.6), fov: 30 }) },
   { line: 17, off: 0, id: 'max_off', cam: TWO },
-  { line: 18, off: 0.3, id: 'dad_leaves', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
+  { line: 18, off: 1.86, id: 'dad_leaves', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 19, off: 0, id: 'max_walks', cam: TWO },
-  { line: 19, off: 1.2, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(5.2), 3.2, 5.6), target: W(D(6.7), -3.9, 5.0), fov: 38 }) },
-  { line: 20, off: 0, id: 'max_dinner', cam: (s) => K.setCam(s, { pos: W(D(4.1), 3.0, 5.3), target: W(D(6.4), -3.9, 4.7), fov: 38 }) },
-  { line: 20, off: 2.7, id: 'max_down', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
+  { line: 19, off: 0.55, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(8.9), -0.6, 5.2), target: W(D(4.8), -3.0, 4.9), fov: 42 }) },   // from the witch side onto Max (3/4) and Skye's profile: his hands on the bucket in shot
+  { line: 20, off: 0, id: 'max_dinner', cam: TWO },
   { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(D(3.4), 0.4, 5.2), target: W(D(5.3), -3.5, 5.0), fov: 36 }) },
   { line: 22, off: 0, id: 'end_two', cam: (s) => K.setCam(s, { pos: W(D(2.6), 4.8, 3.2), target: W(D(5.8), -2.6, 3.3), fov: 54 }) },
+  { line: 24, off: -0.05, id: 'lily_sure', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.25, fov: 32 }) },   // the button: Lily's side-eye
 ].map((x) => ({ ...x, start: x.line === 1 && x.off === 0 ? 0 : at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
@@ -347,7 +349,7 @@ function faces(t) {
   const skye = t < at(2) ? 'shocked' : t < T.pose ? 'scared' : t < at(21) ? (t > T.nozzle && t < T.humOff + 0.3 ? 'scared' : 'neutral') : t < at(23) ? 'annoyed' : 'smug';
   const lily = t < at(2) ? 'surprised' : t < at(5) ? 'determined' : t < T.dadRise ? 'smug' : t < at(10) ? 'happy' : t < at(15) ? 'smug' : t < at(21) ? 'neutral' : t < at(24) ? 'smug' : 'suspicious';
   const dad = t < at(7) ? 'determined' : t < at(9) ? 'surprised' : t < at(11) ? 'suspicious' : t < at(12) ? 'happy' : t < at(16) ? 'suspicious' : t < at(17) ? 'determined' : t < at(18) ? 'surprised' : 'happy';
-  const max = t < T.maxOut ? 'neutral' : t < at(20) ? 'smug' : 'neutral';
+  const max = t < T.lookAt ? 'neutral' : t < T.fix - 0.1 ? 'suspicious' : t < at(20) ? 'smug' : 'neutral';
   // Skye mouths nothing while she is a decoration (her lines come after Max leaves)
   K.speak(C.skye, skye, t, posed && t < at(21) ? [] : L.said('SKYE'));
   K.speak(C.lily, lily, t, L.said('LILY'));

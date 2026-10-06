@@ -1,0 +1,7 @@
+{
+ "voice": "max_boy2",
+ "text": "Dad, something was in my room last night. It said my name.",
+ "seed": 85516,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

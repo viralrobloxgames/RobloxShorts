@@ -1,0 +1,7 @@
+{
+ "voice": "max_boy2",
+ "text": "Go to bed, Dad!",
+ "seed": 20950,
+ "attempt": 3,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

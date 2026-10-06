@@ -70,3 +70,91 @@ Description and settings:
 11. **Package, could.** Settings say "altered content: No". Fine for an animated Roblox story, but Skye is voiced by a
     voice clone (`brittney`): if that voice is cloned from a real, identifiable person rather than a stock voice, the
     user should decide that box before posting.
+
+## Ch09 "The Drawing" (SATURDAY 2:20 PM), 59.73 s, 1792 frames, reviewed 18:3xZ
+
+What works: the drawing reveal is set up and paid off, "He kept it. All this time." gets a proper close-up with a
+sad turn at 00:37, and "Yes." (00:53, the angry face) and "You're both so dumb." land. Dad's offscreen lines are
+correctly quieter and muffled (-23 dB RMS vs -17, centroid ~1.1 kHz). Stitch: -14.12 LUFS, TP -0.91 dBTP;
+`ok: false` only because the audio ends 0.067 s (2 frames) before the video (see global).
+
+12. **00:25.0-00:30.9 and 00:39.0-00:45.9 (frames 751-928, 1171-1378), must.** The drawing reads **"BEST FRIENDS."**,
+    spelled right, and Skye's next line is "He spelled friends wrong." The joke dies, and anyone reading the prop
+    on screen gets a contradiction. Fix the drawing texture in `props.js` to **"BEST FRENDS"** (script, story.md,
+    boundary sheet), and re-render every frame where the drawing is visible: the ranges above plus the box insert
+    at 00:25.
+13. **00:26.0-00:30.9 and 00:39.0-00:45.9, should** (same frames as 12, so do it in the same re-render). Skye holds the
+    drawing flat against her stomach, so it reads as a print on her hoodie, not a paper she's holding and looking at.
+    Hold it up in both hands at chest-to-chin height and angle it slightly toward camera; in the 00:28-00:30 insert,
+    show the edges of the paper and her fingers on it.
+14. **00:48.6-00:50.0 (frames 1459-1500), should.** The scripted beat "[+1.2 Skye looks at the drawing for a long
+    moment, puts it back gently on top]" is a top-down shot of two hands over a box with the paper out of view,
+    so the chapter's quietest moment shows no face and no drawing. Use her close-up looking down (face `sad`, soft
+    smile at the end) with the drawing in frame, then the hands laying it on top.
+15. **00:06.1-00:11.3 (frames 184-339), should.** "Step one, eye holes" plays on a close-up with no sheet and no scissors
+    in frame. She is holding glow sticks. The boundary sheet's opening has the bedsheet across her lap with the
+    scissors cutting. Frame the close-up wider so the sheet and scissors are in the bottom third, or put the scissors in
+    her right hand.
+16. **00:58.2-00:59.7 (frames 1747-1792), could.** Lily's "Ghost!" is delivered with a calm smile toward camera; the
+    boundary sheet has her facing the hatch, face `shouting`. A quick turn toward the hatch would sell the cover-up.
+17. **00:46.7-00:48.6, could.** "It was a really good sandcastle" has strong sibilance (centroid 3.7 kHz vs ~2.5 kHz for
+    her other lines; sharp transients in the source clip at 47.55-47.8). A light de-ess on that clip would help.
+
+## Ch07 "The Pumpkin Girl" (FRIDAY 4:05 PM), 73.45 s, 2204 frames, reviewed 18:4xZ
+
+What works: the decoration gag escalates well (skeleton, witch, "giant pumpkin girl", cinnamon, the hoover). The
+nose-to-nose shot at 00:38-00:42 and the vacuum-nozzle close-up at 00:50 are the best frames in my block. Max's
+offscreen rescue is correctly muffled (-21.9 dB, centroid 0.9 kHz). The pumpkin is set up crooked (00:40-00:55),
+so straightening it can read. Stitch: -14.07 LUFS, TP **-0.75 dBTP**, A/V ok. At 73 s this is the longest
+chapter in my block. That's fine, because it's dense with gags.
+
+18. **00:58.9-01:01.7 (frames 1767-1851), must.** The twist clue is invisible. The script has "Max looks at the
+    pumpkin girl for a long moment, and straightens the pumpkin on her head", and Ch10 pays it off with "Or fixing your
+    pumpkin?". In the film, Max stands *behind* Skye's shoulder with his face hidden by the pumpkin (00:59.7), and the
+    pumpkin goes from crooked to straight across a cut (01:00.7) with no hand in frame. Nobody will remember a
+    "fix" they never saw. Fix: a 3/4 two-shot from Max's side. He steps in front of her and holds the look for ~0.8 s
+    (face `suspicious` going to a tiny `smirk`), both hands come up and visibly turn the pumpkin straight, then
+    "Nice decoration. Very realistic." on his face. Re-render frames 1755-1860.
+19. **00:16.0-00:16.6 (frames 481-498), must.** As Dad climbs through the hatch, a dark out-of-focus mass (the back
+    of his head/shoulder) fills the right half of the frame (blank_frames flags 00:16.0). Start the hatch shot with
+    the camera higher, or cut straight to 00:17 (Dad already up, vacuum in hand).
+20. **00:55.8-00:57.4 (frames 1674-1723), should.** Dad's "Already? You're a good lad, Max." starts on an *empty* hatch
+    shot (00:56) and only finds Dad at 00:57. Hold on Dad's face for the line (face `happy`), then cut to the hatch as he
+    climbs down.
+21. **00:36.5-00:37.5 (frames 1096-1126), should.** As Dad leans in, his raised hand passes through Skye's cheek and
+    jaw. Keep the hand on his knee/hip, or stop his lean ~0.3 studs earlier.
+22. **01:12.0-01:13.4 (frames 2160-2204), should.** "Sure.", the chapter's button and Lily's sceptical beat, plays on
+    a wide where her face is ~25 px at phone size. Cut to Lily's close-up (`suspicious`, side-eye at Skye) for the
+    last 1.4 s, then hard cut to Ch8.
+23. **00:25.0-00:27.5 (frames 751-826), should.** A white-hot specular flare on Dad's hip/forearm and a red glow at
+    the frame bottom (the vacuum) blow out at full brightness. Reduce the key light on Dad in that shot, or move the
+    window beam off him.
+24. **01:04.6-01:05.6 (frames 1939-1969), could.** After "Lily. Dinner. Five minutes." we get a 1 s shot of the empty
+    hatch with Max already gone. Either show him climbing down or cut it, to save a second.
+25. **00:29.9-00:32.9, could.** A large out-of-focus orange block (Dad's arm) covers the right quarter of the
+    "That's my girl" shot. Move the camera so it's out of frame.
+
+## Ch11 "No Crusts" (SUNDAY 8:30 AM), 69.78 s incl. end screen, 2095 frames, reviewed 18:5xZ
+
+What works: bright, warm and readable, a real tonal lift after the night chapters. The SAY YES fridge insert
+(00:34.5-00:35.5) is a great hard cut that doubles as the "Later" time jump. Max's ask is a clean two-shot with the
+crustless sandwiches in frame. Dad's "Phone. Now." covers the grown-up note, and the "No crusts?" / "No crusts."
+callback lands. Stitch: -14.09 LUFS, TP -0.79 dBTP, `ok: false` only on A/V (audio 2 frames short, see global).
+End screen 00:58.4-01:09.8 (11.4 s), dimmed scene with SUBSCRIBE @viralrobloxgames at the top: OK.
+
+26. **00:52.4-00:58.4 (frames 1573-1752), must.** The film's last line, "I spent a week trying to scare my enemy. He spent
+    it making me sandwiches.", plays on a high wide of the whole kitchen. The four faces are ~20 px at phone size, Max
+    sliding Skye a plate isn't readable, and Dad isn't visibly flipping a pancake. This is the title payoff and the
+    emotional button of 12 minutes. Fix: open on the wide for "I spent a week trying to scare my enemy" (00:52.9-00:55.2),
+    then push in, or cut, to a medium two-shot of Skye and Max for "He spent it making me sandwiches" (00:55.4-00:57.5).
+    Show the plate with the crustless sandwich in the lower third, Skye `happy` looking at Max, and Max `happy`. Then
+    go back to the wide (or hold) for the end-screen dim at 00:58.4. Re-render frames 1573-1752; the end-screen
+    frames don't change if the wide comes back by 00:58.4.
+27. **00:42.5-00:43.9 (frames 1276-1317), should.** Lily's "The fridge says yes." is framed with her face low and the
+    island edge cutting her at the chest, Max's half-face and an out-of-focus arm/teddy block in the top right. It's a
+    punchline, so give her a clean single (`smug`), centred, eye line to Skye.
+28. **00:08.1-00:09.1 (frames 244-274), could.** "Pumpkin girl?" stays on Dad. A 0.5 s cut to Skye's sheepish face
+    (`nervous`) on the end of the line would pay off Ch7 more directly.
+29. **00:58.4-01:09.8, could.** The music under the end screen sits at about -32 dB, so the last 8 s are near silent.
+    Bring the bed up ~6 dB for the end-screen tail, or add a short outro sting, so viewers don't drop off thinking it
+    has ended before the end-screen cards show.

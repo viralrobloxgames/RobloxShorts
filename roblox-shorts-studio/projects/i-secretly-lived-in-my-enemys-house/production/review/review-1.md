@@ -74,6 +74,76 @@ Max's voice: judged once "MAX voice replaced in ch02" lands (orchestrator).
 5. **0:11.5-0:14.0 (frames 346-420), Skye's whisper CU behind the island is underlit** (dark-brown face, same as
    Ch1 #3). SHOULD: warm fill from the kitchen lights so her skin matches daytime Skye.
 
+## Ch05 "The Tea Party" (WEDNESDAY 3:41 PM), 2019 frames, 67.3 s
+
+Stitched from main (ch05_a 1-909 + ch05_b 910-2019): seam clean, A/V -0.02 s, -14.1 LUFS. blank_frames: none. The
+best-looking chapter in the block: warm attic light, faces read, Lily at the hatch with her teddy (0:01.5), the
+"Boo" arm (one arm, fine), the horse held out on "you have to be the horse" (0:23), Skye's blush on the last line
+(1:03.5). Levels very even (-12.2 to -15.7). No musts.
+
+1. **0:52.8-0:55.8 (frames 1586-1674), "He talks about you every night at dinner, you know." plays on a wide
+   over-shoulder where Lily is a small profile at the right edge behind the box. SHOULD** (close to a must: it's the
+   chapter's clue and the line Ch10/Ch11 lean on). Put it on Lily's MCU (the 0:57.5 set-up) with a knowing face, and
+   cut to Skye's reaction for "Because he hates me".
+2. **0:16.5-0:24.1 (frames 496-724), the skeleton stands between Lily and the lens and window-bar shadows stripe her
+   body. SHOULD.** Her face is clear, but the ribcage covers her left side and the teddy, and the stripes are the
+   gate's #1 still showing on her dress. Move the camera (or the skeleton) so nothing is in front of her.
+3. **0:29.4-1:03.2, 35 s of ping-pong between three static set-ups. COULD.** Skye MS in the sunbeam, Skye CU under
+   the round window, Lily MCU, line by line with 0.25 s gaps. It's well lit but flat; use the tea-party two-shot
+   (0:26.5) for a couple of exchanges (e.g. "So you're haunting him." / "Professionally.") and push in slowly over the
+   "every night at dinner" run so the scene builds to the blush.
+
+## Ch06 "The Practice" (THURSDAY 10:15 PM), 1733 frames, 57.8 s
+
+Stitched from main (ch06_a 1-780 + ch06_b 781-1733): seam clean, A/V -0.03 s, -14.3 LUFS. blank_frames: none flagged
+by the tool, but see #1. The card, the flashlight-under-chin creep and the mirror rehearsal (0:05.5-0:18.5, Max's
+cringe faces on "Ugh. No.") all work; Lily's "You like him." entrance (0:26.4) lands. Behind-door Max is muffled and
+~4 dB down (right). Dad runs hot: -10.6 to -12.6 against -14/-17 for the whispers around him (could: -2 dB on lines
+13-18). Max's voice: judged once "MAX voice replaced in ch06" lands.
+
+1. **0:44.9-0:45.6 (frames 1347-1369), Skye and Lily dash into the linen closet straight across Dad's flashlight
+   beam, in a wide with black bands. MUST.** In the only shot of the escape Dad stands a few metres away facing them,
+   flashlight up, and the girls run across the lit floor in front of him: he can't not see them, which breaks the
+   scene's logic. The frame also has a black band across the top and a black wedge at the bottom (camera inside the
+   ceiling/floor geometry). Fix: Dad turns to Max's door on "Max, was that you?" and the girls slip into the closet
+   behind his back; or play the pull as a tight shot at the closet door (Lily's hand yanking Skye in, door closing to
+   a gap) and cut back to Dad. Either way, camera fully inside the hallway.
+2. **0:31.2-0:33.2 (frames 935-996), "Then why is your face all red?" and Skye's face is out of frame. SHOULD.**
+   The shot is on Lily; Skye's head is cut off at the eyes by the top of the frame, so the red face the line asks about
+   is never shown. Fix: frame both faces (or cut to Skye on "red") and give Skye a strong blush from 0:31.2 through
+   "It's a very dusty attic." (to 0:35.8).
+3. **0:52.5-0:54.7 (frames 1576-1642), Dad's cliffhanger line ("I'm checking every single box") plays on the back of
+   his head and his raised arm. SHOULD.** The threat that ends the chapter needs his face: a low 3/4 front on Dad,
+   broom raised, flashlight pointed up at the hatch (the boundary's end state), face `determined`.
+4. **Garlic on Max's window isn't visible in the room shots (0:05.5-0:18.5, 0:47-0:48). SHOULD** (boundary: hung by
+   Wednesday, visible in every later shot of his room; Lily's Ch5 line sets it up). The window isn't in frame in either
+   set-up; put the window with the garlic string in the 0:11-0:15 angle.
+5. **End frame 0:57-0:57.8: Dad's back fills the right of a wide, broom level, girls a few pixels in the gap.
+   COULD.** Boundary: Dad facing the hatch, broom raised, flashlight up at it, which also sells "Every box?".
+
+## Ch03 "A Useful Ghost" (TUESDAY 11:52 PM), 2013 frames, 67.1 s
+
+Stitched from main (ch03_a 1-906 + ch03_b 907-2013): seam clean, A/V 0.0, -14.1 LUFS. blank_frames: none. The fridge
+spelling (BE NI -> BE NICE -> 2 SKYE) reads beautifully, Skye peeking through the pantry slats behind Max at the reveal
+(0:17.9) is the best staging in the block, and Dad's "Who's Skye?" / "Nobody!" lands. Levels even (Max -12 to -14,
+whispers -18 to -19.6, offscreen Max -19.4: right). Max's voice: judged once "MAX voice replaced in ch03" lands.
+
+1. **0:37.2-0:38.4 (frames 1117-1153), the crustless sandwich pops onto the plate: nobody makes it and no crust is
+   cut. MUST.** At 0:36.5 the plate is empty, at 0:37.5 a finished sandwich sits on it. The crusts-cut sandwich is the
+   story's running clue (Ch1 lunch, Ch4 "since this week", Ch10 "Who did you think was making the sandwiches?", the
+   last line), and this is the one moment it's made. Fix inside the existing 1.25 s pause, no retime: an insert of
+   Max's knife sliding a crust strip off the sandwich on the plate (crust strips left beside it), then the sandwich
+   in place for 0:38.4. The gate flagged the knife stroke as hidden; it still is.
+2. **0:45.3-0:49.6 (frames 1359-1488), "Max made the ghost a sandwich" with no sandwich in sight. SHOULD.** Skye
+   picks it up at 0:44.5, then it's gone: hands at her sides, plate empty. Hold it up at her chin (the Ch3 end needs it
+   in her hand anyway).
+3. **Max's face is half in a hard shadow band through the fridge scene (0:12.5-0:37, frames 376-1110). SHOULD.**
+   It reads at full size but on a phone his "o" on "Be nice to Skye?" and the flustered "Who even is Skye? I mean, I
+   know who Skye is" (0:30-0:37, the twist's best plant in this chapter) are mush. The script has the fridge open as
+   the key light: open the door for his read and let it light his face 3/4.
+4. **1:00.0-1:01.0 (frames 1801-1830), Skye's reaction CU behind the island is underlit** (same dark-brown face as
+   Ch1 #3 / Ch2 #5). SHOULD.
+
 ## Ch04 "Cinnamon" (WEDNESDAY 12:15 PM), 1833 frames, 61.1 s
 
 Stitched from main 15:05Z (ch04_a + ch04_b, commit 32dbd17): seam at frame 825 clean, A/V diff 0.0, -14.2 LUFS
@@ -109,3 +179,61 @@ and Skye's blush CU on the closing whisper (0:55.5 on) land the chapter's turn.
    0:41, 0:50) and the same Max/Skye two-shot five times; the 60 s chapter is a 6-angle loop. COULD: on the
    cinnamon run (0:34.4-0:43.8) push in a little on each exchange (MCU -> CU -> tighter CU) so the interrogation
    escalates instead of repeating.
+
+---
+
+## Max's voice (max_boy2), checked per chapter as "MAX voice replaced in chNN" lands
+
+Measured on narration.wav (median F0 over voiced frames) and in the re-stitched chapter; I can't listen, so this is
+pitch, level and edit checks, not timbre.
+
+| Ch | Status | Max F0 (old -> new) | Skye F0 in the same chapter | Notes |
+|---|---|---|---|---|
+| 01 | replaced, OK | 242 -> 165 Hz | 275 Hz | ~9 semitones under Skye. Max lines within 4 dB of each other, clean tails. |
+| 02 | replaced, OK | 260 -> 169 Hz | 263 Hz | Even levels (within 1 dB), clean tails. |
+| 03 | replaced, OK | ~250 -> 179 Hz | 242 Hz | Even levels; offscreen "Nobody!" ~6 dB under (right). Clean tails. |
+| 04 | replaced, OK | 247 -> 169 Hz | 285 Hz | ~9 semitones under Skye, clearly a boy on pitch. Lines -12.3 to -16.5 LUFS (a little wider spread than before; "Nothing. It's a cookie." 0:11.8 and "Since this week. Want half?" 0:52.6 are the quiet ones, could +1.5 dB). Every line ends clean inside its window (no clipped tails). Re-stitch -14.3 LUFS, -1.3 dBTP, A/V 0.00. |
+| 05 | no Max | | | |
+| 06 | replaced, OK | 218 -> 172 Hz | 315 Hz | Behind-door lines -17.6 to -18.6 (muffled, ~4 dB under: right). Clean edits. |
+
+All of ch01-06 now use max_boy2 (checked from main after the ch01-03 notes): one consistent boy voice, 165-179 Hz
+against Skye's 242-315 Hz. Must #7 is resolved. ch07+ are review-2's.
+
+---
+
+## Flow pass over the stitched block (ch01-06, 11515 frames, 6:23.8)
+
+Built with `stitch_longform.py --chapters 1-6` from main 18:40Z: every segment seam frame-exact, stream copy,
+-14.2 LUFS, -1.15 dBTP, A/V -0.004 s. Chapter seams (last frame / next first frame) all match the boundary sheet:
+cards identical in style, wardrobe and backpack states right (backpack on Ch2 end, off in Ch3, on at Ch5 start).
+
+1. **The music bed drops to silence and restarts every 32 s. MUST (soundtrack: for kit-pipeline / review-2).**
+   `assets/audio/playful_history_music.wav` is 32.0 s and fades out over its last ~1 s (to -85 dB); the stitch loops it
+   with only a 0.08 s crossfade, so the bed dies and slams back in at full level every loop: in the block at 0:31.2,
+   1:03.3-1:03.7 (-91 dB, dead air right on the Ch1 -> Ch2 cut), 1:33.1, 2:37.1, 3:09.0, 4:45.6, 5:49.3 (more where
+   speech masks it). Under dialogue it reads as the music "pumping". Fix in the stitch: trim the file's fade tail
+   (loop the first ~31.0 s) and crossfade 0.5-1 s equal-power; or pick a loop-ready bed.
+2. **Every gap in every chapter is 0.25 s. SHOULD (block-wide pacing).** Six minutes of line-on-line delivery with
+   the same gap makes the whole block feel like one long breathless scene and flattens every punchline (Ch4 #4 lists
+   the worst). If any chapter is re-narrated for Max anyway, give punchlines a 0.4-0.6 s beat; otherwise leave it.
+3. **Night scenes make Skye a different colour.** Ch1 #3, Ch2 #5, Ch3 #4: in `night_moon` / `night_fridge` her face
+   renders dark brown, in daylight peach; across the block it looks like two characters. One kit-level fix (a face
+   fill or a minimum ambient on faces in the night presets) would fix all three chapters at once. SHOULD.
+4. **Max smiles in the wrong places across chapters** (Ch1 #6, Ch2 #1 and #4). The twist works only if his one tell
+   is "Huh. Just hoodies." (Ch1 0:09.5); every other smile in Ch1-2 gives it away early. SHOULD as a set.
+5. **Shape of the block is good.** Hook lands in 3 s, every chapter opens on a card plus a visual question and ends on
+   a button line ("Day one.", "Bye!", "Best. Haunting. Ever.", "Stop it, face.", "More tea, please.", "Uh-oh."). The
+   school/house alternation keeps it moving. Ch5 is the strongest chapter, Ch3 the weakest picture (dark).
+
+## Musts at a glance (for the fix owners)
+
+| # | Ch | Time (chapter) | Frames | Owner | Fix |
+|---|---|---|---|---|---|
+| 1 | 01 | 0:07.6-0:08.1 | 212-249 | ch01 | Hoodies + pink lock + flashlight stop insert |
+| 2 | 01 | 0:25.3-0:27.3 | 761-818 | ch01 | Skye `scared` + recoil on the shriek |
+| 3 | 02 | 0:14.2-0:16.2 | 427-487 | ch02 | One shot for Max's entrance, no flash CU, no smile |
+| 4 | 03 | 0:37.2-0:38.4 | 1117-1153 | ch03 | Crust-cutting insert, sandwich doesn't pop |
+| 5 | 04 | 0:54.8-0:55.3 | 1640-1680 | ch04 | Handover in one angle, drop the behind-Max shot |
+| 6 | 06 | 0:44.9-0:45.6 | 1347-1369 | ch06 | Escape behind Dad's back / tight shot; camera out of the ceiling |
+| 7 | 01-03 | all Max lines | audio | narration-tool | ~~Replace Max with max_boy2~~ DONE, checked OK |
+| 8 | block | every 32 s | audio | kit-pipeline / review-2 | Music bed loop gap |
