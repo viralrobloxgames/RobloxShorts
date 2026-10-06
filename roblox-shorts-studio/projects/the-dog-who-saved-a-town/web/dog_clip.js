@@ -438,3 +438,4 @@ export const cast = () => ({ max, leo, skye, noob, mia });
 export const TIMES = T;
 export const SHOT_LIST = SHOTS;
 export const props = () => P;
+export const leadPos = () => { dogs[0].root.updateMatrixWorld(true); return dogs[0].root.getWorldPosition(new THREE.Vector3()); };
