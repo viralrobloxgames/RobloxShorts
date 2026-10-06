@@ -1,0 +1,28 @@
+{
+ "made_with": "Qwen3-TTS-12Hz-1.7B-VoiceDesign (cloud, CPU, float32, 4 threads)",
+ "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+ "seed": 22,
+ "language": "English",
+ "instruct": "A 13-year-old English schoolboy whose voice has not broken yet: mid-pitched, natural and relaxed. Dry, teasing and amused, like he has just caught someone out, but kind. Southern English accent. Quick but clear, each sentence separate.",
+ "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+ "max_new_tokens": 300,
+ "audition": "projects/i-secretly-lived-in-my-enemys-house/production/auditions/max_B_s22.wav (style B, seed 22, of 3 styles x 2 seeds)",
+ "checks": {
+  "duration_s": 9.28,
+  "transcript_exact": true,
+  "f0_median_hz": 242.0,
+  "f0_p10_p90_hz": [
+   180.3,
+   285.0
+  ],
+  "words_per_s": 2.89,
+  "sentence_gaps_s": [
+   0.88,
+   0.8,
+   0.76
+  ]
+ },
+ "why": "Only MAX take that is mid-range for a 12-13-year-old (median 242 Hz, p10-p90 180-285: clearly an unbroken boy, no chipmunk peaks), at a natural pace (2.89 words/s) with a clean pause at every sentence break. A_s11 was 3.2 w/s with 141-305 Hz swings, A_s22/C_s11 too fast (3.9 w/s), B_s11 195 Hz with a 1.2 s hole, C_s22 154 Hz (sounds older), C_s11 278 Hz.",
+ "role": "MAX in I Secretly Lived In My Enemy's House (12-13-year-old British boy)",
+ "chosen": "2026-10-06 by the voices worker (user pre-approved: no audition stop)"
+}

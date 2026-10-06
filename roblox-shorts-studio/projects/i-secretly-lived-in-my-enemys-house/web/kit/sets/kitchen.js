@@ -355,7 +355,7 @@ export function build(scene) {
   const moonSink = practical(new THREE.SpotLight('#9fb8ff', 0, 50, 0.45, 0.6, 1.2), 500);
   moonSink.position.set(3, 14, -26); moonSink.target.position.set(1, 0, -2); group.add(moonSink, moonSink.target);
   // daylight through the windows (Ch11 Sunday morning): broad warm spots
-  const sunIn = practical(new THREE.SpotLight('#fff0d0', 0, 70, 0.6, 0.7, 1.0), 450);
+  const sunIn = practical(new THREE.SpotLight('#fff0d0', 0, 70, 0.6, 0.7, 1.0), 260);
   sunIn.position.set(30, 18, -2); sunIn.target.position.set(0, 0, 2); sunIn.castShadow = true; sunIn.shadow.mapSize.set(1024, 1024); sunIn.shadow.bias = -0.0004;
   group.add(sunIn, sunIn.target);
   const sunSink = practical(new THREE.SpotLight('#fff0d0', 0, 60, 0.5, 0.7, 1.0), 260);
@@ -431,10 +431,10 @@ export function build(scene) {
     pancake_reach: C([3.2, 4.5, 3.6], [0.6, 3.9, 0.75], 34, { note: 'the stack on the island and the hand coming up from the front' }),
     stove: C([4.5, 5.6, -2.5], [-2, 4.9, -9.5], 38, { note: 'Dad at the stove, 3/4 from the right' }),
     stove_front: C([-2, 5.4, -3.0], [-2, 4.8, -9], 40, { note: 'over the stools toward Dad at the stove' }),
-    fridge: C([-5, 5.2, -1], [-11, 4.4, -9], 38, { note: 'the fridge and whoever stands at it, 3/4 from the right' }),
+    fridge: C([-6.6, 5.2, -2.8], [-11, 4.4, -9], 40, { note: 'the fridge and whoever stands at it, 3/4 from the right' }),
     fridge_wide: C([-3, 6.5, 5], [-10, 4.0, -8], 42, { note: 'the fridge corner, pantry at left, island edge at right' }),
     fridge_letters: C([-11, 4.7, -4.6], [-11, 4.7, -9], 34, { note: 'the magnet letters fill the frame' }),
-    fridge_pov: C([-11.2, 4.7, -11.2], [-10.6, 4.4, -3], 54, { note: 'from inside the fridge out (door open): the face at fridge_open lit by the fridge light' }),
+    fridge_pov: C([-11.1, 4.9, -9.35], [-10.4, 4.6, -3], 54, { note: 'from inside the fridge out (door open): the face at fridge_open lit by the fridge light' }),
     fridge_ots: C([-8.6, 5.9, -3.6], [-11, 4.6, -9], 40, { note: 'over the shoulder of someone at fridge_read toward the letters' }),
     pantry_pov: C([-17.2, 4.6, -0.5], [-11, 4.0, -7.5], 54, { note: 'from inside the pantry through the slats toward the fridge' }),
     pantry_pov_island: C([-17.2, 4.6, -0.5], [-2, 3.6, 0], 54, { note: 'from inside the pantry through the slats toward the island' }),
