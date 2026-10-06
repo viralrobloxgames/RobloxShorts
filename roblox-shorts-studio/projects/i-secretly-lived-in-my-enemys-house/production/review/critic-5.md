@@ -94,3 +94,103 @@ film 8:35; ch10 0:00 = film 9:35). Frame numbers are the chapter frame (1-based,
 Checked and OK: the walk to the box (0:23.2-0:23.7) is a real stepping cycle along a clear path. The 0:27.9-0:29.9
 drawing insert is held between both hands and reads well. Caption colours match the speakers (Skye pink, Lily yellow,
 Dad orange offscreen).
+
+## ch10 "Hungry?" (film 9:35-10:40)
+
+### Max's identity and position (one cause: two different Max rigs/wardrobes and two bed placements are cut together)
+21. **ch10 0:29.8-0:30.0 (f895-901), walking/teleport + identity**: inside one continuous two-shot, Max **teleports**
+    in a single frame from sitting against the headboard by the window (tan T-shirt, swept brown hair) to sitting on
+    the front corner of the bed (navy T-shirt, plaid pyjama trousers, **spiky black hair**). Both cuts before this
+    (0:08.3-0:29.3) show the tan-shirt, swept-hair Max. From 0:29.9 to the end he is the navy, spiky Max, except in the
+    last shot (1:02.3-1:05.2, f1870-1956), where the swept brown hair is back. Fix: one Max (the wardrobe sheet's
+    pyjama look) in every ch10 shot, and either keep him at the headboard for the whole scene or animate him swinging
+    his legs off the bed (about 1 s) before the two-shot. **must**
+22. **ch10 0:08.3-0:29.3 (f250-880), sitting/interpenetration**: Max "sitting up in bed" is **sunk into the
+    mattress**. Only his upper chest shows above the duvet (hips well below the mattress top), his R forearm lies flat
+    and sinks into the duvet surface, and his L upper arm sticks straight out sideways at shoulder height into the
+    headboard/window-sill block (1280 px check f271). Fix: hips on the mattress top, torso upright against the
+    headboard with the duvet over the legs only, both forearms forward with the plate in both hands at lap height.
+    **must**
+23. **ch10 0:30.0-0:42.0 and 0:59.3-1:00.3 (f901-1260, f1780-1810), interpenetration**: Max on the bed corner. His
+    hips hang half off the bed over the gap; his shins come down **inside the nightstand front**; his R hand/forearm
+    rests in the nightstand top and the lamp base (lamp column inside his forearm at f1780-1800). Skye's glowing L
+    hand touches into his R forearm at f920-1260. Fix: move Max 1.5 studs left so his hips sit fully on the mattress
+    and his shins clear the nightstand. Keep his R hand on his knee, and keep Skye's hand at least 0.3 stud away
+    (or have her actually take the sandwich). **must**
+
+### Props
+24. **ch10 the plate, 0:08.3-0:30.1, props**: the plate blinks in and out. It is missing f250-289 (the sandwich
+    slabs lie on the duvet with no plate), present f290-530, **gone** f541-806 (his hand sits on two bare slabs), fades
+    in as a transparent ghost outline at f811, present f815-868, gone again f871. In the two-shot it flies up into his
+    raised L hand at f898-904 and is out of frame by f904. The script says he is "holding a plate". Fix: plate always
+    visible under the sandwiches and in his palms (not lying on the duvet), lifted on "Hungry?" and on "the
+    sandwiches", then set down on the nightstand on a visible beat before he moves. **must**
+25. **ch10 0:00-0:03.7 (f1-110), staging/props**: the dark open. Max is not readable anywhere in the bed (the
+    lower-left mass is pillows/duvet), yet a plate rim sits at the bed's edge with nobody holding it. The status
+    claims "plate + sandwich in his right hand at the bottom of frame". When the lamp clicks on he is sitting by the
+    window. Fix: a faint silhouette of Max sitting up at the headboard (cool rim on head and shoulders), plate in his
+    hands, so the reveal pays off rather than reading as a teleport. **should**
+26. **ch10 0:23.7-0:24.0 (f710-721), staging**: the beat "Skye pulls the sheet off her head" happens **in the cut**.
+    0:23.7 is the ghost from behind, and 0:24.0 is Skye already unmasked with the sheet bunched in her hand. Fix: play the
+    pull (8-12 frames, both hands at the head, the sheet sliding back) on camera. **should**
+
+### Poses
+27. **ch10 0:50.7-0:52.3 (f1520-1570), pose**: "It was a very convincing fridge." Max shrugs with **both arms raised
+    up and out** (both upper arms diagonally above the shoulders), the house-rule two-arms-up pose, for 1.7 s. Fix: a
+    small one-shoulder shrug or palms-up at waist height. **must**
+28. **ch10 0:30.3-0:30.8 and 0:40.3-0:42.0 (f910-925, f1210-1260), pose**: Max holds **both arms straight out
+    forward at shoulder height** (zombie/T-pose). Fix: hands on knees or one gesture hand below the shoulder. **must**
+29. **ch10 0:36.0-0:44.0, 0:55.7-0:59.0 (f1080-1320, f1670-1770), pose/camera**: Max's MCU. Both upper arms stick
+    straight out toward the lens as two big tan blocks either side of his torso. The R block merges into the
+    lamp/nightstand, and at the right edge Skye's hand + phone + glow stick is a blown-out green blob. He looks
+    into the lens, not at Skye (who stands screen right). Fix: arms down/forward to the knees, eyeline 20-30 degrees
+    to screen right, cheat the phone hand out of frame. **should**
+30. **ch10 0:05.7-0:08.0 and 0:14.0-0:17.7 (f170-240, f421-530), pose/props**: the ghost holds the phone arm forward
+    and the **other arm straight out sideways at shoulder height** for 6 s total. The glow sticks float off the arm
+    surface (a stick hovers in front of the wrist, f441-500), not wrapped round it. Fix: second arm lower (zombie
+    "Ooooh" with forearm forward below the shoulder is fine), glow sticks wrapped on the wrists. **should**
+
+### Staging, framing, interpenetration
+31. **ch10 0:00.0-0:01.5 (f1-45), walking/interpenetration**: the ghost glides in from the door, its body passes the
+    red desk chair at the same depth (0:00.6-0:01.1, phone arm through the chair back), and between f37 and f43 it
+    **jumps** ~1 m toward the camera and bed within the same shot. Fix: a smooth glide path in front of the chair (a
+    clear lane between chair and bed) with no jump. **must**
+32. **ch10 0:46.7-0:50.3 (f1400-1510), interpenetration/camera**: the OTS over Max. His forearm is a huge brown block
+    across the lower-left third, and Skye's glowing L hand rises into the top of that block (f1460-1500). Max's head is
+    a dark half-head at the left edge. Fix: lower his near arm out of frame or push the camera past his shoulder so the
+    forearm is not in shot, and keep her hand clear of his arm. **should**
+33. **ch10 0:24.7-0:27.0, 0:32.7-0:35.7, 0:52.7-0:55.3, camera**: Skye's reverse CU. A big brown box (Max's arm) sits
+    in the lower-left foreground and her L arm is blown out white by the lamp. The bunched sheet in her R hand is a
+    white blob at the lower right. Fix: reframe, and knock the lamp key down on her near arm. **should**
+34. **ch10 0:59.3-1:00.3 (f1780-1810), staging**: "Skye smiles. Max smiles." Both smile **into the lens**, not at each
+    other. Fix: heads turned 30-45 degrees toward each other. **should**
+35. **ch10 1:02.3-1:05.2 (f1870-1956), identity/lighting**: the last shot. Max is a dark silhouette behind Skye (face
+    barely readable while the cyan "NOBODY!" caption plays), and he has the swept hair again (#21). The phone screen
+    in Skye's hand is a white flare in front of his lap. Fix: a warm kicker on Max's face, phone screen turned away,
+    Max per the wardrobe (#21). **should**
+
+Checked and OK: the hair-sticking-out CU with the red circle (0:20-0:21.7) reads clearly. The door insert for Dad's
+offscreen line has a light gap under the door and orange caption. Caption colours match the speakers throughout (Max
+cyan, Skye pink, Dad orange offscreen). "THE DANCE..." over Skye's reaction is a motivated listener cut.
+
+## Must table
+
+| # | Where (chapter time) | Frames | What |
+|---|---|---|---|
+| 2 | ch09 0:30.2-0:31.9 | f907-957 | drawing vanishes, both arms swing up |
+| 3 | ch09 0:35.2-0:36.9 | f1057-1107 | "He kept it": no drawing, both arms spread up |
+| 4 | ch09 whole | many | Lily's teddy pops between floor, hand and nothing |
+| 5 | ch09 0:49.1-0:50.3 | f1474-1510 | drawing teleports into box, rolled camera, giant forearm |
+| 8 | ch09 0:23.8-0:24.2 | f716-728 | T-pose from behind at the box |
+| 9 | ch09 0:00-0:05, 0:13-0:17 | f1-160, f400-520 | Lily's shins missing / sunk in chair; sheet is a rigid box |
+| 10 | ch09 0:06.0-0:11.3 | f181-340 | forearm at lens 5 s, scissors buried in hand/torso |
+| 15 | ch09 0:54.9-0:59.7 | f1647-1792 | sheet is an apron stuck in her chest; arm sunk in Lily's shoulder |
+| 21 | ch10 0:29.8-0:30.0 (+ to end) | f895-901 | Max teleports and changes shirt + hair mid-shot; hair flips back at the end |
+| 22 | ch10 0:08.3-0:29.3 | f250-880 | Max sunk into the mattress, arm in headboard |
+| 23 | ch10 0:30.0-0:42.0, 0:59.3-1:00.3 | f901-1260, f1780-1810 | Max half off the bed, shins in nightstand, hand in lamp |
+| 24 | ch10 0:08.3-0:30.1 | f250-904 | plate blinks in/out, fades, flies |
+| 27 | ch10 0:50.7-0:52.3 | f1520-1570 | two-arms-up shrug |
+| 28 | ch10 0:30.3-0:30.8, 0:40.3-0:42.0 | f910-925, f1210-1260 | both arms straight out forward |
+| 31 | ch10 0:00.0-0:01.5 | f1-45 | ghost through the desk chair, jumps 1 m mid-shot |
+
+Shoulds: ch09 #1, 6, 7, 11-14, 16-20; ch10 #25, 26, 29, 30, 32-35.
