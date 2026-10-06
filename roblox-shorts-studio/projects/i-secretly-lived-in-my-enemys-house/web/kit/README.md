@@ -65,8 +65,10 @@ light in `set.lights` is off unless the preset or `practicals` turns it on (true
 ## camera.js (kit-pipeline)
 
 The camera is on whoever speaks. Call one camera function per frame, last in `update()` (after posing).
-`K.setBlockers(set.group, C.skye, C.max)` each frame: cameras are pulled in front of any wall or other actor between
-them and their subject. `K.setLine(a, b, side)` once per scene: two-shots, over-the-shoulders and singles stay on that
+`K.setBlockers(set.group, C.skye, C.max)` each frame: a removable wall (`set.walls` / `group.userData.walls`) between a
+camera and its subject is hidden for that frame (dollhouse); any other solid thing or actor in the way pulls the camera
+in front of it. Light shafts, particles, additive / see-through meshes and `userData.noCamBlock` objects never block.
+Shots inside tight spaces (the closet, under the island) use the set's named cams via `setCam`. `K.setLine(a, b, side)` once per scene: two-shots, over-the-shoulders and singles stay on that
 side of the line a→b (no 180-degree crossing); if a single would cross, its angle is mirrored.
 
 | Export | Example |
@@ -74,7 +76,7 @@ side of the line a→b (no 180-degree crossing); if a single would cross, its an
 | `camOn(stage, actor, framing, opts)` | `K.camOn(stage, C.max, 'mcu', { angle: 0.35, fov: 35 })`; framings `cu` (whole head), `mcu` (head and shoulders), `ms` (waist up), `ws` (full body + room); opts `angle`, `height`, `fov`, `dist`, `zoom`, `look`, `apply:false` |
 | `twoShot(stage, a, b, opts)` | `K.twoShot(stage, C.max, C.skye, { framing: 'ms', bias: 0.5 })` |
 | `overShoulder(stage, from, to, framing, opts)` | `K.overShoulder(stage, C.skye, C.max, 'mcu')`: over Skye's shoulder onto Max |
-| `setCam(stage, cam)` | `K.setCam(stage, set.cams.closet_pov)` a set's named camera (also pulled out of walls) |
+| `setCam(stage, cam)` | `K.setCam(stage, set.cams.closet_pov)` a set's named camera; hides the walls in its `hide` list; clears against the set only (never actors) |
 | `blendShot(a, b, u)`, `applyShot(stage, shot)` | push-in: `K.applyShot(stage, K.blendShot(K.camOn(stage, a, 'ms', { apply: false }), K.camOn(stage, a, 'cu', { apply: false }), u))` |
 | `drift(shot, t, amp)` | handheld feel for tense shots |
 | `headPos(actor)`, `screenOf(stage, p)` → `{ x, y, visible }` (1920x1080) | `K.screenOf(stage, K.headPos(C.skye))` for a red circle |
