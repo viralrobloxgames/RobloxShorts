@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.68,SKYE,,0,0,0,,WOW. SPOOKY. WHAT DID IT SAY?
+Dialogue: 1,0:00:01.72,0:00:02.77,MAX,,0,0,0,,THAT'S PRIVATE.
+Dialogue: 1,0:00:03.65,0:00:04.39,MAX,,0,0,0,,WHY IS THERE A
+Dialogue: 1,0:00:04.39,0:00:05.72,MAX,,0,0,0,,COBWEB IN YOUR HAIR?
+Dialogue: 1,0:00:05.90,0:00:06.87,SKYE,,0,0,0,,IT'S FASHION.
+Dialogue: 1,0:00:06.95,0:00:07.91,MAX,,0,0,0,,AND WHY DO YOU SMELL
+Dialogue: 1,0:00:07.91,0:00:09.52,MAX,,0,0,0,,LIKE MY DAD'S PANCAKES?
+Dialogue: 1,0:00:09.85,0:00:12.06,SKYE,,0,0,0,,LOTS OF PEOPLE HAVE PANCAKES.
+Dialogue: 1,0:00:12.26,0:00:13.19,MAX,,0,0,0,,WITH CINNAMON?
+Dialogue: 1,0:00:13.39,0:00:16.32,SKYE,,0,0,0,,CINNAMON IS A VERY POPULAR SPICE, MAX.
+Dialogue: 1,0:00:16.59,0:00:18.37,MAX,,0,0,0,,RIGHT. HEY, I TRIED
+Dialogue: 1,0:00:18.37,0:00:19.45,MAX,,0,0,0,,CUTTING THE CRUSTS OFF
+Dialogue: 1,0:00:19.45,0:00:22.58,MAX,,0,0,0,,MY SANDWICH. YOU WERE RIGHT. IT'S BETTER.
+Dialogue: 1,0:00:22.80,0:00:23.82,SKYE,,0,0,0,,SINCE WHEN DO YOU
+Dialogue: 1,0:00:23.82,0:00:25.05,SKYE,,0,0,0,,CUT OFF YOUR CRUSTS?
+Dialogue: 1,0:00:25.05,0:00:27.20,MAX,,0,0,0,,SINCE THIS WEEK. WANT HALF?
+Dialogue: 1,0:00:28.22,0:00:30.52,SKYE,,0,0,0,,WHY IS MY FACE HOT? STOP
+Dialogue: 1,0:00:30.52,0:00:32.86,SKYE,,0,0,0,,IT, FACE. HE'S THE ENEMY.
