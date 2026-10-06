@@ -46,6 +46,8 @@ Horror development: [research and examples](references/horror-research-2026-10-0
 [proposed series and pilots](references/horror-series.md), and
 [prioritised asset checklist](assets/roblox_pack/HORROR_ASSETS.md).
 
+Competitor research: [Mia Rants teardown, 6 October 2026](references/competitor-mia-rants-2026-10-06.md).
+
 | Path | What |
 |---|---|
 | `SKILL.md` | the workflow and hard rules (read first) |
