@@ -1,4 +1,4 @@
-STATUS: DONE
+STATUS: RENDERING
 FRAMES: 2204
 SPLIT: 993
 COMMIT: 1f3787d
@@ -8,3 +8,4 @@ render-ch07-b: delivery/chapters/ch07_b.mp4 = frames 993-2204 (1212 frames, 1920
 - 3 stills checked (t=2, 18, 39 s): framing, captions and props OK.
 - Encode: finish_longform.py ran with no extra installs (~3 min).
 - renders/ch07 (B frames + frame_hashes.json) kept on this machine for final-review fixes ("re-sync ch07 B to <sha>").
+- review-2 fix (ch07 d5ca3f4c): re-rendering 1050-1140,1665-2204 by range, then re-encode ch07_b
