@@ -1,0 +1,26 @@
+{
+ "voice": "lily_kid",
+ "text": "He said that?",
+ "seed": 63998,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "said",
+   "start": 0.16,
+   "end": 0.4
+  },
+  {
+   "word": "that?",
+   "start": 0.4,
+   "end": 0.66
+  }
+ ],
+ "words_md5": "983267109f483f855626fe37a54b1110",
+ "whisper": "small.en"
+}

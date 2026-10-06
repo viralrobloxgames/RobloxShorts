@@ -1,0 +1,51 @@
+{
+ "voice": "max_kid",
+ "text": "And if you're a vampire, we've got garlic.",
+ "seed": 69862,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "And",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "if",
+   "start": 0.18,
+   "end": 0.3
+  },
+  {
+   "word": "you're",
+   "start": 0.3,
+   "end": 0.46
+  },
+  {
+   "word": "a",
+   "start": 0.46,
+   "end": 0.58
+  },
+  {
+   "word": "vampire,",
+   "start": 0.58,
+   "end": 1.02
+  },
+  {
+   "word": "we've",
+   "start": 1.54,
+   "end": 1.76
+  },
+  {
+   "word": "got",
+   "start": 1.76,
+   "end": 1.96
+  },
+  {
+   "word": "garlic.",
+   "start": 1.96,
+   "end": 2.32
+  }
+ ],
+ "words_md5": "edbff733da0fa4c7f744a785d6f163f7",
+ "whisper": "small.en"
+}

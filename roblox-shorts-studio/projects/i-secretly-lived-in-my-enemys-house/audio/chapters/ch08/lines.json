@@ -1,0 +1,253 @@
+{
+ "chapter": 8,
+ "header": "CH08 | FRIDAY | 9:30 PM | The Worst",
+ "duration": 57.857,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Friday night. I decided to stop. I'd leave Max a note, tell him the truth, and go home.",
+   "start": 0.0,
+   "end": 5.239,
+   "clip": "audio/qwen/take-01/clips/88f309a8f8a5.wav",
+   "seed": 75190
+  },
+  {
+   "index": 2,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Dear Max. The ghost was me. Sorry. Also, your dad's pancakes are amazing.",
+   "start": 5.489,
+   "end": 10.209,
+   "clip": "audio/qwen/take-01/clips/d52b50bfc7a7.wav",
+   "seed": 70333
+  },
+  {
+   "index": 3,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "phone",
+   "text": "Skye? Ask Skye to the dance?",
+   "start": 11.059,
+   "end": 13.732,
+   "clip": "audio/qwen/take-01/clips/1d339bef3fa8.wav",
+   "seed": 13832
+  },
+  {
+   "index": 4,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "phone",
+   "text": "Okay. Don't tell anyone.",
+   "start": 13.982,
+   "end": 16.045,
+   "clip": "audio/qwen/take-01/clips/81e107c781ac.wav",
+   "seed": 11828
+  },
+  {
+   "index": 5,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "phone",
+   "text": "Skye is the worst...",
+   "start": 16.295,
+   "end": 17.736,
+   "clip": "audio/qwen/take-01/clips/d27e422aa19b.wav",
+   "seed": 94959
+  },
+  {
+   "index": 6,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "The worst. Right. Got it.",
+   "start": 18.586,
+   "end": 20.906,
+   "clip": "audio/qwen/take-01/clips/ab9b85a0122b.wav",
+   "seed": 46546
+  },
+  {
+   "index": 7,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "What happened? Did he see you?",
+   "start": 21.256,
+   "end": 23.22,
+   "clip": "audio/qwen/take-01/clips/4aa991e9e397.wav",
+   "seed": 93150
+  },
+  {
+   "index": 8,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Worse. Your brother thinks I'm the worst.",
+   "start": 23.47,
+   "end": 25.39,
+   "clip": "audio/qwen/take-01/clips/57840fb7f875.wav",
+   "seed": 35516
+  },
+  {
+   "index": 9,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "He said that?",
+   "start": 25.64,
+   "end": 26.468,
+   "clip": "audio/qwen/take-01/clips/4d44f161510c.wav",
+   "seed": 63998
+  },
+  {
+   "index": 10,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Word for word. Skye is the worst.",
+   "start": 26.718,
+   "end": 29.386,
+   "clip": "audio/qwen/take-01/clips/12d4cc1ec7c4.wav",
+   "seed": 34201
+  },
+  {
+   "index": 11,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "What came after?",
+   "start": 29.636,
+   "end": 30.8,
+   "clip": "audio/qwen/take-01/clips/1f801d21d42a.wav",
+   "seed": 64490
+  },
+  {
+   "index": 12,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Nothing. I left. I didn't need to hear the rest.",
+   "start": 31.05,
+   "end": 33.93,
+   "clip": "audio/qwen/take-01/clips/8bab1074f9fe.wav",
+   "seed": 53373
+  },
+  {
+   "index": 13,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Max never says mean things about you. Only dumb things. Like how your laugh sounds like a goose.",
+   "start": 34.18,
+   "end": 40.328,
+   "clip": "audio/qwen/take-01/clips/00e394e34004.wav",
+   "seed": 58337
+  },
+  {
+   "index": 14,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Tomorrow night, I'm doing the biggest haunting this house has ever seen. And I'm filming the whole thing.",
+   "start": 40.578,
+   "end": 45.658,
+   "clip": "audio/qwen/take-01/clips/2a9fd9341444.wav",
+   "seed": 93510
+  },
+  {
+   "index": 15,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "On Monday, the whole class gets to watch Max scream.",
+   "start": 45.908,
+   "end": 49.508,
+   "clip": "audio/qwen/take-01/clips/dd714636e27d.wav",
+   "seed": 12531
+  },
+  {
+   "index": 16,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "You don't really want to do that.",
+   "start": 49.758,
+   "end": 51.503,
+   "clip": "audio/qwen/take-01/clips/d2f07eb1f4e9.wav",
+   "seed": 24203
+  },
+  {
+   "index": 17,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Yes, I do.",
+   "start": 51.753,
+   "end": 52.553,
+   "clip": "audio/qwen/take-01/clips/571df591926f.wav",
+   "seed": 9378
+  },
+  {
+   "index": 18,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Then why are you crying?",
+   "start": 52.803,
+   "end": 54.367,
+   "clip": "audio/qwen/take-01/clips/553a8237f742.wav",
+   "seed": 85615
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "It's dusty. It's a really, really dusty attic.",
+   "start": 54.617,
+   "end": 57.257,
+   "clip": "audio/qwen/take-01/clips/4c3b5894975f.wav",
+   "seed": 96005
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the upstairs hallway at night. Skye outside Max's door with a folded note.",
+   "until": 0.0
+  },
+  {
+   "after_line": 2,
+   "at": 10.209,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "She bends to slide it under the door. Max's voice stops her: inside, he's on the phone, smiling.",
+   "until": 11.059
+  },
+  {
+   "after_line": 5,
+   "at": 17.736,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Skye straightens up and backs away. The note crumples in her fist.",
+   "until": 18.586
+  },
+  {
+   "after_line": 6,
+   "at": 20.906,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "The attic. Skye sits in her nest. Lily climbs up in her pyjamas.",
+   "until": 21.256
+  }
+ ]
+}

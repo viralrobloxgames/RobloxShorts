@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Skye is the worst...",
+ "seed": 94959,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Sky",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "is",
+   "start": 0.44,
+   "end": 0.7
+  },
+  {
+   "word": "the",
+   "start": 0.7,
+   "end": 0.84
+  },
+  {
+   "word": "worst.",
+   "start": 0.84,
+   "end": 1.14
+  }
+ ],
+ "words_md5": "67c74eb123b0a544e03fc9ff3dbf87a9",
+ "whisper": "small.en"
+}
