@@ -364,7 +364,7 @@
       "title": "The Tornado Came Back",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-tornado-came-back",
@@ -509,6 +509,16 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/she-raced-around-the-world",
       "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating."
+    },
+    {
+      "title": "He Sold The Eiffel Tower",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: Paris, 1925. The papers say the Eiffel Tower is rusting and costly to fix, so con man Victor Lustig fakes government letters, invites scrap dealers to a fancy hotel and whispers that the tower is secretly being sold for scrap. Dealer Andre Poisson pays, and a bribe too; Lustig takes the train out of the country, and Poisson is too embarrassed to tell anyone, so Lustig comes back and tries it again. This time the police are called; he flees to America, tricks Al Capone, is caught making fake money, escapes down a rope and is caught again. His death certificate: apprentice salesman and counterfeiter.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-sold-the-eiffel-tower",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Picked through general research; facts and sources in source/story.md ('tries it again', not 'sold it twice'). Web route; Max as Lustig in the top_hat, Leo as Poisson, procedural Eiffel Tower."
     }
   ],
   "statuses": [
