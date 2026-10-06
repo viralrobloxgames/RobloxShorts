@@ -15,10 +15,14 @@ Your job: fix every must in your chapter, prove it on previews, get your critic'
    light that makes a face unreadable) goes to its owner in `production/requests.md` with the exact problem; do the
    rest meanwhile, and message the owner directly if it blocks you (roster: `production/ORCHESTRATION.md`).
 3. **Prove it before any full render**: previews at `--scale 0.5` of every changed shot at 5-10 fps (`--frames a-b`
-   or `--every 3`), plus the whole chapter at `--every 15`; look at them yourself in 2x2 sheets; `clip_check` shows no
-   unexplained penetration.
+   or `--every 3`), plus the whole chapter at `--every 15`; look at them yourself in 2x2 sheets. Automated proof, all
+   from `roblox-shorts-studio/`: `node web/clip_check.mjs --clip <clip> --sight skye:max,dad,lily --out
+   production/review/clip_check/chNN.json` (no unexplained penetration; nobody sees Skye while she is hiding) and
+   `node web/cam_check.mjs --clip <clip>` (no camera glide or camera inside geometry at a cut). Paste the totals in
+   your status file.
 4. **Re-check**: set `STATUS: READY_FOR_RECHECK` (+ `COMMIT:`), and message your critic (session in the roster) to
    re-check your fixes from previews it renders itself. Fix what it still finds.
-5. **After the critic's OK**: re-render your whole segment A at full quality and ask your segment-B helper to
+5. **After the critic's OK** (and after KIT FREEZE: segments A and B must be rendered from the same code, render.mjs
+   stamps a code fingerprint and the stitch warns on a mismatch): re-render your whole segment A at full quality and ask your segment-B helper to
    re-render the whole of segment B at your commit (both with `--workers 4`, frames deleted first or rendered in
    place), re-encode both, push, `STATUS: DONE`, message the orchestrator. Never post anything.

@@ -73,22 +73,7 @@
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 45.245,
-  "gain": 0.08
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 45.695,
-  "gain": 0.08
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 46.145,
-  "gain": 0.08
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 46.595,
+  "start": 46.932,
   "gain": 0.08
  },
  {

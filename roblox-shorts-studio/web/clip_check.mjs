@@ -2,7 +2,11 @@
 // furniture) or through another character, without rendering anything.
 //
 //   node web/clip_check.mjs --clip projects/<slug>/web/chNN.js [--every 2] [--frames 1-900] [--out <file.json>]
-//        [--min-depth 0.06] [--all]        (--all: also report clipping the camera can't see: out of frame or behind scenery)
+//        [--min-depth 0.06] [--all] [--sight skye:max,dad,lily [--fov 110]]
+//
+// --sight hider:seekers adds a line-of-sight check for hiding scenes: frames where a seeker's eyes see the hider's head or
+// torso (inside his field of view, nothing solid in between) are listed under `sight` (judge them: some sightings are meant).
+//               (--all: also report clipping the camera can't see: out of frame or behind scenery)
 //
 // Each sampled frame is posed exactly as for a render (clip.update + the scene's before-render hooks), then every visible
 // actor body part (head, torso, arms, legs, as boxes shrunk by 0.14 studs so resting contact doesn't count) is tested
@@ -38,6 +42,12 @@ const t0 = Date.now(), per = {};
 for (let i = 0; i < frames.length; i += 40) {
   const batch = frames.slice(i, i + 40);
   Object.assign(per, await page.evaluate(([fs_, md]) => { const o = {}; for (const f of fs_) o[f] = window.__cc.checkFrame(f, { minDepth: md }); return o; }, [batch, minDepth]));
+}
+let sight = null;
+if (args.sight) {
+  const [hider, sk] = String(args.sight).split(':'), seekers = (sk || 'max,dad,lily').split(','), fov = Number(args.fov || 110), per2 = {};
+  for (let i = 0; i < frames.length; i += 40) Object.assign(per2, await page.evaluate(([fs_, h, s, fv]) => { const o = {}; for (const f of fs_) o[f] = window.__cc.checkSight(f, h, s, { fov: fv }); return o; }, [frames.slice(i, i + 40), hider, seekers, fov]));
+  sight = { hider, seekers, fov, per: per2 };
 }
 await browser.close(); server.close();
 
@@ -79,6 +89,18 @@ const out = {
   summary: top.map((g) => ({ actor: g.actor, object: g.object, kind: g.kind, frames: `${g.from}-${g.to}`, t: `${((g.from - 1) / fps).toFixed(1)}-${((g.to - 1) / fps).toFixed(1)}s`, film: filmStart !== null ? mmss(filmStart + (g.from - 1) / fps) : undefined, parts: [...g.parts].join(','), max_depth: g.depth, max_cover_pct: g.cover, severity: (g.depth >= 0.4 && g.cover >= 15) || g.depth >= 0.6 ? 'high' : g.depth >= 0.25 || g.cover >= 15 ? 'medium' : 'low' })),
   ranges,
 };
+if (sight) {
+  const rs = [], openS = new Map();
+  for (const f of frames) for (const h of sight.per[f] || []) {
+    const r = openS.get(h.seeker);
+    if (r && f - r.to <= every) { r.to = f; r.min_dist = Math.min(r.min_dist, h.dist); if (h.sees === 'Head') r.sees = 'Head'; }
+    else { const n = { seeker: h.seeker, hider: sight.hider, from: f, to: f, sees: h.sees, min_dist: h.dist }; openS.set(h.seeker, n); rs.push(n); }
+  }
+  for (const r of rs) { r.t = `${((r.from - 1) / fps).toFixed(2)}-${((r.to - 1) / fps).toFixed(2)}s`; if (filmStart !== null) r.film = mmss(filmStart + (r.from - 1) / fps); }
+  out.sight = { hider: sight.hider, seekers: sight.seekers, fov: sight.fov, ranges: rs };
+  console.log(`sight: ${rs.length} ranges where ${sight.seekers.join('/')} can see ${sight.hider}`);
+  for (const r of rs) console.log(`  ${(r.film || '').padEnd(8)} ${r.t.padEnd(14)} ${r.seeker} sees ${r.hider}'s ${r.sees} (${r.min_dist} studs)`);
+}
 if (args.out) { fs.mkdirSync(path.dirname(path.resolve(args.out)), { recursive: true }); fs.writeFileSync(args.out, JSON.stringify(out, null, 1)); }
 const sev = (x) => out.summary.filter((g) => g.severity === x).length;
 console.log(`${args.clip}: ${frames.length} frames checked in ${out.seconds} s; ${ranges.length} ranges; notable: ${sev('high')} high, ${sev('medium')} medium, ${sev('low')} low`);
