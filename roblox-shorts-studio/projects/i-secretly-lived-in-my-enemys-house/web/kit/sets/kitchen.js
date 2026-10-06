@@ -8,13 +8,13 @@
 //           (kids face the camera, Dad at the stove behind them); a character hides crouched on its front side.
 // Walls and ceiling hide automatically when the camera is outside them.
 import { THREE, V, std, glow, box, rbox, cyl, picture, fontText, floorTexture, wallTexture, wallWithHoles,
-  autoHideWalls, onSceneRender, proxyLight, proxyLevel, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
+  autoHideWalls, onSceneRender, makeRouter, alongRoute, routeLength, proxyLight, proxyLevel, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
 
 export const OFFSET = V(900, 0, 0);
 const H = 12;                         // ceiling
 const ISLAND_TOP = 3.6, STOOL_TOP = 2.2, COUNTER_TOP = 3.4;
 // stairs: 16 steps, rise 0.75, run 0.8; step i (1..16) top at y 0.75 i over z 2.0-0.8 i .. 2.0-0.8 (i-1); x 12..16
-const STEP_RISE = 0.75, STEP_RUN = 0.8, STAIR_Z0 = 2.0, STAIR_X = 14;
+const STEP_RISE = 0.75, STEP_RUN = 0.8, STAIR_Z0 = 2.0, STAIR_X = 13.5, STAIR_W = 5;   // treads x 11..16
 export function stairFootY(z) { const i = Math.ceil((STAIR_Z0 - z) / STEP_RUN); return Math.max(0, Math.min(16, i)) * STEP_RISE; }
 
 const LETTER_COLORS = ['#e8302f', '#ffcc1f', '#2f7be8', '#2fbf4f', '#ff8a1f', '#9a4fe0', '#ff4fa3'];
@@ -56,19 +56,19 @@ export function build(scene) {
   addWall(front, [0, 0, 12], V(0, 0, -1), 'wall_front');
   // ceiling with the stairwell hole (x 12..16, z -12..-2)
   const ceil = new THREE.Group();
-  box(28, 0.4, 24, std('#f7f1e3'), -2, H + 0.2, 0, ceil);
-  box(4, 0.4, 14, std('#f7f1e3'), 14, H + 0.2, 5, ceil);
+  box(27, 0.4, 24, std('#f7f1e3'), -2.5, H + 0.2, 0, ceil);
+  box(5, 0.4, 14, std('#f7f1e3'), 13.5, H + 0.2, 5, ceil);
   ceil.traverse((o) => { if (o.isMesh) o.castShadow = false; });
   addWall(ceil, [0, H, 0], V(0, -1, 0), 'ceiling');
   // skirting boards (part of their walls)
   box(32, 0.6, 0.15, trimM, 0, 0.3, -11.92, back);
   // a dark upstairs volume above the stairwell so the hole never shows sky
   const up = new THREE.Group(); group.add(up);
-  box(5, 0.3, 11, std('#5a4636'), 14, H + 0.1, -7, up);                  // upstairs landing floor edge
-  box(5, 7, 0.3, std('#3b2f2a'), 14, H + 3.5, -12.3, up);
-  box(0.3, 7, 11, std('#3b2f2a'), 11.7, H + 3.5, -7, up);
+  box(6, 0.3, 11, std('#5a4636'), 13.5, H + 0.1, -7, up);                  // upstairs landing floor edge
+  box(6, 7, 0.3, std('#3b2f2a'), 13.5, H + 3.5, -12.3, up);
+  box(0.3, 7, 11, std('#3b2f2a'), 10.7, H + 3.5, -7, up);
   box(0.3, 7, 11, std('#3b2f2a'), 16.4, H + 3.5, -7, up);
-  box(5, 0.3, 11, std('#2a221e'), 14, H + 7, -7, up);
+  box(6, 0.3, 11, std('#2a221e'), 13.5, H + 7, -7, up);
   const upLight = practical(new THREE.PointLight('#ffd7a0', 0, 14, 2), 6); upLight.position.set(14, H + 5, -8); up.add(upLight);
 
   // ---------------------------------------------------------------- outside, seen through windows / the back door
@@ -265,9 +265,9 @@ export function build(scene) {
   const hoodLight = practical(new THREE.PointLight('#ffcf8a', 0, 6, 2), 6); hoodLight.position.set(-2, 7.6, -10.6); kit.add(hoodLight);
 
   // pancake stack (on a plate on the island, toward the hiding side so a hand can reach it from the front)
-  const STACK = V(0.6, ISLAND_TOP, 0.75);
+  const STACK = V(0.6, ISLAND_TOP, 1.12);   // plate rim at the front edge (z 1.8) so a hand from the front can reach it
   const stack = new THREE.Group(); stack.position.copy(STACK); island.add(stack);
-  cyl(0.78, 0.66, 0.1, std('#ffffff', { roughness: 0.3 }), 0, 0.05, 0, stack);
+  cyl(0.66, 0.56, 0.1, std('#ffffff', { roughness: 0.3 }), 0, 0.05, 0, stack);
   const cakeM = std('#d9a05b', { roughness: 0.7 }), cakeTop = std('#c4823d', { roughness: 0.6 });
   const cakes = []; const CAKE_H = 0.11;
   const r0 = rng(21);
@@ -317,25 +317,25 @@ export function build(scene) {
   const treadM = std('#9b6a3e', { roughness: 0.6 }), riserM = std('#f4efe4', { roughness: 0.7 });
   for (let i = 1; i <= 16; i++) {
     const zf = STAIR_Z0 - STEP_RUN * (i - 1), y = STEP_RISE * i;
-    box(4, STEP_RISE, STEP_RUN, riserM, STAIR_X, y - STEP_RISE / 2, zf - STEP_RUN / 2, stairs);
-    box(4.1, 0.14, STEP_RUN + 0.12, treadM, STAIR_X, y + 0.02, zf - STEP_RUN / 2 + 0.04, stairs);
+    box(STAIR_W, STEP_RISE, STEP_RUN, riserM, STAIR_X, y - STEP_RISE / 2, zf - STEP_RUN / 2, stairs);
+    box(STAIR_W + 0.1, 0.14, STEP_RUN + 0.12, treadM, STAIR_X, y + 0.02, zf - STEP_RUN / 2 + 0.04, stairs);
   }
   // the side (stringer) under the steps, facing the room: a solid wall panel shaped as a staircase profile
   const prof = new THREE.Shape(); prof.moveTo(STAIR_Z0, 0);
   for (let i = 1; i <= 16; i++) { const zf = STAIR_Z0 - STEP_RUN * (i - 1); prof.lineTo(zf, STEP_RISE * i); prof.lineTo(zf - STEP_RUN, STEP_RISE * i); }
   prof.lineTo(-12, STEP_RISE * 16); prof.lineTo(-12, 0); prof.lineTo(STAIR_Z0, 0);
   const sideGeo = new THREE.ExtrudeGeometry(prof, { depth: 0.25, bevelEnabled: false });
-  const sideMesh = new THREE.Mesh(sideGeo, std('#efe6d2', { roughness: 0.8 })); sideMesh.rotation.y = -Math.PI / 2; sideMesh.position.set(11.9, 0, 0);
+  const sideMesh = new THREE.Mesh(sideGeo, std('#efe6d2', { roughness: 0.8 })); sideMesh.rotation.y = -Math.PI / 2; sideMesh.position.set(10.9, 0, 0);
   sideMesh.castShadow = sideMesh.receiveShadow = true; stairs.add(sideMesh);
   // cupboard door under the stairs
-  box(0.1, 3.4, 2.2, std('#d8ccb4'), 11.8, 1.7, -4.5, stairs); box(0.15, 0.15, 0.15, handleM, 11.72, 1.7, -3.6, stairs);
+  box(0.1, 3.4, 2.2, std('#d8ccb4'), 10.8, 1.7, -4.5, stairs); box(0.15, 0.15, 0.15, handleM, 10.72, 1.7, -3.6, stairs);
   // banister on the room side: newel post at the bottom, sloped rail, balusters
   const railM = std('#7a4f2a', { roughness: 0.5 });
-  box(0.45, 4.2, 0.45, railM, 12.2, 2.1, 1.6, stairs);
+  box(0.45, 4.2, 0.45, railM, 11.2, 2.1, 1.6, stairs);
   const len = Math.hypot(STEP_RUN * 15, STEP_RISE * 15);
-  const rail = box(0.3, 0.25, len, railM, 12.2, 3.3 + STEP_RISE * 7.5, STAIR_Z0 - STEP_RUN * 7.5, stairs);
+  const rail = box(0.3, 0.25, len, railM, 11.2, 3.3 + STEP_RISE * 7.5, STAIR_Z0 - STEP_RUN * 7.5, stairs);
   rail.rotation.x = Math.atan2(STEP_RISE, STEP_RUN);
-  for (let i = 1; i <= 15; i++) { const zf = STAIR_Z0 - STEP_RUN * (i - 0.5); box(0.12, 3.2, 0.12, std('#f4efe4'), 12.2, STEP_RISE * i + 1.6, zf, stairs); }
+  for (let i = 1; i <= 15; i++) { const zf = STAIR_Z0 - STEP_RUN * (i - 0.5); box(0.12, 3.2, 0.12, std('#f4efe4'), 11.2, STEP_RISE * i + 1.6, zf, stairs); }
 
   // ---------------------------------------------------------------- back door (right wall, z 4..8), window in its top half
   const doorPivot2 = new THREE.Group(); doorPivot2.position.set(16.0, 0, 4.0); group.add(doorPivot2);   // hinge at z 4
@@ -388,9 +388,9 @@ export function build(scene) {
     fridge_open: M(-10.2, 0, -6.6, PI, { note: 'in the open fridge light, facing in; the door swings to his left' }),
     fridge_read: M(-11, 0, -6.4, PI, { note: 'a step back from the door, reading the letters' }),
     fridge_side: M(-8.0, 0, -8.0, -PI / 2, { note: 'to the right of the fridge, facing it' }),
-    stove: M(-2, 0, -8.4, PI, { note: 'Dad at the stove, cooking (back to the room)' }),
-    stove_turned: M(-2, 0, -8.4, 0, { note: 'Dad at the stove turned to the room' }),
-    stove_three_quarter: M(-1.6, 0, -8.3, PI * 0.8, { note: 'Dad cooking, cheated 3/4 toward the front-left camera' }),
+    stove: M(-2, 0, -7.9, PI, { note: 'Dad at the stove, cooking (back to the room)' }),
+    stove_turned: M(-2, 0, -7.9, 0, { note: 'Dad at the stove turned to the room' }),
+    stove_three_quarter: M(-1.6, 0, -7.8, PI * 0.8, { note: 'Dad cooking, cheated 3/4 toward the front-left camera' }),
     counter_sandwich: M(-6.3, 0, -8.3, PI, { note: 'at the back counter, at the plate (Ch3 sandwich)' }),
     counter_right: M(4.5, 0, -8.3, PI, { note: 'at the sink / toaster counter' }),
     island_stool_1: sit(STOOL_X[0], STOOL_Z), island_stool_2: sit(STOOL_X[1], STOOL_Z),
@@ -405,9 +405,9 @@ export function build(scene) {
     pantry_inside: M(-17.5, 0, -0.5, PI / 2, { note: 'inside the pantry facing out (+x)' }),
     pantry_slats: M(-16.75, 0, -0.5, PI / 2, { note: 'nose to the slats, peeking out; the camera pantry_peek sees the eyes through the gap' }),
     pantry_front: M(-13.5, 0, -0.5, -PI / 2, { note: 'outside the pantry doors facing them' }),
-    stairs_top: M(STAIR_X, stairFootY(-9.6), -9.6, 0, { note: 'top of the visible stairs (head in the stairwell), facing down (+z)' }),
-    stairs_mid: M(STAIR_X, stairFootY(-4.0), -4.0, 0, { note: 'halfway down (Ch2 freeze)' }),
-    stairs_low: M(STAIR_X, stairFootY(0.4), 0.4, 0, { note: 'two steps from the bottom' }),
+    stairs_top: M(STAIR_X, stairFootY(-9.6 - 0.45), -9.6, 0, { note: 'top of the visible stairs (head in the stairwell), facing down (+z)' }),
+    stairs_mid: M(STAIR_X, stairFootY(-4.0 - 0.45), -4.0, 0, { note: 'halfway down (Ch2 freeze)' }),
+    stairs_low: M(STAIR_X, stairFootY(0.4 - 0.45), 0.4, 0, { note: 'two steps from the bottom' }),
     stairs_bottom: M(STAIR_X, 0, 3.4, 0, { note: 'at the foot of the stairs on the floor' }),
     back_door_inside: M(13.6, 0, 6.0, PI / 2, { note: 'inside, facing the back door' }),
     back_door_crawl: M(14.4, 0, 6.0, PI / 2, { crawl: true, note: 'on hands and knees going out the back door' }),
@@ -429,10 +429,40 @@ export function build(scene) {
     island_phone_3: M(STOOL_X[2] + 0.8, ISLAND_TOP, -1.2, 0, { note: 'island top beside stool 3\'s plate' }),
     backpack_floor_3: M(STOOL_X[2] + 1.0, 0, -4.6, 0, { note: 'floor beside stool 3' }),
   };
+  // SC2: reach, hide and crawl spots out of the family's sight lines (seated eyes on stools ~y 4.5-5.2 at z -3.2 see over the
+  // island top edge (z 1.8, y 3.6) down to about y 3.3 at z 2.3, y 2.8 at z 3.5). Check any frame with set.sightBlocked(eye, head).
+  Object.assign(marks, {
+    island_reach: M(STACK.x, 0, 2.35, PI, { kneel: true, note: 'kneeling (kneel_up) against the island front, facing it, under the stack: torso front 1.85 clears the panel (1.77); one arm straight up beside the edge, the hand comes over at y ~4.3 in front of the stack (z 1.12, rim 1.78)' }),
+    island_hide_low: M(0.4, 0, 2.6, 0, { crawl: true, note: 'crouched low / hands and knees against the island front (crawl pose, head ~2.6): below every seated sight line' }),
+    island_hide_crawl_end: M(6.2, 0, 3.4, PI / 2, { crawl: true, note: 'crawl waypoint past the right end of the island, still shadowed by it from the stools' }),
+    island_hide_crawl_door: M(10.2, 0, 5.4, PI / 2, { crawl: true, note: 'crawl waypoint toward the back door (in the open: only safe while the family looks at Dad / the stack)' }),
+    stairs_foot_out: M(STAIR_X, 0, 4.4, 0, { note: 'one step clear of the foot of the stairs (start walks into the room from here; the newel post is at x 11.2, z 1.6)' }),
+  });
   marks.stairs_foot = marks.stairs_bottom; marks.back_door = marks.back_door_inside;
   // a walk path down the stairs: u 0 (top) .. 1 (floor at the bottom); y follows the steps
   function stairsPath(u) {
-    const z = -9.6 + (3.4 + 9.6) * u; return { pos: W(STAIR_X, stairFootY(z), z), heading: 0 };
+    const z = -9.6 + (3.4 + 9.6) * u; return { pos: W(STAIR_X, stairFootY(z - 0.45), z), heading: 0 };   // the higher tread under the body (no leg through a tread)
+  }
+
+  // SC2 routing on the floor: island + stools, back counters, fridge, stairs (with the newel/banister), the bin
+  const rects = [
+    { x0: -5.6 - 1.2, x1: 5.6 + 1.2, z0: -4.0 - 0.9, z1: 1.8 + 0.9 },        // island + stools (stools out)
+    { x0: -16, x1: 8.0, z0: -12, z1: -9.4 + 0.9 },                           // back counters, stove, bin
+    { x0: -16, x1: -9 + 1.2, z0: -12, z1: -9.1 + 0.9 },                       // fridge (shut)
+    { x0: 10.9 - 1.2, x1: 16, z0: -12, z1: 2.0 + 0.9 },                       // stairs, stringer, newel (x 11.2, z 1.6)
+  ];
+  const route = makeRouter(OFFSET, rects, { x0: -14.6, x1: 14.8, z0: -8.4, z1: 10.8 });
+  // walk from the stairs (u 0 = top) to a floor point: stairsPath down, then route() from the foot
+  const fromStairs = (toW) => [W(STAIR_X, 0, 3.4), ...route(W(STAIR_X, 0, 4.4), toW)];
+  // true when the island (or the stools' backs) blocks the straight line between two world points (eyes -> head)
+  const ISL = { x0: -5.5, x1: 5.5, y0: 0, y1: ISLAND_TOP, z0: -2.1, z1: 1.8 };
+  function sightBlocked(eyeW, targetW) {
+    const a = eyeW.clone().sub(OFFSET), d = targetW.clone().sub(OFFSET).sub(a); let t0 = 0, t1 = 1;
+    for (const [p, q] of [[-d.x, a.x - ISL.x0], [d.x, ISL.x1 - a.x], [-d.y, a.y - ISL.y0], [d.y, ISL.y1 - a.y], [-d.z, a.z - ISL.z0], [d.z, ISL.z1 - a.z]]) {
+      if (Math.abs(p) < 1e-9) { if (q < 0) return false; continue; }
+      const t = q / p; if (p < 0) { if (t > t1) return false; if (t > t0) t0 = t; } else { if (t < t0) return false; if (t < t1) t1 = t; }
+    }
+    return t0 <= t1;
   }
 
   // ---------------------------------------------------------------- cams
@@ -549,5 +579,6 @@ export function build(scene) {
   const anchors = { pancakeStackTop: () => W(STACK.x, STACK.y + 0.1 + (state.pancakes || 0) * 0.11, STACK.z), plate: W(PLATE.x, PLATE.y, PLATE.z), fridgeLetters: W(-11, 4.6, -8.7) };
   // door helper: setDoor('back_door' | 'pantry' | 'fridge', 0..1)
   const setDoor = (name, u) => setState({ [{ back_door: 'backDoor', pantry: 'pantryDoors', fridge: 'fridgeOpen' }[name] || name]: u });
-  return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
+  return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, route, fromStairs, alongRoute, routeLength, sightBlocked,
+    seatY: (scale = 1) => STOOL_TOP - 1.5 * scale, STOOL_TOP, ISLAND_TOP, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
 }
