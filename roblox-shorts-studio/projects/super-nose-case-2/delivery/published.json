@@ -6,10 +6,22 @@
     "at": "2026-10-05",
     "how": "\"approved\" in chat (second cut)"
   },
+  "scheduled_for": "2026-10-06T20:45:00+01:00",
   "tiktok": {
-    "status": "not posted"
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "on, passed (no issues found)"
   },
   "youtube": {
-    "status": "not posted"
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "url": "https://youtube.com/shorts/Cg9QBdu_cLE",
+    "video_id": "Cg9QBdu_cLE",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "cover.jpg uploaded before scheduling"
   }
 }

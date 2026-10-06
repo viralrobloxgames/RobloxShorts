@@ -39,7 +39,7 @@ it, e.g. a crown that drops on) fits each one to that character's hair by the ru
 
 | Rule | Items | Fitting |
 |---|---|---|
-| seat | crown_admin, top_hat | lowest height where it clears the hair, up to 1.35x |
+| seat | crown_admin, top_hat, ranger_hat, officer_cap, pillbox_hat, postman_kepi | lowest height where it clears the hair, up to 1.35x |
 | cover | cap | as low as possible, up to 1.35x; hair hidden if nothing fits |
 | band | headphones | widened only (up to 1.6x across), height kept |
 | float | admin_badge_halo | lowest height with nothing inside it |

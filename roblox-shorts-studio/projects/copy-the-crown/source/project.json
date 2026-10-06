@@ -1,0 +1,24 @@
+{
+  "title": "Copy the Crown",
+  "character": "Leo",
+  "characters": [
+    "Leo",
+    "Max",
+    "Mia",
+    "Skye",
+    "Noob"
+  ],
+  "seconds": 61.5,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "delivered_local_review",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+    },
+    "music_gain": 0.07
+  }
+}

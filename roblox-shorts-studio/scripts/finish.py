@@ -50,6 +50,17 @@ def caption_width(size):
     return lambda text: font.getlength(text) * LIBASS_SCALE
 
 
+def glue(words):
+    """Whisper splits numbers like '$6.2' or '$120,000' into ' $6' + '.2': glue such a tail onto the word before it."""
+    out = []
+    for w in words:
+        if out and re.match(r'[.,]\d', w['word']):
+            out[-1] = dict(out[-1], word=out[-1]['word'] + w['word'], end=w['end'])
+        else:
+            out.append(w)
+    return out
+
+
 def fit_groups(words, width):
     """Split a caption group (list of word dicts) into consecutive chunks that each fit on screen, as evenly as possible."""
     text = lambda ws: ' '.join(w['word'].strip().upper() for w in ws)
@@ -129,8 +140,14 @@ def main():
     word = lambda x: fixes.get(x.strip().upper().strip(',.?!'), x.strip().upper())
     width = caption_width(opt['caption_font_size'])
     groups = []
-    for cap in json.loads((A / 'alignment/captions.json').read_text(encoding='utf-8')) if voiced else []:
-        chunks = fit_groups(cap['words'], width)
+    caps = json.loads((A / 'alignment/captions.json').read_text(encoding='utf-8')) if voiced else []
+    for prev, cap in zip(caps, caps[1:]):                     # a split number can straddle two groups: '$6' | '.2 million'
+        while cap['words'] and prev['words'] and re.match(r'[.,]\d', cap['words'][0]['word']):
+            w = cap['words'].pop(0); prev['words'].append(w); prev['end'] = max(prev['end'], w['end'])
+    for cap in caps:
+        if not cap['words']:
+            continue
+        chunks = fit_groups(glue(cap['words']), width)
         groups += [(c, chunks[k + 1][0]['start'] if k + 1 < len(chunks) else cap['end']) for k, c in enumerate(chunks)]
     for ws, cap_end in groups:
         for i, w in enumerate(ws):

@@ -17,10 +17,11 @@
       "title": "The Free Coin Trap",
       "series": "roblox",
       "created": "2026-09-17",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Max finds a free-coin button, holds it down, and gets buried until Mia pays one coin to stop it.",
       "platform": "YouTube Shorts / TikTok",
-      "project": "examples/the-free-coin-trap"
+      "project": "examples/the-free-coin-trap",
+      "notes": "On TikTok since 2026-09-17 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The AFK Champion",
@@ -35,10 +36,11 @@
       "title": "Admin For One Round",
       "series": "roblox",
       "created": "2026-09-30",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Leo gets admin commands for one round, spams a useless 'explode' command, and finds out too late that it was aimed at himself.",
       "platform": "TikTok (>60 s for Creator Rewards) / YouTube Shorts",
-      "project": "projects/admin-for-one-round"
+      "project": "projects/admin-for-one-round",
+      "notes": "On TikTok since 2026-09-30 22:35 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The AFK Millionaire",
@@ -128,10 +130,11 @@
       "title": "The Super Nose Detective",
       "series": "super nose detective (case 1)",
       "created": "2026-10-03",
-      "status": "narration_done",
+      "status": "posted",
       "logline": "A Roblox take on the 70s Miami detective parody Dick Snifford (flirting yes, no swearing or sexual references): Detective Max Sniffwell has the Super Nose gamepass and solves the stolen Golden Donut case by sniffing a sock. Skye asks if he's single and Mia asks him to stay at a pool party ('Tempting. But I'm on a case.'); he sneezes a pepper-throwing red herring into the pool and follows the trail back to Chief Leo, who has one sock, sprinkles on his face and half the donut. Leo slides him the other half, his cut. 'Tempting.' Case closed.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/the-super-nose-detective"
+      "project": "projects/the-super-nose-detective",
+      "notes": "Posted by the user on TikTok 2026-10-04 16:30 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "The Server Says One",
@@ -146,10 +149,11 @@
       "title": "Which Max Is Real",
       "series": "After Hours horror (part 2 of 2, finale)",
       "created": "2026-10-03",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "Finale. Mia, who was spectating, realises the copy is a mirror: 'raise your right hand' exposes the right Max (the hoodie star was the clue). It lunges for her; Max walks backwards so the mirror backs toward the EXIT door, it resists one step away, Max sprints backwards and the mirror is flung through; Mia slams the door. Two players online. Max waves goodbye at the door; nothing waves back.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/which-max-is-real"
+      "project": "projects/which-max-is-real",
+      "notes": "Posted by the user on TikTok 2026-10-04 23:37 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "Three Seconds",
@@ -183,10 +187,11 @@
       "title": "The Last Penalty",
       "series": "standalone story",
       "created": "2026-10-03",
-      "status": "delivered_local_review",
+      "status": "posted",
       "logline": "You're the keeper facing the last penalty of the final. Leo always looks at the corner he's aiming for, so you dive early and save it, but it's retaken because you left your line. Knowing he's been read, Leo shuts his eyes, and you stay on your line. Unable to see, he scuffs it into the grass and it rolls to your boot.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
-      "project": "projects/the-last-penalty"
+      "project": "projects/the-last-penalty",
+      "notes": "Posted by the user on TikTok 2026-10-04 22:01 (seen in TikTok Studio 2026-10-05)."
     },
     {
       "title": "Don't Sneeze Outside",
@@ -212,7 +217,7 @@
       "title": "The Vampire Case (Detective Max Sniffwell)",
       "series": "super nose detective",
       "created": "2026-10-05",
-      "status": "approved_for_posting",
+      "status": "scheduled",
       "project": "projects/super-nose-case-2",
       "logline": "Count Vlad, the nicest vampire in town, is knocked out cold with a slice of garlic bread by his coffin. The Chief offers Max a burger to drop it (red herring: he is just lazy). One long sniff: butter, fresh garlic, compost, so the garlic was homegrown, and only the gardener grows anything: a garlic patch behind the roses. Motive: Vlad kept the whole garden in the shade, twenty years of sad tomatoes. Cuffs on, gloves and all; with the garlic gone Vlad wakes, and his sister asks Max to stay for dinner. Then he sees the fangs. ~62 s.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
@@ -250,10 +255,11 @@
       "title": "The Guardian Quits",
       "series": "standalone",
       "created": "2026-10-05",
-      "status": "delivered_local_review",
+      "status": "scheduled",
       "logline": "Steal an Egg told by the guardian: a T-rex loses his egg at the safe-zone wall every day (BONK), gets a one-star review after 400 thefts, disguises himself as a 'Player' to cross the safe zone and steals every egg back from the bases (Leo bonks off him). All 400 hatch into baby T-rexes, so he quits to be Leo's base guard on a brainrot treadmill; his kids now bonk the wall.",
       "platform": "TikTok (>65 s) / YouTube Shorts",
-      "project": "projects/the-guardian-quits"
+      "project": "projects/the-guardian-quits",
+      "notes": "Scheduled 2026-10-09 19:00 UK on TikTok and YouTube; YouTube thumbnail is a stand-in frame, swap in the cover once channel verification clears."
     },
     {
       "title": "Feeding the Prism Kitsune",
@@ -269,7 +275,7 @@
       "title": "The Backwards Umbrella",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "rendered_awaiting_approval",
+      "status": "scheduled",
       "logline": "When Leo's umbrella is open it rains everywhere except under it. He soaks his friends, shares it (the Noob doesn't fit), keeps it shut - until Max's barbecue goes up in flames and the rain saves the park. Mia ducks under: 'Room for one more?'",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-backwards-umbrella",
@@ -289,17 +295,17 @@
       "title": "Say Their Name",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "scheduled",
       "logline": "In this obby, saying a player's name teleports them next to you; first to the top wins a million coins. Leo and Max keep summoning each other down, Leo's 'Steve' name tag fails, Mia summons both boys into mid-air over the lava - then tries the Noob, whose username takes so long to say he wins first, and her '...nine' teleports him to her holding a million coins.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/say-their-name",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Obby tower and lava, big name tags, teleport puffs; web route. Scheduled 2026-10-09 22:30 UK on TikTok. YouTube NOT uploaded yet (daily upload limit 2026-10-05): see delivery/published.json."
     },
     {
       "title": "He Bought Google For 12 Dollars",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_draft_awaiting_approval",
+      "status": "delivered_local_review",
       "logline": "True story: in 2015 a former Google employee bought google.com for $12 on Google's own domain shop and owned it for a minute; Google cancelled it, paid a $6,006.13 bug reward (the digits spell GOOGLE) and doubled it when he gave it to a charity running free schools in India.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/google-for-twelve-dollars",
@@ -313,6 +319,256 @@
       "project": "projects/the-clown-case",
       "platform": "tiktok+youtube",
       "logline": "The mayoral candidate (a literal clown) has had his wife kidnapped on election day. One sniff of the ransom note: waffle cone, hot fudge, mint choc chip. At Big Scoop's Ice Cream Max finds her running the till: she faked it to buy an ice cream truck. He drags her back anyway; the clown wins; Max gets a black eye and a free sundae. Tempting."
+    },
+    {
+      "title": "Copy the Crown",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "Every player copies whoever wears the crown; whoever has it when the timer ends wins a million coins. Leo walks Max off the edge into the lava, walks backwards so Max can never catch him, and makes the whole server dance. Mia flatters him into a bow, bows too, bonks the crown off his head and takes it; with three seconds left she steps back, and so do Leo and Max, who have been walking backwards all game: splash, splash.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/copy-the-crown",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered for review 2026-10-05: delivery/Copy_the_Crown.mp4 (62.0 s incl. 0.5 s cover, -16.9 LUFS). Awaiting approval to post."
+    },
+    {
+      "title": "He Traded A Paperclip For A House",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: in 2005-06 a man traded one red paperclip up through 14 trades; his 'dumbest trade ever' (an afternoon with a rock star for a snow globe) got him a movie role from a snow-globe-collecting actor, and a tiny Canadian town traded him a two-storey house for the role.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/paperclip-for-a-house",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Taken from OddFrame's 'He Traded a Paperclip for a House' (25K views). Narration 59.2 s (George voice C); web route, trade-window UI per swap, paperclip->house progress bar; encoded 61.7 s (incl. cover), awaiting approval."
+    },
+    {
+      "title": "He Ordered A Fighter Jet From Pepsi",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: in 1996 a student saw a Pepsi ad offer a fighter jet for 7,000,000 points, found extra points cost 10 cents, got five investors to front $700,000 and mailed the check; Pepsi sent it back with coupons, a judge ruled no reasonable person would believe the offer, and Pepsi re-ran the ad at 700,000,000 points with 'just kidding'.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/fighter-jet-from-pepsi",
+      "notes": "Taken from OddFrame's Pepsi Points fighter jet Short (26K views, one of their top Shorts) at the user's request ('make another story'); own script and staging. Web route; jet landing at a school as the hook, small-print zoom, number rolls, returned check and coupons, courtroom, 700,000,000 + JUST KIDDING payoff."
+    },
+    {
+      "title": "Lightning Hit Him Seven Times",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: a Shenandoah park ranger is hit by lightning seven times (1942-77) and survives them all; it finds him in a lookout tower, his truck, his yard, his office; he carries a water can for his hair, outruns a storm cloud only to be hit when he steps out, his boss walks off when lightning flashes, and on strike seven a bear steals his fish. The record still stands.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/lightning-hit-him-seven-times",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Delivered 2026-10-05 for review: delivery/Lightning_Hit_Him_Seven_Times.mp4 (64.4 s incl. 0.5 s cover, 1932 frames, -17.0 LUFS), cover, post.json/_post.md. Narration 62.1 s (George voice C, cloud). Web route, 28 shots, STRIKES 0/7 counter. New pack assets: ranger_hat (+ burnt museum copy), animal_bear_parts, brow-less faces. Picked through general research, not from OddFrame's list (Roy Sullivan, Guinness)."
+    },
+    {
+      "title": "The Tornado Came Back",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-tornado-came-back",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 61.0 s (George voice C, cloud). User request 2026-10-05: 'Make a story about tornados'. Picked through general research, not from OddFrame's list (shortlist in source/story.md). Maj. Ernest Fawbush, Capt. Robert Miller, Maj. Gen. Fred Borum; named only in the post copy. Web route planned; tornado funnel, 1940s planes, hangars, radar scope, general's cap and elevator cap to build."
+    },
+    {
+      "title": "He Stole The Mona Lisa",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-stole-the-mona-lisa",
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; delivered for review: 62.4 s MP4 with cover, captions, post sheet. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
+    },
+    {
+      "title": "The Dog Who Found The World Cup",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: in March 1966 the World Cup is stolen from a guarded glass case in London, four months before England hosts the tournament. A ransom arrest catches only a middleman. A week later a collie called Pickles drags a newspaper parcel from under a hedge; his owner fears a bomb, tears it and reads 'Brazil, West Germany, Uruguay'. Police make the owner their main suspect; that summer England win and Pickles licks the players' plates at the victory dinner. Seventeen years later the trophy is stolen again in Brazil. This time there's no Pickles, and it's never been found.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-dog-who-found-the-world-cup",
+      "notes": "Approved 2026-10-05 ('Make it'). Narration 62.1 s (George voice C); video 64.5 s with end card and cover. Web route; new pack creature animal_collie_parts (retriever cut and recoloured). Full web render running. Pickles, David Corbett, theft 20 Mar 1966, found 27 Mar 1966, stolen again in Rio 19 Dec 1983."
+    },
+    {
+      "title": "He Mailed Himself Home",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "farm_render_running",
+      "logline": "True story: in 1964 an Australian athlete, broke in London, has his friend nail him into a crate labelled paint, sent cash on delivery to a company that doesn't exist. Fog in London, upside down on the tarmac in Bombay; 63 hours later he cuts his way out in Perth, walks out of the airport in his suit and hitchhikes home for his daughter's birthday. He forgets to tell his friend he survived; the friend calls a newspaper, the world finds out, and the airline drops the bill. He couldn't afford a ticket, and he never paid for one.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/mailed-himself-home",
+      "notes": "Approved 2026-10-05 (\"Make the video\"). Narration 61.3 s (George voice C, cloud); video 63.4 s + 0.5 s cover. Web route, 24 shots; full web render running. Picked through general research, not from OddFrame's list (Reg Spiers, John McSorley, 17-20 Oct 1964; named only in the post copy)."
+    },
+    {
+      "title": "He Flew A Lawn Chair",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: in 1982 a man who was never allowed to be a pilot ties 42 weather balloons to a lawn chair, meaning to float a hundred feet up on a rope. The rope snaps; he shoots to 16,000 feet, freezing, and two airline pilots radio the tower about a man in a lawn chair. He pops a few balloons with a pellet gun, drops the gun, drifts into power lines and blacks out a neighbourhood, lands unhurt, and the police are waiting. 'A man can't just sit around.' He's fined for flying an aircraft without calling the tower; the aircraft is a lawn chair, and today it sits in the Air and Space Museum.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-flew-a-lawn-chair",
+      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum. | Overnight run 2026-10-05/06 (no script approval needed): narration 59.8 s (George voice C, cloud), video 61.67 s + 0.5 s cover; web clip 20 shots; full web render done and encoded (62.2 s incl. cover, -16.4 LUFS, blank-frame check clean); delivered for the user's review, not posted."
+    },
+    {
+      "title": "He Flew The Wrong Way",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story (1938): refused permission to fly the Atlantic, Douglas Corrigan files a flight plan to California, flies 28 hours east to Dublin, says \"Just got in from New York. Where am I?\" and blames his compass; his punishment ends the day his ship gets home, New York gives him a bigger parade than Lindbergh's, and he never admits a thing.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-flew-the-wrong-way",
+      "notes": "Overnight run 2026-10-05: the user named this story and waived script approval for the run (write, then make the video; posting still needs approval). Script v1 156 words. Web route. Delivered 2026-10-06 for review: delivery/He_Flew_The_Wrong_Way.mp4 (62.1 s incl. 0.5 s cover, 1864 frames), cover, post.json/_post.md. Narration 59.3 s (George voice C, cloud). Web route, 21 shots. Known nit: caption crosses Max's mouth in the compass-excuse close-up (fix noted in START_HERE.md)."
+    },
+    {
+      "title": "He Won The Marathon By Car",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-marathon-car-ride",
+      "notes": "Overnight run 2026-10-05/06: story picked by the user; script approval waived for this run (posting still needs approval). Delivered for review: delivery/He_Won_The_Marathon_By_Car.mp4 (63.07 s). Narration 60.7 s (George voice C, gap 0.6 / beat 1.3). Web route. Fred Lorz, Andarin Carvajal, Len Taunyane named only in the post copy; strychnine/brandy only in the post description as history."
+    },
+    {
+      "title": "The Six Million Dollar Banana",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "ready_to_render",
+      "logline": "True story: a man pays $6.2 million for a banana, then eats it. It began in 2019 when an artist duct-taped a banana to a wall and sold it twice for $120,000; another artist ate it and the gallery just taped up a new one, because buyers get a certificate and instructions, not a banana. A student in Seoul ate one too. At auction in New York it went for $6.2 million and the buyer ate it on stage. The banana came from a street fruit stand: the man who sold it got 25 cents.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-six-million-dollar-banana",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Maurizio Cattelan, Comedian; David Datuna; Noh Hyun-soo; Justin Sun; Shah Alam: named only in the post copy. Script v1 159 words. Web route."
+    },
+    {
+      "title": "The Penguin General",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "ready_to_render",
+      "logline": "True story: a penguin inspects a line of soldiers, and they salute him because he outranks every one of them. In 1972 Norway's royal guard adopted a king penguin at Edinburgh Zoo, named him Nils Olav and made him a lance corporal; every visit since he gets promoted. The penguins change but the name and rank carry on. He was knighted with 130 soldiers on parade, got a bronze statue, became a brigadier and in 2023 a major general. Soldiers who trained for years salute him; he just waddles past.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-penguin-general",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Sir Nils Olav III, Norwegian King's Guard, Edinburgh Zoo. Script v1 147 words. Web route; block penguin built in code."
+    },
+    {
+      "title": "He Won By Not Sleeping",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1983, Sydney to Melbourne, 544 miles. World-class runners line up, and so does a 61-year-old potato farmer in overalls. He shuffles; by nightfall he's miles behind. The pros sleep six hours; he wakes by mistake at 2 a.m., starts running, shuffles past their tents and leads by morning. He decides not to sleep at all, wins by ten hours, nearly two days under the record, and gives most of his $10,000 prize to the runners he beat.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/cliff-young",
+      "notes": "Overnight queue (user 2026-10-05: no script approval needed for these). Picked through general research (Cliff Young, 1983 Westfield Sydney-Melbourne ultramarathon; named only in the post copy). Script 162 words with the CTA. Web route."
+    },
+    {
+      "title": "They Lost A War To Emus",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1932, twenty thousand emus eat Western Australia's wheat. The army sends a major, two gunners, two machine guns and 10,000 bullets. The emus scatter, the gun jams at the ambush, the truck-mounted gun can't keep up or aim, every flock has a lookout. A week and 2,500 bullets later most emus are fine, Parliament jokes about medals, the army pulls out, and the major admits the birds face machine guns like tanks. The emus won.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-emu-war",
+      "notes": "Overnight queue (no script approval needed). General research (Emu War, Nov 1932, Maj. G.P.W. Meredith; named only in the post copy). Picture rule: no emu is shown hit. Script 162 words with the CTA. Web route; code-built emus."
+    },
+    {
+      "title": "The Postman's Palace",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "delivered_local_review",
+      "logline": "True story: in 1879 a French country postman trips over a strange stone, pockets it, and spends 33 years building a palace from stones he picks up on his 30 km round - pockets, then baskets, then a wheelbarrow, building at night by an oil lamp while the village laughs. 10,000 days later it's finished, with 'Let those who can do better, try' on the wall; refused burial inside it, he builds his own tomb in eight more years. Today it's a protected monument, and the village that laughed is famous because of him.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-postmans-palace",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Ferdinand Cheval, Palais Ideal, Hauterives; named only in the post copy. Picked through general research. Web route; new postman_kepi accessory, procedural pebble palace that grows by clipping."
+    },
+    {
+      "title": "Spaghetti Grows On Trees",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "delivered_local_review",
+      "logline": "True story (1 April 1957): Britain's most serious news show reports a bumper spaghetti harvest in Switzerland, pickers pulling spaghetti off trees, the weevil gone, every strand bred to the same length; eight million watch, hundreds phone in asking how to grow their own, and are told to put a sprig of spaghetti in a tin of tomato sauce and hope for the best. It was April Fools' Day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/spaghetti-grows-on-trees",
+      "notes": "Overnight run 2026-10-05/06: picked through general research because the user's second named story (Lawnchair Larry) was already in the ledger as He Flew A Lawn Chair. Script approval waived for the run by the user (posting still needs approval). Script v1 155 words. Web route. Delivered 2026-10-06 for review: delivery/Spaghetti_Grows_On_Trees.mp4 (62.3 s incl. 0.5 s cover, 1868 frames), cover, post.json/_post.md. Narration 59.4 s (George voice C, cloud; gap 0.5 / beat 1.1). Web route, 18 shots. Known nit: caption crosses Leo's mouth in the phone close-up (fix noted in START_HERE.md)."
+    },
+    {
+      "title": "She Went Over Niagara Falls In A Barrel",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "delivered_local_review",
+      "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/over-the-falls-in-a-barrel",
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Delivered for review: delivery/She_Went_Over_Niagara_Falls_In_A_Barrel.mp4 (62.27 s). Narration 59.9 s (George voice C, gap 0.6 / beat 1.3). Web route. Annie Edson Taylor and Frank M. Russell named only in the post copy; 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again')."
+    },
+    {
+      "title": "She Raced Around The World",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "delivered_local_review",
+      "logline": "True story: in 1889 a young reporter says she can beat the famous book's eighty days around the world; her editor wants to send a man. She sails two days later with one bag, meets the author, learns in Hong Kong that a rival was sent the other way the same day, loses two days to storms, races across America on a special train and finishes in 72 days, 6 hours, 11 minutes; the rival comes home four and a half days later.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/she-raced-around-the-world",
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating. | Narration 59.8 s (George voice C); video 61.83 s + 0.5 s cover; preview fixes, hold check and fit check done; full web render done and encoded (62.3 s incl. cover, -16.9 LUFS, blank-frame check clean); delivered for the user's review, not posted."
+    },
+    {
+      "title": "The Dog Who Saved A Town",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "narrated_clip_drafted",
+      "logline": "True story: in 1925 a town in Alaska runs out of medicine with kids getting sick; ships can't get through the ice and planes can't fly in the cold, so twenty sled-dog teams relay it nearly seven hundred miles. One team gets the hardest part, led by a twelve-year-old dog called Togo: 170 miles just to reach it, then back across a frozen sea in a blizzard, and that night the storm blows the ice out to sea. 261 miles, more than any other team; the outbreak is stopped. But the statue in New York goes to the dog who ran the last 53 miles, Balto. Togo waits 76 years for his.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-dog-who-saved-a-town",
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research, not from OddFrame's list (Togo, Leonhard Seppala, the 1925 serum run to Nome; Balto and Gunnar Kaasen; named only in the post copy). Script v1 169 words with the CTA. Web route planned; huskies from animal_collie_parts recoloured. | Narration 60.1 s (George voice C); video 62.1 s + 0.5 s cover. Web clip drafted (17 shots), sound cues, cover clip; previews on the real beats, checks and the full render still to do."
+    },
+    {
+      "title": "He Sold The Eiffel Tower",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "delivered_local_review",
+      "logline": "True story: Paris, 1925. The papers say the Eiffel Tower is rusting and costly to fix, so con man Victor Lustig fakes government letters, invites scrap dealers to a fancy hotel and whispers that the tower is secretly being sold for scrap. Dealer Andre Poisson pays, and a bribe too; Lustig takes the train out of the country, and Poisson is too embarrassed to tell anyone, so Lustig comes back and tries it again. This time the police are called; he flees to America, tricks Al Capone, is caught making fake money, escapes down a rope and is caught again. His death certificate: apprentice salesman and counterfeiter.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-sold-the-eiffel-tower",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Picked through general research; facts and sources in source/story.md ('tries it again', not 'sold it twice'). Web route; Max as Lustig in the top_hat, Leo as Poisson, procedural Eiffel Tower."
+    },
+    {
+      "title": "The First Speeding Ticket",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: on 28 January 1896 in Kent, Walter Arnold becomes the first person charged with speeding, at 8 mph in a 2 mph zone; the law also wanted a crew of three with one walking ahead. A policeman chases him on a bicycle for five miles; he is charged with four offences at once. Months later the walker rule goes, the limit rises to 14 mph, and drivers celebrate with a run from London to Brighton that is still driven every year.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-first-speeding-ticket",
+      "notes": "Draft prepared during the 2026-10-05/06 overnight run while the renders ran; not narrated or built. Needs approval. Sources: Historic UK, Guinness World Records. Walter Arnold named only in the post copy."
+    },
+    {
+      "title": "Miss Unsinkable",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: Violet Jessop works on ocean liners. Her ship the Olympic collides with a warship (nobody dies); the next year she's on its sister ship the Titanic, where an officer hands her a baby as she climbs into lifeboat 16 and she holds it until the rescue ship comes. Then she becomes a nurse on the third sister, the hospital ship Britannic, which hits a mine and sinks in under an hour; her lifeboat is pulled toward the propellers, she jumps, hits her head, and survives again. She works at sea for thirty more years: Miss Unsinkable.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/miss-unsinkable",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Script (153 words) and George C narration done (61.1 s speech, ~63.6 s video); not built yet. Facts and sources in source/story.md. Mia as Violet."
+    },
+    {
+      "title": "He Declared Himself Emperor",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "clip_first_pass",
+      "logline": "True story: in 1859 a broke San Francisco merchant, Joshua Norton, declares himself Emperor of the United States, and the city goes along with it. He lost his fortune trying to buy up all the rice in town; the newspaper prints his proclamation; he wears a uniform with gold epaulettes, prints his own money that shops accept, orders Congress shut down (ignored). Arrested once, the city is furious, the chief lets him go and officers salute him from then on. He orders a bridge across the bay; decades later it is built. Thousands line the streets for his funeral.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-declared-himself-emperor",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Emperor Norton I (1859-1880). Script v1 159 words. Web route planned."
+    },
+    {
+      "title": "They Photographed Fairies",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "narrated_clip_next",
+      "logline": "True story: in 1917 two girls in Cottingley, Elsie (16) and her cousin Frances (9), photograph fairies by the stream. Her dad doesn't believe it, but a photo expert finds no sign of trickery and Sir Arthur Conan Doyle, the creator of Sherlock Holmes, publishes the photos and writes a book about fairies. People argue for over sixty years; in 1983 the cousins admit the fairies were paper cutouts on hatpins. But Frances always said one photo was real.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/they-photographed-fairies",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). The Cottingley Fairies (1917-1983). Script v1 154 words. Web route planned."
     }
   ],
   "statuses": [
@@ -326,6 +582,8 @@
     "farm_render_downloaded_awaiting_encode",
     "delivered_local_review",
     "published",
-    "dropped"
+    "dropped",
+    "posted",
+    "scheduled"
   ]
 }

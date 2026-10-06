@@ -12,11 +12,13 @@
   "width": 1080,
   "height": 1920,
   "platform": "TikTok (>60 s) + YouTube Shorts",
-  "status": "rendering",
+  "status": "delivered_local_review",
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {
-      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES",
+      "2000": "TWO THOUSAND",
+      "-AIR": "AIR"
     },
     "music_gain": 0.07
   }

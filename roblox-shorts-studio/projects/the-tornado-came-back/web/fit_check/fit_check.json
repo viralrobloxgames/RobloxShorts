@@ -1,0 +1,95 @@
+{
+  "clip": "projects/the-tornado-came-back/web/tornado_clip.js",
+  "generated": "2026-10-06T00:54:08.880Z",
+  "fingerprint": "10c43988969edc88",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Max",
+      "options": {
+        "expressions": [
+          "scared",
+          "happy",
+          "neutral",
+          "surprised",
+          "shocked",
+          "determined",
+          "sad",
+          "nervous",
+          "confused",
+          "laugh",
+          "smug",
+          "talking",
+          "cool"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "pillbox_hat"
+      ]
+    },
+    {
+      "character": "Mia",
+      "options": {
+        "expressions": [
+          "angry",
+          "neutral",
+          "happy",
+          "annoyed",
+          "shouting",
+          "suspicious",
+          "determined",
+          "surprised",
+          "talking",
+          "scared",
+          "smug"
+        ],
+        "scale": 1,
+        "hairLift": 0.2
+      },
+      "accessories": [
+        "officer_cap"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Max",
+      "accessory": "pillbox_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.48,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Mia",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.26,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.017,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-06T00:54:22.407Z"
+}

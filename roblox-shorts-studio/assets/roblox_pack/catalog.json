@@ -1375,6 +1375,207 @@
     "decalTextures": null
    },
    "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "ranger_hat",
+   "path": "accessories/ranger_hat/ranger_hat.obj",
+   "description": "Tan park ranger campaign hat: wide flat brim, four-dent pinched crown, dark band (original).",
+   "objects": [
+    "Brim",
+    "Crown",
+    "Band"
+   ],
+   "dimensions": {
+    "min": [
+     -1.22,
+     -0.08,
+     -1.22
+    ],
+    "max": [
+     1.22,
+     0.8,
+     1.22
+    ],
+    "size": [
+     2.44,
+     0.88,
+     2.44
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_ranger_hat.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "ranger_hat_burnt",
+   "path": "accessories/ranger_hat_burnt/ranger_hat_burnt.obj",
+   "description": "Scorched copy of ranger_hat for display props (not worn; no fit rule).",
+   "objects": [
+    "Brim",
+    "Crown",
+    "Band"
+   ],
+   "dimensions": {
+    "min": [
+     -1.22,
+     -0.08,
+     -1.22
+    ],
+    "max": [
+     1.22,
+     0.8,
+     1.22
+    ],
+    "size": [
+     2.44,
+     0.88,
+     2.44
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_ranger_hat.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "officer_cap",
+   "path": "accessories/officer_cap/officer_cap.obj",
+   "description": "General's peaked service cap: blue crown with a wide flat top, black visor with a gold edge, gold chin cord and eagle badge (original).",
+   "objects": [
+    "Crown",
+    "Band",
+    "Visor",
+    "Gold"
+   ],
+   "dimensions": {
+    "min": [
+     -0.97,
+     -0.06,
+     -1.168
+    ],
+    "max": [
+     0.97,
+     0.7,
+     1.028
+    ],
+    "size": [
+     1.94,
+     0.76,
+     2.196
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_service_caps.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "pillbox_hat",
+   "path": "accessories/pillbox_hat/pillbox_hat.obj",
+   "description": "Elevator operator's pillbox hat: short red drum, gold bands, top button and front badge (original).",
+   "objects": [
+    "Body",
+    "Gold"
+   ],
+   "dimensions": {
+    "min": [
+     -0.53,
+     -0.03,
+     -0.55
+    ],
+    "max": [
+     0.53,
+     0.555,
+     0.53
+    ],
+    "size": [
+     1.06,
+     0.585,
+     1.08
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_service_caps.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
+  },
+  {
+   "name": "postman_kepi",
+   "path": "accessories/postman_kepi/postman_kepi.obj",
+   "description": "19th-century French postman's kepi: navy drum with a flat top, red band, short black visor, brass post-horn badge (original).",
+   "objects": [
+    "Body",
+    "Band",
+    "Visor",
+    "Brass"
+   ],
+   "dimensions": {
+    "min": [
+     -0.763,
+     -0.04,
+     -1.045
+    ],
+    "max": [
+     0.763,
+     0.61,
+     0.7
+    ],
+    "size": [
+     1.526,
+     0.65,
+     1.745
+    ]
+   },
+   "pivot": {
+    "kind": "HatAttachment",
+    "attachment": "HatAttachment",
+    "attachTo": "Head"
+   },
+   "source": {
+    "robloxAssetId": null,
+    "robloxMade": false,
+    "free": true,
+    "built": "original, procedural (tools/make_service_caps.py)",
+    "decalTextures": null
+   },
+   "attach": "Head.CFrame * CFrame.new(0, 0.6, 0) (HatAttachment); in character space the head centre is (0, 4.5, 0)"
   }
  ],
  "props": [
@@ -7787,7 +7988,7 @@
  "counts": {
   "characters": 7,
   "faces_per_character": 32,
-  "accessories": 12,
+  "accessories": 17,
   "props": 94,
   "map": 53,
   "animations": 63,

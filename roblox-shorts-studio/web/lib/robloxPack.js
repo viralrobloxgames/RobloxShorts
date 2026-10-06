@@ -132,7 +132,7 @@ export async function loadRobloxCharacter(name, { expressions = ['happy'], scale
 // Check: the accessory's surface is binned by angle around the head axis and height; in every bin the accessory
 // occupies, no hair/head surface point may lie further out than the accessory (tolerance FIT_TOLERANCE studs).
 export const ACCESSORY_FIT = {
-  crown_admin: 'seat', top_hat: 'seat', cap: 'cover', beanie: 'hair', headphones: 'band', admin_badge_halo: 'float',
+  crown_admin: 'seat', top_hat: 'seat', ranger_hat: 'seat', officer_cap: 'seat', pillbox_hat: 'seat', postman_kepi: 'seat', cap: 'cover', beanie: 'hair', headphones: 'band', admin_badge_halo: 'float',
   hair_leo: 'hair', hair_max: 'hair', hair_mia: 'hair', hair_skye: 'hair', spiky_hair: 'hair', long_hair: 'hair',
 };
 export const FIT_TOLERANCE = 0.02;

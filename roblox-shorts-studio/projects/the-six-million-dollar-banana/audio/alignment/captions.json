@@ -1,0 +1,1084 @@
+[
+  {
+    "start": 0.0,
+    "end": 1.14,
+    "text": "A man pays $6",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.24,
+        "word": " A"
+      },
+      {
+        "start": 0.24,
+        "end": 0.44,
+        "word": " man"
+      },
+      {
+        "start": 0.44,
+        "end": 0.76,
+        "word": " pays"
+      },
+      {
+        "start": 0.76,
+        "end": 1.14,
+        "word": " $6"
+      }
+    ]
+  },
+  {
+    "start": 1.14,
+    "end": 2.58,
+    "text": ".2 million for a",
+    "words": [
+      {
+        "start": 1.14,
+        "end": 1.62,
+        "word": ".2"
+      },
+      {
+        "start": 1.62,
+        "end": 1.82,
+        "word": " million"
+      },
+      {
+        "start": 1.82,
+        "end": 2.46,
+        "word": " for"
+      },
+      {
+        "start": 2.46,
+        "end": 2.58,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 2.58,
+    "end": 3.0,
+    "text": "banana.",
+    "words": [
+      {
+        "start": 2.58,
+        "end": 2.88,
+        "word": " banana."
+      }
+    ]
+  },
+  {
+    "start": 3.56,
+    "end": 4.46,
+    "text": "Then he eats it.",
+    "words": [
+      {
+        "start": 3.56,
+        "end": 3.68,
+        "word": " Then"
+      },
+      {
+        "start": 3.68,
+        "end": 3.82,
+        "word": " he"
+      },
+      {
+        "start": 3.82,
+        "end": 4.04,
+        "word": " eats"
+      },
+      {
+        "start": 4.04,
+        "end": 4.34,
+        "word": " it."
+      }
+    ]
+  },
+  {
+    "start": 5.28,
+    "end": 6.24,
+    "text": "It started at an",
+    "words": [
+      {
+        "start": 5.28,
+        "end": 5.52,
+        "word": " It"
+      },
+      {
+        "start": 5.52,
+        "end": 5.82,
+        "word": " started"
+      },
+      {
+        "start": 5.82,
+        "end": 6.06,
+        "word": " at"
+      },
+      {
+        "start": 6.06,
+        "end": 6.24,
+        "word": " an"
+      }
+    ]
+  },
+  {
+    "start": 6.24,
+    "end": 7.32,
+    "text": "art fair in Miami.",
+    "words": [
+      {
+        "start": 6.24,
+        "end": 6.44,
+        "word": " art"
+      },
+      {
+        "start": 6.44,
+        "end": 6.66,
+        "word": " fair"
+      },
+      {
+        "start": 6.66,
+        "end": 6.88,
+        "word": " in"
+      },
+      {
+        "start": 6.88,
+        "end": 7.2,
+        "word": " Miami."
+      }
+    ]
+  },
+  {
+    "start": 7.96,
+    "end": 8.88,
+    "text": "An artist duct tapes",
+    "words": [
+      {
+        "start": 7.96,
+        "end": 8.0,
+        "word": " An"
+      },
+      {
+        "start": 8.0,
+        "end": 8.36,
+        "word": " artist"
+      },
+      {
+        "start": 8.36,
+        "end": 8.64,
+        "word": " duct"
+      },
+      {
+        "start": 8.64,
+        "end": 8.88,
+        "word": " tapes"
+      }
+    ]
+  },
+  {
+    "start": 8.88,
+    "end": 9.74,
+    "text": "a banana to a",
+    "words": [
+      {
+        "start": 8.88,
+        "end": 9.08,
+        "word": " a"
+      },
+      {
+        "start": 9.08,
+        "end": 9.36,
+        "word": " banana"
+      },
+      {
+        "start": 9.36,
+        "end": 9.62,
+        "word": " to"
+      },
+      {
+        "start": 9.62,
+        "end": 9.74,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 9.74,
+    "end": 10.6,
+    "text": "wall and calls it",
+    "words": [
+      {
+        "start": 9.74,
+        "end": 9.98,
+        "word": " wall"
+      },
+      {
+        "start": 9.98,
+        "end": 10.18,
+        "word": " and"
+      },
+      {
+        "start": 10.18,
+        "end": 10.4,
+        "word": " calls"
+      },
+      {
+        "start": 10.4,
+        "end": 10.6,
+        "word": " it"
+      }
+    ]
+  },
+  {
+    "start": 10.6,
+    "end": 11.04,
+    "text": "art.",
+    "words": [
+      {
+        "start": 10.6,
+        "end": 10.92,
+        "word": " art."
+      }
+    ]
+  },
+  {
+    "start": 11.66,
+    "end": 12.78,
+    "text": "Two collectors buy one",
+    "words": [
+      {
+        "start": 11.66,
+        "end": 11.76,
+        "word": " Two"
+      },
+      {
+        "start": 11.76,
+        "end": 12.14,
+        "word": " collectors"
+      },
+      {
+        "start": 12.14,
+        "end": 12.42,
+        "word": " buy"
+      },
+      {
+        "start": 12.42,
+        "end": 12.78,
+        "word": " one"
+      }
+    ]
+  },
+  {
+    "start": 12.78,
+    "end": 15.059999999999999,
+    "text": "for $120 ,000 each.",
+    "words": [
+      {
+        "start": 12.78,
+        "end": 13.14,
+        "word": " for"
+      },
+      {
+        "start": 13.14,
+        "end": 13.82,
+        "word": " $120"
+      },
+      {
+        "start": 13.82,
+        "end": 14.52,
+        "word": ",000"
+      },
+      {
+        "start": 14.52,
+        "end": 14.94,
+        "word": " each."
+      }
+    ]
+  },
+  {
+    "start": 16.12,
+    "end": 17.36,
+    "text": "Days later another artist",
+    "words": [
+      {
+        "start": 16.12,
+        "end": 16.26,
+        "word": " Days"
+      },
+      {
+        "start": 16.26,
+        "end": 16.68,
+        "word": " later"
+      },
+      {
+        "start": 16.68,
+        "end": 16.92,
+        "word": " another"
+      },
+      {
+        "start": 16.92,
+        "end": 17.36,
+        "word": " artist"
+      }
+    ]
+  },
+  {
+    "start": 17.36,
+    "end": 18.14,
+    "text": "peels it off the",
+    "words": [
+      {
+        "start": 17.36,
+        "end": 17.72,
+        "word": " peels"
+      },
+      {
+        "start": 17.72,
+        "end": 17.86,
+        "word": " it"
+      },
+      {
+        "start": 17.86,
+        "end": 17.98,
+        "word": " off"
+      },
+      {
+        "start": 17.98,
+        "end": 18.14,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 18.14,
+    "end": 19.16,
+    "text": "wall and eats it.",
+    "words": [
+      {
+        "start": 18.14,
+        "end": 18.38,
+        "word": " wall"
+      },
+      {
+        "start": 18.38,
+        "end": 18.54,
+        "word": " and"
+      },
+      {
+        "start": 18.54,
+        "end": 18.7,
+        "word": " eats"
+      },
+      {
+        "start": 18.7,
+        "end": 19.04,
+        "word": " it."
+      }
+    ]
+  },
+  {
+    "start": 19.56,
+    "end": 20.8,
+    "text": "The gallery doesn't panic.",
+    "words": [
+      {
+        "start": 19.56,
+        "end": 19.74,
+        "word": " The"
+      },
+      {
+        "start": 19.74,
+        "end": 19.98,
+        "word": " gallery"
+      },
+      {
+        "start": 19.98,
+        "end": 20.36,
+        "word": " doesn't"
+      },
+      {
+        "start": 20.36,
+        "end": 20.68,
+        "word": " panic."
+      }
+    ]
+  },
+  {
+    "start": 21.24,
+    "end": 22.0,
+    "text": "They just tape up",
+    "words": [
+      {
+        "start": 21.24,
+        "end": 21.38,
+        "word": " They"
+      },
+      {
+        "start": 21.38,
+        "end": 21.6,
+        "word": " just"
+      },
+      {
+        "start": 21.6,
+        "end": 21.82,
+        "word": " tape"
+      },
+      {
+        "start": 21.82,
+        "end": 22.0,
+        "word": " up"
+      }
+    ]
+  },
+  {
+    "start": 22.0,
+    "end": 22.740000000000002,
+    "text": "a new one.",
+    "words": [
+      {
+        "start": 22.0,
+        "end": 22.14,
+        "word": " a"
+      },
+      {
+        "start": 22.14,
+        "end": 22.28,
+        "word": " new"
+      },
+      {
+        "start": 22.28,
+        "end": 22.62,
+        "word": " one."
+      }
+    ]
+  },
+  {
+    "start": 23.54,
+    "end": 24.6,
+    "text": "Because the buyers never",
+    "words": [
+      {
+        "start": 23.54,
+        "end": 23.86,
+        "word": " Because"
+      },
+      {
+        "start": 23.86,
+        "end": 24.04,
+        "word": " the"
+      },
+      {
+        "start": 24.04,
+        "end": 24.34,
+        "word": " buyers"
+      },
+      {
+        "start": 24.34,
+        "end": 24.6,
+        "word": " never"
+      }
+    ]
+  },
+  {
+    "start": 24.6,
+    "end": 25.36,
+    "text": "get a banana.",
+    "words": [
+      {
+        "start": 24.6,
+        "end": 24.82,
+        "word": " get"
+      },
+      {
+        "start": 24.82,
+        "end": 24.96,
+        "word": " a"
+      },
+      {
+        "start": 24.96,
+        "end": 25.24,
+        "word": " banana."
+      }
+    ]
+  },
+  {
+    "start": 25.84,
+    "end": 26.74,
+    "text": "They get a certificate",
+    "words": [
+      {
+        "start": 25.84,
+        "end": 26.04,
+        "word": " They"
+      },
+      {
+        "start": 26.04,
+        "end": 26.2,
+        "word": " get"
+      },
+      {
+        "start": 26.2,
+        "end": 26.34,
+        "word": " a"
+      },
+      {
+        "start": 26.34,
+        "end": 26.74,
+        "word": " certificate"
+      }
+    ]
+  },
+  {
+    "start": 26.74,
+    "end": 27.96,
+    "text": "and instructions.",
+    "words": [
+      {
+        "start": 26.74,
+        "end": 27.26,
+        "word": " and"
+      },
+      {
+        "start": 27.26,
+        "end": 27.84,
+        "word": " instructions."
+      }
+    ]
+  },
+  {
+    "start": 28.54,
+    "end": 29.5,
+    "text": "When it goes brown,",
+    "words": [
+      {
+        "start": 28.54,
+        "end": 28.68,
+        "word": " When"
+      },
+      {
+        "start": 28.68,
+        "end": 28.78,
+        "word": " it"
+      },
+      {
+        "start": 28.78,
+        "end": 29.02,
+        "word": " goes"
+      },
+      {
+        "start": 29.02,
+        "end": 29.38,
+        "word": " brown,"
+      }
+    ]
+  },
+  {
+    "start": 29.76,
+    "end": 30.52,
+    "text": "replace it.",
+    "words": [
+      {
+        "start": 29.76,
+        "end": 29.98,
+        "word": " replace"
+      },
+      {
+        "start": 29.98,
+        "end": 30.4,
+        "word": " it."
+      }
+    ]
+  },
+  {
+    "start": 31.3,
+    "end": 32.519999999999996,
+    "text": "Years later in Seoul,",
+    "words": [
+      {
+        "start": 31.3,
+        "end": 31.64,
+        "word": " Years"
+      },
+      {
+        "start": 31.64,
+        "end": 31.94,
+        "word": " later"
+      },
+      {
+        "start": 31.94,
+        "end": 32.16,
+        "word": " in"
+      },
+      {
+        "start": 32.16,
+        "end": 32.4,
+        "word": " Seoul,"
+      }
+    ]
+  },
+  {
+    "start": 32.84,
+    "end": 33.78,
+    "text": "a student eats one",
+    "words": [
+      {
+        "start": 32.84,
+        "end": 32.94,
+        "word": " a"
+      },
+      {
+        "start": 32.94,
+        "end": 33.24,
+        "word": " student"
+      },
+      {
+        "start": 33.24,
+        "end": 33.54,
+        "word": " eats"
+      },
+      {
+        "start": 33.54,
+        "end": 33.78,
+        "word": " one"
+      }
+    ]
+  },
+  {
+    "start": 33.78,
+    "end": 34.22,
+    "text": "too.",
+    "words": [
+      {
+        "start": 33.78,
+        "end": 34.1,
+        "word": " too."
+      }
+    ]
+  },
+  {
+    "start": 34.68,
+    "end": 35.44,
+    "text": "He says he skipped",
+    "words": [
+      {
+        "start": 34.68,
+        "end": 34.84,
+        "word": " He"
+      },
+      {
+        "start": 34.84,
+        "end": 35.0,
+        "word": " says"
+      },
+      {
+        "start": 35.0,
+        "end": 35.18,
+        "word": " he"
+      },
+      {
+        "start": 35.18,
+        "end": 35.44,
+        "word": " skipped"
+      }
+    ]
+  },
+  {
+    "start": 35.44,
+    "end": 36.019999999999996,
+    "text": "breakfast.",
+    "words": [
+      {
+        "start": 35.44,
+        "end": 35.9,
+        "word": " breakfast."
+      }
+    ]
+  },
+  {
+    "start": 37.04,
+    "end": 37.86,
+    "text": "Then it goes to",
+    "words": [
+      {
+        "start": 37.04,
+        "end": 37.36,
+        "word": " Then"
+      },
+      {
+        "start": 37.36,
+        "end": 37.5,
+        "word": " it"
+      },
+      {
+        "start": 37.5,
+        "end": 37.66,
+        "word": " goes"
+      },
+      {
+        "start": 37.66,
+        "end": 37.86,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 37.86,
+    "end": 38.98,
+    "text": "auction in New York.",
+    "words": [
+      {
+        "start": 37.86,
+        "end": 38.14,
+        "word": " auction"
+      },
+      {
+        "start": 38.14,
+        "end": 38.32,
+        "word": " in"
+      },
+      {
+        "start": 38.32,
+        "end": 38.52,
+        "word": " New"
+      },
+      {
+        "start": 38.52,
+        "end": 38.86,
+        "word": " York."
+      }
+    ]
+  },
+  {
+    "start": 39.5,
+    "end": 40.46,
+    "text": "The bids climb past",
+    "words": [
+      {
+        "start": 39.5,
+        "end": 39.62,
+        "word": " The"
+      },
+      {
+        "start": 39.62,
+        "end": 39.8,
+        "word": " bids"
+      },
+      {
+        "start": 39.8,
+        "end": 40.12,
+        "word": " climb"
+      },
+      {
+        "start": 40.12,
+        "end": 40.46,
+        "word": " past"
+      }
+    ]
+  },
+  {
+    "start": 40.46,
+    "end": 41.12,
+    "text": "one million.",
+    "words": [
+      {
+        "start": 40.46,
+        "end": 40.7,
+        "word": " one"
+      },
+      {
+        "start": 40.7,
+        "end": 41.0,
+        "word": " million."
+      }
+    ]
+  },
+  {
+    "start": 41.74,
+    "end": 42.379999999999995,
+    "text": "Three million.",
+    "words": [
+      {
+        "start": 41.74,
+        "end": 42.0,
+        "word": " Three"
+      },
+      {
+        "start": 42.0,
+        "end": 42.26,
+        "word": " million."
+      }
+    ]
+  },
+  {
+    "start": 43.06,
+    "end": 43.46,
+    "text": "Five.",
+    "words": [
+      {
+        "start": 43.06,
+        "end": 43.34,
+        "word": " Five."
+      }
+    ]
+  },
+  {
+    "start": 44.14,
+    "end": 45.12,
+    "text": "Six point two million",
+    "words": [
+      {
+        "start": 44.14,
+        "end": 44.3,
+        "word": " Six"
+      },
+      {
+        "start": 44.3,
+        "end": 44.52,
+        "word": " point"
+      },
+      {
+        "start": 44.52,
+        "end": 44.8,
+        "word": " two"
+      },
+      {
+        "start": 44.8,
+        "end": 45.12,
+        "word": " million"
+      }
+    ]
+  },
+  {
+    "start": 45.12,
+    "end": 45.519999999999996,
+    "text": "dollars.",
+    "words": [
+      {
+        "start": 45.12,
+        "end": 45.4,
+        "word": " dollars."
+      }
+    ]
+  },
+  {
+    "start": 46.32,
+    "end": 47.34,
+    "text": "The buyer eats it",
+    "words": [
+      {
+        "start": 46.32,
+        "end": 46.58,
+        "word": " The"
+      },
+      {
+        "start": 46.58,
+        "end": 46.88,
+        "word": " buyer"
+      },
+      {
+        "start": 46.88,
+        "end": 47.16,
+        "word": " eats"
+      },
+      {
+        "start": 47.16,
+        "end": 47.34,
+        "word": " it"
+      }
+    ]
+  },
+  {
+    "start": 47.34,
+    "end": 47.94,
+    "text": "on stage.",
+    "words": [
+      {
+        "start": 47.34,
+        "end": 47.48,
+        "word": " on"
+      },
+      {
+        "start": 47.48,
+        "end": 47.82,
+        "word": " stage."
+      }
+    ]
+  },
+  {
+    "start": 48.88,
+    "end": 50.16,
+    "text": "And the banana itself.",
+    "words": [
+      {
+        "start": 48.88,
+        "end": 49.1,
+        "word": " And"
+      },
+      {
+        "start": 49.1,
+        "end": 49.2,
+        "word": " the"
+      },
+      {
+        "start": 49.2,
+        "end": 49.58,
+        "word": " banana"
+      },
+      {
+        "start": 49.58,
+        "end": 50.04,
+        "word": " itself."
+      }
+    ]
+  },
+  {
+    "start": 50.86,
+    "end": 51.54,
+    "text": "It came from a",
+    "words": [
+      {
+        "start": 50.86,
+        "end": 51.08,
+        "word": " It"
+      },
+      {
+        "start": 51.08,
+        "end": 51.24,
+        "word": " came"
+      },
+      {
+        "start": 51.24,
+        "end": 51.42,
+        "word": " from"
+      },
+      {
+        "start": 51.42,
+        "end": 51.54,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 51.54,
+    "end": 52.4,
+    "text": "street fruit stand.",
+    "words": [
+      {
+        "start": 51.54,
+        "end": 51.78,
+        "word": " street"
+      },
+      {
+        "start": 51.78,
+        "end": 52.04,
+        "word": " fruit"
+      },
+      {
+        "start": 52.04,
+        "end": 52.4,
+        "word": " stand."
+      }
+    ]
+  },
+  {
+    "start": 52.4,
+    "end": 53.86,
+    "text": "The man who sold",
+    "words": [
+      {
+        "start": 52.4,
+        "end": 53.24,
+        "word": " The"
+      },
+      {
+        "start": 53.24,
+        "end": 53.44,
+        "word": " man"
+      },
+      {
+        "start": 53.44,
+        "end": 53.62,
+        "word": " who"
+      },
+      {
+        "start": 53.62,
+        "end": 53.86,
+        "word": " sold"
+      }
+    ]
+  },
+  {
+    "start": 53.86,
+    "end": 55.279999999999994,
+    "text": "it got 25 cents.",
+    "words": [
+      {
+        "start": 53.86,
+        "end": 54.06,
+        "word": " it"
+      },
+      {
+        "start": 54.06,
+        "end": 54.22,
+        "word": " got"
+      },
+      {
+        "start": 54.22,
+        "end": 54.7,
+        "word": " 25"
+      },
+      {
+        "start": 54.7,
+        "end": 55.16,
+        "word": " cents."
+      }
+    ]
+  },
+  {
+    "start": 56.54,
+    "end": 58.14,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 56.54,
+        "end": 56.66,
+        "word": " Follow"
+      },
+      {
+        "start": 56.66,
+        "end": 57.88,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 57.88,
+        "end": 58.14,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 58.14,
+    "end": 59.4,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 58.14,
+        "end": 58.36,
+        "word": " more"
+      },
+      {
+        "start": 58.36,
+        "end": 58.68,
+        "word": " stories"
+      },
+      {
+        "start": 58.68,
+        "end": 58.96,
+        "word": " like"
+      },
+      {
+        "start": 58.96,
+        "end": 59.28,
+        "word": " this."
+      }
+    ]
+  }
+]

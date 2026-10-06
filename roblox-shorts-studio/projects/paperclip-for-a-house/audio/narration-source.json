@@ -1,0 +1,11 @@
+{
+  "engine": "qwen3-tts",
+  "model": "Qwen3-TTS-12Hz-1.7B-Base",
+  "voice": "george_c (cloud, scripts/qwen_cloud_george_c.py)",
+  "take": "take-01",
+  "clips": "audio/qwen/take-01/clips",
+  "gap_seconds": 0.5,
+  "beat_seconds": 1.1,
+  "speech_end_seconds": 59.32,
+  "note": "tightened with tighten_clips.py; joined with gap 0.5 / beat 1.1 (instead of 0.42 / 0.85) so the approved words reach the 61-65 s rule"
+}

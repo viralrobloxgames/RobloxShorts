@@ -1,0 +1,424 @@
+[
+ {
+  "asset": "sfx/pop.wav",
+  "start": 0.05,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 0.1,
+  "gain": 0.14,
+  "dur": 4.08
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 0.5,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 1.0,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 1.5,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 2.0,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 2.5,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 2.9,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 3.0,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "asset": "impact_3",
+  "start": 3.2,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 3.5,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1760
+  ],
+  "start": 4.0,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 5.68,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 6.48,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 8.68,
+  "gain": 0.14,
+  "dur": 3.8499999999999996
+ },
+ {
+  "asset": "sfx/clang.wav",
+  "start": 9.3,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/buzz.wav",
+  "start": 9.35,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/clang.wav",
+  "start": 11.18,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/buzz.wav",
+  "start": 11.23,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 12.63,
+  "gain": 0.45
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 12.83,
+  "gain": 0.12,
+  "dur": 8.0
+ },
+ {
+  "asset": "sfx/bark.wav",
+  "start": 13.18,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/woof.wav",
+  "start": 13.63,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   880
+  ],
+  "start": 15.2,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   990
+  ],
+  "start": 15.812,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   1100
+  ],
+  "start": 16.424,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   1210
+  ],
+  "start": 17.036,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 17.648,
+  "gain": 0.04,
+  "dur": 0.08
+ },
+ {
+  "asset": "sfx/buzz.wav",
+  "start": 19.1,
+  "gain": 0.3
+ },
+ {
+  "asset": "impact_3",
+  "start": 19.2,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 20.63,
+  "gain": 0.12,
+  "dur": 8.0
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 21.36,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/bark.wav",
+  "start": 22.78,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 26.66,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 26.71,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 27.99,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 28.43,
+  "gain": 0.12,
+  "dur": 1.1899999999999977
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 28.62,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 29.62,
+  "gain": 0.35,
+  "dur": 3.850000000000004
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 30.42,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 31.12,
+  "gain": 0.25,
+  "dur": 2.350000000000004
+ },
+ {
+  "asset": "sfx/clang.wav",
+  "start": 32.15,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/wind.wav",
+  "start": 33.17,
+  "gain": 0.18,
+  "dur": 4.959999999999994
+ },
+ {
+  "asset": "sfx/creak.wav",
+  "start": 33.86,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/crunch.wav",
+  "start": 34.92,
+  "gain": 0.4
+ },
+ {
+  "asset": "sfx/creak.wav",
+  "start": 35.46,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/crunch.wav",
+  "start": 35.86,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 36.6,
+  "gain": 0.35
+ },
+ {
+  "asset": "impact_2",
+  "start": 36.7,
+  "gain": 0.25
+ },
+ {
+  "tone": [
+   880,
+   1175
+  ],
+  "start": 38.13,
+  "gain": 0.06,
+  "dur": 0.14
+ },
+ {
+  "tone": [
+   1175,
+   1568
+  ],
+  "start": 39.56,
+  "gain": 0.06,
+  "dur": 0.14
+ },
+ {
+  "asset": "sfx/woof.wav",
+  "start": 41.12,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 42.82,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/fanfare.wav",
+  "start": 45.98,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/crowd.wav",
+  "start": 47.68,
+  "gain": 0.16,
+  "dur": 6.100000000000001
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 50.32,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/applause.wav",
+  "start": 50.62,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 52.56,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   392,
+   330
+  ],
+  "start": 53.88,
+  "gain": 0.05,
+  "dur": 0.4
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 54.34,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 54.5,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 54.523,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 54.547,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 54.57,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 54.593,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "tone": [
+   1320
+  ],
+  "start": 54.617,
+  "gain": 0.03,
+  "dur": 0.03
+ },
+ {
+  "asset": "sfx/woof.wav",
+  "start": 55.12,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   988,
+   1319
+  ],
+  "start": 56.83,
+  "gain": 0.05,
+  "dur": 0.12
+ }
+]

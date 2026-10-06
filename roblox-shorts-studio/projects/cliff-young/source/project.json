@@ -1,0 +1,23 @@
+{
+  "title": "He Won By Not Sleeping",
+  "character": "Noob",
+  "characters": [
+    "Noob",
+    "Max",
+    "Mia",
+    "Leo",
+    "Skye"
+  ],
+  "seconds": 63.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "script_approved",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+    }
+  }
+}
