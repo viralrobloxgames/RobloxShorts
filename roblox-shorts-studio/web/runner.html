@@ -55,7 +55,7 @@ window.renderFrame = (frame, opts = {}) => {
 // Frame fingerprint without rendering: everything that decides what a frame looks like (camera, every visible mesh's
 // world transform, shape and material, lights, fog, bloom, the sample/shutter settings and the 2D overlay drawn small).
 // web/changed_frames.mjs compares these with the last render's to find exactly which frames an edit changed.
-const ov = document.createElement('canvas'); ov.width = 108; ov.height = 192; const og = ov.getContext('2d');
+const ov = document.createElement('canvas'); ov.width = Math.round(meta.width / 10); ov.height = Math.round(meta.height / 10); const og = ov.getContext('2d');
 const r6 = (x) => Math.round(x * 1e4) / 1e4;
 const view = new THREE.Frustum(), shade = new THREE.Frustum(), m4 = new THREE.Matrix4(), bs = new THREE.Sphere();
 window.frameState = (frame, raw = false) => {   // raw: the unhashed state string, for debugging a mismatch
