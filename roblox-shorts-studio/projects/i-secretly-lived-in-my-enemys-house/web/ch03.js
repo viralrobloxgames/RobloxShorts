@@ -90,7 +90,8 @@ function marks() {
   // Skye's way out of the pantry to the counter, and her hide at the island's left end (out of the stairs' and the back
   // path's sight), then round to the front as Dad leaves
   M.pantryOut = { pos: W(-8.5, 0, -3.6), heading: PI / 2 };
-  M.hideEnd = { pos: W(-7.3, 0, -0.3), heading: -PI / 2 };
+  M.pantryCorner = { pos: W(-18.4, 0, -1.1), heading: PI / 2 };          // deep in the pantry, behind the jamb (out of the slats' sight lines)
+  M.hideEnd = { pos: W(-7.3, 0, 0.6), heading: -PI / 2 };   // against the end panel, not the overhang gap
   M.hideFront = { pos: W(-4.3, 0, 2.75), heading: 0.2 };
   M.endRun = { pos: W(-8.0, 0, -3.6), heading: PI };
 }
@@ -103,14 +104,14 @@ function times() {
   T.reach1 = 0.9; T.reach2 = 2.7;                                          // C, then E go up during the VO
   T.letters = [word(2, 0).start, word(2, 1).start, word(2, 2).start, word(2, 3).start]; // BE / NICE / 2 / SKYE
   T.freeze = endOf(2, 0.05); T.shut1 = T.freeze + 0.3; T.dive = T.shut1 + 0.25;
-  T.maxIn = at(3, -1.3);                                                   // Max at the top of the stairs
+  T.maxIn = T.dive + 1.25;                                                 // Max at the top of the stairs once the pantry has shut
   T.reachMax = endOf(4, 0.05); T.read = T.reachMax + 0.35;
   T.open2 = endOf(8, 0.0); T.toIsland = T.open2 + 1.15; T.shut2 = T.toIsland - 0.45;
   T.make0 = word(9, 6).start; T.make1 = at(10, 0.05); T.cut0 = endOf(9, 0.3); T.cut1 = endOf(9, 0.85);                       // the sandwich (from "Who even is Skye?" over the [+1.0])
   T.plateOut = at(10, 0.35);
   T.maxOut = endOf(10, -0.35);
   T.creep = endOf(10, -0.05);
-  T.grab = arrive([M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, CREEP) + 0.45;
+  T.grab = arrive([M.pantryCorner, M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, CREEP) + 0.45;
   T.duck = endOf(12, 0.05); T.dadIn = endOf(12, 0.1);
   T.lookUp = at(15, 0.05);
   T.open3 = at(16, -0.2); T.ham = at(16, 0.45); T.bite = endOf(16, 0.05);
@@ -119,7 +120,7 @@ function times() {
   T.maxAt = arrive(DOWN(), T.maxIn, 12);
   T.maxBottom = arrive([M.stairs_top, M.stairs_bottom], T.maxIn, 12); T.dadBottom = arrive([M.stairs_top, M.stairs_bottom], T.dadIn, DADV); T.dadBehind = arrive(DOWN().slice(0, 5), T.dadIn, DADV);
   T.dadAt = arrive(DOWN(), T.dadIn, DADV);
-  T.round = T.dadBehind + 0.25;                             // Dad at x ~4 on the back path: she slips round to the front
+  T.round = T.dadBehind + 0.55;                             // Dad at x ~4 on the back path: she slips round to the front
 }
 
 // ---------- setup ----------
@@ -171,8 +172,6 @@ const SHOTS = [
   { at: () => Math.max(T.maxIn, T.dive + 0.55), id: 'max_stairs', cam: cam('stairs_bottom') },
   { at: () => T.maxBottom + 0.5, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
   { at: () => at(4), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
-  { at: () => word(4, 3).start, id: 'skye_peek', cam: fix(PEEK, 'skye', 'cu') },
-  { at: () => word(4, 5).start - 0.05, id: 'max_garlic', cam: fix(AT_FRIDGE, 'max', 'mcu') },
   { at: () => Math.min(T.maxAt + 0.1, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
   { at: () => at(5), id: 'letters_max', cam: fix(AT_FRIDGE, 'max', 'ms', { up: 0.1 }) },
   { at: () => at(6), id: 'max_mcu', cam: fix(AT_FRIDGE, 'max', 'mcu') },
@@ -316,13 +315,13 @@ export function update(t, stage) {
     }
   } else if (t < T.creep) {                                 // through the open pantry doors, deep inside; at the gap only for her peeks
     skFace = 'scared';
-    const r = route([M.skyeDoor, M.pantry_front, M.pantry_inside], T.dive, t, 16);
+    const r = route([M.skyeDoor, M.pantry_front, M.pantry_inside, M.pantryCorner], T.dive, t, 16);
     if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 16), r.heading);
-    else place(sk, PEEKS.includes(sh.id) && t > T.dive + 1.2 ? M.pantry_gap : M.pantry_inside, [[A.idle, idle]], PI / 2);
+    else place(sk, PEEKS.includes(sh.id) && t > T.dive + 1.2 ? M.pantry_gap : M.pantryCorner, [[A.idle, idle]], PI / 2);
     if (t > at(4, 0.3)) skFace = t < at(5) ? 'smug' : t < at(9) ? 'scheming' : 'surprised';
   } else if (t < T.duck) {                                  // tiptoes out round the back of the island, takes the sandwich
     skFace = t < at(12) ? 'surprised' : 'smug';
-    const r = route([M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, t, CREEP);
+    const r = route([M.pantryCorner, M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, t, CREEP);
     if (r.moving) { K.putOn(sk, { pos: r.pos, heading: r.heading }); const d = K.posture(sk, K.gait('creep', r.anim)); sk.root.position.y = r.pos.y - d; }
     else {
       place(sk, M.skyeCounter, [[A.idle, idle]]);
@@ -337,7 +336,7 @@ export function update(t, stage) {
     skFace = 'scared';
     const s = t >= T.bite ? P.bitten : P.sandwich; s.visible = true; K.hold(s, sk, 'R');
   } else {                                                  // as Dad leaves along the back, she crawls round to the front
-    const r = route([M.hideEnd, { pos: W(-7.3, 0, 2.75) }, M.hideFront], T.round, t, 6);
+    const r = route([M.hideEnd, { pos: W(-7.3, 0, 2.75) }, M.hideFront], T.round, t, 7);
     K.putOn(sk, { pos: r.moving ? r.pos : M.hideFront.pos, heading: r.moving ? r.heading : M.hideFront.heading });
     const d = r.moving ? K.posture(sk, K.gait('crawl', r.anim)) : K.posture(sk, 'sit_cross');
     sk.root.position.y = M.hideFront.pos.y - d;
