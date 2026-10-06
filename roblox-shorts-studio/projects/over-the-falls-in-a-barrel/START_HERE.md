@@ -21,9 +21,12 @@ sources: `source/story.md`.
   (pump handle, lid, pushing, Skye's hands on the barrel) looked at, fit check (Max + top_hat) PASS and reviewed.
 - Sound: `source/make_sfx.py` -> `audio/sfx/`, `source/sound_cues.py` -> `source/sound_cues.json`. Post copy: `delivery/post.json`.
 
+- Full render 2026-10-06 02:04-04:28 UTC (1853 frames, 1080x1920; paused while the marathon's render finished).
+- Cover: `web/cover_clip.js` (staged: Mia, shocked, in the barrel right at the brink of the Horseshoe Falls; AGE 63. /
+  OVER NIAGARA / IN A BARREL., 1901 · TRUE STORY), 3:4 grid check looked at.
+- **Delivered for review (2026-10-06):** `delivery/She_Went_Over_Niagara_Falls_In_A_Barrel.mp4` (62.27 s = 1853 frames
+  + 15 cover frames, fully decoded, captions burned in), cover `.jpg`/`.png`, `_post.md`, `post.json`. Blank-frame check:
+  no runs flagged. Contact sheet of the MP4 reviewed. Not posted (needs the user's approval of this MP4).
+
 ## Next
-1. Full render running since 2026-10-06 02:04 UTC (alongside the marathon's; the software GL process left a core idle): `node web/render.mjs --clip projects/over-the-falls-in-a-barrel/web/barrel_clip.js --out projects/over-the-falls-in-a-barrel/renders/web --workers 4 --resume`
-2. Cover (`web/cover_clip.js` -> `delivery/She_Went_Over_Niagara_Falls_In_A_Barrel_cover.png/.jpg` + 3:4 grid check), then
-   `python3 scripts/finish.py projects/over-the-falls-in-a-barrel --encode --frames projects/over-the-falls-in-a-barrel/renders/web`,
-   `python3 scripts/review/blank_frames.py <mp4>`, contact sheet, `python3 scripts/post_md.py projects/over-the-falls-in-a-barrel`.
-3. Ledger status -> delivered_local_review. Post only after the user approves the MP4.
+1. The user watches the MP4. Post only after they approve it (TikTok first, then YouTube; see references/publishing.md).
