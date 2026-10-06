@@ -1,0 +1,21 @@
+{
+ "voice": "lily_kid",
+ "text": "Uh-oh.",
+ "seed": 88304,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Ah!",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "Oh!",
+   "start": 0.54,
+   "end": 0.72
+  }
+ ],
+ "words_md5": "32a0232f1253afeab85f9cadf81004ae",
+ "whisper": "small.en"
+}
