@@ -28,7 +28,7 @@ lines.json, plus an offset) and the per-set blocking in `update()`. Preview:
 | Export | Example |
 |---|---|
 | `META` `{ width: 1920, height: 1080, fps: 30 }`, `FPS`, `V(x,y,z)` | `new THREE.Vector3` shorthand |
-| `chapterMeta(seconds)` | `export const meta = K.chapterMeta(L.end + 0.75);` (rounded up to whole frames) |
+| `chapterMeta(seconds)`, `chapterLength(L)` | `export const meta = K.chapterMeta(K.chapterLength(L));` (last line + 0.75 s, at least the narration's length; rounded up to whole frames) |
 | `SKY` | `export const sky = K.SKY;` (the preset recolours it each frame) |
 | `frameAt(t)`, `timeOf(frame)` | frame numbers are 1-based: frame f is at t = (f-1)/30 |
 | `SET_IDS`, `SET_ORIGIN` | world offsets of the six sets |
@@ -38,7 +38,7 @@ lines.json, plus an offset) and the per-set blocking in `update()`. Preview:
 | `setState(state)` | `K.setState({ chapter: 5 })` once in setup (or per frame when the state changes inside the chapter) |
 | `mark(setId, name, fallback?)` → `{ pos, heading }` | `K.mark('bedroom', 'closet_inside', { pos: V(-6,0,6), heading: 2.7 })` (fallback = offset from the set origin, used with a warning until the set has the mark) |
 | `boxRoom(id)` | the placeholder room |
-| `loadLines(import.meta.url, ch, EST)` → `L` | top level of the clip: `const L = await K.loadLines(import.meta.url, 4, EST);` `L.lines`, `L.words` (each with `speaker`), `L.end`, `L.measured`, `L.line(i)`, `L.said('MAX')`, `L.speakerAt(t)` |
+| `loadLines(import.meta.url, ch, EST)` → `L` | top level of the clip: `const L = await K.loadLines(import.meta.url, 4, EST);` `L.lines` (`index` 1-based as in lines.json), `L.words` (each with `speaker`), `L.end`, `L.duration`, `L.measured`, `L.line(i)`, `L.said('MAX')`, `L.speakerAt(t)` |
 | `holdClock(t, L, extra?)` | `K.playAnim(a, [[A.idle, K.holdClock(t, L)]])`: idle motion runs only while someone speaks (plus `extra` [t0, t1] ranges), so silent held moments repeat frames exactly and render.mjs skips them |
 | `loadAnims(names)` | `const A = await K.loadAnims(['idle', 'walk', 'run'])` (pack animations) |
 | `playAnim(actor, layers)` | `K.playAnim(C.max, [[A.idle, idle], [A.point, 0.4, 0.5, false]])` |
