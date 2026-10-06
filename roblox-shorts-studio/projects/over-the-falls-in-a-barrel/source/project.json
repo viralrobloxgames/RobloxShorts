@@ -1,0 +1,17 @@
+{
+  "title": "She Went Over Niagara Falls In A Barrel",
+  "character": "Mia",
+  "characters": ["Mia", "Max", "Leo", "Skye", "Noob"],
+  "seconds": 63.0,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "platform": "TikTok (>60 s) + YouTube Shorts",
+  "status": "script_approved_in_production",
+  "finish": {
+    "music": "playful_history_music",
+    "word_fixes": {
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+    }
+  }
+}

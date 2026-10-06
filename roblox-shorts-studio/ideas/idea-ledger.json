@@ -404,11 +404,11 @@
       "title": "He Flew A Lawn Chair",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_draft_awaiting_approval",
+      "status": "farm_render_running",
       "logline": "True story: in 1982 a man who was never allowed to be a pilot ties 42 weather balloons to a lawn chair, meaning to float a hundred feet up on a rope. The rope snaps; he shoots to 16,000 feet, freezing, and two airline pilots radio the tower about a man in a lawn chair. He pops a few balloons with a pellet gun, drops the gun, drifts into power lines and blacks out a neighbourhood, lands unhurt, and the police are waiting. 'A man can't just sit around.' He's fined for flying an aircraft without calling the tower; the aircraft is a lawn chair, and today it sits in the Air and Space Museum.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-flew-a-lawn-chair",
-      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum."
+      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum. | Overnight run 2026-10-05/06 (no script approval needed): narration 59.8 s (George voice C, cloud), video 61.67 s + 0.5 s cover; web clip 20 shots; full web render running."
     },
     {
       "title": "He Flew The Wrong Way",
@@ -489,6 +489,26 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/spaghetti-grows-on-trees",
       "notes": "Overnight run 2026-10-05/06: picked through general research because the user's second named story (Lawnchair Larry) was already in the ledger as He Flew A Lawn Chair. Script approval waived for the run by the user (posting still needs approval). Script v1 155 words. Web route."
+    },
+    {
+      "title": "She Went Over Niagara Falls In A Barrel",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/over-the-falls-in-a-barrel",
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Web route."
+    },
+    {
+      "title": "She Raced Around The World",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: in 1889 a young reporter says she can beat the famous book's eighty days around the world; her editor wants to send a man. She sails two days later with one bag, meets the author, learns in Hong Kong that a rival was sent the other way the same day, loses two days to storms, races across America on a special train and finishes in 72 days, 6 hours, 11 minutes; the rival comes home four and a half days later.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/she-raced-around-the-world",
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating."
     }
   ],
   "statuses": [

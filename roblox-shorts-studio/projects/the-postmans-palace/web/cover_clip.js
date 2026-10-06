@@ -12,8 +12,8 @@ export function samples() { return 6; }
 export function update(t, stage) {
   base.update(base.TIMES.done + 1.2, stage);
   const { max } = base.cast(); setExpression(max, 'cool');
-  const cam = stage.camera; cam.position.copy(K.PALACE).add(V(-16, 5.5, 40)); cam.fov = 50; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();
-  cam.lookAt(K.PALACE.clone().add(V(-6, 10, 6))); stage.aimSun(K.PALACE.clone(), 50);
+  const cam = stage.camera; cam.position.copy(K.PALACE).add(V(-19, 5.5, 40)); cam.fov = 50; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();
+  cam.lookAt(K.PALACE.clone().add(V(-9, 10, 6))); stage.aimSun(K.PALACE.clone(), 50);
 }
 function big(g, s, text, x, y, size, color, rot = 0) {
   g.save(); g.translate(x * s, y * s); g.rotate(rot); g.font = `${size * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineJoin = 'round';
@@ -23,5 +23,5 @@ function big(g, s, text, x, y, size, color, rot = 0) {
 export function overlay(g, s) {
   big(g, s, 'A POSTMAN BUILT THIS', 540, 360, 84, '#ffffff', -0.03);
   big(g, s, 'FROM PEBBLES', 540, 490, 128, '#ffd23f', -0.03);
-  big(g, s, '33 YEARS · TRUE STORY', 540, 1500, 72, '#ffffff', -0.02);
+  big(g, s, '33 YEARS · TRUE STORY', 540, 610, 66, '#ffffff', -0.02);
 }
