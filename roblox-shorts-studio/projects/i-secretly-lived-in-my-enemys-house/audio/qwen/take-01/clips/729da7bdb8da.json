@@ -1,0 +1,41 @@
+{
+ "voice": "max_kid",
+ "text": "It was a very convincing fridge.",
+ "seed": 11540,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "It",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "was",
+   "start": 0.18,
+   "end": 0.28
+  },
+  {
+   "word": "a",
+   "start": 0.28,
+   "end": 0.42
+  },
+  {
+   "word": "very",
+   "start": 0.42,
+   "end": 0.66
+  },
+  {
+   "word": "convincing",
+   "start": 0.66,
+   "end": 1.1
+  },
+  {
+   "word": "fridge.",
+   "start": 1.1,
+   "end": 1.54
+  }
+ ],
+ "words_md5": "25822d223bc0dd51d9fc6c0dced1e1cc",
+ "whisper": "small.en"
+}
