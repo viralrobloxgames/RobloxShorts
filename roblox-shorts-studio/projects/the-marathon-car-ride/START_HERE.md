@@ -23,11 +23,15 @@ the official. Facts, beats and sources: `source/story.md`.
 - Checks: previews of every shot, a motion pass (`--every 3 --scale 0.3`) reviewed in sheets, `web/hold_check.js`
   (medal raised / low / back, apple low / at the mouth / rotten, hands on the wheel) looked at, fit check (Noob + cap)
   PASS and reviewed.
-- Full render started 2026-10-06 01:11 UTC: `node web/render.mjs --clip projects/the-marathon-car-ride/web/marathon_clip.js --out projects/the-marathon-car-ride/renders/web --workers 4 --resume`
+- Full render 2026-10-06 01:11-02:52 UTC (1877 frames, 1080x1920; paused ~7 min while the Niagara narration ran).
+- Sound: `source/make_sfx.py` (synthesized engine putter, bulb horn, dog barks, radiator hiss, snores, apple crunch,
+  running steps, bucket splash; copies whoosh/thud/pop/chime/fanfare/applause/clang/flutter) -> `audio/sfx/`,
+  `source/sound_cues.py` -> `source/sound_cues.json` (113 cues). Music: playful_history_music.
+- Cover: `web/cover_clip.js` (Max laughing and waving from the back seat of the car beside the driver, Leo and Skye
+  running behind; HE "WON" THE / MARATHON / BY CAR, 1904 · TRUE STORY), 3:4 grid check looked at.
+- **Delivered for review (2026-10-06):** `delivery/He_Won_The_Marathon_By_Car.mp4` (63.07 s = 1877 frames + 15 cover
+  frames, fully decoded, captions burned in), cover `.jpg`/`.png`, `_post.md`, `post.json`. Blank-frame check: no
+  runs flagged. Contact sheet of the MP4 reviewed. Not posted (needs the user's approval of this MP4).
 
 ## Next
-1. When the render finishes: `python3 source/make_sfx.py && python3 source/sound_cues.py`, cover (`web/cover_clip.js`
-   -> `delivery/He_Won_The_Marathon_By_Car_cover.png/.jpg` + 3:4 grid check), then
-   `python3 scripts/finish.py projects/the-marathon-car-ride --encode --frames projects/the-marathon-car-ride/renders/web`,
-   `python3 scripts/review/blank_frames.py <mp4>`, contact sheet, `delivery/post.json`, `python3 scripts/post_md.py projects/the-marathon-car-ride`.
-2. Ledger status -> delivered_local_review. Post only after the user approves the MP4.
+1. The user watches the MP4. Post only after they approve it (TikTok first, then YouTube; see references/publishing.md).
