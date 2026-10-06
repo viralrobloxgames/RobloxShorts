@@ -80,7 +80,7 @@
   "asset": "sfx/birds.wav",
   "start": 47.082,
   "gain": 0.06,
-  "dur": 4.28
+  "dur": 5.03
  },
  {
   "asset": "sfx/footstep.wav",
@@ -114,28 +114,28 @@
  },
  {
   "asset": "sfx/latch.wav",
-  "start": 51.312,
+  "start": 52.012,
   "gain": 0.2
  },
  {
   "asset": "sfx/night_bed.wav",
-  "start": 51.362,
+  "start": 52.112,
   "gain": 0.1,
-  "dur": 12.323
+  "dur": 11.573
  },
  {
   "asset": "sfx/latch.wav",
-  "start": 51.642,
+  "start": 52.392,
   "gain": 0.3
  },
  {
   "asset": "sfx/latch.wav",
-  "start": 51.892,
+  "start": 52.642,
   "gain": 0.3
  },
  {
   "asset": "sfx/latch.wav",
-  "start": 52.142,
+  "start": 52.892,
   "gain": 0.3
  },
  {
