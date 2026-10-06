@@ -10,7 +10,7 @@ Frame = chapter frame at 30 fps (time x 30 + 1).
 
 Lands overall: the phone misunderstanding is clear, "Skye is the worst..." gets a beat before the cut to her face,
 the attic two-hander reads well and the voices are consistent. Audio: lines -16 to -18 dB RMS, whispers 2-4 dB under,
-Max's phone lines correctly band-limited (centroid ~1.2-1.4 kHz vs 2.5 kHz dry), 0.25 s gaps, bed under speech
+Max's phone lines (still the old `max_kid` voice; judged again once `max_boy` lands per requests.md) correctly band-limited (centroid ~1.2-1.4 kHz vs 2.5 kHz dry), 0.25 s gaps, bed under speech
 -40 to -47 dB, no clicks that matter. Stitch: loudness -14.05 LUFS, but true peak **-0.85 dBTP** (target -1.0), see global.
 
 1. **00:10.0-00:10.4 (frames 300-312), must.** Skye bends to slide the note and the camera ends up inside her: the

@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.64,VO,,0,0,0,,TUESDAY. RULE ONE OF LIVING IN
+Dialogue: 1,0:00:01.64,0:00:03.24,VO,,0,0,0,,YOUR ENEMY'S HOUSE: BE OUT
+Dialogue: 1,0:00:03.24,0:00:05.10,VO,,0,0,0,,BEFORE ANYONE WAKES UP. RULE
+Dialogue: 1,0:00:05.10,0:00:07.17,VO,,0,0,0,,TWO: HIS DAD WAKES UP AT SIX.
+Dialogue: 1,0:00:07.47,0:00:09.03,DAD,,0,0,0,,GOOD MORNING, KITCHEN! WHO WANTS
+Dialogue: 1,0:00:09.03,0:00:11.40,DAD,,0,0,0,,PANCAKES? EVERYBODY WANTS PANCAKES!
+Dialogue: 1,0:00:11.56,0:00:13.19,SKYE,,0,0,0,,WHY IS HE SO HAPPY?
+Dialogue: 1,0:00:13.22,0:00:14.29,SKYE,,0,0,0,,IT'S STILL DARK.
+Dialogue: 1,0:00:14.29,0:00:16.23,MAX,,0,0,0,,DAD, SOMETHING WAS IN MY ROOM
+Dialogue: 1,0:00:16.23,0:00:18.54,MAX,,0,0,0,,LAST NIGHT. IT SAID MY NAME.
+Dialogue: 1,0:00:18.63,0:00:19.92,DAD,,0,0,0,,THAT'S JUST THE PIPES,
+Dialogue: 1,0:00:19.93,0:00:21.11,DAD,,0,0,0,,CHAMP. THIS HOUSE IS A
+Dialogue: 1,0:00:21.11,0:00:22.45,DAD,,0,0,0,,HUNDRED YEARS OLD. IT
+Dialogue: 1,0:00:22.45,0:00:23.90,DAD,,0,0,0,,SAYS ALL SORTS OF THINGS.
+Dialogue: 1,0:00:24.00,0:00:25.27,LILY,,0,0,0,,OR IT'S A GHOST.
+Dialogue: 1,0:00:25.54,0:00:26.57,DAD,,0,0,0,,OR IT'S A GHOST!
+Dialogue: 1,0:00:26.76,0:00:29.18,MAX,,0,0,0,,NOT FUNNY. I DIDN'T SLEEP AT ALL.
+Dialogue: 1,0:00:30.06,0:00:30.10,DAD,,0,0,0,,HANG ON. I MADE TWELVE
