@@ -320,7 +320,7 @@ scale-1 rig; for another scale use `sitPos(mark, scale)` (exported from bedroom.
 (re-render: `node web/render.mjs --clip projects/i-secretly-lived-in-my-enemys-house/production/previews/kit-sets-a/prev_bedroom.js --out /tmp/b --frames 1-35 --scale 0.3 --samples 1`; also `prev_hallway.js`, `prev_linen.js`).
 
 **Practicals** (`set.lights`, switched by `K.applyLight(stage, preset, { set, practicals: {...} })` / `K.setPractical`; all
-off unless named): bedroom `bedside_lamp` (shade + bulb glow), `moon_window` (cold spot through the window + fill),
+off unless named): bedroom `bedside_lamp` (shade + bulb glow), `desk_lamp` (Ch6 mirror face light), `moon_window` (cold spot through the window + fill),
 `hall_under_door` (hallway light seen when the door opens + the warm strip under the door), `closet_light`; hallway
 `moon_window`, `under_door` (warm strip + floor spill under Max's door + light in his room), `nightlight`, `ceiling_light`
 (the `predawn` preset turns it on), `attic_glow` (faint light above the open hatch), `linen_fill` (soft light on faces in
