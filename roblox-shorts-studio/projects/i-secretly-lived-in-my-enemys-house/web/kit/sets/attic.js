@@ -2,7 +2,7 @@
 // Layout (local studs; the group sits at OFFSET; marks and cams are returned in world coordinates):
 //   a gabled room x -13..13, z -10..14; the ridge (y 13) runs along z, the knee walls at x = +-13 are 3 high.
 //   back gable wall z -10: the round window (centre y 7.2, r 1.9); Skye's nest under it (x 0, z -8).
-//   right side (x > 0): the HALLOWEEN box (5.3, -6.6) with the skeleton (2.6, -3.5) and the witch (8.0, -3.5) standing
+//   right side (x > 0): the HALLOWEEN box (6.2, -6.7) with the skeleton (3.6, -3.5) and the witch (8.9, -3.5) standing
 //     in front of it (the Ch7 pose mark is between them), XMAS (10, 0.5), MAX - OLD STUFF (9.2, 4.4), the hobby horse
 //     leaning on XMAS; the floor hatch (centre 4.5, 9.0; hole x 2.2..6.8, z 7.3..10.7) with the ladder going down,
 //     the vacuum spot beside it (7.8, 10.6).
@@ -13,6 +13,15 @@
 import * as THREE from 'three';
 import { canvasTexture, rng } from '../../../../../web/lib/world.js';
 import { roundedBox } from '../../../../../web/lib/rig.js';
+import { makeProp, place } from '../props.js';
+
+// a kit prop (props.js) standing with its rest point on the holder's origin; the attic's own builder if props.js lacks it
+function kitProp(id, opts, fallback) {
+  const h = new THREE.Group();
+  try { const p = makeProp(id, opts); place(p, V(0, 0, 0), 0); h.add(p); h.userData.prop = p; }
+  catch (e) { h.add(fallback()); }
+  return h;
+}
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 export const OFFSET = V(600, 0, 0);
@@ -75,6 +84,7 @@ function boxLabel(text, w, h, { ink = '#1d1a18', tape = null } = {}) {
   m.receiveShadow = true; return m;
 }
 
+const DOT = canvasTexture(32, 32, (c, W) => { const g = c.createRadialGradient(16, 16, 0, 16, 16, 16); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = g; c.fillRect(0, 0, W, W); });
 // ---------- light shafts (additive, soft edges, fade along the beam) ----------
 const SHAFT_VERT = `varying vec3 vN; varying vec3 vV; varying float vU; uniform float len;
 void main(){ vec4 wp = modelMatrix*vec4(position,1.); vN = normalize(mat3(modelMatrix)*normal); vV = normalize(cameraPosition - wp.xyz);
@@ -102,7 +112,7 @@ function motes(from, dir, len, r, color, n, seed) {
     pts.push(from.clone().addScaledVector(d, u * len).addScaledVector(a, Math.cos(th) * rr).addScaledVector(b, Math.sin(th) * rr));
   }
   const geo = new THREE.BufferGeometry().setFromPoints(pts);
-  const p = new THREE.Points(geo, new THREE.PointsMaterial({ color, size: 0.05, transparent: true, opacity: 0.8, depthWrite: false, blending: THREE.AdditiveBlending }));
+  const p = new THREE.Points(geo, new THREE.PointsMaterial({ color, size: 0.03, map: DOT, alphaTest: 0.01, transparent: true, opacity: 0.7, depthWrite: false, blending: THREE.AdditiveBlending }));
   p.renderOrder = 5; return p;
 }
 
@@ -161,7 +171,7 @@ function glowBundle() {
   return g;
 }
 function drawing() {
-  const tex = canvasTexture(512, 380, (c, W, H) => {
+  const tex = canvasTexture(512, 460, (c, W, H) => {
     c.fillStyle = '#fbf6e6'; c.fillRect(0, 0, W, H);
     c.lineCap = 'round'; c.lineWidth = 7;
     const kid = (x, hair) => { c.strokeStyle = '#2b2b2b'; c.beginPath(); c.arc(x, 120, 34, 0, 7); c.stroke(); c.beginPath(); c.moveTo(x, 154); c.lineTo(x, 250); c.moveTo(x, 250); c.lineTo(x - 30, 320); c.moveTo(x, 250); c.lineTo(x + 30, 320); c.stroke();
@@ -169,9 +179,9 @@ function drawing() {
     kid(170, '#ff7ac8'); kid(340, '#5a3a22');
     c.strokeStyle = '#2b2b2b'; c.beginPath(); c.moveTo(170, 190); c.lineTo(120, 230); c.moveTo(170, 190); c.lineTo(255, 205); c.lineTo(340, 190); c.moveTo(340, 190); c.lineTo(390, 230); c.stroke();
     c.fillStyle = '#f2c230'; c.beginPath(); c.arc(455, 55, 32, 0, 7); c.fill();
-    c.font = '40px "Luckiest Guy", sans-serif'; c.textAlign = 'center'; c.fillStyle = '#3157d6'; c.fillText('ME AND SKYE.', W / 2, 30 + 330); c.fillStyle = '#e0362c'; c.fillText('BEST FRENDS.', W / 2, 372);
+    c.font = '40px "Luckiest Guy", sans-serif'; c.textAlign = 'center'; c.fillStyle = '#3157d6'; c.fillText('ME AND SKYE.', W / 2, 385); c.fillStyle = '#e0362c'; c.fillText('BEST FRENDS.', W / 2, 440);
   });
-  const m = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 1.1), std('#ffffff', { map: tex, roughness: 0.95, side: THREE.DoubleSide }));
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 1.35), std('#ffffff', { map: tex, roughness: 0.95, side: THREE.DoubleSide }));
   m.rotation.x = -Math.PI / 2; m.receiveShadow = true; return grp(m);
 }
 function backpack() {                     // lilac, lying in the nest
@@ -185,7 +195,7 @@ function flashlightSmall() {              // her small pink flashlight; origin a
 
 // ---------- big set pieces ----------
 function skeleton() {                     // Halloween decoration, ~5.4 tall, on a little stand; faces +z
-  const b = std('#efe9da', { roughness: 0.6 }), k = std('#1b1b1b', { roughness: 0.6 });
+  const b = std('#b3aa94', { roughness: 0.9 }), k = std('#1b1b1b', { roughness: 0.6 });
   const g = new THREE.Group();
   g.add(cyl(0.6, 0.7, 0.12, k, 0, 0.06, 0), cyl(0.05, 0.05, 2.6, k, 0, 1.3, -0.25, 8));
   const skull = box(0.95, 0.95, 0.95, b, 0, 4.75, 0, 0.3); g.add(skull);
@@ -340,22 +350,22 @@ export function build(scene) {
   nest.add(b1, b2, roll, pillow);
   const crackers = grp(box(0.9, 0.16, 0.55, std('#e8b730', { roughness: 0.5 }), 0, 0.08, 0, 0.04), (() => { const l = boxLabel('CRACKERS', 0.8, 0.3, { ink: '#b2261f' }); l.rotation.x = -Math.PI / 2; l.position.y = 0.17; return l; })(),
     box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.55, 0.05, 0.15, 0.03), box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.5, 0.05, -0.15, 0.03));
-  add('crackers', at(crackers, 1.9, 0.18, 0.7, -0.4), nest);
-  const fl = flashlightSmall(); add('flashlight', fl, nest);
+  add('crackers', at(crackers, -2.7, 0.18, -0.3, 0.4), nest);
+  const fl = kitProp('flashlight_small', { beam: false, light: false }, flashlightSmall); const flKit = fl.userData.prop; add('flashlight', fl, nest);
   const bp = backpack(); add('backpack', at(bp, 2.15, 0.05, -1.2, -0.35), nest);
-  const gs = glowBundle(); add('glow_sticks', at(gs, 1.6, 0.16, 1.9, 0.5), nest);
+  const gs = kitProp('glow_sticks', {}, glowBundle); add('glow_sticks', at(gs, 1.6, 0.16, 1.9, 0.5), nest);
 
   // ---------- Halloween corner: HALLOWEEN box, skeleton, witch ----------
-  const hallo = cardBox(3.2, 2.2, 2.6, 'HALLOWEEN', { seed: 2, tape: '#f28a1d', ink: '#111' }); add('box_halloween', at(hallo, 5.3, 0, -6.7, -0.08));
-  const skel = skeleton(); add('skeleton', at(skel, 2.6, 0, -3.5, 0.15));
-  const wit = witch(); add('witch', at(wit, 8.0, 0, -3.5, -0.2));
-  const pump = pumpkinBucket(); add('pumpkin_bucket', pump);
+  const hallo = cardBox(3.2, 2.2, 2.6, 'HALLOWEEN', { seed: 2, tape: '#f28a1d', ink: '#111' }); add('box_halloween', at(hallo, 6.2, 0, -6.7, -0.08));
+  const skel = skeleton(); add('skeleton', at(skel, 3.6, 0, -3.5, 0.15));
+  const wit = witch(); add('witch', at(wit, 8.9, 0, -3.5, -0.2));
+  const pump = kitProp('pumpkin_bucket', {}, pumpkinBucket); add('pumpkin_bucket', pump);
   // ---------- XMAS, MAX - OLD STUFF, hobby horse ----------
   const xmas = cardBox(3.0, 2.0, 2.6, 'XMAS', { seed: 3, tape: '#2f8f4e', ink: '#b3121f' }); add('box_xmas', at(xmas, 10.0, 0, 0.5, -0.45));
   add('box_small', at(cardBox(1.8, 1.2, 1.6, '', { seed: 5 }), 10.4, 2.0, 0.3, -0.2));
   const maxBox = cardBox(2.8, 2.0, 2.4, 'MAX - OLD STUFF', { seed: 4, ink: '#1a2a6a' }); add('box_max', at(maxBox, 9.2, 0, 4.6, -0.6));
-  const drw = drawing(); add('drawing', drw, maxBox); drw.position.set(0, 2.0 * 0.6 + 0.03, 0); drw.rotation.y = 0.1;
-  const hh = hobbyHorse(); add('hobby_horse', hh);
+  const drw = kitProp('drawing', {}, drawing); if (drw.userData.prop) { drw.userData.prop.rotation.x = -Math.PI / 2; drw.userData.prop.position.set(0, 0.01, 0.42); } add('drawing', drw, maxBox); drw.position.set(0, 2.0 * 0.6 + 0.03, 0); drw.rotation.y = 0.1;
+  const hh = kitProp('hobby_horse', {}, hobbyHorse); add('hobby_horse', hh);
   // ---------- tea party: upturned box table, teddies, tea set ----------
   const table = new THREE.Group(); table.position.set(-3.5, 0, 2.0);
   const tm = std('#b48d58', { map: cardboard(7), roughness: 0.95 });
@@ -364,11 +374,11 @@ export function build(scene) {
   add('teddy_left', at(teddyToy('#c9b18a', 1), -5.6, 0, 2.0, Math.PI / 2));
   add('teddy_right', at(teddyToy('#b9b9c4', 2), -1.4, 0, 2.0, -Math.PI / 2));
   const tea = new THREE.Group(); tea.position.set(-3.5, 1.42, 2.0);
-  add('teapot', at(teapot(), 0.0, 0, -0.1, 0.4), tea); add('cup_1', at(teacup(), -0.75, 0, 0.55), tea); add('cup_2', at(teacup(), 0.7, 0, -0.55), tea);
+  add('teapot', at(kitProp('teapot', {}, teapot), 0.1, 0, 0.1, 0.4), tea); add('cup_1', at(kitProp('cup', {}, teacup), -0.6, 0, -0.6, Math.PI), tea); add('cup_2', at(kitProp('cup', {}, teacup), 0.6, 0, 0.65), tea);   // cup_1 Skye's side, cup_2 Lily's
   add('tea_set', tea);
   // ---------- rocking chair, vacuum, clutter ----------
-  const rc = rockingChair(); add('rocking_chair', at(rc, -8.0, 0, -4.0, 0.7));
-  const vac = vacuum(); add('vacuum', at(vac, 8.2, 0, 10.4, -2.4));
+  const rc = rockingChair(); const rcPivot = grp(rc); add('rocking_chair', at(rcPivot, -8.0, 0, -4.0, 0.7)); items.rocking_chair_rock = rc;
+  const vac = kitProp('vacuum', {}, vacuum); add('vacuum', at(vac, 8.2, 0, 10.4, -2.4));
   const suitcase = grp(box(2.6, 0.9, 1.7, std('#5b6e8f', { roughness: 0.6 }), 0, 0.45, 0, 0.12), box(0.8, 0.12, 0.2, std('#2b2b2b'), 0, 0.95, 0.5, 0.04), box(2.62, 0.1, 1.72, std('#3f4d66'), 0, 0.6, 0));
   add('suitcase', at(suitcase, -10.2, 0, 8.5, 0.3));
   const lampshade = grp(cyl(0.6, 0.9, 0.9, std('#d9c49a', { roughness: 1 }), 0, 2.4, 0, 18), cyl(0.06, 0.06, 2.0, std('#6b5638'), 0, 1.0, 0, 8), cyl(0.5, 0.55, 0.12, std('#6b5638'), 0, 0.06, 0, 18));
@@ -379,7 +389,7 @@ export function build(scene) {
   add('rug_roll', at(grp((() => { const c = cyl(0.4, 0.4, 4.2, std('#7c3b2e', { roughness: 1 }), 0, 0.4, 0, 16); c.rotation.z = Math.PI / 2; return c; })()), -9.2, 0, 11.6, 0.2));
 
   // ---------- lights ----------
-  const sunDir = V(0.15, -0.5, 1).normalize(), moonDir = V(-0.1, -0.85, 1).normalize();
+  const sunDir = V(0.15, -0.62, 1).normalize(), moonDir = V(-0.1, -0.85, 1).normalize();
   const sun = new THREE.SpotLight('#ffc37a', 0, 60, 0.2, 0.55, 0.6);
   sun.position.copy(WINDOW).addScaledVector(sunDir, -7); sun.target.position.copy(WINDOW).addScaledVector(sunDir, 14);
   sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024); sun.shadow.bias = -0.0004; sun.shadow.camera.near = 2; sun.shadow.camera.far = 50;
@@ -400,6 +410,9 @@ export function build(scene) {
   const lights = { sun, moon, bounce, hatchGlow, flashlight: flashL, flashlightCone: flashCone, glow: glowL, shafts: { sun: items.shafts_sun, moon: items.shafts_moon } };
   group.traverse((o) => { if (o.isMesh && o.material && o.material.blending === THREE.AdditiveBlending) o.castShadow = false; });
   [shaftSun, shaftSun2, shaftMoon].forEach((m) => { m.castShadow = false; });
+  // camera clearance (camera.js clearShot) ignores light shafts, dust motes, cobwebs, window glass and the sky disc
+  for (const n of ['shafts_sun', 'shafts_moon', 'cobwebs', 'window_sky', 'window_branch']) items[n].traverse((o) => { o.userData.noCamBlock = true; });
+  glass.userData.noCamBlock = true;
   glass.castShadow = false; outside.castShadow = false; web.side = THREE.DoubleSide; items.cobwebs.traverse((m) => { if (m.isMesh) m.castShadow = false; });
 
   // ---------- marks (world), heading: forward = (sin h, 0, cos h) ----------
@@ -408,20 +421,19 @@ export function build(scene) {
   const towards = (x, z, tx, tz) => Math.atan2(tx - x, tz - z);
   const marks = {
     nest: mk(0.2, -7.2, 0, { note: 'sit cross-legged in the nest, facing the hatch side (+z)' }),
-    nest_beside: mk(-2.0, -6.9, 0.35, { note: 'Lily sitting next to Skye in the nest (Ch8)' }),
     nest_stand: mk(0.3, -5.6, 0),
     window: mk(0, -8.4, Math.PI, { note: 'standing at the round window looking out' }),
-    tea_skye: mk(-3.5, 4.0, Math.PI, { note: 'cross-legged at the upturned box, facing -z' }),
-    tea_lily: mk(-3.5, 0.0, 0, { note: 'opposite Skye, facing +z' }),
-    tea_teddy_lily: mk(-2.3, -0.2, 0, { note: "where Lily's teddy sits beside her" }),
+    tea_skye: mk(-3.5, -0.1, 0, { note: 'cross-legged at the upturned box, nest side, facing +z (the round window behind her)' }),
+    tea_lily: mk(-3.5, 4.1, Math.PI, { note: 'kneeling opposite Skye, hatch side, facing -z' }),
+    tea_teddy_lily: mk(-2.2, 4.3, Math.PI, { note: "where Lily's teddy sits beside her" }),
     tea_teddy_left: mk(-5.6, 2.0, Math.PI / 2), tea_teddy_right: mk(-1.4, 2.0, -Math.PI / 2),
     tea_table: mk(-3.5, 2.0, 0, { y: 1.42, note: 'top of the upturned box (y 1.42)' }),
     rocking_chair: mk(-8.0, -4.0, 0.7, { seatY: 1.65, note: 'seat centre; seat top y 1.65; the chair faces heading 0.7' }),
     rocking_chair_front: mk(-8.0 + Math.sin(0.7) * 2.2, -4.0 + Math.cos(0.7) * 2.2, 0.7),
-    decor_pose: mk(5.3, -3.5, 0, { note: 'Ch7: between the skeleton (x 2.6) and the witch (x 8.0), facing +z; arms out at shoulder height clear both' }),
-    skeleton: mk(2.6, -3.5, 0.15), witch: mk(8.0, -3.5, -0.2),
-    decor_front: mk(5.3, -1.1, Math.PI, { note: 'Dad nose to nose with the pumpkin girl (stand here facing her)' }),
-    box_halloween: mk(5.3, -5.0, Math.PI, { note: 'in front of the HALLOWEEN box, facing it' }),
+    decor_pose: mk(6.2, -3.5, 0, { note: 'Ch7: between the skeleton (x 3.6) and the witch (x 8.9), facing +z; arms out at shoulder height clear both' }),
+    skeleton: mk(3.6, -3.5, 0.15), witch: mk(8.9, -3.5, -0.2),
+    decor_front: mk(6.2, -1.1, Math.PI, { note: 'Dad nose to nose with the pumpkin girl (stand here facing her)' }),
+    box_halloween: mk(6.2, -5.0, Math.PI, { note: 'in front of the HALLOWEEN box, facing it' }),
     box_xmas: mk(8.6, 1.9, towards(8.6, 1.9, 10, 0.5)),
     box_max: mk(7.6, 6.0, towards(7.6, 6.0, 9.2, 4.6), { note: 'in front of MAX - OLD STUFF, facing it (Ch9)' }),
     box_max_kneel: mk(7.9, 5.7, towards(7.9, 5.7, 9.2, 4.6)),
@@ -436,6 +448,20 @@ export function build(scene) {
     vacuum: mk(8.2, 10.4, -2.4, { note: 'where the vacuum stays after Ch7' }),
     centre: mk(0, 2, Math.PI),
   };
+  // names the chapter shot plans use (aliases and additions from production/requests.md)
+  const P = (o) => o.getWorldPosition(new THREE.Vector3());
+  group.updateMatrixWorld(true);
+  Object.assign(marks, {
+    nest_sit: marks.nest, hatch_stand: marks.hatch_top, hatch_head: mk(4.5, 9.4, Math.PI, { y: -4 + 0.55, note: 'scale 1 head and shoulders; Lily: hatch_head_lily, Dad: hatch_head_dad, or hatchRise(scale, k)' }),
+    hatch_below: marks.hatch_climb, vacuum_by_hatch: marks.vacuum,
+    nest_front: mk(0.5, -3.4, Math.PI, { note: 'standing ~4 studs in front of the nest, facing it' }),
+    nest_backpack: { pos: P(items.backpack), heading: items.backpack.rotation.y, note: 'where the loose backpack lies in the nest' },
+    horse_lean: { pos: w(7.9, 0, 2.6), heading: -2.0, note: 'foot of the hobby horse leaning on the XMAS box' },
+    tea_box: marks.tea_table, box_table: marks.tea_table, tea_teddy: marks.tea_teddy_lily, tea_toy_1: marks.tea_teddy_left, tea_toy_2: marks.tea_teddy_right,
+    decor_gap: marks.decor_pose, decor_inspect: marks.decor_front, decor_lily: mk(1.9, -2.6, 0.35, { note: 'Lily standing beside the decorations (left of the skeleton)' }),
+    old_stuff_box: marks.box_max, old_stuff_inside: { pos: P(items.drawing), heading: items.box_max.rotation.y, note: 'top of the contents inside MAX - OLD STUFF (where the drawing lies)' },
+  });
+  marks.nest_beside = mk(2.3, -6.9, -0.35, { note: 'Lily sitting next to Skye in the nest, frame-right of her from the +z cams (Ch8)' });
   const hatchRise = (scale = 1, k = 1) => lerp(-(4 * scale) - 1, 0, k);
 
   // ---------- cams (world): { pos, target, fov } ----------
@@ -443,32 +469,45 @@ export function build(scene) {
   const cams = {
     wide: cam([0, 6.2, 13.2], [0, 3.0, -5], 52, 'the whole attic from the front gable toward the window'),
     wide_low: cam([-2, 3.2, 12.5], [0.5, 3.4, -6], 50, 'low wide toward the window, shafts above'),
-    nest_to_hatch: cam([-2.4, 3.2, -9.3], [4.5, 1.2, 9.0], 46, 'Ch5 start: from beside the nest toward the hatch (Skye foreground, hatch far)'),
-    nest_to_hatch_tight: cam([-1.2, 2.7, -8.9], [4.5, 0.9, 9.2], 30, 'tighter: the hatch and Lily popping up'),
+    nest_to_hatch: cam([-3.2, 4.2, -9.6], [3.6, 1.2, 9.0], 50, 'Ch5 start: from beside the nest toward the hatch (Skye foreground, hatch far)'),
+    nest_to_hatch_tight: cam([-2.2, 3.9, -9.6], [4.4, 1.2, 9.2], 26, 'tighter: the hatch and Lily popping up'),
     hatch_to_nest: cam([5.6, 3.0, 11.2], [0.2, 1.6, -7.2], 38, 'reverse: from behind the hatch toward the nest'),
     hatch_lily_cu: cam([3.4, 2.2, 5.0], [4.5, 1.4, 9.4], 36, 'close on the hatch: a head coming up (eye level of the hatch)'),
     hatch_down: cam([4.5, 5.4, 5.2], [4.5, -4.5, 10.5], 50, 'Ch2: looking down the hatch to the ladder and the hallway'),
     nest_ms: cam([1.0, 3.0, -2.6], [0.0, 1.8, -7.6], 38, 'Skye in the nest, medium'),
     nest_two: cam([0.0, 3.3, -1.4], [-0.9, 1.7, -7.4], 42, 'Ch8: Skye and Lily side by side in the nest'),
-    nest_cu: cam([0.6, 2.6, -4.6], [0.2, 2.2, -7.2], 34, 'close-up in the nest'),
-    tea_two: cam([3.2, 3.4, 2.0], [-3.5, 1.7, 2.0], 40, 'tea party two-shot from the side (Lily left, Skye right)'),
-    tea_wide: cam([4.0, 5.2, 9.0], [-3.5, 1.4, 1.2], 44, 'tea party wide with the teddies'),
-    tea_over_lily: cam([-4.3, 3.4, -2.6], [-3.3, 2.0, 4.0], 40, 'over Lily toward Skye'),
-    tea_over_skye: cam([-2.7, 3.6, 6.6], [-3.7, 2.0, 0.0], 40, 'over Skye toward Lily'),
+    nest_cu: cam([0.7, 3.3, -3.8], [0.2, 2.9, -7.2], 34, 'close-up in the nest'),
+    tea_two: cam([3.4, 3.5, 2.2], [-3.5, 1.8, 2.0], 40, 'tea party two-shot across the box from the +x side (Lily frame-left, Skye frame-right)'),
+    tea_wide: cam([-7.0, 4.4, -6.6], [-3.0, 1.4, 2.4], 46, 'tea party wide 3/4 from window-left (Ch5 S12)'),
+    tea_wide_front: cam([4.0, 5.2, 9.0], [-3.5, 1.4, 1.2], 44, 'tea party wide from the hatch side'),
+    tea_lily_ots: cam([-2.0, 4.0, -3.0], [-3.5, 2.1, 4.1], 40, "over Skye's left shoulder onto Lily"),
+    tea_skye_ots: cam([-2.2, 3.4, 6.4], [-3.5, 2.5, -0.1], 40, "over Lily's right shoulder onto Skye"),
+    tea_lily_cu: cam([-1.6, 2.7, 1.0], [-3.5, 2.4, 4.1], 30, 'Lily close (kneeling)'),
+    tea_skye_cu: cam([-1.6, 2.9, 3.1], [-3.5, 2.6, -0.1], 30, 'Skye close (cross-legged)'),
     tea_hatch: cam([-9.0, 4.6, -3.0], [1.5, 1.5, 6.5], 48, 'Ch7 start: the tea party in front, the hatch in frame behind'),
-    decor_wide: cam([5.3, 4.2, 7.0], [5.3, 2.9, -4.5], 42, 'Ch7: skeleton, Skye (pumpkin girl), witch in a row, HALLOWEEN box behind'),
-    decor_ms: cam([5.0, 4.3, 2.0], [5.3, 3.6, -3.5], 38, 'Ch7: the pumpkin girl, medium'),
-    decor_cu: cam([5.3, 5.0, -0.2], [5.3, 4.8, -3.5], 34, 'Ch7: the pumpkin girl close (her face)'),
-    decor_to_hatch: cam([6.6, 5.4, -6.0], [4.5, 2.0, 9.0], 44, 'Ch7: from behind the pumpkin girl toward the hatch (Dad climbing in)'),
-    decor_side: cam([-0.8, 4.2, -0.6], [6.0, 3.6, -3.6], 40, 'Ch7: Dad and the pumpkin girl nose to nose, from the side'),
+    decor_wide: cam([6.2, 4.2, 7.0], [6.2, 2.9, -4.5], 42, 'Ch7: skeleton, Skye (pumpkin girl), witch in a row, HALLOWEEN box behind'),
+    decor_ms: cam([5.9, 4.3, 2.0], [6.2, 3.6, -3.5], 38, 'Ch7: the pumpkin girl, medium'),
+    decor_cu: cam([6.2, 5.0, -0.2], [6.2, 4.8, -3.5], 34, 'Ch7: the pumpkin girl close (her face)'),
+    decor_to_hatch: cam([8.0, 5.4, -6.0], [4.5, 2.0, 9.0], 44, 'Ch7: from behind the pumpkin girl toward the hatch (Dad climbing in)'),
+    decor_side: cam([10.6, 4.0, -0.9], [5.9, 4.2, -2.3], 40, 'Ch7: Dad and the pumpkin girl nose to nose, from the side'),
     boxes: cam([2.2, 4.0, 6.6], [9.4, 1.6, 2.2], 44, 'XMAS and MAX - OLD STUFF with the hobby horse'),
-    box_max_cu: cam([6.2, 5.0, 7.6], [9.2, 1.4, 4.6], 34, 'Ch9: into the MAX - OLD STUFF box (the drawing on top)'),
+    box_max_cu: cam([6.4, 5.0, 2.4], [9.2, 1.4, 4.8], 36, 'Ch9: into the MAX - OLD STUFF box (the drawing on top)'),
     drawing_insert: cam([9.0, 4.4, 4.7], [9.2, 1.2, 4.6], 30, 'Ch9: top-down insert of the drawing in the open box'),
-    rocking_nest: cam([4.2, 4.2, 2.6], [-3.6, 1.8, -6.2], 44, 'Ch9: Lily on the rocking chair and Skye in the nest'),
+    rocking_nest: cam([-1.0, 4.4, 3.0], [-3.6, 1.8, -6.2], 46, 'Ch9: Lily on the rocking chair and Skye in the nest'),
     rocking_ms: cam([-3.2, 3.4, 1.2], [-8.0, 2.6, -4.0], 38, 'Lily on the rocking chair, medium'),
     window: cam([0.0, 3.0, -1.0], [0.0, 6.2, -10.0], 46, 'toward the round window and the light shafts'),
     hatch_wide: cam([-4.0, 4.4, -1.0], [4.5, 1.2, 9.0], 44, 'toward the hatch and the vacuum'),
   };
+  Object.assign(cams, {
+    tea_party: cams.tea_two, decor_line: cams.decor_wide, hatch_mcu: cams.hatch_lily_cu, nest_mcu: cams.nest_cu, nest_two_shot: cams.nest_two,
+    wide_nest_to_hatch: cam([-6.0, 4.4, -9.4], [2.0, 1.5, 3.0], 52, 'Ch7: tea party foreground, the hatch and the decorations in frame'),
+    wide_nest_hatch: cam([-5.5, 4.4, -9.6], [2.5, 1.2, 1.5], 58, 'the nest (right) and the hatch (left) in one wide'),
+    nest_from_window: cam([-6.0, 4.2, -8.6], [3.0, 1.2, 2.0], 50, 'Ch8: nest frame-left, hatch frame-right'),
+    nest_mcu_skye: cam([-0.6, 3.0, -3.6], [0.2, 2.5, -7.2], 32, 'Skye in the nest, MCU'),
+    nest_mcu_lily: cam([1.3, 3.2, -2.8], [2.3, 2.3, -6.9], 30, 'Lily beside her in the nest, MCU'),
+    lily_ms: cam([3.0, 3.2, 1.6], [4.5, 2.4, 6.4], 38, 'Lily standing at hatch_top, MS'),
+    old_stuff: cams.box_max_cu,
+  });
   for (const c of Object.values(cams)) c.pos.y = Math.min(c.pos.y, roofY(c.pos.x - OFFSET.x) - 1.2);
 
   // ---------- state ----------
@@ -494,9 +533,9 @@ export function build(scene) {
     const vis = (n, v) => { if (items[n]) items[n].visible = !!v; };
     // light mood
     const day = st.time === 'afternoon', night = st.time === 'night', pre = st.time === 'predawn';
-    sun.intensity = day ? 900 : 0; bounce.intensity = day ? 18 : night ? 2 : 1;
+    sun.intensity = day ? 420 : 0; bounce.intensity = day ? 14 : night ? 4 : 1;
     bounce.color.set(day ? '#ffb36b' : '#8fa6e0');
-    moon.intensity = night ? 260 : pre ? 60 : 0;
+    moon.intensity = night ? 320 : pre ? 60 : 0;
     vis('shafts_sun', day); vis('shafts_moon', night);
     outsideMat.color.set(day ? '#ffd29a' : night ? '#1c2c55' : '#2a3f78');
     glassMat.emissive.set(day ? '#ffd59a' : '#5a74b8'); glassMat.emissiveIntensity = day ? 0.6 : 0.25;
@@ -507,10 +546,16 @@ export function build(scene) {
     // nest
     vis('backpack', st.backpack);
     const fl = items.flashlight;
-    if (st.flashlight === 'standing') { at(fl, -1.6, 0.17, 0.9); fl.rotation.set(0, 0, 0); flashL.intensity = 3; flashCone.intensity = 25; fl.children[2].material.emissiveIntensity = 3; }
-    else { at(fl, -1.7, 0.33, 0.6, 0.9); fl.rotation.z = Math.PI / 2; flashL.intensity = 0; flashCone.intensity = 0; fl.children[2].material.emissiveIntensity = 0; }
+    const standing = st.flashlight === 'standing';
+    if (flKit) {                                 // kit flashlight: beam along its +z, tail at z -0.32
+      if (standing) { at(fl, -2.6, 0.17, 1.5); flKit.rotation.set(-Math.PI / 2, 0, 0); flKit.position.set(0, 0.33, 0); }
+      else { at(fl, -1.7, 0.27, 0.6, 0.9); flKit.rotation.set(0, 0, 0); flKit.position.set(0, 0, 0); }
+      flKit.userData.setOn?.(standing);
+    } else if (standing) { at(fl, -2.6, 0.17, 1.5); fl.rotation.set(0, 0, 0); fl.children[0].children[2].material.emissiveIntensity = 3; }
+    else { at(fl, -1.7, 0.33, 0.6, 0.9); fl.rotation.z = Math.PI / 2; fl.children[0].children[2].material.emissiveIntensity = 0; }
+    flashL.intensity = standing ? 1.1 : 0; flashCone.intensity = standing ? 14 : 0;
     vis('flashlight', st.flashlight !== 'none');
-    vis('glow_sticks', st.glowSticks); glowL.intensity = st.glowSticks === 'lit' ? 2 : 0;
+    vis('glow_sticks', st.glowSticks); glowL.intensity = st.glowSticks === 'lit' ? 2 : 0; gs.userData.prop?.userData.setLit?.(st.glowSticks === 'lit');
     // boxes and decorations
     for (const n of ['box_halloween', 'box_xmas', 'box_max', 'box_small']) vis(n, st.boxes);
     vis('skeleton', st.decorations); vis('witch', st.decorations);
@@ -535,6 +580,12 @@ export function build(scene) {
   function setState(state = {}) {
     const ch = state.chapter ?? 5;
     const st = { ...chapterDefaults(ch), ...state, chapter: ch };
+    if (state.night === true) st.time = 'night';
+    if (state.teaSet != null) st.tea = state.teaSet;
+    if (state.oldStuffOpen != null) st.maxBox = state.oldStuffOpen === true ? 'open' : state.oldStuffOpen === false ? 'closed' : state.oldStuffOpen;
+    if (state.pumpkin === false) st.pumpkin = 'none';
+    if (state.hobbyHorse === false) st.hobbyHorse = 'none';
+    if (state.rock != null) items.rocking_chair_rock.rotation.x = state.rock; else items.rocking_chair_rock.rotation.x = 0;
     st.hide = state.hide || [];
     apply(st); S.current = st; return st;
   }
@@ -545,7 +596,9 @@ export function build(scene) {
   }
   setState({ chapter: 5 });
   group.userData.walls = { back, front, left: kneeL, right: kneeR };
-  return { id: 'attic', group, marks, cams, lights, items, setState, useCam, hatchRise, roofY: (x) => roofY(x - OFFSET.x) };
+  const setHatch = (k) => { items.hatch_lid.rotation.x = clamp(k, 0, 1) * 1.95; hatchGlow.intensity = k > 0.02 ? Math.max(hatchGlow.intensity, 4) : 0; };
+  const rockChair = (a) => { items.rocking_chair_rock.rotation.x = a; };
+  return { id: 'attic', group, marks, cams, lights, items, setState, setHatch, rockChair, useCam, hatchRise, roofY: (x) => roofY(x - OFFSET.x) };
 }
 const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
 const lerp = (a, b, t) => a + (b - a) * t;

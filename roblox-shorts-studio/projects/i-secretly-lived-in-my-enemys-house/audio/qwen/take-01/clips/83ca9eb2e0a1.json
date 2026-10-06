@@ -1,0 +1,61 @@
+{
+ "voice": "lily_kid",
+ "text": "He drew it in kindergarten. He keeps it on top.",
+ "seed": 37163,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "drew",
+   "start": 0.18,
+   "end": 0.4
+  },
+  {
+   "word": "it",
+   "start": 0.4,
+   "end": 0.56
+  },
+  {
+   "word": "in",
+   "start": 0.56,
+   "end": 0.74
+  },
+  {
+   "word": "kindergarten.",
+   "start": 0.74,
+   "end": 1.2
+  },
+  {
+   "word": "He",
+   "start": 1.88,
+   "end": 1.98
+  },
+  {
+   "word": "keeps",
+   "start": 1.98,
+   "end": 2.18
+  },
+  {
+   "word": "it",
+   "start": 2.18,
+   "end": 2.34
+  },
+  {
+   "word": "on",
+   "start": 2.34,
+   "end": 2.5
+  },
+  {
+   "word": "top.",
+   "start": 2.5,
+   "end": 2.82
+  }
+ ],
+ "words_md5": "f34d733f0a960b00adffeda2092e229b",
+ "whisper": "small.en"
+}
