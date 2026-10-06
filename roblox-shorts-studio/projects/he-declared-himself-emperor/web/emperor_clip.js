@@ -17,27 +17,32 @@ import { sanFrancisco, nortonUniform, merchantCoat, dress, hat, headHat, riceSac
 export const meta = { seconds: Math.ceil((W.end + 2.0) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'He Declared Himself Emperor' };
 export const sky = { zenith: '#5a8fd6', horizon: '#e6dcc4', below: '#f0f6ff', fog: '#e8e0cc', sunDir: new THREE.Vector3(0.4, 0.62, 0.68) };
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const T = { city: W.city1 - 0.15, name: W.name - 0.15, rich: W.rich - 0.15, ships: W.ship1 - 0.15, writes: W.writes - 0.15, paper: W.paper - 0.15, wears: W.wears - 0.15, money: W.prints2 - 0.15, congress: W.orders1 - 0.15, police: W.police - 0.15 };
+const T = { city: W.city1 - 0.15, name: W.name - 0.15, rich: W.rich - 0.15, ships: W.ship1 - 0.15, writes: W.writes - 0.15, paper: W.paper - 0.15, wears: W.wears - 0.15, money: W.prints2 - 0.15, congress: W.orders1 - 0.15, police: W.police - 0.15, furious: W.city2 - 0.15, chief: W.chief - 0.15, bridge: W.orders2 - 0.15 };
 const SKIN = ['#f1c27d', '#c68642', '#e0ac69', '#8d5524'], COATS = ['#5a4636', '#3f4a5a', '#6b3b3b', '#4e5a3a'];
-let leo, SF, OUT, HAT;
-const A = {}, folk = [], SACKS = [];
+let leo, max, SF, OUT, HAT;
+const A = {}, folk = [], cops = [], SACKS = [];
 
 export async function setup(stage) {
   const { scene } = stage;
   leo = await loadRobloxCharacter('Leo', { expressions: ['neutral', 'determined', 'happy', 'surprised'], hairLift: 0.16 });
+  max = await loadRobloxCharacter('Max', { expressions: ['neutral', 'determined', 'happy'] }); scene.add(max.root);
+  dress(max, { color: '#141c33', hem: 0.45, buttons: '#e8bd3a', collar: '#e8bd3a' });   // the police chief
   scene.add(leo.root);
   OUT = { emperor: nortonUniform(leo), merchant: merchantCoat(leo) }; HAT = { emperor: headHat(leo, hat({ feather: true })), merchant: headHat(leo, hat()) };
-  for (let i = 0; i < 4; i++) {                          // townsfolk: recoloured Noobs in frock coats
-    const e = await loadRobloxCharacter('Noob', { expressions: ['neutral', 'happy', 'surprised'] });
+  for (let i = 0; i < 6; i++) {                          // townsfolk (0-3) in frock coats, two police officers (4-5) in police blue
+    const e = await loadRobloxCharacter('Noob', { expressions: ['neutral', 'happy', 'surprised', 'determined'] });
     e.root.traverse((o) => {
       if (!o.isMesh || o.name === 'Face') return;
       if (!['Torso', 'Left Arm', 'Right Arm', 'Left Leg', 'Right Leg', 'Head'].includes(o.name)) return;
       o.material = o.material.clone(); o.material.map = null; o.material.needsUpdate = true;
-      o.material.color.set(/Leg/.test(o.name) ? '#2e2a28' : o.name === 'Torso' ? COATS[i] : SKIN[i]);
+      o.material.color.set(/Leg/.test(o.name) ? '#2e2a28' : o.name === 'Torso' ? COATS[i % 4] : SKIN[(i + 1) % 4]);   // the officers reuse the tables
     });
-    dress(e, { color: COATS[i], hem: 0.4, buttons: '#c9a24a' }); scene.add(e.root); folk.push(e);
+    if (i < 4) { dress(e, { color: COATS[i], hem: 0.4, buttons: '#c9a24a' }); scene.add(e.root); folk.push(e); continue; }
+    dress(e, { color: '#1d2a4a', hem: 0.4, buttons: '#d9b54a', collar: '#1d2a4a' });
+    const badge = new THREE.Mesh(new THREE.CircleGeometry(0.17, 5), new THREE.MeshStandardMaterial({ color: '#e8bd3a', metalness: 0.8, roughness: 0.3 }));
+    badge.position.set(-0.55, 1.55, 0.57); e.bones.Torso.add(badge); scene.add(e.root); cops.push(e);
   }
-  for (const n of ['idle', 'walk', 'wave', 'cheer', 'clap', 'proud', 'think', 'talk', 'point_forward']) A[n] = await loadAnimation(n);
+  for (const n of ['idle', 'walk', 'wave', 'cheer', 'clap', 'proud', 'think', 'talk', 'point_forward', 'shock', 'stomp']) A[n] = await loadAnimation(n);
   SF = sanFrancisco(scene);
   for (let i = 0; i < 14; i++) {                         // the rice pile on the dock: it grows with every ship
     const k = riceSack(), row = Math.floor(i / 5), col = i % 5;
@@ -47,10 +52,12 @@ export async function setup(stage) {
   SF.ships.forEach((sh) => { sh.userData.home = sh.position.clone(); });
 }
 
-const SHOTS = [[0, 'hook'], [T.city, 'city'], [T.name, 'name'], [T.rich, 'rich'], [T.ships, 'ships'], [T.writes, 'writes'], [T.paper, 'paper'], [T.wears, 'uniform'], [T.money, 'money'], [T.congress, 'congress'], [T.police, 'wip']]
+const SHOTS = [[0, 'hook'], [T.city, 'city'], [T.name, 'name'], [T.rich, 'rich'], [T.ships, 'ships'], [T.writes, 'writes'], [T.paper, 'paper'], [T.wears, 'uniform'], [T.money, 'money'], [T.congress, 'congress'], [T.police, 'arrest'], [T.furious, 'furious'], [T.chief, 'salute'], [T.bridge, 'wip']]
   .map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 const X0 = -20, X1 = -4, SPEED = 5;                       // the Emperor's walk down the street (left to right)
 const FX = [-15, -11, -7.5, -1.5];                        // townsfolk on the boardwalk
+const EUL = new THREE.Euler(), SALUTE = ['R', 2.45, -0.4];   // right hand to the brow (as in The Penguin General)
+function setArm(a, sd, up, fwd = 0.08) { EUL.set(fwd, 0, sd === 'L' ? up : -up, 'XYZ'); a.bones['Arm.' + sd].quaternion.setFromEuler(EUL); }
 function grounded(a, y = 0) { a.root.updateMatrixWorld(true); a.root.position.y -= a.soleHeight() - y; a.root.updateMatrixWorld(true); }
 let SHOT = 'hook';
 
@@ -69,6 +76,9 @@ export function update(t, stage) {
   } else if (office) {                                    // at the BULLETIN's door with his proclamation
     leo.root.position.set(-1.6, 0, STREET_Z - 4.2); leo.root.rotation.set(0, -0.2, 0);
     robloxPose(leo, [[t < T.paper ? A.think : A.proud, t - T.writes, 1, true]]); grounded(leo, 0.03); setExpression(leo, 'happy');
+  } else if (t >= T.police && t < T.bridge) {            // the arrest, the outrage, the salutes
+    leo.root.position.set(-6, 0, STREET_Z); leo.root.rotation.set(0, 0.15, 0);
+    robloxPose(leo, [[t < T.furious ? A.shock : A.proud, t - T.police, 1, true]]); grounded(leo); setExpression(leo, t < T.chief ? 'surprised' : 'happy');
   } else if (t >= T.wears && t < T.police) {             // the reign
     const at = t < T.money ? [-6, 0.3] : t < T.congress ? [-12.2, 0.15] : [-6, 0.1];
     leo.root.position.set(at[0], 0, STREET_Z - (t >= T.money && t < T.congress ? 2.2 : 0)); leo.root.rotation.set(0, at[1], 0);
@@ -85,6 +95,12 @@ export function update(t, stage) {
   SACKS.forEach((k, i) => { k.visible = i < landed; });
   folk.forEach((e, i) => {
     if (dock || (office && t < T.paper) || (t >= T.wears && t < T.money) || (t >= T.congress && t < T.police)) { e.root.visible = false; return; }
+    if (t >= T.police && t < T.bridge) {
+      e.root.visible = true; e.root.position.set(FX[i], 0, STREET_Z - 4.4); e.root.rotation.set(0, (i % 2 ? 0.25 : -0.25), 0);
+      const fur = t >= T.furious && t < T.chief;
+      robloxPose(e, [[fur ? A.stomp : t >= T.chief ? A.clap : A.idle, t + i * 0.25, 1, true]]); grounded(e);
+      setExpression(e, fur ? 'determined' : t >= T.chief ? 'happy' : 'surprised'); return;
+    }
     if (t >= T.money && t < T.congress) {
       e.root.visible = i === 2; if (i !== 2) return;
       e.root.position.set(-10.2, 0, STREET_Z - 4.4); e.root.rotation.set(0, -0.6, 0);
@@ -95,6 +111,21 @@ export function update(t, stage) {
     robloxPose(e, near ? [[anim, t + i * 0.3, 1, true]] : [[A.idle, t + i, 1, true]]);
     grounded(e); setExpression(e, near ? 'happy' : 'neutral');
   });
+  cops.forEach((e, i) => {
+    const on = (t >= T.police && t < T.furious && i === 0) || (t >= T.chief && t < T.bridge);
+    e.root.visible = on; if (!on) return;
+    const arrest = t < T.furious;
+    e.root.position.set(arrest ? -4.4 : (i ? -8.6 : -3.4), 0, STREET_Z + (arrest ? 0.4 : 0.8)); e.root.rotation.set(0, arrest ? -1.2 : (i ? 0.9 : -0.9), 0);
+    robloxPose(e, [[arrest ? A.point_forward : A.idle, t, 1, true]]);
+    if (!arrest && t > W.officers - 0.2) setArm(e, ...SALUTE);
+    grounded(e); setExpression(e, arrest ? 'determined' : 'neutral');
+  });
+  max.root.visible = t >= T.chief && t < T.bridge;
+  if (max.root.visible) {
+    max.root.position.set(-7.6, 0, STREET_Z - 1.6); max.root.rotation.set(0, 0.7, 0);
+    robloxPose(max, [[t < W.officers - 0.2 ? A.talk : A.idle, t - T.chief, 1, true]]); if (t > W.officers - 0.2) setArm(max, ...SALUTE);
+    grounded(max); setExpression(max, 'happy');
+  }
   const c = stage.camera;
   if (shot.id === 'hook') { c.position.set(lx + 4.6, 4.0, STREET_Z + 13.5); c.lookAt(V(lx + 0.4, 4.6, STREET_Z - 1.2)); c.fov = 46; }   // hat clear below the headline
   else if (shot.id === 'city') { c.position.set(lerp(-7, -5, u), 9.5, STREET_Z + 21); c.lookAt(V(-7, 2.6, STREET_Z - 3)); c.fov = 50; }
@@ -105,6 +136,9 @@ export function update(t, stage) {
   else if (shot.id === 'uniform') { c.position.set(-5.2, 3.6, STREET_Z + lerp(11.5, 9.5, u)); c.lookAt(V(-6, 3.6, STREET_Z)); c.fov = 46; }
   else if (shot.id === 'money') { c.position.set(-8.4, 5.2, STREET_Z + 13.5); c.lookAt(V(-11.2, 5.6, STREET_Z - 3.2)); c.fov = 46; }   // the note sits above him
   else if (shot.id === 'congress') { c.position.set(-3.4, 5.0, STREET_Z + 13.5); c.lookAt(V(-6, 5.8, STREET_Z)); c.fov = 46; }   // the decree sits above him
+  else if (shot.id === 'arrest') { c.position.set(-3.6, 4.6, STREET_Z + 12.5); c.lookAt(V(-5.4, 5.0, STREET_Z)); c.fov = 46; }
+  else if (shot.id === 'furious') { c.position.set(lerp(-10, -8.5, u), 4.8, STREET_Z + 10); c.lookAt(V(-9, 4.0, STREET_Z - 4.4)); c.fov = 50; }
+  else if (shot.id === 'salute') { c.position.set(-5.8, 4.6, STREET_Z + lerp(15.5, 14, u)); c.lookAt(V(-6, 4.6, STREET_Z)); c.fov = 46; }
   else if (shot.id === 'name') { c.position.set(lx + 1.6, 4.6, STREET_Z + lerp(9.6, 8.6, u)); c.lookAt(V(lx, 5.0, STREET_Z)); c.fov = 40; }   // head, hat and epaulettes, name above
   else { c.position.set(-6, 9.5, STREET_Z + 21); c.lookAt(V(-6, 2.6, STREET_Z - 3)); c.fov = 50; }
   c.up.set(0, 1, 0); c.updateProjectionMatrix(); stage.aimSun(V(lx, 2, STREET_Z), 18);
@@ -147,6 +181,8 @@ export function overlay(g, s, t) {
     if (t > W.congress1 - 0.2 && t < W.congress2 - 0.1) decree(g, s, t, W.congress1 - 0.2);
     if (t > W.ignores - 0.1) bigText(g, s, '*crickets*', 540, 440, 96, '#ffffff', pop(t, W.ignores - 0.1), -0.03);
   }
+  if (SHOT === 'arrest' && t > W.arrests - 0.1) bigText(g, s, 'ARRESTED!', 540, 400, 130, '#ff4b3f', pop(t, W.arrests - 0.1, 0.18), -0.1, '#2a0d0d');
+  if (SHOT === 'furious' && t > W.furious - 0.15) bigText(g, s, 'OUTRAGE!', 540, 400, 140, '#ff4b3f', pop(t, W.furious - 0.15, 0.18), 0.06, '#2a0d0d');
   if (SHOT === 'ships' && t > W.lost - 0.1) bigText(g, s, 'BROKE', 540, 440, 150, '#ff4b3f', pop(t, W.lost - 0.1, 0.18), -0.12, '#2a0d0d');
 }
 // The proclamation: a handwritten letter card (the real one ran in the Bulletin on 17 September 1859; paraphrased).
@@ -204,4 +240,4 @@ function decree(g, s, t, t0) {                              // "Congress is abol
   g.font = `italic 700 ${32 * s}px "Playfair Display"`; g.fillText('~ Norton I ~', 140 * s, 150 * s);
   g.restore();
 }
-export const cast = () => ({ leo, folk0: folk[0] });
+export const cast = () => ({ leo, max, folk0: folk[0], cop0: cops[0], cop1: cops[1] });
