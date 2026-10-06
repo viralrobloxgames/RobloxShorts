@@ -9,7 +9,7 @@ import { THREE, V, std, glow, box, rbox, cyl, picture, fontText, floorTexture, w
   autoHideWalls, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
 
 export const OFFSET = V(1200, 0, 0);
-const H = 13, DESK_TOP = 3.1, SEAT_TOP = 2.0;
+const H = 13, DESK_TOP = 3.1, SEAT_TOP = 1.7;
 export const COLS = [-13, -5, 3, 11], ROWS = [-7, -1, 5, 11];
 const CHAIR_DZ = 1.9;                 // the seated root is this far behind (+z) the desk centre
 
@@ -121,7 +121,6 @@ export function build(scene) {
   function deskUnit(x, z, colorIdx) {
     const d = new THREE.Group(); d.position.set(x, 0, z); group.add(d);
     box(3.6, 0.22, 2.3, deskTopM, 0, DESK_TOP - 0.11, 0, d);
-    box(3.3, 0.12, 1.8, metalM, 0, 2.62, -0.15, d);               // book tray (front part only, legs pass behind it)
     box(3.3, 0.35, 0.08, metalM, 0, 2.8, -1.05, d);
     for (const sx of [-1.6, 1.6]) for (const sz of [-1.0, 1.0]) cyl(0.07, 0.07, DESK_TOP - 0.2, metalM, sx, (DESK_TOP - 0.2) / 2, sz, d, 8);
     // chair behind the desk (seated root at z + CHAIR_DZ)
@@ -166,7 +165,7 @@ export function build(scene) {
   group.userData.walls = walls.map((w) => w.obj);
 
   // ---------------------------------------------------------------- marks
-  const sit = (key) => { const t = desks[key].top.clone().sub(OFFSET); return M(t.x, SEAT_TOP - 2, t.z + CHAIR_DZ, PI, { sit: true, seatTop: SEAT_TOP, desk: key }); };
+  const sit = (key) => { const t = desks[key].top.clone().sub(OFFSET); return M(t.x, SEAT_TOP - 1.5, t.z + CHAIR_DZ, PI, { sit: true, seatTop: SEAT_TOP, desk: key }); };
   const marks = {};
   ROWS.forEach((z, ri) => COLS.forEach((x, ci) => { marks[`desk_r${ri + 1}c${ci + 1}`] = sit(`r${ri + 1}c${ci + 1}`); }));
   Object.assign(marks, {
@@ -183,7 +182,7 @@ export function build(scene) {
     teacher_desk: M(13, 0, -14.2, 0, { note: 'behind the teacher\'s desk' }),
   });
   // aliases asked for by the chapters
-  Object.assign(marks, { desk_skye_aisle: marks.skye_desk_side, desk_max_side: marks.max_desk_side, door: marks.door_inside });
+  Object.assign(marks, { aisle_skye: marks.skye_desk_side, desk_skye_aisle: marks.skye_desk_side, desk_max_side: marks.max_desk_side, door: marks.door_inside });
 
   // ---------------------------------------------------------------- cams
   const cams = {
@@ -238,6 +237,7 @@ export function build(scene) {
     desk_skye_top: desks.r2c1.top.clone(), desk_max_top: desks.r3c2.top.clone(),
     // the backpack hangs off the back of Skye's chair: this is the top of the backrest (hang point), backpack facing -z
     skye_chair_hang: desks.r2c1.top.clone().add(V(0, SEAT_TOP + 1.85 - DESK_TOP, CHAIR_DZ + 1.15)) };
+  marks.chair_skye_back = { pos: anchors.skye_chair_hang.clone(), heading: 0, note: 'top of Skye\'s chair backrest (backpack hang point), facing away from her desk' };
   marks.desk_skye_top = M(COLS[0], DESK_TOP, ROWS[1], PI, { note: 'top of Skye\'s desk (y = surface)' });
   return { id: 'classroom', group, marks, cams, lights, setState, state, anchors, walls: walls.map((w) => w.obj) };
 }

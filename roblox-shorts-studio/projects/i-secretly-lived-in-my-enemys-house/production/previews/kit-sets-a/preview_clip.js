@@ -13,16 +13,17 @@ export async function setup(stage) {
   stage.hemi.intensity = 0.25; stage.hemi.color.set('#8ea6d8'); stage.sun.intensity = 0.0; stage.fill.intensity = 0.25; stage.rim.intensity = 0.15; scene.environmentIntensity = 0.25;
   const b = bedroom.build(scene), h = hallway.build(scene);
   S = SET === 'bedroom' ? b : h; (SET === 'bedroom' ? h : b).group.visible = false;
-  names = Object.keys(S.cams); meta.names = names;
+  names = SET === 'linen' ? ['linen_gap', 'linen_pov', 'linen_end', 'hatch_low_dad', 'dad_ms'] : Object.keys(S.cams); meta.names = names;
   for (const n of ['idle', 'sit']) A[n] = await loadAnimation(n);
   const want = SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_edge', 'sit'], ['Mia', 'ghost_stop', 'idle'], ['Leo', 'closet_front', 'idle']]
+    : SET === 'linen' ? [['Skye', 'linen_skye', 'idle'], ['Mia', 'linen_lily', 'idle'], ['Leo', 'dad_hatch', 'idle']]
     : [['Skye', 'max_door_listen', 'idle'], ['Mia', 'lily_behind_skye', 'idle'], ['Leo', 'dad_hatch', 'idle'], ['Max', 'stairs_top', 'idle']];
   for (const [who, mk, an] of want) {
     const a = await loadRobloxCharacter(who, { expressions: ['happy'], scale: who === 'Mia' ? 0.78 : who === 'Leo' ? 1.12 : 1 });
     const m = S.marks[mk]; if (!m) { console.error('missing mark ' + mk); continue; }
     a.root.position.copy(m.seat !== undefined ? bedroom.sitPos(m, a.root.scale.x) : m.pos); a.root.rotation.y = m.heading; scene.add(a.root); robloxPose(a, [[A[an], 0.5, 1, true]]); cast[who] = a;
   }
-  S.setState({ chapter: SET === 'bedroom' ? 10 : 6, lamp: true, hall: true, underDoor: true, hatch: SET === 'hallway' ? 1 : 0, linen: 0.2, door: 0, closet: 0.3 });
+  S.setState({ chapter: SET === 'bedroom' ? 10 : 6, lamp: true, hall: true, underDoor: true, hatch: SET === 'hallway' ? 1 : 0, linen: SET === 'linen' ? 0.4 : 0.2, door: 0, closet: 0.3 });
   window.camNames = names;
 }
 export function update(t, stage) {
