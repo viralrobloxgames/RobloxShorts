@@ -3,5 +3,59 @@
  "text": "Lily? Why are there pancake crumbs on the attic ladder?",
  "seed": 28016,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "why",
+   "start": 0.72,
+   "end": 0.92
+  },
+  {
+   "word": "are",
+   "start": 0.92,
+   "end": 1.04
+  },
+  {
+   "word": "there",
+   "start": 1.04,
+   "end": 1.16
+  },
+  {
+   "word": "pancake",
+   "start": 1.16,
+   "end": 1.62
+  },
+  {
+   "word": "crumbs",
+   "start": 1.62,
+   "end": 1.9
+  },
+  {
+   "word": "on",
+   "start": 1.9,
+   "end": 2.06
+  },
+  {
+   "word": "the",
+   "start": 2.06,
+   "end": 2.18
+  },
+  {
+   "word": "attic",
+   "start": 2.18,
+   "end": 2.44
+  },
+  {
+   "word": "ladder?",
+   "start": 2.44,
+   "end": 2.7
+  }
+ ],
+ "words_md5": "2ebbdabe705c6329360b8ca28468ff2c",
+ "whisper": "small.en"
 }
