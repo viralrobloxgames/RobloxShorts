@@ -70,3 +70,32 @@ Description and settings:
 11. **Package, could.** Settings say "altered content: No". Fine for an animated Roblox story, but Skye is voiced by a
     voice clone (`brittney`): if that voice is cloned from a real, identifiable person rather than a stock voice, the
     user should decide that box before posting.
+
+## Ch09 "The Drawing" (SATURDAY 2:20 PM), 59.73 s, 1792 frames, reviewed 18:3xZ
+
+What works: the drawing reveal is set up and paid off, "He kept it. All this time." gets a proper close-up with a
+sad turn at 00:37, and "Yes." (00:53, the angry face) and "You're both so dumb." land. Dad's offscreen lines are
+correctly quieter and muffled (-23 dB RMS vs -17, centroid ~1.1 kHz). Stitch: -14.12 LUFS, TP -0.91 dBTP;
+`ok: false` only because the audio ends 0.067 s (2 frames) before the video (see global).
+
+12. **00:25.0-00:30.9 and 00:39.0-00:45.9 (frames 751-928, 1171-1378), must.** The drawing reads **"BEST FRIENDS."**,
+    spelled right, and Skye's next line is "He spelled friends wrong." The joke dies, and anyone reading the prop
+    on screen gets a contradiction. Fix the drawing texture in `props.js` to **"BEST FRENDS"** (script, story.md,
+    boundary sheet), and re-render every frame where the drawing is visible: the ranges above plus the box insert
+    at 00:25.
+13. **00:26.0-00:30.9 and 00:39.0-00:45.9, should** (same frames as 12, so do it in the same re-render). Skye holds the
+    drawing flat against her stomach, so it reads as a print on her hoodie, not a paper she's holding and looking at.
+    Hold it up in both hands at chest-to-chin height and angle it slightly toward camera; in the 00:28-00:30 insert,
+    show the edges of the paper and her fingers on it.
+14. **00:48.6-00:50.0 (frames 1459-1500), should.** The scripted beat "[+1.2 Skye looks at the drawing for a long
+    moment, puts it back gently on top]" is a top-down shot of two hands over a box with the paper out of view,
+    so the chapter's quietest moment shows no face and no drawing. Use her close-up looking down (face `sad`, soft
+    smile at the end) with the drawing in frame, then the hands laying it on top.
+15. **00:06.1-00:11.3 (frames 184-339), should.** "Step one, eye holes" plays on a close-up with no sheet and no scissors
+    in frame. She is holding glow sticks. The boundary sheet's opening has the bedsheet across her lap with the
+    scissors cutting. Frame the close-up wider so the sheet and scissors are in the bottom third, or put the scissors in
+    her right hand.
+16. **00:58.2-00:59.7 (frames 1747-1792), could.** Lily's "Ghost!" is delivered with a calm smile toward camera; the
+    boundary sheet has her facing the hatch, face `shouting`. A quick turn toward the hatch would sell the cover-up.
+17. **00:46.7-00:48.6, could.** "It was a really good sandcastle" has strong sibilance (centroid 3.7 kHz vs ~2.5 kHz for
+    her other lines; sharp transients in the source clip at 47.55-47.8). A light de-ess on that clip would help.
