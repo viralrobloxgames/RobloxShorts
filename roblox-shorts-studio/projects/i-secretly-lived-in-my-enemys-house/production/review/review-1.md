@@ -179,3 +179,61 @@ and Skye's blush CU on the closing whisper (0:55.5 on) land the chapter's turn.
    0:41, 0:50) and the same Max/Skye two-shot five times; the 60 s chapter is a 6-angle loop. COULD: on the
    cinnamon run (0:34.4-0:43.8) push in a little on each exchange (MCU -> CU -> tighter CU) so the interrogation
    escalates instead of repeating.
+
+---
+
+## Max's voice (max_boy2), checked per chapter as "MAX voice replaced in chNN" lands
+
+Measured on narration.wav (median F0 over voiced frames) and in the re-stitched chapter; I can't listen, so this is
+pitch, level and edit checks, not timbre.
+
+| Ch | Status | Max F0 (old -> new) | Skye F0 in the same chapter | Notes |
+|---|---|---|---|---|
+| 01 | **not replaced yet: MUST** | 242 Hz (old `max_kid`) | 275 Hz | Old voice sits 2 semitones under Skye: the "sounds like a girl" problem. |
+| 02 | **not replaced yet: MUST** | 260 Hz (old) | 247 Hz | Old voice is *above* Skye here. |
+| 03 | **not replaced yet: MUST** | ~250 Hz (old) | | Max carries most of this chapter. |
+| 04 | replaced, OK | 247 -> 169 Hz | 285 Hz | ~9 semitones under Skye, clearly a boy on pitch. Lines -12.3 to -16.5 LUFS (a little wider spread than before; "Nothing. It's a cookie." 0:11.8 and "Since this week. Want half?" 0:52.6 are the quiet ones, could +1.5 dB). Every line ends clean inside its window (no clipped tails). Re-stitch -14.3 LUFS, -1.3 dBTP, A/V 0.00. |
+| 05 | no Max | | | |
+| 06 | replaced, OK | 218 -> 172 Hz | 315 Hz | Behind-door lines -17.6 to -18.6 (muffled, ~4 dB under: right). Clean edits. |
+
+Until ch01-03 are replaced the film has two Maxes: the girl-ish one for three chapters, then the boy from Ch4. That
+switch is the single most noticeable audio problem in my block. ch07 is review-2's.
+
+---
+
+## Flow pass over the stitched block (ch01-06, 11515 frames, 6:23.8)
+
+Built with `stitch_longform.py --chapters 1-6` from main 18:40Z: every segment seam frame-exact, stream copy,
+-14.2 LUFS, -1.15 dBTP, A/V -0.004 s. Chapter seams (last frame / next first frame) all match the boundary sheet:
+cards identical in style, wardrobe and backpack states right (backpack on Ch2 end, off in Ch3, on at Ch5 start).
+
+1. **The music bed drops to silence and restarts every 32 s. MUST (soundtrack: for kit-pipeline / review-2).**
+   `assets/audio/playful_history_music.wav` is 32.0 s and fades out over its last ~1 s (to -85 dB); the stitch loops it
+   with only a 0.08 s crossfade, so the bed dies and slams back in at full level every loop: in the block at 0:31.2,
+   1:03.3-1:03.7 (-91 dB, dead air right on the Ch1 -> Ch2 cut), 1:33.1, 2:37.1, 3:09.0, 4:45.6, 5:49.3 (more where
+   speech masks it). Under dialogue it reads as the music "pumping". Fix in the stitch: trim the file's fade tail
+   (loop the first ~31.0 s) and crossfade 0.5-1 s equal-power; or pick a loop-ready bed.
+2. **Every gap in every chapter is 0.25 s. SHOULD (block-wide pacing).** Six minutes of line-on-line delivery with
+   the same gap makes the whole block feel like one long breathless scene and flattens every punchline (Ch4 #4 lists
+   the worst). If any chapter is re-narrated for Max anyway, give punchlines a 0.4-0.6 s beat; otherwise leave it.
+3. **Night scenes make Skye a different colour.** Ch1 #3, Ch2 #5, Ch3 #4: in `night_moon` / `night_fridge` her face
+   renders dark brown, in daylight peach; across the block it looks like two characters. One kit-level fix (a face
+   fill or a minimum ambient on faces in the night presets) would fix all three chapters at once. SHOULD.
+4. **Max smiles in the wrong places across chapters** (Ch1 #6, Ch2 #1 and #4). The twist works only if his one tell
+   is "Huh. Just hoodies." (Ch1 0:09.5); every other smile in Ch1-2 gives it away early. SHOULD as a set.
+5. **Shape of the block is good.** Hook lands in 3 s, every chapter opens on a card plus a visual question and ends on
+   a button line ("Day one.", "Bye!", "Best. Haunting. Ever.", "Stop it, face.", "More tea, please.", "Uh-oh."). The
+   school/house alternation keeps it moving. Ch5 is the strongest chapter, Ch3 the weakest picture (dark).
+
+## Musts at a glance (for the fix owners)
+
+| # | Ch | Time (chapter) | Frames | Owner | Fix |
+|---|---|---|---|---|---|
+| 1 | 01 | 0:07.6-0:08.1 | 212-249 | ch01 | Hoodies + pink lock + flashlight stop insert |
+| 2 | 01 | 0:25.3-0:27.3 | 761-818 | ch01 | Skye `scared` + recoil on the shriek |
+| 3 | 02 | 0:14.2-0:16.2 | 427-487 | ch02 | One shot for Max's entrance, no flash CU, no smile |
+| 4 | 03 | 0:37.2-0:38.4 | 1117-1153 | ch03 | Crust-cutting insert, sandwich doesn't pop |
+| 5 | 04 | 0:54.8-0:55.3 | 1640-1680 | ch04 | Handover in one angle, drop the behind-Max shot |
+| 6 | 06 | 0:44.9-0:45.6 | 1347-1369 | ch06 | Escape behind Dad's back / tight shot; camera out of the ceiling |
+| 7 | 01-03 | all Max lines | audio | narration-tool | Replace Max with max_boy2 (pending) |
+| 8 | block | every 32 s | audio | kit-pipeline / review-2 | Music bed loop gap |
