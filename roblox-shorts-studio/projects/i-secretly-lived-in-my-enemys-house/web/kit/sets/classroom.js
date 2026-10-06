@@ -182,7 +182,7 @@ export function build(scene) {
     teacher_desk: M(13, 0, -14.2, 0, { note: 'behind the teacher\'s desk' }),
   });
   // aliases asked for by the chapters
-  Object.assign(marks, { desk_skye_aisle: marks.skye_desk_side, desk_max_side: marks.max_desk_side, door: marks.door_inside });
+  Object.assign(marks, { aisle_skye: marks.skye_desk_side, desk_skye_aisle: marks.skye_desk_side, desk_max_side: marks.max_desk_side, door: marks.door_inside });
 
   // ---------------------------------------------------------------- cams
   const cams = {
@@ -237,6 +237,7 @@ export function build(scene) {
     desk_skye_top: desks.r2c1.top.clone(), desk_max_top: desks.r3c2.top.clone(),
     // the backpack hangs off the back of Skye's chair: this is the top of the backrest (hang point), backpack facing -z
     skye_chair_hang: desks.r2c1.top.clone().add(V(0, SEAT_TOP + 1.85 - DESK_TOP, CHAIR_DZ + 1.15)) };
+  marks.chair_skye_back = { pos: anchors.skye_chair_hang.clone(), heading: 0, note: 'top of Skye\'s chair backrest (backpack hang point), facing away from her desk' };
   marks.desk_skye_top = M(COLS[0], DESK_TOP, ROWS[1], PI, { note: 'top of Skye\'s desk (y = surface)' });
   return { id: 'classroom', group, marks, cams, lights, setState, state, anchors, walls: walls.map((w) => w.obj) };
 }
