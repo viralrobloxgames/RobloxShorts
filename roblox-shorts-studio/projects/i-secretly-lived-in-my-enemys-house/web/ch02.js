@@ -117,7 +117,7 @@ const SHOTS = [
   { at: () => at(6, -0.1), id: 'lily_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: -0.45, height: 0.6, look: V(0, 0.45, 0) }) },
   { at: () => at(7, -0.1), id: 'dad_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.35, height: 0.8 }) },
   { at: () => at(8, -0.1), id: 'max_notfunny', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.3, height: 0.9 }) },
-  { at: T.steal, id: 'steal', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('pancake_reach'), { clear: false }) },
+  { at: T.steal, id: 'steal', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, stealCam(), { clear: false }) },
   { at: () => at(9, -0.1), id: 'dad_count', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.5, height: 0.8 }) },
   { at: () => at(10, -0.1), id: 'lily_ghost2', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: -0.45, height: 0.6, look: V(0, 0.45, 0) }) },
   { at: () => at(11, -0.1), id: 'max_lily', set: 'kitchen', light: 'predawn', cam: (s) => K.twoShot(s, C.lily, C.max, { framing: 'mcu', bias: 0.6, height: 1.0 }) },
@@ -132,7 +132,8 @@ const SHOTS = [
   { at: () => at(19, -0.1), id: 'skye_blanket', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5, height: 0.25 }) },
   { at: T.sitUp, id: 'sit_up', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, cc('max_desk_two_shot'), { clear: false }) },
   { at: () => at(20, 0.0), id: 'max_how', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.5, height: 0.35 }) },
-  { at: () => at(21, -0.1), id: 'bye', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, byeCam(), { clear: false }) },
+  { at: () => at(21, -0.1), id: 'lucky', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, cc('max_desk_two_shot'), { clear: false }) },
+  { at: T.bye0, id: 'bye', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, byeCam(), { clear: false }) },
 ].map((x) => ({ ...x, start: x.at() })).sort((a, b) => a.start - b.start);
 export const SHOT_LIST = SHOTS.map((x) => [x.id, +x.start.toFixed(2), Math.round(x.start * 30) + 1]);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
@@ -193,8 +194,8 @@ export function update(t, stage) {
 
 // ---------- hallway: down the attic ladder, then creeping to the stairs ----------
 function ladderCam() {
-  const p = K.getSet('hallway').ladderPoint(0.42).pos;
-  return { pos: p.clone().add(V(1.6, 1.2, 11.5)), target: p.clone().add(V(0.4, 3.6, 0)), fov: 42 };
+  const p = K.getSet('hallway').ladderPoint(0.25).pos;
+  return { pos: p.clone().add(V(2.2, 3.0, 13.5)), target: p.clone().add(V(0.3, 6.2, 0)), fov: 46 };
 }
 // ahead of her, from the stairs end of the hall (open +z side), so her face reads as she creeps to the stairs
 function creepCam() {
@@ -206,9 +207,10 @@ function hallway(t, idle) {
   K.dress(C.skye, ['skye_hoodie', 'backpack']); 
   const hs = K.getSet('hallway');
   if (t < T.ladderEnd()) {
-    const u = lerp(0.62, 0, smooth(inv(0, T.ladderEnd(), t))), lp = hs.ladderPoint(u);
-    const climbed = hs.ladderPoint(0.62).pos.y - lp.pos.y;
-    poseAt(C.skye, { ...K.gait('climb', climbed / 1.6), Head: [10, 55, 0] }, lp.pos, lp.heading);   // looks down over her shoulder
+    const u = lerp(0.45, 0, smooth(inv(0, T.ladderEnd(), t))), lp = hs.ladderPoint(u);
+    const climbed = hs.ladderPoint(0.45).pos.y - lp.pos.y;
+    const g = K.gait('climb', climbed / 1.6), c = Math.sin(climbed / 1.6 * PI * 2);
+    poseAt(C.skye, { ...g, 'Arm.L': [-92 + 16 * c, 0, -8], 'Arm.R': [-92 - 16 * c, 0, 8], Head: [12, 30, 0] }, lp.pos, lp.heading + 0.85);   // hands on the rails below her face   // cheated 3/4 to camera, looking down over her shoulder
   } else {
     const foot = K.mark('hallway', 'ladder_foot'), top = M.stairsTop();
     const m = travel(foot.pos, top.pos, T.ladderEnd() + 0.35, t, 6);
@@ -223,6 +225,7 @@ function hallway(t, idle) {
 // Layout (sets/kitchen.js): camera side +z; the stove at the back, the stools on the island's back side facing +z,
 // Skye hides on the front side; the stairs come down the right wall, the back door beside their foot.
 let KS = '';
+function stealCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(3.4, 5.6, -1.4)), target: o.clone().add(V(0.5, 3.7, 1.4)), fov: 40 }; }
 function kitchenState(st) { const k = JSON.stringify(st); if (k !== KS) { KS = k; K.getSet('kitchen').setState({ chapter: 2, ...st }); } }
 function stairsGait(actor, kind, t0, t, u0, u1, speed, idle) {
   const ks = K.getSet('kitchen'), a = ks.stairsPath(u0).pos, b = ks.stairsPath(u1).pos, len = a.distanceTo(b);
@@ -235,7 +238,7 @@ let cakeBase = null;
 function kitchen(t, idle) {
   K.only(C, ['skye', 'max', 'dad', 'lily']);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs'); K.dress(C.dad, 'dad_apron'); K.dress(C.lily, 'lily_pjs');
-  kitchenState({ pancakes: t < T.slide() ? 12 : 11, backDoor: smooth(inv(T.crawl0() + 2.4, T.crawl0() + 3.0, t)) });
+  kitchenState({ pancakes: t < T.slide() ? 12 : 11, backDoor: smooth(inv(T.crawl0() + 1.9, T.crawl0() + 2.5, t)) });
   const said = (i) => t >= at(i) && t < endOf(i);
 
   // Dad: cooking at the stove (3/4), turned to the room for his lines; to the island end for the count
@@ -309,8 +312,8 @@ function kitchen(t, idle) {
   } else {
     // crawl: from the hiding spot round to the back door and out
     const door = M.backCrawl(), out = door.pos.clone().add(V(4.5, 0, 0));
-    const m1 = travel(hide.pos, door.pos, T.crawl0(), t, 4.2);
-    const m = m1.done ? travel(door.pos, out, m1.arrive + 0.15, t, 4.2) : m1;
+    const m1 = travel(hide.pos, door.pos, T.crawl0(), t, 5.5);
+    const m = m1.done ? travel(door.pos, out, m1.arrive + 0.1, t, 5.5) : m1;
     poseAt(C.skye, crawlPose((m1.done ? m1.anim + m.anim : m.anim) * 1.6), m.pos, m.heading);
     K.hold(P.pancake, C.skye, 'R', 'mouth');
   }
@@ -329,7 +332,7 @@ function outside(t, idle) {
 
 // ---------- classroom before the bell ----------
 // the last shot: from the front, Skye walking toward camera waving back, Max bolt upright behind her
-function byeCam() { const o = K.SET_ORIGIN.classroom; return { pos: o.clone().add(V(-3.0, 7.0, -11.5)), target: o.clone().add(V(-8.4, 3.9, 1.6)), fov: 44 }; }
+function byeCam() { const o = K.SET_ORIGIN.classroom; return { pos: o.clone().add(V(-3.0, 7.0, -11.5)), target: o.clone().add(V(-7.8, 4.2, 1.8)), fov: 30 }; }
 function classroom(t, idle) {
   K.only(C, ['skye', 'max', 'extras']);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_school');
