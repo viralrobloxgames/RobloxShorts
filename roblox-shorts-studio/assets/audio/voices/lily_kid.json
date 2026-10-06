@@ -1,0 +1,28 @@
+{
+ "made_with": "Qwen3-TTS-12Hz-1.7B-VoiceDesign (cloud, CPU, float32, 4 threads)",
+ "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+ "seed": 33,
+ "language": "English",
+ "instruct": "A 7-year-old British girl with a slightly low, husky voice for her age: calm, unimpressed and deadpan, a tiny negotiator laying down her terms. She stops for a full breath after every sentence. Southern English accent, clear and natural, never squeaky, shrill or high-pitched.",
+ "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+ "max_new_tokens": 300,
+ "audition": "projects/i-secretly-lived-in-my-enemys-house/production/auditions/round2/lily_D_s33.wav (style D, seed 33; 20 LILY takes over 2 rounds)",
+ "checks": {
+  "duration_s": 6.88,
+  "transcript_exact": true,
+  "f0_median_hz": 302.3,
+  "f0_p10_p90_hz": [
+   201.7,
+   372.1
+  ],
+  "words_per_s": 2.97,
+  "sentence_gaps_s": [
+   0.64,
+   0.64,
+   0.48
+  ]
+ },
+ "why": "Round 1: the only takes in the 240-330 Hz range (A_s11 321, B_s11 313) ran all four sentences together (0.0 s gaps); the ones with pauses were 378-440 Hz (squeaky). Round 2 added a 'slightly low, husky ... full breath after every sentence' instruct (D): D_s33 is 302 Hz median with the lowest p90 of any Lily take (372 Hz), 2.97 words/s and a clear 0.48-0.64 s pause at every sentence. D_s44 (329 Hz, p90 436) was the runner-up.",
+ "role": "LILY in I Secretly Lived In My Enemy's House (7-year-old British girl)",
+ "chosen": "2026-10-06 by the voices worker (user pre-approved: no audition stop)"
+}

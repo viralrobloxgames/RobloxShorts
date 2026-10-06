@@ -32,7 +32,7 @@ export const SHEETS = [
   ['gestures R: point, hand_over_mouth (L), eye_wipe (L), phone_ear', 'gest', [['point', 'R'], ['hand_over_mouth', 'L'], ['eye_wipe', 'L'], ['phone_ear', 'R']]],
   ['gestures: hand_on_neck, hair_pat, flashlight_chin, thumb_to_chest', 'gest', [['hand_on_neck', 'R'], ['hair_pat', 'R'], ['flashlight_chin', 'R'], ['thumb_to_chest', 'R']]],
   ['chin_on_hand, knock, hand_on_hip, finger_up', 'gest', [['@chin_on_hand', 'R'], ['knock', 'R'], ['hand_on_hip', 'R'], ['finger_up', 'R']]],
-  ['gaits: creep, skip, shuffle, climb', 'gait', ['creep', 'skip', 'shuffle', 'climb']],
+  ['gaits: creep, skip, crawl, climb', 'gait', ['creep', 'skip', 'crawl', 'climb']],
   ['lie_back, scarecrow, sheet + L arm at shoulder, blush', 'misc', []],
   ['blush close-up (Skye nervous, Lily nervous)', 'blush', [], 'idle', { y: 4.2, dist: 8 }],
 ];
