@@ -1,0 +1,7 @@
+{
+ "voice": "lily_kid",
+ "text": "Ghost!",
+ "seed": 90814,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}
