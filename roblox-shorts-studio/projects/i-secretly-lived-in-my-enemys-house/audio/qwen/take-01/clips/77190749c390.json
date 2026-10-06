@@ -3,5 +3,24 @@
  "text": "Who are you?",
  "seed": 5268,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Who",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "are",
+   "start": 0.2,
+   "end": 0.42
+  },
+  {
+   "word": "you?",
+   "start": 0.42,
+   "end": 0.72
+  }
+ ],
+ "words_md5": "3fb7b55e9e0088a10993db3b9b7bd24c",
+ "whisper": "small.en"
 }
