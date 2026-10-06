@@ -1,0 +1,16 @@
+{
+ "voice": "brittney",
+ "text": "Nobody!",
+ "seed": 53258,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Nobody.",
+   "start": 0.0,
+   "end": 0.28
+  }
+ ],
+ "words_md5": "15e5d9121f754fcae3a6e9a2b242784a",
+ "whisper": "small.en"
+}
