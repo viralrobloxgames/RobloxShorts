@@ -350,7 +350,7 @@ export function build(scene) {
   nest.add(b1, b2, roll, pillow);
   const crackers = grp(box(0.9, 0.16, 0.55, std('#e8b730', { roughness: 0.5 }), 0, 0.08, 0, 0.04), (() => { const l = boxLabel('CRACKERS', 0.8, 0.3, { ink: '#b2261f' }); l.rotation.x = -Math.PI / 2; l.position.y = 0.17; return l; })(),
     box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.55, 0.05, 0.15, 0.03), box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.5, 0.05, -0.15, 0.03));
-  add('crackers', at(crackers, -2.5, 0.18, 0.6, 0.4), nest);
+  add('crackers', at(crackers, -2.7, 0.18, -0.3, 0.4), nest);
   const fl = kitProp('flashlight_small', { beam: false, light: false }, flashlightSmall); const flKit = fl.userData.prop; add('flashlight', fl, nest);
   const bp = backpack(); add('backpack', at(bp, 2.15, 0.05, -1.2, -0.35), nest);
   const gs = kitProp('glow_sticks', {}, glowBundle); add('glow_sticks', at(gs, 1.6, 0.16, 1.9, 0.5), nest);
@@ -548,12 +548,12 @@ export function build(scene) {
     const fl = items.flashlight;
     const standing = st.flashlight === 'standing';
     if (flKit) {                                 // kit flashlight: beam along its +z, tail at z -0.32
-      if (standing) { at(fl, -1.5, 0.17, 1.3); flKit.rotation.set(-Math.PI / 2, 0, 0); flKit.position.set(0, 0.33, 0); }
+      if (standing) { at(fl, -2.6, 0.17, 1.5); flKit.rotation.set(-Math.PI / 2, 0, 0); flKit.position.set(0, 0.33, 0); }
       else { at(fl, -1.7, 0.27, 0.6, 0.9); flKit.rotation.set(0, 0, 0); flKit.position.set(0, 0, 0); }
       flKit.userData.setOn?.(standing);
-    } else if (standing) { at(fl, -1.5, 0.17, 1.3); fl.rotation.set(0, 0, 0); fl.children[0].children[2].material.emissiveIntensity = 3; }
+    } else if (standing) { at(fl, -2.6, 0.17, 1.5); fl.rotation.set(0, 0, 0); fl.children[0].children[2].material.emissiveIntensity = 3; }
     else { at(fl, -1.7, 0.33, 0.6, 0.9); fl.rotation.z = Math.PI / 2; fl.children[0].children[2].material.emissiveIntensity = 0; }
-    flashL.intensity = standing ? 3 : 0; flashCone.intensity = standing ? 25 : 0;
+    flashL.intensity = standing ? 1.1 : 0; flashCone.intensity = standing ? 14 : 0;
     vis('flashlight', st.flashlight !== 'none');
     vis('glow_sticks', st.glowSticks); glowL.intensity = st.glowSticks === 'lit' ? 2 : 0; gs.userData.prop?.userData.setLit?.(st.glowSticks === 'lit');
     // boxes and decorations
