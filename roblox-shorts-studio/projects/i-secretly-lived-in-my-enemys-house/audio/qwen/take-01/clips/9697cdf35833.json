@@ -1,0 +1,21 @@
+{
+ "voice": "brittney",
+ "text": "No crusts.",
+ "seed": 69338,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "No",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "crusts.",
+   "start": 0.3,
+   "end": 0.92
+  }
+ ],
+ "words_md5": "f43bc854a2827754632079a8caed9a58",
+ "whisper": "small.en"
+}
