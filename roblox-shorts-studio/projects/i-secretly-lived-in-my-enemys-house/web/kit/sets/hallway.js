@@ -65,7 +65,6 @@ export function build(scene) {
     lower.position.x = HATCH_LEN - L2 + L2 * ease(fe); // slides out of the top section toward the floor
     lower.visible = fp > 0.02;
     cord.visible = fp < 0.98;
-    hatchGlow.intensity = hatchGlowK * fp;
   }
   // a point on the ladder for climbing: u 0 = floor, 1 = hinge (ceiling). The root goes on the rung, facing the ladder (-x).
   const hinge = V(HATCH_X0, H, 0), foot = V(HATCH_X0 + LADDER_LEN * Math.cos(HATCH_ANGLE), 0, 0);
@@ -85,7 +84,7 @@ export function build(scene) {
   group.add(box(5, H, 0.4, lilyRoomM, 6, H / 2, -9.5, false), box(0.4, H, 4.5, lilyRoomM, 3.5, H / 2, -7.2, false), box(0.4, H, 4.5, lilyRoomM, 8.5, H / 2, -7.2, false), box(5, 0.4, 4.5, floorMat('#b98c5e', 3, [1, 1]), 6, -0.2, -7.2, false));
   // lamplight under Max's door: a bright strip in the gap and a warm spill on the floor; a light inside the room
   const gapM = std('#ffd59a', { emissive: '#ffb860', emissiveIntensity: 0 }); const gap = box(3.9, 0.12, 0.3, gapM, -9, 0.07, -5.05, false); group.add(gap);
-  const spillM = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending, map: canvasTexture(256, 128, (c, w, h) => { const g = c.createRadialGradient(w / 2, 0, 4, w / 2, 0, w * 0.55); g.addColorStop(0, 'rgba(255,190,110,1)'); g.addColorStop(1, 'rgba(255,190,110,0)'); c.fillStyle = g; c.fillRect(0, 0, w, h); }) });
+  const spillM = new THREE.MeshStandardMaterial({ color: '#000000', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, emissive: '#ffffff', emissiveIntensity: 0, emissiveMap: canvasTexture(256, 128, (c, w, h) => { const g = c.createRadialGradient(w / 2, 0, 4, w / 2, 0, w * 0.55); g.addColorStop(0, 'rgba(255,190,110,1)'); g.addColorStop(1, 'rgba(255,190,110,0)'); c.fillStyle = g; c.fillRect(0, 0, w, h); }) });
   const spill = plane(6.5, 3.2, spillM, -9, 0.06, -3.4); spill.rotation.x = -Math.PI / 2; group.add(spill);
   const roomLight = new THREE.PointLight('#ffc27a', 0, 9, 1.8); roomLight.position.set(-9, 2.5, -7.5); group.add(roomLight);
   const underLight = new THREE.PointLight('#ffb86a', 0, 6, 2); underLight.position.set(-9, 0.4, -4.3); group.add(underLight);
@@ -134,16 +133,24 @@ export function build(scene) {
   const moon = new THREE.SpotLight('#9db8ff', 0, 40, 0.55, 0.7, 1.2); moon.position.set(2, 12, -16); moon.target.position.set(-1, 0, 2.5); moon.castShadow = true; moon.shadow.mapSize.set(1024, 1024); moon.shadow.bias = -0.001; group.add(moon, moon.target);
   const moonFill = new THREE.PointLight('#5b74b8', 0, 40, 1.4); moonFill.position.set(-6, 8, 2); group.add(moonFill);
   const hatchGlowK = 6; const hatchGlow = new THREE.PointLight('#8a7a6a', 0, 10, 2); hatchGlow.position.set(-2, H + 1.5, 0); group.add(hatchGlow);
-  const lights = { moon, moonFill, underDoor: underLight, maxRoom: roomLight, nightlight: nlLight, ceiling: ceilLight, hatchGlow, linen: linenLight };
+  // authored (full) intensities; K.applyLight / K.setPractical scale them by userData.base (remembered on first use)
+  moon.intensity = 300; moonFill.intensity = 8;
+  underLight.intensity = 6; roomLight.intensity = 25; gapM.emissiveIntensity = 2.2; spillM.emissiveIntensity = 0.55; underLight.userData.bulb = [gap, spill];
+  nlLight.intensity = 3; nl.material.emissiveIntensity = 1.5; nlLight.userData.bulb = nl;
+  ceilLight.intensity = 80; ceilShadeM.emissiveIntensity = 1.2; ceilLight.userData.bulb = ceilLamp.children[0];
+  hatchGlow.intensity = hatchGlowK; linenLight.intensity = 1.2;
+  const lights = { moon_window: { lights: [moon, moonFill] }, under_door: { lights: [underLight, roomLight] }, nightlight: nlLight, ceiling_light: ceilLight, attic_glow: hatchGlow, linen_fill: linenLight };
+  function prac(name, on, k = 1) { // same rule as lighting.js setPractical
+    const l = lights[name]; const v = on === true ? k : on === false ? 0 : Number(on);
+    for (const L of [].concat(l.isLight ? l : l.lights)) { L.userData.base ??= L.intensity; L.intensity = L.userData.base * v; L.visible = v > 0;
+      for (const m of [].concat(L.userData.bulb || [])) { m.material.userData.base ??= m.material.emissiveIntensity; m.material.emissiveIntensity = m.material.userData.base * (v > 0 ? Math.max(v, 0.15) : 0); } }
+  }
+  const setMoon = (on, k) => prac('moon_window', on, k), setUnderDoor = (on, k) => prac('under_door', on, k), setNightlight = (on) => prac('nightlight', on), setCeiling = (on, k) => prac('ceiling_light', on, k);
 
-  function setMoon(on, k = 1) { const v = on ? k : 0; moon.intensity = 300 * v; moonFill.intensity = 8 * v; }
-  function setUnderDoor(on, k = 1) { const v = on ? k : 0; gapM.emissiveIntensity = 2.2 * v; spillM.opacity = 0.55 * v; underLight.intensity = 6 * v; roomLight.intensity = 25 * v; }
-  function setNightlight(on) { nl.material.emissiveIntensity = on ? 1.5 : 0; nlLight.intensity = on ? 3 : 0; }
-  function setCeiling(on, k = 1) { const v = on ? k : 0; ceilShadeM.emissiveIntensity = 1.2 * v; ceilLight.intensity = 80 * v; }
   function setMaxDoor(f = 0) { maxDoor.rotation.y = f * 1.6; } // opens into Max's room (-z)
   function setLilyDoor(f = 0) { lilyDoor.rotation.y = f * 1.6; }
-  function setLinen(f = 0) { linenDoor.rotation.y = -Math.PI / 2 + f * 1.7; linenLight.intensity = f > 0.02 && f < 0.6 ? 1.2 : 0; } // 0 shut, ~0.12 a crack to peek through, 1 wide open (outward, +z)
-  setMoon(true); setUnderDoor(false); setNightlight(true); setCeiling(false); setMaxDoor(0); setLilyDoor(0); setLinen(0); setHatch(0);
+  function setLinen(f = 0) { linenDoor.rotation.y = -Math.PI / 2 + f * 1.7; } // 0 shut, ~0.12 a crack to peek through, 1 wide open (outward, +z)
+  setMoon(true); setUnderDoor(false); setNightlight(true); setCeiling(false); prac('attic_glow', false); prac('linen_fill', false); setMaxDoor(0); setLilyDoor(0); setLinen(0); setHatch(0);
 
   // ---- marks (world) ----
   const M = (x, y, z, heading, note) => ({ pos: W(x, y, z), heading, note });
