@@ -5,6 +5,7 @@ import { loadRobloxCharacter } from '../../../../../web/lib/robloxPack.js';
 import * as kitchen from '../../../web/kit/sets/kitchen.js';
 import * as classroom from '../../../web/kit/sets/classroom.js';
 import * as exterior from '../../../web/kit/sets/exterior.js';
+import { applyLight } from '../../../web/kit/lighting.js';
 
 export const meta = { seconds: 10, fps: 30, width: 1920, height: 1080 };
 const MODS = { kitchen, classroom, exterior };
@@ -31,6 +32,41 @@ export const SHOTS = [
   ['kitchen', 'fridge_ots', { chapter: 3, fridgeOpen: 0, fridge: 'BE NICE\n2 SKYE', plate: 'sandwich' }, 'night', { max: ['fridge_read'] }],
   ['kitchen', 'behind_island', { chapter: 3, fridgeOpen: 0, fridge: 'BE NICE\n2 SKYE', plate: 'empty' }, 'night', { skye: ['island_hide'], dad: ['fridge_side'] }],
   ['kitchen', 'reverse_from_stove', K11, 'day', { max: ['island_stool_2', 'sit'], skye: ['island_stool_3', 'sit'] }],
+  ['classroom', 'wide_front', { chapter: 1 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x1: ['desk_extra_1'], x2: ['desk_extra_2'], x3: ['desk_extra_3'], x4: ['desk_extra_4'] }],
+  ['classroom', 'wide_back', { chapter: 1 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x1: ['desk_extra_1'], x2: ['desk_extra_2'], x3: ['desk_extra_3'], x4: ['desk_extra_4'] }],
+  ['classroom', 'skye_max_diag', { chapter: 1 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x1: ['desk_extra_1'], x2: ['desk_extra_2'], x3: ['desk_extra_3'], x4: ['desk_extra_4'] }],
+  ['classroom', 'two_shot_desk', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'], x1: ['desk_extra_1'], x2: ['desk_extra_2'] }],
+  ['classroom', 'ots_max_on_skye', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'] }],
+  ['classroom', 'ots_skye_on_max', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'], x2: ['desk_extra_2'] }],
+  ['classroom', 'cu_skye_desk', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'] }],
+  ['classroom', 'cu_max_desk', { chapter: 2 }, 'day', { max: ['desk_max'] }],
+  ['classroom', 'cu_side_stand', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'] }],
+  ['classroom', 'max_desk_two_shot', { chapter: 2 }, 'day', { max: ['desk_max'], skye: ['max_desk_side'], x3: ['desk_extra_3'] }],
+  ['classroom', 'ots_skye_on_max_desk', { chapter: 2 }, 'day', { max: ['desk_max'], skye: ['max_desk_side'] }],
+  ['classroom', 'lunchbox_top', { chapter: 1 }, 'day', { skye: ['desk_skye'] }],
+  ['classroom', 'window_in', { chapter: 1 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x4: ['desk_extra_4'] }],
+  ['classroom', 'board_reverse', { chapter: 1 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x1: ['desk_extra_1'], x2: ['desk_extra_2'], x3: ['desk_extra_3'], x4: ['desk_extra_4'] }],
+  ['kitchen', 'kitchen_wide', { chapter: 3, fridgeOpen: 0, fridge: 'BE NICE\n2 SKYE' }, 'night', { max: ['island_counter'], skye: ['pantry_gap'] }],
+  ['kitchen', 'pantry_gap', { chapter: 3, fridgeOpen: 0, fridge: 'BE NICE\n2 SKYE', pantryDoors: 0.15 }, 'night', { skye: ['pantry_gap'] }],
+  ['kitchen', 'island_counter', { chapter: 3, fridgeOpen: 0, fridge: 'BE NICE\n2 SKYE' }, 'night', { max: ['island_counter'] }],
+  ['kitchen', 'island_low_behind', { chapter: 3, fridgeOpen: 0, fridge: 'BE NICE\n2 SKYE' }, 'night', { skye: ['island_crouch', 'crouch'] }],
+  ['kitchen', 'stairs_wide', K11, 'day', { skye: ['stairs_mid'], dad: ['stove_three_quarter'], max: ['island_stool_2'], lily: ['island_stool_1'] }],
+  ['kitchen', 'island_wide', { chapter: 11, fridge: 'SAY YES' }, 'day', { dad: ['stove_three_quarter'], max: ['island_stool_2'], lily: ['island_stool_1'], skye: ['island_stool_3'] }],
+  ['kitchen', 'island_two', K11, 'day', { max: ['island_stool_2'], skye: ['island_end'] }],
+  ['kitchen', 'stove_ms', K11, 'day', { dad: ['stove_three_quarter'] }],
+  ['kitchen', 'back_door_floor', { chapter: 2, backDoor: 0.6 }, 'dim', { skye: ['back_door_crawl', 'crouch'] }],
+  ['classroom', 'end_front', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x2: ['desk_extra_2'] }],
+  ['classroom', 'mcu_max_stand', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'] }],
+  ['exterior', 'back_step_mcu', { chapter: 2 }, 'dusk', { skye: ['back_step'] }],
+  ['exterior', 'dusk_wide', { chapter: 1 }, 'dusk', { skye: ['gate'] }],
+  ['exterior', 'gate', { chapter: 1 }, 'dusk', { skye: ['gate'] }],
+  ['exterior', 'garden_follow', { chapter: 1 }, 'dusk', { skye: ['path_mid'] }],
+  ['exterior', 'back_door', { chapter: 1 }, 'dusk', { skye: ['back_door'] }],
+  ['exterior', 'back_door_ots', { chapter: 1, backDoor: 0.5 }, 'dusk', { skye: ['back_door'] }],
+  ['exterior', 'back_door_low', { chapter: 1 }, 'dusk', { skye: ['porch_step'] }],
+  ['exterior', 'from_inside', { chapter: 1, backDoor: 0.9 }, 'dusk', { skye: ['porch_step'] }],
+  ['exterior', 'establishing_day', { time: 'day', backDoor: 0, windows: 0, porchLight: 0 }, 'day', {}],
+  ['exterior', 'attic_window', { time: 'day', windows: 0, porchLight: 0 }, 'day', {}],
 ];
 const extraShots = (mod) => (mod.PREVIEW_SHOTS || []);
 
@@ -65,9 +101,8 @@ export function update(t, stage) {
   const c = set.cams[camName]; if (!c) throw new Error(`no cam ${setId}.${camName}`);
   stage.camera.position.copy(c.pos); stage.camera.fov = c.fov; stage.camera.up.set(0, 1, 0); stage.camera.lookAt(c.target); stage.camera.updateProjectionMatrix();
   stage.skyMesh.position.copy(c.pos);
-  const L = { day: [3.1, 0.55, 0.55], dim: [0.5, 0.18, 0.2], night: [0.05, 0.05, 0.06], dusk: [1.4, 0.35, 0.4] }[light];
-  stage.sun.intensity = L[0]; stage.hemi.intensity = L[1]; stage.scene.environmentIntensity = L[2];
-  stage.fill.intensity = L[1]; stage.rim.intensity = L[1];
+  const preset = { kitchen: { day: 'sunday_morning', dim: 'predawn', night: 'night_fridge' }, classroom: { day: 'school_day' }, exterior: { dusk: 'dusk', day: 'school_day' } }[setId][light];
+  applyLight(stage, preset, { set });
   stage.aimSun(set.marks[Object.keys(set.marks)[0]].pos, 40);
 }
 export function overlay(g, s, t) {

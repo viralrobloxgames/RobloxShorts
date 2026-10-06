@@ -1,9 +1,12 @@
-STATUS: WORKING
+STATUS: READY
 
-**Template ready:** `web/ch_template.js` (copy to `web/chNN.js`) runs end to end on whatever sets exist (box rooms
-until then). Kit API in `web/kit/README.md`: stage.js, lighting.js, camera.js, overlay.js are on main.
-- Done: index.js, sets/index.js (tolerates missing sets), stage.js, lighting.js (8 presets + practicals), camera.js
-  (camOn / twoShot / overShoulder, 180 line, no camera inside geometry or actors), overlay.js (dayCard, timeStamp,
-  redCircle, endScreen), ch_template.js. runner.html: overlay fingerprint canvas sized to the clip (16:9).
-- Measured: template preview at 0.5 scale, 1 sample: ~1.7-3 s/frame (cloud, 1 worker).
-- Next: scripts/finish_longform.py, scripts/stitch_longform.py, 3 s proof, frame-skip in render.mjs.
+Template ready: `web/ch_template.js`. Kit API + pipeline usage: `web/kit/README.md`.
+- Done and on main: kit index.js, sets/index.js, stage.js, lighting.js, camera.js, overlay.js, ch_template.js,
+  scripts/finish_longform.py, scripts/stitch_longform.py, render.mjs frame skip (+ runner.html fingerprint covers face
+  textures, exposure, sky, lights), proof clip.
+- Measured (proof, 1920x1080, 1 sample, 2 workers): 3.0 s/rendered frame; 33% of frames skipped on the proof
+  (wall 4:31 -> 3:00); copied frames identical to a no-skip render within renderer noise; two-segment encode + stitch:
+  stream copy, seams frame-exact, A/V 0.000 s, -14.1 LUFS / -1.0 dBTP.
+- Requests answered in production/requests.md (practicals, beam fromProp, chinLight, clearShot fix, endScreen space).
+- Template checked on the real bedroom + classroom sets (set cams for the closet, walls hidden automatically).
+- Next: answer production/requests.md every ~20 min; available for a render or stitch job.
