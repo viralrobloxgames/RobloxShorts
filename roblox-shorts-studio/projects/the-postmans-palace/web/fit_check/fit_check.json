@@ -1,0 +1,53 @@
+{
+  "clip": "projects/the-postmans-palace/web/palace_clip.js",
+  "generated": "2026-10-06T01:15:19.375Z",
+  "fingerprint": "60a1723ec8b1e8f9",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Max",
+      "options": {
+        "expressions": [
+          "surprised",
+          "happy",
+          "neutral",
+          "shocked",
+          "determined",
+          "smug",
+          "cool",
+          "sad",
+          "laugh",
+          "scared",
+          "confused"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "postman_kepi"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Max",
+      "accessory": "postman_kepi",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.38,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.012,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-06T01:15:43.733Z"
+}

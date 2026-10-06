@@ -1,0 +1,88 @@
+{
+  "clip": "projects/he-flew-the-wrong-way/web/wrongway_clip.js",
+  "generated": "2026-10-06T01:22:33.946Z",
+  "fingerprint": "080f7b4ed7051e53",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Leo",
+      "options": {
+        "expressions": [
+          "shocked",
+          "surprised",
+          "neutral",
+          "confused",
+          "happy",
+          "suspicious",
+          "talking",
+          "laugh"
+        ],
+        "scale": 1,
+        "hairLift": 0.16
+      },
+      "accessories": [
+        "officer_cap"
+      ]
+    },
+    {
+      "character": "Mia",
+      "options": {
+        "expressions": [
+          "angry",
+          "neutral",
+          "annoyed",
+          "suspicious",
+          "surprised",
+          "talking",
+          "smug",
+          "happy",
+          "determined"
+        ],
+        "scale": 1,
+        "hairLift": 0.2
+      },
+      "accessories": [
+        "officer_cap"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Leo",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.62,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.001,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Mia",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.26,
+        0
+      ],
+      "hideHair": false,
+      "depth": 0.017,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-06T01:22:47.942Z"
+}

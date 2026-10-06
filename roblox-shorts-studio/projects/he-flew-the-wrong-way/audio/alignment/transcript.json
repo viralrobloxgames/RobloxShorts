@@ -1,0 +1,920 @@
+{
+  "source": "narration.wav",
+  "duration": 59.27075,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.84,
+      "text": " A pilot takes off from New York, heading for California.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.2,
+          "word": " A"
+        },
+        {
+          "start": 0.2,
+          "end": 0.42,
+          "word": " pilot"
+        },
+        {
+          "start": 0.42,
+          "end": 0.7,
+          "word": " takes"
+        },
+        {
+          "start": 0.7,
+          "end": 0.92,
+          "word": " off"
+        },
+        {
+          "start": 0.92,
+          "end": 1.06,
+          "word": " from"
+        },
+        {
+          "start": 1.06,
+          "end": 1.26,
+          "word": " New"
+        },
+        {
+          "start": 1.26,
+          "end": 1.6,
+          "word": " York,"
+        },
+        {
+          "start": 1.9,
+          "end": 2.02,
+          "word": " heading"
+        },
+        {
+          "start": 2.02,
+          "end": 2.26,
+          "word": " for"
+        },
+        {
+          "start": 2.26,
+          "end": 2.84,
+          "word": " California."
+        }
+      ]
+    },
+    {
+      "start": 3.46,
+      "end": 5.52,
+      "text": " Twenty-eight hours later he lands in Ireland.",
+      "words": [
+        {
+          "start": 3.46,
+          "end": 3.72,
+          "word": " Twenty"
+        },
+        {
+          "start": 3.72,
+          "end": 3.96,
+          "word": "-eight"
+        },
+        {
+          "start": 3.96,
+          "end": 4.16,
+          "word": " hours"
+        },
+        {
+          "start": 4.16,
+          "end": 4.52,
+          "word": " later"
+        },
+        {
+          "start": 4.52,
+          "end": 4.72,
+          "word": " he"
+        },
+        {
+          "start": 4.72,
+          "end": 4.94,
+          "word": " lands"
+        },
+        {
+          "start": 4.94,
+          "end": 5.18,
+          "word": " in"
+        },
+        {
+          "start": 5.18,
+          "end": 5.52,
+          "word": " Ireland."
+        }
+      ]
+    },
+    {
+      "start": 6.68,
+      "end": 8.56,
+      "text": " For years he'd asked to fly the Atlantic.",
+      "words": [
+        {
+          "start": 6.68,
+          "end": 6.86,
+          "word": " For"
+        },
+        {
+          "start": 6.86,
+          "end": 7.12,
+          "word": " years"
+        },
+        {
+          "start": 7.12,
+          "end": 7.36,
+          "word": " he'd"
+        },
+        {
+          "start": 7.36,
+          "end": 7.56,
+          "word": " asked"
+        },
+        {
+          "start": 7.56,
+          "end": 7.76,
+          "word": " to"
+        },
+        {
+          "start": 7.76,
+          "end": 7.94,
+          "word": " fly"
+        },
+        {
+          "start": 7.94,
+          "end": 8.12,
+          "word": " the"
+        },
+        {
+          "start": 8.12,
+          "end": 8.56,
+          "word": " Atlantic."
+        }
+      ]
+    },
+    {
+      "start": 9.52,
+      "end": 12.82,
+      "text": " Officials said no, his plane was too old and too patched up.",
+      "words": [
+        {
+          "start": 9.52,
+          "end": 9.52,
+          "word": " Officials"
+        },
+        {
+          "start": 9.52,
+          "end": 9.86,
+          "word": " said"
+        },
+        {
+          "start": 9.86,
+          "end": 10.18,
+          "word": " no,"
+        },
+        {
+          "start": 10.56,
+          "end": 10.68,
+          "word": " his"
+        },
+        {
+          "start": 10.68,
+          "end": 10.94,
+          "word": " plane"
+        },
+        {
+          "start": 10.94,
+          "end": 11.14,
+          "word": " was"
+        },
+        {
+          "start": 11.14,
+          "end": 11.38,
+          "word": " too"
+        },
+        {
+          "start": 11.38,
+          "end": 11.74,
+          "word": " old"
+        },
+        {
+          "start": 11.74,
+          "end": 12.0,
+          "word": " and"
+        },
+        {
+          "start": 12.0,
+          "end": 12.24,
+          "word": " too"
+        },
+        {
+          "start": 12.24,
+          "end": 12.5,
+          "word": " patched"
+        },
+        {
+          "start": 12.5,
+          "end": 12.82,
+          "word": " up."
+        }
+      ]
+    },
+    {
+      "start": 13.88,
+      "end": 16.04,
+      "text": " So he filed a flight plan to California.",
+      "words": [
+        {
+          "start": 13.88,
+          "end": 14.32,
+          "word": " So"
+        },
+        {
+          "start": 14.32,
+          "end": 14.46,
+          "word": " he"
+        },
+        {
+          "start": 14.46,
+          "end": 14.7,
+          "word": " filed"
+        },
+        {
+          "start": 14.7,
+          "end": 14.88,
+          "word": " a"
+        },
+        {
+          "start": 14.88,
+          "end": 15.1,
+          "word": " flight"
+        },
+        {
+          "start": 15.1,
+          "end": 15.38,
+          "word": " plan"
+        },
+        {
+          "start": 15.38,
+          "end": 15.58,
+          "word": " to"
+        },
+        {
+          "start": 15.58,
+          "end": 16.04,
+          "word": " California."
+        }
+      ]
+    },
+    {
+      "start": 16.72,
+      "end": 19.94,
+      "text": " At dawn he took off, and kept flying east into the clouds.",
+      "words": [
+        {
+          "start": 16.72,
+          "end": 16.9,
+          "word": " At"
+        },
+        {
+          "start": 16.9,
+          "end": 17.18,
+          "word": " dawn"
+        },
+        {
+          "start": 17.18,
+          "end": 17.42,
+          "word": " he"
+        },
+        {
+          "start": 17.42,
+          "end": 17.56,
+          "word": " took"
+        },
+        {
+          "start": 17.56,
+          "end": 17.8,
+          "word": " off,"
+        },
+        {
+          "start": 18.18,
+          "end": 18.3,
+          "word": " and"
+        },
+        {
+          "start": 18.3,
+          "end": 18.44,
+          "word": " kept"
+        },
+        {
+          "start": 18.44,
+          "end": 18.88,
+          "word": " flying"
+        },
+        {
+          "start": 18.88,
+          "end": 19.16,
+          "word": " east"
+        },
+        {
+          "start": 19.16,
+          "end": 19.42,
+          "word": " into"
+        },
+        {
+          "start": 19.42,
+          "end": 19.62,
+          "word": " the"
+        },
+        {
+          "start": 19.62,
+          "end": 19.94,
+          "word": " clouds."
+        }
+      ]
+    },
+    {
+      "start": 21.04,
+      "end": 22.9,
+      "text": " No radio, a twenty-year-old compass.",
+      "words": [
+        {
+          "start": 21.04,
+          "end": 21.32,
+          "word": " No"
+        },
+        {
+          "start": 21.32,
+          "end": 21.72,
+          "word": " radio,"
+        },
+        {
+          "start": 21.94,
+          "end": 21.98,
+          "word": " a"
+        },
+        {
+          "start": 21.98,
+          "end": 22.2,
+          "word": " twenty"
+        },
+        {
+          "start": 22.2,
+          "end": 22.38,
+          "word": "-year"
+        },
+        {
+          "start": 22.38,
+          "end": 22.58,
+          "word": "-old"
+        },
+        {
+          "start": 22.58,
+          "end": 22.9,
+          "word": " compass."
+        }
+      ]
+    },
+    {
+      "start": 23.62,
+      "end": 25.16,
+      "text": " Then fuel leaked into the cockpit.",
+      "words": [
+        {
+          "start": 23.62,
+          "end": 23.86,
+          "word": " Then"
+        },
+        {
+          "start": 23.86,
+          "end": 24.2,
+          "word": " fuel"
+        },
+        {
+          "start": 24.2,
+          "end": 24.48,
+          "word": " leaked"
+        },
+        {
+          "start": 24.48,
+          "end": 24.7,
+          "word": " into"
+        },
+        {
+          "start": 24.7,
+          "end": 24.86,
+          "word": " the"
+        },
+        {
+          "start": 24.86,
+          "end": 25.16,
+          "word": " cockpit."
+        }
+      ]
+    },
+    {
+      "start": 25.88,
+      "end": 28.66,
+      "text": " He punched a hole in the floor with a screwdriver to drain it.",
+      "words": [
+        {
+          "start": 25.88,
+          "end": 26.08,
+          "word": " He"
+        },
+        {
+          "start": 26.08,
+          "end": 26.26,
+          "word": " punched"
+        },
+        {
+          "start": 26.26,
+          "end": 26.48,
+          "word": " a"
+        },
+        {
+          "start": 26.48,
+          "end": 26.62,
+          "word": " hole"
+        },
+        {
+          "start": 26.62,
+          "end": 26.8,
+          "word": " in"
+        },
+        {
+          "start": 26.8,
+          "end": 26.92,
+          "word": " the"
+        },
+        {
+          "start": 26.92,
+          "end": 27.14,
+          "word": " floor"
+        },
+        {
+          "start": 27.14,
+          "end": 27.32,
+          "word": " with"
+        },
+        {
+          "start": 27.32,
+          "end": 27.44,
+          "word": " a"
+        },
+        {
+          "start": 27.44,
+          "end": 27.92,
+          "word": " screwdriver"
+        },
+        {
+          "start": 27.92,
+          "end": 28.2,
+          "word": " to"
+        },
+        {
+          "start": 28.2,
+          "end": 28.4,
+          "word": " drain"
+        },
+        {
+          "start": 28.4,
+          "end": 28.66,
+          "word": " it."
+        }
+      ]
+    },
+    {
+      "start": 29.259999999999998,
+      "end": 31.96,
+      "text": " He lands in Dublin, climbs out and says,",
+      "words": [
+        {
+          "start": 29.259999999999998,
+          "end": 29.78,
+          "word": " He"
+        },
+        {
+          "start": 29.78,
+          "end": 30.02,
+          "word": " lands"
+        },
+        {
+          "start": 30.02,
+          "end": 30.32,
+          "word": " in"
+        },
+        {
+          "start": 30.32,
+          "end": 30.64,
+          "word": " Dublin,"
+        },
+        {
+          "start": 31.12,
+          "end": 31.22,
+          "word": " climbs"
+        },
+        {
+          "start": 31.22,
+          "end": 31.54,
+          "word": " out"
+        },
+        {
+          "start": 31.54,
+          "end": 31.74,
+          "word": " and"
+        },
+        {
+          "start": 31.74,
+          "end": 31.96,
+          "word": " says,"
+        }
+      ]
+    },
+    {
+      "start": 32.72,
+      "end": 35.18,
+      "text": " just got in from New York, where am I?",
+      "words": [
+        {
+          "start": 32.72,
+          "end": 32.78,
+          "word": " just"
+        },
+        {
+          "start": 32.78,
+          "end": 33.0,
+          "word": " got"
+        },
+        {
+          "start": 33.0,
+          "end": 33.2,
+          "word": " in"
+        },
+        {
+          "start": 33.2,
+          "end": 33.38,
+          "word": " from"
+        },
+        {
+          "start": 33.38,
+          "end": 33.56,
+          "word": " New"
+        },
+        {
+          "start": 33.56,
+          "end": 33.88,
+          "word": " York,"
+        },
+        {
+          "start": 34.34,
+          "end": 34.46,
+          "word": " where"
+        },
+        {
+          "start": 34.46,
+          "end": 34.66,
+          "word": " am"
+        },
+        {
+          "start": 34.66,
+          "end": 35.18,
+          "word": " I?"
+        }
+      ]
+    },
+    {
+      "start": 35.88,
+      "end": 38.68,
+      "text": " His excuse in the clouds, he misread his compass.",
+      "words": [
+        {
+          "start": 35.88,
+          "end": 36.14,
+          "word": " His"
+        },
+        {
+          "start": 36.14,
+          "end": 36.54,
+          "word": " excuse"
+        },
+        {
+          "start": 36.54,
+          "end": 36.8,
+          "word": " in"
+        },
+        {
+          "start": 36.8,
+          "end": 36.92,
+          "word": " the"
+        },
+        {
+          "start": 36.92,
+          "end": 37.3,
+          "word": " clouds,"
+        },
+        {
+          "start": 37.58,
+          "end": 37.74,
+          "word": " he"
+        },
+        {
+          "start": 37.74,
+          "end": 38.12,
+          "word": " misread"
+        },
+        {
+          "start": 38.12,
+          "end": 38.32,
+          "word": " his"
+        },
+        {
+          "start": 38.32,
+          "end": 38.68,
+          "word": " compass."
+        }
+      ]
+    },
+    {
+      "start": 40.26,
+      "end": 42.88,
+      "text": " Officials sent a 600-word telegram of rules he broke.",
+      "words": [
+        {
+          "start": 40.26,
+          "end": 40.26,
+          "word": " Officials"
+        },
+        {
+          "start": 40.26,
+          "end": 40.54,
+          "word": " sent"
+        },
+        {
+          "start": 40.54,
+          "end": 40.72,
+          "word": " a"
+        },
+        {
+          "start": 40.72,
+          "end": 41.14,
+          "word": " 600"
+        },
+        {
+          "start": 41.14,
+          "end": 41.44,
+          "word": "-word"
+        },
+        {
+          "start": 41.44,
+          "end": 41.94,
+          "word": " telegram"
+        },
+        {
+          "start": 41.94,
+          "end": 42.14,
+          "word": " of"
+        },
+        {
+          "start": 42.14,
+          "end": 42.44,
+          "word": " rules"
+        },
+        {
+          "start": 42.44,
+          "end": 42.6,
+          "word": " he"
+        },
+        {
+          "start": 42.6,
+          "end": 42.88,
+          "word": " broke."
+        }
+      ]
+    },
+    {
+      "start": 43.42,
+      "end": 46.36,
+      "text": " His punishment, no flying, until his ship got home.",
+      "words": [
+        {
+          "start": 43.42,
+          "end": 43.6,
+          "word": " His"
+        },
+        {
+          "start": 43.6,
+          "end": 43.98,
+          "word": " punishment,"
+        },
+        {
+          "start": 44.36,
+          "end": 44.54,
+          "word": " no"
+        },
+        {
+          "start": 44.54,
+          "end": 44.92,
+          "word": " flying,"
+        },
+        {
+          "start": 45.24,
+          "end": 45.46,
+          "word": " until"
+        },
+        {
+          "start": 45.46,
+          "end": 45.62,
+          "word": " his"
+        },
+        {
+          "start": 45.62,
+          "end": 45.82,
+          "word": " ship"
+        },
+        {
+          "start": 45.82,
+          "end": 46.02,
+          "word": " got"
+        },
+        {
+          "start": 46.02,
+          "end": 46.36,
+          "word": " home."
+        }
+      ]
+    },
+    {
+      "start": 47.38,
+      "end": 50.7,
+      "text": " New York threw him a ticker tape parade, bigger than Lindbergh's.",
+      "words": [
+        {
+          "start": 47.38,
+          "end": 47.6,
+          "word": " New"
+        },
+        {
+          "start": 47.6,
+          "end": 47.84,
+          "word": " York"
+        },
+        {
+          "start": 47.84,
+          "end": 48.08,
+          "word": " threw"
+        },
+        {
+          "start": 48.08,
+          "end": 48.22,
+          "word": " him"
+        },
+        {
+          "start": 48.22,
+          "end": 48.36,
+          "word": " a"
+        },
+        {
+          "start": 48.36,
+          "end": 48.62,
+          "word": " ticker"
+        },
+        {
+          "start": 48.62,
+          "end": 48.82,
+          "word": " tape"
+        },
+        {
+          "start": 48.82,
+          "end": 49.26,
+          "word": " parade,"
+        },
+        {
+          "start": 49.58,
+          "end": 49.76,
+          "word": " bigger"
+        },
+        {
+          "start": 49.76,
+          "end": 50.0,
+          "word": " than"
+        },
+        {
+          "start": 50.0,
+          "end": 50.7,
+          "word": " Lindbergh's."
+        }
+      ]
+    },
+    {
+      "start": 51.52,
+      "end": 55.1,
+      "text": " They called him Wrong Way Corrigan, and he never admitted a thing.",
+      "words": [
+        {
+          "start": 51.52,
+          "end": 51.82,
+          "word": " They"
+        },
+        {
+          "start": 51.82,
+          "end": 52.04,
+          "word": " called"
+        },
+        {
+          "start": 52.04,
+          "end": 52.24,
+          "word": " him"
+        },
+        {
+          "start": 52.24,
+          "end": 52.44,
+          "word": " Wrong"
+        },
+        {
+          "start": 52.44,
+          "end": 52.68,
+          "word": " Way"
+        },
+        {
+          "start": 52.68,
+          "end": 53.12,
+          "word": " Corrigan,"
+        },
+        {
+          "start": 53.66,
+          "end": 53.9,
+          "word": " and"
+        },
+        {
+          "start": 53.9,
+          "end": 54.04,
+          "word": " he"
+        },
+        {
+          "start": 54.04,
+          "end": 54.28,
+          "word": " never"
+        },
+        {
+          "start": 54.28,
+          "end": 54.66,
+          "word": " admitted"
+        },
+        {
+          "start": 54.66,
+          "end": 54.88,
+          "word": " a"
+        },
+        {
+          "start": 54.88,
+          "end": 55.1,
+          "word": " thing."
+        }
+      ]
+    },
+    {
+      "start": 55.92,
+      "end": 59.12,
+      "text": " Follow Viral Roblox Games for more stories like this.",
+      "words": [
+        {
+          "start": 55.92,
+          "end": 56.54,
+          "word": " Follow"
+        },
+        {
+          "start": 56.54,
+          "end": 57.76,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 57.76,
+          "end": 58.04,
+          "word": " for"
+        },
+        {
+          "start": 58.04,
+          "end": 58.22,
+          "word": " more"
+        },
+        {
+          "start": 58.22,
+          "end": 58.56,
+          "word": " stories"
+        },
+        {
+          "start": 58.56,
+          "end": 58.84,
+          "word": " like"
+        },
+        {
+          "start": 58.84,
+          "end": 59.12,
+          "word": " this."
+        }
+      ]
+    }
+  ]
+}

@@ -6,10 +6,12 @@ HatAttachment, Roblox front = -Z) with smooth vertex normals:
                  edge rises at the front so the visor clears the eyes and brows of every face.
   pillbox_hat  - an elevator operator's / bellhop's pillbox: a short red drum with gold bands, a gold top button and a
                  thin black chin strap at the back.
+  postman_kepi - a 19th-century French postman's kepi: a navy drum that narrows a little to a flat top, a red band, a
+                 short black visor and a brass post-horn badge; the front edge rises like officer_cap's so the eyes stay clear.
 
     python3 tools/make_service_caps.py          # from assets/roblox_pack
 
-Fit rule: both are rigid hats ('seat' in web/lib/robloxPack.js ACCESSORY_FIT).
+Fit rule: all three are rigid hats ('seat' in web/lib/robloxPack.js ACCESSORY_FIT).
 """
 import math
 from pathlib import Path
@@ -166,3 +168,34 @@ m.box('Gold', (0.0, 0.22, -R - 0.015), (0.16, 0.12, 0.03))
 RED = (0.72, 0.10, 0.12)
 m.write('pillbox_hat', "Original elevator operator's pillbox hat (red with gold bands, top button and badge).",
         {'body': (RED, 0.06, 16), 'gold': (GOLD, 0.6, 60)}, [('Body', 'body'), ('Gold', 'gold')])
+
+# ------------------------------------------------------------------ postman_kepi
+m = Mesh()
+KL = 0.12                                                              # how far the front edge rises
+def kedge(x, z): return -0.04 + KL * max(0.0, -z / math.hypot(x, z)) ** 1.5 if (x or z) else -0.04
+prof = [(0.66, -0.04), (0.655, 0.14), (0.63, 0.40), (0.61, 0.56), (0.59, 0.60), (0.0, 0.61)]
+rows = [ring(r, y, rz=r * 1.04) for r, y in prof[:-1]]
+rows[0] = [(x, kedge(x, z), z) for x, y, z in rows[0]]
+rows[1] = [(x, max(y, kedge(x, z) + 0.16), z) for x, y, z in rows[1]]
+b = m.grid('Body', rows)
+m.fan('Body', (0.0, 0.61, 0.0), b + (len(rows) - 1) * N, N, flip=True)
+band = [[(x * 1.02, kedge(x, z) + 0.01 if j == 0 else y, z * 1.02) for x, y, z in ring(0.66, yy, rz=0.66 * 1.04)] for j, yy in enumerate((-0.03, 0.16))]
+band.append([(x * 0.985, y, z * 0.985) for x, y, z in band[1]])
+m.grid('Band', band)
+piping = [ring(0.60 * 1.015, 0.575, rz=0.60 * 1.04 * 1.015), ring(0.60 * 1.015, 0.605, rz=0.60 * 1.04 * 1.015)]
+m.grid('Band', piping)
+def kvisor(a, k, under=False):
+    th = -math.pi / 2 + a * math.radians(66); r = 0.665 + 0.34 * (1 - 0.5 * a * a) * k
+    y = 0.02 + KL - 0.10 * k - (0.03 if under else 0.0)
+    return (r * math.cos(th), y, r * math.sin(th) * 1.04)
+cols = [i / 24 * 2 - 1 for i in range(25)]
+m.grid('Visor', [[kvisor(a, k) for a in cols] for k in (0.0, 0.5, 1.0)], wrap=False)
+m.grid('Visor', [[kvisor(a, k, True) for a in cols] for k in (1.0, 0.5, 0.0)], wrap=False)
+# brass post-horn badge on the front: a ring and a bell
+fz = -0.66 * 1.04 - 0.02
+m.box('Brass', (0.0, 0.36, fz), (0.22, 0.05, 0.03)); m.box('Brass', (-0.1, 0.32, fz), (0.05, 0.12, 0.03)); m.box('Brass', (0.1, 0.32, fz), (0.05, 0.12, 0.03))
+m.box('Brass', (0.0, 0.28, fz), (0.22, 0.05, 0.03)); m.box('Brass', (0.15, 0.36, fz), (0.08, 0.1, 0.03))
+NAVY = (0.10, 0.14, 0.28); RED2 = (0.70, 0.10, 0.12); BRASS = (0.86, 0.66, 0.26)
+m.write('postman_kepi', "Original 19th-century French postman's kepi (navy, red band, black visor, brass horn badge).",
+        {'body': (NAVY, 0.05, 14), 'band': (RED2, 0.05, 14), 'visor': (BLACK, 0.55, 90), 'brass': (BRASS, 0.6, 60)},
+        [('Body', 'body'), ('Band', 'band'), ('Visor', 'visor'), ('Brass', 'brass')])

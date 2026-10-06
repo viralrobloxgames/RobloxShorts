@@ -364,7 +364,7 @@
       "title": "The Tornado Came Back",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-tornado-came-back",
@@ -404,11 +404,11 @@
       "title": "He Flew A Lawn Chair",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_draft_awaiting_approval",
+      "status": "delivered_local_review",
       "logline": "True story: in 1982 a man who was never allowed to be a pilot ties 42 weather balloons to a lawn chair, meaning to float a hundred feet up on a rope. The rope snaps; he shoots to 16,000 feet, freezing, and two airline pilots radio the tower about a man in a lawn chair. He pops a few balloons with a pellet gun, drops the gun, drifts into power lines and blacks out a neighbourhood, lands unhurt, and the police are waiting. 'A man can't just sit around.' He's fined for flying an aircraft without calling the tower; the aircraft is a lawn chair, and today it sits in the Air and Space Museum.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-flew-a-lawn-chair",
-      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum."
+      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum. | Overnight run 2026-10-05/06 (no script approval needed): narration 59.8 s (George voice C, cloud), video 61.67 s + 0.5 s cover; web clip 20 shots; full web render done and encoded (62.2 s incl. cover, -16.4 LUFS, blank-frame check clean); delivered for the user's review, not posted."
     },
     {
       "title": "He Flew The Wrong Way",
@@ -424,11 +424,11 @@
       "title": "He Won The Marathon By Car",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-marathon-car-ride",
-      "notes": "Overnight run 2026-10-05: story picked by the user; script approval waived for this run (posting still needs approval). Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration. Web route."
+      "notes": "Overnight run 2026-10-05/06: story picked by the user; script approval waived for this run (posting still needs approval). Delivered for review: delivery/He_Won_The_Marathon_By_Car.mp4 (63.07 s). Narration 60.7 s (George voice C, gap 0.6 / beat 1.3). Web route. Fred Lorz, Andarin Carvajal, Len Taunyane named only in the post copy; strychnine/brandy only in the post description as history."
     },
     {
       "title": "The Six Million Dollar Banana",
@@ -449,6 +449,96 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-penguin-general",
       "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Sir Nils Olav III, Norwegian King's Guard, Edinburgh Zoo. Script v1 147 words. Web route; block penguin built in code."
+    },
+    {
+      "title": "He Won By Not Sleeping",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1983, Sydney to Melbourne, 544 miles. World-class runners line up, and so does a 61-year-old potato farmer in overalls. He shuffles; by nightfall he's miles behind. The pros sleep six hours; he wakes by mistake at 2 a.m., starts running, shuffles past their tents and leads by morning. He decides not to sleep at all, wins by ten hours, nearly two days under the record, and gives most of his $10,000 prize to the runners he beat.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/cliff-young",
+      "notes": "Overnight queue (user 2026-10-05: no script approval needed for these). Picked through general research (Cliff Young, 1983 Westfield Sydney-Melbourne ultramarathon; named only in the post copy). Script 162 words with the CTA. Web route."
+    },
+    {
+      "title": "They Lost A War To Emus",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1932, twenty thousand emus eat Western Australia's wheat. The army sends a major, two gunners, two machine guns and 10,000 bullets. The emus scatter, the gun jams at the ambush, the truck-mounted gun can't keep up or aim, every flock has a lookout. A week and 2,500 bullets later most emus are fine, Parliament jokes about medals, the army pulls out, and the major admits the birds face machine guns like tanks. The emus won.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-emu-war",
+      "notes": "Overnight queue (no script approval needed). General research (Emu War, Nov 1932, Maj. G.P.W. Meredith; named only in the post copy). Picture rule: no emu is shown hit. Script 162 words with the CTA. Web route; code-built emus."
+    },
+    {
+      "title": "The Postman's Palace",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: in 1879 a French country postman trips over a strange stone, pockets it, and spends 33 years building a palace from stones he picks up on his 30 km round - pockets, then baskets, then a wheelbarrow, building at night by an oil lamp while the village laughs. 10,000 days later it's finished, with 'Let those who can do better, try' on the wall; refused burial inside it, he builds his own tomb in eight more years. Today it's a protected monument, and the village that laughed is famous because of him.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-postmans-palace",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Ferdinand Cheval, Palais Ideal, Hauterives; named only in the post copy. Picked through general research. Web route; new postman_kepi accessory, procedural pebble palace that grows by clipping."
+    },
+    {
+      "title": "Spaghetti Grows On Trees",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story (1 April 1957): Britain's most serious news show reports a bumper spaghetti harvest in Switzerland, pickers pulling spaghetti off trees, the weevil gone, every strand bred to the same length; eight million watch, hundreds phone in asking how to grow their own, and are told to put a sprig of spaghetti in a tin of tomato sauce and hope for the best. It was April Fools' Day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/spaghetti-grows-on-trees",
+      "notes": "Overnight run 2026-10-05/06: picked through general research because the user's second named story (Lawnchair Larry) was already in the ledger as He Flew A Lawn Chair. Script approval waived for the run by the user (posting still needs approval). Script v1 155 words. Web route."
+    },
+    {
+      "title": "She Went Over Niagara Falls In A Barrel",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "farm_render_running",
+      "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/over-the-falls-in-a-barrel",
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Narration 59.9 s (George voice C, gap 0.6 / beat 1.3). Web route: barrel_clip.js (19 shots), kit (upper river, Horseshoe curtain, mist, gorge, dock, barrel, pump, cake, rowboat, poster); previews, motion pass, hold check and fit check (Max + top_hat) done; full render queued after He Won The Marathon By Car."
+    },
+    {
+      "title": "She Raced Around The World",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: in 1889 a young reporter says she can beat the famous book's eighty days around the world; her editor wants to send a man. She sails two days later with one bag, meets the author, learns in Hong Kong that a rival was sent the other way the same day, loses two days to storms, races across America on a special train and finishes in 72 days, 6 hours, 11 minutes; the rival comes home four and a half days later.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/she-raced-around-the-world",
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating."
+    },
+    {
+      "title": "He Sold The Eiffel Tower",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: Paris, 1925. The papers say the Eiffel Tower is rusting and costly to fix, so con man Victor Lustig fakes government letters, invites scrap dealers to a fancy hotel and whispers that the tower is secretly being sold for scrap. Dealer Andre Poisson pays, and a bribe too; Lustig takes the train out of the country, and Poisson is too embarrassed to tell anyone, so Lustig comes back and tries it again. This time the police are called; he flees to America, tricks Al Capone, is caught making fake money, escapes down a rope and is caught again. His death certificate: apprentice salesman and counterfeiter.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-sold-the-eiffel-tower",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Picked through general research; facts and sources in source/story.md ('tries it again', not 'sold it twice'). Web route; Max as Lustig in the top_hat, Leo as Poisson, procedural Eiffel Tower."
+    },
+    {
+      "title": "The First Speeding Ticket",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: on 28 January 1896 in Kent, Walter Arnold becomes the first person charged with speeding, at 8 mph in a 2 mph zone; the law also wanted a crew of three with one walking ahead. A policeman chases him on a bicycle for five miles; he is charged with four offences at once. Months later the walker rule goes, the limit rises to 14 mph, and drivers celebrate with a run from London to Brighton that is still driven every year.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-first-speeding-ticket",
+      "notes": "Draft prepared during the 2026-10-05/06 overnight run while the renders ran; not narrated or built. Needs approval. Sources: Historic UK, Guinness World Records. Walter Arnold named only in the post copy."
+    },
+    {
+      "title": "Miss Unsinkable",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: Violet Jessop works on ocean liners. Her ship the Olympic collides with a warship (nobody dies); the next year she's on its sister ship the Titanic, where an officer hands her a baby as she climbs into lifeboat 16 and she holds it until the rescue ship comes. Then she becomes a nurse on the third sister, the hospital ship Britannic, which hits a mine and sinks in under an hour; her lifeboat is pulled toward the propellers, she jumps, hits her head, and survives again. She works at sea for thirty more years: Miss Unsinkable.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/miss-unsinkable",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Script only so far (147 words); facts and sources in source/story.md. Mia as Violet."
     }
   ],
   "statuses": [

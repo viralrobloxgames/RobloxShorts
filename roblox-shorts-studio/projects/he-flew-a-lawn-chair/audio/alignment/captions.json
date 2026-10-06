@@ -1,0 +1,1089 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.88,
+    "text": "A man sits in",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.18,
+        "word": " A"
+      },
+      {
+        "start": 0.18,
+        "end": 0.42,
+        "word": " man"
+      },
+      {
+        "start": 0.42,
+        "end": 0.68,
+        "word": " sits"
+      },
+      {
+        "start": 0.68,
+        "end": 0.88,
+        "word": " in"
+      }
+    ]
+  },
+  {
+    "start": 0.88,
+    "end": 1.6400000000000001,
+    "text": "a lawn chair,",
+    "words": [
+      {
+        "start": 0.88,
+        "end": 1.04,
+        "word": " a"
+      },
+      {
+        "start": 1.04,
+        "end": 1.18,
+        "word": " lawn"
+      },
+      {
+        "start": 1.18,
+        "end": 1.52,
+        "word": " chair,"
+      }
+    ]
+  },
+  {
+    "start": 1.8,
+    "end": 2.98,
+    "text": "tied to 42 weather",
+    "words": [
+      {
+        "start": 1.8,
+        "end": 2.04,
+        "word": " tied"
+      },
+      {
+        "start": 2.04,
+        "end": 2.3,
+        "word": " to"
+      },
+      {
+        "start": 2.3,
+        "end": 2.72,
+        "word": " 42"
+      },
+      {
+        "start": 2.72,
+        "end": 2.98,
+        "word": " weather"
+      }
+    ]
+  },
+  {
+    "start": 2.98,
+    "end": 3.5,
+    "text": "balloons.",
+    "words": [
+      {
+        "start": 2.98,
+        "end": 3.38,
+        "word": " balloons."
+      }
+    ]
+  },
+  {
+    "start": 4.1,
+    "end": 5.16,
+    "text": "The plan float a",
+    "words": [
+      {
+        "start": 4.1,
+        "end": 4.32,
+        "word": " The"
+      },
+      {
+        "start": 4.32,
+        "end": 4.64,
+        "word": " plan"
+      },
+      {
+        "start": 4.64,
+        "end": 5.0,
+        "word": " float"
+      },
+      {
+        "start": 5.0,
+        "end": 5.16,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 5.16,
+    "end": 6.0600000000000005,
+    "text": "hundred feet up,",
+    "words": [
+      {
+        "start": 5.16,
+        "end": 5.4,
+        "word": " hundred"
+      },
+      {
+        "start": 5.4,
+        "end": 5.64,
+        "word": " feet"
+      },
+      {
+        "start": 5.64,
+        "end": 5.94,
+        "word": " up,"
+      }
+    ]
+  },
+  {
+    "start": 6.18,
+    "end": 7.04,
+    "text": "held by a rope.",
+    "words": [
+      {
+        "start": 6.18,
+        "end": 6.36,
+        "word": " held"
+      },
+      {
+        "start": 6.36,
+        "end": 6.6,
+        "word": " by"
+      },
+      {
+        "start": 6.6,
+        "end": 6.7,
+        "word": " a"
+      },
+      {
+        "start": 6.7,
+        "end": 6.92,
+        "word": " rope."
+      }
+    ]
+  },
+  {
+    "start": 7.66,
+    "end": 8.58,
+    "text": "The rope snaps.",
+    "words": [
+      {
+        "start": 7.66,
+        "end": 7.82,
+        "word": " The"
+      },
+      {
+        "start": 7.82,
+        "end": 8.04,
+        "word": " rope"
+      },
+      {
+        "start": 8.04,
+        "end": 8.46,
+        "word": " snaps."
+      }
+    ]
+  },
+  {
+    "start": 9.78,
+    "end": 10.78,
+    "text": "A thousand feet,",
+    "words": [
+      {
+        "start": 9.78,
+        "end": 9.92,
+        "word": " A"
+      },
+      {
+        "start": 9.92,
+        "end": 10.28,
+        "word": " thousand"
+      },
+      {
+        "start": 10.28,
+        "end": 10.66,
+        "word": " feet,"
+      }
+    ]
+  },
+  {
+    "start": 11.08,
+    "end": 11.68,
+    "text": "five thousand,",
+    "words": [
+      {
+        "start": 11.08,
+        "end": 11.2,
+        "word": " five"
+      },
+      {
+        "start": 11.2,
+        "end": 11.56,
+        "word": " thousand,"
+      }
+    ]
+  },
+  {
+    "start": 12.04,
+    "end": 12.94,
+    "text": "sixteen thousand.",
+    "words": [
+      {
+        "start": 12.04,
+        "end": 12.28,
+        "word": " sixteen"
+      },
+      {
+        "start": 12.28,
+        "end": 12.82,
+        "word": " thousand."
+      }
+    ]
+  },
+  {
+    "start": 13.5,
+    "end": 14.26,
+    "text": "It's freezing.",
+    "words": [
+      {
+        "start": 13.5,
+        "end": 13.84,
+        "word": " It's"
+      },
+      {
+        "start": 13.84,
+        "end": 14.14,
+        "word": " freezing."
+      }
+    ]
+  },
+  {
+    "start": 15.4,
+    "end": 16.34,
+    "text": "He'd always wanted to",
+    "words": [
+      {
+        "start": 15.4,
+        "end": 15.64,
+        "word": " He'd"
+      },
+      {
+        "start": 15.64,
+        "end": 15.88,
+        "word": " always"
+      },
+      {
+        "start": 15.88,
+        "end": 16.16,
+        "word": " wanted"
+      },
+      {
+        "start": 16.16,
+        "end": 16.34,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 16.34,
+    "end": 17.4,
+    "text": "fly but his eyesight",
+    "words": [
+      {
+        "start": 16.34,
+        "end": 16.62,
+        "word": " fly"
+      },
+      {
+        "start": 16.62,
+        "end": 16.82,
+        "word": " but"
+      },
+      {
+        "start": 16.82,
+        "end": 16.96,
+        "word": " his"
+      },
+      {
+        "start": 16.96,
+        "end": 17.4,
+        "word": " eyesight"
+      }
+    ]
+  },
+  {
+    "start": 17.4,
+    "end": 18.34,
+    "text": "wasn't good enough.",
+    "words": [
+      {
+        "start": 17.4,
+        "end": 17.76,
+        "word": " wasn't"
+      },
+      {
+        "start": 17.76,
+        "end": 17.92,
+        "word": " good"
+      },
+      {
+        "start": 17.92,
+        "end": 18.22,
+        "word": " enough."
+      }
+    ]
+  },
+  {
+    "start": 18.96,
+    "end": 20.14,
+    "text": "He packed sandwiches and",
+    "words": [
+      {
+        "start": 18.96,
+        "end": 19.08,
+        "word": " He"
+      },
+      {
+        "start": 19.08,
+        "end": 19.34,
+        "word": " packed"
+      },
+      {
+        "start": 19.34,
+        "end": 19.78,
+        "word": " sandwiches"
+      },
+      {
+        "start": 19.78,
+        "end": 20.14,
+        "word": " and"
+      }
+    ]
+  },
+  {
+    "start": 20.14,
+    "end": 20.98,
+    "text": "a pellet gun to",
+    "words": [
+      {
+        "start": 20.14,
+        "end": 20.26,
+        "word": " a"
+      },
+      {
+        "start": 20.26,
+        "end": 20.54,
+        "word": " pellet"
+      },
+      {
+        "start": 20.54,
+        "end": 20.76,
+        "word": " gun"
+      },
+      {
+        "start": 20.76,
+        "end": 20.98,
+        "word": " to"
+      }
+    ]
+  },
+  {
+    "start": 20.98,
+    "end": 21.740000000000002,
+    "text": "pop balloons.",
+    "words": [
+      {
+        "start": 20.98,
+        "end": 21.16,
+        "word": " pop"
+      },
+      {
+        "start": 21.16,
+        "end": 21.62,
+        "word": " balloons."
+      }
+    ]
+  },
+  {
+    "start": 22.84,
+    "end": 24.2,
+    "text": "Two airline pilots radio",
+    "words": [
+      {
+        "start": 22.84,
+        "end": 23.12,
+        "word": " Two"
+      },
+      {
+        "start": 23.12,
+        "end": 23.46,
+        "word": " airline"
+      },
+      {
+        "start": 23.46,
+        "end": 23.94,
+        "word": " pilots"
+      },
+      {
+        "start": 23.94,
+        "end": 24.2,
+        "word": " radio"
+      }
+    ]
+  },
+  {
+    "start": 24.2,
+    "end": 24.900000000000002,
+    "text": "the tower,",
+    "words": [
+      {
+        "start": 24.2,
+        "end": 24.5,
+        "word": " the"
+      },
+      {
+        "start": 24.5,
+        "end": 24.78,
+        "word": " tower,"
+      }
+    ]
+  },
+  {
+    "start": 25.14,
+    "end": 26.04,
+    "text": "they've passed a man",
+    "words": [
+      {
+        "start": 25.14,
+        "end": 25.38,
+        "word": " they've"
+      },
+      {
+        "start": 25.38,
+        "end": 25.62,
+        "word": " passed"
+      },
+      {
+        "start": 25.62,
+        "end": 25.82,
+        "word": " a"
+      },
+      {
+        "start": 25.82,
+        "end": 26.04,
+        "word": " man"
+      }
+    ]
+  },
+  {
+    "start": 26.04,
+    "end": 27.02,
+    "text": "in a lawn chair.",
+    "words": [
+      {
+        "start": 26.04,
+        "end": 26.22,
+        "word": " in"
+      },
+      {
+        "start": 26.22,
+        "end": 26.32,
+        "word": " a"
+      },
+      {
+        "start": 26.32,
+        "end": 26.54,
+        "word": " lawn"
+      },
+      {
+        "start": 26.54,
+        "end": 26.9,
+        "word": " chair."
+      }
+    ]
+  },
+  {
+    "start": 27.68,
+    "end": 28.86,
+    "text": "He pops a few",
+    "words": [
+      {
+        "start": 27.68,
+        "end": 28.2,
+        "word": " He"
+      },
+      {
+        "start": 28.2,
+        "end": 28.42,
+        "word": " pops"
+      },
+      {
+        "start": 28.42,
+        "end": 28.62,
+        "word": " a"
+      },
+      {
+        "start": 28.62,
+        "end": 28.86,
+        "word": " few"
+      }
+    ]
+  },
+  {
+    "start": 28.86,
+    "end": 30.12,
+    "text": "and starts to sink.",
+    "words": [
+      {
+        "start": 28.86,
+        "end": 29.24,
+        "word": " and"
+      },
+      {
+        "start": 29.24,
+        "end": 29.52,
+        "word": " starts"
+      },
+      {
+        "start": 29.52,
+        "end": 29.78,
+        "word": " to"
+      },
+      {
+        "start": 29.78,
+        "end": 30.0,
+        "word": " sink."
+      }
+    ]
+  },
+  {
+    "start": 30.7,
+    "end": 31.5,
+    "text": "Then he drops the",
+    "words": [
+      {
+        "start": 30.7,
+        "end": 30.92,
+        "word": " Then"
+      },
+      {
+        "start": 30.92,
+        "end": 31.06,
+        "word": " he"
+      },
+      {
+        "start": 31.06,
+        "end": 31.28,
+        "word": " drops"
+      },
+      {
+        "start": 31.28,
+        "end": 31.5,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 31.5,
+    "end": 31.84,
+    "text": "gun.",
+    "words": [
+      {
+        "start": 31.5,
+        "end": 31.72,
+        "word": " gun."
+      }
+    ]
+  },
+  {
+    "start": 32.44,
+    "end": 33.52,
+    "text": "He drifts into power",
+    "words": [
+      {
+        "start": 32.44,
+        "end": 32.64,
+        "word": " He"
+      },
+      {
+        "start": 32.64,
+        "end": 32.98,
+        "word": " drifts"
+      },
+      {
+        "start": 32.98,
+        "end": 33.22,
+        "word": " into"
+      },
+      {
+        "start": 33.22,
+        "end": 33.52,
+        "word": " power"
+      }
+    ]
+  },
+  {
+    "start": 33.52,
+    "end": 34.54,
+    "text": "lines and a whole",
+    "words": [
+      {
+        "start": 33.52,
+        "end": 33.84,
+        "word": " lines"
+      },
+      {
+        "start": 33.84,
+        "end": 34.22,
+        "word": " and"
+      },
+      {
+        "start": 34.22,
+        "end": 34.32,
+        "word": " a"
+      },
+      {
+        "start": 34.32,
+        "end": 34.54,
+        "word": " whole"
+      }
+    ]
+  },
+  {
+    "start": 34.54,
+    "end": 35.779999999999994,
+    "text": "neighborhood goes dark.",
+    "words": [
+      {
+        "start": 34.54,
+        "end": 34.88,
+        "word": " neighborhood"
+      },
+      {
+        "start": 34.88,
+        "end": 35.24,
+        "word": " goes"
+      },
+      {
+        "start": 35.24,
+        "end": 35.66,
+        "word": " dark."
+      }
+    ]
+  },
+  {
+    "start": 36.9,
+    "end": 38.1,
+    "text": "He lands unhurt and",
+    "words": [
+      {
+        "start": 36.9,
+        "end": 37.1,
+        "word": " He"
+      },
+      {
+        "start": 37.1,
+        "end": 37.36,
+        "word": " lands"
+      },
+      {
+        "start": 37.36,
+        "end": 37.84,
+        "word": " unhurt"
+      },
+      {
+        "start": 37.84,
+        "end": 38.1,
+        "word": " and"
+      }
+    ]
+  },
+  {
+    "start": 38.1,
+    "end": 39.12,
+    "text": "the police are waiting.",
+    "words": [
+      {
+        "start": 38.1,
+        "end": 38.22,
+        "word": " the"
+      },
+      {
+        "start": 38.22,
+        "end": 38.46,
+        "word": " police"
+      },
+      {
+        "start": 38.46,
+        "end": 38.64,
+        "word": " are"
+      },
+      {
+        "start": 38.64,
+        "end": 39.0,
+        "word": " waiting."
+      }
+    ]
+  },
+  {
+    "start": 39.84,
+    "end": 41.059999999999995,
+    "text": "Reporters ask him why.",
+    "words": [
+      {
+        "start": 39.84,
+        "end": 40.1,
+        "word": " Reporters"
+      },
+      {
+        "start": 40.1,
+        "end": 40.4,
+        "word": " ask"
+      },
+      {
+        "start": 40.4,
+        "end": 40.62,
+        "word": " him"
+      },
+      {
+        "start": 40.62,
+        "end": 40.94,
+        "word": " why."
+      }
+    ]
+  },
+  {
+    "start": 41.62,
+    "end": 42.46,
+    "text": "A man can't just",
+    "words": [
+      {
+        "start": 41.62,
+        "end": 41.78,
+        "word": " A"
+      },
+      {
+        "start": 41.78,
+        "end": 41.98,
+        "word": " man"
+      },
+      {
+        "start": 41.98,
+        "end": 42.34,
+        "word": " can't"
+      },
+      {
+        "start": 42.34,
+        "end": 42.46,
+        "word": " just"
+      }
+    ]
+  },
+  {
+    "start": 42.46,
+    "end": 43.099999999999994,
+    "text": "sit around.",
+    "words": [
+      {
+        "start": 42.46,
+        "end": 42.64,
+        "word": " sit"
+      },
+      {
+        "start": 42.64,
+        "end": 42.98,
+        "word": " around."
+      }
+    ]
+  },
+  {
+    "start": 43.94,
+    "end": 45.06,
+    "text": "He's fine for flying",
+    "words": [
+      {
+        "start": 43.94,
+        "end": 44.34,
+        "word": " He's"
+      },
+      {
+        "start": 44.34,
+        "end": 44.58,
+        "word": " fine"
+      },
+      {
+        "start": 44.58,
+        "end": 44.78,
+        "word": " for"
+      },
+      {
+        "start": 44.78,
+        "end": 45.06,
+        "word": " flying"
+      }
+    ]
+  },
+  {
+    "start": 45.06,
+    "end": 46.3,
+    "text": "an aircraft without calling",
+    "words": [
+      {
+        "start": 45.06,
+        "end": 45.2,
+        "word": " an"
+      },
+      {
+        "start": 45.2,
+        "end": 45.62,
+        "word": " aircraft"
+      },
+      {
+        "start": 45.62,
+        "end": 45.96,
+        "word": " without"
+      },
+      {
+        "start": 45.96,
+        "end": 46.3,
+        "word": " calling"
+      }
+    ]
+  },
+  {
+    "start": 46.3,
+    "end": 46.919999999999995,
+    "text": "the tower.",
+    "words": [
+      {
+        "start": 46.3,
+        "end": 46.52,
+        "word": " the"
+      },
+      {
+        "start": 46.52,
+        "end": 46.8,
+        "word": " tower."
+      }
+    ]
+  },
+  {
+    "start": 47.52,
+    "end": 48.4,
+    "text": "The aircraft is a",
+    "words": [
+      {
+        "start": 47.52,
+        "end": 47.68,
+        "word": " The"
+      },
+      {
+        "start": 47.68,
+        "end": 48.04,
+        "word": " aircraft"
+      },
+      {
+        "start": 48.04,
+        "end": 48.28,
+        "word": " is"
+      },
+      {
+        "start": 48.28,
+        "end": 48.4,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 48.4,
+    "end": 49.059999999999995,
+    "text": "lawn chair.",
+    "words": [
+      {
+        "start": 48.4,
+        "end": 48.6,
+        "word": " lawn"
+      },
+      {
+        "start": 48.6,
+        "end": 48.94,
+        "word": " chair."
+      }
+    ]
+  },
+  {
+    "start": 50.0,
+    "end": 50.98,
+    "text": "He was never allowed",
+    "words": [
+      {
+        "start": 50.0,
+        "end": 50.24,
+        "word": " He"
+      },
+      {
+        "start": 50.24,
+        "end": 50.38,
+        "word": " was"
+      },
+      {
+        "start": 50.38,
+        "end": 50.66,
+        "word": " never"
+      },
+      {
+        "start": 50.66,
+        "end": 50.98,
+        "word": " allowed"
+      }
+    ]
+  },
+  {
+    "start": 50.98,
+    "end": 51.86,
+    "text": "to be a pilot.",
+    "words": [
+      {
+        "start": 50.98,
+        "end": 51.16,
+        "word": " to"
+      },
+      {
+        "start": 51.16,
+        "end": 51.3,
+        "word": " be"
+      },
+      {
+        "start": 51.3,
+        "end": 51.44,
+        "word": " a"
+      },
+      {
+        "start": 51.44,
+        "end": 51.74,
+        "word": " pilot."
+      }
+    ]
+  },
+  {
+    "start": 52.66,
+    "end": 53.8,
+    "text": "Today his chair sits",
+    "words": [
+      {
+        "start": 52.66,
+        "end": 52.94,
+        "word": " Today"
+      },
+      {
+        "start": 52.94,
+        "end": 53.18,
+        "word": " his"
+      },
+      {
+        "start": 53.18,
+        "end": 53.52,
+        "word": " chair"
+      },
+      {
+        "start": 53.52,
+        "end": 53.8,
+        "word": " sits"
+      }
+    ]
+  },
+  {
+    "start": 53.8,
+    "end": 54.52,
+    "text": "in the Air and",
+    "words": [
+      {
+        "start": 53.8,
+        "end": 54.02,
+        "word": " in"
+      },
+      {
+        "start": 54.02,
+        "end": 54.12,
+        "word": " the"
+      },
+      {
+        "start": 54.12,
+        "end": 54.34,
+        "word": " Air"
+      },
+      {
+        "start": 54.34,
+        "end": 54.52,
+        "word": " and"
+      }
+    ]
+  },
+  {
+    "start": 54.52,
+    "end": 55.4,
+    "text": "Space Museum.",
+    "words": [
+      {
+        "start": 54.52,
+        "end": 54.82,
+        "word": " Space"
+      },
+      {
+        "start": 54.82,
+        "end": 55.28,
+        "word": " Museum."
+      }
+    ]
+  },
+  {
+    "start": 56.14,
+    "end": 58.42,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 56.14,
+        "end": 56.82,
+        "word": " Follow"
+      },
+      {
+        "start": 56.82,
+        "end": 58.14,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 58.14,
+        "end": 58.42,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 58.42,
+    "end": 59.779999999999994,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 58.42,
+        "end": 58.64,
+        "word": " more"
+      },
+      {
+        "start": 58.64,
+        "end": 59.04,
+        "word": " stories"
+      },
+      {
+        "start": 59.04,
+        "end": 59.32,
+        "word": " like"
+      },
+      {
+        "start": 59.32,
+        "end": 59.66,
+        "word": " this."
+      }
+    ]
+  }
+]
