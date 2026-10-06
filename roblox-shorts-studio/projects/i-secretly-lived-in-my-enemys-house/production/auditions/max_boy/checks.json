@@ -34,5 +34,41 @@
   "transcript": "Your hair is pink, it's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
   "instruct": "A confident 12-year-old boy with a lower, slightly gravelly voice, clearly male, like a cheeky boy from a children's TV show. Teasing, amused, relaxed. English accent. Medium pace with a short pause between sentences.",
   "seed": 5
+ },
+ "B_s17": {
+  "dur": 8.0,
+  "f0_med": 127.3,
+  "f0_p10_p90": [
+   88.9,
+   218.8
+  ],
+  "wps": 3.33,
+  "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "instruct": "A confident 12-year-old boy with a lower, slightly gravelly voice, clearly male, like a cheeky boy from a children's TV show. Teasing, amused, relaxed. English accent. Medium pace with a short pause between sentences.",
+  "seed": 17
+ },
+ "C_s5": {
+  "dur": 9.68,
+  "f0_med": 167.0,
+  "f0_p10_p90": [
+   101.9,
+   387.2
+  ],
+  "wps": 2.77,
+  "transcript": "Your hair is pink, it's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "instruct": "Young boy, about twelve, speaking in a low and slightly rough boyish voice, unmistakably a boy. Smug and playful, teasing his rival. British accent. Speaks at a steady, natural pace, sentences clearly separated.",
+  "seed": 5
+ },
+ "C_s17": {
+  "dur": 7.76,
+  "f0_med": 136.8,
+  "f0_p10_p90": [
+   94.0,
+   231.9
+  ],
+  "wps": 3.43,
+  "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "instruct": "Young boy, about twelve, speaking in a low and slightly rough boyish voice, unmistakably a boy. Smug and playful, teasing his rival. British accent. Speaks at a steady, natural pace, sentences clearly separated.",
+  "seed": 17
  }
 }
