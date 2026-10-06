@@ -1,0 +1,61 @@
+{
+ "voice": "brittney",
+ "text": "Nothing. I left. I didn't need to hear the rest.",
+ "seed": 53373,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Nothing",
+   "start": 0.0,
+   "end": 0.58
+  },
+  {
+   "word": "I",
+   "start": 0.58,
+   "end": 0.86
+  },
+  {
+   "word": "left.",
+   "start": 0.86,
+   "end": 1.12
+  },
+  {
+   "word": "I",
+   "start": 1.58,
+   "end": 1.7
+  },
+  {
+   "word": "didn't",
+   "start": 1.7,
+   "end": 2.0
+  },
+  {
+   "word": "need",
+   "start": 2.0,
+   "end": 2.12
+  },
+  {
+   "word": "to",
+   "start": 2.12,
+   "end": 2.22
+  },
+  {
+   "word": "hear",
+   "start": 2.22,
+   "end": 2.34
+  },
+  {
+   "word": "the",
+   "start": 2.34,
+   "end": 2.46
+  },
+  {
+   "word": "rest",
+   "start": 2.46,
+   "end": 2.7
+  }
+ ],
+ "words_md5": "71ce55938bf0d4ad01017f9fd10354fb",
+ "whisper": "small.en"
+}

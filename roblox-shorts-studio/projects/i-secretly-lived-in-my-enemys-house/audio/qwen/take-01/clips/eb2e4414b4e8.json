@@ -1,0 +1,31 @@
+{
+ "voice": "brittney",
+ "text": "Be. Nice. To. Skye.",
+ "seed": 12881,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Be",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "word": "nice,",
+   "start": 0.52,
+   "end": 0.82
+  },
+  {
+   "word": "too.",
+   "start": 1.18,
+   "end": 1.18
+  },
+  {
+   "word": "Skye!",
+   "start": 1.44,
+   "end": 1.98
+  }
+ ],
+ "words_md5": "b3d2029f68dd59bbafda19c649f9c732",
+ "whisper": "small.en"
+}

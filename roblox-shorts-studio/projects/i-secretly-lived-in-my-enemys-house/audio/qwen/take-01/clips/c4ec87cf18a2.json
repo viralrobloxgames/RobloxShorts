@@ -1,0 +1,26 @@
+{
+ "voice": "brittney",
+ "text": "Best. Pancake. Ever.",
+ "seed": 5684,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Best",
+   "start": 0.0,
+   "end": 0.82
+  },
+  {
+   "word": "pancake.",
+   "start": 0.82,
+   "end": 1.74
+  },
+  {
+   "word": "Ever.",
+   "start": 2.08,
+   "end": 2.24
+  }
+ ],
+ "words_md5": "af5fcd94b9ae664da6571cb4855393ad",
+ "whisper": "small.en"
+}

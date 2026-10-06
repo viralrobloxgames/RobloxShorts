@@ -1,0 +1,61 @@
+{
+ "voice": "brittney",
+ "text": "Are you asking me, or is the fridge asking me?",
+ "seed": 9088,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Are",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "you",
+   "start": 0.24,
+   "end": 0.36
+  },
+  {
+   "word": "asking",
+   "start": 0.36,
+   "end": 0.6
+  },
+  {
+   "word": "me,",
+   "start": 0.6,
+   "end": 0.94
+  },
+  {
+   "word": "or",
+   "start": 1.2,
+   "end": 1.32
+  },
+  {
+   "word": "is",
+   "start": 1.32,
+   "end": 1.44
+  },
+  {
+   "word": "the",
+   "start": 1.44,
+   "end": 1.58
+  },
+  {
+   "word": "fridge",
+   "start": 1.58,
+   "end": 1.76
+  },
+  {
+   "word": "asking",
+   "start": 1.76,
+   "end": 2.06
+  },
+  {
+   "word": "me?",
+   "start": 2.06,
+   "end": 2.3
+  }
+ ],
+ "words_md5": "ec9900c8e99ae800c6ab49de19d0ffb8",
+ "whisper": "small.en"
+}

@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "The fridge says yes.",
+ "seed": 10757,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "The",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "fridge",
+   "start": 0.18,
+   "end": 0.44
+  },
+  {
+   "word": "says",
+   "start": 0.44,
+   "end": 0.78
+  },
+  {
+   "word": "yes.",
+   "start": 0.78,
+   "end": 1.12
+  }
+ ],
+ "words_md5": "c3577ccc0031cbfad5d97eed818636bb",
+ "whisper": "small.en"
+}

@@ -3,5 +3,29 @@
  "text": "What's wrong with it?",
  "seed": 70879,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "What's",
+   "start": 0.3,
+   "end": 0.58
+  },
+  {
+   "word": "wrong",
+   "start": 0.58,
+   "end": 0.7
+  },
+  {
+   "word": "with",
+   "start": 0.7,
+   "end": 0.88
+  },
+  {
+   "word": "it?",
+   "start": 0.88,
+   "end": 1.02
+  }
+ ],
+ "words_md5": "7f022900e6a479e0b45db6f8007d1009",
+ "whisper": "small.en"
 }

@@ -1,0 +1,26 @@
+{
+ "voice": "lily_kid",
+ "text": "Is it working?",
+ "seed": 22414,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Is",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "it",
+   "start": 0.2,
+   "end": 0.34
+  },
+  {
+   "word": "working?",
+   "start": 0.34,
+   "end": 0.64
+  }
+ ],
+ "words_md5": "39b97e41d9cd32beca0f3acb2e23969a",
+ "whisper": "small.en"
+}

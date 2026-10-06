@@ -1,0 +1,51 @@
+{
+ "voice": "brittney",
+ "text": "It's dusty. It's a really, really dusty attic.",
+ "seed": 96005,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "It's",
+   "start": 0.0,
+   "end": 0.64
+  },
+  {
+   "word": "dusty.",
+   "start": 0.64,
+   "end": 0.94
+  },
+  {
+   "word": "It's",
+   "start": 1.18,
+   "end": 1.26
+  },
+  {
+   "word": "a",
+   "start": 1.26,
+   "end": 1.36
+  },
+  {
+   "word": "really,",
+   "start": 1.36,
+   "end": 1.68
+  },
+  {
+   "word": "really",
+   "start": 1.68,
+   "end": 1.9
+  },
+  {
+   "word": "dusty",
+   "start": 1.9,
+   "end": 2.2
+  },
+  {
+   "word": "attic.",
+   "start": 2.2,
+   "end": 2.5
+  }
+ ],
+ "words_md5": "f6799d540eb685453ada173d58920348",
+ "whisper": "small.en"
+}

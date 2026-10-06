@@ -1,0 +1,86 @@
+{
+ "voice": "brittney",
+ "text": "I spent a week trying to scare my enemy. He spent it making me sandwiches.",
+ "seed": 19833,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "spent",
+   "start": 0.48,
+   "end": 0.68
+  },
+  {
+   "word": "a",
+   "start": 0.68,
+   "end": 0.84
+  },
+  {
+   "word": "week",
+   "start": 0.84,
+   "end": 1.02
+  },
+  {
+   "word": "trying",
+   "start": 1.02,
+   "end": 1.32
+  },
+  {
+   "word": "to",
+   "start": 1.32,
+   "end": 1.48
+  },
+  {
+   "word": "scare",
+   "start": 1.48,
+   "end": 1.7
+  },
+  {
+   "word": "my",
+   "start": 1.7,
+   "end": 1.9
+  },
+  {
+   "word": "enemy.",
+   "start": 1.9,
+   "end": 2.18
+  },
+  {
+   "word": "He",
+   "start": 2.66,
+   "end": 2.86
+  },
+  {
+   "word": "spent",
+   "start": 2.86,
+   "end": 3.1
+  },
+  {
+   "word": "it",
+   "start": 3.1,
+   "end": 3.3
+  },
+  {
+   "word": "making",
+   "start": 3.3,
+   "end": 3.46
+  },
+  {
+   "word": "me",
+   "start": 3.46,
+   "end": 3.76
+  },
+  {
+   "word": "sandwiches",
+   "start": 3.76,
+   "end": 4.16
+  }
+ ],
+ "words_md5": "49d405562c0726bd21cae35fe5fbef6b",
+ "whisper": "small.en"
+}

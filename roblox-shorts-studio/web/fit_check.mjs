@@ -6,17 +6,17 @@
 //
 // For each character + accessory it runs the same fitting as the clip (robloxPack.js fitAccessory), measures how far
 // any hair/head surface pokes through the accessory, and renders front / three-quarter / side / back head close-ups.
-// Writes <clip dir>/fit_check/fit_check.json and fit_sheet.png (one row per pair). Exit code 1 when any pair fails.
+// Writes <clip dir>/fit_check/<clip name>/fit_check.json and fit_sheet.png (one row per pair). Exit code 1 when any pair fails.
 import { chromium } from 'playwright-core';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { ROOT, reportPath, fitFingerprint, usesPack } from './lib/fitgate.mjs';
+import { ROOT, newReportPath, fitFingerprint, usesPack } from './lib/fitgate.mjs';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith('--') ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]] : a), []));
 if (!args.clip && !args.all) { console.error('Usage: node web/fit_check.mjs --clip <path from studio root> [--reviewed] | --all [--out <dir>]'); process.exit(2); }
-const report = args.clip ? reportPath(args.clip) : path.resolve(args.out || path.join(ROOT, 'assets/roblox_pack/fit_check'), 'fit_check.json');
+const report = args.clip ? newReportPath(args.clip) : path.resolve(args.out || path.join(ROOT, 'assets/roblox_pack/fit_check'), 'fit_check.json');
 const outDir = path.dirname(report);
 
 if (args.reviewed) {

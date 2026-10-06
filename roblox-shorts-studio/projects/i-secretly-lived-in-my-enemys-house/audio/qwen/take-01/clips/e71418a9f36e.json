@@ -1,0 +1,51 @@
+{
+ "voice": "max_kid",
+ "text": "Why is there a cobweb in your hair?",
+ "seed": 44037,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Why",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "is",
+   "start": 0.24,
+   "end": 0.38
+  },
+  {
+   "word": "there",
+   "start": 0.38,
+   "end": 0.52
+  },
+  {
+   "word": "a",
+   "start": 0.52,
+   "end": 0.74
+  },
+  {
+   "word": "cobweb",
+   "start": 0.74,
+   "end": 1.12
+  },
+  {
+   "word": "in",
+   "start": 1.12,
+   "end": 1.28
+  },
+  {
+   "word": "your",
+   "start": 1.28,
+   "end": 1.42
+  },
+  {
+   "word": "hair?",
+   "start": 1.42,
+   "end": 1.72
+  }
+ ],
+ "words_md5": "6dd458f68675cd7792c8d1ab8d9ea40f",
+ "whisper": "small.en"
+}

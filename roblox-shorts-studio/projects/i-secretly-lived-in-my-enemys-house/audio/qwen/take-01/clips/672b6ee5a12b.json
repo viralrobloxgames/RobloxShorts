@@ -1,0 +1,46 @@
+{
+ "voice": "george_c",
+ "text": "Very realistic. Bit dusty. Smells like cinnamon.",
+ "seed": 61403,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Very",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "realistic,",
+   "start": 0.34,
+   "end": 0.86
+  },
+  {
+   "word": "bit",
+   "start": 1.24,
+   "end": 1.4
+  },
+  {
+   "word": "dusty,",
+   "start": 1.4,
+   "end": 1.84
+  },
+  {
+   "word": "smells",
+   "start": 2.16,
+   "end": 2.36
+  },
+  {
+   "word": "like",
+   "start": 2.36,
+   "end": 2.7
+  },
+  {
+   "word": "cinnamon.",
+   "start": 2.7,
+   "end": 2.96
+  }
+ ],
+ "words_md5": "aba2e2cf9e429b36380b0578db32bd48",
+ "whisper": "small.en"
+}

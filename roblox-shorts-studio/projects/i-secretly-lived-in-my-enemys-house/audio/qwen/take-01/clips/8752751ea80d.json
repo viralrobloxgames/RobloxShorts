@@ -1,0 +1,71 @@
+{
+ "voice": "george_c",
+ "text": "Well, she's filthy. Hold still, pumpkin girl. Time for a good hoover.",
+ "seed": 68546,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Well",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "she's",
+   "start": 0.28,
+   "end": 0.62
+  },
+  {
+   "word": "filthy,",
+   "start": 0.62,
+   "end": 1.02
+  },
+  {
+   "word": "hold",
+   "start": 1.48,
+   "end": 1.54
+  },
+  {
+   "word": "still",
+   "start": 1.54,
+   "end": 1.9
+  },
+  {
+   "word": "pumpkin",
+   "start": 1.9,
+   "end": 2.22
+  },
+  {
+   "word": "girl,",
+   "start": 2.22,
+   "end": 2.64
+  },
+  {
+   "word": "time",
+   "start": 3.06,
+   "end": 3.18
+  },
+  {
+   "word": "for",
+   "start": 3.18,
+   "end": 3.38
+  },
+  {
+   "word": "a",
+   "start": 3.38,
+   "end": 3.5
+  },
+  {
+   "word": "good",
+   "start": 3.5,
+   "end": 3.66
+  },
+  {
+   "word": "hoover.",
+   "start": 3.66,
+   "end": 4.02
+  }
+ ],
+ "words_md5": "60a677a8511da8094a962b53604e2edd",
+ "whisper": "small.en"
+}

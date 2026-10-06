@@ -1,0 +1,26 @@
+{
+ "voice": "lily_kid",
+ "text": "What came after?",
+ "seed": 64490,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "What",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "came",
+   "start": 0.26,
+   "end": 0.48
+  },
+  {
+   "word": "after?",
+   "start": 0.48,
+   "end": 0.96
+  }
+ ],
+ "words_md5": "56b48e7a399be6b6e15854e7dd62b929",
+ "whisper": "small.en"
+}

@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Be nice to Skye?",
+ "seed": 84309,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Be",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "nice",
+   "start": 0.16,
+   "end": 0.38
+  },
+  {
+   "word": "to",
+   "start": 0.38,
+   "end": 0.58
+  },
+  {
+   "word": "Skye.",
+   "start": 0.58,
+   "end": 1.02
+  }
+ ],
+ "words_md5": "ccbec7d1905ca90c8eda7aac94c42d31",
+ "whisper": "small.en"
+}

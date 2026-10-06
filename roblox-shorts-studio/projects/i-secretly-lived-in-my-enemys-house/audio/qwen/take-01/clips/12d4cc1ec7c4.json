@@ -1,0 +1,46 @@
+{
+ "voice": "brittney",
+ "text": "Word for word. Skye is the worst.",
+ "seed": 34201,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Word",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "for",
+   "start": 0.34,
+   "end": 0.56
+  },
+  {
+   "word": "word,",
+   "start": 0.56,
+   "end": 0.92
+  },
+  {
+   "word": "sky",
+   "start": 1.5,
+   "end": 1.56
+  },
+  {
+   "word": "is",
+   "start": 1.56,
+   "end": 1.92
+  },
+  {
+   "word": "the",
+   "start": 1.92,
+   "end": 2.12
+  },
+  {
+   "word": "worst.",
+   "start": 2.12,
+   "end": 2.38
+  }
+ ],
+ "words_md5": "1623a6df31793f06276b5d4047e9c963",
+ "whisper": "small.en"
+}

@@ -3,5 +3,34 @@
  "text": "Neigh. I mean, yes, please.",
  "seed": 46648,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Nay?",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "word": "I",
+   "start": 0.86,
+   "end": 0.94
+  },
+  {
+   "word": "mean,",
+   "start": 0.94,
+   "end": 1.16
+  },
+  {
+   "word": "yes,",
+   "start": 1.54,
+   "end": 1.64
+  },
+  {
+   "word": "please.",
+   "start": 1.82,
+   "end": 1.96
+  }
+ ],
+ "words_md5": "421f895c69baf9401f7d68a87e25e9c7",
+ "whisper": "small.en"
 }
