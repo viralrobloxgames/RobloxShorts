@@ -341,7 +341,7 @@ export function update(t, stage) {
     const sk = S.sky;
     sk.clouds.forEach((c) => { const h = c.userData.home; c.position.set(h.x, h.y, ((h.z - s * 140 * c.userData.speed) % 900 + 900 + 450) % 900 - 450); });
     sk.wt.offset.set(0, -s * 0.05);
-    sk.bank.position.set(0, 0, lerp(260, -10, smooth(inv(T.east + 0.4, W.clouds1 + 0.3, s))));
+    sk.bank.position.set(0, 0, lerp(260, 32, smooth(inv(T.east + 0.4, W.clouds1 + 0.3, s))));       // stops short of the camera
   }
   // sea: the liner sails toward New York (+z); punishment ends as it arrives
   // street: ticker tape
@@ -363,7 +363,7 @@ export function update(t, stage) {
     case 'east': { look(stage, SK(lerp(-17, -14, u), lerp(10, 9, u), lerp(-16, -12, u)), SK(0, 5.0, 4), 50, 40); break; }
     case 'radio': look(stage, CK(lerp(4.6, 4.2, u), 6.3, lerp(0.4, 0.8, u)), CK(0.3, 5.2, 3.0), 50, 10); break;
     case 'leak': look(stage, CK(4.6, 4.4, 4.6), CK(-0.6, 2.4, 0.6), 56, 12); break;
-    case 'screw': look(stage, CK(5.6, 2.5, 3.9), CK(-0.7, 2.3, 0.9), 58, 10); break;
+    case 'screw': look(stage, CK(5.4, 3.1, 3.2), CK(-0.6, 2.9, 0.5), 60, 10); break;
     case 'dublin': look(stage, EI(-13, 5.0, 22), EI(1.5, 4.0, 5), 50, 40); break;
     case 'whereami': look(stage, EI(11.2, 5.0, 15.6), EI(4.65, 4.5, 7.0), 46, 16); break;
     case 'excuse': look(stage, EI(lerp(8.6, 8.2, u), 4.9, lerp(12.0, 11.4, u)), EI(3.6, 4.6, 7.8), 42, 14); break;
@@ -461,14 +461,14 @@ function dateTag(g, s, t) {
 }
 export function overlay(g, s, t) {
   // white-out as he flies into the cloud bank (end of 'east'), clearing in the cockpit
-  if (SHOT === 'east') { const w = smooth(inv(W.clouds1 - 0.1, T.radio, t)); if (w > 0) { g.save(); g.globalAlpha = 0.85 * w; g.fillStyle = '#f4f6f8'; g.fillRect(0, 0, 1080 * s, 1920 * s); g.restore(); } }
+  if (SHOT === 'east') { const w = smooth(inv(W.clouds1 - 0.1, T.radio, t)); if (w > 0) { g.save(); g.globalAlpha = 0.45 * w; g.fillStyle = '#f4f6f8'; g.fillRect(0, 0, 1080 * s, 1920 * s); g.restore(); } }
   dateTag(g, s, t);
   if (SHOT === 'hook') {
     pill(g, s, 'FLIGHT PLAN: CALIFORNIA', 540, 420, 1, '#ffd23f', 'rgba(14,18,34,.85)', 50);
   }
   if (SHOT === 'ireland' && t > W.ireland - 0.1) bigText(g, s, 'IRELAND?!', 540, 470, 170, '#7CFC9A', pop(t, W.ireland - 0.1), -0.05);
   if (SHOT === 'ask' && head2D.max) bubble(g, s, ['CAN I FLY', 'THE ATLANTIC?'], head2D.max[0], head2D.max[1] - 80, pop(t, T.ask + 0.05, 0.2, 2) * out(t, T.denied, 0.1), 56);
-  if (SHOT === 'denied' && t > W.no1 - 0.05) stamp(g, s, 'DENIED', 540, 470, clamp((t - W.no1 + 0.05) / 0.18), '#e0262b', -0.1, 130);
+  if (SHOT === 'denied' && t > W.no1 - 0.05) stamp(g, s, 'DENIED', 540, 980, clamp((t - W.no1 + 0.05) / 0.18), '#e0262b', -0.1, 130);
   if (SHOT === 'patched') {
     if (t > W.old - 0.15) bigText(g, s, 'TOO OLD', 540, 400, 120, '#ffffff', pop(t, W.old - 0.15), -0.04);
     if (t > W.patched - 0.15) bigText(g, s, 'TOO PATCHED UP', 540, 540, 96, '#ffd23f', pop(t, W.patched - 0.15), 0.03);
@@ -477,7 +477,7 @@ export function overlay(g, s, t) {
     pill(g, s, 'FLIGHT PLAN: CALIFORNIA', 540, 420, pop(t, W.flight - 0.1), '#ffd23f', 'rgba(14,18,34,.85)', 50);
     if (miaAtStamp(t)) stamp(g, s, 'APPROVED', 540, 600, clamp((t - (W.california2 - 0.02)) / 0.18), '#2fbf5a', -0.1, 110);
   }
-  if (SHOT === 'takeoff' && t > W.took) { bigText(g, s, 'CALIFORNIA', 300, 1530, 64, '#ffd23f', pop(t, W.took), 0); bigText(g, s, '<<<', 300, 1610, 64, '#ffd23f', pop(t, W.took), 0); }
+  if (SHOT === 'takeoff' && t > W.took) { bigText(g, s, '<<< CALIFORNIA', 330, 930, 64, '#ffd23f', pop(t, W.took), 0); bigText(g, s, 'HIM >>>', 780, 1040, 72, '#ffffff', pop(t, W.took + 0.3), 0); }
   if (SHOT === 'east') { routeCard(g, s, t, T.east, pop(t, T.east, 0.2, 1.8) * out(t, W.clouds1 + 0.2, 0.15)); if (t > W.east - 0.1) bigText(g, s, 'EAST!', 540, 720, 130, '#7CFC9A', pop(t, W.east - 0.1) * out(t, W.clouds1 + 0.2, 0.15), -0.05); }
   if (SHOT === 'radio') {
     if (t > W.radio - 0.15) bigText(g, s, 'NO RADIO', 540, 420, 120, '#ff6b6b', pop(t, W.radio - 0.15), -0.04);
