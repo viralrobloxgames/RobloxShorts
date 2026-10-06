@@ -51,7 +51,7 @@ const T = {
   doorShut: end(2) + 0.1,           // [+0.6] he shuts it and pads back to bed
   class: at(4) - 0.35,              // hard cut: the classroom, earlier that day
   spider: end(6) + 0.3,             // [+0.8] the rubber spider drops into her lunchbox
-  maxWalk: at(5) - 1.4,             // he walks up to her desk, face to camera, arriving for his line
+  maxWalk: at(4) + 1.6,             // he walks up the aisle to her desk, face to camera, arriving before his line
   jump: at(7) - 0.05,               // Skye leaps up
   exit: end(13) - 0.15,             // Max says it from her desk, then leaves for the door
   dusk: at(14) - 0.35,              // the back of Max's house
@@ -97,7 +97,14 @@ function walkPath(a, pts, t0, t, opts = {}) {
   return m;
 }
 const P3 = (set, x, z, h = 0) => ({ pos: K.getSet(set).group.position.clone().add(V(x, 0, z)), heading: h });
-let STAGE = null;
+let STAGE = null, ROUTE = {};
+// walk along a set route (waypoints around the furniture, kit-sets-c); legs driven by the distance walked
+function routeWalk(a, set, pts, t0, t, { speed = 12, idleAt = 0, endHeading } = {}) {
+  const len = set.routeLength(pts), d = clamp((t - t0) * speed, 0, len), r = set.alongRoute(pts, d), moving = t > t0 && d < len;
+  K.playAnim(a, moving ? [[A.walk, d / 14.5]] : [[A.idle, idleAt]]);
+  K.putOn(a, { pos: r.pos, heading: moving ? r.heading : (d >= len && endHeading !== undefined ? endHeading : r.heading) });
+  return { moving, done: d >= len, arrive: t0 + len / speed };
+}
 const MAX_FROM = () => K.mark('classroom', 'max_desk_front');                  // Max starts at the front of his desk (row 3)
 const BOX = () => K.getSet('classroom').anchors.skyeDeskTop.clone().add(V(1.0, 0, 0.1));   // the lunchbox on Skye's desk
 
@@ -111,6 +118,11 @@ export async function setup(stage) {
     T.door = T.dusk + 0.1 + d / DUSK_SPEED + 0.6 + 0.15;                  // she arrives, the door opens
     T.night = Math.min(T.door + 0.8, at(15) - 1.0);                      // cut back to the closet as she slips inside
     KNOCKS = [T.night + 0.2, T.night + 0.45, T.night + 0.7];
+    for (const sh of SHOTS) if (sh.at) sh.start = sh.at(); SHOTS.sort((a, b) => a.start - b.start); }
+  { const cl = K.getSet('classroom'), side = K.mark('classroom', 'skye_desk_side').pos;
+    ROUTE.in = cl.route(K.mark('classroom', 'desk_max_side_entry').pos, side);
+    ROUTE.out = cl.route(side, K.mark('classroom', 'door_inside').pos);
+    T.maxArrive = T.maxWalk + cl.routeLength(ROUTE.in) / 6;
     for (const sh of SHOTS) if (sh.at) sh.start = sh.at(); SHOTS.sort((a, b) => a.start - b.start); }
   C = await K.loadCast(stage.scene);
   A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'sit', 'laugh', 'point']);
@@ -164,7 +176,7 @@ const S = {
   maxLaugh: { scene: 'class', cam: (s) => { const x = single(C.max, -1, -0.15); x.target.y -= 0.35; x.fov = 42; return K.applyShot(s, x); } },
   classTwo: { scene: 'class', cam: (s) => K.applyShot(s, pair(7.5)) },
   skyeAsks: { scene: 'class', cam: (s) => K.applyShot(s, single(C.skye, 1, 0.1)) },
-  maxBrags: { scene: 'class', cam: (s, t, sh) => push(s, single(C.max, -1, 0.1), single(C.max, -1, 0.35), inv(sh.start, sh.start + 5, t)) },
+  maxBrags: { scene: 'class', cam: (s, t, sh) => push(s, single(C.max, -1, 0.05), single(C.max, -1, 0.15), inv(sh.start, sh.start + 5, t)) },
   skyeSees: { scene: 'class', cam: (s, t, sh) => push(s, single(C.skye, 1, 0), single(C.skye, 1, 0.12), inv(sh.start, sh.start + 1.6, t)) },
   maxLeaves: { scene: 'class', cam: (s, t) => t < T.exit ? K.applyShot(s, single(C.max, -1, 0.05)) : K.setCam(s, cam(classroom(), 'wide_front'), { clear: false }) },   // the taunt on his face, then he goes
   yardWide: { scene: 'dusk', cam: (s, t, sh) => push(s, shotOf(cam(exterior(), 'dusk_wide')), dolly(cam(exterior(), 'dusk_wide'), 0.35), inv(sh.start, sh.start + 4, t)) },
@@ -178,7 +190,7 @@ const S = {
 const SHOTS = [
   ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.35], ['maxHoodies', at(2) - 0.1],
   ['backToBed', T.doorShut], ['skyeWhisper', at(3) - 0.2],
-  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', at(5) - 0.55], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
+  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', () => Math.min(T.maxArrive - 0.15, at(5) - 0.2)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
   ['yardWide', T.dusk], ['backDoor', () => T.door - 0.75],
   ['knockDoors', () => T.night], ['knock', () => T.night + 1.0], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
@@ -233,15 +245,16 @@ function classScene(t, set, idle) {
   // extras eating at their desks; they turn to look at the shriek
   C.extras.forEach((e, i) => {
     const m = M.extra(i), look = t > T.jump + 0.2 && t < at(10);
-    K.playAnim(e, [[A.sit, 0, 1, false]]);
-    K.putOn(e, m, { sit: true, heading: look ? m.heading + (K.faceTo(m, sk) - m.heading) * 0.5 : m.heading });
+    K.putOn(e, m, { sit: true, heading: look ? m.heading + (K.faceTo(m, sk) - m.heading) * 0.35 : m.heading });
+    K.posture(e, look ? 'sit_chair' : 'sit_desk_arms'); e.root.position.y = set.seatY(e.scale);   // forearms on the desk; turned to look, hands in the lap
     e.setFace(look ? 'surprised' : 'happy');
   });
   // Skye: seated, turned towards Max once he talks; her right hand rests by the lunchbox (the spider lands on it);
   // then up into the aisle, holding the arm with the spider out away from her ("Get it off!"), and standing her ground
   if (t < T.jump) {
-    K.playAnim(C.skye, [[A.sit, 0, 1, false]]);
-    K.putOn(C.skye, sk, { sit: true, heading: t < at(5) - 0.3 ? sk.heading : sk.heading + (K.faceTo(sk, side) - sk.heading) * 0.6 });
+    const turned = t >= at(5) - 0.3;
+    K.putOn(C.skye, sk, { sit: true, heading: turned ? sk.heading + (K.faceTo(sk, side) - sk.heading) * 0.45 : sk.heading });
+    K.posture(C.skye, turned ? 'sit_chair' : 'sit_desk_arms'); C.skye.root.position.y = set.seatY(C.skye.scale);   // eating at the desk, then turned to Max
     if (t > T.spider - 1.2) armSet(C.skye, 'R', -1.15, 0, 0);                                  // hand on the desk by the lunchbox
   } else {
     const u = smooth(inv(T.jump, T.jump + 0.3, t));
@@ -258,9 +271,8 @@ function classScene(t, set, idle) {
   }
   // Max: up the aisle from beside his desk during the VO, stands at her desk; a step in to drop the spider; leaves along the aisles
   const toSkye = K.faceTo(side, t < T.jump ? sk : stand) + 0.4;                                // cheated toward the camera side
-  const from = P3('classroom', -9, 5.0); from.heading = K.faceTo(from, side);
   if (t < T.exit) {
-    if (t < T.spider - 1.0) K.walk(C.max, A, from, side, T.maxWalk, t, { speed: 6, idleAt: idle, endHeading: toSkye });
+    if (t < T.spider - 1.0) routeWalk(C.max, set, ROUTE.in, T.maxWalk, t, { speed: 6, idleAt: idle, endHeading: toSkye });
     else if (t < T.spider + 0.7) { K.walk(C.max, A, side, sideIn, T.spider - 1.0, t, { speed: 3, idleAt: idle, endHeading: K.faceTo(sideIn, BOX()) + 0.2 }); }
     else K.walk(C.max, A, sideIn, side, T.spider + 0.7, t, { speed: 3, idleAt: idle, endHeading: toSkye });
     if (t > at(5) + 0.2 && t < at(5, 1.8)) K.gesture(C.max, 'point', 'R');                     // points at the crusts
@@ -268,7 +280,7 @@ function classScene(t, set, idle) {
     if (t > at(8) - 0.15 && t < at(8, 2.4)) armSet(C.max, 'R', -2.0, 0, 0.15);                 // holds it up by his face: "It's rubber"
     if (t > at(11) && t < end(11)) crossArms(C.max);
   } else {
-    const m = walkPath(C.max, [side, P3('classroom', -9.2, -3.4), P3('classroom', 15, -3.4), M.classDoor()], T.exit, t, { idleAt: idle });
+    const m = routeWalk(C.max, set, ROUTE.out, T.exit, t, { idleAt: idle });
     if (m.moving && t < T.exit + 1.2) waveArm(C.max, t, 'R');                                    // one-arm wave as he goes
   }
   // the lunchbox on her desk; the spider: Max's palm -> onto her hand -> on her hand while she shrieks -> back in his hand
