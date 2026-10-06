@@ -6,7 +6,7 @@ import { holdCheck } from '../../../web/lib/holdcheck.js';
 import { W } from './beats.js';
 const T = base.TIMES;
 export const { meta, sky, setup, update, overlay } = holdCheck(base, [
-  [T.screw + 0.25, 'max', 'R', 'screwdriver raised'], [T.screw + 0.55, 'max', 'R', 'screwdriver jab 1 (tip on the floor)'],
+  [T.screw + 0.1, 'max', 'R', 'screwdriver lifting'], [T.screw + 0.55, 'max', 'R', 'screwdriver jab 1 (tip on the floor)'],
   [T.screw + 1.05, 'max', 'R', 'screwdriver jab 2'], [T.ask + 0.5, 'mia', 'R', 'stamp held over the form'],
   [W.no1 - 0.55 + 0.4, 'mia', 'R', 'stamp raised'], [W.no1 - 0.55 + 0.7, 'mia', 'R', 'stamp on the form (DENIED)'],
   [W.california2 + 0.2, 'mia', 'R', 'stamp on the form (APPROVED)'],

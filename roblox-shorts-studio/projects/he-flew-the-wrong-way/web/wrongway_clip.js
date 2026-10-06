@@ -84,8 +84,8 @@ export async function setup(stage) {
   for (const k of Object.keys(PLACES)) S[k] = PLACES[k].userData;
   plane = K.robin(); scene.add(plane); plane.traverse((o) => { if (o.isMesh) o.castShadow = true; });
   car = K.paradeCar(); PLACES.street.add(car); car.traverse((o) => { if (o.isMesh) o.castShadow = true; });
-  stampM = K.rubberStamp(); mia.bones['Arm.R'].add(stampM); stampM.position.set(0, -1.8, 0); stampM.rotation.x = 1.207;
-  screw = K.screwdriver(); max.bones['Arm.R'].add(screw); screw.position.set(0, -1.8, 0);
+  stampM = K.rubberStamp(); mia.bones['Arm.R'].add(stampM); stampM.position.copy(PALM_R); stampM.rotation.x = -STAMP_HIT;
+  screw = K.screwdriver(); max.bones['Arm.R'].add(screw); screw.position.copy(PALM_R);
   tgram = K.telegram(); scene.add(tgram);
 }
 
@@ -100,9 +100,11 @@ function moveTo(x, from, to, t0, s, speed, endHeading) {
   x.moving = moving; return x;
 }
 const sitIn = (x) => { x.sit = true; x.layers = [['sit', 0, 1, false]]; return x; };
-// Mia's stamp arm: at STAMP_HIT the palm is 1.68 forward and the stamp (tilted by -STAMP_HIT in the fist so it stands
-// upright there) meets the form on the desk (top 2.3); at rest it is held up over the form
-const STAMP_HIT = -1.207, STAMP_REST = -1.45;
+// Held props sit at the palm, measured on the pack mesh: (-0.5, -1.3, 0) in the right arm bone's frame (left: +0.5).
+// Mia's stamp arm: at STAMP_HIT the palm is 1.14 forward of the shoulder and the stamp (tilted by -STAMP_HIT in the fist
+// so it stands upright there) meets the form on the desk (top 2.3); at rest it is held up over the form
+const PALM_R = V(-0.5, -1.3, 0), PALM_L = V(0.5, -1.3, 0);
+const STAMP_HIT = -1.07, STAMP_REST = -1.3;
 // office spots: desk centre (0, 0, -3) local; Mia behind it, the visitor in front
 const MIA_DESK = OF(0.6, 0, -6.0), MAX_DESK = OF(0.2, 0, -0.3);
 const MAX_H = Math.PI - 0.75, MIA_H = 0.55;                 // facing each other across the desk, cheated toward the +x camera
@@ -114,7 +116,7 @@ function maxAt(s) {
   let x = st(V(0, -50, 0), 0); x.visible = false;
   const pl = planeAt(s);
   switch (SHOT) {
-    case 'hook': case 'ireland': case 'takeoff': {                          // in his seat
+    case 'hook': case 'ireland': case 'takeoff': case 'east': {             // in his seat
       if (!pl.vis) return x;
       x = sitIn(st(V(), 0, SHOT === 'hook' ? 'happy' : 'cool')); x.inPlane = true;
       if (SHOT === 'hook') { x.look = [-0.85, -0.05]; x.face = s > 1.6 ? 'laugh' : 'happy'; }
@@ -153,7 +155,7 @@ function maxAt(s) {
     case 'whereami': { x = st(MAX_EI, MAX_TALK_H, 'talking'); x.layers = [['talk', s, 1, true]]; x.face = s > W.where - 0.05 ? 'happy' : 'talking'; if (s > W.am + 0.3) x.layers = [['idle', s]]; return x; }
     case 'excuse': { x = st(MAX_EI, 1.0, 'happy'); x.layers = [['shrug', clamp(s - W.misread + 0.1, 0, 0.7), 1, false]]; x.face = s > W.misread ? 'smug' : 'happy'; return x; }
     case 'telegram': {
-      x = st(MAX_EI, 0.9, 'surprised'); x.arms = [['L', 0.25, -1.15], ['R', 0.25, -1.15]]; x.look = [0, 0.32];
+      x = st(MAX_EI, 0.9, 'surprised'); x.arms = [['L', -0.12, -1.2], ['R', -0.12, -1.2]];      // fists on the strip's two top corners x.look = [0, 0.32];
       x.face = s > W.rules ? 'nervous' : 'surprised'; x.telegram = true; return x;
     }
     case 'ship': { x = st(V(), 0, 'happy'); x.onShip = true; x.wave = true; return x; }
@@ -237,7 +239,7 @@ function place(a, x) {
   setExpression(a, x.face);
 }
 const headPos = (a) => { a.bones.Head.updateMatrixWorld(true); return V(0, 0.55, 0).applyMatrix4(a.bones.Head.matrixWorld); };
-const handPos = (a, sd) => { a.bones['Arm.' + sd].updateMatrixWorld(true); return V(0, -1.8, 0).applyMatrix4(a.bones['Arm.' + sd].matrixWorld); };
+const handPos = (a, sd) => { a.bones['Arm.' + sd].updateMatrixWorld(true); return (sd === 'R' ? PALM_R : PALM_L).clone().applyMatrix4(a.bones['Arm.' + sd].matrixWorld); };
 
 // ---------- lighting ----------
 const MODES = {
@@ -319,7 +321,7 @@ export function update(t, stage) {
   if (tgram.visible) {
     const hl = handPos(max, 'L'), hr = handPos(max, 'R'), mid = hl.clone().add(hr).multiplyScalar(0.5);
     tgram.position.set(mid.x, K.EIRE.y, mid.z); tgram.rotation.set(0, max.root.rotation.y, 0);
-    K.setTelegram(tgram, mid.y - K.EIRE.y + 0.15, 0, 9 * easeOut(inv(T.telegram + 0.1, W.broke + 0.3, s)));
+    K.setTelegram(tgram, mid.y - K.EIRE.y + 0.05, 0, 9 * easeOut(inv(T.telegram + 0.1, W.broke + 0.3, s)));
   }
   // cockpit: compass swing, drips, puddle, hole, clouds outside
   if (place0 === 'cockpit') {
@@ -362,12 +364,12 @@ export function update(t, stage) {
     case 'takeoff': look(stage, NY(-2, 3.2, 26), pp.clone().add(V(-6, 0, 0)), 52, 80); break;
     case 'east': { look(stage, SK(lerp(-17, -14, u), lerp(10, 9, u), lerp(-16, -12, u)), SK(0, 5.0, 4), 50, 40); break; }
     case 'radio': look(stage, CK(lerp(4.6, 4.2, u), 6.3, lerp(0.4, 0.8, u)), CK(0.3, 5.2, 3.0), 50, 10); break;
-    case 'leak': look(stage, CK(4.6, 4.4, 4.6), CK(-0.6, 2.4, 0.6), 56, 12); break;
-    case 'screw': look(stage, CK(5.4, 3.1, 3.2), CK(-0.6, 2.9, 0.5), 60, 10); break;
+    case 'leak': look(stage, CK(5.2, 4.0, 5.2), CK(-0.4, 3.3, 0.3), 58, 12); break;
+    case 'screw': look(stage, CK(4.6, 1.3, 4.6), CK(-0.8, 2.4, 0.7), 60, 10); break;
     case 'dublin': look(stage, EI(-13, 5.0, 22), EI(1.5, 4.0, 5), 50, 40); break;
     case 'whereami': look(stage, EI(11.2, 5.0, 15.6), EI(4.65, 4.5, 7.0), 46, 16); break;
-    case 'excuse': look(stage, EI(lerp(8.6, 8.2, u), 4.9, lerp(12.0, 11.4, u)), EI(3.6, 4.6, 7.8), 42, 14); break;
-    case 'telegram': look(stage, EI(lerp(13.5, 13.0, u), 6.0, lerp(18.0, 17.4, u)), EI(5.4, 3.0, 10.6), 48, 16); break;
+    case 'excuse': look(stage, EI(lerp(8.6, 8.2, u), 5.0, lerp(12.0, 11.4, u)), EI(3.6, 5.4, 7.8), 52, 14); break;
+    case 'telegram': look(stage, EI(lerp(13.5, 13.0, u), 6.2, lerp(18.0, 17.4, u)), EI(5.4, 4.0, 10.6), 50, 16); break;
     case 'ship': { const sh = S.sea.ship.position; look(stage, SE(26, 15, sh.z + 52), SE(1, 9.5, sh.z + 17), 46, 60); break; }
     case 'parade': { const c = carAt(s); look(stage, ST(0, lerp(30, 24, u), c.z - K.STREET.z + 40), ST(0, 3, c.z - K.STREET.z - 2), 50, 60); break; }
     case 'bigger': { const c = carAt(s); look(stage, ST(-7.5, 6.0, c.z - K.STREET.z + 19), ST(-0.5, 4.8, c.z - K.STREET.z - 3), 50, 30); break; }
@@ -436,7 +438,7 @@ function routeCard(g, s, t, t0, k) {
 // a big round compass whose needle spins (the excuse)
 function compassCard(g, s, t, t0, k) {
   if (k <= 0) return;
-  const cx = 540, cy = 520, r = 170;
+  const cx = 540, cy = 430, r = 160;
   g.save(); g.translate(cx * s, cy * s); g.scale(k, k);
   g.beginPath(); g.arc(0, 0, (r + 22) * s, 0, 7); g.fillStyle = '#b8893a'; g.fill(); g.lineWidth = 8 * s; g.strokeStyle = '#16141f'; g.stroke();
   g.beginPath(); g.arc(0, 0, r * s, 0, 7); g.fillStyle = '#f2ead6'; g.fill();
@@ -486,11 +488,11 @@ export function overlay(g, s, t) {
   if (SHOT === 'leak' && t > W.fuel - 0.1) bigText(g, s, 'FUEL LEAK!', 540, 440, 130, '#ff6b6b', pop(t, W.fuel - 0.1), -0.04);
   if (SHOT === 'screw' && t > W.screwdriver - 0.1) pill(g, s, 'A HOLE IN THE FLOOR', 540, 440, pop(t, W.screwdriver - 0.1), '#ffd23f', 'rgba(14,18,34,.85)', 52);
   if (SHOT === 'whereami' && head2D.max) bubble(g, s, ['JUST GOT IN FROM', 'NEW YORK.', 'WHERE AM I?'], head2D.max[0] - 40, Math.min(head2D.max[1] - 90, 760), pop(t, T.whereami + 0.05, 0.2, 2), 56);
-  if (SHOT === 'excuse') { compassCard(g, s, t, T.excuse, pop(t, W.clouds2 - 0.1, 0.25, 1.8)); if (t > W.compass2 - 0.1) bigText(g, s, '"MY COMPASS!"', 540, 790, 96, '#ffd23f', pop(t, W.compass2 - 0.1), -0.04); }
+  if (SHOT === 'excuse') { compassCard(g, s, t, T.excuse, pop(t, W.clouds2 - 0.1, 0.25, 1.8)); if (t > W.compass2 - 0.1) bigText(g, s, '"MY COMPASS!"', 540, 720, 96, '#ffd23f', pop(t, W.compass2 - 0.1), -0.04); }
   if (SHOT === 'telegram') {
     const n = Math.round(lerp(0, 600, smooth(inv(W.sent, W.broke, t))));
     pill(g, s, `${n} WORDS`, 540, 420, pop(t, W.sent - 0.1), '#ffd23f', 'rgba(14,18,34,.85)', 60);
-    if (t > W.rules - 0.1) bigText(g, s, 'RULES BROKEN', 540, 580, 104, '#ff6b6b', pop(t, W.rules - 0.1), -0.04);
+    if (t > W.rules - 0.1) bigText(g, s, 'RULES BROKEN', 540, 560, 104, '#ff6b6b', pop(t, W.rules - 0.1), -0.04);
   }
   if (SHOT === 'ship') {
     if (t > W.flying2 - 0.15) stamp(g, s, 'NO FLYING', 540, 440, clamp((t - W.flying2 + 0.15) / 0.18) * out(t, W.home - 0.05, 0.15), '#e0262b', -0.1, 110);
