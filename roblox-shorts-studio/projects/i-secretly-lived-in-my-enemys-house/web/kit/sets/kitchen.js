@@ -525,9 +525,9 @@ export function build(scene) {
   };
   function setState(s = {}) {
     if (s.chapter !== undefined) {
-      const ch = { 2: { time: 'predawn', fridge: 'LILY', fridgeScatter: true, pancakes: 12, plate: null, fridgeOpen: 0, stools: 'out', backDoor: 0 },
-        3: { time: 'night', fridge: 'BE NI', fridgeScatter: true, pancakes: null, plate: null, fridgeOpen: 1, stools: 'tucked', backDoor: 0 },
-        11: { time: 'morning', fridge: 'BE NICE\n2 SKYE', fridgeScatter: true, pancakes: 8, plate: null, fridgeOpen: 0, stools: 'out', backDoor: 0 } }[s.chapter];
+      const ch = { 2: { time: 'predawn', fridge: 'LILY', fridgeScatter: true, pancakes: 12, plate: null, fridgeOpen: 0, stools: 'out', backDoor: 0, stoolX: null },
+        3: { time: 'night', fridge: 'BE NI', fridgeScatter: true, pancakes: null, plate: null, fridgeOpen: 1, stools: 'tucked', backDoor: 0, stoolX: null },
+        11: { time: 'morning', fridge: 'BE NICE\n2 SKYE', fridgeScatter: true, pancakes: 8, plate: null, fridgeOpen: 0, stools: 'out', backDoor: 0, stoolX: 'three' } }[s.chapter];
       if (!ch) return;          // another set's chapter: nothing to do here
       Object.assign(state, ch, { chapter: s.chapter });
     }
@@ -541,6 +541,17 @@ export function build(scene) {
     doorPivot.rotation.y = -Math.max(0, Math.min(1, state.fridgeOpen ?? 0)) * 1.75;
     const tucked = (state.stools ?? 'out') === 'tucked';
     stools.forEach((st) => { st.position.z = tucked ? -1.75 : STOOL_Z; });
+    // stoolX: the stools' x positions (1-4 entries, left to right); stools beyond the list are hidden. The sit marks
+    // island_stool_N, island_plate_N, island_phone_3 and backpack_floor_3 move with them. 'three' = [-4.2, 0, 4.2]
+    // (neighbours' arms clear at 4.2 apart); default = the four at -3.6/-1.2/1.2/3.6.
+    const sx = state.stoolX === 'three' ? [-4.2, 0, 4.2] : (state.stoolX || STOOL_X);
+    stools.forEach((st, i) => { st.visible = i < sx.length; if (i < sx.length) st.position.x = sx[i]; });
+    sx.forEach((x, i) => {
+      const n = i + 1, wx = OFFSET.x + x;
+      if (marks[`island_stool_${n}`]) marks[`island_stool_${n}`].pos.x = wx;
+      if (marks[`island_plate_${n}`]) marks[`island_plate_${n}`].pos.x = wx;
+      if (n === 3) { marks.island_phone_3.pos.x = wx + 0.8; marks.backpack_floor_3.pos.x = wx + 1.0; }
+    });
     // pancakes: null hides the plate; n shows n pancakes
     const n = state.pancakes;
     stack.visible = n !== null && n !== undefined;
