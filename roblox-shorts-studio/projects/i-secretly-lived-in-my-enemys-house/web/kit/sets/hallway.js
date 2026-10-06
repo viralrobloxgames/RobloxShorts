@@ -43,6 +43,17 @@ export function build(scene) {
     box(4.5, 0.12, 0.3, trimM, -2, H - 0.05, -1.6), box(4.5, 0.12, 0.3, trimM, -2, H - 0.05, 1.6), box(0.3, 0.12, 3.5, trimM, -4.1, H - 0.05, 0), box(0.3, 0.12, 3.5, trimM, 0.1, H - 0.05, 0));
   walls.front.visible = false;
   group.userData.walls = walls;
+  // set extension on the camera side (SA1): floor, side walls and ceiling run on to z 34 and the stair end is closed,
+  // so no camera behind the (hidden) front wall line ever sees past the set
+  const ext = new THREE.Group(); ext.name = 'camera_side_extension'; group.add(ext);
+  ext.add(box(36, 0.4, 29.5, floorMat('#946642', 4, [7, 6]), 0.5, -0.2, 19.75, false));
+  ext.add(box(0.4, H, 29.5, wallM, -16.9, H / 2, 19.75, false), box(0.4, H, 29.5, wallM, 18.3, H / 2, 19.75, false));
+  ext.add(box(36, 0.4, 29.5, ceilM, 0.5, H + 0.2, 19.75, false), box(36, H, 0.4, wallM, 0.5, H / 2, 34.6, false));
+  ext.add(box(36, 0.6, 0.15, trimM, 0.5, 0.3, 34.35, false));
+  for (const x of [-16.65, 18.05]) ext.add(box(0.15, 0.6, 29.5, trimM, x, 0.3, 19.75, false));
+  for (const p of ext.children) p.castShadow = false;
+  // the stair end: a wall past the landing and a dark stairwell wall, top to bottom
+  ext.add(box(0.4, H + 14, 10.6, wallM, 18.3, H / 2 - 7, -0.3, false));
   // the dark attic void above the hatch, with two rafters
   const voidM = std('#1a130d', { roughness: 1 });
   group.add(box(8, 0.3, 7, voidM, -2, H + 4.5, 0, false), box(0.3, 4.5, 7, voidM, -6, H + 2.4, 0, false), box(0.3, 4.5, 7, voidM, 2, H + 2.4, 0, false), box(8, 4.5, 0.3, voidM, -2, H + 2.4, -3.5, false), box(8, 4.5, 0.3, voidM, -2, H + 2.4, 3.5, false));
