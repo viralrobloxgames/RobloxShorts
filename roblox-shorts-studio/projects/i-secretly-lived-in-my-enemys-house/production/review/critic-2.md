@@ -98,3 +98,126 @@ full-res single frames wherever there was movement, contact, a hand-off or a sit
 - **ch03 0:22.0-0:24.6 [2:32.0-2:34.6] (f661-740), animation, should.** In the pantry-gap whisper, the face pops
   scheming → default → scheming (f661/f671), and the mouth never moves for a 2.6 s line.
 
+## ch04 "Cinnamon" (film 3:17-4:18)
+
+### Interpenetration / walking
+- **ch04 0:00.0-0:00.3 [3:17.0-3:17.3] (f1-10), interpenetration + walking, MUST.**
+  - Max is seated at f1. By f4 (0.1 s) he is standing with no stand-up anim.
+  - At f7 he walks *through* the front of his own desk: the desk's front leg passes through his legs and torso.
+  - He then steps into the aisle (f10). This is the same "walks through desks" problem the user saw at 0:45.
+  - Fix: stand-up anim (push the chair back, rise over about 0.5 s), then sidestep into the aisle and walk round
+    the desk end. If the boundary needs him walking on frame 0, start him already in the aisle.
+- **ch04 0:55.1-0:55.9 [4:12.1-4:12.9] (f1653-1677), interpenetration + walking, MUST.**
+  - Max walks back to his desk *through the desk top*: the desk crosses his waist at f1666-f1668 with his legs under
+    it.
+  - He arrives on the far side and is seated by f1675.
+  - The whole return trip (turn, walk 2 rows, sit) takes 0.75 s, so he slides and pops.
+  - Fix: path down the aisle to the chair side of `desk_max`, then a 0.6 s sit-down onto the seat. Give the walk
+    about 1.5 s; trim Skye's stare if time is short.
+- **ch04 0:11.6-0:13.3 and 0:19.0-0:22.6 [3:28.6-3:30.3, 3:36.0-3:39.6] (f351-400, f571-680), interpenetration,
+  MUST.** In the `mcu_max` reverse, Max's left fist (screen-right) is buried in Skye's shoulder and sleeve at the
+  bottom-right of frame (full-res f361). Fix: pull his L arm back to his side or onto the desk edge in front of
+  her. Keep 0.3 stud clear of her body.
+- **ch04 0:30.1-0:37.0 [3:47.1-3:54.0] (f904-1110), interpenetration, should.** In `two_shot_close`, Skye's L
+  forearm reaches out and ends inside Max's chest (full-res f931): she sits at arm's length, but her hand is in front of
+  his star logo with no depth gap. Fold her arms on the desk.
+
+### Props
+- **ch04 0:54.5-0:55.4 [4:11.5-4:12.4] (f1636-1663), props, MUST.** The "Want half?" hand-off teleports the half:
+  - It sits on Skye's desk under Max's L fist (f1626-1636).
+  - Then it *floats in mid-air* in front of Max's chest with no hand touching it (f1645-1651).
+  - Then it pops into Skye's palm behind his back as he turns (f1653-1657).
+  - The sandwich is never split: the whole sandwich stays in his R fist.
+  - Fix: he breaks it in two with both hands at chest height and holds the half out in his R palm. Skye's R hand
+    meets it, and the prop is re-parented on the contact frame. Only then does he turn.
+- **ch04 0:05.0-0:16.6 [3:22.0-3:33.6] (f151-500), props, MUST.**
+  - The cookie is never in a palm. It is glued flat under or on top of his closed fist: at f121-151 it hangs under
+    the fist at his side, and from f161 it rests on the knuckles of a rigid forward arm.
+  - In the reverse (f351-400) it is not in his hand at all. It floats beside the fist, over an orange chair
+    (full-res f361).
+  - He never puts it on her desk ("puts the cookie down", S7). It simply appears there in the 0:17.0 insert,
+    half under Skye's hand (f511).
+  - Fix: open-palm hold (cookie on the palm, palm up), offered *toward Skye*, not toward the lens. Add a reach to
+    set it down on her desk before the cut to 0:17.
+- **ch04 0:05.3-0:23.0 [3:22.3-3:40.0], props/continuity, should.** The sandwich changes hands and places:
+  - It starts on Skye's desk under Max's L fist (f161-500).
+  - Then it is in his R fist in the reverse (f571+), still as one whole block.
+  - It stays in his R fist in the two-shot from 0:23 on.
+  - Plan: sandwich in the L hand all along, R hand free after the cookie. Pick one hand and keep it there.
+
+### Poses / animation
+- **ch04 0:05.3-0:27.3 and 0:44.1-0:55.0 [3:22.3-3:44.3, 4:01.1-4:12.0], poses, MUST.** In every `two_shot_desk`,
+  Max's R arm is locked straight out at the camera at shoulder height for 10-20 s at a time, a rigid "zombie arm"
+  holding the cookie, then the sandwich. Skye's R arm (screen-right) is a big white block angled *up* off the desk
+  toward the lens, resting on nothing. Both read as broken or robotic limbs, and together they fill the right third of
+  frame.
+  - Fix Max: arm relaxed at about 30-45° forward, prop at chest height toward Skye, idle sway.
+  - Fix Skye: both forearms flat on the desk (or chin on hand for S10).
+- **ch04 0:44.0-0:44.3 [4:01.0-4:01.3] (f1321-1330), poses, MUST.** During the push from `two_shot_close` to
+  `two_shot_desk`, Max's arms are spread wide to both sides (one out to the left edge, one onto Skye's desk), which
+  reads as a T-pose. Start the shot on the "straighten up" pose.
+- **ch04 0:55.1-0:60.9 [4:12.1-4:17.9] (f1653-1833), poses, MUST.** In the end shot Skye holds the half-sandwich at
+  the end of a straight arm stuck out horizontally at shoulder height (one-arm T) for 6 s, pointed at the aisle. Her
+  other arm is a white block filling the bottom-right corner. Plan and boundary: the half sits in her R palm at
+  chest height. Fix: bend the elbow, bring the hand to chest height, and drop the far arm onto the desk.
+- **ch04 0:30.1-0:37.0 [3:47.1-3:54.0], poses, should.** For "Why is there a cobweb..." and "...my dad's pancakes?"
+  Max does not lean in or sniff (S12/S14). He stands still with his face swapping only.
+- **ch04 0:33.1-0:34.4 [3:50.1-3:51.4], poses, should.** On "It's fashion" there is no hand pat to the hair (S13).
+- **ch04 0:27.3-0:28.8 [3:44.3-3:45.8], poses, should.** On "What did it say?" there is no chin-on-hand (S10).
+- **ch04 0:40.8-0:43.8 and 0:58.0-0:60.9 [3:57.8-4:00.8, 4:15.0-4:17.9], staging, should.**
+  - On "Cinnamon is a very popular spice, Max." she does not turn her head away (S17).
+  - On "Stop it, face." there is no head snap to the front (S22). Only the face texture changes.
+- **ch04 0:04.0-0:10.0 [3:21.0-3:27.0], staging, should.** For "Hey, Skye. Want my cookie?" Skye stares straight
+  at the lens instead of up at Max (S2: "turns head up to him"), and Max talks to camera, not to her.
+
+### Camera
+- **ch04 0:03.6-0:10.0, 0:15.0-0:16.6, 0:23.0-0:27.3, 0:44.0-0:55.0 [3:20.6-3:27.0, 3:32.0-3:33.6,
+  3:40.0-3:44.3, 4:01.0-4:12.0], camera, MUST.**
+  - `two_shot_desk` sits low behind a row-1 chair. Its blue backrest fills the middle of frame and hides Max's body
+    and both desks.
+  - A huge out-of-focus **green blob** (a chair seat right at the lens) covers the bottom-right 30-40% of frame;
+    at f1330 it covers half of frame.
+  - This is the "unexplained blob in frame" the user flagged.
+  - Fix: raise the camera above the chair backs (eye level about 4.5) or delete the row-1 chair from this cam's view.
+- **ch04 0:30.1-0:37.0 [3:47.1-3:54.0], camera, MUST.**
+  - `two_shot_close` is a very low cam between the two. Max's teal forearm and a tan blur (his fist) are huge blocks
+    across the bottom 35% of frame (full-res f931).
+  - The camera sits nearly inside the desk.
+  - Fix: pull back 2 studs and up 1, and frame from mid-chest up.
+- **ch04 0:11.6-0:13.3, 0:19.0-0:22.6, 0:29.1-0:30.0, 0:39.8-0:40.8 [3:28.6-3:30.3, 3:36-3:39.6, 3:46.1-3:47.0,
+  3:56.8-3:57.8], camera, should.**
+  - `mcu_max` and `cu_max` are shot from *behind Skye's head*. Her hair and cobweb fill the right 35% of frame.
+  - The plan forbids any camera behind Skye's head.
+  - Fix: a clean 3/4 single on Max from the board side, with at most a sliver of her shoulder.
+- **ch04 0:37.1-0:43.8 and 0:47.1-0:52.2 [3:54.1-4:00.8, 4:04.1-4:09.2], camera, should.** In `mcu_skye`, half of
+  Max's face (one eye and the hair edge) is cut by the left frame edge for about 7 s. Either lose him entirely or
+  include his whole head.
+
+### Identity / captions
+- Identity is fine: Skye's cobweb is on the left of her hair throughout, and wardrobe matches. The speaker is on
+  screen with the right caption colour for every line I checked.
+
+## Must-fix table
+
+| # | Chapter | Time (chapter) | Film | Frames | Category | Issue | Fix |
+|---|---|---|---|---|---|---|---|
+| 1 | ch03 | 0:12.6-0:42.2 | 2:22.6-2:52.2 | 379-1267 | staging | Skye is plainly visible through the pantry louvres beside and in front of Max | solid or opaque pantry door, Skye deep inside, re-angle `island_counter` |
+| 2 | ch03 | 0:49.5-0:51.5 | 2:59.5-3:01.5 | 1487-1547 | staging | Skye "ducks" in open view of Dad on the stairs | duck on the far side of the island, out of Dad's line of sight |
+| 3 | ch03 | 0:10.0 / 0:50.2 | 2:20 / 3:00.2 | 301-313, 1507-1547 | interpenetration | Max and Dad walk outside the staircase, through the banister, in mid-air | path on the tread centre-line |
+| 4 | ch03 | 0:09.6-0:10.0 | 2:19.6-2:20.0 | 290-301 | interpenetration | Skye runs through the louvred door panel | open the door first, path through the gap |
+| 5 | ch03 | 0:16.8-0:18.6 | 2:26.8-2:28.6 | 505-558 | interpenetration | Max's forearm is sunk into the fridge door | step back, hand flat on the surface |
+| 6 | ch03 | 0:44.4-0:49.2 | 2:54.4-2:59.2 | 1333-1477 | props | sandwich teleports to Skye, held on a rigid arm half inside the island, size change | reach + chest-height palm hold, keep scale |
+| 7 | ch03 | 0:37.2-0:38.2 | 2:47.2-2:48.2 | 1117-1147 | props | butter knife with no hand, through the bread, then floating | hand on the handle, blade along the edge |
+| 8 | ch03 | 0:32.5-0:42.2 | 2:42.5-2:52.2 | 977-1267 | props | ham through the flashlight on the island | separate the props |
+| 9 | ch03 | 0:42.5-0:42.8 | 2:52.5-2:52.8 | 1277-1290 | camera | Max's head huge and cut in the fg, walks through camera | start after he clears, or route him behind the island |
+| 10 | ch03 | 0:60.2-0:66.8 | 3:10.2-3:16.8 | 1807-2013 | identity | Skye's face renders dark brown in the low angle; sandwich stuck to her forearm, not half-eaten | frontal fill, half-eaten sandwich in R palm |
+| 11 | ch04 | 0:00.0-0:00.3 | 3:17.0-3:17.3 | 1-10 | walking | Max pops from sitting to standing and walks through his desk | stand-up anim, walk round the desk end |
+| 12 | ch04 | 0:55.1-0:55.9 | 4:12.1-4:12.9 | 1653-1677 | walking | Max walks through his desk top and sits in 0.75 s | aisle path to the chair side, real sit-down, about 1.5 s |
+| 13 | ch04 | 0:11.6-0:22.6 | 3:28.6-3:39.6 | 351-680 | interpenetration | Max's L fist buried in Skye's shoulder in the reverse | pull the arm back |
+| 14 | ch04 | 0:54.5-0:55.4 | 4:11.5-4:12.4 | 1636-1663 | props | the half floats mid-air, then teleports into Skye's palm; sandwich never split | split with both hands, palm-to-palm hand-off on the contact frame |
+| 15 | ch04 | 0:05.0-0:16.6 | 3:22.0-3:33.6 | 151-500 | props | cookie glued under or on the fist, floats free in the reverse, appears on her desk with no put-down | palm-up hold toward Skye, put-down reach |
+| 16 | ch04 | 0:05.3-0:55.0 | 3:22.3-4:12.0 | two-shots | poses | Max's rigid zombie arm at the lens for 10-20 s; Skye's arm angled up into the air | relaxed holds; Skye's forearms on the desk |
+| 17 | ch04 | 0:44.0-0:44.3 | 4:01.0-4:01.3 | 1321-1330 | poses | Max's arms spread wide (T) during the camera push | start on the straighten-up pose |
+| 18 | ch04 | 0:55.1-0:60.9 | 4:12.1-4:17.9 | 1653-1833 | poses | end shot: Skye's one-arm T holding the half for 6 s | bent elbow, half at chest height |
+| 19 | ch04 | two_shot_desk shots | 3:20.6-4:12.0 | see above | camera | green fg blob plus blue chair-back fill a third to half of frame | raise the cam or clear row-1 chair from view |
+| 20 | ch04 | 0:30.1-0:37.0 | 3:47.1-3:54.0 | 904-1110 | camera | `two_shot_close` filled with giant fg forearm and fist blobs | pull back and up |
