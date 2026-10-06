@@ -1,2 +1,2 @@
-STATUS: WORKING
-review-2: ch07, ch08, ch09, ch11 reviewed and pushed (production/review/review-2.md); package first pass pushed. Waiting for ch10 (and ch05) for ch10 review + whole-film global checks. Max voice swap not yet announced in requests.md.
+STATUS: DONE
+review-2: ch07-ch11 reviewed + whole-film global checks done (production/review/review-2.md). Film 11:50.1, -14.11 LUFS, -1.07 dBTP, all seams clean, Max = max_boy2 everywhere. 10 musts (table at the end of the review). Waiting for the orchestrator to re-check fixes.
