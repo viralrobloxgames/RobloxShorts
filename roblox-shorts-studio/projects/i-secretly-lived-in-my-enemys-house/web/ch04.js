@@ -274,3 +274,12 @@ export function update(t, stage) {
 
 // ---------- overlay ----------
 export function overlay(g, s, t) { K.dayCard(g, s, t, CARD); }
+
+// ---------- for the hold check (web/ch04_hold.js) ----------
+export const cast = () => ({ skye: C.skye, max: C.max, ...Object.fromEntries(EXTRAS.map((e, i) => ['extra' + i, e])) });
+export const HOLDS = [
+  [1.0, 'max', 'R', 'cookie (walking over)'], [1.0, 'max', 'L', 'sandwich halves (walking over)'],
+  [T.offer() + 0.5, 'max', 'R', 'cookie held out'], [T.show() + 0.5, 'max', 'L', 'sandwich shown'],
+  [T.split() + 0.5, 'max', 'R', 'half held out'], [T.split() + 0.5, 'max', 'L', 'other half'],
+  [T.take() + 0.8, 'skye', 'R', 'half in her hand'], [L.end, 'skye', 'R', 'half, last frame'],
+];

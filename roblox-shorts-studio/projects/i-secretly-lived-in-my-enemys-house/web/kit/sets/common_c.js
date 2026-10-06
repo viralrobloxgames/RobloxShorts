@@ -82,23 +82,37 @@ export function wallWithHoles(len, h, thick, m, holes = []) {
 // normal pointing into the room (world space). Checked on every render through scene.onBeforeRender, so a camera
 // anywhere outside a wall sees straight in. Chapters don't need to do anything.
 const registries = new WeakMap();
-export function autoHideWalls(scene, walls, margin = 0.4) {
-  let list = registries.get(scene);
-  if (!list) {
-    list = []; registries.set(scene, list);
+function registry(scene, margin = 0.4) {
+  let reg = registries.get(scene);
+  if (!reg) {
+    reg = { walls: [], fns: [] }; registries.set(scene, reg);
     const prev = scene.onBeforeRender;
     const v = new THREE.Vector3();
     scene.onBeforeRender = function (renderer, sc, camera, rt) {
-      for (const w of list) {
+      for (const w of reg.walls) {
         if (w.forced !== undefined) { w.obj.visible = w.forced; continue; }
-        v.copy(camera.getWorldPosition(v)).sub(w.point);
+        camera.getWorldPosition(v).sub(w.point);
         w.obj.visible = v.dot(w.normal) > -margin;
       }
+      for (const f of reg.fns) f(camera);
       if (prev) prev.call(this, renderer, sc, camera, rt);
     };
   }
-  list.push(...walls);
+  return reg;
 }
+// Walls never block the kit cameras' clearShot (they hide whenever the camera is outside them).
+export function autoHideWalls(scene, walls) { for (const w of walls) w.obj.traverse((o) => { o.userData.noCamBlock = true; }); registry(scene).walls.push(...walls); }
+// Run fn(camera) right before every render of the scene (after all of update()).
+export function onSceneRender(scene, fn) { registry(scene).fns.push(fn); }
+
+// Practicals for K.applyLight / K.setPractical (lighting.js): each entry in set.lights is a proxy light (never added to
+// the scene) whose intensity the kit switches (0..1+); the set multiplies its real lights by it right before each
+// render, together with its own state (e.g. the fridge light only shines while the door is open). A proxy nobody has
+// switched (intensity -1) uses the set's time-of-day default.
+// The proxy is a black, zero-range light added to the set group so render.mjs's frame fingerprint sees its level.
+// Untouched = intensity -1 and hidden (a hidden light never reaches the shader).
+export function proxyLight(parent) { const p = new THREE.PointLight('#000000', -1, 0.01); p.visible = false; p.userData.base = 1; p.userData.proxy = true; if (parent) parent.add(p); return p; }
+export function proxyLevel(p, fallback) { return p.intensity < 0 ? fallback : (p.visible === false ? 0 : p.intensity); }
 
 // Marks / cams in world space from set-local numbers.
 export function markMaker(offset) {
@@ -114,5 +128,5 @@ export function useCam(camera, c) {
 // A practical light with a base intensity; set via setPractical(light, level 0..1).
 export function practical(light, base) { light.userData.base = base; light.userData.practical = true; light.intensity = base; return light; }
 export function setPractical(light, level) { light.intensity = light.userData.base * level; light.visible = level > 0; }
-// Sitting: hip at the seat top, so the actor's root y = seatTop - 2 * actorScale (R6 hip pivot is 2 studs up).
-export const SIT_ROOT = (seatTop, scale = 1) => seatTop - 2 * scale;
+// Sitting (kit-cast seatY): root y = seatTop - 1.5 * actorScale (thighs horizontal on the seat).
+export const SIT_ROOT = (seatTop, scale = 1) => seatTop - 1.5 * scale;

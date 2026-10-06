@@ -158,10 +158,12 @@ export function build(scene) {
     inside_door: M(6, 0.6, -10.2, PI, { note: 'just inside, slipping in (feet at y 0.6)' }),
     bins_hide: M(13.2, 0, -4.8, PI * 0.75, { note: 'beside the bins, ducked' }),
     lawn_center: M(0, 0, 10, PI, { note: 'middle of the lawn facing the house' }),
+    back_step: M(6, 0.6, -5.6, 0, { note: 'on the step just outside the back door, facing the garden (Ch2: eating the pancake)' }),
   };
+  marks.yard_start = marks.gate; marks.inside_back_door = marks.inside_door;
   const cams = {
     dusk_wide: C([2, 15, 50], [0, 7, -2], 50, { note: 'the back of the house and the garden; the gate bottom left' }),
-    gate: C([-14, 5.2, 19], [-10, 4.4, 30], 44, { note: 'from the garden toward the gate: Skye slipping in, facing camera' }),
+    gate: C([-4.5, 5.2, 21.5], [-10, 4.4, 30], 44, { note: 'from the garden toward the gate: Skye slipping in, facing camera' }),
     garden_follow: C([-12, 5.5, 18], [4, 4.5, -4], 44, { note: 'along the path to the back door' }),
     back_door: C([14, 5, 5], [6, 4.6, -7], 42, { note: 'the back door 3/4 from the right; whoever stands at back_door' }),
     back_door_ots: C([7.4, 6.4, -1.8], [5.6, 4.6, -8.4], 44, { note: 'behind Skye at the door as it opens' }),
@@ -169,16 +171,18 @@ export function build(scene) {
     from_inside: C([6, 5.2, -14.5], [6, 4, 0], 50, { note: 'from the hallway inside out through the open door (needs backDoor > 0.6)' }),
     establishing_day: C([-34, 26, 66], [0, 10, -10], 42, { note: 'high wide of the house and the garden (day establishing)' }),
     attic_window: C([2, 20, 14], [0, EAVES + 4.2, -8], 34, { note: 'the round attic window' }),
+    back_step_mcu: C([8.6, 4.9, -1.2], [6, 4.6, -5.6], 34, { note: '3/4 MCU on whoever stands at back_step' }),
   };
+  Object.assign(cams, { back_door_wide: cams.garden_follow, back_door_close: cams.back_door_ots });
 
   // ---------------------------------------------------------------- state
   const state = {};
   const lights = { porch, hall: hallLight };
   function setState(s = {}) {
-    if (s.chapter !== undefined) { Object.assign(state, ({ 1: { time: 'dusk', backDoor: 0 } })[s.chapter] || {}, { chapter: s.chapter }); }
+    if (s.chapter !== undefined) { const ch = ({ 1: { time: 'dusk', backDoor: 0 }, 2: { time: 'predawn', backDoor: 0, windows: 0.6, porchLight: 0 } })[s.chapter]; if (!ch) return; Object.assign(state, ch, { chapter: s.chapter }); }
     for (const k of Object.keys(s)) if (k !== 'chapter') state[k] = s[k];
     const t = state.time || 'day';
-    const winOn = state.windows ?? (t === 'dusk' ? 0.8 : t === 'night' ? 1 : 0);
+    const winOn = state.windows ?? (t === 'dusk' ? 0.8 : t === 'night' || t === 'predawn' ? 1 : 0);
     for (const m of winGlass) { m.emissiveIntensity = 1.6 * winOn; m.color.set(winOn > 0 ? m.userData.color : '#3a4a60'); m.emissive.set(winOn > 0 ? m.userData.color : '#000000'); }
     atticGlassM.emissiveIntensity = state.atticGlow ?? 0; if (state.atticGlow) atticGlassM.emissive.set('#9fdcff');
     const pl = state.porchLight ?? (t === 'dusk' || t === 'night' ? 1 : 0);
@@ -188,5 +192,7 @@ export function build(scene) {
     gatePiv.rotation.y = (state.gate ?? 0.35) * 1.4;        // swings into the garden
   }
   setState({ time: 'day' });
-  return { id: 'exterior', group, marks, cams, lights, setState, state, walls: [] };
+  // door helper (ch01): setDoor('back_door' | 'gate', 0..1)
+  const setDoor = (name, u) => setState({ [name === 'gate' ? 'gate' : 'backDoor']: u });
+  return { id: 'exterior', group, marks, cams, lights, setState, setDoor, state, walls: [] };
 }

@@ -46,7 +46,7 @@ const M = {
 let C, A, P = {}, beam, RED = null;
 export async function setup(stage) {
   await K.buildSets(stage, ['bedroom', 'classroom']);
-  K.setState({ chapter: Math.max(1, CH) });
+  K.setState({ chapter: Math.max(1, CH), closet: 0.35 });   // persistent things + this chapter's set details (closet doors ajar)
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.max, 'max_pjs');
   A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'point']);
@@ -58,14 +58,16 @@ export async function setup(stage) {
 // Each shot runs from its line's start (+ off) to the next shot. set/light/practicals pick the place and the light;
 // cam(stage, t) frames whoever speaks. Cuts follow the speaker; a scene's line is set once (setLine) at its first shot.
 const SHOTS = [
-  { line: 1, off: 0, id: 'hook', set: 'bedroom', light: 'night_moon', cam: (s) => K.overShoulder(s, C.skye, C.max, 'ms', { fov: 40 }) },
-  { line: 1, off: 1.0, id: 'skye_cu', set: 'bedroom', light: 'night_moon', cam: (s) => K.camOn(s, C.skye, 'cu') },
+  { line: 1, off: 0, id: 'hook', set: 'bedroom', light: 'night_moon', cam: (s) => named(s, 'bedroom', 'closet_pov', () => K.overShoulder(s, C.skye, C.max, 'ms', { fov: 40 })) },
+  { line: 1, off: 1.0, id: 'skye_cu', set: 'bedroom', light: 'night_moon', cam: (s) => named(s, 'bedroom', 'closet_pov_cu', () => K.camOn(s, C.skye, 'cu')) },
   { line: 2, off: 0, id: 'max_asks', set: 'bedroom', light: 'night_moon', cam: (s) => K.overShoulder(s, C.skye, C.max, 'mcu') },
-  { line: 3, off: 0, id: 'skye_whisper', set: 'bedroom', light: 'night_moon', cam: (s) => K.camOn(s, C.skye, 'cu') },
+  { line: 3, off: 0, id: 'skye_whisper', set: 'bedroom', light: 'night_moon', cam: (s) => named(s, 'bedroom', 'closet_pov_cu', () => K.camOn(s, C.skye, 'cu')) },
   { line: 4, off: -0.25, id: 'class_two', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.twoShot(s, C.max, C.skye) },
   { line: 4, off: 1.2, id: 'max_mocks', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.overShoulder(s, C.skye, C.max, 'mcu') },
   { line: 5, off: 0, id: 'skye_back', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.overShoulder(s, C.max, C.skye, 'mcu') },
 ].map((x) => ({ ...x, start: at(x.line, x.off) })).sort((a, b) => a.start - b.start);
+// A set's named camera when the set has it (sets know their own geometry: e.g. inside the closet), else a kit framing.
+function named(stage, setId, name, fallback) { const c = K.getSet(setId).cams[name]; return c ? K.setCam(stage, c) : fallback(); }
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
 // ---------- update: everything for time t ----------
