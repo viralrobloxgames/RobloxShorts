@@ -1,0 +1,46 @@
+{
+ "voice": "max_kid",
+ "text": "I'm not scared. I'm just very alert.",
+ "seed": 40670,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I'm",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "not",
+   "start": 0.26,
+   "end": 0.4
+  },
+  {
+   "word": "scared.",
+   "start": 0.4,
+   "end": 0.86
+  },
+  {
+   "word": "I'm",
+   "start": 1.42,
+   "end": 1.58
+  },
+  {
+   "word": "just",
+   "start": 1.58,
+   "end": 1.74
+  },
+  {
+   "word": "very",
+   "start": 1.74,
+   "end": 2.08
+  },
+  {
+   "word": "alert.",
+   "start": 2.08,
+   "end": 2.46
+  }
+ ],
+ "words_md5": "c5f938830ed5596959d04d89d11035df",
+ "whisper": "small.en"
+}

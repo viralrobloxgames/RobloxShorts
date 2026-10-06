@@ -1,0 +1,51 @@
+{
+ "voice": "brittney",
+ "text": "Sure. That's why you hid under your blanket.",
+ "seed": 18032,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Sure,",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "word": "that's",
+   "start": 0.94,
+   "end": 1.26
+  },
+  {
+   "word": "why",
+   "start": 1.26,
+   "end": 1.38
+  },
+  {
+   "word": "you",
+   "start": 1.38,
+   "end": 1.5
+  },
+  {
+   "word": "hid",
+   "start": 1.5,
+   "end": 1.66
+  },
+  {
+   "word": "under",
+   "start": 1.66,
+   "end": 1.82
+  },
+  {
+   "word": "your",
+   "start": 1.82,
+   "end": 2.0
+  },
+  {
+   "word": "blanket.",
+   "start": 2.0,
+   "end": 2.26
+  }
+ ],
+ "words_md5": "46c12e53a50cccdcaa0e67a72c27948d",
+ "whisper": "small.en"
+}
