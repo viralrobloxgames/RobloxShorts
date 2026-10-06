@@ -3,5 +3,44 @@
  "text": "Oh, and nothing scares you, I guess?",
  "seed": 1608,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Oh,",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "and",
+   "start": 0.56,
+   "end": 0.68
+  },
+  {
+   "word": "nothing",
+   "start": 0.68,
+   "end": 0.94
+  },
+  {
+   "word": "scares",
+   "start": 0.94,
+   "end": 1.32
+  },
+  {
+   "word": "you,",
+   "start": 1.32,
+   "end": 1.54
+  },
+  {
+   "word": "I",
+   "start": 1.58,
+   "end": 1.66
+  },
+  {
+   "word": "guess?",
+   "start": 1.66,
+   "end": 1.84
+  }
+ ],
+ "words_md5": "86e7dbf1d25a5dddcbcba0e52842ce6a",
+ "whisper": "small.en"
 }

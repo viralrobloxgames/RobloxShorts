@@ -3,5 +3,14 @@
  "text": "Maaax.",
  "seed": 57678,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "max",
+   "start": 0.0,
+   "end": 0.56
+  }
+ ],
+ "words_md5": "79a2e789c69e4dca39adaf1cbc2864f8",
+ "whisper": "small.en"
 }

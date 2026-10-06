@@ -1,0 +1,1133 @@
+{
+ "chapter": 1,
+ "duration": 63.485,
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.561,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "secretly",
+   "start": 0.561,
+   "end": 0.901,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "lived",
+   "start": 0.901,
+   "end": 1.341,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "in",
+   "start": 1.341,
+   "end": 1.561,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "my",
+   "start": 1.561,
+   "end": 1.701,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "enemy's",
+   "start": 1.701,
+   "end": 2.141,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "house",
+   "start": 2.141,
+   "end": 2.261,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "for",
+   "start": 2.261,
+   "end": 2.521,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "a",
+   "start": 2.521,
+   "end": 2.641,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "week,",
+   "start": 2.641,
+   "end": 2.841,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "and",
+   "start": 2.841,
+   "end": 3.241,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "he",
+   "start": 3.241,
+   "end": 3.381,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "had",
+   "start": 3.381,
+   "end": 3.501,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "no",
+   "start": 3.501,
+   "end": 3.801,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "idea.",
+   "start": 3.801,
+   "end": 4.221,
+   "speaker": "VO",
+   "line": 1
+  },
+  {
+   "word": "Hello?",
+   "start": 4.763,
+   "end": 5.123,
+   "speaker": "MAX",
+   "line": 2
+  },
+  {
+   "word": "Is",
+   "start": 5.683,
+   "end": 5.923,
+   "speaker": "MAX",
+   "line": 2
+  },
+  {
+   "word": "somebody",
+   "start": 5.923,
+   "end": 6.123,
+   "speaker": "MAX",
+   "line": 2
+  },
+  {
+   "word": "in",
+   "start": 6.123,
+   "end": 6.383,
+   "speaker": "MAX",
+   "line": 2
+  },
+  {
+   "word": "my",
+   "start": 6.383,
+   "end": 6.523,
+   "speaker": "MAX",
+   "line": 2
+  },
+  {
+   "word": "closet?",
+   "start": 6.523,
+   "end": 6.763,
+   "speaker": "MAX",
+   "line": 2
+  },
+  {
+   "word": "Huh.",
+   "start": 8.287,
+   "end": 8.567,
+   "speaker": "MAX",
+   "line": 3
+  },
+  {
+   "word": "Just",
+   "start": 8.927,
+   "end": 9.227,
+   "speaker": "MAX",
+   "line": 3
+  },
+  {
+   "word": "hoodies.",
+   "start": 9.227,
+   "end": 9.707,
+   "speaker": "MAX",
+   "line": 3
+  },
+  {
+   "word": "That",
+   "start": 10.759,
+   "end": 11.079,
+   "speaker": "SKYE",
+   "line": 4
+  },
+  {
+   "word": "was",
+   "start": 11.079,
+   "end": 11.239,
+   "speaker": "SKYE",
+   "line": 4
+  },
+  {
+   "word": "way",
+   "start": 11.239,
+   "end": 11.479,
+   "speaker": "SKYE",
+   "line": 4
+  },
+  {
+   "word": "too",
+   "start": 11.479,
+   "end": 11.699,
+   "speaker": "SKYE",
+   "line": 4
+  },
+  {
+   "word": "close.",
+   "start": 11.699,
+   "end": 11.959,
+   "speaker": "SKYE",
+   "line": 4
+  },
+  {
+   "word": "That's",
+   "start": 12.549,
+   "end": 12.949,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "Max.",
+   "start": 12.949,
+   "end": 13.189,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "My",
+   "start": 13.629,
+   "end": 13.829,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "enemy",
+   "start": 13.829,
+   "end": 14.049,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "since",
+   "start": 14.049,
+   "end": 14.469,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "kindergarten.",
+   "start": 14.469,
+   "end": 14.929,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "And",
+   "start": 15.469,
+   "end": 15.549,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "this",
+   "start": 15.549,
+   "end": 15.709,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "morning,",
+   "start": 15.709,
+   "end": 16.009,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "he",
+   "start": 16.009,
+   "end": 16.349,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "started",
+   "start": 16.349,
+   "end": 16.589,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "a",
+   "start": 16.589,
+   "end": 16.789,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "war.",
+   "start": 16.789,
+   "end": 17.009,
+   "speaker": "VO",
+   "line": 5
+  },
+  {
+   "word": "You",
+   "start": 17.403,
+   "end": 17.643,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "cut",
+   "start": 17.643,
+   "end": 17.903,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "the",
+   "start": 17.903,
+   "end": 18.083,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "crusts",
+   "start": 18.083,
+   "end": 18.643,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "off",
+   "start": 18.643,
+   "end": 18.723,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "your",
+   "start": 18.723,
+   "end": 18.903,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "sandwich?",
+   "start": 18.903,
+   "end": 19.303,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "What",
+   "start": 19.903,
+   "end": 20.063,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "are",
+   "start": 20.063,
+   "end": 20.243,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "you,",
+   "start": 20.243,
+   "end": 20.503,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "five?",
+   "start": 20.863,
+   "end": 21.163,
+   "speaker": "MAX",
+   "line": 6
+  },
+  {
+   "word": "At",
+   "start": 21.652,
+   "end": 22.032,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "least",
+   "start": 22.032,
+   "end": 22.172,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "my",
+   "start": 22.172,
+   "end": 22.412,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "lunch",
+   "start": 22.412,
+   "end": 22.752,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "doesn't",
+   "start": 22.752,
+   "end": 23.132,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "smell",
+   "start": 23.132,
+   "end": 23.312,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "like",
+   "start": 23.312,
+   "end": 23.472,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "your",
+   "start": 23.472,
+   "end": 23.612,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "gym",
+   "start": 23.612,
+   "end": 23.812,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "socks.",
+   "start": 23.812,
+   "end": 24.072,
+   "speaker": "SKYE",
+   "line": 7
+  },
+  {
+   "word": "Spider!",
+   "start": 25.342,
+   "end": 25.762,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "Get",
+   "start": 26.002,
+   "end": 26.042,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "it",
+   "start": 26.042,
+   "end": 26.142,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "off!",
+   "start": 26.142,
+   "end": 26.362,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "Get",
+   "start": 26.682,
+   "end": 26.762,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "it",
+   "start": 26.762,
+   "end": 26.862,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "off!",
+   "start": 26.862,
+   "end": 27.062,
+   "speaker": "SKYE",
+   "line": 8
+  },
+  {
+   "word": "It's",
+   "start": 27.512,
+   "end": 27.832,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "rubber,",
+   "start": 27.832,
+   "end": 28.092,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "Skye.",
+   "start": 28.512,
+   "end": 29.172,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "Wow.",
+   "start": 29.172,
+   "end": 29.492,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "You're",
+   "start": 29.852,
+   "end": 30.072,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "scared",
+   "start": 30.072,
+   "end": 30.292,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "of",
+   "start": 30.292,
+   "end": 30.472,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "everything.",
+   "start": 30.472,
+   "end": 30.812,
+   "speaker": "MAX",
+   "line": 9
+  },
+  {
+   "word": "I",
+   "start": 31.449,
+   "end": 31.649,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "bet",
+   "start": 31.649,
+   "end": 31.789,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "you",
+   "start": 31.789,
+   "end": 31.969,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "wouldn't",
+   "start": 31.969,
+   "end": 32.289,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "last",
+   "start": 32.289,
+   "end": 32.549,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "one",
+   "start": 32.549,
+   "end": 32.909,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "night",
+   "start": 32.909,
+   "end": 33.189,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "in",
+   "start": 33.189,
+   "end": 33.369,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "a",
+   "start": 33.369,
+   "end": 33.469,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "haunted",
+   "start": 33.469,
+   "end": 33.729,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "house.",
+   "start": 33.729,
+   "end": 34.109,
+   "speaker": "MAX",
+   "line": 10
+  },
+  {
+   "word": "Oh,",
+   "start": 34.7,
+   "end": 35.06,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "and",
+   "start": 35.26,
+   "end": 35.38,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "nothing",
+   "start": 35.38,
+   "end": 35.64,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "scares",
+   "start": 35.64,
+   "end": 36.02,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "you,",
+   "start": 36.02,
+   "end": 36.24,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "I",
+   "start": 36.28,
+   "end": 36.36,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "guess?",
+   "start": 36.36,
+   "end": 36.54,
+   "speaker": "SKYE",
+   "line": 11
+  },
+  {
+   "word": "Nothing.",
+   "start": 36.95,
+   "end": 37.49,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "My",
+   "start": 37.99,
+   "end": 38.17,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "house",
+   "start": 38.17,
+   "end": 38.47,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "is",
+   "start": 38.47,
+   "end": 38.67,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "so",
+   "start": 38.67,
+   "end": 38.95,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "boring,",
+   "start": 38.95,
+   "end": 39.43,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "nothing",
+   "start": 40.09,
+   "end": 40.33,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "ever",
+   "start": 40.33,
+   "end": 40.67,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "happens",
+   "start": 40.67,
+   "end": 41.05,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "there.",
+   "start": 41.05,
+   "end": 41.43,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "Not",
+   "start": 41.87,
+   "end": 42.03,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "even",
+   "start": 42.03,
+   "end": 42.23,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "a",
+   "start": 42.23,
+   "end": 42.39,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "creaky",
+   "start": 42.39,
+   "end": 42.73,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "floor.",
+   "start": 42.73,
+   "end": 43.05,
+   "speaker": "MAX",
+   "line": 12
+  },
+  {
+   "word": "We'll",
+   "start": 43.655,
+   "end": 43.995,
+   "speaker": "SKYE",
+   "line": 13
+  },
+  {
+   "word": "see",
+   "start": 43.995,
+   "end": 44.155,
+   "speaker": "SKYE",
+   "line": 13
+  },
+  {
+   "word": "about",
+   "start": 44.155,
+   "end": 44.375,
+   "speaker": "SKYE",
+   "line": 13
+  },
+  {
+   "word": "that.",
+   "start": 44.375,
+   "end": 44.575,
+   "speaker": "SKYE",
+   "line": 13
+  },
+  {
+   "word": "See",
+   "start": 44.945,
+   "end": 45.205,
+   "speaker": "MAX",
+   "line": 14
+  },
+  {
+   "word": "you",
+   "start": 45.205,
+   "end": 45.345,
+   "speaker": "MAX",
+   "line": 14
+  },
+  {
+   "word": "tomorrow,",
+   "start": 45.345,
+   "end": 45.805,
+   "speaker": "MAX",
+   "line": 14
+  },
+  {
+   "word": "scaredy-cat.",
+   "start": 46.405,
+   "end": 46.785,
+   "speaker": "MAX",
+   "line": 14
+  },
+  {
+   "word": "So",
+   "start": 47.432,
+   "end": 47.872,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "after",
+   "start": 47.872,
+   "end": 48.112,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "school,",
+   "start": 48.112,
+   "end": 48.432,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "I",
+   "start": 48.812,
+   "end": 48.872,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "slipped",
+   "start": 48.872,
+   "end": 49.092,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "in",
+   "start": 49.092,
+   "end": 49.332,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "through",
+   "start": 49.332,
+   "end": 49.492,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "his",
+   "start": 49.492,
+   "end": 49.672,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "back",
+   "start": 49.672,
+   "end": 49.912,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "door",
+   "start": 49.912,
+   "end": 50.152,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "and",
+   "start": 50.152,
+   "end": 50.612,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "hid",
+   "start": 50.612,
+   "end": 50.812,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "in",
+   "start": 50.812,
+   "end": 50.972,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "the",
+   "start": 50.972,
+   "end": 51.092,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "last",
+   "start": 51.092,
+   "end": 51.372,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "place",
+   "start": 51.372,
+   "end": 51.672,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "anyone",
+   "start": 51.672,
+   "end": 52.012,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "would",
+   "start": 52.012,
+   "end": 52.292,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "look",
+   "start": 52.292,
+   "end": 52.452,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "for",
+   "start": 52.452,
+   "end": 52.632,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "me.",
+   "start": 52.632,
+   "end": 52.772,
+   "speaker": "VO",
+   "line": 15
+  },
+  {
+   "word": "Maaax.",
+   "start": 53.222,
+   "end": 53.782,
+   "speaker": "SKYE",
+   "line": 16
+  },
+  {
+   "word": "Lily!",
+   "start": 55.112,
+   "end": 55.532,
+   "speaker": "MAX",
+   "line": 17
+  },
+  {
+   "word": "Go",
+   "start": 55.872,
+   "end": 56.212,
+   "speaker": "MAX",
+   "line": 17
+  },
+  {
+   "word": "back",
+   "start": 56.212,
+   "end": 56.412,
+   "speaker": "MAX",
+   "line": 17
+  },
+  {
+   "word": "to",
+   "start": 56.412,
+   "end": 56.592,
+   "speaker": "MAX",
+   "line": 17
+  },
+  {
+   "word": "bed!",
+   "start": 56.592,
+   "end": 56.832,
+   "speaker": "MAX",
+   "line": 17
+  },
+  {
+   "word": "I",
+   "start": 57.289,
+   "end": 57.419,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "am",
+   "start": 57.419,
+   "end": 57.549,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "in",
+   "start": 57.549,
+   "end": 57.669,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "bed!",
+   "start": 57.669,
+   "end": 57.949,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "And",
+   "start": 58.329,
+   "end": 58.409,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "you're",
+   "start": 58.409,
+   "end": 58.609,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "too",
+   "start": 58.609,
+   "end": 58.749,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "loud!",
+   "start": 58.749,
+   "end": 59.129,
+   "speaker": "LILY",
+   "line": 18
+  },
+  {
+   "word": "Then",
+   "start": 59.636,
+   "end": 59.916,
+   "speaker": "MAX",
+   "line": 19
+  },
+  {
+   "word": "who",
+   "start": 59.916,
+   "end": 60.136,
+   "speaker": "MAX",
+   "line": 19
+  },
+  {
+   "word": "said",
+   "start": 60.136,
+   "end": 60.376,
+   "speaker": "MAX",
+   "line": 19
+  },
+  {
+   "word": "my",
+   "start": 60.376,
+   "end": 60.596,
+   "speaker": "MAX",
+   "line": 19
+  },
+  {
+   "word": "name?",
+   "start": 60.596,
+   "end": 60.876,
+   "speaker": "MAX",
+   "line": 19
+  },
+  {
+   "word": "Day",
+   "start": 62.165,
+   "end": 62.525,
+   "speaker": "SKYE",
+   "line": 20
+  },
+  {
+   "word": "one.",
+   "start": 62.525,
+   "end": 62.765,
+   "speaker": "SKYE",
+   "line": 20
+  }
+ ]
+}
