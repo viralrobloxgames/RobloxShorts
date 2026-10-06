@@ -12,17 +12,17 @@ export const PRESETS = {
   night_moon: {        // Max's room / hallway at night, moonlight through the window, cool and dark but readable
     sky: { zenith: '#070d22', horizon: '#1d2b52', below: '#080b18', sunColor: '#9fb6ff' },
     sun: ['#a9bfff', 1.5, [-0.45, 0.7, 0.55]], hemi: ['#5a6fa8', '#1a1a2a', 0.55], fill: ['#7f95d6', 0.35], rim: ['#b9c8ff', 0.55],
-    env: 0.32, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.35, practicals: {},
+    env: 0.32, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.35, practicals: { moon_window: true, nightlight: true },
   },
   midnight: {          // Ch10: darker than night_moon; the lamp click is the reveal
     sky: { zenith: '#04081a', horizon: '#121c3c', below: '#05070f', sunColor: '#8aa2f0' },
     sun: ['#8fa6f5', 1.1, [-0.45, 0.7, 0.55]], hemi: ['#3e4f86', '#101018', 0.4], fill: ['#6a7fc4', 0.25], rim: ['#a4b6ff', 0.45],
-    env: 0.22, exposure: 1.0, fog: ['#080c1c', 140, 600], bloom: 0.45, practicals: {},
+    env: 0.22, exposure: 1.0, fog: ['#080c1c', 140, 600], bloom: 0.45, practicals: { moon_window: 0.6, nightlight: true },
   },
   night_fridge: {      // kitchen at night: blue moon + the warm fridge light when the door is open (practical fridge_light)
     sky: { zenith: '#070d22', horizon: '#1d2b52', below: '#080b18', sunColor: '#9fb6ff' },
     sun: ['#a9bfff', 1.2, [0.5, 0.7, 0.45]], hemi: ['#4d5f96', '#18161e', 0.45], fill: ['#6f86c8', 0.3], rim: ['#b9c8ff', 0.5],
-    env: 0.28, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.4, practicals: { fridge_light: true },
+    env: 0.28, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.4, practicals: { fridge_light: true, moon_window: true },
   },
   predawn: {           // Tuesday 6 am: deep blue windows, warm kitchen ceiling light on
     sky: { zenith: '#1a2350', horizon: '#6a5f8f', below: '#14162a', sunColor: '#ffb48a' },
