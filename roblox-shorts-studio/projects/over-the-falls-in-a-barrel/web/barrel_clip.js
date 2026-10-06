@@ -510,3 +510,4 @@ export function overlay(g, s, t) {
 export const cast = () => ({ mia, max, leo, skye, noob });
 export const TIMES = T;
 export const SHOT_LIST = SHOTS;
+export const barrelObj = () => brl;

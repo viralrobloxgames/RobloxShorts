@@ -3,6 +3,7 @@
 import * as THREE from 'three';
 import * as base from './barrel_clip.js';
 import { setExpression } from '../../../web/lib/rig.js';
+import * as K from './kit.js';
 
 export const meta = { ...base.meta, seconds: 1 };
 export const sky = base.sky;
@@ -10,12 +11,16 @@ const V = (x, y, z) => new THREE.Vector3(x, y, z);
 export async function setup(stage) { await base.setup(stage); }
 export function samples() { return 6; }
 export function update(t, stage) {
-  base.update(1.6, stage);                               // Mia settled in the barrel; both faces read
-  const { mia, leo } = base.cast(); setExpression(mia, 'determined'); setExpression(leo, 'surprised');
-  const cam = stage.camera, b = mia.root.position.clone();
-  cam.position.copy(b).add(V(-10.5, 4.4, 2.6)); cam.fov = 48; cam.near = 0.5; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();
-  cam.lookAt(b.clone().add(V(1.0, 3.6, 0.2)));
-  stage.aimSun(b.clone(), 30);
+  base.update(1.6, stage);                               // Mia settled in the barrel (the hook's pose)
+  const { mia, leo } = base.cast(), brl = base.barrelObj(); setExpression(mia, 'shocked'); leo.root.visible = false;
+  // staged for the cover: the barrel (with Mia in it) floating right at the brink, the drop and the mist behind her
+  const to = V(K.brinkX(-6) - 2.4, -1.6, -6), d = to.clone().sub(brl.position);
+  brl.position.add(d); mia.root.position.add(d); brl.rotation.set(0, 0, 0); mia.root.rotation.y = 0.64;
+  brl.updateMatrixWorld(true); mia.root.updateMatrixWorld(true);
+  const cam = stage.camera, b = to.clone();
+  cam.position.copy(b).add(V(12, 6.5, 16)); cam.fov = 38; cam.near = 0.5; cam.far = 2500; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();
+  cam.lookAt(b.clone().add(V(0.3, 5.0, 0)));
+  stage.aimSun(b.clone(), 40);
 }
 function big(g, s, text, x, y, size, color, rot = 0) {
   g.save(); g.translate(x * s, y * s); g.rotate(rot); g.font = `${size * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineJoin = 'round';
@@ -25,7 +30,7 @@ function big(g, s, text, x, y, size, color, rot = 0) {
 }
 export function overlay(g, s) {
   big(g, s, 'AGE 63.', 540, 350, 110, '#ffd23f', -0.03);
-  big(g, s, 'NIAGARA FALLS.', 540, 480, 104, '#ffffff', -0.03);
+  big(g, s, 'OVER NIAGARA', 540, 480, 110, '#ffffff', -0.03);
   big(g, s, 'IN A BARREL.', 540, 605, 116, '#6ec8ff', -0.03);
   big(g, s, '1901 · TRUE STORY', 540, 1490, 76, '#ffffff', -0.02);
 }
