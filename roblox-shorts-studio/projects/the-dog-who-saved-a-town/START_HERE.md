@@ -10,7 +10,14 @@ out to sea), 261 miles in all. The outbreak was stopped, but the Central Park st
 ## State
 - 2026-10-06 ~04:15 BST: script v1 (169 words with the CTA, 18 lines) in `script.txt` (used as written: no approval
   needed tonight). Post copy: `delivery/post.json`. Ledger entry added (script_approved).
-- Not built yet. Narration waits for the CPU (She Raced Around The World is rendering).
+- Web route drafted (no narration yet; `web/beats.js` is the estimate from `source/beats.py`): `web/kit.js` (snowy Nome
+  at night with the doctor's house, the sick room, the frozen harbour with the ship in the ice and a frosted biplane,
+  the trail through the spruce, the frozen sea with floes that drift out at night and the roadhouse, the New York park
+  with the BALTO 1925 and TOGO 2001 plinths, the sled, the SERUM crate) and `web/dog_clip.js` (17 shots: hook, sick,
+  ships, planes, dogs, relay, hardest, togo, run, back, ice, night, miles, arrive, statue, wait, cta; seven huskies from
+  `animal_collie_parts` recoloured, Balto black, two bronze statues). One low-res frame per shot rendered and looked
+  at; the sick room, harbour and run cameras re-framed. Narration waits for the CPU (She Raced Around The World is
+  rendering).
 
 ## Next
 1. `python3 scripts/qwen_cloud_george_c.py projects/the-dog-who-saved-a-town --take take-01`, then
