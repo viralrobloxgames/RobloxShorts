@@ -138,6 +138,14 @@ export function build(scene) {
   for (const [k, c] of [['r1c1', '#ff4fa3'], ['r2c3', '#2f7be8'], ['r3c3', '#ffcc1f'], ['r4c2', '#2fbf4f'], ['r1c3', '#9a4fe0'], ['r4c4', '#e8302f']]) {
     const t = desks[k].top.clone().sub(OFFSET); box(1.4, 0.18, 1.0, std(c), t.x + 0.6, DESK_TOP + 0.09, t.z - 0.2, deskStuff).rotation.y = 0.3;
   }
+  // lunch on the extras' desks (Ch1, Ch4): a lunchbox, a sandwich, a juice box; never on Skye's or Max's desk
+  const lunch = new THREE.Group(); group.add(lunch);
+  for (const [k, c] of [['r1c1', '#2fbf4f'], ['r2c3', '#ff8a1f'], ['r3c3', '#2f7be8'], ['r4c2', '#e8302f'], ['r1c2', '#9a4fe0']]) {
+    const t = desks[k].top.clone().sub(OFFSET);
+    rbox(1.3, 0.7, 0.9, 0.12, std(c, { roughness: 0.4 }), t.x - 0.7, DESK_TOP + 0.35, t.z + 0.1, lunch);
+    const sw = box(0.8, 0.25, 0.8, std('#f3e1b6', { roughness: 0.8 }), t.x + 0.6, DESK_TOP + 0.13, t.z + 0.3, lunch); sw.rotation.y = 0.785;
+    box(0.4, 0.7, 0.3, std('#ffd23f'), t.x + 1.25, DESK_TOP + 0.35, t.z - 0.5, lunch);
+  }
   // Max's desk: an exercise book with doodles
   const mx = desks.r3c2.top.clone().sub(OFFSET);
   const doodle = picture(1.5, 1.1, 192, 140, (g, w, h) => { g.fillStyle = '#fffef6'; g.fillRect(0, 0, w, h); g.strokeStyle = '#8fb5e8'; for (let y = 20; y < h; y += 16) { g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); } g.strokeStyle = '#333'; g.lineWidth = 3; g.beginPath(); g.arc(60, 70, 22, 0, 7); g.stroke(); fontText(g, 'BOO', 130, 70, 30, '#c9302c'); });
@@ -174,6 +182,8 @@ export function build(scene) {
     board: M(-1, 0, -13.5, 0, { note: 'at the whiteboard facing the class' }),
     teacher_desk: M(13, 0, -14.2, 0, { note: 'behind the teacher\'s desk' }),
   });
+  // aliases asked for by the chapters
+  Object.assign(marks, { desk_skye_aisle: marks.skye_desk_side, desk_max_side: marks.max_desk_side, door: marks.door_inside });
 
   // ---------------------------------------------------------------- cams
   const cams = {
@@ -191,7 +201,14 @@ export function build(scene) {
     lunchbox_top: C([-13, 8.6, -3.4], [-13, DESK_TOP, -0.7], 34, { note: 'top-down onto Skye\'s desk (lunchbox, spider)' }),
     window_in: C([-18.8, 5.0, -5.5], [-11, 4.2, 2.5], 44, { note: 'from the window corner looking along Skye\'s column' }),
     board_reverse: C([-1, 6.5, -14.5], [-5, 3.5, 6], 48, { note: 'from the board over the rows (all faces)' }),
+    two_shot_close: C([-8.4, 5.3, -5.6], [-11.2, 4.5, 0.2], 34, { note: 'tighter two-shot: Skye seated + skye_desk_side, board side' }),
+    mcu_skye: C([-11.0, 4.6, -4.6], [-13, 4.3, 0.9], 34, { note: 'MCU Skye at her desk (board side)' }),
+    mcu_max: C([-3.0, 4.6, 1.3], [-5, 4.3, 6.9], 34, { note: 'MCU Max at his desk (board side)' }),
+    mcu_max_stand: C([-12.6, 5.4, -3.6], [-9.4, 5.1, -0.4], 34, { note: 'MCU on whoever stands at skye_desk_side (board side of the line)' }),
+    end_front: C([-14.5, 5.0, -4.2], [-8.0, 4.3, 4.2], 40, { note: 'Skye MCU fg left, Max at desk_max bg right' }),
   };
+  Object.assign(cams, { classroom_wide: cams.wide_front, cu_skye: cams.cu_skye_desk, cu_max: cams.cu_max_desk, ots_skye_to_max: cams.ots_skye_on_max,
+    ots_max_to_skye: cams.ots_max_on_skye, desk_skye_insert: cams.lunchbox_top, two_shot_desks: cams.skye_max_diag });
 
   // ---------------------------------------------------------------- state
   const state = {};
@@ -200,7 +217,8 @@ export function build(scene) {
   function setState(s = {}) {
     if (s.chapter !== undefined) {
       const ch = { 1: { time: 'lunch', board: 'MONDAY\nSpelling: friends, haunted, pumpkin\nHomework: p. 31' }, 2: { time: 'morning' },
-        4: { time: 'lunch', board: 'WEDNESDAY\nSpelling: friends, haunted, pumpkin\nDANCE tickets on sale!' } }[s.chapter] || {};
+        4: { time: 'lunch', board: 'WEDNESDAY\nSpelling: friends, haunted, pumpkin\nDANCE tickets on sale!' } }[s.chapter];
+      if (!ch) return;
       Object.assign(state, ch, { chapter: s.chapter });
     }
     for (const k of Object.keys(s)) if (k !== 'chapter') state[k] = s[k];
@@ -209,12 +227,17 @@ export function build(scene) {
     outM.map = OUT[T.out]; outM.needsUpdate = true;
     const b = state.board ?? T.board; if (b !== state._board) { drawBoard(b); state._board = b; }
     const lv = state.practicals || {};
+    lunch.visible = state.lunch ?? state.time === 'lunch'; deskStuff.visible = !lunch.visible;
     setPractical(fills[0], lv.fillL ?? 1); setPractical(fills[1], lv.fillR ?? 1); setPractical(windowSun, lv.windowSun ?? (state.time === 'morning' ? 0.7 : 1));
     for (const p of panels) p.material.emissiveIntensity = 1.2 * (lv.fillL ?? 1);
     if (state.walls) for (const w of walls) { const v = state.walls[w.obj.name]; w.forced = v === undefined || v === 'auto' ? undefined : v; }
   }
   setState({ time: 'lunch' });
 
-  const anchors = { deskTop: (key) => desks[key].top.clone(), skyeDeskTop: desks.r2c1.top.clone(), maxDeskTop: desks.r3c2.top.clone() };
+  const anchors = { deskTop: (key) => desks[key].top.clone(), skyeDeskTop: desks.r2c1.top.clone(), maxDeskTop: desks.r3c2.top.clone(),
+    desk_skye_top: desks.r2c1.top.clone(), desk_max_top: desks.r3c2.top.clone(),
+    // the backpack hangs off the back of Skye's chair: this is the top of the backrest (hang point), backpack facing -z
+    skye_chair_hang: desks.r2c1.top.clone().add(V(0, SEAT_TOP + 1.85 - DESK_TOP, CHAIR_DZ + 1.15)) };
+  marks.desk_skye_top = M(COLS[0], DESK_TOP, ROWS[1], PI, { note: 'top of Skye\'s desk (y = surface)' });
   return { id: 'classroom', group, marks, cams, lights, setState, state, anchors, walls: walls.map((w) => w.obj) };
 }

@@ -230,3 +230,78 @@ python3 scripts/stitch_longform.py $P --chapters 1-5     # a block
 4:31 → 3:00; copied frames equal a no-skip render within renderer noise. Encoded as ch01_a (1-45) + ch01_b (46-90) and
 a whole ch02, stitched with test audio: stream copy, 180/180 frames, per-frame checksums equal the segments' (both
 seams clean), A/V difference 0.000 s, -14.1 LUFS / -1.0 dBTP.
+
+## sets/kitchen.js, classroom.js, exterior.js (kit-sets-c)
+
+All three: `build(scene)` → `{ id, group, marks, cams, lights, setState, state, anchors, walls }`. Marks are world
+`{ pos, heading, note? }` (forward = (sin h, 0, cos h)); sit marks also carry `sit: true, seatTop` (pos.y = seatTop − 2,
+i.e. the root for a scale-1 actor whose hip sits on the seat; for Lily use `seatTop - 2 * 0.78`). Cams are `{ pos, target, fov, note? }`.
+Walls and ceilings hide by themselves whenever the camera is outside them (scene.onBeforeRender), so any camera can look
+in; force one with `setState({ walls: { wall_front: false } })`. `setState({ chapter: N })` sets that chapter's state and
+ignores chapters that don't use the set (so `K.setState` broadcast is safe). Shared helpers: `sets/common_c.js`.
+Preview sheets: `production/previews/kit-sets-c/sheet_*.jpg` (clip `set_preview.js` there, one frame per set/cam).
+
+**Practicals and `K.applyLight`.** `set.lights` holds proxies the kit switches; the set applies them to its real lights
+right before each render. Order of precedence: `setState({ practicals: { name: level } })` > `applyLight`/`setPractical` >
+the set's time-of-day default. Window light (moon, sun, a soft room fill) follows `setState({ time })` and is not in `set.lights`.
+
+### Kitchen (900,0,0) — Ch2, Ch3, Ch11
+Layout (local): fridge on the back wall at the left (x −11, door hinged on its left, opens toward the room); stove x −2 and
+sink under the window x 3 on the back wall; slatted pantry in the LEFT wall (x −16, z −3..2); stairs down the RIGHT wall
+(top at the back, foot at z 2–3); back door in the right wall near the front (x 16, z 4–8, window in its top half, opens
+outward); island in the middle (top y 3.6, z −2.1..1.8), four stools on its stove side facing the camera side (+z) — the
+family faces the camera, a hider sits on the floor on the camera side, hidden from Dad at the stove.
+- **States:** `time` `predawn|night|morning|day`; `fridge` / `letters` any string (`\n` = new row; 7-column fixed grid,
+  left-aligned, so adding letters never moves placed ones), `fridgeScatter` (loose letters top/bottom, default true);
+  `fridgeOpen` 0..1 (the fridge light follows it); `pancakes` null | 0..12 (stack on the island); `plate` null | `'sandwich'`
+  | `'empty'` (back counter left of the stove); `backDoor` 0..1; `pantryDoors` (= `pantryDoor`) 0..1, ~0.15 = ajar gap;
+  `stools` `'out'|'tucked'` (tucked under the overhang so someone can stand at `island_counter`); `clock` [h, m].
+  Chapters: 2 = predawn, LILY + scatter, 12 pancakes, stools out; 3 = night, `BE NI`, fridge open, stools tucked;
+  11 = morning, `BE NICE\n2 SKYE`, 8 pancakes (switch with `setState({ fridge: 'SAY YES' })`).
+- **lights:** `fridge_light` (× door open), `ceiling_light` (2 pendants + hood; on by default at predawn), `pantry_light`, `upstairs_light`.
+- **Marks:** `fridge`, `fridge_open`, `fridge_read`, `fridge_side`, `stove`, `stove_turned`, `stove_three_quarter`, `pan`
+  (pan top), `cupboard`, `counter_sandwich`, `counter_right`, `island_stool_1..4` (sit, left→right from the front camera;
+  Ch11: Lily 1, Max 2, Skye 3), `island_back_stand`, `island_counter`, `island_max`, `island_lily`, `island_end`
+  (= `island_end_right`), `island_end_left`, `island_front_stand`, `island_hide` / `island_hide_left` (`floorSit`: on the
+  floor, back to the island, head under the top), `island_hide_reach`, `island_crouch` (crouch: head must stay < 3.6),
+  `island_plate_1..4`, `island_phone_3` (y = island top), `backpack_floor_3`, `pantry_inside`, `pantry_slats`, `pantry_gap`,
+  `pantry_front`, `stairs_top`, `stairs_mid`, `stairs_low`, `stairs_bottom` (= `stairs_foot`), `stairs_exit` (offscreen
+  top), `back_door_inside` (= `back_door`), `back_door_crawl`, `back_door_outside`, `phone_corner`, `front_doorway`, `kitchen_center`.
+  Walking the stairs: `set.stairsPath(u)` → `{ pos, heading }` (u 0 top … 1 floor), `set.stairFootY(zWorld)`.
+- **Cams:** `wide`, `kitchen_wide`, `wide_island`, `stairs_wide` (Ch11 frame 0: fridge L, island, stove, stairs R),
+  `end_screen`, `island_wide` (Ch11 end: four at the island, fridge letters left), `island_two_shot`, `island_two`,
+  `island_two_seated`, `island_stools_left|right`, `island_counter`, `behind_island`, `behind_island_low`,
+  `island_low_behind`, `island_hide_cu`, `pancake_reach`, `stove`, `stove_ms`, `stove_front`, `fridge` (= `fridge_side`),
+  `fridge_wide`, `fridge_letters`, `fridge_cu`, `fridge_pov` (from inside the open fridge), `fridge_ots`, `pantry_pov`,
+  `pantry_pov_island` (through the slats), `pantry_peek`, `pantry_gap`, `stairs_side`, `stairs_bottom`, `back_door`,
+  `back_door_wide`, `back_door_floor`, `reverse_from_stove`.
+- **anchors:** `pancakeStackTop()`, `plate`, `fridgeLetters`.
+
+### Classroom (1200,0,0) — Ch1, Ch2, Ch4
+Board on the front wall (students face −z, heading π); windows along the left wall; door front-right; cubbies and the
+HALLOWEEN DANCE poster on the back wall. Desks 4×4: columns c1..c4 at x −13, −5, 3, 11 (c1 by the windows), rows r1..r4
+(r1 nearest the board). Skye r2c1, Max r3c2 (diagonally behind, on her right). Seat top 2.0, desk top 3.1.
+- **States:** `time` `lunch|morning` (clock 12:15 / 8:25, extras' lunches on their desks at lunch; `lunch: false` hides
+  them), `board` (text, `\n` rows; per-chapter defaults), `chapter` 1/2/4, `practicals: { fillL, fillR, windowSun }`.
+  `lights` is empty (the room lights are always on; school_day does the rest).
+- **Marks:** `desk_r{1-4}c{1-4}` (sit), `desk_skye`, `desk_max`, `desk_extra_1..4` (r1c1, r2c3, r3c3, r4c2),
+  `skye_desk_side` (= `desk_skye_aisle`: standing in the aisle facing seated Skye), `skye_desk_front`, `max_desk_side`
+  (= `desk_max_side`: leaning on Max's desk, facing him), `max_desk_front`, `aisle_mid`, `door_inside` (= `door`),
+  `board`, `teacher_desk`, `desk_skye_top` (desk surface).
+- **Cams:** `wide_front` (= `classroom_wide`), `wide_back`, `board_reverse`, `skye_max_diag` (= `two_shot_desks`),
+  `two_shot_desk`, `two_shot_close`, `ots_max_on_skye` (= `ots_max_to_skye`), `ots_skye_on_max` (= `ots_skye_to_max`),
+  `mcu_skye`, `cu_skye_desk` (= `cu_skye`), `mcu_max`, `cu_max_desk` (= `cu_max`), `mcu_max_stand`, `cu_side_stand`,
+  `max_desk_two_shot`, `ots_skye_on_max_desk`, `lunchbox_top` (= `desk_skye_insert`), `window_in`, `end_front`.
+- **anchors:** `deskTop(key)`, `desk_skye_top`, `desk_max_top`, `skye_chair_hang` (top of Skye's backrest, for the backpack).
+
+### Exterior (1500,0,0) — Ch1 (dusk), Ch2 back step (predawn), day establishing
+The back of Max's house faces +z (back wall z −8): the back door at x 6 (unlocked, opens inward; step y 0.6), the kitchen
+window beside it, the round attic window in the gable; garden with a stepping-stone path from the back-fence gate
+(x −10, z 31) to the door, shed, tree, washing line, bins, pumpkins on the step.
+- **States:** `time` `dusk|day|night|predawn` (windows lit at dusk/night/predawn), `windows` 0..1, `porchLight` 0..1,
+  `hallLight`, `atticGlow`, `backDoor` 0..1, `gate` 0..1 (default 0.35 ajar); chapter 1 = dusk, 2 = predawn.
+- **Marks:** `gate` (= `yard_start`), `gate_outside`, `path_mid`, `path_near`, `porch_step`, `back_door`, `inside_door`,
+  `back_step` (outside the door facing the garden), `bins_hide`, `lawn_center`.
+- **Cams:** `dusk_wide`, `gate` (from the garden: Skye coming in), `garden_follow` (= `back_door_wide`), `back_door`,
+  `back_door_ots` (= `back_door_close`), `back_door_low`, `from_inside` (needs `backDoor` > 0.6), `back_step_mcu`,
+  `establishing_day`, `attic_window`.
