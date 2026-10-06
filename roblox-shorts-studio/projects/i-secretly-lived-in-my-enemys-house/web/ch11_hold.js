@@ -7,6 +7,6 @@ export const { meta, sky, setup, update, overlay } = holdCheck(base, [
   [K.morning, 'dad', 'R', 'spatula'], [K.thief, 'dad', 'R', 'spatula (pointing)'], [K.phone, 'dad', 'R', 'spatula (pointing)'],
   [K.flip, 'dad', 'R', 'spatula (flip)'], [K.end, 'dad', 'R', 'spatula (end screen)'],
   [K.mom, 'skye', 'R', 'phone at ear'],
-  [K.knew, 'lily', 'R', 'teddy'], [K.says, 'lily', 'R', 'teddy (pointing)'], [K.wide, 'lily', 'R', 'teddy (wide)'],
-  [K.wide, 'max', 'R', 'plate slide'],
+  [K.knew, 'lily', 'R', 'teddy on the island', { up: 3.0, dist: 4.5 }], [K.says, 'lily', 'R', 'teddy on the island (pointing)', { up: 3.0, dist: 4.5 }], [K.wide, 'lily', 'R', 'teddy on the island (wide)', { up: 3.0, dist: 4.5 }],
+  [K.wide, 'max', 'R', 'plate slide', { up: 3.0, dist: 5 }],
 ]);

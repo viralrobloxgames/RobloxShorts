@@ -1,0 +1,91 @@
+{
+ "voice": "brittney",
+ "text": "Saturday, midnight. Phone recording. Glow sticks on. Time to give Max the scare of his life.",
+ "seed": 29779,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Saturday",
+   "start": 0.0,
+   "end": 0.7
+  },
+  {
+   "word": "midnight",
+   "start": 0.7,
+   "end": 1.4
+  },
+  {
+   "word": "phone",
+   "start": 1.4,
+   "end": 1.92
+  },
+  {
+   "word": "recording",
+   "start": 1.92,
+   "end": 2.42
+  },
+  {
+   "word": "glow",
+   "start": 2.42,
+   "end": 2.78
+  },
+  {
+   "word": "sticks",
+   "start": 2.78,
+   "end": 3.08
+  },
+  {
+   "word": "on",
+   "start": 3.08,
+   "end": 3.5
+  },
+  {
+   "word": "time",
+   "start": 3.5,
+   "end": 3.92
+  },
+  {
+   "word": "to",
+   "start": 3.92,
+   "end": 4.08
+  },
+  {
+   "word": "give",
+   "start": 4.08,
+   "end": 4.24
+  },
+  {
+   "word": "max",
+   "start": 4.24,
+   "end": 4.44
+  },
+  {
+   "word": "the",
+   "start": 4.44,
+   "end": 4.72
+  },
+  {
+   "word": "scare",
+   "start": 4.72,
+   "end": 4.94
+  },
+  {
+   "word": "of",
+   "start": 4.94,
+   "end": 5.08
+  },
+  {
+   "word": "his",
+   "start": 5.08,
+   "end": 5.18
+  },
+  {
+   "word": "life",
+   "start": 5.18,
+   "end": 5.44
+  }
+ ],
+ "words_md5": "4ffcdf80b62e078335ab25a7cdb06a55",
+ "whisper": "small.en"
+}

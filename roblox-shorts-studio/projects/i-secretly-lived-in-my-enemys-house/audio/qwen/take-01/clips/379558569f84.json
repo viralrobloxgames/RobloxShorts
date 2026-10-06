@@ -1,0 +1,41 @@
+{
+ "voice": "brittney",
+ "text": "Monday? You knew? The whole week?",
+ "seed": 42789,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Monday,",
+   "start": 0.0,
+   "end": 0.5
+  },
+  {
+   "word": "you",
+   "start": 0.72,
+   "end": 0.72
+  },
+  {
+   "word": "knew?",
+   "start": 0.72,
+   "end": 0.92
+  },
+  {
+   "word": "The",
+   "start": 1.38,
+   "end": 1.48
+  },
+  {
+   "word": "whole",
+   "start": 1.48,
+   "end": 1.72
+  },
+  {
+   "word": "week?",
+   "start": 1.72,
+   "end": 1.98
+  }
+ ],
+ "words_md5": "f9c70e7b8bb79b4f37f341217c69aecd",
+ "whisper": "small.en"
+}

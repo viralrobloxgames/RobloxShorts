@@ -1,0 +1,86 @@
+{
+ "clone_brittney_4.wav": {
+  "max_kid": 0.94,
+  "lily_kid": 0.922,
+  "brittney": 0.944,
+  "george_c": 0.915
+ },
+ "clone_george_c_5.wav": {
+  "max_kid": 0.948,
+  "lily_kid": 0.936,
+  "brittney": 0.942,
+  "george_c": 0.987
+ },
+ "clone_lily_kid_10.wav": {
+  "max_kid": 0.978,
+  "lily_kid": 0.983,
+  "brittney": 0.964,
+  "george_c": 0.937
+ },
+ "clone_lily_kid_11.wav": {
+  "max_kid": 0.975,
+  "lily_kid": 0.988,
+  "brittney": 0.959,
+  "george_c": 0.934
+ },
+ "clone_lily_kid_12.wav": {
+  "max_kid": 0.976,
+  "lily_kid": 0.989,
+  "brittney": 0.963,
+  "george_c": 0.936
+ },
+ "clone_lily_kid_13.wav": {
+  "max_kid": 0.966,
+  "lily_kid": 0.978,
+  "brittney": 0.956,
+  "george_c": 0.927
+ },
+ "clone_lily_kid_2.wav": {
+  "max_kid": 0.976,
+  "lily_kid": 0.983,
+  "brittney": 0.96,
+  "george_c": 0.937
+ },
+ "clone_lily_kid_3.wav": {
+  "max_kid": 0.979,
+  "lily_kid": 0.99,
+  "brittney": 0.964,
+  "george_c": 0.942
+ },
+ "clone_max_kid_0.wav": {
+  "max_kid": 0.983,
+  "lily_kid": 0.975,
+  "brittney": 0.966,
+  "george_c": 0.943
+ },
+ "clone_max_kid_1.wav": {
+  "max_kid": 0.989,
+  "lily_kid": 0.98,
+  "brittney": 0.965,
+  "george_c": 0.945
+ },
+ "clone_max_kid_6.wav": {
+  "max_kid": 0.982,
+  "lily_kid": 0.973,
+  "brittney": 0.965,
+  "george_c": 0.943
+ },
+ "clone_max_kid_7.wav": {
+  "max_kid": 0.99,
+  "lily_kid": 0.977,
+  "brittney": 0.967,
+  "george_c": 0.948
+ },
+ "clone_max_kid_8.wav": {
+  "max_kid": 0.988,
+  "lily_kid": 0.973,
+  "brittney": 0.97,
+  "george_c": 0.952
+ },
+ "clone_max_kid_9.wav": {
+  "max_kid": 0.988,
+  "lily_kid": 0.975,
+  "brittney": 0.973,
+  "george_c": 0.951
+ }
+}
