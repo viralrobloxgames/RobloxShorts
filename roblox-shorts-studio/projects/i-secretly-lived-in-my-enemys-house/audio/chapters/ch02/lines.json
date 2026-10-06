@@ -42,13 +42,13 @@
   {
    "index": 4,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Dad, something was in my room last night. It said my name.",
    "start": 14.29,
    "end": 18.377,
-   "clip": "audio/qwen/take-01/clips/0cbfb577c342.wav",
-   "seed": 35586
+   "clip": "audio/qwen/take-01/clips/19b7bf1d604a.wav",
+   "seed": 85516
   },
   {
    "index": 5,
@@ -86,13 +86,13 @@
   {
    "index": 8,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Not funny. I didn't sleep at all.",
    "start": 26.755,
    "end": 29.015,
-   "clip": "audio/qwen/take-01/clips/b3bb4361cd66.wav",
-   "seed": 78960
+   "clip": "audio/qwen/take-01/clips/07f41303bbf1.wav",
+   "seed": 21312
   },
   {
    "index": 9,
@@ -119,13 +119,13 @@
   {
    "index": 11,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Lily, stop saying ghost.",
    "start": 34.508,
    "end": 36.672,
-   "clip": "audio/qwen/take-01/clips/c6613edffc16.wav",
-   "seed": 1099
+   "clip": "audio/qwen/take-01/clips/32fdba313b01.wav",
+   "seed": 41831
   },
   {
    "index": 12,
@@ -174,13 +174,13 @@
   {
    "index": 16,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "My house is haunted. It knows my name.",
    "start": 49.575,
    "end": 52.675,
-   "clip": "audio/qwen/take-01/clips/e3f91374fa05.wav",
-   "seed": 40512
+   "clip": "audio/qwen/take-01/clips/31408e75d44b.wav",
+   "seed": 27867
   },
   {
    "index": 17,
@@ -196,13 +196,13 @@
   {
    "index": 18,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "I'm not scared. I'm just very alert.",
    "start": 55.427,
    "end": 58.223,
-   "clip": "audio/qwen/take-01/clips/e580515b8efa.wav",
-   "seed": 40670
+   "clip": "audio/qwen/take-01/clips/6eeb4d13a61a.wav",
+   "seed": 69274
   },
   {
    "index": 19,
@@ -218,13 +218,13 @@
   {
    "index": 20,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "How do you know that?",
    "start": 61.811,
    "end": 63.034,
-   "clip": "audio/qwen/take-01/clips/1e85f758cb1d.wav",
-   "seed": 1452
+   "clip": "audio/qwen/take-01/clips/b08570a817a1.wav",
+   "seed": 69573
   },
   {
    "index": 21,

@@ -20,13 +20,13 @@
   {
    "index": 2,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Hey, Skye. Want my cookie? You can have it.",
    "start": 6.93,
    "end": 10.142,
-   "clip": "audio/qwen/take-01/clips/e40709ce1cf5.wav",
-   "seed": 44086
+   "clip": "audio/qwen/take-01/clips/1ea8bef1da56.wav",
+   "seed": 9355
   },
   {
    "index": 3,
@@ -42,13 +42,13 @@
   {
    "index": 4,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Nothing. It's a cookie.",
    "start": 11.774,
    "end": 13.546,
-   "clip": "audio/qwen/take-01/clips/e1229ba3f164.wav",
-   "seed": 54536
+   "clip": "audio/qwen/take-01/clips/8a115eee602d.wav",
+   "seed": 48491
   },
   {
    "index": 5,
@@ -64,13 +64,13 @@
   {
    "index": 6,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "No! I'm just being nice.",
    "start": 15.086,
    "end": 16.978,
-   "clip": "audio/qwen/take-01/clips/389544de3c40.wav",
-   "seed": 8305
+   "clip": "audio/qwen/take-01/clips/a08896542808.wav",
+   "seed": 20803
   },
   {
    "index": 7,
@@ -86,24 +86,24 @@
   {
    "index": 8,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Since a ghost told me to. It's a long story.",
    "start": 19.118,
    "end": 22.687,
-   "clip": "audio/qwen/take-01/clips/045d41e4aeb2.wav",
-   "seed": 86094
+   "clip": "audio/qwen/take-01/clips/f4d2c8f860b9.wav",
+   "seed": 44821
   },
   {
    "index": 9,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "It wrote on our fridge. In my little sister's magnet letters.",
    "start": 22.937,
    "end": 26.637,
-   "clip": "audio/qwen/take-01/clips/4fd3106410a9.wav",
-   "seed": 31453
+   "clip": "audio/qwen/take-01/clips/fb7c1271d112.wav",
+   "seed": 81375
   },
   {
    "index": 10,
@@ -119,24 +119,24 @@
   {
    "index": 11,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "That's private.",
    "start": 29.217,
    "end": 30.296,
-   "clip": "audio/qwen/take-01/clips/8c89de855cc5.wav",
-   "seed": 10411
+   "clip": "audio/qwen/take-01/clips/34372d4b1d6c.wav",
+   "seed": 22074
   },
   {
    "index": 12,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Why is there a cobweb in your hair?",
    "start": 31.146,
    "end": 33.15,
-   "clip": "audio/qwen/take-01/clips/e71418a9f36e.wav",
-   "seed": 44037
+   "clip": "audio/qwen/take-01/clips/94d9c5ce239f.wav",
+   "seed": 55154
   },
   {
    "index": 13,
@@ -152,13 +152,13 @@
   {
    "index": 14,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "And why do you smell like my dad's pancakes?",
    "start": 34.45,
    "end": 37.099,
-   "clip": "audio/qwen/take-01/clips/7cc9df29354b.wav",
-   "seed": 78220
+   "clip": "audio/qwen/take-01/clips/8298e70a77b0.wav",
+   "seed": 58900
   },
   {
    "index": 15,
@@ -174,13 +174,13 @@
   {
    "index": 16,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "With cinnamon?",
    "start": 39.759,
    "end": 40.643,
-   "clip": "audio/qwen/take-01/clips/65eaa03e426f.wav",
-   "seed": 79277
+   "clip": "audio/qwen/take-01/clips/3f0838fa7153.wav",
+   "seed": 30949
   },
   {
    "index": 17,
@@ -196,13 +196,13 @@
   {
    "index": 18,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Right. Hey, I tried cutting the crusts off my sandwich. You were right. It's better.",
    "start": 44.09,
    "end": 50.054,
-   "clip": "audio/qwen/take-01/clips/e5969ad722a3.wav",
-   "seed": 46375
+   "clip": "audio/qwen/take-01/clips/020fc735fa77.wav",
+   "seed": 35188
   },
   {
    "index": 19,
@@ -218,13 +218,13 @@
   {
    "index": 20,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Since this week. Want half?",
    "start": 52.554,
    "end": 54.675,
-   "clip": "audio/qwen/take-01/clips/e0f419dc3b4d.wav",
-   "seed": 42630
+   "clip": "audio/qwen/take-01/clips/6c230b816727.wav",
+   "seed": 86936
   },
   {
    "index": 21,

@@ -42,13 +42,13 @@
   {
    "index": 4,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Dad, this is Skye. She's the ghost.",
    "start": 9.39,
    "end": 12.802,
-   "clip": "audio/qwen/take-01/clips/a68830ba5f45.wav",
-   "seed": 13917
+   "clip": "audio/qwen/take-01/clips/74c8b1a5edbe.wav",
+   "seed": 55630
   },
   {
    "index": 5,
@@ -174,13 +174,13 @@
   {
    "index": 16,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "So. The Halloween dance. Do you want to go? With me?",
    "start": 35.503,
    "end": 39.614,
-   "clip": "audio/qwen/take-01/clips/3d0ba1442dcd.wav",
-   "seed": 750
+   "clip": "audio/qwen/take-01/clips/4f46017d2df8.wav",
+   "seed": 95342
   },
   {
    "index": 17,
@@ -218,13 +218,13 @@
   {
    "index": 20,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "No crusts?",
    "start": 45.821,
    "end": 46.905,
-   "clip": "audio/qwen/take-01/clips/b548600dd0b7.wav",
-   "seed": 80621
+   "clip": "audio/qwen/take-01/clips/6edc7a8e81fe.wav",
+   "seed": 65479
   },
   {
    "index": 21,

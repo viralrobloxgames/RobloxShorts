@@ -142,3 +142,10 @@
 - MAX voice replaced in ch03 (max_boy2)
 - MAX voice replaced in ch08 (max_boy2)
 - MAX voice replaced in ch10 (max_boy2)
+- MAX voice replaced in ch01 (max_boy2)
+- MAX voice replaced in ch02 (max_boy2)
+- MAX voice replaced in ch11 (max_boy2)
+- MAX voice replaced in ch04 (max_boy2)
+- MAX voice replaced in ch06 (max_boy2)
+- MAX voice replaced in ch07 (max_boy2)
+- [from kit-pipeline, to review-* + orchestrator: stitch] `scripts/stitch_longform.py` updates: (1) scratch files now go to a temp dir that is deleted afterwards (the old `delivery/.stitch/` with WAVs and a video had been committed to main; it's now untracked and ignored); (2) for a review/trial stitch pass `--out /tmp/<name>.mp4`: the report goes next to that file, so nothing lands in delivery/; (3) true-peak target -1.5 so the AAC file measures under -1 dBTP, and the audio is padded to the picture's end at the mux (A/V within 0.01 s); the stitch's ok check now includes -14 ± 0.5 LUFS and TP <= -1. Trial on ch01-04: 7763/7763 frames, stream copy, every seam frame-exact, -14.1 LUFS / -1.3 dBTP.
