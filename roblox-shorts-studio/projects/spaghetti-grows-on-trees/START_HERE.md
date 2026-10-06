@@ -38,6 +38,19 @@ python3 scripts/review/blank_frames.py projects/spaghetti-grows-on-trees/deliver
 python3 scripts/post_md.py projects/spaghetti-grows-on-trees
 ```
 
+- Shots after the preview/motion review: 18 (the orchard aerial split into aerial + harvest, the tin shot into shelf +
+  tin). Hold check looked at (hank in Mia's palm, basket by the handle clear of Skye's leg, a hank per fist at the
+  rail, tin against Noob's fist, handsets in Leo's and Max's fists, the sprig into the tin). Fit check: 0 accessory
+  pairs, reviewed. Cover: `delivery/Spaghetti_Grows_On_Trees_cover.png/.jpg` + `_cover_grid.jpg` (3:4 check).
+- **Delivered for review (2026-10-06 04:36 UTC):** `delivery/Spaghetti_Grows_On_Trees.mp4`, **62.3 s** (1868 frames
+  incl. the 0.5 s cover), captions burned in; `delivery/Spaghetti_Grows_On_Trees_post.md` + `post.json`. Full render
+  1853 frames (web route, 1 sample; started at nice 19 beside the previous render, finished with 4 workers).
+  Blank-frame check: three 2-3 frame runs (4.0 s living room, 27.6 s and 28.7 s shelf close-up) are plain-wall,
+  low-detail shots with full content, kept.
+- Known nit for a re-cut: in Leo's phone close-up ('ask', about 37-40 s) his face sits in the caption band, so the
+  caption crosses his mouth. Fix: aim the 'ask' camera lower (target y ~3.9) or pull back, then
+  `node web/changed_frames.mjs --clip ... --out renders/web --delete`, fit check + --reviewed, `render.mjs --resume`,
+  re-encode.
+
 ## Next
-1. Previews on the real timings, motion pass, hold check, fit check, full render (~2 h), cover, encode, review.
-   Post only after the user approves the MP4.
+1. The user watches the MP4. Post only after the user approves this MP4 (TikTok first, then YouTube Shorts).
