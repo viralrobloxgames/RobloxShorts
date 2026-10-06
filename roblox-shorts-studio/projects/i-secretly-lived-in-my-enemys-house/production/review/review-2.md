@@ -99,3 +99,37 @@ correctly quieter and muffled (-23 dB RMS vs -17, centroid ~1.1 kHz). Stitch: -1
     boundary sheet has her facing the hatch, face `shouting`. A quick turn toward the hatch would sell the cover-up.
 17. **00:46.7-00:48.6, could.** "It was a really good sandcastle" has strong sibilance (centroid 3.7 kHz vs ~2.5 kHz for
     her other lines; sharp transients in the source clip at 47.55-47.8). A light de-ess on that clip would help.
+
+## Ch07 "The Pumpkin Girl" (FRIDAY 4:05 PM), 73.45 s, 2204 frames, reviewed 18:4xZ
+
+What works: the decoration gag escalates well (skeleton, witch, "giant pumpkin girl", cinnamon, the hoover). The
+nose-to-nose shot at 00:38-00:42 and the vacuum-nozzle close-up at 00:50 are the best frames in my block. Max's
+offscreen rescue is correctly muffled (-21.9 dB, centroid 0.9 kHz). The pumpkin is set up crooked (00:40-00:55),
+so straightening it can read. Stitch: -14.07 LUFS, TP **-0.75 dBTP**, A/V ok. At 73 s this is the longest
+chapter in my block. That's fine, because it's dense with gags.
+
+18. **00:58.9-01:01.7 (frames 1767-1851), must.** The twist clue is invisible. The script has "Max looks at the
+    pumpkin girl for a long moment, and straightens the pumpkin on her head", and Ch10 pays it off with "Or fixing your
+    pumpkin?". In the film, Max stands *behind* Skye's shoulder with his face hidden by the pumpkin (00:59.7), and the
+    pumpkin goes from crooked to straight across a cut (01:00.7) with no hand in frame. Nobody will remember a
+    "fix" they never saw. Fix: a 3/4 two-shot from Max's side. He steps in front of her and holds the look for ~0.8 s
+    (face `suspicious` going to a tiny `smirk`), both hands come up and visibly turn the pumpkin straight, then
+    "Nice decoration. Very realistic." on his face. Re-render frames 1755-1860.
+19. **00:16.0-00:16.6 (frames 481-498), must.** As Dad climbs through the hatch, a dark out-of-focus mass (the back
+    of his head/shoulder) fills the right half of the frame (blank_frames flags 00:16.0). Start the hatch shot with
+    the camera higher, or cut straight to 00:17 (Dad already up, vacuum in hand).
+20. **00:55.8-00:57.4 (frames 1674-1723), should.** Dad's "Already? You're a good lad, Max." starts on an *empty* hatch
+    shot (00:56) and only finds Dad at 00:57. Hold on Dad's face for the line (face `happy`), then cut to the hatch as he
+    climbs down.
+21. **00:36.5-00:37.5 (frames 1096-1126), should.** As Dad leans in, his raised hand passes through Skye's cheek and
+    jaw. Keep the hand on his knee/hip, or stop his lean ~0.3 studs earlier.
+22. **01:12.0-01:13.4 (frames 2160-2204), should.** "Sure.", the chapter's button and Lily's sceptical beat, plays on
+    a wide where her face is ~25 px at phone size. Cut to Lily's close-up (`suspicious`, side-eye at Skye) for the
+    last 1.4 s, then hard cut to Ch8.
+23. **00:25.0-00:27.5 (frames 751-826), should.** A white-hot specular flare on Dad's hip/forearm and a red glow at
+    the frame bottom (the vacuum) blow out at full brightness. Reduce the key light on Dad in that shot, or move the
+    window beam off him.
+24. **01:04.6-01:05.6 (frames 1939-1969), could.** After "Lily. Dinner. Five minutes." we get a 1 s shot of the empty
+    hatch with Max already gone. Either show him climbing down or cut it, to save a second.
+25. **00:29.9-00:32.9, could.** A large out-of-focus orange block (Dad's arm) covers the right quarter of the
+    "That's my girl" shot. Move the camera so it's out of frame.
