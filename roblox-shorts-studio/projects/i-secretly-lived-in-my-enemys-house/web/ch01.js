@@ -13,33 +13,34 @@ const CH = 1;
 const CARD = { day: 'MONDAY', time: '9:47 PM' };
 // Estimated spoken lines until audio/chapters/ch01/lines.json exists (same index numbering as lines.json).
 const EST = [
-  { index: 0, speaker: 'VO', text: "I secretly lived in my enemy's house for a week, and he had no idea.", start: 0.0, end: 4.8 },
-  { index: 1, speaker: 'MAX', text: 'Hello? Is somebody in my closet?', start: 5.05, end: 7.4 },
-  { index: 2, speaker: 'MAX', text: 'Huh. Just hoodies.', start: 8.65, end: 10.0 },
-  { index: 3, speaker: 'SKYE', note: 'whisper', text: 'That was way too close.', start: 10.85, end: 12.5 },
-  { index: 4, speaker: 'VO', text: "That's Max. My enemy since kindergarten. And this morning, he started a war.", start: 12.85, end: 17.4 },
-  { index: 5, speaker: 'MAX', text: 'You cut the crusts off your sandwich? What are you, five?', start: 17.65, end: 21.7 },
-  { index: 6, speaker: 'SKYE', text: "At least my lunch doesn't smell like your gym socks.", start: 21.95, end: 25.4 },
-  { index: 7, speaker: 'SKYE', note: 'shriek', text: 'Spider! Get it off! Get it off!', start: 26.45, end: 28.9 },
-  { index: 8, speaker: 'MAX', text: "It's rubber, Skye. Wow. You're scared of everything.", start: 29.15, end: 32.1 },
-  { index: 9, speaker: 'MAX', text: "I bet you wouldn't last one night in a haunted house.", start: 32.35, end: 36.2 },
-  { index: 10, speaker: 'SKYE', text: 'Oh, and nothing scares you, I guess?', start: 36.45, end: 38.9 },
-  { index: 11, speaker: 'MAX', text: 'Nothing. My house is so boring, nothing ever happens there. Not even a creaky floor.', start: 39.15, end: 44.7 },
-  { index: 12, speaker: 'SKYE', text: "We'll see about that.", start: 44.95, end: 46.4 },
-  { index: 13, speaker: 'MAX', text: 'See you tomorrow, scaredy-cat.', start: 46.65, end: 48.4 },
-  { index: 14, speaker: 'VO', text: 'So after school, I slipped in through his back door and hid in the last place anyone would look for me.', start: 48.75, end: 56.0 },
-  { index: 15, speaker: 'SKYE', note: 'ghost', text: 'Maaax.', start: 56.35, end: 57.4 },
-  { index: 16, speaker: 'MAX', text: 'Lily! Go back to bed!', start: 57.65, end: 59.3 },
-  { index: 17, speaker: 'LILY', note: 'offscreen', text: "I am in bed! And you're too loud!", start: 59.55, end: 62.6 },
-  { index: 18, speaker: 'MAX', text: 'Then who said my name?', start: 62.85, end: 64.5 },
-  { index: 19, speaker: 'SKYE', note: 'whisper', text: 'Day one.', start: 65.55, end: 66.5 },
+  { index: 1, speaker: 'VO', text: "I secretly lived in my enemy's house for a week, and he had no idea.", start: 0.0, end: 4.8 },
+  { index: 2, speaker: 'MAX', text: 'Hello? Is somebody in my closet?', start: 5.05, end: 7.4 },
+  { index: 3, speaker: 'MAX', text: 'Huh. Just hoodies.', start: 8.65, end: 10.0 },
+  { index: 4, speaker: 'SKYE', note: 'whisper', text: 'That was way too close.', start: 10.85, end: 12.5 },
+  { index: 5, speaker: 'VO', text: "That's Max. My enemy since kindergarten. And this morning, he started a war.", start: 12.85, end: 17.4 },
+  { index: 6, speaker: 'MAX', text: 'You cut the crusts off your sandwich? What are you, five?', start: 17.65, end: 21.7 },
+  { index: 7, speaker: 'SKYE', text: "At least my lunch doesn't smell like your gym socks.", start: 21.95, end: 25.4 },
+  { index: 8, speaker: 'SKYE', note: 'shriek', text: 'Spider! Get it off! Get it off!', start: 26.45, end: 28.9 },
+  { index: 9, speaker: 'MAX', text: "It's rubber, Skye. Wow. You're scared of everything.", start: 29.15, end: 32.1 },
+  { index: 10, speaker: 'MAX', text: "I bet you wouldn't last one night in a haunted house.", start: 32.35, end: 36.2 },
+  { index: 11, speaker: 'SKYE', text: 'Oh, and nothing scares you, I guess?', start: 36.45, end: 38.9 },
+  { index: 12, speaker: 'MAX', text: 'Nothing. My house is so boring, nothing ever happens there. Not even a creaky floor.', start: 39.15, end: 44.7 },
+  { index: 13, speaker: 'SKYE', text: "We'll see about that.", start: 44.95, end: 46.4 },
+  { index: 14, speaker: 'MAX', text: 'See you tomorrow, scaredy-cat.', start: 46.65, end: 48.4 },
+  { index: 15, speaker: 'VO', text: 'So after school, I slipped in through his back door and hid in the last place anyone would look for me.', start: 48.75, end: 56.0 },
+  { index: 16, speaker: 'SKYE', note: 'ghost', text: 'Maaax.', start: 56.35, end: 57.4 },
+  { index: 17, speaker: 'MAX', text: 'Lily! Go back to bed!', start: 57.65, end: 59.3 },
+  { index: 18, speaker: 'LILY', note: 'offscreen', text: "I am in bed! And you're too loud!", start: 59.55, end: 62.6 },
+  { index: 19, speaker: 'MAX', text: 'Then who said my name?', start: 62.85, end: 64.5 },
+  { index: 20, speaker: 'SKYE', note: 'whisper', text: 'Day one.', start: 65.55, end: 66.5 },
 ];
 const L = await K.loadLines(import.meta.url, CH, EST);
 export const meta = K.chapterMeta(L.end + 0.8);        // "Day one." + room tone
 export const sky = K.SKY;
 export const samples = () => 1;
-const at = (i, off = 0) => L.line(i).start + off;
-const end = (i, off = 0) => L.line(i).end + off;
+// line numbers below are 0-based in script order; lines.json counts spoken lines from 1
+const at = (i, off = 0) => L.line(i + 1).start + off;
+const end = (i, off = 0) => L.line(i + 1).end + off;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
 // ---------- key times (all on the narration) ----------
@@ -97,9 +98,9 @@ export async function setup(stage) {
 const bedroom = () => SETS.bedroom, classroom = () => SETS.classroom, exterior = () => SETS.exterior;
 // one-arm poses on top of the animation (never both arms up): arm bone euler (x forward/back, z sideways)
 const armSet = (a, sd, x, y = 0, z = 0) => a.bones['Arm.' + sd].rotation.set(x, y, z);
-const handOverMouth = (a) => armSet(a, 'L', -2.2, 0.0, -0.95);     // left hand up across the mouth
-const crossArms = (a) => { armSet(a, 'L', -1.35, 0, -0.75); armSet(a, 'R', -1.25, 0, 0.75); };
-const hipsHands = (a) => { armSet(a, 'L', 0.1, 0, 0.55); armSet(a, 'R', 0.1, 0, -0.55); };
+const handOverMouth = (a) => K.gesture(a, [-140, 0, 55], 'L');   // the kit's 'hand_over_mouth' mirrored for the left arm (its L mirror points outward)
+const crossArms = (a) => K.posture(a, 'arms_folded');
+const hipsHands = (a) => { K.gesture(a, 'hand_on_hip', 'L'); K.gesture(a, 'hand_on_hip', 'R'); };
 const headTurn = (a, y, x = 0) => a.bones.Head?.rotation.set(x, y, 0);
 const faceAt = (list, t, dflt) => { let f = dflt; for (const [t0, x] of list) if (t >= t0) f = x; return f; };
 const cam = (set, name) => set.cams[name];
@@ -124,7 +125,7 @@ const S = {
   skyeCU: { scene: 'night1', cam: (s, t, sh) => push(s, skyeCloset(0), skyeCloset(0.25), inv(sh.start, sh.start + 3.8, t)) },
   maxDoor: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 32 }) },
   doorOpen: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.8, 0)), fov: 40 }) },
-  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: V(-11.3, 5.3, 0.2), target: K.headPos(C.skye).add(V(0, 0.2, 0)), fov: 30 }) },
+  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(-0.7, 0.1, 0.3)), target: K.headPos(C.skye).add(V(0, 0.3, 0)), fov: 30 }) },   // Max's POV: the pink lock between the hoodies
   maxHoodies: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.45, 0)), fov: 24 }) },
   backToBed: { scene: 'night1', cam: (s) => K.setCam(s, cam(bedroom(), 'two_shot_bed_closet'), { clear: false }) },
   skyeWhisper: { scene: 'night1', cam: (s) => K.applyShot(s, skyeCloset(0.2)) },
@@ -144,7 +145,7 @@ const S = {
   knock: { scene: 'night2', cam: (s) => K.applyShot(s, skyeCloset(0.1)) },
   maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(2.6, 0.5, 6.0)), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 34 }) },
   maxBedCU: { scene: 'night2', cam: (s, t, sh) => push(s, shotOf(cam(bedroom(), 'bed_cu')), dolly(cam(bedroom(), 'bed_cu'), 0.2), inv(sh.start, sh.start + 4, t)) },
-  dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-2.5, 5.4, 7.5), target: V(-8.8, 3.5, -1.0), fov: 50 }) },
+  dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-2.8, 5.3, 7.2), target: V(-8.4, 3.6, -1.2), fov: 46 }) },
 };
 const SHOTS = [
   ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.45], ['maxHoodies', at(2) - 0.1],
@@ -163,13 +164,13 @@ function night1(t, set, idle) {
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
   // closet doors: ajar at frame 0 (closet_pov sees Max through the gap), swung open, then shut
   const open = t < T.doorOpen ? 0.5 : t < T.doorShut ? 0.5 + 0.42 * easeOut(inv(T.doorOpen, T.doorOpen + 0.45, t)) : 0.92 * (1 - easeIn(inv(T.doorShut, T.doorShut + 0.4, t)));
-  set.setClosetDoors(Math.max(open, t < T.doorShut ? 0.95 : open), open); set.setBlanketUp(false);
-  K.setPractical(set, 'closet', t > T.doorOpen && t < T.doorShut ? 0.5 : 0);   // the beam spilling into the closet   // left leaf wide (Max seen past it), right leaf ajar set.setLamp(false);
+  set.setClosetDoors(Math.max(open, t < T.doorShut ? 0.95 : open), open); set.setBlanket('flat');
+  K.setPractical(set, 'closet', t > T.doorOpen && t < T.doorShut ? 2.5 : 0);   // the beam spilling into the closet   // left leaf wide (Max seen past it), right leaf ajar set.setLamp(false);
   // Skye: 3/4 to the camera in the closet, left hand over her mouth; presses back into the hoodie gap while the doors are open
   const c = M.closet(), hideU = smooth(inv(T.doorOpen - 0.3, T.doorOpen + 0.05, t)) * (1 - smooth(inv(T.doorShut + 0.4, T.doorShut + 0.9, t)));
   K.playAnim(C.skye, [[A.idle, idle]]);
   K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetHoodies().pos, hideU), heading: c.heading + hideU * (M.closetHoodies().heading - c.heading) });
-  if (t < end(3) - 0.5) handOverMouth(C.skye);
+  if (t < end(3) - 0.5 && hideU < 0.5) handOverMouth(C.skye);
   // Max: creeps from the bed to the closet (real walk), stops to listen, on to the doors; then pads back to bed
   const bs = M.bedSide(), cf = M.closetFront(), mid = { pos: bs.pos.clone().lerp(cf.pos, 0.55), heading: K.faceTo(bs, cf) };
   const start = { pos: bs.pos.clone().lerp(cf.pos, 0.2), heading: mid.heading };
@@ -260,15 +261,16 @@ function night2(t, set, idle) {
   K.only(C, ['skye', 'max']);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
   const lumped = t > T.lump + 0.2;
-  set.setClosetDoors(t < T.lump + 0.35 ? 0 : 0.2 * easeOut(inv(T.lump + 0.35, T.lump + 0.75, t)), 0);
-  set.setBlanketUp(lumped); set.setLamp(false);
-  K.setPractical(set, 'closet', lumped ? 0.35 : 0);              // a little light in the closet so her grin reads at the crack
+  set.setClosetDoors(t < T.lump + 0.35 ? 0 : 0.34 * easeOut(inv(T.lump + 0.35, T.lump + 0.75, t)), 0);
+  set.setBlanket(lumped ? 'over_head' : 'legs'); set.setLamp(false);
+  K.setPractical(set, 'closet', lumped ? 1.6 : 0);              // a little light in the closet so her grin reads at the crack
   // Skye in the closet: knocks three times on the door (right knuckles), "Maaax", then her face at the crack
   const c = M.closet(), toCrack = smooth(inv(T.lump, T.lump + 0.35, t));
   K.playAnim(C.skye, [[A.idle, idle]]);
-  K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetCrack().pos.clone().add(V(0.1, 0, 0.6)), toCrack), heading: c.heading + (M.closetCrack().heading - c.heading) * toCrack });
+  const crackAt = { pos: V(-10.75, 0, 1.45), heading: Math.atan2(-2.5 + 10.75, 7.5 - 1.45) };   // face at the gap the left leaf opens, turned to the camera
+  K.putOn(C.skye, { pos: c.pos.clone().lerp(crackAt.pos, toCrack), heading: c.heading + (crackAt.heading - c.heading) * toCrack });
   const k = KNOCKS.findIndex((x) => t >= x && t < x + 0.25);
-  if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) armSet(C.skye, 'R', -1.5 + (k >= 0 ? 0.3 * Math.sin((t - KNOCKS[k]) / 0.25 * Math.PI) : 0), 0, -0.35);
+  if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) K.gesture(C.skye, 'knock', 'R', k >= 0 ? 1 - 0.35 * Math.sin((t - KNOCKS[k]) / 0.25 * Math.PI) : 1);
   // Max sitting up in bed (flashlight off on the bedside table), then under the blanket
   K.playAnim(C.max, [[A.sit, 0, 1, false]]);
   K.putOn(C.max, M.bedSit(), { sit: true, visible: !lumped });
@@ -298,7 +300,7 @@ function faces(t, sc) {
 export function update(t, stage) {
   const sh = shotAt(t), [setId, light] = SCENE[sh.scene];
   const set = K.showSet(setId);
-  K.applyLight(stage, light, { set, practicals: { bedside_lamp: false } });
+  K.applyLight(stage, light, { set, practicals: { bedside_lamp: false, moon_window: setId === 'bedroom' } });
   const idle = K.holdClock(t, L, [[0, T.closeup], [T.doorOpen, T.doorShut + 1.2], [T.spider, T.spider + 0.6], [T.exit, T.exit + 2], [T.dusk, T.dusk + 7.5], [T.night, at(15)], [T.lump, T.lump + 0.8]]);
   let r = {};
   if (sh.scene === 'night1') r = night1(t, set, idle);

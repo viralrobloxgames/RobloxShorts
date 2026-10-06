@@ -19,3 +19,11 @@ For each of your chapters, as soon as its `production/status/chNN.md` says `READ
 4. When a chapter re-submits after fixes (`READY_FOR_GATE` again with a note), re-check only the fixes and update the file
    (`GATE: PASS` when all musts are done).
 When all your chapters pass, set STATUS: DONE. The orchestrator may then give you a render job.
+
+## Assignments and timing (orchestrator, 13:30Z)
+gate-a: ch01-ch03, seams 1|2, 2|3, 3|4. gate-b: ch04-ch06, seams 4|5, 5|6, 6|7. gate-c: ch07-ch09, seams 7|8, 8|9,
+9|10. gate-d: ch10-ch11, seam 10|11, the end screen. (The seam N|N+1 belongs to the reviewer of chapter N.)
+Chapters render in full while you review (`production/briefs/render_plan.md`): every fix re-renders only the frames it
+changes, so put every must in ONE pass (a second round costs another cycle), be exact about frames, and ask for a timing
+change (which shifts everything after it) only when a beat really doesn't read. Small framing/pose/light fixes are cheap.
+Speed matters: aim for a verdict within ~20 min of a chapter arriving. Don't render full-quality frames (use --scale 0.5).

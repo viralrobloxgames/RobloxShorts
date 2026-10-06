@@ -45,7 +45,7 @@ const L = await K.loadLines(import.meta.url, CH, EST);
 export const meta = K.chapterMeta(L.end + 0.75);
 export const sky = K.SKY;
 export const samples = () => 1;
-const at = (line, off = 0) => L.line(line).start + off;
+export const at = (line, off = 0) => L.line(line).start + off;
 const endOf = (line, off = 0) => L.line(line).end + off;
 // start of the k-th word (0-based) of a spoken line
 const wd = (line, k, off = 0) => { const l = L.line(line); const ws = L.words.filter((w) => w.start >= l.start - 0.02 && w.start < l.end); return (ws[Math.min(k, ws.length - 1)]?.start ?? l.start) + off; };
@@ -87,7 +87,7 @@ export async function setup(stage) {
 }
 
 // ---------- key times ----------
-const T = {
+export const T = {
   ladderEnd: () => 2.7,                           // Skye's feet reach the hall floor
   kitchen: () => wd(1, 15, -0.1),                 // "Rule two:" -> cut to the kitchen
   freeze: () => wd(1, 22),                        // "six."
@@ -172,12 +172,6 @@ function crawlPose(phase) {
   const c = Math.sin(phase * PI * 2);
   return { Torso: [72, 0, 0], Head: [-62, 0, 0], 'Arm.L': [-70 + 18 * c, 0, -4], 'Arm.R': [-70 - 18 * c, 0, 4], 'Leg.L': [78 - 14 * c, 0, -3], 'Leg.R': [78 + 14 * c, 0, 3], drop: 1.25 };
 }
-// the pancake between her teeth (no kit hold mode for the mouth yet: requested from kit-props)
-function inMouth(prop, actor) {
-  const head = actor.bones.Head; if (prop.parent !== head) head.add(prop);
-  prop.position.set(0, 0.32 * actor.scale, 0.62 * actor.scale); prop.rotation.set(PI / 2, 0, 0); prop.scale.setScalar(1); prop.visible = true;
-}
-
 // ---------- update ----------
 export function update(t, stage) {
   const sh = shotAt(t);
@@ -209,6 +203,7 @@ function creepCam() {
 }
 function hallway(t, idle) {
   K.only(C, ['skye']);
+  K.dress(C.skye, ['skye_hoodie', 'backpack']); 
   const hs = K.getSet('hallway');
   if (t < T.ladderEnd()) {
     const u = lerp(0.62, 0, smooth(inv(0, T.ladderEnd(), t))), lp = hs.ladderPoint(u);
@@ -239,7 +234,7 @@ function stairsGait(actor, kind, t0, t, u0, u1, speed, idle) {
 let cakeBase = null;
 function kitchen(t, idle) {
   K.only(C, ['skye', 'max', 'dad', 'lily']);
-  K.dress(C.max, 'max_pjs');
+  K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs'); K.dress(C.dad, 'dad_apron'); K.dress(C.lily, 'lily_pjs');
   kitchenState({ pancakes: t < T.slide() ? 12 : 11, backDoor: smooth(inv(T.crawl0() + 2.4, T.crawl0() + 3.0, t)) });
   const said = (i) => t >= at(i) && t < endOf(i);
 
@@ -309,7 +304,7 @@ function kitchen(t, idle) {
       const u = inv(T.steal(), T.steal() + 0.3, t) - inv(T.steal() + 0.75, T.steal() + 1.1, t);
       poseAt(C.skye, 'crouch', reach.pos, reach.heading);
       K.gesture(C.skye, 'reach_up', 'R', u);
-    } else floorSit(C.skye, hide);
+    } else { floorSit(C.skye, hide); if (t >= T.slide()) K.gesture(C.skye, 'hold_out', 'R', 0.55); }   // the pancake held up in front of her
     if (t >= T.slide()) K.hold(P.pancake, C.skye, 'R');
   } else {
     // crawl: from the hiding spot round to the back door and out
@@ -317,18 +312,19 @@ function kitchen(t, idle) {
     const m1 = travel(hide.pos, door.pos, T.crawl0(), t, 4.2);
     const m = m1.done ? travel(door.pos, out, m1.arrive + 0.15, t, 4.2) : m1;
     poseAt(C.skye, crawlPose((m1.done ? m1.anim + m.anim : m.anim) * 1.6), m.pos, m.heading);
-    inMouth(P.pancake, C.skye);
+    K.hold(P.pancake, C.skye, 'R', 'mouth');
   }
 }
 
 // ---------- outside the back door: "Best. Pancake. Ever." (bites on "Ever") ----------
 function outside(t, idle) {
   K.only(C, ['skye']);
+  K.dress(C.skye, ['skye_hoodie', 'backpack']); 
   stand(C.skye, M.porch(), 0, idle);
   const bite = smooth(inv(wd(14, 2, -0.3), wd(14, 2, -0.05), t));
   K.gesture(C.skye, 'hold_out', 'R', 1 - bite);
   K.gesture(C.skye, 'chin_hand', 'R', bite);
-  K.hold(P.pancake, C.skye, 'R');
+  K.hold(P.pancake, C.skye, 'R', 'palm', { level: true, rot: [0.7, 0, 0] });   // tipped toward camera so it reads as a pancake
 }
 
 // ---------- classroom before the bell ----------
@@ -336,7 +332,7 @@ function outside(t, idle) {
 function byeCam() { const o = K.SET_ORIGIN.classroom; return { pos: o.clone().add(V(-3.0, 7.0, -11.5)), target: o.clone().add(V(-8.4, 3.9, 1.6)), fov: 44 }; }
 function classroom(t, idle) {
   K.only(C, ['skye', 'max', 'extras']);
-  K.dress(C.max, 'max_school');
+  K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_school');
   const dm = M.deskMax(), side = M.maxSide();
   // Max: slumped over his desk until he snaps bolt upright
   const up = smooth(inv(T.sitUp(), T.sitUp() + 0.2, t));

@@ -36,7 +36,7 @@ export function floorTexture(kind, repeat) {
     const r = rng(kind === 'tile' ? 5 : 9);
     if (kind === 'tile') {
       for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) {
-        g.fillStyle = (i + j) % 2 ? '#e9e1d2' : '#cfc3ae'; g.fillRect(i * 64, j * 64, 64, 64);
+        g.fillStyle = (i + j) % 2 ? '#dcd2c0' : '#b9ab94'; g.fillRect(i * 64, j * 64, 64, 64);
       }
       g.strokeStyle = 'rgba(90,80,70,0.35)'; g.lineWidth = 2;
       for (let i = 0; i <= 8; i++) { g.beginPath(); g.moveTo(i * 64, 0); g.lineTo(i * 64, w); g.stroke(); g.beginPath(); g.moveTo(0, i * 64); g.lineTo(w, i * 64); g.stroke(); }
