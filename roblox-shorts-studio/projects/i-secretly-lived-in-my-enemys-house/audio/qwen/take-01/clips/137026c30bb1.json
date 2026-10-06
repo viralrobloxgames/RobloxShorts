@@ -1,0 +1,66 @@
+{
+ "voice": "max_kid",
+ "text": "I bet you wouldn't last one night in a haunted house.",
+ "seed": 73971,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "bet",
+   "start": 0.2,
+   "end": 0.34
+  },
+  {
+   "word": "you",
+   "start": 0.34,
+   "end": 0.52
+  },
+  {
+   "word": "wouldn't",
+   "start": 0.52,
+   "end": 0.84
+  },
+  {
+   "word": "last",
+   "start": 0.84,
+   "end": 1.1
+  },
+  {
+   "word": "one",
+   "start": 1.1,
+   "end": 1.46
+  },
+  {
+   "word": "night",
+   "start": 1.46,
+   "end": 1.74
+  },
+  {
+   "word": "in",
+   "start": 1.74,
+   "end": 1.92
+  },
+  {
+   "word": "a",
+   "start": 1.92,
+   "end": 2.02
+  },
+  {
+   "word": "haunted",
+   "start": 2.02,
+   "end": 2.28
+  },
+  {
+   "word": "house.",
+   "start": 2.28,
+   "end": 2.66
+  }
+ ],
+ "words_md5": "e3e64a563db31e4240de58c7173557ac",
+ "whisper": "small.en"
+}

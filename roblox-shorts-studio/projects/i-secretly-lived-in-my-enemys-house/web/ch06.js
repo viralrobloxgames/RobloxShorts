@@ -92,7 +92,7 @@ export async function setup(stage) {
   P.torchSkye = K.makeProp('flashlight', { color: 'pink' }); stage.scene.add(P.torchSkye); K.hold(P.torchSkye, C.skye, 'R');
   P.torchDad = K.makeProp('flashlight'); stage.scene.add(P.torchDad); K.hold(P.torchDad, C.dad, 'L');
   P.broom = K.makeProp('broom'); stage.scene.add(P.broom); K.hold(P.broom, C.dad, 'R');
-  beamSkye = K.flashlightBeam(stage, { intensity: 14, cone: 0.035, angle: 0.5 }); beamDad = K.flashlightBeam(stage);
+  beamSkye = K.chinLight(stage); beamDad = K.flashlightBeam(stage);
 }
 export const cast = () => ({ skye: C.skye, max: C.max, lily: C.lily, dad: C.dad });
 
@@ -160,8 +160,8 @@ export function update(t, stage) {
   if (sh.set === H) set.setLinen?.(linen);
   K.setBlockers(set.group, ...Object.values(cast()).filter((a) => a.root.visible));
   const pr = sh.set === H
-    ? { moon: true, moonFill: t >= T.hide() ? 2.4 : 1.5, underDoor: true, maxRoom: true, nightlight: true, linen: linen > 0.02 && linen < 0.6 ? 3 : false }
-    : { lamp: true, moon: true, moonFill: 2.0 };
+    ? { moon_window: t >= T.hide() ? 1.6 : 1.2, under_door: true, nightlight: true, linen_fill: linen > 0.02 && linen < 0.8 ? 3 : false }
+    : { bedside_lamp: true, desk_lamp: true, moon_window: 1.2 };
   K.applyLight(stage, 'night_moon', { set, practicals: pr });
   sh.cam(stage, t);
   beams(t, sh);
@@ -313,14 +313,8 @@ const _p = V(0, 0, 0), _d = V(0, 0, 0);
 function handPos(a, side, out) { a.root.updateMatrixWorld(true); return a.bones[side === 'L' ? 'Arm.L' : 'Arm.R'].localToWorld(out.set(side === 'R' ? -0.5 : 0.5, -1.9, 0).multiplyScalar(1)); }
 function beams(t, sh) {
   if (sh.set !== H) { beamSkye.set(false); beamDad.set(false); return; }
-  const sk = C.skye;
-  if (sk.root.visible) {
-    handPos(sk, 'R', _p);
-    const chin = P.torchSkye.userData.chin ?? 0;
-    if (chin > 0.5) { const h = sk.root.rotation.y; _d.set(-0.12 * Math.sin(h), 1, -0.12 * Math.cos(h)).normalize(); }   // straight up past her face
-    else { const h = sk.root.rotation.y; _d.set(Math.sin(h), -1.4, Math.cos(h)).normalize(); }   // down at the floor
-    beamSkye.set(true, _p.clone(), _d.clone());
-  } else beamSkye.set(false);
+  const sk = C.skye, chin = P.torchSkye.userData.chin ?? 0;
+  beamSkye.set(sk.root.visible && chin > 0.05 ? chin : false, sk);              // the torch under her chin: warm up-light
   if (C.dad.root.visible) {
     const a = C.dad; handPos(a, 'L', _p);
     const s0 = a.bones['Arm.L'].localToWorld(V(0.5, 0, 0)); _d.copy(_p).sub(s0).normalize();   // along the arm
