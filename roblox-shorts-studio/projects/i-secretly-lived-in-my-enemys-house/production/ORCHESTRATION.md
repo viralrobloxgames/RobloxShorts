@@ -22,8 +22,12 @@ after the reset; 10-11 h was too long, so maximum parallelism (target ~5 h, ~18:
    description; START_HERE + ledger updated; user report. Never post.
 
 ## Usage-limit resume
-Routines "Long-form video: orchestrator check-in" (hourly) wake this session; on each wake: get_session for every
-worker below; send_message any idle/failed worker whose status isn't DONE: "Resume from production/status/<role>.md".
+The user asked (23:20Z): do not stop until the full video is improved and done, and keep every session going through
+5-hour limits. Routine `trig_01HDGnJJhFJCFHgLovLmazw1` ("Long-form video: hourly orchestrator check-in", :23 every hour)
+and a one-shot at 04:14Z (`trig_014E7ZtrvpHp8yHH8yse2tVH`) wake this session; on each wake: list_sessions, resume every
+FAILED worker that still has work with send_message priority "next" ("Resume from production/status/<role>.md").
+Background watcher: scratchpad/watch_p4.sh (exits on an actionable change; restart it after each wake).
+**Delete the hourly routine once the improved video is delivered.**
 
 ## Sessions (created 2026-10-06 ~11:54-11:57 UTC)
 | Role | Session |
