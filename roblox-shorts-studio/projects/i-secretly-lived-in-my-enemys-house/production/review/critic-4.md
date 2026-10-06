@@ -204,10 +204,9 @@ lies on the floor instead of in her fist.
    cycle; no crumple. Fix: real backward walk with feet stepping, crumple in the fist. **must**
 8. **ch08 0:18.7-0:20.0 (f560-600) [7:55.9], camera.** "The worst. Right. Got it." is an extreme CU where her face
    fills the frame and her body is gone; plus smiles (C8-1). Fix: MCU, 3/4, lit door gap behind. **should**
-9. **ch08 0:21.3-0:21.7 (f641-660) [7:58.6], staging / identity.** Lily rises at the hatch with her back to the
-   camera wearing lavender pyjamas (ch07 had her in the yellow day dress 3 minutes earlier, fine for night) - but in
-   this WS Skye is not in the nest under the window: she sits on the open floor in the moonbeam beside the tea box,
-   arms out stiff. Fix: Skye in the nest, knees up. **should**
+9. **ch08 0:21.3-0:21.7 (f641-660) [7:58.6], pose.** WS: Lily rises at the hatch with her back to the camera; Skye
+   sits on the nest blanket with both arms stuck straight out sideways and stiff (a seated T), not hugging her knees.
+   Fix: Skye knees up, arms around her knees or the note fist on her knee. **should**
 10. **ch08 0:22.0-0:23.0 (f661-700) [7:59.3], staging.** "What happened? Did he see you?" MCU: Lily is standing beside
     the vacuum facing the lens, but in the WS before and after she is still half in the hatch/at the far end; then at
     f701 the WS shows **no Lily at all** (she vanished from the hatch) and she re-enters from the bottom-right corner at
