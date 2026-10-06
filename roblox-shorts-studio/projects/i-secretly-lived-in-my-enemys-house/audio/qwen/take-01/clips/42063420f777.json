@@ -1,0 +1,41 @@
+{
+ "voice": "brittney",
+ "text": "She thinks I'm at a sleepover.",
+ "seed": 27041,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "She",
+   "start": 0.0,
+   "end": 0.56
+  },
+  {
+   "word": "thinks",
+   "start": 0.56,
+   "end": 0.72
+  },
+  {
+   "word": "I'm",
+   "start": 0.72,
+   "end": 0.98
+  },
+  {
+   "word": "at",
+   "start": 0.98,
+   "end": 1.04
+  },
+  {
+   "word": "a",
+   "start": 1.04,
+   "end": 1.14
+  },
+  {
+   "word": "sleepover.",
+   "start": 1.14,
+   "end": 1.62
+  }
+ ],
+ "words_md5": "86e9efdad10c2000677b3b0256ee8892",
+ "whisper": "small.en"
+}
