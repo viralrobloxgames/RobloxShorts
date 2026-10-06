@@ -101,7 +101,7 @@ function guardAt(i, s, who) {
 // Pickings for the two cast-only roles
 function miaAt(s) {
   let x = base([POOL.x + 9.0, 1.0, POOL.z + 3.0], -R90 + 0.4, 'happy'); x.visible = false;
-  if (s >= T.y1972 && s < T.visits) { x.visible = true; x.pos = V(POOL.x + 8.4, 0, POOL.z + 5.4); x.heading = 0.7; x.layers = [['clap', s - T.y1972, 1, true]]; return x; }
+  if (s >= T.y1972 && s < T.visits) { x.visible = true; x.pos = V(POOL.x + 9.0, 0, POOL.z - 1.4); x.heading = -0.5; x.layers = [['clap', s - T.y1972, 1, true]]; return x; }
   if (s >= T.cta) { x.visible = true; x.pos = V(-10.8, 0, LINE_Z); x.heading = 0.1; x.face = 'laugh'; return x; }
   return x;
 }
@@ -120,11 +120,12 @@ function leoCitation(s) {
   const x = base([-2.6, 0, PATH_Z - 0.4], R90 - 0.3, 'determined'); x.arms = [['L', -0.36, -1.05], ['R', -0.36, -1.05]]; x.scroll = true;
   if (s > W.qualified - 0.2) x.face = 'happy'; return x;
 }
-// The 1972 guards walking up to the pool (Max, Leo, Skye)
+// The 1972 visit (Max, Leo, Skye): they march in single file from off-screen right and halt facing the penguin on the rim
+const PEN72 = V(POOL.x + 3.0, 1.0, POOL.z + 4.1);          // the penguin's spot on the pool's front rim (rim top y = 1.0)
 function guard1972(i, s) {
-  const x = base([0, 0, 0], -R90, 'happy');
-  const m = moveTo(x, V(6 + i * 2.4, 0, POOL.z + 4.4 + (i % 2) * 1.2), V(-3.2 + i * 2.1, 0, POOL.z + 4.0 + (i % 2) * 1.0), T.y1972 + 0.05, s, 12, -R90 + 0.15);
-  if (!m.moving && s > W.lance - 0.1 && i === 1) { x.arms = SALUTE; x.face = 'determined'; }
+  const x = base([0, 0, 0], -R90, 'happy'), z = PEN72.z + 1.3 + (i % 2) * 0.4;
+  const m = moveTo(x, V(-1.0 + i * 1.7, 0, z), V(PEN72.x + 2.0 + i * 1.7, 0, z), W.norways - 0.1, s, 5, -R90 + (i === 0 ? 0.75 : 0));   // the nearest turns half to camera so his salute shows
+  if (!m.moving && s > W.lance - 0.1 && i === 0) { x.arms = SALUTE; x.face = 'determined'; }
   return x;
 }
 
@@ -161,8 +162,8 @@ function pengStand(p, pos, heading, opts = {}) { p.visible = true; p.position.co
 function penguins(s) {
   peng.visible = peng2.visible = false;
   if (s < T.y1972) { pengWalk(peng, V(-7.5, 0, PATH_Z), V(5.0, 0, PATH_Z), 0.0, s, 0.4, { look: s > W.outranks ? 0.5 : 0 }); return peng; }
-  if (s < T.visits) {                                        // 1972: on the pool edge, then waddles to the guards
-    pengWalk(peng, V(POOL.x + 6.6, 1.0, POOL.z + 3.2), V(POOL.x + 6.6, 1.0, POOL.z + 3.25), T.y1972, s, R90 - 0.2, { flap: s > W.adopts && s < W.adopts + 0.6 ? 0.6 : 0 }); return peng;
+  if (s < T.visits) {                                        // 1972: on the pool's front rim, facing the guards as they arrive
+    pengWalk(peng, PEN72, PEN72.clone().add(V(0, 0, 0.01)), T.y1972, s, R90 - 0.6, { flap: s > W.adopts && s < W.adopts + 0.6 ? 0.6 : 0 }); return peng;
   }
   if (s < T.change) { pengStand(peng, V(0.4, 0, PATH_Z), 0.1, { flap: 0.25 * Math.max(0, Math.sin((s - T.visits) * 6)) * (s > W.corporal2 - 0.1 ? 1 : 0), look: 0.15 * Math.sin(s * 2) }); return peng; }
   if (s < T.knight) {                                        // one walks off, a lookalike walks in
@@ -225,8 +226,8 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': look(stage, V(pp.x + 3.4, 3.6, PATH_Z + 10.5), V(pp.x - 0.4, 3.1, LINE_Z), 50, 14); break;
     case 'close': look(stage, V(pp.x + 1.6, 2.4, PATH_Z + 4.2), V(pp.x - 0.2, 2.9, PATH_Z - 1.0), 44, 10); break;
-    case 'y1972': look(stage, V(POOL.x + 9.0, 4.6, POOL.z + 14.0), V(POOL.x + 4.0, 2.4, POOL.z + 3.0), 50, 16); break;
-    case 'name': look(stage, V(POOL.x + 9.4, 3.0, POOL.z + 8.6), V(POOL.x + 6.2, 2.6, POOL.z + 3.6), 42, 10); break;
+    case 'y1972': look(stage, V(POOL.x + 5.7, 4.4, POOL.z + 20.0), V(POOL.x + 5.7, 2.4, POOL.z + 4.6), 50, 16); break;
+    case 'name': look(stage, V(POOL.x + 4.0, 3.8, POOL.z + 17.0), V(POOL.x + 4.0, 3.6, POOL.z + 5.0), 42, 10); break;   // headroom for NILS OLAV and the rank card
     case 'visits': look(stage, V(lerp(1.6, 0.8, u), 2.8, PATH_Z + lerp(8.0, 6.4, u)), V(0.4, 2.6, LINE_Z), 46, 12); break;
     case 'change': look(stage, V(0.4, 3.2, PATH_Z + 12.5), V(0.4, 2.4, PATH_Z), 52, 16); break;
     case 'knight': look(stage, V(0.4, 3.4, PATH_Z + 10.0), V(0.9, 2.8, PATH_Z - 0.4), 48, 12); break;
@@ -269,7 +270,7 @@ function insignia(g, s, kind, k) {
   const crown = (x, y) => { g.beginPath(); g.moveTo((x - 50) * s, (y + 30) * s); g.lineTo((x - 50) * s, (y - 20) * s); g.lineTo((x - 25) * s, y * s); g.lineTo(x * s, (y - 35) * s); g.lineTo((x + 25) * s, y * s); g.lineTo((x + 50) * s, (y - 20) * s); g.lineTo((x + 50) * s, (y + 30) * s); g.closePath(); g.fill(); g.stroke(); };
   if (kind <= 3) for (let i = 0; i < kind; i++) chev(-60 + i * 40);
   if (kind === 4) crown(0, 0);
-  if (kind === 5) { g.font = `${110 * s}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineWidth = 16 * s; g.strokeText('SIR', 0, 0); g.fillText('SIR', 0, 0); }
+  if (kind === 5) for (const [x0, y0, w, h] of [[-9, -88, 18, 128], [-46, 40, 92, 16], [-8, 56, 16, 32]]) { g.fillRect(x0 * s, y0 * s, w * s, h * s); g.strokeRect(x0 * s, y0 * s, w * s, h * s); }   // a sword
   if (kind === 6) { crown(0, -30); star(0, 50, 30); }
   if (kind === 7) { g.save(); for (const r of [-0.6, 0.6]) { g.save(); g.rotate(r); g.fillRect(-8 * s, -70 * s, 16 * s, 140 * s); g.strokeRect(-8 * s, -70 * s, 16 * s, 140 * s); g.restore(); } g.restore(); star(0, -95, 30); }
   g.restore();
@@ -279,7 +280,7 @@ const RANKS = () => [[W.lance - 0.1, 'LANCE CORPORAL', 1], [W.corporal2 - 0.1, '
 function rankCard(g, s, t) {
   const show = ['name', 'visits', 'knight', 'brigadier', 'general', 'close'].includes(SHOT); if (!show) return;
   let cur = SHOT === 'close' ? [0, 'MAJOR GENERAL', 7] : null; if (SHOT !== 'close') for (const r of RANKS()) if (t >= r[0]) cur = r;
-  if (!cur) return;
+  if (!cur || (SHOT === 'general' && cur[2] !== 7)) return;
   const k = SHOT === 'close' ? pop(t, W.outranks - 0.1) : pop(t, cur[0], 0.25);
   g.save(); g.translate(540 * s, 440 * s);
   roundRect(g, -400 * s, -150 * s, 800 * s, 300 * s, 36 * s); g.fillStyle = 'rgba(12,16,32,.88)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#ffd23f'; g.stroke();
