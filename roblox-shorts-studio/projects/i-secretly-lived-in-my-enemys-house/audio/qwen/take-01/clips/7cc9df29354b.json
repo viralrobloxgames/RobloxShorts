@@ -1,0 +1,56 @@
+{
+ "voice": "max_kid",
+ "text": "And why do you smell like my dad's pancakes?",
+ "seed": 78220,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "And",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "why",
+   "start": 0.2,
+   "end": 0.44
+  },
+  {
+   "word": "do",
+   "start": 0.44,
+   "end": 0.58
+  },
+  {
+   "word": "you",
+   "start": 0.58,
+   "end": 0.74
+  },
+  {
+   "word": "smell",
+   "start": 0.74,
+   "end": 0.96
+  },
+  {
+   "word": "like",
+   "start": 0.96,
+   "end": 1.18
+  },
+  {
+   "word": "my",
+   "start": 1.18,
+   "end": 1.38
+  },
+  {
+   "word": "dad's",
+   "start": 1.38,
+   "end": 1.76
+  },
+  {
+   "word": "pancakes?",
+   "start": 1.76,
+   "end": 2.22
+  }
+ ],
+ "words_md5": "330b1c7f4346a09c724ad1f0babdb822",
+ "whisper": "small.en"
+}

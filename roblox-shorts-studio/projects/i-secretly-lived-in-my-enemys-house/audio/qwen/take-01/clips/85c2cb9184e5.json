@@ -1,0 +1,41 @@
+{
+ "voice": "brittney",
+ "text": "Lucky guess. Everybody does that. Bye!",
+ "seed": 66232,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lucky",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "guess?",
+   "start": 0.3,
+   "end": 0.64
+  },
+  {
+   "word": "Everybody",
+   "start": 1.04,
+   "end": 1.26
+  },
+  {
+   "word": "does",
+   "start": 1.26,
+   "end": 1.6
+  },
+  {
+   "word": "that?",
+   "start": 1.6,
+   "end": 1.92
+  },
+  {
+   "word": "Bye!",
+   "start": 2.26,
+   "end": 2.46
+  }
+ ],
+ "words_md5": "e554a090f2f494b2b75e6b8bb8cc71b2",
+ "whisper": "small.en"
+}

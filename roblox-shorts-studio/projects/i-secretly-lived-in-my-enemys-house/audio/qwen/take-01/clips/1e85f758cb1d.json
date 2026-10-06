@@ -1,0 +1,36 @@
+{
+ "voice": "max_kid",
+ "text": "How do you know that?",
+ "seed": 1452,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "How",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "do",
+   "start": 0.26,
+   "end": 0.4
+  },
+  {
+   "word": "you",
+   "start": 0.4,
+   "end": 0.5
+  },
+  {
+   "word": "know",
+   "start": 0.5,
+   "end": 0.68
+  },
+  {
+   "word": "that?",
+   "start": 0.68,
+   "end": 0.94
+  }
+ ],
+ "words_md5": "60bb328db2ec0a03b932d338c54856de",
+ "whisper": "small.en"
+}
