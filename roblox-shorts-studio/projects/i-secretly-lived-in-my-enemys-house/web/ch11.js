@@ -74,31 +74,33 @@ export async function setup(stage) {
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs'); K.dress(C.lily, 'lily_pjs'); K.dress(C.dad, 'dad_apron');
   A = await K.loadAnims(['idle', 'walk', 'sit', 'laugh']);
   const add = (k, id, o) => { P[k] = K.makeProp(id, o); stage.scene.add(P[k]); return P[k]; };
-  add('spatula', 'spatula'); add('phone', 'phone'); add('plate', 'plate', { with: 'sandwich' }); add('pancake', 'pancake');
+  add('spatula', 'spatula'); add('pan', 'pan', { pancake: true }); add('phone', 'phone'); add('plate', 'plate', { with: 'sandwich' }); add('pancake', 'pancake');
   try { add('bag', 'backpack'); } catch { P.bag = null; }     // floor backpack: requested from kit-props
 }
 export const cast = () => ({ skye: C.skye, max: C.max, dad: C.dad, lily: C.lily });
 
 // ---------- the shot table (one scene; every camera on the open +z side of the room) ----------
 const KO = K.SET_ORIGIN.kitchen;
+// the closing wide / end screen: the four in a compact block at frame centre, SAY YES in the left third, Dad clear between Max and Skye
+const WIDE_POS = [6, 10.6, 14], WIDE_TGT = [-2.1, 3.7, -4.6], WIDE_FOV = 38;
 // fixed set-ups (kitchen-local), all on the open +z side; walls auto-hide, so no wall pull-in
 const fixed = (pos, target, fov) => (s) => K.setCam(s, { pos: KO.clone().add(V(...pos)), target: KO.clone().add(V(...target)), fov }, { clear: false });
 const dadCU = (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.45 });
 const skyeMCU = (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.3 });
-const lilyCU = fixed([-6.2, 4.9, 1.8], [-3.6, 4.1, -3.2], 32);
+const lilyCU = fixed([-5.4, 4.6, 4.2], [-4.0, 4.1, -3.2], 26);
 const seatedTwo = fixed([-0.2, 5.4, 5.0], [0.0, 4.4, -3.2], 30);
-const skyeSeatCU = (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.7 });
+const skyeSeatCU = fixed([6.6, 7.6, 0.9], [-0.2, 5.3, -3.8], 36);      // from front-right: SAY YES on the fridge behind her
 const SHOTS = [
-  { line: LN.vo, off: 0, id: 'stairs_wide', cam: fixed([5.5, 8.2, 15], [5, 5.6, -4], 56) },
+  { line: LN.vo, off: 0, id: 'stairs_wide', cam: fixed([5.5, 10.2, 15], [4.6, 5.6, -4], 56) },
   { line: LN.morning, off: -0.1, id: 'stove_ms', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.9 }) },
   { line: LN.pumpkin, off: -0.05, id: 'dad_cu', cam: dadCU },
-  { line: LN.ghost, off: -0.05, id: 'island_two', cam: fixed([6, 6.2, 13], [8.5, 4.3, -1], 50) },
+  { line: LN.ghost, off: -0.05, id: 'max_mcu', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.4 }) },
   { line: LN.thief, off: -0.05, id: 'dad_cu', cam: dadCU },
   { line: LN.sorry, off: -0.1, id: 'skye_ms', cam: (s) => K.camOn(s, C.skye, 'ms', { angle: 0.3 }) },
   { line: LN.knew, off: -0.05, id: 'lily_cu', cam: lilyCU },
   { line: LN.youKnew, off: -0.05, id: 'dad_cu', cam: dadCU },
   { line: LN.horse, off: -0.05, id: 'lily_cu', cam: lilyCU },
-  { line: LN.mother, off: -0.05, id: 'dad_skye_two', cam: fixed([8.5, 6.4, 7.5], [1.5, 4.6, -5], 46) },
+  { line: LN.mother, off: -0.05, id: 'dad_cu', cam: dadCU },
   { line: LN.sleepover, off: -0.05, id: 'skye_mcu', cam: skyeMCU },
   { line: LN.week, off: -0.05, id: 'dad_cu', cam: dadCU },
   { line: LN.long, off: -0.05, id: 'skye_mcu', cam: skyeMCU },
@@ -111,8 +113,8 @@ const SHOTS = [
   { line: LN.cond, off: -0.05, id: 'skye_cu', cam: skyeSeatCU },
   { line: LN.crusts, off: -0.05, id: 'max_cu', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.6 }) },
   { line: LN.crusts2, off: -0.05, id: 'island_two_seated', cam: seatedTwo },
-  { line: LN.pancakes, off: -0.1, id: 'stove_ms', cam: fixed([5.5, 6.0, -4.5], [-2, 4.9, -9], 38) },
-  { t: T_WIDE, id: 'island_wide', cam: fixed([-4, 8.5, 11], [-0.5, 4.5, -5], 40) },
+  { line: LN.pancakes, off: -0.1, id: 'stove_ms', cam: fixed([4.2, 5.9, -5.6], [-1.6, 4.8, -8.4], 42) },
+  { t: T_WIDE, id: 'island_wide', cam: fixed(WIDE_POS, WIDE_TGT, WIDE_FOV) },
 ].map((x) => ({ ...x, start: x.t ?? at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
@@ -123,6 +125,8 @@ const lerpH = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * u;
 // one-arm kit gesture held from t0 to t1, eased in and out over 0.25 s
 const gest = (actor, name, side, t0, t1, t) => { const k = sm(inv(t0, t0 + 0.25, t)) * (1 - sm(inv(t1 - 0.25, t1, t))); if (k > 0) K.gesture(actor, name, side, k); };
 const STRIDE = 14.5;
+const PHONE_OFF = [-0.7, -0.3, 0];     // phone in the fist against her ear (hold() offset, phone frame)
+const PAN = (t) => t >= at(LN.pancakes) - 0.3;
 const FLIPS = () => [at(LN.pancakes) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5];
 // Walk down the stairs in legs [from, to, arriveAt]: straight along the flight (feet on the slope), legs driven by the
 // horizontal distance, stopping between legs (a nervous pause on the steps).
@@ -169,7 +173,6 @@ export function update(t, stage) {
       const m = K.walk(C.skye, A, bottom, endM, tLeave, t, { idleAt: idle });
       if (m.done) {
         K.playAnim(C.skye, [[A.idle, idle]]);
-        gest(C.skye, 'hand_on_neck', 'L', end(LN.sorry) - 2.6, end(LN.sorry) + 0.3, t);
         const sh2 = sm(inv(at(LN.sleepover) + 0.2, at(LN.sleepover) + 0.45, t)) * (1 - sm(inv(end(LN.sleepover), end(LN.sleepover) + 0.3, t)));
         if (sh2 > 0) K.posture(C.skye, 'shrug', { mix: sh2, reset: false });
         gest(C.skye, 'phone_ear', 'R', at(LN.mom) - 0.4, T_LATER + 0.2, t);
@@ -180,9 +183,10 @@ export function update(t, stage) {
     K.dress(C.skye, ['skye_hoodie', 'backpack']);
   } else {
     K.playAnim(C.skye, [[A.sit, 0]]);
-    gest(C.skye, 'point', 'L', at(LN.fridgeAsk) + 0.7, end(LN.fridgeAsk) + 0.2, t);
-    gest(C.skye, 'finger_up', 'R', at(LN.cond) + 0.4, end(LN.cond) + 0.3, t);
-    K.putOn(C.skye, s3, { sit: true, heading: -0.5 });
+    // on her two lines she turns to the front-right camera: a thumb back over her right shoulder at the fridge, then a finger up (left arm, clear of Max)
+    const turn = sm(inv(at(LN.fridgeAsk) - 0.2, at(LN.fridgeAsk) + 0.2, t)) * (1 - sm(inv(end(LN.cond) + 0.1, end(LN.cond) + 0.5, t)));
+    K.putOn(C.skye, s3, { sit: true, heading: lerpH(-0.5, 0.45, turn) });
+    gest(C.skye, 'finger_up', 'L', at(LN.cond) + 0.4, end(LN.cond) + 0.3, t);
     K.dress(C.skye, 'skye_hoodie');
   }
   K.dress(C.max, 'max_pjs'); K.dress(C.lily, 'lily_pjs'); K.dress(C.dad, 'dad_apron');
@@ -214,15 +218,16 @@ export function update(t, stage) {
     K.playAnim(C.dad, [[A.idle, idle]]);
     const toRoom = sm(inv(at(LN.morning) - 0.3, at(LN.morning) + 0.3, t)) * (1 - sm(inv(at(LN.pancakes) - 0.4, at(LN.pancakes) + 0.1, t)));
     const tgt = t < at(LN.morning) + 1.3 ? s2.pos : seated ? s3.pos : t < at(LN.sorry) + 1 ? bottom.pos : endM.pos;
-    const back = t >= T_WIDE ? 0.55 : 0;                // in the wide, half turned to the kids while he flips
-    const h = lerpH(sv.heading, lerpH(K.faceTo(sv, tgt), CHEAT, 0.3), Math.max(toRoom, back));
-    const hh = t >= at(LN.pancakes) - 0.1 && t < T_WIDE ? 0.5 : h;
-    K.putOn(C.dad, sv, { heading: hh });
+    let h = lerpH(sv.heading, lerpH(K.faceTo(sv, tgt), CHEAT, 0.3), toRoom);
+    if (t < at(LN.morning) - 0.3) h = 0.9;               // frame 0: cooking side-on, 3/4 to the opening wide
+    if (PAN(t)) h = 0.9;                                  // flipping with the pan held out, 3/4 to the stove shot and the wide
+    K.putOn(C.dad, sv, { heading: h });
     gest(C.dad, 'point', 'R', at(LN.thief), end(LN.thief) + 0.3, t);
     gest(C.dad, 'hand_on_hip', 'L', at(LN.mother) + 0.1, end(LN.week) + 0.2, t);
     gest(C.dad, 'point', 'R', at(LN.phone), end(LN.phone) + 0.1, t);
-    gest(C.dad, 'hand_on_hip', 'L', at(LN.pancakes) + 1.0, T_WIDE + 3.5, t);            // laughing, proud of his pancakes
-    for (const f of FLIPS()) gest(C.dad, 'tap', 'R', f - 0.35, f + 0.5, t);    // the spatula flick for each flip
+    // from "Pancakes for everyone!" on: the pan out in his right hand, the spatula in his left, a flick up for each flip
+    if (PAN(t)) { K.gesture(C.dad, 'hold_out', 'R', 1); K.gesture(C.dad, 'hold_out', 'L', 0.55); }
+    for (const f of FLIPS()) gest(C.dad, 'tap', 'L', f - 0.3, f + 0.35, t);
   }
 
   // --- faces ---
@@ -239,9 +244,10 @@ export function update(t, stage) {
   K.speak(C.dad, dadF, t, L.said('DAD'));
 
   // --- props ---
-  K.hold(P.spatula, C.dad, 'R');
+  K.hold(P.spatula, C.dad, PAN(t) ? 'L' : 'R');
+  P.pan.visible = PAN(t); if (PAN(t)) K.hold(P.pan, C.dad, 'R', 'palm');
   const phoneOut = t >= at(LN.mom) - 0.4 && t < T_LATER;
-  if (phoneOut) { P.phone.visible = true; K.hold(P.phone, C.skye, 'R', 'palm'); }
+  if (phoneOut) { P.phone.visible = true; K.hold(P.phone, C.skye, 'R', 'palm', { offset: PHONE_OFF }); }
   else if (seated) { if (P.phone.parent !== stage.scene) stage.scene.add(P.phone); const p = M.phoneDown(); P.phone.visible = true; P.phone.scale.setScalar(1); P.phone.position.copy(p.pos).add(V(0, 0.06, 0)); P.phone.rotation.set(-Math.PI / 2, p.heading, 0, 'YXZ'); }   // lying flat, screen up
   else P.phone.visible = false;
   // the crustless sandwich: in front of Max after "Later"; he slides it to Skye in the wide (it follows his palm)
@@ -252,11 +258,13 @@ export function update(t, stage) {
     if (u > 0 && u < 1) { const h = palmR(C.max); pp.set(h.x, a.y, h.z); }
     K.place(P.plate, pp, 0);
   }
-  // pancake flips from the pan: on "Pancakes for everyone!" and slowly through the wide / end screen
+  // pancake flips out of the held pan: on "Pancakes for everyone!" and slowly through the wide / end screen
   {
-    let y = 0, r = 0;
-    for (const f of FLIPS()) { const u = inv(f, f + 0.9, t); if (u > 0 && u < 1) { y = 2.4 * 4 * u * (1 - u); r = u * Math.PI * 2; } }
-    K.place(P.pancake, M.pan().pos.clone().add(V(0, y, 0))); P.pancake.rotation.x = r;
+    const cake = P.pan.userData.pancake; cake.visible = true;
+    let y = 0.04, r = 0;
+    for (const f of FLIPS()) { const u = inv(f, f + 0.9, t); if (u > 0 && u < 1) { y = 0.04 + 2.2 * 4 * u * (1 - u); r = u * Math.PI * 2; } }
+    cake.position.y = y; cake.rotation.x = r;
+    P.pancake.visible = false;
   }
   if (P.bag) { P.bag.visible = seated; if (seated) { const b = M.bagFloor(); K.place(P.bag, b.pos, b.heading); } }
 
