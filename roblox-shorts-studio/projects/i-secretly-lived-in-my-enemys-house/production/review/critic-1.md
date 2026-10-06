@@ -55,6 +55,15 @@ How I looked: I joined chNN_a + chNN_b, took 3 fps 2x2 sheets at 960 px across e
 | 19 | 0:00-1:01 | night shots | Max/Skye skin and hair read as other characters |
 | 20 | 0:57.3-0:59.4 | f1720-1785 | Lily's line over Max, Lily never shown |
 
+### ch01 kit tags (orchestrator 23:25Z; the kit fixes the cause, ch01 still changes its blocking)
+- **SA2 closet sight line:** #1, #2, #3 (restage on `closet_hide` / `closet_hide_pov`, doors shut for the approach). #4 hair lock: at the wall edge at most (SA2).
+- **K3 T/two-arm poses:** #11 "Spider!" becomes one-arm `shock`. **K1 zombie arms:** #5 Max's flashlight arm; #6 the mannequin hold. #7's robot arm swing is ch01 blocking.
+- **K4 face cycling:** none seen in ch01 beyond #16's emotion pop (#16 is a chapter-side base-face choice).
+- **P1 identity under night light:** #19 (all night shots; ch01 only needs to re-check after P1 f63801b). #21/#22 stay ch01.
+- **P2 camera:** #8 (180° pop at the cut f509-511) is a `camOn`-from-facing cut, so P2: use a fixed heading. cam_check also flags f1414-1461 (0:47.1, the dusk yard): the camera sits inside an exterior-set box. I saw no visible artefact there at 3 fps, but check it.
+- **PR1 prop grips:** #10 (the spider has no hand), #12 (fist into her face: also blocking, so hold 15-20 cm off her face), #13 (the floating lunchbox is a placement, not a grip: ch01 must put it on the desk top).
+- **SC1 classroom seats/aisles:** #6, #7, #9, #14 (`desk_rXcY_side`, `set.route()`). Chapter-only: #15 (OTS camera through her arm), #17 (door), #18, #20 (Lily on screen).
+
 ## ch02 "Twelve Pancakes" (1:03.7-2:10.6)
 
 ### A. Secrecy: Skye in plain view of the family (shared cause: her kitchen marks are on the lit room side of the island, and the family's eyelines point at her)

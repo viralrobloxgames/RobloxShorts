@@ -42,7 +42,7 @@ export const PRESETS = {
   },
   attic_afternoon: {   // the attic's own lights (set.lights.sun through the round window, bounce) carry it: the stage sun is off
     sky: { zenith: '#4f8fe0', horizon: '#ffe2b0', below: '#d8c8a8', sunColor: '#ffd9a0' },
-    sun: ['#ffd9a8', 0.0, [0.75, 0.45, 0.35]], hemi: ['#ffe3c0', '#5a4636', 0.22], fill: ['#ffcf9a', 0.12], rim: ['#ffe0b8', 0.2],
+    sun: ['#ffd9a8', 0.0, [0.75, 0.45, 0.35]], hemi: ['#ffe3c0', '#5a4636', 0.22], fill: ['#c3cdec', 0.45], rim: ['#ffe0b8', 0.2],   // SB2: a cool front fill so faces and Lily's yellow dress separate from the amber wood
     env: 0.18, exposure: 1.0, fog: ['#c9a882', 140, 650], bloom: 0.3, cast: 0.22, practicals: { sun: 0.1, bounce: true },
   },
   sunday_morning: {    // Ch11 kitchen: soft warm morning, the happiest light in the film
