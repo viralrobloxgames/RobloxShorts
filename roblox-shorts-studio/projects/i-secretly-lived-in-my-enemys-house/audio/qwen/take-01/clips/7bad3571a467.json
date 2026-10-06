@@ -1,0 +1,86 @@
+{
+ "voice": "max_kid",
+ "text": "Nothing. My house is so boring, nothing ever happens there. Not even a creaky floor.",
+ "seed": 5346,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Nothing.",
+   "start": 0.0,
+   "end": 0.54
+  },
+  {
+   "word": "My",
+   "start": 1.04,
+   "end": 1.22
+  },
+  {
+   "word": "house",
+   "start": 1.22,
+   "end": 1.52
+  },
+  {
+   "word": "is",
+   "start": 1.52,
+   "end": 1.72
+  },
+  {
+   "word": "so",
+   "start": 1.72,
+   "end": 2.0
+  },
+  {
+   "word": "boring.",
+   "start": 2.0,
+   "end": 2.48
+  },
+  {
+   "word": "Nothing",
+   "start": 3.14,
+   "end": 3.38
+  },
+  {
+   "word": "ever",
+   "start": 3.38,
+   "end": 3.72
+  },
+  {
+   "word": "happens",
+   "start": 3.72,
+   "end": 4.1
+  },
+  {
+   "word": "there.",
+   "start": 4.1,
+   "end": 4.48
+  },
+  {
+   "word": "Not",
+   "start": 4.92,
+   "end": 5.08
+  },
+  {
+   "word": "even",
+   "start": 5.08,
+   "end": 5.28
+  },
+  {
+   "word": "a",
+   "start": 5.28,
+   "end": 5.44
+  },
+  {
+   "word": "creaky",
+   "start": 5.44,
+   "end": 5.78
+  },
+  {
+   "word": "floor.",
+   "start": 5.78,
+   "end": 6.1
+  }
+ ],
+ "words_md5": "04ddfc5da625f035d8545c12a905bcf8",
+ "whisper": "small.en"
+}

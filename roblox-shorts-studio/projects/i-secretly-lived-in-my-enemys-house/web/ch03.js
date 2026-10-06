@@ -46,11 +46,13 @@ export const meta = K.chapterMeta(L.end + 0.8);
 export const sky = K.SKY;
 export const samples = () => 1;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const at = (i, off = 0) => L.line(i).start + off;
-const endOf = (i, off = 0) => L.line(i).end + off;
+// lines by their order in the chapter (0-based; lines.json numbers them from 1)
+const LN = (i) => { const l = L.lines[i]; if (!l) throw new Error(`ch03: no spoken line #${i}`); return l; };
+const at = (i, off = 0) => LN(i).start + off;
+const endOf = (i, off = 0) => LN(i).end + off;
 const inv = (a, b, x) => Math.min(1, Math.max(0, (x - a) / (b - a)));
 const sm = (u) => u * u * (3 - 2 * u);
-const word = (i, k) => { const l = L.line(i), ws = L.words.filter((w) => w.speaker === l.speaker && w.start >= l.start - 0.05 && w.end <= l.end + 0.05); return ws[Math.min(k, ws.length - 1)] || { start: l.start, end: l.end }; };
+const word = (i, k) => { const l = LN(i), ws = L.words.filter((w) => w.speaker === l.speaker && w.start >= l.start - 0.05 && w.end <= l.end + 0.05); return ws[Math.min(k, ws.length - 1)] || { start: l.start, end: l.end }; };
 
 // ---------- marks (kitchen set, local layout in web/kit/sets/kitchen.js; +z is the open camera side) ----------
 const PI = Math.PI;
@@ -166,7 +168,7 @@ const SHOTS = [
   { at: () => at(11, 0.15), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'mcu') },
   { at: () => at(12), id: 'skye_smug', cam: fix(AT_ISLAND, 'skye', 'ms') },
   { at: () => T.duck - 0.05, id: 'wide_dad', cam: cam('stairs_wide') },
-  { at: () => T.dadBehind, id: 'dad_walk', cam: fix(WALK_IN, 'dad', 'ms') },
+  { at: () => T.dadBehind, id: 'dad_walk', cam: cam('kitchen_wide') },
   { at: () => T.dadAt + 0.1, id: 'dad_snack', cam: fix(AT_FRIDGE, 'dad', 'ms') },
   { at: () => at(14), id: 'dad_reads', cam: fix(AT_FRIDGE, 'dad', 'mcu') },
   { at: () => at(15), id: 'dad_up', cam: fix(AT_FRIDGE, 'dad', 'mcu') },
@@ -333,3 +335,8 @@ export function update(t, stage) {
 
 // ---------- overlay ----------
 export function overlay(g, s, t) { K.dayCard(g, s, t, CARD); }
+
+// for the hold check (ch03_hold.js)
+export const cast = () => C;
+export const lineAt = (i, off = 0) => at(i, off);
+export const lineEnd = (i, off = 0) => endOf(i, off);
