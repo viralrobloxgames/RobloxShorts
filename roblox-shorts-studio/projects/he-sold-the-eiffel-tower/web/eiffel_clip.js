@@ -97,7 +97,7 @@ function moveTo(x, from, to, t0, s, speed, endHeading, gait) {
   x.moving = moving; x.dist = u * d; return x;
 }
 const headTo = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
-const SIT_Y = 1.55;                                                // root height that puts a seated R6 on a 2.2-high chair
+const SIT_Y = 0.7;                                                 // root height that puts a seated R6 on a 2.2-high chair (hips 2 above the root)
 const sitAt = (pos, heading, face) => { const x = st(pos, heading, face); x.sit = true; x.pos.y = pos.y + SIT_Y; x.layers = [['sit', 0, 1, false]]; return x; };
 const HOOK_MAX = P_(-1.7, 0, 40), HOOK_LEO = P_(1.7, 0, 40);
 
@@ -121,9 +121,9 @@ function maxAt(s) {
       const k = inv(T.stampT, T.stampT + 0.28, s), slam = k < 1 ? Math.sin(k * PI) : 0;
       x.arms = [['R', 0.1, -0.75 - 0.7 * slam]]; x.stampR = true; x.face = 'smug'; return x;
     }
-    case 'hotel': { x = st(H_(-11.2, 0, 0), R90, 'smug'); x.layers = [['proud', 0.35, 1, false]]; return x; }
+    case 'hotel': { x = st(H_(-9.6, 0, 1.8), R90 - 0.6, 'smug'); x.layers = [['proud', 0.35, 1, false]]; return x; }
     case 'whisper': {
-      x = st(H_(-9.6, 0, 0), R90, 'scheming'); x.layers = [['talk', s * 0.8, 1, true]]; x.lean = 0.28 * smooth(inv(T.whisper, T.whisper + 0.4, s));
+      x = st(H_(-9.6, 0, 0.4), R90 - 0.45, 'scheming'); x.layers = [['talk', s * 0.8, 1, true]]; x.lean = 0.28 * smooth(inv(T.whisper, T.whisper + 0.4, s));
       x.arms = [['L', 0.25, -0.7]]; return x;
     }
     case 'bribe': {                                              // palm out for the bribe, takes the bags, turns to go
@@ -140,22 +140,22 @@ function maxAt(s) {
       const tr = trainX(s), door = S_(tr + 3.6, 1.7, 1.55), plat = S_(tr + 3.6, K.PLAT_Y, -1.6);
       x = st(door, PI, 'evil_grin'); x.air = true;
       const k = smooth(inv(W.comes - 0.05, W.back + 0.1, s)); x.pos = door.clone().lerp(plat, k); x.pos.y = lerp(1.7, K.PLAT_Y, k) + Math.sin(k * PI) * 0.5;
-      if (k > 0 && k < 1) x.layers = [['walk', k * 1.2]];
+      if (k > 0 && k < 1) x.layers = [['walk', (3.2 * k) / STRIDE]];
       if (s > W.again1 - 0.2) { x.face = 'evil_grin'; x.layers = [['proud', 0.35, 1, false]]; }
       return x;
     }
     case 'flee': {                                               // sprinting down the pier to the ship
-      const a = D_(26, 2.2, 4.0), b = D_(-2, 2.2, 2.0);
-      x = st(a, -R90, 'scared'); moveTo(x, a, b, T.flee - 0.4, s, 22, -R90 - 0.6, 'sprint'); x.face = 'scared'; return x;
+      const a = D_(22, 2.2, 4.0), b = D_(-2, 2.2, 2.0);
+      x = st(a, -R90, 'scared'); moveTo(x, a, b, T.flee - 0.4, s, 16, -R90 - 0.6, 'run'); x.face = 'scared'; return x;
     }
     case 'capone': {                                             // hands the briefcase back across the desk; takes the reward
-      x = st(G_(-2.4, 0, 1.2), PI - 0.45, 'smug');
+      x = st(G_(-5.5, 0, -0.4), headTo(G_(-5.5, 0, -0.4), G_(1.0, 0, -5.6)), 'smug');
       const k = smooth(inv(T.capone + 0.1, W.gangster, s)); x.arms = [['R', 0.1, lerp(-0.3, -1.05, k)]]; x.case = k < 0.98 ? 'R' : null;
       if (s > W.capone + 0.3) { x.arms = [['R', 0.1, -1.0]]; x.face = 'cool'; }
       return x;
     }
     case 'money': {                                              // the money box spits bills; then the police
-      x = st(O_(0, 0, -7.0), 0, 'cool'); x.layers = [['scheming', s * 0.6, 1, true]];
+      x = st(O_(-1.2, 0, -7.0), 0.15, 'cool'); x.layers = [['scheming', s * 0.6, 1, true]];
       if (s > W.caught1 - 0.1) { x.face = 'shocked'; x.layers = [['shock', clamp(s - W.caught1, 0, 0.3), 1, false]]; x.heading = 0.6; }
       return x;
     }
@@ -178,9 +178,9 @@ function leoAt(s) {
       if (s > W.police1 - 0.25) { const k = smooth(inv(W.police1 - 0.25, W.police1 + 0.15, s)); x.arms = [['R', 0.12, lerp(-1.0, 0.75, k)]]; x.face = 'nervous'; x.look = [0.5 * k, 0]; }
       return x;
     }
-    case 'hotel': return sitAt(H_(-5, 0, -2.9), 0, 'happy');
-    case 'whisper': { x = sitAt(H_(-5, 0, -2.9), 0, 'surprised'); x.lean = 0.18; x.heading = -0.5; return x; }
-    case 'poisson': { x = sitAt(H_(-5, 0, -2.9), 0.15, 'love'); if (s > W.wants2 - 0.15) { x.layers = [['sit', 0, 1, false]]; x.arms = [['R', 0.15, -2.55]]; } return x; }
+    case 'hotel': return sitAt(H_(-5, 0, -3.6), 0, 'happy');
+    case 'whisper': { x = sitAt(H_(-5, 0, -3.6), 0, 'surprised'); x.lean = 0.18; x.heading = -0.5; return x; }
+    case 'poisson': { x = sitAt(H_(-5, 0, -3.6), 0.15, 'love'); if (s > W.wants2 - 0.15) { x.layers = [['sit', 0, 1, false]]; x.arms = [['R', 0.15, -2.55]]; } return x; }
     case 'bribe': {
       x = st(H_(-8.2, 0, 2.4), -R90 + 0.35, 'happy');
       if (s > W.bribe - 0.2 && s < W.bribe + 0.35) { x.arms = [['R', 0.12, -1.05]]; x.bag2 = 'R'; }
@@ -195,7 +195,7 @@ function leoAt(s) {
 // Mia, Skye: dealers in the hotel (Mia calls the police). Noob: dealer, then Capone, then the policeman.
 function extraAt(a, s) {
   let x = st(V(0, -50, 0), 0); x.visible = false;
-  const seats = { mia: [H_(0, 0, -2.9), 0], skye: [H_(5, 0, -2.9), -0.15], noob: [H_(9.0, 0, 0), -R90] };
+  const seats = { mia: [H_(0, 0, -3.6), 0], skye: [H_(5, 0, -3.6), -0.15], noob: [H_(9.6, 0, 0), -R90] };
   const k = a === mia ? 'mia' : a === skye ? 'skye' : 'noob';
   switch (SHOT) {
     case 'hotel': case 'whisper': case 'poisson': {
@@ -206,14 +206,14 @@ function extraAt(a, s) {
     }
     case 'call': {
       if (k !== 'mia') return x;
-      x = sitAt(H_(0, 0, -2.9), 0, 'angry'); const kk = smooth(inv(T.call + 0.05, T.call + 0.45, s));
+      x = sitAt(H_(0, 0, -3.6), 0, 'angry'); const kk = smooth(inv(T.call + 0.05, T.call + 0.45, s));
       x.arms = [['R', lerp(0.12, 0.55, kk), lerp(-0.4, -2.35, kk)]]; x.ear = kk > 0.5; return x;
     }
   }
   if (k !== 'noob') return x;
   switch (SHOT) {
     case 'buyer': {                                              // the policeman strolling behind Leo
-      const a0 = P_(-14, 0, 24), b0 = P_(16, 0, 26); x = st(a0, R90, 'neutral'); moveTo(x, a0, b0, T.buyer - 0.6, s, 5.5, R90); x.outfit = 'cop'; return x;
+      const a0 = P_(-24, 0, 24), b0 = P_(24, 0, 26); x = st(a0, R90, 'neutral'); moveTo(x, a0, b0, T.buyer - 0.9, s, 12, R90); x.outfit = 'cop'; return x;
     }
     case 'flee': {                                               // chasing, too late
       const a0 = D_(44, 2.2, 4.0), b0 = D_(18, 2.2, 4.0); x = st(a0, -R90, 'angry'); moveTo(x, a0, b0, T.flee + 0.2, s, 16, -R90, 'run'); x.outfit = 'cop'; x.face = 'shouting';
@@ -221,19 +221,19 @@ function extraAt(a, s) {
       return x;
     }
     case 'capone': {
-      x = st(G_(0.6, 0, -5.4), 0.25, 'suspicious'); x.outfit = 'gang'; x.layers = [['idle', s]];
+      x = st(G_(1.0, 0, -5.6), headTo(G_(1.0, 0, -5.6), G_(-5.5, 0, -0.4)), 'suspicious'); x.outfit = 'gang'; x.layers = [['idle', s]];
       if (s > W.capone - 0.1) { x.face = 'happy'; x.arms = [['R', 0.1, lerp(-0.3, -1.05, smooth(inv(W.capone - 0.1, W.capone + 0.3, s)))]]; x.stack = 'R'; }
       return x;
     }
     case 'money': {
       if (s < W.caught1 - 0.4) return x;
-      const a0 = O_(9, 0, -2), b0 = O_(4.4, 0, -4.2); x = st(a0, -R90, 'angry'); moveTo(x, a0, b0, W.caught1 - 0.4, s, 12, -R90 - 0.3, 'run'); x.outfit = 'cop';
+      const a0 = O_(11, 0, -1), b0 = O_(6.4, 0, -2.0); x = st(a0, -R90, 'angry'); moveTo(x, a0, b0, W.caught1 - 0.45, s, 16, -R90 - 0.3, 'run'); x.outfit = 'cop';
       if (!x.moving) x.layers = [['point_forward', 0.2, 1, false]];
       return x;
     }
     case 'rope': {
       if (s < W.caught2 - 0.6) return x;
-      const a0 = J_(-9, 0, 8), b0 = J_(-3.2, 0, 4.8); x = st(a0, R90, 'smug'); moveTo(x, a0, b0, W.caught2 - 0.6, s, 12, R90 - 0.5, 'run'); x.outfit = 'cop';
+      const a0 = J_(-9, 0, 8), b0 = J_(-3.2, 0, 4.8); x = st(a0, R90, 'smug'); moveTo(x, a0, b0, W.caught2 - 0.55, s, 16, R90 - 0.5, 'run'); x.outfit = 'cop';
       if (!x.moving) x.layers = [['point_forward', 0.2, 1, false]];
       return x;
     }
@@ -309,7 +309,7 @@ export function update(t, stage) {
   const mx = maxAt(s), lx = leoAt(s); place(max, mx); place(leo, lx);
   const ex = {}; for (const [k, a] of [['mia', mia], ['skye', skye], ['noob', noob]]) { ex[k] = extraAt(a, s); place(a, ex[k]); }
   const outfit = ex.noob.outfit || 'suit';
-  CL.noobSuit.visible = outfit === 'suit'; CL.noobGang.visible = outfit === 'gang'; CL.noobCop.visible = outfit === 'cop'; cap.visible = outfit === 'cop';
+  CL.noobSuit.visible = outfit === 'suit'; CL.noobGang.visible = outfit === 'gang'; CL.noobCop.visible = outfit === 'cop'; cap.item.visible = outfit === 'cop';
 
   // sets
   S.pa.tower.userData.rust(SHOT === 'news' ? smooth(inv(W.rusting - 0.1, W.rusting + 0.9, s)) : 0);
@@ -328,25 +328,25 @@ export function update(t, stage) {
     if (mx.paperL) { P.paper.position.copy(grip(max, 'L')).add(V(0, -0.6, 0)); P.paper.rotation.set(0.2, max.root.rotation.y + PI * 0.75, 0); P.paper.scale.setScalar(0.6); } else P.paper.scale.setScalar(1);
   }
   if (SHOT === 'letters' || SHOT === 'money' || SHOT === 'cert') {   // the desk
-    if (SHOT === 'letters') { P.tw.visible = true; P.tw.position.copy(K.DESK).add(V(-0.6, K.DESK_Y, -0.9)); P.tw.rotation.set(0, PI, 0); }
+    if (SHOT === 'letters') { P.tw.visible = true; P.tw.position.copy(K.DESK).add(V(s < T.stampT ? -0.6 : -3.0, K.DESK_Y, -0.9)); P.tw.rotation.set(0, s < T.stampT ? PI : PI - 0.5, 0); }
     if (mx.stampR) { P.stamp.visible = true; P.stamp.position.copy(grip(max, 'R')).add(V(0, 0.1, 0)); P.stamp.rotation.set(0, 0, 0); }
-    if (SHOT === 'money') { P.box.visible = true; P.box.position.copy(K.DESK).add(V(0.4, K.DESK_Y, 0.4)); P.box.rotation.set(0, 0, 0);
-      const out = K.DESK.clone().add(V(0.4, K.DESK_Y + 1.2, 1.5));
+    if (SHOT === 'money') { P.box.visible = true; P.box.position.copy(K.DESK).add(V(2.4, K.DESK_Y, 0.4)); P.box.rotation.set(0, 0, 0);
+      const out = K.DESK.clone().add(V(2.4, K.DESK_Y + 1.2, 1.5));
       P.bills.forEach((b, i) => { const ph = ((s * 1.4 + i / P.bills.length) % 1); b.visible = true; b.position.copy(out).add(V(Math.sin(i * 2.7) * 2.2 * ph, 1.6 * ph - 2.6 * ph * ph, 2.2 * ph)); b.rotation.set(-1.2 + ph * 3, i, ph * 4); }); }
     if (SHOT === 'cert') { P.cert.visible = true; P.cert.position.copy(K.DESK).add(V(0, K.DESK_Y + 0.03, 0.2)); P.cert.rotation.set(0, 0, 0); }
   }
   if (SHOT === 'letters' && s > W.invites - 0.2) {                   // the letters fly out to the dealers (toward camera)
     P.letters.forEach((l, i) => { const k = clamp(inv(W.invites - 0.2 + i * 0.12, W.invites + 0.5 + i * 0.12, s)); if (k <= 0) return; l.visible = true;
-      l.position.copy(K.DESK).add(V(lerp(0.4, -5 + i * 2.5, k), K.DESK_Y + 0.4 + Math.sin(k * PI) * 2.5 + k * 2, lerp(0.2, 9, k))); l.rotation.set(-0.3, k * 6 + i, 0.4 * Math.sin(k * 5)); });
+      l.position.copy(K.DESK).add(V(lerp(0.4, (i - 2) * 3.4 + (i === 2 ? 4 : 0), k), K.DESK_Y + 0.4 + Math.sin(k * PI) * 2.5 + k * 2, lerp(0.2, 9, k))); l.rotation.set(-0.3, k * 6 + i, 0.4 * Math.sin(k * 5)); });
   }
   if (mx.bag && max.root.visible) holdAt(max, mx.bag, P.bag);
   if (mx.bag2 && max.root.visible) holdAt(max, mx.bag2, P.bag2);
   if (lx.bag && leo.root.visible) holdAt(leo, lx.bag, P.bag);
   if (lx.bag2 && leo.root.visible) holdAt(leo, lx.bag2, P.bag2);
-  if (SHOT === 'call') { P.phone.visible = true; P.phone.position.copy(H_(0.9, 3.45, -1.4)); P.phone.rotation.set(0, 0, 0); const ear = P.phone.userData.ear;
+  if (SHOT === 'call') { P.phone.visible = true; P.phone.position.copy(H_(0.9, 3.65, -1.6)); P.phone.rotation.set(0, 0, 0); const ear = P.phone.userData.ear;
     if (ex.mia.ear) { const g = grip(mia, 'R'); ear.position.copy(g).sub(P.phone.position).add(V(0, 0.05, 0)); ear.rotation.set(0, 0, 0); } else { ear.position.copy(P.phone.userData.rest); ear.rotation.set(0, 0, 0); } }
   if (mx.case) holdAt(max, 'R', P.case);
-  if (SHOT === 'capone' && !mx.case && s > W.gangster - 0.05) { P.case.visible = true; P.case.position.copy(G_(-0.6, 3.6 + 1.6, -2.4)); P.case.rotation.set(-R90, 0, 0.3); }
+  if (SHOT === 'capone' && !mx.case && s > W.gangster - 0.05) { P.case.visible = true; P.case.position.copy(G_(-1.6, 3.6 + 1.85, -2.6)); P.case.rotation.set(0, 0.5, 0); }
   if (ex.noob.stack && noob.root.visible) { P.stack.visible = true; P.stack.position.copy(grip(noob, 'R')).add(V(0, 0.1, 0)); P.stack.rotation.set(0, noob.root.rotation.y, 0); }
   if (SHOT === 'rope') { P.rope.visible = true; P.rope.position.copy(J_(0, 21.7, 0.4)); P.rope.rotation.set(0, 0, 0); }
   if (SHOT === 'train' || SHOT === 'again') { const ch = S.stn.loco.userData.chimney.clone(); S.stn.loco.localToWorld(ch); puffs(ch, s, 0, 6, SHOT === 'train' ? 1 : -1); }
@@ -356,7 +356,7 @@ export function update(t, stage) {
   const mp = max.root.position.clone(), hdM = max.root.visible ? headPos(max) : V();
   switch (SHOT) {
     case 'hook': { const k = easeOut(clamp(t / T.buyer)); look(stage, P_(lerp(0.6, 0.3, k), 2.4, lerp(51.5, 50.5, k)), P_(0, 25, 0), 62, 30); break; }
-    case 'buyer': look(stage, P_(3.0, 4.6, 43.5), P_(0.6, 4.4, 30), 44, 18); break;
+    case 'buyer': look(stage, P_(4.6, 5.0, 47.5), P_(0.2, 4.2, 29), 46, 22); break;
     case 'news': {
       if (s < W.rusting - 0.1) {                                    // the paper spins in toward the camera
         look(stage, P_(6, 3.0, 4), P_(10, 30, -28), 56, 60);
@@ -368,23 +368,23 @@ export function update(t, stage) {
     }
     case 'idea': look(stage, P_(-4.6, 4.8, 39.5), P_(-7.3, 4.6, 31.4), 40, 14); break;
     case 'letters': {
-      if (s < T.stampT) look(stage, O_(1.6, 7.6, -10.8), O_(-0.5, 4.4, -4.4), 44, 12);
+      if (s < T.stampT) look(stage, O_(2.0, 8.0, -8.5), O_(-0.6, 3.6, -3.8), 46, 12);
       else look(stage, O_(2.2, 6.4, 6.5), O_(0, 4.5, -5.2), 46, 14);
       break;
     }
-    case 'hotel': { const k = easeOut(u); look(stage, H_(lerp(4, 2, k), 9.5, lerp(19, 17, k)), H_(-1, 3.6, -2), 54, 26); break; }
-    case 'whisper': look(stage, H_(-3.5, 6.2, 9.5), H_(-6.4, 4.4, -1.0), 50, 16); break;
-    case 'poisson': look(stage, H_(-4.6, 5.0, 4.6), H_(-5, 4.6, -2.9), 44, 10); break;
-    case 'bribe': look(stage, H_(-9.6, 5.0, 12.5), H_(-9.8, 4.3, 2.2), 46, 14); break;
+    case 'hotel': { const k = easeOut(u); look(stage, H_(lerp(-17.5, -16.5, k), 7.4, lerp(10.5, 9.5, k)), H_(1, 3.6, -2.5), 50, 26); break; }
+    case 'whisper': look(stage, H_(-4.0, 6.0, 8.5), H_(-7.6, 4.6, -1.2), 48, 16); break;
+    case 'poisson': look(stage, H_(-4.4, 6.0, 6.5), H_(-5, 5.0, -2.9), 44, 10); break;
+    case 'bribe': look(stage, H_(-9.8, 5.4, 14.5), H_(-9.8, 4.4, 2.2), 46, 14); break;
     case 'train': look(stage, S_(-5, 4.6, -13), S_(-1, 4.4, 2.5), 52, 24); break;
     case 'shame': { const k = easeOut(u); look(stage, P_(lerp(5.8, 4.6, k), 4.2, lerp(5.0, 3.2, k)), P_(2.2, 5.2, -6), 50, 30); break; }
     case 'again': look(stage, S_(9, 4.8, -12), S_(3, 4.0, 0.5), 50, 20); break;
     case 'call': look(stage, H_(1.2, 5.6, 5.8), H_(0.2, 4.6, -2.6), 44, 10); break;
-    case 'flee': look(stage, D_(mp.x + 7, 6.5, 18), D_(mp.x - 2, 5.5, 0), 52, 30); break;
-    case 'capone': look(stage, G_(-0.4, 6.0, 9.0), G_(-0.8, 4.4, -2.4), 48, 14); break;
-    case 'money': look(stage, O_(2.4, 6.0, 6.0), O_(0.6, 4.6, -4.8), 48, 14); break;
+    case 'flee': look(stage, D_(mp.x - 9, 6.0, 16), D_(mp.x + 1, 4.5, 2), 52, 30); break;
+    case 'capone': look(stage, G_(3.0, 6.6, 12.5), G_(-2.2, 4.6, -2.6), 58, 14); break;
+    case 'money': look(stage, O_(1.2, 6.4, 7.5), O_(1.0, 4.6, -4.6), 50, 14); break;
     case 'rope': { const yy = Math.max(hdM.y, 4.6); look(stage, J_(6.5, yy + 1.0, 15.5), J_(-0.5, yy - 0.8, 0), 50, 20); break; }
-    case 'cert': { const c = stage.camera; c.position.copy(K.DESK).add(V(0, K.DESK_Y + 10.4, 0.6)); c.fov = 44; c.updateProjectionMatrix(); c.up.set(0, 0, -1); c.lookAt(K.DESK.clone().add(V(0, K.DESK_Y, 0.55))); stage.aimSun(K.DESK.clone(), 10); break; }
+    case 'cert': { const c = stage.camera; c.position.copy(K.DESK).add(V(0, K.DESK_Y + 10.2, 0.6)); c.fov = 64; c.updateProjectionMatrix(); c.up.set(0, 0, -1); c.lookAt(K.DESK.clone().add(V(0, K.DESK_Y, 0.55))); stage.aimSun(K.DESK.clone(), 10); break; }
     case 'cta': look(stage, P_(0.6, 2.4, 51.5), P_(0, 25, 0), 62, 30); break;
     default: look(stage, V(5, 6, 10), V(0, 4, 0), 50);
   }
@@ -501,3 +501,4 @@ export function overlay(g, s, t) {
 export const cast = () => ({ max, leo, mia, skye, noob });
 export const TIMES = T;
 export const SHOT_LIST = SHOTS;
+export const W_SOLD = W.sold;
