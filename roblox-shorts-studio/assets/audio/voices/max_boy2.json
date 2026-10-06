@@ -1,0 +1,22 @@
+{
+ "made_with": "Qwen3-TTS-12Hz-1.7B-VoiceDesign (cloud, CPU, float32, 4 threads)",
+ "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+ "seed": 5,
+ "language": "English",
+ "instruct": "Young boy, about twelve, speaking in a low and slightly rough boyish voice, unmistakably a boy. Smug and playful, teasing his rival. British accent. Speaks at a steady, natural pace, sentences clearly separated.",
+ "text_full_take": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+ "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday.",
+ "max_new_tokens": 300,
+ "audition": "projects/i-secretly-lived-in-my-enemys-house/production/auditions/max_boy/C_s5.wav (style C, seed 5); reference = its first 6.6 s (three sentences), the question 'Who did you think...' (255-288 Hz, the squeaky part) cut off",
+ "checks_full_take": {
+  "duration_s": 9.68,
+  "f0_median_hz": 167.0,
+  "f0_p10_p90_hz": [
+   101.9,
+   387.2
+  ],
+  "words_per_s": 2.77
+ },
+ "role": "MAX (12-year-old British boy), replaces max_kid in every chapter (scripts/replace_speaker.py)",
+ "chosen": "2026-10-06 by the user (of three takes played by the orchestrator), over B_s5 (max_boy)"
+}
