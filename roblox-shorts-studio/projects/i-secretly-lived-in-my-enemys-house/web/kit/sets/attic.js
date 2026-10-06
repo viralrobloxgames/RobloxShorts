@@ -13,6 +13,15 @@
 import * as THREE from 'three';
 import { canvasTexture, rng } from '../../../../../web/lib/world.js';
 import { roundedBox } from '../../../../../web/lib/rig.js';
+import { makeProp, place } from '../props.js';
+
+// a kit prop (props.js) standing with its rest point on the holder's origin; the attic's own builder if props.js lacks it
+function kitProp(id, opts, fallback) {
+  const h = new THREE.Group();
+  try { const p = makeProp(id, opts); place(p, V(0, 0, 0), 0); h.add(p); h.userData.prop = p; }
+  catch (e) { h.add(fallback()); }
+  return h;
+}
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 export const OFFSET = V(600, 0, 0);
@@ -342,21 +351,21 @@ export function build(scene) {
   const crackers = grp(box(0.9, 0.16, 0.55, std('#e8b730', { roughness: 0.5 }), 0, 0.08, 0, 0.04), (() => { const l = boxLabel('CRACKERS', 0.8, 0.3, { ink: '#b2261f' }); l.rotation.x = -Math.PI / 2; l.position.y = 0.17; return l; })(),
     box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.55, 0.05, 0.15, 0.03), box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.5, 0.05, -0.15, 0.03));
   add('crackers', at(crackers, -2.5, 0.18, 0.6, 0.4), nest);
-  const fl = flashlightSmall(); add('flashlight', fl, nest);
+  const fl = kitProp('flashlight_small', { beam: false, light: false }, flashlightSmall); const flKit = fl.userData.prop; add('flashlight', fl, nest);
   const bp = backpack(); add('backpack', at(bp, 2.15, 0.05, -1.2, -0.35), nest);
-  const gs = glowBundle(); add('glow_sticks', at(gs, 1.6, 0.16, 1.9, 0.5), nest);
+  const gs = kitProp('glow_sticks', {}, glowBundle); add('glow_sticks', at(gs, 1.6, 0.16, 1.9, 0.5), nest);
 
   // ---------- Halloween corner: HALLOWEEN box, skeleton, witch ----------
   const hallo = cardBox(3.2, 2.2, 2.6, 'HALLOWEEN', { seed: 2, tape: '#f28a1d', ink: '#111' }); add('box_halloween', at(hallo, 6.2, 0, -6.7, -0.08));
   const skel = skeleton(); add('skeleton', at(skel, 3.6, 0, -3.5, 0.15));
   const wit = witch(); add('witch', at(wit, 8.9, 0, -3.5, -0.2));
-  const pump = pumpkinBucket(); add('pumpkin_bucket', pump);
+  const pump = kitProp('pumpkin_bucket', {}, pumpkinBucket); add('pumpkin_bucket', pump);
   // ---------- XMAS, MAX - OLD STUFF, hobby horse ----------
   const xmas = cardBox(3.0, 2.0, 2.6, 'XMAS', { seed: 3, tape: '#2f8f4e', ink: '#b3121f' }); add('box_xmas', at(xmas, 10.0, 0, 0.5, -0.45));
   add('box_small', at(cardBox(1.8, 1.2, 1.6, '', { seed: 5 }), 10.4, 2.0, 0.3, -0.2));
   const maxBox = cardBox(2.8, 2.0, 2.4, 'MAX - OLD STUFF', { seed: 4, ink: '#1a2a6a' }); add('box_max', at(maxBox, 9.2, 0, 4.6, -0.6));
-  const drw = drawing(); add('drawing', drw, maxBox); drw.position.set(0, 2.0 * 0.6 + 0.03, 0); drw.rotation.y = 0.1;
-  const hh = hobbyHorse(); add('hobby_horse', hh);
+  const drw = kitProp('drawing', {}, drawing); if (drw.userData.prop) { drw.userData.prop.rotation.x = -Math.PI / 2; drw.userData.prop.position.set(0, 0.01, 0.42); } add('drawing', drw, maxBox); drw.position.set(0, 2.0 * 0.6 + 0.03, 0); drw.rotation.y = 0.1;
+  const hh = kitProp('hobby_horse', {}, hobbyHorse); add('hobby_horse', hh);
   // ---------- tea party: upturned box table, teddies, tea set ----------
   const table = new THREE.Group(); table.position.set(-3.5, 0, 2.0);
   const tm = std('#b48d58', { map: cardboard(7), roughness: 0.95 });
@@ -365,11 +374,11 @@ export function build(scene) {
   add('teddy_left', at(teddyToy('#c9b18a', 1), -5.6, 0, 2.0, Math.PI / 2));
   add('teddy_right', at(teddyToy('#b9b9c4', 2), -1.4, 0, 2.0, -Math.PI / 2));
   const tea = new THREE.Group(); tea.position.set(-3.5, 1.42, 2.0);
-  add('teapot', at(teapot(), 0.1, 0, 0.1, 0.4), tea); add('cup_1', at(teacup(), -0.6, 0, -0.6), tea); add('cup_2', at(teacup(), 0.6, 0, 0.65), tea);   // cup_1 Skye's side, cup_2 Lily's
+  add('teapot', at(kitProp('teapot', {}, teapot), 0.1, 0, 0.1, 0.4), tea); add('cup_1', at(kitProp('cup', {}, teacup), -0.6, 0, -0.6, Math.PI), tea); add('cup_2', at(kitProp('cup', {}, teacup), 0.6, 0, 0.65), tea);   // cup_1 Skye's side, cup_2 Lily's
   add('tea_set', tea);
   // ---------- rocking chair, vacuum, clutter ----------
   const rc = rockingChair(); const rcPivot = grp(rc); add('rocking_chair', at(rcPivot, -8.0, 0, -4.0, 0.7)); items.rocking_chair_rock = rc;
-  const vac = vacuum(); add('vacuum', at(vac, 8.2, 0, 10.4, -2.4));
+  const vac = kitProp('vacuum', {}, vacuum); add('vacuum', at(vac, 8.2, 0, 10.4, -2.4));
   const suitcase = grp(box(2.6, 0.9, 1.7, std('#5b6e8f', { roughness: 0.6 }), 0, 0.45, 0, 0.12), box(0.8, 0.12, 0.2, std('#2b2b2b'), 0, 0.95, 0.5, 0.04), box(2.62, 0.1, 1.72, std('#3f4d66'), 0, 0.6, 0));
   add('suitcase', at(suitcase, -10.2, 0, 8.5, 0.3));
   const lampshade = grp(cyl(0.6, 0.9, 0.9, std('#d9c49a', { roughness: 1 }), 0, 2.4, 0, 18), cyl(0.06, 0.06, 2.0, std('#6b5638'), 0, 1.0, 0, 8), cyl(0.5, 0.55, 0.12, std('#6b5638'), 0, 0.06, 0, 18));
@@ -534,10 +543,16 @@ export function build(scene) {
     // nest
     vis('backpack', st.backpack);
     const fl = items.flashlight;
-    if (st.flashlight === 'standing') { at(fl, -1.5, 0.17, 1.3); fl.rotation.set(0, 0, 0); flashL.intensity = 3; flashCone.intensity = 25; fl.children[2].material.emissiveIntensity = 3; }
-    else { at(fl, -1.7, 0.33, 0.6, 0.9); fl.rotation.z = Math.PI / 2; flashL.intensity = 0; flashCone.intensity = 0; fl.children[2].material.emissiveIntensity = 0; }
+    const standing = st.flashlight === 'standing';
+    if (flKit) {                                 // kit flashlight: beam along its +z, tail at z -0.32
+      if (standing) { at(fl, -1.5, 0.17, 1.3); flKit.rotation.set(-Math.PI / 2, 0, 0); flKit.position.set(0, 0.33, 0); }
+      else { at(fl, -1.7, 0.27, 0.6, 0.9); flKit.rotation.set(0, 0, 0); flKit.position.set(0, 0, 0); }
+      flKit.userData.setOn?.(standing);
+    } else if (standing) { at(fl, -1.5, 0.17, 1.3); fl.rotation.set(0, 0, 0); fl.children[0].children[2].material.emissiveIntensity = 3; }
+    else { at(fl, -1.7, 0.33, 0.6, 0.9); fl.rotation.z = Math.PI / 2; fl.children[0].children[2].material.emissiveIntensity = 0; }
+    flashL.intensity = standing ? 3 : 0; flashCone.intensity = standing ? 25 : 0;
     vis('flashlight', st.flashlight !== 'none');
-    vis('glow_sticks', st.glowSticks); glowL.intensity = st.glowSticks === 'lit' ? 2 : 0;
+    vis('glow_sticks', st.glowSticks); glowL.intensity = st.glowSticks === 'lit' ? 2 : 0; gs.userData.prop?.userData.setLit?.(st.glowSticks === 'lit');
     // boxes and decorations
     for (const n of ['box_halloween', 'box_xmas', 'box_max', 'box_small']) vis(n, st.boxes);
     vis('skeleton', st.decorations); vis('witch', st.decorations);
