@@ -237,8 +237,8 @@ const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.star
 export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet('bedroom');
-  K.applyLight(stage, 'midnight');
-  K.setState({ chapter: CH, garlic: true, door: doorOpen(t), lamp: t >= T.click, moon: true, blanket: t < T.edge + 0.3 ? 'legs' : 'flat', hall: t > T.smiles + 0.2 });
+  K.setState({ chapter: CH, garlic: true, door: doorOpen(t), blanket: t < T.edge + 0.3 ? 'legs' : 'flat' });
+  K.applyLight(stage, 'midnight', { set, practicals: { moon_window: 0.6, bedside_lamp: t >= T.click, hall_under_door: t > T.smiles + 0.2 } });
   K.setBlockers(set.group, C.skye, C.max);
   // idle runs only while someone speaks, in the entrance creep, and in the scripted actions (so still moments repeat)
   const idle = K.holdClock(t, L, [[0, 3.2], [T.click - 0.5, T.click + 0.4], [T.pull - 0.1, T.pull + 0.5]]);
