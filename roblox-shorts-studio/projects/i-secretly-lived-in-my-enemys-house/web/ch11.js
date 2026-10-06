@@ -89,7 +89,7 @@ const WIDE_POS = [-9, 10.5, 13.5], WIDE_TGT = [-0.3, 4.0, -4.6], WIDE_FOV = 42; 
 // fixed set-ups (kitchen-local), all on the open +z side; walls auto-hide, so no wall pull-in
 const fixed = (pos, target, fov) => (s) => K.setCam(s, { pos: KO.clone().add(V(...pos)), target: KO.clone().add(V(...target)), fov }, { clear: false });
 // fixed set-ups only (critic-6 #1-#3): a camera never follows a turning actor, so nothing jumps inside a line
-const DADCAM = [2.1, 6.6, -4.9], DADTGT = [-1.6, 5.9, -8.0];
+const DADCAM = [2.1, 6.6, -4.9], DADTGT = [-1.6, 4.85, -8.0];
 const dadCU = fixed(DADCAM, DADTGT, 30), dadMS = fixed(DADCAM, [-1.6, 5.3, -8.0], 44);
 // a fixed position panning with an actor's head (Skye's walk to the island end)
 const track = (pos, actor, fov) => (s) => K.setCam(s, { pos: KO.clone().add(V(...pos)), target: K.headPos(actor()).add(V(0, -0.5, 0)), fov }, { clear: false });
@@ -185,7 +185,7 @@ export function update(t, stage) {
     if (t < T_FOOT) {
       const u = 0.42 + 0.58 * inv(0, T_FOOT, t), pos = SET.stairsPath(u).pos, from = SET.stairsPath(0.42).pos;   // frame 0: out of the stairwell, a third of the way down; feet on the treads
       K.playAnim(C.skye, [[A.idle, 0], [A.walk, (from.distanceTo(pos)) / STRIDE, 0.6]]);   // shorter steps on the treads
-      K.putOn(C.skye, { pos, heading: 0 });
+      K.putOn(C.skye, { pos, heading: 0 }); C.skye.root.position.y += 0.35;   // the swinging trailing leg clears the tread behind her
     }
     else if (t < tLeave) {
       K.playAnim(C.skye, [[A.idle, idle]]);
@@ -225,7 +225,8 @@ export function update(t, stage) {
     let h = lerpH(t < at(LN.sorry) ? 0.4 : seated ? 0.5 : 0.3, K.faceTo(s2, bottom), toSkye);
     if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = maxSlideH(t);
     K.putOn(C.max, s2, { sit: true, heading: h });
-    gest(C.max, 'point', 'R', at(LN.ghost) + 0.4, end(LN.ghost) + 0.2, t);
+    { const a0 = at(LN.ghost) - 0.05, a1 = end(LN.ghost) + 0.6, k = sm(inv(a0, a0 + 0.07, t)) * (1 - sm(inv(a1 - 0.07, a1, t)));
+      if (k > 0) K.gesture(C.max, 'point', 'R', k); }      // a quick raise: the arm never sweeps through the island top
     gest(C.max, 'hold_out', 'L', slide0 - 0.4, slide1 + 0.5, t);
   }
 
