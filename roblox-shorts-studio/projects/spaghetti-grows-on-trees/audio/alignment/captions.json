@@ -1,0 +1,1089 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.76,
+    "text": "On the news,",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.2,
+        "word": " On"
+      },
+      {
+        "start": 0.2,
+        "end": 0.3,
+        "word": " the"
+      },
+      {
+        "start": 0.3,
+        "end": 0.64,
+        "word": " news,"
+      }
+    ]
+  },
+  {
+    "start": 0.92,
+    "end": 1.78,
+    "text": "a family is picking",
+    "words": [
+      {
+        "start": 0.92,
+        "end": 1.02,
+        "word": " a"
+      },
+      {
+        "start": 1.02,
+        "end": 1.3,
+        "word": " family"
+      },
+      {
+        "start": 1.3,
+        "end": 1.56,
+        "word": " is"
+      },
+      {
+        "start": 1.56,
+        "end": 1.78,
+        "word": " picking"
+      }
+    ]
+  },
+  {
+    "start": 1.78,
+    "end": 3.46,
+    "text": "spaghetti off a tree.",
+    "words": [
+      {
+        "start": 1.78,
+        "end": 2.34,
+        "word": " spaghetti"
+      },
+      {
+        "start": 2.34,
+        "end": 2.88,
+        "word": " off"
+      },
+      {
+        "start": 2.88,
+        "end": 3.04,
+        "word": " a"
+      },
+      {
+        "start": 3.04,
+        "end": 3.34,
+        "word": " tree."
+      }
+    ]
+  },
+  {
+    "start": 4.04,
+    "end": 5.0,
+    "text": "Eight million people are",
+    "words": [
+      {
+        "start": 4.04,
+        "end": 4.18,
+        "word": " Eight"
+      },
+      {
+        "start": 4.18,
+        "end": 4.42,
+        "word": " million"
+      },
+      {
+        "start": 4.42,
+        "end": 4.84,
+        "word": " people"
+      },
+      {
+        "start": 4.84,
+        "end": 5.0,
+        "word": " are"
+      }
+    ]
+  },
+  {
+    "start": 5.0,
+    "end": 5.46,
+    "text": "watching.",
+    "words": [
+      {
+        "start": 5.0,
+        "end": 5.34,
+        "word": " watching."
+      }
+    ]
+  },
+  {
+    "start": 6.7,
+    "end": 8.68,
+    "text": "It's 1957 on Britain's",
+    "words": [
+      {
+        "start": 6.7,
+        "end": 6.94,
+        "word": " It's"
+      },
+      {
+        "start": 6.94,
+        "end": 7.62,
+        "word": " 1957"
+      },
+      {
+        "start": 7.62,
+        "end": 8.22,
+        "word": " on"
+      },
+      {
+        "start": 8.22,
+        "end": 8.68,
+        "word": " Britain's"
+      }
+    ]
+  },
+  {
+    "start": 8.68,
+    "end": 10.0,
+    "text": "most serious news show.",
+    "words": [
+      {
+        "start": 8.68,
+        "end": 8.8,
+        "word": " most"
+      },
+      {
+        "start": 8.8,
+        "end": 9.3,
+        "word": " serious"
+      },
+      {
+        "start": 9.3,
+        "end": 9.56,
+        "word": " news"
+      },
+      {
+        "start": 9.56,
+        "end": 9.88,
+        "word": " show."
+      }
+    ]
+  },
+  {
+    "start": 10.54,
+    "end": 11.2,
+    "text": "In Switzerland,",
+    "words": [
+      {
+        "start": 10.54,
+        "end": 10.7,
+        "word": " In"
+      },
+      {
+        "start": 10.7,
+        "end": 11.08,
+        "word": " Switzerland,"
+      }
+    ]
+  },
+  {
+    "start": 11.48,
+    "end": 12.58,
+    "text": "the presenter explains,",
+    "words": [
+      {
+        "start": 11.48,
+        "end": 11.5,
+        "word": " the"
+      },
+      {
+        "start": 11.5,
+        "end": 11.84,
+        "word": " presenter"
+      },
+      {
+        "start": 11.84,
+        "end": 12.46,
+        "word": " explains,"
+      }
+    ]
+  },
+  {
+    "start": 12.96,
+    "end": 14.04,
+    "text": "a mild winter means",
+    "words": [
+      {
+        "start": 12.96,
+        "end": 13.0,
+        "word": " a"
+      },
+      {
+        "start": 13.0,
+        "end": 13.34,
+        "word": " mild"
+      },
+      {
+        "start": 13.34,
+        "end": 13.76,
+        "word": " winter"
+      },
+      {
+        "start": 13.76,
+        "end": 14.04,
+        "word": " means"
+      }
+    ]
+  },
+  {
+    "start": 14.04,
+    "end": 15.559999999999999,
+    "text": "a bumper spaghetti harvest.",
+    "words": [
+      {
+        "start": 14.04,
+        "end": 14.24,
+        "word": " a"
+      },
+      {
+        "start": 14.24,
+        "end": 14.48,
+        "word": " bumper"
+      },
+      {
+        "start": 14.48,
+        "end": 15.0,
+        "word": " spaghetti"
+      },
+      {
+        "start": 15.0,
+        "end": 15.44,
+        "word": " harvest."
+      }
+    ]
+  },
+  {
+    "start": 16.8,
+    "end": 17.6,
+    "text": "The pickers lay the",
+    "words": [
+      {
+        "start": 16.8,
+        "end": 16.92,
+        "word": " The"
+      },
+      {
+        "start": 16.92,
+        "end": 17.26,
+        "word": " pickers"
+      },
+      {
+        "start": 17.26,
+        "end": 17.42,
+        "word": " lay"
+      },
+      {
+        "start": 17.42,
+        "end": 17.6,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 17.6,
+    "end": 18.44,
+    "text": "strands in the sun",
+    "words": [
+      {
+        "start": 17.6,
+        "end": 17.9,
+        "word": " strands"
+      },
+      {
+        "start": 17.9,
+        "end": 18.12,
+        "word": " in"
+      },
+      {
+        "start": 18.12,
+        "end": 18.26,
+        "word": " the"
+      },
+      {
+        "start": 18.26,
+        "end": 18.44,
+        "word": " sun"
+      }
+    ]
+  },
+  {
+    "start": 18.44,
+    "end": 19.1,
+    "text": "to dry.",
+    "words": [
+      {
+        "start": 18.44,
+        "end": 18.64,
+        "word": " to"
+      },
+      {
+        "start": 18.64,
+        "end": 18.98,
+        "word": " dry."
+      }
+    ]
+  },
+  {
+    "start": 19.68,
+    "end": 21.18,
+    "text": "The dreaded spaghetti weevil",
+    "words": [
+      {
+        "start": 19.68,
+        "end": 19.9,
+        "word": " The"
+      },
+      {
+        "start": 19.9,
+        "end": 20.22,
+        "word": " dreaded"
+      },
+      {
+        "start": 20.22,
+        "end": 20.76,
+        "word": " spaghetti"
+      },
+      {
+        "start": 20.76,
+        "end": 21.18,
+        "word": " weevil"
+      }
+    ]
+  },
+  {
+    "start": 21.18,
+    "end": 22.400000000000002,
+    "text": "almost wiped out.",
+    "words": [
+      {
+        "start": 21.18,
+        "end": 21.6,
+        "word": " almost"
+      },
+      {
+        "start": 21.6,
+        "end": 21.9,
+        "word": " wiped"
+      },
+      {
+        "start": 21.9,
+        "end": 22.28,
+        "word": " out."
+      }
+    ]
+  },
+  {
+    "start": 22.88,
+    "end": 23.8,
+    "text": "And why is every",
+    "words": [
+      {
+        "start": 22.88,
+        "end": 23.08,
+        "word": " And"
+      },
+      {
+        "start": 23.08,
+        "end": 23.32,
+        "word": " why"
+      },
+      {
+        "start": 23.32,
+        "end": 23.5,
+        "word": " is"
+      },
+      {
+        "start": 23.5,
+        "end": 23.8,
+        "word": " every"
+      }
+    ]
+  },
+  {
+    "start": 23.8,
+    "end": 24.98,
+    "text": "strand the same length?",
+    "words": [
+      {
+        "start": 23.8,
+        "end": 24.1,
+        "word": " strand"
+      },
+      {
+        "start": 24.1,
+        "end": 24.26,
+        "word": " the"
+      },
+      {
+        "start": 24.26,
+        "end": 24.48,
+        "word": " same"
+      },
+      {
+        "start": 24.48,
+        "end": 24.86,
+        "word": " length?"
+      }
+    ]
+  },
+  {
+    "start": 25.42,
+    "end": 26.720000000000002,
+    "text": "Years of careful breeding.",
+    "words": [
+      {
+        "start": 25.42,
+        "end": 25.64,
+        "word": " Years"
+      },
+      {
+        "start": 25.64,
+        "end": 25.86,
+        "word": " of"
+      },
+      {
+        "start": 25.86,
+        "end": 26.24,
+        "word": " careful"
+      },
+      {
+        "start": 26.24,
+        "end": 26.6,
+        "word": " breeding."
+      }
+    ]
+  },
+  {
+    "start": 27.64,
+    "end": 28.66,
+    "text": "Back then,",
+    "words": [
+      {
+        "start": 27.64,
+        "end": 28.12,
+        "word": " Back"
+      },
+      {
+        "start": 28.12,
+        "end": 28.54,
+        "word": " then,"
+      }
+    ]
+  },
+  {
+    "start": 28.76,
+    "end": 29.78,
+    "text": "spaghetti was rare in",
+    "words": [
+      {
+        "start": 28.76,
+        "end": 28.94,
+        "word": " spaghetti"
+      },
+      {
+        "start": 28.94,
+        "end": 29.24,
+        "word": " was"
+      },
+      {
+        "start": 29.24,
+        "end": 29.56,
+        "word": " rare"
+      },
+      {
+        "start": 29.56,
+        "end": 29.78,
+        "word": " in"
+      }
+    ]
+  },
+  {
+    "start": 29.78,
+    "end": 30.16,
+    "text": "Britain.",
+    "words": [
+      {
+        "start": 29.78,
+        "end": 30.04,
+        "word": " Britain."
+      }
+    ]
+  },
+  {
+    "start": 30.84,
+    "end": 31.88,
+    "text": "Most people only knew",
+    "words": [
+      {
+        "start": 30.84,
+        "end": 31.0,
+        "word": " Most"
+      },
+      {
+        "start": 31.0,
+        "end": 31.26,
+        "word": " people"
+      },
+      {
+        "start": 31.26,
+        "end": 31.64,
+        "word": " only"
+      },
+      {
+        "start": 31.64,
+        "end": 31.88,
+        "word": " knew"
+      }
+    ]
+  },
+  {
+    "start": 31.88,
+    "end": 32.66,
+    "text": "it from a tin.",
+    "words": [
+      {
+        "start": 31.88,
+        "end": 32.04,
+        "word": " it"
+      },
+      {
+        "start": 32.04,
+        "end": 32.18,
+        "word": " from"
+      },
+      {
+        "start": 32.18,
+        "end": 32.34,
+        "word": " a"
+      },
+      {
+        "start": 32.34,
+        "end": 32.54,
+        "word": " tin."
+      }
+    ]
+  },
+  {
+    "start": 33.7,
+    "end": 34.72,
+    "text": "So the next day,",
+    "words": [
+      {
+        "start": 33.7,
+        "end": 34.0,
+        "word": " So"
+      },
+      {
+        "start": 34.0,
+        "end": 34.12,
+        "word": " the"
+      },
+      {
+        "start": 34.12,
+        "end": 34.34,
+        "word": " next"
+      },
+      {
+        "start": 34.34,
+        "end": 34.6,
+        "word": " day,"
+      }
+    ]
+  },
+  {
+    "start": 34.72,
+    "end": 35.72,
+    "text": "hundreds of viewers phoned",
+    "words": [
+      {
+        "start": 34.72,
+        "end": 34.92,
+        "word": " hundreds"
+      },
+      {
+        "start": 34.92,
+        "end": 35.16,
+        "word": " of"
+      },
+      {
+        "start": 35.16,
+        "end": 35.4,
+        "word": " viewers"
+      },
+      {
+        "start": 35.4,
+        "end": 35.72,
+        "word": " phoned"
+      }
+    ]
+  },
+  {
+    "start": 35.72,
+    "end": 36.16,
+    "text": "in.",
+    "words": [
+      {
+        "start": 35.72,
+        "end": 36.04,
+        "word": " in."
+      }
+    ]
+  },
+  {
+    "start": 36.58,
+    "end": 37.279999999999994,
+    "text": "Is it real?",
+    "words": [
+      {
+        "start": 36.58,
+        "end": 36.78,
+        "word": " Is"
+      },
+      {
+        "start": 36.78,
+        "end": 36.92,
+        "word": " it"
+      },
+      {
+        "start": 36.92,
+        "end": 37.16,
+        "word": " real?"
+      }
+    ]
+  },
+  {
+    "start": 37.64,
+    "end": 38.24,
+    "text": "How do I grow",
+    "words": [
+      {
+        "start": 37.64,
+        "end": 37.76,
+        "word": " How"
+      },
+      {
+        "start": 37.76,
+        "end": 37.88,
+        "word": " do"
+      },
+      {
+        "start": 37.88,
+        "end": 38.0,
+        "word": " I"
+      },
+      {
+        "start": 38.0,
+        "end": 38.24,
+        "word": " grow"
+      }
+    ]
+  },
+  {
+    "start": 38.24,
+    "end": 39.5,
+    "text": "my own spaghetti tree?",
+    "words": [
+      {
+        "start": 38.24,
+        "end": 38.42,
+        "word": " my"
+      },
+      {
+        "start": 38.42,
+        "end": 38.6,
+        "word": " own"
+      },
+      {
+        "start": 38.6,
+        "end": 39.0,
+        "word": " spaghetti"
+      },
+      {
+        "start": 39.0,
+        "end": 39.38,
+        "word": " tree?"
+      }
+    ]
+  },
+  {
+    "start": 40.62,
+    "end": 41.279999999999994,
+    "text": "The answer?",
+    "words": [
+      {
+        "start": 40.62,
+        "end": 40.86,
+        "word": " The"
+      },
+      {
+        "start": 40.86,
+        "end": 41.16,
+        "word": " answer?"
+      }
+    ]
+  },
+  {
+    "start": 41.84,
+    "end": 42.7,
+    "text": "Place a sprig of",
+    "words": [
+      {
+        "start": 41.84,
+        "end": 42.14,
+        "word": " Place"
+      },
+      {
+        "start": 42.14,
+        "end": 42.3,
+        "word": " a"
+      },
+      {
+        "start": 42.3,
+        "end": 42.56,
+        "word": " sprig"
+      },
+      {
+        "start": 42.56,
+        "end": 42.7,
+        "word": " of"
+      }
+    ]
+  },
+  {
+    "start": 42.7,
+    "end": 43.6,
+    "text": "spaghetti in a tin",
+    "words": [
+      {
+        "start": 42.7,
+        "end": 43.12,
+        "word": " spaghetti"
+      },
+      {
+        "start": 43.12,
+        "end": 43.32,
+        "word": " in"
+      },
+      {
+        "start": 43.32,
+        "end": 43.44,
+        "word": " a"
+      },
+      {
+        "start": 43.44,
+        "end": 43.6,
+        "word": " tin"
+      }
+    ]
+  },
+  {
+    "start": 43.6,
+    "end": 44.98,
+    "text": "of tomato sauce and",
+    "words": [
+      {
+        "start": 43.6,
+        "end": 43.76,
+        "word": " of"
+      },
+      {
+        "start": 43.76,
+        "end": 44.06,
+        "word": " tomato"
+      },
+      {
+        "start": 44.06,
+        "end": 44.5,
+        "word": " sauce"
+      },
+      {
+        "start": 44.5,
+        "end": 44.98,
+        "word": " and"
+      }
+    ]
+  },
+  {
+    "start": 44.98,
+    "end": 45.839999999999996,
+    "text": "hope for the best.",
+    "words": [
+      {
+        "start": 44.98,
+        "end": 45.14,
+        "word": " hope"
+      },
+      {
+        "start": 45.14,
+        "end": 45.3,
+        "word": " for"
+      },
+      {
+        "start": 45.3,
+        "end": 45.42,
+        "word": " the"
+      },
+      {
+        "start": 45.42,
+        "end": 45.72,
+        "word": " best."
+      }
+    ]
+  },
+  {
+    "start": 46.84,
+    "end": 47.54,
+    "text": "The date of the",
+    "words": [
+      {
+        "start": 46.84,
+        "end": 47.1,
+        "word": " The"
+      },
+      {
+        "start": 47.1,
+        "end": 47.28,
+        "word": " date"
+      },
+      {
+        "start": 47.28,
+        "end": 47.42,
+        "word": " of"
+      },
+      {
+        "start": 47.42,
+        "end": 47.54,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 47.54,
+    "end": 47.9,
+    "text": "show,",
+    "words": [
+      {
+        "start": 47.54,
+        "end": 47.78,
+        "word": " show,"
+      }
+    ]
+  },
+  {
+    "start": 48.26,
+    "end": 49.18,
+    "text": "April the 1st.",
+    "words": [
+      {
+        "start": 48.26,
+        "end": 48.26,
+        "word": " April"
+      },
+      {
+        "start": 48.26,
+        "end": 48.44,
+        "word": " the"
+      },
+      {
+        "start": 48.44,
+        "end": 49.06,
+        "word": " 1st."
+      }
+    ]
+  },
+  {
+    "start": 49.46,
+    "end": 50.2,
+    "text": "It was an April",
+    "words": [
+      {
+        "start": 49.46,
+        "end": 49.6,
+        "word": " It"
+      },
+      {
+        "start": 49.6,
+        "end": 49.72,
+        "word": " was"
+      },
+      {
+        "start": 49.72,
+        "end": 49.84,
+        "word": " an"
+      },
+      {
+        "start": 49.84,
+        "end": 50.2,
+        "word": " April"
+      }
+    ]
+  },
+  {
+    "start": 50.2,
+    "end": 50.98,
+    "text": "Fool's joke.",
+    "words": [
+      {
+        "start": 50.2,
+        "end": 50.64,
+        "word": " Fool's"
+      },
+      {
+        "start": 50.64,
+        "end": 50.86,
+        "word": " joke."
+      }
+    ]
+  },
+  {
+    "start": 51.54,
+    "end": 52.38,
+    "text": "And it's still called",
+    "words": [
+      {
+        "start": 51.54,
+        "end": 51.72,
+        "word": " And"
+      },
+      {
+        "start": 51.72,
+        "end": 51.94,
+        "word": " it's"
+      },
+      {
+        "start": 51.94,
+        "end": 52.12,
+        "word": " still"
+      },
+      {
+        "start": 52.12,
+        "end": 52.38,
+        "word": " called"
+      }
+    ]
+  },
+  {
+    "start": 52.38,
+    "end": 53.42,
+    "text": "the biggest hoax a",
+    "words": [
+      {
+        "start": 52.38,
+        "end": 52.54,
+        "word": " the"
+      },
+      {
+        "start": 52.54,
+        "end": 52.8,
+        "word": " biggest"
+      },
+      {
+        "start": 52.8,
+        "end": 53.12,
+        "word": " hoax"
+      },
+      {
+        "start": 53.12,
+        "end": 53.42,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 53.42,
+    "end": 54.66,
+    "text": "serious news show ever",
+    "words": [
+      {
+        "start": 53.42,
+        "end": 53.76,
+        "word": " serious"
+      },
+      {
+        "start": 53.76,
+        "end": 54.06,
+        "word": " news"
+      },
+      {
+        "start": 54.06,
+        "end": 54.36,
+        "word": " show"
+      },
+      {
+        "start": 54.36,
+        "end": 54.66,
+        "word": " ever"
+      }
+    ]
+  },
+  {
+    "start": 54.66,
+    "end": 55.14,
+    "text": "pulled.",
+    "words": [
+      {
+        "start": 54.66,
+        "end": 55.02,
+        "word": " pulled."
+      }
+    ]
+  },
+  {
+    "start": 56.1,
+    "end": 58.12,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 56.1,
+        "end": 56.72,
+        "word": " Follow"
+      },
+      {
+        "start": 56.72,
+        "end": 57.88,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 57.88,
+        "end": 58.12,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 58.12,
+    "end": 59.36,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 58.12,
+        "end": 58.32,
+        "word": " more"
+      },
+      {
+        "start": 58.32,
+        "end": 58.66,
+        "word": " stories"
+      },
+      {
+        "start": 58.66,
+        "end": 58.92,
+        "word": " like"
+      },
+      {
+        "start": 58.92,
+        "end": 59.24,
+        "word": " this."
+      }
+    ]
+  }
+]

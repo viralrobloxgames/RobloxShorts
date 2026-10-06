@@ -218,6 +218,7 @@ export function update(t, stage) {
   const nDrape = SHOT === 'dry' ? Math.floor(4 + 14 * inv(T.dry + 1.0, T.weevil - 0.2, s)) : ['weevil', 'length', 'hoax', 'cta', 'swiss'].includes(SHOT) ? 18 : 6;
   S.orchard.drape.forEach((b, i) => { b.visible = i < nDrape; b.rotation.z = 0.04 * Math.sin(s * 1.5 + i); });
   if (place0 === 'orchard') S.orchard.trees.forEach((tr, i) => K.swayTree(tr, s + i * 0.7, 1));
+  S.orchard.ladder.visible = SHOT !== 'weevil';                  // its rail would sit right in front of the close-up
   // the weevil: climbs a bunch on the hero tree, then scuttles off when it's "wiped out"
   P.weevil.visible = SHOT === 'weevil';
   if (P.weevil.visible) {
@@ -237,7 +238,7 @@ export function update(t, stage) {
     case 'hook': look(stage, OR(lerp(5.6, 5.0, u), lerp(4.6, 4.9, u), lerp(17.5, 16.5, u)), OR(0.5, 5.2, 5.6), 50, 18); break;
     case 'watch': look(stage, HM(0, 4.6, lerp(-4.9, -4.4, u)), HM(0, 3.5, 4.3), 60, 14); break;
     case 'studio': look(stage, SD(0.8, 5.0, lerp(7.0, 5.8, u)), SD(0, 4.8, -5.0), 42, 14); break;
-    case 'swiss': { const k = easeOut(u); look(stage, OR(-8, lerp(28, 22, k), lerp(64, 54, k)), OR(-2, 2, -4), 50, 60); break; }
+    case 'swiss': { const k = easeOut(u); look(stage, OR(-8, lerp(36, 30, k), lerp(64, 56, k)), OR(-2, 0, -2), 50, 60); break; }
     case 'dry': look(stage, OR(lerp(7.4, 7.8, u), 4.8, lerp(23.5, 22.5, u)), OR(12.6, 4.3, 10.6), 50, 20); break;
     case 'weevil': { const b = S.wb.getWorldPosition(V()); look(stage, b.clone().add(V(1.4, -1.0, 6.4)), b.clone().add(V(0.3, -1.7, 0)), 42, 8); break; }
     case 'length': look(stage, OR(-3.4, 4.8, 22.5), OR(-7.0, 4.3, 10.6), 48, 18); break;
@@ -339,7 +340,7 @@ export function overlay(g, s, t) {
   }
   if (SHOT === 'answer') pill(g, s, 'THE ANSWER:', 540, 420, pop(t, T.answer + 0.05, 0.2, 1.8), '#ffd23f', 'rgba(14,18,34,.85)', 56);
   if (SHOT === 'sprig') {
-    bubble(g, s, ['PLACE A SPRIG', 'OF SPAGHETTI IN A TIN', 'OF TOMATO SAUCE...'], 540, 760, pop(t, T.sprig + 0.05, 0.2, 2) * out(t, W.hope - 0.1, 0.12), 54);
+    bubble(g, s, ['PLACE A SPRIG', 'OF SPAGHETTI IN A TIN', 'OF TOMATO SAUCE...'], 330, 900, pop(t, T.sprig + 0.05, 0.2, 2) * out(t, W.hope - 0.1, 0.12), 54);
     if (t > W.hope - 0.15) bigText(g, s, '...AND HOPE', 540, 470, 104, '#ffffff', pop(t, W.hope - 0.15), -0.03), bigText(g, s, 'FOR THE BEST', 540, 590, 104, '#ffd23f', pop(t, W.best - 0.15), -0.03);
   }
   if (SHOT === 'calendar') pill(g, s, 'THE DATE OF THE SHOW?', 540, 300, pop(t, T.calendar + 0.05, 0.2, 1.8), '#ffffff', 'rgba(14,18,34,.85)', 48);
