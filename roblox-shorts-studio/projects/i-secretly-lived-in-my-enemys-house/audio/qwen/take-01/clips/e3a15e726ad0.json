@@ -3,5 +3,59 @@
  "text": "At least my lunch doesn't smell like your gym socks.",
  "seed": 18059,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "At",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "least",
+   "start": 0.38,
+   "end": 0.52
+  },
+  {
+   "word": "my",
+   "start": 0.52,
+   "end": 0.76
+  },
+  {
+   "word": "lunch",
+   "start": 0.76,
+   "end": 1.1
+  },
+  {
+   "word": "doesn't",
+   "start": 1.1,
+   "end": 1.48
+  },
+  {
+   "word": "smell",
+   "start": 1.48,
+   "end": 1.66
+  },
+  {
+   "word": "like",
+   "start": 1.66,
+   "end": 1.82
+  },
+  {
+   "word": "your",
+   "start": 1.82,
+   "end": 1.96
+  },
+  {
+   "word": "gym",
+   "start": 1.96,
+   "end": 2.16
+  },
+  {
+   "word": "socks.",
+   "start": 2.16,
+   "end": 2.42
+  }
+ ],
+ "words_md5": "ba61e9e6dc419118ff686e7f72e59369",
+ "whisper": "small.en"
 }
