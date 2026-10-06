@@ -1,0 +1,48 @@
+{
+  "clip": "projects/over-the-falls-in-a-barrel/web/barrel_clip.js",
+  "generated": "2026-10-06T01:56:46.946Z",
+  "fingerprint": "e2a031e5ee919427",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Max",
+      "options": {
+        "expressions": [
+          "happy",
+          "scheming",
+          "smug",
+          "neutral",
+          "laugh",
+          "evil_grin"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "top_hat"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Max",
+      "accessory": "top_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.4,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.037,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-06T01:56:47.634Z"
+}
