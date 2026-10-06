@@ -171,7 +171,6 @@ function poseMax(t, idle) {
   const pos = up.pos.clone().lerp(ed.pos, k);
   if (k > 0 && k < 1) pos.y += 0.35 * Math.sin(k * Math.PI);
   let heading = lerpAngle(toward(up.pos, M.ghost().pos), toward(ed.pos, M.nearBed().pos), k);
-  if (t < T.click) heading = lerpAngle(-0.55, heading, smooth(inv(T.click - 0.6, T.click, t)) * 0.0 + smooth(inv(T.click - 0.5, T.click, t)));
   heading = lerpAngle(heading, 0.2, k);                 // on the bed edge he sits open to the lens, turned a little toward her
   if (t > T.dad + 0.2) heading = lerpAngle(heading, cheat(toward(ed.pos, M.door().pos), 1, 0.15), smooth(inv(T.dad + 0.2, T.dad + 0.7, t)));
   K.playAnim(a, [[A.sit, 0, 1, false]]);
@@ -218,7 +217,7 @@ const setCamOf = (name) => (s) => K.setCam(s, K.getSet('bedroom').cams[name], { 
 const maxEdge = (framing) => (s) => camFrom(s, C.max, MAX_EDGE_DIR, framing);
 const two = () => (s) => K.setCam(s, { pos: V(-1.0, 5.2, 5.6), target: V(1.0, 3.6, -4.5), fov: 38 }, { clear: false });
 const SHOTS = [
-  { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: K.getSet('bedroom').cams.two_shot_bed_door.pos, target: V(3.0, 2.8, -4.4), fov: 52 }, { clear: false }) },  // the set's Ch10 cam, panned to keep Max in frame
+  { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: K.getSet('bedroom').cams.two_shot_bed_door.pos, target: V(6.0, 2.8, -1.8), fov: 48 }, { clear: false }) },  // the set's Ch10 cam panned toward the door: Max stays out of frame in the dark until the lamp
   { line: 1, off: 3.9, id: 'ghost_front', cam: (s) => K.setCam(s, { pos: V(-1.4, 4.9, -2.9), target: V(3.2, 4.4, -4.4), fov: 34 }, { clear: false }) },
   { line: 2, off: -0.15, id: 'ghost_ms', cam: (s) => K.setCam(s, { pos: V(-3.9, 5.0, -2.1), target: V(3.2, 3.8, -4.4), fov: 38 }, { clear: false }) },
   { line: 2, off: T.click - at(2) - 0.03, id: 'click', cam: (s) => camFrom(s, C.max, V(3.0, 0, 5.2), 'ms', 34, 1.4) },
@@ -239,9 +238,10 @@ const SHOTS = [
   { line: 12, off: -0.1, id: 'fridge', cam: skyeOn('ms') },
   { line: 13, off: -0.1, id: 'convincing', cam: maxEdge('mcu') },
   { line: 14, off: -0.1, id: 'why', cam: skyeOn('mcu') },
-  { line: 15, off: -0.1, id: 'boring', cam: two() },
+  { line: 15, off: -0.1, id: 'boring', cam: maxEdge('mcu') },
+  { line: 15, off: (ln(15).end - ln(15).start) + 0.05, id: 'smiles', cam: (s) => K.setCam(s, { pos: V(0.6, 5.0, 2.6), target: V(1.0, 4.2, -4.5), fov: 34 }, { clear: false }) },
   { line: 16, off: -0.1, id: 'door', cam: (s) => K.setCam(s, { pos: V(5.0, 3.2, 6.8), target: V(10.8, 1.9, 3.6), fov: 38 }, { clear: false }) },
-  { line: 17, off: -0.15, id: 'nobody', cam: (s) => K.setCam(s, { pos: V(1.0, 5.3, 5.0), target: V(1.0, 4.0, -4.5), fov: 36 }, { clear: false }) },
+  { line: 17, off: -0.15, id: 'nobody', cam: (s) => K.setCam(s, { pos: V(8.5, 5.0, 2.5), target: V(1.0, 4.0, -4.5), fov: 32 }, { clear: false }) },
 ].map((x) => ({ ...x, start: Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
@@ -250,7 +250,9 @@ export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet('bedroom');
   K.setState({ chapter: CH, garlic: true, door: doorOpen(t) + (t > T.handle ? 0.006 * Math.abs(Math.sin((t - T.handle) * 22)) * (t < T.handle + 0.8 ? 1 : 0) : 0), blanket: t < T.edge + 0.3 ? 'legs' : 'flat' });
-  K.applyLight(stage, 'midnight', { set, practicals: { moon_window: 0.6, bedside_lamp: t >= T.click, hall_under_door: t > T.smiles + 0.2 } });
+  K.applyLight(stage, 'midnight', { set, practicals: { moon_window: t < T.click ? 0.35 : 0.6, bedside_lamp: t >= T.click, hall_under_door: t > T.smiles + 0.2 } });
+  // review-2 #30: before the lamp clicks the room is near black (moonlight, glow sticks and the phone only), so the reveal isn't spoiled
+  if (t < T.click) { stage.hemi.intensity *= 0.25; stage.scene.environmentIntensity *= 0.25; stage.fill.intensity *= 0.2; stage.rim.intensity *= 0.3; stage.sun.intensity *= 0.3; stage.renderer.toneMappingExposure *= 0.6; }
   K.setBlockers(set.group, C.skye, C.max);
   // idle runs only while someone speaks, in the entrance creep, and in the scripted actions (so still moments repeat)
   const idle = K.holdClock(t, L, [[0, 3.2], [T.click - 0.5, T.click + 0.4], [T.pull - 0.1, T.pull + 0.5]]);
@@ -259,7 +261,7 @@ export function update(t, stage) {
   poseMax(t, idle);
   poseSkye(t, idle);
   sh.cam(stage, t);
-  FILL.position.copy(stage.camera.position).add(V(0, 0.8, 0)); FILL.color.set(t < T.click ? '#9fb4ff' : '#ffd9b0'); FILL.intensity = (t < T.click ? 3 : 7) * (/ghost|not_skye|pull|lock/.test(sh.id) ? 0.25 : /skye|you_knew|phone|fridge|why|comes_down/.test(sh.id) ? 0.5 : 1);
+  FILL.position.copy(stage.camera.position).add(V(0, 0.8, 0)); FILL.color.set(t < T.click ? '#9fb4ff' : '#ffd9b0'); FILL.intensity = (t < T.click ? 0 : 7) * (/ghost|not_skye|pull|lock/.test(sh.id) ? 0.25 : /skye|you_knew|phone|fridge|why|comes_down/.test(sh.id) ? 0.5 : 1);
   // red circle on the pink lock (left of her face, i.e. screen right of her head centre when she faces the camera)
   RED = null;
   if (sh.id === 'lock_cu') { const lock = C.skye.root.getObjectByName('pink_lock'); if (lock) RED = K.screenOf(stage, new THREE.Box3().setFromObject(lock).getCenter(V(0, 0, 0))); }
