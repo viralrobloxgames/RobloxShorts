@@ -212,16 +212,24 @@ export function build(scene) {
   const lamp = new THREE.PointLight('#ffc27a', 0, 26, 1.6); lamp.position.set(0.3, 4.1, -7.6); lamp.castShadow = true; lamp.shadow.mapSize.set(1024, 1024); lamp.shadow.bias = -0.002; group.add(lamp);
   const moonLight = new THREE.SpotLight('#9db8ff', 0, 40, 0.5, 0.6, 1.2); moonLight.position.set(-2.5, 11.5, -16); moonLight.target.position.set(-3.5, 1.5, -2.5); moonLight.castShadow = true; moonLight.shadow.mapSize.set(1024, 1024); moonLight.shadow.bias = -0.001; group.add(moonLight, moonLight.target);
   const moonFill = new THREE.PointLight('#5b74b8', 0, 30, 1.5); moonFill.position.set(-4, 7, -6); group.add(moonFill);
-  const lights = { lamp, moon: moonLight, moonFill, hall: hallLight, closet: closetLight };
+  // authored (full) intensities; K.applyLight / K.setPractical scale them by userData.base (remembered on first use)
+  lamp.intensity = 60; shadeOff.emissiveIntensity = 0.9; bulb.material.emissiveIntensity = 2.5; lamp.userData.bulb = [shade, bulb];
+  moonLight.intensity = 260; moonFill.intensity = 10;
+  hallLight.intensity = 40; hallPanel.material.emissiveIntensity = 1.5; hallLight.userData.bulb = hallPanel;
+  closetLight.intensity = 6;
+  const lights = { bedside_lamp: lamp, moon_window: { lights: [moonLight, moonFill] }, hall_light: hallLight, closet_light: closetLight };
+  function prac(name, on, k = 1) { // same rule as lighting.js setPractical
+    const l = lights[name]; const v = on === true ? k : on === false ? 0 : Number(on);
+    for (const L of [].concat(l.isLight ? l : l.lights)) { L.userData.base ??= L.intensity; L.intensity = L.userData.base * v; L.visible = v > 0;
+      for (const m of [].concat(L.userData.bulb || [])) { m.material.userData.base ??= m.material.emissiveIntensity; m.material.emissiveIntensity = m.material.userData.base * (v > 0 ? Math.max(v, 0.15) : 0); } }
+  }
+  const setLamp = (on, k) => prac('bedside_lamp', on, k), setMoon = (on, k) => prac('moon_window', on, k), setHall = (on, k) => prac('hall_light', on, k);
 
-  function setLamp(on, k = 1) { const v = on ? k : 0; lamp.intensity = 60 * v; shadeOff.emissiveIntensity = 0.9 * v; bulb.material.emissiveIntensity = 2.5 * v; }
-  function setMoon(on, k = 1) { const v = on ? k : 0; moonLight.intensity = 260 * v; moonFill.intensity = 10 * v; }
-  function setHall(on, k = 1) { const v = on ? k : 0; hallLight.intensity = 40 * v; hallPanel.material.emissiveIntensity = 1.5 * v; }
   function setClosetDoors(fl = 0, fr = fl) { closetL.rotation.y = -Math.PI / 2 + fl * 1.9; closetR.rotation.y = Math.PI / 2 - fr * 1.9; } // 0 shut, 1 swung wide into the room
   function setDoor(f = 0) { doorLeaf.rotation.y = -Math.PI / 2 - f * 1.7; } // 0 shut, 1 open into the room (toward -x, leaf swings toward the desk side)
   function setBlanketUp(up) { blanketUp.visible = !!up; blanket.visible = !up; }
   function setClock(text) { const c = clockFace.material.map.image.getContext('2d'); c.fillStyle = '#111'; c.fillRect(0, 0, 128, 96); c.font = 'bold 54px monospace'; c.fillStyle = '#ff4a3a'; c.textAlign = 'center'; c.fillText(text, 64, 66); clockFace.material.map.needsUpdate = true; }
-  setLamp(false); setMoon(true); setHall(false); setClosetDoors(0); setDoor(0);
+  setLamp(false); setMoon(true); setHall(false); prac('closet_light', false); setClosetDoors(0); setDoor(0);
 
   // ---- marks (world) ----
   // sitting marks carry `seat` (the seat surface y, world) and pos.y = seat - 2.0 (R6 hip height at scale 1);
