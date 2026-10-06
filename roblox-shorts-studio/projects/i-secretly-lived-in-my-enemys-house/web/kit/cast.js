@@ -461,6 +461,15 @@ function teddyFallback() {
 
 // Teddy placement. 'R' / 'L': in Lily's palm via kit-props hold(); 'hug': against her chest (pose her arms with
 // POSES.hug_teddy); 'free': detached (the chapter adds lily.teddy to a set and places it).
+// Re-seat the teddy after a pose change (kit-props PR1: its clearance depends on the pose). Called by posture() and
+// kit playAnim(); only when the teddy is still where holdTeddy() put it (a chapter's own K.hold() is left alone).
+export function refreshTeddy(lily) {
+  const t = lily && lily.teddy, m = lily && lily.teddyMode;
+  if (!t || !t.parent || !['R', 'L', 'hug'].includes(m)) return;
+  const want = m === 'R' ? lily.bones['Arm.R'] : m === 'L' ? lily.bones['Arm.L'] : null;
+  if (want ? t.parent !== want : !(t.parent === lily.bones.Torso || t.parent?.parent === lily.bones.Torso)) return;
+  holdTeddy(lily, m);
+}
 export function holdTeddy(lily, mode = 'R') {
   const t = lily.teddy; if (t.parent) t.parent.remove(t);
   t.position.set(0, 0, 0); t.rotation.set(0, 0, 0); t.scale.setScalar(1);
@@ -709,6 +718,7 @@ export function posture(actor, p, { mix = 1, reset = true, extra = null } = {}) 
     if (k === 'Root') { actor.bones.Root.quaternion.copy(boneQ('Root', v)); actor.bones.Root.position.set(0, (v[0] === -90 ? 0.5 : 0) * actor.scale, 0); continue; }
     if (actor.bones[k]) actor.bones[k].quaternion.copy(boneQ(k, v));
   }
+  if (actor.teddy) refreshTeddy(actor);
   return (d.drop || 0) * actor.scale;
 }
 // One arm: gesture(actor, 'point', 'R', mix) (layered: other bones untouched). `name` may be an [x, y, z] array.
