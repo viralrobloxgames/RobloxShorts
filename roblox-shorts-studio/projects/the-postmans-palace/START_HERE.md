@@ -10,14 +10,16 @@ Facts, beats and sources: `source/story.md`.
 
 ## State
 - Script v1 (156 words) written (no approval needed tonight). Ledger: script_approved.
-- Narration: George voice C running (`scripts/qwen_cloud_george_c.py --take take-01`, then tighten + narrate.py),
-  slowed by sharing CPU with The Tornado Came Back's render.
-- Web route: `web/palace_clip.js` (19 shots), `web/kit.js` (lane with the stone, site with the palace that grows by
-  clipping planes, fence and village, oil lamp, cemetery with the tomb, wheelbarrow, basket, satchel, souvenir stand,
-  monument plaque). First preview pass done and fixed; needs the real narration timings, a second preview pass, a
-  motion pass, the hold check (`web/hold_check.js`), the fit check (postman_kepi on Max) and then the full render.
-- Sound: `source/make_sfx.py` (copies) and `source/sound_cues.py`. Cover: `web/cover_clip.js`. Post copy:
-  `delivery/post.json`.
+- Narration: George voice C, 60.2 s (`audio/narration.wav`); captions merged for 10,000 and 93,000.
+- Web route: `web/palace_clip.js` (19 shots) on the real word timings (`source/beats.py` -> `web/beats.js`).
+  Fit check (postman_kepi on Max) passed and reviewed; hold check (stone, basket, wheelbarrow, lamp-lit stone, tomb
+  stone) passed.
+- Cover rendered: `delivery/The_Postman_s_Palace_cover.png/.jpg` + 3:4 grid crop; subline under the headline, motto
+  sign reads in full, Max's face clear.
+- Full render started 2026-10-06 ~02:35 UK straight after The Tornado Came Back's (`--resume` picks up if it dies).
+  Then encode, blank-frame check, contact-sheet review, post_md, deliver for the user's review. Post only after
+  approval.
+- Sound: `source/make_sfx.py` (copies) and `source/sound_cues.py`. Post copy: `delivery/post.json`.
 
 ## Commands
 ```

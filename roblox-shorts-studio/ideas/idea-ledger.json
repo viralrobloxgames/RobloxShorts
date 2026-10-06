@@ -364,7 +364,7 @@
       "title": "The Tornado Came Back",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story: in March 1948 an unforecast tornado wrecks fifty planes at Tinker Air Force Base; the general asks why weathermen can forecast rain but not tornadoes. Five days later his two weathermen see the same weather map, call the odds billions to one, and still answer 'yes or no?' with yes. Planes go into hangars, one weatherman goes home wondering if he can get a job running an elevator, and at 6 pm a tornado hits almost the same spot: the first official tornado forecast comes true, and tornado warnings are born.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-tornado-came-back",
@@ -424,7 +424,7 @@
       "title": "He Won The Marathon By Car",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "scene_built",
+      "status": "farm_render_running",
       "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-marathon-car-ride",
@@ -494,11 +494,11 @@
       "title": "She Went Over Niagara Falls In A Barrel",
       "series": "standalone story",
       "created": "2026-10-06",
-      "status": "script_approved",
+      "status": "farm_render_running",
       "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/over-the-falls-in-a-barrel",
-      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Web route."
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Narration 59.9 s (George voice C, gap 0.6 / beat 1.3). Web route: barrel_clip.js (19 shots), kit (upper river, Horseshoe curtain, mist, gorge, dock, barrel, pump, cake, rowboat, poster); previews, motion pass, hold check and fit check (Max + top_hat) done; full render queued after He Won The Marathon By Car."
     },
     {
       "title": "She Raced Around The World",
@@ -509,6 +509,36 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/she-raced-around-the-world",
       "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating."
+    },
+    {
+      "title": "He Sold The Eiffel Tower",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: Paris, 1925. The papers say the Eiffel Tower is rusting and costly to fix, so con man Victor Lustig fakes government letters, invites scrap dealers to a fancy hotel and whispers that the tower is secretly being sold for scrap. Dealer Andre Poisson pays, and a bribe too; Lustig takes the train out of the country, and Poisson is too embarrassed to tell anyone, so Lustig comes back and tries it again. This time the police are called; he flees to America, tricks Al Capone, is caught making fake money, escapes down a rope and is caught again. His death certificate: apprentice salesman and counterfeiter.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-sold-the-eiffel-tower",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Picked through general research; facts and sources in source/story.md ('tries it again', not 'sold it twice'). Web route; Max as Lustig in the top_hat, Leo as Poisson, procedural Eiffel Tower."
+    },
+    {
+      "title": "The First Speeding Ticket",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: on 28 January 1896 in Kent, Walter Arnold becomes the first person charged with speeding, at 8 mph in a 2 mph zone; the law also wanted a crew of three with one walking ahead. A policeman chases him on a bicycle for five miles; he is charged with four offences at once. Months later the walker rule goes, the limit rises to 14 mph, and drivers celebrate with a run from London to Brighton that is still driven every year.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-first-speeding-ticket",
+      "notes": "Draft prepared during the 2026-10-05/06 overnight run while the renders ran; not narrated or built. Needs approval. Sources: Historic UK, Guinness World Records. Walter Arnold named only in the post copy."
+    },
+    {
+      "title": "Miss Unsinkable",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: Violet Jessop works on ocean liners. Her ship the Olympic collides with a warship (nobody dies); the next year she's on its sister ship the Titanic, where an officer hands her a baby as she climbs into lifeboat 16 and she holds it until the rescue ship comes. Then she becomes a nurse on the third sister, the hospital ship Britannic, which hits a mine and sinks in under an hour; her lifeboat is pulled toward the propellers, she jumps, hits her head, and survives again. She works at sea for thirty more years: Miss Unsinkable.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/miss-unsinkable",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Script only so far (147 words); facts and sources in source/story.md. Mia as Violet."
     }
   ],
   "statuses": [

@@ -24,16 +24,16 @@ const PALM_R = V(-0.5, -1.3, 0), PALM_L = V(0.5, -1.3, 0);
 
 // ---------- key times (all on the narration) ----------
 const T = {
-  watch: W.eight - 0.1, studio: W.its1 - 0.1, swiss: W.in_sw - 0.1, dry: W.pickers - 0.1, weevil: W.dreaded - 0.1, length: W.and1 - 0.1,
-  tin: W.back - 0.1, calls: W.so - 0.1, ask: W.is - 0.1, answer: W.the_answer - 0.1, sprig: W.place - 0.1, calendar: W.date - 0.1,
+  watch: W.eight - 0.1, studio: W.its1 - 0.1, swiss: W.in_sw - 0.1, harvest: W.mild - 0.1, dry: W.pickers - 0.1, weevil: W.dreaded - 0.1, length: W.and1 - 0.1,
+  shelf: W.back - 0.1, tin: W.most - 0.1, calls: W.so - 0.1, ask: W.is - 0.1, answer: W.the_answer - 0.1, sprig: W.place - 0.1, calendar: W.date - 0.1,
   fool: W.it_was - 0.1, hoax: W.and_its - 0.1, cta: W.follow - 0.15,
 };
 const SHOTS = [
-  [0, 'hook'], [T.watch, 'watch'], [T.studio, 'studio'], [T.swiss, 'swiss'], [T.dry, 'dry'], [T.weevil, 'weevil'], [T.length, 'length'],
-  [T.tin, 'tin'], [T.calls, 'calls'], [T.ask, 'ask'], [T.answer, 'answer'], [T.sprig, 'sprig'], [T.calendar, 'calendar'], [T.fool, 'fool'],
+  [0, 'hook'], [T.watch, 'watch'], [T.studio, 'studio'], [T.swiss, 'swiss'], [T.harvest, 'harvest'], [T.dry, 'dry'], [T.weevil, 'weevil'], [T.length, 'length'],
+  [T.shelf, 'shelf'], [T.tin, 'tin'], [T.calls, 'calls'], [T.ask, 'ask'], [T.answer, 'answer'], [T.sprig, 'sprig'], [T.calendar, 'calendar'], [T.fool, 'fool'],
   [T.hoax, 'hoax'], [T.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
-const PLACE_OF = { hook: 'orchard', watch: 'home', studio: 'studio', swiss: 'orchard', dry: 'orchard', weevil: 'orchard', length: 'orchard', tin: 'home',
+const PLACE_OF = { hook: 'orchard', watch: 'home', studio: 'studio', swiss: 'orchard', harvest: 'orchard', dry: 'orchard', weevil: 'orchard', length: 'orchard', shelf: 'home', tin: 'home',
   calls: 'home', ask: 'home', answer: 'studio', sprig: 'home', calendar: 'studio', fool: 'studio', hoax: 'orchard', cta: 'orchard' };
 
 // ---------- scene ----------
@@ -59,7 +59,8 @@ export async function setup(stage) {
   P.hsLeo = K.handset(); leo.bones['Arm.L'].add(P.hsLeo); P.hsLeo.position.copy(PALM_L); P.hsLeo.rotation.z = R90;
   P.hsMax = K.handset(); max.bones['Arm.R'].add(P.hsMax); P.hsMax.position.copy(PALM_R); P.hsMax.rotation.z = R90;
   P.weevil = K.weevil(); scene.add(P.weevil);
-  P.handDrape = K.bunch(79, 9, 2.4, 0.25); scene.add(P.handDrape);               // the hank Skye drapes on the rail
+  P.handDrape = K.bunch(79, 7, 2.4, 0.22); scene.add(P.handDrape);               // the hanks Skye carries to the rail, one per fist
+  P.handDrape2 = K.bunch(80, 7, 2.4, 0.22); scene.add(P.handDrape2);
 }
 
 // ---------- the cast ----------
@@ -96,11 +97,11 @@ function maxAt(s) {
 function miaAt(s) {
   let x = st(V(0, -50, 0), 0, 'happy'); x.visible = false;
   switch (SHOT) {
-    case 'hook': case 'swiss': {                                   // on the ladder, picking: the left arm reaches up, pulls down
+    case 'hook': case 'swiss': case 'harvest': {                   // on the ladder, picking: the left arm reaches up, pulls down
       x = st(MIA_LADDER, R90 - 0.25, 'happy'); x.sit = true;
       const k = 0.5 + 0.5 * Math.sin(s * 2.2);
       x.arms = [['L', lerp(1.9, 2.4, k), 0.15], ['R', 1.25, -0.25]]; x.hank = true; x.look = [-0.15, 0.15];   // one hand in the tree, the other holds out a hank
-      x.face = SHOT === 'hook' && s > 1.2 ? 'laugh' : 'happy'; return x;
+      x.face = (SHOT === 'hook' && s > 1.2) || (SHOT === 'harvest' && s > W.bumper) ? 'laugh' : 'happy'; return x;
     }
     case 'length': { x = st(OR(-5.6, 0, 12.4), 0.45, 'happy'); x.arms = [['R', lerp(0.1, 1.45, smooth(inv(T.length + 0.1, T.length + 0.4, s))), 0.1]]; x.look = [-0.45, 0]; if (s > W.careful) { x.face = 'smug'; x.look = [0, 0]; } return x; }
     case 'hoax': case 'cta': { x = st(OR(-1.6, 0, 7.2), 0.45, 'laugh'); x.layers = [['laugh_big', s + 0.4, 1, true]]; if (SHOT === 'cta') { x.layers = [['idle', s]]; x.wave = true; x.face = 'happy'; } return x; }
@@ -110,8 +111,8 @@ function miaAt(s) {
 function skyeAt(s) {
   let x = st(V(0, -50, 0), 0, 'happy'); x.visible = false;
   switch (SHOT) {
-    case 'hook': { x = st(SKYE_HOOK, 0.55, 'happy'); x.look = [-0.5, -0.35]; x.basket = true; x.face = s > 1.4 ? 'laugh' : 'happy'; return x; }
-    case 'swiss': { const a = OR(-14, 0, 14), b = OR(-3, 0, 9); x = st(a, 0, 'happy'); moveTo(x, a, b, T.swiss + 0.2, s, 12, 0.7); x.basket = true; return x; }
+    case 'hook': case 'harvest': { x = st(SKYE_HOOK, 0.55, 'happy'); x.look = [-0.5, -0.35]; x.basket = true; x.arms = [['R', 0.45, -0.2]]; x.face = s > (SHOT === 'hook' ? 1.4 : W.bumper) ? 'laugh' : 'happy'; return x; }
+    case 'swiss': { const a = OR(-14, 0, 14), b = OR(-3, 0, 9); x = st(a, 0, 'happy'); moveTo(x, a, b, T.swiss + 0.2, s, 12, 0.7); x.basket = true; x.arms = [['R', 0.45, -0.2]]; return x; }
     case 'dry': {                                                  // walks to the rail with a hank, drapes it over the pole
       const a = OR(17.5, 0, 14.5), b = OR(12.0, 0, 13.0);
       x = st(a, 0, 'happy'); moveTo(x, a, b, T.dry - 0.3, s, 12, -0.45);
@@ -209,15 +210,16 @@ export function update(t, stage) {
   if (P.basket.visible) { P.basket.position.copy(palm(skye, 'R')).add(V(0, -1.9, 0)); P.basket.rotation.set(0, skye.root.rotation.y, 0); }
   S.orchard.basket.visible = !(P.basket.visible);
   P.strand.visible = !!lo.strand && leo.root.visible; if (P.strand.visible) { P.strand.position.copy(palm(leo, 'R')); P.strand.rotation.set(0, 0, 0); }
-  P.tin.visible = !!nb.tin && noob.root.visible; if (P.tin.visible) { P.tin.position.copy(palm(noob, 'R')).add(V(0, -0.6, 0)); P.tin.rotation.set(0, noob.root.rotation.y, 0); }
+  P.tin.visible = !!nb.tin && noob.root.visible; if (P.tin.visible) { const h = noob.root.rotation.y; P.tin.position.copy(palm(noob, 'R')).add(V(Math.sin(h) * 0.85, -0.6, Math.cos(h) * 0.85)); P.tin.rotation.set(0, h, 0); }
   P.hsLeo.visible = !!lo.phone && leo.root.visible; P.hsMax.visible = !!mx.phone && max.root.visible;
   S.home.phone.userData.handset.visible = !P.hsLeo.visible; S.studio.phone.userData.handset.visible = !P.hsMax.visible;
-  P.handDrape.visible = SHOT === 'dry' && skye.root.visible;
-  if (P.handDrape.visible) { P.handDrape.position.copy(palm(skye, 'L').lerp(palm(skye, 'R'), 0.5)); }
+  P.handDrape.visible = P.handDrape2.visible = SHOT === 'dry' && skye.root.visible;
+  if (P.handDrape.visible) { P.handDrape.position.copy(palm(skye, 'L')); P.handDrape2.position.copy(palm(skye, 'R')); }
   // the drying rail fills up through the shot (and stays full after)
-  const nDrape = SHOT === 'dry' ? Math.floor(4 + 14 * inv(T.dry + 1.0, T.weevil - 0.2, s)) : ['weevil', 'length', 'hoax', 'cta', 'swiss'].includes(SHOT) ? 18 : 6;
+  const nDrape = SHOT === 'dry' ? Math.floor(4 + 14 * inv(T.dry + 1.0, T.weevil - 0.2, s)) : ['weevil', 'length', 'hoax', 'cta', 'swiss', 'harvest'].includes(SHOT) ? 18 : 6;
   S.orchard.drape.forEach((b, i) => { b.visible = i < nDrape; b.rotation.z = 0.04 * Math.sin(s * 1.5 + i); });
   if (place0 === 'orchard') S.orchard.trees.forEach((tr, i) => K.swayTree(tr, s + i * 0.7, 1));
+  S.orchard.ladder.visible = SHOT !== 'weevil';                  // its rail would sit right in front of the close-up
   // the weevil: climbs a bunch on the hero tree, then scuttles off when it's "wiped out"
   P.weevil.visible = SHOT === 'weevil';
   if (P.weevil.visible) {
@@ -237,7 +239,9 @@ export function update(t, stage) {
     case 'hook': look(stage, OR(lerp(5.6, 5.0, u), lerp(4.6, 4.9, u), lerp(17.5, 16.5, u)), OR(0.5, 5.2, 5.6), 50, 18); break;
     case 'watch': look(stage, HM(0, 4.6, lerp(-4.9, -4.4, u)), HM(0, 3.5, 4.3), 60, 14); break;
     case 'studio': look(stage, SD(0.8, 5.0, lerp(7.0, 5.8, u)), SD(0, 4.8, -5.0), 42, 14); break;
-    case 'swiss': { const k = easeOut(u); look(stage, OR(-8, lerp(28, 22, k), lerp(64, 54, k)), OR(-2, 2, -4), 50, 60); break; }
+    case 'swiss': { const k = easeOut(u); look(stage, OR(-8, lerp(40, 34, k), lerp(58, 50, k)), OR(-2, 0, -4), 50, 60); break; }
+    case 'harvest': look(stage, OR(lerp(9.6, 8.8, u), 5.8, lerp(13.0, 12.2, u)), OR(0.2, 4.9, 5.6), 52, 18); break;
+    case 'shelf': look(stage, HM(lerp(-7.2, -7.8, u), 8.1, lerp(-4.6, -5.4, u)), HM(-9.5, 8.0, -9.0), 46, 10); break;
     case 'dry': look(stage, OR(lerp(7.4, 7.8, u), 4.8, lerp(23.5, 22.5, u)), OR(12.6, 4.3, 10.6), 50, 20); break;
     case 'weevil': { const b = S.wb.getWorldPosition(V()); look(stage, b.clone().add(V(1.4, -1.0, 6.4)), b.clone().add(V(0.3, -1.7, 0)), 42, 8); break; }
     case 'length': look(stage, OR(-3.4, 4.8, 22.5), OR(-7.0, 4.3, 10.6), 48, 18); break;
@@ -313,22 +317,22 @@ export function overlay(g, s, t) {
   if (SHOT === 'studio') { pill(g, s, 'BRITAIN · 1957', 540, 300, pop(t, T.studio + 0.05, 0.2, 1.8), '#ffffff', 'rgba(14,18,34,.85)', 44); if (t > W.serious1 - 0.15) { bigText(g, s, "BRITAIN'S MOST", 540, 440, 84, '#ffffff', pop(t, W.serious1 - 0.15), -0.03); bigText(g, s, 'SERIOUS NEWS SHOW', 540, 540, 80, '#ffd23f', pop(t, W.show1 - 0.15), -0.03); } }
   if (SHOT === 'swiss') {
     pill(g, s, 'SWITZERLAND', 540, 420, pop(t, W.switzerland - 0.1, 0.2, 1.8), '#ff6b6b', 'rgba(14,18,34,.85)', 54);
-    if (t > W.mild - 0.1) bigText(g, s, 'MILD WINTER', 540, 570, 96, '#ffffff', pop(t, W.mild - 0.1) * out(t, W.bumper - 0.05, 0.12), -0.03);
-    if (t > W.bumper - 0.1) bigText(g, s, 'BUMPER HARVEST!', 540, 570, 104, '#ffd23f', pop(t, W.bumper - 0.1), -0.03);
+  }
+  if (SHOT === 'harvest') {
+    bigText(g, s, 'MILD WINTER', 540, 420, 96, '#ffffff', pop(t, T.harvest + 0.05) * out(t, W.bumper - 0.05, 0.12), -0.03);
+    if (t > W.bumper - 0.1) bigText(g, s, 'BUMPER HARVEST!', 540, 420, 104, '#ffd23f', pop(t, W.bumper - 0.1), -0.03);
   }
   if (SHOT === 'dry' && t > W.sun - 0.15) pill(g, s, 'DRYING IN THE SUN', 540, 420, pop(t, W.sun - 0.15), '#ffd23f', 'rgba(14,18,34,.85)', 52);
   if (SHOT === 'weevil') {
     pill(g, s, 'THE SPAGHETTI WEEVIL', 540, 420, pop(t, W.weevil - 0.15), '#ff6b6b', 'rgba(14,18,34,.85)', 50);
-    if (t > W.wiped - 0.1) stamp(g, s, 'ALMOST GONE', 540, 760, clamp((t - W.wiped + 0.1) / 0.18), '#e0262b', -0.1, 80);
+    if (t > W.wiped - 0.1) stamp(g, s, 'ALMOST GONE', 540, 570, clamp((t - W.wiped + 0.1) / 0.18), '#e0262b', -0.1, 80);
   }
   if (SHOT === 'length') {
     if (t > W.same - 0.15) bigText(g, s, 'ALL THE SAME LENGTH?', 540, 420, 78, '#ffffff', pop(t, W.same - 0.15), -0.03);
     if (t > W.careful - 0.15) bigText(g, s, 'CAREFUL BREEDING', 540, 540, 96, '#ffd23f', pop(t, W.careful - 0.15), -0.03);
   }
-  if (SHOT === 'tin') {
-    if (t > W.rare - 0.15) pill(g, s, 'SPAGHETTI IN BRITAIN: RARE', 540, 420, pop(t, W.rare - 0.15), '#ffd23f', 'rgba(14,18,34,.85)', 48);
-    if (t > W.tin1 - 0.15) bigText(g, s, 'ONLY IN A TIN', 540, 1060, 100, '#ffffff', pop(t, W.tin1 - 0.15), -0.03);
-  }
+  if (SHOT === 'shelf' && t > W.rare - 0.15) pill(g, s, 'SPAGHETTI IN BRITAIN: RARE', 540, 420, pop(t, W.rare - 0.15), '#ffd23f', 'rgba(14,18,34,.85)', 48);
+  if (SHOT === 'tin' && t > W.tin1 - 0.15) bigText(g, s, 'ONLY IN A TIN', 540, 560, 100, '#ffffff', pop(t, W.tin1 - 0.15), -0.03);
   if (SHOT === 'calls') {
     const n = Math.round(lerp(1, 300, easeIn(inv(T.calls + 0.3, T.ask - 0.1, t))));
     pill(g, s, n >= 300 ? 'CALLS: HUNDREDS!' : `CALLS: ${n}`, 540, 420, pop(t, T.calls + 0.1, 0.2, 1.8), '#ff6b6b', 'rgba(14,18,34,.85)', 54);
@@ -339,7 +343,7 @@ export function overlay(g, s, t) {
   }
   if (SHOT === 'answer') pill(g, s, 'THE ANSWER:', 540, 420, pop(t, T.answer + 0.05, 0.2, 1.8), '#ffd23f', 'rgba(14,18,34,.85)', 56);
   if (SHOT === 'sprig') {
-    bubble(g, s, ['PLACE A SPRIG', 'OF SPAGHETTI IN A TIN', 'OF TOMATO SAUCE...'], 540, 760, pop(t, T.sprig + 0.05, 0.2, 2) * out(t, W.hope - 0.1, 0.12), 54);
+    bubble(g, s, ['PLACE A SPRIG', 'OF SPAGHETTI IN A TIN', 'OF TOMATO SAUCE...'], 330, 900, pop(t, T.sprig + 0.05, 0.2, 2) * out(t, W.hope - 0.1, 0.12), 54);
     if (t > W.hope - 0.15) bigText(g, s, '...AND HOPE', 540, 470, 104, '#ffffff', pop(t, W.hope - 0.15), -0.03), bigText(g, s, 'FOR THE BEST', 540, 590, 104, '#ffd23f', pop(t, W.best - 0.15), -0.03);
   }
   if (SHOT === 'calendar') pill(g, s, 'THE DATE OF THE SHOW?', 540, 300, pop(t, T.calendar + 0.05, 0.2, 1.8), '#ffffff', 'rgba(14,18,34,.85)', 48);

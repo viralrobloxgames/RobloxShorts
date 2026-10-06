@@ -10,9 +10,12 @@ Fools' Day. Max is the presenter, Mia and Skye the pickers, Leo and Noob the vie
 `source/story.md`. No on-screen branding; nobody named in the narration.
 
 ## State
-- Script v1 (155 words), `script.txt`.
-- Narration: George voice C (cloud, `scripts/qwen_cloud_george_c.py --take take-01`), then `tighten_clips.py` and
-  `narrate.py --voice george_c` (see the root of this file's history for the run; check the word report).
+- Script v1 (157 words; line 3 writes the year out, "It's nineteen fifty-seven", because the voice read "1957" as
+  "a 1957"), `script.txt`.
+- Narration: George voice C (cloud, `scripts/qwen_cloud_george_c.py --take take-01`), `tighten_clips.py`, joined with
+  `narrate.py --voice george_c --gap 0.5 --beat 1.1` (slightly longer pauses so the video clears 61 s) = **59.4 s**
+  speech (words end 59.24 s). Video = words end + 2.5 s end card = 61.77 s, + 0.5 s cover = **62.3 s**. Whisper
+  heard "phoned in" (spoken that way; fine), "1st", "Fool's", "ViralRobloxGames": word_fixes in `source/project.json`.
 - Web route: `web/spaghetti_clip.js` (16 shots), `web/kit.js` (orchard of spaghetti trees with a ladder, a basket, a
   drying rail and a PERFECT LENGTH board, mountains; the weevil; a 1950s TV studio with desk, microphone, desk phone,
   flip calendar, studio camera; a 1950s living room with a TV set, armchairs, side table phone, shelf of tins, the tin
