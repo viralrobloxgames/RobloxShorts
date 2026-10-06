@@ -121,7 +121,7 @@ export async function setup(stage) {
   A = await K.loadAnims(['idle', 'walk', 'run', 'duck', 'sit', 'horror_reach', 'horror_listen', 'horror_torch_hold', 'typing', 'think', 'shrug', 'look_up', 'talk', 'scheming', 'hold']);
   const add = (k, id, o) => { P[k] = K.makeProp(id, o); stage.scene.add(P[k]); return P[k]; };
   add('letters', 'magnet_letters', { letters: 'CE2SKYE' }); add('torch', 'flashlight'); add('torchDown', 'flashlight'); add('knife', 'knife');
-  add('sandwich', 'sandwich', { filling: 'ham' }); add('bitten', 'sandwich', { filling: 'ham', bitten: 'half_eaten' }); add('onPlate', 'sandwich', { filling: 'ham' });
+  add('sandwich', 'sandwich', { filling: 'ham' }); add('bitten', 'sandwich', { filling: 'ham', bitten: 'half_eaten' }); add('onPlate', 'sandwich', { filling: 'ham' }); add('withCrust', 'sandwich', { filling: 'ham', crusts: true }); add('knifeIns', 'knife');
   add('plate', 'plate'); add('ham', 'ham'); add('dadHam', 'ham'); add('milk', 'milk');
   beam = K.flashlightBeam(stage);
   times();
@@ -167,7 +167,7 @@ const SHOTS = [
   { at: () => T.toIsland + 0.2, id: 'max_island', cam: fix(AT_ISLAND, 'max', 'ms') },
   { at: () => word(9, 4).start, id: 'skye_react', cam: fix(PEEK, 'skye', 'cu') },
   { at: () => word(9, 6).start, id: 'max_sandwich', cam: fix(AT_ISLAND, 'max', 'ms') },
-  { at: () => endOf(9, 0.1), id: 'sandwich_insert', cam: (s) => K.applyShot(s, { pos: M.plate.clone().add(V(1.6, 2.3, 2.6)), target: M.plate.clone().add(V(-1.0, 0.5, 0.1)), fov: 44 }) },
+  { at: () => endOf(9, 0.0), id: 'sandwich_insert', cam: (s) => K.applyShot(s, { pos: M.plate.clone().add(V(1.1, 1.7, 1.9)), target: M.plate.clone().add(V(0.05, 0.1, 0.1)), fov: 30 }) },
   { at: () => at(10), id: 'max_plate', cam: fix(AT_ISLAND, 'max', 'mcu') },
   { at: () => T.maxOut, id: 'wide_swap', cam: cam('fridge_wide') },
   { at: () => at(11, 0.15), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'mcu') },
@@ -265,7 +265,7 @@ export function update(t, stage) {
     const r = route([M.pantry_slats, M.pantry_front, M.islandEnd], T.creep, t, CREEP);
     if (r.moving) { K.putOn(sk, { pos: r.pos, heading: r.heading }); const d = K.posture(sk, K.gait('creep', r.anim)); sk.root.position.y = r.pos.y - d; }
     else place(sk, r.done ? M.islandEnd : M.pantry_slats, [[A.idle, idle], [A.hold, 0.3, t >= T.grab - 0.2 ? 1 : 0]]);
-    if (t >= T.grab) { P.sandwich.visible = true; K.hold(P.sandwich, sk, 'R'); }
+    if (t >= T.grab) { K.gesture(sk, 'chin_hand', 'R', 0.6 * sm(inv(T.grab, T.grab + 0.3, t))); P.sandwich.visible = true; K.hold(P.sandwich, sk, 'R'); }
   } else {                                                  // ducks down at the front of the island
     const r = route([M.islandEnd, M.frontL, M.island_crouch], T.duck, t, 14);
     if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 14), r.heading);
@@ -318,7 +318,16 @@ export function update(t, stage) {
   // the plate on the island from the moment Max makes the sandwich; the sandwich on it until Skye takes it
   if (t >= T.make0) {
     P.plate.visible = true; put(P.plate, M.plate, 0);
-    if (t >= endOf(9, 0.3) && t < T.grab) { P.onPlate.visible = true; put(P.onPlate, M.plate.clone().add(V(0, 0.055, -0.4)), 0.3); }
+    const SW = M.plate.clone().add(V(0, 0.055, -0.4)), cut0 = endOf(9, 0.3), cut1 = endOf(9, 0.85);
+    if (t >= endOf(9, 0.0) && t < cut1) put(P.withCrust, SW, 0.3);                  // the insert: crusts on ...
+    if (t >= cut1 && t < T.grab) put(P.onPlate, SW, 0.3);                           // ... and off
+    if (t >= endOf(9, 0.0) && t < at(10, -0.02)) {                                    // Max's knife slides along the edge
+      const u = sm(inv(cut0, cut1, t)), lift = sm(inv(cut1, cut1 + 0.3, t));
+      const h = 0.3, fw = V(Math.sin(h), 0, Math.cos(h)), side = V(Math.cos(h), 0, -Math.sin(h));
+      const c = SW.clone().addScaledVector(fw, 0.42);                                // the sandwich's centre
+      const pos = c.addScaledVector(fw, 0.36).addScaledVector(side, 0.55 - 1.1 * u).add(V(0, 0.12 + 0.6 * lift, 0));
+      put(P.knifeIns, pos, h - PI / 2); P.knifeIns.rotateZ(PI / 2);
+    }
   }
 
   // ----- Dad -----

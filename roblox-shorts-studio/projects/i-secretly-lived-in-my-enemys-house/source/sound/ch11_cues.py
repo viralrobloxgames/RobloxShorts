@@ -34,7 +34,9 @@ cue('click', T_LATER + 0.65, 0.2)
 for f in [at(22) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5]:
     cue('whoosh', f, 0.18); cue('plop', f + 0.85, 0.3)
 # Max slides the plate to Skye
-cue('glass', T_WIDE + 0.5, 0.08, dur=0.9)
+cw = json.loads((P / 'audio/chapters/ch11/captions.json').read_text())['words']
+he = next((w['start'] for w in cw if w.get('speaker') == 'VO' and at(23) + 1 < w['start'] < end(23) and w['word'].startswith('He')), at(23) + 2.65)
+cue('glass', he - 0.15 + 0.35, 0.08, dur=0.9)    # review #26: the slide is in the two-shot on "He spent it making me sandwiches" (T_PAY + 0.35)
 # end screen
 cue('pop', T_END + 0.05, 0.3)
 
