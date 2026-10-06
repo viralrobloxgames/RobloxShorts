@@ -168,3 +168,29 @@ of the Skye-Lily line), `decor_wide` / `decor_line`, `decor_ms`, `decor_cu`, `de
 `shafts.moon`, `bounce`, `hatchGlow`, `flashlight` + `flashlightCone`, `glow` (glow sticks). `setState({ time })`
 switches them; the stage hemi/env should be low inside the attic (the preview uses hemi 0.22 day / 0.1 night, env
 0.18 / 0.08, stage sun off).
+
+## cast.js (kit-cast)
+
+Four characters + four extras, all wardrobe ids of `source/boundary_sheet.md`, faces, lip flap, poses. Clothes are painted
+into each character's own R6 atlas (128 px/stud, the pack layout), so they follow the bones exactly and cannot clip; only
+the ghost sheet and the backpack are meshes (parented to the bones they move with). Check sheets (front, 3/4, side,
+back per look; poses; gestures; gaits; blush): `production/previews/kit-cast/*.jpg`, made by
+`node web/render.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/kit/cast_turnaround.js --out /tmp/ta --frames 1-28 --scale 0.4 --samples 1`.
+
+| Export | What / example |
+|---|---|
+| `loadCast(scene)` | `const C = await K.loadCast(stage.scene)` → `{ skye, max, dad, lily, extras: [4] }`, all added to the scene, dressed in their default looks (`skye_hoodie`, `max_school`, `dad_cardigan`, `lily_day`, `extras`), face `neutral`, `lily.teddy` (kit-props' `teddy`) already in her right hand. Dad = Leo rig at 1.12 with hair tinted dark brown; Lily = Mia rig at 0.78 with her ponytail tinted black. Extras: the Noob in a `cap`, then recoloured Noobs in `spiky_hair`, `long_hair`, `beanie` (all via `wear()`). Each actor has `.speaker` (`SKYE`/`MAX`/`DAD`/`LILY`), `.scale`, `.outfit`. |
+| `FACES` | every face preloaded on every character: scared suspicious scheming nervous happy annoyed shocked smug surprised determined crying sad shouting laugh talking mouth_o neutral confused mouth_small. `C.max.setFace('suspicious')` |
+| `WARDROBE`, `dress(actor, id \| [ids], on = true)` | synchronous and cached, so it can run inside `update(t)`. Base looks: `skye_hoodie`, `max_school`, `max_pjs`, `dad_cardigan`, `dad_apron`, `dad_robe`, `lily_day`, `lily_pjs`, `extras`. A base look on Skye also takes the sheet AND the backpack off, so give the order: `K.dress(C.skye, ['skye_hoodie', 'backpack'])`. Overlays: `K.dress(C.skye, 'backpack', false)` (take it off mid-shot), `K.dress(C.skye, 'skye_sheet')` (ghost: dome with eye holes + pink lock out at the LEFT of her face, drape to below the knees, sheet sleeves to the wrists; hides her hair and face), `K.dress(C.skye, 'glow_sticks')` (kit-props' green wrist bands on both wrists). Wrong person → throws. |
+| `sheetLift(skye, u)` | Ch10 pull-off: `u` 0 → 1 lifts the sheet up and off (hair and face come back at 0.35). At 1: `K.dress(C.skye, 'skye_sheet', false)` (or `dress(skye,'skye_hoodie')`) and hand her kit-props' `bedsheet` `{ state: 'bunched' }` in her left palm. |
+| `speak(actor, baseFace, t, words, { whisper })` | `K.speak(C.max, 'suspicious', t, captions.words)`: on the actor's own words (speaker match; VO never moves a mouth) alternates `talking`/`mouth_o` (every ~0.14 s inside long words), base face in the gaps. `whisper: true` alternates `mouth_small`/base. Returns the face set. |
+| `blush(actor, 0..1)` | pink cheeks over any face: `K.blush(C.skye, 1)` with `nervous` for "blushing"; `K.blush(C.skye, 0)` to clear. |
+| `holdTeddy(lily, mode)` | `'R'` / `'L'` (kit-props `hold(teddy, lily, hand, 'side')`, hanging at her side), `'hug'` (on her chest; pose with `posture(lily, 'hug_teddy')`), `'free'` (detached: add `C.lily.teddy` to the set and place it, e.g. beside her at the tea party). |
+| `POSES`, `posture(actor, name \| dict, { mix, reset, extra })` | sets the bones (rig.js angle convention, degrees) and returns the root drop. Floor poses: `const d = K.posture(C.skye, 'sit_cross'); C.skye.root.position.y = floorY - d`. Seats: `K.posture(C.max, 'sit_chair'); C.max.root.position.y = K.seatY(C.max, seatTopY)`. Names: `stand`, `sit_chair`, `sit_upright`, `sit_slump`, `sit_desk_arms`, `chin_on_hand`, `sit_cross`, `kneel`, `kneel_up`, `crouch`, `lie_back`, `shock`, `scarecrow` (arms out at shoulder height; `mix` brings them down), `arms_folded`, `hug_teddy`, `shrug`, `lean_in`, `lean_back`, `ear_to_door`, `hip_bend` (Dad leaning in nose to nose). `mixAngles(a, b, u)` blends two dicts. |
+| `ARM_GESTURES`, `gesture(actor, name, side, mix)` | one arm, layered over the current pose (call after `posture`/`robloxPose`): `K.gesture(C.skye, 'hand_over_mouth', 'L')`. Names: point, point_up, reach_up, finger_up, knock, tap, hand_over_mouth, eye_wipe, thumb_to_chest, hand_on_hip, hand_on_neck, hair_pat, phone_ear, chin_hand, hold_out, flashlight_chin, wave (static; `waveArm` in web/lib/gestures.js animates), hand_hold, cup_hold; or pass `[x, y, z]`. `mix` slerps from the current arm. |
+| `gait(kind, phase)` | distance-driven gaits as a pose dict: `const m = travel(a, b, t0, t, 6); K.posture(C.skye, K.gait('creep', m.anim))`. Kinds: `walk`, `run`, `creep` (sneaky, bent forward), `skip` (Lily; returns a negative `drop` = hop), `shuffle` (sleepy Max), `climb` (ladder, facing the rungs; phase = height climbed / 1.6). Use the drop: `root.y = floorY - drop`. |
+| `SCALE`, `COLORS`, `SPEAKER`, `EXTRA_LOOKS` | constants (Dad 1.12, Lily 0.78; hair and glow colours; caption speaker labels; the extras' looks). |
+
+Notes: walk in the sheet with the arms still or barely swinging (the drape bulges for legs and arms, but a big arm swing
+reads as a tent); one arm up through the sheet (phone, left arm at shoulder height) reads as a sheet-covered arm. No
+two-arms-up poses (SKILL.md): `climb` keeps both hands in front of the face, not above the head.
