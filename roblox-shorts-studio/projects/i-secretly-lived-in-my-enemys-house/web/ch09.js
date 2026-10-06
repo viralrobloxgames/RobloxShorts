@@ -61,8 +61,8 @@ const T = {
 };
 T.lidOpen = T.walk + 1.45; T.lidOpened = T.lidOpen + 0.4; T.pick = T.lidOpened + 0.55; T.picked = at(8, -0.05);
 T.lilyWalk = at(8, 0.2);                 // Lily gets up and comes over while Skye reads the drawing
-T.back = endOf(15, 0.2); T.backDone = T.back + 0.4; T.lidClose = T.backDone + 0.5; T.lidClosed = T.lidClose + 0.25;   // the drawing stays in view on top ~0.5 s
-T.sheetUp = T.lidClosed; T.sheetUpDone = at(16, 0.3);
+T.back = endOf(15, 0.55); T.backDone = T.back + 0.35; T.lidClose = T.backDone + 0.45; T.lidClosed = T.lidClose + 0.25;   // a long look, then on top ~0.45 s
+T.sheetUp = T.lidClosed; T.sheetUpDone = at(16, 0.6);
 T.dad2 = at(19); T.ghost = at(20);
 const SPELL = wordAt(9, 6);              // "He spelled friends wrong": back to Skye's face
 
@@ -175,26 +175,29 @@ function skyeAt(s, idle) {
   let h = lerpAng(box.heading, faceLily, smooth(inv(T.pick + 0.05, T.pick + 0.4, s)));
   st.sheet = 'floor'; st.drawing = true; st.face = 'surprised';
   K.playAnim(sk, [[A.idle, idle]]);
-  const hold = s < SPELL ? 1.3 : 0.35;   // the drawing up to read it, then lower at her waist
+  const hold = s < SPELL ? 1.5 : 0.35;   // the drawing up at her chest to read it, then lower at her waist
   reach(sk, 'L', hold, 0.45); reach(sk, 'R', hold, 0.45);
+  if (s < SPELL) st.tilt = -0.45;
+  if (s >= at(13) && s < at(14)) { st.oneHand = true; reach(sk, 'R', 1.25, 0.35); setArm(sk, 'L', 0.2); }   // the story: the drawing in her right hand at her chest
   if (s >= at(9)) st.face = s < SPELL ? 'happy' : 'smug';
   if (s >= at(10)) st.face = 'sad';
   if (s >= at(11)) { st.face = 'sad'; }
   if (s >= at(13)) {
     st.face = 'sad';
     const k1 = wordAt(13, 7), k2 = wordAt(13, 12), k3 = wordAt(13, 15);    // "knocked down my sandcastle" / "his"
-    if (s >= k1 && s < k3) { st.face = s >= k2 ? 'annoyed' : 'sad'; const u = smooth(inv(k1, k1 + 0.35, s)) * (1 - smooth(inv(k3 - 0.3, k3, s))); setArm(sk, 'L', lerp(0.2, 1.3, u), lerp(0.08, 0.9, u)); st.oneHand = true; }
+    if (s >= k1 && s < k3) { st.face = s >= k2 ? 'annoyed' : 'sad'; const u = smooth(inv(k1, k1 + 0.35, s)) * (1 - smooth(inv(k3 - 0.3, k3, s))); setArm(sk, 'L', lerp(0.2, 1.3, u), lerp(0.08, 0.9, u)); }
   }
   if (s >= at(14)) st.face = 'neutral';
   if (s >= at(15)) st.face = 'smug';
   if (s >= endOf(15)) {                                    // the long look, the drawing back on top, the lid, the sheet
-    st.face = 'sad';
+    st.face = s < T.back - 0.2 ? 'sad' : 'happy';
+    if (s < T.back) { reach(sk, 'L', 1.4, 0.45); reach(sk, 'R', 1.4, 0.45); st.tilt = -0.45; lookHead(sk, 0, 0.3); }
     h = lerpAng(h, box.heading, smooth(inv(T.back, T.back + 0.25, s)));
     if (s >= T.back) { const u = inv(T.back, T.backDone, s); reach(sk, 'L', lerp(0.35, 1.0, u), 0.45); reach(sk, 'R', lerp(0.35, 1.0, u), 0.45); st.drawing = s < T.backDone; st.tilt = 1.45 * smooth(inv(0.1, 0.7, u)); }
     if (s >= T.backDone) { const k = smooth(inv(T.backDone, T.backDone + 0.2, s)) * (1 - smooth(inv(T.lidClose - 0.2, T.lidClose, s))); reach(sk, 'L', lerp(1.2, 0.35, k), 0.3); reach(sk, 'R', lerp(1.2, 0.35, k), 0.3); }
     if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.25 ? 'open' : 'floor'; h = lerpAng(box.heading, faceLily, u); reach(sk, 'L', lerp(1.2, 1.15, u), lerp(0.3, -0.3, u)); reach(sk, 'R', lerp(1.2, 1.15, u), lerp(0.3, -0.3, u)); }
   }
-  if (s >= at(16)) { st.sheet = 'open'; st.face = 'determined'; reach(sk, 'L', 1.15, -0.3); reach(sk, 'R', 1.15, -0.3); }
+  if (s >= T.sheetUpDone) { st.sheet = 'open'; st.face = 'determined'; reach(sk, 'L', 1.15, -0.3); reach(sk, 'R', 1.15, -0.3); }
   if (s >= at(18)) st.face = 'smug';
   if (s >= T.dad2 - 0.1) { st.face = s < T.ghost ? 'shocked' : 'determined'; h = lerpAng(h, towardXZ(box.pos, M.hatch()), 0.5 * smooth(inv(T.dad2 - 0.1, T.dad2 + 0.3, s))); }
   K.putOn(sk, { pos: box.pos, heading: h });
@@ -257,7 +260,7 @@ function placeProps(sk, s) {
   if (mode === 'lap') P.sheetLap.scale.set(1, 1, 1);
   P.scissors.visible = sk.scissors; if (sk.scissors) K.hold(P.scissors, C.skye, 'R');
   P.glow.visible = !!sk.glow; if (sk.glow) K.hold(P.glow, C.skye, 'L');
-  P.drawing.visible = sk.drawing; if (sk.drawing) K.carry2(P.drawing, C.skye, sk.tilt ? { tilt: sk.tilt } : {});
+  P.drawing.visible = sk.drawing; if (sk.drawing) { if (sk.oneHand) K.hold(P.drawing, C.skye, 'R', 'palm'); else K.carry2(P.drawing, C.skye, sk.tilt ? { tilt: sk.tilt, at: sk.tilt < 0 ? 'out' : 'palm' } : {}); }
 }
 
 // ---------- shots ----------
@@ -282,7 +285,7 @@ const NEST_TWO = { pos: NESTCAM.pos.clone().lerp(NESTCAM.target, 0.18), target: 
 const BOX_TWO = { pos: BOXCAM.pos.clone().lerp(BOXCAM.target, 0.12), target: BOXCAM.target.clone().add(V(0, 0.75, 0)), fov: 40 };
 const SHOTS = [
   { line: 0, off: 0, id: 'open', cam: (s, t) => push(NESTCAM, { pos: NESTCAM.pos.clone().lerp(NESTCAM.target, 0.3), target: NESTCAM.target, fov: NESTCAM.fov }, 0, endOf(0))(s, t) },
-  { line: 1, off: 0, id: 'skye_steps', cam: front('skye', { ang: -0.45, d: 5.6 }) },
+  { line: 1, off: 0, id: 'skye_steps', cam: front('skye', { ang: -0.45, d: 7.8, up: 0.4, look: -1.05 }) },
   { line: 2, off: 0, id: 'lily_sheet', cam: front('lily', { ang: 0.25, d: 4.6 }) },
   { line: 3, off: 0, id: 'two_nest', cam: FIX(NEST_TWO) },
   { line: 4, off: 0, id: 'dad_below', cam: (s, t) => push(NEST_TWO, { pos: NEST_TWO.pos.clone().lerp(NEST_TWO.target, 0.2), target: NEST_TWO.target, fov: NEST_TWO.fov }, at(4), at(4) + 0.6)(s, t) },
@@ -300,8 +303,9 @@ const SHOTS = [
   { line: 13, off: 0, id: 'two_sandcastle', cam: FIX({ pos: V(5.4, 3.9, 12.6).add(OFF), target: V(6.1, 3.2, 5.6).add(OFF), fov: 40 }) },
   { line: 14, off: 0, id: 'lily_seven', cam: LILY_BOX },
   { line: 15, off: 0, id: 'skye_good', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
+  { line: 15, off: 0, at: () => endOf(15, 0.05), id: 'look_cu', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3, d: 5.4, look: -0.85 }) },
   { line: 15, off: 0, at: () => T.back - 0.05, id: 'put_back', cam: ROLLED(INSERT_WIDE) },   // insert: the drawing back on top, the lid
-  { line: 16, off: 0, id: 'lily_still', cam: LILY_BOX },
+  { line: 16, off: 0.35, id: 'lily_still', cam: LILY_BOX },
   { line: 17, off: -0.05, id: 'skye_yes', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3, d: 4.6, up: 0.4 }) },
   { line: 18, off: 0, id: 'two_dumb', cam: FIX(BOX_TWO) },
   { line: 19, off: 0, id: 'two_hatch', cam: FIX(BOXCAM) },
