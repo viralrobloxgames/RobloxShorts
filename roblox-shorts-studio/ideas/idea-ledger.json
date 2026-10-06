@@ -374,11 +374,11 @@
       "title": "He Stole The Mona Lisa",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-stole-the-mona-lisa",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; full web render running. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; delivered for review: 62.4 s MP4 with cover, captions, post sheet. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
     },
     {
       "title": "The Dog Who Found The World Cup",
@@ -409,6 +409,96 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-flew-a-lawn-chair",
       "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum. | Overnight run 2026-10-05/06 (no script approval needed): narration 59.8 s (George voice C, cloud), video 61.67 s + 0.5 s cover; web clip 20 shots; full web render running."
+    },
+    {
+      "title": "He Flew The Wrong Way",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story (1938): refused permission to fly the Atlantic, Douglas Corrigan files a flight plan to California, flies 28 hours east to Dublin, says \"Just got in from New York. Where am I?\" and blames his compass; his punishment ends the day his ship gets home, New York gives him a bigger parade than Lindbergh's, and he never admits a thing.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-flew-the-wrong-way",
+      "notes": "Overnight run 2026-10-05: the user named this story and waived script approval for the run (write, then make the video; posting still needs approval). Script v1 156 words. Web route."
+    },
+    {
+      "title": "He Won The Marathon By Car",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "scene_built",
+      "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-marathon-car-ride",
+      "notes": "Overnight run 2026-10-05/06: story picked by the user; script approval waived for this run (posting still needs approval). Narration 60.7 s (George voice C, gap 0.6 / beat 1.3). Web route; full render started 2026-10-06 01:11 UTC. Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration."
+    },
+    {
+      "title": "The Six Million Dollar Banana",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: a man pays $6.2 million for a banana, then eats it. It began in 2019 when an artist duct-taped a banana to a wall and sold it twice for $120,000; another artist ate it and the gallery just taped up a new one, because buyers get a certificate and instructions, not a banana. A student in Seoul ate one too. At auction in New York it went for $6.2 million and the buyer ate it on stage. The banana came from a street fruit stand: the man who sold it got 25 cents.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-six-million-dollar-banana",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Maurizio Cattelan, Comedian; David Datuna; Noh Hyun-soo; Justin Sun; Shah Alam: named only in the post copy. Script v1 159 words. Web route."
+    },
+    {
+      "title": "The Penguin General",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: a penguin inspects a line of soldiers, and they salute him because he outranks every one of them. In 1972 Norway's royal guard adopted a king penguin at Edinburgh Zoo, named him Nils Olav and made him a lance corporal; every visit since he gets promoted. The penguins change but the name and rank carry on. He was knighted with 130 soldiers on parade, got a bronze statue, became a brigadier and in 2023 a major general. Soldiers who trained for years salute him; he just waddles past.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-penguin-general",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Sir Nils Olav III, Norwegian King's Guard, Edinburgh Zoo. Script v1 147 words. Web route; block penguin built in code."
+    },
+    {
+      "title": "He Won By Not Sleeping",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1983, Sydney to Melbourne, 544 miles. World-class runners line up, and so does a 61-year-old potato farmer in overalls. He shuffles; by nightfall he's miles behind. The pros sleep six hours; he wakes by mistake at 2 a.m., starts running, shuffles past their tents and leads by morning. He decides not to sleep at all, wins by ten hours, nearly two days under the record, and gives most of his $10,000 prize to the runners he beat.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/cliff-young",
+      "notes": "Overnight queue (user 2026-10-05: no script approval needed for these). Picked through general research (Cliff Young, 1983 Westfield Sydney-Melbourne ultramarathon; named only in the post copy). Script 162 words with the CTA. Web route."
+    },
+    {
+      "title": "They Lost A War To Emus",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1932, twenty thousand emus eat Western Australia's wheat. The army sends a major, two gunners, two machine guns and 10,000 bullets. The emus scatter, the gun jams at the ambush, the truck-mounted gun can't keep up or aim, every flock has a lookout. A week and 2,500 bullets later most emus are fine, Parliament jokes about medals, the army pulls out, and the major admits the birds face machine guns like tanks. The emus won.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-emu-war",
+      "notes": "Overnight queue (no script approval needed). General research (Emu War, Nov 1932, Maj. G.P.W. Meredith; named only in the post copy). Picture rule: no emu is shown hit. Script 162 words with the CTA. Web route; code-built emus."
+    },
+    {
+      "title": "The Postman's Palace",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: in 1879 a French country postman trips over a strange stone, pockets it, and spends 33 years building a palace from stones he picks up on his 30 km round - pockets, then baskets, then a wheelbarrow, building at night by an oil lamp while the village laughs. 10,000 days later it's finished, with 'Let those who can do better, try' on the wall; refused burial inside it, he builds his own tomb in eight more years. Today it's a protected monument, and the village that laughed is famous because of him.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-postmans-palace",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Ferdinand Cheval, Palais Ideal, Hauterives; named only in the post copy. Picked through general research. Web route; new postman_kepi accessory, procedural pebble palace that grows by clipping."
+    },
+    {
+      "title": "Spaghetti Grows On Trees",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story (1 April 1957): Britain's most serious news show reports a bumper spaghetti harvest in Switzerland, pickers pulling spaghetti off trees, the weevil gone, every strand bred to the same length; eight million watch, hundreds phone in asking how to grow their own, and are told to put a sprig of spaghetti in a tin of tomato sauce and hope for the best. It was April Fools' Day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/spaghetti-grows-on-trees",
+      "notes": "Overnight run 2026-10-05/06: picked through general research because the user's second named story (Lawnchair Larry) was already in the ledger as He Flew A Lawn Chair. Script approval waived for the run by the user (posting still needs approval). Script v1 155 words. Web route."
+    },
+    {
+      "title": "She Went Over Niagara Falls In A Barrel",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/over-the-falls-in-a-barrel",
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Web route."
     }
   ],
   "statuses": [

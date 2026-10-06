@@ -1,0 +1,51 @@
+{
+  "clip": "projects/the-marathon-car-ride/web/marathon_clip.js",
+  "generated": "2026-10-06T01:11:32.864Z",
+  "fingerprint": "91a924e26f9b5a26",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "neutral",
+          "happy",
+          "surprised",
+          "shocked",
+          "angry",
+          "determined",
+          "nervous",
+          "talking",
+          "confused"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "cap"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Noob",
+      "accessory": "cap",
+      "mode": "cover",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.123,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-06T01:11:41.589Z"
+}
