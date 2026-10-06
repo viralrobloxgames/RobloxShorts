@@ -22,8 +22,19 @@ out to sea), 261 miles in all. The outbreak was stopped, but the Central Park st
   `animal_collie_parts` recoloured, Balto black, two bronze statues). One low-res frame per shot rendered and looked
   at; the sick room, harbour and run cameras re-framed.
 
+## Preview notes (every 20th frame on the real narration, 05:50 BST; not fixed yet)
+- sick: Skye's face is cut off at the top left and Leo's back fills the right; re-frame so her face reads under the
+  700 MILES card.
+- togo: the close-up cuts Togo's head off at the left edge; aim further forward (his head) and pull back a little.
+- ice: the blizzard haze washes the team out; lighten the white overlay or bring the camera closer.
+- night: the sled and dogs fill the foreground; the drifting floes and open water barely read; frame more of the sea.
+- miles: the bar chart hides Max's head; move the chart up or frame Max lower.
+- statue: Mia and Balto are only at the right edge and the crowd is out of shot; frame wider (plinth + Mia + Balto).
+- wait: Togo (the dog) beside his statue is out of shot; include him.
+- hook, ships, planes, dogs, relay, hardest, run, back, arrive, cta read fine.
+
 ## Next
-1. Preview every 10th frame on the real narration (`node web/render.mjs --clip projects/the-dog-who-saved-a-town/web/dog_clip.js --out /tmp/p --every 10 --scale 0.3 --samples 1 --workers 4 --skip-fit-check`),
+1. Fix the notes above, then preview every 10th frame on the real narration (`node web/render.mjs --clip projects/the-dog-who-saved-a-town/web/dog_clip.js --out /tmp/p --every 10 --scale 0.3 --samples 1 --workers 4 --skip-fit-check`),
    fix framing and timing; hold check (`web/hold_check.js`: the bottle and the crate); fit check (no accessories:
    `node web/fit_check.mjs --clip ...` then `--reviewed`); cover (`web/cover_clip.js` drafted, looked at once at low
    res: the team running at the camera, THE DOG WHO / SAVED A TOWN / ...AND GOT NO STATUE) at full res into
