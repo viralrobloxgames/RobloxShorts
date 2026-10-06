@@ -103,13 +103,14 @@ const LILY_MCU = headCam(() => C.lily, V(-0.2, 0.3, 4.4), 28, V(0, -0.15, 0));
 const SHOTS = [
   { line: 0, off: 0, id: 'door_ws', ...HALL, cam: (s, t) => K.applyShot(s, K.blendShot(K.getSet('hallway').cams.wide_to_max_door, { pos: K.headPos(C.skye).add(V(4.6, 0.6, 5.0)), target: K.headPos(C.skye).add(V(0, -0.9, 0)), fov: 38 }, smooth((t - 0.3) / (endOf(0) - 0.3)))) },
   { line: 1, off: -0.1, id: 'note_mcu', ...HALL, cam: headCam(() => C.skye, V(4.2, 0.3, 1.2), 44, V(0, -0.9, 0)) },
-  { line: 1, off: endOf(1) - at(1) - 0.3, id: 'kneel', ...HALL, cam: SIDECAM(4.4, 0.7, -1.2, 42) },
+  { line: 1, off: endOf(1) - at(1) - 0.25, id: 'kneel', ...HALL, cam: SIDECAM(4.4, 0.7, -1.2, 42) },
   { line: 2, off: -0.1, id: 'max_phone', ...ROOM, cam: ROOMCAM(0) },
   { line: 4, off: -0.1, id: 'max_worst', ...ROOM, cam: ROOMCAM(1) },
   { line: 4, off: 0.9, id: 'skye_hears', ...HALL, cam: SIDECAM(2.5, 0.1, -0.1, 32) },
   { line: 4, off: endOf(4) - at(4) + 0.05, id: 'backs_away', ...HALL, cam: SIDECAM(4.6, 0.3, -1.0, 40) },
   { line: 5, off: -0.1, id: 'got_it', ...HALL, cam: SIDECAM(3.0, 0.3, -0.4, 32) },
-  { line: 6, off: -0.35, id: 'lily_hatch', ...ATT, cam: camA('hatch_lily_cu') },
+  { line: 6, off: -0.35, id: 'attic_open', ...ATT, cam: (s) => { const o = K.SET_ORIGIN.attic; return K.applyShot(s, { pos: o.clone().add(V(-9.0, 5.2, 12.0)), target: o.clone().add(V(2.0, 1.6, 0.5)), fov: 52 }); } },
+  { line: 6, off: 0.6, id: 'lily_hatch', ...ATT, cam: camA('hatch_lily_cu') },
   { line: 7, off: -0.1, id: 'attic_wide', ...ATT, cam: camA('wide') },
   { line: 7, off: 1.3, id: 'skye_worse', ...ATT, cam: SKYE_MCU },
     { line: 8, off: -0.1, id: 'lily_said', ...ATT, cam: LILY_MCU },
@@ -121,6 +122,7 @@ const SHOTS = [
   { line: 15, off: -0.1, id: 'lily_dont', ...ATT, cam: LILY_MCU },
   { line: 16, off: -0.1, id: 'skye_yes', ...ATT, cam: SKYE_CU },
   { line: 17, off: -0.1, id: 'lily_crying', ...ATT, cam: LILY_MCU },
+  { line: 17, off: 0.8, id: 'skye_tears', ...ATT, cam: SKYE_CU },
   { line: 18, off: -0.1, id: 'end_two', ...ATT, cam: TWO },
 ].map((x) => ({ ...x, start: x.line === 0 && x.off === 0 ? -1 : at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
@@ -148,7 +150,7 @@ export function update(t, stage) {
     if (t < backT0) {
       const d = M.door(), k = M.doorKneel(), u = ramp(t, T.crouch, T.crouch + 0.45);
       const at0 = { pos: d.pos.clone().lerp(k.pos, u) };
-      poseAt(C.skye, 'kneel', at0, d.heading + (k.heading - d.heading) * u, { mix: kneelK });
+      poseAt(C.skye, 'kneel', at0, t >= T.crouch ? k.heading : d.heading, { mix: kneelK });   // turned on the cut to the kneel shot
       // reading the note at chest height on line 1; holding it low toward the door gap while kneeling
       const read = ramp(t, at(1) - 0.3, at(1) + 0.2) * (1 - ramp(t, endOf(1) - 0.2, endOf(1) + 0.2));
       K.gesture(C.skye, 'hand_hold', 'R');
@@ -182,12 +184,12 @@ export function update(t, stage) {
     K.gesture(C.max, 'phone_ear', 'L');                 // phone in his left palm against his ear (camera side, beside his face)
     K.hold(P.phone, C.max, 'L', 'ear');
     P.note.visible = P.crumpled.visible = false;
-    const face = t < at(2) + 0.6 ? 'surprised' : t < at(3) ? 'happy' : t < at(3) + 0.9 ? 'nervous' : 'happy';
+    const face = t < at(3) ? 'happy' : t < at(3) + 0.9 ? 'nervous' : 'happy';
     K.speak(C.max, face, t, L.said('MAX'));
     K.blush(C.max, t > at(3) && t < at(3) + 1.6 ? 1 : 0);
   } else {
     K.only(C, ['skye', 'lily']);
-    K.setState({ chapter: CH, hatch: ramp(t, T.attic, T.attic + 0.5) });   // Lily pushes the hatch up
+    K.setState({ chapter: CH, hatch: 0.6 + 0.4 * ramp(t, at(6, -0.35), at(6, 0.2)) });   // Lily has pushed the hatch up
     K.setBlockers(set.group);
     // Skye cross-legged in the nest, turned a little toward Lily
     poseAt(C.skye, 'sit_cross', M.nest(), 0.25);
@@ -196,18 +198,18 @@ export function update(t, stage) {
     if (knee > 0) K.gesture(C.skye, [-46, 0, -4], 'R', knee);
     K.hold(P.crumpled, C.skye, 'R'); P.crumpled.visible = true; P.note.visible = false; P.phone.visible = false;
     const sf = t < at(7) ? 'sad' : t < at(9) ? 'sad' : t < at(11) ? 'annoyed' : t < at(12) + 3.5 ? 'sad'
-      : t < at(13) ? 'annoyed' : t < at(14) ? 'determined' : t < at(15) ? 'scheming' : t < at(18) ? 'determined' : 'crying';
+      : t < at(13) ? 'annoyed' : t < at(14) ? 'determined' : t < at(15) ? 'scheming' : t < at(16) ? 'determined' : 'crying';   // tears from "Yes, I do."
     K.speak(C.skye, sf, t, L.said('SKYE'));
 
     // Lily: head and shoulders up through the hatch for line 6, then climbs out, walks to the nest and sits beside Skye
     const climb = M.hatchClimb(), top = M.hatchTop(), side = M.beside();
-    const rise = ramp(t, T.attic, at(6) + 0.2) * 0.4 + ramp(t, endOf(6) + 0.1, endOf(6) + 0.7) * 0.6;
+    const rise = 0.36 + ramp(t, at(6, -0.35), at(6, 0.5)) * 0.16 + ramp(t, endOf(6) + 0.1, endOf(6) + 0.7) * 0.48;
     const walkT0 = endOf(6) + 0.75, dWalk = top.pos.distanceTo(side.pos), arrive = walkT0 + dWalk / 12;
     if (t < walkT0) {
       K.posture(C.lily, 'stand');
       const y = ATTIC.hatchRise(C.lily.scale, rise);
       const p = climb.pos.clone().lerp(top.pos, ramp(t, endOf(6) + 0.4, walkT0)).setY(climb.pos.y + y);
-      K.putOn(C.lily, { pos: p, heading: climb.heading }, { sit: true });
+      K.putOn(C.lily, { pos: p, heading: climb.heading - (t < at(6, 0.6) ? 0.5 : 0) }, { sit: true });   // in the opening wide, turned a little toward the nest/camera
     } else if (t < arrive) {
       K.walk(C.lily, A, top, side, walkT0, t);
     } else {

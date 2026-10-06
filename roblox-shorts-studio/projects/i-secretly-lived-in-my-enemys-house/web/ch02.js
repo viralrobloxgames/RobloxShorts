@@ -111,8 +111,8 @@ const SHOTS = [
   { at: T.kitchen, id: 'kitchen_wide', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('wide'), { clear: false }) },
   { at: () => at(2, 1.2), id: 'dad_morning', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.55, height: 1.4 }) },
   { at: () => at(3, -0.1), id: 'skye_whisper', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.45, height: 0.2 }) },
-  { at: () => at(4, -0.1), id: 'max_walk', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.max, 'ms', { angle: 0.4, height: 0.6 }) },
-  { at: () => at(4, 2.6), id: 'max_dad', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('island_stools_right'), { clear: false }) },
+  { at: () => at(4, -0.1), id: 'max_walk', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, entranceCam(), { clear: false }) },   // one held shot: Max shuffles down the stairs, Lily skips in behind
+  { at: () => at(4, 1.9), id: 'max_dad', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('island_stools_right'), { clear: false }) },
   { at: () => at(5, -0.1), id: 'dad_pipes', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.55, height: 1.4 }) },
   { at: () => at(6, -0.1), id: 'lily_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: -0.45, height: 0.6, look: V(0, 0.45, 0) }) },
   { at: () => at(7, -0.1), id: 'dad_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.55, height: 1.4 }) },
@@ -188,7 +188,7 @@ export function update(t, stage) {
   else if (sh.set === 'exterior') outside(t, idle);
   else classroom(t, idle);
 
-  for (const who of ['skye', 'max', 'dad', 'lily']) if (C[who].root.visible) K.speak(C[who], faceAt(who, t), t, L.words, { whisper: who === 'skye' && WHISPER(t) });
+  for (const who of ['skye', 'max', 'dad', 'lily']) if (C[who].root.visible) K.speak(C[who], faceAt(who, t), t, L.words, { whisper: (who === 'skye' && WHISPER(t)) || (who === 'max' && t >= at(4) && t < endOf(4)) });
   K.setBlockers(set.group, ...[C.skye, C.max, C.dad, C.lily, ...C.extras].filter((a) => a.root.visible));
   sh.cam(stage, t);
 }
@@ -229,6 +229,7 @@ let KS = '';
 function stealCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(7.8, 3.4, 5.0)), target: o.clone().add(V(0.4, 3.9, 1.6)), fov: 40 }; }
 const STEAL_AT = () => V(0.5, 0, 3.05).add(K.SET_ORIGIN.kitchen);   // kneeling side-on to the island under the stack, facing +x
 function crawlCam() { const o = K.SET_ORIGIN.kitchen, h = K.headPos(C.skye); return { pos: o.clone().add(V(10.0, 3.4, 13.0)), target: h.clone().add(V(0, -0.6, 0)), fov: 34 }; }   // in front of her path to the door: she crawls toward camera, face 3/4   // from beside the door, she crawls toward camera
+function entranceCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(1.2, 5.8, -9.6)), target: o.clone().add(V(9.0, 4.2, 0.0)), fov: 44 }; }
 function kitchenState(st) { const k = JSON.stringify(st); if (k !== KS) { KS = k; K.getSet('kitchen').setState({ chapter: 2, ...st }); } }
 function stairsGait(actor, kind, t0, t, u0, u1, speed, idle) {
   const ks = K.getSet('kitchen'), a = ks.stairsPath(u0).pos, b = ks.stairsPath(u1).pos, len = a.distanceTo(b);

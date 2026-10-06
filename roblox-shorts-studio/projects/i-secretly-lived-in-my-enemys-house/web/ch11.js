@@ -45,6 +45,9 @@ const LN = { vo: 1, morning: 2, pumpkin: 3, ghost: 4, thief: 5, sorry: 6, knew: 
 const T_LATER = end(LN.mom) + 0.1;                    // the "Later" cut: SAY YES, Skye seated
 const T_WIDE = end(LN.pancakes) + 0.1;                // the wide on the island
 const T_END = at(LN.sub) - 0.1;                       // end screen from the subscribe line
+// review #26: "He spent it making me sandwiches." on a medium two-shot of Skye and Max (the plate slide), then the wide again
+const W_HE = L.words.find((w) => w.speaker === 'VO' && w.start > at(LN.spent) + 1 && w.start < end(LN.spent) && /^He\b/.test(w.word));
+const T_PAY = (W_HE ? W_HE.start : at(LN.spent) + 2.65) - 0.15, T_PAY_END = end(LN.spent) + 0.05;
 // moments for web/ch11_hold.js (every held prop)
 export const KEY = { morning: at(LN.morning) + 0.6, thief: at(LN.thief) + 0.5, phone: at(LN.phone) + 0.5, mom: at(LN.mom) + 0.6,
   knew: at(LN.knew) + 0.3, says: at(LN.says) + 0.5, flip: at(LN.pancakes) + 0.7, wide: T_WIDE + 2.0, end: T_END + 6.0 };
@@ -109,12 +112,14 @@ const SHOTS = [
   { t: T_LATER, id: 'fridge_cu', cam: fixed([-11, 4.7, -4.6], [-11, 4.7, -9], 34) },
   { t: T_LATER + 0.7, id: 'island_two_seated', cam: seatedTwo },
   { line: LN.fridgeAsk, off: -0.05, id: 'skye_cu', cam: skyeSeatCU },
-  { line: LN.says, off: -0.05, id: 'lily_cu', cam: lilyCU },
+  { line: LN.says, off: -0.05, id: 'lily_single', cam: fixed([-4.2, 5.1, 3.0], [-3.6, 4.3, -3.2], 26) },
   { line: LN.cond, off: -0.05, id: 'skye_cu', cam: skyeSeatCU },
   { line: LN.crusts, off: -0.05, id: 'max_cu', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.6 }) },
   { line: LN.crusts2, off: -0.05, id: 'island_two_seated', cam: seatedTwo },
   { line: LN.pancakes, off: -0.1, id: 'stove_ms', cam: fixed([4.2, 5.9, -5.6], [-1.6, 4.8, -8.4], 42) },
   { t: T_WIDE, id: 'island_wide', cam: fixed(WIDE_POS, WIDE_TGT, WIDE_FOV) },
+  { t: T_PAY, id: 'payoff_two', cam: fixed([0.1, 5.6, 5.8], [0.1, 4.2, -3.0], 30) },        // Skye and Max, the plate in the lower third
+  { t: T_PAY_END, id: 'island_wide', cam: fixed(WIDE_POS, WIDE_TGT, WIDE_FOV) },
 ].map((x) => ({ ...x, start: x.t ?? at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
@@ -193,7 +198,7 @@ export function update(t, stage) {
 
   // --- Max: stool 2; turned a little to whoever matters; slides Skye the plate in the wide ---
   {
-    const slide0 = T_WIDE + 0.5, slide1 = T_WIDE + 1.6;
+    const slide0 = T_PAY + 0.35, slide1 = T_PAY + 1.35;
     K.playAnim(C.max, [[A.sit, 0]]);
     let h = t < at(LN.sorry) ? 0.4 : seated ? 0.5 : 0.3;
     if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = 0.15 + 0.7 * sm(inv(slide0, slide1, t));
@@ -205,12 +210,11 @@ export function update(t, stage) {
   // --- Lily: stool 1, teddy in her right hand ---
   {
     K.playAnim(C.lily, [[A.sit, 0]]);
-    K.putOn(C.lily, s1, { sit: true, heading: t < at(LN.knew) ? 0.45 : t < T_WIDE ? -0.25 : 0.35 });
-    gest(C.lily, 'point', 'L', at(LN.says), end(LN.says) + 0.3, t);
+    K.putOn(C.lily, s1, { sit: true, heading: t < at(LN.knew) ? 0.45 : t >= at(LN.says) - 0.05 && t < at(LN.cond) - 0.05 ? 0.25 : t < T_WIDE ? -0.25 : 0.35 });
     // seated she is only head-high to the island, so her teddy sits on the island in front of her, her left hand on it
     K.holdTeddy(C.lily, 'free'); if (C.lily.teddy.parent !== stage.scene) stage.scene.add(C.lily.teddy);
     K.place(C.lily.teddy, KL(-2.55, 3.6, -1.95).pos, -0.2);
-    if (!(t >= at(LN.says) && t < end(LN.says) + 0.3)) K.gesture(C.lily, 'tap', 'L', 1);
+    K.gesture(C.lily, 'tap', 'L', 1);
   }
 
   // --- Dad: at the stove (cheated 3/4); turns to the room to talk ---
@@ -252,7 +256,7 @@ export function update(t, stage) {
   else P.phone.visible = false;
   // the crustless sandwich: in front of Max after "Later"; he slides it to Skye in the wide (it follows his palm)
   {
-    const a = M.plateMax().pos, b = M.plateSkye().pos, u = sm(inv(T_WIDE + 0.5, T_WIDE + 1.6, t));
+    const a = M.plateMax().pos, b = M.plateSkye().pos, u = sm(inv(T_PAY + 0.35, T_PAY + 1.35, t));
     P.plate.visible = seated;
     const pp = a.clone().lerp(b, u);
     if (u > 0 && u < 1) { const h = palmR(C.max); pp.set(h.x, a.y, h.z); }
