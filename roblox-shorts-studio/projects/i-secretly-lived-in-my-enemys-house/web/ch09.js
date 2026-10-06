@@ -61,7 +61,7 @@ const T = {
 };
 T.lidOpen = T.walk + 1.45; T.lidOpened = T.lidOpen + 0.4; T.pick = T.lidOpened + 0.55; T.picked = at(8, -0.05);
 T.lilyWalk = at(8, 0.2);                 // Lily gets up and comes over while Skye reads the drawing
-T.back = endOf(15, 0.2); T.backDone = T.back + 0.4; T.lidClose = T.backDone + 0.05; T.lidClosed = T.lidClose + 0.3;
+T.back = endOf(15, 0.2); T.backDone = T.back + 0.4; T.lidClose = T.backDone + 0.5; T.lidClosed = T.lidClose + 0.25;   // the drawing stays in view on top ~0.5 s
 T.sheetUp = T.lidClosed; T.sheetUpDone = at(16, 0.3);
 T.dad2 = at(19); T.ghost = at(20);
 const SPELL = wordAt(9, 6);              // "He spelled friends wrong": back to Skye's face
@@ -191,7 +191,7 @@ function skyeAt(s, idle) {
     st.face = 'sad';
     h = lerpAng(h, box.heading, smooth(inv(T.back, T.back + 0.25, s)));
     if (s >= T.back) { const u = inv(T.back, T.backDone, s); reach(sk, 'L', lerp(0.35, 1.0, u), 0.45); reach(sk, 'R', lerp(0.35, 1.0, u), 0.45); st.drawing = s < T.backDone; st.tilt = 1.45 * smooth(inv(0.1, 0.7, u)); }
-    if (s >= T.backDone) { reach(sk, 'L', 1.2, 0.3); reach(sk, 'R', 1.2, 0.3); }
+    if (s >= T.backDone) { const k = smooth(inv(T.backDone, T.backDone + 0.2, s)) * (1 - smooth(inv(T.lidClose - 0.2, T.lidClose, s))); reach(sk, 'L', lerp(1.2, 0.35, k), 0.3); reach(sk, 'R', lerp(1.2, 0.35, k), 0.3); }
     if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.25 ? 'open' : 'floor'; h = lerpAng(box.heading, faceLily, u); reach(sk, 'L', lerp(1.2, 1.15, u), lerp(0.3, -0.3, u)); reach(sk, 'R', lerp(1.2, 1.15, u), lerp(0.3, -0.3, u)); }
   }
   if (s >= at(16)) { st.sheet = 'open'; st.face = 'determined'; reach(sk, 'L', 1.15, -0.3); reach(sk, 'R', 1.15, -0.3); }
