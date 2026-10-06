@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Lily. Dinner. Five minutes.",
+ "seed": 30672,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "word": "dinner,",
+   "start": 0.92,
+   "end": 1.26
+  },
+  {
+   "word": "five",
+   "start": 1.74,
+   "end": 2.02
+  },
+  {
+   "word": "minutes.",
+   "start": 2.02,
+   "end": 2.4
+  }
+ ],
+ "words_md5": "20085aa60d8ce49750f91380c98e7b29",
+ "whisper": "small.en"
+}

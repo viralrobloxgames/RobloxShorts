@@ -1,0 +1,51 @@
+{
+ "voice": "max_kid",
+ "text": "My house is haunted. It knows my name.",
+ "seed": 40512,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "My",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "house",
+   "start": 0.32,
+   "end": 0.64
+  },
+  {
+   "word": "is",
+   "start": 0.64,
+   "end": 0.84
+  },
+  {
+   "word": "haunted.",
+   "start": 0.84,
+   "end": 1.32
+  },
+  {
+   "word": "It",
+   "start": 1.84,
+   "end": 1.96
+  },
+  {
+   "word": "knows",
+   "start": 1.96,
+   "end": 2.18
+  },
+  {
+   "word": "my",
+   "start": 2.18,
+   "end": 2.44
+  },
+  {
+   "word": "name.",
+   "start": 2.44,
+   "end": 2.8
+  }
+ ],
+ "words_md5": "503d5f9f3826a801a27fd4d9dff23357",
+ "whisper": "small.en"
+}

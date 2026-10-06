@@ -3,5 +3,44 @@
  "text": "Stand still. Don't breathe. Think pumpkin thoughts.",
  "seed": 27904,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Stand",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "still.",
+   "start": 0.44,
+   "end": 0.92
+  },
+  {
+   "word": "Don't",
+   "start": 1.6,
+   "end": 1.78
+  },
+  {
+   "word": "breathe.",
+   "start": 1.78,
+   "end": 2.14
+  },
+  {
+   "word": "Think",
+   "start": 2.72,
+   "end": 2.82
+  },
+  {
+   "word": "pumpkin",
+   "start": 2.82,
+   "end": 3.28
+  },
+  {
+   "word": "thoughts.",
+   "start": 3.28,
+   "end": 3.68
+  }
+ ],
+ "words_md5": "97d989123bc878db472b0729048ce9e3",
+ "whisper": "small.en"
 }

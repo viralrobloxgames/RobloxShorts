@@ -1,0 +1,81 @@
+{
+ "voice": "lily_kid",
+ "text": "He sleeps with the light on now. And he put garlic on his window.",
+ "seed": 69329,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "sleeps",
+   "start": 0.16,
+   "end": 0.5
+  },
+  {
+   "word": "with",
+   "start": 0.5,
+   "end": 0.76
+  },
+  {
+   "word": "the",
+   "start": 0.76,
+   "end": 0.9
+  },
+  {
+   "word": "light",
+   "start": 0.9,
+   "end": 1.14
+  },
+  {
+   "word": "on",
+   "start": 1.14,
+   "end": 1.4
+  },
+  {
+   "word": "now,",
+   "start": 1.4,
+   "end": 1.74
+  },
+  {
+   "word": "and",
+   "start": 2.14,
+   "end": 2.46
+  },
+  {
+   "word": "he",
+   "start": 2.46,
+   "end": 2.56
+  },
+  {
+   "word": "put",
+   "start": 2.56,
+   "end": 2.72
+  },
+  {
+   "word": "garlic",
+   "start": 2.72,
+   "end": 3.14
+  },
+  {
+   "word": "on",
+   "start": 3.14,
+   "end": 3.36
+  },
+  {
+   "word": "his",
+   "start": 3.36,
+   "end": 3.5
+  },
+  {
+   "word": "window.",
+   "start": 3.5,
+   "end": 3.82
+  }
+ ],
+ "words_md5": "ccc20ea35ea6f4b90fe4904937d95b00",
+ "whisper": "small.en"
+}

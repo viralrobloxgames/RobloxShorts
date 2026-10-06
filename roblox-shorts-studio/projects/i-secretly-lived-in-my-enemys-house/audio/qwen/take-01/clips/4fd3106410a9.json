@@ -1,0 +1,66 @@
+{
+ "voice": "max_kid",
+ "text": "It wrote on our fridge. In my little sister's magnet letters.",
+ "seed": 31453,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "It",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "wrote",
+   "start": 0.2,
+   "end": 0.44
+  },
+  {
+   "word": "on",
+   "start": 0.44,
+   "end": 0.64
+  },
+  {
+   "word": "our",
+   "start": 0.64,
+   "end": 0.8
+  },
+  {
+   "word": "fridge",
+   "start": 0.8,
+   "end": 1.2
+  },
+  {
+   "word": "in",
+   "start": 1.2,
+   "end": 1.78
+  },
+  {
+   "word": "my",
+   "start": 1.78,
+   "end": 1.96
+  },
+  {
+   "word": "little",
+   "start": 1.96,
+   "end": 2.18
+  },
+  {
+   "word": "sister's",
+   "start": 2.18,
+   "end": 2.7
+  },
+  {
+   "word": "magnet",
+   "start": 2.7,
+   "end": 2.94
+  },
+  {
+   "word": "letters.",
+   "start": 2.94,
+   "end": 3.4
+  }
+ ],
+ "words_md5": "21b69c73e51fd52a387774af5ae4f19b",
+ "whisper": "small.en"
+}

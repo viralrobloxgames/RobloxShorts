@@ -1,0 +1,21 @@
+{
+ "voice": "max_kid",
+ "text": "With cinnamon?",
+ "seed": 79277,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "With",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "cinnamon?",
+   "start": 0.24,
+   "end": 0.58
+  }
+ ],
+ "words_md5": "3ffffe556f21ab0d6a28c20db5465864",
+ "whisper": "small.en"
+}

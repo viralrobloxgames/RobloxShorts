@@ -1,0 +1,36 @@
+{
+ "voice": "lily_kid",
+ "text": "I like to plan ahead.",
+ "seed": 11233,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "like",
+   "start": 0.24,
+   "end": 0.5
+  },
+  {
+   "word": "to",
+   "start": 0.5,
+   "end": 0.72
+  },
+  {
+   "word": "plan",
+   "start": 0.72,
+   "end": 1.02
+  },
+  {
+   "word": "ahead.",
+   "start": 1.02,
+   "end": 1.42
+  }
+ ],
+ "words_md5": "0575b17c803d6a5cdad5310a4893bc88",
+ "whisper": "small.en"
+}

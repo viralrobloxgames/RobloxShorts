@@ -47,11 +47,14 @@ const EST = (() => {
   return out;
 })();
 const L = await K.loadLines(import.meta.url, CH, EST);
-export const meta = K.chapterMeta(L.end + 0.8);           // last line + room tone
+const LAST = Math.max(...L.lines.map((l) => l.end));
+export const meta = K.chapterMeta(Math.max(LAST + 0.8, L.duration ?? 0));   // last line + 0.8 s room tone
 export const sky = K.SKY;
 export const samples = () => 1;
 const at = (line, off = 0) => L.line(line).start + off;
 const end = (line, off = 0) => L.line(line).end + off;
+// start of word k of a spoken line (measured captions; an even spread on the estimate)
+const wordT = (line, k, off = 0) => { const l = L.line(line), ws = L.words.filter((w) => w.start >= l.start - 0.05 && w.start < l.end); return (ws[k] ? ws[k].start : l.start + (l.end - l.start) * k / l.text.split(/\s+/).length) + off; };
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const smooth = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
@@ -92,15 +95,15 @@ export async function setup(stage) {
 // ---------- key times ----------
 const T = {
   walk0: 0.0,                                  // Max leaves his desk on frame 0
-  offer: () => at(1, 5.2),                     // "Max was being nice": cookie out
+  offer: () => wordT(1, 15, -0.1),             // "Max was being nice": cookie out
   cookieDown: () => end(6, -0.2),              // after "I'm just being nice." he puts it on her desk
   lean: () => end(11, 0.05),                   // [+0.6 Max leans in]
   unlean: () => at(18, 0.1),                   // "Right." he straightens
-  show: () => at(18, 0.9),                     // lifts the sandwich to show it
-  split: () => at(20, 0.9),                    // "Want half?" one half into his right hand, held out
+  show: () => wordT(18, 4, -0.1),                     // lifts the sandwich to show it
+  split: () => wordT(20, 3, -0.15),                    // "Want half?" one half into his right hand, held out
   take: () => end(20, 0.15),                   // Skye's hand meets the half
   back: () => end(20, 0.45),                   // Max walks back to his desk
-  snap: () => at(21, 1.15),                    // "Stop it, face." Skye snaps her head front
+  snap: () => wordT(21, 5, -0.05),                    // "Stop it, face." Skye snaps her head front
 };
 
 // ---------- the shot table ----------
@@ -125,7 +128,7 @@ const END = (s) => {                          // Skye MCU foreground left, Max a
 };
 const SHOTS = [
   { line: 1, off: 0, id: 'skye_max_diag', cam: named('skye_max_diag', WIDE) },
-  { line: 1, off: 4.5, id: 'two_shot', cam: S2 },
+  { line: 1, word: 10, id: 'two_shot', cam: S2 },
   { line: 2, off: -0.1, id: 'max_cookie', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 3, off: -0.1, id: 'skye_wrong', cam: named('mcu_skye', SK('mcu')) },
   { line: 4, off: -0.1, id: 'max_nothing', cam: named('mcu_max_stand', MX('mcu')) },
@@ -143,12 +146,12 @@ const SHOTS = [
   { line: 16, off: -0.1, id: 'max_cinnamon', cam: named('cu_side_stand', MX('cu')) },
   { line: 17, off: -0.1, id: 'skye_spice', cam: named('mcu_skye', SK('mcu')) },
   { line: 18, off: -0.1, id: 'right_two', cam: S2 },
-  { line: 18, off: 0.8, id: 'max_crusts', cam: named('mcu_max_stand', MX('mcu')) },
+  { line: 18, word: 2, id: 'max_crusts', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 19, off: -0.1, id: 'skye_crusts', cam: named('mcu_skye', SK('mcu')) },
   { line: 20, off: -0.1, id: 'max_half', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 20, off: 99, id: 'handoff', cam: named('two_shot_desk', (s) => K.twoShot(s, C.skye, C.max, { framing: 'ws', fov: 36, bias: 0.35 })) },
   { line: 21, off: -0.35, id: 'end_front', cam: END },
-].map((x) => ({ ...x, start: x.off === 99 ? end(x.line, 0.1) : Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
+].map((x) => ({ ...x, start: x.off === 99 ? end(x.line, 0.1) : x.word != null ? wordT(x.line, x.word, -0.1) : Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
 // ---------- posing helpers (choreography only; poses, gestures, faces and looks come from the kit) ----------
@@ -185,7 +188,7 @@ export function update(t, stage) {
   const mS = M.skye(), mA = M.aisle(), mM = M.max();
   const towardMax = K.faceTo(mS, mA), watchMaxDesk = K.faceTo(mS, mM);
   const turnTo = (h, u) => amix(mS.heading, h, u);
-  let hS = turnTo(towardMax, 0.45 * ramp(t, at(1, 4.6), at(1, 5.2))), headY = 0;
+  let hS = turnTo(towardMax, 0.45 * ramp(t, wordT(1, 14), wordT(1, 15))), headY = 0;
   const hTurned = turnTo(towardMax, 0.45);
   const toDesk = Math.sign(amix(hTurned, watchMaxDesk, 1) - hTurned), away = -Math.sign(amix(hTurned, towardMax, 1) - hTurned || 1);
   if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }        // stares after him
@@ -201,7 +204,7 @@ export function update(t, stage) {
   if (t > at(13) && t < end(13, 0.25)) K.gesture(C.skye, 'hair_pat', 'L', ramp(t, at(13), at(13) + 0.25) * (1 - ramp(t, end(13), end(13, 0.25))));
   if (t > T.take() - 0.4) K.gesture(C.skye, 'hold_out', 'R', ramp(t, T.take() - 0.4, T.take()) * (1 - 0.5 * ramp(t, T.take() + 0.1, T.take() + 0.5)));
   let fS = 'annoyed';
-  if (t > at(1, 4.8)) fS = 'suspicious';
+  if (t > wordT(1, 15)) fS = 'suspicious';
   if (t > at(7)) fS = 'annoyed';
   if (t > at(9, 0.4)) fS = 'scheming';                                               // she wrote it
   if (t > at(10)) fS = 'smug';
@@ -291,5 +294,5 @@ export const HOLDS = [
   [1.0, 'max', 'R', 'cookie (walking over)'], [1.0, 'max', 'L', 'sandwich halves (walking over)'],
   [T.offer() + 0.5, 'max', 'R', 'cookie held out'], [T.show() + 0.5, 'max', 'L', 'sandwich shown'],
   [T.split() + 0.5, 'max', 'R', 'half held out'], [T.split() + 0.5, 'max', 'L', 'other half'],
-  [T.take() + 0.8, 'skye', 'R', 'half in her hand'], [L.end, 'skye', 'R', 'half, last frame'],
+  [T.take() + 0.8, 'skye', 'R', 'half in her hand'], [LAST + 0.7, 'skye', 'R', 'half, last frame'],
 ];

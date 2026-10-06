@@ -1,0 +1,36 @@
+{
+ "voice": "brittney",
+ "text": "Hi, Mom. So. Funny story.",
+ "seed": 16067,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Hi",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "mom,",
+   "start": 0.24,
+   "end": 0.52
+  },
+  {
+   "word": "so",
+   "start": 0.8,
+   "end": 1.14
+  },
+  {
+   "word": "funny",
+   "start": 1.14,
+   "end": 1.48
+  },
+  {
+   "word": "story.",
+   "start": 1.48,
+   "end": 1.8
+  }
+ ],
+ "words_md5": "f5920583b2c716e8bf58a78988ebb6c1",
+ "whisper": "small.en"
+}

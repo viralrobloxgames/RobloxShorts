@@ -1,0 +1,61 @@
+{
+ "voice": "lily_kid",
+ "text": "He talks about you every night at dinner, you know.",
+ "seed": 1973,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "talks",
+   "start": 0.16,
+   "end": 0.48
+  },
+  {
+   "word": "about",
+   "start": 0.48,
+   "end": 0.82
+  },
+  {
+   "word": "you",
+   "start": 0.82,
+   "end": 1.08
+  },
+  {
+   "word": "every",
+   "start": 1.08,
+   "end": 1.46
+  },
+  {
+   "word": "night",
+   "start": 1.46,
+   "end": 1.76
+  },
+  {
+   "word": "at",
+   "start": 1.76,
+   "end": 1.96
+  },
+  {
+   "word": "dinner,",
+   "start": 1.96,
+   "end": 2.22
+  },
+  {
+   "word": "you",
+   "start": 2.44,
+   "end": 2.48
+  },
+  {
+   "word": "know.",
+   "start": 2.48,
+   "end": 2.72
+  }
+ ],
+ "words_md5": "752297adbaad783f7e64bc42552b2a5e",
+ "whisper": "small.en"
+}
