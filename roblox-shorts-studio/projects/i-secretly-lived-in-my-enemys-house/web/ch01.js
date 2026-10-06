@@ -84,6 +84,7 @@ const M = {
   inside: () => K.mark('exterior', 'inside_door'),
 };
 
+const LOCK = V(-13.45, 5.1, 3.88);   // where the pink lock pokes out of the seam between the grey and red hoodies
 const MAX_FROM = () => K.mark('classroom', 'max_desk_front');                  // Max starts at the front of his desk (row 3)
 const BOX = () => K.getSet('classroom').anchors.skyeDeskTop.clone().add(V(1.0, 0, 0.1));   // the lunchbox on Skye's desk
 
@@ -136,7 +137,7 @@ const S = {
   skyeCU: { scene: 'night1', cam: (s, t, sh) => push(s, skyeCloset(0), skyeCloset(0.25), inv(sh.start, sh.start + 3.8, t)) },
   maxDoor: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 32 }) },
   doorOpen: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.8, 0)), fov: 40 }) },
-  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: V(-15.0, 4.9, 2.1), target: K.headPos(C.skye).add(V(0.15, 0.35, -0.3)), fov: 34 }) },   // the beam on the hoodies: the pink lock between two of them
+  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: V(-10.2, 5.4, 1.6), target: LOCK.clone().add(V(0, -0.3, 0)), fov: 38 }) },   // two hoodies, the pink lock between them, the beam stops on it   // the beam on the hoodies: the pink lock between two of them
   maxHoodies: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.45, 0)), fov: 24 }) },
   backToBed: { scene: 'night1', cam: (s) => K.setCam(s, cam(bedroom(), 'two_shot_bed_closet'), { clear: false }) },
   skyeWhisper: { scene: 'night1', cam: (s) => K.applyShot(s, skyeCloset(0.2)) },
@@ -161,7 +162,7 @@ const S = {
   dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(2.5, 6.6, -7.8), target: V(-7.0, 3.9, -0.9), fov: 27 }) },
 };
 const SHOTS = [
-  ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.45], ['maxHoodies', at(2) - 0.1],
+  ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.35], ['maxHoodies', at(2) - 0.1],
   ['backToBed', T.doorShut], ['skyeWhisper', at(3) - 0.2],
   ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', at(5) - 0.55], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
@@ -178,12 +179,13 @@ function night1(t, set, idle) {
   // closet doors: ajar at frame 0 (closet_pov sees Max through the gap), swung open, then shut
   const open = t < T.doorOpen ? 0.5 : t < T.doorShut ? 0.5 + 0.42 * easeOut(inv(T.doorOpen, T.doorOpen + 0.45, t)) : 0.92 * (1 - easeIn(inv(T.doorShut, T.doorShut + 0.4, t)));
   set.setClosetDoors(Math.max(open, t < T.doorShut ? 0.95 : open), open); set.setBlanket('flat');
-  K.setPractical(set, 'closet_light', t > T.doorOpen && t < T.doorShut ? 2.2 : 0);   // the beam spilling into the closet
+  K.setPractical(set, 'closet_light', t > T.doorOpen && t < T.doorShut ? (t >= T.doorOpen + 0.35 && t < at(2) - 0.1 ? 0.5 : 2.2) : 0);   // dimmer in the insert so the beam reads   // the beam spilling into the closet
   set.setLamp(false);   // left leaf wide (Max seen past it), right leaf ajar
   // Skye: 3/4 to the camera in the closet, left hand over her mouth; presses back into the hoodie gap while the doors are open
   const c = M.closet(), hideU = smooth(inv(T.doorOpen - 0.3, T.doorOpen + 0.05, t)) * (1 - smooth(inv(T.doorShut, T.doorShut + 0.45, t)));
   K.playAnim(C.skye, [[A.idle, idle]]);
-  K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetHoodies().pos, hideU), heading: c.heading + hideU * (M.closetHoodies().heading - c.heading) });
+  if (t >= T.doorOpen + 0.35 && t < at(2) - 0.1) K.putOn(C.skye, { pos: V(-14.05, 0, 3.88), heading: -Math.PI / 2 });   // the insert: her back to the room, hair in the seam between the grey and red hoodies
+  else K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetHoodies().pos, hideU), heading: c.heading + hideU * (M.closetHoodies().heading - c.heading) });
   if (t < end(3) - 0.5 && hideU < 0.5) { handOverMouth(C.skye); headTurn(C.skye, 0.3, 0.12); }   // head turned into the hand
   // Max: creeps from the bed to the closet (real walk), stops to listen, on to the doors; then pads back to bed
   const bs = M.bedSide(), cf = M.closetFront(), mid = { pos: bs.pos.clone().lerp(cf.pos, 0.55), heading: K.faceTo(bs, cf) };
@@ -223,6 +225,13 @@ function classScene(t, set, idle) {
     K.playAnim(C.skye, t < end(7) ? [[A.shock, (t - T.jump), 1, false]] : [[A.idle, idle]]);
     K.putOn(C.skye, { pos: sk.pos.clone().lerp(stand.pos, u), heading: K.faceTo(stand, side) - 0.4 });   // cheated toward the camera side
     if (u < 1) C.skye.root.position.y = sk.pos.y + (stand.pos.y - sk.pos.y) * u;   // rise from the seat
+    // the shriek: she recoils a step away from the spider and leans back (shock arms at shoulder height), then settles
+    const rec = t < end(7) ? smooth(inv(T.jump, T.jump + 0.3, t)) * (1 - smooth(inv(end(7) - 0.3, end(7), t))) : 0;
+    if (rec > 0) {
+      const away = stand.pos.clone().sub(BOX()); away.y = 0; away.normalize();
+      C.skye.root.position.addScaledVector(away, 0.8 * rec);
+      C.skye.root.rotation.order = 'YXZ'; C.skye.root.rotation.x = -0.2 * rec;
+    }
     if (t > at(10) - 0.2 && t < at(11)) hipsHands(C.skye);
     if (t > at(11) && t < at(12)) crossArms(C.skye);
   }
@@ -310,6 +319,7 @@ function night2(t, set, idle) {
 
 // ---------- faces ----------
 function faces(t, sc) {
+  const shriek = sc === 'class' && t >= at(7) - 0.05 && t < end(7) + 0.1;
   const sk = sc === 'night1' ? faceAt([[0, 'scared'], [T.doorShut + 0.5, 'nervous']], t)
     : sc === 'class' ? faceAt([[0, 'happy'], [at(5), 'annoyed'], [T.spider + 0.2, 'shocked'], [at(7), 'scared'], [end(7) + 0.1, 'annoyed'], [at(12) - 0.2, 'scheming']], t)
     : sc === 'dusk' ? 'scheming'
@@ -317,7 +327,8 @@ function faces(t, sc) {
   const mx = sc === 'night1' ? faceAt([[0, 'suspicious'], [at(2), 'neutral'], [end(2) - 0.4, 'happy'], [T.doorShut, 'neutral']], t)
     : sc === 'class' ? faceAt([[0, 'smug'], [at(8), 'laugh'], [at(9), 'smug']], t)
     : faceAt([[0, 'annoyed'], [at(17), 'surprised'], [end(17), 'scared']], t);
-  K.speak(C.skye, sk, t, L.said('SKYE'));
+  if (shriek) C.skye.setFace('shocked');   // terrified the whole line: wide eyes, mouth open in a scream
+  else K.speak(C.skye, sk, t, L.said('SKYE'));
   K.speak(C.max, mx, t, L.said('MAX'));
 }
 
@@ -342,7 +353,9 @@ export function update(t, stage) {
   if (r.torch) {
     const from = new THREE.Vector3(), q = new THREE.Quaternion();
     P.torch.getWorldPosition(from); P.torch.getWorldQuaternion(q);
-    beam.set(true, from, V(0, 0, 1).applyQuaternion(q));
+    let dir = V(0, 0, 1).applyQuaternion(q);
+    if (sh.id === 'pinkLock') { const u = easeOut(inv(sh.start, sh.start + 0.5, t)); dir = LOCK.clone().add(V(0, 0.6 * (1 - u), -1.6 * (1 - u))).sub(from).normalize(); }   // sweeps across the hoodies and stops on the pink
+    beam.set(true, from, dir);
   } else beam.set(false);
 
   // red circle on Skye's face in the close-up (2.5 s)
