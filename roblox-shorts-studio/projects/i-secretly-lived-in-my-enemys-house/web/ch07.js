@@ -261,11 +261,11 @@ function poseMax(t, idle) {
   }
   if (t < T.maxGo) {
     const r = maxRoute(), bh = r[r.length - 1];
-    const m = walkPath(x, r, T.maxOut, t, { idleAt: idle, endHeading: towards(bh, M.pose()) + Math.PI / 2 });   // side-on to her, face to the camera, right arm toward her   // round the witch to behind her
+    const m = walkPath(x, r, T.maxOut, t, { idleAt: idle, endHeading: towards(bh, M.pose()) + 0.9 });   // turned to the camera over her shoulder   // round the witch to behind her
     if (!m.done) return;
     const fx = sm(T.fix - 0.3, T.fix, t) * (1 - sm(T.fix + 0.5, T.fix + 0.8, t));
-    if (fx > 0) K.gesture(x, [0, 0, 150], 'R', fx);     // one hand up and forward onto the bucket over her head
-    if (t > at(20)) x.root.rotation.y = lerp(towards(bh, M.pose()) + Math.PI / 2, towards(bh, M.teaLily()), sm(at(20), at(20, 0.3), t));
+    if (fx > 0) K.gesture(x, 'reach_up', 'R', fx);          // one hand up to the back of the bucket
+    if (t > at(20)) x.root.rotation.y = lerp(towards(bh, M.pose()) + 0.9, towards(bh, M.teaLily()), sm(at(20), at(20, 0.3), t));
     return;
   }
   if (t < T.maxDown) { walkPath(x, maxRoute().reverse(), T.maxGo, t, { idleAt: idle }); return; }
@@ -309,7 +309,7 @@ function placeProps(t) {
 // ---------- the shot table ----------
 const cam = (name) => (s) => K.setCam(s, set.cams[name]);
 // Skye front 3/4, whoever stands at M.front() in profile, screen right of her
-const TWO = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.3), target: W(D(5.8), -2.4, 3.6), fov: 40 });
+const TWO = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.3), target: W(D(5.8), -2.4, 3.95), fov: 40 });
 const NOSE = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.5), target: W(D(6.1), -2.6, 4.4), fov: 28 });   // TWO zoomed in: her face, his 3/4 leaning in
 const SHOTS = [
   { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-5.0, 12.4, 5.6), target: W(D(4.2), 0.2, 1.4), fov: 52 }) },   // tea party left, hatch + decorations right
@@ -332,7 +332,8 @@ const SHOTS = [
   { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => K.setCam(s, { pos: W(D(2.4), -1.4, 4.9), target: W(D(5.4), -3.3, 4.6), fov: 30 }) },
   { line: 17, off: 0, id: 'max_off', cam: TWO },
   { line: 18, off: 0.3, id: 'dad_leaves', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
-  { line: 19, off: 0, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(4.1), 3.0, 5.6), target: W(D(6.0), -3.9, 5.2), fov: 38 }) },
+  { line: 19, off: 0, id: 'max_walks', cam: TWO },
+  { line: 19, off: 1.2, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(5.2), 3.2, 5.6), target: W(D(6.7), -3.9, 5.0), fov: 38 }) },
   { line: 20, off: 0, id: 'max_dinner', cam: (s) => K.setCam(s, { pos: W(D(4.1), 3.0, 5.3), target: W(D(6.4), -3.9, 4.7), fov: 38 }) },
   { line: 20, off: 2.7, id: 'max_down', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(D(3.4), 0.4, 5.2), target: W(D(5.3), -3.5, 5.0), fov: 36 }) },

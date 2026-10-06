@@ -68,6 +68,9 @@ window.frameState = (frame, raw = false) => {   // raw: the unhashed state strin
   for (const tt of ts) {
     clip.update(tt, stage);
     stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
+    // Run the scene's before-render hooks without drawing: sets apply state there (walls that auto-hide for the camera,
+    // light levels), so without this the fingerprint saw the state left by the previous draw (or none on a fresh page).
+    stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
     stage.sun.shadow.updateMatrices(stage.sun);   // place the shadow camera now: three.js only does it while rendering, so without this the
                                                   // fingerprint depended on whether (and what) the page had rendered before
     parts.push('C', ...stage.camera.matrixWorld.elements.map(r6), r6(stage.camera.fov));
