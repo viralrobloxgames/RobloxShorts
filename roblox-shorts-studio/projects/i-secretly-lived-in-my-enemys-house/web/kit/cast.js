@@ -697,7 +697,8 @@ export function gesture(actor, name, side = 'R', mix = 1) {
 // Where the root goes for a seat whose top is at `seatY` (sit_* poses: thighs horizontal, hips 1.5 above the root).
 export const seatY = (actor, seatTop) => seatTop - 1.5 * actor.scale;
 // Distance-driven gaits for posture(): phase = distance travelled / STRIDE (locomotion.js), so feet never slide.
-// kind: 'walk', 'run', 'creep' (sneaky tiptoe, bent forward), 'skip' (Lily), 'shuffle' (sleepy Max), 'climb' (ladder,
+// kind: 'walk', 'run', 'creep' (sneaky tiptoe, bent forward), 'skip' (Lily), 'shuffle' (sleepy Max), 'crawl' (hands and
+// knees), 'climb' (ladder,
 // facing the rungs: hands and feet alternate; phase = height climbed / 1.6).
 export function gait(kind, phase) {
   const c = Math.sin(phase * Math.PI * 2), c2 = Math.sin(phase * Math.PI * 4);
@@ -706,6 +707,7 @@ export function gait(kind, phase) {
   if (kind === 'creep') return { 'Leg.L': [16 * c - 8, 0, -3], 'Leg.R': [-16 * c - 8, 0, 3], 'Arm.L': [-34 - 8 * c, 0, -14], 'Arm.R': [-34 + 8 * c, 0, 14], Torso: [16, 3 * c, 0], Head: [-12, 0, 0], drop: 0.12 };
   if (kind === 'skip') return { 'Leg.L': [36 * c, 0, 0], 'Leg.R': [-36 * c, 0, 0], 'Arm.L': [-30 * c, 0, -10], 'Arm.R': [30 * c, 0, 10], Torso: [4, 0, 0], drop: -0.25 * Math.abs(c2) };
   if (kind === 'shuffle') return { 'Leg.L': [12 * c, 0, 0], 'Leg.R': [-12 * c, 0, 0], 'Arm.L': [-4 * c, 0, -2], 'Arm.R': [4 * c, 0, 2], Torso: [10, 0, 0], Head: [12, 0, 4] };
+  if (kind === 'crawl') return { 'Leg.L': [60 + 10 * c, 0, -4], 'Leg.R': [60 - 10 * c, 0, 4], 'Arm.L': [-60 - 14 * c, 0, -4], 'Arm.R': [-60 + 14 * c, 0, 4], Torso: [60, 0, 0], Head: [-48, 0, 0], drop: 0.57 };
   if (kind === 'climb') return { 'Leg.L': [-36 - 26 * c, 0, -3], 'Leg.R': [-36 + 26 * c, 0, 3], 'Arm.L': [-128 + 22 * c, 0, -6], 'Arm.R': [-128 - 22 * c, 0, 6], Torso: [6, 0, 0] };
   throw new Error(`Unknown gait "${kind}"`);
 }
