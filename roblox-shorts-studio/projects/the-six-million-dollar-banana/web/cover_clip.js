@@ -12,8 +12,8 @@ export function samples() { return 6; }
 export function update(t, stage) {
   base.update(0.5, stage);                                // the hook: on stage, banana held up
   const cam = stage.camera, g = STAGE;
-  cam.position.copy(g).add(V(1.6, 5.3, 9.4)); cam.fov = 44; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();
-  cam.lookAt(g.clone().add(V(1.0, 5.6, -2.0)));
+  cam.position.copy(g).add(V(1.4, 7.4, 9.0)); cam.fov = 44; cam.up.set(0, 1, 0); cam.updateProjectionMatrix();   // high enough to clear the stage lip
+  cam.lookAt(g.clone().add(V(1.0, 5.0, -2.0)));
   stage.aimSun(g.clone().add(V(1, 4, -2)), 14);
 }
 function big(g, s, text, x, y, size, color, rot = 0) {

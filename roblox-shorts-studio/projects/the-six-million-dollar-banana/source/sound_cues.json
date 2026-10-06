@@ -1,22 +1,22 @@
 [
  {
   "asset": "sfx/coins.wav",
-  "start": 0.89,
+  "start": 0.66,
   "gain": 0.3
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 4.23,
+  "start": 3.76,
   "gain": 0.3
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 4.83,
+  "start": 4.36,
   "gain": 0.3
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 6.78,
+  "start": 5.32,
   "gain": 0.2
  },
  {
@@ -24,194 +24,194 @@
    300,
    600
   ],
-  "start": 10.91,
+  "start": 8.98,
   "gain": 0.03,
   "dur": 0.25,
   "sweep": 200
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 13.22,
+  "start": 10.5,
   "gain": 0.3
  },
  {
   "asset": "sfx/coins.wav",
-  "start": 15.83,
+  "start": 12.94,
   "gain": 0.3
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 17.58,
+  "start": 14.42,
   "gain": 0.25
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 22.61,
+  "start": 18.54,
   "gain": 0.3
  },
  {
   "asset": "impact_2",
-  "start": 22.66,
+  "start": 18.59,
   "gain": 0.3
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 23.11,
+  "start": 19.04,
   "gain": 0.3
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 23.61,
+  "start": 19.54,
   "gain": 0.3
  },
  {
   "asset": "sfx/boing.wav",
-  "start": 25.95,
+  "start": 21.5,
   "gain": 0.3
  },
  {
   "asset": "sfx/chime.wav",
-  "start": 28.95,
+  "start": 23.49,
   "gain": 0.3
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 35.31,
+  "start": 29.66,
   "gain": 0.25
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 37.17,
+  "start": 31.1,
   "gain": 0.2
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 39.65,
+  "start": 33.54,
   "gain": 0.28
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 40.15,
+  "start": 34.04,
   "gain": 0.28
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 40.65,
+  "start": 34.54,
   "gain": 0.28
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 41.53,
+  "start": 34.98,
   "gain": 0.25
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 43.54,
+  "start": 36.89,
   "gain": 0.2
  },
  {
   "tone": [
    660
   ],
-  "start": 48.23,
+  "start": 40.55,
   "gain": 0.05,
   "dur": 0.12
  },
  {
   "asset": "sfx/coins.wav",
-  "start": 48.28,
+  "start": 40.6,
   "gain": 0.18
  },
  {
   "tone": [
    740
   ],
-  "start": 48.96,
+  "start": 41.59,
   "gain": 0.05,
   "dur": 0.12
  },
  {
   "asset": "sfx/coins.wav",
-  "start": 49.01,
+  "start": 41.64,
   "gain": 0.18
  },
  {
   "tone": [
    830
   ],
-  "start": 50.02,
+  "start": 42.91,
   "gain": 0.05,
   "dur": 0.12
  },
  {
   "asset": "sfx/coins.wav",
-  "start": 50.07,
+  "start": 42.96,
   "gain": 0.18
  },
  {
   "tone": [
    990
   ],
-  "start": 50.75,
+  "start": 43.99,
   "gain": 0.05,
   "dur": 0.12
  },
  {
   "asset": "sfx/coins.wav",
-  "start": 50.8,
+  "start": 44.04,
   "gain": 0.18
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 52.02,
+  "start": 44.92,
   "gain": 0.4
  },
  {
   "asset": "impact_3",
-  "start": 52.12,
+  "start": 45.02,
   "gain": 0.35
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 54.03,
+  "start": 46.43,
   "gain": 0.2
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 54.43,
+  "start": 46.83,
   "gain": 0.3
  },
  {
   "asset": "sfx/chomp.wav",
-  "start": 55.03,
+  "start": 47.43,
   "gain": 0.3
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 57.92,
+  "start": 49.38,
   "gain": 0.3
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 59.77,
+  "start": 51.14,
   "gain": 0.2
  },
  {
   "asset": "sfx/chime.wav",
-  "start": 63.72,
+  "start": 54.55,
   "gain": 0.3
  },
  {
   "tone": [
    523
   ],
-  "start": 64.37,
+  "start": 55.2,
   "gain": 0.04,
   "dur": 0.2
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 65.3,
+  "start": 56.34,
   "gain": 0.2
  },
  {
@@ -219,7 +219,7 @@
    988,
    1319
   ],
-  "start": 65.45,
+  "start": 56.49,
   "gain": 0.05,
   "dur": 0.12
  }

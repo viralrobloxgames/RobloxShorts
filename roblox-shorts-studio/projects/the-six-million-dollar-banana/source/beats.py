@@ -25,7 +25,7 @@ norm = lambda w: re.sub(r"[^a-z0-9]", '', w.lower())
 script = [norm(w) for line in (P / 'script.txt').read_text().splitlines() for w in line.split() if norm(w)]
 cap = P / 'audio/alignment/captions.json'
 if cap.is_file():
-    ALIAS = {}         # numerals Whisper writes for spoken words
+    ALIAS = {'6': 'six', '2': 'two', '120': 'hundred', '000': 'thousand', '25': 'twentyfive'}   # numerals Whisper writes for spoken words
     heard = [(ALIAS.get(norm(w['word']), norm(w['word'])), w['start'], w['end']) for seg in json.loads(cap.read_text()) for w in seg['words'] if norm(w['word'])]
     src = 'narration'
 else:

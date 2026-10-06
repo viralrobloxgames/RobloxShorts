@@ -31,7 +31,8 @@ the airline pilots. Facts, beats and sources: `source/story.md`.
 - Sound: `source/sound_cues.py` -> `source/sound_cues.json` (53 cues). Mix -16.4 LUFS.
 - Cover: `web/cover_clip.js` (Max in the chair at 16,000 ft under the balloons; HE FLEW A / LAWN CHAIR / TO 16,000 FT),
   `delivery/He_Flew_A_Lawn_Chair_cover.jpg|png`, grid check `_cover_grid.jpg`. Post copy: `delivery/post.json`.
-- Full render running (renders/web, 4 workers).
+- Full render done (renders/web, git-ignored, kept for fixes). Encoded `delivery/He_Flew_A_Lawn_Chair.mp4`: 1865 frames,
+  62.17 s incl. the 0.5 s cover, -16.4 LUFS / -1.5 dBTP, captions burned, blank-frame check clean, contact sheet reviewed.
 
 ## Commands
 ```
@@ -42,4 +43,4 @@ python3 scripts/review/blank_frames.py projects/he-flew-a-lawn-chair/delivery/He
 ```
 
 ## Next
-1. Finish the render, encode, blank-frame check, review contact sheet; deliver for the user's review. Never post without approval.
+1. Awaiting the user's review of `delivery/He_Flew_A_Lawn_Chair.mp4`. Never post without explicit approval of this MP4.
