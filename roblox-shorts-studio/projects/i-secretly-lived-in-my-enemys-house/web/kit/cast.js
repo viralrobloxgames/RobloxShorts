@@ -461,6 +461,15 @@ function teddyFallback() {
 
 // Teddy placement. 'R' / 'L': in Lily's palm via kit-props hold(); 'hug': against her chest (pose her arms with
 // POSES.hug_teddy); 'free': detached (the chapter adds lily.teddy to a set and places it).
+// Re-seat the teddy after a pose change (kit-props PR1: its clearance depends on the pose). Called by posture() and
+// kit playAnim(); only when the teddy is still where holdTeddy() put it (a chapter's own K.hold() is left alone).
+export function refreshTeddy(lily) {
+  const t = lily && lily.teddy, m = lily && lily.teddyMode;
+  if (!t || !t.parent || !['R', 'L', 'hug'].includes(m)) return;
+  const want = m === 'R' ? lily.bones['Arm.R'] : m === 'L' ? lily.bones['Arm.L'] : null;
+  if (want ? t.parent !== want : !(t.parent === lily.bones.Torso || t.parent?.parent === lily.bones.Torso)) return;
+  holdTeddy(lily, m);
+}
 export function holdTeddy(lily, mode = 'R') {
   const t = lily.teddy; if (t.parent) t.parent.remove(t);
   t.position.set(0, 0, 0); t.rotation.set(0, 0, 0); t.scale.setScalar(1);
@@ -592,10 +601,25 @@ export async function loadCast(scene) {
   return { skye, max, dad, lily, extras };
 }
 
-// Lip flap: while one of the actor's words is playing, alternate `talking` / `mouth_o` (switching inside long words every
-// ~0.14 s); between words and outside their lines the base face. `words` = captions.json words ({ word, start, end,
+// Lip flap: while one of the actor's words is playing, only the MOUTH moves: the base face's eyes and brows (rows above
+// the mouth band of the face texture) stay, with the `talking` / `mouth_o` mouth drawn under them, alternating every
+// ~0.14 s; between words and outside their lines the full base face. `words` = captions.json words ({ word, start, end,
 // speaker }) - all of them or just this actor's; only words whose speaker matches the actor (SKYE/MAX/DAD/LILY) count.
-// { whisper: true } uses the small mouth (`mouth_small` / base face) instead.
+// { whisper: true } uses the small mouth. Returns the face key set.
+const BRIGHT = new Set(['happy', 'laugh', 'smug', 'scheming', 'surprised', 'neutral', 'talking']);
+const MOUTH_TOP = 600;          // every pack face (plain and glam) keeps its mouth below this row and eyes/brows/tears above
+function mouthFace(actor, base, mouth) {
+  const key = `${base}+${mouth}`;
+  if (!actor.faceTex[key]) {
+    const bi = actor.faceTex[base]?.image, mi = actor.faceTex[mouth]?.image;
+    if (!bi || !mi) return mouth;
+    const c = canvas(bi.width, bi.height), g = c.getContext('2d'), k = bi.height / 1024;
+    g.drawImage(bi, 0, 0, bi.width, MOUTH_TOP * k, 0, 0, bi.width, MOUTH_TOP * k);
+    g.drawImage(mi, 0, MOUTH_TOP * k, mi.width, mi.height - MOUTH_TOP * k, 0, MOUTH_TOP * k, bi.width, bi.height - MOUTH_TOP * k);
+    actor.faceTex[key] = texOf(c);
+  }
+  return key;
+}
 export function speak(actor, baseFace, t, words = [], { whisper = false } = {}) {
   const list = Array.isArray(words) ? words : words.words || [];
   for (let i = 0; i < list.length; i++) {
@@ -603,7 +627,9 @@ export function speak(actor, baseFace, t, words = [], { whisper = false } = {}) 
     if (t < w.start || t >= w.end) continue;
     if (w.speaker && actor.speaker && String(w.speaker).toUpperCase() !== actor.speaker) continue;
     const k = Math.floor((t - w.start) / 0.14), odd = (i + k) % 2;
-    const f = whisper ? (odd ? baseFace : 'mouth_small') : (odd ? 'mouth_o' : 'talking');
+    // `talking` is a smiling open mouth: only bright faces use it; sad/scared/angry ones alternate `mouth_o` / `mouth_small`
+    const open = BRIGHT.has(baseFace) ? 'talking' : 'mouth_o', small = BRIGHT.has(baseFace) ? 'mouth_o' : 'mouth_small';
+    const f = whisper ? (odd ? baseFace : mouthFace(actor, baseFace, 'mouth_small')) : mouthFace(actor, baseFace, odd ? small : open);
     actor.setFace(f); return f;
   }
   actor.setFace(baseFace); return baseFace;
@@ -632,32 +658,37 @@ export function blush(actor, amount = 1) {
 // above the shoulder (SKILL.md).
 export const POSES = {
   stand: {},
-  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-18, 0, -4], 'Arm.R': [-18, 0, 4] },
-  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-8, 0, -3], 'Arm.R': [-8, 0, 3] },
-  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-55, 0, -6], 'Arm.R': [-55, 0, 6] },
-  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-62, 14, 0], 'Arm.R': [-62, -14, 0] },
+  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-34, 6, -3], 'Arm.R': [-34, -6, 3] },
+  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-30, 4, -3], 'Arm.R': [-30, -4, 3] },
+  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-44, 10, -2], 'Arm.R': [-44, -10, 2] },
+  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-48, 12, 0], 'Arm.R': [-48, -12, 0] },
   chin_on_hand: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [10, 0, 0], Head: [-4, 0, 6], 'Arm.R': [-136, -18, 56], 'Arm.L': [-60, 12, 0] },
-  sit_cross: { 'Leg.L': [-90, 30, 0], 'Leg.R': [-90, -30, 0], 'Arm.L': [-30, 0, -6], 'Arm.R': [-30, 0, 6], drop: 1.5 },
-  kneel: { 'Leg.L': [90, 0, -3], 'Leg.R': [90, 0, 3], Torso: [-4, 0, 0], 'Arm.L': [-14, 0, -4], 'Arm.R': [-14, 0, 4], drop: 1.5 },
-  kneel_up: { 'Leg.L': [62, 0, -3], 'Leg.R': [62, 0, 3], Torso: [-2, 0, 0], 'Arm.L': [-10, 0, -4], 'Arm.R': [-10, 0, 4], drop: 0.6 },
+  sit_cross: { 'Leg.L': [-90, 30, 0], 'Leg.R': [-90, -30, 0], 'Arm.L': [-36, 10, -2], 'Arm.R': [-36, -10, 2], drop: 1.5 },
+  kneel: { 'Leg.L': [90, 0, -3], 'Leg.R': [90, 0, 3], Torso: [-4, 0, 0], 'Arm.L': [-16, 6, -2], 'Arm.R': [-16, -6, 2], drop: 1.5 },
+  kneel_up: { 'Leg.L': [62, 0, -3], 'Leg.R': [62, 0, 3], Torso: [-2, 0, 0], 'Arm.L': [-62, 34, 0], 'Arm.R': [-62, -34, 0], drop: 0.6 },
   crouch: { 'Leg.L': [-62, 0, -10], 'Leg.R': [-62, 0, 10], Torso: [38, 0, 0], Head: [-26, 0, 0], 'Arm.L': [-40, 0, -6], 'Arm.R': [-40, 0, 6], drop: 0.62 },
   lie_back: { Root: [-90, 0, 0], 'Arm.L': [0, 0, -8], 'Arm.R': [0, 0, 8] },
-  shock: { 'Arm.L': [-12, 0, -78], 'Arm.R': [-12, 0, 78], Head: [-8, 0, 0], Torso: [-4, 0, 0] },
-  scarecrow: { 'Arm.L': [0, 0, -90], 'Arm.R': [0, 0, 90] },
+  shock: { 'Arm.R': [-120, 0, 40], 'Arm.L': [-14, 6, -6], Head: [-8, 0, 0], Torso: [-6, 0, 0] },
+  scarecrow: { 'Arm.L': [-10, 0, -70], 'Arm.R': [-10, 0, 70], Head: [0, 0, 8] },
   arms_folded: { 'Arm.L': [-70, 46, -8], 'Arm.R': [-74, -46, 8] },
   hug_teddy: { 'Arm.L': [-56, 42, 0], 'Arm.R': [-56, -42, 0] },
-  shrug: { 'Arm.L': [-24, 0, -30], 'Arm.R': [-24, 0, 30], Head: [0, 0, 10] },
+  shrug: { 'Arm.L': [-20, 0, -22], 'Arm.R': [-20, 0, 22], Head: [0, 0, 10] },
   lean_in: { Torso: [16, 0, 0], Head: [-10, 0, 0] },
   lean_back: { Torso: [-10, 0, 0], Head: [6, 0, 0] },
   ear_to_door: { Torso: [10, 0, -14], Head: [0, 0, -16], 'Arm.L': [-60, 10, 0] },
   hip_bend: { Torso: [42, 0, 0], Head: [-34, 0, 0] },
+  // added in the plausibility pass
+  rest: { 'Arm.L': [-4, 2, -4], 'Arm.R': [-4, -2, 4] },                                   // standing, arms relaxed at the sides
+  stand_hold: { 'Arm.L': [-24, 8, -3], 'Arm.R': [-24, -8, 3] },                           // something low in front (both hands), no T
+  hold_paper: { 'Arm.L': [-80, 32, 0], 'Arm.R': [-80, -32, 0], Head: [8, 0, 0] },        // a sheet held at chest height, looking down at it
+  seated_rest: { 'Arm.L': [-34, 6, -3], 'Arm.R': [-34, -6, 3] },                          // arms only: hands beside the thighs (any seat)
 };
 // One-arm gestures: side 'R' or 'L' (mirrored). Layer them over any pose.
 export const ARM_GESTURES = {
   point: [-88, 0, 10], point_up: [-150, 0, 6], reach_up: [-162, 0, 8], finger_up: [-120, 0, -6], knock: [-82, -6, 0], tap: [-62, -8, 0],
   hand_over_mouth: [-130, -36, 24], eye_wipe: [-144, 12, 56], thumb_to_chest: [-82, -48, 4], hand_on_hip: [-6, 0, 34],
-  hand_on_neck: [-34, 0, 148], hair_pat: [-30, 0, 156], phone_ear: [-22, 0, 160], chin_hand: [-136, -18, 56], hold_out: [-64, 0, 4],
-  flashlight_chin: [-106, -44, 16], wave: [-6, 0, 128], hand_hold: [-24, 0, 8], cup_hold: [-70, -12, 0],
+  hand_on_neck: [-160, -35, 0], hair_pat: [-170, -20, 10], phone_ear: [-140, -45, 0], chin_hand: [-136, -18, 56], hold_out: [-64, 0, 4],
+  flashlight_chin: [-106, -44, 16], wave: [-6, 0, 128], shock_up: [-120, 0, 40], fist_low: [-14, -6, 4], hand_hold: [-24, 0, 8], cup_hold: [-70, -12, 0],
 };
 const D2R = Math.PI / 180, _e = new THREE.Euler(), _q = new THREE.Quaternion();
 const LIMB = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI), LIMB_INV = LIMB.clone().invert();
@@ -687,6 +718,7 @@ export function posture(actor, p, { mix = 1, reset = true, extra = null } = {}) 
     if (k === 'Root') { actor.bones.Root.quaternion.copy(boneQ('Root', v)); actor.bones.Root.position.set(0, (v[0] === -90 ? 0.5 : 0) * actor.scale, 0); continue; }
     if (actor.bones[k]) actor.bones[k].quaternion.copy(boneQ(k, v));
   }
+  if (actor.teddy) refreshTeddy(actor);
   return (d.drop || 0) * actor.scale;
 }
 // One arm: gesture(actor, 'point', 'R', mix) (layered: other bones untouched). `name` may be an [x, y, z] array.
@@ -698,6 +730,27 @@ export function gesture(actor, name, side = 'R', mix = 1) {
 }
 // Where the root goes for a seat whose top is at `seatY` (sit_* poses: thighs horizontal, hips 1.5 above the root).
 export const seatY = (actor, seatTop) => seatTop - 1.5 * actor.scale;
+// Arms only, both sides, layered over whatever pose is on (playAnim, posture): 'standing' hangs them relaxed at the sides,
+// 'seated' lets the hands rest beside the thighs, 'desk' lays the forearms on a desk/island top in front.
+// kit playAnim() calls restArms(actor, 'seated') after the pack `sit` animation (whose arms point straight forward).
+export function restArms(actor, kind = 'standing', mix = 1) {
+  const d = kind === 'seated' ? POSES.seated_rest : kind === 'desk' ? { 'Arm.L': POSES.sit_desk_arms['Arm.L'], 'Arm.R': POSES.sit_desk_arms['Arm.R'] } : POSES.rest;
+  for (const b of ['Arm.L', 'Arm.R']) actor.bones[b].quaternion.slerp(boneQ(b, d[b]), Math.min(Math.max(mix, 0), 1));
+}
+// A gesture on a beat: up over 0.25 s from t0, held, back down by t0 + dur (default 1.2 s, the critics' "within ~1.5 s").
+// K.beat(C.dad, 'point', 'R', t, at(4, 0.2))
+export function beat(actor, name, side, t, t0, dur = 1.2, mix = 1) {
+  const u = Math.min(1, Math.max(0, (t - t0) / 0.25)) * Math.min(1, Math.max(0, (t0 + dur - t) / 0.3));
+  if (u > 0) gesture(actor, name, side, u * mix);
+  return u;
+}
+// Propped-scarecrow idle: the 'scarecrow' pose plus a small sway (call after posture(actor, 'scarecrow', { mix })).
+export function scarecrowSway(actor, t, w = 1) {
+  const s = Math.sin(t * 1.3) * w;
+  actor.bones.Head.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0.05 * s)));
+  actor.bones.Torso.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0.02 * s)));
+  for (const [b, k] of [['Arm.L', 1], ['Arm.R', -1]]) actor.bones[b].quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0.04 * s * k)));
+}
 // Distance-driven gaits for posture(): phase = distance travelled / STRIDE (locomotion.js), so feet never slide.
 // kind: 'walk', 'run', 'creep' (sneaky tiptoe, bent forward), 'skip' (Lily), 'shuffle' (sleepy Max), 'crawl' (hands and
 // knees), 'climb' (ladder,
