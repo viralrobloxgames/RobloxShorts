@@ -101,10 +101,10 @@ export async function setup(stage) {
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.max, 'max_school'); K.dress(C.dad, 'dad_cardigan'); K.dress(C.lily, 'lily_day');
   A = await K.loadAnims(['idle', 'walk', 'run']);
-  // the set's own pumpkin bucket and vacuum move with the action (until kit-props hands chapters its own movable ones)
-  P.pumpkin = set.items?.pumpkin_bucket; P.vacuum = set.items?.vacuum;
-  for (const o of [P.pumpkin, P.vacuum]) o?.traverse((m) => { m.userData.noCamBlock = true; });   // carried things never push a camera
-  for (const o of [set.items?.shafts_sun, set.items?.shafts_moon]) o?.traverse((m) => { m.userData.noCamBlock = true; });   // light shafts aren't walls (asked kit-sets-b to set this in the set)
+  // kit props the chapter moves: the bucket (in Lily's hand, then worn), the vacuum (canister + its held wand)
+  P.bucket = K.makeProp('pumpkin_bucket'); stage.scene.add(P.bucket);
+  P.worn = K.makeProp('pumpkin_bucket', { worn: true }); stage.scene.add(P.worn);
+  P.vac = K.makeProp('vacuum'); stage.scene.add(P.vac);
 }
 
 // ---------- posing helpers (chapter blocking; looks come from the kit) ----------
@@ -121,21 +121,6 @@ function climbAt(actor, m, heading, k) {
   K.posture(actor, K.gait('climb', (k * 4 * actor.scale) / 1.6));
   actor.root.position.y = set.hatchRise(actor.scale, k);
 }
-// put a set object at a world transform (it stays parented to the set group)
-const _m = new THREE.Matrix4(), _p = new THREE.Matrix4();
-function placeWorld(obj, worldMatrix) {
-  obj.parent.updateMatrixWorld(true);
-  _p.copy(obj.parent.matrixWorld).invert().multiply(worldMatrix);
-  _p.decompose(obj.position, obj.quaternion, obj.scale);
-}
-// world matrix of a point on a bone: offset (bone local), rotation (euler), scale
-function onBone(actor, bone, off, rot = [0, 0, 0], s = 1) {
-  actor.root.updateMatrixWorld(true);
-  const b = actor.bones[bone];
-  const local = new THREE.Matrix4().compose(off.clone().multiplyScalar(actor.scale), new THREE.Quaternion().setFromEuler(new THREE.Euler(...rot)), V(s, s, s));
-  return _m.copy(b.matrixWorld).multiply(local).clone();
-}
-
 // ---------- blocking per character ----------
 function poseSkye(t, idle) {
   const s = C.skye;
@@ -274,33 +259,28 @@ function placeProps(t) {
   if (t < T.lidLift) lid = 0.03 * Math.max(0, Math.sin(t * 23)) * (Math.sin(t * 2.7) > 0.2 ? 1 : 0);
   else if (t < T.dadRise) lid = 0.12 * sm(T.lidLift, T.lidLift + 0.6, t);
   else lid = lerp(0.12, 1, sm(T.dadRise - 0.1, T.dadRise + 0.35, t));
-  const vacOn = t >= T.dadRise;
-  K.setState({ chapter: 7, hatch: lid, pumpkin: t < T.jam - 0.3 ? 'box' : 'none', vacuum: vacOn });
-  // pumpkin: in Lily's hand, then on Skye's head (crooked until Max fixes it)
-  const pb = P.pumpkin;
-  if (pb && t >= T.jam - 0.3) {
-    pb.visible = true;
-    if (t < T.jam) {                                       // hanging by its handle from Lily's left palm
-      C.lily.root.updateMatrixWorld(true);
-      const g = C.lily.bones['Arm.L'].localToWorld(V(0.5, -1.3, 0).multiplyScalar(C.lily.scale)).add(V(0, -1.43 * 0.9, 0));
-      placeWorld(pb, new THREE.Matrix4().compose(g, new THREE.Quaternion().setFromEuler(new THREE.Euler(0, C.lily.root.rotation.y, 0)), V(0.9, 0.9, 0.9)));
-    }
-    else {
-      const tilt = lerp(0.22, 0.0, sm(T.fix - 0.1, T.fix + 0.35, t));
-      const drop = 0.25 * (1 - sm(T.jam, T.jam + 0.12, t));
-      placeWorld(pb, onBone(C.skye, 'Head', V(0.05, 1.98 + drop, 0), [Math.PI + 0.05, Math.PI + 0.3, tilt], 1.05));
-    }
+  // the set shows the bucket on the HALLOWEEN box until Lily grabs it; the vacuum is always the chapter's
+  K.setState({ chapter: 7, hatch: lid, pumpkin: t < T.jam - 0.3 ? 'box' : 'none', vacuum: false });
+  // pumpkin: in Lily's left palm, then worn on Skye's head (crooked until Max straightens it)
+  P.bucket.visible = t >= T.jam - 0.3 && t < T.jam;
+  if (P.bucket.visible) K.hold(P.bucket, C.lily, 'L', 'side');
+  P.worn.visible = t >= T.jam;
+  if (P.worn.visible) {
+    const k = 1 - sm(T.fix - 0.1, T.fix + 0.35, t), drop = 0.25 * (1 - sm(T.jam, T.jam + 0.12, t));
+    K.wearOnHead(P.worn, C.skye, { tilt: [0.25 * k, -0.2 * k], rim: 0.55 + drop });
   }
-  // vacuum: in Dad's left hand up the ladder, then on the floor at his side, then left by the hatch
-  const vac = P.vacuum;
-  if (vac && vacOn) {
-    if (t < T.dadOut + 0.3) placeWorld(vac, new THREE.Matrix4().compose(W(7.4, 8.4), new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -2.2, 0)), V(1, 1, 1)));   // pushed up onto the floor ahead of him
-    else if (t < T.dadGo) {
-      const d = C.dad.root, h = d.rotation.y, side = V(Math.cos(h), 0, -Math.sin(h));        // his left
-      const p = d.position.clone().addScaledVector(side, 1.6).add(V(Math.sin(h) * 0.6, 0, Math.cos(h) * 0.6)); p.y = 0;
-      placeWorld(vac, new THREE.Matrix4().compose(p, new THREE.Quaternion().setFromEuler(new THREE.Euler(0, h, 0)), V(1, 1, 1)));
-    } else { const m = M.vac(); placeWorld(vac, new THREE.Matrix4().compose(m.pos, new THREE.Quaternion().setFromEuler(new THREE.Euler(0, m.heading, 0)), V(1, 1, 1))); }
-  }
+  // vacuum: pushed up onto the floor ahead of Dad, dragged at his side, the wand raised at her face, left by the hatch
+  const v = P.vac, wand = v.userData.wand;
+  v.visible = t >= T.dadRise + 0.3;
+  if (!v.visible) return;
+  if (t < T.dadOut + 0.3) K.place(v, W(7.4, 8.2), -2.2);
+  else if (t < T.dadGo) {
+    const d = C.dad.root, h = d.rotation.y, side = V(Math.cos(h), 0, -Math.sin(h));        // his left
+    const p = d.position.clone().addScaledVector(side, 1.7).add(V(Math.sin(h) * 0.4, 0, Math.cos(h) * 0.4)); p.y = 0;
+    K.place(v, p, h);
+  } else { const m = M.vac(); K.place(v, m.pos, m.heading); }
+  const up = sm(T.nozzle, T.nozzle + 0.5, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
+  if (up > 0.05) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye) }); else v.userData.park();
 }
 
 // ---------- the shot table ----------
