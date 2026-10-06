@@ -133,6 +133,9 @@ export function build(scene) {
   const blanketM = texMat(256, 256, (c, S) => { c.fillStyle = '#d24d4d'; c.fillRect(0, 0, S, S); c.fillStyle = '#b53b3b'; for (let i = 0; i < S; i += 64) { c.fillRect(i, 0, 26, S); c.fillRect(0, i, S, 26); } });
   const blanket = box(5.3, 0.3, 5.0, blanketM, -4, 2.25, -4.3); bed.add(blanket, box(5.3, 1.2, 0.2, blanketM, -4, 1.6, -1.75));
   for (const s of [-1, 1]) bed.add(box(0.2, 1.4, 5.0, blanketM, -4 + s * 2.65, 1.6, -4.3));
+  // blanket raised over a sitter's legs (bed_sit): state blanket 'legs'
+  const blanketLegs = new THREE.Group(); blanketLegs.visible = false; bed.add(blanketLegs);
+  blanketLegs.add(box(5.3, 0.3, 4.4, blanketM, -4, 3.25, -4.0)); for (const s of [-1, 1]) blanketLegs.add(box(0.2, 1.4, 4.4, blanketM, -4 + s * 2.65, 2.6, -4.0)); blanketLegs.add(box(5.3, 1.3, 0.2, blanketM, -4, 2.65, -1.85));
   // a lump to pull over the head (Ch1 "yanks the blanket over his head"): chapters toggle parts.blanketUp
   const blanketUp = new THREE.Group(); blanketUp.visible = false; bed.add(blanketUp);
   blanketUp.add(box(5.3, 0.3, 7.0, blanketM, -4, 3.3, -5.3)); for (const s of [-1, 1]) blanketUp.add(box(0.2, 1.4, 7.0, blanketM, -4 + s * 2.65, 2.7, -5.3)); blanketUp.add(box(5.3, 1.3, 0.2, blanketM, -4, 2.7, -8.75));
@@ -215,19 +218,21 @@ export function build(scene) {
   // authored (full) intensities; K.applyLight / K.setPractical scale them by userData.base (remembered on first use)
   lamp.intensity = 60; shadeOff.emissiveIntensity = 0.9; bulb.material.emissiveIntensity = 2.5; lamp.userData.bulb = [shade, bulb];
   moonLight.intensity = 260; moonFill.intensity = 10;
-  hallLight.intensity = 40; hallPanel.material.emissiveIntensity = 1.5; hallLight.userData.bulb = hallPanel;
+  const gapM = std('#ffd59a', { emissive: '#ffb860', emissiveIntensity: 1.8 }); const doorGap = box(0.3, 0.1, 3.9, gapM, 11.0, 0.06, 3.5, false); group.add(doorGap);
+  hallLight.intensity = 40; hallPanel.material.emissiveIntensity = 1.5; hallLight.userData.bulb = [hallPanel, doorGap];
   closetLight.intensity = 6;
-  const lights = { bedside_lamp: lamp, moon_window: { lights: [moonLight, moonFill] }, hall_light: hallLight, closet_light: closetLight };
+  const lights = { bedside_lamp: lamp, moon_window: { lights: [moonLight, moonFill] }, hall_under_door: hallLight, closet_light: closetLight };
   function prac(name, on, k = 1) { // same rule as lighting.js setPractical
     const l = lights[name]; const v = on === true ? k : on === false ? 0 : Number(on);
     for (const L of [].concat(l.isLight ? l : l.lights)) { L.userData.base ??= L.intensity; L.intensity = L.userData.base * v; L.visible = v > 0;
       for (const m of [].concat(L.userData.bulb || [])) { m.material.userData.base ??= m.material.emissiveIntensity; m.material.emissiveIntensity = m.material.userData.base * (v > 0 ? Math.max(v, 0.15) : 0); } }
   }
-  const setLamp = (on, k) => prac('bedside_lamp', on, k), setMoon = (on, k) => prac('moon_window', on, k), setHall = (on, k) => prac('hall_light', on, k);
+  const setLamp = (on, k) => prac('bedside_lamp', on, k), setMoon = (on, k) => prac('moon_window', on, k), setHall = (on, k) => prac('hall_under_door', on, k);
 
   function setClosetDoors(fl = 0, fr = fl) { closetL.rotation.y = -Math.PI / 2 + fl * 1.9; closetR.rotation.y = Math.PI / 2 - fr * 1.9; } // 0 shut, 1 swung wide into the room
   function setDoor(f = 0) { doorLeaf.rotation.y = -Math.PI / 2 - f * 1.7; } // 0 shut, 1 open into the room (toward -x, leaf swings toward the desk side)
-  function setBlanketUp(up) { blanketUp.visible = !!up; blanket.visible = !up; }
+  function setBlanket(mode = 'flat') { blanketUp.visible = mode === 'over_head'; blanketLegs.visible = mode === 'legs'; blanket.visible = mode === 'flat'; } // 'flat' | 'legs' | 'over_head'
+  function setBlanketUp(up) { setBlanket(up ? 'over_head' : 'flat'); }
   function setClock(text) { const c = clockFace.material.map.image.getContext('2d'); c.fillStyle = '#111'; c.fillRect(0, 0, 128, 96); c.font = 'bold 54px monospace'; c.fillStyle = '#ff4a3a'; c.textAlign = 'center'; c.fillText(text, 64, 66); clockFace.material.map.needsUpdate = true; }
   setLamp(false); setMoon(true); setHall(false); prac('closet_light', false); setClosetDoors(0); setDoor(0);
 
@@ -245,7 +250,7 @@ export function build(scene) {
     bed_lie: M(-4, 2.1, -5.2, 0, 'lying on the mattress (top y 2.1): head on the pillow at z -7.6, feet toward +z; chapter lays the rig back'),
     bed_sit: SIT(-4, 2.1, -6.4, 0, 'sitting up in bed, back to the headboard, legs under the blanket toward +z'),
     bed_sit_door: SIT(-4, 2.1, -6.4, Math.atan2(15.0, 9.9), 'sitting up in bed, turned toward the door (Ch10)'),
-    bed_edge: SIT(-1.3, 2.0, -4.6, Math.PI / 2, 'sitting on the right edge of the bed facing the room, feet on the floor (Ch8 phone)'),
+    bed_edge: SIT(-1.3, 2.0, -4.6, Math.PI / 2 - 0.3, 'sitting on the right edge of the bed facing the room (toward ghost_stop, cheated to camera), feet on the floor'),
     desk_chair: SIT(7.9, 1.9, -5, Math.PI / 2, 'sitting on the desk chair (seat top y 1.9) facing the mirror'),
     desk_stand: M(8.0, 0, -5, Math.PI / 2, 'standing at the desk facing the mirror (Ch6 rehearsal; push the chair aside: parts.chair)'),
     room_center: M(2.5, 0, 0, 0, 'middle of the rug'),
@@ -281,7 +286,32 @@ export function build(scene) {
     window_garlic: C([-1.0, 5.6, -1.5], [-4.0, 7.0, -9.0], 44, [], 'the window with the garlic (state garlic)'),
   };
 
-  const parts = { bed, blanket, blanketUp, pillow, closet, closetL, closetR, doorLeaf, desk, chair, mirror: mirrorGlass, garlic, shade, bulb, moon, sky, rug, hallPanel };
+  // ---- marks/cams asked for by the chapter plans (production/shots/chNN.md); aliases share the objects above ----
+  Object.assign(marks, {
+    ghost_stop: M(3.2, 0, -4.4, -Math.PI / 2 + 0.3, 'Ch10: Skye standing ~4.5 studs from the bed\'s long side, facing Max (cheated to camera)'),
+    bedside_plate: M(0.9, 2.42, -7.5, 0, 'Ch10: plate spot on the bedside table top (y = table top)'),
+    bedside_flashlight: M(1.2, 2.42, -7.2, -0.6, 'Ch1: flashlight lying on the bedside table'),
+    lamp_switch: M(0.65, 2.75, -8.1, 0, 'Ch10: the lamp switch on the lamp base (hand point)'),
+    closet_hide: marks.closet_deep,
+    mirror_stand: marks.desk_stand, bed_sit_up: marks.bed_sit, door_outside: marks.door_out, door_inside: marks.door_in,
+  });
+  Object.assign(cams, {
+    closet_skye_cu: cams.closet_pov_cu,
+    closet_pov_reverse: C([-15.6, 5.2, 2.0], [-8.6, 4.2, 2.0], 44, [], 'Ch1: from the back of the closet over the hoodies at Max in the open doorway (Skye at closet_deep)'),
+    closet_max_mcu: C([-14.2, 4.9, 2.6], [-8.6, 4.5, 2.0], 32, [], 'Ch1: inside the closet between the hoodies, MCU on Max at closet_front'),
+    closet_door_ext: C([-10.2, 5.0, -2.8], [-8.6, 4.3, 2.0], 40, [], 'Ch1: room side, front 3/4 on Max at closet_front (camera by the side wall, near the bed)'),
+    bed_max_ms: cams.bed_ms, bed_max_mcu: cams.bed_cu,
+    bed_phone_mcu: C([-1.6, 5.0, -1.6], [-4.0, 4.6, -6.6], 32, [], 'Ch8: Max sitting up in bed (bed_sit) with the phone, 3/4, garlic window behind him'),
+    bed_phone_ms: C([-0.6, 5.6, 0.2], [-4.0, 4.0, -6.4], 44, [], 'Ch8: wider, the window and garlic behind'),
+    mirror_mcu: C([10.3, 5.3, -3.0], [8.0, 4.9, -5.0], 32, [], 'Ch6: beside the mirror, Max (mirror_stand) 3/4'),
+    mirror_ms: C([10.4, 5.0, -0.8], [8.0, 4.1, -5.0], 40, [], 'Ch6: waist-up on Max at the mirror'),
+    bed_to_door: C([-6.5, 4.6, 12.5], [3.5, 3.4, -1.8], 44, [], 'Ch10 start: from the open side, Max in bed frame-left (3/4) and the door frame-right'),
+    two_shot_door: C([2.6, 5.2, 7.2], [1.4, 3.8, -4.2], 44, [], 'Ch10 end: Max at bed_edge and Skye at ghost_stop, both 3/4, the door toward the frame edge'),
+    door_handle_cu: C([8.4, 4.0, 3.0], [10.9, 3.6, 5.0], 30, [], 'Ch10: the door handle (inside)'),
+    ghost_front_mcu: C([-0.2, 5.0, -0.6], [3.2, 4.8, -4.2], 34, [], 'Ch10: Skye at ghost_stop from the front (bed side of her, camera side of the line)'),
+  });
+
+  const parts = { bed, blanket, blanketUp, blanketLegs, pillow, closet, closetL, closetR, doorLeaf, desk, chair, mirror: mirrorGlass, garlic, shade, bulb, moon, sky, rug, hallPanel };
 
   function setState(state = {}) {
     const ch = state.chapter ?? 1;
@@ -292,6 +322,7 @@ export function build(scene) {
     if (state.door !== undefined) setDoor(state.door);
     if (state.closet !== undefined) setClosetDoors(state.closet);
     if (state.blanketUp !== undefined) setBlanketUp(state.blanketUp);
+    if (state.blanket !== undefined) setBlanket(state.blanket);
     if (state.clock) setClock(state.clock);
   }
   setState({ chapter: 1 });
@@ -304,5 +335,5 @@ export function build(scene) {
     return c;
   }
 
-  return { id: 'bedroom', group, marks, cams, lights, parts, walls, sitPos, setState, setLamp, setMoon, setHall, setDoor, setClosetDoors, setBlanketUp, setClock, useCam };
+  return { id: 'bedroom', group, marks, cams, lights, parts, walls, sitPos, setState, setLamp, setMoon, setHall, setDoor, setClosetDoors, setBlanketUp, setBlanket, setClock, useCam };
 }

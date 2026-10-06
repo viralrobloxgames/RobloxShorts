@@ -8,6 +8,7 @@
 // Each returns the shot { pos, target, fov } and applies it (camera, sky dome, shadow box). Pure functions of their
 // inputs: call one per frame from the shot table.
 import * as THREE from 'three';
+import { currentSet } from './stage.js';
 
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
 const UP = V(0, 1, 0);
@@ -40,16 +41,35 @@ const onSide = (p) => !LINE || sideOf(p) === LINE.side;
 
 // ---------- applying a shot ----------
 const ray = new THREE.Raycaster();
-// Pull pos towards target until nothing in `blockers` (the current set's group by default) is between them.
-export function clearShot(target, pos, blockers, margin = 0.35, skip = []) {
+// Removable walls (set.walls or set.group.userData.walls: a map or a list, entries an Object3D or { obj }): a wall between
+// the camera and its subject is hidden for that frame (dollhouse) instead of pulling the camera in; a cam's `hide` list
+// names walls to hide as well. Walls the camera hid are shown again at the next camera call, so this stays a pure
+// function of the frame.
+const wallsOf = (set) => { const w = set?.walls || set?.group?.userData?.walls; if (!w) return []; return (Array.isArray(w) ? w.map((x, i) => [String(i), x]) : Object.entries(w)).map(([k, x]) => [k, x?.obj || x]).filter(([, o]) => o?.isObject3D); };
+let camHidden = [];
+function prepWalls(hide = []) {
+  for (const o of camHidden) o.visible = true; camHidden = [];
+  const walls = wallsOf(currentSet());
+  for (const [k, o] of walls) if (hide.includes(k) && o.visible) { o.visible = false; camHidden.push(o); }
+  return walls.map(([, o]) => o);
+}
+const inside = (o, roots) => { for (let x = o; x; x = x.parent) if (roots.includes(x)) return x; return null; };
+// Pull pos towards target until nothing solid in `blockers` (the current set's group and the other actors) is between
+// them; hides walls in the way instead (see above).
+export function clearShot(target, pos, blockers, margin = 0.35, skip = [], hide = []) {
+  const walls = prepWalls(hide);
   if (!blockers) return pos;
   blockers = [].concat(blockers).filter((b) => b && b.visible && !skip.includes(b));
   if (!blockers.length) return pos;
   const d = pos.clone().sub(target), len = d.length(); if (len < 1e-3) return pos;
   ray.set(target, d.divideScalar(len)); ray.near = 0.2; ray.far = len;
-  const hits = ray.intersectObjects(blockers, true).filter((h) => isSolid(h.object) && visibleChain(h.object));
-  if (!hits.length) return pos;
-  return target.clone().addScaledVector(ray.ray.direction, Math.max(0.6, hits[0].distance - margin));
+  for (const h of ray.intersectObjects(blockers, true)) {
+    if (!isSolid(h.object) || !visibleChain(h.object)) continue;
+    const w = inside(h.object, walls);
+    if (w) { w.visible = false; camHidden.push(w); continue; }
+    return target.clone().addScaledVector(ray.ray.direction, Math.max(0.6, h.distance - margin));
+  }
+  return pos;
 }
 // Only solid surfaces block a camera: not light shafts, dust (Points), lines, sprites, additive or see-through things.
 const isSolid = (o) => {
@@ -79,7 +99,8 @@ export function applyShot(stage, shot, { roll = 0 } = {}) {
 }
 export function setCam(stage, cam, opts = {}) {
   const shot = { pos: cam.pos.clone(), target: cam.target.clone(), fov: cam.fov || 40 };
-  if (opts.clear !== false) shot.pos = clearShot(shot.target, shot.pos, opts.blockers ?? SET_BLOCKERS);
+  if (opts.clear !== false) shot.pos = clearShot(shot.target, shot.pos, opts.blockers ?? SET_BLOCKERS, 0.35, [], cam.hide || []);
+  else prepWalls(cam.hide || []);
   return applyShot(stage, shot, opts);
 }
 // Blend two shots (a slow push or a pan): u 0..1.
