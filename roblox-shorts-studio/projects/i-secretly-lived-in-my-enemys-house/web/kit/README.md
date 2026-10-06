@@ -488,3 +488,4 @@ camera orbit (ch11's stove shot flew through Dad's head and a wall). For a shot 
 `heading` (`K.camOn(s, C.dad, 'ms', { angle: 0.9, heading: 0.05 })`) or use a fixed set camera (`K.setCam`). Check:
 `node web/cam_check.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/chNN.js` lists glides (the camera
 travelling > 0.6 studs/frame on 2+ frames, i.e. not a clean cut), cameras inside scenery and cameras at a head.
+- kit-sets-c: kitchen `setState({ stoolX: [x1, x2, ...] | 'three' })` respaces the stools (extra stools hidden); `island_stool_N`, `island_plate_N`, `island_phone_3`, `backpack_floor_3` move with them. 'three' = x −4.2 / 0 / 4.2 (seated neighbours' arms clear). `setState({ chapter: 11 })` uses 'three'; ch02/ch03 keep the four.

@@ -1,0 +1,52 @@
+{
+ "chapter": 11,
+ "hider": "skye",
+ "seekers": [
+  "max",
+  "dad",
+  "lily"
+ ],
+ "fov": 110,
+ "ranges": [
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 47,
+   "to": 2095,
+   "sees": "Head",
+   "min_dist": 5.4,
+   "t": "1.53-69.80s",
+   "film": "10:41.8"
+  },
+  {
+   "seeker": "lily",
+   "hider": "skye",
+   "from": 87,
+   "to": 89,
+   "sees": "Head",
+   "min_dist": 17.6,
+   "t": "2.87-2.93s",
+   "film": "10:43.2"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 95,
+   "to": 1037,
+   "sees": "Head",
+   "min_dist": 9.9,
+   "t": "3.13-34.53s",
+   "film": "10:43.4"
+  },
+  {
+   "seeker": "lily",
+   "hider": "skye",
+   "from": 121,
+   "to": 561,
+   "sees": "Head",
+   "min_dist": 11.9,
+   "t": "4.00-18.67s",
+   "film": "10:44.3"
+  }
+ ]
+}
