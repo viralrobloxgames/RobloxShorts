@@ -194,3 +194,81 @@ Stitch: -14.13 LUFS, TP -1.44 dBTP, A/V ok. Ghost lines are processed (centroid 
     treatment (low-pass, -5 dB). Also, the door insert shows a static door, and the boundary sheet has the handle
     turning: animate the handle and add a light strip under the door (blank_frames flags 01:00.3-01:02.0 as a
     near-empty shot).
+
+## Whole film: global checks (review-2), built 19:48Z from all 22 segments on main (ch07 fixes included)
+
+`stitch_longform.py --no-split`: **11:50.1** (21,304 frames), stream copy, every frame matches its segment, all 21
+seams clean, A/V -0.011 s, **-14.11 LUFS integrated, -1.07 dBTP**: the deliverable meets spec. (Per-chapter
+stitches showed TP up to -0.75 and two A/V misses of 2 frames. Those are artefacts of stitching one chapter alone and
+don't happen in the film, so no action.)
+
+**Seams (all 10 chapter breaks).** Every break is the same hard cut to the full-width day/time card, with Skye's VO
+starting on frame 0. The outgoing chapter's last 0.25 s sits at -36 to -46 dB, with no clicks (largest sample jump
+0.008) and no dropped or repeated frames. It feels like one film, and the card plus VO rhythm gives a clear structure.
+Nothing to fix at the seams.
+
+**Voices.** Max is `max_boy2` in every chapter with Max lines (ch01-04, 06-08, 10, 11; ch05 and ch09 have none). Median F0
+157-195 Hz, always well below Skye (216-344 Hz) and Lily (~300 Hz). Same boy throughout: **confirmed, no chapter with
+a girl-sounding Max.** Skye, Lily and Dad are consistent between chapters.
+
+**Loudness by chapter (ebur128 on the film):** ch01 -14.4, ch02 -14.3, ch03 -14.7, ch04 -14.3, ch05 **-13.0**,
+ch06 **-15.5**, ch07 -14.0, ch08 -13.7, ch09 -13.4, ch10 -14.3, ch11 -13.8 LUFS.
+
+35. **Soundtrack, should.** The music bed is effectively inaudible, and when it is heard it's one 28.7 s loop
+    (`playful_history_music`, LOOP_POINTS 0-28.7) repeated ~25 times across 12 minutes. Measured between lines
+    it sits at -40 to -57 dB, varying with where the loop is. Two options; pick one and do it on purpose:
+    (a) raise it to `--music-gain 0.09` (~5 dB up, ~-34 dB in gaps) and fade the bed out under the two emotional beats
+    (Ch8 00:49-00:58 "Then why are you crying?", film 8:26-8:35; Ch10 00:56-01:00 "this house was really boring",
+    film 10:31-10:35), so a playful track doesn't sit under tears; or (b) keep it this low and accept it's room tone.
+    I recommend (a). It's audio only, so no frames change.
+36. **Soundtrack, could.** Ch05 is 1.3 LU hotter and Ch06 1.4 LU quieter than the film average. Ch06 is
+    whisper-heavy, so that's partly right, but a ±0.7 LU per-chapter trim before the loudness pass would even out the
+    jump at 5:26 (Ch5 → Ch6).
+
+**YouTube chapter list** (from `delivery/youtube_chapters.txt`, measured): valid for YouTube (starts at 0:00, 11
+chapters, each ≥10 s):
+```
+0:00 The Dare
+1:03 Twelve Pancakes
+2:10 A Useful Ghost
+3:17 Cinnamon
+4:18 The Tea Party
+5:26 The Practice
+6:23 The Pumpkin Girl
+7:37 The Worst
+8:35 The Drawing
+9:35 Hungry?
+10:40 No Crusts
+```
+10. *(update to the package must above).* `_post.md` and `post.json` still carry the estimate, which is **wrong from
+    Ch7 on, by up to 13 s** (6:31 / 7:44 / 8:42 / 9:42 / 10:53). Replace the list with the one above. Re-check after
+    the fixes: they re-render inside chapters and keep frame counts, so the list should not move. If any fix changes
+    a chapter's length, re-stitch and take the new `youtube_chapters.txt`.
+37. **Chapter titles, could.** "Hungry?" at 9:35 is the twist chapter. As a chapter name it's a nice tease and doesn't
+    spoil anything. Keep it. "The Worst" (7:37) is fine too.
+
+**End screen** (Ch11 00:58.4-01:09.8, film **11:38.7-11:50.1**, 11.4 s). Dimmed kitchen, "SUBSCRIBE @viralrobloxgames"
+top centre, the middle and lower two-thirds free for YouTube's elements, idle motion only. Within YouTube's 5-20 s
+window, OK. Set the elements to start at 11:39 (two videos left and right in the lower half, subscribe button
+under the text). See #29 for the near-silent tail.
+
+**Total length** 11:50 (target ~12): good. Pacing across the block: the strongest run is Ch7 → Ch10 (gag, heartbreak,
+drawing, reveal). Nothing to cut. Ch7 (73 s) is the longest, but every beat earns it.
+
+**Package:** thumbnail A "HE NEVER KNEW" stays the pick (#7-#9). The title matches the first spoken line. The
+description hook "He had no idea... right?" sets up the twist and matches the film. The only must is the chapter
+list (#10).
+
+## Summary of musts (review-2), for the fixers
+| # | Chapter | Chapter time (film time) | Fix |
+|---|---|---|---|
+| 1 | Ch08 | 00:10.0-00:10.4 (7:47.3) | camera inside Skye as she bends |
+| 2 | Ch08 | 00:21.0 (7:58.3) | attic opens on an empty shot |
+| 3 | Ch08 | 00:52.5-00:54.4 (8:29.8) | Skye not crying on "Then why are you crying?" |
+| 12 | Ch09 | 00:25-00:31, 00:39-00:46 (9:00-9:21) | drawing must read BEST FRENDS |
+| 18 | Ch07 | 00:58.9-01:01.7 (7:22.7) | Max fixing the pumpkin must be on screen (**fixed in 07b2157f, to re-check**) |
+| 19 | Ch07 | 00:16.0 (6:39.8) | blocked hatch frame (**fixed in 07b2157f, to re-check**) |
+| 26 | Ch11 | 00:52.4-00:58.4 (11:32.7) | last line on a tiny wide: push in on Skye and Max |
+| 30 | Ch10 | 00:00-00:09.3 (9:35.1-9:44.4) | reveal spoiled: open dark, lamp click reveals Max |
+| 31 | Ch10 | 01:02.3-01:05.2 (10:37.4) | "Nobody!" faces unreadable |
+| 10 | Package | | replace the description's chapter list |
