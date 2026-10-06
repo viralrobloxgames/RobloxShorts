@@ -22,7 +22,7 @@ sources: `source/story.md`.
 - Sound: `source/make_sfx.py` -> `audio/sfx/`, `source/sound_cues.py` -> `source/sound_cues.json`. Post copy: `delivery/post.json`.
 
 ## Next
-1. Full render (after the marathon's finishes): `node web/render.mjs --clip projects/over-the-falls-in-a-barrel/web/barrel_clip.js --out projects/over-the-falls-in-a-barrel/renders/web --workers 4 --resume`
+1. Full render running since 2026-10-06 02:04 UTC (alongside the marathon's; the software GL process left a core idle): `node web/render.mjs --clip projects/over-the-falls-in-a-barrel/web/barrel_clip.js --out projects/over-the-falls-in-a-barrel/renders/web --workers 4 --resume`
 2. Cover (`web/cover_clip.js` -> `delivery/She_Went_Over_Niagara_Falls_In_A_Barrel_cover.png/.jpg` + 3:4 grid check), then
    `python3 scripts/finish.py projects/over-the-falls-in-a-barrel --encode --frames projects/over-the-falls-in-a-barrel/renders/web`,
    `python3 scripts/review/blank_frames.py <mp4>`, contact sheet, `python3 scripts/post_md.py projects/over-the-falls-in-a-barrel`.
