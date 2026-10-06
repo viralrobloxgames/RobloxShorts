@@ -211,8 +211,7 @@ export function update(t, stage) {
 
   // --- Dad: at the stove (cheated 3/4); turns to the room to talk ---
   {
-    const lau = t >= at(LN.pancakes) + 1.3 && t < at(LN.pancakes) + 3.3;
-    K.playAnim(C.dad, lau ? [[A.laugh, t - at(LN.pancakes) - 1.3, 1, false]] : [[A.idle, idle]]);
+    K.playAnim(C.dad, [[A.idle, idle]]);
     const toRoom = sm(inv(at(LN.morning) - 0.3, at(LN.morning) + 0.3, t)) * (1 - sm(inv(at(LN.pancakes) - 0.4, at(LN.pancakes) + 0.1, t)));
     const tgt = t < at(LN.morning) + 1.3 ? s2.pos : seated ? s3.pos : t < at(LN.sorry) + 1 ? bottom.pos : endM.pos;
     const back = t >= T_WIDE ? 0.55 : 0;                // in the wide, half turned to the kids while he flips
@@ -222,6 +221,7 @@ export function update(t, stage) {
     gest(C.dad, 'point', 'R', at(LN.thief), end(LN.thief) + 0.3, t);
     gest(C.dad, 'hand_on_hip', 'L', at(LN.mother) + 0.1, end(LN.week) + 0.2, t);
     gest(C.dad, 'point', 'R', at(LN.phone), end(LN.phone) + 0.1, t);
+    gest(C.dad, 'hand_on_hip', 'L', at(LN.pancakes) + 1.0, T_WIDE + 3.5, t);            // laughing, proud of his pancakes
     for (const f of FLIPS()) gest(C.dad, 'tap', 'R', f - 0.35, f + 0.5, t);    // the spatula flick for each flip
   }
 
