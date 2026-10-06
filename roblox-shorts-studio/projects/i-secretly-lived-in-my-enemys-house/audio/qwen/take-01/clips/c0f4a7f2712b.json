@@ -1,0 +1,26 @@
+{
+ "voice": "lily_kid",
+ "text": "More tea, horse?",
+ "seed": 45620,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "More",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "tea?",
+   "start": 0.3,
+   "end": 0.7
+  },
+  {
+   "word": "Horse?",
+   "start": 1.28,
+   "end": 1.36
+  }
+ ],
+ "words_md5": "915519e9966ee2feb3b2d9bcf918c08e",
+ "whisper": "small.en"
+}

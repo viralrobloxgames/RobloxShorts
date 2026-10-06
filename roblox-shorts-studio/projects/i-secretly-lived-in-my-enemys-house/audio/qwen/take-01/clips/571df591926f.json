@@ -1,0 +1,26 @@
+{
+ "voice": "brittney",
+ "text": "Yes, I do.",
+ "seed": 9378,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Yes,",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "I",
+   "start": 0.32,
+   "end": 0.4
+  },
+  {
+   "word": "do.",
+   "start": 0.4,
+   "end": 0.58
+  }
+ ],
+ "words_md5": "282b0b8dad5c5e5cc613e3dc3b95079b",
+ "whisper": "small.en"
+}

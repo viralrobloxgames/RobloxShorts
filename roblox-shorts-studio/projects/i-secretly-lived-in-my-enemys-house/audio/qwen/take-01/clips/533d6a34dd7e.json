@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "So you're haunting him.",
+ "seed": 55287,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "So",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "you're",
+   "start": 0.24,
+   "end": 0.52
+  },
+  {
+   "word": "haunting",
+   "start": 0.52,
+   "end": 0.86
+  },
+  {
+   "word": "him.",
+   "start": 0.86,
+   "end": 1.18
+  }
+ ],
+ "words_md5": "443bbdf44a2168151315e05c53461f03",
+ "whisper": "small.en"
+}

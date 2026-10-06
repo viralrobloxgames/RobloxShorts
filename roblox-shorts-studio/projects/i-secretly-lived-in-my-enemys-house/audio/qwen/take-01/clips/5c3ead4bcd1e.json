@@ -1,0 +1,36 @@
+{
+ "voice": "lily_kid",
+ "text": "You're Skye. From the fridge.",
+ "seed": 45434,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Your",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "Sky",
+   "start": 0.28,
+   "end": 0.74
+  },
+  {
+   "word": "from",
+   "start": 0.74,
+   "end": 1.34
+  },
+  {
+   "word": "the",
+   "start": 1.34,
+   "end": 1.54
+  },
+  {
+   "word": "Fridge",
+   "start": 1.54,
+   "end": 1.98
+  }
+ ],
+ "words_md5": "953190d2e50601a23e21483391858478",
+ "whisper": "small.en"
+}

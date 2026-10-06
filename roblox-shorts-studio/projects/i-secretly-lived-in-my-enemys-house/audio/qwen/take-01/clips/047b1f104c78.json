@@ -3,5 +3,29 @@
  "text": "Because he hates me.",
  "seed": 93740,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Because",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "he",
+   "start": 0.48,
+   "end": 0.8
+  },
+  {
+   "word": "hates",
+   "start": 0.8,
+   "end": 1.08
+  },
+  {
+   "word": "me.",
+   "start": 1.08,
+   "end": 1.32
+  }
+ ],
+ "words_md5": "a5948c69476d92a6813a8e272ed749c7",
+ "whisper": "small.en"
 }

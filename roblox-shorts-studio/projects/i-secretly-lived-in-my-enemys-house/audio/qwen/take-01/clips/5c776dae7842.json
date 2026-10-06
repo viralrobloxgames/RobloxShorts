@@ -1,0 +1,71 @@
+{
+ "voice": "max_kid",
+ "text": "There. One sandwich, for the ghost. Please stay out of my closet.",
+ "seed": 59962,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "There,",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "one",
+   "start": 0.46,
+   "end": 0.62
+  },
+  {
+   "word": "sandwich,",
+   "start": 0.62,
+   "end": 1.08
+  },
+  {
+   "word": "for",
+   "start": 1.4,
+   "end": 1.56
+  },
+  {
+   "word": "the",
+   "start": 1.56,
+   "end": 1.7
+  },
+  {
+   "word": "ghost,",
+   "start": 1.7,
+   "end": 2.0
+  },
+  {
+   "word": "please",
+   "start": 2.68,
+   "end": 2.92
+  },
+  {
+   "word": "stay",
+   "start": 2.92,
+   "end": 3.18
+  },
+  {
+   "word": "out",
+   "start": 3.18,
+   "end": 3.36
+  },
+  {
+   "word": "of",
+   "start": 3.36,
+   "end": 3.46
+  },
+  {
+   "word": "my",
+   "start": 3.46,
+   "end": 3.62
+  },
+  {
+   "word": "closet.",
+   "start": 3.62,
+   "end": 3.9
+  }
+ ],
+ "words_md5": "9d05daaa7be870a10c37ee769058c59b",
+ "whisper": "small.en"
+}
