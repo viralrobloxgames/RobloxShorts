@@ -133,12 +133,6 @@
   "dur": 5.0
  },
  {
-  "asset": "sfx/glass.wav",
-  "start": 52.449,
-  "gain": 0.08,
-  "dur": 0.9
- },
- {
   "asset": "sfx/whoosh.wav",
   "start": 52.649,
   "gain": 0.18
@@ -153,6 +147,12 @@
   "start": 55.0,
   "gain": 0.07,
   "dur": 5.0
+ },
+ {
+  "asset": "sfx/glass.wav",
+  "start": 55.759,
+  "gain": 0.08,
+  "dur": 0.9
  },
  {
   "asset": "sfx/whoosh.wav",
