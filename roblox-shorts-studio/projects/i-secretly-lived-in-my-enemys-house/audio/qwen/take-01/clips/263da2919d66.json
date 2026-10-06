@@ -1,0 +1,21 @@
+{
+ "voice": "brittney",
+ "text": "Maaax. Maaaax.",
+ "seed": 6223,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Max,",
+   "start": 0.0,
+   "end": 0.64
+  },
+  {
+   "word": "max.",
+   "start": 1.08,
+   "end": 1.32
+  }
+ ],
+ "words_md5": "054d70313f234b1c88892ba6fac56c84",
+ "whisper": "small.en"
+}

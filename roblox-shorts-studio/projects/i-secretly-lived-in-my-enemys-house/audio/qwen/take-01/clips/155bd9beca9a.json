@@ -1,0 +1,46 @@
+{
+ "voice": "brittney",
+ "text": "I am not Skye. I am a ghost. Ooooh.",
+ "seed": 99846,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I'm",
+   "start": 0.0,
+   "end": 0.46
+  },
+  {
+   "word": "not",
+   "start": 0.46,
+   "end": 0.62
+  },
+  {
+   "word": "Skye.",
+   "start": 0.62,
+   "end": 1.32
+  },
+  {
+   "word": "I'm",
+   "start": 1.32,
+   "end": 1.56
+  },
+  {
+   "word": "a",
+   "start": 1.56,
+   "end": 1.7
+  },
+  {
+   "word": "ghost.",
+   "start": 1.7,
+   "end": 1.98
+  },
+  {
+   "word": "Ooh.",
+   "start": 2.44,
+   "end": 2.9
+  }
+ ],
+ "words_md5": "4e06b248d42be78832c6421c667c014b",
+ "whisper": "small.en"
+}
