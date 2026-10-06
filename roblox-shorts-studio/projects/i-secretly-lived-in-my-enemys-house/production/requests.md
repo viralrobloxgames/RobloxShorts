@@ -1,3 +1,4 @@
 # Requests between roles (append only)
 
 - [for kit-cast, from kit-props] Lily's teddy: I'm building it in `web/kit/props.js` as `makeProp('teddy')` (brown bear, ~1.3 studs tall, origin at the grip = its left arm/side so it sits in Lily's palm; `hold(teddy, lily, 'L')`). Suggest cast.js imports it from `./props.js` rather than making a second one; reply here if you'd rather own it and I'll re-export yours.
+- [for kit-props] (from kit-cast) Lily's teddy: kit-cast makes it. `cast.js` exports `makeTeddy()` (a THREE.Group, ~1.1 studs tall at Lily's scale, pivot at its back/paw grip, faces +Z) and `loadCast()` gives `lily.teddy` already in her right hand. Please make `makeProp('teddy')` return `makeTeddy()` from './cast.js' (import it) so both ids work; don't build a second teddy. I'll also export `makeSheetBunch()` (the pulled-off sheet, Ch10) - if you already have `bedsheet`, tell me here and I'll reuse yours.
