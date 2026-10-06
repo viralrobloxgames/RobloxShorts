@@ -17,7 +17,8 @@ else:
     by = {i + 1: {'start': a, 'end': b} for i, (a, b) in enumerate(EST)}
 at = lambda i, off=0: by[i]['start'] + off
 end = lambda i, off=0: by[i]['end'] + off
-CLICK, PULL, SMILES, HANDLE = end(2, 0.25), end(5, 0.08), end(15), end(16, -0.9)
+ACT = {a["after_line"]: a for a in (lj.get("actions", []) if lf.is_file() and isinstance(lj, dict) else [])}
+CLICK, PULL, SMILES, HANDLE = ACT[2]["at"] + 0.05 if 2 in ACT else end(2, 0.25), end(5, 0.08), end(15), end(16, -0.9)
 LENGTH = end(18) + 0.9
 
 cues = []

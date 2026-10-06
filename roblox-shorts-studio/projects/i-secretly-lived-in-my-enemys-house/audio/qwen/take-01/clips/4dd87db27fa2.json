@@ -1,0 +1,46 @@
+{
+ "voice": "lily_kid",
+ "text": "I am in bed! And you're too loud!",
+ "seed": 2770,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I'm",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "in",
+   "start": 0.26,
+   "end": 0.38
+  },
+  {
+   "word": "bed,",
+   "start": 0.38,
+   "end": 0.66
+  },
+  {
+   "word": "and",
+   "start": 1.04,
+   "end": 1.12
+  },
+  {
+   "word": "you're",
+   "start": 1.12,
+   "end": 1.32
+  },
+  {
+   "word": "too",
+   "start": 1.32,
+   "end": 1.46
+  },
+  {
+   "word": "loud!",
+   "start": 1.46,
+   "end": 1.84
+  }
+ ],
+ "words_md5": "1f290b2a68d596414acd9484c53cf3bb",
+ "whisper": "small.en"
+}
