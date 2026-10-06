@@ -116,7 +116,7 @@ function maxAt(s) {
       return x;
     }
     case 'round': {                                              // walking his round, stops to pick up a stone
-      const a = V(-40, 0, 0), b = V(14, 0, 0);
+      const a = V(-29, 0, 0), b = V(14, 0, 0);          // starts inside the hedge gap (|x| < 30) so the hedge never hides him
       x = st(a, R90, 'happy'); moveTo(x, a, b, T.round - 0.6, s, 12, R90 - 0.2); x.face = 'happy';
       if (!x.moving) { const k = smooth(inv(T.round + 4.0 - 0.8, T.round + 4.0, s)); x.arms = [['R', 0.1, -0.2 - 0.9 * k]]; x.look = [0, 0.4 * k]; }
       return x;

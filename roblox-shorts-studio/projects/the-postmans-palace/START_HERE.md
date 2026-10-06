@@ -16,9 +16,12 @@ Facts, beats and sources: `source/story.md`.
   stone) passed.
 - Cover rendered: `delivery/The_Postman_s_Palace_cover.png/.jpg` + 3:4 grid crop; subline under the headline, motto
   sign reads in full, Max's face clear.
-- Full render started 2026-10-06 ~02:35 UK straight after The Tornado Came Back's (`--resume` picks up if it dies).
-  Then encode, blank-frame check, contact-sheet review, post_md, deliver for the user's review. Post only after
-  approval.
+- **Delivered for review (2026-10-06 ~05:25 UK):** `delivery/The_Postman_s_Palace.mp4` (62.5 s, 1875 frames,
+  1080x1920, audio, burned captions, cover held in the last 0.5 s). The first encode's blank-frame check flagged the
+  start of the round shot (Max behind the front hedge); his walk now starts inside the hedge gap (x -29), the round
+  shot (frames 387-516) was re-rendered and the video re-encoded: no flags. Contact sheet looked at: faces readable,
+  no two-arms-up poses, stone/basket/barrow in hand. Fit check re-run and reviewed after the clip edit. Post copy:
+  `delivery/The_Postman_s_Palace_post.md`. **Not posted: waiting for the user's approval of the MP4.**
 - Sound: `source/make_sfx.py` (copies) and `source/sound_cues.py`. Post copy: `delivery/post.json`.
 
 ## Commands
