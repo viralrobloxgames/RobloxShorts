@@ -3,5 +3,44 @@
  "text": "Dad, this is Skye. She's the ghost.",
  "seed": 13917,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Dad,",
+   "start": 0.0,
+   "end": 0.5
+  },
+  {
+   "word": "this",
+   "start": 0.94,
+   "end": 1.22
+  },
+  {
+   "word": "is",
+   "start": 1.22,
+   "end": 1.42
+  },
+  {
+   "word": "Skye.",
+   "start": 1.42,
+   "end": 2.36
+  },
+  {
+   "word": "She's",
+   "start": 2.36,
+   "end": 2.68
+  },
+  {
+   "word": "the",
+   "start": 2.68,
+   "end": 2.8
+  },
+  {
+   "word": "ghost.",
+   "start": 2.8,
+   "end": 3.08
+  }
+ ],
+ "words_md5": "ca4fd95707d18720b89b4238833e3228",
+ "whisper": "small.en"
 }
