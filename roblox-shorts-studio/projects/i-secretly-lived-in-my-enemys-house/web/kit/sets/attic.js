@@ -410,6 +410,9 @@ export function build(scene) {
   const lights = { sun, moon, bounce, hatchGlow, flashlight: flashL, flashlightCone: flashCone, glow: glowL, shafts: { sun: items.shafts_sun, moon: items.shafts_moon } };
   group.traverse((o) => { if (o.isMesh && o.material && o.material.blending === THREE.AdditiveBlending) o.castShadow = false; });
   [shaftSun, shaftSun2, shaftMoon].forEach((m) => { m.castShadow = false; });
+  // camera clearance (camera.js clearShot) ignores light shafts, dust motes, cobwebs, window glass and the sky disc
+  for (const n of ['shafts_sun', 'shafts_moon', 'cobwebs', 'window_sky', 'window_branch']) items[n].traverse((o) => { o.userData.noCamBlock = true; });
+  glass.userData.noCamBlock = true;
   glass.castShadow = false; outside.castShadow = false; web.side = THREE.DoubleSide; items.cobwebs.traverse((m) => { if (m.isMesh) m.castShadow = false; });
 
   // ---------- marks (world), heading: forward = (sin h, 0, cos h) ----------
