@@ -190,11 +190,11 @@ export function build(scene) {
   for (const y of [2.0, 3.8, 5.6]) box(3.4, 0.5, 0.5, std('#e8f2ff', { roughness: 0.4 }), 2, y, -0.2, doorPivot);
   box(3.6, FR.h - 1.2, 0.05, frIn, 2, FR.h / 2, -0.02, doorPivot);
   // magnet letters: a canvas plane on the door front
-  const LETTER_W = 3.7, LETTER_H = 4.4, LCV = [740, 880];
+  const LETTER_W = 3.2, LETTER_H = 4.4, LCV = [640, 880];   // stops short of the handle (door x 3.5..3.7)
   const lettersCanvas = document.createElement('canvas'); lettersCanvas.width = LCV[0]; lettersCanvas.height = LCV[1];
   const lettersTex = new THREE.CanvasTexture(lettersCanvas); lettersTex.colorSpace = THREE.SRGBColorSpace; lettersTex.anisotropy = 8;
   const lettersMesh = new THREE.Mesh(new THREE.PlaneGeometry(LETTER_W, LETTER_H), new THREE.MeshStandardMaterial({ map: lettersTex, transparent: true, roughness: 0.35, alphaTest: 0.05 }));
-  lettersMesh.position.set(2, 4.6, 0.36); lettersMesh.castShadow = false; doorPivot.add(lettersMesh);
+  lettersMesh.position.set(1.75, 4.6, 0.36); lettersMesh.castShadow = false; doorPivot.add(lettersMesh);
   // a kid's drawing held by a magnet
   drawing.position.set(2.6, 7.0, 0.36); drawing.rotation.z = 0.06; doorPivot.add(drawing);
   const letterState = { text: null, scatter: null };
@@ -217,7 +217,7 @@ export function build(scene) {
       for (const [x, y] of spots) letter(pool[(r() * pool.length) | 0], x, y, 70 + r() * 16, n++);
     }
     if (text) {   // fixed grid: 7 columns x up to 3 rows, lines left-aligned, so a growing string never moves placed letters
-      const px = 128, step = 96, lh = 150, x0 = w / 2 - 3 * step, y0 = h / 2 - lh * 0.5;
+      const px = 108, step = 80, lh = 140, x0 = w / 2 - 3 * step, y0 = h / 2 - lh * 0.5;
       String(text).toUpperCase().split('\n').forEach((line, li) => [...line].forEach((ch, ci) => {
         if (ch === ' ') return;
         const k = li * 16 + ci, rr = rng(101 + k * 7 + ch.charCodeAt(0));
@@ -358,10 +358,10 @@ export function build(scene) {
   const moonSink = practical(new THREE.SpotLight('#9fb8ff', 0, 50, 0.45, 0.8, 1.2), 160);
   moonSink.position.set(3, 14, -26); moonSink.target.position.set(2, 0, -6); group.add(moonSink, moonSink.target);
   // daylight through the windows (Ch11 Sunday morning): broad warm spots
-  const sunIn = practical(new THREE.SpotLight('#fff0d0', 0, 70, 0.6, 0.7, 1.0), 260);
+  const sunIn = practical(new THREE.SpotLight('#fff0d0', 0, 70, 0.6, 0.7, 1.0), 150);
   sunIn.position.set(30, 18, -2); sunIn.target.position.set(0, 0, 2); sunIn.castShadow = true; sunIn.shadow.mapSize.set(1024, 1024); sunIn.shadow.bias = -0.0004;
   group.add(sunIn, sunIn.target);
-  const sunSink = practical(new THREE.SpotLight('#fff0d0', 0, 60, 0.5, 0.7, 1.0), 260);
+  const sunSink = practical(new THREE.SpotLight('#fff0d0', 0, 60, 0.5, 0.7, 1.0), 150);
   sunSink.position.set(4, 15, -28); sunSink.target.position.set(0, 0, -3); group.add(sunSink, sunSink.target);
   // a soft room fill for every time of day (scaled by setState time)
   const roomFill = practical(new THREE.PointLight('#fff4e0', 0, 40, 1.5), 14); roomFill.position.set(0, 10.5, 4); group.add(roomFill);
@@ -490,7 +490,7 @@ export function build(scene) {
   const TIME = {
     night: { out: 'night', clock: [11, 52], lv: { moon: 1, moonSink: 1, roomFill: 0.06, pendantL: 0, pendantR: 0, hood: 0, upstairs: 0 } },
     predawn: { out: 'predawn', clock: [6, 4], lv: { moon: 0.35, moonSink: 0.4, roomFill: 0.25, pendantL: 1, pendantR: 1, hood: 1, upstairs: 0.6 } },
-    morning: { out: 'morning', clock: [8, 30], lv: { sunIn: 1, sunSink: 1, roomFill: 1, pendantL: 0, pendantR: 0, hood: 0, upstairs: 0.6 } },
+    morning: { out: 'morning', clock: [8, 30], lv: { sunIn: 1, sunSink: 1, roomFill: 0.5, pendantL: 0, pendantR: 0, hood: 0, upstairs: 0.6 } },
     day: { out: 'day', clock: [12, 0], lv: { sunIn: 1, sunSink: 1, roomFill: 1 } },
   };
   function setState(s = {}) {
