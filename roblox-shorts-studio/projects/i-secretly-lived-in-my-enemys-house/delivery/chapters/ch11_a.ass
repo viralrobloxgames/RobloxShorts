@@ -1,0 +1,36 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.62,VO,,0,0,0,,SUNDAY. DAY SEVEN. FOR
+Dialogue: 1,0:00:01.62,0:00:03.00,VO,,0,0,0,,THE FIRST TIME ALL WEEK, I
+Dialogue: 1,0:00:03.00,0:00:03.80,VO,,0,0,0,,WALKED DOWN THE STAIRS
+Dialogue: 1,0:00:03.80,0:00:05.11,VO,,0,0,0,,LIKE A NORMAL PERSON.
+Dialogue: 1,0:00:05.31,0:00:07.96,DAD,,0,0,0,,MORNING, MAX! MORNING, LILY! MORNING...
+Dialogue: 1,0:00:08.12,0:00:09.17,DAD,,0,0,0,,PUMPKIN GIRL?
+Dialogue: 1,0:00:09.39,0:00:12.82,MAX,,0,0,0,,DAD, THIS IS SKYE. SHE'S THE GHOST.
+Dialogue: 1,0:00:13.05,0:00:14.24,DAD,,0,0,0,,THE PANCAKE THIEF!
+Dialogue: 1,0:00:14.34,0:00:16.36,SKYE,,0,0,0,,SORRY ABOUT THE PANCAKES. AND THE
+Dialogue: 1,0:00:16.36,0:00:18.45,SKYE,,0,0,0,,SHEET. AND THE HAM. AND THE FRIDGE.
+Dialogue: 1,0:00:18.67,0:00:19.80,LILY,,0,0,0,,I KNEW FIRST.
+Dialogue: 1,0:00:20.01,0:00:20.88,DAD,,0,0,0,,YOU KNEW?
+Dialogue: 1,0:00:21.08,0:00:22.47,LILY,,0,0,0,,SHE WAS MY HORSE.
+Dialogue: 1,0:00:22.55,0:00:23.25,DAD,,0,0,0,,DOES YOUR MOTHER KNOW
+Dialogue: 1,0:00:23.25,0:00:24.60,DAD,,0,0,0,,WHERE YOU'VE BEEN ALL WEEK?
+Dialogue: 1,0:00:24.72,0:00:26.69,SKYE,,0,0,0,,SHE THINKS I'M AT A SLEEPOVER.
+Dialogue: 1,0:00:26.73,0:00:27.60,DAD,,0,0,0,,FOR A WEEK?
+Dialogue: 1,0:00:27.76,0:00:29.79,SKYE,,0,0,0,,IT'S A REALLY LONG SLEEPOVER.
+Dialogue: 1,0:00:29.85,0:00:31.43,DAD,,0,0,0,,PHONE. NOW. THEN PANCAKES.
