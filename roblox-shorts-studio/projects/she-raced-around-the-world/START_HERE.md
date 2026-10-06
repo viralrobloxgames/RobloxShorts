@@ -25,7 +25,9 @@ beats and sources: `source/story.md`.
 - Sound: `source/sound_cues.py` -> `source/sound_cues.json` (46 cues; sfx copied into `audio/sfx/`).
 - Cover: `web/cover_clip.js` (Mia, one fist up, in front of the giant book with its 80 crossed out; SHE RACED /
   AROUND THE WORLD / IN 72 DAYS), `delivery/She_Raced_Around_The_World_cover.jpg|png`, grid check `_cover_grid.jpg`.
-- Full render running (renders/web, 4 workers, started ~04:05 BST); resume with the render command below.
+- Full render done (renders/web, git-ignored, kept for fixes). Encoded `delivery/She_Raced_Around_The_World.mp4`: 1870
+  frames, 62.33 s incl. the 0.5 s cover, -16.9 LUFS / -1.5 dBFS peak, captions burned, blank-frame check clean,
+  contact sheet reviewed.
 - Post copy: `delivery/post.json`.
 
 ## Commands
@@ -37,5 +39,5 @@ python3 scripts/review/blank_frames.py projects/she-raced-around-the-world/deliv
 ```
 
 ## Next
-1. Finish the full render (`--resume`), encode, blank-frame check, contact sheet review; deliver for the user's review.
-   Never post without the user's explicit approval of the MP4.
+1. Awaiting the user's review of `delivery/She_Raced_Around_The_World.mp4`. Never post without explicit approval of
+   this MP4.

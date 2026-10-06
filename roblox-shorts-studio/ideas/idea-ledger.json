@@ -504,11 +504,11 @@
       "title": "She Raced Around The World",
       "series": "standalone story",
       "created": "2026-10-06",
-      "status": "full_render_running",
+      "status": "delivered_local_review",
       "logline": "True story: in 1889 a young reporter says she can beat the famous book's eighty days around the world; her editor wants to send a man. She sails two days later with one bag, meets the author, learns in Hong Kong that a rival was sent the other way the same day, loses two days to storms, races across America on a special train and finishes in 72 days, 6 hours, 11 minutes; the rival comes home four and a half days later.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/she-raced-around-the-world",
-      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating. | Narration 59.8 s (George voice C); video 61.83 s + 0.5 s cover; preview fixes, hold check and fit check done; full web render running."
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating. | Narration 59.8 s (George voice C); video 61.83 s + 0.5 s cover; preview fixes, hold check and fit check done; full web render done and encoded (62.3 s incl. cover, -16.9 LUFS, blank-frame check clean); delivered for the user's review, not posted."
     },
     {
       "title": "The Dog Who Saved A Town",
