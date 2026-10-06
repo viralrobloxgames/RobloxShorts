@@ -92,3 +92,106 @@ Coordinates are 1920x1080 units times `s`. The lower third (y > 760) belongs to 
 | `redCircle(g, s, t, x, y, r, { t0, t1 })` | `K.redCircle(g, s, t, p.x, p.y, 130, { t0: 2.5 })` hand-drawn, draws on in 0.35 s |
 | `endScreen(g, s, t, { t0 })` | Ch11's last ~12 s: SUBSCRIBE @viralrobloxgames in the top band (y 40-290, darkened); **clear space for YouTube's end-screen elements: x 0-1920, y 300-1040** (the whole frame below the title) where YouTube places two video tiles and the subscribe button. The picture underneath shows through a dim; frame the cast in the top band's sides or keep them small/out of the clear space |
 | `roundRect`, `OV` | |
+
+## sets/attic.js (kit-sets-b)
+
+`const attic = K.sets.attic.build(scene)` → `{ id, group, marks, cams, lights, items, setState, setHatch, rockChair, useCam, hatchRise, roofY }`.
+World offset (600, 0, 0), attic floor y 0. A gabled room x -13..13, z -10 (back gable, round window) .. 14 (front
+gable); ridge y 13 along z, knee walls 3 high at x ±13 (`roofY(worldX)` gives the roof underside). Cameras are all
+inside the room, below the rafters (collar ties are at y ~11). Check sheets: `production/previews/kit-sets-b/`; check
+clip: `web/previews/attic_preview.js` (one frame per state × cam with stand-ins).
+
+Layout: Skye's nest under the window (x 0, z -8: two blankets, pillow, cracker packet, pink flashlight, backpack, glow
+sticks); right side: HALLOWEEN box with the skeleton and the witch in front of it, XMAS, MAX - OLD STUFF, the hobby
+horse leaning on XMAS; front right: the floor hatch (centre (604.5, 0, 9), hole 4.6 × 3.4, the ladder going down to the
+hallway floor at y -10) and the vacuum spot; left: the upturned box table with the tea party round it, the rocking chair.
+
+```js
+attic.setState({ chapter: 5 });                                 // Ch5 start: no tea set, backpack not in the nest (she wears it)
+attic.setState({ chapter: 5, hatch: 0.9 });                     // the hatch lifting (0 shut .. 1 open, or 'shut'/'open')
+attic.setState({ chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' });   // the tea party (horse in Skye's hands)
+attic.setState({ chapter: 7, pumpkin: false });                 // HALLOWEEN open, pumpkin on Skye's head (chapter's prop)
+attic.setState({ chapter: 8 });                                 // night: moonlight, flashlight standing lit, vacuum, pumpkin on the lid
+attic.setState({ chapter: 9, maxBox: 'open', rock: 0.1 });      // MAX - OLD STUFF open, the drawing on top; the chair rocked
+attic.useCam(stage.camera, 'nest_to_hatch');
+lily.root.position.copy(attic.marks.hatch_head_lily.pos); lily.root.rotation.y = attic.marks.hatch_head_lily.heading;
+```
+
+**setState is stateless**: each call = that chapter's defaults (boundary sheet "Things that persist") + the overrides
+passed, so call it every frame with everything the moment needs. Defaults by chapter:
+
+| key | values | default |
+|---|---|---|
+| `time` | `'afternoon'` (warm sun spot + dusty shafts through the round window), `'night'` (moon spot + cold shaft), `'predawn'` | Ch8 night, Ch2 predawn, else afternoon (`night: true` also works) |
+| `hatch` | `'shut'`, `'open'`, 0..1 (lid angle; light comes up from the hallway when open) | shut |
+| `backpack` | true = lying in the nest | false in Ch2 and Ch5 (worn), true Ch7-9 |
+| `flashlight` | `'lying'`, `'standing'` (on end, lit), `'none'` | Ch8 standing |
+| `tea` (`teaSet`) | teapot + 2 cups on the upturned box | true from Ch6 on; Ch5 sets it from the tea party |
+| `halloween` | `'open'`, `'closed'`, 0..1 | Ch7 open |
+| `pumpkin` | `'box'` (in the open box), `'lid'` (on the closed box), `'inside'`, `'none'`/false | Ch7 box, Ch8+ lid |
+| `vacuum` | by the hatch | true from Ch8 (Ch7 sets it at the end) |
+| `glowSticks` | true (bundle beside the nest), `'lit'` | Ch9 true |
+| `maxBox` (`oldStuffOpen`) | `'open'`, `'closed'`, 0..1 | closed |
+| `drawing` | `'box'` (on top inside MAX - OLD STUFF), `'none'` | Ch9 box |
+| `hobbyHorse` | `'boxes'` (leaning on XMAS), `'floor'`, `'none'`/false | boxes |
+| `teddies` | the two attic toys at the tea party | true from Ch5 |
+| `rock` | rocking chair angle (rad, ±0.15 reads well) | 0 |
+| `hide` / `show` | arrays of `items` names | |
+
+`setHatch(k)` and `rockChair(a)` set those two directly. `items` holds every named object (`nest`, `backpack`,
+`flashlight`, `crackers`, `glow_sticks`, `box_halloween`, `box_xmas`, `box_max`, `drawing`, `skeleton`, `witch`,
+`pumpkin_bucket`, `hobby_horse`, `table_box`, `tea_set`, `teapot`, `cup_1`, `cup_2`, `teddy_left`, `teddy_right`,
+`rocking_chair`, `vacuum`, `hatch_lid`, `ladder`, `window`, `rafters`, walls ...). Set props are the attic's own until
+`props.js` has its versions.
+
+**Marks** (world `{ pos, heading }`, sitting marks are at floor level: a floor sit puts the hips on the floor):
+`nest` / `nest_sit` (Skye cross-legged, facing +z), `nest_beside` (Lily next to her, frame-right from the +z cams),
+`nest_stand`, `nest_front`, `nest_backpack`, `window`; `tea_skye` (nest side, facing +z, the window behind her),
+`tea_lily` (hatch side, facing -z, kneeling), `tea_teddy` / `tea_teddy_lily`, `tea_toy_1`, `tea_toy_2`, `tea_box` /
+`box_table` / `tea_table` (box top, y 1.42); `rocking_chair` (seat centre, `seatY` 1.65), `rocking_chair_front`;
+`decor_pose` / `decor_gap` (Ch7, between `skeleton` and `witch`, facing +z, arms out clear both), `decor_front` /
+`decor_inspect` (Dad nose to nose), `decor_lily`, `box_halloween`, `box_xmas`, `box_max` / `old_stuff_box`,
+`box_max_kneel`, `old_stuff_inside` (where the drawing lies), `hobby_horse`, `horse_lean`; `hatch_top` / `hatch_stand`
+(standing on the floor at the hatch, facing the room), `hatch_side`, `hatch_climb` / `hatch_below` (over the hole; height
+`hatchRise(scale, k)`: k 0 = below the floor, 1 = standing), `hatch_head` (scale 1), `hatch_head_lily`,
+`hatch_head_dad`, `hatch_head_max` (head and shoulders up through the hatch, facing -z), `ladder_foot`, `vacuum` /
+`vacuum_by_hatch`, `centre`.
+
+**Cams** (`{ pos, target, fov, note }`): `wide`, `wide_low`, `wide_nest_hatch`, `wide_nest_to_hatch` (Ch7 start:
+tea party, hatch, decorations), `nest_to_hatch` (Ch5 start), `nest_to_hatch_tight`, `hatch_to_nest`, `hatch_lily_cu`
+/ `hatch_mcu`, `lily_ms`, `hatch_down` (Ch2), `hatch_wide`, `nest_ms`, `nest_cu` / `nest_mcu`, `nest_two` /
+`nest_two_shot`, `nest_mcu_skye`, `nest_mcu_lily`, `nest_from_window` (Ch8), `tea_two` / `tea_party`, `tea_wide`,
+`tea_wide_front`, `tea_hatch`, `tea_lily_ots`, `tea_skye_ots`, `tea_lily_cu`, `tea_skye_cu` (all tea cams on the +x side
+of the Skye-Lily line), `decor_wide` / `decor_line`, `decor_ms`, `decor_cu`, `decor_to_hatch`, `decor_side`, `boxes`,
+`box_max_cu` / `old_stuff`, `drawing_insert`, `rocking_nest` (Ch9), `rocking_ms`, `window`.
+
+**Lights** (practicals; lighting.js sets the stage preset): `sun` (spot through the window) + `shafts.sun`, `moon` +
+`shafts.moon`, `bounce`, `hatchGlow`, `flashlight` + `flashlightCone`, `glow` (glow sticks). `setState({ time })`
+switches them; the stage hemi/env should be low inside the attic (the preview uses hemi 0.22 day / 0.1 night, env
+0.18 / 0.08, stage sun off).
+
+## cast.js (kit-cast)
+
+Four characters + four extras, all wardrobe ids of `source/boundary_sheet.md`, faces, lip flap, poses. Clothes are painted
+into each character's own R6 atlas (128 px/stud, the pack layout), so they follow the bones exactly and cannot clip; only
+the ghost sheet and the backpack are meshes (parented to the bones they move with). Check sheets (front, 3/4, side,
+back per look; poses; gestures; gaits; blush): `production/previews/kit-cast/*.jpg`, made by
+`node web/render.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/kit/cast_turnaround.js --out /tmp/ta --frames 1-28 --scale 0.4 --samples 1`.
+
+| Export | What / example |
+|---|---|
+| `loadCast(scene)` | `const C = await K.loadCast(stage.scene)` → `{ skye, max, dad, lily, extras: [4] }`, all added to the scene, dressed in their default looks (`skye_hoodie`, `max_school`, `dad_cardigan`, `lily_day`, `extras`), face `neutral`, `lily.teddy` (kit-props' `teddy`) already in her right hand. Dad = Leo rig at 1.12 with hair tinted dark brown; Lily = Mia rig at 0.78 with her ponytail tinted black. Extras: the Noob in a `cap`, then recoloured Noobs in `spiky_hair`, `long_hair`, `beanie` (all via `wear()`). Each actor has `.speaker` (`SKYE`/`MAX`/`DAD`/`LILY`), `.scale`, `.outfit`. |
+| `FACES` | every face preloaded on every character: scared suspicious scheming nervous happy annoyed shocked smug surprised determined crying sad shouting laugh talking mouth_o neutral confused mouth_small. `C.max.setFace('suspicious')` |
+| `WARDROBE`, `dress(actor, id \| [ids], on = true)` | synchronous and cached, so it can run inside `update(t)`. Base looks: `skye_hoodie`, `max_school`, `max_pjs`, `dad_cardigan`, `dad_apron`, `dad_robe`, `lily_day`, `lily_pjs`, `extras`. A base look on Skye also takes the sheet AND the backpack off, so give the order: `K.dress(C.skye, ['skye_hoodie', 'backpack'])`. Overlays: `K.dress(C.skye, 'backpack', false)` (take it off mid-shot), `K.dress(C.skye, 'skye_sheet')` (ghost: dome with eye holes + pink lock out at the LEFT of her face, drape to below the knees, sheet sleeves to the wrists; hides her hair and face), `K.dress(C.skye, 'glow_sticks')` (kit-props' green wrist bands on both wrists). Wrong person → throws. |
+| `sheetLift(skye, u)` | Ch10 pull-off: `u` 0 → 1 lifts the sheet up and off (hair and face come back at 0.35). At 1: `K.dress(C.skye, 'skye_sheet', false)` (or `dress(skye,'skye_hoodie')`) and hand her kit-props' `bedsheet` `{ state: 'bunched' }` in her left palm. |
+| `speak(actor, baseFace, t, words, { whisper })` | `K.speak(C.max, 'suspicious', t, captions.words)`: on the actor's own words (speaker match; VO never moves a mouth) alternates `talking`/`mouth_o` (every ~0.14 s inside long words), base face in the gaps. `whisper: true` alternates `mouth_small`/base. Returns the face set. |
+| `blush(actor, 0..1)` | pink cheeks over any face: `K.blush(C.skye, 1)` with `nervous` for "blushing"; `K.blush(C.skye, 0)` to clear. |
+| `holdTeddy(lily, mode)` | `'R'` / `'L'` (kit-props `hold(teddy, lily, hand, 'side')`, hanging at her side), `'hug'` (on her chest; pose with `posture(lily, 'hug_teddy')`), `'free'` (detached: add `C.lily.teddy` to the set and place it, e.g. beside her at the tea party). |
+| `POSES`, `posture(actor, name \| dict, { mix, reset, extra })` | sets the bones (rig.js angle convention, degrees) and returns the root drop. Floor poses: `const d = K.posture(C.skye, 'sit_cross'); C.skye.root.position.y = floorY - d`. Seats: `K.posture(C.max, 'sit_chair'); C.max.root.position.y = K.seatY(C.max, seatTopY)`. Names: `stand`, `sit_chair`, `sit_upright`, `sit_slump`, `sit_desk_arms`, `chin_on_hand`, `sit_cross`, `kneel`, `kneel_up`, `crouch`, `lie_back`, `shock`, `scarecrow` (arms out at shoulder height; `mix` brings them down), `arms_folded`, `hug_teddy`, `shrug`, `lean_in`, `lean_back`, `ear_to_door`, `hip_bend` (Dad leaning in nose to nose). `mixAngles(a, b, u)` blends two dicts. |
+| `ARM_GESTURES`, `gesture(actor, name, side, mix)` | one arm, layered over the current pose (call after `posture`/`robloxPose`): `K.gesture(C.skye, 'hand_over_mouth', 'L')`. Names: point, point_up, reach_up, finger_up, knock, tap, hand_over_mouth, eye_wipe, thumb_to_chest, hand_on_hip, hand_on_neck, hair_pat, phone_ear, chin_hand, hold_out, flashlight_chin, wave (static; `waveArm` in web/lib/gestures.js animates), hand_hold, cup_hold; or pass `[x, y, z]`. `mix` slerps from the current arm. |
+| `gait(kind, phase)` | distance-driven gaits as a pose dict: `const m = travel(a, b, t0, t, 6); K.posture(C.skye, K.gait('creep', m.anim))`. Kinds: `walk`, `run`, `creep` (sneaky, bent forward), `skip` (Lily; returns a negative `drop` = hop), `shuffle` (sleepy Max), `climb` (ladder, facing the rungs; phase = height climbed / 1.6). Use the drop: `root.y = floorY - drop`. |
+| `SCALE`, `COLORS`, `SPEAKER`, `EXTRA_LOOKS` | constants (Dad 1.12, Lily 0.78; hair and glow colours; caption speaker labels; the extras' looks). |
+
+Notes: walk in the sheet with the arms still or barely swinging (the drape bulges for legs and arms, but a big arm swing
+reads as a tent); one arm up through the sheet (phone, left arm at shoulder height) reads as a sheet-covered arm. No
+two-arms-up poses (SKILL.md): `climb` keeps both hands in front of the face, not above the head.

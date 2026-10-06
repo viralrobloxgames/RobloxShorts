@@ -12,8 +12,10 @@ export const SHOTS = [
   ['ch5', 'nest_ms', { chapter: 5 }, { skye: 'nest/sit' }],
   ['ch5 end', 'tea_two', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
   ['ch5 end', 'tea_wide', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
-  ['ch5 end', 'tea_over_lily', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
-  ['ch5 end', 'tea_over_skye', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
+  ['ch5 end', 'tea_lily_ots', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
+  ['ch5 end', 'tea_skye_ots', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
+  ['ch5 end', 'tea_lily_cu', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
+  ['ch5 end', 'tea_skye_cu', { chapter: 5, tea: true, backpack: true, hobbyHorse: 'none' }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
   ['ch7', 'tea_hatch', { chapter: 7, hatch: 0.25 }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
   ['ch7', 'decor_wide', { chapter: 7, pumpkin: 'none' }, { skye: 'decor_pose', lily: 'decor_front' }],
   ['ch7', 'decor_ms', { chapter: 7, pumpkin: 'none' }, { skye: 'decor_pose' }],
@@ -33,6 +35,14 @@ export const SHOTS = [
   ['ch9', 'window', { chapter: 9 }, { skye: 'nest/sit' }],
   ['ch2', 'hatch_down', { chapter: 2, hatch: 1 }, {}],
   ['ch8', 'nest_cu', { chapter: 8 }, { skye: 'nest/sit' }],
+  ['ch7', 'wide_nest_to_hatch', { chapter: 7 }, { skye: 'tea_skye/sit', lily: 'tea_lily/sit' }],
+  ['ch5', 'wide_nest_hatch', { chapter: 5, hatch: 1 }, { skye: 'nest/sit', lily: 'hatch_head_lily' }],
+  ['ch8', 'nest_from_window', { chapter: 8, hatch: 1 }, { skye: 'nest/sit', lily: 'hatch_head_lily' }],
+  ['ch8', 'nest_mcu_skye', { chapter: 8 }, { skye: 'nest/sit', lily: 'nest_beside/sit' }],
+  ['ch8', 'nest_mcu_lily', { chapter: 8 }, { skye: 'nest/sit', lily: 'nest_beside/sit' }],
+  ['ch5', 'lily_ms', { chapter: 5, hatch: 1 }, { lily: 'hatch_top' }],
+  ['ch7', 'decor_line', { chapter: 7, pumpkin: false }, { skye: 'decor_gap', lily: 'decor_lily' }],
+  ['ch9', 'rocking_ms', { chapter: 9, rock: 0.12 }, { lily: 'rocking_chair/sit' }],
 ];
 export const meta = { seconds: SHOTS.length / 30, fps: 30, width: 1920, height: 1080, title: 'attic preview' };
 export const sky = { zenith: '#3a5d9a', horizon: '#f2c48a', below: '#5a4632', fog: '#3a3028' };
@@ -50,14 +60,14 @@ export function update(t, stage) {
   const i = Math.min(SHOTS.length - 1, Math.round(t * 30)), [, cam, st, who] = SHOTS[i];
   set.setState(st);
   const night = set.lights.moon.intensity > 0 && set.lights.sun.intensity === 0;
-  stage.hemi.intensity = night ? 0.06 : 0.22; stage.hemi.color.set(night ? '#6f86c8' : '#ffe2c0'); stage.hemi.groundColor.set('#4a3a2a');
-  stage.scene.environmentIntensity = night ? 0.05 : 0.18;
+  stage.hemi.intensity = night ? 0.1 : 0.22; stage.hemi.color.set(night ? '#6f86c8' : '#ffe2c0'); stage.hemi.groundColor.set('#4a3a2a');
+  stage.scene.environmentIntensity = night ? 0.08 : 0.18;
   stage.sun.intensity = 0; stage.fill.intensity = night ? 0.03 : 0.12; stage.rim.intensity = 0;
   for (const [k, c] of Object.entries(C)) {
     const spec = who[k]; c.root.visible = !!spec; if (!spec) continue;
     const [mark, pose] = spec.split('/'); const m = set.marks[mark];
     c.root.position.copy(m.pos); c.root.rotation.y = m.heading;
-    if (pose === 'sit' && mark === 'rocking_chair') c.root.position.y += m.seatY - 2 * c.scale * 0.95;
+    if (pose === 'sit') c.root.position.y += mark === 'rocking_chair' ? m.seatY - 2 * c.scale * 0.95 : -2 * c.scale * 0.95;   // floor sit: hips on the floor
     robloxPose(c, [[pose === 'sit' ? A.sit : A.idle, 0.5, 1, true]]);
   }
   set.useCam(stage.camera, cam);

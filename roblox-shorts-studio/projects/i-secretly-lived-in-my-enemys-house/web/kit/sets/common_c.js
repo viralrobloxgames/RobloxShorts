@@ -75,7 +75,6 @@ export function wallWithHoles(len, h, thick, m, holes = []) {
     for (const o of hs) { if (o.y0 > y) box(b - a, o.y0 - y, thick, m, mid, (y + o.y0) / 2, 0, g); y = o.y1; }
     if (y < h) box(b - a, h - y, thick, m, mid, (y + h) / 2, 0, g);
   }
-  g.traverse((o) => { if (o.isMesh) o.castShadow = false; });
   return g;
 }
 
