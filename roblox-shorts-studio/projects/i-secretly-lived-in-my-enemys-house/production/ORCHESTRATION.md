@@ -51,3 +51,18 @@ worker below; send_message any idle/failed worker whose status isn't DONE: "Resu
 Later: gate-a/b/c/d (fresh, `briefs/gate.md`), render helpers for segment B (the 8 setup sessions, then gate reviewers / spares;
 `briefs/render_plan.md`: full renders start at READY_FOR_GATE, fixes re-render only changed frames), review-1..4 (fresh).
 Orchestrator routines: trig_01SHFzCL5TM3VVuWqEnfUCrE (:47) and a second one at :17.
+
+## Phase 2 sessions (13:27Z)
+| Role | Session |
+|---|---|
+| gate-a (ch01-03) | session_0113HDTXbFK6qyDkbMuq2LFQ |
+| gate-b (ch04-06) | session_01SrFdNTG52rfwv28WoiWdEW |
+| gate-c (ch07-09) | session_01LgnSKU2rJGmWXA6JpGy4HP |
+| gate-d (ch10-11 + end screen) | session_01Junr2nzH4Do71363wUXn9y |
+| render-ch09-b | session_01RmDSQSmZxiSnYwsnaz53yT |
+| render-ch10-b | session_012KdE2mYxkFxh8Hc5YFHzYW |
+| render-ch11-b | session_019itEkDEcdnMftz8PwrhKbc |
+
+Segment B helpers (static, they watch their chapter's status file and start at READY_FOR_GATE): ch01 kit-pipeline,
+ch02 kit-cast, ch03 kit-props, ch04 kit-sets-a, ch05 kit-sets-b, ch06 kit-sets-c, ch07 voices, ch08 narration-tool,
+ch09-ch11 the three render sessions above. Kit files are additive-only from ~13:50Z (look changes re-render frames).
