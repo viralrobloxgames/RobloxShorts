@@ -1,0 +1,215 @@
+{
+ "file": "I_Secretly_Lived_In_My_Enemys_House.mp4",
+ "chapters": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11
+ ],
+ "frames": 21304,
+ "frames_expected": 21304,
+ "seconds": 710.133,
+ "video_join": "stream copy",
+ "frames_match_segments": true,
+ "seams": [
+  {
+   "after": "ch01_a.mp4",
+   "frame": 860,
+   "ok": true
+  },
+  {
+   "after": "ch01_b.mp4",
+   "frame": 1911,
+   "ok": true
+  },
+  {
+   "after": "ch02_a.mp4",
+   "frame": 2814,
+   "ok": true
+  },
+  {
+   "after": "ch02_b.mp4",
+   "frame": 3917,
+   "ok": true
+  },
+  {
+   "after": "ch03_a.mp4",
+   "frame": 4823,
+   "ok": true
+  },
+  {
+   "after": "ch03_b.mp4",
+   "frame": 5930,
+   "ok": true
+  },
+  {
+   "after": "ch04_a.mp4",
+   "frame": 6755,
+   "ok": true
+  },
+  {
+   "after": "ch04_b.mp4",
+   "frame": 7763,
+   "ok": true
+  },
+  {
+   "after": "ch05_a.mp4",
+   "frame": 8672,
+   "ok": true
+  },
+  {
+   "after": "ch05_b.mp4",
+   "frame": 9782,
+   "ok": true
+  },
+  {
+   "after": "ch06_a.mp4",
+   "frame": 10562,
+   "ok": true
+  },
+  {
+   "after": "ch06_b.mp4",
+   "frame": 11515,
+   "ok": true
+  },
+  {
+   "after": "ch07_a.mp4",
+   "frame": 12507,
+   "ok": true
+  },
+  {
+   "after": "ch07_b.mp4",
+   "frame": 13719,
+   "ok": true
+  },
+  {
+   "after": "ch08_a.mp4",
+   "frame": 14503,
+   "ok": true
+  },
+  {
+   "after": "ch08_b.mp4",
+   "frame": 15461,
+   "ok": true
+  },
+  {
+   "after": "ch09_a.mp4",
+   "frame": 16267,
+   "ok": true
+  },
+  {
+   "after": "ch09_b.mp4",
+   "frame": 17253,
+   "ok": true
+  },
+  {
+   "after": "ch10_a.mp4",
+   "frame": 18133,
+   "ok": true
+  },
+  {
+   "after": "ch10_b.mp4",
+   "frame": 19209,
+   "ok": true
+  },
+  {
+   "after": "ch11_a.mp4",
+   "frame": 20152,
+   "ok": true
+  }
+ ],
+ "video_s": 710.133333,
+ "audio_s": 710.122,
+ "av_diff_s": -0.0113,
+ "loudness_I": "-14.11",
+ "true_peak": "-1.24",
+ "chapter_starts": {
+  "ch01": {
+   "frame": 0,
+   "s": 0.0,
+   "frames": 1911
+  },
+  "ch02": {
+   "frame": 1911,
+   "s": 63.7,
+   "frames": 2006
+  },
+  "ch03": {
+   "frame": 3917,
+   "s": 130.567,
+   "frames": 2013
+  },
+  "ch04": {
+   "frame": 5930,
+   "s": 197.667,
+   "frames": 1833
+  },
+  "ch05": {
+   "frame": 7763,
+   "s": 258.767,
+   "frames": 2019
+  },
+  "ch06": {
+   "frame": 9782,
+   "s": 326.067,
+   "frames": 1733
+  },
+  "ch07": {
+   "frame": 11515,
+   "s": 383.833,
+   "frames": 2204
+  },
+  "ch08": {
+   "frame": 13719,
+   "s": 457.3,
+   "frames": 1742
+  },
+  "ch09": {
+   "frame": 15461,
+   "s": 515.367,
+   "frames": 1792
+  },
+  "ch10": {
+   "frame": 17253,
+   "s": 575.1,
+   "frames": 1956
+  },
+  "ch11": {
+   "frame": 19209,
+   "s": 640.3,
+   "frames": 2095
+  }
+ },
+ "youtube_chapters": [
+  "0:00 The Dare",
+  "1:03 Twelve Pancakes",
+  "2:10 A Useful Ghost",
+  "3:17 Cinnamon",
+  "4:18 The Tea Party",
+  "5:26 The Practice",
+  "6:23 The Pumpkin Girl",
+  "7:37 The Worst",
+  "8:35 The Drawing",
+  "9:35 Hungry?",
+  "10:40 No Crusts"
+ ],
+ "notes": [
+  "music ducked in ch08 49-58s",
+  "music ducked in ch10 56-60s"
+ ],
+ "size_mb": 242.2,
+ "sha256": "f4b0f9ad13185d74f618640523e2bd58033986d64ec4b9d829d6c065d6e7ca0d",
+ "ok": true,
+ "parts": [
+  "I_Secretly_Lived_In_My_Enemys_House.mp4.part_aa",
+  "I_Secretly_Lived_In_My_Enemys_House.mp4.part_ab",
+  "I_Secretly_Lived_In_My_Enemys_House.mp4.part_ac"
+ ]
+}
