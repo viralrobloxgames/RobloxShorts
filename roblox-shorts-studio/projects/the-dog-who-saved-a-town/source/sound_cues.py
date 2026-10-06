@@ -46,8 +46,8 @@ S('pop', W['five'] - 0.1, 0.3); S('fanfare', W['stopped'] - 0.3, 0.3)           
 S('crowd', T['statue'], 0.16, dur=T['wait'] - T['statue']); S('whoosh', W['statue'] - 0.2, 0.3); S('applause', W['statue'] + 0.1, 0.25)
 S('pop', W['balto'] - 0.2, 0.3)
 TN([392, 330], T['wait'] + 0.1, 0.05, 0.4)                                         # a sad low tone for Togo
-for i in range(6): TN([1320], W['wait'] + i * (W['seventysix'] - W['wait']) / 6, 0.03, 0.03)   # the years ticking
-S('chime', W['seventysix'] - 0.3, 0.35); S('woof', W['years'], 0.3)                # his statue rises
+for i in range(6): TN([1320], T['wait'] + 0.3 + i * (W['years'] + 0.2 - T['wait'] - 0.3) / 6, 0.03, 0.03)   # the years ticking
+S('chime', W['years'] + 0.05, 0.35); S('woof', W['years'] + 0.5, 0.3)          # 2001: his statue rises
 TN([988, 1319], T['cta'] + 0.1, 0.05, 0.12)
 (P / 'source/sound_cues.json').write_text(json.dumps(sorted(c, key=lambda x: x['start']), indent=1))
 print(len(c), 'cues')

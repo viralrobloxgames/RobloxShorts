@@ -144,12 +144,13 @@ function maxAt(s, tm) {                                           // the musher 
     if (SHOT === 'run' && s > W.reach) x.face = 'happy';
   }
   if (SHOT === 'miles') { x.visible = true; x.pos = TR(315.5, 2.8); x.heading = 0.3; x.face = 'happy'; x.layers = [['proud', clamp(s - T.miles, 0, 0.5), 1, false]]; }
-  if (SHOT === 'cta') { x.visible = true; x.pos = PK(36.5, 4.5); x.heading = 0.25; x.face = 'happy'; x.wave = true; }
-  if (SHOT === 'wait' && s > W.seventysix - 0.3) { x.visible = true; x.pos = PK(36.5, 4.5); x.heading = 0.25; x.face = 'happy'; }
+  if (SHOT === 'cta') { x.visible = true; x.pos = PK(36.4, 4.2); x.heading = 0.3; x.face = 'happy'; x.wave = true; }
+  if (SHOT === 'wait') { x.visible = true; x.pos = PK(36.4, 4.2); x.heading = 0.3; x.face = s > W.years ? 'happy' : 'neutral'; }
   return x;
 }
 function leoAt(s) {                                               // the doctor
   const x = st(V(0, 0, 0), 0, 'nervous'); x.visible = false;
+  if (SHOT === 'hook') { x.visible = true; x.pos = TOWN_P(-1, 2.2); x.heading = 0.12; x.face = s > W.time1 - 0.4 ? 'scared' : 'nervous'; x.bottle = true; x.arms = [['R', 0.25, -1.4]]; }   // frame 1: the empty bottle
   if (SHOT === 'sick') { x.visible = true; x.pos = RM(1.6, -1.6); x.heading = -1.25; x.look = [0, 0.2]; x.face = s > W.seven ? 'scared' : 'nervous'; x.bottle = true; x.arms = [['R', 0.25, -1.4]]; }   // holds up the empty bottle
   if (SHOT === 'arrive') { x.visible = true; x.pos = TOWN_P(-1, 1.6); x.heading = 0.1; x.face = s > W.stopped - 0.3 ? 'laugh' : 'happy'; x.crate = true; x.arms = [['L', 0.25, -1.45]]; }   // holds the crate up in his left hand
   return x;
@@ -170,9 +171,9 @@ function miaAt(s) {                                               // the last mu
   if (x.visible) { x.pos = PK(-1.2, 4.6); x.heading = -0.25; x.wave = s > W.statue; x.face = s > W.balto - 0.2 ? 'laugh' : 'happy'; }
   return x;
 }
-const CROWD_AT = [[-13.5, 3.5], [-11.8, 6.4], [1.8, 6.8], [3.6, 3.8]];
+const CROWD_AT = [[-8.8, -3.6], [-7.2, -5.0], [-4.7, -5.0], [-3.2, -3.6]];   // behind the plinth, heads above it
 function crowdAt(i, s) {
-  const [dx, dz] = CROWD_AT[i], x = st(PK(dx, dz), dx < -6 ? 0.9 : -0.9, 'happy');
+  const [dx, dz] = CROWD_AT[i], x = st(PK(dx, dz), dx < -6 ? 0.25 : -0.25, 'happy');
   x.visible = SHOT === 'statue'; x.layers = [['clap', s + i * 0.13, 1, true]]; x.face = i % 2 ? 'laugh' : 'happy';
   return x;
 }
@@ -243,7 +244,7 @@ export function update(t, stage) {
   // the statues: the cloth lifts off Balto's; Togo's appears at the end of the wait
   const lift = smooth(inv(W.statue - 0.2, W.statue + 0.5, s));
   S.cloth.visible = SHOT === 'statue' && lift < 1; S.cloth.position.y = 5.6 + lift * 12; S.cloth.scale.setScalar(1 - 0.6 * lift);
-  const togoUp = smooth(inv(W.seventysix - 0.4, W.seventysix + 0.1, s));
+  const togoUp = smooth(inv(W.years, W.years + 0.5, s));
   statues.forEach((d, i) => {
     const show = place0 === 'park' && (i === 0 || togoUp > 0);
     placeDog(d, { visible: show, pos: (i ? S.TOGO : S.BALTO).clone().add(K.PARK).add(V(0, i ? (1 - togoUp) * -3 : 0, 0)), heading: i ? -R90 + 0.45 : R90 - 0.45, dist: 0, moving: false, sit: 0, head: [0, 0, -0.15], wag: 0 }, 0);
@@ -258,7 +259,7 @@ export function update(t, stage) {
   crowd.forEach((c, i) => place(c, crowdAt(i, s)));
   // Balto with Mia (statue shot); Togo next to his own statue (wait, cta), the team's lead dog elsewhere
   placeDog(balto, { visible: SHOT === 'statue', pos: PK(-3.2, 5.4), heading: 0.3, dist: 0, moving: false, sit: 1, head: [0, 0, 0.1], wag: 1.5 }, s);
-  if (SHOT === 'wait' || SHOT === 'cta') placeDog(dogs[0], { pos: PK(43.5, 4.8), heading: -0.3, dist: 0, moving: false, sit: 1, head: [0, 0.2, SHOT === 'wait' && togoUp < 1 ? 0.25 : 0.05], wag: SHOT === 'cta' ? 2 : 0.6 }, s);
+  if (SHOT === 'wait' || SHOT === 'cta') placeDog(dogs[0], { pos: PK(43.2, 4.6), heading: -0.3, dist: 0, moving: false, sit: 1, head: [0, 0.2, SHOT === 'wait' && togoUp < 1 ? 0.25 : 0.05], wag: SHOT === 'cta' ? 2 : 0.6 }, s);
   if (SHOT === 'statue') placeDog(dogs[0], { pos: PK(-16, 3.2), heading: 0.9, dist: 0, moving: false, sit: 1, head: [0, -0.3, 0.3], wag: 0 }, s);   // Togo watches from the side
   // props
   const lx = leoAt(s);
@@ -271,7 +272,7 @@ export function update(t, stage) {
   const tp = tm ? tm.pos : V(0, 0, 0), h = tm ? tm.heading : 0, fw = V(Math.sin(h), 0, Math.cos(h)), rt = V(-fw.z, 0, fw.x);
   const lead = tm ? team.localToWorld(V(17.2, 0, 0)) : V();
   switch (shot.id) {
-    case 'hook': { const k = easeOut(clamp(t / (T.sick - 0.1))); look(stage, TOWN_P(lerp(-30, -6, k), 22 - 4 * k).add(V(0, lerp(9, 6.5, k), 0)), TOWN_P(lerp(-12, 0, k), -6).add(V(0, 5.5, 0)), 44, 30); break; }
+    case 'hook': { const k = easeOut(clamp(t / (T.sick - 0.1))); look(stage, TOWN_P(lerp(-5, -2.2, k), lerp(21, 13, k)).add(V(0, lerp(7, 6.1, k), 0)), TOWN_P(lerp(-2, -1, k), lerp(-2, 0, k)).add(V(0, lerp(5.4, 5.5, k), 0)), 44, 24); break; }
     case 'sick': look(stage, RM(2.4, 9.5, 6.2), RM(-1.6, -2.8, 4.0), 44, 14); break;
     case 'ships': { const k = clamp((t - T.ships) / 3); look(stage, HB(lerp(-2, -6, k), 2, 7.5), HB(-4, -42, 7), 40, 40); break; }
     case 'planes': look(stage, HB(4, 24, 5.0), HB(13, 8, 3.6), 42, 20); break;
@@ -284,10 +285,10 @@ export function update(t, stage) {
     case 'ice': look(stage, tp.clone().add(rt.clone().multiplyScalar(-13)).add(fw.clone().multiplyScalar(4)).add(V(0, 4, 0)), tp.clone().add(fw.clone().multiplyScalar(6)).add(V(0, 2.4, 0)), 48, 22); break;
     case 'night': look(stage, IC(126, 14).add(V(0, 12, 0)), IC(40, -10).add(V(0, 0, 0)), 46, 60); break;
     case 'miles': look(stage, TR(318, 15).add(V(0, 5.4, 0)), TR(316.5, 0).add(V(0, 4.4, 0)), 46, 20); break;
-    case 'arrive': look(stage, TOWN_P(0.8, 12).add(V(0, 4.6, 0)), TOWN_P(0.6, 0).add(V(0, 4.2, 0)), 46, 16); break;
-    case 'statue': look(stage, PK(-5, 30).add(V(0, 6.5, 0)), PK(-5, 0).add(V(0, 4.5, 0)), 46, 24); break;
-    case 'wait': { const k = smooth(clamp((t - T.wait) / 1.2)); look(stage, PK(lerp(-5, 41.5, k), lerp(30, 21, k)).add(V(0, 5.5, 0)), PK(lerp(-5, 41.5, k), 0).add(V(0, 4.8, 0)), 46, 20); break; }
-    case 'cta': look(stage, PK(41.5, 21).add(V(0, 5.5, 0)), PK(41.5, 0).add(V(0, 4.8, 0)), 46, 20); break;
+    case 'arrive': look(stage, TOWN_P(0.8, 15.5).add(V(0, 4.6, 0)), TOWN_P(0.8, 0).add(V(0, 4.0, 0)), 46, 16); break;
+    case 'statue': look(stage, PK(-3.8, 21).add(V(0, 5.2, 0)), PK(-3.8, 0).add(V(0, 3.8, 0)), 46, 22); break;
+    case 'wait': { const k = smooth(clamp((t - T.wait) / 1.2)); look(stage, PK(lerp(-3.8, 40, k), lerp(21, 24, k)).add(V(0, lerp(5.2, 5.5, k), 0)), PK(lerp(-3.8, 40, k), 0).add(V(0, lerp(3.8, 4.4, k), 0)), 46, 22); break; }
+    case 'cta': look(stage, PK(40, 24).add(V(0, 5.5, 0)), PK(40, 0).add(V(0, 4.4, 0)), 46, 22); break;
     default: look(stage, V(5, 6, 10), V(0, 4, 0), 50);
   }
 }
@@ -417,9 +418,9 @@ export function overlay(g, s, t) {
     if (t > W.balto - 0.2) bigText(g, s, 'BALTO', 540, 560, 140, '#ffd23f', pop(t, W.balto - 0.2), -0.04);
   }
   if (sh === 'wait') {
-    const y = Math.round(lerp(1925, 2001, smooth(clamp((t - W.wait) / Math.max(0.6, W.seventysix - W.wait)))));
+    const y = Math.round(lerp(1925, 2001, smooth(clamp((t - T.wait - 0.3) / Math.max(0.6, W.years + 0.2 - T.wait - 0.3)))));   // lands on 2001 just after "years"
     bigText(g, s, String(y), 540, 440, 150, y === 2001 ? '#7CFC9A' : '#ffffff', 1, -0.03);
-    if (t > W.seventysix - 0.1) bigText(g, s, '76 YEARS LATER', 540, 590, 80, '#ffd23f', pop(t, W.seventysix - 0.1), 0.03);
+    if (t > W.years + 0.15) bigText(g, s, '76 YEARS LATER', 540, 590, 80, '#ffd23f', pop(t, W.years + 0.15), 0.03);
   }
   if (t >= T.cta) {
     const k2 = easeOutBack(clamp((t - T.cta) / 0.3), 1.6);
