@@ -1,0 +1,32 @@
+{
+ "chapter": 10,
+ "hider": "skye",
+ "seekers": [
+  "max",
+  "dad",
+  "lily"
+ ],
+ "fov": 110,
+ "ranges": [
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 1,
+   "to": 909,
+   "sees": "Head",
+   "min_dist": 5.2,
+   "t": "0.00-30.27s",
+   "film": "9:35.1"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 1829,
+   "to": 1955,
+   "sees": "Head",
+   "min_dist": 4.5,
+   "t": "60.93-65.13s",
+   "film": "10:36.0"
+  }
+ ]
+}

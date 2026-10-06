@@ -116,7 +116,7 @@ export function camOn(stage, actor, framing = 'mcu', opts = {}) {
   const S = actor.scale || 1, fov = opts.fov ?? 35, span = f.span * S * (opts.zoom ?? 1);
   const eye = headPos(actor), d = opts.dist ?? distFor(span, fov);
   const target = eye.clone().add(V(0, -f.eyeUp * span, 0)); if (opts.look) target.add(opts.look);
-  const h = heading(actor);
+  const h = opts.heading ?? heading(actor);               // opts.heading: frame from a fixed facing, so the camera stays put if the actor turns mid-shot
   const place = (ang) => target.clone().addScaledVector(fwd(h + ang), d).add(V(0, opts.height ?? 0.12 * span, 0));
   let ang = opts.angle ?? 0.35, pos = place(ang);
   if (LINE && !onSide(pos)) { ang = -ang; pos = place(ang); }

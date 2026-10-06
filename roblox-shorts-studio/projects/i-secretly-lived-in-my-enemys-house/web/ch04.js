@@ -66,7 +66,7 @@ const mk = (name, fb) => { const m = K.mark('classroom', name, fb), raw = K.getS
 const M = {
   skye: () => mk('desk_skye', { pos: V(4, 0, 0), heading: Math.PI }),
   max: () => mk('desk_max', { pos: V(0.8, 0, 4.2), heading: Math.PI }),
-  aisle: () => mk('desk_skye_aisle', { pos: V(2.0, 0, 0.3), heading: Math.PI / 2 }),
+  aisle: () => { const a = mk('desk_skye_aisle', { pos: V(2.0, 0, 0.3), heading: Math.PI / 2 }), sk = mk('desk_skye', { pos: V(4, 0, 0), heading: Math.PI }); const d = a.pos.clone().sub(sk.pos); d.y = 0; a.pos.addScaledVector(d.normalize(), 0.8); return a; },   // 0.8 further out than the set's mark: arm's length from her
   deskTop: () => mk('desk_skye_top', { pos: V(4, 2.6, -1.3), heading: Math.PI }),
   bag: () => mk('chair_skye_back', { pos: V(4, 2.0, 1.05), heading: 0 }),
   extra: (i) => mk(['desk_r1c3', 'desk_extra_2', 'desk_extra_3', 'desk_extra_4'][i], [
@@ -106,16 +106,18 @@ const T = {
   unlean: () => at(18, 0.1),                   // "Right." he straightens
   show: () => wordT(18, 4, -0.1),                     // lifts the sandwich to show it
   split: () => wordT(20, 3, -0.15),                    // "Want half?" one half into his right hand, held out
-  take: () => end(20, 0.15),                   // Skye's hand meets the half
-  back: () => end(20, 0.45),                   // Max walks back to his desk
+  take: () => end(20, 0.15),                    // Skye's hand meets the half (re-parented on this frame)
+  back: () => end(20, 0.75),                   // only then does Max turn and walk back to his desk (aisle, then beside his chair, sit)
   snap: () => wordT(21, 5, -0.05),                    // "Stop it, face." Skye snaps her head front
 };
 
 // ---------- the shot table ----------
-const S2 = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 34, look: V(0, -0.45, 0) });   // a touch low: held props clear the captions
-const S2c = (s) => K.twoShot(s, C.skye, C.max, { framing: 'mcu', fov: 32, bias: 0.45 });
-const SK = (fr) => (s) => K.camOn(s, C.skye, fr, { angle: 0.45, fov: 32 });
-const MX = (fr) => (s) => K.camOn(s, C.max, fr, { angle: 0.45, fov: 32 });
+const S2 = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 34, height: 1.5, look: V(0, -0.45, 0) });   // above the row-1 chair backs; props clear the captions
+const S2c = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 30, bias: 0.45, height: 1.3, look: V(0, 0.2, 0) });   // mid-chest up, clear of the desk
+// clean board-side singles: Skye near-frontal with Max out of frame; Max 3/4 with Skye out of frame (never behind a head)
+const single = (who, off, fov) => (s) => { const h = K.headPos(C[who]); return K.applyShot(s, { pos: h.clone().add(off), target: h.clone().add(V(0, -0.45, 0)), fov }); };
+const SK = (fr) => single('skye', fr === 'cu' ? V(1.1, 0.15, -3.3) : V(1.5, 0.2, -4.6), fr === 'cu' ? 30 : 32);
+const MX = (fr) => single('max', fr === 'cu' ? V(-0.8, 0.2, -3.6) : V(-1.0, 0.25, -5.2), 32);
 const WIDE = (s, t) => {
   const set = K.getSet('classroom');
   if (set.cams.wide_front) return K.setCam(s, set.cams.wide_front);
@@ -125,7 +127,7 @@ const WIDE = (s, t) => {
 };
 const named = (id, fb) => (s, t) => { const c = K.getSet('classroom').cams[id]; return c ? K.setCam(s, c) : fb(s, t); };
 const END = (s) => {                          // Skye MCU foreground left, Max at his desk background right
-  const c = K.getSet('classroom').cams.end_front; if (c) return K.setCam(s, { ...c, target: c.target.clone().add(V(0, -0.5, 0)) });
+  const c = K.getSet('classroom').cams.end_front; if (c) return K.setCam(s, { ...c, target: c.target.clone().add(V(0, -0.85, 0)) });
   const sk = K.headPos(C.skye), mx = K.headPos(C.max);
   const target = sk.clone().lerp(mx, 0.42).add(V(0, -0.5, 0));
   const pos = sk.clone().add(V(-2.6, 0.2, -6.4));
@@ -134,30 +136,30 @@ const END = (s) => {                          // Skye MCU foreground left, Max a
 // "Want half?" two-shot: Max's place in it is his standing mark, so the angle holds still while he walks away
 const HALF = (s, t) => {
   const mA = M.aisle(); MAXSTAND.root.position.copy(mA.pos); MAXSTAND.root.rotation.set(0, mA.heading - 0.5, 0);
-  return K.twoShot(s, C.skye, MAXSTAND, { framing: 'ms', fov: 34, look: V(0, -0.45, 0) });
+  return K.twoShot(s, C.skye, MAXSTAND, { framing: 'ms', fov: 34, height: 1.5, look: V(0, -0.45, 0) });
 };
 // the end shot starts once Max is back in his seat (walk 12 studs/s from the aisle), never before line 21's lead-in
-const ENDCUT = () => Math.max(at(21, -0.35), T.back() + M.aisle().pos.distanceTo(M.max().pos) / 12 + 0.2);
+const ENDCUT = () => Math.max(at(21, -0.35), SEATED() + 0.05);
 const SHOT_LIST = [
   { line: 1, off: 0, id: 'skye_max_diag', cam: named('skye_max_diag', WIDE) },
   { line: 1, word: 10, id: 'two_shot', cam: S2 },
-  { line: 3, off: -0.1, id: 'skye_wrong', cam: named('mcu_skye', SK('mcu')) },
+  { line: 3, off: -0.1, id: 'skye_wrong', cam: SK('mcu') },
   { line: 4, off: -0.1, id: 'max_nothing', cam: MX('mcu') },
-  { line: 5, off: -0.1, id: 'skye_lick', cam: named('cu_skye', SK('cu')) },
+  { line: 5, off: -0.1, id: 'skye_lick', cam: SK('cu') },
   { line: 6, off: -0.1, id: 'max_no', cam: S2 },
-  { line: 7, off: -0.1, id: 'skye_since', cam: named('mcu_skye', SK('mcu')) },
+  { line: 7, off: -0.1, id: 'skye_since', cam: SK('mcu') },
   { line: 8, off: -0.1, id: 'max_ghost', cam: MX('mcu') },
   { line: 9, off: -0.1, id: 'fridge_two', cam: S2 },
-  { line: 10, off: -0.1, id: 'skye_spooky', cam: named('mcu_skye', SK('mcu')) },
+  { line: 10, off: -0.1, id: 'skye_spooky', cam: SK('mcu') },
   { line: 11, off: -0.1, id: 'max_private', cam: MX('mcu') },
   { line: 11, off: 1.0, id: 'lean_two', cam: S2c },
-  { line: 13, off: -0.1, id: 'skye_fashion', cam: named('cu_skye', SK('cu')) },
+  { line: 13, off: -0.1, id: 'skye_fashion', cam: SK('cu') },
   { line: 14, off: -0.1, id: 'max_pancakes', cam: S2c },
-  { line: 15, off: -0.1, id: 'skye_lots', cam: named('mcu_skye', SK('mcu')) },
+  { line: 15, off: -0.1, id: 'skye_lots', cam: SK('mcu') },
   { line: 16, off: -0.1, id: 'max_cinnamon', cam: MX('mcu') },          // follows his lean
-  { line: 17, off: -0.1, id: 'skye_spice', cam: named('mcu_skye', SK('mcu')) },
+  { line: 17, off: -0.1, id: 'skye_spice', cam: SK('mcu') },
   { line: 18, off: -0.1, id: 'right_two', cam: S2 },
-  { line: 19, off: -0.1, id: 'skye_crusts', cam: named('mcu_skye', SK('mcu')) },
+  { line: 19, off: -0.1, id: 'skye_crusts', cam: SK('mcu') },
   { line: 20, off: -0.1, id: 'max_half', cam: HALF },                    // one angle from "Want half?" through the take and his walk back
   { line: 21, off: 98, id: 'end_front', cam: END },                       // cut once, after he has sat down
 ];
@@ -190,6 +192,44 @@ const SIT = K.POSES.sit_desk_arms;
 const OFFER = [-84, 0, 4];                 // hold_out raised to chest height (kit hold_out is -64: too low for the frame)
 const CHEST = [-112, 0, -18];               // Skye's half held up in front of her chest
 const GLANCE_SIGN = 1;
+const LOW = [-28, 0, 6];                   // a prop held low at the side, arm relaxed (no straight-arm holds)
+const OFFER_ARM = [-74, 0, 6];             // a prop offered toward her at chest height
+// Max's walk: from beside his chair (aisle side) to the aisle, then down the aisle to her desk (never through a desk)
+function maxPathIn() {
+  const mM = M.max(), mA = M.aisle();
+  const side = V(mM.pos.x - 2.1, 0, mM.pos.z);                                    // standing beside his chair, in the aisle
+  const corner = V(mA.pos.x, 0, mM.pos.z);
+  return [side, corner, V(mA.pos.x, 0, mA.pos.z)];
+}
+const pathTime = (pts) => { let d = 0; for (let i = 1; i < pts.length; i++) d += pts[i - 1].distanceTo(pts[i]); return d / 12; };
+function walkPath(a, pts, t0, t, endHeading) {
+  let tt = t0;
+  for (let i = 1; i < pts.length; i++) {
+    const seg = pts[i - 1].distanceTo(pts[i]) / 12;
+    if (t < tt + seg || i === pts.length - 1) {
+      const m = K.walk(a, A, { pos: pts[i - 1], heading: K.faceTo(pts[i - 1], pts[i]) }, { pos: pts[i], heading: endHeading }, tt, t, { idleAt: 0, endHeading });
+      return m;
+    }
+    tt += seg;
+  }
+}
+const sitRootY = (a, m) => (m.sit ? m.pos.y : K.seatY(a, m.pos.y + SEAT_TOP));
+// when Max is seated again (walk back + 0.6 s sit-down); the end shot cuts in after this
+const SEATED = () => T.back() + pathTime(maxPathIn()) + 0.6;
+// Max's arms while standing at her desk: relaxed, one forearm up only on a beat
+function maxArms(t) {
+  K.gesture(C.max, LOW, 'R', 1);                                                    // the sandwich, low in his right hand
+  const offer = ramp(t, T.offer() - 0.3, T.offer()) * (1 - ramp(t, T.cookieDown() - 0.35, T.cookieDown()));
+  const down = t > T.cookieDown() - 0.35 && t < T.cookieDown() + 0.45 ? Math.sin(Math.PI * clamp((t - T.cookieDown() + 0.35) / 0.8)) : 0;
+  if (offer > 0) K.gesture(C.max, OFFER_ARM, 'L', offer);                           // the cookie on his palm, toward her
+  if (down > 0) K.gesture(C.max, 'tap', 'L', down);                                 // sets it down on her desk
+  if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, OFFER_ARM, 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
+  if (t > T.split() - 0.3) {                                                         // breaks it with both hands at chest height
+    const both = ramp(t, T.split() - 0.3, T.split()) * (1 - ramp(t, T.split() + 0.2, T.split() + 0.45));
+    K.gesture(C.max, [-70, 0, -16], 'R', both); K.gesture(C.max, [-70, 0, -16], 'L', both);
+    K.gesture(C.max, [-62, 0, 4], 'L', ramp(t, T.split() + 0.2, T.split() + 0.45) * (1 - ramp(t, T.take() + 0.05, T.take() + 0.3)));   // half held out to her
+  }
+}
 
 // ---------- update ----------
 export function update(t, stage) {
@@ -203,27 +243,31 @@ export function update(t, stage) {
   const mS = M.skye(), mA = M.aisle(), mM = M.max();
   const towardMax = K.faceTo(mS, mA), watchMaxDesk = K.faceTo(mS, mM);
   const turnTo = (h, u) => amix(mS.heading, h, u);
-  let hS = turnTo(towardMax, 0.45 * ramp(t, wordT(1, 14), wordT(1, 15))), headY = 0;
-  const hTurned = turnTo(towardMax, 0.45);
+  const turnU = ramp(t, wordT(1, 14), wordT(1, 15));
+  let hS = turnTo(towardMax, 0.35 * turnU), headY = 0;
+  const hTurned = turnTo(towardMax, 0.35);
   const toDesk = Math.sign(amix(hTurned, watchMaxDesk, 1) - hTurned), away = -Math.sign(amix(hTurned, towardMax, 1) - hTurned || 1);
   // stares after him through the hand-off shot; for her whisper (end_front) she faces front again, 3/4 to the lens
   const faceFront = ENDCUT() - 0.1;
   if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }
   if (t > faceFront) { hS = mS.heading - 0.25; headY = 0; }
   if (t > T.snap() && t < T.snap() + 0.45) headY = 12 * Math.sin((t - T.snap()) / 0.45 * Math.PI * 3);   // "Stop it, face." shakes it off
-  let dS = { ...SIT };
-  const back = (t > at(3) && t < at(7) ? ramp(t, at(3), at(3) + 0.3) * (t > at(5) ? 1 : 0.5) * (1 - ramp(t, at(7), at(7) + 0.3)) : 0)
+  // turned toward Max she folds her arms (nothing reaches across the desk at him); facing front, forearms on the desk
+  const folded = turnU * (t > faceFront ? 0 : 1);
+  let dS = K.mixAngles(SIT, { ...SIT, 'Arm.L': K.POSES.arms_folded['Arm.L'], 'Arm.R': K.POSES.arms_folded['Arm.R'] }, folded);
+  const back = (t > at(3) && t < at(7) ? ramp(t, at(3), at(3) + 0.3) * (t > at(5) ? 0.55 : 0.35) * (1 - ramp(t, at(7), at(7) + 0.3)) : 0)
     + (t > at(12) && t < at(16) ? ramp(t, at(12), at(12) + 0.3) * (1 - ramp(t, at(16) - 0.3, at(16))) * 0.7 : 0);
   dS.Torso = P3(SIT.Torso, K.POSES.lean_back.Torso, back); dS.Head = P3([0, 0, 0], K.POSES.lean_back.Head, back);
   if (t > at(10) && t < end(10, 0.3)) dS = K.mixAngles(dS, K.POSES.chin_on_hand, 0.4 * ramp(t, at(10), at(10) + 0.3) * (1 - ramp(t, end(10), end(10, 0.3))));
   if (t > at(17, 0.5) && t < end(17, 0.2)) headY += 30 * away * ramp(t, at(17, 0.5), at(17, 0.8)) * (1 - ramp(t, end(17), end(17, 0.2)));   // prim: turns her head away
   if (t > at(13) && t < end(13, 0.25)) headY += 25 * away * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25)));   // "It's fashion." flips her hair away from him: the cobweb side to camera
   const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
-  dS.Head = [dS.Head?.[0] ?? 0, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
+  const lookUp = t > wordT(1, 15) && t < T.back() ? -8 : 0;                      // looks up at him (he is standing)
+  dS.Head = [(dS.Head?.[0] ?? 0) + lookUp, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
   sitOn(C.skye, mS, hS, dS);
 
-  if (t > T.take() - 0.4) K.gesture(C.skye, OFFER, 'R', ramp(t, T.take() - 0.4, T.take()));
-  if (t > T.take() + 0.1) K.gesture(C.skye, CHEST, 'R', ramp(t, T.take() + 0.1, T.take() + 0.5));      // holds her half up at chest height
+  if (t > T.take() - 0.45) K.gesture(C.skye, OFFER_ARM, 'R', 0.55 * ramp(t, T.take() - 0.45, T.take()));   // reaches for the half
+  if (t > T.take() + 0.05) K.gesture(C.skye, 'cup_hold', 'R', ramp(t, T.take() + 0.05, T.take() + 0.35));      // brings it in to her chest, elbow bent
   let fS = 'annoyed';
   if (t > wordT(1, 15)) fS = 'suspicious';
   if (t > at(7)) fS = 'annoyed';
@@ -239,42 +283,43 @@ export function update(t, stage) {
   K.speak(C.skye, fS, t, L.said('SKYE'), { whisper: t > at(21, -0.1) });
   K.blush(C.skye, t > T.back() ? 1 - 0.6 * ramp(t, T.snap(), T.snap() + 0.5) : (t > at(15) && t < at(17) ? 0.5 : 0));
 
-  // ----- Max: walks over, stands in the aisle, walks back and sits -----
+  // ----- Max: from beside his chair down the aisle to her desk; back up the aisle, sidles into his seat -----
   const hA = mA.heading - 0.5;                                                       // facing her, cheated toward the board (cameras)
-  const walkIn = t >= T.walk0 && t < T.walk0 + mM.pos.distanceTo(mA.pos) / 12;
-  const walkBack = t >= T.back();
-  let seatedM = false;
+  const PATH_IN = maxPathIn(), PATH_BACK = [...PATH_IN].reverse();
+  const tIn = pathTime(PATH_IN), tBack = pathTime(PATH_BACK);
   if (t < T.back()) {
-    const m = K.walk(C.max, A, mM, mA, T.walk0, t, { idleAt: idle, endHeading: hA });
-    if (m.done) {
-      const offer = ramp(t, T.offer() - 0.3, T.offer()) * (1 - ramp(t, T.cookieDown(), T.cookieDown() + 0.4));
+    if (t < tIn) walkPath(C.max, PATH_IN, 0, t, hA);
+    else {
       const lean = t > T.lean() ? ramp(t, T.lean(), T.lean() + 0.35) * (1 - ramp(t, T.unlean(), T.unlean() + 0.3)) : 0;
       const d = K.mixAngles({}, K.POSES.lean_in, lean);
-      if (t > at(14) && t < at(14, 0.8)) d.Head = [(d.Head?.[0] ?? 0) + 8 * Math.abs(Math.sin((t - at(14)) * Math.PI * 5)), 0, 0];  // sniff, sniff
+      if (t > at(14) && t < at(14, 0.8)) d.Head = [(d.Head?.[0] ?? 0) + 12 * Math.abs(Math.sin((t - at(14)) * Math.PI * 5)), 0, 0];  // sniff, sniff
       if (t > at(8) && t < at(8, 1.4)) d.Head = [0, 18 * Math.sin((t - at(8)) * 4.5), 0];        // glances round: a secret
       if (t > at(11) && t < end(11)) d.Head = [6, -22, 0];                                          // "That's private." looks away
       standOn(C.max, mA.pos, hA, d);
-      // the sandwich: left hand until the cookie is down, then his near (right) hand so the camera sees it; at "Want half?"
-      // one half goes back to his left and the other is held out to her in his right
-      const swapped = t > T.swap();
-      K.gesture(C.max, 'cup_hold', 'L', swapped && t < T.split() ? 0 : 1);
-      if (swapped) K.gesture(C.max, 'cup_hold', 'R', ramp(t, T.swap() - 0.25, T.swap()));
-      if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, OFFER, 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
-      const down = t > T.cookieDown() && t < T.cookieDown() + 0.5 ? Math.sin(Math.PI * clamp((t - T.cookieDown()) / 0.5)) : 0;
-      if (offer > 0 || down > 0) K.gesture(C.max, down > 0 ? 'tap' : OFFER, 'R', Math.max(offer, down));
-      if (t > T.split()) K.gesture(C.max, OFFER, 'R', ramp(t, T.split(), T.split() + 0.35) * (1 - ramp(t, T.take() + 0.1, T.take() + 0.4)));
-    } else { K.gesture(C.max, 'cup_hold', 'L', 1); K.gesture(C.max, 'cup_hold', 'R', 0.6); }
+      maxArms(t);
+    }
+  } else if (t < T.back() + tBack) {
+    walkPath(C.max, PATH_BACK, T.back(), t, -Math.PI / 2);
+    K.gesture(C.max, LOW, 'R', 1);                                                    // his half, low at his side
   } else {
-    const m = K.walk(C.max, A, mA, mM, T.back(), t, { idleAt: idle, endHeading: mM.heading });
-    if (m.done) {
-      seatedM = true;
-      const d = { ...SIT, Head: [0, 0, 0] };
-      const hM = amix(mM.heading, K.faceTo(mM, mS), 0.3);
-      const glance = t > at(21, 0.6) ? 1 : 0;                                         // glances over at her
-      d.Head = [0, glance * 75 * GLANCE_SIGN * Math.sign(amix(hM, K.faceTo(mM, mS), 1) - hM), 0];
-      sitOn(C.max, mM, hM, d);
-      K.gesture(C.max, 'cup_hold', 'R', 1);
-    } else K.gesture(C.max, 'cup_hold', 'R', 0.7);
+    // sidle from beside the chair onto the seat over 0.6 s, turning to the front; then seated, glancing over at her
+    const u = smooth((t - T.back() - tBack) / 0.6), side = PATH_IN[0];
+    const seat = { pos: mM.pos.clone(), heading: mM.heading, sit: mM.sit };
+    const hM = amix(-Math.PI / 2, mM.heading, u);
+    if (u < 1) {
+      // first half: bends into the sit beside the chair (hips down to seat height); second half: slides across onto the seat
+      const u1 = clamp(u * 2), u2 = clamp(u * 2 - 1);
+      const d = K.mixAngles({}, SIT, u1);
+      const standY = (() => { standOn(C.max, side, hM, {}); return C.max.root.position.y; })();
+      K.posture(C.max, d);
+      C.max.root.position.lerpVectors(side, seat.pos, u2); C.max.root.position.y = mix(standY, sitRootY(C.max, seat), u1);
+      C.max.root.rotation.set(0, hM, 0); C.max.root.updateMatrixWorld(true);
+    } else {
+      const glance = t > at(21, 0.6) ? 1 : 0;
+      const d = { ...SIT, Head: [0, glance * 60 * Math.sign(amix(mM.heading, K.faceTo(mM, mS), 1) - mM.heading), 0] };
+      sitOn(C.max, seat, mM.heading, d);
+    }
+    K.gesture(C.max, 'cup_hold', 'R', 1);
   }
   let fM = 'happy';
   if (t > at(6) && t < at(6, 0.45)) fM = 'shocked';
@@ -296,14 +341,15 @@ export function update(t, stage) {
     if (P.lunch[i]) K.hold(P.lunch[i], e, 'R');
   });
 
-  // ----- props -----
-  const out = (u) => (u > 0.5 ? 'out' : 'palm');
-  if (t < T.cookieDown() + 0.25) K.hold(P.cookie, C.max, 'R', out(t > T.offer() - 0.15 && t < T.cookieDown() ? 1 : 0));
-  else { if (P.cookie.parent !== P.scene) P.scene.add(P.cookie); K.place(P.cookie, M.deskTop().pos.clone().add(V(-0.6, 0, 0.1)), 0.4); }
-  const hand0 = t < T.swap() ? 'L' : 'R';
-  K.hold(P.halfA, C.max, t < T.swap() ? 'L' : t < T.split() ? 'R' : t < T.back() ? 'L' : 'R', t > T.show() && t < at(19, 0.3) ? 'out' : 'palm');
-  if (t < T.split()) K.hold(P.halfB, C.max, hand0, t > T.show() && t < at(19, 0.3) ? 'out' : 'palm', { offset: [hand0 === 'L' ? 0.38 : -0.38, 0, 0] });   // the two halves side by side
-  else if (t < T.take()) K.hold(P.halfB, C.max, 'R', 'out'); else K.hold(P.halfB, C.skye, 'R', t < T.take() + 0.3 ? 'out' : 'palm');
+  // ----- props: cookie in his LEFT palm (offered, then set down on her desk); the sandwich in his RIGHT until he
+  // breaks it at "Want half?": one half to his left hand, held out, re-parented into her right palm on contact -----
+  if (t < T.cookieDown() + 0.2) K.hold(P.cookie, C.max, 'L', t > T.offer() - 0.15 ? 'out' : 'palm');
+  else { if (P.cookie.parent !== P.scene) P.scene.add(P.cookie); K.place(P.cookie, M.deskTop().pos.clone().add(V(1.1, 0, -0.35)), 0.4); }
+  const showing = t > T.show() && t < at(19, 0.3);
+  K.hold(P.halfA, C.max, 'R', showing ? 'out' : 'palm');
+  if (t < T.split()) K.hold(P.halfB, C.max, 'R', showing ? 'out' : 'palm', { offset: [-0.38, 0, 0] });   // the two halves together = the whole sandwich
+  else if (t < T.take()) K.hold(P.halfB, C.max, 'L', t > T.split() + 0.35 ? 'out' : 'palm');
+  else K.hold(P.halfB, C.skye, 'R', t < T.take() + 0.3 ? 'out' : 'palm');
   if (P.bag) { const bag = M.bag(); if (P.bag.parent !== P.scene) P.scene.add(P.bag); K.place(P.bag, bag.pos, bag.heading); }
 
   K.setBlockers(set.group, C.skye, C.max);
@@ -319,8 +365,8 @@ export function overlay(g, s, t) { K.dayCard(g, s, t, CARD); }
 export const cast = () => ({ skye: C.skye, max: C.max, ...Object.fromEntries(EXTRAS.map((e, i) => ['extra' + i, e])) });
 const HC = { dist: 4.5, side: -2.0, up: 1.0 };
 export const HOLDS = [
-  [1.0, 'max', 'R', 'cookie (walking over)', HC], [1.0, 'max', 'L', 'sandwich halves (walking over)', HC],
-  [T.offer() + 0.5, 'max', 'R', 'cookie held out', HC], [T.show() + 0.5, 'max', 'R', 'sandwich shown', HC],
-  [T.split() + 0.5, 'max', 'R', 'half held out', HC], [T.split() + 0.5, 'max', 'L', 'other half', HC],
+  [0.3, 'max', 'L', 'cookie (walking over)', HC], [0.3, 'max', 'R', 'sandwich (walking over)', HC],
+  [T.offer() + 0.5, 'max', 'L', 'cookie on his palm, offered', HC], [T.show() + 0.5, 'max', 'R', 'sandwich shown', HC],
+  [T.split() + 0.6, 'max', 'L', 'half held out to her', HC], [T.split() + 0.6, 'max', 'R', 'his half', HC],
   [T.take() + 0.8, 'skye', 'R', 'half in her hand', HC], [LAST + 0.7, 'skye', 'R', 'half, last frame', HC],
 ];

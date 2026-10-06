@@ -461,6 +461,15 @@ function teddyFallback() {
 
 // Teddy placement. 'R' / 'L': in Lily's palm via kit-props hold(); 'hug': against her chest (pose her arms with
 // POSES.hug_teddy); 'free': detached (the chapter adds lily.teddy to a set and places it).
+// Re-seat the teddy after a pose change (kit-props PR1: its clearance depends on the pose). Called by posture() and
+// kit playAnim(); only when the teddy is still where holdTeddy() put it (a chapter's own K.hold() is left alone).
+export function refreshTeddy(lily) {
+  const t = lily && lily.teddy, m = lily && lily.teddyMode;
+  if (!t || !t.parent || !['R', 'L', 'hug'].includes(m)) return;
+  const want = m === 'R' ? lily.bones['Arm.R'] : m === 'L' ? lily.bones['Arm.L'] : null;
+  if (want ? t.parent !== want : !(t.parent === lily.bones.Torso || t.parent?.parent === lily.bones.Torso)) return;
+  holdTeddy(lily, m);
+}
 export function holdTeddy(lily, mode = 'R') {
   const t = lily.teddy; if (t.parent) t.parent.remove(t);
   t.position.set(0, 0, 0); t.rotation.set(0, 0, 0); t.scale.setScalar(1);
@@ -597,6 +606,7 @@ export async function loadCast(scene) {
 // ~0.14 s; between words and outside their lines the full base face. `words` = captions.json words ({ word, start, end,
 // speaker }) - all of them or just this actor's; only words whose speaker matches the actor (SKYE/MAX/DAD/LILY) count.
 // { whisper: true } uses the small mouth. Returns the face key set.
+const BRIGHT = new Set(['happy', 'laugh', 'smug', 'scheming', 'surprised', 'neutral', 'talking']);
 const MOUTH_TOP = 600;          // every pack face (plain and glam) keeps its mouth below this row and eyes/brows/tears above
 function mouthFace(actor, base, mouth) {
   const key = `${base}+${mouth}`;
@@ -617,7 +627,9 @@ export function speak(actor, baseFace, t, words = [], { whisper = false } = {}) 
     if (t < w.start || t >= w.end) continue;
     if (w.speaker && actor.speaker && String(w.speaker).toUpperCase() !== actor.speaker) continue;
     const k = Math.floor((t - w.start) / 0.14), odd = (i + k) % 2;
-    const f = whisper ? (odd ? baseFace : mouthFace(actor, baseFace, 'mouth_small')) : mouthFace(actor, baseFace, odd ? 'mouth_o' : 'talking');
+    // `talking` is a smiling open mouth: only bright faces use it; sad/scared/angry ones alternate `mouth_o` / `mouth_small`
+    const open = BRIGHT.has(baseFace) ? 'talking' : 'mouth_o', small = BRIGHT.has(baseFace) ? 'mouth_o' : 'mouth_small';
+    const f = whisper ? (odd ? baseFace : mouthFace(actor, baseFace, 'mouth_small')) : mouthFace(actor, baseFace, odd ? small : open);
     actor.setFace(f); return f;
   }
   actor.setFace(baseFace); return baseFace;
@@ -646,10 +658,10 @@ export function blush(actor, amount = 1) {
 // above the shoulder (SKILL.md).
 export const POSES = {
   stand: {},
-  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-34, 6, -3], 'Arm.R': [-34, -6, 3] },
-  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-30, 4, -3], 'Arm.R': [-30, -4, 3] },
-  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-44, 10, -2], 'Arm.R': [-44, -10, 2] },
-  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-48, 12, 0], 'Arm.R': [-48, -12, 0] },
+  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-8, 2, -3], 'Arm.R': [-8, -2, 3] },
+  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-6, 2, -3], 'Arm.R': [-6, -2, 3] },
+  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-74, 8, 0], 'Arm.R': [-74, -8, 0] },
+  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-86, 8, 0], 'Arm.R': [-86, -8, 0] },
   chin_on_hand: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [10, 0, 0], Head: [-4, 0, 6], 'Arm.R': [-136, -18, 56], 'Arm.L': [-60, 12, 0] },
   sit_cross: { 'Leg.L': [-90, 30, 0], 'Leg.R': [-90, -30, 0], 'Arm.L': [-36, 10, -2], 'Arm.R': [-36, -10, 2], drop: 1.5 },
   kneel: { 'Leg.L': [90, 0, -3], 'Leg.R': [90, 0, 3], Torso: [-4, 0, 0], 'Arm.L': [-16, 6, -2], 'Arm.R': [-16, -6, 2], drop: 1.5 },
@@ -669,7 +681,7 @@ export const POSES = {
   rest: { 'Arm.L': [-4, 2, -4], 'Arm.R': [-4, -2, 4] },                                   // standing, arms relaxed at the sides
   stand_hold: { 'Arm.L': [-24, 8, -3], 'Arm.R': [-24, -8, 3] },                           // something low in front (both hands), no T
   hold_paper: { 'Arm.L': [-80, 32, 0], 'Arm.R': [-80, -32, 0], Head: [8, 0, 0] },        // a sheet held at chest height, looking down at it
-  seated_rest: { 'Arm.L': [-34, 6, -3], 'Arm.R': [-34, -6, 3] },                          // arms only: hands beside the thighs (any seat)
+  seated_rest: { 'Arm.L': [-8, 2, -3], 'Arm.R': [-8, -2, 3] },                            // arms only: hanging beside the seat (clear of a desk/island top)
 };
 // One-arm gestures: side 'R' or 'L' (mirrored). Layer them over any pose.
 export const ARM_GESTURES = {
@@ -706,6 +718,7 @@ export function posture(actor, p, { mix = 1, reset = true, extra = null } = {}) 
     if (k === 'Root') { actor.bones.Root.quaternion.copy(boneQ('Root', v)); actor.bones.Root.position.set(0, (v[0] === -90 ? 0.5 : 0) * actor.scale, 0); continue; }
     if (actor.bones[k]) actor.bones[k].quaternion.copy(boneQ(k, v));
   }
+  if (actor.teddy) refreshTeddy(actor);
   return (d.drop || 0) * actor.scale;
 }
 // One arm: gesture(actor, 'point', 'R', mix) (layered: other bones untouched). `name` may be an [x, y, z] array.

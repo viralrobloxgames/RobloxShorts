@@ -461,3 +461,32 @@ Every lighting preset has `cast` (0 by day, ~0.2-0.38 at night / under the fridg
 also glows with its own texture at that level, applied right before each draw, so coloured light tints the set but not a
 character's skin, hair or clothes. Override per frame with `K.applyLight(stage, id, { set, castFloor: 0.3 })`.
 Flashlight defaults are softer (`flashlightBeam` 30, `chinLight` 4.5) so torches don't white out faces.
+
+### kit-sets-c SC1/SC2 (plausibility fix, 2026-10-06 late)
+- **Walk routes:** `set.route(fromWorld, toWorld)` (classroom, kitchen) → world waypoints around desks, chairs, the
+  island, stools, counters, fridge, stairs and newel post (body half-width 2.1 included). Walk them with
+  `set.alongRoute(pts, distance)` → `{ pos, heading, done }` (distance = speed × time; `routeLength(pts)` for timing). An
+  endpoint inside furniture (a seat, a stool) steps out sideways first. Never lerp a character straight between marks.
+- **Classroom:** desks are 3.2 wide (aisles 4.8 at x −9, −1, 7; window aisle x −17), chairs 2.3 behind the desk centre so
+  a seated torso sits 0.65 behind the desk edge; seat top `set.SEAT_TOP` 1.7, desk top `set.DESK_TOP` 3.1;
+  `set.seatY(scale)` = root y (= `K.seatY(actor, 1.7)`). Forearms rest on the top with the upper arm horizontal
+  (arm pitch ≈ −90°; shoulder 3.7 above the floor). New marks `desk_rXcY_side` (stand here, step in sideways, sit),
+  `desk_skye_side`, `desk_max_side_entry`, `aisle_<12|23|34|window|door>_<front|back>`. The teacher's desk moved to the
+  front window corner (`teacher_desk`), so the door side of the room is clear. Nobody stands in a chair: walk to a
+  `_side` mark, then slide sideways onto the seat while sitting.
+- **Kitchen:** stairs are 5 wide (x 11..16, `STAIR_X` 13.5), banister/newel at x 11.2. `set.stairsPath(u)` keeps the
+  feet on the higher tread under the body; `set.fromStairs(toWorld)` = waypoints from the stair foot into the room
+  around the newel. New marks `stairs_foot_out`, `island_reach` (kneel_up against the island front under the stack; one
+  arm straight up beside the edge, hand over at y ≈ 4.3; the stack now sits at the front edge, z 1.12),
+  `island_hide_low` (crawl/crouch-low: below the seated family's sight line), `island_hide_crawl_end`,
+  `island_hide_crawl_door`. `set.sightBlocked(eyeWorld, headWorld)` → true when the island hides the head from those
+  eyes (sitting upright at `island_hide` the hair can show over the top to someone on a stool). Stove marks moved to z −7.9 so
+  Dad's arms stay in front of the counter. `set.seatY(scale)` for the stools (seat 2.2).
+### Cuts and camera continuity (kit-pipeline, P2)
+`camOn` / `twoShot` / `overShoulder` frame from the actor's facing at that frame, so a shot whose actor turns makes the
+camera orbit (ch11's stove shot flew through Dad's head and a wall). For a shot whose actor turns or walks, pass a fixed
+`heading` (`K.camOn(s, C.dad, 'ms', { angle: 0.9, heading: 0.05 })`) or use a fixed set camera (`K.setCam`). Check:
+`node web/cam_check.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/chNN.js` lists glides (the camera
+travelling > 0.6 studs/frame on 2+ frames, i.e. not a clean cut), cameras inside scenery and cameras at a head.
+- kit-sets-c: kitchen `setState({ stoolX: [x1, x2, ...] | 'three' })` respaces the stools (extra stools hidden); `island_stool_N`, `island_plate_N`, `island_phone_3`, `backpack_floor_3` move with them. 'three' = x −4.2 / 0 / 4.2 (seated neighbours' arms clear). `setState({ chapter: 11 })` uses 'three'; ch02/ch03 keep the four.
+- kit-sets-c: kitchen `set.stairsGait(u)` — pose dict for `K.posture` while walking down with `stairsPath(u)`: legs swing only forward (one per tread), so no leg goes into the tread behind; 0 clip_check hits over the whole descent (`production/previews/kit-sets-c/stairs_test.js`). The upstairs landing slab no longer covers the stairwell.

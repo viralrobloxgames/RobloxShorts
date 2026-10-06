@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import * as SETS from './sets/index.js';
 import { loadAnimation, robloxPose } from '../../../../web/lib/robloxPack.js';
-import { restArms } from './cast.js';
+import { restArms, refreshTeddy } from './cast.js';
 import { travel } from '../../../../web/lib/locomotion.js';
 
 export const META = { width: 1920, height: 1080, fps: 30 };
@@ -139,6 +139,7 @@ export async function loadAnims(names) { const A = {}; for (const n of names) A[
 export function playAnim(actor, layers) {
   robloxPose(actor, layers);
   if (actor.bones && layers.some((l) => l && l[0] && l[0].name === 'sit' && (l[2] ?? 1) > 0)) restArms(actor, 'seated');
+  if (actor.teddy) refreshTeddy(actor);
   return actor;
 }
 // Put an actor on a mark ({ pos, heading } from K.mark) or at pos/heading; feet on pos.y unless opts.sit.

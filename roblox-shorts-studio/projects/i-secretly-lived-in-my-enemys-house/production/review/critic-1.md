@@ -54,3 +54,66 @@ How I looked: I joined chNN_a + chNN_b, took 3 fps 2x2 sheets at 960 px across e
 | 17 | 0:50.8-0:51.3 | f1524-1541 | Skye walks through the closed back door |
 | 19 | 0:00-1:01 | night shots | Max/Skye skin and hair read as other characters |
 | 20 | 0:57.3-0:59.4 | f1720-1785 | Lily's line over Max, Lily never shown |
+
+### ch01 kit tags (orchestrator 23:25Z; the kit fixes the cause, ch01 still changes its blocking)
+- **SA2 closet sight line:** #1, #2, #3 (restage on `closet_hide` / `closet_hide_pov`, doors shut for the approach). #4 hair lock: at the wall edge at most (SA2).
+- **K3 T/two-arm poses:** #11 "Spider!" becomes one-arm `shock`. **K1 zombie arms:** #5 Max's flashlight arm; #6 the mannequin hold. #7's robot arm swing is ch01 blocking.
+- **K4 face cycling:** none seen in ch01 beyond #16's emotion pop (#16 is a chapter-side base-face choice).
+- **P1 identity under night light:** #19 (all night shots; ch01 only needs to re-check after P1 f63801b). #21/#22 stay ch01.
+- **P2 camera:** #8 (180° pop at the cut f509-511) is a `camOn`-from-facing cut, so P2: use a fixed heading. cam_check also flags f1414-1461 (0:47.1, the dusk yard): the camera sits inside an exterior-set box. I saw no visible artefact there at 3 fps, but check it.
+- **PR1 prop grips:** #10 (the spider has no hand), #12 (fist into her face: also blocking, so hold 15-20 cm off her face), #13 (the floating lunchbox is a placement, not a grip: ch01 must put it on the desk top).
+- **SC1 classroom seats/aisles:** #6, #7, #9, #14 (`desk_rXcY_side`, `set.route()`). Chapter-only: #15 (OTS camera through her arm), #17 (door), #18, #20 (Lily on screen).
+
+## ch02 "Twelve Pancakes" (1:03.7-2:10.6)
+
+### A. Secrecy: Skye in plain view of the family (shared cause: her kitchen marks are on the lit room side of the island, and the family's eyelines point at her)
+1. **ch02 1:11.2-1:11.7 (f225-240), staging.** Skye walks across the open, lit kitchen toward the island while Dad has turned and faces her, smiling, about 3 m away. **Fix:** she crosses only while Dad's back is turned to the stove, then drops behind the island before he turns. **must**
+2. **ch02 1:20.1-1:21.9 (f495-545), staging.** In the 3-shot across the island, Skye's pink hair pokes above the countertop at frame bottom-left, and Max looks straight down the lens at it. **Fix:** lower Skye (sitting on the floor, head below the counter line) or reframe. **must**
+3. **ch02 1:32.8-1:33.8 (f875-904), staging + interpenetration (the steal).** Skye *stands* (not kneeling as the gate fix said) with her head at counter height, and Lily, seated across the island, looks straight at her. Her right forearm rises *into* the island's side panel/countertop edge (f884-895). The top pancake slides off and hovers at the edge, never reaching her hand (f895). **Fix:** kneel her below the counter line, reach up and over the edge with the hand on top of the counter (not through it), and slide the pancake into the hand. Keep Lily's eyes on Max or Dad during the steal. **must**
+4. **ch02 1:33.8-1:34.5 (f905-930), staging.** In the wide from behind Dad, Skye crouches at the end of the island on *Dad's* side, about 1 m from him, fully visible. Max and Lily at the far end face her way. **Fix:** put her on the far side of the island from Dad (out of the frame line), or cut away before Dad turns. **must**
+5. **ch02 1:44.8-1:46.3 (f1235-1280), staging + interpenetration (user's 1:45).** Skye crawls across the open floor in front of the island toward camera. Dad stands at the island end looking straight at her from about 1.5 m, and Max and Lily face her direction. Her left forearm goes *into* the island's base cabinet (f1245-1255), and one leg trails straight back like a plank (f1235). **Fix:** route the crawl along the island's blind side, or have the family turn to the stove/window on Dad's syrup line first. Keep her hands on the floor 10 cm clear of the cabinet. Use an alternating knee/hand crawl cycle. **must**
+
+### B. Interpenetration and contact
+6. **ch02 1:04.9-1:06.2 (f36-75), climbing.** Skye "descends the attic ladder" while drifting *right of the ladder*: her body hangs in the air beside it and sinks straight down like an elevator. Hands aren't on the rails and feet never meet a rung. Her near arm is a big white slab over her face (f5-35). **Fix:** centre her on the rungs, alternate hand/foot contacts per rung (or a 3-pose cycle), and keep her face 3/4 to camera with the arm off it. **must**
+7. **ch02 1:08.5-1:10.6 (f145-215), stairs + pose.** Skye comes down the stairs on the banister line: the handrail passes through her hips (crop f150), and her body sits half outside the open side of the stair. At the bottom her shoulder is inside the right-hand wall/door frame (f180). She holds both arms out like airplane wings the whole way, and at f205-215 flings both arms up/out (two-arms-up, house rule). **Fix:** put her on the treads, 25 cm inside the rail, one hand on the rail and the other close to her body. End the descent with a crouch instead of arms wide. **must**
+8. **ch02 1:18.0-1:18.4 (f430-442), walking through the banister (user's 1:18).** Max comes down on the open side of the stairs, and the handrail and balusters pass through his head and torso. **Fix:** walk him on the treads inside the rail. **must**
+9. **ch02 1:18.5-1:19.5 (f446-475), body inside body (user's 1:19).** Lily appears *inside* Max: her feet and teddy show inside his plaid legs (f446-450), her torso is fully inside his torso (f454), and she slides out of him to the right (f458-475). **Fix:** have Lily enter after Max from the stairs, one step behind him and offset 60 cm, or start her already at the island. **must**
+10. **ch02 1:20.1-1:43.8 (f495-555, f725-760, f805-870, f1015-1215), every Max/Lily 2-shot at the island: pose + overlap.** Max's left arm is held *vertically* beside his face like a wall (forearm straight up, elbow at shoulder height: a broken pose), and Lily's shoulder and upper arm are buried inside that arm and his torso in every frame of these shots (clearest f725, f1035, f1045-1200). **Fix:** sit them 30 cm further apart. Put Max's arms down on the counter (elbows on the counter, or arms folded) and Lily's arms around the teddy. **must**
+11. **ch02 1:34.8-1:37.2 (f935-1005), interpenetration.** Dad's right fist/forearm block sinks into the island's countertop corner, with the spatula lying flat on the counter "in" the buried fist. **Fix:** raise the hand onto the counter top, or have him hold the spatula above it. **must**
+12. **ch02 1:46.5-1:50.8 (f1285-1415), hand/prop (user's 1:47).** Outside the back door, a giant block hand covers the lower-left quarter of Skye's face and then moves into it (f1405-1415 covers an eye and her mouth). The pancake is glued flat onto the front face of the cube hand, not held. It's static for 4 s. **Fix:** hand at chin height and below her mouth, pancake held edgewise between fingers and thumb, a bite on "Ever", and a smaller hand scale in CU (or a looser shot). **must**
+13. **ch02 1:51.2-2:01.4 (f1425-1720), sitting inside the desk (user's 1:53).** "Slumped" Max has his torso *sunk into* the desk: the desk top cuts his chest at armpit height, his forearms lie through the desk top, and no chair is under him (hips below the desk top). This holds in the 2-shot (f1425-1490) and in every Max CU (f1495-1560, f1685-1720). **Fix:** seat him on a chair behind the desk (hips on the seat), then slump him with his forearms *on* the desk top and his chin on his forearms. **must**
+14. **ch02 1:51.2-2:09.2 (f1425-1490, f1845-1965), interpenetration.** In the 2-shot, Skye's right forearm passes through the blue chair back in the foreground. **Fix:** rotate her arm onto her own desk, or move the chair. **must**
+15. **ch02 2:05.2-2:10.6 (f1845-2006), seating logic.** In the final wide, Max's blue chair sits on the *camera* side of his desk while he sits behind it with nothing under him (f1975-2005). When Skye leaves (f1985-1995) her hip and arm brush the desk edges. **Fix:** chair under Max, and walk Skye down the aisle centre. **should**
+
+### C. Animation, identity, camera
+16. **ch02 1:15.2-1:27.5 and 1:29.2-1:30.2 (f345, f565-800), animation/props.** Dad holds the same locked two-arm pose for a 5 s line. The pan sits beside his cube fist with no handle visible, so it reads as floating. **Fix:** add gestures (spatula point on "champ", shrug on "hundred years old") and put the pan handle in his fist. **should**
+17. **ch02 1:15.2-1:43.8 (f245-260, f365-395, f725-1215), identity.** In the dim kitchen, Lily's and Skye's faces render dark brown (Lily reads as a different, darker-skinned child next to Max's peach face, f1045-1200). Skye's face matches her daytime look only outside (f1285+). **Fix:** add a warm fill on the island faces. Keep Lily's skin matched to her wardrobe/rig tone. **should** (**must** if Lily's wardrobe skin is light; I couldn't find a skin tone in KIT_SPEC.md)
+18. **ch02 1:12.0-1:12.5 (f245-260), sitting.** Skye "sits" against the island with her legs straight out and her hips floating above the floor. **Fix:** hips on the floor, knees up. **should**
+19. **ch02 1:27.8-1:28.9 and 1:40.8-1:43.8 (f725-760, f1115-1215), camera.** A huge out-of-focus yellow arm block (Dad's) fills the left third at Lily's face height, and an out-of-focus pancake blob fills the bottom-left. Dad's head is cut by the frame edge. **Fix:** move the camera off Dad's arm or out from behind the stack. **should**
+20. **ch02 1:19.8 (f485), camera.** A muddled shot from just behind Max's head, with his head and Lily's hair blob at the bottom edge. **should**
+21. **ch02 1:53.5-2:01.4 (f1495-1720), camera.** Skye's face is cut in half by the right frame edge throughout Max's CUs. **should**
+22. **ch02 1:46.5-1:47.5 (f1285-1315), caption.** Dad's yellow line "The syrup's in the cupboard." finishes over Skye outside the house. **Fix:** hold the kitchen shot until his line ends, then cut. **should**
+
+### ch02 musts
+| # | time | frames | what |
+|---|---|---|---|
+| 1 | 1:11.2-1:11.7 | f225-240 | Skye walks across the kitchen while Dad faces her |
+| 2 | 1:20.1-1:21.9 | f495-545 | Skye's hair above the counter in Max's eyeline |
+| 3 | 1:32.8-1:33.8 | f875-904 | steal: standing in Lily's view, arm into counter, pancake floats |
+| 4 | 1:33.8-1:34.5 | f905-930 | Skye crouched 1 m from Dad, in view |
+| 5 | 1:44.8-1:46.3 | f1235-1280 | crawl in full view; arm through the cabinet |
+| 6 | 1:04.9-1:06.2 | f36-75 | ladder descent in mid-air beside the ladder |
+| 7 | 1:08.5-1:10.6 | f145-215 | Skye through banister/wall, airplane arms, two-arms-up |
+| 8 | 1:18.0-1:18.4 | f430-442 | Max through the banister |
+| 9 | 1:18.5-1:19.5 | f446-475 | Lily inside Max's body |
+| 10 | 1:20-1:44 | island 2-shots | Max's vertical arm wall; Lily inside it |
+| 11 | 1:34.8-1:37.2 | f935-1005 | Dad's fist inside the countertop |
+| 12 | 1:46.5-1:50.8 | f1285-1415 | block hand in Skye's face; pancake glued to the hand |
+| 13 | 1:51.2-2:01.4 | f1425-1720 | Max sits inside his desk |
+| 14 | 1:51-2:09 | f1425-1965 | Skye's arm through the chair back |
+
+## Shared causes (fix once, fixes many)
+- **Secret staging (ch01 A, ch02 A):** both chapters put Skye in the lit, open part of the set facing whoever must not see her. Give every "hidden" shot a blocker (closed door leaf, island, counter line) *between* Skye and the other character's eye, and keep that character's head turned away. Check by rendering from the other character's eye position: if you can see Skye, they can.
+- **Furniture marks inside volumes (ch01 B/C, ch02 B):** classroom desks and chairs, the island, the banister. Marks and walk paths need about 25 cm clearance from furniture boxes, and seated poses need hips at seat height *with a chair under them*. The automated clip check (`production/review/clip_check/`) wasn't there when I looked, but every item above is visible by eye.
+- **Night/dim lighting kills identity (ch01 E, ch02 C):** add a warm face fill in every night or kitchen-dawn shot.
+- **Block hands in CU (ch01 #5, #12; ch02 #6, #12):** any hand near a face in a CU should sit below the chin or out of frame. At CU scale the cube hand reads as a giant slab.
