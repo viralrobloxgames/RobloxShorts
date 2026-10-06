@@ -6,5 +6,5 @@
   "clips": "audio/qwen/take-01/clips",
   "gap_seconds": 0.4,
   "beat_seconds": 0.9,
-  "speech_end_seconds": 60.27
+  "speech_end_seconds": 62.79
 }

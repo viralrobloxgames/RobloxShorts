@@ -41,15 +41,16 @@ plus two crew in matching aprons).
    poster behind her, a picture of the truck taped to the register. She points at the cream on his nose; he wipes it.
    *"Out back, I found the wife. Not tied up. Running the till. She'd faked the kidnapping. The ransom was for an ice
    cream truck."*
-9. **The scuffle (49-53 s).** Real action with space between them: the crew wind up, a sundae flies across the room and
-   splats on Max's face (camera shake, sprinkles), then he walks her out by the elbow. *"Her crew objected. One flying
-   sundae later, I took her back anyway."*
-10. **The rally (53-58 s).** Stage with "VOTE GIGGLES" banners, balloons, a crowd in red clown noses. Mrs. Giggles at the
-    microphone with a huge, fixed, painted-looking smile; a WINNER banner drops. *"She gave the speech with a very big
-    smile. The clown won."*
-11. **Coda + broken catchphrase (58-62 s).** Max alone at the beach bar, one black eye, the sun going down. Big Scoop's
-    van pulls up; a sundae slides down the counter to him. He looks at it. TEMPTATIONS RESISTED counter glitches; he picks
-    up the spoon. *"I got a black eye. And a free sundae. Tempting."*
+9. **The scuffle and the cuffs (44-49 s).** The crew come out; one throws a sundae glass across the room: it lands right in
+   Max's eye (flash, camera shake, dizzy chimes). The wife comes round the counter; he turns and cuffs her (click), both
+   cheated 3/4 to the camera, his black eye showing. *"Her crew threw a sundae. Right in my eye. I cuffed her anyway."*
+   (v2 ending, approved 2026-10-06: v1's "The clown won. I got a black eye." was unexplained and open-ended.)
+10. **The rally (49-55 s).** Stage with "VOTE GIGGLES" banners, balloons, a crowd in red clown noses. Mrs. Giggles at the
+    microphone in handcuffs, with a huge fixed smile; the WINNER banner drops. *"She made the speech. In handcuffs. The
+    clown still won. Sympathy vote."*
+11. **Coda + broken catchphrase (55-59 s).** Max alone at the beach bar, the black eye, the sun going down. A sundae
+    slides down the counter to him. TEMPTATIONS RESISTED glitches to SUNDAES EATEN: 1; he picks up the spoon.
+    *"Me? A black eye. And a free sundae. Tempting."*
 12. **CTA.** *"Follow Viral Roblox Games for more cases."* End card: MORE CASES... @viralrobloxgames.
 
 Content line: flirting only (Skye); no swearing, no sexual references; the "kidnapping" is fake and played for laughs;

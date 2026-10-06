@@ -14,7 +14,7 @@ import { clamp, lerp, inv, easeInOut, easeOut, easeIn, easeOutBack, shotAt } fro
 import { roundRect, flash } from '../../../web/lib/overlay.js';
 import { loadRobloxCharacter, loadAnimation, robloxPose } from '../../../web/lib/robloxPack.js';
 import { travel, travelTo, STRIDE } from '../../../web/lib/locomotion.js';
-import { makeTalkingFace, wearOutfit, makeNose, setNose, makeSunglasses, convertible, rollWheels } from '../../the-super-nose-detective/web/kit.js';
+import { makeTalkingFace, wearOutfit, makeNose, setNose, makeSunglasses, convertible, rollWheels, handcuffs, setCuffs } from '../../the-super-nose-detective/web/kit.js';
 import { lockup } from '../../super-nose-case-2/web/vampire_clip.js';
 import { wearOutfitHere, tintHair, clownFace, blackEye, creamBlob, faceSplat, paperHat, apron, putter, photo, ransomNote, sundae, spoon, microphone,
   beachBar, dock, voteBanner, boat, balloon, dressingRoom, parlour, stage as rallyStage, winnerBanner, fan, palm, std, mesh, box } from './kit.js';
@@ -43,6 +43,7 @@ const CREW = [PL.clone().add(V(-7.6, 0.3, 2.5)), PL.clone().add(V(-4.4, 0.3, 2.5
 const WIFE_TILL = PL.clone().add(V(6.9, 0.3, -7.1)), MAX_TILL = PL.clone().add(V(6.4, 0.3, -2.9)), EXIT_A = PL.clone().add(V(5.5, 0.3, 9)), EXIT_B = PL.clone().add(V(7.5, 0.3, 9));
 const MIC = RL.clone().add(V(0, 3.1, 2.2)), WIFE_RL = RL.clone().add(V(0, 3.1, 1.2)), GIG_RL = RL.clone().add(V(3.2, 3.1, 0.6)), MAX_RL = RL.clone().add(V(-8.6, 3.1, 1.6));
 const MAX_DUSK = BAR.clone().add(V(1.5, 0, 2.3));
+const WIFE_SIDE = PL.clone().add(V(5.85, 0.3, -7.1)), WIFE_FRONT = PL.clone().add(V(5.85, 0.3, -3.9)), WIFE_CUFF = PL.clone().add(V(8.4, 0.3, -3.5));   // the gap between the counters; out in front (behind Max); at Max's right
 
 // ---------- beats (all from narration words) ----------
 const B = {
@@ -50,19 +51,19 @@ const B = {
   dock: W.somebody - 0.2, photo: W.kidnapped1 - 0.1, putt: W.chief - 0.2, sink: W.speech1 + 0.1, reveal: W.candidate - 0.25, working: W.figure - 0.3,
   note: W.ransom1 - 0.2, sniff: W.sniffed - 0.25, i1: W.waffle - 0.05, i2: W.fudge - 0.05, i3: W.mint - 0.1, drive: W.only - 0.25, inside: W.big1 - 0.2,
   offer: W.owner - 0.2, slide: W.free1 - 0.1, lean: W.sundae1 + 0.1, think2: W.tempting2 - 0.1, stop2: W.case2 - 0.55, r2: W.case2,
-  back: W.out - 0.2, wipe: W.ransom2 - 0.1, crew: W.crew - 0.2, throw: W.flying - 0.05, splat: W.sundae2 + 0.1, leave: W.later + 0.1,
-  rally: W.gave - 0.25, won: W.clown2 - 0.15, drop: W.won - 0.05, coda: W.black - 0.35, slideIn: W.free2 - 0.4, tempt3: W.tempting3 - 0.05, eat: W.tempting3 + 0.35,
+  back: W.out - 0.2, wipe: W.ransom2 - 0.1, crew: W.crew - 0.2, throw: W.threw + 0.15, splat: W.right + 0.1, cuff: W.cuffed - 0.15,
+  rally: W.made - 0.25, won: W.clown2 - 0.15, drop: W.won - 0.05, coda: W.me - 0.25, slideIn: W.free2 - 0.4, tempt3: W.tempting3 - 0.05, eat: W.tempting3 + 0.35,
   cta: W.follow - 0.15,
 };
 const SHOTS = [
   [0, 'hook'], [W.tempting1 - 0.15, 'tempt1'], [B.dock, 'dock'], [B.putt, 'putt'], [B.reveal, 'reveal'], [B.working, 'working'], [B.note, 'note'],
   [B.sniff, 'sniff'], [B.drive, 'drive'], [B.inside, 'inside'], [B.offer, 'offer'], [W.tempting2 - 0.15, 'tempt2'], [B.back, 'back'],
-  [B.wipe, 'wipe'], [B.crew, 'scuffle'], [B.leave, 'leave'], [B.rally, 'rally'], [B.won, 'won'], [B.coda, 'coda'], [B.cta, 'cta'],
+  [B.wipe, 'wipe'], [B.crew, 'scuffle'], [B.cuff - 0.2, 'cuff'], [B.rally, 'rally'], [B.won, 'won'], [B.coda, 'coda'], [B.cta, 'cta'],
 ].map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 
 // ---------- scene ----------
 let A = {}, max, sky2, chief, gig, wife, scoop, crew = [], nose, cam, cream, splatF, eye, put, pic, note, sunCtr, sunFly, sunBar, spn, mic, car, winner, banner;
-let fans = [], balloons = [], confetti = [], ball, wifeApron, SHOT = 'hook', sea;
+let fans = [], balloons = [], confetti = [], ball, wifeApron, cuffs, SHOT = 'hook', sea;
 
 export async function setup(stage) {
   const { scene } = stage; const r = rng(31);
@@ -119,7 +120,7 @@ export async function setup(stage) {
   put = putter(); scene.add(put); pic = photo(); scene.add(pic); note = ransomNote(); scene.add(note);
   sunCtr = sundae(0.9); scene.add(sunCtr); sunFly = sundae(0.8); scene.add(sunFly); sunBar = sundae(0.9); scene.add(sunBar); spn = spoon(); scene.add(spn);
   ball = mesh(new THREE.SphereGeometry(0.13, 12, 8), std('#ffffff', { roughness: 0.3 })); scene.add(ball);
-  car = convertible(); scene.add(car);
+  car = convertible(); scene.add(car); cuffs = handcuffs(); scene.add(cuffs);
 }
 
 // ---------- characters ----------
@@ -155,15 +156,17 @@ function maxState(s) {
     if (s > B.lean && s < B.think2) { const k = Math.sin(clamp((s - B.lean) / 0.7) * Math.PI); b.rotX = 0.42 * k; b.face = 'sleeping'; }
     if (s > B.think2) { b.layers = [[A.think, 0.4]]; b.face = 'suspicious'; }
     if (s > B.stop2) { b.layers = idle(s); b.arms = [['R', 1.75, 0.05]]; b.face = 'determined'; }
-  } else if (s < B.leave) {                                        // out back: the wife at the till; the wipe; the flying sundae
+  } else if (s < B.rally) {                                        // out back: the wife at the till; the wipe; the sundae in the eye; the cuffs
     b.face = 'surprised'; moveTo(b, s, MAX_CTR, MAX_TILL, B.back + 0.95, 12, face(MAX_TILL, WIFE_TILL));
     if (s > B.wipe + 0.6 && s < B.wipe + 1.2) { b.arms = [['R', 2.05, 0.55]]; b.face = 'annoyed'; }             // wipes the cream off
     if (s > B.wipe + 1.2) b.face = 'determined';
     if (s > B.crew) { b.rotY = lerp(face(MAX_TILL, WIFE_TILL), face(MAX_TILL, CREW[1]), easeInOut(seg(s, B.crew, B.crew + 0.4))); b.face = 'suspicious'; }
-    if (s > B.splat) { b.face = 'shocked'; b.splat = true; b.layers = [[A.shock, 0.25]]; }
-  } else if (s < B.rally) {                                        // walks her out
-    b.face = 'determined'; b.splat = s < B.leave + 0.5; moveTo(b, s, MAX_TILL, EXIT_A, B.leave + 0.2 + MAX_TILL.distanceTo(EXIT_A) / 10, 10, 0);
-    if (s < B.leave + 0.2) { b.pos = MAX_TILL.clone(); b.rotY = face(MAX_TILL, EXIT_A); }
+    if (s > B.splat) { b.face = 'shocked'; b.splat = s < B.cuff - 0.3; b.eye = s > B.splat + 0.3; b.layers = [[A.shock, 0.25]]; }   // the glass lands on his eye
+    if (s > B.cuff - 0.3) {                                         // turns to her and cuffs her: "I cuffed her anyway."
+      b.layers = idle(s); b.eye = true; b.face = 'determined'; b.rotY = lerp(face(MAX_TILL, CREW[1]), face(MAX_TILL, WIFE_CUFF) - 0.6, easeInOut(seg(s, B.cuff - 0.3, B.cuff)));   // both cheated 3/4 to the camera
+      if (s < B.cuff + 0.5) b.arms = [['R', lerp(0.3, 1.05, easeOut(seg(s, B.cuff - 0.3, B.cuff))), -0.25], ['L', lerp(0.3, 1.05, easeOut(seg(s, B.cuff - 0.3, B.cuff))), -0.25]];
+      if (s > B.cuff + 0.6) b.face = 'smug';
+    }
   } else if (s < B.coda) {                                         // side of the stage, arms folded
     b.pos = MAX_RL.clone(); b.floor = MAX_RL.y; b.rotY = face(MAX_RL, WIFE_RL) + 0.4; b.face = s > B.won ? 'sad' : 'neutral'; b.eye = true;
   } else {                                                         // dusk at the bar: the black eye, the sundae, the spoon
@@ -215,13 +218,20 @@ function wifeState(s) {
     b.arms = [['R', 0.9, 0.2], ['L', 0.9, -0.2]];                                                                // hands at the till
     if (s > B.back + 0.9) { b.rotY = face(WIFE_TILL, MAX_TILL); b.arms = []; b.face = 'smug'; }
     if (win(s, B.wipe, B.wipe + 0.8)) { b.arms = [['R', 1.55, 0.05]]; b.face = 'laugh'; b.talk = true; }         // "You've got a little... something."
-    if (s > B.crew) { b.face = 'smug'; b.arms = []; }
-    if (s > B.leave) { b.face = 'annoyed'; b.apron = true; moveTo(b, s, WIFE_TILL, EXIT_B, B.leave + 0.2 + WIFE_TILL.distanceTo(EXIT_B) / 10, 10, 0); if (s < B.leave + 0.2) b.pos = WIFE_TILL.clone(); }
+    if (s > B.crew) b.face = 'smug';
+    if (s > B.splat + 0.1) {                                        // out from behind the till counter (round its end, not through it), behind Max
+      b.face = 'smug'; b.arms = [];
+      const t1 = B.splat + 0.25, t2 = t1 + WIFE_SIDE.distanceTo(WIFE_FRONT) / 6, t3 = t2 + WIFE_FRONT.distanceTo(WIFE_CUFF) / 6;
+      if (s < t1) moveTo(b, s, WIFE_TILL, WIFE_SIDE, t1, 6, face(WIFE_SIDE, WIFE_FRONT));
+      else if (s < t2) moveTo(b, s, WIFE_SIDE, WIFE_FRONT, t2, 6, face(WIFE_FRONT, WIFE_CUFF));
+      else moveTo(b, s, WIFE_FRONT, WIFE_CUFF, t3, 6, face(WIFE_CUFF, MAX_TILL));
+    }
+    if (s > B.cuff - 0.3) { b.pos = WIFE_CUFF.clone(); b.rotY = face(WIFE_CUFF, MAX_TILL) + 0.6; b.layers = idle(s, 0.2); b.arms = [['R', 0.55, -0.55], ['L', 0.55, -0.55]]; b.face = 'annoyed'; b.cuffs = s > B.cuff; }   // wrists together in front
     return b;
   }
   if (win(s, B.rally, B.coda)) {
     b.pos = WIFE_RL.clone(); b.floor = WIFE_RL.y; b.rotY = 0; b.face = 'happy'; b.apron = false; b.bigSmile = true; b.talk = win(s, B.rally + 0.3, B.won);
-    if (s > B.drop) b.wave = true;
+    b.arms = [['R', 0.55, -0.55], ['L', 0.55, -0.55]]; b.cuffs = true;                                           // the speech, in handcuffs
     return b;
   }
   b.visible = false; return b;
@@ -235,10 +245,10 @@ function scoopState(s) {
 }
 function crewState(s, i) {
   const at = CREW[i], b = st(at, face(at, TABLE), idle(s, i * 0.7), 'smug');
-  if (!win(s, B.inside, B.leave + 1.2)) { b.visible = false; return b; }
+  if (!win(s, B.inside, B.rally)) { b.visible = false; return b; }
   b.arms = [['R', 1.0 + 0.1 * Math.sin(s * 7 + i), 0.15]];                                                        // counting cash
   if (s > B.crew) {                                                                                               // they come out back
-    const to = MAX_TILL.clone().add(V(-2.6 - i * 1.3, 0, 1.0 + i * 1.6)); moveTo(b, s, at, to, B.crew + 0.75, 14, face(to, MAX_TILL)); b.face = 'angry'; b.arms = [];
+    const to = MAX_TILL.clone().add(V(-4.4 - i * 1.3, 0, 1.0 + i * 1.6)); moveTo(b, s, at, to, B.crew + 0.75, 14, face(to, MAX_TILL)); b.face = 'angry'; b.arms = [];
     if (i === 1 && win(s, B.throw - 0.35, B.throw + 0.15)) { const k = seg(s, B.throw - 0.35, B.throw); b.arms = [['R', k < 1 ? lerp(1.5, 2.9, easeIn(k)) : 0.9, 0.1]]; }
   }
   return b;
@@ -285,6 +295,13 @@ export function update(t, stage) {
   const M = maxState(s), K = skyState(s), C = chiefState(s), G = gigState(s), Wf = wifeState(s), S = scoopState(s), CR = [crewState(s, 0), crewState(s, 1)];
   place(max, M); place(sky2, K); place(chief, C); place(gig, G); place(wife, Wf); place(scoop, S); place(crew[0], CR[0]); place(crew[1], CR[1]);
   wifeApron.visible = !!Wf.apron;
+  // The handcuffs on the wife's wrists (snap shut on "cuffed", stay on for the speech).
+  cuffs.visible = !!Wf.cuffs && wife.root.visible;
+  if (cuffs.visible) {
+    const wrist = (side) => { const bone = wife.bones[side === 'L' ? 'Arm.L' : 'Arm.R']; bone.updateMatrixWorld(true); return [V(0, -1.6, 0).applyMatrix4(bone.matrixWorld), bone.getWorldQuaternion(new THREE.Quaternion())]; };
+    const [pl, ql] = wrist('L'), [pr, qr] = wrist('R'); setCuffs(cuffs, pl, pr, ql, qr);
+    const k = s > B.rally ? 1 : easeOutBack(clamp((s - B.cuff) / 0.15), 3); cuffs.userData.rings.forEach((r) => r.scale.setScalar(Math.max(0.01, k * 0.85)));
+  }
   eye.visible = !!M.eye; splatF.visible = !!M.splat;
   setNose(nose, { glow: win(s, B.sniff + 0.2, B.drive) ? 0.8 + 0.2 * Math.sin(s * 12) : 0, inflate: win(s, B.sniff + 0.3, B.i1) ? 0.06 * Math.max(0, Math.sin((s - B.sniff) * 9)) : 0 });
   stage.seaTex.offset.set(s * 0.01, s * 0.02);
@@ -353,8 +370,8 @@ export function update(t, stage) {
     case 'tempt2': look(local(max, 5.0, 4.7, 3.6), local(max, 0, 4.1, 1.2), 40, 15); break;                     // his left: cream on the nose, hand up
     case 'back': { const k = easeInOut(u), m0 = MAX_TILL.clone().lerp(WIFE_TILL, 0.5); look(PL.clone().add(V(lerp(0.2, 0.8, k), 5.2, -0.6)), m0.clone().add(V(0.4, 3.8, 0)), 46, 20); break; }   // front-left 3/4: Max arriving, the wife beside the till, the poster
     case 'wipe': { const m0 = MAX_TILL.clone().lerp(WIFE_TILL, 0.5); look(PL.clone().add(V(-1.6, 5.8, -3.4)), m0.clone().add(V(0, 3.9, 1.1)), 50, 20); break; }   // her point, his nose, the truck poster behind
-    case 'scuffle': look(PL.clone().add(V(4.6, 5.8, 8.4)).add(jolt(B.splat, 0.18, 0.4)), PL.clone().add(V(4.6, 3.4, -2.0)), 52, 25); break;   // from the doorway: the crew, the throw, the splat
-    case 'leave': { const p = max.root.position; look(EXIT_A.clone().add(V(-1.0, 5.2, 9)), p.clone().lerp(wife.root.position, 0.5).add(V(0, 3.4, 0)), 44, 25); break; }   // they walk out towards the camera
+    case 'scuffle': look(PL.clone().add(V(3.9, 6.0, 9.4)).add(jolt(B.splat, 0.18, 0.4)), PL.clone().add(V(3.9, 3.4, -2.0)), 52, 25); break;   // from the doorway: the crew, the throw, the splat
+    case 'cuff': { const k = easeInOut(u), m0 = MAX_TILL.clone().lerp(WIFE_CUFF, 0.5); look(m0.clone().add(V(0, 4.4, lerp(8.8, 8.0, k))), m0.clone().add(V(0, 3.0, 0)), 44, 20); break; }   // from the front, both cheated 3/4: his black eye, her cuffed wrists between them
     case 'rally': { const k = easeInOut(u); look(WIFE_RL.clone().add(V(lerp(-3.0, -2.5, k), 2.6, lerp(7.2, 6.6, k))), WIFE_RL.clone().add(V(1.5, 4.4, 0)), 50, 25); break; }   // her big fixed smile, the clown beside her, past the microphone
     case 'won': look(RL.clone().add(V(0, 9, 34)), RL.clone().add(V(0, 7.5, 0)), 46, 45); break;                    // over the crowd: the banner drops
     case 'coda': { const k = easeInOut(seg(s, B.coda, B.coda + 1.5)); look(BAR.clone().add(V(lerp(-0.2, 0.4, k), 5.0, -3.0)), mh.clone().add(V(0.3, -1.4, 0)), 62, 20); break; }   // from behind the bar: his black eye and the sundae on the counter

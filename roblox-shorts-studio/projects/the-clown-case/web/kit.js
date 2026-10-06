@@ -44,7 +44,7 @@ export function clownFace(actor) {
 // A black eye for Max (left eye): a purple ring over the eye on the face.
 export function blackEye(actor) {
   const g = new THREE.Group();
-  const ring = mesh(new THREE.CircleGeometry(0.2, 24), new THREE.MeshStandardMaterial({ color: '#5b2a6e', transparent: true, opacity: 0.75, roughness: 0.8 }), 0.24, 0.8, 0.615);
+  const ring = mesh(new THREE.CircleGeometry(0.2, 24), new THREE.MeshStandardMaterial({ color: '#5b2a6e', transparent: true, opacity: 0.75, roughness: 0.8 }), -0.24, 0.8, 0.615);   // his right eye
   g.add(ring); g.visible = false; actor.bones.Head.add(g); return g;
 }
 // Whipped cream on the tip of Max's nose (attach to the nose pivot's tip).

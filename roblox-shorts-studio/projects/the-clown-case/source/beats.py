@@ -17,9 +17,10 @@ ANCHORS = {
     'big1': ('big', 1), 'scoops': ('scoops', 1), 'suspicious': ('suspicious', 1), 'owner': ('owner', 1), 'free1': ('free', 1),
     'sundae1': ('sundae', 1), 'tempting2': ('tempting', 2), 'case2': ('case', 2), 'out': ('out', 1), 'wife2': ('wife', 2),
     'tied': ('tied', 1), 'till': ('till', 1), 'faked': ('faked', 1), 'ransom2': ('ransom', 2), 'truck': ('truck', 1),
-    'crew': ('crew', 1), 'objected': ('objected', 1), 'flying': ('flying', 1), 'sundae2': ('sundae', 2), 'later': ('later', 1),
-    'anyway': ('anyway', 1), 'gave': ('gave', 1), 'speech2': ('speech', 2), 'smile': ('smile', 1), 'clown2': ('clown', 2),
-    'won': ('won', 1), 'black': ('black', 1), 'eye': ('eye', 1), 'free2': ('free', 2), 'sundae3': ('sundae', 3),
+    'crew': ('crew', 1), 'threw': ('threw', 1), 'sundae2': ('sundae', 2), 'right': ('right', 1),
+    'eye1': ('eye', 1), 'cuffed': ('cuffed', 1), 'anyway': ('anyway', 1), 'made': ('made', 1), 'speech2': ('speech', 3),
+    'handcuffs': ('handcuffs', 1), 'clown2': ('clown', 2), 'still': ('still', 1), 'won': ('won', 1), 'sympathy': ('sympathy', 1),
+    'vote': ('vote', 1), 'me': ('me', 2), 'black': ('black', 1), 'eye2': ('eye', 2), 'free2': ('free', 2), 'sundae3': ('sundae', 3),
     'tempting3': ('tempting', 3), 'follow': ('follow', 1),
 }
 NUM = {'1': 'one', '2': 'two', '10000': 'ten'}
