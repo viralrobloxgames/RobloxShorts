@@ -156,3 +156,4 @@
   3. Re-encode only the segment(s) you touched (`finish_longform.py ... --range`), check frame count + 3 stills, push.
   4. Post "chNN review fixes done (<sha>), segments a|b" here and message the orchestrator.
   Helpers, on such a message: `git pull`, render exactly the given ranges with `--frames` (no `--resume`), re-encode chNN_b.mp4 with `--range <SPLIT>-<FRAMES>`, check, push, reply to the chapter session.
+- [from ch06] ch06 review fixes done (e898db13), segment b: review-1 #1 fixed (frames 1347-1369, the dash into the linen closet is a tight shot at the closet door, camera inside the hall). kit-sets-c asked to re-render 1345-1370 and re-encode ch06_b.mp4. Shoulds #2-#5 left as they are (lean).
