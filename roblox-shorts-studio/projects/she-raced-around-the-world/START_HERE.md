@@ -11,23 +11,31 @@ beats and sources: `source/story.md`.
 ## State
 - 2026-10-06 ~02:30 BST: script v1 (158 words with the CTA, 20 lines) in `script.txt` (used as written: no approval
   needed tonight).
-- Narration: take-01 started at low priority beside the lawn-chair render and was stopped after 1 of 20 lines (it was
-  starved); the cached line is kept. Resume with the commands below once the CPU is free.
-- Web route drafted: `web/race_clip.js` (15 shots: hook at the pier with the giant open book, editor's office with
-  bubbles, sailing with 1 DRESS / 1 COAT / 1 BAG, the author's door in Amiens, the route map over the sea, Hong Kong
-  telegram, the rival on her train going the other way, THE GREAT RACE front page, the storm (-2 DAYS), the special
-  train with her on the rear platform, the Jersey City finish with 72 DAYS / 6 HOURS / 11 MINUTES, the crossed-out 80,
-  the rival arriving +4.5 DAYS, CTA on the ship), `web/kit.js`, `source/beats.py` (anchors; `web/beats.js` is still the
-  estimate). A first low-res pass per shot ran; framing fixes applied for the hook (camera was inside the moored ship),
-  the office, finish/rival2 (faces turned to camera) and the trains (rear platform). Needs a full preview pass after
-  the narration, then hold check (bag, telegram, the author's book), fit check (no accessories), sound cues, cover.
+- Narration (George voice C, local Qwen): 20 clips, tightened 47.6 -> 47.0 s, joined at gap 0.5 / beat 1.0:
+  speech ends 59.82 s; video 61.83 s (1855 frames) + 0.5 s cover = **62.3 s**. `source/beats.py` maps the
+  transcriber's digits (80, 72, 6, 11) back to the script words, so all 56 anchors are measured (none interpolated).
+- Web route: `web/race_clip.js` (15 shots), `web/kit.js`. Preview pass (every 10th frame) after the narration; fixes:
+  the travel bag now stays in her hand on the whole trip (sail, author, route, race, storm, CTA); the author's book and
+  the telegram are held out just past the fist (they sank into the hand); Mia faces Leo in the office; cameras
+  re-framed for the editor (Leo was out of shot), her reply (was the back of her head), sail and storm (closer),
+  the author (both faces; the book moved to his left hand, his right was behind her bag), Hong Kong (her face and the
+  telegram), the rival's train and the special train (the platform was at the frame edge) and the rival's arrival
+  (both of them in shot; the rival walks in sooner and turns to her).
+- Hold check: `web/hold_check.js` (11 close-ups, looked at). Fit check: no accessories (0 pairs), reviewed.
+- Sound: `source/sound_cues.py` -> `source/sound_cues.json` (46 cues; sfx copied into `audio/sfx/`).
+- Cover: `web/cover_clip.js` (Mia, one fist up, in front of the giant book with its 80 crossed out; SHE RACED /
+  AROUND THE WORLD / IN 72 DAYS), `delivery/She_Raced_Around_The_World_cover.jpg|png`, grid check `_cover_grid.jpg`.
+- Full render running (renders/web, 4 workers, started ~04:05 BST); resume with the render command below.
 - Post copy: `delivery/post.json`.
 
+## Commands
+```
+python3 source/beats.py && python3 source/sound_cues.py      # from the project dir
+node web/render.mjs --clip projects/she-raced-around-the-world/web/race_clip.js --out projects/she-raced-around-the-world/renders/web --workers 4 --resume
+python3 scripts/finish.py projects/she-raced-around-the-world --encode --frames projects/she-raced-around-the-world/renders/web
+python3 scripts/review/blank_frames.py projects/she-raced-around-the-world/delivery/She_Raced_Around_The_World.mp4
+```
+
 ## Next
-1. `python3 scripts/qwen_cloud_george_c.py projects/she-raced-around-the-world --take take-01`, then
-   `python3 scripts/tighten_clips.py projects/she-raced-around-the-world --voice george_c --take take-01`, then
-   `QWEN_TTS_DIR=<dir> python3 scripts/narrate.py projects/she-raced-around-the-world --voice george_c --take take-01 --beat 0.8 --gap 0.38`
-   (adjust the join so speech end + 2.5 s is 61-65 s), `python3 source/beats.py`, set `seconds` in project.json.
-2. Preview every 10th frame (`node web/render.mjs --clip projects/she-raced-around-the-world/web/race_clip.js --out /tmp/p --every 10 --scale 0.3 --samples 1`),
-   fix framing, hold check, fit check (`node web/fit_check.mjs --clip ...` then `--reviewed`), sound cues, cover, full
-   render, encode, blank-frame check, review. Never post without the user's approval.
+1. Finish the full render (`--resume`), encode, blank-frame check, contact sheet review; deliver for the user's review.
+   Never post without the user's explicit approval of the MP4.
