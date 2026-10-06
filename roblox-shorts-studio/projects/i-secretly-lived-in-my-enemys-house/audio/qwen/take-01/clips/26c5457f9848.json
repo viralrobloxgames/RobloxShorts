@@ -1,0 +1,86 @@
+{
+ "voice": "brittney",
+ "text": "I secretly lived in my enemy's house for a week, and he had no idea.",
+ "seed": 40946,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.62
+  },
+  {
+   "word": "secretly",
+   "start": 0.62,
+   "end": 0.96
+  },
+  {
+   "word": "lived",
+   "start": 0.96,
+   "end": 1.4
+  },
+  {
+   "word": "in",
+   "start": 1.4,
+   "end": 1.62
+  },
+  {
+   "word": "my",
+   "start": 1.62,
+   "end": 1.76
+  },
+  {
+   "word": "enemy's",
+   "start": 1.76,
+   "end": 2.2
+  },
+  {
+   "word": "house",
+   "start": 2.2,
+   "end": 2.32
+  },
+  {
+   "word": "for",
+   "start": 2.32,
+   "end": 2.58
+  },
+  {
+   "word": "a",
+   "start": 2.58,
+   "end": 2.7
+  },
+  {
+   "word": "week",
+   "start": 2.7,
+   "end": 2.9
+  },
+  {
+   "word": "and",
+   "start": 2.9,
+   "end": 3.3
+  },
+  {
+   "word": "he",
+   "start": 3.3,
+   "end": 3.44
+  },
+  {
+   "word": "had",
+   "start": 3.44,
+   "end": 3.56
+  },
+  {
+   "word": "no",
+   "start": 3.56,
+   "end": 3.86
+  },
+  {
+   "word": "idea",
+   "start": 3.86,
+   "end": 4.28
+  }
+ ],
+ "words_md5": "72b08be8966a5abdb2bff59f59013c1e",
+ "whisper": "small.en"
+}
