@@ -230,7 +230,7 @@ export function office(scene) {
   for (const s of [-1, 1]) g.add(box(0.3, DESK_TOP - 0.4, 4.2, wood, DESK.x + s * 4.8, (DESK_TOP - 0.4) / 2, DESK.z));
   const blotter = box(4.6, 0.06, 2.8, std('#2f5a3a', { roughness: 0.9 }), 0, DESK_TOP + 0.03, DESK.z - 0.9); g.add(blotter);
   // the application form on the blotter (its texture is set per shot) and a stamp pad
-  const form = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 2.2), std('#ffffff', { roughness: 0.8 })); form.rotation.x = -Math.PI / 2; form.position.set(-0.4, DESK_TOP + 0.08, DESK.z - 1.3); form.rotation.z = 0.12; g.add(form);
+  const form = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 2.2), std('#ffffff', { roughness: 0.8 })); form.rotation.x = -Math.PI / 2; form.position.set(0.0, DESK_TOP + 0.08, DESK.z - 1.1); form.rotation.z = 0.12; g.add(form);
   form.userData.tex = {
     atlantic: formTex('TRANSATLANTIC FLIGHT', 'ATLANTIC OCEAN', null), denied: formTex('TRANSATLANTIC FLIGHT', 'ATLANTIC OCEAN', 'DENIED'),
     plan: formTex('FLIGHT PLAN', 'CALIFORNIA', null), approved: formTex('FLIGHT PLAN', 'CALIFORNIA', 'APPROVED'),
@@ -328,9 +328,9 @@ export function cockpit(scene) {
   for (const x of [-2.2, 2.2]) { const b = cyl(1.75, 1.75, 0.25, dark, 20, x, 7.4, 5.2); b.rotation.z = Math.PI / 2; g.add(b); }
   // the fuel line: from the tank along the roof, then down a little beside the pilot's right knee; its joint leaks
   const pipeM = std('#b8893a', { metalness: 0.7, roughness: 0.35 });
-  { const p = cyl(0.12, 0.12, 2.8, pipeM, 8, -1.7, 8.8, 3.9); p.rotation.x = Math.PI / 2; g.add(p); }
-  g.add(cyl(0.12, 0.12, 0.8, pipeM, 8, -1.7, 8.4, 2.5), cyl(0.2, 0.2, 0.25, pipeM, 10, -1.7, 8.0, 2.5));
-  const drip = V(-1.7, 7.8, 2.5);                                                                         // where the leak drips from (the joint)
+  { const p = cyl(0.12, 0.12, 2.8, pipeM, 8, -2.2, 8.8, 3.9); p.rotation.x = Math.PI / 2; g.add(p); }
+  g.add(cyl(0.12, 0.12, 0.8, pipeM, 8, -2.2, 8.4, 2.5), cyl(0.2, 0.2, 0.25, pipeM, 10, -2.2, 8.0, 2.5));
+  const drip = V(-2.2, 7.8, 2.5);                                                                         // where the leak drips from (the joint)
   // the compass: a brass bowl on the panel top with a glass dome and a card that swings
   const comp = new THREE.Group(); comp.position.set(1.6, 6.1, 3.9); g.add(comp);
   comp.add(cyl(0.75, 0.6, 0.5, std('#b8893a', { metalness: 0.8, roughness: 0.3 }), 20, 0, 0, 0));
@@ -343,8 +343,8 @@ export function cockpit(scene) {
   // fuel: drips (small spheres) and a puddle (a thin disc that grows, then drains into the hole)
   const fuelM = new THREE.MeshStandardMaterial({ color: '#e6b85c', roughness: 0.08, metalness: 0.2, transparent: true, opacity: 0.75 });
   const drips = []; for (let i = 0; i < 5; i++) { const d = sph(0.12, fuelM, 0, 0, 0, 10); d.scale.y = 1.5; g.add(d); drips.push(d); }
-  const puddle = new THREE.Mesh(new THREE.CircleGeometry(1, 28), fuelM); puddle.rotation.x = -Math.PI / 2; puddle.position.set(-1.7, 0.03, 2.5); g.add(puddle);
-  const hole = new THREE.Mesh(new THREE.CircleGeometry(0.22, 16), std('#050505', { roughness: 1 })); hole.rotation.x = -Math.PI / 2; hole.position.set(-1.7, 0.05, 2.5); g.add(hole);
+  const puddle = new THREE.Mesh(new THREE.CircleGeometry(1, 28), fuelM); puddle.rotation.x = -Math.PI / 2; puddle.position.set(-2.2, 0.03, 2.5); g.add(puddle);
+  const hole = new THREE.Mesh(new THREE.CircleGeometry(0.22, 16), std('#050505', { roughness: 1 })); hole.rotation.x = -Math.PI / 2; hole.position.set(-2.2, 0.05, 2.5); g.add(hole);
   // clouds outside the window (beyond the far wall), scrolled in the clip
   const outside = [], r = rng(70);
   for (let i = 0; i < 8; i++) { const c = cloud(900 + i, 4 + r() * 3); c.userData.home = V(-14 - r() * 8, 3 + r() * 6, r() * 60 - 30); g.add(c); outside.push(c); }
@@ -357,8 +357,8 @@ export function screwdriver() {
   const g = new THREE.Group();
   g.add(cyl(0.2, 0.17, 1.0, std('#d62828', { roughness: 0.35 }), 12, 0, 0.05, 0));
   g.add(cyl(0.21, 0.21, 0.12, std('#1b1b1d'), 12, 0, -0.45, 0));
-  g.add(cyl(0.05, 0.05, 1.5, std('#c9cdd2', { metalness: 0.9, roughness: 0.25 }), 8, 0, -1.25, 0));
-  g.add(box(0.12, 0.2, 0.03, std('#c9cdd2', { metalness: 0.9, roughness: 0.25 }), 0, -2.05, 0));
+  g.add(cyl(0.05, 0.05, 2.0, std('#c9cdd2', { metalness: 0.9, roughness: 0.25 }), 8, 0, -1.5, 0));
+  g.add(box(0.12, 0.2, 0.03, std('#c9cdd2', { metalness: 0.9, roughness: 0.25 }), 0, -2.55, 0));
   return g;
 }
 
@@ -377,9 +377,9 @@ export function telegram() {
   tex.wrapS = THREE.ClampToEdgeWrapping;
   const m = std('#ffffff', { map: tex, roughness: 0.85, side: THREE.DoubleSide });
   const g = new THREE.Group();
-  const hang = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1), m); g.add(hang);
-  const run = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1), m.clone()); run.material.map = tex.clone(); run.material.map.needsUpdate = true; run.rotation.x = -Math.PI / 2; g.add(run);
-  const curl = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 1.6, 14), std('#f6efc9', { roughness: 0.85 })); curl.rotation.z = Math.PI / 2; g.add(curl);
+  const hang = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1), m); g.add(hang);
+  const run = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1), m.clone()); run.material.map = tex.clone(); run.material.map.needsUpdate = true; run.rotation.x = -Math.PI / 2; g.add(run);
+  const curl = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 2.6, 14), std('#f6efc9', { roughness: 0.85 })); curl.rotation.z = Math.PI / 2; g.add(curl);
   g.userData = { hang, run, curl };
   return g;
 }
