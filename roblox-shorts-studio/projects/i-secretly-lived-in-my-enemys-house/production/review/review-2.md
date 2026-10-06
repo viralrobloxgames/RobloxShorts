@@ -266,8 +266,8 @@ list (#10).
 | 2 | Ch08 | 00:21.0 (7:58.3) | attic opens on an empty shot |
 | 3 | Ch08 | 00:52.5-00:54.4 (8:29.8) | Skye not crying on "Then why are you crying?" |
 | 12 | Ch09 | 00:25-00:31, 00:39-00:46 (9:00-9:21) | drawing must read BEST FRENDS |
-| 18 | Ch07 | 00:58.9-01:01.7 (7:22.7) | Max fixing the pumpkin must be on screen (**fixed in 07b2157f, to re-check**) |
-| 19 | Ch07 | 00:16.0 (6:39.8) | blocked hatch frame (**fixed in 07b2157f, to re-check**) |
+| 18 | Ch07 | 00:58.9-01:01.7 (7:22.7) | Max fixing the pumpkin must be on screen: **STILL OPEN in the film.** ch07 status says fixed in d5ca3f4c, but `ch07_b.mp4` on main is still the 18:20Z render (5a5c2189), so the B-range fixes (#18, #20, #22, #24) never reached the segment. Re-encode ch07_b.mp4 from the fixed frames. |
+| 19 | Ch07 | 00:16.0 (6:39.8) | blocked hatch frame: **re-checked in the 19:48Z film: FIXED** (ch07_a 07b2157f) |
 | 26 | Ch11 | 00:52.4-00:58.4 (11:32.7) | last line on a tiny wide: push in on Skye and Max |
 | 30 | Ch10 | 00:00-00:09.3 (9:35.1-9:44.4) | reveal spoiled: open dark, lamp click reveals Max |
 | 31 | Ch10 | 01:02.3-01:05.2 (10:37.4) | "Nobody!" faces unreadable |
