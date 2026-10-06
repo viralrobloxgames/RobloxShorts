@@ -221,3 +221,49 @@ full-res single frames wherever there was movement, contact, a hand-off or a sit
 | 18 | ch04 | 0:55.1-0:60.9 | 4:12.1-4:17.9 | 1653-1833 | poses | end shot: Skye's one-arm T holding the half for 6 s | bent elbow, half at chest height |
 | 19 | ch04 | two_shot_desk shots | 3:20.6-4:12.0 | see above | camera | green fg blob plus blue chair-back fill a third to half of frame | raise the cam or clear row-1 chair from view |
 | 20 | ch04 | 0:30.1-0:37.0 | 3:47.1-3:54.0 | 904-1110 | camera | `two_shot_close` filled with giant fg forearm and fist blobs | pull back and up |
+
+## Kit tags (per requests.md 23:25Z): who fixes which instance
+
+Kit-owned. The chapter only re-checks these after KIT FREEZE.
+- **K1 (zombie-arm talking idle):**
+  - ch04 two-shots 0:05.3-0:27.3 and 0:44.1-0:55.0: Max's arm locked out at the lens.
+  - ch03 0:44.4-0:49.2: Skye's rigid sandwich arm.
+  - ch03 0:19-0:42: Max's arms hanging dead for 15 s of MCU. Same idle; give it gesture beats.
+- **K2 (sideways arm):**
+  - ch04 0:55.1-0:60.9: Skye's end shot, the half held on an arm stuck out sideways.
+  - ch04 two_shot_desk: Skye's R arm angled up off the desk. Seated forearms must rest on the surface.
+- **K3 (T / two-arm poses):** ch04 0:44.0-0:44.3, Max's arms spread wide during the camera push.
+- **K4 (face cycling):** ch03 0:22.0-0:24.6, the pantry-gap whisper pops scheming → default → scheming.
+- **P1 (identity under coloured light):**
+  - ch03 0:60.2-0:66.8: Skye's face renders dark brown in `island_low_behind`.
+  - ch03 0:30.0: Max's navy pyjama top goes pale grey in the fridge light.
+- **P2 (camera lerp):** ch04 0:44.0-0:44.3, the move from `two_shot_close` to `two_shot_desk`. If this is a lerp across a `camOn` change, it should be a hard cut.
+- **PR1 (prop grips):**
+  - ch03: knife with no hand (0:37.2), sandwich in Skye's hand (0:44.4+ and the end frame), Dad's ham hanging below his fist (0:59-0:63).
+  - ch04: cookie on top of or under the fist and floating free (0:05-0:16.6), sandwich under the fist (0:19+).
+- **SC1 (classroom seating, aisles):**
+  - ch04 0:00-0:00.3 and 0:55.1-0:55.9: Max stands up and sits down through his desk.
+  - The row-1 chair backs in front of `two_shot_desk` are the green and blue blobs. Set/camera.
+- **SC2 (kitchen):**
+  - ch03 0:10.0 and 0:50.2: stair paths outside the banister.
+  - ch03 0:49.5: Skye's hide mark behind the island is in Dad's sight line.
+  - Pantry louvres are see-through (ch03 0:12.6-0:42.2); needs an opaque door or dark interior.
+- **P4 (line-of-sight check, optional):** would catch both ch03 hiding failures automatically.
+
+Chapter-owned: paths, marks, cameras and timing in the clip.
+- **ch03:**
+  - Skye through the pantry door (0:09.6): open the door first.
+  - Max's arm in the fridge door (0:16.8): mark 0.5 stud back.
+  - Ham through the flashlight: placement.
+  - Wide shot opening on Max's head (0:42.5): retime the shot or route his walk behind the island.
+  - Fridge doors opening and shutting with no reach (0:09.0, 0:58.5, 0:62.8).
+  - Letters popping on with no hand (0:00-0:08.6).
+  - Gestures from the plan.
+- **ch04:**
+  - Max's L fist in Skye's shoulder in the reverse (0:11.6-0:22.6): mark or arm.
+  - The half-sandwich hand-off choreography and contact frame (0:54.5-0:55.4).
+  - Cookie put-down before 0:17.
+  - Sandwich in one hand only.
+  - Walk timing about 1.5 s plus a sit-down (0:55).
+  - Re-frame `two_shot_close` and the shots from behind Skye's head.
+  - Planned leans, hair pat, head turns.
