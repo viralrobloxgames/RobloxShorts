@@ -74,6 +74,25 @@ Max's voice: judged once "MAX voice replaced in ch02" lands (orchestrator).
 5. **0:11.5-0:14.0 (frames 346-420), Skye's whisper CU behind the island is underlit** (dark-brown face, same as
    Ch1 #3). SHOULD: warm fill from the kitchen lights so her skin matches daytime Skye.
 
+## Ch05 "The Tea Party" (WEDNESDAY 3:41 PM), 2019 frames, 67.3 s
+
+Stitched from main (ch05_a 1-909 + ch05_b 910-2019): seam clean, A/V -0.02 s, -14.1 LUFS. blank_frames: none. The
+best-looking chapter in the block: warm attic light, faces read, Lily at the hatch with her teddy (0:01.5), the
+"Boo" arm (one arm, fine), the horse held out on "you have to be the horse" (0:23), Skye's blush on the last line
+(1:03.5). Levels very even (-12.2 to -15.7). No musts.
+
+1. **0:52.8-0:55.8 (frames 1586-1674), "He talks about you every night at dinner, you know." plays on a wide
+   over-shoulder where Lily is a small profile at the right edge behind the box. SHOULD** (close to a must: it's the
+   chapter's clue and the line Ch10/Ch11 lean on). Put it on Lily's MCU (the 0:57.5 set-up) with a knowing face, and
+   cut to Skye's reaction for "Because he hates me".
+2. **0:16.5-0:24.1 (frames 496-724), the skeleton stands between Lily and the lens and window-bar shadows stripe her
+   body. SHOULD.** Her face is clear, but the ribcage covers her left side and the teddy, and the stripes are the
+   gate's #1 still showing on her dress. Move the camera (or the skeleton) so nothing is in front of her.
+3. **0:29.4-1:03.2, 35 s of ping-pong between three static set-ups. COULD.** Skye MS in the sunbeam, Skye CU under
+   the round window, Lily MCU, line by line with 0.25 s gaps. It's well lit but flat; use the tea-party two-shot
+   (0:26.5) for a couple of exchanges (e.g. "So you're haunting him." / "Professionally.") and push in slowly over the
+   "every night at dinner" run so the scene builds to the blush.
+
 ## Ch06 "The Practice" (THURSDAY 10:15 PM), 1733 frames, 57.8 s
 
 Stitched from main (ch06_a 1-780 + ch06_b 781-1733): seam clean, A/V -0.03 s, -14.3 LUFS. blank_frames: none flagged
