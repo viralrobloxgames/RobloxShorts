@@ -179,3 +179,24 @@ export function checkFrame(frame, { minDepth = 0.06 } = {}) {
   }
   return [...hits.values()].map((h) => ({ actor: h.actor, part: h.part, object: h.object, onscreen: h.onscreen, depth: Math.round(h.depth * 100) / 100, cover: h.cover }));
 }
+
+// Camera check for one frame: where the camera is, whether it sits inside solid scenery, and how close it is to the
+// nearest character's head (a camera inside or right at a head shows a wall of face).
+export function checkCamera(frame) {
+  const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
+  clip.update((frame - 1) / meta.fps, stage);
+  stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
+  stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
+  const cam = stage.camera, p = cam.getWorldPosition(new THREE.Vector3()), target = new THREE.Vector3();
+  cam.getWorldDirection(target);
+  const roots = new Set(packActors.map((a) => a.root));
+  let inside = null, depth = 0;
+  for (const ob of obstacles(stage.scene, roots)) { if (!ob.box.containsPoint(p)) continue; const d = depthIn(ob, p); if (d > depth) { depth = d; inside = ob.name; } }
+  let head = null, hd = Infinity;
+  for (const bp of bodyParts(stage.scene)) {
+    if (bp.part !== 'Head') continue;
+    const c = bp.boxFull.getCenter(new THREE.Vector3()), d = c.distanceTo(p) - 0.6 * (bp.a.scale || 1);
+    if (d < hd) { hd = d; head = bp.actor; }
+  }
+  return { pos: p.toArray().map((x) => Math.round(x * 100) / 100), dir: target.toArray().map((x) => Math.round(x * 1000) / 1000), fov: cam.fov, inside, depth: Math.round(depth * 100) / 100, head, headDist: Math.round(hd * 100) / 100 };
+}
