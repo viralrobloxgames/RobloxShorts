@@ -1,4 +1,4 @@
-STATUS: READY
+STATUS: DONE
 
 Kit + pipeline on main (see web/kit/README.md). Staying on per the orchestrator:
 - Answering requests in production/requests.md (watcher every 90 s). Done so far: practicals, beam fromProp, chinLight,
@@ -10,3 +10,5 @@ Kit + pipeline on main (see web/kit/README.md). Staying on per the orchestrator:
 - Fit gate fixed: kit chapters are now fit-checked, one report per clip (web/fit_check/chNN/).
 - Measured: 3.0 s/rendered frame at 1080p (2 workers, 4 cores); frame skip 33% on the proof; seams frame-exact.
 - Next: final stitch when chapters are rendered.
+
+Final (orchestrator stitch bf9f3a7, using stitch_longform.py): 21304/21304 frames, stream copy, 21/21 seams frame-exact, A/V 0.011 s, -14.1 LUFS / -1.2 dBTP, 242 MB in 3 parts.
