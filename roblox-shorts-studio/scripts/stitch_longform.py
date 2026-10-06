@@ -2,7 +2,7 @@
 
 python scripts/stitch_longform.py <project>                    all eleven chapters
 python scripts/stitch_longform.py <project> --chapters 1-5     a block (e.g. pass one); output name gets _ch01-05
-          [--music playful_history_music] [--music-gain 0.05] [--out NAME.mp4] [--no-split]
+          [--music playful_history_music] [--music-gain 0.05] [--music-duck "8@49-58"] [--out NAME.mp4] [--no-split]
 
 Video: delivery/chapters/chNN.mp4, or its segments chNN_a.mp4, chNN_b.mp4 ... (finish_longform.py, with their .json
 sidecars). Segments must cover frames 1..total of their chapter without gaps or overlaps. If every segment carries the
@@ -109,6 +109,7 @@ def main():
     p.add_argument('--music-gain', type=float, default=0.05); p.add_argument('--voice-gain', type=float, default=1.4)
     p.add_argument('--sfx-gain', type=float, default=0.7); p.add_argument('--out'); p.add_argument('--no-split', action='store_true')
     p.add_argument('--audio-dir', default='audio/chapters', help='where chNN/narration.wav live (tests: a stand-in folder)')
+    p.add_argument('--music-duck', default='', help='mute the music bed in chapter windows, e.g. "8@49-58,10@56-60" (chapter@start-end s): 1 s fade down, 1.5 s back up')
     a = p.parse_args(); P = Path(a.project).resolve(); D = P / 'delivery'; D.mkdir(exist_ok=True)
     lo, _, hi = a.chapters.partition('-'); chs = list(range(int(lo), int(hi or lo) + 1))
     full = chs == list(range(1, 12))
@@ -160,6 +161,14 @@ def main():
     mpath = Path(a.music) if Path(a.music).is_file() else ROOT / 'assets/audio' / (a.music + ('' if a.music.endswith('.wav') else '.wav'))
     bed = loop_bed(load(mpath), N, LOOP_POINTS.get(mpath.stem))
     bed[:SR] *= np.linspace(0, 1, SR); bed[-3 * SR:] *= np.linspace(1, 0, 3 * SR)
+    for w in filter(None, a.music_duck.split(',')):            # emotional beats: no playful bed under them
+        ch_s, _, span = w.partition('@'); t0, _, t1 = span.partition('-'); ch = int(ch_s)
+        if ch not in starts: continue
+        base = starts[ch][0] * SPF; i0, i1 = base + int(float(t0) * SR), base + int(float(t1) * SR)
+        env = np.ones(N, np.float32); dn, up = SR, int(1.5 * SR)
+        env[max(0, i0 - dn):i0] = np.linspace(1, 0, i0 - max(0, i0 - dn)); env[i0:i1] = 0
+        k = min(N, i1 + up); env[i1:k] = np.linspace(0, 1, k - i1)
+        bed *= env; notes.append(f'music ducked in ch{ch:02d} {t0}-{t1}s')
     mix = voice * a.voice_gain + sfx * a.sfx_gain + bed * a.music_gain
     raw = work / 'mix_raw.wav'
     with wave.open(str(raw), 'wb') as w:
