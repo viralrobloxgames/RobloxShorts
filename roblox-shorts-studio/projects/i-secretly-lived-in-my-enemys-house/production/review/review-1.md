@@ -102,6 +102,29 @@ cringe faces on "Ugh. No.") all work; Lily's "You like him." entrance (0:26.4) l
 5. **End frame 0:57-0:57.8: Dad's back fills the right of a wide, broom level, girls a few pixels in the gap.
    COULD.** Boundary: Dad facing the hatch, broom raised, flashlight up at it, which also sells "Every box?".
 
+## Ch03 "A Useful Ghost" (TUESDAY 11:52 PM), 2013 frames, 67.1 s
+
+Stitched from main (ch03_a 1-906 + ch03_b 907-2013): seam clean, A/V 0.0, -14.1 LUFS. blank_frames: none. The fridge
+spelling (BE NI -> BE NICE -> 2 SKYE) reads beautifully, Skye peeking through the pantry slats behind Max at the reveal
+(0:17.9) is the best staging in the block, and Dad's "Who's Skye?" / "Nobody!" lands. Levels even (Max -12 to -14,
+whispers -18 to -19.6, offscreen Max -19.4: right). Max's voice: judged once "MAX voice replaced in ch03" lands.
+
+1. **0:37.2-0:38.4 (frames 1117-1153), the crustless sandwich pops onto the plate: nobody makes it and no crust is
+   cut. MUST.** At 0:36.5 the plate is empty, at 0:37.5 a finished sandwich sits on it. The crusts-cut sandwich is the
+   story's running clue (Ch1 lunch, Ch4 "since this week", Ch10 "Who did you think was making the sandwiches?", the
+   last line), and this is the one moment it's made. Fix inside the existing 1.25 s pause, no retime: an insert of
+   Max's knife sliding a crust strip off the sandwich on the plate (crust strips left beside it), then the sandwich
+   in place for 0:38.4. The gate flagged the knife stroke as hidden; it still is.
+2. **0:45.3-0:49.6 (frames 1359-1488), "Max made the ghost a sandwich" with no sandwich in sight. SHOULD.** Skye
+   picks it up at 0:44.5, then it's gone: hands at her sides, plate empty. Hold it up at her chin (the Ch3 end needs it
+   in her hand anyway).
+3. **Max's face is half in a hard shadow band through the fridge scene (0:12.5-0:37, frames 376-1110). SHOULD.**
+   It reads at full size but on a phone his "o" on "Be nice to Skye?" and the flustered "Who even is Skye? I mean, I
+   know who Skye is" (0:30-0:37, the twist's best plant in this chapter) are mush. The script has the fridge open as
+   the key light: open the door for his read and let it light his face 3/4.
+4. **1:00.0-1:01.0 (frames 1801-1830), Skye's reaction CU behind the island is underlit** (same dark-brown face as
+   Ch1 #3 / Ch2 #5). SHOULD.
+
 ## Ch04 "Cinnamon" (WEDNESDAY 12:15 PM), 1833 frames, 61.1 s
 
 Stitched from main 15:05Z (ch04_a + ch04_b, commit 32dbd17): seam at frame 825 clean, A/V diff 0.0, -14.2 LUFS

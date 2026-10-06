@@ -1,2 +1,2 @@
 STATUS: WORKING
-review-2 (ch07-ch11 + global checks). ch08 reviewed and pushed; package first pass pushed. Waiting for ch07, ch09, ch10, ch11 segments.
+review-2: ch07, ch08, ch09, ch11 reviewed and pushed (production/review/review-2.md); package first pass pushed. Waiting for ch10 (and ch05) for ch10 review + whole-film global checks. Max voice swap not yet announced in requests.md.
