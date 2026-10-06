@@ -3,5 +3,39 @@
  "text": "Wow. Spooky. What did it say?",
  "seed": 9485,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Wow",
+   "start": 0.0,
+   "end": 0.58
+  },
+  {
+   "word": "spooky,",
+   "start": 0.58,
+   "end": 1.18
+  },
+  {
+   "word": "what",
+   "start": 1.32,
+   "end": 1.52
+  },
+  {
+   "word": "did",
+   "start": 1.52,
+   "end": 1.62
+  },
+  {
+   "word": "it",
+   "start": 1.62,
+   "end": 1.72
+  },
+  {
+   "word": "say?",
+   "start": 1.72,
+   "end": 1.94
+  }
+ ],
+ "words_md5": "79d1cd293fdc42e52a68b056d5f018c9",
+ "whisper": "small.en"
 }

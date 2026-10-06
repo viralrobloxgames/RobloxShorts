@@ -3,5 +3,29 @@
  "text": "Or it's a ghost.",
  "seed": 90605,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Or",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "it's",
+   "start": 0.28,
+   "end": 0.64
+  },
+  {
+   "word": "a",
+   "start": 0.64,
+   "end": 0.68
+  },
+  {
+   "word": "ghost.",
+   "start": 0.68,
+   "end": 0.92
+  }
+ ],
+ "words_md5": "4fd4cfd18095dfd7736a7c11827efeee",
+ "whisper": "small.en"
 }

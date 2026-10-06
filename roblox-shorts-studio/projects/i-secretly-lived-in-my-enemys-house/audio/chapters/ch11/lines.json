@@ -1,0 +1,308 @@
+{
+ "chapter": 11,
+ "header": "CH11 | SUNDAY | 8:30 AM | No Crusts",
+ "duration": 62.069,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Sunday. Day seven. For the first time all week, I walked down the stairs like a normal person.",
+   "start": 0.0,
+   "end": 5.064,
+   "clip": "audio/qwen/take-01/clips/a12c3bacb21a.wav",
+   "seed": 62696
+  },
+  {
+   "index": 2,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Morning, Max! Morning, Lily! Morning...",
+   "start": 5.314,
+   "end": 7.874,
+   "clip": "audio/qwen/take-01/clips/6fa56b9f258a.wav",
+   "seed": 16920
+  },
+  {
+   "index": 3,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Pumpkin girl?",
+   "start": 8.124,
+   "end": 9.14,
+   "clip": "audio/qwen/take-01/clips/cfccd41ad3cd.wav",
+   "seed": 18465
+  },
+  {
+   "index": 4,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Dad, this is Skye. She's the ghost.",
+   "start": 9.39,
+   "end": 12.802,
+   "clip": "audio/qwen/take-01/clips/a68830ba5f45.wav",
+   "seed": 13917
+  },
+  {
+   "index": 5,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "The pancake thief!",
+   "start": 13.052,
+   "end": 14.092,
+   "clip": "audio/qwen/take-01/clips/6672b8fcbd83.wav",
+   "seed": 14117
+  },
+  {
+   "index": 6,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Sorry about the pancakes. And the sheet. And the ham. And the fridge.",
+   "start": 14.342,
+   "end": 18.422,
+   "clip": "audio/qwen/take-01/clips/9e533b39b73c.wav",
+   "seed": 76072
+  },
+  {
+   "index": 7,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "I knew first.",
+   "start": 18.672,
+   "end": 19.756,
+   "clip": "audio/qwen/take-01/clips/7ec8404b7864.wav",
+   "seed": 8877
+  },
+  {
+   "index": 8,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "You knew?",
+   "start": 20.006,
+   "end": 20.826,
+   "clip": "audio/qwen/take-01/clips/1899962f07bc.wav",
+   "seed": 12259
+  },
+  {
+   "index": 9,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "She was my horse.",
+   "start": 21.076,
+   "end": 22.304,
+   "clip": "audio/qwen/take-01/clips/7510b2db497b.wav",
+   "seed": 72063
+  },
+  {
+   "index": 10,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Does your mother know where you've been all week?",
+   "start": 22.554,
+   "end": 24.471,
+   "clip": "audio/qwen/take-01/clips/84c919d596a1.wav",
+   "seed": 2310
+  },
+  {
+   "index": 11,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "She thinks I'm at a sleepover.",
+   "start": 24.721,
+   "end": 26.481,
+   "clip": "audio/qwen/take-01/clips/42063420f777.wav",
+   "seed": 27041
+  },
+  {
+   "index": 12,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "For a week?",
+   "start": 26.731,
+   "end": 27.509,
+   "clip": "audio/qwen/take-01/clips/749bb938f1ac.wav",
+   "seed": 42118
+  },
+  {
+   "index": 13,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "It's a really long sleepover.",
+   "start": 27.759,
+   "end": 29.599,
+   "clip": "audio/qwen/take-01/clips/06bd0837f408.wav",
+   "seed": 41685
+  },
+  {
+   "index": 14,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Phone. Now. Then pancakes.",
+   "start": 29.849,
+   "end": 32.095,
+   "clip": "audio/qwen/take-01/clips/ed107b141ef3.wav",
+   "seed": 36328
+  },
+  {
+   "index": 15,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Hi, Mom. So. Funny story.",
+   "start": 32.345,
+   "end": 34.453,
+   "clip": "audio/qwen/take-01/clips/667a56f8f228.wav",
+   "seed": 16067
+  },
+  {
+   "index": 16,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "So. The Halloween dance. Do you want to go? With me?",
+   "start": 35.503,
+   "end": 39.614,
+   "clip": "audio/qwen/take-01/clips/3d0ba1442dcd.wav",
+   "seed": 750
+  },
+  {
+   "index": 17,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Are you asking me, or is the fridge asking me?",
+   "start": 39.864,
+   "end": 42.264,
+   "clip": "audio/qwen/take-01/clips/f8db1354717e.wav",
+   "seed": 9088
+  },
+  {
+   "index": 18,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "The fridge says yes.",
+   "start": 42.514,
+   "end": 43.881,
+   "clip": "audio/qwen/take-01/clips/2f7718efe9df.wav",
+   "seed": 10757
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Fine. One condition.",
+   "start": 44.131,
+   "end": 45.571,
+   "clip": "audio/qwen/take-01/clips/3bcee0daed3c.wav",
+   "seed": 19661
+  },
+  {
+   "index": 20,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "No crusts?",
+   "start": 45.821,
+   "end": 46.905,
+   "clip": "audio/qwen/take-01/clips/b548600dd0b7.wav",
+   "seed": 80621
+  },
+  {
+   "index": 21,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "No crusts.",
+   "start": 47.155,
+   "end": 48.115,
+   "clip": "audio/qwen/take-01/clips/9697cdf35833.wav",
+   "seed": 69338
+  },
+  {
+   "index": 22,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Pancakes for everyone! Including the ghost! Especially the ghost.",
+   "start": 48.365,
+   "end": 51.849,
+   "clip": "audio/qwen/take-01/clips/f489de21c9d1.wav",
+   "seed": 26155
+  },
+  {
+   "index": 23,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "I spent a week trying to scare my enemy. He spent it making me sandwiches.",
+   "start": 52.899,
+   "end": 57.459,
+   "clip": "audio/qwen/take-01/clips/ba756c18a872.wav",
+   "seed": 19833
+  },
+  {
+   "index": 24,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Subscribe to Viral Roblox Games for more stories like this.",
+   "start": 57.709,
+   "end": 61.469,
+   "clip": "audio/qwen/take-01/clips/13f3148c415c.wav",
+   "seed": 7489
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the kitchen on a bright Sunday morning. Dad flips pancakes. Max and Lily sit at the island. Skye walks down the stairs.",
+   "until": 0.0
+  },
+  {
+   "after_line": 15,
+   "at": 34.453,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Later: Skye hangs up and sits down at the island. Behind her, the fridge letters now say SAY YES.",
+   "until": 35.503
+  },
+  {
+   "after_line": 22,
+   "at": 51.849,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Wide: the four of them at the island. Dad flips a pancake. Max slides Skye a plate.",
+   "until": 52.899
+  },
+  {
+   "after_line": 24,
+   "at": 61.469,
+   "pause": 0.0,
+   "scene_change": false,
+   "text": "End screen, about 12 s: Skye and Max at the island, SUBSCRIBE @viralrobloxgames, room for YouTube's end-screen video slots.",
+   "until": 61.469
+  }
+ ]
+}

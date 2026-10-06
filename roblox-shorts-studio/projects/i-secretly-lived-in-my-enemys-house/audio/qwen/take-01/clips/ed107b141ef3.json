@@ -1,0 +1,31 @@
+{
+ "voice": "george_c",
+ "text": "Phone. Now. Then pancakes.",
+ "seed": 36328,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "phone",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "now,",
+   "start": 0.36,
+   "end": 0.84
+  },
+  {
+   "word": "then",
+   "start": 1.12,
+   "end": 1.42
+  },
+  {
+   "word": "pancakes.",
+   "start": 1.42,
+   "end": 1.94
+  }
+ ],
+ "words_md5": "8f8b02279c2582f47a4708a505b228a1",
+ "whisper": "small.en"
+}

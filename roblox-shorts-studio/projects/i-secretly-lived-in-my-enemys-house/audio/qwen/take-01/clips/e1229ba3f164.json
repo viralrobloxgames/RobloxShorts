@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Nothing. It's a cookie.",
+ "seed": 54536,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Nothing,",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "it's",
+   "start": 1.0,
+   "end": 1.16
+  },
+  {
+   "word": "a",
+   "start": 1.16,
+   "end": 1.26
+  },
+  {
+   "word": "cookie",
+   "start": 1.26,
+   "end": 1.46
+  }
+ ],
+ "words_md5": "1f3b3b1e9013733fd1fb9cfa02970e57",
+ "whisper": "small.en"
+}
