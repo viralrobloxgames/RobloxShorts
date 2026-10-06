@@ -1,0 +1,46 @@
+{
+ "voice": "max_kid",
+ "text": "Hey, Skye. Hungry? It's ham. No crusts.",
+ "seed": 38877,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Hey,",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "Skye,",
+   "start": 0.72,
+   "end": 1.4
+  },
+  {
+   "word": "hungry?",
+   "start": 1.44,
+   "end": 1.72
+  },
+  {
+   "word": "It's",
+   "start": 2.34,
+   "end": 2.58
+  },
+  {
+   "word": "Ham,",
+   "start": 2.58,
+   "end": 2.84
+  },
+  {
+   "word": "no",
+   "start": 3.34,
+   "end": 3.6
+  },
+  {
+   "word": "crusts.",
+   "start": 3.6,
+   "end": 4.24
+  }
+ ],
+ "words_md5": "644336ca754c0e2cf865e3332e0d3f04",
+ "whisper": "small.en"
+}

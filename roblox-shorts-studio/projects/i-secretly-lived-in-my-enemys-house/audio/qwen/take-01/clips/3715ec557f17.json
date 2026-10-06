@@ -1,0 +1,66 @@
+{
+ "voice": "george_c",
+ "text": "I'm a grown man. I go to bed when I want.",
+ "seed": 10169,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I'm",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "a",
+   "start": 0.22,
+   "end": 0.3
+  },
+  {
+   "word": "grown",
+   "start": 0.3,
+   "end": 0.52
+  },
+  {
+   "word": "man,",
+   "start": 0.52,
+   "end": 0.84
+  },
+  {
+   "word": "I",
+   "start": 1.02,
+   "end": 1.1
+  },
+  {
+   "word": "go",
+   "start": 1.1,
+   "end": 1.24
+  },
+  {
+   "word": "to",
+   "start": 1.24,
+   "end": 1.38
+  },
+  {
+   "word": "bed",
+   "start": 1.38,
+   "end": 1.56
+  },
+  {
+   "word": "when",
+   "start": 1.56,
+   "end": 1.74
+  },
+  {
+   "word": "I",
+   "start": 1.74,
+   "end": 1.86
+  },
+  {
+   "word": "want.",
+   "start": 1.86,
+   "end": 2.06
+  }
+ ],
+ "words_md5": "cb10197f25057e9ae8f5dae59d472a19",
+ "whisper": "small.en"
+}
