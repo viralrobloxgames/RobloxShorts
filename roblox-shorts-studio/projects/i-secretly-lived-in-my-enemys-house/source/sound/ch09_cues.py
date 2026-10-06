@@ -18,7 +18,7 @@ else:
 at = lambda i, off=0: rows[i][0] + off          # 0-based, as in web/ch09.js
 end = lambda i, off=0: rows[i][1] + off
 WALK = at(7, 0.55); LID_OPEN = WALK + 1.45; PICK = LID_OPEN + 0.95; LILY_WALK = at(8, 0.2)
-BACK = end(15, 0.2); LID_CLOSE = BACK + 0.45; SHEET_UP = LID_CLOSE + 0.3
+BACK = end(15, 0.2); LID_CLOSE = BACK + 0.9; SHEET_UP = LID_CLOSE + 0.25
 LENGTH = end(20) + 0.75
 
 cues = []
