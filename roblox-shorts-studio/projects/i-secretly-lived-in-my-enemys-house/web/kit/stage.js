@@ -4,6 +4,7 @@
 import * as THREE from 'three';
 import * as SETS from './sets/index.js';
 import { loadAnimation, robloxPose } from '../../../../web/lib/robloxPack.js';
+import { restArms } from './cast.js';
 import { travel } from '../../../../web/lib/locomotion.js';
 
 export const META = { width: 1920, height: 1080, fps: 30 };
@@ -133,7 +134,13 @@ export function holdClock(t, L, extra = []) {
 // Load pack animations once in setup(): const A = await K.loadAnims(['idle', 'walk', 'talk']).
 export async function loadAnims(names) { const A = {}; for (const n of names) A[n] = await loadAnimation(n); return A; }
 // Pose an actor from animation layers [[anim, time, weight?, loop?], ...] (pack animations).
-export function playAnim(actor, layers) { robloxPose(actor, layers); return actor; }
+// The pack `sit` animation holds both arms straight forward (critic-6 R1, "zombie arms"): after it, the arms are laid
+// to rest beside the thighs (kit-cast restArms). Gestures/postures applied after playAnim still override them.
+export function playAnim(actor, layers) {
+  robloxPose(actor, layers);
+  if (actor.bones && layers.some((l) => l && l[0] && l[0].name === 'sit' && (l[2] ?? 1) > 0)) restArms(actor, 'seated');
+  return actor;
+}
 // Put an actor on a mark ({ pos, heading } from K.mark) or at pos/heading; feet on pos.y unless opts.sit.
 export function putOn(actor, at, opts = {}) {
   actor.root.visible = opts.visible ?? true;
