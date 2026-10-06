@@ -243,6 +243,8 @@ function blockNest(t, idle) {
   }
   const lilyHasHorse = t >= L5.t2 + GRAB * 0.5 && t < T.horseGive;
   K.hold(P.hobby_horse, lilyHasHorse ? C.lily : C.skye, 'R');
+  const offer = lilyHasHorse && t >= at(9, 0.4);                                  // held out: the head tips towards Skye
+  if (offer) P.hobby_horse.rotateX(0.7 * smooth(inv(at(9, 0.4), at(9, 0.9), t)));
   P.hobby_horse.visible = t >= L5.t2 + GRAB * 0.5;
   K.hold(P.cracker_packet, C.skye, 'L'); P.cracker_packet.visible = t < at(2, 0.3);
   P.teapot.visible = P.cup.visible = P.cupLily.visible = false;
