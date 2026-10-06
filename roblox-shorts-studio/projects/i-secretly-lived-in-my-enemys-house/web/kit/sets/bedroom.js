@@ -185,7 +185,11 @@ export function build(scene) {
   // a real mirror (Reflector renders the room from the mirrored camera); parts.mirror.visible = false to skip its cost
   const mirrorGlass = new Reflector(new THREE.PlaneGeometry(2.6, 3.8), { textureWidth: 768, textureHeight: 1024, color: '#c9d4dc', clipBias: 0.003 }); mirrorGlass.position.set(10.7, 6.2, -5); mirrorGlass.rotation.y = -Math.PI / 2; desk.add(mirrorGlass);
   desk.add(box(1.4, 0.1, 1.0, std('#ffffff'), 9.4, 3.17, -4.1), box(0.08, 0.08, 0.9, std('#e94d4d'), 9.0, 3.2, -4.3)); // paper, pencil
-  desk.add(cyl(0.3, 0.25, 0.7, std('#2c7be5'), 12, 10.2, 3.47, -7.0)); // pencil cup
+  desk.add(cyl(0.3, 0.25, 0.7, std('#2c7be5'), 12, 10.2, 3.47, -2.95)); // pencil cup
+  // desk lamp (practical desk_lamp): an angled lamp at the back corner of the desk, aimed at the face of whoever stands at the mirror
+  desk.add(cyl(0.45, 0.5, 0.18, std('#2c2f38'), 16, 10.1, 3.21, -7.0), cyl(0.07, 0.07, 1.6, std('#2c2f38'), 8, 10.1, 4.0, -7.0));
+  const dShadeM = std('#e94d4d', { roughness: 0.5, emissive: '#ffb860', emissiveIntensity: 0 }); const dShade = new THREE.Mesh(new THREE.ConeGeometry(0.5, 0.8, 16, 1, true), dShadeM); dShade.material.side = THREE.DoubleSide; dShade.position.set(9.8, 4.9, -6.6); dShade.rotation.set(-0.9, 0, 0.6); dShade.castShadow = true; desk.add(dShade);
+  const deskLamp = new THREE.PointLight('#ffd09a', 0, 14, 1.6); deskLamp.position.set(9.4, 5.0, -6.0); desk.add(deskLamp);
   desk.add(box(0.6, 0.9, 0.3, std('#ffd23f'), 10.2, 3.57, -2.9), box(0.6, 0.8, 0.3, std('#3f8f5a'), 10.2, 3.52, -3.25)); // books
   // chair (seat top y 1.9) facing the desk
   const chair = new THREE.Group(); chair.position.set(7.9, 0, -5); group.add(chair);
@@ -228,7 +232,8 @@ export function build(scene) {
   const gapM = std('#ffd59a', { emissive: '#ffb860', emissiveIntensity: 1.8 }); const doorGap = box(0.3, 0.1, 3.9, gapM, 11.0, 0.06, 3.5, false); group.add(doorGap);
   hallLight.intensity = 40; hallPanel.material.emissiveIntensity = 1.5; hallLight.userData.bulb = [hallPanel, doorGap];
   closetLight.intensity = 6;
-  const lights = { bedside_lamp: lamp, moon_window: { lights: [moonLight, moonFill] }, hall_under_door: hallLight, closet_light: closetLight };
+  deskLamp.intensity = 22; dShadeM.emissiveIntensity = 0.8; deskLamp.userData.bulb = dShade;
+  const lights = { bedside_lamp: lamp, moon_window: { lights: [moonLight, moonFill] }, hall_under_door: hallLight, closet_light: closetLight, desk_lamp: deskLamp };
   function prac(name, on, k = 1) { // same rule as lighting.js setPractical
     const l = lights[name]; const v = on === true ? k : on === false ? 0 : Number(on);
     for (const L of [].concat(l.isLight ? l : l.lights)) { L.userData.base ??= L.intensity; L.intensity = L.userData.base * v; L.visible = v > 0;
@@ -241,7 +246,7 @@ export function build(scene) {
   function setBlanket(mode = 'flat') { blanketUp.visible = mode === 'over_head'; blanketLegs.visible = mode === 'legs'; blanket.visible = mode === 'flat'; } // 'flat' | 'legs' | 'over_head'
   function setBlanketUp(up) { setBlanket(up ? 'over_head' : 'flat'); }
   function setClock(text) { const c = clockFace.material.map.image.getContext('2d'); c.fillStyle = '#111'; c.fillRect(0, 0, 128, 96); c.font = 'bold 54px monospace'; c.fillStyle = '#ff4a3a'; c.textAlign = 'center'; c.fillText(text, 64, 66); clockFace.material.map.needsUpdate = true; }
-  setLamp(false); setMoon(true); setHall(false); prac('closet_light', false); setClosetDoors(0); setDoor(0);
+  setLamp(false); setMoon(true); setHall(false); prac('closet_light', false); prac('desk_lamp', false); setClosetDoors(0); setDoor(0);
 
   // ---- marks (world) ----
   // sitting marks carry `seat` (the seat surface y, world) and pos.y = seat - 2.0 (R6 hip height at scale 1);
@@ -310,7 +315,7 @@ export function build(scene) {
     bed_max_ms: cams.bed_ms, bed_max_mcu: cams.bed_cu,
     bed_phone_mcu: C([-1.6, 5.0, -1.6], [-4.0, 4.6, -6.6], 32, [], 'Ch8: Max sitting up in bed (bed_sit) with the phone, 3/4, garlic window behind him'),
     bed_phone_ms: C([-0.6, 5.6, 0.2], [-4.0, 4.0, -6.4], 44, [], 'Ch8: wider, the window and garlic behind'),
-    mirror_mcu: C([10.3, 5.3, -3.0], [8.0, 4.9, -5.0], 32, [], 'Ch6: beside the mirror, Max (mirror_stand) 3/4'),
+    mirror_mcu: C([10.5, 5.3, -1.9], [8.0, 4.9, -5.0], 30, [], 'Ch6: beside the mirror, Max (mirror_stand) 3/4'),
     mirror_ms: C([10.4, 5.0, -0.8], [8.0, 4.1, -5.0], 40, [], 'Ch6: waist-up on Max at the mirror'),
     bed_to_door: C([-6.5, 4.6, 12.5], [3.5, 3.4, -1.8], 44, [], 'Ch10 start: from the open side, Max in bed frame-left (3/4) and the door frame-right'),
     two_shot_door: C([2.6, 5.2, 7.2], [1.4, 3.8, -4.2], 44, [], 'Ch10 end: Max at bed_edge and Skye at ghost_stop, both 3/4, the door toward the frame edge'),

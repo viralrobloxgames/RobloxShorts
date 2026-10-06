@@ -45,7 +45,7 @@ const L = await K.loadLines(import.meta.url, CH, EST);
 export const meta = K.chapterMeta(L.end + 0.75);
 export const sky = K.SKY;
 export const samples = () => 1;
-const at = (line, off = 0) => L.line(line).start + off;
+export const at = (line, off = 0) => L.line(line).start + off;
 const endOf = (line, off = 0) => L.line(line).end + off;
 // start of the k-th word (0-based) of a spoken line
 const wd = (line, k, off = 0) => { const l = L.line(line); const ws = L.words.filter((w) => w.start >= l.start - 0.02 && w.start < l.end); return (ws[Math.min(k, ws.length - 1)]?.start ?? l.start) + off; };
@@ -87,7 +87,7 @@ export async function setup(stage) {
 }
 
 // ---------- key times ----------
-const T = {
+export const T = {
   ladderEnd: () => 2.7,                           // Skye's feet reach the hall floor
   kitchen: () => wd(1, 15, -0.1),                 // "Rule two:" -> cut to the kitchen
   freeze: () => wd(1, 22),                        // "six."
@@ -309,7 +309,7 @@ function kitchen(t, idle) {
       const u = inv(T.steal(), T.steal() + 0.3, t) - inv(T.steal() + 0.75, T.steal() + 1.1, t);
       poseAt(C.skye, 'crouch', reach.pos, reach.heading);
       K.gesture(C.skye, 'reach_up', 'R', u);
-    } else floorSit(C.skye, hide);
+    } else { floorSit(C.skye, hide); if (t >= T.slide()) K.gesture(C.skye, 'hold_out', 'R', 0.55); }   // the pancake held up in front of her
     if (t >= T.slide()) K.hold(P.pancake, C.skye, 'R');
   } else {
     // crawl: from the hiding spot round to the back door and out
@@ -328,7 +328,7 @@ function outside(t, idle) {
   const bite = smooth(inv(wd(14, 2, -0.3), wd(14, 2, -0.05), t));
   K.gesture(C.skye, 'hold_out', 'R', 1 - bite);
   K.gesture(C.skye, 'chin_hand', 'R', bite);
-  K.hold(P.pancake, C.skye, 'R');
+  K.hold(P.pancake, C.skye, 'R', 'palm', { level: true, rot: [0.7, 0, 0] });   // tipped toward camera so it reads as a pancake
 }
 
 // ---------- classroom before the bell ----------
