@@ -163,9 +163,9 @@ const S = {
 const SHOTS = [
   ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.45], ['maxHoodies', at(2) - 0.1],
   ['backToBed', T.doorShut], ['skyeWhisper', at(3) - 0.2],
-  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', at(5)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
+  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', at(5) - 0.55], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
-  ['yardWide', T.dusk], ['backDoor', () => T.door - 2.0],
+  ['yardWide', T.dusk], ['backDoor', () => T.door - 0.75],
   ['knockDoors', () => T.night], ['knock', () => T.night + 1.0], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
 ].map(([id, start]) => ({ id, start: typeof start === 'function' ? 0 : start, at: typeof start === 'function' ? start : null, ...S[id] })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
