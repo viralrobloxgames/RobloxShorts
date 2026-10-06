@@ -16,6 +16,12 @@ sources: `source/story.md`. Made overnight without script approval (user request
   58.92 s, so a clip with meta.seconds = ceil((W.end + 2.0) * 30) / 30 is 60.93 s (1828 frames) + 0.5 s cover = 61.4 s;
   `source/project.json` seconds = 60.93. Post copy: `delivery/post.json`.
 
+- Kit started (`web/kit.js`, work in progress): the 1859 street (BANK, GENERAL STORE, DAILY EVENING BULLETIN, HOTEL
+  shopfronts on a boardwalk), hills, the bay with a dock and four sailing ships, the Bay Bridge (hidden until its
+  scene), Norton's uniform (navy coat, brass buttons, gold collar and epaulettes), a merchant's coat, and hats on
+  bones.Head (top hat; the emperor's beaver hat with gold band, rosette and peacock feather; HAT_Y 1.55 sits on Leo's
+  hair). `web/emperor_clip.js` is only a set test (Leo in uniform and hat on the street, one camera).
+
 ## Next
 1. Web clip `web/emperor_clip.js` (sets kit: 1859 San Francisco street, docks with ships,
    newspaper office, shop, a Capitol, the bay and bridge), previews, hold/fit checks, sound cues, cover, post copy,
