@@ -17,7 +17,7 @@ import { sanFrancisco, nortonUniform, merchantCoat, dress, hat, headHat, riceSac
 export const meta = { seconds: Math.ceil((W.end + 2.0) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'He Declared Himself Emperor' };
 export const sky = { zenith: '#5a8fd6', horizon: '#e6dcc4', below: '#f0f6ff', fog: '#e8e0cc', sunDir: new THREE.Vector3(0.4, 0.62, 0.68) };
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const T = { city: W.city1 - 0.15, name: W.name - 0.15, rich: W.rich - 0.15, ships: W.ship1 - 0.15, writes: W.writes - 0.15 };
+const T = { city: W.city1 - 0.15, name: W.name - 0.15, rich: W.rich - 0.15, ships: W.ship1 - 0.15, writes: W.writes - 0.15, paper: W.paper - 0.15, wears: W.wears - 0.15 };
 const SKIN = ['#f1c27d', '#c68642', '#e0ac69', '#8d5524'], COATS = ['#5a4636', '#3f4a5a', '#6b3b3b', '#4e5a3a'];
 let leo, SF, OUT, HAT;
 const A = {}, folk = [], SACKS = [];
@@ -37,7 +37,7 @@ export async function setup(stage) {
     });
     dress(e, { color: COATS[i], hem: 0.4, buttons: '#c9a24a' }); scene.add(e.root); folk.push(e);
   }
-  for (const n of ['idle', 'walk', 'wave', 'cheer', 'clap', 'proud']) A[n] = await loadAnimation(n);
+  for (const n of ['idle', 'walk', 'wave', 'cheer', 'clap', 'proud', 'think']) A[n] = await loadAnimation(n);
   SF = sanFrancisco(scene);
   for (let i = 0; i < 14; i++) {                         // the rice pile on the dock: it grows with every ship
     const k = riceSack(), row = Math.floor(i / 5), col = i % 5;
@@ -47,7 +47,7 @@ export async function setup(stage) {
   SF.ships.forEach((sh) => { sh.userData.home = sh.position.clone(); });
 }
 
-const SHOTS = [[0, 'hook'], [T.city, 'city'], [T.name, 'name'], [T.rich, 'rich'], [T.ships, 'ships'], [T.writes, 'wip']]
+const SHOTS = [[0, 'hook'], [T.city, 'city'], [T.name, 'name'], [T.rich, 'rich'], [T.ships, 'ships'], [T.writes, 'writes'], [T.paper, 'paper'], [T.wears, 'wip']]
   .map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 const X0 = -20, X1 = -4, SPEED = 5;                       // the Emperor's walk down the street (left to right)
 const FX = [-15, -11, -7.5, -1.5];                        // townsfolk on the boardwalk
@@ -58,14 +58,17 @@ export function samples() { return 1; }
 export function update(t, stage) {
   const { shot, u } = shotAt(SHOTS, t); SHOT = shot.id;
   stage.sun.intensity = 2.8; stage.hemi.intensity = 0.55;
-  const dock = t >= T.rich && t < T.writes;
-  OUT.emperor.visible = HAT.emperor.visible = !dock; OUT.merchant.visible = HAT.merchant.visible = dock;
+  const dock = t >= T.rich && t < T.writes, office = t >= T.writes && t < T.wears;   // the old clothes until the uniform
+  OUT.emperor.visible = HAT.emperor.visible = !(dock || office); OUT.merchant.visible = HAT.merchant.visible = dock || office;
   const d = Math.min(X1 - X0, t * SPEED), walking = !dock && d < X1 - X0, lx = X0 + d;
   leo.root.visible = true;
   if (dock) {                                             // the merchant on the dock, facing the bay, then the crash
     leo.root.position.set(DOCK.x - 3.2, 0, DOCK.z + 0.8); leo.root.rotation.set(0, t < T.ships ? -0.55 : 0.9, 0);   // to camera, then to the bay
     robloxPose(leo, t < W.lost - 0.1 ? [[A.proud, t - T.rich, 1, true]] : [[A.idle, t, 1, true]]);
     grounded(leo, 0.8); setExpression(leo, t < W.arrived ? 'happy' : 'surprised');
+  } else if (office) {                                    // at the BULLETIN's door with his proclamation
+    leo.root.position.set(-1.6, 0, STREET_Z - 4.2); leo.root.rotation.set(0, -0.2, 0);
+    robloxPose(leo, [[t < T.paper ? A.think : A.proud, t - T.writes, 1, true]]); grounded(leo, 0.03); setExpression(leo, 'happy');
   } else {
     leo.root.position.set(lx, 0, STREET_Z); leo.root.rotation.set(0, walking ? Math.PI / 2 : 0.35, 0);
     robloxPose(leo, walking ? [[A.walk, d / STRIDE]] : [[A.proud, t - (X1 - X0) / SPEED, 1, true]]);
@@ -76,7 +79,7 @@ export function update(t, stage) {
   const landed = t < T.ships ? 3 : 3 + SF.ships.filter((sh, i) => t > arrive(i)).length * 3;
   SACKS.forEach((k, i) => { k.visible = i < landed; });
   folk.forEach((e, i) => {
-    if (dock) { e.root.visible = false; return; }
+    if (dock || (office && t < T.paper)) { e.root.visible = false; return; }
     const near = lx > FX[i] - 5, anim = [A.wave, A.cheer, A.clap, A.wave][i];
     e.root.visible = true; e.root.position.set(FX[i], 0, STREET_Z - 4.4); e.root.rotation.set(0, (i % 2 ? 0.25 : -0.25), 0);
     robloxPose(e, near ? [[anim, t + i * 0.3, 1, true]] : [[A.idle, t + i, 1, true]]);
@@ -87,6 +90,8 @@ export function update(t, stage) {
   else if (shot.id === 'city') { c.position.set(lerp(-7, -5, u), 9.5, STREET_Z + 21); c.lookAt(V(-7, 2.6, STREET_Z - 3)); c.fov = 50; }
   else if (shot.id === 'rich') { c.position.set(DOCK.x - 10.5, 4.6, DOCK.z + lerp(12.5, 11.5, u)); c.lookAt(V(DOCK.x - 1.6, 4.0, DOCK.z - 1.0)); c.fov = 46; }
   else if (shot.id === 'ships') { c.position.set(DOCK.x - 10, 6.0, DOCK.z + 13); c.lookAt(V(DOCK.x + 8, 3.0, DOCK.z - 12)); c.fov = 50; }
+  else if (shot.id === 'writes') { c.position.set(-0.6, 4.4, STREET_Z + lerp(7.5, 6.6, u)); c.lookAt(V(-2.2, 4.6, STREET_Z - 5)); c.fov = 46; }
+  else if (shot.id === 'paper') { c.position.set(-3.0, 7.5, STREET_Z + 17); c.lookAt(V(-3.0, 3.0, STREET_Z - 4)); c.fov = 50; }
   else if (shot.id === 'name') { c.position.set(lx + 1.6, 4.6, STREET_Z + lerp(9.6, 8.6, u)); c.lookAt(V(lx, 5.0, STREET_Z)); c.fov = 40; }   // head, hat and epaulettes, name above
   else { c.position.set(-6, 9.5, STREET_Z + 21); c.lookAt(V(-6, 2.6, STREET_Z - 3)); c.fov = 50; }
   c.up.set(0, 1, 0); c.updateProjectionMatrix(); stage.aimSun(V(lx, 2, STREET_Z), 18);
@@ -118,6 +123,33 @@ export function overlay(g, s, t) {
   }
   if (SHOT === 'name' && t > W.norton1 - 0.2) bigText(g, s, 'JOSHUA NORTON', 540, 440, 104, '#ffffff', pop(t, W.norton1 - 0.2), -0.03);
   if (SHOT === 'rich' && t > W.rice1 - 0.15) bigText(g, s, 'ALL THE RICE', 540, 330, 100, '#ffd23f', pop(t, W.rice1 - 0.15), -0.03);
+  if (SHOT === 'writes' && t > W.newspaper - 0.2) letter(g, s, t, W.newspaper - 0.2);
+  if (SHOT === 'paper') frontPage(g, s, t, T.paper + 0.05);
   if (SHOT === 'ships' && t > W.lost - 0.1) bigText(g, s, 'BROKE', 540, 440, 150, '#ff4b3f', pop(t, W.lost - 0.1, 0.18), -0.12, '#2a0d0d');
+}
+// The proclamation: a handwritten letter card (the real one ran in the Bulletin on 17 September 1859; paraphrased).
+function letter(g, s, t, t0) {
+  const k = easeOut(clamp((t - t0) / 0.35)); if (k <= 0) return;
+  g.save(); g.translate(540 * s, (1240 + 300 * (1 - k)) * s); g.rotate(-0.04); g.globalAlpha = k;
+  roundRect(g, -380 * s, -230 * s, 760 * s, 460 * s, 14 * s); g.fillStyle = '#f3e7c9'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#8a6a3e'; g.stroke();
+  g.fillStyle = '#3a2a1e'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = `700 ${38 * s}px "Playfair Display"`; g.fillText('I, Joshua Norton,', 0, -140 * s); g.fillText('declare and proclaim myself', 0, -80 * s);
+  g.font = `700 ${46 * s}px "Playfair Display"`; g.fillText('EMPEROR OF THESE', 0, 0); g.fillText('UNITED STATES', 0, 60 * s);
+  g.font = `italic 700 ${40 * s}px "Playfair Display"`; g.fillText('~ Norton I ~', 120 * s, 160 * s);
+  g.restore();
+}
+// The Daily Evening Bulletin's front page slams in.
+function frontPage(g, s, t, t0) {
+  const k = pop(t, t0, 0.28); if (k <= 0) return;
+  g.save(); g.translate(540 * s, 960 * s); g.rotate(0.05); g.scale(k, k);
+  g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = 40 * s; g.fillStyle = '#efe8d6'; g.fillRect(-420 * s, -560 * s, 840 * s, 1060 * s); g.shadowColor = 'transparent';
+  g.fillStyle = '#1d1a1c'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = `700 ${62 * s}px "Playfair Display"`; g.fillText('DAILY EVENING', 0, -470 * s); g.fillText('BULLETIN', 0, -400 * s);
+  g.font = `700 ${24 * s}px Montserrat`; g.fillText('SAN FRANCISCO  ·  SEPTEMBER 17, 1859', 0, -335 * s);
+  g.fillRect(-380 * s, -310 * s, 760 * s, 6 * s); g.fillRect(-380 * s, -300 * s, 760 * s, 2 * s);
+  g.font = `900 ${150 * s}px "Playfair Display"`; g.fillText('NORTON I', 0, -170 * s);
+  g.font = `700 ${50 * s}px "Playfair Display"`; g.fillText('EMPEROR OF THESE', 0, -50 * s); g.fillText('UNITED STATES', 0, 10 * s);
+  g.fillStyle = '#9a9384'; for (let r = 0; r < 9; r++) for (const cx of [-200, 200]) g.fillRect((cx - 170) * s, (90 + r * 40) * s, (r % 4 === 3 ? 220 : 340) * s, 14 * s);
+  g.restore();
 }
 export const cast = () => ({ leo, folk0: folk[0] });
