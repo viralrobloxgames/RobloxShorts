@@ -3,5 +3,74 @@
  "text": "That's Max. My enemy since kindergarten. And this morning, he started a war.",
  "seed": 11530,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "That's",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "Max,",
+   "start": 0.4,
+   "end": 0.64
+  },
+  {
+   "word": "my",
+   "start": 1.08,
+   "end": 1.28
+  },
+  {
+   "word": "enemy",
+   "start": 1.28,
+   "end": 1.5
+  },
+  {
+   "word": "since",
+   "start": 1.5,
+   "end": 1.92
+  },
+  {
+   "word": "kindergarten,",
+   "start": 1.92,
+   "end": 2.38
+  },
+  {
+   "word": "and",
+   "start": 2.92,
+   "end": 3.0
+  },
+  {
+   "word": "this",
+   "start": 3.0,
+   "end": 3.16
+  },
+  {
+   "word": "morning",
+   "start": 3.16,
+   "end": 3.46
+  },
+  {
+   "word": "he",
+   "start": 3.46,
+   "end": 3.8
+  },
+  {
+   "word": "started",
+   "start": 3.8,
+   "end": 4.04
+  },
+  {
+   "word": "a",
+   "start": 4.04,
+   "end": 4.24
+  },
+  {
+   "word": "war.",
+   "start": 4.24,
+   "end": 4.46
+  }
+ ],
+ "words_md5": "1a2523e62b5e73c48231eccbed37d1b8",
+ "whisper": "small.en"
 }

@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "She was my horse.",
+ "seed": 72063,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "She",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "was",
+   "start": 0.3,
+   "end": 0.48
+  },
+  {
+   "word": "my",
+   "start": 0.48,
+   "end": 0.72
+  },
+  {
+   "word": "horse.",
+   "start": 0.72,
+   "end": 1.04
+  }
+ ],
+ "words_md5": "4ae63bcc9cd5d568e5c7fc139337d57c",
+ "whisper": "small.en"
+}

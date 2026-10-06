@@ -1,0 +1,46 @@
+{
+ "voice": "brittney",
+ "text": "He didn't notice. Boys never notice anything.",
+ "seed": 62759,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "word": "didn't",
+   "start": 0.52,
+   "end": 0.82
+  },
+  {
+   "word": "notice",
+   "start": 0.82,
+   "end": 1.1
+  },
+  {
+   "word": "boys",
+   "start": 1.1,
+   "end": 1.8
+  },
+  {
+   "word": "never",
+   "start": 1.8,
+   "end": 2.24
+  },
+  {
+   "word": "notice",
+   "start": 2.24,
+   "end": 2.56
+  },
+  {
+   "word": "anything",
+   "start": 2.56,
+   "end": 3.02
+  }
+ ],
+ "words_md5": "24ede74419656302c8a696636e95de3d",
+ "whisper": "small.en"
+}

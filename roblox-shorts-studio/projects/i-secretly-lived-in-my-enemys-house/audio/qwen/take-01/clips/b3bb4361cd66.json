@@ -1,0 +1,46 @@
+{
+ "voice": "max_kid",
+ "text": "Not funny. I didn't sleep at all.",
+ "seed": 78960,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Not",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "funny.",
+   "start": 0.3,
+   "end": 0.62
+  },
+  {
+   "word": "I",
+   "start": 1.1,
+   "end": 1.2
+  },
+  {
+   "word": "didn't",
+   "start": 1.2,
+   "end": 1.52
+  },
+  {
+   "word": "sleep",
+   "start": 1.52,
+   "end": 1.7
+  },
+  {
+   "word": "at",
+   "start": 1.7,
+   "end": 1.84
+  },
+  {
+   "word": "all.",
+   "start": 1.84,
+   "end": 2.08
+  }
+ ],
+ "words_md5": "2ba99bb35328ccfb1fc7dac4f99a980b",
+ "whisper": "small.en"
+}

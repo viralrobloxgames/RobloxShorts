@@ -1,0 +1,36 @@
+{
+ "voice": "brittney",
+ "text": "The worst. Right. Got it.",
+ "seed": 46546,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "The",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "worst",
+   "start": 0.32,
+   "end": 0.7
+  },
+  {
+   "word": "right.",
+   "start": 0.7,
+   "end": 1.24
+  },
+  {
+   "word": "Got",
+   "start": 1.72,
+   "end": 1.98
+  },
+  {
+   "word": "it.",
+   "start": 1.98,
+   "end": 2.2
+  }
+ ],
+ "words_md5": "17e3dd20f3213672f2c05e9518aba93f",
+ "whisper": "small.en"
+}

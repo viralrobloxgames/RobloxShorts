@@ -3,5 +3,19 @@
  "text": "Day one.",
  "seed": 40777,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Day",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "one.",
+   "start": 0.36,
+   "end": 0.6
+  }
+ ],
+ "words_md5": "0b49ee8d6f3fe077c38bb4ccf8f7fed9",
+ "whisper": "small.en"
 }

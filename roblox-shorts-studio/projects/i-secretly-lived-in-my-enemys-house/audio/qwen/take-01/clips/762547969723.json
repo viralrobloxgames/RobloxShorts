@@ -3,5 +3,34 @@
  "text": "What does it sound like?",
  "seed": 42868,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "What",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "does",
+   "start": 0.44,
+   "end": 0.58
+  },
+  {
+   "word": "it",
+   "start": 0.58,
+   "end": 0.7
+  },
+  {
+   "word": "sound",
+   "start": 0.7,
+   "end": 0.94
+  },
+  {
+   "word": "like?",
+   "start": 0.94,
+   "end": 1.18
+  }
+ ],
+ "words_md5": "4e8e6b378b890251dec4fd1d018e41e8",
+ "whisper": "small.en"
 }

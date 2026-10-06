@@ -480,7 +480,7 @@ export function build(scene) {
     tea_two: cam([3.4, 3.5, 2.2], [-3.5, 1.8, 2.0], 40, 'tea party two-shot across the box from the +x side (Lily frame-left, Skye frame-right)'),
     tea_wide: cam([-7.0, 4.4, -6.6], [-3.0, 1.4, 2.4], 46, 'tea party wide 3/4 from window-left (Ch5 S12)'),
     tea_wide_front: cam([4.0, 5.2, 9.0], [-3.5, 1.4, 1.2], 44, 'tea party wide from the hatch side'),
-    tea_lily_ots: cam([-2.0, 4.0, -3.0], [-3.5, 2.1, 4.1], 40, "over Skye's left shoulder onto Lily"),
+    tea_lily_ots: cam([-1.6, 3.7, -2.0], [-3.7, 2.2, 4.1], 34, "over Skye's left shoulder onto Lily"),
     tea_skye_ots: cam([-2.2, 3.4, 6.4], [-3.5, 2.5, -0.1], 40, "over Lily's right shoulder onto Skye"),
     tea_lily_cu: cam([-1.6, 2.7, 1.0], [-3.5, 2.4, 4.1], 30, 'Lily close (kneeling)'),
     tea_skye_cu: cam([-1.6, 2.9, 3.1], [-3.5, 2.6, -0.1], 30, 'Skye close (cross-legged)'),

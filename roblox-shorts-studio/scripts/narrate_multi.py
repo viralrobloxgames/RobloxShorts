@@ -26,7 +26,7 @@ SCENE = re.compile(r'^(hard cut|cut to|back to|inside\b|dusk|dawn|later|meanwhil
 # note -> ffmpeg filter chain (applied after levelling; deterministic)
 FX = {
     'whisper': 'highpass=f=160,lowpass=f=5500,volume=0.55',
-    'ghost': 'apad=pad_dur=0.5,aecho=0.8:0.55:70|140|260:0.45|0.3|0.18,lowpass=f=7000,volume=0.9',
+    'ghost': 'apad=pad_dur=0.5,aecho=1.0:0.7:70|140|260:0.4|0.28|0.16,lowpass=f=7000,volume=1.3,alimiter=limit=0.95:level=false',
     'shriek': 'volume=1.35,alimiter=limit=0.95:level=false',
     'offscreen': 'lowpass=f=1100,volume=0.5',
     'offscreen, below': 'lowpass=f=750,volume=0.45',
@@ -155,25 +155,36 @@ def align(text, heard, t0, t1):
             toks.append(tk)
         else:
             toks[-1] += ' ' + tk  # punctuation-only token sticks to the previous word
-    keys = [' '.join(norm(t)) for t in toks]; hk = [' '.join(norm(w['word'])) for w in heard]
+    # compare sub-words ("scaredy-cat" = scaredy + cat on both sides), then time each token from its sub-words
+    sk, so = [], []
+    for i, t in enumerate(toks):
+        for w in norm(t):
+            sk.append(w); so.append(i)
+    hk, ht = [], []
+    for w in heard:
+        ws = norm(w['word']); n = len(ws)
+        for k, x in enumerate(ws):
+            d = (w['end'] - w['start']) / max(n, 1); hk.append(x); ht.append((w['start'] + d * k, w['start'] + d * (k + 1)))
     st, en = [None] * len(toks), [None] * len(toks); bad = []
-    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, keys, hk, autojunk=False).get_opcodes():
+    def put(i, a, b):
+        st[i] = a if st[i] is None else min(st[i], a); en[i] = b if en[i] is None else max(en[i], b)
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, sk, hk, autojunk=False).get_opcodes():
         if tag == 'equal':
             for k in range(i2 - i1):
-                st[i1 + k], en[i1 + k] = heard[j1 + k]['start'], heard[j1 + k]['end']
+                put(so[i1 + k], *ht[j1 + k])
         else:
-            bad.append((' '.join(keys[i1:i2]), ' '.join(hk[j1:j2])))
+            bad.append((' '.join(sk[i1:i2]), ' '.join(hk[j1:j2])))
             if tag == 'replace':
-                a, b = heard[j1]['start'], heard[j2 - 1]['end']; n = i2 - i1
+                a, b = ht[j1][0], ht[j2 - 1][1]; n = i2 - i1
                 for k in range(n):
-                    st[i1 + k], en[i1 + k] = a + (b - a) * k / n, a + (b - a) * (k + 1) / n
+                    put(so[i1 + k], a + (b - a) * k / n, a + (b - a) * (k + 1) / n)
     # fill unheard tokens by interpolation, then force monotonic and inside [t0, t1]
-    known = [i for i in range(len(toks)) if st[i] is not None]
-    for i in range(len(toks)):
-        if st[i] is None:
+    known = [i for i in range(len(toks)) if st[i] is not None]; miss = set(range(len(toks))) - set(known)
+    for i in sorted(miss):
+        if True:
             lo = max([k for k in known if k < i], default=None); hi = min([k for k in known if k > i], default=None)
             a = en[lo] if lo is not None else 0.0; b = st[hi] if hi is not None else (t1 - t0)
-            run = [k for k in range(len(toks)) if st[k] is None and (lo is None or k > lo) and (hi is None or k < hi)]
+            run = [k for k in sorted(miss) if (lo is None or k > lo) and (hi is None or k < hi)]
             j = run.index(i); n = len(run); st[i], en[i] = a + (b - a) * j / n, a + (b - a) * (j + 1) / n
     out, prev = [], 0.0
     for i, tk in enumerate(toks):

@@ -1,0 +1,51 @@
+{
+ "voice": "brittney",
+ "text": "Why is he so happy? It's still dark.",
+ "seed": 99283,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Why",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "is",
+   "start": 0.34,
+   "end": 0.54
+  },
+  {
+   "word": "he",
+   "start": 0.54,
+   "end": 0.7
+  },
+  {
+   "word": "so",
+   "start": 0.7,
+   "end": 0.9
+  },
+  {
+   "word": "happy?",
+   "start": 0.9,
+   "end": 1.28
+  },
+  {
+   "word": "It's",
+   "start": 1.66,
+   "end": 1.84
+  },
+  {
+   "word": "still",
+   "start": 1.84,
+   "end": 2.04
+  },
+  {
+   "word": "dark.",
+   "start": 2.04,
+   "end": 2.38
+  }
+ ],
+ "words_md5": "63c35efa3f67f7c8199fd35142123987",
+ "whisper": "small.en"
+}

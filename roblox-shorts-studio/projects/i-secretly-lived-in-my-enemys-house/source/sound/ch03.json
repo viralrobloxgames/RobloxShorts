@@ -1,0 +1,389 @@
+[
+ {
+  "asset": "sfx/room_hum.wav",
+  "start": 0.0,
+  "gain": 0.05,
+  "dur": 67.08
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 0.95,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 2.45,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 8.16,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 8.42,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 8.53,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 8.56,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 8.7,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 8.84,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 8.86,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 8.98,
+  "gain": 0.035
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.19,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.28,
+  "gain": 0.035
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.52,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/latch.wav",
+  "start": 9.53,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.58,
+  "gain": 0.035
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.83,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.85,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 9.95,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 10.07,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/door_creak.wav",
+  "start": 10.13,
+  "gain": 0.04,
+  "dur": 0.6
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 10.18,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 10.51,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 10.84,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 11.17,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 11.5,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/latch.wav",
+  "start": 29.807,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/latch.wav",
+  "start": 30.407,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 30.707,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 31.007,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 31.307,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/swish_3.wav",
+  "start": 32.637,
+  "gain": 0.03
+ },
+ {
+  "asset": "sfx/swish_3.wav",
+  "start": 32.987,
+  "gain": 0.03
+ },
+ {
+  "asset": "sfx/swish_3.wav",
+  "start": 33.337,
+  "gain": 0.03
+ },
+ {
+  "asset": "sfx/swish_3.wav",
+  "start": 33.687,
+  "gain": 0.03
+ },
+ {
+  "asset": "sfx/swish_3.wav",
+  "start": 34.037,
+  "gain": 0.03
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 38.783,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 42.381,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 42.681,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 42.981,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.031,
+  "gain": 0.025
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.251,
+  "gain": 0.025
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.281,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.471,
+  "gain": 0.025
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.581,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.691,
+  "gain": 0.025
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.881,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 44.181,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 44.481,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 49.641,
+  "gain": 0.035
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 49.761,
+  "gain": 0.035
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 49.791,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 49.881,
+  "gain": 0.035
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 50.211,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 50.631,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 51.051,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 51.471,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 51.891,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 52.311,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 52.731,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 53.151,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 53.571,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 53.991,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 54.411,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 54.831,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 55.251,
+  "gain": 0.045
+ },
+ {
+  "asset": "sfx/latch.wav",
+  "start": 58.597,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/latch.wav",
+  "start": 62.79,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 63.19,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 63.61,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 64.03,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 64.45,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 64.87,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 65.29,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 65.71,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 66.13,
+  "gain": 0.04
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 66.55,
+  "gain": 0.04
+ }
+]

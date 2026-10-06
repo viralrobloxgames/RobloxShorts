@@ -1,0 +1,56 @@
+{
+ "voice": "george_c",
+ "text": "Good morning, kitchen! Who wants pancakes? Everybody wants pancakes!",
+ "seed": 85425,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Good",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "morning",
+   "start": 0.16,
+   "end": 0.42
+  },
+  {
+   "word": "kitchen.",
+   "start": 0.42,
+   "end": 0.82
+  },
+  {
+   "word": "Who",
+   "start": 1.28,
+   "end": 1.38
+  },
+  {
+   "word": "wants",
+   "start": 1.38,
+   "end": 1.56
+  },
+  {
+   "word": "pancakes?",
+   "start": 1.56,
+   "end": 2.02
+  },
+  {
+   "word": "Everybody",
+   "start": 2.64,
+   "end": 2.8
+  },
+  {
+   "word": "wants",
+   "start": 2.8,
+   "end": 3.18
+  },
+  {
+   "word": "pancakes.",
+   "start": 3.18,
+   "end": 3.58
+  }
+ ],
+ "words_md5": "65f4da26042af4d459757d5f2d4dff12",
+ "whisper": "small.en"
+}

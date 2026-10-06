@@ -1,0 +1,26 @@
+{
+ "voice": "george_c",
+ "text": "The pancake thief!",
+ "seed": 14117,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "the",
+   "start": 0.0,
+   "end": 0.14
+  },
+  {
+   "word": "pancake",
+   "start": 0.14,
+   "end": 0.64
+  },
+  {
+   "word": "thief.",
+   "start": 0.64,
+   "end": 0.84
+  }
+ ],
+ "words_md5": "4faee48dfe860eb910c38dedb10d34d4",
+ "whisper": "small.en"
+}

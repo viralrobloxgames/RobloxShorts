@@ -1,0 +1,66 @@
+{
+ "voice": "max_kid",
+ "text": "You cut the crusts off your sandwich? What are you, five?",
+ "seed": 52797,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "cut",
+   "start": 0.24,
+   "end": 0.5
+  },
+  {
+   "word": "the",
+   "start": 0.5,
+   "end": 0.68
+  },
+  {
+   "word": "crusts",
+   "start": 0.68,
+   "end": 1.24
+  },
+  {
+   "word": "off",
+   "start": 1.24,
+   "end": 1.32
+  },
+  {
+   "word": "your",
+   "start": 1.32,
+   "end": 1.5
+  },
+  {
+   "word": "sandwich?",
+   "start": 1.5,
+   "end": 1.9
+  },
+  {
+   "word": "What",
+   "start": 2.5,
+   "end": 2.66
+  },
+  {
+   "word": "are",
+   "start": 2.66,
+   "end": 2.84
+  },
+  {
+   "word": "you,",
+   "start": 2.84,
+   "end": 3.1
+  },
+  {
+   "word": "five?",
+   "start": 3.46,
+   "end": 3.76
+  }
+ ],
+ "words_md5": "98f136e6d6dcb87e57f3d8d9099f135a",
+ "whisper": "small.en"
+}

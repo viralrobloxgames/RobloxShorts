@@ -1,0 +1,56 @@
+{
+ "voice": "george_c",
+ "text": "Pancakes for everyone! Including the ghost! Especially the ghost.",
+ "seed": 26155,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "pancakes",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "for",
+   "start": 0.4,
+   "end": 0.66
+  },
+  {
+   "word": "everyone,",
+   "start": 0.66,
+   "end": 1.04
+  },
+  {
+   "word": "including",
+   "start": 1.36,
+   "end": 1.6
+  },
+  {
+   "word": "the",
+   "start": 1.6,
+   "end": 1.82
+  },
+  {
+   "word": "ghost,",
+   "start": 1.82,
+   "end": 2.06
+  },
+  {
+   "word": "especially",
+   "start": 2.54,
+   "end": 2.74
+  },
+  {
+   "word": "the",
+   "start": 2.74,
+   "end": 3.04
+  },
+  {
+   "word": "ghost.",
+   "start": 3.04,
+   "end": 3.26
+  }
+ ],
+ "words_md5": "f26a3abcd990a0383617b0098f016b27",
+ "whisper": "small.en"
+}

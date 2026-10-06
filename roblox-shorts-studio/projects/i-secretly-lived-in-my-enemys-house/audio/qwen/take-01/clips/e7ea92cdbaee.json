@@ -1,0 +1,51 @@
+{
+ "voice": "george_c",
+ "text": "Lily, why do the decorations smell like cinnamon?",
+ "seed": 98943,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "why",
+   "start": 0.68,
+   "end": 0.9
+  },
+  {
+   "word": "do",
+   "start": 0.9,
+   "end": 1.04
+  },
+  {
+   "word": "the",
+   "start": 1.04,
+   "end": 1.16
+  },
+  {
+   "word": "decorations",
+   "start": 1.16,
+   "end": 1.62
+  },
+  {
+   "word": "smell",
+   "start": 1.62,
+   "end": 2.0
+  },
+  {
+   "word": "like",
+   "start": 2.0,
+   "end": 2.24
+  },
+  {
+   "word": "cinnamon?",
+   "start": 2.24,
+   "end": 2.5
+  }
+ ],
+ "words_md5": "919ad3c1251cc2b0f6cfcd11103bded9",
+ "whisper": "small.en"
+}

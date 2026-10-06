@@ -1,0 +1,21 @@
+{
+ "voice": "george_c",
+ "text": "You knew?",
+ "seed": 12259,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "knew.",
+   "start": 0.26,
+   "end": 0.52
+  }
+ ],
+ "words_md5": "116fdbb47bec08edae83d42260009b36",
+ "whisper": "small.en"
+}

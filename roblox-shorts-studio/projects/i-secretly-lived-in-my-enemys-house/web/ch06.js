@@ -58,35 +58,41 @@ const T = {
   hatch: () => wordT(18, 1),                 // "I'm going up": Dad steps under the hatch
 };
 
-// ---------- marks (fallbacks are offsets from the set origin, until kit-sets-a defines them) ----------
-// Hallway runs along x; the open camera side is +z; back wall at z -9: linen closet (x -6), Max's door (x -1),
-// attic hatch in the ceiling (x +3), stairs top at the right end (x +10).
+// ---------- marks (kit-sets-a hallway / bedroom; world coordinates) ----------
+// Hallway: runs along x, open camera side +z. Linen closet in the left end wall (x -17), Max's door (x -9) and Lily's
+// door (x 6) in the back wall, the attic hatch in the ceiling (x -4..0), the stairs at the right end (x 11).
+const HO = () => K.getSet('hallway').group.position;
+const hw = (x, z, heading) => ({ pos: HO().clone().add(V(x, 0, z)), heading });
 const M = {
-  creep: () => K.mark('hallway', 'hall_creep_start', { pos: V(-10, 0, -5.6), heading: 1.45 }),
-  door: () => K.mark('hallway', 'max_door_out', { pos: V(-1.9, 0, -7.0), heading: 1.25 }),
-  lilyStart: () => K.mark('hallway', 'lily_start', { pos: V(-11, 0, -5.0), heading: 1.5 }),
-  lily: () => K.mark('hallway', 'lily_behind', { pos: V(-4.2, 0, -6.3), heading: 1.5 }),
-  linenSkye: () => K.mark('hallway', 'linen_in_R', { pos: V(-5.6, 0, -8.2), heading: 0.55 }),
-  linenLily: () => K.mark('hallway', 'linen_in_L', { pos: V(-6.6, 0, -7.7), heading: 0.55 }),
-  stairs: () => K.mark('hallway', 'stairs_top', { pos: V(10, 0, -4.5), heading: -1.57 }),
-  dadMid: () => K.mark('hallway', 'dad_mid', { pos: V(4.5, 0, -4.8), heading: -1.2 }),
-  hatch: () => K.mark('hallway', 'under_hatch', { pos: V(3.2, 0, -4.4), heading: -0.35 }),
-  mirror: () => K.mark('bedroom', 'mirror_stand', { pos: V(5, 0, -3.5), heading: -0.5 }),
+  creep: () => K.mark('hallway', 'skye_creep'),
+  door: () => ({ ...K.mark('hallway', 'max_door_listen'), heading: -0.87 }),     // listening: face cheated 3/4 to camera
+  doorTurn: 1.15,                                                                 // turned to Lily (facing +x, a bit to camera)
+  lilyStart: () => K.mark('hallway', 'lily_door_out'),
+  lily: () => { const m = K.mark('hallway', 'max_door_listen'); return { pos: m.pos.add(V(1.5, 0, 1.2)), heading: -0.45 }; },   // behind Skye, facing her (-x), cheated 3/4
+  linenFront: () => K.mark('hallway', 'linen_front'),
+  linenSkye: () => hw(-15.9, -1.0, 1.2),           // at the crack (between the door's free edge and the frame), peeking out
+  linenLily: () => hw(-15.3, -0.6, 1.25),          // in front of / below Skye
+  stairs: () => K.mark('hallway', 'dad_enter'),
+  dadMid: () => hw(4.0, 0.8, -1.07),
+  hatch: () => hw(-5.6, 1.4, 1.45),                   // just past the hatch, facing it (+x), looking up; closet behind him
+  mirror: () => { const m = K.mark('bedroom', 'desk_stand'); m.pos.x -= 0.8; return m; },   // facing the mirror, a step back from the desk
 };
-const HALL_Z = () => K.mark('hallway', 'hall_line', { pos: V(0, 4, -6), heading: 0 }).pos.z;
+const HATCH_C = () => HO().clone().add(V(-2, 9.6, 0));
 
 // ---------- setup ----------
 let C, A, P = {}, beamSkye, beamDad;
 export async function setup(stage) {
   await K.buildSets(stage, ['hallway', 'bedroom']);
   K.setState({ chapter: CH });
+  const bd = K.getSet('bedroom');
+  if (bd?.parts?.chair) bd.parts.chair.position.x -= 3.2;   // the desk chair pushed back so Max can stand at the mirror
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.max, 'max_pjs'); K.dress(C.lily, 'lily_pjs'); K.dress(C.dad, 'dad_robe');
-  A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'point_forward', 'point_up', 'facepalm', 'think', 'horror_listen', 'look_up']);
+  A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'facepalm', 'horror_listen', 'think']);
   P.torchSkye = K.makeProp('flashlight', { color: 'pink' }); stage.scene.add(P.torchSkye); K.hold(P.torchSkye, C.skye, 'R');
   P.torchDad = K.makeProp('flashlight'); stage.scene.add(P.torchDad); K.hold(P.torchDad, C.dad, 'L');
   P.broom = K.makeProp('broom'); stage.scene.add(P.broom); K.hold(P.broom, C.dad, 'R');
-  beamSkye = K.flashlightBeam(stage); beamDad = K.flashlightBeam(stage);
+  beamSkye = K.chinLight(stage); beamDad = K.flashlightBeam(stage);
 }
 export const cast = () => ({ skye: C.skye, max: C.max, lily: C.lily, dad: C.dad });
 
@@ -94,50 +100,42 @@ export const cast = () => ({ skye: C.skye, max: C.max, lily: C.lily, dad: C.dad 
 const H = 'hallway', B = 'bedroom';
 const SHOTS = [
   { at: () => 0, id: 'creep', set: H, cam: (s) => camCreep(s) },
-  { at: () => at(2, -0.15), id: 'mirror_mcu', set: B, cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.5 }) },
-  { at: () => at(4, -0.15), id: 'mirror_ms', set: B, cam: (s) => K.camOn(s, C.max, 'ms', { angle: 0.45 }) },
-  { at: () => at(5, -0.15), id: 'mirror_ask', set: B, cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.35 }) },
-  { at: () => T.whats() - 0.1, id: 'door_listen', set: H, cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.75 }) },
-  { at: () => T.tap() - 0.45, id: 'tap', set: H, cam: (s) => K.twoShot(s, C.lily, C.skye, { framing: 'ms', bias: 0.6 }) },
-  { at: () => at(9, -0.1), id: 'skye_mcu', set: H, cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.5 }) },
-  { at: () => at(11, -0.1), id: 'lily_mcu', set: H, cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.45 }) },
-  { at: () => at(12, -0.1), id: 'skye_dusty', set: H, cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.5 }) },
-  { at: () => T.creak(), id: 'hall_wide', set: H, cam: (s) => camFixed(s, 'hall_wide', V(-2.0, 5.2, 9.0), V(3.0, 3.4, -5.5), 52) },
-  { at: () => at(13, 0.6), id: 'dad_ms', set: H, cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.45 }) },
+  { at: () => at(2, -0.15), id: 'mirror_ms', set: B, cam: (s) => camMirror(s, 'mcu') },
+  { at: () => at(4, -0.15), id: 'mirror_gest', set: B, cam: (s) => camMirror(s, 'ms', 0.3) },
+  { at: () => at(5, -0.15), id: 'mirror_cu', set: B, cam: (s) => camMirror(s, 'mcu', -0.15) },
+  { at: () => T.whats() - 0.1, id: 'door_listen', set: H, cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.3 }) },
+  { at: () => T.tap() - 0.45, id: 'tap', set: H, cam: (s) => fixed(s, V(-2.6, 3.0, 3.6), K.headPos(C.skye).lerp(K.headPos(C.lily), 0.5).add(V(0, -0.4, 0)), 40) },
+  { at: () => at(9, -0.1), id: 'skye_mcu', set: H, cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
+  { at: () => at(11, -0.1), id: 'lily_mcu', set: H, cam: (s) => K.setCam(s, { pos: K.headPos(C.lily).add(V(0.4, 0.3, 4.6)), target: K.headPos(C.lily).add(V(-0.5, -0.1, 0)), fov: 40 }, { clear: false }) },
+  { at: () => at(12, -0.1), id: 'skye_dusty', set: H, cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
+  { at: () => T.creak(), id: 'hall_wide', set: H, cam: (s) => setCam(s, H, 'wide_to_stairs') },
+  { at: () => at(13, 0.9), id: 'dad_ms', set: H, cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.4 }) },
   { at: () => at(14, -0.1), id: 'dad_mcu', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.4 }) },
-  { at: () => T.hide() - 0.05, id: 'hide_wide', set: H, cam: (s) => camFixed(s, 'hall_wide', V(-2.0, 5.2, 9.0), V(-1.0, 3.4, -5.5), 52) },
-  { at: () => at(15, -0.1), id: 'dad_max', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.6 }) },
-  { at: () => at(16, -0.1), id: 'max_bed', set: B, cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.3 }) },
+  { at: () => T.hide() - 0.05, id: 'hide_wide', set: H, cam: (s) => setCam(s, H, 'wide') },
+  { at: () => at(15, -0.1), id: 'dad_max', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.45 }) },
+  { at: () => at(16, -0.1), id: 'max_bed', set: B, cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.35 }) },
   { at: () => at(17, -0.1), id: 'dad_grown', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.4 }) },
-  { at: () => T.hatch() - 0.1, id: 'dad_hatch', set: H, cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.35, height: -1.6, look: V(0, 1.4, 0), fov: 46 }) },
-  { at: () => at(19, -0.12), id: 'gap', set: H, cam: (s) => K.twoShot(s, C.lily, C.skye, { framing: 'mcu', bias: 0.6 }) },
+  { at: () => T.hatch() - 0.1, id: 'dad_hatch', set: H, cam: (s) => camHatch(s) },
+  { at: () => at(19, -0.12), id: 'gap', set: H, cam: (s) => fixed(s, V(-11.5, 4.0, 3.8), K.headPos(C.skye).lerp(K.headPos(C.lily), 0.4), 32) },
   { at: () => at(20, -0.1), id: 'end', set: H, cam: (s) => camEnd(s) },
 ].map((x) => ({ ...x, start: x.at() })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
-// a set camera if kit-sets-a has it, else a fallback (offsets from the set origin)
-function camFixed(stage, name, pos, target, fov) {
-  const set = K.getSet(H), c = set?.cams?.[name];
-  if (c) return K.setCam(stage, c, { blockers: [set.group] });
-  const o = set?.group?.position || V(300, 0, 0);
-  return K.setCam(stage, { pos: pos.clone().add(o), target: target.clone().add(o), fov }, { blockers: [set.group] });
+const setCam = (stage, id, name) => { const set = K.getSet(id); return K.setCam(stage, set.cams[name], { blockers: [set.group] }); };
+const fixed = (stage, pos, target, fov) => K.setCam(stage, { pos: HO().clone().add(pos), target, fov }, { blockers: [K.getSet(H).group] });
+// opening: from ahead of Skye as she creeps down the hall to Max's door; her face 3/4, below the day card
+const camCreep = (stage) => fixed(stage, V(-14.5, 4.4, 5.0), K.headPos(C.skye).add(V(0.4, 0.75, 0)), 25);
+// the mirror's point of view: the camera just in front of the desk mirror, looking back at Max (a slight angle off square)
+function camMirror(stage, framing, side = -0.35) {
+  const eye = K.headPos(C.max), f = { cu: 2.6, mcu: 3.8, ms: 4.8 }[framing];
+  const pos = V(10.3, eye.y + 0.25, eye.z + side * 2), d = pos.distanceTo(eye);
+  const fov = THREE.MathUtils.radToDeg(2 * Math.atan(f / 2 / d)) * 1.05;
+  return K.setCam(stage, { pos, target: eye.clone().add(V(0, -0.12 * f, 0)), fov }, { clear: false });
 }
-// opening: a slow pan with Skye creeping to Max's door, her face 3/4 below the day card
-function camCreep(stage) {
-  const set = K.getSet(H);
-  if (set?.cams?.door_approach) return K.setCam(stage, set.cams.door_approach, { blockers: [set.group] });
-  const o = set.group.position, target = K.headPos(C.skye).add(V(0.6, 0.55, 0));
-  return K.setCam(stage, { pos: o.clone().add(V(2.5, 4.3, 3.5)), target, fov: 34 }, { blockers: [set.group] });
-}
+// Dad from low in front, the hatch above him in frame
+const camHatch = (stage) => fixed(stage, V(1.5, 2.6, 7.5), K.headPos(C.dad).lerp(HATCH_C(), 0.35), 46);
 // last frame: toward the linen-closet gap, Dad in the foreground (3/4) facing the hatch
-function camEnd(stage) {
-  const set = K.getSet(H);
-  if (set?.cams?.linen_end) return K.setCam(stage, set.cams.linen_end);
-  const d = K.headPos(C.dad), g = K.headPos(C.skye).lerp(K.headPos(C.lily), 0.4);
-  const target = d.clone().lerp(g, 0.55).add(V(0, -0.6, 0));
-  const pos = d.clone().add(V(4.2, -0.8, 8.5));
-  return K.setCam(stage, { pos, target, fov: 42 });
-}
+const camEnd = (stage) => fixed(stage, V(2.0, 4.0, 9.5), K.headPos(C.dad).lerp(K.headPos(C.skye), 0.55).add(V(0, -0.8, 0)), 40);
 
 // ---------- arm and head overrides (after playAnim; one arm high at most) ----------
 const _e = new THREE.Euler(), _q = new THREE.Quaternion();
@@ -154,16 +152,19 @@ const pulse = (t, t0, d) => (t >= t0 && t < t0 + d ? Math.sin(Math.PI * (t - t0)
 export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet(sh.set);
-  const idle = K.holdClock(t, L, [[0, T.heard() + 0.6], [T.tap() - 1.4, T.tap() + 0.7], [T.creak(), at(13, 1.6)], [T.hide(), T.hide() + 0.9], [T.hatch() - 0.4, T.hatch() + 0.9]]);
-  const zl = HALL_Z(), o = set.group.position;
-  if (sh.set === H) K.setLine(V(o.x - 14, 4, zl), V(o.x + 14, 4, zl), 1); else K.clearLine();
-  if (sh.set === H) hallway(t, idle, sh); else bedroom(t, idle, sh);
+  const idle = K.holdClock(t, L, [[0, T.heard() + 0.6], [T.tap() - 1.8, T.tap() + 0.7], [T.creak(), at(13, 1.8)], [T.hide(), T.hide() + 1.2], [T.hatch() - 0.4, T.hatch() + 1.4]]);
+  const o = set.group.position;
+  if (sh.set === H) K.setLine(V(o.x - 20, 4, o.z + 0.5), V(o.x + 14, 4, o.z + 0.5), 1); else K.clearLine();
+  let linen = 0;
+  if (sh.set === H) linen = hallway(t, idle, sh); else bedroom(t, idle, sh);
+  if (sh.set === H) set.setLinen?.(linen);
   K.setBlockers(set.group, ...Object.values(cast()).filter((a) => a.root.visible));
-
-  K.applyLight(stage, 'night_moon', { set, practicals: sh.set === H ? { door_light: true, max_door_light: true } : { bedside_lamp: true, desk_lamp: true } });
+  const pr = sh.set === H
+    ? { moon_window: t >= T.hide() ? 1.6 : 1.2, under_door: true, nightlight: true, linen_fill: linen > 0.02 && linen < 0.8 ? 3 : false }
+    : { bedside_lamp: true, desk_lamp: true, moon_window: 1.2 };
+  K.applyLight(stage, 'night_moon', { set, practicals: pr });
   sh.cam(stage, t);
   beams(t, sh);
-  OVL = { t };
 }
 
 // ---------- Max's room: rehearsing to the mirror ----------
@@ -171,105 +172,106 @@ function bedroom(t, idle, sh) {
   K.only(C, ['max']);
   const m = M.mirror(), mx = C.max;
   let face = 'nervous';
+  K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m);
   if (t < at(3)) {                                    // "Hey. So. Do you want to go to the Halloween dance with me?"
-    K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m);
-    const k = smooth((t - at(2)) / 0.5) * (1 - smooth((t - wordT(2, 4)) / 0.4));      // hand to the back of his neck, nervous
-    arm(mx, 'R', 2.1 * k, 0.55 * k, 0);
-    const offer = smooth((t - wordT(2, 9)) / 0.35);                                    // open-hand offer on "with me?"
-    if (offer > 0) arm(mx, 'L', 1.15 * offer, 0.25 * offer, 0);
-    face = 'nervous';
+    const k = smooth((t - at(2) + 0.1) / 0.4) * (1 - smooth((t - wordT(2, 6)) / 0.4));   // nervous hand to his chin
+    if (k > 0) { K.playAnim(mx, [[A.idle, idle], [A.think, 0.4, 2 * k, false]]); K.putOn(mx, m); }
+    const offer = smooth((t - wordT(2, 9) + 0.1) / 0.3);                               // open-hand offer on "with me?"
+    if (offer > 0) arm(mx, 'L', 1.1 * offer, 0.3 * offer, 0);
   } else if (t < at(4)) {                             // "No. Too serious." head shake
-    K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m);
-    headTurn(mx, 0.35 * Math.sin((t - at(3)) * 14) * pulse(t, at(3), 0.8)); face = 'annoyed';
+    headTurn(mx, 0.3 * Math.sin((t - at(3)) * 14) * pulse(t, at(3), 0.8)); face = 'annoyed';
   } else if (t < at(5)) {                             // "Yo! Dance? You? Me? Ugh. No."
-    K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m); face = 'happy';
+    face = 'happy';
     const you = wordT(4, 2), me = wordT(4, 3), ugh = wordT(4, 4);
-    if (t >= you - 0.1 && t < me - 0.05) arm(mx, 'R', 1.55 * smooth((t - you + 0.1) / 0.15), 0.05);          // point at the mirror
-    else if (t >= me - 0.05 && t < ugh - 0.05) arm(mx, 'R', 1.25, -0.55, 0);                                     // thumb to his chest
-    if (t >= ugh - 0.05) { K.playAnim(mx, [[A.idle, idle], [A.facepalm, Math.min(0.3, t - ugh + 0.05), 1.6, false]]); face = 'annoyed'; }
-  } else if (sh.id !== 'max_bed') {                   // "Okay. This weekend, I just ask her..." squares up
-    K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m); face = 'determined';
-    headTurn(mx, 0, 0.12 * pulse(t, wordT(5, 3), 0.5));
+    if (t >= you - 0.1 && t < me - 0.05) arm(mx, 'R', 1.55 * smooth((t - you + 0.1) / 0.12), 0.05);   // points at the mirror
+    else if (t >= me - 0.05 && t < ugh - 0.05) arm(mx, 'R', 1.3, -0.6, 0);                             // thumb to his chest
+    if (t >= ugh - 0.05) { K.playAnim(mx, [[A.idle, idle], [A.facepalm, Math.min(0.3, t - ugh + 0.05), 1.6, false]]); K.putOn(mx, m); face = 'annoyed'; }
+  } else if (sh.id !== 'max_bed') {                   // "Okay. This weekend, I just ask her..." squares up, a nod
+    face = 'determined'; headTurn(mx, 0, -0.12 * pulse(t, wordT(5, 3), 0.5));
   } else {                                            // "Go to bed, Dad!" turned toward his door
-    K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m, { heading: m.heading - 1.1 }); face = 'annoyed';
+    K.putOn(mx, { pos: m.pos, heading: 0.45 }); face = 'annoyed';
   }
   K.speak(mx, face, t, L.said('MAX'));
+}
+
+// a two-leg run (via a waypoint) from t0; returns the travel state of the current leg
+function run2(a, from, via, to, t0, t, speed = 16) {
+  const t1 = t0 + from.pos.distanceTo(via.pos) / speed;
+  if (t < t1) return K.walk(a, A, from, via, t0, t, { speed });
+  return K.walk(a, A, via, to, t1, t, { speed, endHeading: to.heading });
 }
 
 // ---------- the hallway ----------
 function hallway(t, idle, sh) {
   const sk = C.skye, li = C.lily, dd = C.dad;
-  const lilyOn = t >= T.tap() - 1.3, dadOn = t >= T.creak() - 0.05;
+  const lilyOn = t >= T.tap() - 1.9, dadOn = t >= T.creak() - 0.05;
   K.only(C, ['skye', ...(lilyOn ? ['lily'] : []), ...(dadOn ? ['dad'] : [])]);
   const door = M.door(), hide = T.hide();
+  let linen = 0;
 
   // --- Skye ---
   let skFace = 'scheming', chin = 1;                  // chin: 1 = flashlight under her chin, 0 = lowered
   if (t < hide) {
-    const creepEnd = 2.7;
-    const m = K.walk(sk, A, M.creep(), door, creepEnd - M.creep().pos.distanceTo(door.pos) / 3.4, t, { speed: 3.4, idleAt: idle, endHeading: door.heading });
+    const cr = M.creep(), creepEnd = 3.0, sp = 4.2;
+    const m = K.walk(sk, A, cr, door, creepEnd - cr.pos.distanceTo(door.pos) / sp, t, { speed: sp, idleAt: idle, endHeading: door.heading });
     if (m.done) {
-      const listen = t >= T.heard() - 0.1 && t < at(6, 0.1);
-      const back = t >= at(6, 0.1);                   // pulls back from the door and turns her face out (3/4)
       let h = door.heading;
-      if (back) h = door.heading - 0.75 * smooth((t - at(6, 0.1)) / 0.35);
-      if (t >= T.tap()) h = door.heading - 0.75 - 1.35 * smooth((t - T.tap() - 0.25) / 0.35);   // turns to Lily
-      if (t >= T.creak()) h = door.heading - 0.5 * smooth((t - T.creak() - 0.15) / 0.3) - 2.5 * (1 - smooth((t - T.creak() - 0.15) / 0.3));
-      K.putOn(sk, { pos: door.pos, heading: h });
+      if (t >= T.tap()) h = door.heading + (M.doorTurn - door.heading) * smooth((t - T.tap() - 0.3) / 0.35);   // turns to Lily
+      if (t >= T.creak()) h = M.doorTurn - 0.15 * smooth((t - T.creak() - 0.1) / 0.3);                          // toward the stairs
+      const listen = t >= T.heard() - 0.1 && t < at(6, 0.1);
       K.playAnim(sk, listen ? [[A.idle, idle], [A.horror_listen, Math.min(1.2, t - T.heard() + 0.1), 1.5, false]] : [[A.idle, idle]]);
-      if (listen) K.putOn(sk, { pos: door.pos.clone().add(V(0, 0, -0.25)), heading: h });
+      K.putOn(sk, { pos: door.pos, heading: h });
+      if (t >= at(6, 0.1) && t < T.tap()) headTurn(sk, 0.25 * smooth((t - at(6, 0.1)) / 0.3));   // pulls back, turns her face out
     }
     if (t < T.heard()) skFace = 'scheming';
-    else if (t < at(6)) skFace = t < at(5) ? 'surprised' : 'suspicious';
+    else if (t < at(5)) skFace = 'surprised';
     else if (t < at(7)) skFace = 'suspicious';
     else if (t < T.tap()) skFace = 'annoyed';
     else if (t < at(9)) skFace = 'shocked';
     else if (t < at(12)) skFace = 'annoyed';
     else if (t < T.creak()) skFace = 'nervous';
     else skFace = 'scared';
-    // the jump when Lily taps her: arms out at shoulder height (shock), then back
-    const jolt = pulse(t, T.tap() + 0.05, 0.8);
-    if (jolt > 0) { K.playAnim(sk, [[A.idle, idle], [A.shock, 0.35, 2.5 * jolt, false]]); K.putOn(sk, { pos: door.pos, heading: sk.root.rotation.y }); chin = 1 - jolt; }
+    const jolt = pulse(t, T.tap() + 0.02, 0.45);      // the jump when Lily taps her (a hop; the torch drops from her chin)
+    if (jolt > 0) sk.root.position.y += 0.45 * jolt;
+    if (t >= T.tap()) chin = Math.min(chin, 1 - smooth((t - T.tap()) / 0.2));
     if (t >= at(9, -0.1)) chin = 0;                  // flashlight lowered once she's talking to Lily
-    if (t >= at(12) && t < T.creak()) {               // "up there": one arm points up at the ceiling (the left; the right holds the light)
-      const u = pulse(t, wordT(12, 2) - 0.1, 1.3);
+    if (t >= at(10) && t < at(11)) arm(sk, 'L', 1.25, -0.7);                  // arms folded: "I do not like him"
+    if (t >= at(12) && t < T.creak()) {               // "up there": the left arm points up at the attic (the right holds the light)
+      const u = pulse(t, wordT(12, 2) - 0.15, 1.4);
       if (u > 0) arm(sk, 'L', 2.3 * u, 0.15 * u);
     }
-    if (t >= at(10) && t < at(11)) { arm(sk, 'L', 1.25, -0.7); }        // arms folded (left across)
   } else {                                            // pulled into the linen closet, peeking out
-    const lin = M.linenSkye(), from = { pos: door.pos, heading: door.heading };
-    const m = K.walk(sk, A, from, lin, hide + 0.12, t, { speed: 16, idleAt: idle, endHeading: lin.heading });
-    if (m.moving) arm(sk, 'L', 1.1, 0.1);            // her hand in Lily's
-    if (m.done) {
-      K.playAnim(sk, [[A.idle, idle]]); K.putOn(sk, lin);
-      headTurn(sk, 0.25, 0);
-    }
+    const m = run2(sk, { pos: door.pos, heading: door.heading }, M.linenFront(), M.linenSkye(), hide + 0.12, t);
+    if (m.moving) arm(sk, 'L', 1.0, 0.1);            // her hand in Lily's
+    if (t >= m.arrive && m.done) { K.playAnim(sk, [[A.idle, idle]]); K.putOn(sk, M.linenSkye()); }
     skFace = 'scared'; chin = 0;
+    linen = t < hide + 0.9 ? 0.7 * smooth((t - hide - 0.1) / 0.3) : 0.7 - 0.15 * smooth((t - hide - 0.9) / 0.4);   // half shut: they peek round its free edge   // opens, they dive in, pulled to a crack
   }
   K.speak(sk, skFace, t, L.said('SKYE'));
   P.torchSkye.userData.chin = chin;
-  if (chin > 0.02) arm(sk, 'R', 1.25 * chin + 0.1, -0.35 * chin, 0);   // the torch held up in front of her chin
+  if (chin > 0.02) arm(sk, 'R', 1.3 * chin + 0.1, -0.4 * chin, 0);    // the torch held up in front of her chin
 
   // --- Lily ---
   if (lilyOn) {
     let lfFace = 'neutral';
+    const lm = M.lily();
     if (t < hide) {
-      const lm = M.lily(), arrive = T.tap() - 0.05;
-      const m = K.walk(li, A, M.lilyStart(), lm, arrive - M.lilyStart().pos.distanceTo(lm.pos) / 8, t, { speed: 8, idleAt: idle, endHeading: K.faceTo(lm, door) });
+      const st = M.lilyStart(), arrive = T.tap() - 0.05;
+      const m = K.walk(li, A, st, lm, arrive - st.pos.distanceTo(lm.pos) / 9, t, { speed: 9, idleAt: idle, endHeading: lm.heading });
       if (m.done) {
-        K.playAnim(li, [[A.idle, idle]]); K.putOn(li, { pos: lm.pos, heading: 1.0 });                    // cheated 3/4 to camera
-        const tap = pulse(t, T.tap() - 0.05, 0.45);
-        if (tap > 0) arm(li, 'L', 1.9 * tap, 0.1);    // the tap on Skye's shoulder
+        K.playAnim(li, [[A.idle, idle]]); K.putOn(li, lm);
+        const tap = pulse(t, T.tap() - 0.1, 0.45);
+        if (tap > 0) arm(li, 'L', 1.9 * tap, 0.1);    // the tap on Skye's arm
         if (t >= at(11) && t < at(12)) arm(li, 'L', 2.1 * smooth((t - wordT(11, 1)) / 0.2), 0.1);   // points up at Skye's red face
-        headTurn(li, 0, 0.3);                         // looking up at Skye
+        headTurn(li, 0, 0.25);                        // looking up at Skye
+        if (t >= T.creak()) { K.putOn(li, { pos: lm.pos, heading: lm.heading + 2.1 * smooth((t - T.creak() - 0.2) / 0.3) }); }
       }
       if (t >= at(8, -0.2)) lfFace = 'smug';
-      if (t >= T.creak()) { lfFace = 'surprised'; li.root.rotation.y = K.faceTo(lm, M.stairs()); headTurn(li, 0, 0); }
+      if (t >= T.creak()) lfFace = 'surprised';
     } else {
-      const lin = M.linenLily(), from = M.lily();
-      const m = K.walk(li, A, from, lin, hide, t, { speed: 16, idleAt: idle, endHeading: lin.heading });
-      if (m.moving) arm(li, 'L', 0.3, 0.1, 0) ;      // reaching back for Skye's hand
-      if (m.done) { K.playAnim(li, [[A.idle, idle]]); K.putOn(li, lin); }
+      const m = run2(li, lm, M.linenFront(), M.linenLily(), hide, t);
+      if (m.moving) arm(li, 'L', 0.5, 0.2);          // reaching back for Skye's hand
+      if (t >= m.arrive && m.done) { K.playAnim(li, [[A.idle, idle]]); K.putOn(li, M.linenLily()); }
       lfFace = t < at(19) ? 'determined' : 'nervous';
     }
     K.speak(li, lfFace, t, L.said('LILY'));
@@ -280,29 +282,30 @@ function hallway(t, idle, sh) {
     let dFace = 'nervous', swordUp = 0, torchUp = 0;
     const st = M.stairs(), mid = M.dadMid(), hm = M.hatch();
     if (t < T.hatch()) {
-      const m = K.walk(dd, A, st, mid, T.creak() + 0.15, t, { speed: 4, idleAt: idle, endHeading: mid.heading });
+      const m = K.walk(dd, A, st, mid, T.creak() + 0.15, t, { speed: 5, idleAt: idle, endHeading: mid.heading });
       if (m.done) {
         let h = mid.heading;
-        if (t >= at(15, -0.2) && t < at(17)) h = K.faceTo(mid, door);                // "Max, was that you?" at Max's door
+        if (t >= at(15, -0.2) && t < at(17)) h = K.faceTo(mid, K.mark('hallway', 'max_door'));   // "Max, was that you?"
         K.playAnim(dd, [[A.idle, idle]]); K.putOn(dd, { pos: mid.pos, heading: h });
       }
       dFace = t < at(13, 1.6) ? 'nervous' : t < at(15) ? 'determined' : t < at(17) ? 'suspicious' : 'smug';
       if (t >= wordT(14, 11) && t < at(15)) swordUp = smooth((t - wordT(14, 11)) / 0.25);   // "draw the line"
-      if (t >= at(17) && t < at(18)) headTurn(dd, 0, 0.18 * smooth((t - at(17)) / 0.3));    // chin up
+      if (t >= at(17) && t < T.hatch()) headTurn(dd, 0, 0.18 * smooth((t - at(17)) / 0.3)); // chin up
     } else {
-      const m = K.walk(dd, A, mid, hm, T.hatch(), t, { speed: 6, idleAt: idle, endHeading: hm.heading });
+      const m = K.walk(dd, A, mid, hm, T.hatch(), t, { speed: 9, idleAt: idle, endHeading: hm.heading });
       if (m.done) {
         K.playAnim(dd, [[A.idle, idle]]); K.putOn(dd, hm);
         const u = smooth((t - m.arrive) / 0.4);
-        headTurn(dd, 0, 0.55 * u); torchUp = u; swordUp = u;
+        headTurn(dd, 0, 0.5 * u); torchUp = u; swordUp = -0.25 * u;   // broom held low across, torch up at the hatch
       }
       dFace = 'determined';
     }
     // broom out in front like a sword (right), raised on "draw the line" / at the hatch; torch (left) forward, up at the hatch
-    arm(dd, 'R', 1.25 + 0.55 * swordUp, 0.05, 0);
-    arm(dd, 'L', 1.35 + 0.9 * torchUp, 0.12, 0);
+    arm(dd, 'R', 1.2 + 0.6 * swordUp, 0.05, 0);
+    arm(dd, 'L', 1.35 + 0.85 * torchUp, 0.12, 0);
     K.speak(dd, dFace, t, L.said('DAD'));
   }
+  return linen;
 }
 
 // ---------- practicals: flashlight beams ----------
@@ -310,14 +313,8 @@ const _p = V(0, 0, 0), _d = V(0, 0, 0);
 function handPos(a, side, out) { a.root.updateMatrixWorld(true); return a.bones[side === 'L' ? 'Arm.L' : 'Arm.R'].localToWorld(out.set(side === 'R' ? -0.5 : 0.5, -1.9, 0).multiplyScalar(1)); }
 function beams(t, sh) {
   if (sh.set !== H) { beamSkye.set(false); beamDad.set(false); return; }
-  const sk = C.skye;
-  if (sk.root.visible) {
-    handPos(sk, 'R', _p);
-    const chin = P.torchSkye.userData.chin ?? 0;
-    if (chin > 0.5) { const h = sk.root.rotation.y; _d.set(-0.12 * Math.sin(h), 1, -0.12 * Math.cos(h)).normalize(); }   // straight up past her face
-    else { const h = sk.root.rotation.y; _d.set(Math.sin(h), -1.4, Math.cos(h)).normalize(); }   // down at the floor
-    beamSkye.set(true, _p.clone(), _d.clone());
-  } else beamSkye.set(false);
+  const sk = C.skye, chin = P.torchSkye.userData.chin ?? 0;
+  beamSkye.set(sk.root.visible && chin > 0.05 ? chin : false, sk);              // the torch under her chin: warm up-light
   if (C.dad.root.visible) {
     const a = C.dad; handPos(a, 'L', _p);
     const s0 = a.bones['Arm.L'].localToWorld(V(0.5, 0, 0)); _d.copy(_p).sub(s0).normalize();   // along the arm

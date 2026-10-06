@@ -35,7 +35,7 @@ const SPECS = [
   ['phone', { screen: 'call' }, 'out', -1.4],
   ['phone', { screen: 'call' }, 'ear', -2.6],
   ['backpack', {}, 'side', 0],
-  ['pancake', {}, 'mouth', 0],
+  ['pancake', {}, 'mouth', 0, { cam: [V(0, 4.6, 0.4), V(2.5, 5.2, 5)] }],
   ['vacuum', {}, 'side', 0],
   ['cracker_packet', {}, 'palm', -1.2],
   ['apple', {}, 'palm', -1.2],
@@ -53,7 +53,7 @@ const SPECS = [
 ];
 const WHO = [['skye', 'R'], ['skye', 'L'], ['lily', 'R'], ['lily', 'L'], ['dad', 'R'], ['dad', 'L']];
 export const ENTRIES = [];
-for (const s of SPECS) for (const [who, hand] of (s[0] === 'teddy' ? [['lily', 'L'], ['lily', 'R'], ['skye', 'L']] : s[0] === 'vacuum' ? [['dad', 'R'], ['dad', 'L']] : [WHO[ENTRIES.length % 2], WHO[2 + (ENTRIES.length % 2)], WHO[4]])) ENTRIES.push({ spec: s, who, hand });
+for (const s of SPECS) for (const [who, hand] of (s[0] === 'teddy' ? [['lily', 'L'], ['lily', 'R'], ['skye', 'L']] : s[0] === 'vacuum' ? [['dad', 'R'], ['dad', 'L']] : [WHO[ENTRIES.length % 2], WHO[2 + (ENTRIES.length % 2)], WHO[4]])) ENTRIES.push({ spec: s, who, hand, ...(s[4]?.cam ? { headCam: s[4].cam } : {}) });
 // two-handed, worn
 for (const who of ['skye', 'lily', 'dad']) ENTRIES.push({ c2: ['plate', { with: 'ham_sandwich' }, -1.15], who, hand: 'R' });
 ENTRIES.push({ c2: ['bedsheet', { state: 'bundle' }, -1.0], who: 'skye', hand: 'R' });
@@ -81,7 +81,7 @@ export async function setup(stage) {
 }
 const armPose = (a, sd, pitch, inward = 0) => { const b = a.bones['Arm.' + sd]; b.rotation.set(pitch, 0, (sd === 'R' ? 1 : -1) * -inward); };
 function base_update(i) {
-  for (const p of props) p.removeFromParent(); props = [];
+  for (const p of props) { p.userData.wand?.removeFromParent(); p.removeFromParent(); } props = [];
   const e = ENTRIES[Math.max(0, Math.min(ENTRIES.length - 1, Math.round(i)))], a = cast[e.who];
   for (const x of Object.values(cast)) { x.root.visible = true; for (const sd of ['L', 'R']) armPose(x, sd, 0); x.bones.Head.rotation.set(0, 0, 0); }
   if (e.spec) {

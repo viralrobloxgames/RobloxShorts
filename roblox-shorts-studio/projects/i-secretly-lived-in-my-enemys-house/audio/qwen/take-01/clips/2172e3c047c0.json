@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "Ghosts don't have backpacks.",
+ "seed": 92176,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Ghosts",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "don't",
+   "start": 0.38,
+   "end": 0.84
+  },
+  {
+   "word": "have",
+   "start": 0.84,
+   "end": 0.98
+  },
+  {
+   "word": "backpacks.",
+   "start": 0.98,
+   "end": 1.56
+  }
+ ],
+ "words_md5": "b9a8669e2a4d189a3f814c8447061537",
+ "whisper": "small.en"
+}
