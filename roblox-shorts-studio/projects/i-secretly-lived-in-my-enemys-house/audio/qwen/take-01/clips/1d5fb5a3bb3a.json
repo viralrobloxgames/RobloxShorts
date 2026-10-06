@@ -1,0 +1,26 @@
+{
+ "voice": "brittney",
+ "text": "Best. Haunting. Ever.",
+ "seed": 25122,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Best",
+   "start": 0.0,
+   "end": 0.5
+  },
+  {
+   "word": "haunting",
+   "start": 0.5,
+   "end": 1.14
+  },
+  {
+   "word": "ever.",
+   "start": 1.14,
+   "end": 1.62
+  }
+ ],
+ "words_md5": "bcbfe8d7ae6f35ab39f2617af97f8c31",
+ "whisper": "small.en"
+}

@@ -1,0 +1,41 @@
+{
+ "voice": "george_c",
+ "text": "And who's been at my ham?",
+ "seed": 87408,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "And",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "who's",
+   "start": 0.16,
+   "end": 0.42
+  },
+  {
+   "word": "been",
+   "start": 0.42,
+   "end": 0.58
+  },
+  {
+   "word": "at",
+   "start": 0.58,
+   "end": 0.68
+  },
+  {
+   "word": "my",
+   "start": 0.68,
+   "end": 0.86
+  },
+  {
+   "word": "ham?",
+   "start": 0.86,
+   "end": 1.18
+  }
+ ],
+ "words_md5": "ad9f39ce85072579784ccd595df0db08",
+ "whisper": "small.en"
+}

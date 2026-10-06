@@ -1,0 +1,71 @@
+{
+ "voice": "max_kid",
+ "text": "Fine. Deal. I'll be nice to Skye. But only because you asked.",
+ "seed": 52249,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Fine.",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "Deal.",
+   "start": 0.88,
+   "end": 1.14
+  },
+  {
+   "word": "I'll",
+   "start": 1.76,
+   "end": 1.9
+  },
+  {
+   "word": "be",
+   "start": 1.9,
+   "end": 2.02
+  },
+  {
+   "word": "nice",
+   "start": 2.02,
+   "end": 2.24
+  },
+  {
+   "word": "to",
+   "start": 2.24,
+   "end": 2.46
+  },
+  {
+   "word": "Skye,",
+   "start": 2.46,
+   "end": 3.26
+  },
+  {
+   "word": "but",
+   "start": 3.26,
+   "end": 3.42
+  },
+  {
+   "word": "only",
+   "start": 3.42,
+   "end": 3.66
+  },
+  {
+   "word": "because",
+   "start": 3.66,
+   "end": 3.96
+  },
+  {
+   "word": "you",
+   "start": 3.96,
+   "end": 4.16
+  },
+  {
+   "word": "asked.",
+   "start": 4.16,
+   "end": 4.56
+  }
+ ],
+ "words_md5": "4b6712157a1308609c5bd2b69be5b6e0",
+ "whisper": "small.en"
+}
