@@ -1,6 +1,6 @@
 # The Clown Case
 
-TikTok: **not posted** · YouTube: **not posted** · `The_Clown_Case.mp4` (62 s)
+TikTok: **not posted** · YouTube: **not posted** · `The_Clown_Case.mp4` (64 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 

@@ -516,22 +516,22 @@
   ]
  },
  {
-  "start": 26.68,
+  "start": 26.66,
   "end": 28.08,
   "text": "Big scoop's ice cream,",
   "words": [
    {
-    "start": 26.68,
-    "end": 26.94,
+    "start": 26.66,
+    "end": 26.92,
     "word": " Big"
    },
    {
-    "start": 26.94,
-    "end": 27.5,
+    "start": 26.92,
+    "end": 27.52,
     "word": " scoop's"
    },
    {
-    "start": 27.5,
+    "start": 27.52,
     "end": 27.66,
     "word": " ice"
    },
@@ -543,17 +543,17 @@
   ]
  },
  {
-  "start": 28.4,
-  "end": 29.8,
+  "start": 28.48,
+  "end": 29.86,
   "text": "full of suspicious guys.",
   "words": [
    {
-    "start": 28.4,
-    "end": 28.76,
+    "start": 28.48,
+    "end": 28.74,
     "word": " full"
    },
    {
-    "start": 28.76,
+    "start": 28.74,
     "end": 28.94,
     "word": " of"
    },
@@ -564,28 +564,28 @@
    },
    {
     "start": 29.3,
-    "end": 29.8,
+    "end": 29.86,
     "word": " guys."
    }
   ]
  },
  {
-  "start": 30.46,
+  "start": 30.6,
   "end": 31.4,
   "text": "The owner offered me",
   "words": [
    {
-    "start": 30.46,
+    "start": 30.6,
     "end": 30.6,
     "word": " The"
    },
    {
     "start": 30.6,
-    "end": 30.82,
+    "end": 30.84,
     "word": " owner"
    },
    {
-    "start": 30.82,
+    "start": 30.84,
     "end": 31.22,
     "word": " offered"
    },
@@ -598,22 +598,22 @@
  },
  {
   "start": 31.4,
-  "end": 32.36,
+  "end": 32.38,
   "text": "a free sundae,",
   "words": [
    {
     "start": 31.4,
-    "end": 31.58,
+    "end": 31.56,
     "word": " a"
    },
    {
-    "start": 31.58,
+    "start": 31.56,
     "end": 31.78,
     "word": " free"
    },
    {
     "start": 31.78,
-    "end": 32.36,
+    "end": 32.38,
     "word": " sundae,"
    }
   ]
@@ -670,12 +670,12 @@
   ]
  },
  {
-  "start": 35.46,
+  "start": 35.4,
   "end": 35.92,
   "text": "Out back,",
   "words": [
    {
-    "start": 35.46,
+    "start": 35.4,
     "end": 35.56,
     "word": " Out"
    },
@@ -687,22 +687,22 @@
   ]
  },
  {
-  "start": 36.34,
+  "start": 36.38,
   "end": 37.14,
   "text": "I found the wife,",
   "words": [
    {
-    "start": 36.34,
+    "start": 36.38,
     "end": 36.5,
     "word": " I"
    },
    {
     "start": 36.5,
-    "end": 36.7,
+    "end": 36.72,
     "word": " found"
    },
    {
-    "start": 36.7,
+    "start": 36.72,
     "end": 36.88,
     "word": " the"
    },
@@ -736,12 +736,12 @@
   ]
  },
  {
-  "start": 38.74,
+  "start": 38.76,
   "end": 39.44,
   "text": "running the till.",
   "words": [
    {
-    "start": 38.74,
+    "start": 38.76,
     "end": 38.94,
     "word": " running"
    },
@@ -759,7 +759,7 @@
  },
  {
   "start": 40.18,
-  "end": 41.32,
+  "end": 41.34,
   "text": "She'd faked the kidnapping.",
   "words": [
    {
@@ -779,18 +779,18 @@
    },
    {
     "start": 40.92,
-    "end": 41.32,
+    "end": 41.34,
     "word": " kidnapping."
    }
   ]
  },
  {
-  "start": 41.96,
+  "start": 42.0,
   "end": 42.82,
   "text": "The ransom was for",
   "words": [
    {
-    "start": 41.96,
+    "start": 42.0,
     "end": 42.08,
     "word": " The"
    },
@@ -839,294 +839,294 @@
   ]
  },
  {
-  "start": 44.3,
-  "end": 45.26,
-  "text": "Her crew objected.",
+  "start": 44.34,
+  "end": 45.2,
+  "text": "Her crew threw a",
   "words": [
    {
-    "start": 44.3,
-    "end": 44.46,
+    "start": 44.34,
+    "end": 44.48,
     "word": " Her"
    },
    {
-    "start": 44.46,
-    "end": 44.72,
+    "start": 44.48,
+    "end": 44.74,
     "word": " crew"
    },
    {
-    "start": 44.72,
-    "end": 45.26,
-    "word": " objected."
+    "start": 44.74,
+    "end": 45.0,
+    "word": " threw"
+   },
+   {
+    "start": 45.0,
+    "end": 45.2,
+    "word": " a"
    }
   ]
  },
  {
-  "start": 45.78,
-  "end": 47.1,
-  "text": "One flying sundae later,",
+  "start": 45.2,
+  "end": 46.42,
+  "text": "sundae right in my",
   "words": [
    {
-    "start": 45.78,
-    "end": 45.96,
-    "word": " One"
-   },
-   {
-    "start": 45.96,
-    "end": 46.34,
-    "word": " flying"
-   },
-   {
-    "start": 46.34,
-    "end": 46.8,
+    "start": 45.2,
+    "end": 45.7,
     "word": " sundae"
    },
    {
-    "start": 46.8,
-    "end": 47.1,
-    "word": " later,"
+    "start": 45.7,
+    "end": 46.08,
+    "word": " right"
+   },
+   {
+    "start": 46.08,
+    "end": 46.24,
+    "word": " in"
+   },
+   {
+    "start": 46.24,
+    "end": 46.42,
+    "word": " my"
    }
   ]
  },
  {
-  "start": 47.1,
-  "end": 47.82,
-  "text": "I took her back",
+  "start": 46.42,
+  "end": 46.7,
+  "text": "eye.",
   "words": [
    {
-    "start": 47.1,
-    "end": 47.3,
+    "start": 46.42,
+    "end": 46.7,
+    "word": " eye."
+   }
+  ]
+ },
+ {
+  "start": 47.42,
+  "end": 48.46,
+  "text": "I cuffed her anyway.",
+  "words": [
+   {
+    "start": 47.42,
+    "end": 47.58,
     "word": " I"
    },
    {
-    "start": 47.3,
-    "end": 47.46,
-    "word": " took"
+    "start": 47.58,
+    "end": 47.86,
+    "word": " cuffed"
    },
    {
-    "start": 47.46,
-    "end": 47.6,
+    "start": 47.86,
+    "end": 48.12,
     "word": " her"
    },
    {
-    "start": 47.6,
-    "end": 47.82,
-    "word": " back"
-   }
-  ]
- },
- {
-  "start": 47.82,
-  "end": 48.12,
-  "text": "anyway.",
-  "words": [
-   {
-    "start": 47.82,
-    "end": 48.12,
+    "start": 48.12,
+    "end": 48.46,
     "word": " anyway."
    }
   ]
  },
  {
-  "start": 48.82,
-  "end": 49.62,
-  "text": "She gave the speech",
+  "start": 49.3,
+  "end": 50.2,
+  "text": "She made the speech",
   "words": [
    {
-    "start": 48.82,
-    "end": 48.98,
+    "start": 49.3,
+    "end": 49.42,
     "word": " She"
    },
    {
-    "start": 48.98,
-    "end": 49.16,
-    "word": " gave"
+    "start": 49.42,
+    "end": 49.6,
+    "word": " made"
    },
    {
-    "start": 49.16,
-    "end": 49.34,
+    "start": 49.6,
+    "end": 49.76,
     "word": " the"
    },
    {
-    "start": 49.34,
-    "end": 49.62,
+    "start": 49.76,
+    "end": 50.2,
     "word": " speech"
    }
   ]
  },
  {
-  "start": 49.62,
-  "end": 50.36,
-  "text": "with a very big",
+  "start": 50.2,
+  "end": 51.32,
+  "text": "in handcuffs.",
   "words": [
    {
-    "start": 49.62,
-    "end": 49.8,
-    "word": " with"
-   },
-   {
-    "start": 49.8,
-    "end": 49.92,
-    "word": " a"
-   },
-   {
-    "start": 49.92,
-    "end": 50.1,
-    "word": " very"
-   },
-   {
-    "start": 50.1,
-    "end": 50.36,
-    "word": " big"
-   }
-  ]
- },
- {
-  "start": 50.36,
-  "end": 50.8,
-  "text": "smile,",
-  "words": [
-   {
-    "start": 50.36,
+    "start": 50.2,
     "end": 50.8,
-    "word": " smile,"
+    "word": " in"
+   },
+   {
+    "start": 50.8,
+    "end": 51.32,
+    "word": " handcuffs."
    }
   ]
  },
  {
-  "start": 51.46,
-  "end": 52.3,
-  "text": "the clown won.",
+  "start": 52.12,
+  "end": 53.22,
+  "text": "The clown still won,",
   "words": [
    {
-    "start": 51.46,
-    "end": 51.7,
-    "word": " the"
+    "start": 52.12,
+    "end": 52.22,
+    "word": " The"
    },
    {
-    "start": 51.7,
-    "end": 51.94,
+    "start": 52.22,
+    "end": 52.44,
     "word": " clown"
    },
    {
-    "start": 51.94,
-    "end": 52.3,
-    "word": " won."
+    "start": 52.44,
+    "end": 52.78,
+    "word": " still"
+   },
+   {
+    "start": 52.78,
+    "end": 53.22,
+    "word": " won,"
    }
   ]
  },
  {
-  "start": 52.79,
-  "end": 53.66,
-  "text": "I got a black",
+  "start": 53.86,
+  "end": 54.44,
+  "text": "sympathy vote.",
   "words": [
    {
-    "start": 52.79,
-    "end": 53.14,
-    "word": " I"
+    "start": 53.86,
+    "end": 54.06,
+    "word": " sympathy"
    },
    {
-    "start": 53.14,
-    "end": 53.26,
-    "word": " got"
-   },
+    "start": 54.06,
+    "end": 54.44,
+    "word": " vote."
+   }
+  ]
+ },
+ {
+  "start": 54.98,
+  "end": 55.32,
+  "text": "Me,",
+  "words": [
    {
-    "start": 53.26,
-    "end": 53.42,
+    "start": 54.98,
+    "end": 55.32,
+    "word": " Me,"
+   }
+  ]
+ },
+ {
+  "start": 55.8,
+  "end": 56.62,
+  "text": "a black eye,",
+  "words": [
+   {
+    "start": 55.8,
+    "end": 55.9,
     "word": " a"
    },
    {
-    "start": 53.42,
-    "end": 53.66,
+    "start": 55.9,
+    "end": 56.18,
     "word": " black"
+   },
+   {
+    "start": 56.18,
+    "end": 56.62,
+    "word": " eye,"
    }
   ]
  },
  {
-  "start": 53.66,
-  "end": 54.96,
-  "text": "eye and a free",
+  "start": 56.96,
+  "end": 58.44,
+  "text": "and a free sundae,",
   "words": [
    {
-    "start": 53.66,
-    "end": 54.02,
-    "word": " eye"
-   },
-   {
-    "start": 54.02,
-    "end": 54.6,
+    "start": 56.96,
+    "end": 57.24,
     "word": " and"
    },
    {
-    "start": 54.6,
-    "end": 54.72,
+    "start": 57.24,
+    "end": 57.38,
     "word": " a"
    },
    {
-    "start": 54.72,
-    "end": 54.96,
+    "start": 57.38,
+    "end": 57.58,
     "word": " free"
-   }
-  ]
- },
- {
-  "start": 54.96,
-  "end": 56.0,
-  "text": "sundae,",
-  "words": [
+   },
    {
-    "start": 54.96,
-    "end": 56.0,
+    "start": 57.58,
+    "end": 58.44,
     "word": " sundae,"
    }
   ]
  },
  {
-  "start": 56.16,
-  "end": 56.6,
+  "start": 58.68,
+  "end": 59.1,
   "text": "tempting.",
   "words": [
    {
-    "start": 56.16,
-    "end": 56.6,
+    "start": 58.68,
+    "end": 59.1,
     "word": " tempting."
    }
   ]
  },
  {
-  "start": 57.34,
-  "end": 59.34,
+  "start": 59.82,
+  "end": 61.86,
   "text": "Follow Viral Roblox Games for",
   "words": [
    {
-    "start": 57.34,
-    "end": 57.72,
+    "start": 59.82,
+    "end": 60.24,
     "word": " Follow"
    },
    {
-    "start": 57.72,
-    "end": 59.04,
+    "start": 60.24,
+    "end": 61.56,
     "word": " Viral Roblox Games"
    },
    {
-    "start": 59.04,
-    "end": 59.34,
+    "start": 61.56,
+    "end": 61.86,
     "word": " for"
    }
   ]
  },
  {
-  "start": 59.34,
-  "end": 59.88,
+  "start": 61.86,
+  "end": 62.38,
   "text": "more cases.",
   "words": [
    {
-    "start": 59.34,
-    "end": 59.54,
+    "start": 61.86,
+    "end": 62.04,
     "word": " more"
    },
    {
-    "start": 59.54,
-    "end": 59.88,
+    "start": 62.04,
+    "end": 62.38,
     "word": " cases."
    }
   ]

@@ -27,8 +27,11 @@ original's Election Case: `source/story.md`. Script: `script.txt` (158 words, ~6
   had placed it); fixed, and `web/changed_frames.mjs --delete` now refuses to delete every frame without --force.
   Known: ~27 frames (the drive, a few at 0.1 s) still fingerprint differently with no edit; harmless (they'd just re-render).
 
+- First cut reviewed 2026-10-06: "the end doesn't make sense... how did he get the black eye, what is the conclusion".
+  New ending approved: the sundae glass hits him in the eye; he cuffs the wife; she makes the speech in handcuffs; the
+  clown wins on a sympathy vote. Narration re-joined (only the new lines generated; 62.8 s), beats/lipsync/cues rebuilt,
+  cuff shot staged in the open floor with both cheated 3/4 (black eye moved to his right eye so it faces the camera),
+  hold check incl. the cuffs. Changed frames re-rendered (943 of 1905).
+
 ## Next
-- Awaiting the user's review. Fixes: edit `web/clown_clip.js`, refresh the fit check, then
-  `web/changed_frames.mjs --delete` + `render.mjs --resume` (only the changed frames), then `finish.py --encode`.
-- After approval: post TikTok first, then YouTube, via the user's local Claude (references/scheduling-workflow.md;
-  TikTok AI label OFF).
+- Encode, blank-frame scan, deliver. Then awaiting the user's review / approval; posting via the user's local Claude.

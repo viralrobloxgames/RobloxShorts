@@ -20,9 +20,9 @@ B = dict(ask=W['girl'] - 0.1, stop1=W['case1'] - 0.55, r1=W['case1'], title=W['c
          putt=W['chief'] - 0.2, sink=W['speech1'] + 0.1, reveal=W['candidate'] - 0.25, working=W['figure'] - 0.3,
          note=W['ransom1'] - 0.2, sniff=W['sniffed'] - 0.25, i1=W['waffle'] - 0.05, i2=W['fudge'] - 0.05, i3=W['mint'] - 0.1,
          drive=W['only'] - 0.25, inside=W['big1'] - 0.2, slide=W['free1'] - 0.1, lean=W['sundae1'] + 0.1, stop2=W['case2'] - 0.55,
-         r2=W['case2'], back=W['out'] - 0.2, wipe=W['ransom2'] - 0.1, crew=W['crew'] - 0.2, throw=W['flying'] - 0.05,
-         splat=W['sundae2'] + 0.1, leave=W['later'] + 0.1, rally=W['gave'] - 0.25, won=W['clown2'] - 0.15, drop=W['won'] - 0.05,
-         coda=W['black'] - 0.35, slideIn=W['free2'] - 0.4, eat=W['tempting3'] + 0.35, cta=W['follow'] - 0.15)
+         r2=W['case2'], back=W['out'] - 0.2, wipe=W['ransom2'] - 0.1, crew=W['crew'] - 0.2, throw=W['threw'] + 0.15,
+         splat=W['right'] + 0.1, cuff=W['cuffed'] - 0.15, rally=W['made'] - 0.25, won=W['clown2'] - 0.15, drop=W['won'] - 0.05,
+         coda=W['me'] - 0.25, slideIn=W['free2'] - 0.4, eat=W['tempting3'] + 0.35, cta=W['follow'] - 0.15)
 
 # Hook: a love chime on "single"; tempting; the stop and the counter; the title.
 A('swish_1', 0.0, 0.25); love(B['ask'] + 0.2); love(W['single'] + 0.1)
@@ -44,16 +44,18 @@ T(330, W['tempting2'], 0.05, 0.5, sweep=-60); denied(B['stop2']); ding(B['r2'])
 # Out back: the wife at the till (a till ding); the fake kidnapping (sting); the ransom for a truck; the wipe.
 A('swish_3', B['back'], 0.3); A('horror/desk_bell', W['till'], 0.4)
 sting(W['faked'], (220, 262, 330), 0.12); T([523, 659, 784, 659], W['truck'], 0.05, 0.1)          # ice cream truck jingle
-# The crew; the throw; the splat (flash); the walk out.
+# The crew; the throw; the sundae glass in the eye (flash, a ring of stars); the cuffs click shut.
 A('horror/footstep', B['crew'] + 0.1, 0.3); A('horror/footstep', B['crew'] + 0.4, 0.3)
 A('swish_4', B['throw'], 0.45); A('impact_3', B['splat'], 0.6); A('impact_1', B['splat'] + 0.03, 0.4); T(180, B['splat'], 0.06, 0.3, sweep=-80)
-for i in range(4): A('horror/footstep', B['leave'] + 0.3 + i * 0.32, 0.22)
-# The rally: crowd energy (bright chords); the banner drop; confetti pops; WINNER.
-T([523, 659, 784], B['rally'], 0.05, 0.2); A('swish_2', B['drop'], 0.4); A('drum_hit', B['drop'] + 0.45, 0.5)
+for i in range(3): T(1568 - i * 200, B['splat'] + 0.2 + i * 0.12, 0.04, 0.08)                     # dizzy
+A('click', B['cuff'], 0.6); T([2600, 1900], B['cuff'], 0.05, 0.05, square=True); A('impact_4', B['cuff'] + 0.02, 0.4)
+sting(B['cuff'] + 0.1, (247, 294, 370), 0.11)
+# The rally: crowd energy (bright chords); a sheepish note on "handcuffs"; the banner drop; confetti pops; WINNER.
+T([523, 659, 784], B['rally'], 0.05, 0.2); T([392, 330], W['handcuffs'], 0.05, 0.16); A('swish_2', B['drop'], 0.4); A('drum_hit', B['drop'] + 0.45, 0.5)
 sting(B['drop'] + 0.45, (262, 330, 392), 0.12); honk(B['drop'] + 0.8)
 for i in range(5): A('click', B['drop'] + 0.6 + i * 0.13, 0.15)
 # Dusk: a sad note on the black eye; the sundae slides down the bar; tempting; the glitch; the spoon; CTA.
-T([392, 370, 349, 330], W['black'] - 0.1, 0.06, 0.18); A('swish_1', B['slideIn'], 0.3); ding(B['slideIn'] + 0.8)
+T([392, 370, 349, 330], W['black'] - 0.1, 0.06, 0.18); love(W['sympathy']); A('swish_1', B['slideIn'], 0.3); ding(B['slideIn'] + 0.8)
 T(330, W['tempting3'], 0.05, 0.5, sweep=-60); T([1200, 400, 1600], B['eat'], 0.05, 0.05, square=True)
 A('swish_3', B['cta'] - 0.05, 0.35); T([1047, 1319, 1568], B['cta'], 0.12, 0.18)
 c = [x for x in c if x['start'] >= 0]

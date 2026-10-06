@@ -30,7 +30,13 @@ Facts, beats and sources: `source/story.md`.
   applause or paper noise). Music: playful_history_music.
 - Cover: `web/cover_clip.js`, `delivery/The_Dog_Who_Found_The_World_Cup_cover.jpg|png`, grid check `_cover_grid.jpg`.
   Post copy: `delivery/post.json`.
-- Full render running (renders/web, 4 workers, ~3.7 s/frame, ~2 h).
+- Full render done (1920 frames). 2026-10-06: `source/project.json` seconds corrected 63.0 -> 64.0 (the clip is 64.0 s);
+  encoded: `delivery/The_Dog_Who_Found_The_World_Cup.mp4`, 64.5 s incl. the 0.5 s cover, -16.9 LUFS, validated, post sheet.
+- Blank-frame check found a guard's body filling the lens at 11.9-12.0 s (the hall2 shot): the day guard started walking
+  0.6 s before the guards shot and crossed between the camera and the case. He now starts at the cut (`cup_clip.js`);
+  frames 344-413 re-rendered (`changed_frames.mjs`; the other flagged frames 2-7 and 21 differed by under 0.1 levels, not
+  re-rendered; fingerprints saved), re-encoded. The remaining flags at 13.8 s and 14.6 s are the plain empty case (intended).
+  Delivered for the user's review.
 
 ## Commands
 ```
@@ -43,4 +49,4 @@ python3 scripts/post_md.py projects/the-dog-who-found-the-world-cup
 ```
 
 ## Next
-1. Finish the render, encode, blank-frame check, review contact sheet, deliver for the user's review. Post only after approval.
+1. The user's review. Post only after approval (TikTok, then YouTube).
