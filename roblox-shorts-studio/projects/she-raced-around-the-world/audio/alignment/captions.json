@@ -1,0 +1,1132 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.76,
+    "text": "In 1889,",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.18,
+        "word": " In"
+      },
+      {
+        "start": 0.18,
+        "end": 0.64,
+        "word": " 1889,"
+      }
+    ]
+  },
+  {
+    "start": 1.26,
+    "end": 2.2,
+    "text": "a famous book says",
+    "words": [
+      {
+        "start": 1.26,
+        "end": 1.36,
+        "word": " a"
+      },
+      {
+        "start": 1.36,
+        "end": 1.64,
+        "word": " famous"
+      },
+      {
+        "start": 1.64,
+        "end": 1.94,
+        "word": " book"
+      },
+      {
+        "start": 1.94,
+        "end": 2.2,
+        "word": " says"
+      }
+    ]
+  },
+  {
+    "start": 2.2,
+    "end": 2.94,
+    "text": "you can go around",
+    "words": [
+      {
+        "start": 2.2,
+        "end": 2.38,
+        "word": " you"
+      },
+      {
+        "start": 2.38,
+        "end": 2.52,
+        "word": " can"
+      },
+      {
+        "start": 2.52,
+        "end": 2.7,
+        "word": " go"
+      },
+      {
+        "start": 2.7,
+        "end": 2.94,
+        "word": " around"
+      }
+    ]
+  },
+  {
+    "start": 2.94,
+    "end": 3.82,
+    "text": "the world in 80",
+    "words": [
+      {
+        "start": 2.94,
+        "end": 3.06,
+        "word": " the"
+      },
+      {
+        "start": 3.06,
+        "end": 3.32,
+        "word": " world"
+      },
+      {
+        "start": 3.32,
+        "end": 3.54,
+        "word": " in"
+      },
+      {
+        "start": 3.54,
+        "end": 3.82,
+        "word": " 80"
+      }
+    ]
+  },
+  {
+    "start": 3.82,
+    "end": 4.4,
+    "text": "days.",
+    "words": [
+      {
+        "start": 3.82,
+        "end": 4.28,
+        "word": " days."
+      }
+    ]
+  },
+  {
+    "start": 4.98,
+    "end": 6.1,
+    "text": "One young reporter says",
+    "words": [
+      {
+        "start": 4.98,
+        "end": 5.18,
+        "word": " One"
+      },
+      {
+        "start": 5.18,
+        "end": 5.38,
+        "word": " young"
+      },
+      {
+        "start": 5.38,
+        "end": 5.74,
+        "word": " reporter"
+      },
+      {
+        "start": 5.74,
+        "end": 6.1,
+        "word": " says"
+      }
+    ]
+  },
+  {
+    "start": 6.1,
+    "end": 6.7,
+    "text": "she can do it",
+    "words": [
+      {
+        "start": 6.1,
+        "end": 6.28,
+        "word": " she"
+      },
+      {
+        "start": 6.28,
+        "end": 6.42,
+        "word": " can"
+      },
+      {
+        "start": 6.42,
+        "end": 6.56,
+        "word": " do"
+      },
+      {
+        "start": 6.56,
+        "end": 6.7,
+        "word": " it"
+      }
+    ]
+  },
+  {
+    "start": 6.7,
+    "end": 7.18,
+    "text": "faster.",
+    "words": [
+      {
+        "start": 6.7,
+        "end": 7.06,
+        "word": " faster."
+      }
+    ]
+  },
+  {
+    "start": 7.76,
+    "end": 8.66,
+    "text": "Her editor says it's",
+    "words": [
+      {
+        "start": 7.76,
+        "end": 7.9,
+        "word": " Her"
+      },
+      {
+        "start": 7.9,
+        "end": 8.18,
+        "word": " editor"
+      },
+      {
+        "start": 8.18,
+        "end": 8.44,
+        "word": " says"
+      },
+      {
+        "start": 8.44,
+        "end": 8.66,
+        "word": " it's"
+      }
+    ]
+  },
+  {
+    "start": 8.66,
+    "end": 9.22,
+    "text": "a job for a",
+    "words": [
+      {
+        "start": 8.66,
+        "end": 8.74,
+        "word": " a"
+      },
+      {
+        "start": 8.74,
+        "end": 8.9,
+        "word": " job"
+      },
+      {
+        "start": 8.9,
+        "end": 9.1,
+        "word": " for"
+      },
+      {
+        "start": 9.1,
+        "end": 9.22,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 9.22,
+    "end": 9.58,
+    "text": "man.",
+    "words": [
+      {
+        "start": 9.22,
+        "end": 9.46,
+        "word": " man."
+      }
+    ]
+  },
+  {
+    "start": 10.24,
+    "end": 10.719999999999999,
+    "text": "She says,",
+    "words": [
+      {
+        "start": 10.24,
+        "end": 10.34,
+        "word": " She"
+      },
+      {
+        "start": 10.34,
+        "end": 10.6,
+        "word": " says,"
+      }
+    ]
+  },
+  {
+    "start": 10.8,
+    "end": 11.659999999999998,
+    "text": "start the man,",
+    "words": [
+      {
+        "start": 10.8,
+        "end": 11.1,
+        "word": " start"
+      },
+      {
+        "start": 11.1,
+        "end": 11.28,
+        "word": " the"
+      },
+      {
+        "start": 11.28,
+        "end": 11.54,
+        "word": " man,"
+      }
+    ]
+  },
+  {
+    "start": 11.88,
+    "end": 12.86,
+    "text": "and she'll beat him.",
+    "words": [
+      {
+        "start": 11.88,
+        "end": 12.0,
+        "word": " and"
+      },
+      {
+        "start": 12.0,
+        "end": 12.22,
+        "word": " she'll"
+      },
+      {
+        "start": 12.22,
+        "end": 12.38,
+        "word": " beat"
+      },
+      {
+        "start": 12.38,
+        "end": 12.74,
+        "word": " him."
+      }
+    ]
+  },
+  {
+    "start": 13.72,
+    "end": 14.52,
+    "text": "Two days later,",
+    "words": [
+      {
+        "start": 13.72,
+        "end": 13.94,
+        "word": " Two"
+      },
+      {
+        "start": 13.94,
+        "end": 14.16,
+        "word": " days"
+      },
+      {
+        "start": 14.16,
+        "end": 14.52,
+        "word": " later,"
+      }
+    ]
+  },
+  {
+    "start": 14.52,
+    "end": 15.9,
+    "text": "she sails with one",
+    "words": [
+      {
+        "start": 14.52,
+        "end": 14.76,
+        "word": " she"
+      },
+      {
+        "start": 14.76,
+        "end": 15.12,
+        "word": " sails"
+      },
+      {
+        "start": 15.12,
+        "end": 15.64,
+        "word": " with"
+      },
+      {
+        "start": 15.64,
+        "end": 15.9,
+        "word": " one"
+      }
+    ]
+  },
+  {
+    "start": 15.9,
+    "end": 16.32,
+    "text": "dress,",
+    "words": [
+      {
+        "start": 15.9,
+        "end": 16.2,
+        "word": " dress,"
+      }
+    ]
+  },
+  {
+    "start": 16.5,
+    "end": 17.220000000000002,
+    "text": "one coat,",
+    "words": [
+      {
+        "start": 16.5,
+        "end": 16.78,
+        "word": " one"
+      },
+      {
+        "start": 16.78,
+        "end": 17.1,
+        "word": " coat,"
+      }
+    ]
+  },
+  {
+    "start": 17.32,
+    "end": 18.48,
+    "text": "and one small bag.",
+    "words": [
+      {
+        "start": 17.32,
+        "end": 17.52,
+        "word": " and"
+      },
+      {
+        "start": 17.52,
+        "end": 17.74,
+        "word": " one"
+      },
+      {
+        "start": 17.74,
+        "end": 18.02,
+        "word": " small"
+      },
+      {
+        "start": 18.02,
+        "end": 18.36,
+        "word": " bag."
+      }
+    ]
+  },
+  {
+    "start": 19.52,
+    "end": 20.2,
+    "text": "In France,",
+    "words": [
+      {
+        "start": 19.52,
+        "end": 19.72,
+        "word": " In"
+      },
+      {
+        "start": 19.72,
+        "end": 20.08,
+        "word": " France,"
+      }
+    ]
+  },
+  {
+    "start": 20.28,
+    "end": 21.14,
+    "text": "she stops to meet",
+    "words": [
+      {
+        "start": 20.28,
+        "end": 20.5,
+        "word": " she"
+      },
+      {
+        "start": 20.5,
+        "end": 20.76,
+        "word": " stops"
+      },
+      {
+        "start": 20.76,
+        "end": 20.98,
+        "word": " to"
+      },
+      {
+        "start": 20.98,
+        "end": 21.14,
+        "word": " meet"
+      }
+    ]
+  },
+  {
+    "start": 21.14,
+    "end": 21.94,
+    "text": "the man who wrote",
+    "words": [
+      {
+        "start": 21.14,
+        "end": 21.32,
+        "word": " the"
+      },
+      {
+        "start": 21.32,
+        "end": 21.56,
+        "word": " man"
+      },
+      {
+        "start": 21.56,
+        "end": 21.76,
+        "word": " who"
+      },
+      {
+        "start": 21.76,
+        "end": 21.94,
+        "word": " wrote"
+      }
+    ]
+  },
+  {
+    "start": 21.94,
+    "end": 22.5,
+    "text": "the book.",
+    "words": [
+      {
+        "start": 21.94,
+        "end": 22.1,
+        "word": " the"
+      },
+      {
+        "start": 22.1,
+        "end": 22.38,
+        "word": " book."
+      }
+    ]
+  },
+  {
+    "start": 23.1,
+    "end": 24.240000000000002,
+    "text": "Then the Suez Canal,",
+    "words": [
+      {
+        "start": 23.1,
+        "end": 23.32,
+        "word": " Then"
+      },
+      {
+        "start": 23.32,
+        "end": 23.48,
+        "word": " the"
+      },
+      {
+        "start": 23.48,
+        "end": 23.78,
+        "word": " Suez"
+      },
+      {
+        "start": 23.78,
+        "end": 24.12,
+        "word": " Canal,"
+      }
+    ]
+  },
+  {
+    "start": 25.22,
+    "end": 25.6,
+    "text": "Ceylon,",
+    "words": [
+      {
+        "start": 25.22,
+        "end": 25.48,
+        "word": " Ceylon,"
+      }
+    ]
+  },
+  {
+    "start": 26.12,
+    "end": 26.720000000000002,
+    "text": "Singapore.",
+    "words": [
+      {
+        "start": 26.12,
+        "end": 26.6,
+        "word": " Singapore."
+      }
+    ]
+  },
+  {
+    "start": 27.460000000000004,
+    "end": 28.64,
+    "text": "In Hong Kong,",
+    "words": [
+      {
+        "start": 27.460000000000004,
+        "end": 28.02,
+        "word": " In"
+      },
+      {
+        "start": 28.02,
+        "end": 28.24,
+        "word": " Hong"
+      },
+      {
+        "start": 28.24,
+        "end": 28.52,
+        "word": " Kong,"
+      }
+    ]
+  },
+  {
+    "start": 28.7,
+    "end": 29.64,
+    "text": "she hears the news.",
+    "words": [
+      {
+        "start": 28.7,
+        "end": 28.76,
+        "word": " she"
+      },
+      {
+        "start": 28.76,
+        "end": 28.96,
+        "word": " hears"
+      },
+      {
+        "start": 28.96,
+        "end": 29.14,
+        "word": " the"
+      },
+      {
+        "start": 29.14,
+        "end": 29.52,
+        "word": " news."
+      }
+    ]
+  },
+  {
+    "start": 30.18,
+    "end": 31.22,
+    "text": "A magazine sent a",
+    "words": [
+      {
+        "start": 30.18,
+        "end": 30.28,
+        "word": " A"
+      },
+      {
+        "start": 30.28,
+        "end": 30.68,
+        "word": " magazine"
+      },
+      {
+        "start": 30.68,
+        "end": 31.02,
+        "word": " sent"
+      },
+      {
+        "start": 31.02,
+        "end": 31.22,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 31.22,
+    "end": 32.22,
+    "text": "rival the other way",
+    "words": [
+      {
+        "start": 31.22,
+        "end": 31.5,
+        "word": " rival"
+      },
+      {
+        "start": 31.5,
+        "end": 31.72,
+        "word": " the"
+      },
+      {
+        "start": 31.72,
+        "end": 31.94,
+        "word": " other"
+      },
+      {
+        "start": 31.94,
+        "end": 32.22,
+        "word": " way"
+      }
+    ]
+  },
+  {
+    "start": 32.22,
+    "end": 33.38,
+    "text": "around the world the",
+    "words": [
+      {
+        "start": 32.22,
+        "end": 32.48,
+        "word": " around"
+      },
+      {
+        "start": 32.48,
+        "end": 32.64,
+        "word": " the"
+      },
+      {
+        "start": 32.64,
+        "end": 33.0,
+        "word": " world"
+      },
+      {
+        "start": 33.0,
+        "end": 33.38,
+        "word": " the"
+      }
+    ]
+  },
+  {
+    "start": 33.38,
+    "end": 34.4,
+    "text": "very same day.",
+    "words": [
+      {
+        "start": 33.38,
+        "end": 33.64,
+        "word": " very"
+      },
+      {
+        "start": 33.64,
+        "end": 33.94,
+        "word": " same"
+      },
+      {
+        "start": 33.94,
+        "end": 34.28,
+        "word": " day."
+      }
+    ]
+  },
+  {
+    "start": 35.0,
+    "end": 35.92,
+    "text": "Now the papers call",
+    "words": [
+      {
+        "start": 35.0,
+        "end": 35.24,
+        "word": " Now"
+      },
+      {
+        "start": 35.24,
+        "end": 35.38,
+        "word": " the"
+      },
+      {
+        "start": 35.38,
+        "end": 35.68,
+        "word": " papers"
+      },
+      {
+        "start": 35.68,
+        "end": 35.92,
+        "word": " call"
+      }
+    ]
+  },
+  {
+    "start": 35.92,
+    "end": 36.599999999999994,
+    "text": "it a race.",
+    "words": [
+      {
+        "start": 35.92,
+        "end": 36.08,
+        "word": " it"
+      },
+      {
+        "start": 36.08,
+        "end": 36.2,
+        "word": " a"
+      },
+      {
+        "start": 36.2,
+        "end": 36.48,
+        "word": " race."
+      }
+    ]
+  },
+  {
+    "start": 38.0,
+    "end": 38.62,
+    "text": "Storms on the Pacific",
+    "words": [
+      {
+        "start": 38.0,
+        "end": 38.16,
+        "word": " Storms"
+      },
+      {
+        "start": 38.16,
+        "end": 38.24,
+        "word": " on"
+      },
+      {
+        "start": 38.24,
+        "end": 38.36,
+        "word": " the"
+      },
+      {
+        "start": 38.36,
+        "end": 38.62,
+        "word": " Pacific"
+      }
+    ]
+  },
+  {
+    "start": 38.62,
+    "end": 39.98,
+    "text": "cost her two days.",
+    "words": [
+      {
+        "start": 38.62,
+        "end": 39.0,
+        "word": " cost"
+      },
+      {
+        "start": 39.0,
+        "end": 39.24,
+        "word": " her"
+      },
+      {
+        "start": 39.24,
+        "end": 39.42,
+        "word": " two"
+      },
+      {
+        "start": 39.42,
+        "end": 39.86,
+        "word": " days."
+      }
+    ]
+  },
+  {
+    "start": 40.6,
+    "end": 41.68,
+    "text": "So her newspaper hires",
+    "words": [
+      {
+        "start": 40.6,
+        "end": 40.68,
+        "word": " So"
+      },
+      {
+        "start": 40.68,
+        "end": 40.86,
+        "word": " her"
+      },
+      {
+        "start": 40.86,
+        "end": 41.24,
+        "word": " newspaper"
+      },
+      {
+        "start": 41.24,
+        "end": 41.68,
+        "word": " hires"
+      }
+    ]
+  },
+  {
+    "start": 41.68,
+    "end": 42.699999999999996,
+    "text": "a special train,",
+    "words": [
+      {
+        "start": 41.68,
+        "end": 41.9,
+        "word": " a"
+      },
+      {
+        "start": 41.9,
+        "end": 42.2,
+        "word": " special"
+      },
+      {
+        "start": 42.2,
+        "end": 42.58,
+        "word": " train,"
+      }
+    ]
+  },
+  {
+    "start": 42.94,
+    "end": 43.76,
+    "text": "and it races her",
+    "words": [
+      {
+        "start": 42.94,
+        "end": 43.1,
+        "word": " and"
+      },
+      {
+        "start": 43.1,
+        "end": 43.2,
+        "word": " it"
+      },
+      {
+        "start": 43.2,
+        "end": 43.52,
+        "word": " races"
+      },
+      {
+        "start": 43.52,
+        "end": 43.76,
+        "word": " her"
+      }
+    ]
+  },
+  {
+    "start": 43.76,
+    "end": 44.699999999999996,
+    "text": "across America.",
+    "words": [
+      {
+        "start": 43.76,
+        "end": 44.08,
+        "word": " across"
+      },
+      {
+        "start": 44.08,
+        "end": 44.58,
+        "word": " America."
+      }
+    ]
+  },
+  {
+    "start": 45.9,
+    "end": 46.879999999999995,
+    "text": "72 days,",
+    "words": [
+      {
+        "start": 45.9,
+        "end": 46.4,
+        "word": " 72"
+      },
+      {
+        "start": 46.4,
+        "end": 46.76,
+        "word": " days,"
+      }
+    ]
+  },
+  {
+    "start": 47.68,
+    "end": 48.339999999999996,
+    "text": "6 hours,",
+    "words": [
+      {
+        "start": 47.68,
+        "end": 47.82,
+        "word": " 6"
+      },
+      {
+        "start": 47.82,
+        "end": 48.22,
+        "word": " hours,"
+      }
+    ]
+  },
+  {
+    "start": 48.88,
+    "end": 49.8,
+    "text": "11 minutes.",
+    "words": [
+      {
+        "start": 48.88,
+        "end": 49.2,
+        "word": " 11"
+      },
+      {
+        "start": 49.2,
+        "end": 49.68,
+        "word": " minutes."
+      }
+    ]
+  },
+  {
+    "start": 50.88,
+    "end": 51.56,
+    "text": "She beat the book",
+    "words": [
+      {
+        "start": 50.88,
+        "end": 51.08,
+        "word": " She"
+      },
+      {
+        "start": 51.08,
+        "end": 51.24,
+        "word": " beat"
+      },
+      {
+        "start": 51.24,
+        "end": 51.4,
+        "word": " the"
+      },
+      {
+        "start": 51.4,
+        "end": 51.56,
+        "word": " book"
+      }
+    ]
+  },
+  {
+    "start": 51.56,
+    "end": 52.76,
+    "text": "by almost eight days,",
+    "words": [
+      {
+        "start": 51.56,
+        "end": 51.76,
+        "word": " by"
+      },
+      {
+        "start": 51.76,
+        "end": 52.02,
+        "word": " almost"
+      },
+      {
+        "start": 52.02,
+        "end": 52.3,
+        "word": " eight"
+      },
+      {
+        "start": 52.3,
+        "end": 52.64,
+        "word": " days,"
+      }
+    ]
+  },
+  {
+    "start": 53.22,
+    "end": 54.22,
+    "text": "and her rival came",
+    "words": [
+      {
+        "start": 53.22,
+        "end": 53.46,
+        "word": " and"
+      },
+      {
+        "start": 53.46,
+        "end": 53.6,
+        "word": " her"
+      },
+      {
+        "start": 53.6,
+        "end": 53.94,
+        "word": " rival"
+      },
+      {
+        "start": 53.94,
+        "end": 54.22,
+        "word": " came"
+      }
+    ]
+  },
+  {
+    "start": 54.22,
+    "end": 55.0,
+    "text": "home four and a",
+    "words": [
+      {
+        "start": 54.22,
+        "end": 54.5,
+        "word": " home"
+      },
+      {
+        "start": 54.5,
+        "end": 54.78,
+        "word": " four"
+      },
+      {
+        "start": 54.78,
+        "end": 54.92,
+        "word": " and"
+      },
+      {
+        "start": 54.92,
+        "end": 55.0,
+        "word": " a"
+      }
+    ]
+  },
+  {
+    "start": 55.0,
+    "end": 55.919999999999995,
+    "text": "half days later.",
+    "words": [
+      {
+        "start": 55.0,
+        "end": 55.16,
+        "word": " half"
+      },
+      {
+        "start": 55.16,
+        "end": 55.4,
+        "word": " days"
+      },
+      {
+        "start": 55.4,
+        "end": 55.8,
+        "word": " later."
+      }
+    ]
+  },
+  {
+    "start": 56.76,
+    "end": 58.76,
+    "text": "Follow ViralRobloxGames for",
+    "words": [
+      {
+        "start": 56.76,
+        "end": 57.32,
+        "word": " Follow"
+      },
+      {
+        "start": 57.32,
+        "end": 58.52,
+        "word": " ViralRobloxGames"
+      },
+      {
+        "start": 58.52,
+        "end": 58.76,
+        "word": " for"
+      }
+    ]
+  },
+  {
+    "start": 58.76,
+    "end": 59.94,
+    "text": "more stories like this.",
+    "words": [
+      {
+        "start": 58.76,
+        "end": 58.96,
+        "word": " more"
+      },
+      {
+        "start": 58.96,
+        "end": 59.3,
+        "word": " stories"
+      },
+      {
+        "start": 59.3,
+        "end": 59.54,
+        "word": " like"
+      },
+      {
+        "start": 59.54,
+        "end": 59.82,
+        "word": " this."
+      }
+    ]
+  }
+]

@@ -106,23 +106,23 @@ function miaAt(s) {
       if (s > W.faster - 0.1) { x.layers = [['point_forward', clamp(s - W.faster + 0.1, 0, 0.6), 1, false]]; x.arms = BAG_L; x.face = 'determined'; }
       break;
     case 'editor': case 'reply': {
-      x = st(OF(1.8, 2.6), Math.PI - 0.55, 'neutral'); x.bag = null;
+      x = st(OF(1.8, 2.6), Math.PI + 0.25, 'neutral'); x.bag = null;
       if (SHOT === 'editor') x.face = s > W.job - 0.1 ? 'annoyed' : 'neutral';
       else { x.face = 'determined'; const k = smooth(inv(W.start - 0.1, W.start + 0.15, s)) * (1 - smooth(inv(W.start + 0.3, W.start + 0.5, s))); x.arms = [['R', 0.2, lerp(-0.6, -1.9, k)]]; if (s > W.beat1 - 0.1) x.face = 'smug'; }
       break;
     }
     case 'sail': {
-      x = st(onShip(K.DECK_SPOT), ship.rotation.y, 'happy'); x.arms = BAG_L; x.wave = true; x.pos.y = onShip(K.DECK_SPOT).y;
+      x = st(onShip(K.DECK_SPOT), ship.rotation.y, 'happy'); x.bag = 'L'; x.arms = BAG_L; x.wave = true; x.pos.y = onShip(K.DECK_SPOT).y;
       if (s > W.dress - 0.2) x.face = 'laugh';
       break;
     }
     case 'verne': {
-      x = st(AM(-2.2, 4.4), 0.9, 'happy'); moveTo(x, AM(-9, 7), AM(-2.0, 2.6), T.verne, s, 12, 0.85); x.arms = x.moving ? BAG_L : BAG_L;
+      x = st(AM(-2.2, 4.4), 0.9, 'happy'); moveTo(x, AM(-9, 7), AM(-2.0, 2.6), T.verne, s, 12, 0.65); x.bag = 'L'; x.arms = BAG_L;
       if (!x.moving && s > W.meet) x.face = 'laugh';
       break;
     }
     case 'route': case 'race': case 'cta': {
-      x = st(onShip(K.DECK_SPOT), 0, SHOT === 'race' ? 'determined' : 'happy'); x.arms = BAG_L;
+      x = st(onShip(K.DECK_SPOT), 0, SHOT === 'race' ? 'determined' : 'happy'); x.bag = 'L'; x.arms = BAG_L;
       if (SHOT === 'cta') { x.wave = true; x.face = 'happy'; }
       break;
     }
@@ -132,7 +132,7 @@ function miaAt(s) {
       break;
     }
     case 'storm': {
-      x = st(onShip(K.DECK_SPOT.clone().add(V(-1, 0, -0.4))), -0.2, 'scared'); x.arms = [...BAG_L, ['R', 0.5, -0.9]];
+      x = st(onShip(K.DECK_SPOT.clone().add(V(-1, 0, -0.4))), -0.2, 'scared'); x.bag = 'L'; x.arms = [...BAG_L, ['R', 0.5, -0.9]];
       if (s > W.two2 - 0.2) x.face = 'annoyed';
       break;
     }
@@ -153,7 +153,7 @@ function miaAt(s) {
       break;
     }
     case 'rival2': {
-      x = st(STN(-2.5, 1.6), Math.PI + 0.45, 'smug'); x.bag = null; x.layers = [['idle', s]];
+      x = st(STN(-2.5, 1.6), Math.PI - 0.4, 'smug'); x.bag = null; x.layers = [['idle', s]];
       if (s > W.half) x.face = 'laugh';
       break;
     }
@@ -169,7 +169,7 @@ function leoAt(s) {                                                // the editor
   return x;
 }
 function maxAt(s) {                                                // the author at his door
-  const x = st(AM(1.2, 1.4), -0.75, 'happy'); x.visible = SHOT === 'verne'; x.book = true; x.arms = [['R', 0.25, -1.45]];
+  const x = st(AM(1.2, 1.4), -0.55, 'happy'); x.visible = SHOT === 'verne'; x.book = true; x.arms = [['L', 0.25, -1.45]];   // the book in his left hand (his right is hidden behind her bag)
   if (s > W.wrote - 0.2) x.face = 'laugh';
   return x;
 }
@@ -179,7 +179,7 @@ function skyeAt(s) {
     trn.updateMatrixWorld(true); x.visible = true; x.pos = trn.localToWorld(trn.userData.PLATFORM.clone());
     x.heading = Math.PI - 0.35; x.face = s > W.same - 0.2 ? 'smug' : 'determined'; x.wave = true;
   }
-  if (SHOT === 'rival2') { x.visible = true; moveTo(x, STN(14, 1.8), STN(3.2, 1.6), T.rival2 - 0.2, s, 12, Math.PI - 0.5); x.face = x.moving ? 'scared' : 'sad'; if (!x.moving) x.layers = [['shrug', clamp(s - W.home, 0, 0.7), 1, false]]; }
+  if (SHOT === 'rival2') { x.visible = true; moveTo(x, STN(8.5, 1.8), STN(3.2, 1.6), T.rival2 - 0.3, s, 12, Math.PI + 0.4); x.face = x.moving ? 'scared' : 'sad'; if (!x.moving) x.layers = [['shrug', clamp(s - W.home, 0, 0.7), 1, false]]; }
   return x;
 }
 function noobAt(s) {                                               // the train driver in the cab
@@ -215,6 +215,8 @@ function place(a, x) {
 }
 // the palm (measured on the pack mesh): (-+0.5, -1.3, 0) in the arm bone frame
 const grip = (a, sd = 'R') => { a.bones['Arm.' + sd].updateMatrixWorld(true); return V(sd === 'R' ? -0.5 : 0.5, -1.3, 0).applyMatrix4(a.bones['Arm.' + sd].matrixWorld); };
+// just past the fist, for things held out in front of a raised arm (book, telegram)
+const tip = (a, sd = 'R') => { a.bones['Arm.' + sd].updateMatrixWorld(true); return V(sd === 'R' ? -0.5 : 0.5, -1.75, 0).applyMatrix4(a.bones['Arm.' + sd].matrixWorld); };
 const headPos = (a) => { a.bones.Head.updateMatrixWorld(true); return V(0, 0.55, 0).applyMatrix4(a.bones.Head.matrixWorld); };
 
 // ---------- shots ----------
@@ -267,8 +269,8 @@ export function update(t, stage) {
   // props in hands
   const mx = miaAt(s);
   P.bag.visible = !!mx.bag && mia.root.visible; if (P.bag.visible) { P.bag.position.copy(grip(mia, 'L')); P.bag.rotation.set(0, mia.root.rotation.y, 0); }
-  P.tele.visible = !!mx.tele && mia.root.visible; if (P.tele.visible) { P.tele.position.copy(grip(mia, 'R')); P.tele.rotation.set(-0.35, mia.root.rotation.y, 0); }
-  P.book.visible = max.root.visible; if (P.book.visible) { P.book.position.copy(grip(max, 'R')); P.book.rotation.set(0, max.root.rotation.y, 0); }
+  P.tele.visible = !!mx.tele && mia.root.visible; if (P.tele.visible) { P.tele.position.copy(tip(mia, 'R')).add(V(0, -0.3, 0)); P.tele.rotation.set(-0.2, mia.root.rotation.y, 0); }
+  P.book.visible = max.root.visible; if (P.book.visible) { P.book.position.copy(tip(max, 'L')).add(V(0, -0.45, 0)); P.book.rotation.set(0, max.root.rotation.y, 0); }
   // the "80" crossed out at the end
   S.cross.visible = SHOT === 'book' && s > W.eight - 0.15;
   // smoke from the funnels or the locomotive
@@ -283,18 +285,18 @@ export function update(t, stage) {
   const hd = mia.root.visible ? headPos(mia) : V(0, 5, 0);
   switch (shot.id) {
     case 'hook': { const k = easeOut(clamp(t / 2.2)); look(stage, V(lerp(8.5, 12.5, k), K.PIER_Y + lerp(2.8, 3.6, k), lerp(-0.6, 0.2, k)), V(-2.5, K.PIER_Y + lerp(4.4, 5.2, k), -2.2), 50, 14); break; }
-    case 'editor': look(stage, OF(10.5, -0.6, 4.6), OF(0.8, -0.8, 4.4), 48, 14); break;
-    case 'reply': look(stage, OF(-0.4, -1.4, 5.0), OF(1.8, 2.6, 4.9), 46, 10); break;
-    case 'sail': { const sp = ship.position; look(stage, V(sp.x + 6, 6.5, sp.z + 24), V(sp.x + 2, 8.0, sp.z + 2), 50, 26); break; }
-    case 'verne': look(stage, AM(4.5, 13.5, 4.2), AM(-0.5, 2.0, 4.6), 50, 16); break;
+    case 'editor': look(stage, OF(6.8, 7.5, 5.4), OF(0.4, -3.6, 3.9), 40, 14); break;
+    case 'reply': look(stage, OF(-1.3, -1.0, 5.2), OF(1.8, 2.6, 4.3), 46, 10); break;
+    case 'sail': { const sp = ship.position; look(stage, V(sp.x + 4, 7.2, sp.z + 16), V(sp.x + 2, 8.2, sp.z + 2), 50, 22); break; }
+    case 'verne': look(stage, AM(1.0, 13.5, 4.2), AM(-0.4, 2.0, 4.4), 50, 16); break;
     case 'route': { const sp = ship.position; look(stage, V(sp.x + 10, 9, sp.z + 32), V(sp.x, 6, sp.z), 52, 34); break; }
-    case 'hong': look(stage, hd.clone().add(V(1.8, -0.4, 7.4)), hd.clone().add(V(0, -0.6, 0)), 44, 10); break;
+    case 'hong': look(stage, hd.clone().add(V(0.2, -0.5, 10)), hd.clone().add(V(-1.1, -0.9, 0)), 44, 12); break;   // her face and the telegram held out to her right
     case 'race': look(stage, hd.clone().add(V(-2.4, 0.2, 7.2)), hd.clone().add(V(0, 1.0, 0)), 46, 12); break;
-    case 'storm': { const sp = ship.position; look(stage, V(sp.x + 14, 5, sp.z + 26), V(sp.x + 1, 6, sp.z), 54, 30); break; }
-    case 'train': case 'rival': { const tp = trn.position, d = tr ? tr.dir : 1, pf = trn.localToWorld(trn.userData.PLATFORM.clone()); look(stage, pf.clone().add(V(-3 * d, 3.2, 13 * d)), pf.clone().add(V(4 * d, 3.6, 0)), 50, 26); break; }
+    case 'storm': { const sp = ship.position; look(stage, V(sp.x + 9, 6, sp.z + 17), V(sp.x + 0.5, 7, sp.z), 54, 26); break; }
+    case 'train': case 'rival': { const tp = trn.position, d = tr ? tr.dir : 1, pf = trn.localToWorld(trn.userData.PLATFORM.clone()); look(stage, pf.clone().add(V(-2.5 * d, 3.4, 11 * d)), pf.clone().add(V(0.6 * d, 3.6, 0)), 50, 22); break; }
     case 'finish': look(stage, STN(1.5, -9.5).add(V(0, 3.0, 0)), STN(0, 2.5).add(V(0, 4.0, 0)), 52, 18); break;
     case 'book': look(stage, V(10.5, K.PIER_Y + 3.4, 1.0), V(-2.5, K.PIER_Y + 5.2, -2.0), 50, 14); break;
-    case 'rival2': look(stage, STN(1.5, -10).add(V(0, 3.0, 0)), STN(1.5, 2.0).add(V(0, 4.0, 0)), 52, 18); break;
+    case 'rival2': look(stage, STN(0.3, -12.5).add(V(0, 3.2, 0)), STN(0.3, 2.0).add(V(0, 3.8, 0)), 52, 18); break;
     case 'cta': { const sp = ship.position; look(stage, V(sp.x + 6, 7, sp.z + 22), V(sp.x + 2, 8.5, sp.z + 2), 50, 26); break; }
     default: look(stage, V(5, 6, 10), V(0, 4, 0), 50);
   }

@@ -1,8 +1,14 @@
 {
   "title": "She Went Over Niagara Falls In A Barrel",
   "character": "Mia",
-  "characters": ["Mia", "Max", "Leo", "Skye", "Noob"],
-  "seconds": 63.0,
+  "characters": [
+    "Mia",
+    "Max",
+    "Leo",
+    "Skye",
+    "Noob"
+  ],
+  "seconds": 61.767,
   "fps": 30,
   "width": 1080,
   "height": 1920,

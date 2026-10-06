@@ -404,37 +404,37 @@
       "title": "He Flew A Lawn Chair",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "farm_render_running",
+      "status": "delivered_local_review",
       "logline": "True story: in 1982 a man who was never allowed to be a pilot ties 42 weather balloons to a lawn chair, meaning to float a hundred feet up on a rope. The rope snaps; he shoots to 16,000 feet, freezing, and two airline pilots radio the tower about a man in a lawn chair. He pops a few balloons with a pellet gun, drops the gun, drifts into power lines and blacks out a neighbourhood, lands unhurt, and the police are waiting. 'A man can't just sit around.' He's fined for flying an aircraft without calling the tower; the aircraft is a lawn chair, and today it sits in the Air and Space Museum.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-flew-a-lawn-chair",
-      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum. | Overnight run 2026-10-05/06 (no script approval needed): narration 59.8 s (George voice C, cloud), video 61.67 s + 0.5 s cover; web clip 20 shots; full web render running."
+      "notes": "User request 2026-10-05: 'Make another story'. Picked through general research, not from OddFrame's list (Larry Walters, 'Inspiration I', San Pedro to Long Beach, 2 July 1982; named only in the post copy). Script v1 155 words with the CTA. Web route planned; thick glasses (new accessory), lawn chair with jugs, poppable balloon cluster, Jeep, power lines, airliner cockpit; reuse control tower, police car and museum. | Overnight run 2026-10-05/06 (no script approval needed): narration 59.8 s (George voice C, cloud), video 61.67 s + 0.5 s cover; web clip 20 shots; full web render done and encoded (62.2 s incl. cover, -16.4 LUFS, blank-frame check clean); delivered for the user's review, not posted."
     },
     {
       "title": "He Flew The Wrong Way",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story (1938): refused permission to fly the Atlantic, Douglas Corrigan files a flight plan to California, flies 28 hours east to Dublin, says \"Just got in from New York. Where am I?\" and blames his compass; his punishment ends the day his ship gets home, New York gives him a bigger parade than Lindbergh's, and he never admits a thing.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-flew-the-wrong-way",
-      "notes": "Overnight run 2026-10-05: the user named this story and waived script approval for the run (write, then make the video; posting still needs approval). Script v1 156 words. Web route."
+      "notes": "Overnight run 2026-10-05: the user named this story and waived script approval for the run (write, then make the video; posting still needs approval). Script v1 156 words. Web route. Delivered 2026-10-06 for review: delivery/He_Flew_The_Wrong_Way.mp4 (62.1 s incl. 0.5 s cover, 1864 frames), cover, post.json/_post.md. Narration 59.3 s (George voice C, cloud). Web route, 21 shots. Known nit: caption crosses Max's mouth in the compass-excuse close-up (fix noted in START_HERE.md)."
     },
     {
       "title": "He Won The Marathon By Car",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "farm_render_running",
+      "status": "delivered_local_review",
       "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-marathon-car-ride",
-      "notes": "Overnight run 2026-10-05/06: story picked by the user; script approval waived for this run (posting still needs approval). Narration 60.7 s (George voice C, gap 0.6 / beat 1.3). Web route; full render started 2026-10-06 01:11 UTC. Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration."
+      "notes": "Overnight run 2026-10-05/06: story picked by the user; script approval waived for this run (posting still needs approval). Delivered for review: delivery/He_Won_The_Marathon_By_Car.mp4 (63.07 s). Narration 60.7 s (George voice C, gap 0.6 / beat 1.3). Web route. Fred Lorz, Andarin Carvajal, Len Taunyane named only in the post copy; strychnine/brandy only in the post description as history."
     },
     {
       "title": "The Six Million Dollar Banana",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "ready_to_render",
       "logline": "True story: a man pays $6.2 million for a banana, then eats it. It began in 2019 when an artist duct-taped a banana to a wall and sold it twice for $120,000; another artist ate it and the gallery just taped up a new one, because buyers get a certificate and instructions, not a banana. A student in Seoul ate one too. At auction in New York it went for $6.2 million and the buyer ate it on stage. The banana came from a street fruit stand: the man who sold it got 25 cents.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-six-million-dollar-banana",
@@ -444,7 +444,7 @@
       "title": "The Penguin General",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "ready_to_render",
       "logline": "True story: a penguin inspects a line of soldiers, and they salute him because he outranks every one of them. In 1972 Norway's royal guard adopted a king penguin at Edinburgh Zoo, named him Nils Olav and made him a lance corporal; every visit since he gets promoted. The penguins change but the name and rank carry on. He was knighted with 130 soldiers on parade, got a bronze statue, became a brigadier and in 2023 a major general. Soldiers who trained for years salute him; he just waddles past.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-penguin-general",
@@ -504,11 +504,21 @@
       "title": "She Raced Around The World",
       "series": "standalone story",
       "created": "2026-10-06",
-      "status": "script_approved",
+      "status": "full_render_running",
       "logline": "True story: in 1889 a young reporter says she can beat the famous book's eighty days around the world; her editor wants to send a man. She sails two days later with one bag, meets the author, learns in Hong Kong that a rival was sent the other way the same day, loses two days to storms, races across America on a special train and finishes in 72 days, 6 hours, 11 minutes; the rival comes home four and a half days later.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/she-raced-around-the-world",
-      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating."
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research (Nellie Bly, New York World; Jules Verne; Elizabeth Bisland, Cosmopolitan; named only in the post copy). Script v1 158 words; narration generating. | Narration 59.8 s (George voice C); video 61.83 s + 0.5 s cover; preview fixes, hold check and fit check done; full web render running."
+    },
+    {
+      "title": "The Dog Who Saved A Town",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: in 1925 a town in Alaska runs out of medicine with kids getting sick; ships can't get through the ice and planes can't fly in the cold, so twenty sled-dog teams relay it nearly seven hundred miles. One team gets the hardest part, led by a twelve-year-old dog called Togo: 170 miles just to reach it, then back across a frozen sea in a blizzard, and that night the storm blows the ice out to sea. 261 miles, more than any other team; the outbreak is stopped. But the statue in New York goes to the dog who ran the last 53 miles, Balto. Togo waits 76 years for his.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-dog-who-saved-a-town",
+      "notes": "Overnight run 2026-10-06 (no script approval needed). Picked through general research, not from OddFrame's list (Togo, Leonhard Seppala, the 1925 serum run to Nome; Balto and Gunnar Kaasen; named only in the post copy). Script v1 169 words with the CTA. Web route planned; huskies from animal_collie_parts recoloured."
     },
     {
       "title": "He Sold The Eiffel Tower",
@@ -539,6 +549,26 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/miss-unsinkable",
       "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Script only so far (147 words); facts and sources in source/story.md. Mia as Violet."
+    },
+    {
+      "title": "He Declared Himself Emperor",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "narrated_clip_next",
+      "logline": "True story: in 1859 a broke San Francisco merchant, Joshua Norton, declares himself Emperor of the United States, and the city goes along with it. He lost his fortune trying to buy up all the rice in town; the newspaper prints his proclamation; he wears a uniform with gold epaulettes, prints his own money that shops accept, orders Congress shut down (ignored). Arrested once, the city is furious, the chief lets him go and officers salute him from then on. He orders a bridge across the bay; decades later it is built. Thousands line the streets for his funeral.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/he-declared-himself-emperor",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Emperor Norton I (1859-1880). Script v1 159 words. Web route planned."
+    },
+    {
+      "title": "They Photographed Fairies",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "narrated_clip_next",
+      "logline": "True story: in 1917 two girls in Cottingley, Elsie (16) and her cousin Frances (9), photograph fairies by the stream. Her dad doesn't believe it, but a photo expert finds no sign of trickery and Sir Arthur Conan Doyle, the creator of Sherlock Holmes, publishes the photos and writes a book about fairies. People argue for over sixty years; in 1983 the cousins admit the fairies were paper cutouts on hatpins. But Frances always said one photo was real.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/they-photographed-fairies",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). The Cottingley Fairies (1917-1983). Script v1 154 words. Web route planned."
     }
   ],
   "statuses": [
