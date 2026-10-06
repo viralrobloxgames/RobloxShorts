@@ -72,3 +72,15 @@ ch09-ch11 the three render sessions above. Kit files are additive-only from ~13:
 
 Orchestrator note: send_message with priority "now" interrupts the worker's running tool call, and the worker reads the
 cancel as "the user doesn't want this; wait" (kit-sets-b stalled at 13:43). Always use priority "next".
+
+## Phase 3: physical-plausibility pass (user feedback 21:00Z: clipping, sitting, staging, poses)
+| Role | Session |
+|---|---|
+| critic-1 (ch01-02) | session_01MBPEtt2p6fabrhjtXdpGWx |
+| critic-2 (ch03-04) | session_01MrBwaynP2e4RQAqfEX843r |
+| critic-3 (ch05-06) | session_01ChpHL1sVh8DL4LyFpAQK25 |
+| critic-4 (ch07-08) | session_01CvVu818G9LnEb292kRTgkK |
+| critic-5 (ch09-10) | session_01TxdQ9Pe586Uffauv215j6Y |
+| critic-6 (ch11 + character identity) | session_01DNVA77c1V6odpP5EydznQH |
+Brief: `briefs/frame_critic.md`. kit-pipeline builds `web/clip_check.mjs` (automated interpenetration report per chapter,
+`production/review/clip_check/`). Then chapter sessions fix (kit fixes go to the kit owners), re-render, re-stitch.
