@@ -94,4 +94,4 @@ re-render A (chapter) + B (same helpers as phase 2) -> re-stitch (same command) 
 | Role | Session |
 |---|---|
 | critic-1 (now ch01 only) | session_01MBPEtt2p6fabrhjtXdpGWx |
-| critic-7 (ch02) | created 23:30Z, see below |
+| critic-7 (ch02) | session_01Se3gj5odNjgiyMc6oaWrF1 |
