@@ -374,11 +374,11 @@
       "title": "He Stole The Mona Lisa",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "delivered_local_review",
       "logline": "True story: in 1911 a former Louvre worker in a staff smock lifts the Mona Lisa off the wall, dumps the frame on a back staircase, and a plumber opens the locked door for him. Guards assume she's being photographed; police question Picasso; a detective leans on the table she's hidden in; crowds queue to stare at the empty wall. Two years later the Florence dealer he tries to sell her to calls the police. He stole a painting hardly anyone talked about and handed back the most famous painting in the world.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-stole-the-mona-lisa",
-      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; full web render running. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
+      "notes": "Approved 2026-10-05 (\"approved, make the video\"). Narration 59.9 s (George voice C, cloud); video 61.9 s + 0.5 s cover. Web route, 22 shots; delivered for review: 62.4 s MP4 with cover, captions, post sheet. Picked through general research, not from OddFrame's list (Vincenzo Peruggia, 21 Aug 1911, recovered Dec 1913)."
     },
     {
       "title": "The Dog Who Found The World Cup",
@@ -419,6 +419,66 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-flew-the-wrong-way",
       "notes": "Overnight run 2026-10-05: the user named this story and waived script approval for the run (write, then make the video; posting still needs approval). Script v1 156 words. Web route."
+    },
+    {
+      "title": "He Won The Marathon By Car",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-marathon-car-ride",
+      "notes": "Overnight run 2026-10-05: story picked by the user; script approval waived for this run (posting still needs approval). Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration. Web route."
+    },
+    {
+      "title": "The Six Million Dollar Banana",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: a man pays $6.2 million for a banana, then eats it. It began in 2019 when an artist duct-taped a banana to a wall and sold it twice for $120,000; another artist ate it and the gallery just taped up a new one, because buyers get a certificate and instructions, not a banana. A student in Seoul ate one too. At auction in New York it went for $6.2 million and the buyer ate it on stage. The banana came from a street fruit stand: the man who sold it got 25 cents.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-six-million-dollar-banana",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Maurizio Cattelan, Comedian; David Datuna; Noh Hyun-soo; Justin Sun; Shah Alam: named only in the post copy. Script v1 159 words. Web route."
+    },
+    {
+      "title": "The Penguin General",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: a penguin inspects a line of soldiers, and they salute him because he outranks every one of them. In 1972 Norway's royal guard adopted a king penguin at Edinburgh Zoo, named him Nils Olav and made him a lance corporal; every visit since he gets promoted. The penguins change but the name and rank carry on. He was knighted with 130 soldiers on parade, got a bronze statue, became a brigadier and in 2023 a major general. Soldiers who trained for years salute him; he just waddles past.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-penguin-general",
+      "notes": "Overnight batch (user 2026-10-05 23:45 UK: make as many story videos as possible, no script approval needed). Sir Nils Olav III, Norwegian King's Guard, Edinburgh Zoo. Script v1 147 words. Web route; block penguin built in code."
+    },
+    {
+      "title": "He Won By Not Sleeping",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1983, Sydney to Melbourne, 544 miles. World-class runners line up, and so does a 61-year-old potato farmer in overalls. He shuffles; by nightfall he's miles behind. The pros sleep six hours; he wakes by mistake at 2 a.m., starts running, shuffles past their tents and leads by morning. He decides not to sleep at all, wins by ten hours, nearly two days under the record, and gives most of his $10,000 prize to the runners he beat.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/cliff-young",
+      "notes": "Overnight queue (user 2026-10-05: no script approval needed for these). Picked through general research (Cliff Young, 1983 Westfield Sydney-Melbourne ultramarathon; named only in the post copy). Script 162 words with the CTA. Web route."
+    },
+    {
+      "title": "They Lost A War To Emus",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: 1932, twenty thousand emus eat Western Australia's wheat. The army sends a major, two gunners, two machine guns and 10,000 bullets. The emus scatter, the gun jams at the ambush, the truck-mounted gun can't keep up or aim, every flock has a lookout. A week and 2,500 bullets later most emus are fine, Parliament jokes about medals, the army pulls out, and the major admits the birds face machine guns like tanks. The emus won.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-emu-war",
+      "notes": "Overnight queue (no script approval needed). General research (Emu War, Nov 1932, Maj. G.P.W. Meredith; named only in the post copy). Picture rule: no emu is shown hit. Script 162 words with the CTA. Web route; code-built emus."
+    },
+    {
+      "title": "The Postman's Palace",
+      "series": "standalone story",
+      "created": "2026-10-05",
+      "status": "script_approved",
+      "logline": "True story: in 1879 a French country postman trips over a strange stone, pockets it, and spends 33 years building a palace from stones he picks up on his 30 km round - pockets, then baskets, then a wheelbarrow, building at night by an oil lamp while the village laughs. 10,000 days later it's finished, with 'Let those who can do better, try' on the wall; refused burial inside it, he builds his own tomb in eight more years. Today it's a protected monument, and the village that laughed is famous because of him.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-postmans-palace",
+      "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Ferdinand Cheval, Palais Ideal, Hauterives; named only in the post copy. Picked through general research. Web route; new postman_kepi accessory, procedural pebble palace that grows by clipping."
     }
   ],
   "statuses": [
