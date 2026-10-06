@@ -45,7 +45,7 @@ function wordT(i, k) {
 
 // ---------- key beats ----------
 const T = {
-  click: end(2, 0.25),                 // [+0.8] the lamp clicks on
+  click: (L.actions.find((a) => a.after_line === 2)?.at ?? end(2, 0.25)) + 0.05,   // [+0.8] the lamp clicks on (after the ghost echo)
   pink: wordT(5, 3),                   // "Your hair is PINK"
   sticking: wordT(5, 4),               // "It's sticking out of the sheet."
   monday: wordT(5, 10),                // "Same as in my closet on Monday."
@@ -66,10 +66,10 @@ const T = {
 const M = {
   doorIn: () => K.mark('bedroom', 'door_in_bed', { pos: V(8.2, 0, 2.8), heading: -2.15 }),
   ghost: () => K.mark('bedroom', 'mid_room_bed', { pos: V(3.0, 0, -0.5), heading: -2.2 }),
-  nearBed: () => ({ pos: V(2.6, 0, -4.1), heading: -1.6 }),          // beside the bed edge, level with Max (both read from +z)
+  nearBed: () => K.mark('bedroom', 'ghost_stop', { pos: V(3.2, 0, -4.4), heading: -1.27 }),  // beside the bed edge, level with Max (both read from +z)
   bedUp: () => K.mark('bedroom', 'bed_sit_door', { pos: V(-4, 0.1, -6.4), heading: 0.99 }),
   bedEdge: () => K.mark('bedroom', 'bed_edge', { pos: V(-1.3, 0.0, -4.6), heading: Math.PI / 2 }),
-  plate: () => ({ pos: V(0.15, 2.4, -7.35), heading: 0.3 }),         // on the bedside table top
+  plate: () => K.mark('bedroom', 'bedside_plate', { pos: V(0.9, 2.42, -7.5), heading: 0 }),
   door: () => ({ pos: V(11, 0, 3.5), heading: -Math.PI / 2 }),
 };
 
@@ -85,7 +85,7 @@ export async function setup(stage) {
   P.phone = prop('phone', { screen: 'record', light: true });
   P.plate = prop('plate', { with: 'ham_sandwich' });
   P.plateDown = prop('plate', { with: 'ham_sandwich' });          // the same plate set down on the bedside table
-  P.sheet = K.makeSheetBunch(); stage.scene.add(P.sheet);
+  P.sheet = prop('bedsheet', { state: 'bunched', holes: true });
   K.dress(C.skye, 'glow_sticks');
   glow = K.phoneGlow(stage); sticks = K.glowSticks(stage, 2);
 }
@@ -229,7 +229,7 @@ const SHOTS = [
   { line: 14, off: -0.1, id: 'why', cam: skyeOn('mcu') },
   { line: 15, off: -0.1, id: 'boring', cam: two() },
   { line: 16, off: -0.1, id: 'door', cam: (s) => K.setCam(s, { pos: V(5.0, 4.4, 6.8), target: V(10.8, 3.3, 3.6), fov: 34 }, { clear: false }) },
-  { line: 17, off: -0.15, id: 'nobody', cam: (s) => K.setCam(s, { pos: V(1.6, 5.2, 7.6), target: V(0.6, 3.7, -4.3), fov: 34 }, { clear: false }) },
+  { line: 17, off: -0.15, id: 'nobody', cam: (s) => K.setCam(s, K.getSet('bedroom').cams.two_shot_door, { clear: false }) },
 ].map((x) => ({ ...x, start: Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
@@ -238,7 +238,7 @@ export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet('bedroom');
   K.applyLight(stage, 'midnight');
-  K.setState({ chapter: CH, garlic: true, door: doorOpen(t), lamp: t >= T.click, moon: true, hall: t > T.smiles + 0.2 });
+  K.setState({ chapter: CH, garlic: true, door: doorOpen(t), lamp: t >= T.click, moon: true, blanket: t < T.edge + 0.3 ? 'legs' : 'flat', hall: t > T.smiles + 0.2 });
   K.setBlockers(set.group, C.skye, C.max);
   // idle runs only while someone speaks, in the entrance creep, and in the scripted actions (so still moments repeat)
   const idle = K.holdClock(t, L, [[0, 3.2], [T.click - 0.5, T.click + 0.4], [T.pull - 0.1, T.pull + 0.5]]);
