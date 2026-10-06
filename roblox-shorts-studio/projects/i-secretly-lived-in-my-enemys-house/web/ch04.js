@@ -307,10 +307,12 @@ export function update(t, stage) {
     const seat = { pos: mM.pos.clone(), heading: mM.heading, sit: mM.sit };
     const hM = amix(-Math.PI / 2, mM.heading, u);
     if (u < 1) {
-      const d = K.mixAngles({}, SIT, u), drop = K.posture(C.max, d);
+      // first half: bends into the sit beside the chair (hips down to seat height); second half: slides across onto the seat
+      const u1 = clamp(u * 2), u2 = clamp(u * 2 - 1);
+      const d = K.mixAngles({}, SIT, u1);
       const standY = (() => { standOn(C.max, side, hM, {}); return C.max.root.position.y; })();
       K.posture(C.max, d);
-      C.max.root.position.lerpVectors(side, seat.pos, u); C.max.root.position.y = mix(standY, sitRootY(C.max, seat), u);
+      C.max.root.position.lerpVectors(side, seat.pos, u2); C.max.root.position.y = mix(standY, sitRootY(C.max, seat), u1);
       C.max.root.rotation.set(0, hM, 0); C.max.root.updateMatrixWorld(true);
     } else {
       const glance = t > at(21, 0.6) ? 1 : 0;
