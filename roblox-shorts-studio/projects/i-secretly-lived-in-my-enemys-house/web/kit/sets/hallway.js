@@ -99,7 +99,7 @@ export function build(scene) {
   linen.add(box(1.0, 1.4, 1.1, std('#b9a27a'), -20.0, 0.7, -3.2)); // laundry basket
   const fLin = doorFrame(3, 7.2, trimM); fLin.rotation.y = Math.PI / 2; fLin.position.set(-16.9, 0, -2); group.add(fLin);
   const linenDoor = door(2.95, 7.1, '#f3efe6', { knobSide: 1 }); linenDoor.position.set(-16.7, 0.05, -3.48); linenDoor.rotation.y = -Math.PI / 2; group.add(linenDoor); // leaf toward +z when shut
-  const linenLight = new THREE.PointLight('#cfd9ff', 0, 6, 2); linenLight.position.set(-18.0, 5.5, -1.5); linen.add(linenLight); // faint, so faces in the gap read
+  const linenLight = new THREE.PointLight('#cfd9ff', 0, 8, 2); linenLight.position.set(-15.6, 5.6, -0.6); linen.add(linenLight); // faint, so faces in the gap read
 
   // ---- stairs down (x 12..17.4, z -5..-0.6), the landing rail, newel posts ----
   const stairM = std('#8a5c38', { roughness: 0.75 }), riserM = std('#f3efe6', { roughness: 0.7 });
@@ -138,7 +138,7 @@ export function build(scene) {
   underLight.intensity = 6; roomLight.intensity = 25; gapM.emissiveIntensity = 2.2; spillM.emissiveIntensity = 0.55; underLight.userData.bulb = [gap, spill];
   nlLight.intensity = 3; nl.material.emissiveIntensity = 1.5; nlLight.userData.bulb = nl;
   ceilLight.intensity = 80; ceilShadeM.emissiveIntensity = 1.2; ceilLight.userData.bulb = ceilLamp.children[0];
-  hatchGlow.intensity = hatchGlowK; linenLight.intensity = 1.2;
+  hatchGlow.intensity = hatchGlowK; linenLight.intensity = 5;
   const lights = { moon_window: { lights: [moon, moonFill] }, under_door: { lights: [underLight, roomLight] }, nightlight: nlLight, ceiling_light: ceilLight, attic_glow: hatchGlow, linen_fill: linenLight };
   function prac(name, on, k = 1) { // same rule as lighting.js setPractical
     const l = lights[name]; const v = on === true ? k : on === false ? 0 : Number(on);
@@ -149,7 +149,7 @@ export function build(scene) {
 
   function setMaxDoor(f = 0) { maxDoor.rotation.y = f * 1.6; } // opens into Max's room (-z)
   function setLilyDoor(f = 0) { lilyDoor.rotation.y = f * 1.6; }
-  function setLinen(f = 0) { linenDoor.rotation.y = -Math.PI / 2 + f * 1.7; } // 0 shut, ~0.12 a crack to peek through, 1 wide open (outward, +z)
+  function setLinen(f = 0) { linenDoor.rotation.y = -Math.PI / 2 + f * 1.7; } // 0 shut, ~0.12 a crack to peek through, 0.4 for the Ch6 peek (linen_gap / linen_pov), 1 wide open (outward, +z)
   setMoon(true); setUnderDoor(false); setNightlight(true); setCeiling(false); prac('attic_glow', false); prac('linen_fill', false); setMaxDoor(0); setLilyDoor(0); setLinen(0); setHatch(0);
 
   // ---- marks (world) ----
@@ -167,8 +167,8 @@ export function build(scene) {
     max_door_back: M(-5.6, 0, -2.0, Math.PI - 0.7, 'a few steps back from Max\'s door (Ch8 "backs away")'),
     lily_behind_skye: M(-9.9, 0, -3.4, Math.PI / 2 - 0.25, 'Lily right behind Skye (her back, the left side of the door), facing her (Ch6 tap on the shoulder)'),
     skye_creep: M(2.5, 0, 1.0, Math.atan2(-11.5, -4.3), 'Skye creeping from the hatch end toward Max\'s door (Ch6 start)'),
-    linen_skye: M(-18.1, 0, -0.1, Math.PI / 2 + 0.15, 'inside the linen closet, face at the crack (free edge at z -0.5), looking down the hall'),
-    linen_lily: M(-17.4, 0, -0.8, Math.PI / 2 + 0.2, 'Lily in the linen closet in front of/below Skye, peeking too'),
+    linen_skye: M(-17.75, 0, -1.0, Math.PI / 2 - 0.45, 'inside the linen closet, face at the crack (free edge at z -0.5), looking down the hall'),
+    linen_lily: M(-17.15, 0, -1.35, Math.PI / 2 - 0.45, 'Lily in the linen-closet doorway in front of/below Skye, peeking too'),
     linen_front: M(-14.5, 0, -1.6, -Math.PI / 2, 'in front of the linen closet door (Lily pulls Skye in from here)'),
     lily_door: M(6, 0, -3.3, Math.PI, 'in front of Lily\'s door, facing it'),
     lily_door_out: M(6, 0, -3.0, 0, 'just out of Lily\'s door, facing the hall'),
@@ -192,8 +192,8 @@ export function build(scene) {
     max_door_cu: C([-4.6, 4.7, -1.4], [-7.8, 4.4, -4.1], 34, [], 'close on Skye at Max\'s door (max_door_listen)'),
     under_door: C([-7.4, 1.6, -0.6], [-9.0, 0.3, -5.0], 40, [], 'the lamplight under Max\'s door / the note sliding under'),
     two_shot_skye_lily: C([-5.0, 4.6, 3.8], [-8.8, 3.6, -3.8], 42, [], 'Ch6: Skye at the door with Lily behind her'),
-    linen_gap: C([-12.6, 4.4, 4.6], [-17.0, 3.8, -0.5], 38, [], 'Ch6: the linen-closet crack with Skye and Lily peeking'),
-    linen_pov: C([-19.8, 6.0, -0.8], [1.0, 4.6, 2.0], 46, [], 'Ch6: from inside the linen closet, over Skye, out through the crack at Dad under the hatch (setLinen 0.2-0.3)'),
+    linen_gap: C([-13.6, 4.6, 3.4], [-17.3, 4.1, -1.1], 42, [], 'Ch6: the linen-closet crack with Skye and Lily peeking'),
+    linen_pov: C([-19.6, 6.2, -1.4], [-5.6, 4.6, 2.2], 46, [], 'Ch6: from inside the linen closet, over Skye, out through the crack at Dad under the hatch (setLinen 0.4, same as linen_gap)'),
     dad_ms: C([0.5, 5.0, 6.5], [-5.6, 4.6, 2.2], 40, [], 'Ch6: Dad under the hatch (dad_hatch), medium, front 3/4'),
     dad_low: C([1.0, 1.8, 5.5], [-4.2, 6.2, 1.2], 46, [], 'Ch6: Dad from low, broom up, hatch above'),
     stairs_top: C([6.0, 8.0, 1.6], [15.0, -2.0, -2.8], 46, [], 'the top of the stairs'),
@@ -206,7 +206,7 @@ export function build(scene) {
     hall_creep_start: M(-2.6, 0, 0.6, Math.atan2(-5.2, -3.8), 'Ch6: Skye starting her creep from the hatch end, ~6 studs from Max\'s door, heading for it'),
     max_door_out: marks.max_door_listen, lily_behind: marks.lily_behind_skye,
     linen_in_R: marks.linen_skye, linen_in_L: marks.linen_lily,
-    dad_mid: M(2.4, 0, 1.6, -Math.PI / 2 - 0.35, 'Ch6: Dad in the middle of the hall, facing toward Max\'s door (cheated to camera)'),
+    dad_mid: M(2.4, 0, 1.6, -Math.PI / 2 + 0.35, 'Ch6: Dad in the middle of the hall, facing toward Max\'s door (cheated to camera)'),
     under_hatch: marks.dad_hatch,
     max_door_outside: M(-8.3, 0, -3.5, Math.PI, 'Ch8: Skye ~1.5 studs off Max\'s door, facing it (frame-right half of the door)'),
     max_door_crouch: M(-8.3, 0, -3.5, Math.PI, 'Ch8: same spot, crouched to slide the note under (chapter poses the crouch)'),
@@ -214,7 +214,7 @@ export function build(scene) {
   Object.assign(cams, {
     door_approach: C([-13.5, 5.0, 4.0], [-6.0, 3.8, -1.6], 42, [], 'Ch6: front 3/4 on Skye creeping from hall_creep_start to Max\'s door, the light under it in frame'),
     hall_wide: cams.wide,
-    linen_end: C([4.0, 4.6, 4.8], [-12.0, 4.0, -1.2], 40, [], 'Ch6 end: toward the linen-closet crack, Dad at under_hatch in the foreground facing the hatch (face 3/4)'),
+    linen_end: C([-1.0, 4.8, 6.5], [-11.5, 4.0, -0.3], 42, [], 'Ch6 end: toward the linen-closet crack, Dad at under_hatch in the foreground facing the hatch (face 3/4)'),
     max_door_ws: cams.wide_to_max_door,
     max_door_mcu: C([-5.2, 4.8, -2.4], [-8.3, 4.5, -3.6], 34, [], 'Ch8: MCU on Skye at max_door_outside from beside the door (her head turned lens-left reads 3/4)'),
     max_door_side: C([-5.4, 1.4, -2.0], [-8.8, 1.0, -4.8], 40, [], 'Ch8: low side angle, the door and the lamplight gap under it'),

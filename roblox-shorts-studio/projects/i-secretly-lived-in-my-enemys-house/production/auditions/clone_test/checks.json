@@ -1,0 +1,122 @@
+{
+ "clone_max_kid_0.wav": {
+  "dur": 2.88,
+  "transcript": "Hey Skye, want my cookie? You can have it.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 242.7,
+  "f0_p10_p90": [
+   217.5,
+   320.3
+  ],
+  "wps": 3.19,
+  "sentence_gaps": [
+   0.5
+  ]
+ },
+ "clone_max_kid_1.wav": {
+  "dur": 4.64,
+  "transcript": "Fine, deal, I'll be nice to Skye, but only because you asked.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 287.0,
+  "f0_p10_p90": [
+   221.9,
+   312.2
+  ],
+  "wps": 2.73,
+  "sentence_gaps": []
+ },
+ "clone_lily_kid_2.wav": {
+  "dur": 2.4,
+  "transcript": "Ghosts don't have backpacks.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 263.9,
+  "f0_p10_p90": [
+   178.2,
+   377.1
+  ],
+  "wps": 1.8,
+  "sentence_gaps": []
+ },
+ "clone_lily_kid_3.wav": {
+  "dur": 4.72,
+  "transcript": "He sleeps with the light on now, and he put garlic on his window.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 259.4,
+  "f0_p10_p90": [
+   195.4,
+   333.5
+  ],
+  "wps": 3.32,
+  "sentence_gaps": []
+ },
+ "clone_brittney_4.wav": {
+  "dur": 2.32,
+  "transcript": "Oh, and nothing scares you, I guess.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 166.3,
+  "f0_p10_p90": [
+   133.6,
+   260.9
+  ],
+  "wps": 3.93,
+  "sentence_gaps": []
+ },
+ "clone_george_c_5.wav": {
+  "dur": 3.68,
+  "transcript": "Good morning, kitchen. Who wants pancakes? Everybody wants pancakes.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 137.4,
+  "f0_p10_p90": [
+   106.6,
+   178.2
+  ],
+  "wps": 2.68,
+  "sentence_gaps": [
+   0.5,
+   0.5
+  ]
+ },
+ "brittney.wav": {
+  "dur": 14.9,
+  "transcript": "Soon, you won't even need the Roblox app to play Roblox. This is Viral Roblox News. At RDC, Roblox's yearly developer conference, Roblox announced a web player. By the end of this year, you'll be able to join games in your browser on Chrome.",
+  "match": 0.966,
+  "exact": false,
+  "f0_median": 228.4,
+  "f0_p10_p90": [
+   182.6,
+   360.1
+  ],
+  "wps": 2.92,
+  "sentence_gaps": [
+   0.48,
+   0.74,
+   0.32
+  ]
+ },
+ "george_c.wav": {
+  "dur": 20.79,
+  "transcript": "Leo got admin for one round. One minute, his plan, kick everyone and have the server to himself. He typed it fast, too fast, admin, all. Now everyone had admin. Max went first, explode Leo, boom. Leo respawned, invisible me. Leo disappeared, except his hair.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 120.3,
+  "f0_p10_p90": [
+   100.0,
+   143.1
+  ],
+  "wps": 2.2,
+  "sentence_gaps": [
+   0.92,
+   0.58,
+   0.72,
+   0.66,
+   0.74,
+   0.4
+  ]
+ }
+}
