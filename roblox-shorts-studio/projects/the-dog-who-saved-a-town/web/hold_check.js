@@ -5,5 +5,5 @@ import { W } from './beats.js';
 const T = base.TIMES;
 export const { meta, sky, setup, update, overlay } = holdCheck(base, [
   [T.sick + 0.6, 'leo', 'R', 'medicine bottle'], [W.seven + 0.3, 'leo', 'R', 'medicine bottle (later)'],
-  [T.arrive + 0.6, 'leo', 'L', 'crate (L)'], [T.arrive + 0.6, 'leo', 'R', 'crate (R)'], [W.stopped + 0.3, 'leo', 'R', 'crate (stopped)'],
+  [T.arrive + 0.6, 'leo', 'L', 'crate'], [W.stopped + 0.3, 'leo', 'L', 'crate (stopped)'],
 ]);

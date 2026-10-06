@@ -151,7 +151,7 @@ function maxAt(s, tm) {                                           // the musher 
 function leoAt(s) {                                               // the doctor
   const x = st(V(0, 0, 0), 0, 'nervous'); x.visible = false;
   if (SHOT === 'sick') { x.visible = true; x.pos = RM(1.6, -1.6); x.heading = -1.25; x.look = [0, 0.2]; x.face = s > W.seven ? 'scared' : 'nervous'; x.bottle = true; x.arms = [['R', 0.2, -0.9]]; }
-  if (SHOT === 'arrive') { x.visible = true; x.pos = TOWN_P(-1, 1.6); x.heading = 0.1; x.face = s > W.stopped - 0.3 ? 'laugh' : 'happy'; x.crate = true; x.arms = [['L', 0.15, -1.25], ['R', 0.15, -1.25]]; }
+  if (SHOT === 'arrive') { x.visible = true; x.pos = TOWN_P(-1, 1.6); x.heading = 0.1; x.face = s > W.stopped - 0.3 ? 'laugh' : 'happy'; x.crate = true; x.arms = [['L', 0.25, -1.45]]; }   // holds the crate up in his left hand
   return x;
 }
 function skyeAt(s) {                                              // the sick kid
@@ -264,8 +264,8 @@ export function update(t, stage) {
   const lx = leoAt(s);
   P.crate.visible = !!crateOn || !!lx.crate;
   if (crateOn) { S.sled.updateMatrixWorld(true); P.crate.position.copy(S.sled.localToWorld(S.sled.userData.CRATE.clone())); P.crate.rotation.set(0, tm.heading - R90 + R90, 0); }
-  else if (lx.crate && leo.root.visible) { P.crate.position.copy(grip(leo, 'L').lerp(grip(leo, 'R'), 0.5)).add(V(0, -0.1, 0.35)); P.crate.rotation.set(0, leo.root.rotation.y, 0); }
-  P.bottle.visible = !!lx.bottle && leo.root.visible; if (P.bottle.visible) P.bottle.position.copy(grip(leo, 'R')).add(V(0, 0.3, 0));
+  else if (lx.crate && leo.root.visible) { P.crate.position.copy(tip(leo, 'L')).add(V(0, -0.45, 0)); P.crate.rotation.set(0, leo.root.rotation.y, 0); }
+  P.bottle.visible = !!lx.bottle && leo.root.visible; if (P.bottle.visible) P.bottle.position.copy(tip(leo, 'R')).add(V(0, 0.05, 0));
 
   // cameras
   const tp = tm ? tm.pos : V(0, 0, 0), h = tm ? tm.heading : 0, fw = V(Math.sin(h), 0, Math.cos(h)), rt = V(-fw.z, 0, fw.x);
