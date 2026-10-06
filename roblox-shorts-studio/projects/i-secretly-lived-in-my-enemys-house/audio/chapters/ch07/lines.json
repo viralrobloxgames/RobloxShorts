@@ -185,13 +185,13 @@
   {
    "index": 17,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": "offscreen",
    "text": "Dad! I'll clean the attic. Your football's starting!",
    "start": 51.763,
    "end": 55.527,
-   "clip": "audio/qwen/take-01/clips/67003aabc06a.wav",
-   "seed": 50343
+   "clip": "audio/qwen/take-01/clips/c7f446b1ea33.wav",
+   "seed": 5275
   },
   {
    "index": 18,
@@ -207,24 +207,24 @@
   {
    "index": 19,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Nice decoration. Very realistic.",
    "start": 58.892,
    "end": 61.659,
-   "clip": "audio/qwen/take-01/clips/459dcfbd5755.wav",
-   "seed": 62460
+   "clip": "audio/qwen/take-01/clips/ffdceeed1329.wav",
+   "seed": 68315
   },
   {
    "index": 20,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Lily. Dinner. Five minutes.",
    "start": 61.909,
    "end": 64.593,
-   "clip": "audio/qwen/take-01/clips/b60be35ebfe9.wav",
-   "seed": 30672
+   "clip": "audio/qwen/take-01/clips/6027bf302aa6.wav",
+   "seed": 1708
   },
   {
    "index": 21,
