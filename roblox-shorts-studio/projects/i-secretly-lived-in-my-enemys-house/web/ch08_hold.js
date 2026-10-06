@@ -9,7 +9,7 @@ const LIST = [
   [at(1, 1.0), 'note', 'note folded (reading it)'],
   [at(2, -0.4), 'note', 'note at the door gap (kneeling)'],
   [at(5, 0.5), 'crumpled', 'crumpled note in her fist (hallway)'],
-  [at(3, 0.5), 'phone', 'phone at Max\'s ear'],
+  [at(3, 0.5), 'phone', 'phone at Max\'s ear (left hand)'],
   [at(9, 0.5), 'crumpled', 'crumpled note (nest)'],
   [at(18, 1.0), 'crumpled', 'crumpled note (nest, end)'],
   [at(6, 0.6), 'teddy', 'teddy (Lily up through the hatch)'],

@@ -46,7 +46,7 @@ const ramp = (t, t0, t1) => smooth((t - t0) / (t1 - t0));
 
 // key moments (on the narration)
 const T = {
-  crouch: endOf(1, 0.1),                 // she bends to slide the note under the door
+  crouch: endOf(1, -0.25),                 // she bends to slide the note under the door
   rise: endOf(4, 0.05),                  // she straightens up, backs away; the note crumples
   attic: endOf(5, 0.3),                  // cut to the attic
 };
@@ -54,12 +54,12 @@ const T = {
 // ---------- marks (fallbacks are offsets from the set origin until the set defines the mark) ----------
 const M = {
   // Skye beside Max's door (x -9), cheated 3/4 toward the camera side, reading her note
-  door: () => { const m = K.mark('hallway', 'max_door'); return { pos: m.pos.clone().add(V(1.1, 0, -0.1)), heading: 1.2 }; },
+  door: () => { const m = K.mark('hallway', 'max_door'); return { pos: m.pos.clone().add(V(1.1, 0, -0.1)), heading: 1.5 }; },
   // kneeling at the door gap, turned toward the camera side so the face reads
-  doorKneel: () => { const m = K.mark('hallway', 'max_door_kneel'); return { pos: m.pos.clone().add(V(0.5, 0, 0)), heading: 2.3 }; },
-  doorStep: () => { const m = K.mark('hallway', 'max_door_kneel'); return { pos: m.pos.clone().add(V(1.1, 0, 1.0)), heading: 2.3 }; },
-  doorBack: () => { const m = K.mark('hallway', 'max_door_back'); return { pos: m.pos.clone().add(V(1.4, 0, -0.6)), heading: 1.6 }; },
-  bed: () => K.mark('bedroom', 'bed_edge'),
+  doorKneel: () => { const m = K.mark('hallway', 'max_door_kneel'); return { pos: m.pos.clone().add(V(0.3, 0, 0.1)), heading: -Math.PI / 2 }; },
+  doorStep: () => { const m = K.mark('hallway', 'max_door_kneel'); return { pos: m.pos.clone().add(V(0.1, 0, 1.6)), heading: -1.0 }; },
+  doorBack: () => M.doorStep(),
+  bed: () => K.mark('bedroom', 'bed_sit'),
   nest: () => K.mark('attic', 'nest'),
   beside: () => K.mark('attic', 'nest_beside'),
   hatchTop: () => K.mark('attic', 'hatch_top'),
@@ -67,7 +67,7 @@ const M = {
 };
 
 // ---------- setup ----------
-let C, A, P = {}, ATTIC;
+let C, A, P = {}, ATTIC, FILL;
 export async function setup(stage) {
   await K.buildSets(stage, ['hallway', 'bedroom', 'attic']);
   K.setState({ chapter: CH });
@@ -79,14 +79,21 @@ export async function setup(stage) {
   P.crumpled = K.makeProp('note', { state: 'crumpled' }); stage.scene.add(P.crumpled);
   P.phone = K.makeProp('phone', { screen: 'call' }); stage.scene.add(P.phone);
   K.holdTeddy(C.lily, 'L');
+  // a soft warm face fill from the camera side (the night attic is lit only by the standing flashlight)
+  FILL = new THREE.PointLight('#ffe6cc', 0, 0, 2); stage.scene.add(FILL);
 }
 
 // ---------- the shot table ----------
 const HALL = { set: 'hallway', light: 'night_moon', practicals: { moon_window: true, under_door: true, nightlight: true, ceiling_light: 0.3 } };
-const ROOM = { set: 'bedroom', light: 'night_moon', practicals: { bedside_lamp: true, moon_window: true } };
-const ATT = { set: 'attic', light: 'night_moon', practicals: { moon: true, bounce: true, flashlight: true, flashlightCone: true, hatchGlow: true } };
+const ROOM = { set: 'bedroom', light: 'night_moon', practicals: { bedside_lamp: 0.45, moon_window: true } };
+const ATT = { set: 'attic', light: 'night_moon', practicals: { moon: 0.45, bounce: true, flashlight: true, flashlightCone: false, hatchGlow: true } };
 const camS = (name) => (s) => K.setCam(s, K.getSet(SHOTSET[name] || 'hallway').cams[name]);
-const SHOTSET = { bed_edge_ms: 'bedroom' };
+// Max in bed on the phone, 3/4 from the room side, the window with the garlic behind him (k 0 closer, 1 wider)
+const ROOMCAM = (k) => (s) => { const o = K.SET_ORIGIN.bedroom; return K.applyShot(s, { pos: o.clone().add(V(-1.9 + 0.5 * k, 5.4, 0.6 + 1.4 * k)), target: o.clone().add(V(-3.9, 5.2, -6.8)), fov: 40 }); };
+const SHOTSET = { bed_phone_mcu: 'bedroom', bed_phone_ms: 'bedroom' };
+// the door beat from down the hall (the linen-closet end, -x): she kneels side-on to Max's door, right hand at the gap,
+// face to this camera. dist: from her head; h: height above her eyes; look: aim below her eyes.
+const SIDECAM = (dist, h, look, fov) => (s) => { const hd = K.headPos(C.skye); return K.applyShot(s, { pos: hd.clone().add(V(-0.86 * dist, h, 0.5 * dist)), target: hd.add(V(0, look, 0)), fov }); };
 const TWO = (s) => { const a = K.headPos(C.skye), b = K.headPos(C.lily), m = a.clone().add(b).multiplyScalar(0.5); return K.applyShot(s, { pos: m.clone().add(V(0.4, 0.5, 7.4)), target: m.clone().add(V(-0.2, -1.1, 0)), fov: 36 }); };
 const camA = (name) => (s) => K.setCam(s, ATTIC.cams[name]);
 // attic singles: from the room side (+z), each cheated 3/4 toward the other (Lily is on Skye's left, frame-left)
@@ -95,13 +102,13 @@ const SKYE_MCU = headCam(() => C.skye, V(0.5, 0.35, 5.2), 34), SKYE_CU = headCam
 const LILY_MCU = headCam(() => C.lily, V(-0.2, 0.3, 4.4), 28, V(0, -0.15, 0));
 const SHOTS = [
   { line: 0, off: 0, id: 'door_ws', ...HALL, cam: (s, t) => K.applyShot(s, K.blendShot(K.getSet('hallway').cams.wide_to_max_door, { pos: K.headPos(C.skye).add(V(4.6, 0.6, 5.0)), target: K.headPos(C.skye).add(V(0, -0.9, 0)), fov: 38 }, smooth((t - 0.3) / (endOf(0) - 0.3)))) },
-  { line: 1, off: -0.1, id: 'note_mcu', ...HALL, cam: headCam(() => C.skye, V(3.4, 0.3, 3.2), 34, V(0, -0.6, 0)) },
-  { line: 1, off: endOf(1) - at(1), id: 'kneel', ...HALL, cam: headCam(() => C.skye, V(3.6, 0.0, 0.6), 42, V(-0.9, -1.3, -0.8)) },
-  { line: 2, off: -0.1, id: 'max_phone', ...ROOM, cam: headCam(() => C.max, V(4.6, 0.4, -2.6), 34, V(0, -0.7, 0)) },
-  { line: 4, off: -0.1, id: 'max_worst', ...ROOM, cam: headCam(() => C.max, V(5.4, 0.6, -2.4), 40, V(0, -1.2, 0)) },
-  { line: 4, off: 0.9, id: 'skye_hears', ...HALL, cam: headCam(() => C.skye, V(2.5, 0.1, -0.5), 32, V(0, -0.1, 0)) },
-  { line: 4, off: endOf(4) - at(4) + 0.05, id: 'backs_away', ...HALL, cam: headCam(() => C.skye, V(4.6, 0.2, 2.2), 40, V(0, -1.0, 0)) },
-  { line: 5, off: -0.1, id: 'got_it', ...HALL, cam: headCam(() => C.skye, V(3.6, 0.3, 1.2), 32, V(0, -0.4, 0)) },
+  { line: 1, off: -0.1, id: 'note_mcu', ...HALL, cam: headCam(() => C.skye, V(4.2, 0.3, 1.2), 44, V(0, -0.9, 0)) },
+  { line: 1, off: endOf(1) - at(1) - 0.3, id: 'kneel', ...HALL, cam: SIDECAM(4.4, 0.7, -1.2, 42) },
+  { line: 2, off: -0.1, id: 'max_phone', ...ROOM, cam: ROOMCAM(0) },
+  { line: 4, off: -0.1, id: 'max_worst', ...ROOM, cam: ROOMCAM(1) },
+  { line: 4, off: 0.9, id: 'skye_hears', ...HALL, cam: SIDECAM(2.5, 0.1, -0.1, 32) },
+  { line: 4, off: endOf(4) - at(4) + 0.05, id: 'backs_away', ...HALL, cam: SIDECAM(4.6, 0.3, -1.0, 40) },
+  { line: 5, off: -0.1, id: 'got_it', ...HALL, cam: SIDECAM(3.0, 0.3, -0.4, 32) },
   { line: 6, off: -0.35, id: 'lily_hatch', ...ATT, cam: camA('hatch_lily_cu') },
   { line: 7, off: -0.1, id: 'attic_wide', ...ATT, cam: camA('wide') },
   { line: 7, off: 1.3, id: 'skye_worse', ...ATT, cam: SKYE_MCU },
@@ -146,7 +153,7 @@ export function update(t, stage) {
       const read = ramp(t, at(1) - 0.3, at(1) + 0.2) * (1 - ramp(t, endOf(1) - 0.2, endOf(1) + 0.2));
       K.gesture(C.skye, 'hand_hold', 'R');
       if (read > 0) K.gesture(C.skye, 'hold_out', 'R', read);
-      if (kneelK > 0) K.gesture(C.skye, 'tap', 'R', kneelK);
+      if (kneelK > 0) K.gesture(C.skye, [-20, 0, 4], 'R', kneelK);
     } else {
       // backs away from the door (a real backward step, 4 studs/s), then turns and walks off down the hall
       const k = M.doorKneel(), st = M.doorStep(), bk = M.doorBack(), d1 = k.pos.distanceTo(st.pos), stepEnd = backT0 + d1 / 4;
@@ -156,7 +163,7 @@ export function update(t, stage) {
         K.putOn(C.skye, { pos: k.pos.clone().lerp(st.pos, u), heading: k.heading });
       } else {
         const m = K.walk(C.skye, A, st, bk, stepEnd + 0.15, t, { idleAt: 0, endHeading: bk.heading });
-        if (!m.moving) poseAt(C.skye, 'stand', bk, bk.heading);
+        if (!m.moving) { poseAt(C.skye, 'stand', bk, bk.heading); K.gesture(C.skye, [-14, 0, 12], 'R'); }
       }
     }
     const crumpled = t >= T.rise + 0.15;
@@ -171,9 +178,9 @@ export function update(t, stage) {
     K.setState({ chapter: CH, lamp: true });
     const b = M.bed();
     K.posture(C.max, 'sit_upright');
-    K.putOn(C.max, { pos: b.pos.clone().setY(K.seatY(C.max, K.getSet('bedroom').marks.bed_edge.seat)), heading: Math.PI / 2 + 0.35 }, { sit: true });
-    K.gesture(C.max, 'phone_ear', 'R');                 // phone at his right ear (the far side from the camera: his face stays clear)
-    K.hold(P.phone, C.max, 'R', 'ear');
+    K.putOn(C.max, { pos: b.pos.clone().setY(K.seatY(C.max, K.getSet('bedroom').marks.bed_sit.seat)), heading: b.heading + 0.5 }, { sit: true });   // turned to the camera: the phone arm sits beside his head
+    K.gesture(C.max, 'phone_ear', 'L');                 // phone in his left palm against his ear (camera side, beside his face)
+    K.hold(P.phone, C.max, 'L', 'ear');
     P.note.visible = P.crumpled.visible = false;
     const face = t < at(2) + 0.6 ? 'surprised' : t < at(3) ? 'happy' : t < at(3) + 0.9 ? 'nervous' : 'happy';
     K.speak(C.max, face, t, L.said('MAX'));
@@ -185,8 +192,8 @@ export function update(t, stage) {
     // Skye cross-legged in the nest, turned a little toward Lily
     poseAt(C.skye, 'sit_cross', M.nest(), 0.25);
     K.gesture(C.skye, 'hand_hold', 'R');
-    const wipe = ramp(t, at(18) + 0.2, at(18) + 0.6) * (1 - ramp(t, endOf(18) - 0.6, endOf(18) - 0.2));
-    if (wipe > 0) K.gesture(C.skye, 'eye_wipe', 'L', wipe);
+    const knee = ramp(t, at(18) - 0.3, at(18) + 0.2);              // the last line: her fist with the note comes to rest on her knee
+    if (knee > 0) K.gesture(C.skye, [-46, 0, -4], 'R', knee);
     K.hold(P.crumpled, C.skye, 'R'); P.crumpled.visible = true; P.note.visible = false; P.phone.visible = false;
     const sf = t < at(7) ? 'sad' : t < at(9) ? 'sad' : t < at(11) ? 'annoyed' : t < at(12) + 3.5 ? 'sad'
       : t < at(13) ? 'annoyed' : t < at(14) ? 'determined' : t < at(15) ? 'scheming' : t < at(18) ? 'determined' : 'crying';
@@ -204,15 +211,21 @@ export function update(t, stage) {
     } else if (t < arrive) {
       K.walk(C.lily, A, top, side, walkT0, t);
     } else {
-      poseAt(C.lily, 'sit_cross', side, side.heading);
+      poseAt(C.lily, 'sit_cross', side, side.heading, { extra: { 'Arm.L': [-48, 0, 26], 'Arm.R': [-42, 0, -26] } });
     }
-    K.holdTeddy(C.lily, 'L');
+    K.holdTeddy(C.lily, t >= arrive ? 'hug' : 'L');
     const lf = t < at(8) ? 'nervous' : t < at(10) ? 'surprised' : t < at(12) ? 'suspicious'
       : t < at(12) + 4.2 ? 'neutral' : t < at(13) ? 'smug' : 'sad';
     K.speak(C.lily, lf, t, L.said('LILY'));
   }
   sh.cam(stage, t);
+  // face fill from the lens (a little above it), attic and bedroom only; scaled by the distance to the nearest face so
+  // close-ups and wides get the same light on the face
+  const c = stage.camera, near = Math.min(...['skye', 'lily', 'max'].filter((k) => C[k].root.visible).map((k) => c.position.distanceTo(K.headPos(C[k]))));
+  FILL.position.copy(c.position).add(V(0, 0.5, 0));
+  FILL.intensity = (sh.set === 'attic' ? FILL_I.attic : sh.set === 'bedroom' ? FILL_I.bedroom : 0) * near * near;
 }
+const FILL_I = { attic: 1.3, bedroom: 0.4 };
 
 // ---------- overlay ----------
 export function overlay(g, s, t) {
