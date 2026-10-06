@@ -18,8 +18,12 @@ sources: `source/story.md`. Made overnight without script approval (user request
 - Hold check (`web/hold_check.js`: sword, scroll, salute) and fit check (0 pairs) done.
 - **Full render not started: the disk has 1.3 GB free; a full render needs ~2.6 GB.**
 
+- Sound cues (`source/sound_cues.py`, 53 cues; SFX copied into `audio/sfx/`), final mix -16.8 LUFS, peak 0.84;
+  captions built. Cover clip (`web/cover_clip.js`: the penguin turned to camera in front of the saluting line,
+  "THIS PENGUIN IS A / MAJOR GENERAL / THEY SALUTE HIM") saved full size: `delivery/The_Penguin_General_cover.png|jpg`.
+  Post copy: `delivery/post.json`.
+
 ## Next
-1. Sound cues, cover clip, post copy (`delivery/post.json`).
-2. Free disk space (user decision), then full render:
+1. Free disk space (user decision), then full render:
    `node web/render.mjs --clip projects/the-penguin-general/web/penguin_clip.js --out projects/the-penguin-general/renders/web --workers 4`;
    cover full size, encode with `scripts/finish.py ... --encode --frames .../renders/web`, blank-frame check, preview to the user.

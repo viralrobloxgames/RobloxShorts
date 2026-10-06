@@ -332,3 +332,4 @@ export function overlay(g, s, t) {
 export const cast = () => ({ max, mia, leo, skye, noob, folk0: folk[0] });
 export const TIMES = T;
 export const props = () => PROPS;
+export const penguinObj = () => peng;                     // for the cover (turned to camera there)

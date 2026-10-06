@@ -16,12 +16,14 @@ Facts, beats and sources: `source/story.md`. Made overnight without script appro
 - Preview sheet (28 frames) reviewed: auction bid boards land on "Three million / Five / Six point two"; end card fine.
   Hold check re-run: all props in hand where the check camera can see; the three wall-taping close-ups render grey
   (check camera behind the gallery wall), and those moments look right in the main-camera preview. Fit check: 0 pairs, reviewed.
+- Cover re-framed (the stage lip hid Leo and the banana; camera raised) and saved full size:
+  `delivery/The_Six_Million_Dollar_Banana_cover.png|jpg`. Sound cues re-run on the real beats (40 cues); final mix
+  -17.0 LUFS, peak 0.84; captions built (finish.py now keeps "$6.2" and "$120,000" as one caption word).
 - **Full render not started: the disk has 1.3 GB free; a full render needs ~2.6 GB, and finish.py copies the frames
   again for the encode.**
 
 ## Next
 1. Free disk space (user decision), then full render:
    `node web/render.mjs --clip projects/the-six-million-dollar-banana/web/banana_clip.js --out projects/the-six-million-dollar-banana/renders/web --workers 4`
-2. Cover full size -> `delivery/The_Six_Million_Dollar_Banana_cover.png`, encode
-   (`python3 scripts/finish.py projects/the-six-million-dollar-banana --encode --frames projects/the-six-million-dollar-banana/renders/web`),
-   blank-frame check, contact sheet, post copy, preview to the user.
+2. Encode (`python3 scripts/finish.py projects/the-six-million-dollar-banana --encode --frames projects/the-six-million-dollar-banana/renders/web`),
+   blank-frame check (`scripts/review/blank_frames.py`), contact sheet, preview to the user. Cover and post copy are done.
