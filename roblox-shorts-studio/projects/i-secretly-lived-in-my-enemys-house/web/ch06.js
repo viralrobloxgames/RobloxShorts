@@ -115,7 +115,8 @@ const SHOTS = [
   { at: () => at(15, -0.1), id: 'dad_max', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.45 }) },
   { at: () => at(16, -0.1), id: 'max_bed', set: B, cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.35 }) },
   { at: () => at(17, -0.1), id: 'dad_grown', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.4 }) },
-  { at: () => T.hatch() - 0.1, id: 'dad_hatch', set: H, cam: (s) => camHatch(s) },
+  { at: () => T.hatch() + 1.12, id: 'dad_hatch',     // after his 9.6-stud walk at 9 studs/s
+    set: H, cam: (s) => camHatch(s) },
   { at: () => at(19, -0.12), id: 'gap', set: H, cam: (s) => fixed(s, V(-11.5, 4.0, 3.8), K.headPos(C.skye).lerp(K.headPos(C.lily), 0.4), 32) },
   { at: () => at(20, -0.1), id: 'end', set: H, cam: (s) => camEnd(s) },
 ].map((x) => ({ ...x, start: x.at() })).sort((a, b) => a.start - b.start);
@@ -124,7 +125,7 @@ const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.star
 const setCam = (stage, id, name) => { const set = K.getSet(id); return K.setCam(stage, set.cams[name], { blockers: [set.group] }); };
 const fixed = (stage, pos, target, fov) => K.setCam(stage, { pos: HO().clone().add(pos), target, fov }, { blockers: [K.getSet(H).group] });
 // opening: from ahead of Skye as she creeps down the hall to Max's door; her face 3/4, below the day card
-const camCreep = (stage) => fixed(stage, V(-14.5, 4.4, 5.0), K.headPos(C.skye).add(V(0.4, 0.75, 0)), 25);
+const camCreep = (stage) => fixed(stage, V(-13.5, 4.3, 5.5), K.headPos(C.skye).lerp(HO().clone().add(V(-9, 3.6, -5)), 0.3).add(V(0, 0.6, 0)), 38);
 // the mirror's point of view: the camera just in front of the desk mirror, looking back at Max (a slight angle off square)
 function camMirror(stage, framing, side = -0.35) {
   const eye = K.headPos(C.max), f = { cu: 2.6, mcu: 3.8, ms: 4.8 }[framing];
@@ -133,9 +134,9 @@ function camMirror(stage, framing, side = -0.35) {
   return K.setCam(stage, { pos, target: eye.clone().add(V(0, -0.12 * f, 0)), fov }, { clear: false });
 }
 // Dad from low in front, the hatch above him in frame
-const camHatch = (stage) => fixed(stage, V(1.5, 2.6, 7.5), K.headPos(C.dad).lerp(HATCH_C(), 0.35), 46);
+const camHatch = (stage) => fixed(stage, V(-0.5, 3.4, 7.2), K.headPos(C.dad).lerp(HATCH_C(), 0.25), 46);
 // last frame: toward the linen-closet gap, Dad in the foreground (3/4) facing the hatch
-const camEnd = (stage) => fixed(stage, V(2.0, 4.0, 9.5), K.headPos(C.dad).lerp(K.headPos(C.skye), 0.55).add(V(0, -0.8, 0)), 40);
+const camEnd = (stage) => fixed(stage, V(2.0, 4.0, 9.5), K.headPos(C.dad).lerp(K.headPos(C.skye), 0.62).add(V(0, -0.8, 0)), 34);
 
 // ---------- arm and head overrides (after playAnim; one arm high at most) ----------
 const _e = new THREE.Euler(), _q = new THREE.Quaternion();
@@ -160,7 +161,7 @@ export function update(t, stage) {
   if (sh.set === H) set.setLinen?.(linen);
   K.setBlockers(set.group, ...Object.values(cast()).filter((a) => a.root.visible));
   const pr = sh.set === H
-    ? { moon_window: t >= T.hide() ? 1.6 : 1.2, under_door: true, nightlight: true, linen_fill: linen > 0.02 && linen < 0.8 ? 3 : false }
+    ? { moon_window: t >= T.hide() ? 2.6 : 1.2, under_door: true, nightlight: true, linen_fill: linen > 0.02 && linen < 0.8 ? 0.5 : false }
     : { bedside_lamp: true, desk_lamp: true, moon_window: 1.2 };
   K.applyLight(stage, 'night_moon', { set, practicals: pr });
   sh.cam(stage, t);
@@ -233,8 +234,7 @@ function hallway(t, idle, sh) {
     else skFace = 'scared';
     const jolt = pulse(t, T.tap() + 0.02, 0.45);      // the jump when Lily taps her (a hop; the torch drops from her chin)
     if (jolt > 0) sk.root.position.y += 0.45 * jolt;
-    if (t >= T.tap()) chin = Math.min(chin, 1 - smooth((t - T.tap()) / 0.2));
-    if (t >= at(9, -0.1)) chin = 0;                  // flashlight lowered once she's talking to Lily
+    if (t >= T.creak()) chin = 1 - smooth((t - T.creak()) / 0.3);   // torch lowered when Dad's beam swings in
     if (t >= at(10) && t < at(11)) arm(sk, 'L', 1.25, -0.7);                  // arms folded: "I do not like him"
     if (t >= at(12) && t < T.creak()) {               // "up there": the left arm points up at the attic (the right holds the light)
       const u = pulse(t, wordT(12, 2) - 0.15, 1.4);
@@ -272,7 +272,7 @@ function hallway(t, idle, sh) {
       const m = run2(li, lm, M.linenFront(), M.linenLily(), hide, t);
       if (m.moving) arm(li, 'L', 0.5, 0.2);          // reaching back for Skye's hand
       if (t >= m.arrive && m.done) { K.playAnim(li, [[A.idle, idle]]); K.putOn(li, M.linenLily()); }
-      lfFace = t < at(19) ? 'determined' : 'nervous';
+      lfFace = 'nervous';
     }
     K.speak(li, lfFace, t, L.said('LILY'));
   }
@@ -296,12 +296,12 @@ function hallway(t, idle, sh) {
       if (m.done) {
         K.playAnim(dd, [[A.idle, idle]]); K.putOn(dd, hm);
         const u = smooth((t - m.arrive) / 0.4);
-        headTurn(dd, 0, 0.5 * u); torchUp = u; swordUp = -0.25 * u;   // broom held low across, torch up at the hatch
+        headTurn(dd, 0, 0.5 * u); torchUp = u; swordUp = -0.9 * u;   // broom held low across, torch up at the hatch
       }
       dFace = 'determined';
     }
     // broom out in front like a sword (right), raised on "draw the line" / at the hatch; torch (left) forward, up at the hatch
-    arm(dd, 'R', 1.2 + 0.6 * swordUp, 0.05, 0);
+    arm(dd, 'R', 1.45 + 0.5 * swordUp, 0.05, 0);
     arm(dd, 'L', 1.35 + 0.85 * torchUp, 0.12, 0);
     K.speak(dd, dFace, t, L.said('DAD'));
   }
@@ -314,7 +314,7 @@ function handPos(a, side, out) { a.root.updateMatrixWorld(true); return a.bones[
 function beams(t, sh) {
   if (sh.set !== H) { beamSkye.set(false); beamDad.set(false); return; }
   const sk = C.skye, chin = P.torchSkye.userData.chin ?? 0;
-  beamSkye.set(sk.root.visible && chin > 0.05 ? chin : false, sk);              // the torch under her chin: warm up-light
+  beamSkye.set(sk.root.visible && chin > 0.05 ? 0.28 * chin : false, sk);              // the torch under her chin: warm up-light
   if (C.dad.root.visible) {
     const a = C.dad; handPos(a, 'L', _p);
     const s0 = a.bones['Arm.L'].localToWorld(V(0.5, 0, 0)); _d.copy(_p).sub(s0).normalize();   // along the arm
