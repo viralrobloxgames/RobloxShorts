@@ -46,6 +46,27 @@ def tone(hz, dur, sweep=0.0, square=False):
     return (w * (1 - np.exp(-t * 300)) * np.exp(-t * 5 / dur)).astype(np.float32)
 
 
+# Loop points (s) for beds whose file ends on a button/fade: only the full-level body is looped.
+LOOP_POINTS = {'playful_history_music': (0.0, 28.7)}   # it fades from 28.8 s and ends on a button
+
+
+def loop_bed(m, n, points=None, xfade=0.75):
+    """n samples of bed: the loop body (points, else the file minus its quiet tail) repeated with equal-power crossfades."""
+    if points: body = m[int(points[0] * SR):int(points[1] * SR)]
+    else:
+        w = SR // 10; lv = np.array([np.sqrt(np.mean(m[i:i + w] ** 2)) for i in range(0, len(m) - w, w)]) + 1e-9
+        loud = np.nonzero(20 * np.log10(lv) > 20 * np.log10(np.median(lv)) - 12)[0]
+        body = m[:(loud[-1] + 1) * w] if len(loud) else m
+    x = min(int(xfade * SR), len(body) // 4); fi = np.sin(np.linspace(0, np.pi / 2, x)).astype(np.float32); fo = fi[::-1]
+    out = np.zeros(n + len(body), np.float32); pos = 0; first = True
+    while pos < n:
+        seg = body.copy()
+        if not first: seg[:x] *= fi
+        seg[-x:] *= fo
+        out[pos:pos + len(seg)] += seg; pos += len(seg) - x; first = False
+    return out[:n]
+
+
 def framemd5(path):
     out = run(['ffmpeg', '-v', 'error', '-i', str(path), '-map', '0:v:0', '-f', 'framemd5', '-'], capture_output=True, text=True).stdout
     return [l.split(',')[-1].strip() for l in out.splitlines() if l and not l.startswith('#')]
@@ -137,9 +158,7 @@ def main():
             i = i0 + int(c['start'] * SR); j = min(i0 + L, i + len(buf))   # a cue never spills into the next chapter
             if i0 <= i < j: sfx[i:j] += buf[:j - i] * c.get('gain', .3)
     mpath = Path(a.music) if Path(a.music).is_file() else ROOT / 'assets/audio' / (a.music + ('' if a.music.endswith('.wav') else '.wav'))
-    m = load(mpath); xf = int(0.08 * SR)                                # loop with a short crossfade at each seam
-    body = m[:-xf].copy(); body[:xf] = body[:xf] * np.linspace(0, 1, xf) + m[-xf:] * np.linspace(1, 0, xf)
-    bed = np.tile(body, N // len(body) + 1)[:N]
+    bed = loop_bed(load(mpath), N, LOOP_POINTS.get(mpath.stem))
     bed[:SR] *= np.linspace(0, 1, SR); bed[-3 * SR:] *= np.linspace(1, 0, 3 * SR)
     mix = voice * a.voice_gain + sfx * a.sfx_gain + bed * a.music_gain
     raw = work / 'mix_raw.wav'
