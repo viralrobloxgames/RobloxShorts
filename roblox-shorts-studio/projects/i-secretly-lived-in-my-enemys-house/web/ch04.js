@@ -115,9 +115,9 @@ const T = {
 const S2 = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 34, height: 1.5, look: V(0, -0.45, 0) });   // above the row-1 chair backs; props clear the captions
 const S2c = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 30, bias: 0.45, height: 1.3, look: V(0, 0.2, 0) });   // mid-chest up, clear of the desk
 // clean board-side singles: Skye near-frontal with Max out of frame; Max 3/4 with Skye out of frame (never behind a head)
-const single = (who, off, fov) => (s) => { const h = K.headPos(C[who]); return K.applyShot(s, { pos: h.clone().add(off), target: h.clone().add(V(0, -0.45, 0)), fov }); };
-const SK = (fr) => single('skye', fr === 'cu' ? V(1.1, 0.15, -3.3) : V(1.5, 0.2, -4.6), fr === 'cu' ? 30 : 32);
-const MX = (fr) => single('max', fr === 'cu' ? V(-0.8, 0.2, -3.6) : V(-1.0, 0.25, -5.2), 32);
+const single = (who, off, fov) => (s) => { const h = K.headPos(C[who]); return K.applyShot(s, { pos: h.clone().add(off), target: h.clone().add(V(0, -0.2, 0)), fov }); };
+const SK = (fr) => single('skye', fr === 'cu' ? V(1.3, 0.15, -4.1) : V(1.6, 0.2, -5.0), fr === 'cu' ? 30 : 32);
+const MX = (fr) => single('max', fr === 'cu' ? V(-0.9, 0.2, -4.4) : V(-1.1, 0.25, -5.8), 32);
 const WIDE = (s, t) => {
   const set = K.getSet('classroom');
   if (set.cams.wide_front) return K.setCam(s, set.cams.wide_front);
@@ -223,11 +223,11 @@ function maxArms(t) {
   const down = t > T.cookieDown() - 0.35 && t < T.cookieDown() + 0.45 ? Math.sin(Math.PI * clamp((t - T.cookieDown() + 0.35) / 0.8)) : 0;
   if (offer > 0) K.gesture(C.max, OFFER_ARM, 'L', offer);                           // the cookie on his palm, toward her
   if (down > 0) K.gesture(C.max, 'tap', 'L', down);                                 // sets it down on her desk
-  if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, OFFER_ARM, 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
+  if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, [-86, 0, -6], 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
   if (t > T.split() - 0.3) {                                                         // breaks it with both hands at chest height
     const both = ramp(t, T.split() - 0.3, T.split()) * (1 - ramp(t, T.split() + 0.2, T.split() + 0.45));
     K.gesture(C.max, [-70, 0, -16], 'R', both); K.gesture(C.max, [-70, 0, -16], 'L', both);
-    K.gesture(C.max, [-62, 0, 4], 'L', ramp(t, T.split() + 0.2, T.split() + 0.45) * (1 - ramp(t, T.take() + 0.05, T.take() + 0.3)));   // half held out to her
+    K.gesture(C.max, [-70, 0, 8], 'L', ramp(t, T.split() + 0.2, T.split() + 0.45) * (1 - ramp(t, T.take() + 0.05, T.take() + 0.3)));   // half held out to her
   }
 }
 
@@ -252,13 +252,12 @@ export function update(t, stage) {
   if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }
   if (t > faceFront) { hS = mS.heading - 0.25; headY = 0; }
   if (t > T.snap() && t < T.snap() + 0.45) headY = 12 * Math.sin((t - T.snap()) / 0.45 * Math.PI * 3);   // "Stop it, face." shakes it off
-  // turned toward Max she folds her arms (nothing reaches across the desk at him); facing front, forearms on the desk
+  // turned toward Max her arms hang beside the seat (clear of the desk, nothing reaches at him); facing front, forearms flat on the desk
   const folded = turnU * (t > faceFront ? 0 : 1);
-  let dS = K.mixAngles(SIT, { ...SIT, 'Arm.L': K.POSES.arms_folded['Arm.L'], 'Arm.R': K.POSES.arms_folded['Arm.R'] }, folded);
+  let dS = K.mixAngles(SIT, { ...SIT, 'Arm.L': [6, 0, -6], 'Arm.R': [6, 0, 6] }, folded);
   const back = (t > at(3) && t < at(7) ? ramp(t, at(3), at(3) + 0.3) * (t > at(5) ? 0.55 : 0.35) * (1 - ramp(t, at(7), at(7) + 0.3)) : 0)
     + (t > at(12) && t < at(16) ? ramp(t, at(12), at(12) + 0.3) * (1 - ramp(t, at(16) - 0.3, at(16))) * 0.7 : 0);
   dS.Torso = P3(SIT.Torso, K.POSES.lean_back.Torso, back); dS.Head = P3([0, 0, 0], K.POSES.lean_back.Head, back);
-  if (t > at(10) && t < end(10, 0.3)) dS = K.mixAngles(dS, K.POSES.chin_on_hand, 0.4 * ramp(t, at(10), at(10) + 0.3) * (1 - ramp(t, end(10), end(10, 0.3))));
   if (t > at(17, 0.5) && t < end(17, 0.2)) headY += 30 * away * ramp(t, at(17, 0.5), at(17, 0.8)) * (1 - ramp(t, end(17), end(17, 0.2)));   // prim: turns her head away
   if (t > at(13) && t < end(13, 0.25)) headY += 25 * away * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25)));   // "It's fashion." flips her hair away from him: the cobweb side to camera
   const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
@@ -266,8 +265,8 @@ export function update(t, stage) {
   dS.Head = [(dS.Head?.[0] ?? 0) + lookUp, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
   sitOn(C.skye, mS, hS, dS);
 
-  if (t > T.take() - 0.45) K.gesture(C.skye, OFFER_ARM, 'R', 0.55 * ramp(t, T.take() - 0.45, T.take()));   // reaches for the half
-  if (t > T.take() + 0.05) K.gesture(C.skye, 'cup_hold', 'R', ramp(t, T.take() + 0.05, T.take() + 0.35));      // brings it in to her chest, elbow bent
+  if (t > T.take() - 0.45) K.gesture(C.skye, OFFER_ARM, 'R', 0.9 * ramp(t, T.take() - 0.45, T.take()));   // reaches for the half
+  if (t > T.take() + 0.05) K.gesture(C.skye, [-106, 0, -30], 'R', ramp(t, T.take() + 0.05, T.take() + 0.35));      // brings it in across her chest (not out at the aisle)
   let fS = 'annoyed';
   if (t > wordT(1, 15)) fS = 'suspicious';
   if (t > at(7)) fS = 'annoyed';
@@ -293,7 +292,7 @@ export function update(t, stage) {
       const lean = t > T.lean() ? ramp(t, T.lean(), T.lean() + 0.35) * (1 - ramp(t, T.unlean(), T.unlean() + 0.3)) : 0;
       const d = K.mixAngles({}, K.POSES.lean_in, lean);
       if (t > at(14) && t < at(14, 0.8)) d.Head = [(d.Head?.[0] ?? 0) + 12 * Math.abs(Math.sin((t - at(14)) * Math.PI * 5)), 0, 0];  // sniff, sniff
-      if (t > at(8) && t < at(8, 1.4)) d.Head = [0, 18 * Math.sin((t - at(8)) * 4.5), 0];        // glances round: a secret
+      if (t > at(8) && t < at(8, 1.4)) d.Head = [0, 9 * Math.sin((t - at(8)) * 4.5), 0];        // glances round: a secret
       if (t > at(11) && t < end(11)) d.Head = [6, -22, 0];                                          // "That's private." looks away
       standOn(C.max, mA.pos, hA, d);
       maxArms(t);
@@ -317,9 +316,8 @@ export function update(t, stage) {
     } else {
       const glance = t > at(21, 0.6) ? 1 : 0;
       const d = { ...SIT, Head: [0, glance * 60 * Math.sign(amix(mM.heading, K.faceTo(mM, mS), 1) - mM.heading), 0] };
-      sitOn(C.max, seat, mM.heading, d);
+      sitOn(C.max, seat, mM.heading, d);                                            // forearms flat on his desk, his half in his right palm
     }
-    K.gesture(C.max, 'cup_hold', 'R', 1);
   }
   let fM = 'happy';
   if (t > at(6) && t < at(6, 0.45)) fM = 'shocked';
