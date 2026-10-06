@@ -111,7 +111,7 @@ const SHOTS = [
   { at: () => T.creak(), id: 'hall_wide', set: H, cam: (s) => setCam(s, H, 'wide_to_stairs') },
   { at: () => at(13, 0.9), id: 'dad_ms', set: H, cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.4 }) },
   { at: () => at(14, -0.1), id: 'dad_mcu', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.4 }) },
-  { at: () => T.hide() - 0.05, id: 'hide_wide', set: H, cam: (s) => setCam(s, H, 'wide') },
+  { at: () => T.hide() - 0.05, id: 'hide_dash', set: H, cam: (s) => K.setCam(s, { pos: HO().clone().add(V(-12.6, 4.3, 3.6)), target: HO().clone().add(V(-15.6, 3.4, -1.4)), fov: 52 }, { clear: false }) },   // tight at the closet: they dash in (review-1 #1)
   { at: () => at(15, -0.1), id: 'dad_max', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.45 }) },
   { at: () => at(16, -0.1), id: 'max_bed', set: B, cam: (s) => camMirror(s, 'mcu', 0.9) },
   { at: () => at(17, -0.1), id: 'dad_grown', set: H, cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.4 }) },
