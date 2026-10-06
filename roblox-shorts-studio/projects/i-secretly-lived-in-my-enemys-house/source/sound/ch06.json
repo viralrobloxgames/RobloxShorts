@@ -1,0 +1,83 @@
+[
+ {
+  "asset": "sfx/night_bed.wav",
+  "start": 0.0,
+  "gain": 0.08,
+  "dur": 57.8
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 0.25,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 1.0,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 1.75,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 2.5,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/swish_1.wav",
+  "start": 22.08,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/door_creak.wav",
+  "start": 32.87,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 33.27,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 33.97,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 34.67,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.63,
+  "gain": 0.07
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.79,
+  "gain": 0.07
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 43.95,
+  "gain": 0.07
+ },
+ {
+  "asset": "sfx/door_creak.wav",
+  "start": 43.98,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 50.6,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 50.95,
+  "gain": 0.1
+ }
+]

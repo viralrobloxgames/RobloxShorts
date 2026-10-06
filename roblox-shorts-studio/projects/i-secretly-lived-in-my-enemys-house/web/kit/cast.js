@@ -9,9 +9,10 @@
 import * as THREE from 'three';
 import { loadRobloxCharacter, packTexture, wear } from '../../../../web/lib/robloxPack.js';
 import { roundedBox } from '../../../../web/lib/rig.js';
+import { makeProp, hold, glowBands } from './props.js';
 
 export const FACES = ['scared', 'suspicious', 'scheming', 'nervous', 'happy', 'annoyed', 'shocked', 'smug', 'surprised', 'determined',
-  'crying', 'sad', 'shouting', 'laugh', 'talking', 'mouth_o', 'neutral'];
+  'crying', 'sad', 'shouting', 'laugh', 'talking', 'mouth_o', 'neutral', 'confused', 'mouth_small'];
 export const WARDROBE = ['skye_hoodie', 'skye_sheet', 'backpack', 'max_school', 'max_pjs', 'dad_cardigan', 'dad_apron', 'dad_robe',
   'lily_day', 'lily_pjs', 'extras'];
 // Caption speaker labels (captions.json) of each character; speak() only moves the mouth on these words (never on VO).
@@ -433,16 +434,9 @@ function makeSheet(actor) {
   return parts;
 }
 
-// The pulled-off sheet, bunched (Ch10, in her left hand).
-export function makeSheetBunch() {
-  const g = new THREE.Group(); g.name = 'sheet_bunch'; const m = cloth('#f3f3f0', { roughness: 0.92 });
-  const blobs = [[0, 0, 0, 0.55], [0.3, -0.25, 0.1, 0.42], [-0.28, -0.3, -0.05, 0.4], [0.05, -0.62, 0.05, 0.38], [0.12, -0.95, 0, 0.28], [-0.1, -1.2, 0.04, 0.2]];
-  for (const [x, y, z, r] of blobs) { const s = new THREE.Mesh(new THREE.IcosahedronGeometry(r, 2), m); s.position.set(x, y, z); s.scale.set(1, 0.85, 0.9); g.add(s); }
-  return shade(g);
-}
-
-// Lily's brown teddy: ~1.1 studs tall. Pivot at the tip of its raised right paw (the grip), teddy hanging below, facing +Z.
-export function makeTeddy() {
+// Lily's teddy is kit-props' `makeProp('teddy')` (orchestrator decision). This brown bear is only a fallback while props.js
+// returns an empty group. Pivot at the tip of its raised paw (the grip), teddy hanging below, facing +Z.
+function teddyFallback() {
   const g = new THREE.Group(); g.name = 'teddy';
   const fur = cloth('#8a5a36', { roughness: 0.95 }), light = cloth('#d7b48a', { roughness: 0.95 }), dark = new THREE.MeshStandardMaterial({ color: '#1a1210', roughness: 0.3 });
   const t = new THREE.Group(); g.add(t);
@@ -465,22 +459,28 @@ export function makeTeddy() {
   return shade(g);
 }
 
-// Teddy placement. 'R' / 'L': held by its paw in Lily's fist, hanging at her side; 'hug': against her chest
-// (pose her arms in front, e.g. Arm.L/Arm.R about -40 deg pitch, 25 deg in); 'free': detached (the chapter places it).
+// Teddy placement. 'R' / 'L': in Lily's palm via kit-props hold(); 'hug': against her chest (pose her arms with
+// POSES.hug_teddy); 'free': detached (the chapter adds lily.teddy to a set and places it).
 export function holdTeddy(lily, mode = 'R') {
   const t = lily.teddy; if (t.parent) t.parent.remove(t);
   t.position.set(0, 0, 0); t.rotation.set(0, 0, 0); t.scale.setScalar(1);
   const S = lily.scale;
   if (mode === 'R' || mode === 'L') {
-    const sx = mode === 'R' ? -1 : 1;
-    t.position.set(sx * 0.5 * S, -1.3 * S, 0.05 * S); t.rotation.set(0, 0, sx * -0.1);
-    if (mode === 'L') t.scale.set(-1, 1, 1);
-    lily.bones[mode === 'R' ? 'Arm.R' : 'Arm.L'].add(t);
+    if (t.userData.fallback) {
+      const sx = mode === 'R' ? -1 : 1;
+      t.position.set(sx * 0.5 * S, -1.3 * S, 0.05 * S); t.rotation.set(0, 0, sx * -0.1); t.scale.set(mode === 'L' ? -S / 0.78 : S / 0.78, S / 0.78, S / 0.78);
+      lily.bones[mode === 'R' ? 'Arm.R' : 'Arm.L'].add(t);
+    } else hold(t, lily, mode, 'side');
   } else if (mode === 'hug') {
-    t.position.set(-0.1 * S, (3.55 - 2) * S, 0.82 * S); t.rotation.set(0.1, 0, 0);
-    lily.bones.Torso.add(t);
+    if (t.userData.fallback) { t.position.set(-0.1 * S, 1.45 * S, 0.85 * S); t.rotation.set(0.1, 0, 0); t.scale.setScalar(S / 0.78); lily.bones.Torso.add(t); }
+    else hold(t, lily, 'R', 'hug');
   }
   lily.teddyMode = mode; return t;
+}
+function makeTeddy() {
+  const p = makeProp('teddy');
+  if (p && p.children && p.children.length) return p;
+  const f = teddyFallback(); f.userData.fallback = true; return f;
 }
 
 // ---------- hair tint ----------
@@ -533,7 +533,7 @@ function setMap(actor, map) { for (const m of actor.bodyMeshes) { m.material.map
 const BASE_OWNER = { skye_hoodie: 'Skye', skye_sheet: 'Skye', backpack: 'Skye', max_school: 'Max', max_pjs: 'Max', dad_cardigan: 'Leo', dad_apron: 'Leo', dad_robe: 'Leo', lily_day: 'Mia', lily_pjs: 'Mia', extras: 'Noob' };
 
 // dress(actor, id, on = true). Base looks (skye_hoodie, max_school, max_pjs, dad_cardigan, dad_apron, dad_robe, lily_day,
-// lily_pjs, extras) replace the outfit; a base look on Skye also takes the sheet off. Overlays: 'backpack' and
+// lily_pjs, extras) replace the outfit; a base look on Skye also takes the sheet and the backpack off. Overlays: 'backpack' and
 // 'skye_sheet' (on/off with `on`), 'glow_sticks' (green bands round both wrists). Arrays apply in order.
 // Synchronous and cached, so a chapter can change clothes inside update(t).
 export function dress(actor, id, on = true) {
@@ -541,7 +541,7 @@ export function dress(actor, id, on = true) {
   const owner = BASE_OWNER[id];
   if (owner && owner !== actor.name) throw new Error(`Wardrobe "${id}" is for ${owner}, not ${actor.name}`);
   if (id === 'backpack') { overlay(actor, 'backpack', on, () => [makeBackpack(actor)]); return actor; }
-  if (id === 'glow_sticks') { overlay(actor, 'glow_sticks', on, () => makeGlowBands(actor)); return actor; }
+  if (id === 'glow_sticks') { overlay(actor, 'glow_sticks', on, () => glowBands(actor)); return actor; }
   if (id === 'skye_sheet') {
     if (on && actor.outfit !== 'skye_hoodie') dress(actor, 'skye_hoodie');
     overlay(actor, 'skye_sheet', on, () => makeSheet(actor));
@@ -551,6 +551,7 @@ export function dress(actor, id, on = true) {
     actor.sheetOn = on; return actor;
   }
   if (!LOOKS[id] && id !== 'extras' && id !== 'max_school') throw new Error(`Unknown wardrobe id "${id}"`);
+  if (actor.name === 'Skye') overlay(actor, 'backpack', false);      // a base look drops the backpack: dress(skye, ['skye_hoodie', 'backpack'])
   setMap(actor, id === 'max_school' ? actor.defaultMap : atlasFor(actor, id));
   actor.outfit = id;
   if (actor.name === 'Skye' && actor.sheetOn) dress(actor, 'skye_sheet', false);
@@ -594,14 +595,117 @@ export async function loadCast(scene) {
 // Lip flap: while one of the actor's words is playing, alternate `talking` / `mouth_o` (switching inside long words every
 // ~0.14 s); between words and outside their lines the base face. `words` = captions.json words ({ word, start, end,
 // speaker }) - all of them or just this actor's; only words whose speaker matches the actor (SKYE/MAX/DAD/LILY) count.
-export function speak(actor, baseFace, t, words = []) {
+// { whisper: true } uses the small mouth (`mouth_small` / base face) instead.
+export function speak(actor, baseFace, t, words = [], { whisper = false } = {}) {
   const list = Array.isArray(words) ? words : words.words || [];
   for (let i = 0; i < list.length; i++) {
     const w = list[i];
     if (t < w.start || t >= w.end) continue;
     if (w.speaker && actor.speaker && String(w.speaker).toUpperCase() !== actor.speaker) continue;
-    const k = Math.floor((t - w.start) / 0.14);
-    actor.setFace((i + k) % 2 ? 'mouth_o' : 'talking'); return 'talking';
+    const k = Math.floor((t - w.start) / 0.14), odd = (i + k) % 2;
+    const f = whisper ? (odd ? baseFace : 'mouth_small') : (odd ? 'mouth_o' : 'talking');
+    actor.setFace(f); return f;
   }
   actor.setFace(baseFace); return baseFace;
+}
+
+// ---------- blush ----------
+// Pink cheeks layered over any face: blush(actor, 0..1).
+let BLUSH_TEX = null;
+export function blush(actor, amount = 1) {
+  if (!actor.blushMesh) {
+    if (!BLUSH_TEX) BLUSH_TEX = texOf((() => { const c = canvas(1024, 1024), g = c.getContext('2d');
+      for (const x of [372, 662]) { const gr = g.createRadialGradient(x, 430, 0, x, 430, 90); gr.addColorStop(0, 'rgba(255,80,130,1)'); gr.addColorStop(0.55, 'rgba(255,80,130,0.7)'); gr.addColorStop(1, 'rgba(255,80,130,0)'); g.fillStyle = gr; g.beginPath(); g.ellipse(x, 430, 92, 64, 0, 0, 7); g.fill(); }
+      return c; })());
+    const m = new THREE.Mesh(actor.face.geometry, new THREE.MeshStandardMaterial({ map: BLUSH_TEX, transparent: true, depthWrite: false, roughness: 0.6, polygonOffset: true, polygonOffsetFactor: -4 }));
+    m.position.copy(actor.face.position); m.renderOrder = 2; m.name = 'blush'; actor.face.parent.add(m); actor.blushMesh = m;
+  }
+  actor.blushMesh.material.opacity = Math.min(Math.max(amount, 0), 1); actor.blushMesh.visible = amount > 0.01 && actor.face.visible;
+}
+
+// ---------- poses ----------
+// Named poses as bone angles (degrees, the rig.js pose() convention: limbs x < 0 swings forward, Arm.R z > 0 / Arm.L z < 0
+// raises the arm sideways; Torso x > 0 leans forward; Head x < 0 looks up, y turns, z tilts). `drop` lowers the root
+// (studs at scale 1, multiplied by the actor's scale): sitting poses put the hips 1.5 above the root (legs horizontal),
+// so a seat at height h needs root.y = h - drop... see seatY(). One arm at most goes above the shoulder (SKILL.md).
+export const POSES = {
+  stand: {},
+  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-18, 0, -4], 'Arm.R': [-18, 0, 4] },
+  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-8, 0, -3], 'Arm.R': [-8, 0, 3] },
+  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-55, 0, -6], 'Arm.R': [-55, 0, 6] },
+  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-62, 0, 12], 'Arm.R': [-62, 0, -12] },
+  chin_on_hand: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [10, 0, 0], Head: [-4, 0, 6], 'Arm.R': [-128, 0, -14], 'Arm.L': [-60, 0, 10] },
+  sit_cross: { 'Leg.L': [-90, 30, 0], 'Leg.R': [-90, -30, 0], 'Arm.L': [-30, 0, -6], 'Arm.R': [-30, 0, 6], drop: 1.5 },
+  kneel: { 'Leg.L': [90, 0, -3], 'Leg.R': [90, 0, 3], Torso: [-4, 0, 0], 'Arm.L': [-14, 0, -4], 'Arm.R': [-14, 0, 4], drop: 1.5 },
+  kneel_up: { 'Leg.L': [62, 0, -3], 'Leg.R': [62, 0, 3], Torso: [-2, 0, 0], 'Arm.L': [-10, 0, -4], 'Arm.R': [-10, 0, 4], drop: 0.6 },
+  crouch: { 'Leg.L': [-62, 0, -10], 'Leg.R': [-62, 0, 10], Torso: [38, 0, 0], Head: [-26, 0, 0], 'Arm.L': [-40, 0, -6], 'Arm.R': [-40, 0, 6], drop: 0.62 },
+  lie_back: { Root: [-90, 0, 0], 'Arm.L': [0, 0, -8], 'Arm.R': [0, 0, 8] },
+  shock: { 'Arm.L': [-12, 0, -78], 'Arm.R': [-12, 0, 78], Head: [-8, 0, 0], Torso: [-4, 0, 0] },
+  scarecrow: { 'Arm.L': [0, 0, -90], 'Arm.R': [0, 0, 90] },
+  arms_folded: { 'Arm.L': [-72, 0, 30], 'Arm.R': [-66, 0, -30] },
+  hug_teddy: { 'Arm.L': [-48, 0, 26], 'Arm.R': [-42, 0, -26] },
+  shrug: { 'Arm.L': [-24, 0, -30], 'Arm.R': [-24, 0, 30], Head: [0, 0, 10] },
+  lean_in: { Torso: [16, 0, 0], Head: [-10, 0, 0] },
+  lean_back: { Torso: [-10, 0, 0], Head: [6, 0, 0] },
+  ear_to_door: { Torso: [10, 0, -14], Head: [0, 0, -16], 'Arm.L': [-60, 0, -10] },
+  hip_bend: { Torso: [42, 0, 0], Head: [-34, 0, 0] },
+};
+// One-arm gestures: side 'R' or 'L' (mirrored). Layer them over any pose.
+export const ARM_GESTURES = {
+  point: [-88, 0, 10], point_up: [-150, 0, 6], reach_up: [-162, 0, 8], finger_up: [-120, 0, -6], knock: [-82, 0, -4], tap: [-62, 0, -6],
+  hand_over_mouth: [-128, 0, -38], eye_wipe: [-138, 0, -30], thumb_to_chest: [-70, 0, -44], hand_on_hip: [-6, 0, 34],
+  hand_on_neck: [-34, 0, 148], hair_pat: [-30, 0, 156], phone_ear: [-22, 0, 160], chin_hand: [-128, 0, -14], hold_out: [-64, 0, 4],
+  flashlight_chin: [-112, 0, -32], wave: [-6, 0, 128], hand_hold: [-24, 0, 8], cup_hold: [-70, 0, -10],
+};
+const D2R = Math.PI / 180, _e = new THREE.Euler(), _q = new THREE.Quaternion();
+const LIMB = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI), LIMB_INV = LIMB.clone().invert();
+function boneQ(bone, [x, y, z]) {
+  _e.set(x * D2R, y * D2R, z * D2R, 'ZYX'); _q.setFromEuler(_e);
+  return /^(Arm|Leg)/.test(bone) ? LIMB.clone().multiply(_q).multiply(LIMB_INV) : _q.clone();
+}
+const BONES = ['Torso', 'Head', 'Arm.L', 'Arm.R', 'Leg.L', 'Leg.R'];
+// Blend two angle dicts (missing bones = rest).
+export function mixAngles(a, b, u) {
+  const out = {}; for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
+    if (k === 'drop') { out.drop = (a.drop || 0) + ((b.drop || 0) - (a.drop || 0)) * u; continue; }
+    const p = a[k] || [0, 0, 0], q = b[k] || [0, 0, 0]; out[k] = p.map((v, i) => v + (q[i] - v) * u);
+  }
+  return out;
+}
+// posture(actor, name | dict, { mix: 0..1 from rest, reset: true, extra: dict }) - sets the bones (clears first unless
+// reset: false) and returns the root drop in world units (add it to the root's y: root.y = floorY - drop).
+export function posture(actor, p, { mix = 1, reset = true, extra = null } = {}) {
+  let d = typeof p === 'string' ? POSES[p] : p;
+  if (!d) throw new Error(`Unknown pose "${p}"`);
+  if (mix !== 1) d = mixAngles({}, d, mix);
+  if (extra) d = { ...d, ...extra };
+  if (reset) { for (const k of BONES) actor.bones[k].quaternion.identity(); actor.bones.Root.quaternion.identity(); actor.bones.Root.position.set(0, 0, 0); }
+  for (const [k, v] of Object.entries(d)) {
+    if (k === 'drop') continue;
+    if (k === 'Root') { actor.bones.Root.quaternion.copy(boneQ('Root', v)); actor.bones.Root.position.set(0, (v[0] === -90 ? 0.5 : 0) * actor.scale, 0); continue; }
+    if (actor.bones[k]) actor.bones[k].quaternion.copy(boneQ(k, v));
+  }
+  return (d.drop || 0) * actor.scale;
+}
+// One arm: gesture(actor, 'point', 'R', mix) (layered: other bones untouched). `name` may be an [x, y, z] array.
+export function gesture(actor, name, side = 'R', mix = 1) {
+  const a = Array.isArray(name) ? name : ARM_GESTURES[name];
+  if (!a) throw new Error(`Unknown gesture "${name}"`);
+  const v = side === 'R' ? a : [a[0], -a[1], -a[2]], bone = side === 'R' ? 'Arm.R' : 'Arm.L';
+  const target = boneQ(bone, v); actor.bones[bone].quaternion.slerp(target, Math.min(Math.max(mix, 0), 1)); // from the current arm
+}
+// Where the root goes for a seat whose top is at `seatY` (sit_* poses: thighs horizontal, hips 1.5 above the root).
+export const seatY = (actor, seatTop) => seatTop - 1.5 * actor.scale;
+// Distance-driven gaits for posture(): phase = distance travelled / STRIDE (locomotion.js), so feet never slide.
+// kind: 'walk', 'run', 'creep' (sneaky tiptoe, bent forward), 'skip' (Lily), 'shuffle' (sleepy Max), 'climb' (ladder,
+// facing the rungs: hands and feet alternate; phase = height climbed / 1.6).
+export function gait(kind, phase) {
+  const c = Math.sin(phase * Math.PI * 2), c2 = Math.sin(phase * Math.PI * 4);
+  if (kind === 'walk') return { 'Leg.L': [28 * c, 0, 0], 'Leg.R': [-28 * c, 0, 0], 'Arm.L': [-22 * c, 0, -3], 'Arm.R': [22 * c, 0, 3], Torso: [2, 2 * c, 0] };
+  if (kind === 'run') return { 'Leg.L': [44 * c, 0, 0], 'Leg.R': [-44 * c, 0, 0], 'Arm.L': [-40 * c, 0, -5], 'Arm.R': [40 * c, 0, 5], Torso: [8, 3 * c, 0] };
+  if (kind === 'creep') return { 'Leg.L': [16 * c - 8, 0, -3], 'Leg.R': [-16 * c - 8, 0, 3], 'Arm.L': [-34 - 8 * c, 0, -14], 'Arm.R': [-34 + 8 * c, 0, 14], Torso: [16, 3 * c, 0], Head: [-12, 0, 0], drop: 0.12 };
+  if (kind === 'skip') return { 'Leg.L': [36 * c, 0, 0], 'Leg.R': [-36 * c, 0, 0], 'Arm.L': [-30 * c, 0, -10], 'Arm.R': [30 * c, 0, 10], Torso: [4, 0, 0], drop: -0.25 * Math.abs(c2) };
+  if (kind === 'shuffle') return { 'Leg.L': [12 * c, 0, 0], 'Leg.R': [-12 * c, 0, 0], 'Arm.L': [-4 * c, 0, -2], 'Arm.R': [4 * c, 0, 2], Torso: [10, 0, 0], Head: [12, 0, 4] };
+  if (kind === 'climb') return { 'Leg.L': [-36 - 26 * c, 0, -3], 'Leg.R': [-36 + 26 * c, 0, 3], 'Arm.L': [-128 + 22 * c, 0, -6], 'Arm.R': [-128 - 22 * c, 0, 6], Torso: [6, 0, 0] };
+  throw new Error(`Unknown gait "${kind}"`);
 }

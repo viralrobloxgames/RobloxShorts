@@ -331,3 +331,9 @@ let OVL = {};
 export function overlay(g, s, t) {
   K.dayCard(g, s, t, CARD);
 }
+
+// moments for web/ch06_hold.js
+export const HOLD_TIMES = {
+  creep: 1.2, listen: at(6, 0.2), lowered: at(10, 0.3), lily: at(8, 0.3), closet: at(20, 0.2),
+  dadWalk: at(13, 0.8), line: end(14, -0.2), hatch: end(20, 0.3),
+};
