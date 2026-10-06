@@ -136,3 +136,111 @@ Severity: **must** = a viewer will notice; **should** = weakens the scene.
 | 18 | 00:30.3 | 909/910 | continuity | teapot pops in at the A/B seam |
 | 19 | 00:57.6-00:58.3 | 1731-1751 | props | teapot pops in mid-shot, flips sides |
 | 20 | Lily tea shots | see item | pose | both arms at shoulder height (T-pose) |
+
+## ch06 "The Practice" (film 5:26.0-6:23.8)
+
+### Hallway creep / bedroom mirror (S1-S5)
+
+1. **ch06 00:00.0-00:04.3 (f1-130), walking/props/staging. should.** S1: Skye stands still for 1.3 s, then walks in big
+   strides toward Max's door with her back to the camera (f41-85). Between f85 and f91 she snaps 180 deg to face the
+   lens (a pop, no turn), and she never leans an ear to the door (the planned `horror_listen`): she stands with her back
+   flat to it. Her flashlight hand is in front of her mouth (f91-109), then the flashlight and arm pop down and vanish at
+   f115-121. Fix: creep in profile/3/4 (front 3/4 as planned), turn over 8-10 frames, lean her head to the door on
+   "heard", and keep the lit flashlight under her chin until shot 10.
+2. **ch06 00:05.3-00:11.0 and 00:16.0-00:18.7 (f160-331, f481-561), camera. must.** `mirror_mcu`: a huge out-of-focus
+   orange block (the mirror frame or Max's reflection) fills the right ~15% of frame for the whole shot. This is a blob
+   in frame, exactly the calibration case. Fix: move the camera so the mirror is a clean edge or out of frame.
+3. **ch06 00:05.6-00:07.6 (f171-231), pose. must.** On "Do you want to go...", Max shoves both forearms straight at the
+   lens: two giant foreground blocks fill the bottom half of frame (both arms up/out). The plan has one hand rubbing his
+   neck, then a small one-hand offer. Fix: right hand to the back of his neck (elbow up, beside his head), then a small
+   palm-up offer with that hand at chest height; left arm down.
+4. **ch06 00:11.3-00:15.6 (f341-471), interpenetration/pose. must.** `mirror_ms` "Yo! Dance? You? Me? Ugh. No.": Max's
+   right forearm sinks into the desk top (clearest at f455, where it pushes through the desk surface and the paper on
+   it). None of the planned gestures read (point on "You?", thumb to chest on "Me?", facepalm on "Ugh"); the arm just
+   swings into the desk. Fix: stand him 0.5 stud further back from the desk and key the three gestures with the hand
+   above the desk plane (the facepalm hand on his face, not through it).
+5. **ch06 00:47.3-00:48.3 (f1421-1451), staging. should.** S19 "Go to bed, Dad!" Max faces the lens, not his door. Fix:
+   turn him 3/4 toward the door, as planned.
+
+### Door eavesdrop / Lily (S5b-S13)
+
+6. **ch06 00:25.3-00:27.4 (f760-822), interpenetration/pose. must.** S8/S9 `two_shot_door`: Lily walks in and stops
+   *inside* Skye's silhouette. Her shoulder and arm go into Skye's arm and back (f773-783), and her head overlaps
+   Skye's torso and arm (f788-823). Skye's "shock" is both arms flung out at shoulder height (f788, a T-pose, which the
+   house rule bans). Fix: Lily's `lily_behind` mark ~1.5 studs from Skye, the tap a short reach to Skye's elbow; Skye's
+   jump is shoulders up with hands to her chest (or one arm out), never both arms horizontal.
+7. **ch06 00:25.9-00:26.0 (f780 -> f781), A/B seam pop. should.** Lily's tapping arm jumps position between segment A's
+   last frame and B's first. Fix: B should start from A's pose (re-render f781 onward from the same pose track).
+8. **ch06 00:27.6-00:36.0 (f828-1080), pose/framing. should.** `skye_mcu`: the back of Lily's head is a big dark mass
+   over the bottom-right third of every frame. Skye's arms never fold on "I do not like him" (no gesture, frozen), and
+   on "up there" (f1031-1051) her pointing arm shows as a lone brown block floating beside Lily's head, cut by the frame.
+   Fix: lower/shift the camera so Lily is a cheek at the edge, not a head mass; fold Skye's arms; frame the `point_up`
+   so the whole arm reads from her shoulder.
+9. **ch06 00:31.6-00:33.0 (f951-995), pose. should.** Lily's "points up at Skye's face" shows as a flat brown forearm
+   block raised beside her own face, not pointing at anything. Fix: index finger extended toward Skye's face, forearm
+   angled up and away from her own head.
+
+### Dad's entrance (S14-S21)
+
+10. **ch06 00:36.0-00:37.7 (f1081-1131), camera/staging. must.** `hall_wide`: the right half of frame is a dark-blue
+    void outside the set (no wall, no stairs end), and Dad's beam is a solid grey cone into that void. Skye is not in
+    the shot at all; Lily is cut by the left frame edge. Plan: both girls frozen at the door, turned toward Dad. Fix:
+    re-aim inside the set (back wall and stairs filling frame right) and put both girls at Max's door, in frame, turned
+    toward Dad.
+11. **ch06 00:38.0-00:57.8 (f1141-1733), pose. must.** Dad is in a T-pose for every shot of the scene: both arms
+    straight out at shoulder height, frozen. The broom is held horizontal, pointing backward out of frame left with its
+    head behind him (not "out in front like a sword"), and the flashlight points at the camera. There is no raise on
+    "draw the line" (f1321-1345 only lifts the stick a few degrees). Fix: broom right hand, elbow bent, bristles forward
+    toward the hall; flashlight left hand low, sweeping; raise only the broom arm on "draw the line".
+12. **ch06 00:45.0-00:45.7 (f1347-1368), staging/interpenetration. must.** S17 the dash into the closet: there is no
+    wide and no Dad. The shot opens on 6 frames of an empty door (f1347-1353), then the girls slide in from frame right
+    with Skye's arm passing through Lily's head (f1361-1363) and their bodies clipping the door slab (f1365-1367). We
+    never see that they got past Dad unseen. Fix: play it in `hall_wide` with Dad turned to Max's door (beam on the door),
+    the girls running behind his back on a clear path, Lily leading by the hand, and the closet door swinging to a gap.
+13. **ch06 00:45.6-00:48.2 (f1369-1449), camera. must.** `dad_mcu` "Max, was that you?": the right ~25% of frame is a
+    void outside the set. He also faces the lens, not Max's door (the line is aimed at Max). Fix: re-aim inside the set,
+    turn Dad 3/4 to Max's door with the beam on it.
+14. **ch06 00:52.6-00:54.9 (f1579-1648), camera/staging. must.** `hatch_low` "...into that attic": the attic hatch is
+    not in frame. The ceiling above him is an empty dark plane, so "that attic" points at nothing. Dad looks at the lens,
+    not up, with both arms still out. Fix: frame the shut hatch (with its ladder) at the top of frame, Dad's head
+    tilted up to it, the beam on the hatch.
+
+### Closet ending (S22-S23)
+
+15. **ch06 00:55.0-00:57.8 (f1651-1733, last frame), staging. must.** This is the "hidden girl in plain view" problem
+    again. The closet door stands wide open, a bright light inside the closet lights both girls' faces like a spotlight,
+    and in `linen_end` (f1711-1733) they stand fully in the doorway ~3 m from Dad. Dad stands 3/4 to camera, roughly
+    toward them, not facing the hatch, so he could not miss them. Fix: close the closet door to a gap of about one face
+    width, no light inside (only Dad's beam spill), with only Skye's eye and Lily's eye showing; turn Dad's back/side to
+    the closet with his face up to the hatch.
+16. **ch06 00:57.0-00:57.8 (f1711-1733, last frame), interpenetration/camera. must.** The broom head passes through
+    Dad's face, and the shot shows the edge of the hallway floor slab with void beyond at frame left. This is the
+    boundary frame ch07 inherits. Fix: broom raised in his right hand above and beside his head, clear of the face
+    (`dad_robe` pose with one arm up); re-aim so the frame stays inside the set.
+
+### ch06 musts
+
+| # | Time (ch06) | Frames | Category | Problem |
+|---|---|---|---|---|
+| 2 | 00:05.3-00:18.7 | 160-331, 481-561 | camera | orange blob filling the right of `mirror_mcu` |
+| 3 | 00:05.6-00:07.6 | 171-231 | pose | both forearms thrust at the lens |
+| 4 | 00:11.3-00:15.6 | 341-471 | clip/pose | Max's arm through the desk; gestures don't read |
+| 6 | 00:25.3-00:27.4 | 760-822 | clip/pose | Lily inside Skye; Skye's two-arm T shock |
+| 10 | 00:36.0-00:37.7 | 1081-1131 | camera/staging | void half-frame; Skye missing from the wide |
+| 11 | 00:38.0-00:57.8 | 1141-1733 | pose | Dad's T-pose; broom backwards |
+| 12 | 00:45.0-00:45.7 | 1347-1368 | staging/clip | closet dash unstaged, bodies through each other and the door |
+| 13 | 00:45.6-00:48.2 | 1369-1449 | camera | void beyond set; Dad not facing Max's door |
+| 14 | 00:52.6-00:54.9 | 1579-1648 | camera/staging | no hatch in the hatch shot |
+| 15 | 00:55.0-00:57.8 | 1651-1733 | staging | hidden girls spotlit in an open doorway in front of Dad |
+| 16 | 00:57.0-00:57.8 | 1711-1733 | clip/camera | broom through Dad's face; set edge in the end frame |
+
+## Cross-chapter causes (for the kit owners)
+- **Two-arms-out idle**: Lily (ch05 tea party) and Dad (all of ch06) default to both arms horizontal. Whatever pose
+  they're keyed from is a T-pose; give `kneel`/`stand_hold` a low-arms default (kit-cast).
+- **Props not attached to palms**: teapot, cups, hobby horse and broom float or pass through bodies. Prop grip offsets
+  per pose are needed (kit-props); check every prop in a held pose against the hand and the body.
+- **Marks overlapping set dressing**: the skeleton/witch at `lily_ms` (ch05), the tea box at `tea_skye`, Max at the desk
+  (ch06). A clip check of each mark's body box against props/furniture (`web/clip_check.mjs`) would catch all of these.
+- **Cameras seeing outside the set**: `hall_wide`, `dad_mcu`, `linen_end` (ch06). The hallway set needs a far wall/stair
+  end and a floor that extends past every camera frustum (kit-sets-a).
+- **A/B segment seams pop** (ch05 f909/910 props, ch06 f780/781 pose): segment B is not resuming A's state exactly.
