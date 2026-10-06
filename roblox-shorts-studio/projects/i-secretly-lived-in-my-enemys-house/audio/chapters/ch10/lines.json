@@ -1,0 +1,242 @@
+{
+ "chapter": 10,
+ "header": "CH10 | SATURDAY | 11:59 PM | Hungry?",
+ "duration": 64.871,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Saturday, midnight. Phone recording. Glow sticks on. Time to give Max the scare of his life.",
+   "start": 0.0,
+   "end": 5.6,
+   "clip": "audio/qwen/take-01/clips/78ff66a03859.wav",
+   "seed": 29779
+  },
+  {
+   "index": 2,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "ghost",
+   "text": "Maaax. Maaaax.",
+   "start": 5.85,
+   "end": 7.53,
+   "clip": "audio/qwen/take-01/clips/263da2919d66.wav",
+   "seed": 6223
+  },
+  {
+   "index": 3,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Hey, Skye. Hungry? It's ham. No crusts.",
+   "start": 9.34,
+   "end": 13.717,
+   "clip": "audio/qwen/take-01/clips/babfd0d09058.wav",
+   "seed": 38877
+  },
+  {
+   "index": 4,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "ghost",
+   "text": "I am not Skye. I am a ghost. Ooooh.",
+   "start": 13.967,
+   "end": 17.167,
+   "clip": "audio/qwen/take-01/clips/155bd9beca9a.wav",
+   "seed": 99846
+  },
+  {
+   "index": 5,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday.",
+   "start": 18.177,
+   "end": 23.549,
+   "clip": "audio/qwen/take-01/clips/4f911b456c8b.wav",
+   "seed": 14568
+  },
+  {
+   "index": 6,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Monday? You knew? The whole week?",
+   "start": 24.599,
+   "end": 26.697,
+   "clip": "audio/qwen/take-01/clips/379558569f84.wav",
+   "seed": 42789
+  },
+  {
+   "index": 7,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Who did you think was making the sandwiches?",
+   "start": 26.947,
+   "end": 29.177,
+   "clip": "audio/qwen/take-01/clips/2bbc80f78faf.wav",
+   "seed": 66381
+  },
+  {
+   "index": 8,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Or leaving the back door open? Or fixing your pumpkin?",
+   "start": 29.427,
+   "end": 32.543,
+   "clip": "audio/qwen/take-01/clips/b10d5ca11543.wav",
+   "seed": 3369
+  },
+  {
+   "index": 9,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "But on the phone. I heard you. You said I was the worst.",
+   "start": 32.793,
+   "end": 35.829,
+   "clip": "audio/qwen/take-01/clips/be623273d522.wav",
+   "seed": 77055
+  },
+  {
+   "index": 10,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "You left too early. I said, Skye is the worst at hiding. She's been in our attic all week.",
+   "start": 36.079,
+   "end": 42.207,
+   "clip": "audio/qwen/take-01/clips/630f0eeb761c.wav",
+   "seed": 91995
+  },
+  {
+   "index": 11,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "And then I said I'm asking her to the dance. If she ever comes down.",
+   "start": 42.457,
+   "end": 46.456,
+   "clip": "audio/qwen/take-01/clips/531847d6639a.wav",
+   "seed": 45780
+  },
+  {
+   "index": 12,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "You were nice to me all week because a fridge told you to.",
+   "start": 46.706,
+   "end": 50.393,
+   "clip": "audio/qwen/take-01/clips/4e81b611929a.wav",
+   "seed": 45091
+  },
+  {
+   "index": 13,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "It was a very convincing fridge.",
+   "start": 50.643,
+   "end": 52.535,
+   "clip": "audio/qwen/take-01/clips/729da7bdb8da.wav",
+   "seed": 11540
+  },
+  {
+   "index": 14,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Then why didn't you tell anyone I was here?",
+   "start": 52.785,
+   "end": 55.345,
+   "clip": "audio/qwen/take-01/clips/ed3691277659.wav",
+   "seed": 46078
+  },
+  {
+   "index": 15,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Because before you haunted it, this house was really boring.",
+   "start": 55.595,
+   "end": 59.153,
+   "clip": "audio/qwen/take-01/clips/587a5314a8b1.wav",
+   "seed": 98560
+  },
+  {
+   "index": 16,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": "offscreen",
+   "text": "Max? Who are you talking to?",
+   "start": 60.403,
+   "end": 62.279,
+   "clip": "audio/qwen/take-01/clips/6ec85e523ced.wav",
+   "seed": 60331
+  },
+  {
+   "index": 17,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Nobody!",
+   "start": 62.529,
+   "end": 63.461,
+   "clip": "audio/qwen/take-01/clips/22e3f6fa158b.wav",
+   "seed": 86659
+  },
+  {
+   "index": 18,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Nobody!",
+   "start": 63.711,
+   "end": 64.271,
+   "clip": "audio/qwen/take-01/clips/23e81d1de864.wav",
+   "seed": 53258
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: Max's bedroom at midnight, dark. The door creaks open. A sheet ghost glides in, green glow sticks round its wrists, a phone held up and recording.",
+   "until": 0.0
+  },
+  {
+   "after_line": 2,
+   "at": 8.29,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Click: the bedside lamp comes on. Max is sitting up in bed, wide awake, holding a plate with a sandwich on it.",
+   "until": 9.34
+  },
+  {
+   "after_line": 5,
+   "at": 23.549,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Skye pulls the sheet off her head.",
+   "until": 24.599
+  },
+  {
+   "after_line": 15,
+   "at": 59.153,
+   "pause": 1.0,
+   "scene_change": false,
+   "text": "Skye smiles. Max smiles. Footsteps in the hallway.",
+   "until": 60.403
+  }
+ ]
+}
