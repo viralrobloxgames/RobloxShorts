@@ -108,7 +108,7 @@ const T = {
 };
 
 // ---------- the shot table ----------
-const S2 = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 34 });
+const S2 = (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 34, look: V(0, -0.45, 0) });   // a touch low: held props clear the captions
 const S2c = (s) => K.twoShot(s, C.skye, C.max, { framing: 'mcu', fov: 32, bias: 0.45 });
 const SK = (fr) => (s) => K.camOn(s, C.skye, fr, { angle: 0.45, fov: 32 });
 const MX = (fr) => (s) => K.camOn(s, C.max, fr, { angle: 0.45, fov: 32 });
@@ -121,7 +121,7 @@ const WIDE = (s, t) => {
 };
 const named = (id, fb) => (s, t) => { const c = K.getSet('classroom').cams[id]; return c ? K.setCam(s, c) : fb(s, t); };
 const END = (s) => {                          // Skye MCU foreground left, Max at his desk background right
-  const c = K.getSet('classroom').cams.end_front; if (c) return K.setCam(s, c);
+  const c = K.getSet('classroom').cams.end_front; if (c) return K.setCam(s, { ...c, target: c.target.clone().add(V(0, -0.5, 0)) });
   const sk = K.headPos(C.skye), mx = K.headPos(C.max);
   const target = sk.clone().lerp(mx, 0.42).add(V(0, -0.5, 0));
   const pos = sk.clone().add(V(-2.6, 0.2, -6.4));
@@ -131,14 +131,14 @@ const SHOTS = [
   { line: 1, off: 0, id: 'skye_max_diag', cam: named('skye_max_diag', WIDE) },
   { line: 1, word: 10, id: 'two_shot', cam: S2 },
   { line: 3, off: -0.1, id: 'skye_wrong', cam: named('mcu_skye', SK('mcu')) },
-  { line: 4, off: -0.1, id: 'max_nothing', cam: named('mcu_max_stand', MX('mcu')) },
+  { line: 4, off: -0.1, id: 'max_nothing', cam: MX('mcu') },
   { line: 5, off: -0.1, id: 'skye_lick', cam: named('cu_skye', SK('cu')) },
   { line: 6, off: -0.1, id: 'max_no', cam: S2 },
   { line: 7, off: -0.1, id: 'skye_since', cam: named('mcu_skye', SK('mcu')) },
-  { line: 8, off: -0.1, id: 'max_ghost', cam: named('mcu_max_stand', MX('mcu')) },
+  { line: 8, off: -0.1, id: 'max_ghost', cam: MX('mcu') },
   { line: 9, off: -0.1, id: 'fridge_two', cam: S2 },
   { line: 10, off: -0.1, id: 'skye_spooky', cam: named('mcu_skye', SK('mcu')) },
-  { line: 11, off: -0.1, id: 'max_private', cam: named('mcu_max_stand', MX('mcu')) },
+  { line: 11, off: -0.1, id: 'max_private', cam: MX('mcu') },
   { line: 11, off: 1.0, id: 'lean_two', cam: S2c },
   { line: 13, off: -0.1, id: 'skye_fashion', cam: named('cu_skye', SK('cu')) },
   { line: 14, off: -0.1, id: 'max_pancakes', cam: S2c },
@@ -148,7 +148,7 @@ const SHOTS = [
   { line: 18, off: -0.1, id: 'right_two', cam: S2 },
   { line: 19, off: -0.1, id: 'skye_crusts', cam: named('mcu_skye', SK('mcu')) },
   { line: 20, off: -0.1, id: 'max_half', cam: S2 },
-  { line: 20, off: 99, id: 'handoff', cam: named('two_shot_desk', (s) => K.twoShot(s, C.skye, C.max, { framing: 'ws', fov: 36, bias: 0.35 })) },
+  { line: 20, off: 99, id: 'handoff', cam: (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 36, bias: 0.5, look: V(0, -0.6, 0) }) },   // board side: the hands meet in clear view
   { line: 21, off: -0.35, id: 'end_front', cam: END },
 ].map((x) => ({ ...x, start: x.off === 99 ? end(x.line, 0.1) : x.word != null ? wordT(x.line, x.word, -0.1) : Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
@@ -174,6 +174,9 @@ function standOn(a, pos, heading, dict) {
   a.root.position.y -= a.soleHeight() - pos.y + drop; a.root.updateMatrixWorld(true);
 }
 const SIT = K.POSES.sit_desk_arms;
+const OFFER = [-84, 0, 4];                 // hold_out raised to chest height (kit hold_out is -64: too low for the frame)
+const CHEST = [-112, 0, -18];               // Skye's half held up in front of her chest
+const GLANCE_SIGN = 1;
 
 // ---------- update ----------
 export function update(t, stage) {
@@ -199,13 +202,14 @@ export function update(t, stage) {
   const back = (t > at(3) && t < at(7) ? ramp(t, at(3), at(3) + 0.3) * (t > at(5) ? 1 : 0.5) * (1 - ramp(t, at(7), at(7) + 0.3)) : 0)
     + (t > at(12) && t < at(16) ? ramp(t, at(12), at(12) + 0.3) * (1 - ramp(t, at(16) - 0.3, at(16))) * 0.7 : 0);
   dS.Torso = P3(SIT.Torso, K.POSES.lean_back.Torso, back); dS.Head = P3([0, 0, 0], K.POSES.lean_back.Head, back);
-  if (t > at(10) && t < end(10, 0.3)) dS = K.mixAngles(dS, K.POSES.chin_on_hand, ramp(t, at(10), at(10) + 0.3) * (1 - ramp(t, end(10), end(10, 0.3))));
+  if (t > at(10) && t < end(10, 0.3)) dS = K.mixAngles(dS, K.POSES.chin_on_hand, 0.4 * ramp(t, at(10), at(10) + 0.3) * (1 - ramp(t, end(10), end(10, 0.3))));
   if (t > at(17, 0.5) && t < end(17, 0.2)) headY += 30 * away * ramp(t, at(17, 0.5), at(17, 0.8)) * (1 - ramp(t, end(17), end(17, 0.2)));   // prim: turns her head away
   const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
   dS.Head = [dS.Head?.[0] ?? 0, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
   sitOn(C.skye, mS, hS, dS);
 
-  if (t > T.take() - 0.4) K.gesture(C.skye, 'hold_out', 'R', ramp(t, T.take() - 0.4, T.take()) * (1 - 0.5 * ramp(t, T.take() + 0.1, T.take() + 0.5)));
+  if (t > T.take() - 0.4) K.gesture(C.skye, OFFER, 'R', ramp(t, T.take() - 0.4, T.take()));
+  if (t > T.take() + 0.1) K.gesture(C.skye, CHEST, 'R', ramp(t, T.take() + 0.1, T.take() + 0.5));      // holds her half up at chest height
   let fS = 'annoyed';
   if (t > wordT(1, 15)) fS = 'suspicious';
   if (t > at(7)) fS = 'annoyed';
@@ -241,10 +245,10 @@ export function update(t, stage) {
       const swapped = t > T.swap();
       K.gesture(C.max, 'cup_hold', 'L', swapped && t < T.split() ? 0 : 1);
       if (swapped) K.gesture(C.max, 'cup_hold', 'R', ramp(t, T.swap() - 0.25, T.swap()));
-      if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, 'hold_out', 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
+      if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, OFFER, 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
       const down = t > T.cookieDown() && t < T.cookieDown() + 0.5 ? Math.sin(Math.PI * clamp((t - T.cookieDown()) / 0.5)) : 0;
-      if (offer > 0 || down > 0) K.gesture(C.max, down > 0 ? 'tap' : 'hold_out', 'R', Math.max(offer, down));
-      if (t > T.split()) K.gesture(C.max, 'hold_out', 'R', ramp(t, T.split(), T.split() + 0.35) * (1 - ramp(t, T.take() + 0.1, T.take() + 0.4)));
+      if (offer > 0 || down > 0) K.gesture(C.max, down > 0 ? 'tap' : OFFER, 'R', Math.max(offer, down));
+      if (t > T.split()) K.gesture(C.max, OFFER, 'R', ramp(t, T.split(), T.split() + 0.35) * (1 - ramp(t, T.take() + 0.1, T.take() + 0.4)));
     } else { K.gesture(C.max, 'cup_hold', 'L', 1); K.gesture(C.max, 'cup_hold', 'R', 0.6); }
   } else {
     const m = K.walk(C.max, A, mA, mM, T.back(), t, { idleAt: idle, endHeading: mM.heading });
@@ -253,7 +257,7 @@ export function update(t, stage) {
       const d = { ...SIT, Head: [0, 0, 0] };
       const hM = amix(mM.heading, K.faceTo(mM, mS), 0.3);
       const glance = t > at(21, 0.6) ? 1 : 0;                                         // glances over at her
-      d.Head = [0, glance * 25 * Math.sign(amix(hM, K.faceTo(mM, mS), 1) - hM), 0];
+      d.Head = [0, glance * 75 * GLANCE_SIGN * Math.sign(amix(hM, K.faceTo(mM, mS), 1) - hM), 0];
       sitOn(C.max, mM, hM, d);
       K.gesture(C.max, 'cup_hold', 'R', 1);
     } else K.gesture(C.max, 'cup_hold', 'R', 0.7);
