@@ -84,3 +84,14 @@ cancel as "the user doesn't want this; wait" (kit-sets-b stalled at 13:43). Alwa
 | critic-6 (ch11 + character identity) | session_01DNVA77c1V6odpP5EydznQH |
 Brief: `briefs/frame_critic.md`. kit-pipeline builds `web/clip_check.mjs` (automated interpenetration report per chapter,
 `production/review/clip_check/`). Then chapter sessions fix (kit fixes go to the kit owners), re-render, re-stitch.
+
+## Phase 4: plausibility rework (23:25Z, after the 21:20-23:10Z usage-limit stop)
+All workers stopped at 21:20Z (five_hour limit; reset 23:10Z, next ~04:10Z). Assignments: requests.md 23:25Z entry.
+Kit root causes: kit-cast K1-K5 (poses, faces), kit-pipeline P1-P4 (identity light, hard cuts, A/B seams, sight check),
+kit-props PR1 (grips), kit-sets-a SA1-2, kit-sets-b SB1-2, kit-sets-c SC1-2. Chapters fix staging now; orchestrator posts
+KIT FREEZE when all kit fixes landed; then chapters pull, preview, clip_check, READY_FOR_RECHECK -> critic OK -> full
+re-render A (chapter) + B (same helpers as phase 2) -> re-stitch (same command) -> final critic pass -> deliver.
+| Role | Session |
+|---|---|
+| critic-1 (now ch01 only) | session_01MBPEtt2p6fabrhjtXdpGWx |
+| critic-7 (ch02) | session_01Se3gj5odNjgiyMc6oaWrF1 |
