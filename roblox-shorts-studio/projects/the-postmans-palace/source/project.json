@@ -8,7 +8,7 @@
     "Skye",
     "Noob"
   ],
-  "seconds": 63.0,
+  "seconds": 62.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
@@ -17,7 +17,8 @@
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {
-      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES",
+      "KILOMETER": "KILOMETRE"
     }
   }
 }

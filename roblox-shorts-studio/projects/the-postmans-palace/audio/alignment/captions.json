@@ -1,0 +1,1131 @@
+[
+ {
+  "start": 0.0,
+  "end": 1.14,
+  "text": " A postman trips over",
+  "words": [
+   {
+    "start": 0.0,
+    "end": 0.18,
+    "word": " A"
+   },
+   {
+    "start": 0.18,
+    "end": 0.6,
+    "word": " postman"
+   },
+   {
+    "start": 0.6,
+    "end": 0.84,
+    "word": " trips"
+   },
+   {
+    "start": 0.84,
+    "end": 1.14,
+    "word": " over"
+   }
+  ]
+ },
+ {
+  "start": 1.14,
+  "end": 2.42,
+  "text": " a stone and almost",
+  "words": [
+   {
+    "start": 1.14,
+    "end": 1.34,
+    "word": " a"
+   },
+   {
+    "start": 1.34,
+    "end": 1.64,
+    "word": " stone"
+   },
+   {
+    "start": 1.64,
+    "end": 2.1,
+    "word": " and"
+   },
+   {
+    "start": 2.1,
+    "end": 2.42,
+    "word": " almost"
+   }
+  ]
+ },
+ {
+  "start": 2.42,
+  "end": 2.96,
+  "text": " falls.",
+  "words": [
+   {
+    "start": 2.42,
+    "end": 2.84,
+    "word": " falls."
+   }
+  ]
+ },
+ {
+  "start": 3.44,
+  "end": 4.18,
+  "text": " He doesn't kick it",
+  "words": [
+   {
+    "start": 3.44,
+    "end": 3.64,
+    "word": " He"
+   },
+   {
+    "start": 3.64,
+    "end": 3.92,
+    "word": " doesn't"
+   },
+   {
+    "start": 3.92,
+    "end": 4.06,
+    "word": " kick"
+   },
+   {
+    "start": 4.06,
+    "end": 4.18,
+    "word": " it"
+   }
+  ]
+ },
+ {
+  "start": 4.18,
+  "end": 4.62,
+  "text": " away,",
+  "words": [
+   {
+    "start": 4.18,
+    "end": 4.5,
+    "word": " away,"
+   }
+  ]
+ },
+ {
+  "start": 4.88,
+  "end": 5.46,
+  "text": " he puts it in",
+  "words": [
+   {
+    "start": 4.88,
+    "end": 5.02,
+    "word": " he"
+   },
+   {
+    "start": 5.02,
+    "end": 5.16,
+    "word": " puts"
+   },
+   {
+    "start": 5.16,
+    "end": 5.34,
+    "word": " it"
+   },
+   {
+    "start": 5.34,
+    "end": 5.46,
+    "word": " in"
+   }
+  ]
+ },
+ {
+  "start": 5.46,
+  "end": 6.08,
+  "text": " his pocket.",
+  "words": [
+   {
+    "start": 5.46,
+    "end": 5.62,
+    "word": " his"
+   },
+   {
+    "start": 5.62,
+    "end": 5.96,
+    "word": " pocket."
+   }
+  ]
+ },
+ {
+  "start": 7.239999999999993,
+  "end": 8.399999999999999,
+  "text": " It's 1879,",
+  "words": [
+   {
+    "start": 7.239999999999993,
+    "end": 7.759999999999996,
+    "word": " It's"
+   },
+   {
+    "start": 7.759999999999996,
+    "end": 8.28,
+    "word": " 1879,"
+   }
+  ]
+ },
+ {
+  "start": 8.72,
+  "end": 9.68,
+  "text": " and that strange stone",
+  "words": [
+   {
+    "start": 8.72,
+    "end": 8.8,
+    "word": " and"
+   },
+   {
+    "start": 8.8,
+    "end": 8.94,
+    "word": " that"
+   },
+   {
+    "start": 8.94,
+    "end": 9.3,
+    "word": " strange"
+   },
+   {
+    "start": 9.3,
+    "end": 9.68,
+    "word": " stone"
+   }
+  ]
+ },
+ {
+  "start": 9.68,
+  "end": 10.48,
+  "text": " reminds him of an",
+  "words": [
+   {
+    "start": 9.68,
+    "end": 10.06,
+    "word": " reminds"
+   },
+   {
+    "start": 10.06,
+    "end": 10.26,
+    "word": " him"
+   },
+   {
+    "start": 10.26,
+    "end": 10.38,
+    "word": " of"
+   },
+   {
+    "start": 10.38,
+    "end": 10.48,
+    "word": " an"
+   }
+  ]
+ },
+ {
+  "start": 10.48,
+  "end": 11.139999999999999,
+  "text": " old dream,",
+  "words": [
+   {
+    "start": 10.48,
+    "end": 10.68,
+    "word": " old"
+   },
+   {
+    "start": 10.68,
+    "end": 11.02,
+    "word": " dream,"
+   }
+  ]
+ },
+ {
+  "start": 11.4,
+  "end": 11.979999999999999,
+  "text": " a palace.",
+  "words": [
+   {
+    "start": 11.4,
+    "end": 11.52,
+    "word": " a"
+   },
+   {
+    "start": 11.52,
+    "end": 11.86,
+    "word": " palace."
+   }
+  ]
+ },
+ {
+  "start": 13.02,
+  "end": 13.86,
+  "text": " So on his 30",
+  "words": [
+   {
+    "start": 13.02,
+    "end": 13.26,
+    "word": " So"
+   },
+   {
+    "start": 13.26,
+    "end": 13.4,
+    "word": " on"
+   },
+   {
+    "start": 13.4,
+    "end": 13.56,
+    "word": " his"
+   },
+   {
+    "start": 13.56,
+    "end": 13.86,
+    "word": " 30"
+   }
+  ]
+ },
+ {
+  "start": 13.86,
+  "end": 15.0,
+  "text": " kilometer mail round,",
+  "words": [
+   {
+    "start": 13.86,
+    "end": 14.38,
+    "word": " kilometer"
+   },
+   {
+    "start": 14.38,
+    "end": 14.58,
+    "word": " mail"
+   },
+   {
+    "start": 14.58,
+    "end": 14.88,
+    "word": " round,"
+   }
+  ]
+ },
+ {
+  "start": 15.18,
+  "end": 16.06,
+  "text": " he starts picking up",
+  "words": [
+   {
+    "start": 15.18,
+    "end": 15.32,
+    "word": " he"
+   },
+   {
+    "start": 15.32,
+    "end": 15.6,
+    "word": " starts"
+   },
+   {
+    "start": 15.6,
+    "end": 15.88,
+    "word": " picking"
+   },
+   {
+    "start": 15.88,
+    "end": 16.06,
+    "word": " up"
+   }
+  ]
+ },
+ {
+  "start": 16.06,
+  "end": 16.62,
+  "text": " stones.",
+  "words": [
+   {
+    "start": 16.06,
+    "end": 16.5,
+    "word": " stones."
+   }
+  ]
+ },
+ {
+  "start": 17.2,
+  "end": 18.36,
+  "text": " First in his pockets,",
+  "words": [
+   {
+    "start": 17.2,
+    "end": 17.48,
+    "word": " First"
+   },
+   {
+    "start": 17.48,
+    "end": 17.7,
+    "word": " in"
+   },
+   {
+    "start": 17.7,
+    "end": 17.86,
+    "word": " his"
+   },
+   {
+    "start": 17.86,
+    "end": 18.24,
+    "word": " pockets,"
+   }
+  ]
+ },
+ {
+  "start": 18.58,
+  "end": 19.48,
+  "text": " then in baskets,",
+  "words": [
+   {
+    "start": 18.58,
+    "end": 18.76,
+    "word": " then"
+   },
+   {
+    "start": 18.76,
+    "end": 18.94,
+    "word": " in"
+   },
+   {
+    "start": 18.94,
+    "end": 19.36,
+    "word": " baskets,"
+   }
+  ]
+ },
+ {
+  "start": 19.92,
+  "end": 20.54,
+  "text": " then he brings a",
+  "words": [
+   {
+    "start": 19.92,
+    "end": 20.08,
+    "word": " then"
+   },
+   {
+    "start": 20.08,
+    "end": 20.22,
+    "word": " he"
+   },
+   {
+    "start": 20.22,
+    "end": 20.38,
+    "word": " brings"
+   },
+   {
+    "start": 20.38,
+    "end": 20.54,
+    "word": " a"
+   }
+  ]
+ },
+ {
+  "start": 20.54,
+  "end": 21.26,
+  "text": " wheelbarrow.",
+  "words": [
+   {
+    "start": 20.54,
+    "end": 21.14,
+    "word": " wheelbarrow."
+   }
+  ]
+ },
+ {
+  "start": 22.12,
+  "end": 22.98,
+  "text": " At night by an",
+  "words": [
+   {
+    "start": 22.12,
+    "end": 22.36,
+    "word": " At"
+   },
+   {
+    "start": 22.36,
+    "end": 22.6,
+    "word": " night"
+   },
+   {
+    "start": 22.6,
+    "end": 22.82,
+    "word": " by"
+   },
+   {
+    "start": 22.82,
+    "end": 22.98,
+    "word": " an"
+   }
+  ]
+ },
+ {
+  "start": 22.98,
+  "end": 24.1,
+  "text": " oil lamp he builds.",
+  "words": [
+   {
+    "start": 22.98,
+    "end": 23.16,
+    "word": " oil"
+   },
+   {
+    "start": 23.16,
+    "end": 23.42,
+    "word": " lamp"
+   },
+   {
+    "start": 23.42,
+    "end": 23.62,
+    "word": " he"
+   },
+   {
+    "start": 23.62,
+    "end": 23.98,
+    "word": " builds."
+   }
+  ]
+ },
+ {
+  "start": 24.56,
+  "end": 25.54,
+  "text": " The whole village laughs",
+  "words": [
+   {
+    "start": 24.56,
+    "end": 24.7,
+    "word": " The"
+   },
+   {
+    "start": 24.7,
+    "end": 24.94,
+    "word": " whole"
+   },
+   {
+    "start": 24.94,
+    "end": 25.24,
+    "word": " village"
+   },
+   {
+    "start": 25.24,
+    "end": 25.54,
+    "word": " laughs"
+   }
+  ]
+ },
+ {
+  "start": 25.54,
+  "end": 26.080000000000002,
+  "text": " at him.",
+  "words": [
+   {
+    "start": 25.54,
+    "end": 25.76,
+    "word": " at"
+   },
+   {
+    "start": 25.76,
+    "end": 25.96,
+    "word": " him."
+   }
+  ]
+ },
+ {
+  "start": 26.84,
+  "end": 27.86,
+  "text": " He keeps going,",
+  "words": [
+   {
+    "start": 26.84,
+    "end": 27.14,
+    "word": " He"
+   },
+   {
+    "start": 27.14,
+    "end": 27.34,
+    "word": " keeps"
+   },
+   {
+    "start": 27.34,
+    "end": 27.74,
+    "word": " going,"
+   }
+  ]
+ },
+ {
+  "start": 28.32,
+  "end": 29.46,
+  "text": " 20 years just for",
+  "words": [
+   {
+    "start": 28.32,
+    "end": 28.66,
+    "word": " 20"
+   },
+   {
+    "start": 28.66,
+    "end": 28.98,
+    "word": " years"
+   },
+   {
+    "start": 28.98,
+    "end": 29.28,
+    "word": " just"
+   },
+   {
+    "start": 29.28,
+    "end": 29.46,
+    "word": " for"
+   }
+  ]
+ },
+ {
+  "start": 29.46,
+  "end": 30.36,
+  "text": " the outer walls,",
+  "words": [
+   {
+    "start": 29.46,
+    "end": 29.56,
+    "word": " the"
+   },
+   {
+    "start": 29.56,
+    "end": 29.78,
+    "word": " outer"
+   },
+   {
+    "start": 29.78,
+    "end": 30.24,
+    "word": " walls,"
+   }
+  ]
+ },
+ {
+  "start": 30.88,
+  "end": 31.6,
+  "text": " then animals,",
+  "words": [
+   {
+    "start": 30.88,
+    "end": 31.0,
+    "word": " then"
+   },
+   {
+    "start": 31.0,
+    "end": 31.48,
+    "word": " animals,"
+   }
+  ]
+ },
+ {
+  "start": 31.6,
+  "end": 32.0,
+  "text": " giants,",
+  "words": [
+   {
+    "start": 31.6,
+    "end": 31.88,
+    "word": " giants,"
+   }
+  ]
+ },
+ {
+  "start": 32.02,
+  "end": 32.64,
+  "text": " and towers.",
+  "words": [
+   {
+    "start": 32.02,
+    "end": 32.14,
+    "word": " and"
+   },
+   {
+    "start": 32.14,
+    "end": 32.52,
+    "word": " towers."
+   }
+  ]
+ },
+ {
+  "start": 33.7,
+  "end": 35.04,
+  "text": " 33 years later,",
+  "words": [
+   {
+    "start": 33.7,
+    "end": 34.06,
+    "word": " 33"
+   },
+   {
+    "start": 34.06,
+    "end": 34.5,
+    "word": " years"
+   },
+   {
+    "start": 34.5,
+    "end": 34.92,
+    "word": " later,"
+   }
+  ]
+ },
+ {
+  "start": 35.26,
+  "end": 35.9,
+  "text": " it's finished,",
+  "words": [
+   {
+    "start": 35.26,
+    "end": 35.46,
+    "word": " it's"
+   },
+   {
+    "start": 35.46,
+    "end": 35.78,
+    "word": " finished,"
+   }
+  ]
+ },
+ {
+  "start": 36.4,
+  "end": 37.44,
+  "text": " 10,000 days,",
+  "words": [
+   {
+    "start": 36.4,
+    "end": 36.98,
+    "word": " 10,000"
+   },
+   {
+    "start": 36.98,
+    "end": 37.32,
+    "word": " days,"
+   }
+  ]
+ },
+ {
+  "start": 37.68,
+  "end": 38.98,
+  "text": " 93,000 hours.",
+  "words": [
+   {
+    "start": 37.68,
+    "end": 38.52,
+    "word": " 93,000"
+   },
+   {
+    "start": 38.52,
+    "end": 38.86,
+    "word": " hours."
+   }
+  ]
+ },
+ {
+  "start": 39.5,
+  "end": 40.1,
+  "text": " On the wall he",
+  "words": [
+   {
+    "start": 39.5,
+    "end": 39.6,
+    "word": " On"
+   },
+   {
+    "start": 39.6,
+    "end": 39.72,
+    "word": " the"
+   },
+   {
+    "start": 39.72,
+    "end": 39.92,
+    "word": " wall"
+   },
+   {
+    "start": 39.92,
+    "end": 40.1,
+    "word": " he"
+   }
+  ]
+ },
+ {
+  "start": 40.1,
+  "end": 40.48,
+  "text": " writes,",
+  "words": [
+   {
+    "start": 40.1,
+    "end": 40.36,
+    "word": " writes,"
+   }
+  ]
+ },
+ {
+  "start": 40.76,
+  "end": 41.4,
+  "text": " let those who can",
+  "words": [
+   {
+    "start": 40.76,
+    "end": 40.84,
+    "word": " let"
+   },
+   {
+    "start": 40.84,
+    "end": 41.12,
+    "word": " those"
+   },
+   {
+    "start": 41.12,
+    "end": 41.28,
+    "word": " who"
+   },
+   {
+    "start": 41.28,
+    "end": 41.4,
+    "word": " can"
+   }
+  ]
+ },
+ {
+  "start": 41.4,
+  "end": 42.019999999999996,
+  "text": " do better,",
+  "words": [
+   {
+    "start": 41.4,
+    "end": 41.56,
+    "word": " do"
+   },
+   {
+    "start": 41.56,
+    "end": 41.9,
+    "word": " better,"
+   }
+  ]
+ },
+ {
+  "start": 42.1,
+  "end": 42.54,
+  "text": " try.",
+  "words": [
+   {
+    "start": 42.1,
+    "end": 42.42,
+    "word": " try."
+   }
+  ]
+ },
+ {
+  "start": 43.44,
+  "end": 44.48,
+  "text": " He asks to be",
+  "words": [
+   {
+    "start": 43.44,
+    "end": 43.74,
+    "word": " He"
+   },
+   {
+    "start": 43.74,
+    "end": 44.1,
+    "word": " asks"
+   },
+   {
+    "start": 44.1,
+    "end": 44.34,
+    "word": " to"
+   },
+   {
+    "start": 44.34,
+    "end": 44.48,
+    "word": " be"
+   }
+  ]
+ },
+ {
+  "start": 44.48,
+  "end": 45.599999999999994,
+  "text": " buried inside it,",
+  "words": [
+   {
+    "start": 44.48,
+    "end": 44.74,
+    "word": " buried"
+   },
+   {
+    "start": 44.74,
+    "end": 45.16,
+    "word": " inside"
+   },
+   {
+    "start": 45.16,
+    "end": 45.48,
+    "word": " it,"
+   }
+  ]
+ },
+ {
+  "start": 45.7,
+  "end": 46.839999999999996,
+  "text": " the law says no.",
+  "words": [
+   {
+    "start": 45.7,
+    "end": 45.84,
+    "word": " the"
+   },
+   {
+    "start": 45.84,
+    "end": 46.04,
+    "word": " law"
+   },
+   {
+    "start": 46.04,
+    "end": 46.36,
+    "word": " says"
+   },
+   {
+    "start": 46.36,
+    "end": 46.72,
+    "word": " no."
+   }
+  ]
+ },
+ {
+  "start": 47.2,
+  "end": 48.0,
+  "text": " So he builds his",
+  "words": [
+   {
+    "start": 47.2,
+    "end": 47.46,
+    "word": " So"
+   },
+   {
+    "start": 47.46,
+    "end": 47.6,
+    "word": " he"
+   },
+   {
+    "start": 47.6,
+    "end": 47.82,
+    "word": " builds"
+   },
+   {
+    "start": 47.82,
+    "end": 48.0,
+    "word": " his"
+   }
+  ]
+ },
+ {
+  "start": 48.0,
+  "end": 48.98,
+  "text": " own tomb too,",
+  "words": [
+   {
+    "start": 48.0,
+    "end": 48.2,
+    "word": " own"
+   },
+   {
+    "start": 48.2,
+    "end": 48.48,
+    "word": " tomb"
+   },
+   {
+    "start": 48.48,
+    "end": 48.86,
+    "word": " too,"
+   }
+  ]
+ },
+ {
+  "start": 49.34,
+  "end": 50.239999999999995,
+  "text": " eight more years.",
+  "words": [
+   {
+    "start": 49.34,
+    "end": 49.48,
+    "word": " eight"
+   },
+   {
+    "start": 49.48,
+    "end": 49.74,
+    "word": " more"
+   },
+   {
+    "start": 49.74,
+    "end": 50.12,
+    "word": " years."
+   }
+  ]
+ },
+ {
+  "start": 51.18,
+  "end": 52.18,
+  "text": " Today his palace is",
+  "words": [
+   {
+    "start": 51.18,
+    "end": 51.48,
+    "word": " Today"
+   },
+   {
+    "start": 51.48,
+    "end": 51.7,
+    "word": " his"
+   },
+   {
+    "start": 51.7,
+    "end": 51.96,
+    "word": " palace"
+   },
+   {
+    "start": 51.96,
+    "end": 52.18,
+    "word": " is"
+   }
+  ]
+ },
+ {
+  "start": 52.18,
+  "end": 53.16,
+  "text": " a protected monument,",
+  "words": [
+   {
+    "start": 52.18,
+    "end": 52.28,
+    "word": " a"
+   },
+   {
+    "start": 52.28,
+    "end": 52.62,
+    "word": " protected"
+   },
+   {
+    "start": 52.62,
+    "end": 53.04,
+    "word": " monument,"
+   }
+  ]
+ },
+ {
+  "start": 53.58,
+  "end": 54.36,
+  "text": " and the village that",
+  "words": [
+   {
+    "start": 53.58,
+    "end": 53.82,
+    "word": " and"
+   },
+   {
+    "start": 53.82,
+    "end": 53.92,
+    "word": " the"
+   },
+   {
+    "start": 53.92,
+    "end": 54.14,
+    "word": " village"
+   },
+   {
+    "start": 54.14,
+    "end": 54.36,
+    "word": " that"
+   }
+  ]
+ },
+ {
+  "start": 54.36,
+  "end": 55.56,
+  "text": " laughed is famous because",
+  "words": [
+   {
+    "start": 54.36,
+    "end": 54.7,
+    "word": " laughed"
+   },
+   {
+    "start": 54.7,
+    "end": 54.92,
+    "word": " is"
+   },
+   {
+    "start": 54.92,
+    "end": 55.2,
+    "word": " famous"
+   },
+   {
+    "start": 55.2,
+    "end": 55.56,
+    "word": " because"
+   }
+  ]
+ },
+ {
+  "start": 55.56,
+  "end": 56.08,
+  "text": " of him.",
+  "words": [
+   {
+    "start": 55.56,
+    "end": 55.74,
+    "word": " of"
+   },
+   {
+    "start": 55.74,
+    "end": 55.96,
+    "word": " him."
+   }
+  ]
+ },
+ {
+  "start": 57.34,
+  "end": 58.92,
+  "text": " Follow ViralRobloxGames for",
+  "words": [
+   {
+    "start": 57.34,
+    "end": 57.44,
+    "word": " Follow"
+   },
+   {
+    "start": 57.44,
+    "end": 58.66,
+    "word": " ViralRobloxGames"
+   },
+   {
+    "start": 58.66,
+    "end": 58.92,
+    "word": " for"
+   }
+  ]
+ },
+ {
+  "start": 58.92,
+  "end": 60.12,
+  "text": " more stories like this.",
+  "words": [
+   {
+    "start": 58.92,
+    "end": 59.1,
+    "word": " more"
+   },
+   {
+    "start": 59.1,
+    "end": 59.46,
+    "word": " stories"
+   },
+   {
+    "start": 59.46,
+    "end": 59.72,
+    "word": " like"
+   },
+   {
+    "start": 59.72,
+    "end": 60.0,
+    "word": " this."
+   }
+  ]
+ }
+]

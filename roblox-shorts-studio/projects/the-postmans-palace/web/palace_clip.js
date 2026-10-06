@@ -166,7 +166,7 @@ function villagerAt(a, s) {
       if (a === leo) { x = st(K.STAND.clone().add(V(0.5, 0, -2.2)), Math.PI - 0.4, 'happy'); if (SHOT === 'famous') { x.face = 'smug'; x.layers = [['point_forward', 0.2, 1, false]]; } return x; }
       const p = SHOT === 'cta' ? K.PALACE.clone().add(V(a === mia ? 3.7 : -3.7, 0, 21.5)) : a === mia ? K.PALACE.clone().add(V(1.5, 0, 20)) : K.PALACE.clone().add(V(-2.2, 0, 20.5));
       x = st(p, a === mia ? -0.25 : 0.3, 'happy');
-      if (a === mia) x.layers = [['proud', 0.35, 1, false]]; else x.waveL = true;
+      if (a === mia) x.layers = [['proud', 0.35, 1, false]]; else x.wave = true;
       return x;
     }
   }
@@ -243,7 +243,7 @@ export function update(t, stage) {
   // props
   for (const k of ['stone', 'basket', 'barrow']) P[k].visible = false;
   S.ln.stone.visible = SHOT === 'hook' || (SHOT === 'pocket' && mx.stone === 'ground');
-  if ((mx.stone === 'hand') && max.root.visible) { P.stone.visible = true; P.stone.position.copy(grip(max, 'R')).add(V(0, 0.15, 0)); P.stone.rotation.set(s * 0.6, s * 0.9, 0); P.stone.scale.setScalar(SHOT === 'pocket' ? 1 : 0.7); }
+  if ((mx.stone === 'hand') && max.root.visible) { P.stone.visible = true; P.stone.position.copy(grip(max, 'R')).add(V(0, 0.62, 0)); P.stone.rotation.set(s * 0.6, s * 0.9, 0); P.stone.scale.setScalar(SHOT === 'pocket' ? 1 : 0.7); }
   if (mx.carry === 'basket') { P.basket.visible = true; P.basket.position.copy(grip(max, 'R')).add(V(0, 0.1, 0)); P.basket.rotation.set(0, max.root.rotation.y, 0); }
   if (mx.carry === 'barrow') {                                   // posed from both hands every frame
     const gl = grip(max, 'L'), gr = grip(max, 'R'), mid = gl.clone().lerp(gr, 0.5), fwd = V(Math.sin(max.root.rotation.y), 0, Math.cos(max.root.rotation.y));
@@ -257,15 +257,15 @@ export function update(t, stage) {
   const mp = max.root.position.clone(), hdM = max.root.visible ? headPos(max) : V();
   switch (SHOT) {
     case 'hook': { const k = easeOut(clamp(t / T.pocket)); look(stage, V(lerp(5.0, 4.4, k), lerp(2.6, 2.9, k), lerp(11.5, 10.8, k)), V(1.3, 2.8, 0.2), 50, 10); break; }
-    case 'pocket': look(stage, V(5.6, 4.6, 7.8), V(2.0, 4.0, 0.6), 46, 8); break;
+    case 'pocket': look(stage, V(6.5, 4.4, 10.5), V(1.8, 3.9, 1.5), 46, 8); break;
     case 'dream': { const k = easeOut(u); look(stage, K.PALACE.clone().add(V(lerp(30, 22, k), lerp(14, 11, k), lerp(56, 50, k))), K.PALACE.clone().add(V(0, 11, 0)), 46, 50); break; }
     case 'round': look(stage, V(mp.x + 4, 3.6, 13), V(mp.x - 0.5, 3.8, 0), 46, 14); break;
-    case 'pockets': look(stage, V(10.2, 4.4, 7.0), V(6.2, 3.7, 0.6), 48, 8); break;
-    case 'baskets': look(stage, V(mp.x + 3, 3.8, 9.5), V(mp.x - 0.2, 3.4, 0), 46, 12); break;
-    case 'barrow': look(stage, V(mp.x + 6, 4.4, 11), V(mp.x + 1.5, 3.0, 0), 46, 14); break;
+    case 'pockets': look(stage, V(10.2, 4.4, 7.0), V(6.2, 4.6, 0.6), 48, 8); break;
+    case 'baskets': look(stage, V(mp.x + 3, 3.8, 10.5), V(mp.x - 0.2, 4.4, 0), 46, 12); break;
+    case 'barrow': look(stage, V(mp.x + 6, 4.4, 12), V(mp.x + 1.5, 4.0, 0), 46, 14); break;
     case 'night': look(stage, NIGHT_SPOT.clone().add(V(6.5, 4.8, 13.5)), NIGHT_SPOT.clone().add(V(1.2, 3.0, -0.5)), 48, 16); break;
     case 'laugh': look(stage, K.PALACE.clone().add(V(-3.6, 4.6, 17)), K.SITE.clone().add(V(-4, 4.4, K.FENCE_Z + 1.6)), 46, 14); break;
-    case 'keeps': { const f = V(Math.sin(max.root.rotation.y), 0, Math.cos(max.root.rotation.y)), r = V(-f.z, 0, f.x); look(stage, hdM.clone().addScaledVector(f, 6.6).addScaledVector(r, -2.2).add(V(0, 0.2, 0)), hdM.clone().add(V(0, -1.0, 0)).addScaledVector(r, -0.6), 46, 8); break; }
+    case 'keeps': { const f = V(Math.sin(max.root.rotation.y), 0, Math.cos(max.root.rotation.y)), r = V(-f.z, 0, f.x); look(stage, hdM.clone().addScaledVector(f, 8.6).addScaledVector(r, -2.8).add(V(0, 0.3, 0)), hdM.clone().add(V(0, -1.2, 0)).addScaledVector(r, -0.7), 42, 8); break; }
     case 'walls': { const k = easeOut(u); look(stage, K.PALACE.clone().add(V(lerp(36, 30, k), lerp(9, 12, k), lerp(46, 42, k))), K.PALACE.clone().add(V(0, 6, 0)), 46, 50); break; }
     case 'deco': { const k = easeOut(u); look(stage, K.PALACE.clone().add(V(lerp(30, 18, k), lerp(12, 15, k), lerp(42, 50, k))), K.PALACE.clone().add(V(0, 10, 0)), 46, 50); break; }
     case 'done': look(stage, K.PALACE.clone().add(V(lerp(-24, -20, u), 7, lerp(44, 40, u))), K.PALACE.clone().add(V(-4, 11, 4)), 48, 50); break;
@@ -274,7 +274,7 @@ export function update(t, stage) {
     case 'tomb': look(stage, C_(lerp(11, 9, u), 6.0, 16), C_(2.0, 4.4, -4.5), 46, 20); break;
     case 'today': { const k = easeOut(u); look(stage, K.PALACE.clone().add(V(lerp(3, 1, k), 5.0, lerp(36, 33, k))), K.PALACE.clone().add(V(-0.5, 9, 6)), 50, 50); break; }
     case 'famous': look(stage, K.STAND.clone().add(V(3.5, 4.6, -11)), K.STAND.clone().add(V(0.5, 4.4, -1.5)), 44, 14); break;
-    case 'cta': look(stage, K.PALACE.clone().add(V(-1, 5.6, 34)), K.PALACE.clone().add(V(-2, 8.5, 12)), 50, 40); break;
+    case 'cta': look(stage, K.PALACE.clone().add(V(-0.5, 5.4, 41)), K.PALACE.clone().add(V(-0.5, 6.6, 14)), 50, 40); break;
     default: look(stage, V(5, 6, 10), V(0, 4, 0), 50);
   }
   cam = stage.camera; head2D = {};

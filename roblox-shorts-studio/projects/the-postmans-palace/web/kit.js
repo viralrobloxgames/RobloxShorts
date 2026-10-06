@@ -24,7 +24,7 @@ export const LANE = V(0, 0, 0), SITE = V(300, 0, 0), CEMETERY = V(-300, 0, 0);
 export const THE_STONE = V(2.2, 0, 0.4);
 export const PALACE = SITE.clone().add(V(0, 0, -16));      // palace centre on the ground; front face at z +8 (local)
 export const FENCE_Z = 14;                                  // site: the fence the villagers lean on (local z)
-export const LAMP = SITE.clone().add(V(-38.5, 0, -5.5));       // by the platform's left front corner (where he works at night)
+export const LAMP = SITE.clone().add(V(-31.5, 0, -9.5));       // just in front of where he works at night (the platform's left end)
 export const STAND = SITE.clone().add(V(16, 0, 12));        // souvenir stand (today)
 export const TOMB = CEMETERY.clone().add(V(0, 0, -6));
 
@@ -84,9 +84,6 @@ export function lane(scene) {
   const road = new THREE.Mesh(new THREE.PlaneGeometry(400, 6), std('#ffffff', { map: dirt, roughness: 0.95 })); road.rotation.x = -Math.PI / 2; road.position.y = 0.03; road.receiveShadow = true; g.add(road);
   const hedge = std('#3f6b2e', { roughness: 0.95 });
   for (const z of [-5.5, 5.5]) for (let x = -190; x < 190; x += 12) if (!(z > 0 && Math.abs(x) < 30)) { const r = rng(x * 7 + z); g.add(box(11.4, 2.4 + r() * 0.6, 2.2, hedge, x, 1.3, z)); }
-  // a low dry-stone wall in front (the camera side) where the hedge has a gap
-  const wall = std('#a8a08e', { roughness: 0.9, map: pebbleTex(31, 2) });
-  g.add(box(60, 1.6, 1.2, wall, 0, 0.8, 7.0));
   const ms = box(1.6, 3, 1, std('#e6e0d0', { roughness: 0.8 }), -14, 1.5, -4); g.add(ms);
   const sg = label(1.5, 1.1, 256, 190, (c, w, h) => { c.fillStyle = '#e6e0d0'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8202b'; c.fillRect(0, 0, w, 50); LG(c, 'VILLAGE', w / 2, 27, 40, '#ffffff'); SLAB(c, '2 KM', w / 2, 125, 64, '#16141f'); });
   sg.position.set(-14, 2.4, -3.48); g.add(sg);
