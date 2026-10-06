@@ -1,7 +1,7 @@
 {
  "chapter": 6,
  "header": "CH06 | THURSDAY | 10:15 PM | The Practice",
- "duration": 57.77,
+ "duration": 57.546,
  "sample_rate": 24000,
  "take": "take-01",
  "standin": null,
@@ -145,9 +145,9 @@
    "note": null,
    "text": "Hello? Mister Ghost? This is a friendly house. We're friendly people.",
    "start": 36.877,
-   "end": 41.103,
+   "end": 40.879,
    "clip": "audio/qwen/take-01/clips/5e639f31a551.wav",
-   "seed": 85964
+   "seed": 86964
   },
   {
    "index": 14,
@@ -155,8 +155,8 @@
    "voice": "george_c",
    "note": null,
    "text": "But you have eaten nine of my pancakes, and that is where I draw the line.",
-   "start": 41.353,
-   "end": 45.033,
+   "start": 41.129,
+   "end": 44.809,
    "clip": "audio/qwen/take-01/clips/b55de9fad459.wav",
    "seed": 86134
   },
@@ -166,8 +166,8 @@
    "voice": "george_c",
    "note": null,
    "text": "Max, was that you?",
-   "start": 45.883,
-   "end": 47.297,
+   "start": 45.659,
+   "end": 47.073,
    "clip": "audio/qwen/take-01/clips/5056c7f30a68.wav",
    "seed": 65172
   },
@@ -177,8 +177,8 @@
    "voice": "max_kid",
    "note": "behind door",
    "text": "Go to bed, Dad!",
-   "start": 47.547,
-   "end": 48.466,
+   "start": 47.323,
+   "end": 48.242,
    "clip": "audio/qwen/take-01/clips/f744871bf61d.wav",
    "seed": 5012
   },
@@ -188,8 +188,8 @@
    "voice": "george_c",
    "note": null,
    "text": "I'm a grown man. I go to bed when I want.",
-   "start": 48.716,
-   "end": 51.016,
+   "start": 48.492,
+   "end": 50.792,
    "clip": "audio/qwen/take-01/clips/3715ec557f17.wav",
    "seed": 10169
   },
@@ -199,8 +199,8 @@
    "voice": "george_c",
    "note": null,
    "text": "Tomorrow, I'm going up into that attic, and I'm checking every single box.",
-   "start": 51.266,
-   "end": 54.946,
+   "start": 51.042,
+   "end": 54.722,
    "clip": "audio/qwen/take-01/clips/fa0dd455c541.wav",
    "seed": 87617
   },
@@ -210,8 +210,8 @@
    "voice": "brittney",
    "note": "whisper",
    "text": "Every box?",
-   "start": 55.196,
-   "end": 55.996,
+   "start": 54.972,
+   "end": 55.772,
    "clip": "audio/qwen/take-01/clips/84982a46bf28.wav",
    "seed": 89783
   },
@@ -221,8 +221,8 @@
    "voice": "lily_kid",
    "note": "whisper",
    "text": "Uh-oh.",
-   "start": 56.246,
-   "end": 57.17,
+   "start": 56.022,
+   "end": 56.946,
    "clip": "audio/qwen/take-01/clips/5237c35499fb.wav",
    "seed": 88304
   }
@@ -262,11 +262,11 @@
   },
   {
    "after_line": 14,
-   "at": 45.033,
+   "at": 44.809,
    "pause": 0.6,
    "scene_change": false,
    "text": "Lily pulls Skye into the linen closet. They peek through the gap.",
-   "until": 45.883
+   "until": 45.659
   }
  ]
 }
