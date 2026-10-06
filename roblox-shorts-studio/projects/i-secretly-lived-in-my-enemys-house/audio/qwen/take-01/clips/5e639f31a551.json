@@ -1,0 +1,66 @@
+{
+ "voice": "george_c",
+ "text": "Hello? Mister Ghost? This is a friendly house. We're friendly people.",
+ "seed": 85964,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Hello,",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "Mr.",
+   "start": 0.5,
+   "end": 0.62
+  },
+  {
+   "word": "Ghost.",
+   "start": 0.94,
+   "end": 0.94
+  },
+  {
+   "word": "This",
+   "start": 1.52,
+   "end": 1.74
+  },
+  {
+   "word": "is",
+   "start": 1.74,
+   "end": 1.88
+  },
+  {
+   "word": "a",
+   "start": 1.88,
+   "end": 2.02
+  },
+  {
+   "word": "friendly",
+   "start": 2.02,
+   "end": 2.24
+  },
+  {
+   "word": "house,",
+   "start": 2.24,
+   "end": 2.68
+  },
+  {
+   "word": "with",
+   "start": 3.18,
+   "end": 3.3
+  },
+  {
+   "word": "friendly",
+   "start": 3.3,
+   "end": 3.62
+  },
+  {
+   "word": "people.",
+   "start": 3.62,
+   "end": 4.02
+  }
+ ],
+ "words_md5": "ea63f53e005fc0a2665532b595ade049",
+ "whisper": "small.en"
+}
