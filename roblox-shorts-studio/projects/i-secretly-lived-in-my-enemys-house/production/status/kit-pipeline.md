@@ -1,12 +1,10 @@
 STATUS: READY
 
-Template ready: `web/ch_template.js`. Kit API + pipeline usage: `web/kit/README.md`.
-- Done and on main: kit index.js, sets/index.js, stage.js, lighting.js, camera.js, overlay.js, ch_template.js,
-  scripts/finish_longform.py, scripts/stitch_longform.py, render.mjs frame skip (+ runner.html fingerprint covers face
-  textures, exposure, sky, lights), proof clip.
-- Measured (proof, 1920x1080, 1 sample, 2 workers): 3.0 s/rendered frame; 33% of frames skipped on the proof
-  (wall 4:31 -> 3:00); copied frames identical to a no-skip render within renderer noise; two-segment encode + stitch:
-  stream copy, seams frame-exact, A/V 0.000 s, -14.1 LUFS / -1.0 dBTP.
-- Requests answered in production/requests.md (practicals, beam fromProp, chinLight, clearShot fix, endScreen space).
-- Template checked on the real bedroom + classroom sets (set cams for the closet, walls hidden automatically).
-- Next: answer production/requests.md every ~20 min; available for a render or stitch job.
+Kit + pipeline on main (see web/kit/README.md). Staying on per the orchestrator:
+- Answering requests in production/requests.md (watcher every 90 s). Done so far: practicals, beam fromProp, chinLight,
+  clearShot, endScreen space, night presets moonlight, attic_afternoon (attic's own lights), sunday_morning toned down.
+- YouTube package: delivery/thumbnail.jpg (1280x720, web/thumbnail.js, checked at 246x138), delivery/youtube.md
+  (title, description with chapter placeholder, tags). Not posted.
+- QA of chapter drafts: contact sheets every 4 s at 0.25 scale, all 11 chapters (running); findings go to requests.md.
+- Measured: 3.0 s/rendered frame at 1080p (2 workers, 4 cores); frame skip 33% on the proof; seams frame-exact.
+- Next: final stitch when chapters are rendered.
