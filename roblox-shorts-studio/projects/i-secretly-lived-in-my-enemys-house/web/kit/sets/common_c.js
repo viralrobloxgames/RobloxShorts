@@ -130,3 +130,59 @@ export function practical(light, base) { light.userData.base = base; light.userD
 export function setPractical(light, level) { light.intensity = light.userData.base * level; light.visible = level > 0; }
 // Sitting (kit-cast seatY): root y = seatTop - 1.5 * actorScale (thighs horizontal on the seat).
 export const SIT_ROOT = (seatTop, scale = 1) => seatTop - 1.5 * scale;
+
+// ---------------------------------------------------------------- walking routes (SC1/SC2)
+// Obstacles are floor rectangles in set-local coordinates { x0, x1, z0, z1 } already inflated by the walker's half
+// size. route(a, b) returns world-space waypoints [a, ..., b] (Vector3, y 0) along straight segments that never cross an
+// obstacle: a visibility graph over the rectangle corners, shortest path by Dijkstra. An endpoint inside an obstacle
+// (a seat, a mark at a counter) first steps out to the nearest free point on that rectangle's edge.
+export function makeRouter(offset, rects, bounds) {
+  const EPS = 0.02;
+  const inside = (x, z, r, e = 0) => x > r.x0 + e && x < r.x1 - e && z > r.z0 + e && z < r.z1 - e;
+  const free = (x, z) => x >= bounds.x0 && x <= bounds.x1 && z >= bounds.z0 && z <= bounds.z1 && !rects.some((r) => inside(x, z, r, -EPS / 2));
+  function segHits(ax, az, bx, bz, r) {   // Liang-Barsky against the open rectangle
+    let t0 = 0, t1 = 1; const dx = bx - ax, dz = bz - az;
+    for (const [p, q] of [[-dx, ax - r.x0], [dx, r.x1 - ax], [-dz, az - r.z0], [dz, r.z1 - az]]) {
+      if (Math.abs(p) < 1e-9) { if (q <= EPS) return false; continue; }
+      const t = q / p; if (p < 0) { if (t > t1) return false; if (t > t0) t0 = t; } else { if (t < t0) return false; if (t < t1) t1 = t; }
+    }
+    return t1 - t0 > 1e-4 && inside(ax + dx * (t0 + t1) / 2, az + dz * (t0 + t1) / 2, r, EPS);
+  }
+  const clear = (a, b) => !rects.some((r) => segHits(a[0], a[1], b[0], b[1], r));
+  const corners = [];
+  for (const r of rects) for (const [x, z] of [[r.x0 - EPS, r.z0 - EPS], [r.x1 + EPS, r.z0 - EPS], [r.x0 - EPS, r.z1 + EPS], [r.x1 + EPS, r.z1 + EPS]]) if (free(x, z)) corners.push([x, z]);
+  function escape(p) {
+    const r = rects.find((q) => inside(p[0], p[1], q)); if (!r) return null;
+    const c = [[r.x0 - EPS, p[1]], [r.x1 + EPS, p[1]], [p[0], r.z0 - EPS], [p[0], r.z1 + EPS]].filter((q) => free(q[0], q[1]));
+    c.sort((u, v) => Math.hypot(u[0] - p[0], u[1] - p[1]) - Math.hypot(v[0] - p[0], v[1] - p[1]));
+    return c[0] || null;
+  }
+  return function route(aW, bW) {
+    const A = [aW.x - offset.x, aW.z - offset.z], B = [bW.x - offset.x, bW.z - offset.z];
+    const ea = escape(A), eb = escape(B), s = ea || A, g = eb || B;
+    const nodes = [s, g, ...corners], n = nodes.length, dist = new Array(n).fill(Infinity), prev = new Array(n).fill(-1), done = new Array(n).fill(false);
+    dist[0] = 0;
+    for (;;) {
+      let u = -1; for (let i = 0; i < n; i++) if (!done[i] && dist[i] < Infinity && (u < 0 || dist[i] < dist[u])) u = i;
+      if (u < 0 || u === 1) break; done[u] = true;
+      for (let v = 0; v < n; v++) if (!done[v] && v !== u) {
+        const d = dist[u] + Math.hypot(nodes[v][0] - nodes[u][0], nodes[v][1] - nodes[u][1]);
+        if (d < dist[v] && clear(nodes[u], nodes[v])) { dist[v] = d; prev[v] = u; }
+      }
+    }
+    const pts = [];
+    if (dist[1] === Infinity) pts.push(s, g); else { for (let v = 1; v >= 0; v = prev[v]) { pts.unshift(nodes[v]); if (v === 0) break; } }
+    if (ea) pts.unshift(A); if (eb) pts.push(B);
+    return pts.map(([x, z]) => new THREE.Vector3(x + offset.x, 0, z + offset.z));
+  };
+}
+// Position along a waypoint list at distance d (studs) from the start: { pos, heading, done }.
+export function alongRoute(pts, d) {
+  for (let i = 0; i < pts.length - 1; i++) {
+    const a = pts[i], b = pts[i + 1], L = a.distanceTo(b);
+    if (d <= L || i === pts.length - 2) { const u = L > 0 ? Math.min(1, d / L) : 1; return { pos: a.clone().lerp(b, u), heading: Math.atan2(b.x - a.x, b.z - a.z), done: d >= L && i === pts.length - 2 }; }
+    d -= L;
+  }
+  return { pos: pts[0].clone(), heading: 0, done: true };
+}
+export const routeLength = (pts) => pts.reduce((s, p, i) => (i ? s + p.distanceTo(pts[i - 1]) : 0), 0);
