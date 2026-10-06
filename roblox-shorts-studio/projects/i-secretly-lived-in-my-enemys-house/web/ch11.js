@@ -183,9 +183,9 @@ export function update(t, stage) {
     // legs driven by the distance travelled, arriving at the foot at 5.0 s
     const tLeave = at(LN.sorry) + 0.2, top = M.stairsTop(), T_FOOT = 5.0;
     if (t < T_FOOT) {
-      const u = 0.42 + 0.58 * inv(0, T_FOOT, t), pos = SET.stairsPath(u).pos, from = SET.stairsPath(0.42).pos;   // frame 0: out of the stairwell, a third of the way down; feet on the treads
-      K.playAnim(C.skye, [[A.idle, 0], [A.walk, (from.distanceTo(pos)) / STRIDE, 0.6]]);   // shorter steps on the treads
-      K.putOn(C.skye, { pos, heading: 0 }); C.skye.root.position.y += 0.35;   // the swinging trailing leg clears the tread behind her
+      const u = 0.42 + 0.58 * inv(0, T_FOOT, t), p = SET.stairsPath(u);   // frame 0: out of the stairwell; the kit stair gait, one tread per step
+      K.posture(C.skye, SET.stairsGait(u));
+      C.skye.root.position.copy(p.pos); C.skye.root.rotation.y = p.heading; C.skye.root.visible = true; C.skye.root.updateMatrixWorld(true);
     }
     else if (t < tLeave) {
       K.playAnim(C.skye, [[A.idle, idle]]);
