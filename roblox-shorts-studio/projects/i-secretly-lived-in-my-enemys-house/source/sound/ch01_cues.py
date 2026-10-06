@@ -24,7 +24,7 @@ EXIT, DUSK, LUMP = end(13, -0.15), at(14, -0.35), end(18, 0.15)
 _legs = [(-2, 0, 12), (3.8, 0, 1.5), (6, 0.6, -5.8), (6, 0.6, -7.2)]
 _d = sum(sum((a - b) ** 2 for a, b in zip(_legs[i], _legs[i + 1])) ** 0.5 for i in range(3))
 BACKDOOR = DUSK + 0.1 + _d / 8 + 0.6 + 0.15
-NIGHT = min(BACKDOOR + 0.8, at(15, -1.0))
+NIGHT = min(BACKDOOR + 1.55, at(15, -1.0))
 LENGTH = end(19) + 0.8
 
 cues = []
@@ -47,7 +47,7 @@ steps(EXIT, DUSK - 0.1, 0.08, 0.3)
 cue('birds', DUSK, 0.06, dur=round(NIGHT - DUSK, 3))
 steps(DUSK + 0.2, BACKDOOR - 0.9, 0.06, 0.55)
 cue('door_creak', BACKDOOR, 0.22)
-cue('latch', BACKDOOR + 0.75, 0.2)
+cue('latch', BACKDOOR + 1.45, 0.2)
 # night again: three knocks inside the closet, the blanket yanked over his head, the closet door creaks open a crack
 cue('night_bed', NIGHT, 0.10, dur=round(LENGTH - NIGHT, 3))
 for k in (0.2, 0.45, 0.7):
