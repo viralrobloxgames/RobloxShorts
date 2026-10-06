@@ -1,5 +1,8 @@
 {
   "file": "The_Clown_Case.mp4",
-  "status": "on_hold",
-  "note": "On hold 2026-10-06: the user found a problem in the v2 cut (sha256 960f9c12...) and is fixing it. Nothing was scheduled on either platform. Planned slot was 2026-10-08 19:00 UK; needs a fresh approval of the fixed file before scheduling."
+  "sha256": "45058b9588311f7a443a5c23531e39e07a67cf0894938807685e6b33d84ed761",
+  "approved": {"by": "user", "at": "2026-10-06", "how": "\"The clown case is ready now with the corrected video\" in chat (golf scene re-render, commit e76a06d); part of the approved 15-video plan"},
+  "scheduled_for": "2026-10-08T19:00:00+01:00",
+  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "last frame of the video (Edit cover)", "content_check_lite": "on, passed (no issues found)"},
+  "youtube": {"status": "not_uploaded", "note": "YouTube daily upload limit reached 2026-10-06 after 10 uploads. Upload from 2026-10-07, set the cover (custom thumbnail upload still blocked at 12:20 on 2026-10-06: video verification in review), then schedule for scheduled_for."}
 }
