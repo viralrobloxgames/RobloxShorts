@@ -24,3 +24,11 @@ review-4, package: two thumbnail drafts exist (`delivery/I_Secretly_Lived_In_My_
 KNEW" with variants in `delivery/thumbnail_variants/`, and an older `delivery/thumbnail.jpg` "I LIVED IN HIS HOUSE! 7 DAYS"
 with `youtube.md`). Pick one and say why. Challenge whether "HE NEVER KNEW" fights the twist (Max knew all along) or sets
 it up, whether faces and poses read at phone size, and whether the description's hook and chapter list match the film.
+
+## Pipelined start (orchestrator, 13:55Z)
+Reviewers start as soon as every segment of their range is on main (`delivery/chapters/chNN_a.mp4` + `chNN_b.mp4`, status
+files DONE), not after the whole film. Build your block yourself (nothing extra is pushed):
+`python3 scripts/stitch_longform.py projects/i-secretly-lived-in-my-enemys-house --chapters A-B --no-split`
+(from `roblox-shorts-studio/`; it needs the segments and `audio/chapters/chNN/` from main and takes a few minutes) and
+review that MP4. review-4 builds the whole film (all 11) when everything is in and owns the seams between blocks.
+Be quick and decisive: one complete pass (aim for ~30 min), musts first. Fixes are re-rendered only where frames change.
