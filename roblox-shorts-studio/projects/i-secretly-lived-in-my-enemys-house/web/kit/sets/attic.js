@@ -350,7 +350,7 @@ export function build(scene) {
   nest.add(b1, b2, roll, pillow);
   const crackers = grp(box(0.9, 0.16, 0.55, std('#e8b730', { roughness: 0.5 }), 0, 0.08, 0, 0.04), (() => { const l = boxLabel('CRACKERS', 0.8, 0.3, { ink: '#b2261f' }); l.rotation.x = -Math.PI / 2; l.position.y = 0.17; return l; })(),
     box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.55, 0.05, 0.15, 0.03), box(0.3, 0.08, 0.12, std('#f0d9a0'), 0.5, 0.05, -0.15, 0.03));
-  add('crackers', at(crackers, -2.5, 0.18, 0.6, 0.4), nest);
+  add('crackers', at(crackers, -2.7, 0.18, -0.3, 0.4), nest);
   const fl = kitProp('flashlight_small', { beam: false, light: false }, flashlightSmall); const flKit = fl.userData.prop; add('flashlight', fl, nest);
   const bp = backpack(); add('backpack', at(bp, 2.15, 0.05, -1.2, -0.35), nest);
   const gs = kitProp('glow_sticks', {}, glowBundle); add('glow_sticks', at(gs, 1.6, 0.16, 1.9, 0.5), nest);
@@ -480,7 +480,7 @@ export function build(scene) {
     tea_two: cam([3.4, 3.5, 2.2], [-3.5, 1.8, 2.0], 40, 'tea party two-shot across the box from the +x side (Lily frame-left, Skye frame-right)'),
     tea_wide: cam([-7.0, 4.4, -6.6], [-3.0, 1.4, 2.4], 46, 'tea party wide 3/4 from window-left (Ch5 S12)'),
     tea_wide_front: cam([4.0, 5.2, 9.0], [-3.5, 1.4, 1.2], 44, 'tea party wide from the hatch side'),
-    tea_lily_ots: cam([-2.0, 4.0, -3.0], [-3.5, 2.1, 4.1], 40, "over Skye's left shoulder onto Lily"),
+    tea_lily_ots: cam([-1.6, 3.7, -2.0], [-3.7, 2.2, 4.1], 34, "over Skye's left shoulder onto Lily"),
     tea_skye_ots: cam([-2.2, 3.4, 6.4], [-3.5, 2.5, -0.1], 40, "over Lily's right shoulder onto Skye"),
     tea_lily_cu: cam([-1.6, 2.7, 1.0], [-3.5, 2.4, 4.1], 30, 'Lily close (kneeling)'),
     tea_skye_cu: cam([-1.6, 2.9, 3.1], [-3.5, 2.6, -0.1], 30, 'Skye close (cross-legged)'),
@@ -548,12 +548,12 @@ export function build(scene) {
     const fl = items.flashlight;
     const standing = st.flashlight === 'standing';
     if (flKit) {                                 // kit flashlight: beam along its +z, tail at z -0.32
-      if (standing) { at(fl, -1.5, 0.17, 1.3); flKit.rotation.set(-Math.PI / 2, 0, 0); flKit.position.set(0, 0.33, 0); }
+      if (standing) { at(fl, -2.6, 0.17, 1.5); flKit.rotation.set(-Math.PI / 2, 0, 0); flKit.position.set(0, 0.33, 0); }
       else { at(fl, -1.7, 0.27, 0.6, 0.9); flKit.rotation.set(0, 0, 0); flKit.position.set(0, 0, 0); }
       flKit.userData.setOn?.(standing);
-    } else if (standing) { at(fl, -1.5, 0.17, 1.3); fl.rotation.set(0, 0, 0); fl.children[0].children[2].material.emissiveIntensity = 3; }
+    } else if (standing) { at(fl, -2.6, 0.17, 1.5); fl.rotation.set(0, 0, 0); fl.children[0].children[2].material.emissiveIntensity = 3; }
     else { at(fl, -1.7, 0.33, 0.6, 0.9); fl.rotation.z = Math.PI / 2; fl.children[0].children[2].material.emissiveIntensity = 0; }
-    flashL.intensity = standing ? 3 : 0; flashCone.intensity = standing ? 25 : 0;
+    flashL.intensity = standing ? 1.1 : 0; flashCone.intensity = standing ? 14 : 0;
     vis('flashlight', st.flashlight !== 'none');
     vis('glow_sticks', st.glowSticks); glowL.intensity = st.glowSticks === 'lit' ? 2 : 0; gs.userData.prop?.userData.setLit?.(st.glowSticks === 'lit');
     // boxes and decorations

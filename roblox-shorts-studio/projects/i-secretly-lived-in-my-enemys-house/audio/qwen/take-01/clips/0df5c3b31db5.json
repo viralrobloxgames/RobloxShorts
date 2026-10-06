@@ -1,0 +1,56 @@
+{
+ "voice": "lily_kid",
+ "text": "In that box. But nobody's allowed to touch it.",
+ "seed": 14960,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "in",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "that",
+   "start": 0.22,
+   "end": 0.44
+  },
+  {
+   "word": "box,",
+   "start": 0.44,
+   "end": 0.88
+  },
+  {
+   "word": "but",
+   "start": 1.22,
+   "end": 1.48
+  },
+  {
+   "word": "nobody's",
+   "start": 1.48,
+   "end": 2.02
+  },
+  {
+   "word": "allowed",
+   "start": 2.02,
+   "end": 2.28
+  },
+  {
+   "word": "to",
+   "start": 2.28,
+   "end": 2.5
+  },
+  {
+   "word": "touch",
+   "start": 2.5,
+   "end": 2.74
+  },
+  {
+   "word": "it.",
+   "start": 2.74,
+   "end": 3.04
+  }
+ ],
+ "words_md5": "cca04942b8afe07411982b22f557afab",
+ "whisper": "small.en"
+}
