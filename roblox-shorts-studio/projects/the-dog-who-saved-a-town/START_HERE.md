@@ -26,9 +26,8 @@ out to sea), 261 miles in all. The outbreak was stopped, but the Central Park st
 - Fixed and checked on one frame each (05:52): sick (Skye's face now reads under the card), togo (head in frame,
   muzzle still near the left edge), night (more of the open sea), miles (Max's face below the chart), statue (wider:
   the plinth, Mia waving and Balto), wait/cta (Togo next to his statue); the blizzard haze lightened (not re-checked).
-- Hold check (`web/hold_check.js`, 05:53): the SERUM crate is now held up just past Leo's left fist (reads well,
-  passes). The medicine bottle in the sick room sits just past his right fist but is half hidden behind it (his arm
-  points down); raise that arm a little or move the bottle further out, then re-run the hold check.
+- Hold check (`web/hold_check.js`, 05:54, looked at): passes. The SERUM crate is held up just past Leo's left fist;
+  the empty medicine bottle just past his raised right fist. Fit check: not run yet (no accessories, expect 0 pairs).
 - Still to look at: the whole clip again every 10th frame; the togo close-up could sit a touch further forward.
 - hook, ships, planes, dogs, relay, hardest, run, back, arrive read fine.
 
