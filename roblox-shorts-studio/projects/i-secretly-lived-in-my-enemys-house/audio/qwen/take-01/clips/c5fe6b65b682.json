@@ -1,0 +1,26 @@
+{
+ "voice": "lily_kid",
+ "text": "For seven years?",
+ "seed": 75800,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "For",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "seven",
+   "start": 0.22,
+   "end": 0.62
+  },
+  {
+   "word": "years?",
+   "start": 0.62,
+   "end": 0.96
+  }
+ ],
+ "words_md5": "5bf34f169fbf019cf5f72b938636d02f",
+ "whisper": "small.en"
+}

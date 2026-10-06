@@ -48,5 +48,6 @@ worker below; send_message any idle/failed worker whose status isn't DONE: "Resu
 | ch10 | session_01GpbJMMGFqdZsfFWsWu5Lk4 |
 | ch11 | session_01BfKdng2SSK8yGriwr5FWoJ |
 
-Later: gate-a/b/c (fresh), render helpers (reuse the 8 setup sessions + spares for segment B of each chapter), review-1..4 (fresh).
+Later: gate-a/b/c/d (fresh, `briefs/gate.md`), render helpers for segment B (the 8 setup sessions, then gate reviewers / spares;
+`briefs/render_plan.md`: full renders start at READY_FOR_GATE, fixes re-render only changed frames), review-1..4 (fresh).
 Orchestrator routines: trig_01SHFzCL5TM3VVuWqEnfUCrE (:47) and a second one at :17.

@@ -39,7 +39,8 @@ export const meta = K.chapterMeta(L.end + 0.75);
 export const sky = K.SKY;
 export const samples = () => 1;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const ln = (i) => L.line(i);
+const BASE = L.lines[0]?.index ?? 0;     // lines.json counts spoken lines from 1, EST from 0
+const ln = (i) => L.line(i + BASE);
 const at = (i, off = 0) => ln(i).start + off;
 const endOf = (i, off = 0) => ln(i).end + off;
 // start of the k-th word (0-based) of spoken line i (measured words when narrated, else spread evenly)
@@ -56,14 +57,13 @@ const lerpAng = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * 
 // ---------- key times ----------
 const T = {
   standUp: at(6, -0.3),                  // cut: Skye standing by the nest with the sheet
-  walk: endOf(7, 0.1),                   // Skye walks to MAX - OLD STUFF ([+0.8])
-  lidOpen: endOf(7, 1.35), lidOpened: endOf(7, 1.75),
-  pick: endOf(7, 1.8), picked: at(8, -0.05),
-  lilyWalk: at(8, 0.2),                  // Lily gets up and comes over while Skye reads the drawing
-  back: endOf(15, 0.55), backDone: endOf(15, 0.95), lidClose: endOf(15, 1.0), lidClosed: endOf(15, 1.3),
-  sheetUp: endOf(15, 1.3), sheetUpDone: at(16, -0.05),
-  dad2: at(19), ghost: at(20),
+  walk: at(7, 0.9),                      // Skye heads for MAX - OLD STUFF while Lily is still talking
 };
+T.lidOpen = T.walk + 1.45; T.lidOpened = T.lidOpen + 0.4; T.pick = T.lidOpened + 0.15; T.picked = at(8, -0.05);
+T.lilyWalk = at(8, 0.2);                 // Lily gets up and comes over while Skye reads the drawing
+T.back = endOf(15, 0.2); T.backDone = T.back + 0.4; T.lidClose = T.backDone + 0.05; T.lidClosed = T.lidClose + 0.3;
+T.sheetUp = T.lidClosed; T.sheetUpDone = at(16, 0.3);
+T.dad2 = at(19); T.ghost = at(20);
 const SPELL = wordAt(9, 6);              // "He spelled friends wrong": back to Skye's face
 
 // ---------- marks (attic, world coords) ----------
@@ -96,8 +96,10 @@ export async function setup(stage) {
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.lily, 'lily_day');
   A = await K.loadAnims(['idle', 'walk', 'run', 'sit', 'point', 'shock']);
   const add = (k, id) => { P[k] = K.makeProp(id); stage.scene.add(P[k]); return P[k]; };
-  add('sheet', 'bedsheet'); add('scissors', 'scissors'); add('drawing', 'drawing');
-  if (!C.lily.teddy) { add('teddy', 'teddy'); K.hold(P.teddy, C.lily, 'R'); }
+  P.sheetLap = K.makeProp('bedsheet', { state: 'flat', holes: 1 }); P.sheetBunch = K.makeProp('bedsheet', { state: 'bunched' });
+  P.sheetHeld = K.makeProp('bedsheet', { state: 'held', holes: 2 });
+  for (const k of ['sheetLap', 'sheetBunch', 'sheetHeld']) stage.scene.add(P[k]);
+  add('scissors', 'scissors'); add('drawing', 'drawing');
   CAMS = attic.cams || {};
 }
 export const cast = () => ({ skye: C.skye, lily: C.lily });
@@ -106,34 +108,40 @@ export const cast = () => ({ skye: C.skye, lily: C.lily });
 const EUL = new THREE.Euler(), Q = new THREE.Quaternion();
 function setArm(a, sd, up, fwd = 0.08, twist = 0) { EUL.set(fwd, twist, sd === 'L' ? up : -up, 'XYZ'); a.bones['Arm.' + sd].quaternion.setFromEuler(EUL); }
 // arm reaching forward: pitch p (0 down, PI/2 straight ahead), slight inward yaw
-function reach(a, sd, p, inward = 0.25) { EUL.set(-p, 0, (sd === 'L' ? -1 : 1) * inward * 0, 'XYZ'); a.bones['Arm.' + sd].quaternion.setFromEuler(EUL); a.bones['Arm.' + sd].rotateY((sd === 'L' ? -1 : 1) * inward); }
+function reach(a, sd, p, inward = 0.25) { EUL.set(-p, (sd === 'L' ? -1 : 1) * inward, 0, 'YXZ'); a.bones['Arm.' + sd].quaternion.setFromEuler(EUL); }   // inward < 0 spreads the hands
 function lookHead(a, yaw, pitch = 0) { a.bones.Head.quaternion.multiply(Q.setFromEuler(EUL.set(pitch, yaw, 0, 'YXZ'))); }
-// sitting on the floor (nest), legs out in front, a little apart
-function floorSit(a, at, heading, idle) {
-  K.playAnim(a, [[A.idle, idle]]);
-  const S = a.scale || 1;
-  for (const [sd, s] of [['L', 1], ['R', -1]]) { a.bones['Leg.' + sd].quaternion.setFromEuler(EUL.set(-Math.PI / 2 + 0.06, 0, s * 0.12, 'XYZ')); }
-  K.putOn(a, { pos: at.pos.clone().add(V(0, 0.35 - 1.5 * S, 0)), heading }, { sit: true });
+// sitting cross-legged on the floor (nest; the blankets are ~0.3 thick)
+function floorSit(a, at, heading) {
+  const d = K.posture(a, 'sit_cross');
+  K.putOn(a, { pos: at.pos, heading }, { sit: true });
+  a.root.position.y = at.pos.y + 0.3 - d; a.root.updateMatrixWorld(true);
 }
-// sitting on a chair seat (seat top at seatY), the pack sit animation
-function chairSit(a, at, heading, seatY, rock = 0) {
-  K.playAnim(a, [[A.sit, 0, 1, false]]);
-  const S = a.scale || 1;
-  K.putOn(a, { pos: at.pos.clone().add(V(0, seatY - 1.5 * S + 0.05, 0)), heading }, { sit: true });
-  if (rock) { a.root.rotateX(rock); a.root.updateMatrixWorld(true); }
+// sitting on the rocking chair: the kit's sit_chair on the seat, rocking with the chair about its base
+const _ax = V(), _rq = new THREE.Quaternion();
+function chairSit(a, at, heading, seatTop, rock = 0) {
+  K.posture(a, 'sit_chair');
+  K.putOn(a, { pos: at.pos, heading }, { sit: true });
+  a.root.position.y = K.seatY(a, at.pos.y + seatTop);
+  if (rock) {
+    _ax.set(Math.cos(heading), 0, -Math.sin(heading)); _rq.setFromAxisAngle(_ax, rock);
+    const rel = a.root.position.clone().sub(at.pos).applyQuaternion(_rq);
+    a.root.position.copy(at.pos).add(rel); a.root.quaternion.premultiply(_rq);
+  }
+  a.root.updateMatrixWorld(true);
 }
-const rockAngle = (s, on) => (on ? 0.07 * Math.sin(s * 2.2) : 0);
+const rockAngle = (s, on) => (on ? 0.06 * Math.sin(s * 2.2) : 0);
+let ROCK = 0;
 
 // ---------- where everyone is ----------
 function skyeAt(s, idle) {
   const sk = C.skye;
   let st = { face: 'determined', sheet: 'lap', scissors: true, drawing: false };
   if (s < T.standUp) {                                     // the nest: cutting eye holes
-    floorSit(sk, M.nest(), -0.1, idle);
+    floorSit(sk, M.nest(), -0.1);
     const snip = s < at(1) || (s >= at(1) && s < wordAt(1, 3)) ? 0.5 + 0.5 * Math.sin(s * 9) : 0;
-    reach(sk, 'R', 0.85 + 0.12 * snip, 0.35); reach(sk, 'L', 0.75, 0.35);
+    reach(sk, 'R', 1.1 + 0.12 * snip, 0.3); reach(sk, 'L', 1.15, 0.4);
     if (s >= wordAt(1, 3) && s < wordAt(1, 8)) { reach(sk, 'L', 0.6 + 0.4 * smooth(inv(wordAt(1, 3), wordAt(1, 3) + 0.3, s)), 0.6); }   // "glow sticks": a hand towards the bundle
-    if (s >= wordAt(1, 8)) reach(sk, 'R', 1.1, 0.2);        // "revenge": scissors up
+    if (s >= wordAt(1, 8)) reach(sk, 'R', 1.55, 0.15);        // "revenge": scissors up
     st.face = s >= wordAt(1, 8) && s < endOf(1) + 0.3 ? 'scheming' : 'determined';
     if (s >= at(2) && s < at(3)) st.face = 'neutral';
     if (s >= at(3) && s < at(4)) { st.face = 'smug'; reach(sk, 'L', 1.0, 0.4); reach(sk, 'R', 1.0, 0.4); st.scissors = true; }
@@ -180,9 +188,9 @@ function skyeAt(s, idle) {
     h = lerpAng(h, box.heading, smooth(inv(T.back - 0.3, T.back, s)));
     if (s >= T.back) { const u = inv(T.back, T.backDone, s); reach(sk, 'L', lerp(0.6, 1.25, u), 0.45); reach(sk, 'R', lerp(0.6, 1.25, u), 0.45); st.drawing = s < T.backDone; }
     if (s >= T.backDone) { reach(sk, 'L', 1.2, 0.3); reach(sk, 'R', 1.2, 0.3); }
-    if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.25 ? 'open' : 'floor'; h = lerpAng(box.heading, faceLily, 0.6 * u); reach(sk, 'L', lerp(1.2, 1.1, u), 0.15); reach(sk, 'R', lerp(1.2, 1.1, u), 0.15); }
+    if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.25 ? 'open' : 'floor'; h = lerpAng(box.heading, faceLily, 0.6 * u); reach(sk, 'L', lerp(1.2, 1.15, u), lerp(0.3, -0.3, u)); reach(sk, 'R', lerp(1.2, 1.15, u), lerp(0.3, -0.3, u)); }
   }
-  if (s >= at(16)) { st.sheet = 'open'; st.face = 'determined'; reach(sk, 'L', 1.1, 0.15); reach(sk, 'R', 1.1, 0.15); }
+  if (s >= at(16)) { st.sheet = 'open'; st.face = 'determined'; reach(sk, 'L', 1.15, -0.3); reach(sk, 'R', 1.15, -0.3); }
   if (s >= at(18)) st.face = 'smug';
   if (s >= T.dad2 - 0.1) { st.face = s < T.ghost ? 'shocked' : 'determined'; h = lerpAng(h, towardXZ(box.pos, M.hatch()), 0.5 * smooth(inv(T.dad2 - 0.1, T.dad2 + 0.3, s))); }
   K.putOn(sk, { pos: box.pos, heading: h });
@@ -195,12 +203,12 @@ function lilyAt(s, idle) {
   if (s < T.lilyWalk) {                                    // on the rocking chair
     const seatY = 1.65;
     const rocking = s < at(2) || (s > endOf(7) && s < T.lilyWalk);
-    chairSit(li, ch, ch.heading, seatY, rockAngle(idle, rocking && s < at(2)));
-    if (s >= at(2) && s < endOf(2) + 0.2) { setArm(li, 'L', 1.25, 0.9); lookHead(li, 0.25, 0); }  // points at the sheet
+    ROCK = rockAngle(idle, rocking && s < at(2)); chairSit(li, ch, ch.heading, seatY, ROCK);
+    if (s >= at(2) && s < endOf(2) + 0.2) { K.gesture(li, 'point', 'L', smooth(inv(at(2), at(2) + 0.25, s))); lookHead(li, 0.25, 0); }  // points at the sheet
     if (s >= at(4) - 0.1) { st.face = s < at(5) ? 'shocked' : s < endOf(5) + 0.2 ? 'shouting' : 'annoyed'; lookHead(li, -0.5 * smooth(inv(at(4) - 0.1, at(4) + 0.25, s)), -0.08); }
     if (s >= at(5) && s < endOf(5) + 0.1) { li.root.position.add(V(Math.sin(ch.heading), 0, Math.cos(ch.heading)).multiplyScalar(0.25)); }
     if (s >= at(6)) { st.face = 'annoyed'; }
-    if (s >= at(7)) { st.face = s < wordAt(7, 4) ? 'annoyed' : 'nervous'; if (s < wordAt(7, 4) + 0.4) { setArm(li, 'L', 1.35, 0.7); } }
+    if (s >= at(7)) { st.face = s < wordAt(7, 4) ? 'annoyed' : 'nervous'; if (s < wordAt(7, 4) + 0.4) { K.gesture(li, 'point', 'L', smooth(inv(at(7), at(7) + 0.25, s))); lookHead(li, 0.5, 0); } }
     if (s >= endOf(7)) st.face = 'nervous';
     return st;
   }
@@ -224,17 +232,24 @@ function lilyAt(s, idle) {
 }
 
 // ---------- props ----------
-const _p = V(), _q = new THREE.Quaternion();
+let HOLES = 1;
 function placeProps(sk, s) {
-  // the sheet: across her lap in the nest, bundled in her arms, on the floor by the box, held open (eye holes cut)
-  const sh = P.sheet; sh.visible = true;
+  const root = C.skye.root, h = root.rotation.y, f = V(Math.sin(h), 0, Math.cos(h));
   const mode = sk.sheet;
-  if (sh.userData.setMode) sh.userData.setMode(mode === 'carry' ? 'bundle' : mode);
-  if (mode === 'lap') {
-    sh.removeFromParent(); C.skye.root.add(sh); sh.position.set(0, 1.55, 1.2); sh.rotation.set(0, 0, 0);
-  } else if (mode === 'carry') K.carry2(sh, C.skye);
-  else if (mode === 'open') K.carry2(sh, C.skye, { mode: 'open' });
-  else { sh.removeFromParent(); attic.group.parent.add(sh); sh.position.copy(M.box().pos).add(V(-1.2, 0.1, 0.6)); sh.rotation.set(0, 0.4, 0); }
+  for (const k of ['sheetLap', 'sheetBunch', 'sheetHeld']) P[k].visible = false;
+  if (mode === 'lap') {                                     // across her crossed legs, eye-hole edge towards her
+    const sh = P.sheetLap, holes = s < wordAt(1, 3) ? 1 : 2;
+    if (holes !== HOLES) { sh.userData.setHoles(holes); HOLES = holes; }
+    if (sh.parent !== root.parent) root.parent.add(sh);
+    sh.visible = true; sh.position.copy(root.position).setY(M.nest().pos.y + 1.3).addScaledVector(f, 0.85); sh.rotation.set(0, h + Math.PI, 0);
+  } else if (mode === 'carry') { P.sheetBunch.visible = true; K.hold(P.sheetBunch, C.skye, 'R', 'side'); }
+  else if (mode === 'open') { P.sheetHeld.visible = true; K.carry2(P.sheetHeld, C.skye); }
+  else {                                                    // dropped flat on the floor beside her, left of the box
+    const sh = P.sheetLap; if (sh.parent !== root.parent) root.parent.add(sh);
+    if (HOLES !== 2) { sh.userData.setHoles(2); HOLES = 2; }
+    sh.visible = true; sh.position.copy(M.box().pos).add(V(-1.6, 0.06, -0.6)); sh.rotation.set(0, 0.5, 0); sh.scale.set(0.8, 0.12, 0.8);
+  }
+  if (mode === 'lap') P.sheetLap.scale.set(1, 1, 1);
   P.scissors.visible = sk.scissors; if (sk.scissors) K.hold(P.scissors, C.skye, 'R');
   P.drawing.visible = sk.drawing; if (sk.drawing) K.carry2(P.drawing, C.skye);
 }
@@ -261,20 +276,20 @@ const SHOTS = [
   { line: 5, off: 0, id: 'lily_nodad', cam: front('lily', { ang: -0.2, d: 4.6 }) },
   { line: 6, off: -0.3, id: 'skye_stand', cam: front('skye', { ang: -0.35, d: 7.5, up: -0.2, look: -1.0, fov: 38 }) },
   { line: 7, off: 0, id: 'lily_box', cam: front('lily', { ang: 0.25, d: 4.6 }) },
-  { line: 7, off: 0.95, id: 'box_insert', cam: FIX({ pos: V(5.4, 4.0, 9.0).add(OFF), target: V(9.2, 1.4, 4.6).add(OFF), fov: 34 }) },
-  { line: 7, off: 1.7, id: 'skye_walk', cam: FIX(BOXCAM) },
+  { line: 7, off: 0.9, id: 'skye_walk', cam: FIX(BOXCAM) },
+  { line: 7, off: 0, at: () => T.lidOpen - 0.1, id: 'box_insert', cam: FIX({ pos: V(8.7, 4.9, 5.6).add(OFF), target: V(9.25, 1.2, 4.55).add(OFF), fov: 40 }) },   // the flaps open: the drawing on top
   { line: 8, off: -0.05, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
   { line: 9, off: 0, id: 'drawing_cu', cam: (s) => { const r = C.skye.root.position, h = C.skye.root.rotation.y, f = V(Math.sin(h), 0, Math.cos(h)); K.setCam(s, { pos: r.clone().addScaledVector(f, 2.6).add(V(0, 4.9, 0)), target: r.clone().addScaledVector(f, 1.1).add(V(0, 2.4, 0)), fov: 36 }, { clear: false }); } },
   { line: 9, off: 0, at: () => SPELL - 0.1, id: 'skye_spelled', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
-  { line: 10, off: 0, id: 'lily_kinder', cam: front('lily', { heading: LILY_OPEN, ang: -0.4, d: 5.0, fov: 32 }) },
+  { line: 10, off: 0, id: 'lily_kinder', cam: front('lily', { heading: LILY_OPEN, ang: -0.55, d: 5.0, fov: 32 }) },
   { line: 11, off: 0, id: 'skye_kept', cam: (s, t) => { const u = smooth(inv(at(11), endOf(11) + 0.3, t)); front('skye', { heading: SKYE_OPEN, ang: 0.3, d: lerp(5.2, 3.6, u) })(s); } },
-  { line: 12, off: 0, id: 'lily_sad', cam: front('lily', { heading: LILY_OPEN, ang: -0.4, d: 5.0, fov: 32 }) },
+  { line: 12, off: 0, id: 'lily_sad', cam: front('lily', { heading: LILY_OPEN, ang: -0.55, d: 5.0, fov: 32 }) },
   { line: 13, off: 0, id: 'two_sandcastle', cam: FIX(BOX_TWO) },
-  { line: 14, off: 0, id: 'lily_seven', cam: front('lily', { heading: LILY_OPEN, ang: -0.4, d: 5.0, fov: 32 }) },
+  { line: 14, off: 0, id: 'lily_seven', cam: front('lily', { heading: LILY_OPEN, ang: -0.55, d: 5.0, fov: 32 }) },
   { line: 15, off: 0, id: 'skye_good', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
-  { line: 15, off: 0, at: () => endOf(15, 0.2), id: 'put_back', cam: FIX({ pos: V(8.7, 4.9, 5.6).add(OFF), target: V(9.25, 1.2, 4.55).add(OFF), fov: 40 }) },   // insert: the drawing back on top, the lid
+  { line: 15, off: 0, at: () => T.back - 0.05, id: 'put_back', cam: FIX({ pos: V(8.7, 4.9, 5.6).add(OFF), target: V(9.25, 1.2, 4.55).add(OFF), fov: 40 }) },   // insert: the drawing back on top, the lid
   { line: 15, off: 0, at: () => T.sheetUp - 0.05, id: 'sheet_up', cam: FIX(BOX_TWO) },
-  { line: 16, off: 0, id: 'lily_still', cam: front('lily', { heading: LILY_OPEN, ang: -0.4, d: 5.0, fov: 32 }) },
+  { line: 16, off: 0, id: 'lily_still', cam: front('lily', { heading: LILY_OPEN, ang: -0.55, d: 5.0, fov: 32 }) },
   { line: 17, off: -0.05, id: 'skye_yes', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3, d: 3.8 }) },
   { line: 18, off: 0, id: 'two_dumb', cam: FIX(BOX_TWO) },
   { line: 19, off: 0, id: 'two_hatch', cam: FIX(BOXCAM) },
@@ -288,14 +303,16 @@ export function update(t, stage) {
   const set = K.showSet('attic');
   const lid = t < T.lidOpen ? 0 : t < T.lidOpened ? smooth(inv(T.lidOpen, T.lidOpened, t)) : t < T.lidClose ? 1 : 1 - smooth(inv(T.lidClose, T.lidClosed, t));
   const drawingInBox = t < T.pick + 0.2 || t >= T.backDone;
-  K.setState({ chapter: 9, maxBox: lid, drawing: drawingInBox ? 'box' : 'none' });
   K.applyLight(stage, 'attic_afternoon', { set });
   K.setBlockers(set.group, C.skye, C.lily);
   K.setLine(C.lily, C.skye, 1);
   K.only(C, ['skye', 'lily']);
   // idle motion while someone speaks and while things move (walks, the lid, the sheet)
   const idle = K.holdClock(t, L, [[T.walk, T.picked], [T.lilyWalk, T.lilyWalk + 2], [T.back - 0.3, T.sheetUpDone]]);
+  ROCK = 0;
   const sk = skyeAt(t, idle), li = lilyAt(t, idle + 0.7);
+  K.setState({ chapter: 9, maxBox: lid, drawing: drawingInBox ? 'box' : 'none', rock: ROCK });
+
   K.speak(C.skye, sk.face, t, L.said('SKYE'));
   K.speak(C.lily, li.face, t, L.said('LILY'));
   C.skye.root.updateMatrixWorld(true); C.lily.root.updateMatrixWorld(true);
@@ -306,3 +323,17 @@ export function update(t, stage) {
 
 // ---------- overlay ----------
 export function overlay(g, s, t) { K.dayCard(g, s, t, CARD); }
+
+// held props and their moments, for web/ch09_hold.js: [t, who, hand, what]
+export const HOLDS = [
+  [at(1, 0.5), 'skye', 'R', 'scissors (nest)'],
+  [at(6, 0.5), 'skye', 'R', 'sheet bunched at her side'],
+  [at(8, 0.4), 'skye', 'L', 'drawing (carry2, left fist)'],
+  [at(8, 0.4), 'skye', 'R', 'drawing (carry2, right fist)'],
+  [at(13, 1.0), 'skye', 'R', 'drawing low while she gestures'],
+  [at(17, 0.2), 'skye', 'L', 'sheet held open (left fist)'],
+  [at(17, 0.2), 'skye', 'R', 'sheet held open (right fist)'],
+  [at(2, 0.3), 'lily', 'R', 'teddy on the rocking chair'],
+  [at(12, 0.3), 'lily', 'R', 'teddy standing at the box'],
+  [at(20, 0.2), 'lily', 'R', 'teddy, last frame'],
+];

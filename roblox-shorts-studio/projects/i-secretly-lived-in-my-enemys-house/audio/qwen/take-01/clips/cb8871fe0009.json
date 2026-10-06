@@ -1,0 +1,51 @@
+{
+ "voice": "max_kid",
+ "text": "It's rubber, Skye. Wow. You're scared of everything.",
+ "seed": 38814,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "It's",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "rubber,",
+   "start": 0.32,
+   "end": 0.58
+  },
+  {
+   "word": "Skye.",
+   "start": 1.0,
+   "end": 1.66
+  },
+  {
+   "word": "Wow,",
+   "start": 1.66,
+   "end": 1.98
+  },
+  {
+   "word": "you're",
+   "start": 2.34,
+   "end": 2.56
+  },
+  {
+   "word": "scared",
+   "start": 2.56,
+   "end": 2.78
+  },
+  {
+   "word": "of",
+   "start": 2.78,
+   "end": 2.96
+  },
+  {
+   "word": "everything.",
+   "start": 2.96,
+   "end": 3.3
+  }
+ ],
+ "words_md5": "9bf340d4a68a1046309760fd6309e835",
+ "whisper": "small.en"
+}

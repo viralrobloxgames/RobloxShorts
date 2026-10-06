@@ -1,0 +1,267 @@
+{
+ "chapter": 9,
+ "header": "CH09 | SATURDAY | 2:20 PM | The Drawing",
+ "duration": 59.575,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Saturday. Everyone was home all day, and I had one job. Make the scariest ghost in history.",
+   "start": 0.0,
+   "end": 5.883,
+   "clip": "audio/qwen/take-01/clips/672d322676bd.wav",
+   "seed": 61855
+  },
+  {
+   "index": 2,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Step one, eye holes. Step two, glow sticks. Step three, revenge.",
+   "start": 6.133,
+   "end": 11.253,
+   "clip": "audio/qwen/take-01/clips/e81288515bd3.wav",
+   "seed": 9173
+  },
+  {
+   "index": 3,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "That's Dad's good sheet.",
+   "start": 11.503,
+   "end": 13.051,
+   "clip": "audio/qwen/take-01/clips/b351bfb7aada.wav",
+   "seed": 51948
+  },
+  {
+   "index": 4,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Ghosts don't use bad sheets.",
+   "start": 13.301,
+   "end": 15.461,
+   "clip": "audio/qwen/take-01/clips/a6525fb7a798.wav",
+   "seed": 140
+  },
+  {
+   "index": 5,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": "offscreen, below",
+   "text": "Has anyone seen my good sheet?",
+   "start": 15.711,
+   "end": 17.287,
+   "clip": "audio/qwen/take-01/clips/26aa04652690.wav",
+   "seed": 33969
+  },
+  {
+   "index": 6,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "No, Dad!",
+   "start": 17.537,
+   "end": 18.418,
+   "clip": "audio/qwen/take-01/clips/a7563e857f2d.wav",
+   "seed": 66667
+  },
+  {
+   "index": 7,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "I need more glow sticks. Where does Max keep his old stuff?",
+   "start": 18.668,
+   "end": 21.781,
+   "clip": "audio/qwen/take-01/clips/df4e39d79a26.wav",
+   "seed": 34630
+  },
+  {
+   "index": 8,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "In that box. But nobody's allowed to touch it.",
+   "start": 22.031,
+   "end": 25.214,
+   "clip": "audio/qwen/take-01/clips/0df5c3b31db5.wav",
+   "seed": 14960
+  },
+  {
+   "index": 9,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "What is this?",
+   "start": 26.264,
+   "end": 27.6,
+   "clip": "audio/qwen/take-01/clips/305477870a0c.wav",
+   "seed": 67428
+  },
+  {
+   "index": 10,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Me and Skye. Best friends. He spelled friends wrong.",
+   "start": 27.85,
+   "end": 31.69,
+   "clip": "audio/qwen/take-01/clips/2e82051dae18.wav",
+   "seed": 48018
+  },
+  {
+   "index": 11,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "He drew it in kindergarten. He keeps it on top.",
+   "start": 31.94,
+   "end": 35.056,
+   "clip": "audio/qwen/take-01/clips/83ca9eb2e0a1.wav",
+   "seed": 37163
+  },
+  {
+   "index": 12,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "He kept it. All this time.",
+   "start": 35.306,
+   "end": 36.887,
+   "clip": "audio/qwen/take-01/clips/cf2b22591b0b.wav",
+   "seed": 77071
+  },
+  {
+   "index": 13,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "He looks at it when he's sad.",
+   "start": 37.137,
+   "end": 38.835,
+   "clip": "audio/qwen/take-01/clips/c68b844ca324.wav",
+   "seed": 11921
+  },
+  {
+   "index": 14,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "We were best friends. Then he knocked down my sandcastle, so I knocked down his. And we just never stopped.",
+   "start": 39.085,
+   "end": 44.925,
+   "clip": "audio/qwen/take-01/clips/dba6e069e974.wav",
+   "seed": 95181
+  },
+  {
+   "index": 15,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "For seven years?",
+   "start": 45.175,
+   "end": 46.456,
+   "clip": "audio/qwen/take-01/clips/c5fe6b65b682.wav",
+   "seed": 75800
+  },
+  {
+   "index": 16,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "It was a really good sandcastle.",
+   "start": 46.706,
+   "end": 48.546,
+   "clip": "audio/qwen/take-01/clips/c2ea2f0e55ce.wav",
+   "seed": 74012
+  },
+  {
+   "index": 17,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "So are you still going to scare him?",
+   "start": 49.996,
+   "end": 52.115,
+   "clip": "audio/qwen/take-01/clips/f89b6ab30d46.wav",
+   "seed": 92791
+  },
+  {
+   "index": 18,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Yes.",
+   "start": 52.365,
+   "end": 53.005,
+   "clip": "audio/qwen/take-01/clips/6f934453d684.wav",
+   "seed": 12273
+  },
+  {
+   "index": 19,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "You're both so dumb.",
+   "start": 53.255,
+   "end": 54.739,
+   "clip": "audio/qwen/take-01/clips/87764ec34b0e.wav",
+   "seed": 77723
+  },
+  {
+   "index": 20,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": "offscreen, below",
+   "text": "Lily? Why are there pancake crumbs on the attic ladder?",
+   "start": 54.989,
+   "end": 57.987,
+   "clip": "audio/qwen/take-01/clips/682fa364e63b.wav",
+   "seed": 28016
+  },
+  {
+   "index": 21,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Ghost!",
+   "start": 58.237,
+   "end": 58.975,
+   "clip": "audio/qwen/take-01/clips/2c1bf105c351.wav",
+   "seed": 90814
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the attic on Saturday afternoon. Skye cuts eye holes in a white bedsheet. Glow sticks on the floor. Lily watches with her teddy.",
+   "until": 0.0
+  },
+  {
+   "after_line": 8,
+   "at": 25.214,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Skye opens the box marked MAX - OLD STUFF. On top: a crayon drawing of two stick kids holding hands, one with pink hair, and the words ME AND SKYE. BEST FRENDS.",
+   "until": 26.264
+  },
+  {
+   "after_line": 16,
+   "at": 48.546,
+   "pause": 1.2,
+   "scene_change": false,
+   "text": "Skye looks at the drawing for a long moment, puts it back gently on top, and picks up the sheet.",
+   "until": 49.996
+  }
+ ]
+}

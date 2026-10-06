@@ -316,15 +316,15 @@ function cookie(o = {}) {
 function cobweb(o = {}) {
   const g = group('cobweb');
   const tex = textTex(256, 256, (x, w, h) => {
-    x.clearRect(0, 0, w, h); x.strokeStyle = 'rgba(245,245,250,0.95)'; x.lineWidth = 2.2; x.lineCap = 'round';
+    x.clearRect(0, 0, w, h); x.strokeStyle = 'rgba(245,245,250,0.95)'; x.lineWidth = 4; x.lineCap = 'round';
     const cx = 128, cy = 128, r = rnd(11), spokes = 9;
     const ang = Array.from({ length: spokes }, (_, i) => i / spokes * TAU + r() * 0.3);
     for (const a of ang) { x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + Math.cos(a) * 124, cy + Math.sin(a) * 124); x.stroke(); }
     for (let k = 1; k <= 6; k++) { x.beginPath(); ang.forEach((a, i) => { const rr = k * 19 + r() * 6; const p = [cx + Math.cos(a) * rr, cy + Math.sin(a) * rr]; i ? x.quadraticCurveTo(cx + Math.cos(a - 0.35) * rr * 0.85, cy + Math.sin(a - 0.35) * rr * 0.85, ...p) : x.moveTo(...p); }); x.closePath(); x.stroke(); }
     x.strokeStyle = 'rgba(255,255,255,0.5)'; x.lineWidth = 1; for (let i = 0; i < 8; i++) { x.beginPath(); x.moveTo(r() * w, r() * h); x.lineTo(r() * w, r() * h); x.stroke(); }
   });
-  const geo = new THREE.PlaneGeometry(0.75, 0.75, 8, 8), p = geo.attributes.position;
-  for (let i = 0; i < p.count; i++) { const x = p.getX(i), y = p.getY(i); p.setZ(i, -(x * x + y * y) * 0.35); }
+  const geo = new THREE.PlaneGeometry(0.95, 0.95, 8, 8), p = geo.attributes.position;
+  for (let i = 0; i < p.count; i++) { const x = p.getX(i), y = p.getY(i); p.setZ(i, -(x * x + y * y) * 0.2); }
   geo.computeVertexNormals();
   const m = add(g, geo, new THREE.MeshStandardMaterial({ map: tex, transparent: true, alphaTest: 0.08, side: THREE.DoubleSide, roughness: 0.9, depthWrite: false }));
   m.castShadow = false; m.renderOrder = 3;
@@ -769,16 +769,18 @@ function knife() {
 }
 
 // ---------- backpack (loose) ----------
-// Skye's lilac backpack off her back: 1.3 wide, 1.5 tall, 0.6 deep, front pocket +z, straps at the back (-z), a grab
+// Skye's lilac backpack off her back (matches cast.js's worn one): 1.5 wide, 1.6 tall, 0.62 deep, front pocket +z, straps at the back (-z), a grab
 // loop on top (the grip). place() stands it on the floor; hold(bp, skye, 'R', 'side') carries it by the loop.
 function backpack() {
-  const g = group('backpack'), lil = M('#c3a6ec', 0.75), dark = M('#8e6cc9', 0.7), body = new THREE.Group(); body.position.y = -1.62; g.add(body);
-  add(body, box(1.3, 1.45, 0.6, 0.28), lil, [0, 0.75, 0]);
-  add(body, box(1.0, 0.62, 0.22, 0.12), dark, [0, 0.45, 0.36]);
-  add(body, box(0.9, 0.04, 0.04, 0.02), M('#f0f0f0', 0.4), [0, 0.78, 0.48]);
-  for (const sx of [-1, 1]) add(body, box(0.2, 1.1, 0.12, 0.05), dark, [sx * 0.36, 0.78, -0.36]);
-  add(body, new THREE.TorusGeometry(0.12, 0.035, 6, 16, Math.PI), dark, [0, 1.47, 0]);
-  g.userData = { bottom: V(0, -1.62, 0), holdDefaults: { side: { level: true } } };
+  // same look as cast.js's worn one: body 1.5 x 1.6 x 0.62, lilac #bfa0e6, pocket #a585d4, zip #7e62a8
+  const g = group('backpack'), lil = M('#bfa0e6', 0.8), dark = M('#a585d4', 0.8), zip = M('#7e62a8', 0.5), body = new THREE.Group(); body.position.y = -1.75; g.add(body);
+  add(body, box(1.5, 1.6, 0.62, 0.2), lil, [0, 0.8, 0]);
+  add(body, box(1.1, 0.7, 0.2, 0.08), dark, [0, 0.45, 0.41]);
+  add(body, new THREE.BoxGeometry(0.9, 0.035, 0.03), zip, [0, 0.73, 0.515]);
+  add(body, box(0.07, 0.16, 0.04, 0.02), zip, [0.32, 0.66, 0.52]);
+  for (const sx of [-1, 1]) add(body, box(0.26, 1.32, 0.07, 0.03), dark, [sx * 0.52, 0.85, -0.35]);
+  add(body, new THREE.TorusGeometry(0.16, 0.035, 8, 16, Math.PI), dark, [0, 1.6, 0]);
+  g.userData = { bottom: V(0, -1.75, 0), holdDefaults: { side: { level: true } } };
   return g;
 }
 
@@ -949,7 +951,7 @@ export function hold(prop, actor, hand = 'R', mode = 'palm', opts = {}) {
 function atEar(prop, actor, sd, o) {
   const S = actor.scale ?? 1, head = actor.bones.Head, sc = o.scale ?? 1;
   if (prop.parent !== head) head.add(prop);
-  prop.position.set((sd === 'R' ? -0.66 : 0.66) * S, 0.42 * S, 0.05 * S);
+  prop.position.set((sd === 'R' ? -0.68 : 0.68) * S, 0.38 * S, 0.22 * S);
   prop.quaternion.setFromEuler(new THREE.Euler(0, sd === 'R' ? -Math.PI / 2 : Math.PI / 2, 0)); // screen (+z) faces the head
   prop.rotateX(-0.25); prop.scale.set(sc, sc, sc);
   if (o.offset) prop.position.add(V(...o.offset));
@@ -978,7 +980,7 @@ function hug(prop, actor, sd, o) {
   // torso pivot is the hip centre; the chest front is z = +0.5 * S, the chest 1.2 * S up. Put the teddy's tummy there.
   const b = prop.userData.bottom ?? V(0, 0, 0);
   prop.quaternion.identity(); prop.scale.set(sc, sc, sc);
-  prop.position.set(0, 0.45 * S, 0.5 * S + 0.3 * sc).sub(V(b.x * sc, b.y * sc + 0, b.z * sc));
+  prop.position.set(0, 0.05 * S, 0.5 * S + 0.3 * sc).sub(V(b.x * sc, b.y * sc + 0, b.z * sc));
   if (o.rot) prop.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(...o.rot)));
   if (o.offset) prop.position.add(V(...o.offset));
   prop.updateMatrixWorld(true);
@@ -1009,10 +1011,10 @@ export function carry2(prop, actor, opts = {}) {
 }
 
 // reach2(actor, width, pitch): pose both arms forward by pitch (radians, negative = raised) and swing them in until the
-// two fists are `width` studs apart (grip to grip) - e.g. reach2(max, plate, -1.1) then carry2(plate, max). Pass the prop
+// two fists are `width` studs apart (grip to grip; given a prop, its handle span plus a fist so the fists pinch its edges) - e.g. reach2(max, plate, -1.1) then carry2(plate, max). Pass the prop
 // instead of a number to use its handle spacing. Returns the inward angle (Arm.L rotation.z; Arm.R gets the negative).
 export function reach2(actor, width, pitch = -1.2) {
-  if (typeof width !== 'number') { const h = width.userData.handles; width = h.L.distanceTo(h.R) * (width.scale?.x ?? 1); }
+  if (typeof width !== 'number') { const h = width.userData.handles; width = h.L.distanceTo(h.R) * (width.scale?.x ?? 1) + 0.9 * (actor.scale ?? 1); } // fists pinch the edges: their centres sit just outside the handles
   const S = actor.scale ?? 1, set = (a) => { actor.bones['Arm.L'].rotation.set(pitch, 0, a); actor.bones['Arm.R'].rotation.set(pitch, 0, -a); actor.root.updateMatrixWorld(true);
     return actor.bones['Arm.L'].localToWorld(V(0.5 * S, -1.3 * S, 0)).distanceTo(actor.bones['Arm.R'].localToWorld(V(-0.5 * S, -1.3 * S, 0))); };
   const sgn = set(0.2) < set(0) ? 1 : -1; let lo = 0, hi = 1.3;
@@ -1036,14 +1038,14 @@ function headPoints(actor) {
   return (actor._propHead = { pts, top, cy, S });
 }
 // wearOnHead(prop, actor, opts): attach to the Head bone.
-//   pumpkin_bucket: upside down over the crown, rim at the brows (opts.rim, studs above head centre, default 0.12 * scale),
+//   pumpkin_bucket: upside down over the crown, rim at the brows (opts.rim, studs above head centre, default 0.55 * scale),
 //     sized so no hair pokes through above the rim; opts.tilt [x, z] radians for crooked; the handle hangs as a chin strap.
 //   cobweb (or anything else): on the hair surface at opts.spot 'left' (default) | 'top' | 'right', facing out.
 export function wearOnHead(prop, actor, opts = {}) {
   const H = headPoints(actor), head = actor.bones.Head, S = H.S;
   if (prop.parent !== head) head.add(prop);
   if (prop.userData.id === 'pumpkin_bucket') {
-    const rimY = H.cy + (opts.rim ?? 0.12) * S; let rad = 0;
+    const rimY = H.cy + (opts.rim ?? 0.55) * S; let rad = 0;
     for (const p of H.pts) if (p.y > rimY - 0.05 * S) rad = Math.max(rad, Math.hypot(p.x, p.z * 1.0));
     const need = Math.max(rad * 1.04 + 0.02, 0.3), k = need / prop.userData.rimR, depth = H.top - rimY + 0.06;
     const ky = Math.max(k * 0.9, depth / (prop.userData.height * 0.92));
@@ -1056,7 +1058,7 @@ export function wearOnHead(prop, actor, opts = {}) {
     const spot = opts.spot ?? 'left', dir = (spot === 'top' ? V(0, 1, 0.15) : spot === 'right' ? V(-0.75, 0.75, 0.1) : V(0.75, 0.75, 0.1)).normalize();
     let best = null, bd = -Infinity; const c = V(0, H.cy, 0);
     for (const p of H.pts) { const d = p.clone().sub(c).dot(dir); if (d > bd) { bd = d; best = p; } }
-    prop.position.copy(best).addScaledVector(dir, 0.02 * S);
+    prop.position.copy(best).addScaledVector(dir, 0.07 * S);
     prop.quaternion.setFromUnitVectors(V(0, 0, 1), dir); prop.rotateZ(opts.spin ?? 0.4);
     prop.scale.setScalar((opts.scale ?? 1) * S);
   }

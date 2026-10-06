@@ -30,7 +30,7 @@ const EST = (() => {
   raw.forEach(([speaker, text, pause = 0], index) => {
     if (index) t += 0.25 + pause;
     const d = Math.max(0.8, text.split(/\s+/).length / 2.5);
-    out.push({ index: index + 1, speaker, text, start: t, end: t + d });   // lines.json counts from 1 t += d;
+    out.push({ index: index + 1, speaker, text, start: t, end: t + d }); t += d;   // lines.json counts from 1
   });
   return out;
 })();
@@ -71,9 +71,10 @@ export async function setup(stage) {
   K.setState({ chapter: CH });
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs'); K.dress(C.lily, 'lily_pjs'); K.dress(C.dad, 'dad_apron');
-  A = await K.loadAnims(['idle', 'walk', 'sit', 'point', 'point_forward', 'shrug', 'laugh', 'proud', 'scheming', 'think']);
-  const add = (k, id) => { P[k] = K.makeProp(id); stage.scene.add(P[k]); return P[k]; };
-  add('spatula', 'spatula'); add('phone', 'phone'); add('plate', 'sandwich_plate'); add('pancake', 'pancake'); add('bag', 'backpack');
+  A = await K.loadAnims(['idle', 'walk', 'sit', 'laugh']);
+  const add = (k, id, o) => { P[k] = K.makeProp(id, o); stage.scene.add(P[k]); return P[k]; };
+  add('spatula', 'spatula'); add('phone', 'phone'); add('plate', 'plate', { with: 'sandwich' }); add('pancake', 'pancake');
+  try { add('bag', 'backpack'); } catch { P.bag = null; }     // floor backpack: requested from kit-props
 }
 export const cast = () => ({ skye: C.skye, max: C.max, dad: C.dad, lily: C.lily });
 
@@ -118,8 +119,10 @@ const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.star
 const inv = (a, b, x) => Math.min(1, Math.max(0, (x - a) / (b - a)));
 const sm = (u) => u * u * (3 - 2 * u);
 const lerpH = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * u;
-const gest = (anim, t0, t, len = 1.2) => (t >= t0 && t < t0 + len ? [[anim, t - t0, 1, false]] : []);
+// one-arm kit gesture held from t0 to t1, eased in and out over 0.25 s
+const gest = (actor, name, side, t0, t1, t) => { const k = sm(inv(t0, t0 + 0.25, t)) * (1 - sm(inv(t1 - 0.25, t1, t))); if (k > 0) K.gesture(actor, name, side, k); };
 const STRIDE = 14.5;
+const FLIPS = () => [at(LN.pancakes) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5];
 // Walk down the stairs in legs [from, to, arriveAt]: straight along the flight (feet on the slope), legs driven by the
 // horizontal distance, stopping between legs (a nervous pause on the steps).
 function stairsWalk(actor, legs, t, idle, speed = 10) {
@@ -164,46 +167,62 @@ export function update(t, stage) {
     } else {
       const m = K.walk(C.skye, A, bottom, endM, tLeave, t, { idleAt: idle });
       if (m.done) {
-        const layers = [[A.idle, idle], ...gest(A.shrug, at(LN.sleepover) + 0.2, t, 1.4)];
-        K.playAnim(C.skye, layers);
+        K.playAnim(C.skye, [[A.idle, idle]]);
+        gest(C.skye, 'hand_on_neck', 'L', end(LN.sorry) - 2.6, end(LN.sorry) + 0.3, t);
+        const sh2 = sm(inv(at(LN.sleepover) + 0.2, at(LN.sleepover) + 0.45, t)) * (1 - sm(inv(end(LN.sleepover), end(LN.sleepover) + 0.3, t)));
+        if (sh2 > 0) K.posture(C.skye, 'shrug', { mix: sh2, reset: false });
+        gest(C.skye, 'phone_ear', 'R', at(LN.mom) - 0.4, T_LATER + 0.2, t);
         const look = t > end(LN.sorry) - 0.9 && t < end(LN.sorry) + 0.2 ? M.fridge().pos : dadAt;
         K.putOn(C.skye, endM, { heading: lerpH(K.faceTo(endM, look), CHEAT, 0.6) });
       }
     }
-    K.dress(C.skye, 'backpack', true);
+    K.dress(C.skye, ['skye_hoodie', 'backpack']);
   } else {
-    K.playAnim(C.skye, [[A.sit, 0], ...gest(A.point, at(LN.fridgeAsk) + 0.7, t, 1.3), ...gest(A.scheming, at(LN.cond), t, 1.6)]);
+    K.playAnim(C.skye, [[A.sit, 0]]);
+    gest(C.skye, 'point', 'R', at(LN.fridgeAsk) + 0.7, end(LN.fridgeAsk) + 0.2, t);
+    gest(C.skye, 'finger_up', 'R', at(LN.cond) + 0.4, end(LN.cond) + 0.3, t);
     K.putOn(C.skye, s3, { sit: true, heading: -0.5 });
-    K.dress(C.skye, 'backpack', false);
+    K.dress(C.skye, 'skye_hoodie');
   }
+  K.dress(C.max, 'max_pjs'); K.dress(C.lily, 'lily_pjs'); K.dress(C.dad, 'dad_apron');
 
   // --- Max: stool 2; turned a little to whoever matters; slides Skye the plate in the wide ---
   {
     const slide0 = T_WIDE + 0.5, slide1 = T_WIDE + 1.6;
-    const layers = [[A.sit, 0], ...gest(A.point, at(LN.ghost) + 0.5, t, 1.5)];
+    K.playAnim(C.max, [[A.sit, 0]]);
     let h = t < at(LN.sorry) ? 0.4 : seated ? 0.5 : 0.3;
-    if (t >= slide0 - 0.3 && t < slide1 + 0.5) { layers.push([A.point_forward, 0.5, 1, false]); h = 0.15 + 0.7 * sm(inv(slide0, slide1, t)); }
-    K.playAnim(C.max, layers);
+    if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = 0.15 + 0.7 * sm(inv(slide0, slide1, t));
     K.putOn(C.max, s2, { sit: true, heading: h });
+    gest(C.max, 'point', 'R', at(LN.ghost) + 0.4, end(LN.ghost) + 0.2, t);
+    gest(C.max, 'hand_on_neck', 'L', at(LN.dance) + 0.2, end(LN.dance), t);
+    gest(C.max, 'hold_out', 'R', slide0 - 0.4, slide1 + 0.5, t);
   }
 
   // --- Lily: stool 1, teddy in her right hand ---
   {
-    K.playAnim(C.lily, [[A.sit, 0], ...gest(A.point, at(LN.says), t, 1.4)]);
+    K.playAnim(C.lily, [[A.sit, 0]]);
     K.putOn(C.lily, s1, { sit: true, heading: t < at(LN.knew) ? 0.45 : t < T_WIDE ? -0.25 : 0.35 });
+    gest(C.lily, 'point', 'L', at(LN.says), end(LN.says) + 0.3, t);
+    // seated she is only head-high to the island, so her teddy sits on the island in front of her, her left hand on it
+    K.holdTeddy(C.lily, 'free'); if (C.lily.teddy.parent !== stage.scene) stage.scene.add(C.lily.teddy);
+    K.place(C.lily.teddy, KL(-2.55, 3.6, -1.95).pos, -0.2);
+    if (!(t >= at(LN.says) && t < end(LN.says) + 0.3)) K.gesture(C.lily, 'tap', 'L', 1);
   }
 
   // --- Dad: at the stove (cheated 3/4); turns to the room to talk ---
   {
-    const layers = [[A.idle, idle], ...gest(A.point, at(LN.thief), t, 1.3), ...gest(A.point, at(LN.phone), t, 1.2),
-      ...gest(A.proud, at(LN.mother) + 0.2, t, 2.2), ...gest(A.laugh, at(LN.pancakes) + 1.3, t, 2.0)];
-    K.playAnim(C.dad, layers);
+    K.playAnim(C.dad, [[A.idle, idle]]);
     const toRoom = sm(inv(at(LN.morning) - 0.3, at(LN.morning) + 0.3, t)) * (1 - sm(inv(at(LN.pancakes) - 0.4, at(LN.pancakes) + 0.1, t)));
     const tgt = t < at(LN.morning) + 1.3 ? s2.pos : seated ? s3.pos : t < at(LN.sorry) + 1 ? bottom.pos : endM.pos;
     const back = t >= T_WIDE ? 0.55 : 0;                // in the wide, half turned to the kids while he flips
     const h = lerpH(sv.heading, lerpH(K.faceTo(sv, tgt), CHEAT, 0.3), Math.max(toRoom, back));
     const hh = t >= at(LN.pancakes) - 0.1 && t < T_WIDE ? 0.5 : h;
     K.putOn(C.dad, sv, { heading: hh });
+    gest(C.dad, 'point', 'R', at(LN.thief), end(LN.thief) + 0.3, t);
+    gest(C.dad, 'hand_on_hip', 'L', at(LN.mother) + 0.1, end(LN.week) + 0.2, t);
+    gest(C.dad, 'point', 'R', at(LN.phone), end(LN.phone) + 0.1, t);
+    gest(C.dad, 'hand_on_hip', 'L', at(LN.pancakes) + 1.0, T_WIDE + 3.5, t);            // laughing, proud of his pancakes
+    for (const f of FLIPS()) gest(C.dad, 'tap', 'R', f - 0.35, f + 0.5, t);    // the spatula flick for each flip
   }
 
   // --- faces ---
@@ -222,24 +241,24 @@ export function update(t, stage) {
   // --- props ---
   K.hold(P.spatula, C.dad, 'R');
   const phoneOut = t >= at(LN.mom) - 0.4 && t < T_LATER;
-  if (phoneOut) { P.phone.visible = true; K.hold(P.phone, C.skye, 'R', 'ear'); }
-  else if (seated) { stage.scene.attach(P.phone); const p = M.phoneDown(); P.phone.visible = true; P.phone.position.copy(p.pos); P.phone.rotation.set(0, p.heading, 0); }
+  if (phoneOut) { P.phone.visible = true; K.hold(P.phone, C.skye, 'R', 'palm'); }
+  else if (seated) { if (P.phone.parent !== stage.scene) stage.scene.add(P.phone); const p = M.phoneDown(); P.phone.visible = true; P.phone.scale.setScalar(1); P.phone.position.copy(p.pos).add(V(0, 0.06, 0)); P.phone.rotation.set(-Math.PI / 2, p.heading, 0, 'YXZ'); }   // lying flat, screen up
   else P.phone.visible = false;
   // the crustless sandwich: in front of Max after "Later"; he slides it to Skye in the wide (it follows his palm)
   {
     const a = M.plateMax().pos, b = M.plateSkye().pos, u = sm(inv(T_WIDE + 0.5, T_WIDE + 1.6, t));
-    P.plate.visible = seated; P.plate.position.copy(a).lerp(b, u); P.plate.rotation.set(0, 0, 0);
-    if (u > 0 && u < 1) { const p = palmR(C.max); P.plate.position.set(p.x, a.y, p.z); }
+    P.plate.visible = seated;
+    const pp = a.clone().lerp(b, u);
+    if (u > 0 && u < 1) { const h = palmR(C.max); pp.set(h.x, a.y, h.z); }
+    K.place(P.plate, pp, 0);
   }
   // pancake flips from the pan: on "Pancakes for everyone!" and slowly through the wide / end screen
   {
-    const flips = [at(LN.pancakes) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5];
     let y = 0, r = 0;
-    for (const f of flips) { const u = inv(f, f + 0.9, t); if (u > 0 && u < 1) { y = 2.4 * 4 * u * (1 - u); r = u * Math.PI * 2; } }
-    P.pancake.position.copy(M.pan().pos).add(V(0, y, 0)); P.pancake.rotation.set(r, 0, 0);
+    for (const f of FLIPS()) { const u = inv(f, f + 0.9, t); if (u > 0 && u < 1) { y = 2.4 * 4 * u * (1 - u); r = u * Math.PI * 2; } }
+    K.place(P.pancake, M.pan().pos.clone().add(V(0, y, 0))); P.pancake.rotation.x = r;
   }
-  P.bag.visible = seated;
-  if (seated) { const b = M.bagFloor(); P.bag.position.copy(b.pos); P.bag.rotation.set(0, b.heading, 0); }
+  if (P.bag) { P.bag.visible = seated; if (seated) { const b = M.bagFloor(); K.place(P.bag, b.pos, b.heading); } }
 
   sh.cam(stage, t);
   OVL = { end: t >= T_END };

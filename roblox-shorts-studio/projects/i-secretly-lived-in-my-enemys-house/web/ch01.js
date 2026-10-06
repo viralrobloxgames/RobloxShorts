@@ -13,33 +13,34 @@ const CH = 1;
 const CARD = { day: 'MONDAY', time: '9:47 PM' };
 // Estimated spoken lines until audio/chapters/ch01/lines.json exists (same index numbering as lines.json).
 const EST = [
-  { index: 0, speaker: 'VO', text: "I secretly lived in my enemy's house for a week, and he had no idea.", start: 0.0, end: 4.8 },
-  { index: 1, speaker: 'MAX', text: 'Hello? Is somebody in my closet?', start: 5.05, end: 7.4 },
-  { index: 2, speaker: 'MAX', text: 'Huh. Just hoodies.', start: 8.65, end: 10.0 },
-  { index: 3, speaker: 'SKYE', note: 'whisper', text: 'That was way too close.', start: 10.85, end: 12.5 },
-  { index: 4, speaker: 'VO', text: "That's Max. My enemy since kindergarten. And this morning, he started a war.", start: 12.85, end: 17.4 },
-  { index: 5, speaker: 'MAX', text: 'You cut the crusts off your sandwich? What are you, five?', start: 17.65, end: 21.7 },
-  { index: 6, speaker: 'SKYE', text: "At least my lunch doesn't smell like your gym socks.", start: 21.95, end: 25.4 },
-  { index: 7, speaker: 'SKYE', note: 'shriek', text: 'Spider! Get it off! Get it off!', start: 26.45, end: 28.9 },
-  { index: 8, speaker: 'MAX', text: "It's rubber, Skye. Wow. You're scared of everything.", start: 29.15, end: 32.1 },
-  { index: 9, speaker: 'MAX', text: "I bet you wouldn't last one night in a haunted house.", start: 32.35, end: 36.2 },
-  { index: 10, speaker: 'SKYE', text: 'Oh, and nothing scares you, I guess?', start: 36.45, end: 38.9 },
-  { index: 11, speaker: 'MAX', text: 'Nothing. My house is so boring, nothing ever happens there. Not even a creaky floor.', start: 39.15, end: 44.7 },
-  { index: 12, speaker: 'SKYE', text: "We'll see about that.", start: 44.95, end: 46.4 },
-  { index: 13, speaker: 'MAX', text: 'See you tomorrow, scaredy-cat.', start: 46.65, end: 48.4 },
-  { index: 14, speaker: 'VO', text: 'So after school, I slipped in through his back door and hid in the last place anyone would look for me.', start: 48.75, end: 56.0 },
-  { index: 15, speaker: 'SKYE', note: 'ghost', text: 'Maaax.', start: 56.35, end: 57.4 },
-  { index: 16, speaker: 'MAX', text: 'Lily! Go back to bed!', start: 57.65, end: 59.3 },
-  { index: 17, speaker: 'LILY', note: 'offscreen', text: "I am in bed! And you're too loud!", start: 59.55, end: 62.6 },
-  { index: 18, speaker: 'MAX', text: 'Then who said my name?', start: 62.85, end: 64.5 },
-  { index: 19, speaker: 'SKYE', note: 'whisper', text: 'Day one.', start: 65.55, end: 66.5 },
+  { index: 1, speaker: 'VO', text: "I secretly lived in my enemy's house for a week, and he had no idea.", start: 0.0, end: 4.8 },
+  { index: 2, speaker: 'MAX', text: 'Hello? Is somebody in my closet?', start: 5.05, end: 7.4 },
+  { index: 3, speaker: 'MAX', text: 'Huh. Just hoodies.', start: 8.65, end: 10.0 },
+  { index: 4, speaker: 'SKYE', note: 'whisper', text: 'That was way too close.', start: 10.85, end: 12.5 },
+  { index: 5, speaker: 'VO', text: "That's Max. My enemy since kindergarten. And this morning, he started a war.", start: 12.85, end: 17.4 },
+  { index: 6, speaker: 'MAX', text: 'You cut the crusts off your sandwich? What are you, five?', start: 17.65, end: 21.7 },
+  { index: 7, speaker: 'SKYE', text: "At least my lunch doesn't smell like your gym socks.", start: 21.95, end: 25.4 },
+  { index: 8, speaker: 'SKYE', note: 'shriek', text: 'Spider! Get it off! Get it off!', start: 26.45, end: 28.9 },
+  { index: 9, speaker: 'MAX', text: "It's rubber, Skye. Wow. You're scared of everything.", start: 29.15, end: 32.1 },
+  { index: 10, speaker: 'MAX', text: "I bet you wouldn't last one night in a haunted house.", start: 32.35, end: 36.2 },
+  { index: 11, speaker: 'SKYE', text: 'Oh, and nothing scares you, I guess?', start: 36.45, end: 38.9 },
+  { index: 12, speaker: 'MAX', text: 'Nothing. My house is so boring, nothing ever happens there. Not even a creaky floor.', start: 39.15, end: 44.7 },
+  { index: 13, speaker: 'SKYE', text: "We'll see about that.", start: 44.95, end: 46.4 },
+  { index: 14, speaker: 'MAX', text: 'See you tomorrow, scaredy-cat.', start: 46.65, end: 48.4 },
+  { index: 15, speaker: 'VO', text: 'So after school, I slipped in through his back door and hid in the last place anyone would look for me.', start: 48.75, end: 56.0 },
+  { index: 16, speaker: 'SKYE', note: 'ghost', text: 'Maaax.', start: 56.35, end: 57.4 },
+  { index: 17, speaker: 'MAX', text: 'Lily! Go back to bed!', start: 57.65, end: 59.3 },
+  { index: 18, speaker: 'LILY', note: 'offscreen', text: "I am in bed! And you're too loud!", start: 59.55, end: 62.6 },
+  { index: 19, speaker: 'MAX', text: 'Then who said my name?', start: 62.85, end: 64.5 },
+  { index: 20, speaker: 'SKYE', note: 'whisper', text: 'Day one.', start: 65.55, end: 66.5 },
 ];
 const L = await K.loadLines(import.meta.url, CH, EST);
 export const meta = K.chapterMeta(L.end + 0.8);        // "Day one." + room tone
 export const sky = K.SKY;
 export const samples = () => 1;
-const at = (i, off = 0) => L.line(i).start + off;
-const end = (i, off = 0) => L.line(i).end + off;
+// line numbers below are 0-based in script order; lines.json counts spoken lines from 1
+const at = (i, off = 0) => L.line(i + 1).start + off;
+const end = (i, off = 0) => L.line(i + 1).end + off;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
 // ---------- key times (all on the narration) ----------
@@ -89,7 +90,7 @@ export async function setup(stage) {
   A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'sit', 'laugh', 'point']);
   P.torch = K.makeProp('flashlight', { beam: true }); K.hold(P.torch, C.max, 'R');
   P.lunchbox = K.makeProp('lunchbox', { open: true, spider: true }); stage.scene.add(P.lunchbox);
-  P.spider = K.makeProp('rubber_spider'); K.hold(P.spider, C.max, 'R');
+  P.spider = K.makeProp('rubber_spider'); K.hold(P.spider, C.max, 'R', 'out');
   beam = K.flashlightBeam(stage, { cone: 0 });
 }
 
@@ -113,7 +114,7 @@ const skyeCloset = (k) => { const h = K.headPos(C.skye); const p = h.clone().add
 // classroom: every camera on the +z side of the Skye-Max line (the back rows' side, clear of the seated extras)
 const lineN = () => { const d = K.headPos(C.max).sub(K.headPos(C.skye)); d.y = 0; d.normalize(); const n = V(d.z, 0, -d.x); if (n.z < 0) n.negate(); return { d, n }; };
 // a 3/4 single: out to the side of the Skye-Max line and a little toward the other person (so we see the face)
-const single = (a, side, k) => { const { d, n } = lineN(), h = K.headPos(a); const p = h.clone().addScaledVector(n, 4.4).addScaledVector(d, 1.7 * side).add(V(0, 0.35, 0)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.45, 0)), fov: 36 }; };
+const single = (a, side, k) => { const { d, n } = lineN(), h = K.headPos(a); const p = h.clone().addScaledVector(n, 3.2).addScaledVector(d, 3.4 * side).add(V(0, 0.35, 0)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.45, 0)), fov: 36 }; };
 const pair = (dist) => { const { n } = lineN(), m = K.headPos(C.skye).lerp(K.headPos(C.max), 0.5); return { pos: m.clone().addScaledVector(n, dist).add(V(0, 0.9, 0)), target: m.clone().add(V(0, -0.9, 0)), fov: 38 }; };
 const dolly = (c, k) => { const s = shotOf(c); s.pos.lerp(s.target, k); return s; };
 
@@ -190,7 +191,7 @@ function night1(t, set, idle) {
 function classScene(t, set, idle) {
   K.only(C, ['skye', 'max', 'extras']);
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.skye, 'backpack', false); K.dress(C.max, 'max_school');
-  const sk = M.deskSkye(), ai = M.aisle(), side = M.skyeSide();
+  const sk = M.deskSkye(), ai = M.aisle(), side = { ...M.skyeSide() }; side.pos.x -= 0.7;   // a step closer to her desk
   const stand = { pos: V(sk.pos.x + 0.9, 0, sk.pos.z + 0.2), heading: Math.PI / 2 };   // up out of her seat, into the aisle by Max
   // extras eating at their desks; they turn to look at the shriek
   C.extras.forEach((e, i) => {
@@ -225,12 +226,12 @@ function classScene(t, set, idle) {
   }
   // the lunchbox on her desk; the spider in Max's hand, dropped into the lunchbox, picked up again ("It's rubber")
   const top = set.anchors.skyeDeskTop;
-  K.place(P.lunchbox, top.clone().add(V(0, 0, 0.1)), sk.heading + Math.PI);
+  K.place(P.lunchbox, top.clone().add(V(1.0, 0, 0.1)), sk.heading + Math.PI);   // on the aisle side of her desk, in Max's reach
   P.lunchbox.visible = true;
   const sp = P.lunchbox.userData.spider; sp.userData.base ??= sp.position.clone();
   const inBox = t >= T.spider && t < at(8) - 0.1;
   sp.visible = inBox; sp.position.copy(sp.userData.base).add(V(0, 1.4 * (1 - easeIn(inv(T.spider, T.spider + 0.28, t))), 0));
-  K.hold(P.spider, C.max, 'R'); P.spider.visible = !inBox && t > at(5) + 1.8 && t < T.exit;
+  K.hold(P.spider, C.max, 'R', 'out'); P.spider.visible = !inBox && t > at(5) + 1.8 && t < T.exit;
   P.torch.visible = false;
   return { torch: false };
 }
@@ -308,7 +309,6 @@ export function update(t, stage) {
   faces(t, sh.scene);
   K.setBlockers(set.group, C.skye, C.max, ...(sh.scene === 'class' ? C.extras : []));
 
-  if (globalThis.DBG) console.warn("DBG", t.toFixed(2), JSON.stringify({ sk: C.skye.root.position, skh: C.skye.root.rotation.y, mx: C.max.root.position, mxh: C.max.root.rotation.y }));
   sh.cam(stage, t, sh);                                // camera last: it reads the posed actors
 
   // the flashlight: its own soft cone plus the kit's spot light along the torch's forward axis
@@ -329,3 +329,7 @@ export function overlay(g, s, t) {
   if (OVL.stamp) K.timeStamp(g, s, OVL.stamp);
   if (RED) K.redCircle(g, s, t, RED.x, RED.y - 10, 150, { t0: T.circle, t1: T.circleOff });
 }
+
+// for web/ch01_hold.js
+export const cast = () => ({ skye: C.skye, max: C.max });
+export const TIMES = T;

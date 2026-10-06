@@ -1,0 +1,41 @@
+{
+ "voice": "max_kid",
+ "text": "Hello? Is somebody in my closet?",
+ "seed": 54856,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Hello?",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "Is",
+   "start": 0.92,
+   "end": 1.16
+  },
+  {
+   "word": "somebody",
+   "start": 1.16,
+   "end": 1.36
+  },
+  {
+   "word": "in",
+   "start": 1.36,
+   "end": 1.62
+  },
+  {
+   "word": "my",
+   "start": 1.62,
+   "end": 1.76
+  },
+  {
+   "word": "closet?",
+   "start": 1.76,
+   "end": 2.0
+  }
+ ],
+ "words_md5": "7fb10d2d9a641e95c9888bf0e4608256",
+ "whisper": "small.en"
+}
