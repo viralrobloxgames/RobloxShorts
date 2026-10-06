@@ -20,9 +20,11 @@ sources: `source/story.md`. Made overnight without script approval (user request
   shopfronts on a boardwalk), hills, the bay with a dock and four sailing ships, the Bay Bridge (hidden until its
   scene), Norton's uniform (navy coat, brass buttons, gold collar and epaulettes), a merchant's coat, and hats on
   bones.Head (top hat; the emperor's beaver hat with gold band, rosette and peacock feather; HAT_Y 1.55 sits on Leo's
-  hair). `web/emperor_clip.js` is only a set test (Leo in uniform and hat on the street, one camera).
+  hair). `web/emperor_clip.js` (work in progress): shots 1-3 staged and previewed (hook: the Emperor walks down the
+  street, townsfolk wave/cheer/clap, tag "SAN FRANCISCO, 1859", headline "EMPEROR OF THE / UNITED STATES"; a wide for
+  "the city goes along with it"; the name close-up "JOSHUA NORTON"); from T.rich on it is a placeholder wide.
 
 ## Next
-1. Web clip `web/emperor_clip.js` (sets kit: 1859 San Francisco street, docks with ships,
+1. Web clip `web/emperor_clip.js` from T.rich on (sets kit: 1859 San Francisco street, docks with ships,
    newspaper office, shop, a Capitol, the bay and bridge), previews, hold/fit checks, sound cues, cover, post copy,
    then the full render (needs disk space: see the Banana and Penguin notes).
