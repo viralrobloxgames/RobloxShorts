@@ -305,3 +305,5 @@ window beside it, the round attic window in the gable; garden with a stepping-st
 - **Cams:** `dusk_wide`, `gate` (from the garden: Skye coming in), `garden_follow` (= `back_door_wide`), `back_door`,
   `back_door_ots` (= `back_door_close`), `back_door_low`, `from_inside` (needs `backDoor` > 0.6), `back_step_mcu`,
   `establishing_day`, `attic_window`.
+- kit-sets-c additions: `setDoor(name, u)` on kitchen (`back_door`, `pantry`, `fridge`) and exterior (`back_door`, `gate`);
+  aliases `aisle_skye` and `chair_skye_back` (classroom), `inside_back_door` (exterior).
