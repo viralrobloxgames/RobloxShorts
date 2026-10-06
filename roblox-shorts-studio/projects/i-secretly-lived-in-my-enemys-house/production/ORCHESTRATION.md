@@ -65,7 +65,7 @@ Orchestrator routines: trig_01SHFzCL5TM3VVuWqEnfUCrE (:47) and a second one at :
 | package (thumbnail, YouTube copy) | session_019cE5sZwNxrmfZaUNbxuCAr |
 
 Segment B helpers (static, they watch their chapter's status file and start at READY_FOR_GATE): ch01 kit-pipeline,
-ch02 kit-cast, ch03 kit-props, ch04 kit-sets-a, ch05 kit-sets-b, ch06 kit-sets-c, ch07 voices, ch08 narration-tool,
+ch02 kit-cast, ch03 kit-props, ch04 kit-sets-a, ch05 kit-sets-b -> reassigned to gate-a at 14:26Z (kit-sets-b stalled), ch06 kit-sets-c, ch07 voices, ch08 narration-tool,
 ch09-ch11 the three render sessions above. Kit files are additive-only from ~13:50Z (look changes re-render frames).
 
 Orchestrator note: send_message with priority "now" interrupts the worker's running tool call, and the worker reads the
