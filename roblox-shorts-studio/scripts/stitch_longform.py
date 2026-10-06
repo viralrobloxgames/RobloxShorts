@@ -145,10 +145,10 @@ def main():
     with wave.open(str(raw), 'wb') as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(mix, -.999, .999) * 32767).astype('<i2').tobytes())
     st = 'aformat=channel_layouts=stereo'           # measure and normalise the stereo file that gets delivered
-    meas = run(['ffmpeg', '-v', 'info', '-i', str(raw), '-af', f'{st},loudnorm=I=-14:TP=-1:LRA=11:print_format=json', '-f', 'null', '-'],
+    meas = run(['ffmpeg', '-v', 'info', '-i', str(raw), '-af', f'{st},loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'],
                capture_output=True, text=True).stderr
     mj = json.loads(meas[meas.rindex('{'):meas.rindex('}') + 1])
-    ln = (f"loudnorm=I=-14:TP=-1:LRA=11:measured_I={mj['input_i']}:measured_TP={mj['input_tp']}:measured_LRA={mj['input_lra']}:"
+    ln = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={mj['input_i']}:measured_TP={mj['input_tp']}:measured_LRA={mj['input_lra']}:"
           f"measured_thresh={mj['input_thresh']}:offset={mj['target_offset']}:linear=true")
     final_wav = work / 'mix.wav'
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(raw), '-af', f'{st},{ln},aresample={SR},apad,atrim=0:{total / FPS}', '-ac', '2', '-ar', str(SR), str(final_wav)])
@@ -180,7 +180,8 @@ def main():
         'youtube_chapters': lines, 'notes': notes, 'size_mb': round(out.stat().st_size / 1e6, 1),
         'sha256': hashlib.sha256(out.read_bytes()).hexdigest(),
     }
-    ok = rep['frames'] == total and rep['frames_match_segments'] and abs(rep['av_diff_s']) <= 1 / FPS + 0.03
+    ok = (rep['frames'] == total and rep['frames_match_segments'] and abs(rep['av_diff_s']) <= 1 / FPS + 0.03
+          and abs(float(pj['input_i']) + 14) <= 0.5 and float(pj['input_tp']) <= -1.0)
     rep['ok'] = ok
     if not a.no_split and out.stat().st_size > 95e6:
         for old in D.glob(out.name + '.part_*'): old.unlink()
