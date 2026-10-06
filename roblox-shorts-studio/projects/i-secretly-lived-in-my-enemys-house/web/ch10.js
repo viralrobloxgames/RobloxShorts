@@ -171,7 +171,7 @@ function poseMax(t, idle) {
   const pos = up.pos.clone().lerp(ed.pos, k);
   if (k > 0 && k < 1) pos.y += 0.35 * Math.sin(k * Math.PI);
   let heading = lerpAngle(toward(up.pos, M.ghost().pos), toward(ed.pos, M.nearBed().pos), k);
-  if (t < T.click) heading = lerpAngle(-0.4, heading, smooth(inv(T.click - 0.6, T.click, t)) * 0.0 + smooth(inv(T.click - 0.5, T.click, t)));
+  if (t < T.click) heading = lerpAngle(-0.55, heading, smooth(inv(T.click - 0.6, T.click, t)) * 0.0 + smooth(inv(T.click - 0.5, T.click, t)));
   heading = lerpAngle(heading, 0.2, k);                 // on the bed edge he sits open to the lens, turned a little toward her
   if (t > T.dad + 0.2) heading = lerpAngle(heading, cheat(toward(ed.pos, M.door().pos), 1, 0.15), smooth(inv(T.dad + 0.2, T.dad + 0.7, t)));
   K.playAnim(a, [[A.sit, 0, 1, false]]);
@@ -179,10 +179,10 @@ function poseMax(t, idle) {
   // the lamp click: right hand back to the switch on the bedside table
   if (t > T.click - 0.45 && t < T.click + 0.35) { const u = Math.sin(inv(T.click - 0.45, T.click + 0.35, t) * Math.PI); armSide(a, 'L', lerp(0.2, 1.2, u), lerp(0, -0.8, u)); }
   // holding the plate: in his lap (left hand forward-low), out to her on "Hungry?", lifted on "the sandwiches"
-  let plateUp = -0.95;
-  if (t > at(3) && t < end(3, 0.2)) plateUp = -0.95 - 0.45 * smooth(inv(at(3), at(3, 0.4), t));
-  if (t > at(7) && t < end(7)) plateUp = -0.95 - 0.6 * Math.sin(inv(at(7), end(7), t) * Math.PI);
-  if (t < T.edge + 0.55) armFwd(a, 'R', plateUp, -0.05);
+  let plateUp = -1.3;                                   // plate held up in front of his chest, toward the lens
+  if (t > at(3) && t < end(3, 0.2)) plateUp = -1.3 - 0.2 * smooth(inv(at(3), at(3, 0.4), t));
+  if (t > at(7) && t < end(7)) plateUp = -1.3 - 0.4 * Math.sin(inv(at(7), end(7), t) * Math.PI);
+  if (t < T.edge + 0.55) armFwd(a, 'R', t < T.click ? -1.5 : plateUp, t < T.click ? -0.4 : -0.05);   // in the open the plate swings out to his right, clear of his arm, toward the lens
   else if (t < T.edge + 0.9) armSide(a, 'R', 0.9, -0.5);                                  // reaching to the table
   if (t > T.pink - 0.15 && t < T.monday) armFwd(a, 'L', -1.5, 0.05);                      // points at her head
   if (t > T.pumpkin - 0.1 && t < end(8, 0.1)) armSide(a, 'R', 2.0 + 0.12 * Math.sin((t - T.pumpkin) * 9), -0.6); // straightening a pumpkin
@@ -218,10 +218,10 @@ const setCamOf = (name) => (s) => K.setCam(s, K.getSet('bedroom').cams[name], { 
 const maxEdge = (framing) => (s) => camFrom(s, C.max, MAX_EDGE_DIR, framing);
 const two = () => (s) => K.setCam(s, { pos: V(-1.0, 5.2, 5.6), target: V(1.0, 3.6, -4.5), fov: 38 }, { clear: false });
 const SHOTS = [
-  { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: K.getSet('bedroom').cams.two_shot_bed_door.pos, target: V(3.0, 3.3, -4.4), fov: 52 }, { clear: false }) },  // the set's Ch10 cam, panned to keep Max in frame
+  { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: K.getSet('bedroom').cams.two_shot_bed_door.pos, target: V(3.0, 2.8, -4.4), fov: 52 }, { clear: false }) },  // the set's Ch10 cam, panned to keep Max in frame
   { line: 1, off: 3.9, id: 'ghost_front', cam: (s) => K.setCam(s, { pos: V(-1.4, 4.9, -2.9), target: V(3.2, 4.4, -4.4), fov: 34 }, { clear: false }) },
   { line: 2, off: -0.15, id: 'ghost_ms', cam: (s) => K.setCam(s, { pos: V(-3.9, 5.0, -2.1), target: V(3.2, 3.8, -4.4), fov: 38 }, { clear: false }) },
-  { line: 2, off: T.click - at(2) - 0.03, id: 'click', cam: setCamOf('bed_cu') },
+  { line: 2, off: T.click - at(2) - 0.03, id: 'click', cam: (s) => camFrom(s, C.max, V(3.0, 0, 5.2), 'ms', 34, 1.4) },
   { line: 3, off: -0.1, id: 'hungry', cam: (s) => camFrom(s, C.max, V(3.0, 0, 5.2), 'ms', 34, 1.4) },
   { line: 4, off: -0.1, id: 'not_skye', cam: (s) => K.setCam(s, { pos: V(-3.9, 5.0, -2.1), target: V(3.2, 3.8, -4.4), fov: 38 }, { clear: false }) },
   { line: 5, off: -0.1, id: 'pink', cam: (s) => camFrom(s, C.max, V(3.0, 0, 5.2), 'ms', 34, 1.4) },
