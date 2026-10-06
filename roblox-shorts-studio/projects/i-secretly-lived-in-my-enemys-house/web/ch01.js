@@ -327,7 +327,7 @@ function faces(t, sc) {
   const mx = sc === 'night1' ? faceAt([[0, 'suspicious'], [at(2), 'neutral'], [end(2) - 0.4, 'happy'], [T.doorShut, 'neutral']], t)
     : sc === 'class' ? faceAt([[0, 'smug'], [at(8), 'laugh'], [at(9), 'smug']], t)
     : faceAt([[0, 'annoyed'], [at(17), 'surprised'], [end(17), 'scared']], t);
-  if (shriek) C.skye.setFace(L.said('SKYE').some((w) => t >= w.start && t < w.end) && Math.floor(t / 0.14) % 2 ? 'shouting' : 'scared');   // terrified the whole line
+  if (shriek) C.skye.setFace('shocked');   // terrified the whole line: wide eyes, mouth open in a scream
   else K.speak(C.skye, sk, t, L.said('SKYE'));
   K.speak(C.max, mx, t, L.said('MAX'));
 }
