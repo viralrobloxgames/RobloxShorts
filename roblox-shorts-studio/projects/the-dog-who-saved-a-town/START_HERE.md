@@ -26,6 +26,9 @@ out to sea), 261 miles in all. The outbreak was stopped, but the Central Park st
 - Fixed and checked on one frame each (05:52): sick (Skye's face now reads under the card), togo (head in frame,
   muzzle still near the left edge), night (more of the open sea), miles (Max's face below the chart), statue (wider:
   the plinth, Mia waving and Balto), wait/cta (Togo next to his statue); the blizzard haze lightened (not re-checked).
+- Hold check run (05:52, `web/hold_check.js`, 5 close-ups): NOT passing yet. The medicine bottle in the sick room
+  is hidden inside Leo's fist (hold it out past the fist, as the book in She Raced Around The World); the SERUM crate
+  sits beside his hands instead of between them (bring the arms in or widen the crate, centre it on both palms).
 - Still to look at: the whole clip again every 10th frame; the togo close-up could sit a touch further forward.
 - hook, ships, planes, dogs, relay, hardest, run, back, arrive read fine.
 
