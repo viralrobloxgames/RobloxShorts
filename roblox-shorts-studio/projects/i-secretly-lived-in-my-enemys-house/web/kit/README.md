@@ -367,3 +367,69 @@ small table + plant, moonlit window (x 1), Lily's door (x 6), nightlight, then t
   (Ch6), `ladder_ms`, `door_approach`, `max_door_ms`, `max_door_cu`, `max_door_mcu`, `max_door_side`, `max_door_crouch_cu`,
   `max_door_back_mcu`, `under_door`, `two_shot_skye_lily`, `linen_gap`, `linen_pov`, `linen_end`, `dad_ms`, `dad_low`,
   `stairs_top`. MCUs not listed: derive with `K.camOn`.
+
+## Props (`props.js`, kit-props)
+
+Every hand-held or worn prop. Real sizes in studs for the cast (characters ~5 tall, a fist 1 stud); +y up, **front +z**,
+**origin = the grip** (the point in the palm). `PROPS` lists every id with a one-line `what`. Hold check:
+`web/kit/props_hold_check.js` (sheets in `production/previews/kit-props/`: `hold_sheet_*.jpg` all props x Skye/Lily/Dad,
+both hands; `hold_fixes_*.jpg` the final carry2 / hug / head / mouth checks; `pumpkin_worn.jpg`). Notes from the check: rigid R6
+fists cover anything small held at the grip, so props sit just past the fist end; a phone at the ear (`'ear'`) needs the
+arm swung so the fist is behind the phone, not over it; when you re-parent the vacuum wand to a hand, `vac.userData.park()`
+puts it back on the canister (removing the canister alone leaves the wand in the hand).
+
+```js
+import { makeProp, hold, carry2, reach2, place, wearOnHead, wearWrist, glowBands, facePoint, magnetLetter } from '../kit/index.js';
+const fl = makeProp('flashlight', { beam: true });           // once, in setup
+// every frame, AFTER posing the actor:
+hold(fl, max, 'R');                                          // palm; aims along the arm
+```
+
+### Helpers
+
+| Call | What |
+|---|---|
+| `makeProp(id, opts)` | a fresh `THREE.Group`, shadows on; `userData.id`, `userData.bottom`, optional `handles`, `holdDefaults` and switches below |
+| `hold(prop, actor, hand = 'R', mode = 'palm', opts)` | parents the prop to `Arm.L/R` at the measured grip `(-+0.5, -1.3, 0) * actor.scale` and orients it. Modes: `palm` (Rx90: prop +z out of the fist along the arm, +y = the arm's front: world up when the arm is raised forward), `out` (same, just past the fist at `(-+0.5, -1.75, 0)`), `side` (no rotation: for things carried with the arm hanging), `hug` (on the torso front: the teddy), `ear` (phone against the side of the head), `mouth` (clamped in the teeth: the Ch2 pancake). `opts`: `level` (stay upright, facing along the arm), `aim` (world point the prop's +z points at), `rot` [x,y,z], `offset` [x,y,z] (prop frame), `mirror`, `scale`, `yaw`. Each prop's own `holdDefaults` fill in the right ones (cups, plates, letters stay level etc.). Call every frame after posing; re-parenting is automatic, so a hand-off is just `hold(p, skye, 'R')` from the contact frame on instead of `hold(p, max, 'R')` |
+| `carry2(prop, actor, { at, parent, tilt })` | two-handed: the prop's `handles.L/R` into the left/right fists, upright, centred; returns the gap error. Use `reach2` first so the fists are the right distance apart |
+| `reach2(actor, propOrWidth, pitch = -1.2)` | poses both arms forward by `pitch` and swings them in until the fists match the prop's handle spacing (or a width in studs). Returns the inward angle (`Arm.L.rotation.z`; `Arm.R` gets its negative) |
+| `place(prop, pos, heading, { flat })` | stands the prop with `userData.bottom` on `pos` (parent space). `flat: true` lays it on its back, front up: a phone face-up on the island, a note, the drawing, **a flashlight standing on its tail with the beam up** (Ch8) |
+| `wearOnHead(prop, actor, opts)` | `pumpkin_bucket` (make it with `{ worn: true }`): upside down over the crown, rim at the brows (`opts.rim`, default 0.12 above head centre), sized from the actor's own hair so nothing pokes through, face upright, handle as a chin strap swung back; `opts.tilt: [x, z]` radians for crooked (Ch7: `[0.25, -0.2]` when Lily jams it on, `[0, 0]` after Max straightens it). Anything else (the `cobweb`): on the hair surface at `opts.spot` `'left'` (default) / `'top'` / `'right'` |
+| `wearWrist(band, actor, hand)` / `glowBands(actor, { light })` | a `glow_band` round the wrist, follows the arm; `glowBands` does both wrists and returns `[L, R]` |
+| `facePoint(actor)` | a world point on the face: `hold(pinkFl, skye, 'R', 'palm', { aim: facePoint(skye) })` lights her face from under the chin (Ch6) |
+| `magnetLetter(ch, color, size = 0.42)` | one fridge magnet letter (extruded, glossy), standing, origin at its back-bottom: sets use it for the fridge door; `LETTER_COLORS` |
+
+Arm angles: `arm.rotation.x = -PI/2` raises an arm straight forward; arms are rigid (R6), so for "held at chest height"
+use about -1.2 to -1.4. No two-arms-up poses.
+
+### Prop ids
+
+| Id | Notes (opts; switches) |
+|---|---|
+| `flashlight` | Max's/Dad's dark torch, beam +z. `{ beam, light, beamLength = 12, beamStrength, on }`; `setOn(bool)`, `setBeam(bool)`; `userData.beam` (cone), `.spot` (SpotLight when `light: true`). `{ pink: true }` or id `flashlight_small` = Skye's small pink one |
+| `lunchbox` | Skye's lilac box, handle grip. `{ open, sandwich = true, spider }`; `setOpen(0..1)`; `userData.sandwich`, `.spider`. Carry: `hold(lb, skye, 'R', 'side')`; on the desk: `place()` |
+| `rubber_spider` | grip on its back; `hold(sp, max, 'R', 'out')` dangles it; drop = re-parent to the scene and animate |
+| `spatula`, `pan` | `pan { pancake: true }`: `userData.pancake` (a child you can re-parent to flip), `userData.panPivot` |
+| `pancake` | `{ grip: 'edge' }` pinched at the edge (palm), default centred (for `mouth` / plates) |
+| `pancake_stack` | `{ count = 12, plate = true, butter, syrup }`; `setCount(n)`; `userData.top()` world point of the top pancake. Origin = plate bottom |
+| `magnet_letters` | a fanned handful, `{ letters: 'BENICE' }` |
+| `plate`, `sandwich_plate` | `{ with: 'sandwich' | 'ham_sandwich' | 'pancakes' | 'crumbs', size: 'big' }`; handles for `carry2`; palm (level) and `place()` |
+| `sandwich` (`sandwich_crustless`, `sandwich_half`) | crustless by default. `{ half, bitten: n | 'half_eaten', filling: 'ham' | 'jam' | 'cheese', crusts }`. Grip = back edge, lies flat pointing +z |
+| `cookie` | `{ bitten, upright }` |
+| `bread`, `knife` (`butter_knife`), `ham` (`{ raided }`), `milk`, `syrup`, `napkin`, `apple`, `juice_box` | kitchen / lunch things; `ham` is carried by the bone (`'side'`) |
+| `cobweb` | `wearOnHead(web, skye, { spot: 'left' })` (Ch4) |
+| `teddy` | Lily's brown bear. Default: hangs from its raised paw (`hold(t, lily, 'L' or 'R', 'side')`); `{ hold: false }` arms down for `'hug'`; `{ pose: 'sit' }` for tables/laps. `toy_teddy_a` (cream), `toy_teddy_b` (pink): sitting tea-party guests. cast.js gives `lily.teddy` already |
+| `teapot`, `cup` | toy tea set (white, pink spots); handle grips, level. `cup { saucer: true }` for the table, `{ tea: false }` empty; pour: `hold(...)` then `teapot.rotateX(0.5)` |
+| `hobby_horse` | upright, grip 0.9 below the head; across a lap: `place()` it and rotate flat |
+| `pumpkin_bucket` | handle-top grip (`'side'` carries it hanging; `place()` on the HALLOWEEN box); `{ worn: true }` + `wearOnHead` for Ch7 |
+| `vacuum` | canister on the floor (origin), hose to `userData.wand`. `hold(vac.userData.wand, dad, 'R')` (the hose re-routes); `vac.userData.park()` rests the wand on top; carried up the ladder: `hold(vac, dad, 'R', 'side')` by its top handle |
+| `broom` | long axis +z, grip near the top (`{ grip: 'end' }` at the very end). `palm` with a raised arm = sword; `side` = bristles down beside a hanging arm |
+| `note` (`note_crumpled`) | `{ state: 'folded' | 'crumpled' | 'open' }`: folded says "Max" and stands up out of the fist; swap for a `crumpled` one on the crumple frame; `open` (carry2 handles) has Skye's text |
+| `phone` | `{ screen: 'record' | 'call' | 'home' | 'off', light, brightness }`; `setGlow(bool)`. `'out'`/`'palm'` turn the screen to the holder (recording), `'ear'` at the head; `place(p, pos, h, { flat: true })` on a table |
+| `bedsheet` | `{ state: 'flat' (across a lap) | 'held' (carry2 by the top corners) | 'bunched' (one fist; also id `sheet_bunched`) | 'bundle' (an armful, carry2), holes: 0..2 }`; `setHoles(n)` while cutting |
+| `scissors` | loops in the fist, blades out; `{ open }`, `setOpen(a)` to snip |
+| `glow_sticks` | bundle of six, `{ lit }`, `setLit(bool)` |
+| `glow_band` | one green band for a wrist, `{ color, lit = true, light }`; see `glowBands` |
+| `drawing` | crayon drawing, ME AND SKYE. BEST FRENDS.; carry2 handles; `place(d, pos, h, { flat: true })` in the box |
+| `backpack` | Skye's lilac backpack as a loose prop (floor, nest, chair back), top loop grip |
+| `cracker_packet` | Skye's crackers (nest), palm or `place(..., { flat })` |
