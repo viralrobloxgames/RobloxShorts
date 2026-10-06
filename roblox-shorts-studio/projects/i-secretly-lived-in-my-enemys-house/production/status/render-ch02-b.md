@@ -1,3 +1,4 @@
-STATUS: WORKING
+STATUS: RENDERING
+CHAPTER: ch02 segment B, frames 904-2006 (FRAMES 2006, SPLIT 904, chapter COMMIT 7070167)
 
-render-ch02-b (kit-cast session): machine checked (render 4.5 s/frame at 0.3 scale incl. load; finish_longform.py runs; ffmpeg present). Waiting for ch02 READY_FOR_GATE, then segment B.
+First pass started; waiting for ch02 READY_TO_RENDER to sync (changed_frames + resume), then finish_longform -> delivery/chapters/ch02_b.mp4.
