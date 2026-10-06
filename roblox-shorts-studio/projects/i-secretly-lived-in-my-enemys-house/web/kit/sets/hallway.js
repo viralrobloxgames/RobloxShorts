@@ -204,6 +204,8 @@ export function build(scene) {
   Object.assign(marks, {
     ladder_top: { pos: ladderPoint(0.88).pos, heading: -Math.PI / 2, note: 'on the ladder near the top (Ch2 first frame); climbing pose by the chapter' },
     hall_creep_start: M(-2.6, 0, 0.6, Math.atan2(-5.2, -3.8), 'Ch6: Skye starting her creep from the hatch end, ~6 studs from Max\'s door, heading for it'),
+    lily_start: M(-15.2, 0, 1.2, Math.atan2(5.3, -4.6), 'Ch6: Lily appearing at the left (linen-closet) end of the hall, heading for lily_behind (behind Skye)'),
+    hall_line: M(0, 0, 0.8, Math.PI / 2, 'the walking line along the hall (z of the runner\'s centre)'),
     max_door_out: marks.max_door_listen, lily_behind: marks.lily_behind_skye,
     linen_in_R: marks.linen_skye, linen_in_L: marks.linen_lily,
     dad_mid: M(2.4, 0, 1.6, -Math.PI / 2 + 0.35, 'Ch6: Dad in the middle of the hall, facing toward Max\'s door (cheated to camera)'),

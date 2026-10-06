@@ -54,7 +54,7 @@ const towards = (a, b) => Math.atan2(b.pos.x - a.pos.x, b.pos.z - a.pos.z);
 // ---------- marks ----------
 const M = {
   // Ch7 tea seats: both on the far side of the upturned box from the opening camera, faces to it; the hatch behind them
-  teaSkye: () => pt(-2.3, 3.4, -2.55), teaLily: () => pt(-4.9, 2.6, -1.9),
+  teaSkye: () => pt(-3.0, 4.2, -2.95), teaLily: () => pt(-5.8, 2.4, -2.6),
   pose: () => { const m = K.mark('attic', 'decor_pose'); m.heading -= 0.3; return m; },   // cheated toward the cameras (-x side)
   front: () => pt(6.3, -1.5, Math.atan2(5.3 - 6.3, -3.5 + 1.5) + 0.45),   // in front of her, a little to the witch side (both faces read)
   hatchTop: () => K.mark('attic', 'hatch_top'), climb: () => K.mark('attic', 'hatch_climb'),
@@ -100,7 +100,7 @@ export async function setup(stage) {
   set = K.getSet('attic');
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.max, 'max_school'); K.dress(C.dad, 'dad_cardigan'); K.dress(C.lily, 'lily_day');
-  A = await K.loadAnims(['idle', 'walk', 'run', 'sit', 'climb', 'point', 'shock']);
+  A = await K.loadAnims(['idle', 'walk', 'run']);
   // the set's own pumpkin bucket and vacuum move with the action (until kit-props hands chapters its own movable ones)
   P.pumpkin = set.items?.pumpkin_bucket; P.vacuum = set.items?.vacuum;
   for (const o of [P.pumpkin, P.vacuum]) o?.traverse((m) => { m.userData.noCamBlock = true; });   // carried things never push a camera
@@ -109,23 +109,17 @@ export async function setup(stage) {
 
 // ---------- posing helpers (chapter blocking; looks come from the kit) ----------
 const eu = new THREE.Euler();
-// arm(actor, side, up, fwd): up = raised sideways (0 hanging, PI/2 straight out at the shoulder), fwd = swung forward
-function arm(actor, side, up, fwd = 0) {
-  const b = actor.bones[side === 'L' ? 'Arm.L' : 'Arm.R'];
-  eu.set(-fwd, 0, side === 'L' ? up : -up, 'XYZ'); b.quaternion.setFromEuler(eu);
-}
 function headTurn(actor, yaw, pitch = 0) { const h = actor.bones.Head; h.rotation.set(pitch, yaw, 0); }
-// seated on the floor (legs forward from the sit animation; the root dropped so the seat is on the floor)
-function sitFloor(actor, m, heading) {
-  K.playAnim(actor, [[A.sit, 0.5, 1, false]]);
-  K.putOn(actor, { pos: m.pos.clone().add(V(0, -1.5 * actor.scale, 0)), heading: heading ?? m.heading }, { sit: true });
+// seated on the floor at the tea box (kit poses sit_cross / kneel; the pose's drop puts the seat on the floor)
+function sitFloor(actor, m, heading, pose = 'sit_cross') {
+  K.putOn(actor, { pos: m.pos, heading: heading ?? m.heading }, { sit: true });
+  const d = K.posture(actor, pose); actor.root.position.y = m.pos.y - d;
 }
-// lean the whole body forward about the feet by `a` radians
-function lean(actor, a) {
-  if (!a) return;
-  const h = actor.root.rotation.y;
-  actor.root.rotation.set(0, 0, 0); actor.root.rotateY(h); actor.root.rotateX(a);
-  actor.root.updateMatrixWorld(true);
+// up or down the attic ladder through the hatch: k 0 = below the floor, 1 = standing on it (kit climb gait)
+function climbAt(actor, m, heading, k) {
+  K.putOn(actor, { pos: m.pos, heading }, { sit: true });
+  K.posture(actor, K.gait('climb', (k * 4 * actor.scale) / 1.6));
+  actor.root.position.y = set.hatchRise(actor.scale, k);
 }
 // put a set object at a world transform (it stays parented to the set group)
 const _m = new THREE.Matrix4(), _p = new THREE.Matrix4();
@@ -152,21 +146,19 @@ function poseSkye(t, idle) {
     return 'tea';
   }
   if (t < T.goDecor) {                                  // up on her feet, looking for somewhere to hide
-    K.playAnim(s, [[A.idle, idle]]);
     K.putOn(s, { pos: ts.pos, heading: ts.heading + 0.45 * Math.sin((t - T.skyeUp) * 4) });
-    arm(s, 'L', 0.35, 0.2); arm(s, 'R', 0.35, 0.2);
+    K.posture(s, 'shock', { mix: 0.45 });                 // arms half out, panicking (not up)
     return 'stand';
   }
   const from = { pos: ts.pos, heading: ts.heading };
   const m = K.walk(s, A, from, pose, T.goDecor + 0.1, t, { idleAt: idle, endHeading: pose.heading });
   if (!m.done) return 'walk';
   // the scarecrow pose: both arms straight out at shoulder height (never above the head); feet together
-  K.playAnim(s, [[A.idle, 0]]);
   K.putOn(s, pose);
   let k = sm(T.pose - 0.15, T.pose + 0.1, t);               // snap into it
   k *= 1 - 0.18 * sm(at(20), end(20), t);                   // a tired droop on "I almost got hoovered"
   k *= 1 - 0.55 * sm(T.armsDown, T.armsDown + 0.9, t);      // arms coming down at the end (the end frame)
-  arm(s, 'L', k * Math.PI / 2, 0.05 * k); arm(s, 'R', k * Math.PI / 2, 0.05 * k);
+  K.posture(s, 'scarecrow', { mix: k });
   // tiny flinch when the nozzle comes up
   const fl = sm(T.nozzle, T.nozzle + 0.3, t) * (1 - sm(T.humOff, T.humOff + 0.4, t));
   headTurn(s, 0, -0.08 * fl);
@@ -175,12 +167,12 @@ function poseSkye(t, idle) {
 
 function poseLily(t, idle) {
   const l = C.lily;
-  const tl = M.teaLily(), grab = pt(6.9, -5.1, Math.PI), jam = pt(7.1, -2.4, 0), stand = pt(-4.6, 1.0, 0);
+  const tl = M.teaLily(), grab = pt(6.9, -5.1, Math.PI), jam = pt(7.1, -2.4, 0), stand = pt(-5.4, 1.2, 0);
   const teaH = tl.heading;
-  if (t < T.lilyUp) { sitFloor(l, tl, teaH); headTurn(l, 0.35 * sm(0.3, 0.7, t)); return; }
+  if (t < T.lilyUp) { sitFloor(l, tl, teaH, 'kneel'); headTurn(l, -0.3 * sm(1.2, 1.6, t)); return; }
   if (t < T.goDecor) {
     K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: towards(stand, M.pose()) });
-    arm(l, 'L', 0.2, 1.45);                                  // points at the decorations (one arm)
+    K.gesture(l, 'point', 'L');                              // points at the decorations (one arm)
     return;
   }
   if (t < T.lilyBack) {
@@ -191,15 +183,15 @@ function poseLily(t, idle) {
     if (m2.done) {
       const hop = Math.max(0, Math.sin(Math.PI * inv(T.jam - 0.25, T.jam + 0.1, t)));
       l.root.position.y += 0.9 * hop;
-      if (t < T.jam + 0.1) { arm(l, 'L', 0.3, 2.4); }        // reaching up and forward with the bucket (one arm)
+      if (t < T.jam + 0.1) K.gesture(l, 'reach_up', 'L');     // reaching up and forward with the bucket (one arm)
       if (t > T.jam + 0.3) l.root.rotation.y = lerp(towards(jam, M.pose()), towards(jam, pt(3.0, 3.5)), sm(T.jam + 0.3, T.jam + 0.6, t));  // orders, half to camera
-      if (t >= T.jam + 0.1 && t > at(4)) arm(l, 'L', 0.15, 1.3 * sm(at(4, 1.2), at(4, 1.5), t) * (1 - sm(at(4, 2.4), at(4, 2.7), t))); // a finger wag
+      if (t >= T.jam + 0.1 && t > at(4)) K.gesture(l, 'finger_up', 'L', sm(at(4, 1.2), at(4, 1.5), t) * (1 - sm(at(4, 2.4), at(4, 2.7), t))); // a finger up
     }
     return;
   }
   if (t < T.lilyCome) {                                      // back at the tea party
     const m = K.walk(l, A, jam, tl, T.lilyBack, t, { speed: 16, idleAt: idle });
-    if (m.done) { sitFloor(l, tl, towards(tl, M.front()) * 0.6 + tl.heading * 0.4); if (t > at(9) && t < end(9)) arm(l, 'R', 0.1, 1.2); }
+    if (m.done) { sitFloor(l, tl, towards(tl, M.front()) * 0.6 + tl.heading * 0.4, 'kneel'); if (t > at(7) && t < end(9)) K.gesture(l, 'cup_hold', 'L'); }
     return;
   }
   const side = pt(7.3, -2.5, 0);
@@ -212,8 +204,7 @@ function poseDad(t, idle) {
   if (t < T.dadRise) { d.root.visible = false; return; }
   if (t < T.dadOut) {                                        // up the ladder
     const k = sm(T.dadRise, T.dadOut - 0.2, t);
-    K.playAnim(d, [[A.climb, (t - T.dadRise) * 1.2]]);
-    K.putOn(d, climb, { sit: true }); d.root.position.y = set.hatchRise(d.scale, k);
+    climbAt(d, climb, climb.heading, k);
     return;
   }
   const near = pt(1.8, 0.4), front = M.front();
@@ -225,29 +216,28 @@ function poseDad(t, idle) {
   if (t < T.dadWalk2) {
     const m = K.walk(d, A, top, near, T.dadWalk1, t, { idleAt: idle, endHeading: towards(near, M.pose()) - 0.3 });
     if (m.done && t > at(10, 0.9)) d.root.rotation.y = towards(near, pt(2.6, -3.5));   // "Skeleton."
-    if (m.done && t > at(8, 2.2) && t < end(8)) arm(d, 'R', 0.25, 1.2);                  // gestures at the decorations
+    if (m.done && t > at(8, 2.2) && t < end(8)) K.gesture(d, 'hold_out', 'R');          // gestures at the decorations
     return;
   }
   if (t < T.dadGo) {
     const m = K.walk(d, A, near, front, T.dadWalk2, t, { idleAt: idle, endHeading: front.heading });
-    if (!m.done) { if (t < T.dadWalk2 + 0.6) arm(d, 'R', 0.2, 1.4); return; }       // pointing as he goes ("Witch.")
+    if (!m.done) { if (t < T.dadWalk2 + 0.6) K.gesture(d, 'point', 'R'); return; }   // pointing as he goes ("Witch.")
     // nose to nose
     const lk = sm(T.lean, T.lean + 0.5, t) * (1 - sm(T.unlean, T.unlean + 0.4, t));
     d.root.rotation.y -= 0.45 * lk;                          // square up to her for the lean (the cheat is for the two-shot)
-    lean(d, 0.15 * lk);
-    if (t > at(11) && t < end(11)) arm(d, 'R', 0.1, 1.9 * sm(at(11), at(11, 0.3), t)); // chin stroke
+    if (lk > 0) K.posture(d, 'hip_bend', { mix: 0.55 * lk, reset: false });
+    if (t > at(11) && t < end(11)) K.gesture(d, 'chin_hand', 'R', sm(at(11), at(11, 0.3), t)); // chin stroke
     if (t > at(13) && t < at(15)) headTurn(d, 0.75 * sm(at(13), at(13, 0.3), t) * (1 - sm(at(15), at(15, 0.3), t)));
     // the nozzle: right arm forward, raised toward her face
     const nz = sm(T.nozzle, T.nozzle + 0.5, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
-    if (nz > 0) arm(d, 'R', 0.05, 1.45 * nz);
+    if (nz > 0) K.gesture(d, 'hold_out', 'R', nz);
     if (t > T.humOff) headTurn(d, 1.2 * sm(T.humOff, T.humOff + 0.35, t));               // toward the hatch
     return;
   }
   if (t < T.dadDown) { K.walk(d, A, front, climb, T.dadGo, t, { idleAt: idle }); return; }
   if (t < T.maxUp + 0.2) {
     const k = 1 - sm(T.dadDown, T.maxUp, t);
-    K.playAnim(d, [[A.climb, (t - T.dadDown) * 1.2]]);
-    K.putOn(d, { pos: climb.pos, heading: 0 }, { sit: true }); d.root.position.y = set.hatchRise(d.scale, k);
+    climbAt(d, climb, 0, k);
     if (k <= 0.01) d.root.visible = false;
     return;
   }
@@ -260,22 +250,21 @@ function poseMax(t, idle) {
   const near = pt(6.4, -1.4, Math.PI);
   if (t < T.maxOut) {                                        // head and shoulders up through the hatch: the long look
     const k = 0.62 * sm(T.maxUp, T.maxUp + 0.5, t);
-    K.playAnim(x, [[A.climb, 0.2]]); K.putOn(x, climb, { sit: true }); x.root.position.y = set.hatchRise(1, k);
-    x.root.rotation.y = towards(climb, M.pose());
+    climbAt(x, climb, towards(climb, M.pose()), k);
+    if (t > T.maxUp + 0.5) K.posture(x, 'stand', { reset: false, extra: { 'Arm.L': [-60, 0, -6], 'Arm.R': [-60, 0, 6] } });   // hands on the hatch rim, looking
     return;
   }
   if (t < T.maxGo) {
     const m = K.walk(x, A, { pos: climb.pos, heading: towards(climb, M.pose()) }, near, T.maxOut, t, { idleAt: idle, endHeading: towards(near, M.pose()) });
     if (!m.done) return;
     const fx = sm(T.fix - 0.3, T.fix, t) * (1 - sm(T.fix + 0.5, T.fix + 0.8, t));
-    if (fx > 0) arm(x, 'R', 0.15, 2.35 * fx);                // reaches up to her pumpkin (one arm, forward)
+    if (fx > 0) K.gesture(x, 'reach_up', 'R', fx);          // reaches up to her pumpkin (one arm)
     if (t > at(19)) x.root.rotation.y = lerp(towards(near, M.pose()), towards(near, M.teaLily()), sm(at(19), at(19, 0.3), t));
     return;
   }
   if (t < T.maxDown) { K.walk(x, A, near, climb, T.maxGo, t, { idleAt: idle }); return; }
   const k = 1 - sm(T.maxDown, T.maxDown + 0.6, t);
-  K.playAnim(x, [[A.climb, (t - T.maxDown) * 1.2]]); K.putOn(x, { pos: climb.pos, heading: 0 }, { sit: true });
-  x.root.position.y = set.hatchRise(1, k); if (k <= 0.01) x.root.visible = false;
+  climbAt(x, climb, 0, k); if (k <= 0.01) x.root.visible = false;
 }
 
 // ---------- props ----------
@@ -301,7 +290,7 @@ function placeProps(t) {
   // vacuum: in Dad's left hand up the ladder, then on the floor at his side, then left by the hatch
   const vac = P.vacuum;
   if (vac && vacOn) {
-    if (t < T.dadOut + 0.3) placeWorld(vac, onBone(C.dad, 'Arm.L', V(0.5, -2.6, 0.2), [0, Math.PI / 2, 0], 1 / C.dad.scale));
+    if (t < T.dadOut + 0.3) placeWorld(vac, new THREE.Matrix4().compose(W(7.4, 8.4), new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -2.2, 0)), V(1, 1, 1)));   // pushed up onto the floor ahead of him
     else if (t < T.dadGo) {
       const d = C.dad.root, h = d.rotation.y, side = V(Math.cos(h), 0, -Math.sin(h));        // his left
       const p = d.position.clone().addScaledVector(side, 1.6).add(V(Math.sin(h) * 0.6, 0, Math.cos(h) * 0.6)); p.y = 0;
@@ -314,31 +303,31 @@ function placeProps(t) {
 const cam = (name) => (s) => K.setCam(s, set.cams[name]);
 // Skye front 3/4, whoever stands at M.front() in profile, screen right of her
 const TWO = (s) => K.setCam(s, { pos: W(0.4, 0.0, 4.3), target: W(5.8, -2.4, 3.6), fov: 40 });
-const NOSE = (s) => K.setCam(s, { pos: W(1.1, -0.7, 4.9), target: W(5.6, -2.9, 4.5), fov: 30 });
+const NOSE = (s) => K.setCam(s, { pos: W(5.8, 1.5, 5.0), target: W(5.3, -3.5, 4.5), fov: 30 });   // over Dad's left shoulder onto her face
 const SHOTS = [
-  { line: 0, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-8.4, -4.8, 5.8), target: W(1.8, 5.6, 1.0), fov: 50 }) },
-  { line: 1, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-4.6, -2.6, 4.4), target: W(-3.4, 3.0, 2.6), fov: 44 }) },
+  { line: 0, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-7.6, -5.8, 5.9), target: W(0.6, 6.5, 0.6), fov: 52 }) },
+  { line: 1, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-6.6, -3.6, 5.2), target: W(-3.6, 3.0, 3.2), fov: 46 }) },
   { line: 2, off: 0, id: 'lily_quick', cam: (s) => K.camOn(s, C.lily, 'ms') },
   { line: 3, off: 0, id: 'skye_what', cam: (s) => K.camOn(s, C.skye, 'mcu') },
   { line: 3, off: 0.6, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(2.6, 4.6, 4.4), target: W(5.9, -3.5, 3.0), fov: 44 }) },
-  { line: 5, off: -0.8, id: 'dad_rises', cam: cam('hatch_wide') },
+  { line: 5, off: -0.8, id: 'dad_rises', cam: (s) => K.setCam(s, { pos: W(0.6, 2.0, 3.8), target: W(4.5, 8.0, 2.6), fov: 44 }) },
   { line: 6, off: 0, id: 'dad_lily', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.4 }) },
   { line: 7, off: 0, id: 'lily_tea', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
-  { line: 8, off: 0, id: 'dad_halloween', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.5 }) },
+  { line: 8, off: 0, id: 'dad_halloween', cam: (s) => K.setCam(s, { pos: W(4.0, -1.8, 4.6), target: W(2.2, 1.6, 3.9), fov: 44 }) },
   { line: 9, off: 0, id: 'lily_plan', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
-  { line: 10, off: 0, id: 'row', cam: cam('decor_wide') },
+  { line: 10, off: 0, id: 'row', cam: (s) => K.setCam(s, { pos: W(-1.6, 1.6, 4.6), target: W(5.0, -2.4, 3.2), fov: 46 }) },
   { line: 11, off: 0, id: 'two_hmm', cam: TWO },
   { line: 12, off: -0.8, id: 'nose', cam: NOSE },
-  { line: 13, off: 0, id: 'dad_asks', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.6 }) },
+  { line: 13, off: 0, id: 'dad_asks', cam: TWO },
   { line: 14, off: 0, id: 'lily_festive', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
   { line: 15, off: 0, id: 'hoover', cam: TWO },
-  { line: 15, off: 2.4, id: 'nozzle_cu', cam: cam('decor_cu') },
+  { line: 15, off: 2.4, id: 'nozzle_cu', cam: (s) => K.setCam(s, { pos: W(2.4, -1.4, 4.9), target: W(5.4, -3.3, 4.6), fov: 30 }) },
   { line: 16, off: 0, id: 'max_off', cam: TWO },
   { line: 17, off: 0.3, id: 'dad_leaves', cam: cam('hatch_wide') },
   { line: 18, off: 0, id: 'max_fix', cam: TWO },
-  { line: 19, off: 0, id: 'max_dinner', cam: (s) => K.camOn(s, C.max, 'ms', { angle: -0.5 }) },
+  { line: 19, off: 0, id: 'max_dinner', cam: TWO },
   { line: 19, off: 1.9, id: 'max_down', cam: cam('hatch_wide') },
-  { line: 20, off: 0, id: 'skye_hoovered', cam: cam('decor_cu') },
+  { line: 20, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(3.4, 0.4, 4.8), target: W(5.3, -3.5, 4.5), fov: 32 }) },
   { line: 21, off: 0, id: 'end_two', cam: cam('decor_ms') },
 ].map((x) => ({ ...x, start: x.line === 0 && x.off === 0 ? 0 : at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
