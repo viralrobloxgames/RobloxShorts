@@ -20,7 +20,15 @@ original's Election Case: `source/story.md`. Script: `script.txt` (158 words, ~6
   the lock-up; 3:4 band checked). `delivery/post.json` written.
 - Fit check: 0 pairs, reviewed.
 
+- Full render (1830 frames) and encode 2026-10-06: `delivery/The_Clown_Case.mp4`, 61.5 s (61.0 s + the cover as the last
+  0.5 s), 1080x1920, captions burned in; blank-frame scan clean; -16.8 LUFS. The title card sits below the caption band
+  (y 1490). `delivery/The_Clown_Case_post.md` written.
+- First render was lost to a fingerprint bug (`web/runner.html` frameState read the sun's shadow camera before three.js
+  had placed it); fixed, and `web/changed_frames.mjs --delete` now refuses to delete every frame without --force.
+  Known: ~27 frames (the drive, a few at 0.1 s) still fingerprint differently with no edit; harmless (they'd just re-render).
+
 ## Next
-- Full render -> `renders/web`, then `scripts/finish.py projects/the-clown-case --encode --frames renders/web`,
-  `scripts/review/blank_frames.py`, caption bounds, loudness.
-- Fixes after review: `web/changed_frames.mjs --delete` + `render.mjs --resume` (only the changed frames).
+- Awaiting the user's review. Fixes: edit `web/clown_clip.js`, refresh the fit check, then
+  `web/changed_frames.mjs --delete` + `render.mjs --resume` (only the changed frames), then `finish.py --encode`.
+- After approval: post TikTok first, then YouTube, via the user's local Claude (references/scheduling-workflow.md;
+  TikTok AI label OFF).
