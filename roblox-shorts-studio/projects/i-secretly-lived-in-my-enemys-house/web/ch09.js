@@ -57,14 +57,13 @@ const lerpAng = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * 
 // ---------- key times ----------
 const T = {
   standUp: at(6, -0.3),                  // cut: Skye standing by the nest with the sheet
-  walk: endOf(7, 0.1),                   // Skye walks to MAX - OLD STUFF ([+0.8])
-  lidOpen: endOf(7, 1.35), lidOpened: endOf(7, 1.75),
-  pick: endOf(7, 1.8), picked: at(8, -0.05),
-  lilyWalk: at(8, 0.2),                  // Lily gets up and comes over while Skye reads the drawing
-  back: endOf(15, 0.55), backDone: endOf(15, 0.95), lidClose: endOf(15, 1.0), lidClosed: endOf(15, 1.3),
-  sheetUp: endOf(15, 1.3), sheetUpDone: at(16, -0.05),
-  dad2: at(19), ghost: at(20),
+  walk: at(7, 0.9),                      // Skye heads for MAX - OLD STUFF while Lily is still talking
 };
+T.lidOpen = T.walk + 1.45; T.lidOpened = T.lidOpen + 0.4; T.pick = T.lidOpened + 0.15; T.picked = at(8, -0.05);
+T.lilyWalk = at(8, 0.2);                 // Lily gets up and comes over while Skye reads the drawing
+T.back = endOf(15, 0.2); T.backDone = T.back + 0.4; T.lidClose = T.backDone + 0.05; T.lidClosed = T.lidClose + 0.3;
+T.sheetUp = T.lidClosed; T.sheetUpDone = at(16, 0.3);
+T.dad2 = at(19); T.ghost = at(20);
 const SPELL = wordAt(9, 6);              // "He spelled friends wrong": back to Skye's face
 
 // ---------- marks (attic, world coords) ----------
@@ -277,8 +276,8 @@ const SHOTS = [
   { line: 5, off: 0, id: 'lily_nodad', cam: front('lily', { ang: -0.2, d: 4.6 }) },
   { line: 6, off: -0.3, id: 'skye_stand', cam: front('skye', { ang: -0.35, d: 7.5, up: -0.2, look: -1.0, fov: 38 }) },
   { line: 7, off: 0, id: 'lily_box', cam: front('lily', { ang: 0.25, d: 4.6 }) },
-  { line: 7, off: 0.95, id: 'box_insert', cam: FIX({ pos: V(5.4, 4.0, 9.0).add(OFF), target: V(9.2, 1.4, 4.6).add(OFF), fov: 34 }) },
-  { line: 7, off: 1.7, id: 'skye_walk', cam: FIX(BOXCAM) },
+  { line: 7, off: 0.9, id: 'skye_walk', cam: FIX(BOXCAM) },
+  { line: 7, off: 0, at: () => T.lidOpen - 0.1, id: 'box_insert', cam: FIX({ pos: V(8.7, 4.9, 5.6).add(OFF), target: V(9.25, 1.2, 4.55).add(OFF), fov: 40 }) },   // the flaps open: the drawing on top
   { line: 8, off: -0.05, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
   { line: 9, off: 0, id: 'drawing_cu', cam: (s) => { const r = C.skye.root.position, h = C.skye.root.rotation.y, f = V(Math.sin(h), 0, Math.cos(h)); K.setCam(s, { pos: r.clone().addScaledVector(f, 2.6).add(V(0, 4.9, 0)), target: r.clone().addScaledVector(f, 1.1).add(V(0, 2.4, 0)), fov: 36 }, { clear: false }); } },
   { line: 9, off: 0, at: () => SPELL - 0.1, id: 'skye_spelled', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
@@ -288,7 +287,7 @@ const SHOTS = [
   { line: 13, off: 0, id: 'two_sandcastle', cam: FIX(BOX_TWO) },
   { line: 14, off: 0, id: 'lily_seven', cam: front('lily', { heading: LILY_OPEN, ang: -0.55, d: 5.0, fov: 32 }) },
   { line: 15, off: 0, id: 'skye_good', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3 }) },
-  { line: 15, off: 0, at: () => endOf(15, 0.2), id: 'put_back', cam: FIX({ pos: V(8.7, 4.9, 5.6).add(OFF), target: V(9.25, 1.2, 4.55).add(OFF), fov: 40 }) },   // insert: the drawing back on top, the lid
+  { line: 15, off: 0, at: () => T.back - 0.05, id: 'put_back', cam: FIX({ pos: V(8.7, 4.9, 5.6).add(OFF), target: V(9.25, 1.2, 4.55).add(OFF), fov: 40 }) },   // insert: the drawing back on top, the lid
   { line: 15, off: 0, at: () => T.sheetUp - 0.05, id: 'sheet_up', cam: FIX(BOX_TWO) },
   { line: 16, off: 0, id: 'lily_still', cam: front('lily', { heading: LILY_OPEN, ang: -0.55, d: 5.0, fov: 32 }) },
   { line: 17, off: -0.05, id: 'skye_yes', cam: front('skye', { heading: SKYE_OPEN, ang: 0.3, d: 3.8 }) },

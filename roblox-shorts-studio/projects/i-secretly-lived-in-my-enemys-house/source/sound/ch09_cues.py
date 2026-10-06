@@ -17,8 +17,8 @@ else:
     rows = EST
 at = lambda i, off=0: rows[i][0] + off          # 0-based, as in web/ch09.js
 end = lambda i, off=0: rows[i][1] + off
-WALK = end(7, 0.1); LID_OPEN = end(7, 1.35); PICK = end(7, 1.8); LILY_WALK = at(8, 0.2)
-BACK = end(15, 0.55); LID_CLOSE = end(15, 1.0); SHEET_UP = end(15, 1.3)
+WALK = at(7, 0.9); LID_OPEN = WALK + 1.45; PICK = LID_OPEN + 0.55; LILY_WALK = at(8, 0.2)
+BACK = end(15, 0.2); LID_CLOSE = BACK + 0.45; SHEET_UP = LID_CLOSE + 0.3
 LENGTH = end(20) + 0.75
 
 cues = []
