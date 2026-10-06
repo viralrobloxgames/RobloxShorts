@@ -141,8 +141,9 @@ class Whisper:
         from faster_whisper import WhisperModel
         self.m = WhisperModel(name, device='cpu', compute_type='int8'); self.name = name
 
-    def words(self, path):
-        segs, _ = self.m.transcribe(str(path), language='en', word_timestamps=True, beam_size=5, vad_filter=False)
+    def words(self, y, sr):
+        import librosa  # an array, not a path: faster-whisper's own decoder breaks with some PyAV versions
+        segs, _ = self.m.transcribe(librosa.resample(y, orig_sr=sr, target_sr=16000).astype(np.float32), language='en', word_timestamps=True, beam_size=5, vad_filter=False)
         return [{'word': w.word.strip(), 'start': round(w.start, 3), 'end': round(w.end, 3)} for s in segs for w in (s.words or [])]
 
 
@@ -188,7 +189,7 @@ def main():
     ap.add_argument('--take', default='take-01'); ap.add_argument('--seed', type=int, default=77)
     ap.add_argument('--standin', default='', help='SPEAKER=voice list for testing before a voice exists (outputs go to audio/chapters-standin/)')
     ap.add_argument('--no-gen', action='store_true', help='never generate; fail if a clip is missing')
-    ap.add_argument('--gen-only', action='store_true', help='generate missing clips, skip join/transcribe')
+    ap.add_argument('--gen-only', action='store_true', help='generate missing clips (skipping voices with no sample yet), skip join/transcribe')
     ap.add_argument('--whisper', default='small.en'); ap.add_argument('--max-lines', type=int, default=0, help='testing: only the first N spoken lines')
     a = ap.parse_args()
     o = (a.project if a.project.is_absolute() or a.project.exists() else ROOT / a.project).resolve()
@@ -220,6 +221,8 @@ def main():
         for idx, it in enumerate(lines, 1):
             v = voices[it['speaker']]
             if not (V / f'{v}.wav').is_file():
+                if a.gen_only:
+                    log(f'  skip ch{c}:{idx} {it["speaker"]}: no sample {v}.wav yet'); continue
                 raise SystemExit(f'voice sample assets/audio/voices/{v}.wav missing (speaker {it["speaker"]}); wait for it or pass --standin {it["speaker"]}=brittney')
             it['voice'], it['name'] = v, clip_name(v, it['text'])
             if idx in redo.get(c, set()) or not (clips / f'{it["name"]}.wav').is_file():
@@ -271,7 +274,7 @@ def main():
             if meta.get('words_md5') != md5 or meta.get('whisper') != a.whisper:
                 if wh is None:
                     log(f'loading faster-whisper {a.whisper}'); wh = Whisper(a.whisper)
-                sf.write(tmp / 'w.wav', y, sr); meta.update(words=wh.words(tmp / 'w.wav'), words_md5=md5, whisper=a.whisper)
+                meta.update(words=wh.words(y, sr), words_md5=md5, whisper=a.whisper)
                 meta.setdefault('voice', it['voice']); meta.setdefault('text', it['text']); side.write_text(json.dumps(meta, indent=1))
             words = meta['words']
             if first:  # the chapter's first word lands on 0.0 s
