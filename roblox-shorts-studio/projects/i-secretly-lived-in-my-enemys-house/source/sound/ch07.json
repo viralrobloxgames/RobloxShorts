@@ -177,72 +177,57 @@
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 56.177,
+  "start": 56.942,
   "gain": 0.08
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 56.527,
+  "start": 57.142,
   "gain": 0.08
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 56.877,
+  "start": 57.342,
   "gain": 0.08
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 57.192,
+  "start": 57.542,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 57.692,
   "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 57.492,
+  "start": 57.992,
   "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 57.792,
+  "start": 58.292,
   "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 57.792,
+  "start": 58.442,
   "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 58.092,
+  "start": 58.792,
   "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 58.642,
-  "gain": 0.07
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 58.992,
-  "gain": 0.07
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 59.342,
-  "gain": 0.07
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 59.692,
-  "gain": 0.07
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 60.042,
+  "start": 59.142,
   "gain": 0.07
  },
  {
   "asset": "sfx/swish_1.wav",
-  "start": 60.692,
+  "start": 60.392,
   "gain": 0.07
  },
  {
@@ -267,18 +252,8 @@
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 65.693,
-  "gain": 0.07
- },
- {
-  "asset": "sfx/footstep.wav",
   "start": 65.743,
   "gain": 0.05
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 66.043,
-  "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",

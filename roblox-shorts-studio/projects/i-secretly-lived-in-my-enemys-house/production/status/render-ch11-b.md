@@ -1,8 +1,8 @@
 STATUS: DONE
 FRAMES: 2095
 SPLIT: 944
-COMMIT: 78db3a9
-render-ch11-b: delivery/chapters/ch11_b.mp4 (+ .json, .ass) = ch11 frames 944-2095, 1152 frames, 38.4 s, 1920x1080 h264, 17 captions, sha256 b33c5196...0449e0. Decodes cleanly with 1152 frames; stills at 3/17/34 s checked (Skye on phone + caption, Dad "PANCAKES FOR EVERYONE" + caption, closing wide with subscribe end screen).
-- Rendered from ch11 78db3a9 (GATE: PASS). The first pass from 6ac38c4 was dropped: the gate fix adds a `pan` prop to setup(), so every frame changed (changed_frames --force, all of B rendered again; 263/1152 frames copied by the frame skip).
-- Frames kept in renders/ch11 (944-2095 + frame_hashes.json) on this machine for final-review fixes ("re-sync ch11 B to <sha>").
-- Nothing extra installed (web npm ci only).
+COMMIT: 3e6f232
+render-ch11-b: delivery/chapters/ch11_b.mp4 (+ .json, .ass) re-encoded for review-2 (ch11 3e6f232): frames 944-2095, 1152 frames, 1920x1080, 17 captions, sha256 d9c9f78bef10b3ce93e732f69cc75cea8e2f1fdfd1a583046ae593bdd3394857. Decodes cleanly with 1152 frames.
+- Re-rendered 1270-1330 and 1555-1760 at full quality, no --resume, as ch11 asked. Fingerprinting the old (78db3a9) and new ch11.js under the same runner showed changes only in 1275-1326 and 1563-1726, both covered.
+- Stills checked: f1295 Lily single ("THE FRIDGE SAYS YES"; a big tan forearm still fills the right third next to the teddy), f1700 Skye/Max two-shot with the plate ("HE SPENT IT MAKING ME SANDWICHES"), f1740 the wide + subscribe end screen.
+- Frames kept in renders/ch11 (944-2095) on this machine. Note: frame_hashes.json there predates runner.html 0b822646, so changed_frames against it flags unchanged frames; next fix: send explicit ranges, or I re-fingerprint.
