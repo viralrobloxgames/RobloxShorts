@@ -56,8 +56,8 @@ const towards = (a, b) => Math.atan2(b.pos.x - a.pos.x, b.pos.z - a.pos.z);
 // ---------- marks ----------
 const M = {
   // Ch7 tea seats: both on the far side of the upturned box from the opening camera, faces to it; the hatch behind them
-  teaSkye: () => pt(-3.0, 4.2, -2.95), teaLily: () => pt(-5.8, 2.4, -2.6),
-  pose: () => { const m = K.mark('attic', 'decor_pose'); m.heading -= 0.3; return m; },   // cheated toward the cameras (-x side)
+  teaSkye: () => pt(-4.7, 3.4, 0.25), teaLily: () => pt(-2.3, 3.7, -0.35),   // on the front side of the box, faces to the opening camera
+  pose: () => { const m = K.mark('attic', 'decor_pose'); m.heading -= 0.55; return m; },   // cheated toward the cameras (-x side); keeps her hands clear of the skeleton and witch
   front: () => pt(D(6.3), -1.5, Math.atan2(-1.0, -2.0) + 0.45),   // in front of her, a little to the witch side (both faces read)
   hatchTop: () => K.mark('attic', 'hatch_top'), climb: () => K.mark('attic', 'hatch_climb'),
   vac: () => K.mark('attic', 'vacuum'),
@@ -74,7 +74,7 @@ function times() {
   T.pose = T.jam + 0.25;                 // scarecrow pose
   T.lilyBack = end(5, 0.0);              // Lily runs back to the tea box
   T.dadRise = end(5, 0.05);              // Dad climbs in
-  T.dadOut = at(6, 1.6);
+  T.dadOut = at(6, 0.7);
   T.dadWalk1 = at(9, 0.3);               // toward the decorations
   T.dadWalk2 = at(11, 1.5);              // along the row to the pumpkin girl
   T.lean = end(12, 0.1);                 // nose to nose
@@ -86,9 +86,9 @@ function times() {
   T.dadDown = end(18, -0.25);
   T.maxUp = end(18, 0.35);
   T.maxOut = at(19, -0.25);
-  T.fix = at(19, 1.1);                   // straightens the pumpkin
+  T.fix = at(19, 1.9);                   // straightens the pumpkin
   T.maxGo = end(20, 0.05);
-  T.maxDown = end(20, 0.75);
+  T.maxDown = end(20, 1.65);
   T.lilyCome = at(21, -0.2);             // Lily walks over to Skye
   T.armsDown = at(23, 0.6);
 }
@@ -106,7 +106,7 @@ export async function setup(stage) {
   // kit props the chapter moves: the bucket (in Lily's hand, then worn), the vacuum (canister + its held wand)
   P.bucket = K.makeProp('pumpkin_bucket'); stage.scene.add(P.bucket);
   P.worn = K.makeProp('pumpkin_bucket', { worn: true }); stage.scene.add(P.worn);
-  P.vac = K.makeProp('vacuum'); stage.scene.add(P.vac);
+  P.vac = K.makeProp('vacuum'); stage.scene.add(P.vac); P.scene = stage.scene;
 }
 
 // ---------- posing helpers (chapter blocking; looks come from the kit) ----------
@@ -123,6 +123,21 @@ function climbAt(actor, m, heading, k) {
   K.posture(actor, K.gait('climb', (k * 4 * actor.scale) / 1.6));
   actor.root.position.y = set.hatchRise(actor.scale, k);
 }
+// walk through waypoints (marks or { pos }) from t0; returns the last leg's travel state
+function walkPath(actor, pts, t0, t, { idleAt = 0, endHeading } = {}) {
+  let s0 = t0, m;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const last = i === pts.length - 2;
+    m = K.walk(actor, A, pts[i], pts[i + 1], s0, t, { idleAt, endHeading: last ? endHeading : undefined });
+    if (!m.done || last) return m;
+    s0 = m.arrive;
+  }
+  return m;
+}
+// behind the pumpkin girl (Max straightens the bucket from behind her, his face to the camera over her shoulder)
+const behind = () => { const p = M.pose(), h = p.heading; return { pos: p.pos.clone().add(V(-Math.sin(h) * 1.05 + Math.cos(h) * 0.95, 0, -Math.cos(h) * 1.05 - Math.sin(h) * 0.95)), heading: h }; };   // behind her left shoulder
+const maxRoute = () => [M.climb(), pt(D(9.0), -1.0), pt(D(9.0), -4.8), behind()];
+
 // ---------- blocking per character ----------
 function poseSkye(t, idle) {
   const s = C.skye;
@@ -138,14 +153,17 @@ function poseSkye(t, idle) {
     return 'stand';
   }
   const from = { pos: ts.pos, heading: ts.heading };
-  const m = K.walk(s, A, from, pose, T.goDecor + 0.1, t, { idleAt: idle, endHeading: pose.heading });
+  const wp = pt(-1.6, 4.0);                                // round the front of the tea box
+  const m0 = K.walk(s, A, from, wp, T.goDecor + 0.1, t, { idleAt: idle });
+  if (!m0.done) return 'walk';
+  const m = K.walk(s, A, wp, pose, m0.arrive, t, { idleAt: idle, endHeading: pose.heading });
   if (!m.done) return 'walk';
   // the scarecrow pose: both arms straight out at shoulder height (never above the head); feet together
   K.putOn(s, pose);
   let k = sm(T.pose - 0.15, T.pose + 0.1, t);               // snap into it
   k *= 1 - 0.18 * sm(at(21), end(21), t);                   // a tired droop on "I almost got hoovered"
   k *= 1 - 0.55 * sm(T.armsDown, T.armsDown + 0.9, t);      // arms coming down at the end (the end frame)
-  K.posture(s, 'scarecrow', { mix: k });
+  K.posture(s, 'scarecrow', { mix: 0.94 * k });
   // tiny flinch when the nozzle comes up
   const fl = sm(T.nozzle, T.nozzle + 0.3, t) * (1 - sm(T.humOff, T.humOff + 0.4, t));
   headTurn(s, 0, -0.08 * fl);
@@ -154,11 +172,11 @@ function poseSkye(t, idle) {
 
 function poseLily(t, idle) {
   const l = C.lily;
-  const tl = M.teaLily(), grab = pt(D(6.9), -5.1, Math.PI), jam = pt(D(7.1), -2.4, 0), stand = pt(-5.4, 1.2, 0);
+  const tl = M.teaLily(), grab = pt(D(6.9), -5.1, Math.PI), jam = pt(D(7.1), -2.4, 0), stand = pt(-1.9, 4.7, 0);
   const teaH = tl.heading;
   if (t < T.lilyUp) { sitFloor(l, tl, teaH, 'kneel'); headTurn(l, -0.3 * sm(1.2, 1.6, t)); return; }
   if (t < T.goDecor) {
-    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: towards(stand, M.pose()) });
+    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: -0.4 });   // half to Skye, half to the camera, pointing off at the decorations
     K.gesture(l, 'point', 'L');                              // points at the decorations (one arm)
     return;
   }
@@ -181,8 +199,8 @@ function poseLily(t, idle) {
     if (m.done) sitFloor(l, tl, towards(tl, M.front()) * 0.6 + tl.heading * 0.4, 'kneel');
     return;
   }
-  const side = pt(D(7.3), -2.5, 0);
-  const m = K.walk(l, A, tl, side, T.lilyCome, t, { idleAt: idle, endHeading: towards(side, pt(4.6, 3)) });
+  const side = (() => { const p = M.pose(); return { pos: p.pos.clone().add(V(Math.sin(p.heading) * 2.1 - 0.5, 0, Math.cos(p.heading) * 2.1)), heading: p.heading }; })();   // just in front of her
+  const m = K.walk(l, A, tl, side, T.lilyCome, t, { idleAt: idle, endHeading: towards(side, pt(D(2.6), 4.8)) });
   if (m.done) headTurn(l, at(23) < t ? -0.45 : -0.2);
 }
 
@@ -242,14 +260,15 @@ function poseMax(t, idle) {
     return;
   }
   if (t < T.maxGo) {
-    const m = K.walk(x, A, { pos: climb.pos, heading: towards(climb, M.pose()) }, near, T.maxOut, t, { idleAt: idle, endHeading: towards(near, M.pose()) });
+    const r = maxRoute(), bh = r[r.length - 1];
+    const m = walkPath(x, r, T.maxOut, t, { idleAt: idle, endHeading: towards(bh, M.pose()) + 0.9 });   // turned to the camera over her shoulder   // round the witch to behind her
     if (!m.done) return;
     const fx = sm(T.fix - 0.3, T.fix, t) * (1 - sm(T.fix + 0.5, T.fix + 0.8, t));
-    if (fx > 0) K.gesture(x, 'reach_up', 'R', fx);          // reaches up to her pumpkin (one arm)
-    if (t > at(20)) x.root.rotation.y = lerp(towards(near, M.pose()), towards(near, M.teaLily()), sm(at(20), at(20, 0.3), t));
+    if (fx > 0) K.gesture(x, 'reach_up', 'R', fx);          // one hand up to the back of the bucket
+    if (t > at(20)) x.root.rotation.y = lerp(towards(bh, M.pose()) + 0.9, towards(bh, M.teaLily()), sm(at(20), at(20, 0.3), t));
     return;
   }
-  if (t < T.maxDown) { K.walk(x, A, near, climb, T.maxGo, t, { idleAt: idle }); return; }
+  if (t < T.maxDown) { walkPath(x, maxRoute().reverse(), T.maxGo, t, { idleAt: idle }); return; }
   const k = 1 - sm(T.maxDown, T.maxDown + 0.6, t);
   climbAt(x, climb, 0, k); if (k <= 0.01) x.root.visible = false;
 }
@@ -275,7 +294,9 @@ function placeProps(t) {
   const v = P.vac, wand = v.userData.wand;
   v.visible = t >= T.dadRise + 0.3;
   if (!v.visible) return;
-  if (t < T.dadOut + 0.3) K.place(v, W(7.4, 8.2), -2.2);
+  if (v.parent !== P.scene) P.scene.add(v);
+  if (t < T.dadOut) K.place(v, W(7.4, 8.2), -2.2);
+  else if (t < end(7)) { K.hold(v, C.dad, 'L', 'side'); return; }   // "It's you, me, and the vacuum": carried by its handle
   else if (t < T.dadGo) {
     const d = C.dad.root, h = d.rotation.y, side = V(Math.cos(h), 0, -Math.sin(h));        // his left
     const p = d.position.clone().addScaledVector(side, 1.7).add(V(Math.sin(h) * 0.4, 0, Math.cos(h) * 0.4)); p.y = 0;
@@ -288,14 +309,14 @@ function placeProps(t) {
 // ---------- the shot table ----------
 const cam = (name) => (s) => K.setCam(s, set.cams[name]);
 // Skye front 3/4, whoever stands at M.front() in profile, screen right of her
-const TWO = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.3), target: W(D(5.8), -2.4, 3.6), fov: 40 });
+const TWO = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.3), target: W(D(5.8), -2.4, 3.95), fov: 40 });
 const NOSE = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.5), target: W(D(6.1), -2.6, 4.4), fov: 28 });   // TWO zoomed in: her face, his 3/4 leaning in
 const SHOTS = [
-  { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-7.6, -5.8, 5.9), target: W(0.6, 6.5, 0.6), fov: 52 }) },
-  { line: 2, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-6.6, -3.6, 5.2), target: W(-3.6, 3.0, 3.2), fov: 46 }) },
-  { line: 3, off: 0, id: 'lily_quick', cam: (s) => K.camOn(s, C.lily, 'ms') },
+  { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-5.0, 12.4, 5.6), target: W(D(4.2), 0.2, 1.4), fov: 52 }) },   // tea party left, hatch + decorations right
+  { line: 2, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-3.4, 9.6, 4.6), target: W(-3.5, 3.8, 3.2), fov: 46 }) },
+  { line: 3, off: 0, id: 'lily_quick', cam: (s) => K.setCam(s, { pos: W(-2.6, 10.6, 4.2), target: W(-3.0, 4.2, 3.0), fov: 42 }) },
   { line: 4, off: 0, id: 'skye_what', cam: (s) => K.camOn(s, C.skye, 'mcu') },
-  { line: 5, off: -0.75, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(D(2.6), 4.6, 4.4), target: W(D(5.9), -3.5, 3.0), fov: 44 }) },
+  { line: 4, off: 0.5, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(D(2.6), 4.6, 4.4), target: W(D(5.9), -3.5, 3.0), fov: 44 }) },
   { line: 6, off: -0.8, id: 'dad_rises', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 7, off: 0, id: 'dad_lily', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.4 }) },
   { line: 8, off: 0, id: 'lily_tea', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
@@ -303,18 +324,20 @@ const SHOTS = [
   { line: 10, off: 0, id: 'lily_plan', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
   { line: 11, off: 0, id: 'row', cam: (s) => K.setCam(s, { pos: W(D(-1.6), 1.6, 4.6), target: W(D(5.0), -2.4, 3.2), fov: 46 }) },
   { line: 12, off: 0, id: 'two_hmm', cam: TWO },
-  { line: 13, off: -0.8, id: 'nose', cam: NOSE },
+  { line: 13, off: -0.8, id: 'nose', cam: (s) => K.camOn(s, C.dad, 'mcu', { angle: 0.63, fov: 34 }) },
+  { line: 14, off: 0, id: 'nose_skye', cam: NOSE },
   { line: 14, off: 0, id: 'dad_asks', cam: TWO },
   { line: 15, off: 0, id: 'lily_festive', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
   { line: 16, off: 0, id: 'hoover', cam: TWO },
   { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => K.setCam(s, { pos: W(D(2.4), -1.4, 4.9), target: W(D(5.4), -3.3, 4.6), fov: 30 }) },
   { line: 17, off: 0, id: 'max_off', cam: TWO },
-  { line: 18, off: 0.3, id: 'dad_leaves', cam: cam('hatch_wide') },
-  { line: 19, off: 0, id: 'max_fix', cam: TWO },
-  { line: 20, off: 0, id: 'max_dinner', cam: TWO },
-  { line: 20, off: 2.7, id: 'max_down', cam: cam('hatch_wide') },
-  { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(D(3.4), 0.4, 4.8), target: W(D(5.3), -3.5, 4.5), fov: 32 }) },
-  { line: 22, off: 0, id: 'end_two', cam: cam('decor_ms') },
+  { line: 18, off: 0.3, id: 'dad_leaves', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
+  { line: 19, off: 0, id: 'max_walks', cam: TWO },
+  { line: 19, off: 1.2, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(5.2), 3.2, 5.6), target: W(D(6.7), -3.9, 5.0), fov: 38 }) },
+  { line: 20, off: 0, id: 'max_dinner', cam: (s) => K.setCam(s, { pos: W(D(4.1), 3.0, 5.3), target: W(D(6.4), -3.9, 4.7), fov: 38 }) },
+  { line: 20, off: 2.7, id: 'max_down', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
+  { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(D(3.4), 0.4, 5.2), target: W(D(5.3), -3.5, 5.0), fov: 36 }) },
+  { line: 22, off: 0, id: 'end_two', cam: (s) => K.setCam(s, { pos: W(D(2.6), 4.8, 3.2), target: W(D(5.8), -2.6, 3.3), fov: 54 }) },
 ].map((x) => ({ ...x, start: x.line === 1 && x.off === 0 ? 0 : at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 

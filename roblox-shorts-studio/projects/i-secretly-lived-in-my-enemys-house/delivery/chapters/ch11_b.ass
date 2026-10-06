@@ -1,0 +1,34 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:00.71,DAD,,0,0,0,,PHONE. NOW. THEN PANCAKES.
+Dialogue: 1,0:00:00.91,0:00:03.06,SKYE,,0,0,0,,HI, MOM. SO. FUNNY STORY.
+Dialogue: 1,0:00:04.07,0:00:06.93,MAX,,0,0,0,,SO. THE HALLOWEEN DANCE. DO
+Dialogue: 1,0:00:06.93,0:00:08.32,MAX,,0,0,0,,YOU WANT TO GO? WITH ME?
+Dialogue: 1,0:00:08.43,0:00:09.87,SKYE,,0,0,0,,ARE YOU ASKING ME, OR IS
+Dialogue: 1,0:00:09.87,0:00:11.08,SKYE,,0,0,0,,THE FRIDGE ASKING ME?
+Dialogue: 1,0:00:11.08,0:00:12.55,LILY,,0,0,0,,THE FRIDGE SAYS YES.
+Dialogue: 1,0:00:12.70,0:00:14.19,SKYE,,0,0,0,,FINE. ONE CONDITION.
+Dialogue: 1,0:00:14.39,0:00:15.72,MAX,,0,0,0,,NO CRUSTS?
+Dialogue: 1,0:00:15.72,0:00:16.93,SKYE,,0,0,0,,NO CRUSTS.
+Dialogue: 1,0:00:16.93,0:00:18.53,DAD,,0,0,0,,PANCAKES FOR EVERYONE! INCLUDING
+Dialogue: 1,0:00:18.53,0:00:20.54,DAD,,0,0,0,,THE GHOST! ESPECIALLY THE GHOST.
+Dialogue: 1,0:00:21.47,0:00:22.79,VO,,0,0,0,,I SPENT A WEEK TRYING
+Dialogue: 1,0:00:22.79,0:00:24.00,VO,,0,0,0,,TO SCARE MY ENEMY.
+Dialogue: 1,0:00:24.13,0:00:25.98,VO,,0,0,0,,HE SPENT IT MAKING ME SANDWICHES.
+Dialogue: 1,0:00:26.28,0:00:28.44,VO,,0,0,0,,SUBSCRIBE TO VIRAL ROBLOX GAMES
+Dialogue: 1,0:00:28.44,0:00:30.25,VO,,0,0,0,,FOR MORE STORIES LIKE THIS.

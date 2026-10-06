@@ -68,7 +68,7 @@ const M = {
   porch: () => K.mark('exterior', 'porch_step'),
   deskMax: () => mk('classroom', 'desk_max'),
   maxSide: () => K.mark('classroom', 'max_desk_side'),
-  extra: (i) => mk('classroom', ['desk_extra_2', 'desk_extra_3', 'desk_extra_4'][i]),
+  extra: (i) => mk('classroom', ['desk_r3c1', 'desk_r4c1', 'desk_r4c2', 'desk_r2c3'][i]),
 };
 
 // ---------- setup ----------
@@ -95,7 +95,7 @@ export const T = {
   famIn: () => at(3, 0.3),                        // Max shuffles down the stairs, Lily skips behind
   steal: () => endOf(8, 0.08),                    // [+0.8] the hand over the island
   crawl0: () => at(13, 0.5),                      // Skye crawls to the back door during Dad's syrup line
-  out: () => at(14, -0.3),
+  out: () => Math.min(at(14, -0.3), at(13, 0.5) + 1.6),   // cut outside as she reaches the door (hide -> door ~14.3 studs at 5.5/s)
   class: () => at(15, -0.2),
   sitUp: () => endOf(19, 0.08),                   // [+0.6] Max sits up
   bye0: () => endOf(21, -0.35),                   // she heads back to her desk on "Bye!"
@@ -109,13 +109,13 @@ const SHOTS = [
   { at: () => 0, id: 'hall_ladder', set: 'hallway', light: 'predawn', cam: (s) => K.setCam(s, ladderCam(), { clear: false }) },
   { at: () => T.ladderEnd() + 0.1, id: 'hall_creep', set: 'hallway', light: 'predawn', cam: (s) => K.setCam(s, creepCam(), { clear: false }) },
   { at: T.kitchen, id: 'kitchen_wide', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('wide'), { clear: false }) },
-  { at: () => at(2, 1.2), id: 'dad_morning', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.35, height: 0.8 }) },
+  { at: () => at(2, 1.2), id: 'dad_morning', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.55, height: 1.4 }) },
   { at: () => at(3, -0.1), id: 'skye_whisper', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.45, height: 0.2 }) },
-  { at: () => at(4, -0.1), id: 'family_in', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('wide'), { clear: false }) },
+  { at: () => at(4, -0.1), id: 'max_walk', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.max, 'ms', { angle: 0.4, height: 0.6 }) },
   { at: () => at(4, 2.6), id: 'max_dad', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('island_stools_right'), { clear: false }) },
-  { at: () => at(5, -0.1), id: 'dad_pipes', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.35, height: 0.8 }) },
+  { at: () => at(5, -0.1), id: 'dad_pipes', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.55, height: 1.4 }) },
   { at: () => at(6, -0.1), id: 'lily_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: -0.45, height: 0.6, look: V(0, 0.45, 0) }) },
-  { at: () => at(7, -0.1), id: 'dad_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.35, height: 0.8 }) },
+  { at: () => at(7, -0.1), id: 'dad_ghost', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.55, height: 1.4 }) },
   { at: () => at(8, -0.1), id: 'max_notfunny', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.3, height: 0.9 }) },
   { at: T.steal, id: 'steal', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, stealCam(), { clear: false }) },
   { at: () => at(9, -0.1), id: 'dad_count', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.5, height: 0.8 }) },
@@ -123,7 +123,7 @@ const SHOTS = [
   { at: () => at(11, -0.1), id: 'max_lily', set: 'kitchen', light: 'predawn', cam: (s) => K.twoShot(s, C.lily, C.max, { framing: 'mcu', bias: 0.6, height: 1.0 }) },
   { at: () => at(12, -0.1), id: 'lily_ghosts', set: 'kitchen', light: 'predawn', cam: (s) => K.twoShot(s, C.lily, C.max, { framing: 'mcu', bias: 0.35, height: 1.0 }) },
   { at: () => at(13, -0.1), id: 'dad_syrup', set: 'kitchen', light: 'predawn', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.5, height: 0.8 }) },
-  { at: T.crawl0, id: 'crawl', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, kc('back_door_wide'), { clear: false }) },
+  { at: T.crawl0, id: 'crawl', set: 'kitchen', light: 'predawn', cam: (s) => K.setCam(s, crawlCam(), { clear: false }) },
   { at: T.out, id: 'back_step', set: 'exterior', light: 'predawn', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.5 }) },
   { at: T.class, id: 'class_two', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, cc('max_desk_two_shot'), { clear: false }) },
   { at: () => at(16, -0.1), id: 'max_haunted', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.5, height: 0.35 }) },
@@ -131,7 +131,7 @@ const SHOTS = [
   { at: () => at(18, -0.1), id: 'max_alert', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.5, height: 0.35 }) },
   { at: () => at(19, -0.1), id: 'skye_blanket', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5, height: 0.25 }) },
   { at: T.sitUp, id: 'sit_up', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, cc('max_desk_two_shot'), { clear: false }) },
-  { at: () => at(20, 0.0), id: 'max_how', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.5, height: 0.35 }) },
+  { at: () => at(20, 0.0), id: 'max_how', set: 'classroom', light: 'school_day', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.5, height: 0.35, zoom: 0.85 }) },
   { at: () => at(21, -0.1), id: 'lucky', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, cc('max_desk_two_shot'), { clear: false }) },
   { at: T.bye0, id: 'bye', set: 'classroom', light: 'school_day', cam: (s) => K.setCam(s, byeCam(), { clear: false }) },
 ].map((x) => ({ ...x, start: x.at() })).sort((a, b) => a.start - b.start);
@@ -171,19 +171,20 @@ function floorSit(actor, m) { poseAt(actor, 'sit_chair', V(m.pos.x, m.pos.y + 0.
 // hands and knees; the crawl cycle is driven by the distance covered (phase = distance / STRIDE)
 function crawlPose(phase) {
   const c = Math.sin(phase * PI * 2);
-  return { Torso: [72, 0, 0], Head: [-62, 0, 0], 'Arm.L': [-70 + 18 * c, 0, -4], 'Arm.R': [-70 - 18 * c, 0, 4], 'Leg.L': [78 - 14 * c, 0, -3], 'Leg.R': [78 + 14 * c, 0, 3], drop: 1.25 };
+  // legs hang from the root (not the torso): swung back 45 deg so the hips stay up on the knees; arms straight down to the floor
+  return { Torso: [70, 0, 0], Head: [-58, 0, 0], 'Arm.L': [-70 + 15 * c, 0, -4], 'Arm.R': [-70 - 15 * c, 0, 4], 'Leg.L': [45 - 12 * c, 0, -3], 'Leg.R': [45 + 12 * c, 0, 3], drop: 0.59 };
 }
 // ---------- update ----------
 export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet(sh.set);
-  K.applyLight(stage, sh.light, sh.set === 'kitchen' ? {} : { set });   // the kitchen's practicals follow its own setState
+  K.applyLight(stage, sh.light, sh.set === 'kitchen' ? {} : { set, practicals: sh.set === 'hallway' ? { ceiling_light: false } : {} });   // the hall stays dark: nobody is up yet   // the kitchen's practicals follow its own setState
   const idle = K.holdClock(t, L, [[T.kitchen(), T.duck0() + 1.8], [T.famIn(), at(4, 3)], [T.steal(), at(9)], [T.crawl0(), at(14)], [T.bye0(), meta.seconds]]);
   for (const p of Object.values(P)) p.visible = false;
 
   if (sh.set === 'kitchen') K.setLine(C.dad, C.max, 1); else if (sh.set === 'classroom') K.setLine(C.skye, C.max, -1); else K.clearLine();
   if (sh.set === 'hallway') hallway(t, idle);
-  else if (sh.set === 'kitchen') kitchen(t, idle);
+  else if (sh.set === 'kitchen') { stage0 = stage; kitchen(t, idle); }
   else if (sh.set === 'exterior') outside(t, idle);
   else classroom(t, idle);
 
@@ -195,7 +196,7 @@ export function update(t, stage) {
 // ---------- hallway: down the attic ladder, then creeping to the stairs ----------
 function ladderCam() {
   const p = K.getSet('hallway').ladderPoint(0.25).pos;
-  return { pos: p.clone().add(V(2.2, 3.0, 13.5)), target: p.clone().add(V(0.3, 6.2, 0)), fov: 46 };
+  return { pos: p.clone().add(V(2.2, 3.4, 13.5)), target: p.clone().add(V(0.3, 6.6, 0)), fov: 34 };
 }
 // ahead of her, from the stairs end of the hall (open +z side), so her face reads as she creeps to the stairs
 function creepCam() {
@@ -210,7 +211,7 @@ function hallway(t, idle) {
     const u = lerp(0.45, 0, smooth(inv(0, T.ladderEnd(), t))), lp = hs.ladderPoint(u);
     const climbed = hs.ladderPoint(0.45).pos.y - lp.pos.y;
     const g = K.gait('climb', climbed / 1.6), c = Math.sin(climbed / 1.6 * PI * 2);
-    poseAt(C.skye, { ...g, 'Arm.L': [-92 + 16 * c, 0, -8], 'Arm.R': [-92 - 16 * c, 0, 8], Head: [12, 30, 0] }, lp.pos, lp.heading + 0.85);   // hands on the rails below her face   // cheated 3/4 to camera, looking down over her shoulder
+    poseAt(C.skye, { ...g, 'Arm.L': [-48 + 8 * c, 0, -16], 'Arm.R': [-48 - 8 * c, 0, 16], Head: [14, 62, 0] }, lp.pos, lp.heading + 0.45);   // hands on the side rails at chest height, face turned 3/4 over her shoulder   // cheated 3/4 to camera, looking down over her shoulder
   } else {
     const foot = K.mark('hallway', 'ladder_foot'), top = M.stairsTop();
     const m = travel(foot.pos, top.pos, T.ladderEnd() + 0.35, t, 6);
@@ -225,7 +226,9 @@ function hallway(t, idle) {
 // Layout (sets/kitchen.js): camera side +z; the stove at the back, the stools on the island's back side facing +z,
 // Skye hides on the front side; the stairs come down the right wall, the back door beside their foot.
 let KS = '';
-function stealCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(3.4, 5.6, -1.4)), target: o.clone().add(V(0.5, 3.7, 1.4)), fov: 40 }; }
+function stealCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(7.8, 3.4, 5.0)), target: o.clone().add(V(0.4, 3.9, 1.6)), fov: 40 }; }
+const STEAL_AT = () => V(0.5, 0, 3.05).add(K.SET_ORIGIN.kitchen);   // kneeling side-on to the island under the stack, facing +x
+function crawlCam() { const o = K.SET_ORIGIN.kitchen, h = K.headPos(C.skye); return { pos: o.clone().add(V(10.0, 3.4, 13.0)), target: h.clone().add(V(0, -0.6, 0)), fov: 34 }; }   // in front of her path to the door: she crawls toward camera, face 3/4   // from beside the door, she crawls toward camera
 function kitchenState(st) { const k = JSON.stringify(st); if (k !== KS) { KS = k; K.getSet('kitchen').setState({ chapter: 2, ...st }); } }
 function stairsGait(actor, kind, t0, t, u0, u1, speed, idle) {
   const ks = K.getSet('kitchen'), a = ks.stairsPath(u0).pos, b = ks.stairsPath(u1).pos, len = a.distanceTo(b);
@@ -235,6 +238,7 @@ function stairsGait(actor, kind, t0, t, u0, u1, speed, idle) {
   return { done: u >= 1, end: t0 + len / speed, pos: p.pos };
 }
 let cakeBase = null;
+let stage0 = null;
 function kitchen(t, idle) {
   K.only(C, ['skye', 'max', 'dad', 'lily']);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs'); K.dress(C.dad, 'dad_apron'); K.dress(C.lily, 'lily_pjs');
@@ -272,6 +276,7 @@ function kitchen(t, idle) {
   K.hold(P.spatula, C.dad, 'R', 'palm', { level: true });
 
   // Max shuffles down the stairs to stool 4, Lily skips behind him to stool 3; they sit
+  K.holdTeddy(C.lily, 'R');
   for (const [who, stool, d, kind, sp] of [['max', M.stoolMax(), 0, 'shuffle', 7], ['lily', M.stoolLily(), 0.7, 'skip', 9]]) {
     const a = C[who], t0 = T.famIn() + d;
     if (t < t0) { a.root.visible = false; continue; }
@@ -283,7 +288,7 @@ function kitchen(t, idle) {
     let h = stool.heading;
     if (t >= at(11) && t < endOf(12)) h += who === 'max' ? -0.55 : 0.5;                              // Max and Lily turn to each other
     sitOn(a, stool, 'sit_chair', m.arrive, t, behind, 0.35, h);
-    if (who === 'max' && said(8)) K.gesture(a, 'eye_wipe', 'L', smooth(inv(at(8), at(8, 0.3), t)));   // rubs his eye
+    if (who === 'lily') { K.gesture(a, [-46, 0, -26], 'L', 1); K.gesture(a, [-42, 0, -26], 'R', 1); K.holdTeddy(a, 'hug'); }
     if (who === 'lily' && t >= at(12) && t < endOf(12)) a.root.position.y += 0.1 * Math.abs(Math.sin((t - at(12)) * 7));
   }
 
@@ -304,18 +309,23 @@ function kitchen(t, idle) {
   } else if (t < T.crawl0()) {
     if (t >= T.steal() && t < T.steal() + 1.3) {
       // turned to the island, crouched, one arm up over the counter to the stack
-      const u = inv(T.steal(), T.steal() + 0.3, t) - inv(T.steal() + 0.75, T.steal() + 1.1, t);
-      poseAt(C.skye, 'crouch', reach.pos, reach.heading);
-      K.gesture(C.skye, 'reach_up', 'R', u);
-    } else { floorSit(C.skye, hide); if (t >= T.slide()) K.gesture(C.skye, 'hold_out', 'R', 0.55); }   // the pancake held up in front of her
-    if (t >= T.slide()) K.hold(P.pancake, C.skye, 'R');
+      const u = smooth(inv(T.steal(), T.steal() + 0.3, t)) - smooth(inv(T.slide() + 0.35, T.slide() + 0.65, t));
+      poseAt(C.skye, { ...K.POSES.kneel, Head: [-6, -40, 0] }, STEAL_AT(), PI / 2 - 0.35);   // cheated toward camera, head turned to it
+      K.gesture(C.skye, [-28, 0, 150], 'L', u);   // R-format angles (mirrored for L): raised sideways, up and over the island edge
+    } else { floorSit(C.skye, hide); if (t >= T.slide()) K.gesture(C.skye, 'hold_out', 'L', 0.55); }   // the pancake held up in front of her
+    if (t >= T.slide()) {
+      // the top pancake slides off the stack toward her, then she has it in her left hand
+      const v = smooth(inv(T.slide(), T.slide() + 0.35, t)), top = ks.anchors.pancakeStackTop();
+      K.hold(P.pancake, C.skye, 'L');
+      if (v < 1) { const hand = V(); P.pancake.getWorldPosition(hand); stage0.scene.attach(P.pancake); P.pancake.position.copy(top.clone().lerp(hand, v)); P.pancake.rotation.set(0, 0, 0); }
+    }
   } else {
     // crawl: from the hiding spot round to the back door and out
     const door = M.backCrawl(), out = door.pos.clone().add(V(4.5, 0, 0));
     const m1 = travel(hide.pos, door.pos, T.crawl0(), t, 5.5);
     const m = m1.done ? travel(door.pos, out, m1.arrive + 0.1, t, 5.5) : m1;
     poseAt(C.skye, crawlPose((m1.done ? m1.anim + m.anim : m.anim) * 1.6), m.pos, m.heading);
-    K.hold(P.pancake, C.skye, 'R', 'mouth');
+    K.hold(P.pancake, C.skye, 'R', 'mouth'); P.pancake.visible = true;   // (the mouth mode doesn't switch visibility)
   }
 }
 
@@ -325,8 +335,7 @@ function outside(t, idle) {
   K.dress(C.skye, ['skye_hoodie', 'backpack']); 
   stand(C.skye, M.porch(), 0, idle);
   const bite = smooth(inv(wd(14, 2, -0.3), wd(14, 2, -0.05), t));
-  K.gesture(C.skye, 'hold_out', 'R', 1 - bite);
-  K.gesture(C.skye, 'chin_hand', 'R', bite);
+  K.gesture(C.skye, 'chin_hand', 'R', 1); C.skye.bones.Head.rotateX(0.22 * bite);   // pancake up by her chin; she leans into the bite on "Ever"
   K.hold(P.pancake, C.skye, 'R', 'palm', { level: true, rot: [0.7, 0, 0] });   // tipped toward camera so it reads as a pancake
 }
 
@@ -339,7 +348,8 @@ function classroom(t, idle) {
   const dm = M.deskMax(), side = M.maxSide();
   // Max: slumped over his desk until he snaps bolt upright
   const up = smooth(inv(T.sitUp(), T.sitUp() + 0.2, t));
-  K.posture(C.max, K.mixAngles(K.POSES.sit_slump, K.POSES.sit_upright, up));
+  const SLUMP = { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [34, 0, 0], Head: [-22, 0, 0], 'Arm.L': [-70, 0, 8], 'Arm.R': [-70, 0, -8] };   // folded over the desk, chin up so the face reads
+  K.posture(C.max, K.mixAngles(SLUMP, K.POSES.sit_upright, up));
   K.putOn(C.max, { pos: V(dm.pos.x, K.seatY(C.max, dm.seatTop), dm.pos.z), heading: dm.heading - 0.35 * (1 - up) - 0.3 * up }, { sit: true });
   // Skye: leaning on his desk; on "Bye!" she walks back toward her own desk, waving
   if (t < T.bye0()) {
@@ -355,7 +365,6 @@ function classroom(t, idle) {
   }
   // extras: three at their desks
   C.extras.forEach((e, i) => {
-    if (i > 2) { e.root.visible = false; return; }
     const s = M.extra(i);
     K.posture(e, 'sit_chair'); K.putOn(e, { pos: V(s.pos.x, K.seatY(e, s.seatTop), s.pos.z), heading: s.heading }, { sit: true });
     e.setFace(i === 1 ? 'happy' : 'neutral');

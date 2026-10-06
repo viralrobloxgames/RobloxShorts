@@ -1,10 +1,10 @@
 {
   "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch05.js",
-  "generated": "2026-10-06T13:41:49.244Z",
-  "fingerprint": "580bbce4d85c9b11",
+  "generated": "2026-10-06T14:20:43.295Z",
+  "fingerprint": "12f06ab294d75164",
   "tolerance_studs": 0.02,
   "passed": true,
-  "reviewed": false,
+  "reviewed": true,
   "wardrobe": [
     {
       "character": "Noob",
@@ -200,5 +200,6 @@
       "passed": true,
       "note": "replaces the character hair; review the sheet"
     }
-  ]
+  ],
+  "reviewedAt": "2026-10-06T14:20:44.178Z"
 }
