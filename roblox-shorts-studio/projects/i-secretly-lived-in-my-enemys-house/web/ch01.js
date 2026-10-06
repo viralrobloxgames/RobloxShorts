@@ -113,7 +113,7 @@ const skyeCloset = (k) => { const h = K.headPos(C.skye); const p = h.clone().add
 // classroom: every camera on the +z side of the Skye-Max line (the back rows' side, clear of the seated extras)
 const lineN = () => { const d = K.headPos(C.max).sub(K.headPos(C.skye)); d.y = 0; d.normalize(); const n = V(d.z, 0, -d.x); if (n.z < 0) n.negate(); return { d, n }; };
 // a 3/4 single: out to the side of the Skye-Max line and a little toward the other person (so we see the face)
-const single = (a, side, k) => { const { d, n } = lineN(), h = K.headPos(a); const p = h.clone().addScaledVector(n, 4.4).addScaledVector(d, 1.7 * side).add(V(0, 0.35, 0)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.45, 0)), fov: 36 }; };
+const single = (a, side, k) => { const { d, n } = lineN(), h = K.headPos(a); const p = h.clone().addScaledVector(n, 3.2).addScaledVector(d, 3.4 * side).add(V(0, 0.35, 0)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.45, 0)), fov: 36 }; };
 const pair = (dist) => { const { n } = lineN(), m = K.headPos(C.skye).lerp(K.headPos(C.max), 0.5); return { pos: m.clone().addScaledVector(n, dist).add(V(0, 0.9, 0)), target: m.clone().add(V(0, -0.9, 0)), fov: 38 }; };
 const dolly = (c, k) => { const s = shotOf(c); s.pos.lerp(s.target, k); return s; };
 
@@ -308,7 +308,6 @@ export function update(t, stage) {
   faces(t, sh.scene);
   K.setBlockers(set.group, C.skye, C.max, ...(sh.scene === 'class' ? C.extras : []));
 
-  if (globalThis.DBG) console.warn("DBG", t.toFixed(2), JSON.stringify({ sk: C.skye.root.position, skh: C.skye.root.rotation.y, mx: C.max.root.position, mxh: C.max.root.rotation.y }));
   sh.cam(stage, t, sh);                                // camera last: it reads the posed actors
 
   // the flashlight: its own soft cone plus the kit's spot light along the torch's forward axis
