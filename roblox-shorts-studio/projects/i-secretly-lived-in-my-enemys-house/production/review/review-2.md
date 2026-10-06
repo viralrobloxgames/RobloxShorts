@@ -133,3 +133,28 @@ chapter in my block. That's fine, because it's dense with gags.
     hatch with Max already gone. Either show him climbing down or cut it, to save a second.
 25. **00:29.9-00:32.9, could.** A large out-of-focus orange block (Dad's arm) covers the right quarter of the
     "That's my girl" shot. Move the camera so it's out of frame.
+
+## Ch11 "No Crusts" (SUNDAY 8:30 AM), 69.78 s incl. end screen, 2095 frames, reviewed 18:5xZ
+
+What works: bright, warm and readable, a real tonal lift after the night chapters. The SAY YES fridge insert
+(00:34.5-00:35.5) is a great hard cut that doubles as the "Later" time jump. Max's ask is a clean two-shot with the
+crustless sandwiches in frame. Dad's "Phone. Now." covers the grown-up note, and the "No crusts?" / "No crusts."
+callback lands. Stitch: -14.09 LUFS, TP -0.79 dBTP, `ok: false` only on A/V (audio 2 frames short, see global).
+End screen 00:58.4-01:09.8 (11.4 s), dimmed scene with SUBSCRIBE @viralrobloxgames at the top: OK.
+
+26. **00:52.4-00:58.4 (frames 1573-1752), must.** The film's last line, "I spent a week trying to scare my enemy. He spent
+    it making me sandwiches.", plays on a high wide of the whole kitchen. The four faces are ~20 px at phone size, Max
+    sliding Skye a plate isn't readable, and Dad isn't visibly flipping a pancake. This is the title payoff and the
+    emotional button of 12 minutes. Fix: open on the wide for "I spent a week trying to scare my enemy" (00:52.9-00:55.2),
+    then push in, or cut, to a medium two-shot of Skye and Max for "He spent it making me sandwiches" (00:55.4-00:57.5).
+    Show the plate with the crustless sandwich in the lower third, Skye `happy` looking at Max, and Max `happy`. Then
+    go back to the wide (or hold) for the end-screen dim at 00:58.4. Re-render frames 1573-1752; the end-screen
+    frames don't change if the wide comes back by 00:58.4.
+27. **00:42.5-00:43.9 (frames 1276-1317), should.** Lily's "The fridge says yes." is framed with her face low and the
+    island edge cutting her at the chest, Max's half-face and an out-of-focus arm/teddy block in the top right. It's a
+    punchline, so give her a clean single (`smug`), centred, eye line to Skye.
+28. **00:08.1-00:09.1 (frames 244-274), could.** "Pumpkin girl?" stays on Dad. A 0.5 s cut to Skye's sheepish face
+    (`nervous`) on the end of the line would pay off Ch7 more directly.
+29. **00:58.4-01:09.8, could.** The music under the end screen sits at about -32 dB, so the last 8 s are near silent.
+    Bring the bed up ~6 dB for the end-screen tail, or add a short outro sting, so viewers don't drop off thinking it
+    has ended before the end-screen cards show.
