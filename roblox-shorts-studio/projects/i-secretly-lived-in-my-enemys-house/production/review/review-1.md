@@ -189,15 +189,15 @@ pitch, level and edit checks, not timbre.
 
 | Ch | Status | Max F0 (old -> new) | Skye F0 in the same chapter | Notes |
 |---|---|---|---|---|
-| 01 | **not replaced yet: MUST** | 242 Hz (old `max_kid`) | 275 Hz | Old voice sits 2 semitones under Skye: the "sounds like a girl" problem. |
-| 02 | **not replaced yet: MUST** | 260 Hz (old) | 247 Hz | Old voice is *above* Skye here. |
-| 03 | **not replaced yet: MUST** | ~250 Hz (old) | | Max carries most of this chapter. |
+| 01 | replaced, OK | 242 -> 165 Hz | 275 Hz | ~9 semitones under Skye. Max lines within 4 dB of each other, clean tails. |
+| 02 | replaced, OK | 260 -> 169 Hz | 263 Hz | Even levels (within 1 dB), clean tails. |
+| 03 | replaced, OK | ~250 -> 179 Hz | 242 Hz | Even levels; offscreen "Nobody!" ~6 dB under (right). Clean tails. |
 | 04 | replaced, OK | 247 -> 169 Hz | 285 Hz | ~9 semitones under Skye, clearly a boy on pitch. Lines -12.3 to -16.5 LUFS (a little wider spread than before; "Nothing. It's a cookie." 0:11.8 and "Since this week. Want half?" 0:52.6 are the quiet ones, could +1.5 dB). Every line ends clean inside its window (no clipped tails). Re-stitch -14.3 LUFS, -1.3 dBTP, A/V 0.00. |
 | 05 | no Max | | | |
 | 06 | replaced, OK | 218 -> 172 Hz | 315 Hz | Behind-door lines -17.6 to -18.6 (muffled, ~4 dB under: right). Clean edits. |
 
-Until ch01-03 are replaced the film has two Maxes: the girl-ish one for three chapters, then the boy from Ch4. That
-switch is the single most noticeable audio problem in my block. ch07 is review-2's.
+All of ch01-06 now use max_boy2 (checked from main after the ch01-03 notes): one consistent boy voice, 165-179 Hz
+against Skye's 242-315 Hz. Must #7 is resolved. ch07+ are review-2's.
 
 ---
 
@@ -235,5 +235,5 @@ cards identical in style, wardrobe and backpack states right (backpack on Ch2 en
 | 4 | 03 | 0:37.2-0:38.4 | 1117-1153 | ch03 | Crust-cutting insert, sandwich doesn't pop |
 | 5 | 04 | 0:54.8-0:55.3 | 1640-1680 | ch04 | Handover in one angle, drop the behind-Max shot |
 | 6 | 06 | 0:44.9-0:45.6 | 1347-1369 | ch06 | Escape behind Dad's back / tight shot; camera out of the ceiling |
-| 7 | 01-03 | all Max lines | audio | narration-tool | Replace Max with max_boy2 (pending) |
+| 7 | 01-03 | all Max lines | audio | narration-tool | ~~Replace Max with max_boy2~~ DONE, checked OK |
 | 8 | block | every 32 s | audio | kit-pipeline / review-2 | Music bed loop gap |
