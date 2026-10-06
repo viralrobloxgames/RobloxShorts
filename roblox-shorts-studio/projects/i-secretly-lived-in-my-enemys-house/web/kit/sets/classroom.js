@@ -6,12 +6,13 @@
 //   Skye: r2 c1 (by the window). Max: r3 c2 (diagonally behind her, on her right). Same in every chapter.
 // Walls and ceiling hide automatically when the camera is outside them.
 import { THREE, V, std, glow, box, rbox, cyl, picture, fontText, floorTexture, wallTexture, wallWithHoles,
-  autoHideWalls, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
+  autoHideWalls, makeRouter, alongRoute, routeLength, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
 
 export const OFFSET = V(1200, 0, 0);
 const H = 13, DESK_TOP = 3.1, SEAT_TOP = 1.7;
 export const COLS = [-13, -5, 3, 11], ROWS = [-7, -1, 5, 11];
-const CHAIR_DZ = 1.9;                 // the seated root is this far behind (+z) the desk centre
+const CHAIR_DZ = 2.3;                 // the seated root is this far behind (+z) the desk centre (torso 0.65 behind the desk edge)
+const DESK_W = 3.2, DESK_D = 2.3;      // aisles between columns: 8 - 3.2 = 4.8 studs
 
 export function build(scene) {
   const group = new THREE.Group(); group.name = 'set_classroom'; group.position.copy(OFFSET); scene.add(group);
@@ -86,12 +87,12 @@ export function build(scene) {
   box(0.1, 0.5, 0.03, std('#222'), 0, 0.25, 0, hourG); box(0.07, 0.72, 0.03, std('#222'), 0, 0.36, 0.01, minG);
   const setClock = (hh, mm) => { minG.rotation.z = -mm / 60 * PI * 2; hourG.rotation.z = -((hh % 12) + mm / 60) / 12 * PI * 2; };
   // teacher's desk (front right) with an apple and a pile of books
-  const td = new THREE.Group(); td.position.set(13, 0, -11.5); group.add(td);
+  const td = new THREE.Group(); td.position.set(-15.4, 0, -12.6);   // front window corner: the door side stays clear for walking group.add(td);
   box(6, 0.3, 3, std('#8a5a34', { roughness: 0.5 }), 0, 3.3, 0, td); box(5.8, 3.15, 0.2, std('#7a4f2a'), 0, 1.6, 1.3, td);
   box(0.3, 3.15, 2.8, std('#7a4f2a'), -2.8, 1.6, 0, td); box(0.3, 3.15, 2.8, std('#7a4f2a'), 2.8, 1.6, 0, td);
   const apple = new THREE.Mesh(new THREE.SphereGeometry(0.35, 14, 10), std('#d9282a', { roughness: 0.35 })); apple.position.set(-1.8, 3.8, 0.3); apple.castShadow = true; td.add(apple);
   [['#2f7be8', 0], ['#ffcc1f', 0.3], ['#2fbf4f', 0.55]].forEach(([c, y]) => box(1.6, 0.28, 1.1, std(c), 1.5, 3.6 + y, -0.2, td));
-  box(2, 4.4, 1.2, std('#5d6670'), 2, 2.2, -2.4, td);          // a filing cabinet behind it
+  box(2, 4.4, 1.2, std('#5d6670'), -2.2, 2.2, -2.4, td);         // a filing cabinet behind it, by the window
 
   // ---------------------------------------------------------------- the door (right wall) and the back wall
   box(0.3, 8.2, 3.9, std('#3f7fc4', { roughness: 0.5 }), 20.0, 4.1, -11, group);
@@ -99,10 +100,10 @@ export function build(scene) {
   const knob = new THREE.Mesh(new THREE.SphereGeometry(0.18, 12, 8), std('#cfcfcf', { metalness: 0.8, roughness: 0.25 })); knob.position.set(19.75, 3.8, -9.6); group.add(knob);
   box(0.4, 0.35, 4.6, trimM, 19.9, 8.35, -11, group);
   // cubbies with backpacks along the back wall (back-wall local: x 0..40 -> world x -20..20, z -0.3 inward is -z world)
-  const cub = new THREE.Group(); cub.position.set(20, 0, -1.6); back.add(cub);
-  box(24, 4.2, 2.4, std('#c79a62', { roughness: 0.6 }), 0, 2.1, 0, cub);
+  const cub = new THREE.Group(); cub.position.set(20, 0, -0.85); back.add(cub);
+  box(24, 4.2, 1.2, std('#c79a62', { roughness: 0.6 }), 0, 2.1, 0, cub);
   const bagColors = ['#e8302f', '#2f7be8', '#ffcc1f', '#9a4fe0', '#2fbf4f', '#ff8a1f', '#ff4fa3', '#30c0c8'];
-  for (let i = 0; i < 8; i++) { const x = -10.5 + i * 3; box(2.6, 1.6, 0.2, std('#8a6a44'), x, 2.9, -1.15, cub); rbox(1.6, 1.4, 1.0, 0.3, std(bagColors[i], { roughness: 0.6 }), x, 1.15, -1.0, cub); }
+  for (let i = 0; i < 8; i++) { const x = -10.5 + i * 3; box(2.6, 1.6, 0.2, std('#8a6a44'), x, 2.9, -0.55, cub); rbox(1.6, 1.4, 0.7, 0.25, std(bagColors[i], { roughness: 0.6 }), x, 1.15, -0.45, cub); }
   // posters on the back wall
   const poster = (w, h, draw, x, y) => { const p = picture(w, h, Math.round(w * 64), Math.round(h * 64), draw); p.rotation.y = PI; p.position.set(x, y, -0.32); back.add(p); };
   poster(6, 4, (g, w, h) => { g.fillStyle = '#2a1a3a'; g.fillRect(0, 0, w, h); fontText(g, 'HALLOWEEN', w / 2, h * 0.3, 62, '#ff8a1f', { stroke: '#000', lw: 6 }); fontText(g, 'DANCE', w / 2, h * 0.58, 78, '#ffcc1f', { stroke: '#000', lw: 6 }); fontText(g, 'FRI 31 OCT  🎃', w / 2, h * 0.84, 34, '#ffffff'); }, 10, 8);
@@ -120,9 +121,9 @@ export function build(scene) {
   const desks = {};
   function deskUnit(x, z, colorIdx) {
     const d = new THREE.Group(); d.position.set(x, 0, z); group.add(d);
-    box(3.6, 0.22, 2.3, deskTopM, 0, DESK_TOP - 0.11, 0, d);
-    box(3.3, 0.35, 0.08, metalM, 0, 2.8, -1.05, d);
-    for (const sx of [-1.6, 1.6]) for (const sz of [-1.0, 1.0]) cyl(0.07, 0.07, DESK_TOP - 0.2, metalM, sx, (DESK_TOP - 0.2) / 2, sz, d, 8);
+    box(DESK_W, 0.22, DESK_D, deskTopM, 0, DESK_TOP - 0.11, 0, d);
+    box(DESK_W - 0.3, 0.35, 0.08, metalM, 0, 2.8, -1.05, d);
+    for (const sx of [-1.4, 1.4]) for (const sz of [-1.0, 1.0]) cyl(0.07, 0.07, DESK_TOP - 0.2, metalM, sx, (DESK_TOP - 0.2) / 2, sz, d, 8);
     // chair behind the desk (seated root at z + CHAIR_DZ)
     const c = new THREE.Group(); c.position.set(0, 0, CHAIR_DZ); d.add(c);
     box(1.9, 0.22, 1.7, std(['#3f7fc4', '#e8643b', '#2fa86a', '#e8b42f'][colorIdx % 4], { roughness: 0.45 }), 0, SEAT_TOP - 0.11, 0.15, c);
@@ -173,14 +174,26 @@ export function build(scene) {
     desk_max: { ...sit('r3c2'), note: 'Max: row 3, diagonally behind Skye on her right' },
     desk_extra_1: sit('r1c1'), desk_extra_2: sit('r2c3'), desk_extra_3: sit('r3c3'), desk_extra_4: sit('r4c2'),
     skye_desk_side: M(-9.4, 0, -0.4, -PI / 2, { note: 'standing in the aisle beside Skye\'s desk, facing her (Max in Ch1 and Ch4)' }),
-    skye_desk_front: M(-10.6, 0, -3.2, -PI * 0.8, { note: 'standing at the front corner of Skye\'s desk, facing her' }),
+    skye_desk_front: M(-10.4, 0, -2.7, -PI * 0.8, { note: 'standing at the front corner of Skye\'s desk, facing her' }),
     max_desk_side: M(-8.4, 0, 5.4, PI / 2, { note: 'standing at the left of Max\'s desk leaning on it, facing him (Skye in Ch2)' }),
     max_desk_front: M(-5, 0, 2.6, 0, { note: 'standing in front of Max\'s desk facing him' }),
     aisle_mid: M(-9, 0, 2.2, PI, { note: 'the aisle between Skye\'s and Max\'s columns' }),
     door_inside: M(17.5, 0, -11, -PI / 2, { note: 'just inside the door, facing into the room' }),
     board: M(-1, 0, -13.5, 0, { note: 'at the whiteboard facing the class' }),
-    teacher_desk: M(13, 0, -14.2, 0, { note: 'behind the teacher\'s desk' }),
+    teacher_desk: M(-14.4, 0, -14.6, 0, { note: 'behind the teacher\'s desk' }),
   });
+  // SC1: standing beside each chair on its aisle side (step in sideways and sit from here): desk_rXcY_side.
+  // c1/c2 share the aisle x -9 (c1 steps in from its right, c2 from its left); c3/c4 share the aisle x 7.
+  const SIDE = 0.95 + 0.65;           // chair half-width + half a body
+  ROWS.forEach((z, ri) => COLS.forEach((x, ci) => {
+    const s = ci % 2 === 0 ? 1 : -1;     // c1, c3 step in from +x; c2, c4 from -x
+    marks[`desk_r${ri + 1}c${ci + 1}_side`] = M(x + s * SIDE, 0, z + CHAIR_DZ, -s * PI / 2, { note: 'standing beside the chair in the aisle, facing the seat' });
+  }));
+  marks.desk_skye_side = marks.desk_r2c1_side; marks.desk_max_side_entry = marks.desk_r3c2_side;
+  // aisle and lane points for walks (centre lines): aisles x -9, -1, 7 (+ the window aisle x -17, the door side x 17); front lane z -11
+  for (const [n, x] of [['window', -17], ['12', -9], ['23', -1], ['34', 7], ['door', 17]]) {
+    marks[`aisle_${n}_front`] = M(x, 0, -11, 0); marks[`aisle_${n}_back`] = M(x, 0, 13.2, PI);
+  }
   // aliases asked for by the chapters
   Object.assign(marks, { aisle_skye: marks.skye_desk_side, desk_skye_aisle: marks.skye_desk_side, desk_max_side: marks.max_desk_side, door: marks.door_inside });
 
@@ -233,11 +246,19 @@ export function build(scene) {
   }
   setState({ time: 'lunch' });
 
+  // SC1 routing: desks + chairs as obstacles (inflated by a walker's half width 2.1 across x, 0.9 along z)
+  const rects = [];
+  for (const z of ROWS) for (const x of COLS) rects.push({ x0: x - DESK_W / 2 - 2.1, x1: x + DESK_W / 2 + 2.1, z0: z - DESK_D / 2 - 0.9, z1: z + CHAIR_DZ + 1.15 + 0.9 });
+  rects.push({ x0: -20, x1: -12.4 + 2.1, z0: -16, z1: -11.1 + 0.9 });   // teacher's desk + cabinet
+  rects.push({ x0: 17.4 - 2.1, x1: 20, z0: 2.5 - 0.9, z1: 9.5 + 0.9 }); // bookshelf
+  const route = makeRouter(OFFSET, rects, { x0: -18, x1: 18, z0: -14.5, z1: 14.2 });
   const anchors = { deskTop: (key) => desks[key].top.clone(), skyeDeskTop: desks.r2c1.top.clone(), maxDeskTop: desks.r3c2.top.clone(),
     desk_skye_top: desks.r2c1.top.clone(), desk_max_top: desks.r3c2.top.clone(),
     // the backpack hangs off the back of Skye's chair: this is the top of the backrest (hang point), backpack facing -z
     skye_chair_hang: desks.r2c1.top.clone().add(V(0, SEAT_TOP + 1.85 - DESK_TOP, CHAIR_DZ + 1.15)) };
   marks.chair_skye_back = { pos: anchors.skye_chair_hang.clone(), heading: 0, note: 'top of Skye\'s chair backrest (backpack hang point), facing away from her desk' };
   marks.desk_skye_top = M(COLS[0], DESK_TOP, ROWS[1], PI, { note: 'top of Skye\'s desk (y = surface)' });
-  return { id: 'classroom', group, marks, cams, lights, setState, state, anchors, walls: walls.map((w) => w.obj) };
+  // root y for a seated actor at a desk: seatY(scale) (= kit-cast K.seatY(actor, SEAT_TOP))
+  const seatY = (scale = 1) => SEAT_TOP - 1.5 * scale + OFFSET.y;
+  return { id: 'classroom', group, marks, cams, lights, setState, state, anchors, route, alongRoute, routeLength, seatY, SEAT_TOP, DESK_TOP, walls: walls.map((w) => w.obj) };
 }
