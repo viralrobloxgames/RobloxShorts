@@ -34,8 +34,8 @@ sources: `source/story.md`. Made overnight without script approval (user request
   officers saluting, tag SAN FRANCISCO, 1880; the end card). Every shot is staged as a first pass.
 
 ## Next
-1. Polish `web/emperor_clip.js`: a fuller preview sheet; the farewell needs a bigger crowd ("thousands"); the bridge
-   is plain (towers and deck: add cables); Mia/Skye are not cast yet (story.md proposes Skye as the editor, Mia's shop;
-   sets kit: 1859 San Francisco street, docks with ships,
-   newspaper office, shop, a Capitol, the bay and bridge), previews, hold/fit checks, sound cues, cover, post copy,
-   then the full render (needs disk space: see the Banana and Penguin notes).
+1. Polish `web/emperor_clip.js` (first pass, spot-checked only): render a full preview sheet; the farewell needs a much
+   bigger crowd ("thousands"); the bridge is plain (towers and a deck: add cables); Skye (the editor) and Mia (the
+   shop) from story.md are not cast yet; the hook headline and the name sit close to the hat.
+2. Hold check (props: none held yet), fit check, sound cues, cover (`web/cover_clip.js`), then the full render (needs
+   disk space: see the Banana and Penguin notes), encode, blank-frame check. Post copy is done (`delivery/post.json`).
