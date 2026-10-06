@@ -117,7 +117,7 @@ const SHOTS = [
   { k: 5, off: -0.35, id: 'wide_walk', cam: (s) => K.setCam(s, { pos: W(-10.2, 3.8, -2.5), target: W(2.5, 1.6, -0.5), fov: 52 }, { blockers: SET.group }) },
   { k: 6, off: -0.1, id: 'skye_plead', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
   { k: 7, off: -0.1, id: 'lily_deal', cam: (s) => lilyStand(s) },
-  { k: 8, off: -0.1, id: 'skye_deal', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5 }) },
+  { k: 8, off: -0.1, id: 'skye_deal', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
   { k: 9, off: -0.1, id: 'lily_horse', cam: (s) => lilyStand(s) },
   { k: 9, off: 'end+0.05', id: 'horse_pov', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
   { k: 10, off: -0.1, id: 'skye_horse', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
@@ -151,7 +151,7 @@ function teaSide(s, fov) { return K.setCam(s, { pos: W(-9.6, 3.8, 2.2), target: 
 function setNamed(name) { return K.setCam(STAGE, SET.cams[name], { blockers: SET.group }); }
 function blushPush(s, t) {
   const u = smooth(inv(T.blush, at(29, 1.6), t));
-  return K.applyShot(s, K.blendShot(K.camOn(s, C.skye, 'mcu', { angle: 0.4, apply: false }), K.camOn(s, C.skye, 'cu', { angle: 0.4, apply: false }), u));
+  return K.applyShot(s, K.blendShot(K.camOn(s, C.skye, 'mcu', { angle: 0.65, apply: false }), K.camOn(s, C.skye, 'cu', { angle: 0.65, apply: false }), u));
 }
 
 // ---------- faces ----------
@@ -236,7 +236,7 @@ function blockNest(t, idle) {
     if (t < L5.t3) {
       const m = K.walk(C.lily, A, L5.top, L5.horse, L5.t1, t, { idleAt: idle });
       if (t >= L5.t2) K.gesture(C.lily, 'reach_up', 'R', 0.35 * Math.sin(Math.PI * inv(L5.t2, L5.t3, t)));
-    } else K.walk(C.lily, A, L5.horse, L5.front, L5.t3, t, { idleAt: idle, endHeading: K.faceTo(L5.front, nest) });
+    } else K.walk(C.lily, A, L5.horse, L5.front, L5.t3, t, { idleAt: idle, endHeading: K.faceTo(L5.front, nest) + 0.6 });   // cheated 3/4 to the window-left cameras
     if (t >= at(9, 0.4) && t < T.horseGive + 0.2) K.gesture(C.lily, 'hold_out', 'R');     // holds the horse out to Skye
   }
   const lilyHasHorse = t >= L5.t2 + GRAB * 0.5 && t < T.horseGive;
