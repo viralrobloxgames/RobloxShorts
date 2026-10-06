@@ -1,0 +1,7 @@
+{
+ "voice": "max_boy2",
+ "text": "Dad, this is Skye. She's the ghost.",
+ "seed": 55630,
+ "attempt": 2,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

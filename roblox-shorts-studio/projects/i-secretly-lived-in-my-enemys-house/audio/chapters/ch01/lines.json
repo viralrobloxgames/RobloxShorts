@@ -20,24 +20,24 @@
   {
    "index": 2,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Hello? Is somebody in my closet?",
    "start": 4.763,
    "end": 7.037,
-   "clip": "audio/qwen/take-01/clips/97e5dbe9a88f.wav",
-   "seed": 54856
+   "clip": "audio/qwen/take-01/clips/57dffafa6a9e.wav",
+   "seed": 61047
   },
   {
    "index": 3,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Huh. Just hoodies.",
    "start": 8.287,
    "end": 9.909,
-   "clip": "audio/qwen/take-01/clips/f2fec6a5cc04.wav",
-   "seed": 25011
+   "clip": "audio/qwen/take-01/clips/77132024e4bd.wav",
+   "seed": 3757
   },
   {
    "index": 4,
@@ -64,13 +64,13 @@
   {
    "index": 6,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "You cut the crusts off your sandwich? What are you, five?",
    "start": 17.403,
    "end": 21.402,
-   "clip": "audio/qwen/take-01/clips/594e3089efa5.wav",
-   "seed": 52797
+   "clip": "audio/qwen/take-01/clips/0e1610471389.wav",
+   "seed": 23229
   },
   {
    "index": 7,
@@ -97,24 +97,24 @@
   {
    "index": 9,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "It's rubber, Skye. Wow. You're scared of everything.",
    "start": 27.512,
    "end": 31.199,
-   "clip": "audio/qwen/take-01/clips/cb8871fe0009.wav",
-   "seed": 38814
+   "clip": "audio/qwen/take-01/clips/c9199cef62a6.wav",
+   "seed": 79369
   },
   {
    "index": 10,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "I bet you wouldn't last one night in a haunted house.",
    "start": 31.449,
    "end": 34.45,
-   "clip": "audio/qwen/take-01/clips/137026c30bb1.wav",
-   "seed": 73971
+   "clip": "audio/qwen/take-01/clips/89601a6f17c1.wav",
+   "seed": 3111
   },
   {
    "index": 11,
@@ -130,13 +130,13 @@
   {
    "index": 12,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Nothing. My house is so boring, nothing ever happens there. Not even a creaky floor.",
    "start": 36.95,
    "end": 43.405,
-   "clip": "audio/qwen/take-01/clips/7bad3571a467.wav",
-   "seed": 5346
+   "clip": "audio/qwen/take-01/clips/926b2a3cc96e.wav",
+   "seed": 96767
   },
   {
    "index": 13,
@@ -152,13 +152,13 @@
   {
    "index": 14,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "See you tomorrow, scaredy-cat.",
    "start": 44.945,
    "end": 47.082,
-   "clip": "audio/qwen/take-01/clips/2d136b7d4ed8.wav",
-   "seed": 54168
+   "clip": "audio/qwen/take-01/clips/601b01c2eba9.wav",
+   "seed": 98446
   },
   {
    "index": 15,
@@ -185,13 +185,13 @@
   {
    "index": 17,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Lily! Go back to bed!",
    "start": 55.112,
    "end": 57.039,
-   "clip": "audio/qwen/take-01/clips/512f1673e6f6.wav",
-   "seed": 20547
+   "clip": "audio/qwen/take-01/clips/d401fcdf29e6.wav",
+   "seed": 94217
   },
   {
    "index": 18,
@@ -207,13 +207,13 @@
   {
    "index": 19,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Then who said my name?",
    "start": 59.636,
    "end": 61.115,
-   "clip": "audio/qwen/take-01/clips/3fe45ea93b05.wav",
-   "seed": 87307
+   "clip": "audio/qwen/take-01/clips/49544392a92b.wav",
+   "seed": 5776
   },
   {
    "index": 20,
