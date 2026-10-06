@@ -17,8 +17,8 @@ at = lambda i, off=0: by[i]['start'] + off
 end = lambda i, off=0: by[i]['end'] + off
 # key times: keep in step with times() in web/ch07.js
 T = dict(lidLift=at(1, 3.6), goDecor=at(4, 0.45), jam=end(4, 0.95), dadRise=end(5, 0.05), dadOut=at(6, 0.7), dadWalk1=at(9, 0.3),
-         dadWalk2=at(11, 1.5), nozzle=at(16, 1.6), hum=end(16, 0.15), humOff=at(17, 0.05), dadGo=at(18, 0.4),
-         dadDown=end(18, -0.25), maxUp=end(18, 0.35), maxOut=at(19, -0.25), fix=at(19, 1.9), maxGo=end(20, 0.05),
+         dadWalk2=at(11, 1.5), nozzle=at(16, 1.6), hum=end(16, 0.15), humOff=at(17, 0.05), dadGo=end(18, -0.5),
+         dadDown=end(18, 0.25), maxUp=end(18, 0.55), maxOut=at(19, -0.45), fix=at(19, 1.6), maxGo=end(20, 0.05),
          maxDown=end(20, 1.65), lilyCome=at(21, -0.2), lilyBack=end(5))
 LENGTH = max(x['end'] for x in by.values()) + 0.75
 
@@ -41,12 +41,12 @@ steps(T['dadWalk2'], T['dadWalk2'] + 0.45, 0.35, 0.08)
 cue('torch_click', T['hum'] - 0.05, 0.25)                        # the vacuum switches on...
 cue('room_hum', T['hum'], 0.55, dur=round(T['humOff'] - T['hum'] + 0.08, 3))
 cue('torch_click', T['humOff'], 0.22)                            # ...and off when Max shouts
-steps(T['dadGo'], T['dadGo'] + 0.85, 0.35, 0.08)                 # Dad to the hatch and down
+steps(T['dadGo'], T['dadGo'] + 0.7, 0.2, 0.08)                 # Dad to the hatch and down
 steps(T['dadDown'], T['maxUp'], 0.3, 0.07)
 steps(T['maxUp'], T['maxUp'] + 0.5, 0.3, 0.07)                   # Max up
-steps(T['maxOut'], T['maxOut'] + 1.5, 0.35, 0.07)
+steps(T['maxOut'], T['maxOut'] + 0.95, 0.35, 0.07)
 cue('swish_1', T['fix'] - 0.1, 0.07)                             # he straightens the pumpkin
-steps(T['maxGo'], T['maxGo'] + 1.5, 0.35, 0.07)                 # Max back to the hatch and down
+steps(T['maxGo'], T['maxGo'] + 0.95, 0.35, 0.07)                 # Max back to the hatch and down
 steps(T['maxDown'], T['maxDown'] + 0.6, 0.3, 0.06)
 steps(T['lilyCome'], T['lilyCome'] + 0.8, 0.3, 0.05)             # Lily walks over to Skye
 (P / 'source/sound/ch07.json').write_text(json.dumps(sorted(cues, key=lambda c: c['start']), indent=1))
