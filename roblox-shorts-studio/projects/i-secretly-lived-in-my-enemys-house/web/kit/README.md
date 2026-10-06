@@ -232,8 +232,8 @@ seams clean), A/V difference 0.000 s, -14.1 LUFS / -1.0 dBTP.
 ## sets/kitchen.js, classroom.js, exterior.js (kit-sets-c)
 
 All three: `build(scene)` → `{ id, group, marks, cams, lights, setState, state, anchors, walls }`. Marks are world
-`{ pos, heading, note? }` (forward = (sin h, 0, cos h)); sit marks also carry `sit: true, seatTop` (pos.y = seatTop − 2,
-i.e. the root for a scale-1 actor whose hip sits on the seat; for Lily use `seatTop - 2 * 0.78`). Cams are `{ pos, target, fov, note? }`.
+`{ pos, heading, note? }` (forward = (sin h, 0, cos h)); sit marks also carry `sit: true, seatTop` (pos.y = seatTop − 1.5, kit-cast `seatY`,
+i.e. the root for a scale-1 actor whose hip sits on the seat; for Lily use `K.seatY(lily, seatTop)`). Cams are `{ pos, target, fov, note? }`.
 Walls and ceilings hide by themselves whenever the camera is outside them (scene.onBeforeRender), so any camera can look
 in; force one with `setState({ walls: { wall_front: false } })`. `setState({ chapter: N })` sets that chapter's state and
 ignores chapters that don't use the set (so `K.setState` broadcast is safe). Shared helpers: `sets/common_c.js`.
@@ -278,7 +278,7 @@ family faces the camera, a hider sits on the floor on the camera side, hidden fr
 ### Classroom (1200,0,0) — Ch1, Ch2, Ch4
 Board on the front wall (students face −z, heading π); windows along the left wall; door front-right; cubbies and the
 HALLOWEEN DANCE poster on the back wall. Desks 4×4: columns c1..c4 at x −13, −5, 3, 11 (c1 by the windows), rows r1..r4
-(r1 nearest the board). Skye r2c1, Max r3c2 (diagonally behind, on her right). Seat top 2.0, desk top 3.1.
+(r1 nearest the board). Skye r2c1, Max r3c2 (diagonally behind, on her right). Seat top 1.7, desk top 3.1.
 - **States:** `time` `lunch|morning` (clock 12:15 / 8:25, extras' lunches on their desks at lunch; `lunch: false` hides
   them), `board` (text, `\n` rows; per-chapter defaults), `chapter` 1/2/4, `practicals: { fillL, fillR, windowSun }`.
   `lights` is empty (the room lights are always on; school_day does the rest).

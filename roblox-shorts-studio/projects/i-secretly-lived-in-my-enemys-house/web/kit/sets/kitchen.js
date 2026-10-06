@@ -12,7 +12,7 @@ import { THREE, V, std, glow, box, rbox, cyl, picture, fontText, floorTexture, w
 
 export const OFFSET = V(900, 0, 0);
 const H = 12;                         // ceiling
-const ISLAND_TOP = 3.6, STOOL_TOP = 2.4, COUNTER_TOP = 3.4;
+const ISLAND_TOP = 3.6, STOOL_TOP = 2.2, COUNTER_TOP = 3.4;
 // stairs: 16 steps, rise 0.75, run 0.8; step i (1..16) top at y 0.75 i over z 2.0-0.8 i .. 2.0-0.8 (i-1); x 12..16
 const STEP_RISE = 0.75, STEP_RUN = 0.8, STAIR_Z0 = 2.0, STAIR_X = 14;
 export function stairFootY(z) { const i = Math.ceil((STAIR_Z0 - z) / STEP_RUN); return Math.max(0, Math.min(16, i)) * STEP_RISE; }
@@ -30,7 +30,7 @@ export function build(scene) {
   const tileM = std('#ffffff', { map: floorTexture('tile', [6, 5]), roughness: 0.55 });
   const cabM = std('#6f9a8d', { roughness: 0.55 });        // sage cabinets
   const cabDark = std('#557a6f', { roughness: 0.55 });
-  const topM = std('#efeae2', { roughness: 0.3 });           // light stone counter top
+  const topM = std('#efeae2', { roughness: 0.6 });           // light stone counter top
   const woodM = std('#a8723f', { roughness: 0.6 });
   const woodDark = std('#7a4f2a', { roughness: 0.65 });
   const steelM = std('#c9ced4', { roughness: 0.3, metalness: 0.6 });
@@ -89,7 +89,7 @@ export function build(scene) {
     day: outsideTex('#7cc0ff', '#dff1ff', garden(false)),
   };
   const outM = new THREE.MeshBasicMaterial({ map: OUT.night, fog: false });
-  const outPlane = (w, h, x, y, z, ry) => { const p = new THREE.Mesh(new THREE.PlaneGeometry(w, h), outM); p.position.set(x, y, z); p.rotation.y = ry; group.add(p); return p; };
+  const outPlane = (w, h, x, y, z, ry) => { const p = new THREE.Mesh(new THREE.PlaneGeometry(w, h), outM); p.userData.noCamBlock = true; p.position.set(x, y, z); p.rotation.y = ry; group.add(p); return p; };
   outPlane(14, 9, 3, 7, -15, 0);                  // behind the sink window
   outPlane(16, 12, 22, 5, 6, -Math.PI / 2);       // behind the back door
   front.add(outPlane(14, 9, 24.5, 7, 3.75, Math.PI));   // behind the front window (hides with the front wall)
@@ -307,7 +307,7 @@ export function build(scene) {
     const d = new THREE.Group(); d.position.z = dz; piv.add(d);
     box(0.18, 7.9, 0.22, slatM, 0, 4.0, -1.13, d); box(0.18, 7.9, 0.22, slatM, 0, 4.0, 1.13, d);
     box(0.18, 0.3, 2.5, slatM, 0, 0.2, 0, d); box(0.18, 0.3, 2.5, slatM, 0, 7.8, 0, d); box(0.18, 0.35, 2.5, slatM, 0, 4.0, 0, d);
-    for (let y = 0.55; y < 7.6; y += 0.42) { if (Math.abs(y - 4.0) < 0.3) continue; const s = box(0.05, 0.3, 2.1, slatM, 0, y, 0, d); s.rotation.z = -1.15; }
+    for (let y = 0.55; y < 7.6; y += 0.42) { if (Math.abs(y - 4.0) < 0.3) continue; const s = box(0.05, 0.3, 2.1, slatM, 0, y, 0, d); s.rotation.z = -1.15; s.userData.noCamBlock = true; }
     box(0.12, 0.6, 0.12, handleM, 0.15, 4.0, side < 0 ? 1.0 : -1.0, d);
     pantryDoors.push({ piv, side });
   }
@@ -382,7 +382,7 @@ export function build(scene) {
 
   // ---------------------------------------------------------------- marks (heading: forward = (sin h, 0, cos h))
   const PI = Math.PI;
-  const sit = (x, z, h = 0) => M(x, STOOL_TOP - 2, z, h, { sit: true, seatTop: STOOL_TOP + OFFSET.y });
+  const sit = (x, z, h = 0) => M(x, STOOL_TOP - 1.5, z, h, { sit: true, seatTop: STOOL_TOP + OFFSET.y });
   const marks = {
     fridge: M(-11, 0, -7.4, PI, { note: 'facing the fridge door (letters), arm length from it' }),
     fridge_open: M(-10.2, 0, -6.6, PI, { note: 'in the open fridge light, facing in; the door swings to his left' }),
