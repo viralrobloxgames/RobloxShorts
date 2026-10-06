@@ -1,2 +1,2 @@
 STATUS: RENDERING
-render-ch03-b: segment B = frames 907-2013 of ch03 (FRAMES 2013, SPLIT 907, COMMIT 4d1828c) rendering into renders/ch03 (4 workers), started 13:59Z. Waiting for ch03 READY_TO_RENDER to sync changed frames, then encode delivery/chapters/ch03_b.mp4.
+render-ch03-b: ch03 READY_TO_RENDER (FRAMES 2013, SPLIT 907, COMMIT 180443c). Synced: changed_frames deleted all (first pass had ~45 frames), re-rendering 907-2013 with --resume on 4 workers since 14:04Z. Next: finish_longform --range 907-2013 -> delivery/chapters/ch03_b.mp4.
