@@ -272,22 +272,22 @@ export function update(t, stage) {
   const lead = tm ? team.localToWorld(V(17.2, 0, 0)) : V();
   switch (shot.id) {
     case 'hook': { const k = easeOut(clamp(t / (T.sick - 0.1))); look(stage, TOWN_P(lerp(-30, -6, k), 22 - 4 * k).add(V(0, lerp(9, 6.5, k), 0)), TOWN_P(lerp(-12, 0, k), -6).add(V(0, 5.5, 0)), 44, 30); break; }
-    case 'sick': look(stage, RM(3.8, 9.5, 6.4), RM(-0.4, -2.4, 4.8), 44, 14); break;
+    case 'sick': look(stage, RM(2.4, 9.5, 6.2), RM(-1.6, -2.8, 4.0), 44, 14); break;
     case 'ships': { const k = clamp((t - T.ships) / 3); look(stage, HB(lerp(-2, -6, k), 2, 7.5), HB(-4, -42, 7), 40, 40); break; }
     case 'planes': look(stage, HB(4, 24, 5.0), HB(13, 8, 3.6), 42, 20); break;
     case 'dogs': look(stage, lead.clone().add(fw.clone().multiplyScalar(16 - 6 * clamp((t - T.dogs) / 2))).add(rt.clone().multiplyScalar(3)).add(V(0, 2.2, 0)), lead.clone().add(fw.clone().multiplyScalar(-6)).add(V(0, 1.6, 0)), 48, 26); break;
     case 'relay': look(stage, tp.clone().add(rt.clone().multiplyScalar(-34)).add(fw.clone().multiplyScalar(18)).add(V(0, 22, 0)), tp.clone().add(fw.clone().multiplyScalar(10)), 46, 40); break;
     case 'hardest': look(stage, tp.clone().add(rt.clone().multiplyScalar(-15)).add(fw.clone().multiplyScalar(6)).add(V(0, 4, 0)), tp.clone().add(fw.clone().multiplyScalar(7)).add(V(0, 2.6, 0)), 46, 24); break;
-    case 'togo': look(stage, lead.clone().add(rt.clone().multiplyScalar(-4.6)).add(fw.clone().multiplyScalar(2.2)).add(V(0, 1.9, 0)), lead.clone().add(fw.clone().multiplyScalar(0.8)).add(V(0, 1.5, 0)), 44, 10); break;
+    case 'togo': look(stage, lead.clone().add(rt.clone().multiplyScalar(-5.8)).add(fw.clone().multiplyScalar(3.2)).add(V(0, 2.0, 0)), lead.clone().add(fw.clone().multiplyScalar(1.7)).add(V(0, 1.6, 0)), 44, 10); break;
     case 'run': look(stage, tp.clone().add(rt.clone().multiplyScalar(-9)).add(fw.clone().multiplyScalar(-9)).add(V(0, 5.5, 0)), tp.clone().add(fw.clone().multiplyScalar(9)).add(V(0, 2.0, 0)), 48, 24); break;
     case 'back': { const c = TR(240 + 0.4 * SPEED - 4, 26); look(stage, c.clone().add(V(0, 14, 0)), tp.clone().add(V(0, 2, 0)), 48, 40); break; }
     case 'ice': look(stage, tp.clone().add(rt.clone().multiplyScalar(-13)).add(fw.clone().multiplyScalar(4)).add(V(0, 4, 0)), tp.clone().add(fw.clone().multiplyScalar(6)).add(V(0, 2.4, 0)), 48, 22); break;
-    case 'night': look(stage, IC(126, 14).add(V(0, 7, 0)), IC(70, -6).add(V(0, 2, 0)), 46, 60); break;
-    case 'miles': look(stage, TR(318, 14).add(V(0, 4.2, 0)), TR(316.5, 0).add(V(0, 2.8, 0)), 46, 20); break;
+    case 'night': look(stage, IC(126, 14).add(V(0, 12, 0)), IC(40, -10).add(V(0, 0, 0)), 46, 60); break;
+    case 'miles': look(stage, TR(318, 15).add(V(0, 5.4, 0)), TR(316.5, 0).add(V(0, 4.4, 0)), 46, 20); break;
     case 'arrive': look(stage, TOWN_P(0.8, 12).add(V(0, 4.6, 0)), TOWN_P(0.6, 0).add(V(0, 4.2, 0)), 46, 16); break;
-    case 'statue': look(stage, PK(-6, 19).add(V(0, 5.5, 0)), PK(-6, 0).add(V(0, 5.0, 0)), 46, 20); break;
-    case 'wait': { const k = smooth(clamp((t - T.wait) / 1.2)); look(stage, PK(lerp(-6, 40, k), 19).add(V(0, 5.5, 0)), PK(lerp(-6, 40, k), 0).add(V(0, 5.0, 0)), 46, 20); break; }
-    case 'cta': look(stage, PK(40, 19).add(V(0, 5.5, 0)), PK(40, 0).add(V(0, 5.0, 0)), 46, 20); break;
+    case 'statue': look(stage, PK(-5, 30).add(V(0, 6.5, 0)), PK(-5, 0).add(V(0, 4.5, 0)), 46, 24); break;
+    case 'wait': { const k = smooth(clamp((t - T.wait) / 1.2)); look(stage, PK(lerp(-5, 41.5, k), lerp(30, 21, k)).add(V(0, 5.5, 0)), PK(lerp(-5, 41.5, k), 0).add(V(0, 4.8, 0)), 46, 20); break; }
+    case 'cta': look(stage, PK(41.5, 21).add(V(0, 5.5, 0)), PK(41.5, 0).add(V(0, 4.8, 0)), 46, 20); break;
     default: look(stage, V(5, 6, 10), V(0, 4, 0), 50);
   }
 }
@@ -348,7 +348,7 @@ export function overlay(g, s, t) {
   if (['hook', 'arrive'].includes(sh)) snow(g, s, t, 70, 0.25, 0.7);
   if (['ships', 'planes', 'dogs', 'relay', 'hardest', 'togo', 'run', 'back'].includes(sh)) snow(g, s, t, 60, 0.5, 0.6);
   if (sh === 'night') snow(g, s, t, 90, 1.2, 0.6);
-  if (sh === 'ice') { snow(g, s, t, 160, 2.2, 0.75, 40); g.save(); g.fillStyle = 'rgba(235,242,250,.28)'; g.fillRect(0, 0, 1080 * s, 1920 * s); g.restore(); }
+  if (sh === 'ice') { snow(g, s, t, 160, 2.2, 0.75, 40); g.save(); g.fillStyle = 'rgba(235,242,250,.15)'; g.fillRect(0, 0, 1080 * s, 1920 * s); g.restore(); }
   if (['dogs', 'run', 'back'].includes(sh)) speedLines(g, s, t, 0.35, { cx: 540, cy: 1000 });
 
   if (sh === 'hook') {
