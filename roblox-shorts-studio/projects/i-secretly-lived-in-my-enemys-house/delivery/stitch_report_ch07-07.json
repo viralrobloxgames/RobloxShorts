@@ -1,0 +1,37 @@
+{
+ "file": "I_Secretly_Lived_In_My_Enemys_House_ch07-07.mp4",
+ "chapters": [
+  7
+ ],
+ "frames": 2204,
+ "frames_expected": 2204,
+ "seconds": 73.467,
+ "video_join": "stream copy",
+ "frames_match_segments": true,
+ "seams": [
+  {
+   "after": "ch07_a.mp4",
+   "frame": 992,
+   "ok": true
+  }
+ ],
+ "video_s": 73.466667,
+ "audio_s": 73.433,
+ "av_diff_s": -0.0337,
+ "loudness_I": "-14.07",
+ "true_peak": "-0.75",
+ "chapter_starts": {
+  "ch07": {
+   "frame": 0,
+   "s": 0.0,
+   "frames": 2204
+  }
+ },
+ "youtube_chapters": [
+  "0:00 The Pumpkin Girl"
+ ],
+ "notes": [],
+ "size_mb": 25.0,
+ "sha256": "9aaf7f24d82600577485973185108f5e48bb6523abf04d0427cd83fbe99deaef",
+ "ok": true
+}

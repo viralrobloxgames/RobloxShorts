@@ -74,6 +74,57 @@ Max's voice: judged once "MAX voice replaced in ch02" lands (orchestrator).
 5. **0:11.5-0:14.0 (frames 346-420), Skye's whisper CU behind the island is underlit** (dark-brown face, same as
    Ch1 #3). SHOULD: warm fill from the kitchen lights so her skin matches daytime Skye.
 
+## Ch06 "The Practice" (THURSDAY 10:15 PM), 1733 frames, 57.8 s
+
+Stitched from main (ch06_a 1-780 + ch06_b 781-1733): seam clean, A/V -0.03 s, -14.3 LUFS. blank_frames: none flagged
+by the tool, but see #1. The card, the flashlight-under-chin creep and the mirror rehearsal (0:05.5-0:18.5, Max's
+cringe faces on "Ugh. No.") all work; Lily's "You like him." entrance (0:26.4) lands. Behind-door Max is muffled and
+~4 dB down (right). Dad runs hot: -10.6 to -12.6 against -14/-17 for the whispers around him (could: -2 dB on lines
+13-18). Max's voice: judged once "MAX voice replaced in ch06" lands.
+
+1. **0:44.9-0:45.6 (frames 1347-1369), Skye and Lily dash into the linen closet straight across Dad's flashlight
+   beam, in a wide with black bands. MUST.** In the only shot of the escape Dad stands a few metres away facing them,
+   flashlight up, and the girls run across the lit floor in front of him: he can't not see them, which breaks the
+   scene's logic. The frame also has a black band across the top and a black wedge at the bottom (camera inside the
+   ceiling/floor geometry). Fix: Dad turns to Max's door on "Max, was that you?" and the girls slip into the closet
+   behind his back; or play the pull as a tight shot at the closet door (Lily's hand yanking Skye in, door closing to
+   a gap) and cut back to Dad. Either way, camera fully inside the hallway.
+2. **0:31.2-0:33.2 (frames 935-996), "Then why is your face all red?" and Skye's face is out of frame. SHOULD.**
+   The shot is on Lily; Skye's head is cut off at the eyes by the top of the frame, so the red face the line asks about
+   is never shown. Fix: frame both faces (or cut to Skye on "red") and give Skye a strong blush from 0:31.2 through
+   "It's a very dusty attic." (to 0:35.8).
+3. **0:52.5-0:54.7 (frames 1576-1642), Dad's cliffhanger line ("I'm checking every single box") plays on the back of
+   his head and his raised arm. SHOULD.** The threat that ends the chapter needs his face: a low 3/4 front on Dad,
+   broom raised, flashlight pointed up at the hatch (the boundary's end state), face `determined`.
+4. **Garlic on Max's window isn't visible in the room shots (0:05.5-0:18.5, 0:47-0:48). SHOULD** (boundary: hung by
+   Wednesday, visible in every later shot of his room; Lily's Ch5 line sets it up). The window isn't in frame in either
+   set-up; put the window with the garlic string in the 0:11-0:15 angle.
+5. **End frame 0:57-0:57.8: Dad's back fills the right of a wide, broom level, girls a few pixels in the gap.
+   COULD.** Boundary: Dad facing the hatch, broom raised, flashlight up at it, which also sells "Every box?".
+
+## Ch03 "A Useful Ghost" (TUESDAY 11:52 PM), 2013 frames, 67.1 s
+
+Stitched from main (ch03_a 1-906 + ch03_b 907-2013): seam clean, A/V 0.0, -14.1 LUFS. blank_frames: none. The fridge
+spelling (BE NI -> BE NICE -> 2 SKYE) reads beautifully, Skye peeking through the pantry slats behind Max at the reveal
+(0:17.9) is the best staging in the block, and Dad's "Who's Skye?" / "Nobody!" lands. Levels even (Max -12 to -14,
+whispers -18 to -19.6, offscreen Max -19.4: right). Max's voice: judged once "MAX voice replaced in ch03" lands.
+
+1. **0:37.2-0:38.4 (frames 1117-1153), the crustless sandwich pops onto the plate: nobody makes it and no crust is
+   cut. MUST.** At 0:36.5 the plate is empty, at 0:37.5 a finished sandwich sits on it. The crusts-cut sandwich is the
+   story's running clue (Ch1 lunch, Ch4 "since this week", Ch10 "Who did you think was making the sandwiches?", the
+   last line), and this is the one moment it's made. Fix inside the existing 1.25 s pause, no retime: an insert of
+   Max's knife sliding a crust strip off the sandwich on the plate (crust strips left beside it), then the sandwich
+   in place for 0:38.4. The gate flagged the knife stroke as hidden; it still is.
+2. **0:45.3-0:49.6 (frames 1359-1488), "Max made the ghost a sandwich" with no sandwich in sight. SHOULD.** Skye
+   picks it up at 0:44.5, then it's gone: hands at her sides, plate empty. Hold it up at her chin (the Ch3 end needs it
+   in her hand anyway).
+3. **Max's face is half in a hard shadow band through the fridge scene (0:12.5-0:37, frames 376-1110). SHOULD.**
+   It reads at full size but on a phone his "o" on "Be nice to Skye?" and the flustered "Who even is Skye? I mean, I
+   know who Skye is" (0:30-0:37, the twist's best plant in this chapter) are mush. The script has the fridge open as
+   the key light: open the door for his read and let it light his face 3/4.
+4. **1:00.0-1:01.0 (frames 1801-1830), Skye's reaction CU behind the island is underlit** (same dark-brown face as
+   Ch1 #3 / Ch2 #5). SHOULD.
+
 ## Ch04 "Cinnamon" (WEDNESDAY 12:15 PM), 1833 frames, 61.1 s
 
 Stitched from main 15:05Z (ch04_a + ch04_b, commit 32dbd17): seam at frame 825 clean, A/V diff 0.0, -14.2 LUFS
