@@ -74,7 +74,7 @@ const M = {
   linenLily: () => hw(-16.95, -1.5, 1.05),         // in front of / below Skye
   stairs: () => K.mark('hallway', 'dad_enter'),
   dadMid: () => hw(4.0, 0.8, -1.07),
-  hatch: () => hw(-5.6, 1.4, 1.45),                 // just past the hatch, facing it (+x) and looking up; the closet behind him
+  hatch: () => hw(-5.6, 1.4, 1.1),                  // just past the hatch, facing it (+x) and looking up; the closet behind him
   mirror: () => { const m = K.mark('bedroom', 'desk_stand'); m.pos.x -= 0.8; return m; },   // facing the mirror, a step back from the desk
 };
 const HATCH_C = () => HO().clone().add(V(-2, 9.6, 0));
@@ -135,7 +135,7 @@ function camMirror(stage, framing, side = -0.35) {
 // Dad from low in front, the hatch above him in frame
 const camHatch = (stage) => fixed(stage, V(2.2, 3.0, 3.6), K.headPos(C.dad).lerp(HATCH_C(), 0.22), 44);
 // last frame: toward the linen-closet gap, Dad in the foreground (3/4) facing the hatch
-const camEnd = (stage) => fixed(stage, V(2.0, 4.0, 9.5), K.headPos(C.dad).lerp(K.headPos(C.skye), 0.62).add(V(0, -0.8, 0)), 34);
+const camEnd = (stage) => fixed(stage, V(2.0, 4.2, 14.0), K.headPos(C.dad).lerp(K.headPos(C.skye), 0.42).add(V(0, -0.9, 0)), 34);
 
 // ---------- arm and head overrides (after playAnim; one arm high at most) ----------
 const _e = new THREE.Euler(), _q = new THREE.Quaternion();
@@ -245,7 +245,7 @@ function hallway(t, idle, sh) {
     if (m.moving) arm(sk, 'L', 1.0, 0.1);            // her hand in Lily's
     if (t >= m.arrive && m.done) { K.playAnim(sk, [[A.idle, idle]]); K.putOn(sk, M.linenSkye()); }
     skFace = 'scared'; chin = 0;
-    linen = t < hide + 0.9 ? 0.75 * smooth((t - hide - 0.1) / 0.3) : 0.75 - 0.35 * smooth((t - hide - 0.9) / 0.4);   // open, they dive in, pulled to a crack (0.4)   // opens, they dive in, pulled to a crack
+    linen = t < hide + 0.9 ? 0.75 * smooth((t - hide - 0.1) / 0.3) : 0.75 - 0.42 * smooth((t - hide - 0.9) / 0.4);   // open, they dive in, pulled to a crack (0.33)
   }
   K.speak(sk, skFace, t, L.said('SKYE'));
   P.torchSkye.userData.chin = chin;
@@ -298,13 +298,14 @@ function hallway(t, idle, sh) {
       if (m.done) {
         K.playAnim(dd, [[A.idle, idle]]); K.putOn(dd, hm);
         const u = smooth((t - m.arrive) / 0.4);
-        headTurn(dd, 0, 0.3 * u); torchUp = 0.45 * u; swordUp = 0.85 * u;   // broom raised (right arm only); torch forward, its beam aimed up at the hatch   // broom held low across, torch up at the hatch
+        headTurn(dd, 0, 0.3 * u); torchUp = 0.25 * u; swordUp = 0.6 * u;   // broom raised forward like a sword (right arm); torch tilted up at the hatch
       }
       dFace = 'determined';
     }
     // broom out in front like a sword (right), raised on "draw the line" / at the hatch; torch (left) forward, up at the hatch
-    arm(dd, 'R', 1.45 + 0.5 * swordUp, 0.05 + 0.5 * Math.max(0, swordUp), 0);   // raised out to the side, clear of his face
+    arm(dd, 'R', 1.45 + 0.5 * swordUp, 0.05, 0);
     arm(dd, 'L', 1.35 + 0.85 * torchUp, 0.12, 0);
+    K.hold(P.torchDad, dd, 'L', 'palm', P.dadAim ? { aim: HATCH_C() } : {});   // at the hatch the torch itself points up at it
     K.speak(dd, dFace, t, L.said('DAD'));
   }
   return linen;
