@@ -7,7 +7,7 @@
  "min_depth": 0.06,
  "onscreen_only": true,
  "film_start_s": 258.767,
- "seconds": 11.9,
+ "seconds": 29.3,
  "summary": [
   {
    "actor": "skye",
@@ -101,7 +101,7 @@
    "t": "33.8-36.5s",
    "film": "4:52.6",
    "parts": "Arm.L",
-   "max_depth": 0.28,
+   "max_depth": 0.27,
    "max_cover_pct": 13,
    "severity": "medium"
   },
@@ -113,7 +113,7 @@
    "t": "42.5-45.1s",
    "film": "5:01.2",
    "parts": "Arm.L",
-   "max_depth": 0.28,
+   "max_depth": 0.27,
    "max_cover_pct": 13,
    "severity": "medium"
   },
@@ -125,7 +125,7 @@
    "t": "63.3-64.3s",
    "film": "5:22.0",
    "parts": "Arm.L",
-   "max_depth": 0.28,
+   "max_depth": 0.27,
    "max_cover_pct": 13,
    "severity": "medium"
   },
@@ -215,26 +215,14 @@
   },
   {
    "actor": "lily",
-   "object": "skeleton cyl 0.1x2.6x0.1 @world(603.6,1.3,-3.7)",
-   "kind": "scenery",
-   "frames": "403-421",
-   "t": "13.4-14.0s",
-   "film": "4:32.2",
-   "parts": "Arm.R",
-   "max_depth": 0.21,
-   "max_cover_pct": 0,
-   "severity": "low"
-  },
-  {
-   "actor": "lily",
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "kind": "scenery",
    "frames": "803-879",
    "t": "26.7-29.3s",
    "film": "4:45.5",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
    "severity": "low"
   },
   {
@@ -245,8 +233,8 @@
    "t": "45.1-49.5s",
    "film": "5:03.9",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
    "severity": "low"
   },
   {
@@ -257,8 +245,8 @@
    "t": "52.8-55.9s",
    "film": "5:11.6",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
    "severity": "low"
   },
   {
@@ -269,8 +257,8 @@
    "t": "31.9-33.7s",
    "film": "4:50.6",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
    "severity": "low"
   },
   {
@@ -281,8 +269,8 @@
    "t": "57.7-59.5s",
    "film": "5:16.4",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
    "severity": "low"
   },
   {
@@ -293,8 +281,8 @@
    "t": "65.5-67.3s",
    "film": "5:24.3",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
    "severity": "low"
   },
   {
@@ -305,8 +293,104 @@
    "t": "38.5-40.2s",
    "film": "4:57.3",
    "parts": "Arm.R",
-   "max_depth": 0.12,
-   "max_cover_pct": 3,
+   "max_depth": 0.17,
+   "max_cover_pct": 6,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "803-879",
+   "t": "26.7-29.3s",
+   "film": "4:45.5",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "1355-1485",
+   "t": "45.1-49.5s",
+   "film": "5:03.9",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "1585-1679",
+   "t": "52.8-55.9s",
+   "film": "5:11.6",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "957-1013",
+   "t": "31.9-33.7s",
+   "film": "4:50.6",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "1731-1785",
+   "t": "57.7-59.5s",
+   "film": "5:16.4",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "1967-2019",
+   "t": "65.5-67.3s",
+   "film": "5:24.3",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "kind": "scenery",
+   "frames": "1157-1207",
+   "t": "38.5-40.2s",
+   "film": "4:57.3",
+   "parts": "Arm.R",
+   "max_depth": 0.19,
+   "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "lily",
+   "object": "skeleton cyl 0.1x2.6x0.1 @world(603.6,1.3,-3.7)",
+   "kind": "scenery",
+   "frames": "403-421",
+   "t": "13.4-14.0s",
+   "film": "4:32.2",
+   "parts": "Arm.R",
+   "max_depth": 0.21,
+   "max_cover_pct": 0,
    "severity": "low"
   },
   {
@@ -600,7 +684,7 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1015,
    "to": 1095,
-   "depth": 0.28,
+   "depth": 0.27,
    "cover": 13,
    "samples": 41,
    "t": "33.80-36.47s",
@@ -613,7 +697,7 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1275,
    "to": 1353,
-   "depth": 0.28,
+   "depth": 0.27,
    "cover": 13,
    "samples": 40,
    "t": "42.47-45.07s",
@@ -626,7 +710,7 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1585,
    "to": 1729,
-   "depth": 0.28,
+   "depth": 0.27,
    "cover": 13,
    "samples": 73,
    "t": "52.80-57.60s",
@@ -725,16 +809,81 @@
    "kind": "scenery"
   },
   {
-   "actor": "skye",
-   "part": "Arm.L",
-   "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
-   "from": 1899,
-   "to": 1931,
-   "depth": 0.28,
-   "cover": 13,
-   "samples": 17,
-   "t": "63.27-64.33s",
-   "film": "5:22.0",
+   "actor": "lily",
+   "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 803,
+   "to": 879,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 39,
+   "t": "26.73-29.27s",
+   "film": "4:45.5",
+   "kind": "scenery"
+  },
+  {
+   "actor": "lily",
+   "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 1355,
+   "to": 1485,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 66,
+   "t": "45.13-49.47s",
+   "film": "5:03.9",
+   "kind": "scenery"
+  },
+  {
+   "actor": "lily",
+   "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 1585,
+   "to": 1679,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 48,
+   "t": "52.80-55.93s",
+   "film": "5:11.6",
+   "kind": "scenery"
+  },
+  {
+   "actor": "lily",
+   "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 957,
+   "to": 1013,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 29,
+   "t": "31.87-33.73s",
+   "film": "4:50.6",
+   "kind": "scenery"
+  },
+  {
+   "actor": "lily",
+   "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 1731,
+   "to": 1785,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 28,
+   "t": "57.67-59.47s",
+   "film": "5:16.4",
+   "kind": "scenery"
+  },
+  {
+   "actor": "lily",
+   "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 1967,
+   "to": 2019,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 27,
+   "t": "65.53-67.27s",
+   "film": "5:24.3",
    "kind": "scenery"
   },
   {
@@ -743,8 +892,8 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 803,
    "to": 879,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 39,
    "t": "26.73-29.27s",
    "film": "4:45.5",
@@ -756,8 +905,8 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1355,
    "to": 1485,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 66,
    "t": "45.13-49.47s",
    "film": "5:03.9",
@@ -769,8 +918,8 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1585,
    "to": 1679,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 48,
    "t": "52.80-55.93s",
    "film": "5:11.6",
@@ -779,11 +928,24 @@
   {
    "actor": "lily",
    "part": "Arm.R",
+   "object": "table_box box 0.3x1.0x0.0 @world(597.4,0.7,3.1)",
+   "from": 1157,
+   "to": 1207,
+   "depth": 0.19,
+   "cover": 0,
+   "samples": 26,
+   "t": "38.53-40.20s",
+   "film": "4:57.3",
+   "kind": "scenery"
+  },
+  {
+   "actor": "lily",
+   "part": "Arm.R",
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 957,
    "to": 1013,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 29,
    "t": "31.87-33.73s",
    "film": "4:50.6",
@@ -795,8 +957,8 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1731,
    "to": 1785,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 28,
    "t": "57.67-59.47s",
    "film": "5:16.4",
@@ -808,11 +970,24 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1967,
    "to": 2019,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 27,
    "t": "65.53-67.27s",
    "film": "5:24.3",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Arm.L",
+   "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
+   "from": 1899,
+   "to": 1931,
+   "depth": 0.27,
+   "cover": 13,
+   "samples": 17,
+   "t": "63.27-64.33s",
+   "film": "5:22.0",
    "kind": "scenery"
   },
   {
@@ -821,24 +996,11 @@
    "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
    "from": 1157,
    "to": 1207,
-   "depth": 0.12,
-   "cover": 3,
+   "depth": 0.17,
+   "cover": 6,
    "samples": 26,
    "t": "38.53-40.20s",
    "film": "4:57.3",
-   "kind": "scenery"
-  },
-  {
-   "actor": "skye",
-   "part": "Arm.L",
-   "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
-   "from": 803,
-   "to": 823,
-   "depth": 0.28,
-   "cover": 13,
-   "samples": 11,
-   "t": "26.73-27.40s",
-   "film": "4:45.5",
    "kind": "scenery"
   },
   {
@@ -904,6 +1066,19 @@
    "samples": 73,
    "t": "52.80-57.60s",
    "film": "5:11.6",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Arm.L",
+   "object": "table_box box 2.6x1.4x2.2 @world(596.5,0.7,2.0)",
+   "from": 803,
+   "to": 823,
+   "depth": 0.27,
+   "cover": 13,
+   "samples": 11,
+   "t": "26.73-27.40s",
+   "film": "4:45.5",
    "kind": "scenery"
   },
   {
@@ -1257,5 +1432,36 @@
    "film": "4:31.6",
    "kind": "scenery"
   }
- ]
+ ],
+ "sight": {
+  "hider": "skye",
+  "seekers": [
+   "max",
+   "dad",
+   "lily"
+  ],
+  "fov": 110,
+  "ranges": [
+   {
+    "seeker": "lily",
+    "hider": "skye",
+    "from": 1,
+    "to": 363,
+    "sees": "Head",
+    "min_dist": 13.9,
+    "t": "0.00-12.07s",
+    "film": "4:18.8"
+   },
+   {
+    "seeker": "lily",
+    "hider": "skye",
+    "from": 387,
+    "to": 2019,
+    "sees": "Head",
+    "min_dist": 4.4,
+    "t": "12.87-67.27s",
+    "film": "4:31.6"
+   }
+  ]
+ }
 }
