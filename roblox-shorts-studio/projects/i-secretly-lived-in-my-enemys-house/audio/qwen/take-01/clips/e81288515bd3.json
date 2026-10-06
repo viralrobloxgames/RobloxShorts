@@ -1,0 +1,66 @@
+{
+ "voice": "brittney",
+ "text": "Step one, eye holes. Step two, glow sticks. Step three, revenge.",
+ "seed": 9173,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Step",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "1.",
+   "start": 0.38,
+   "end": 0.7
+  },
+  {
+   "word": "Eye",
+   "start": 1.18,
+   "end": 1.3
+  },
+  {
+   "word": "holes.",
+   "start": 1.3,
+   "end": 1.6
+  },
+  {
+   "word": "Step",
+   "start": 2.22,
+   "end": 2.24
+  },
+  {
+   "word": "2.",
+   "start": 2.24,
+   "end": 2.56
+  },
+  {
+   "word": "Glow",
+   "start": 2.9,
+   "end": 2.9
+  },
+  {
+   "word": "sticks.",
+   "start": 2.9,
+   "end": 3.26
+  },
+  {
+   "word": "Step",
+   "start": 3.86,
+   "end": 3.92
+  },
+  {
+   "word": "3.",
+   "start": 3.92,
+   "end": 4.36
+  },
+  {
+   "word": "Revenge.",
+   "start": 4.88,
+   "end": 4.88
+  }
+ ],
+ "words_md5": "432b6cf97692a8a490cada58f26896be",
+ "whisper": "small.en"
+}

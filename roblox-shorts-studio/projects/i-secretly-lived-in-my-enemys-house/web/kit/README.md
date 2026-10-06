@@ -65,8 +65,10 @@ light in `set.lights` is off unless the preset or `practicals` turns it on (true
 ## camera.js (kit-pipeline)
 
 The camera is on whoever speaks. Call one camera function per frame, last in `update()` (after posing).
-`K.setBlockers(set.group, C.skye, C.max)` each frame: cameras are pulled in front of any wall or other actor between
-them and their subject. `K.setLine(a, b, side)` once per scene: two-shots, over-the-shoulders and singles stay on that
+`K.setBlockers(set.group, C.skye, C.max)` each frame: a removable wall (`set.walls` / `group.userData.walls`) between a
+camera and its subject is hidden for that frame (dollhouse); any other solid thing or actor in the way pulls the camera
+in front of it. Light shafts, particles, additive / see-through meshes and `userData.noCamBlock` objects never block.
+Shots inside tight spaces (the closet, under the island) use the set's named cams via `setCam`. `K.setLine(a, b, side)` once per scene: two-shots, over-the-shoulders and singles stay on that
 side of the line a→b (no 180-degree crossing); if a single would cross, its angle is mirrored.
 
 | Export | Example |
@@ -74,7 +76,7 @@ side of the line a→b (no 180-degree crossing); if a single would cross, its an
 | `camOn(stage, actor, framing, opts)` | `K.camOn(stage, C.max, 'mcu', { angle: 0.35, fov: 35 })`; framings `cu` (whole head), `mcu` (head and shoulders), `ms` (waist up), `ws` (full body + room); opts `angle`, `height`, `fov`, `dist`, `zoom`, `look`, `apply:false` |
 | `twoShot(stage, a, b, opts)` | `K.twoShot(stage, C.max, C.skye, { framing: 'ms', bias: 0.5 })` |
 | `overShoulder(stage, from, to, framing, opts)` | `K.overShoulder(stage, C.skye, C.max, 'mcu')`: over Skye's shoulder onto Max |
-| `setCam(stage, cam)` | `K.setCam(stage, set.cams.closet_pov)` a set's named camera (also pulled out of walls) |
+| `setCam(stage, cam)` | `K.setCam(stage, set.cams.closet_pov)` a set's named camera; hides the walls in its `hide` list; clears against the set only (never actors) |
 | `blendShot(a, b, u)`, `applyShot(stage, shot)` | push-in: `K.applyShot(stage, K.blendShot(K.camOn(stage, a, 'ms', { apply: false }), K.camOn(stage, a, 'cu', { apply: false }), u))` |
 | `drift(shot, t, amp)` | handheld feel for tense shots |
 | `headPos(actor)`, `screenOf(stage, p)` → `{ x, y, visible }` (1920x1080) | `K.screenOf(stage, K.headPos(C.skye))` for a red circle |
@@ -228,3 +230,140 @@ python3 scripts/stitch_longform.py $P --chapters 1-5     # a block
 4:31 → 3:00; copied frames equal a no-skip render within renderer noise. Encoded as ch01_a (1-45) + ch01_b (46-90) and
 a whole ch02, stitched with test audio: stream copy, 180/180 frames, per-frame checksums equal the segments' (both
 seams clean), A/V difference 0.000 s, -14.1 LUFS / -1.0 dBTP.
+
+## sets/kitchen.js, classroom.js, exterior.js (kit-sets-c)
+
+All three: `build(scene)` → `{ id, group, marks, cams, lights, setState, state, anchors, walls }`. Marks are world
+`{ pos, heading, note? }` (forward = (sin h, 0, cos h)); sit marks also carry `sit: true, seatTop` (pos.y = seatTop − 1.5, kit-cast `seatY`,
+i.e. the root for a scale-1 actor whose hip sits on the seat; for Lily use `K.seatY(lily, seatTop)`). Cams are `{ pos, target, fov, note? }`.
+Walls and ceilings hide by themselves whenever the camera is outside them (scene.onBeforeRender), so any camera can look
+in; force one with `setState({ walls: { wall_front: false } })`. `setState({ chapter: N })` sets that chapter's state and
+ignores chapters that don't use the set (so `K.setState` broadcast is safe). Shared helpers: `sets/common_c.js`.
+Preview sheets: `production/previews/kit-sets-c/sheet_*.jpg` (clip `set_preview.js` there, one frame per set/cam).
+
+**Practicals and `K.applyLight`.** `set.lights` holds proxies the kit switches; the set applies them to its real lights
+right before each render. Order of precedence: `setState({ practicals: { name: level } })` > `applyLight`/`setPractical` >
+the set's time-of-day default. Window light (moon, sun, a soft room fill) follows `setState({ time })` and is not in `set.lights`.
+
+### Kitchen (900,0,0) — Ch2, Ch3, Ch11
+Layout (local): fridge on the back wall at the left (x −11, door hinged on its left, opens toward the room); stove x −2 and
+sink under the window x 3 on the back wall; slatted pantry in the LEFT wall (x −16, z −3..2); stairs down the RIGHT wall
+(top at the back, foot at z 2–3); back door in the right wall near the front (x 16, z 4–8, window in its top half, opens
+outward); island in the middle (top y 3.6, z −2.1..1.8), four stools on its stove side facing the camera side (+z) — the
+family faces the camera, a hider sits on the floor on the camera side, hidden from Dad at the stove.
+- **States:** `time` `predawn|night|morning|day`; `fridge` / `letters` any string (`\n` = new row; 7-column fixed grid,
+  left-aligned, so adding letters never moves placed ones), `fridgeScatter` (loose letters top/bottom, default true);
+  `fridgeOpen` 0..1 (the fridge light follows it); `pancakes` null | 0..12 (stack on the island); `plate` null | `'sandwich'`
+  | `'empty'` (back counter left of the stove); `backDoor` 0..1; `pantryDoors` (= `pantryDoor`) 0..1, ~0.15 = ajar gap;
+  `stools` `'out'|'tucked'` (tucked under the overhang so someone can stand at `island_counter`); `clock` [h, m].
+  Chapters: 2 = predawn, LILY + scatter, 12 pancakes, stools out; 3 = night, `BE NI`, fridge open, stools tucked;
+  11 = morning, `BE NICE\n2 SKYE`, 8 pancakes (switch with `setState({ fridge: 'SAY YES' })`).
+- **lights:** `fridge_light` (× door open), `ceiling_light` (2 pendants + hood; on by default at predawn), `pantry_light`, `upstairs_light`.
+- **Marks:** `fridge`, `fridge_open`, `fridge_read`, `fridge_side`, `stove`, `stove_turned`, `stove_three_quarter`, `pan`
+  (pan top), `cupboard`, `counter_sandwich`, `counter_right`, `island_stool_1..4` (sit, left→right from the front camera;
+  Ch11: Lily 1, Max 2, Skye 3), `island_back_stand`, `island_counter`, `island_max`, `island_lily`, `island_end`
+  (= `island_end_right`), `island_end_left`, `island_front_stand`, `island_hide` / `island_hide_left` (`floorSit`: on the
+  floor, back to the island, head under the top), `island_hide_reach`, `island_crouch` (crouch: head must stay < 3.6),
+  `island_plate_1..4`, `island_phone_3` (y = island top), `backpack_floor_3`, `pantry_inside`, `pantry_slats`, `pantry_gap`,
+  `pantry_front`, `stairs_top`, `stairs_mid`, `stairs_low`, `stairs_bottom` (= `stairs_foot`), `stairs_exit` (offscreen
+  top), `back_door_inside` (= `back_door`), `back_door_crawl`, `back_door_outside`, `phone_corner`, `front_doorway`, `kitchen_center`.
+  Walking the stairs: `set.stairsPath(u)` → `{ pos, heading }` (u 0 top … 1 floor), `set.stairFootY(zWorld)`.
+- **Cams:** `wide`, `kitchen_wide`, `wide_island`, `stairs_wide` (Ch11 frame 0: fridge L, island, stove, stairs R),
+  `end_screen`, `island_wide` (Ch11 end: four at the island, fridge letters left), `island_two_shot`, `island_two`,
+  `island_two_seated`, `island_stools_left|right`, `island_counter`, `behind_island`, `behind_island_low`,
+  `island_low_behind`, `island_hide_cu`, `pancake_reach`, `stove`, `stove_ms`, `stove_front`, `fridge` (= `fridge_side`),
+  `fridge_wide`, `fridge_letters`, `fridge_cu`, `fridge_pov` (from inside the open fridge), `fridge_ots`, `pantry_pov`,
+  `pantry_pov_island` (through the slats), `pantry_peek`, `pantry_gap`, `stairs_side`, `stairs_bottom`, `back_door`,
+  `back_door_wide`, `back_door_floor`, `reverse_from_stove`.
+- **anchors:** `pancakeStackTop()`, `plate`, `fridgeLetters`.
+
+### Classroom (1200,0,0) — Ch1, Ch2, Ch4
+Board on the front wall (students face −z, heading π); windows along the left wall; door front-right; cubbies and the
+HALLOWEEN DANCE poster on the back wall. Desks 4×4: columns c1..c4 at x −13, −5, 3, 11 (c1 by the windows), rows r1..r4
+(r1 nearest the board). Skye r2c1, Max r3c2 (diagonally behind, on her right). Seat top 1.7, desk top 3.1.
+- **States:** `time` `lunch|morning` (clock 12:15 / 8:25, extras' lunches on their desks at lunch; `lunch: false` hides
+  them), `board` (text, `\n` rows; per-chapter defaults), `chapter` 1/2/4, `practicals: { fillL, fillR, windowSun }`.
+  `lights` is empty (the room lights are always on; school_day does the rest).
+- **Marks:** `desk_r{1-4}c{1-4}` (sit), `desk_skye`, `desk_max`, `desk_extra_1..4` (r1c1, r2c3, r3c3, r4c2),
+  `skye_desk_side` (= `desk_skye_aisle`: standing in the aisle facing seated Skye), `skye_desk_front`, `max_desk_side`
+  (= `desk_max_side`: leaning on Max's desk, facing him), `max_desk_front`, `aisle_mid`, `door_inside` (= `door`),
+  `board`, `teacher_desk`, `desk_skye_top` (desk surface).
+- **Cams:** `wide_front` (= `classroom_wide`), `wide_back`, `board_reverse`, `skye_max_diag` (= `two_shot_desks`),
+  `two_shot_desk`, `two_shot_close`, `ots_max_on_skye` (= `ots_max_to_skye`), `ots_skye_on_max` (= `ots_skye_to_max`),
+  `mcu_skye`, `cu_skye_desk` (= `cu_skye`), `mcu_max`, `cu_max_desk` (= `cu_max`), `mcu_max_stand`, `cu_side_stand`,
+  `max_desk_two_shot`, `ots_skye_on_max_desk`, `lunchbox_top` (= `desk_skye_insert`), `window_in`, `end_front`.
+- **anchors:** `deskTop(key)`, `desk_skye_top`, `desk_max_top`, `skye_chair_hang` (top of Skye's backrest, for the backpack).
+
+### Exterior (1500,0,0) — Ch1 (dusk), Ch2 back step (predawn), day establishing
+The back of Max's house faces +z (back wall z −8): the back door at x 6 (unlocked, opens inward; step y 0.6), the kitchen
+window beside it, the round attic window in the gable; garden with a stepping-stone path from the back-fence gate
+(x −10, z 31) to the door, shed, tree, washing line, bins, pumpkins on the step.
+- **States:** `time` `dusk|day|night|predawn` (windows lit at dusk/night/predawn), `windows` 0..1, `porchLight` 0..1,
+  `hallLight`, `atticGlow`, `backDoor` 0..1, `gate` 0..1 (default 0.35 ajar); chapter 1 = dusk, 2 = predawn.
+- **Marks:** `gate` (= `yard_start`), `gate_outside`, `path_mid`, `path_near`, `porch_step`, `back_door`, `inside_door`,
+  `back_step` (outside the door facing the garden), `bins_hide`, `lawn_center`.
+- **Cams:** `dusk_wide`, `gate` (from the garden: Skye coming in), `garden_follow` (= `back_door_wide`), `back_door`,
+  `back_door_ots` (= `back_door_close`), `back_door_low`, `from_inside` (needs `backDoor` > 0.6), `back_step_mcu`,
+  `establishing_day`, `attic_window`.
+- kit-sets-c additions: `setDoor(name, u)` on kitchen (`back_door`, `pantry`, `fridge`) and exterior (`back_door`, `gate`);
+  aliases `aisle_skye` and `chair_skye_back` (classroom), `inside_back_door` (exterior).
+
+## sets/bedroom.js, sets/hallway.js (kit-sets-a)
+
+Both return `{ id, group, marks, cams, lights, parts, walls, setState, useCam, ... }`. Marks and cams are in world
+coordinates; every mark has `{ pos, heading, note }` (forward = (sin h, 0, cos h)); sitting marks also carry `seat`
+(seat-surface y) with `pos.y = seat - 2.0` (R6 hip height at scale 1), so `K.putOn(actor, mark, { sit: true })` seats a
+scale-1 rig; for another scale use `sitPos(mark, scale)` (exported from bedroom.js / on the bedroom set). Every cam is
+`{ pos, target, fov, hide, note }`; the camera-side (+z) wall is hidden by default, `hide` lists any other wall to hide
+(`set.useCam(stage.camera, 'closet_pov')` applies it, or `K.setCam(stage, set.cams.closet_pov)`). Walls: `group.userData.walls`
+= `{ back, left, right, front, ceiling }`. Previews of every cam: `production/previews/kit-sets-a/*_cams.jpg`
+(re-render: `node web/render.mjs --clip projects/i-secretly-lived-in-my-enemys-house/production/previews/kit-sets-a/prev_bedroom.js --out /tmp/b --frames 1-35 --scale 0.3 --samples 1`; also `prev_hallway.js`, `prev_linen.js`).
+
+**Practicals** (`set.lights`, switched by `K.applyLight(stage, preset, { set, practicals: {...} })` / `K.setPractical`; all
+off unless named): bedroom `bedside_lamp` (shade + bulb glow), `moon_window` (cold spot through the window + fill),
+`hall_under_door` (hallway light seen when the door opens + the warm strip under the door), `closet_light`; hallway
+`moon_window`, `under_door` (warm strip + floor spill under Max's door + light in his room), `nightlight`, `ceiling_light`
+(the `predawn` preset turns it on), `attic_glow` (faint light above the open hatch), `linen_fill` (soft light on faces in
+the linen-closet crack). Night chapters: pass `moon_window: true` (the presets don't name it).
+
+### Max's bedroom (offset 0,0,0; room x -11..11, z -9..9, ceiling 11)
+Layout: window + bed (headboard to the back wall) at x -4; bedside table + lamp right of the bed (x 0.6, z -7.8); louvred
+double closet doors in the left wall (x -11, z -1..5), walk-in to x -16.4 with six hoodies on a rail along z and a gap at
+z ~2; desk + real mirror (Reflector; `parts.mirror.visible = false` to skip its cost) on the right wall at z -5; door to
+the hallway in the right wall (z 1.5..5.5) with a dim hallway stub behind it.
+- Controls: `setClosetDoors(fLeft, fRight = fLeft)` (0 shut, ~0.12 crack, 1 wide), `setDoor(f)` (0 shut, 1 open into the
+  room), `setBlanket('flat' | 'legs' | 'over_head')`, `setClock('12:00')`, `setLamp/setMoon/setHall(on, k)`.
+- `setState({ chapter, garlic, lamp, moon, hall, door, closet, blanket, blanketUp, clock })`: `garlic` defaults to
+  `chapter >= 5` (none in Ch1; on in Ch6, 8, 10).
+- Marks: `closet_inside` (Ch1 hook, Skye 3/4 toward `closet_pov`), `closet_deep` (pressed back into the hoodie gap),
+  `closet_crack` (face at the door crack), `closet_front`, `bed_side`, `bed_lie`, `bed_sit` (= `bed_sit_up`),
+  `bed_sit_door`, `bed_edge` (sit, faces `ghost_stop`), `desk_chair` (sit), `desk_stand` (= `mirror_stand`), `room_center`,
+  `door_out` (= `door_outside`), `door_in` (= `door_inside`), `door_in_bed`, `mid_room_bed`, `ghost_stop`, `window`,
+  `bedside_plate`, `bedside_flashlight`, `lamp_switch` (points).
+- Cams: `closet_pov`, `closet_pov_cu` (= `closet_skye_cu`), `closet_pov_reverse`, `closet_max_mcu`, `closet_door_ext`,
+  `closet_doors_ms`, `closet_doors_cu`, `two_shot_bed_closet`, `wide`, `bed_ms` (= `bed_max_ms`), `bed_cu` (= `bed_max_mcu`),
+  `bed_edge_ms`, `bed_phone_mcu`, `bed_phone_ms`, `desk_side`, `desk_profile`, `desk_cu`, `desk_wide`, `mirror_mcu`,
+  `mirror_ms`, `door_ws`, `bed_to_door` (Ch10 start, from the open side), `two_shot_bed_door`, `two_shot_door` (Ch10 end),
+  `ots_max_to_skye`, `ots_skye_to_max`, `cu_skye_mid`, `cu_skye_door`, `ghost_front_mcu`, `door_handle_cu`, `window_garlic`.
+  Ch10 line: Skye (door / `ghost_stop`) and Max (bed): the named Ch10 cams all sit on the open (+z) side.
+- `parts`: bed, blanket(s), closet doors, door leaf, desk, chair, mirror, garlic, lamp shade/bulb, moon, rug.
+
+### Upstairs hallway (offset 300,0,0; hall x -16.5..12, z -5..4.5, ceiling 10)
+Layout (camera side +z): left end wall = linen closet (opening z -3.5..-0.5, door hinged at z -3.5 opening outward; the
+crack at its free edge looks down the hall at the hatch). Back wall left→right: Max's door (x -9, sign MAX KEEP OUT),
+small table + plant, moonlit window (x 1), Lily's door (x 6), nightlight, then the stairs going down along +x from x 12
+(banister and landing on the camera side). Ceiling: attic hatch x -4..0 hinged at x -4; ladder foot at x ~0.
+- Controls: `setHatch(f)` (0 shut; 0..0.6 the panel swings down; 0.6..1 the lower ladder slides out to the floor),
+  `ladderPoint(u)` → `{ pos, heading }` on the ladder (u 0 floor, 1 hatch; climber faces -x), `rungs` (rung centres, top
+  first, open state), `setLinen(f)` (0 shut, **0.4 for the Ch6 peek**, 1 open), `setMaxDoor(f)`, `setLilyDoor(f)`.
+- `setState({ chapter, hatch: 'shut' | 'open' | 0..1, linen, maxDoor, lilyDoor, underDoor, moon, ceiling, nightlight })`:
+  chapter defaults Ch2 hatch open (ladder down), Ch6/Ch8 hatch shut + light under Max's door.
+- Marks: `ladder_foot`, `ladder_mid`, `ladder_top`, `hatch_below` = `dad_hatch` = `under_hatch` (Dad facing the hatch,
+  face toward the stairs end), `hall_mid`, `dad_mid`, `hall_creep_start`, `max_door`, `max_door_listen` (= `max_door_out`;
+  Skye's left ear on the door, facing +x), `lily_behind_skye` (= `lily_behind`), `max_door_kneel`, `max_door_outside`,
+  `max_door_crouch`, `max_door_back`, `linen_skye` (= `linen_in_R`), `linen_lily` (= `linen_in_L`), `linen_front`,
+  `lily_door`, `lily_door_out`, `stairs_top`, `stairs_step2`, `stairs_up`, `dad_enter`, `landing`.
+- Cams: `wide` (= `hall_wide`), `wide_to_max_door` (= `max_door_ws`), `wide_to_stairs`, `hatch_low` (Ch2), `hatch_low_dad`
+  (Ch6), `ladder_ms`, `door_approach`, `max_door_ms`, `max_door_cu`, `max_door_mcu`, `max_door_side`, `max_door_crouch_cu`,
+  `max_door_back_mcu`, `under_door`, `two_shot_skye_lily`, `linen_gap`, `linen_pov`, `linen_end`, `dad_ms`, `dad_low`,
+  `stairs_top`. MCUs not listed: derive with `K.camOn`.

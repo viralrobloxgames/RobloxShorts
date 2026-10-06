@@ -1,0 +1,21 @@
+{
+ "voice": "lily_kid",
+ "text": "No, Dad!",
+ "seed": 66667,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "No",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "dad.",
+   "start": 0.32,
+   "end": 0.64
+  }
+ ],
+ "words_md5": "54eeb35edbe76efde5f57aae60eabbda",
+ "whisper": "small.en"
+}

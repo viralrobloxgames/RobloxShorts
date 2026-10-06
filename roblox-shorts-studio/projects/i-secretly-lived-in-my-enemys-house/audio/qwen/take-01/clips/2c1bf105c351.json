@@ -1,0 +1,16 @@
+{
+ "voice": "lily_kid",
+ "text": "Ghost!",
+ "seed": 90814,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "ghost",
+   "start": 0.0,
+   "end": 0.36
+  }
+ ],
+ "words_md5": "c66a657ea6ae4b130e866705816c44e8",
+ "whisper": "small.en"
+}

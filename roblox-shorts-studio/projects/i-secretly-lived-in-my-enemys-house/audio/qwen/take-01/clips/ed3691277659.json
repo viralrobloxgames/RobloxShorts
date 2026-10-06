@@ -1,0 +1,56 @@
+{
+ "voice": "brittney",
+ "text": "Then why didn't you tell anyone I was here?",
+ "seed": 46078,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "then",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "why",
+   "start": 0.38,
+   "end": 0.78
+  },
+  {
+   "word": "didn't",
+   "start": 0.78,
+   "end": 1.1
+  },
+  {
+   "word": "you",
+   "start": 1.1,
+   "end": 1.22
+  },
+  {
+   "word": "tell",
+   "start": 1.22,
+   "end": 1.42
+  },
+  {
+   "word": "anyone",
+   "start": 1.42,
+   "end": 1.78
+  },
+  {
+   "word": "I",
+   "start": 1.78,
+   "end": 2.0
+  },
+  {
+   "word": "was",
+   "start": 2.0,
+   "end": 2.16
+  },
+  {
+   "word": "here?",
+   "start": 2.16,
+   "end": 2.4
+  }
+ ],
+ "words_md5": "e0cb6141606ae1b003c4758cd2688604",
+ "whisper": "small.en"
+}
