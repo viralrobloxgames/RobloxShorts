@@ -118,5 +118,115 @@
    0.74,
    0.4
   ]
+ },
+ "clone_max_kid_6.wav": {
+  "dur": 2.16,
+  "transcript": "It was a very convincing fridge.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 297.9,
+  "f0_p10_p90": [
+   255.9,
+   321.2
+  ],
+  "wps": 3.26,
+  "sentence_gaps": []
+ },
+ "clone_max_kid_7.wav": {
+  "dur": 4.08,
+  "transcript": "Dad, something was in my room last night. It said my name.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 224.5,
+  "f0_p10_p90": [
+   165.3,
+   335.6
+  ],
+  "wps": 3.05,
+  "sentence_gaps": [
+   0.48
+  ]
+ },
+ "clone_max_kid_8.wav": {
+  "dur": 3.44,
+  "transcript": "Okay, ghost. That's weirdly specific.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 233.8,
+  "f0_p10_p90": [
+   166.2,
+   286.8
+  ],
+  "wps": 1.66,
+  "sentence_gaps": [
+   0.88
+  ]
+ },
+ "clone_max_kid_9.wav": {
+  "dur": 3.76,
+  "transcript": "Because before you haunted it, this house was really boring.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 211.9,
+  "f0_p10_p90": [
+   173.1,
+   290.8
+  ],
+  "wps": 3.01,
+  "sentence_gaps": []
+ },
+ "clone_lily_kid_10.wav": {
+  "dur": 2.08,
+  "transcript": "Your sky from the fridge",
+  "match": 0.6,
+  "exact": false,
+  "f0_median": 243.4,
+  "f0_p10_p90": [
+   185.7,
+   302.8
+  ],
+  "wps": 2.94,
+  "sentence_gaps": []
+ },
+ "clone_lily_kid_11.wav": {
+  "dur": 3.68,
+  "transcript": "Stand still don't breathe think pumpkin thoughts",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 324.9,
+  "f0_p10_p90": [
+   251.8,
+   395.4
+  ],
+  "wps": 2.07,
+  "sentence_gaps": []
+ },
+ "clone_lily_kid_12.wav": {
+  "dur": 3.52,
+  "transcript": "He drew it in kindergarten. He keeps it on top.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 324.9,
+  "f0_p10_p90": [
+   216.8,
+   400.0
+  ],
+  "wps": 3.11,
+  "sentence_gaps": [
+   0.54
+  ]
+ },
+ "clone_lily_kid_13.wav": {
+  "dur": 1.68,
+  "transcript": "You're both so dumb!",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 321.2,
+  "f0_p10_p90": [
+   200.5,
+   366.4
+  ],
+  "wps": 2.94,
+  "sentence_gaps": []
  }
 }

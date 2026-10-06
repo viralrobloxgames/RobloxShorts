@@ -12,3 +12,4 @@ Next: watching requests.md and shots/*.md for more asks; available for a render 
 - Update: sit marks follow kit-cast `seatY` (root = seatTop − 1.5); kitchen stool seat 2.2, classroom seat 1.7; walls and
   pantry slats are `noCamBlock` (setCam's clearShot never pulls a set cam inside); `setDoor()` on kitchen/exterior;
   aliases for every name ch01-ch04/ch11 code looks up (checked against web/chNN.js).
+- 13:18 UTC: per orchestrator, chapter QA dropped; answering kit-sets-c requests (background watch), waiting for a render job.

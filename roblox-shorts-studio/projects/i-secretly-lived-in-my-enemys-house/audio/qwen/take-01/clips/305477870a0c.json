@@ -1,0 +1,26 @@
+{
+ "voice": "brittney",
+ "text": "What is this?",
+ "seed": 67428,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "What",
+   "start": 0.0,
+   "end": 0.62
+  },
+  {
+   "word": "is",
+   "start": 0.62,
+   "end": 0.84
+  },
+  {
+   "word": "this?",
+   "start": 0.84,
+   "end": 1.1
+  }
+ ],
+ "words_md5": "de5f1a0d64b7c2eef372a8f752b46bb7",
+ "whisper": "small.en"
+}
