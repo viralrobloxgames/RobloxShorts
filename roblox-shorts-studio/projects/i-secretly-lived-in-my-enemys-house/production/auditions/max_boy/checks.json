@@ -22,5 +22,17 @@
   "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
   "instruct": "A 12-year-old English schoolboy, clearly a boy and not a girl: a low, slightly raspy boyish voice for his age, a bit husky, chest voice. Confident, cheeky and teasing, like he has just caught someone out, but friendly. Southern English accent. Natural pace, each sentence separate.",
   "seed": 17
+ },
+ "B_s5": {
+  "dur": 9.92,
+  "f0_med": 191.4,
+  "f0_p10_p90": [
+   114.4,
+   286.5
+  ],
+  "wps": 2.71,
+  "transcript": "Your hair is pink, it's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "instruct": "A confident 12-year-old boy with a lower, slightly gravelly voice, clearly male, like a cheeky boy from a children's TV show. Teasing, amused, relaxed. English accent. Medium pace with a short pause between sentences.",
+  "seed": 5
  }
 }
