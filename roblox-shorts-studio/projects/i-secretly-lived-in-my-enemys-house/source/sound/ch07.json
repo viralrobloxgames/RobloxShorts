@@ -131,22 +131,12 @@
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 17.753,
+  "start": 17.553,
   "gain": 0.09
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 18.153,
-  "gain": 0.09
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 18.453,
-  "gain": 0.09
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 18.803,
+  "start": 17.903,
   "gain": 0.09
  },
  {
@@ -241,8 +231,18 @@
   "gain": 0.07
  },
  {
+  "asset": "sfx/footstep.wav",
+  "start": 59.692,
+  "gain": 0.07
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 60.042,
+  "gain": 0.07
+ },
+ {
   "asset": "sfx/swish_1.wav",
-  "start": 59.892,
+  "start": 60.692,
   "gain": 0.07
  },
  {
@@ -262,18 +262,13 @@
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 65.343,
-  "gain": 0.06
- },
- {
-  "asset": "sfx/footstep.wav",
   "start": 65.443,
   "gain": 0.05
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 65.643,
-  "gain": 0.06
+  "start": 65.693,
+  "gain": 0.07
  },
  {
   "asset": "sfx/footstep.wav",
@@ -283,6 +278,21 @@
  {
   "asset": "sfx/footstep.wav",
   "start": 66.043,
+  "gain": 0.07
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 66.043,
   "gain": 0.05
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 66.243,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 66.543,
+  "gain": 0.06
  }
 ]
