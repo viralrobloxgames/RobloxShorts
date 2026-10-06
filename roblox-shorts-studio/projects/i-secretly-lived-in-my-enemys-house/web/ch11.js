@@ -44,6 +44,9 @@ const LN = { vo: 0, morning: 1, pumpkin: 2, ghost: 3, thief: 4, sorry: 5, knew: 
 const T_LATER = end(LN.mom) + 0.1;                    // the "Later" cut: SAY YES, Skye seated
 const T_WIDE = end(LN.pancakes) + 0.1;                // the wide on the island
 const T_END = at(LN.sub) - 0.1;                       // end screen from the subscribe line
+// moments for web/ch11_hold.js (every held prop)
+export const KEY = { morning: at(LN.morning) + 0.6, thief: at(LN.thief) + 0.5, phone: at(LN.phone) + 0.5, mom: at(LN.mom) + 0.6,
+  knew: at(LN.knew) + 0.3, says: at(LN.says) + 0.5, flip: at(LN.pancakes) + 0.7, wide: T_WIDE + 2.0, end: T_END + 6.0 };
 export const meta = K.chapterMeta(Math.max(L.end + 0.75, T_END + 12.2));
 export const sky = K.SKY;
 export const samples = () => 1;
