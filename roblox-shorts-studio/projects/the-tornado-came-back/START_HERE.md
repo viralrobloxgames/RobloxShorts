@@ -33,6 +33,11 @@ weathermen, Mia the general, Skye and Noob airmen. Facts, beats and sources: `so
   playful_history_music.
 - Cover: `web/cover_clip.js` (the hook: funnel, a fighter in the air, Max and Leo running; THEY PREDICTED / THE
   TORNADO / 1948 · TRUE STORY). Post copy: `delivery/post.json`.
+- **Delivered for review (2026-10-06 ~02:45 UK):** `delivery/The_Tornado_Came_Back.mp4` (63.4 s, 1902 frames,
+  1080x1920, audio, burned captions, cover held in the last 0.5 s). Blank-frame check: one low-detail flag at 50.0 s
+  (frames 1500-1501, the plain first frames of the "next morning" shelter shot), not blank. Contact-sheet review: no
+  hidden faces, no two-arms-up poses, CTA wave is one arm each. Post copy: `delivery/The_Tornado_Came_Back_post.md`.
+  **Not posted: waiting for the user's approval of the MP4.**
 
 ## Commands
 ```
@@ -46,5 +51,4 @@ python3 scripts/post_md.py projects/the-tornado-came-back
 ```
 
 ## Next
-1. Full render, encode, blank-frame check, contact-sheet review, cover, deliver for the user's review. Post only
-   after approval.
+1. The user reviews the MP4. Post only after approval.
