@@ -15,7 +15,7 @@ export async function setup(stage) {
   S = SET === 'bedroom' ? b : h; (SET === 'bedroom' ? h : b).group.visible = false;
   names = Object.keys(S.cams); meta.names = names;
   for (const n of ['idle', 'sit']) A[n] = await loadAnimation(n);
-  const want = SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_sit', 'sit'], ['Mia', 'door_in_bed', 'idle'], ['Leo', 'desk_stand', 'idle']]
+  const want = SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_edge', 'sit'], ['Mia', 'ghost_stop', 'idle'], ['Leo', 'closet_front', 'idle']]
     : [['Skye', 'max_door_listen', 'idle'], ['Mia', 'lily_behind_skye', 'idle'], ['Leo', 'dad_hatch', 'idle'], ['Max', 'stairs_top', 'idle']];
   for (const [who, mk, an] of want) {
     const a = await loadRobloxCharacter(who, { expressions: ['happy'], scale: who === 'Mia' ? 0.78 : who === 'Leo' ? 1.12 : 1 });
