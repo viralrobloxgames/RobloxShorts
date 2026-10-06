@@ -8,6 +8,21 @@ stitched into one video. It is also the reusable kit for a second story.
 - Full script (speaker-tagged, with action lines): `script.txt`
 - Continuity contract for every chapter break: `source/boundary_sheet.md`
 
+## Status (2026-10-06 ~20:45 UTC): DELIVERED FOR REVIEW, NOT POSTED
+
+- Final video: `delivery/I_Secretly_Lived_In_My_Enemys_House.mp4` (11:50, 1920x1080, 21,304 frames, -14.1 LUFS / -1.2 dBTP),
+  committed as `.part_aa/ab/ac` (join: see `delivery/README.md`); `delivery/stitch_report.json` has the checks.
+- Built by parallel cloud sessions (roster and phases: `production/ORCHESTRATION.md`): shared kit (`web/kit/`), one session
+  per chapter (`web/chNN.js`), four gate reviewers (`production/gate/`), two fresh final reviewers (`production/review/`),
+  segment-B render helpers. Every gate and final-review must is fixed.
+- Max is voiced by `max_boy2` (C_s5 audition; the user picked it after hearing three boy voices); all 57 lines replaced
+  audio-only with timings unchanged (`scripts/replace_speaker.py`).
+- Re-stitch: `python3 scripts/stitch_longform.py projects/i-secretly-lived-in-my-enemys-house --music-gain 0.09 --music-duck "8@49-58,10@56-60"`.
+- Upload hand-off (only after the user approves this video): `delivery/I_Secretly_Lived_In_My_Enemys_House_post.md`,
+  `post.json`, thumbnail `delivery/I_Secretly_Lived_In_My_Enemys_House_thumbnail.jpg`, chapters `delivery/youtube_chapters.txt`.
+- Fixing a shot later: edit `web/chNN.js` (keep timing), re-render that frame range (`render.mjs --frames a-b`), re-encode
+  the touched segment with `scripts/finish_longform.py --range`, re-stitch (protocol in `production/requests.md`, 18:55Z).
+
 ## The brief (user, 2026-10-06)
 
 Setup, done once, with two approval stops:

@@ -574,11 +574,11 @@
       "title": "I Secretly Lived In My Enemy's House For A Week",
       "series": "long-form story (first long-form video)",
       "created": "2026-10-06",
-      "status": "script_draft_awaiting_approval",
+      "status": "delivered_for_review",
       "logline": "Skye's rival Max tells the class she's scared of everything and his house is so boring nothing ever happens there, so she moves into his attic for a week to haunt him. By day they fight at school; by night she sees the real Max. When she comes for the biggest scare of his life, he's waiting with a crustless sandwich: he knew from the first night.",
       "platform": "YouTube long-form (16:9, ~12 min, 11 chapters)",
       "project": "projects/i-secretly-lived-in-my-enemys-house",
-      "notes": "User brief 2026-10-06: multi-voice (Skye=brittney, Dad=george, Max and Lily designed), chapters rendered in parallel on separate cloud machines and stitched. Script v1 1,741 words. Stops: after script, after auditions, after pass one (ch 1-5)."
+      "notes": "User brief 2026-10-06: multi-voice (Skye=brittney, Dad=george, Max and Lily designed), chapters rendered in parallel on separate cloud machines and stitched. Script v1 1,741 words. Stops: after script, after auditions, after pass one (ch 1-5). 2026-10-06 ~20:45 UTC: finished and delivered for the user's review (NOT posted): delivery/I_Secretly_Lived_In_My_Enemys_House.mp4 (11:50, 1080p, in 3 parts in git + join command), made by ~30 parallel cloud sessions (kit, 11 chapter sessions, gate and final reviewers, render helpers); Max re-voiced to max_boy2 at the user's request; thumbnail, title, description and measured chapter list in delivery/."
     },
     {
       "title": "She Joined The Search For Herself",
