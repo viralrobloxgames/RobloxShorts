@@ -3,5 +3,29 @@
  "text": "We'll see about that.",
  "seed": 63608,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "We'll",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "see",
+   "start": 0.34,
+   "end": 0.5
+  },
+  {
+   "word": "about",
+   "start": 0.5,
+   "end": 0.72
+  },
+  {
+   "word": "that.",
+   "start": 0.72,
+   "end": 0.92
+  }
+ ],
+ "words_md5": "31dca22d05b6a1f43c209e758a7f1b0a",
+ "whisper": "small.en"
 }
