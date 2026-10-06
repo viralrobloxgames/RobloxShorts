@@ -64,7 +64,7 @@ export function build(scene) {
   box(32, 0.6, 0.15, trimM, 0, 0.3, -11.92, back);
   // a dark upstairs volume above the stairwell so the hole never shows sky
   const up = new THREE.Group(); group.add(up);
-  box(6, 0.3, 11, std('#5a4636'), 13.5, H + 0.1, -7, up);                  // upstairs landing floor edge
+  box(6, 0.3, 1.6, std('#5a4636'), 13.5, H - 0.15, -11.6, up);            // upstairs landing (beyond the top tread, z < -10.8)
   box(6, 7, 0.3, std('#3b2f2a'), 13.5, H + 3.5, -12.3, up);
   box(0.3, 7, 11, std('#3b2f2a'), 10.7, H + 3.5, -7, up);
   box(0.3, 7, 11, std('#3b2f2a'), 16.4, H + 3.5, -7, up);
@@ -440,6 +440,16 @@ export function build(scene) {
   });
   marks.stairs_foot = marks.stairs_bottom; marks.back_door = marks.back_door_inside;
   // a walk path down the stairs: u 0 (top) .. 1 (floor at the bottom); y follows the steps
+  // A stair-descent gait for posture(): legs swing only FORWARD (downhill), one leg per tread, so the trailing leg never
+  // reaches back into the higher tread (a flat-ground walk cycle does). Pose dict in kit-cast's convention (degrees;
+  // negative x = forward). Use with stairsPath(u): K.posture(actor, set.stairsGait(u)); root at stairsPath(u).pos.
+  function stairsGait(u) {
+    const z = -9.6 + (3.4 + 9.6) * u, ph = Math.max(0, (z + 9.6) / STEP_RUN), k = Math.floor(ph), f = ph - k;
+    const sw = -24 * Math.sin(Math.PI * f), lead = k % 2 === 0;
+    const onFloor = z > STAIR_Z0 + 0.4;               // past the bottom step: a normal walk can take over
+    return { 'Leg.L': [onFloor ? 0 : (lead ? sw : 0), 0, 0], 'Leg.R': [onFloor ? 0 : (lead ? 0 : sw), 0, 0],
+      'Arm.L': [lead ? 8 * Math.sin(Math.PI * f) : -6 * Math.sin(Math.PI * f), 0, -3], 'Arm.R': [lead ? -6 * Math.sin(Math.PI * f) : 8 * Math.sin(Math.PI * f), 0, 3], Torso: [4, 0, 0] };
+  }
   function stairsPath(u) {
     const z = -9.6 + (3.4 + 9.6) * u; return { pos: W(STAIR_X, stairFootY(z - 0.45), z), heading: 0 };   // the higher tread under the body (no leg through a tread)
   }
@@ -590,6 +600,6 @@ export function build(scene) {
   const anchors = { pancakeStackTop: () => W(STACK.x, STACK.y + 0.1 + (state.pancakes || 0) * 0.11, STACK.z), plate: W(PLATE.x, PLATE.y, PLATE.z), fridgeLetters: W(-11, 4.6, -8.7) };
   // door helper: setDoor('back_door' | 'pantry' | 'fridge', 0..1)
   const setDoor = (name, u) => setState({ [{ back_door: 'backDoor', pantry: 'pantryDoors', fridge: 'fridgeOpen' }[name] || name]: u });
-  return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, route, fromStairs, alongRoute, routeLength, sightBlocked,
+  return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, stairsGait, route, fromStairs, alongRoute, routeLength, sightBlocked,
     seatY: (scale = 1) => STOOL_TOP - 1.5 * scale, STOOL_TOP, ISLAND_TOP, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
 }

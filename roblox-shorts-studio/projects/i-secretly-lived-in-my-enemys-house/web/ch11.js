@@ -63,8 +63,8 @@ const M = {
   stairsTop: KM('stairs_top'), stairsMid: KM('stairs_mid'), stairsLow: KM('stairs_low'), stairsBottom: KM('stairs_bottom'),
   stove: KM('stove_three_quarter'), islandEnd: () => KL(6.5, 0, 3.0, -1.0), fridge: KM('fridge'),   // islandEnd: in front of the island's right end, so the walk to it crosses the frame
   stool: (i, a) => { const m = K.mark('kitchen', `island_stool_${i}`); m.pos.y = K.getSet('kitchen').seatY(a?.scale ?? 1); return m; },   // hips on the seat (kit sit_chair)
-  plateMax: () => KL(-1.2, 3.6, -1.25), plateSkye: () => KL(1.2, 3.6, -1.25), phoneDown: () => KL(2.3, 3.6, -1.0, 0.4),
-  bagFloor: () => KL(2.5, 0, -3.9, -0.5), pan: () => KL(-2.85, 3.78, -10.1),
+  plateMax: () => KL(-1.2, 3.6, -1.25), plateSkye: () => KL(1.2, 3.6, -1.25), phoneDown: KM('island_phone_3'),
+  bagFloor: KM('backpack_floor_3'), pan: () => KL(-2.85, 3.78, -10.1),
 };
 const CHEAT = 0;                                       // heading that faces the camera side (+z)
 
@@ -85,18 +85,18 @@ export const cast = () => ({ skye: C.skye, max: C.max, dad: C.dad, lily: C.lily 
 // ---------- the shot table (one scene; every camera on the open +z side of the room) ----------
 const KO = K.SET_ORIGIN.kitchen;
 // the closing wide / end screen: the four in a compact block at frame centre, SAY YES in the left third, Dad clear between Max and Skye
-const WIDE_POS = [-9, 10.5, 13.5], WIDE_TGT = [-0.6, 4.0, -4.6], WIDE_FOV = 38;   // from the left: Dad reads above Lily, clear of Max
+const WIDE_POS = [-9, 10.5, 13.5], WIDE_TGT = [-0.3, 4.0, -4.6], WIDE_FOV = 42;   // from the left: Dad reads above Lily, clear of Max
 // fixed set-ups (kitchen-local), all on the open +z side; walls auto-hide, so no wall pull-in
 const fixed = (pos, target, fov) => (s) => K.setCam(s, { pos: KO.clone().add(V(...pos)), target: KO.clone().add(V(...target)), fov }, { clear: false });
 // fixed set-ups only (critic-6 #1-#3): a camera never follows a turning actor, so nothing jumps inside a line
-const DADCAM = [3.8, 6.4, -4.0], DADTGT = [-1.6, 5.3, -8.3];
-const dadCU = fixed(DADCAM, DADTGT, 30), dadMS = fixed(DADCAM, [-1.6, 4.8, -8.3], 44);
+const DADCAM = [2.1, 6.6, -4.9], DADTGT = [-1.6, 4.85, -8.0];
+const dadCU = fixed(DADCAM, DADTGT, 30), dadMS = fixed(DADCAM, [-1.6, 5.3, -8.0], 44);
 // a fixed position panning with an actor's head (Skye's walk to the island end)
 const track = (pos, actor, fov) => (s) => K.setCam(s, { pos: KO.clone().add(V(...pos)), target: K.headPos(actor()).add(V(0, -0.5, 0)), fov }, { clear: false });
 const skyeMCU = fixed([2.4, 5.9, 9.4], [6.5, 4.9, 3.0], 30), skyeMS = fixed([2.0, 5.8, 10.2], [6.5, 4.4, 3.0], 40);
-const lilyCU = fixed([-5.4, 4.6, 4.2], [-4.0, 4.1, -3.2], 26);
-const seatedTwo = fixed([-0.2, 5.4, 5.0], [0.0, 4.4, -3.2], 30);
-const skyeSeatCU = fixed([6.6, 7.6, 0.9], [-0.2, 5.3, -3.8], 36);      // from front-right: SAY YES on the fridge behind her
+const lilyCU = fixed([-6.0, 4.6, 4.2], [-4.6, 4.1, -3.2], 26);
+const seatedTwo = fixed([2.1, 5.4, 6.2], [2.1, 4.4, -3.2], 34);     // three stools 4.2 apart (kit stoolX 'three'): Max x 0, Skye x 4.2
+const skyeSeatCU = fixed([9.6, 7.6, 0.9], [3.4, 5.3, -3.8], 36);      // from front-right: SAY YES on the fridge behind her
 const SHOTS = [
   { line: LN.vo, off: 0, id: 'stairs_wide', cam: fixed([-8.5, 9.0, 14], [4.5, 7.6, -3.5], 60) },
   { line: LN.morning, off: -0.1, id: 'stove_ms', cam: dadMS },
@@ -116,13 +116,13 @@ const SHOTS = [
   { t: T_LATER, id: 'fridge_cu', cam: fixed([-11, 4.7, -4.6], [-11, 4.7, -9], 34) },
   { t: T_LATER + 0.7, id: 'island_two_seated', cam: seatedTwo },
   { line: LN.fridgeAsk, off: -0.05, id: 'skye_cu', cam: skyeSeatCU },
-  { line: LN.says, off: -0.05, id: 'lily_single', cam: fixed([-4.2, 5.1, 3.0], [-3.6, 4.3, -3.2], 26) },
+  { line: LN.says, off: -0.05, id: 'lily_single', cam: fixed([-4.8, 5.1, 3.0], [-4.2, 4.3, -3.2], 26) },
   { line: LN.cond, off: -0.05, id: 'skye_cu', cam: skyeSeatCU },
   { line: LN.crusts, off: -0.05, id: 'max_cu', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: -0.6 }) },
   { line: LN.crusts2, off: -0.05, id: 'island_two_seated', cam: seatedTwo },
   { line: LN.pancakes, off: -0.1, id: 'stove_ms', cam: dadMS },
   { t: T_WIDE, id: 'island_wide', cam: fixed(WIDE_POS, WIDE_TGT, WIDE_FOV) },
-  { t: T_PAY, id: 'payoff_two', cam: fixed([0.1, 5.6, 5.8], [0.1, 4.2, -3.0], 30) },        // Skye and Max, the plate in the lower third
+  { t: T_PAY, id: 'payoff_two', cam: fixed([2.1, 5.6, 6.6], [2.1, 4.2, -3.0], 34) },        // Skye and Max, the plate in the lower third
   { t: T_PAY_END, id: 'island_wide', cam: fixed(WIDE_POS, WIDE_TGT, WIDE_FOV) },
 ].map((x) => ({ ...x, start: x.t ?? at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
@@ -183,9 +183,9 @@ export function update(t, stage) {
     // legs driven by the distance travelled, arriving at the foot at 5.0 s
     const tLeave = at(LN.sorry) + 0.2, top = M.stairsTop(), T_FOOT = 5.0;
     if (t < T_FOOT) {
-      const u = 0.3 + 0.7 * inv(0, T_FOOT, t), pos = SET.stairsPath(u).pos, from = SET.stairsPath(0.3).pos;   // frame 0: out of the stairwell, a third of the way down; feet on the treads
-      K.playAnim(C.skye, [[A.walk, (from.distanceTo(pos)) / STRIDE]]);
-      K.putOn(C.skye, { pos, heading: 0 });
+      const u = 0.42 + 0.58 * inv(0, T_FOOT, t), p = SET.stairsPath(u);   // frame 0: out of the stairwell; the kit stair gait, one tread per step
+      K.posture(C.skye, SET.stairsGait(u));
+      C.skye.root.position.copy(p.pos); C.skye.root.rotation.y = p.heading; C.skye.root.visible = true; C.skye.root.updateMatrixWorld(true);
     }
     else if (t < tLeave) {
       K.playAnim(C.skye, [[A.idle, idle]]);
@@ -225,7 +225,8 @@ export function update(t, stage) {
     let h = lerpH(t < at(LN.sorry) ? 0.4 : seated ? 0.5 : 0.3, K.faceTo(s2, bottom), toSkye);
     if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = maxSlideH(t);
     K.putOn(C.max, s2, { sit: true, heading: h });
-    gest(C.max, 'point', 'R', at(LN.ghost) + 0.4, end(LN.ghost) + 0.2, t);
+    { const a0 = at(LN.ghost) - 0.05, a1 = end(LN.ghost) + 0.6, k = sm(inv(a0, a0 + 0.07, t)) * (1 - sm(inv(a1 - 0.07, a1, t)));
+      if (k > 0) K.gesture(C.max, 'point', 'R', k); }      // a quick raise: the arm never sweeps through the island top
     gest(C.max, 'hold_out', 'L', slide0 - 0.4, slide1 + 0.5, t);
   }
 

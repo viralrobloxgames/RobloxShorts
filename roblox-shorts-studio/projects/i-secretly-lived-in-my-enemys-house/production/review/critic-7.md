@@ -79,6 +79,25 @@ the island top on the side away from them; P4 (line-of-sight check) when it land
 - F2 1:25-1:44 kitchen MS/MCU: Max's kitchen hair (side-swept, lighter) differs from his classroom hair in the same
   chapter; confirm one hairstyle for Max all chapter (`max_pjs` should not swap hair). should.
 
+## G. Merged from critic-1's ch02 section (verified against my frames; added or upgraded)
+
+critic-1 had reviewed ch02 before the split (`critic-1.md` ch02, 14 musts). Every item there matches what I see. The
+ones my sections above missed or rated lower are listed here. The ch02 session works from this file alone.
+
+| # | time (frames) | what is wrong | fix | |
+|---|---|---|---|---|
+| G1 (c1#2) | 1:20.1-1:21.9 (f495-545) | Upgrades E2: the pink blob is **Skye's hair above the counter line**, and Max looks straight down the lens at it. Secrecy, not just composition. | Skye sits on the floor with her head below the counter line, or reframe without her. | must |
+| G2 (c1#3) | 1:32.8-1:33.8 (f875-904) | In the steal Skye is **standing**, head at counter height, and her right forearm rises into the island's side panel/countertop edge (f884-895). | Kneel below the counter line; hand over the edge and on top of the counter (with A2/C2). | must |
+| G3 (c1#6) | 1:04.9-1:06.2 (f36-75) | Upgrades D4: she descends **beside** the ladder in mid-air, sinking straight down like an elevator with no rung or rail contact. | Centre her on the rungs, alternate hand and foot contacts per rung, face 3/4 with the arm off it. | must |
+| G4 (c1#7) | 1:08.5-1:10.6 (f145-215) | On the stairs Skye walks on the banister line (the handrail passes through her hips, f150) with **airplane arms** the whole way, and her shoulder is inside the wall at the foot (f180). Adds to B5/B6/D1. | On the treads 25 cm inside the rail, one hand on the rail and the other arm low; end the descent in a crouch. | must |
+| G5 (c1#10) | 1:20-1:44 (f495-555, f725-760, f805-870, f1015-1215) | In every island two-shot **Max's left arm is held vertically beside his face like a wall** (broken pose), and Lily's shoulder is buried in it. Adds to B4. | Max's arms down on the counter (elbows on top) or folded; Lily's arms around the teddy; seats further apart (B4). K1 for the default. | must |
+| G6 (c1#11) | 1:34.8-1:37.2 (f935-1005) | Upgrades C5: Dad's fist sinks into the countertop corner, with the spatula lying flat "in" the buried fist. | Hand on top of the counter, spatula held above it and pointing at the stack. | must |
+| G7 (c1#14) | 1:51.2-2:09.2 (f1425-1490, f1845-1965) | Skye's right forearm **passes through the blue chair back** in the classroom two-shot foreground. | Her hand rests on Max's desk top (the plan's lean), or move the chair. | must |
+| G8 (c1#15) | 2:05.2-2:10.6 (f1845-2006) | Max's blue chair stands on the camera side of his desk while he sits behind it with nothing under him; when she leaves, Skye's hip brushes the desk edges. | Chair under Max (SC1); Skye walks the middle of the aisle. | should |
+| G9 (c1#17) | 1:12-1:44 kitchen | Lily's and Skye's faces render dark brown in the dim kitchen and don't match their other scenes. | **P1**; warm face fill at the island. | should |
+| G10 (c1#18) | 1:12.0-1:12.5 (f245-260) | Skye "sits" against the island with her legs straight out and her hips floating. | Hips on the floor, knees up. | should |
+| G11 (c1#21) | 1:53.5-2:01.4 (f1495-1720) | Skye's face is cut in half by the right frame edge in every Max CU. | Reframe so she is out of frame or clearly in it. | should |
+
 ## ch02 musts
 
 | id | time | fix owner | one-line fix |
@@ -105,3 +124,10 @@ the island top on the side away from them; P4 (line-of-sight check) when it land
 | E3 | 1:27.7-1:29.2 | ch02 + K1 | no Dad arm/pan swinging through Lily's MCU |
 | E5 | 1:46.4 | ch02 | Skye outside only after Dad's line and the crawl |
 | F1 | 1:18.0-1:19.9 | P1 | Max recognisable in the predawn kitchen |
+| G1 | 1:20.1-1:21.9 | ch02 | Skye's head below the counter line, not in Max's eyeline |
+| G2 | 1:32.8-1:33.8 | ch02 | kneel for the steal, arm over the counter edge, not into the panel |
+| G3 | 1:04.9-1:06.2 | ch02 | ladder descent on the rungs with hand/foot contacts |
+| G4 | 1:08.5-1:10.6 | ch02 + SC2/K3 | on the treads inside the rail, no airplane arms, not inside the wall |
+| G5 | 1:20-1:44 | ch02 + K1 | no vertical "wall" arm on Max, Lily not inside it |
+| G6 | 1:34.8-1:37.2 | ch02 | Dad's hand on top of the counter, not in it |
+| G7 | 1:51-2:09 | ch02 | Skye's arm not through the chair back |
