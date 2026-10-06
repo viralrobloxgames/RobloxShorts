@@ -1,0 +1,36 @@
+{
+ "voice": "brittney",
+ "text": "That was way too close.",
+ "seed": 49157,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "That",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "was",
+   "start": 0.32,
+   "end": 0.48
+  },
+  {
+   "word": "way",
+   "start": 0.48,
+   "end": 0.72
+  },
+  {
+   "word": "too",
+   "start": 0.72,
+   "end": 0.94
+  },
+  {
+   "word": "close.",
+   "start": 0.94,
+   "end": 1.2
+  }
+ ],
+ "words_md5": "a64f9902ed7ca16db4a79c734c80a9be",
+ "whisper": "small.en"
+}

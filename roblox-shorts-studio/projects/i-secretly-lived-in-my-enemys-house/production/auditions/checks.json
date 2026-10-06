@@ -1,0 +1,182 @@
+{
+ "max_A_s11.wav": {
+  "dur": 8.32,
+  "transcript": "Your hair is pink, it's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 216.8,
+  "f0_p10_p90": [
+   140.9,
+   304.9
+  ],
+  "wps": 3.2,
+  "sentence_gaps": [
+   0.62,
+   0.72
+  ]
+ },
+ "max_A_s22.wav": {
+  "dur": 6.88,
+  "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 184.5,
+  "f0_p10_p90": [
+   158.7,
+   244.1
+  ],
+  "wps": 3.88,
+  "sentence_gaps": [
+   0.46,
+   0.62,
+   0.6
+  ]
+ },
+ "max_B_s11.wav": {
+  "dur": 9.12,
+  "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 195.4,
+  "f0_p10_p90": [
+   155.1,
+   259.1
+  ],
+  "wps": 2.99,
+  "sentence_gaps": [
+   0.66,
+   0.54,
+   1.16
+  ]
+ },
+ "max_B_s22.wav": {
+  "dur": 9.28,
+  "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 242.0,
+  "f0_p10_p90": [
+   180.3,
+   285.0
+  ],
+  "wps": 2.89,
+  "sentence_gaps": [
+   0.88,
+   0.8,
+   0.76
+  ]
+ },
+ "max_C_s11.wav": {
+  "dur": 6.96,
+  "transcript": "Your hair is pink, it's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 278.0,
+  "f0_p10_p90": [
+   166.8,
+   373.6
+  ],
+  "wps": 3.86,
+  "sentence_gaps": [
+   0.48,
+   0.48
+  ]
+ },
+ "max_C_s22.wav": {
+  "dur": 8.0,
+  "transcript": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 154.2,
+  "f0_p10_p90": [
+   102.9,
+   209.7
+  ],
+  "wps": 3.32,
+  "sentence_gaps": [
+   0.78,
+   0.72,
+   0.66
+  ]
+ },
+ "lily_A_s11.wav": {
+  "dur": 6.64,
+  "transcript": "I won't tell if you come to my tea party every day and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 321.2,
+  "f0_p10_p90": [
+   202.3,
+   465.9
+  ],
+  "wps": 3.01,
+  "sentence_gaps": []
+ },
+ "lily_A_s22.wav": {
+  "dur": 6.32,
+  "transcript": "I won't tell. If you come to my tea party, every day, and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 378.6,
+  "f0_p10_p90": [
+   281.1,
+   489.9
+  ],
+  "wps": 3.23,
+  "sentence_gaps": [
+   0.76
+  ]
+ },
+ "lily_B_s11.wav": {
+  "dur": 6.8,
+  "transcript": "I won't tell if you come to my tea party every day and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 312.9,
+  "f0_p10_p90": [
+   259.5,
+   421.1
+  ],
+  "wps": 2.98,
+  "sentence_gaps": []
+ },
+ "lily_B_s22.wav": {
+  "dur": 6.08,
+  "transcript": "I won't tell, if you come to my tea party, every day, and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 440.0,
+  "f0_p10_p90": [
+   283.7,
+   509.8
+  ],
+  "wps": 3.37,
+  "sentence_gaps": []
+ },
+ "lily_C_s11.wav": {
+  "dur": 6.08,
+  "transcript": "I won't tell, if you come to my tea party, every day, and you have to be the horse!",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 377.5,
+  "f0_p10_p90": [
+   289.5,
+   500.5
+  ],
+  "wps": 3.31,
+  "sentence_gaps": []
+ },
+ "lily_C_s22.wav": {
+  "dur": 6.56,
+  "transcript": "I won't tell, if you come to my tea party, every day, and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 438.7,
+  "f0_p10_p90": [
+   344.2,
+   546.4
+  ],
+  "wps": 3.08,
+  "sentence_gaps": []
+ }
+}
