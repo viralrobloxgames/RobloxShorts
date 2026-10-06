@@ -255,7 +255,7 @@ function blockTea(t, idle) {
   floorSit(C.lily, { pos: li.pos, heading: li.heading + 0.45 }, 'kneel');
   // Skye: cup in her left hand (her right arm is on the camera side), the hobby horse across her lap
   const sip = (a, b) => t >= a && t < b;
-  K.gesture(C.skye, 'cup_hold', 'L', 0.7);
+  K.gesture(C.skye, 'cup_hold', 'L', 0.9);                      // high enough that the cup clears the box
   if (sip(at(12), end(12)) || sip(at(29, 1.4), 1e9)) K.gesture(C.skye, 'hold_out', 'L');        // cup out for more tea
   if (sip(at(18), end(18, 0.5))) K.gesture(C.skye, 'cup_hold', 'L', 1);                          // "Professionally." (a sip)
   if (sip(at(20), end(20))) K.gesture(C.skye, 'hand_over_mouth', 'R', 0.6);                       // gossip

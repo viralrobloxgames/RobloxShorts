@@ -1,0 +1,204 @@
+{
+  "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch05.js",
+  "generated": "2026-10-06T13:41:49.244Z",
+  "fingerprint": "580bbce4d85c9b11",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": false,
+  "wardrobe": [
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "scared",
+          "suspicious",
+          "scheming",
+          "nervous",
+          "happy",
+          "annoyed",
+          "shocked",
+          "smug",
+          "surprised",
+          "determined",
+          "crying",
+          "sad",
+          "shouting",
+          "laugh",
+          "talking",
+          "mouth_o",
+          "neutral",
+          "confused",
+          "mouth_small"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "cap"
+      ]
+    },
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "scared",
+          "suspicious",
+          "scheming",
+          "nervous",
+          "happy",
+          "annoyed",
+          "shocked",
+          "smug",
+          "surprised",
+          "determined",
+          "crying",
+          "sad",
+          "shouting",
+          "laugh",
+          "talking",
+          "mouth_o",
+          "neutral",
+          "confused",
+          "mouth_small"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "spiky_hair"
+      ]
+    },
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "scared",
+          "suspicious",
+          "scheming",
+          "nervous",
+          "happy",
+          "annoyed",
+          "shocked",
+          "smug",
+          "surprised",
+          "determined",
+          "crying",
+          "sad",
+          "shouting",
+          "laugh",
+          "talking",
+          "mouth_o",
+          "neutral",
+          "confused",
+          "mouth_small"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "long_hair"
+      ]
+    },
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "scared",
+          "suspicious",
+          "scheming",
+          "nervous",
+          "happy",
+          "annoyed",
+          "shocked",
+          "smug",
+          "surprised",
+          "determined",
+          "crying",
+          "sad",
+          "shouting",
+          "laugh",
+          "talking",
+          "mouth_o",
+          "neutral",
+          "confused",
+          "mouth_small"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "beanie"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Noob",
+      "accessory": "cap",
+      "mode": "cover",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.123,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Noob",
+      "accessory": "spiky_hair",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Noob",
+      "accessory": "long_hair",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    },
+    {
+      "character": "Noob",
+      "accessory": "beanie",
+      "mode": "hair",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.1,
+        0
+      ],
+      "hideHair": true,
+      "depth": 0,
+      "count": 0,
+      "passed": true,
+      "note": "replaces the character hair; review the sheet"
+    }
+  ]
+}

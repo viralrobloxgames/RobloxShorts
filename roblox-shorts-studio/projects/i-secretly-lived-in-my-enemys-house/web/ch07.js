@@ -36,7 +36,7 @@ const EST = [
   { index: 24, speaker: 'LILY', text: 'Sure.', start: 67.25, end: 67.9 },
 ];
 const L = await K.loadLines(import.meta.url, CH, EST);   // spoken lines count from 1, as in lines.json
-export const meta = K.chapterMeta(L.end + 0.75);
+export const meta = K.chapterMeta(L.lines[L.lines.length - 1].end + 0.75);   // last line + 0.75 s room tone
 export const sky = K.SKY;
 export const samples = () => 1;
 const at = (line, off = 0) => L.line(line).start + off;
@@ -49,6 +49,8 @@ const sm = (a, b, t) => smooth(inv(a, b, t));
 const ATT = V(600, 0, 0);
 const W = (x, z, y = 0) => V(x, y, z).add(ATT);                          // attic local -> world
 const pt = (x, z, h = 0) => ({ pos: W(x, z), heading: h });              // a spot as a mark
+// the decorations' spots are relative to the set's decor_pose mark (authored when it was at x 5.3)
+const D = (x) => x + K.mark('attic', 'decor_pose').pos.x - 600 - 5.3;
 const towards = (a, b) => Math.atan2(b.pos.x - a.pos.x, b.pos.z - a.pos.z);
 
 // ---------- marks ----------
@@ -56,7 +58,7 @@ const M = {
   // Ch7 tea seats: both on the far side of the upturned box from the opening camera, faces to it; the hatch behind them
   teaSkye: () => pt(-3.0, 4.2, -2.95), teaLily: () => pt(-5.8, 2.4, -2.6),
   pose: () => { const m = K.mark('attic', 'decor_pose'); m.heading -= 0.3; return m; },   // cheated toward the cameras (-x side)
-  front: () => pt(6.3, -1.5, Math.atan2(5.3 - 6.3, -3.5 + 1.5) + 0.45),   // in front of her, a little to the witch side (both faces read)
+  front: () => pt(D(6.3), -1.5, Math.atan2(-1.0, -2.0) + 0.45),   // in front of her, a little to the witch side (both faces read)
   hatchTop: () => K.mark('attic', 'hatch_top'), climb: () => K.mark('attic', 'hatch_climb'),
   vac: () => K.mark('attic', 'vacuum'),
 };
@@ -67,8 +69,8 @@ function times() {
   T.lidLift = at(1, 3.6);                // the lid starts to lift (rattles before)
   T.skyeUp = at(2, 0.15);                // Skye scrambles up from the tea box
   T.lilyUp = at(3, 0.0);                 // Lily jumps up
-  T.goDecor = at(4, 0.0);                // both head for the decorations
-  T.jam = end(4, 0.55);                  // the bucket goes on
+  T.goDecor = at(4, 0.45);                // both head for the decorations
+  T.jam = end(4, 0.95);                  // the bucket goes on
   T.pose = T.jam + 0.25;                 // scarecrow pose
   T.lilyBack = end(5, 0.0);              // Lily runs back to the tea box
   T.dadRise = end(5, 0.05);              // Dad climbs in
@@ -152,7 +154,7 @@ function poseSkye(t, idle) {
 
 function poseLily(t, idle) {
   const l = C.lily;
-  const tl = M.teaLily(), grab = pt(6.9, -5.1, Math.PI), jam = pt(7.1, -2.4, 0), stand = pt(-5.4, 1.2, 0);
+  const tl = M.teaLily(), grab = pt(D(6.9), -5.1, Math.PI), jam = pt(D(7.1), -2.4, 0), stand = pt(-5.4, 1.2, 0);
   const teaH = tl.heading;
   if (t < T.lilyUp) { sitFloor(l, tl, teaH, 'kneel'); headTurn(l, -0.3 * sm(1.2, 1.6, t)); return; }
   if (t < T.goDecor) {
@@ -179,7 +181,7 @@ function poseLily(t, idle) {
     if (m.done) sitFloor(l, tl, towards(tl, M.front()) * 0.6 + tl.heading * 0.4, 'kneel');
     return;
   }
-  const side = pt(7.3, -2.5, 0);
+  const side = pt(D(7.3), -2.5, 0);
   const m = K.walk(l, A, tl, side, T.lilyCome, t, { idleAt: idle, endHeading: towards(side, pt(4.6, 3)) });
   if (m.done) headTurn(l, at(23) < t ? -0.45 : -0.2);
 }
@@ -192,16 +194,16 @@ function poseDad(t, idle) {
     climbAt(d, climb, climb.heading, k);
     return;
   }
-  const near = pt(1.8, 0.4), front = M.front();
+  const near = pt(4.6, 3.0), front = M.front();   // out of the window's sun pool
   if (t < T.dadWalk1) {
     const m = K.walk(d, A, climb, top, T.dadOut, t, { idleAt: idle, endHeading: towards(top, M.teaLily()) });
     if (m.done && t > at(7) - 0.3) d.root.rotation.y = towards(top, M.teaLily());
     return;
   }
   if (t < T.dadWalk2) {
-    const m = K.walk(d, A, top, near, T.dadWalk1, t, { idleAt: idle, endHeading: towards(near, M.pose()) - 0.3 });
-    if (m.done && t > at(11, 0.9)) d.root.rotation.y = towards(near, pt(2.6, -3.5));   // "Skeleton."
-    if (m.done && t > at(9, 2.2) && t < end(9)) K.gesture(d, 'hold_out', 'R');          // gestures at the decorations
+    const m = K.walk(d, A, top, near, T.dadWalk1, t, { idleAt: idle, endHeading: towards(near, M.teaLily()) });
+    if (m.done && t > at(11, 0.9)) d.root.rotation.y = towards(near, pt(D(2.6), -3.5));   // "Skeleton."
+    if (m.done && t > at(9, 2.2) && t < end(9)) K.gesture(d, 'point', 'L');             // points at the decorations (his left; the right would be in the sun pool)
     return;
   }
   if (t < T.dadGo) {
@@ -209,8 +211,8 @@ function poseDad(t, idle) {
     if (!m.done) { if (t < T.dadWalk2 + 0.6) K.gesture(d, 'point', 'R'); return; }   // pointing as he goes ("Witch.")
     // nose to nose
     const lk = sm(T.lean, T.lean + 0.5, t) * (1 - sm(T.unlean, T.unlean + 0.4, t));
-    d.root.rotation.y -= 0.45 * lk;                          // square up to her for the lean (the cheat is for the two-shot)
-    if (lk > 0) K.posture(d, 'hip_bend', { mix: 0.55 * lk, reset: false });
+    headTurn(d, 0.35 * lk);                                   // his face cheated toward the camera as he leans in
+    if (lk > 0) K.posture(d, 'hip_bend', { mix: 0.4 * lk, reset: false });
     if (t > at(12) && t < end(12)) K.gesture(d, 'chin_hand', 'R', sm(at(12), at(12, 0.3), t)); // chin stroke
     if (t > at(14) && t < at(16)) headTurn(d, 0.75 * sm(at(14), at(14, 0.3), t) * (1 - sm(at(16), at(16, 0.3), t)));
     // the nozzle: right arm forward, raised toward her face
@@ -232,7 +234,7 @@ function poseDad(t, idle) {
 function poseMax(t, idle) {
   const x = C.max, climb = M.climb(), top = M.hatchTop();
   if (t < T.maxUp) { x.root.visible = false; return; }
-  const near = pt(6.4, -1.4, Math.PI);
+  const near = M.front();
   if (t < T.maxOut) {                                        // head and shoulders up through the hatch: the long look
     const k = 0.62 * sm(T.maxUp, T.maxUp + 0.5, t);
     climbAt(x, climb, towards(climb, M.pose()), k);
@@ -286,32 +288,32 @@ function placeProps(t) {
 // ---------- the shot table ----------
 const cam = (name) => (s) => K.setCam(s, set.cams[name]);
 // Skye front 3/4, whoever stands at M.front() in profile, screen right of her
-const TWO = (s) => K.setCam(s, { pos: W(0.4, 0.0, 4.3), target: W(5.8, -2.4, 3.6), fov: 40 });
-const NOSE = (s) => K.setCam(s, { pos: W(5.8, 1.5, 5.0), target: W(5.3, -3.5, 4.5), fov: 30 });   // over Dad's left shoulder onto her face
+const TWO = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.3), target: W(D(5.8), -2.4, 3.6), fov: 40 });
+const NOSE = (s) => K.setCam(s, { pos: W(D(0.4), 0.0, 4.5), target: W(D(6.1), -2.6, 4.4), fov: 28 });   // TWO zoomed in: her face, his 3/4 leaning in
 const SHOTS = [
   { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-7.6, -5.8, 5.9), target: W(0.6, 6.5, 0.6), fov: 52 }) },
   { line: 2, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-6.6, -3.6, 5.2), target: W(-3.6, 3.0, 3.2), fov: 46 }) },
   { line: 3, off: 0, id: 'lily_quick', cam: (s) => K.camOn(s, C.lily, 'ms') },
   { line: 4, off: 0, id: 'skye_what', cam: (s) => K.camOn(s, C.skye, 'mcu') },
-  { line: 4, off: 0.6, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(2.6, 4.6, 4.4), target: W(5.9, -3.5, 3.0), fov: 44 }) },
-  { line: 6, off: -0.8, id: 'dad_rises', cam: (s) => K.setCam(s, { pos: W(0.6, 2.0, 3.8), target: W(4.5, 8.0, 2.6), fov: 44 }) },
+  { line: 5, off: -0.75, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(D(2.6), 4.6, 4.4), target: W(D(5.9), -3.5, 3.0), fov: 44 }) },
+  { line: 6, off: -0.8, id: 'dad_rises', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 7, off: 0, id: 'dad_lily', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.4 }) },
   { line: 8, off: 0, id: 'lily_tea', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
-  { line: 9, off: 0, id: 'dad_halloween', cam: (s) => K.setCam(s, { pos: W(4.0, -1.8, 4.6), target: W(2.2, 1.6, 3.9), fov: 44 }) },
+  { line: 9, off: 0, id: 'dad_halloween', cam: (s) => K.setCam(s, { pos: W(-2.0, -1.0, 4.4), target: W(4.6, 3.0, 3.9), fov: 42 }) },
   { line: 10, off: 0, id: 'lily_plan', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
-  { line: 11, off: 0, id: 'row', cam: (s) => K.setCam(s, { pos: W(-1.6, 1.6, 4.6), target: W(5.0, -2.4, 3.2), fov: 46 }) },
+  { line: 11, off: 0, id: 'row', cam: (s) => K.setCam(s, { pos: W(D(-1.6), 1.6, 4.6), target: W(D(5.0), -2.4, 3.2), fov: 46 }) },
   { line: 12, off: 0, id: 'two_hmm', cam: TWO },
   { line: 13, off: -0.8, id: 'nose', cam: NOSE },
   { line: 14, off: 0, id: 'dad_asks', cam: TWO },
   { line: 15, off: 0, id: 'lily_festive', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.4 }) },
   { line: 16, off: 0, id: 'hoover', cam: TWO },
-  { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => K.setCam(s, { pos: W(2.4, -1.4, 4.9), target: W(5.4, -3.3, 4.6), fov: 30 }) },
+  { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => K.setCam(s, { pos: W(D(2.4), -1.4, 4.9), target: W(D(5.4), -3.3, 4.6), fov: 30 }) },
   { line: 17, off: 0, id: 'max_off', cam: TWO },
   { line: 18, off: 0.3, id: 'dad_leaves', cam: cam('hatch_wide') },
   { line: 19, off: 0, id: 'max_fix', cam: TWO },
   { line: 20, off: 0, id: 'max_dinner', cam: TWO },
-  { line: 20, off: 1.9, id: 'max_down', cam: cam('hatch_wide') },
-  { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(3.4, 0.4, 4.8), target: W(5.3, -3.5, 4.5), fov: 32 }) },
+  { line: 20, off: 2.7, id: 'max_down', cam: cam('hatch_wide') },
+  { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(D(3.4), 0.4, 4.8), target: W(D(5.3), -3.5, 4.5), fov: 32 }) },
   { line: 22, off: 0, id: 'end_two', cam: cam('decor_ms') },
 ].map((x) => ({ ...x, start: x.line === 1 && x.off === 0 ? 0 : at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
@@ -346,8 +348,6 @@ export function update(t, stage) {
   K.setBlockers(set.group);                           // walls only: the blocking keeps actors out of each other's shots
   K.setLine(C.skye, C.dad.root.visible ? C.dad : C.lily, 1);
   sh.cam(stage, t);
-  const r = (a) => a.root.visible ? [+(a.root.position.x - 600).toFixed(2), +a.root.position.y.toFixed(2), +a.root.position.z.toFixed(2), +a.root.rotation.y.toFixed(2)] : null;
-  globalThis.__dbg = { shot: sh.id, skye: r(C.skye), lily: r(C.lily), dad: r(C.dad), max: r(C.max), cam: stage.camera.position.toArray().map((v, i) => +(v - (i ? 0 : 600)).toFixed(2)) };
 }
 
 // ---------- overlay ----------

@@ -1,0 +1,106 @@
+{
+ "voice": "max_kid",
+ "text": "You left too early. I said, Skye is the worst at hiding. She's been in our attic all week.",
+ "seed": 91995,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "left",
+   "start": 0.2,
+   "end": 0.42
+  },
+  {
+   "word": "too",
+   "start": 0.42,
+   "end": 0.7
+  },
+  {
+   "word": "early,",
+   "start": 0.7,
+   "end": 1.16
+  },
+  {
+   "word": "I",
+   "start": 1.58,
+   "end": 1.66
+  },
+  {
+   "word": "said.",
+   "start": 1.66,
+   "end": 2.0
+  },
+  {
+   "word": "Sky",
+   "start": 2.68,
+   "end": 2.7
+  },
+  {
+   "word": "is",
+   "start": 2.7,
+   "end": 2.94
+  },
+  {
+   "word": "the",
+   "start": 2.94,
+   "end": 3.1
+  },
+  {
+   "word": "worst",
+   "start": 3.1,
+   "end": 3.36
+  },
+  {
+   "word": "at",
+   "start": 3.36,
+   "end": 3.6
+  },
+  {
+   "word": "hiding.",
+   "start": 3.6,
+   "end": 3.96
+  },
+  {
+   "word": "She's",
+   "start": 4.56,
+   "end": 4.66
+  },
+  {
+   "word": "been",
+   "start": 4.66,
+   "end": 4.82
+  },
+  {
+   "word": "in",
+   "start": 4.82,
+   "end": 4.94
+  },
+  {
+   "word": "our",
+   "start": 4.94,
+   "end": 5.1
+  },
+  {
+   "word": "attic",
+   "start": 5.1,
+   "end": 5.4
+  },
+  {
+   "word": "all",
+   "start": 5.4,
+   "end": 5.66
+  },
+  {
+   "word": "week.",
+   "start": 5.66,
+   "end": 5.94
+  }
+ ],
+ "words_md5": "43e583d09415bceb3ca259ddd21d0873",
+ "whisper": "small.en"
+}
