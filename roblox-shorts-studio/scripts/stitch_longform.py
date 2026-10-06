@@ -21,7 +21,7 @@ Over 95 MB: also delivery/<Title>.mp4.part_aa, _ab, ... (split -b 95M) with the 
 commit only the parts (delivery/.gitignore keeps the whole file out of git).
 """
 from pathlib import Path
-import argparse, hashlib, json, re, subprocess, sys, wave
+import argparse, hashlib, json, os, re, shutil, subprocess, sys, tempfile, wave
 import numpy as np
 
 S = Path(__file__).resolve().parent; ROOT = S.parent
@@ -92,7 +92,8 @@ def main():
     lo, _, hi = a.chapters.partition('-'); chs = list(range(int(lo), int(hi or lo) + 1))
     full = chs == list(range(1, 12))
     out = Path(a.out).resolve() if a.out else D / (f'{TITLE}.mp4' if full else f'{TITLE}_ch{chs[0]:02d}-{chs[-1]:02d}.mp4')
-    work = D / '.stitch'; work.mkdir(exist_ok=True)
+    # scratch files (concat list, joined video, mixes) live in a temp dir, never in the repo; removed at the end
+    work = Path(tempfile.mkdtemp(prefix='stitch_', dir=os.environ.get('STITCH_TMP')))
 
     # ---- video
     plan, start, starts = [], 0, {}
@@ -155,7 +156,7 @@ def main():
 
     # ---- mux
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(video), '-i', str(final_wav), '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy',
-         '-c:a', 'aac', '-b:a', '192k', '-ar', str(SR), '-movflags', '+faststart', str(out)])
+         '-c:a', 'aac', '-b:a', '192k', '-ar', str(SR), '-af', 'apad', '-shortest', '-movflags', '+faststart', str(out)])   # audio padded to the picture's end
 
     # ---- checks
     got = framemd5(out); want = [h for s in plan for h in framemd5(s['path'])]
@@ -171,7 +172,7 @@ def main():
     pj = json.loads(post[post.rindex('{'):post.rindex('}') + 1])
     titles = chapter_titles(P)
     lines = [f'{int(starts[ch][0] / FPS) // 60}:{int(starts[ch][0] / FPS) % 60:02d} {titles.get(ch, f"Chapter {ch}")}' for ch in chs]
-    if full or chs[0] == 1: (D / 'youtube_chapters.txt' if full else work / 'youtube_chapters.txt').write_text('\n'.join(lines) + '\n')
+    if full: (D / 'youtube_chapters.txt').write_text('\n'.join(lines) + '\n')
     rep = {
         'file': out.name, 'chapters': chs, 'frames': len(got), 'frames_expected': total, 'seconds': round(total / FPS, 3),
         'video_join': 'stream copy' if copy else 're-encoded', 'frames_match_segments': got == want, 'seams': seams,
@@ -192,10 +193,12 @@ def main():
         rm = out.parent / 'README.md'; r = rm.read_text() if rm.exists() else '# Delivery\n'
         cmd = f'cat {out.name}.part_* > {out.name}'
         if cmd not in r: rm.write_text(r.rstrip('\n') + f'\n\n`{out.name}` is committed in parts (GitHub file limit). Join: `{cmd}`\n')
-    (D / ('stitch_report.json' if full else f'stitch_report_ch{chs[0]:02d}-{chs[-1]:02d}.json')).write_text(json.dumps(rep, indent=1))
+    rp = out.with_name(out.stem + '_stitch_report.json') if a.out else D / ('stitch_report.json' if full else f'stitch_report_ch{chs[0]:02d}-{chs[-1]:02d}.json')
+    rp.write_text(json.dumps(rep, indent=1))
     print(json.dumps({k: rep[k] for k in ('file', 'frames', 'frames_expected', 'video_join', 'frames_match_segments', 'av_diff_s', 'loudness_I', 'true_peak', 'size_mb', 'ok')}))
     for s in seams: print(f"seam after {s['after']} at frame {s['frame']}: {'clean' if s['ok'] else 'MISMATCH'}")
     for n_ in notes: print('NOTE', n_)
+    shutil.rmtree(work, ignore_errors=True)
     if not ok: raise SystemExit('STITCH CHECK FAILED (see stitch report)')
 
 
