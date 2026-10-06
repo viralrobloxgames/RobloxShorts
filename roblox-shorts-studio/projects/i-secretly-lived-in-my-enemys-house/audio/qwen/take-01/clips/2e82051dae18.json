@@ -1,0 +1,56 @@
+{
+ "voice": "brittney",
+ "text": "Me and Skye. Best friends. He spelled friends wrong.",
+ "seed": 48018,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Me",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "and",
+   "start": 0.48,
+   "end": 0.76
+  },
+  {
+   "word": "Skye",
+   "start": 0.76,
+   "end": 1.3
+  },
+  {
+   "word": "best",
+   "start": 1.3,
+   "end": 1.58
+  },
+  {
+   "word": "friends.",
+   "start": 1.58,
+   "end": 2.02
+  },
+  {
+   "word": "He",
+   "start": 2.36,
+   "end": 2.56
+  },
+  {
+   "word": "spelled",
+   "start": 2.56,
+   "end": 2.86
+  },
+  {
+   "word": "friends",
+   "start": 2.86,
+   "end": 3.24
+  },
+  {
+   "word": "wrong",
+   "start": 3.24,
+   "end": 3.58
+  }
+ ],
+ "words_md5": "f449fc5582f7e75aa8853989e15bf3f6",
+ "whisper": "small.en"
+}

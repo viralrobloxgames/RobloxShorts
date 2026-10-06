@@ -1,0 +1,41 @@
+{
+ "voice": "george_c",
+ "text": "Max? Who are you talking to?",
+ "seed": 60331,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Max,",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "who",
+   "start": 0.88,
+   "end": 0.98
+  },
+  {
+   "word": "are",
+   "start": 0.98,
+   "end": 1.06
+  },
+  {
+   "word": "you",
+   "start": 1.06,
+   "end": 1.18
+  },
+  {
+   "word": "talking",
+   "start": 1.18,
+   "end": 1.42
+  },
+  {
+   "word": "to?",
+   "start": 1.42,
+   "end": 1.66
+  }
+ ],
+ "words_md5": "c3b57642813a4ae2b65146e94dc9293f",
+ "whisper": "small.en"
+}

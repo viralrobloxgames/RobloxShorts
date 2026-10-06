@@ -1,0 +1,71 @@
+{
+ "voice": "brittney",
+ "text": "I need more glow sticks. Where does Max keep his old stuff?",
+ "seed": 34630,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "need",
+   "start": 0.18,
+   "end": 0.32
+  },
+  {
+   "word": "more",
+   "start": 0.32,
+   "end": 0.62
+  },
+  {
+   "word": "glow",
+   "start": 0.62,
+   "end": 0.86
+  },
+  {
+   "word": "sticks,",
+   "start": 0.86,
+   "end": 1.18
+  },
+  {
+   "word": "where",
+   "start": 1.6,
+   "end": 1.82
+  },
+  {
+   "word": "does",
+   "start": 1.82,
+   "end": 1.98
+  },
+  {
+   "word": "Max",
+   "start": 1.98,
+   "end": 2.16
+  },
+  {
+   "word": "keep",
+   "start": 2.16,
+   "end": 2.42
+  },
+  {
+   "word": "his",
+   "start": 2.42,
+   "end": 2.56
+  },
+  {
+   "word": "old",
+   "start": 2.56,
+   "end": 2.68
+  },
+  {
+   "word": "stuff?",
+   "start": 2.68,
+   "end": 2.94
+  }
+ ],
+ "words_md5": "25d6dfb95d99d556a87c430ac34247bf",
+ "whisper": "small.en"
+}

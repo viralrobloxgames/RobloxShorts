@@ -138,7 +138,14 @@ export function build(scene) {
   blanketLegs.add(box(5.3, 0.3, 4.4, blanketM, -4, 3.25, -4.0)); for (const s of [-1, 1]) blanketLegs.add(box(0.2, 1.4, 4.4, blanketM, -4 + s * 2.65, 2.6, -4.0)); blanketLegs.add(box(5.3, 1.3, 0.2, blanketM, -4, 2.65, -1.85));
   // a lump to pull over the head (Ch1 "yanks the blanket over his head"): chapters toggle parts.blanketUp
   const blanketUp = new THREE.Group(); blanketUp.visible = false; bed.add(blanketUp);
-  blanketUp.add(box(5.3, 0.3, 7.0, blanketM, -4, 3.3, -5.3)); for (const s of [-1, 1]) blanketUp.add(box(0.2, 1.4, 7.0, blanketM, -4 + s * 2.65, 2.7, -5.3)); blanketUp.add(box(5.3, 1.3, 0.2, blanketM, -4, 2.7, -8.75));
+  // the blanket lying on the bed from the headboard down, with a person-sized mound under it (body, head end under the
+  // pillow end, a knee bump); Max is hidden under it (chapters hide the rig while it shows)
+  blanketUp.add(box(5.3, 0.3, 6.9, blanketM, -4, 2.25, -5.3)); for (const s of [-1, 1]) blanketUp.add(box(0.2, 1.4, 6.9, blanketM, -4 + s * 2.65, 1.6, -5.3)); blanketUp.add(box(5.3, 1.2, 0.2, blanketM, -4, 1.6, -1.75));
+  const lumpM = blanketM.clone(); lumpM.flatShading = false;
+  const body = new THREE.Mesh(new THREE.CapsuleGeometry(1.15, 3.6, 8, 20), lumpM); body.rotation.x = Math.PI / 2; body.scale.set(1.25, 1, 0.75); body.position.set(-4.1, 2.45, -5.3); body.castShadow = body.receiveShadow = true;
+  const head = new THREE.Mesh(new THREE.SphereGeometry(1.05, 20, 14), lumpM); head.scale.set(1.15, 0.85, 1.0); head.position.set(-4.0, 2.75, -7.6); head.castShadow = head.receiveShadow = true;
+  const knee = new THREE.Mesh(new THREE.SphereGeometry(0.85, 18, 12), lumpM); knee.scale.set(1.3, 0.75, 1.0); knee.position.set(-4.1, 2.8, -3.8); knee.castShadow = knee.receiveShadow = true;
+  blanketUp.add(body, head, knee);
 
   // ---- bedside table + lamp (x 0.6, z -7.8) ----
   group.add(box(2.2, 2.4, 2.0, woodM, 0.6, 1.2, -7.9), box(1.8, 0.6, 0.1, darkWood, 0.6, 1.5, -6.86), box(0.3, 0.15, 0.1, std('#d9b34a', { metalness: 0.6 }), 0.6, 1.5, -6.78));
