@@ -441,3 +441,14 @@ use about -1.2 to -1.4. No two-arms-up poses.
 scenery or another character, in frame ranges with film times, depth and coverage, ranked high / medium / low; only clipping
 the camera can see. Mark an object `userData.noClipCheck = true` if it is meant to be passed through (e.g. a sheet).
 Results and the method: `production/review/clip_check/SUMMARY.md`.
+- (kit-sets-a, SA1/SA2) Hallway: the camera side runs on to z 34 (floor, side walls, ceiling, end wall) and the stair end
+  is closed, so no camera sees past the set. Bedroom: the walk-in runs on behind the left wall to z -5.4; `closet_hide` is
+  Skye flat against the inside of that wall, out of sight from `closet_front` with the doors open (a hair lock at the
+  edge at most); cams `closet_hide_pov` (corner: Skye 3/4 foreground, Max beyond the wall edge) and `closet_hide_ext`
+  (over Max into the open closet: hoodies, no Skye). With the doors shut the closet is dark and louvred: Max can't see in.
+
+### Cast colour floor (kit-pipeline, P1)
+Every lighting preset has `cast` (0 by day, ~0.2-0.38 at night / under the fridge / in the attic): each cast material
+also glows with its own texture at that level, applied right before each draw, so coloured light tints the set but not a
+character's skin, hair or clothes. Override per frame with `K.applyLight(stage, id, { set, castFloor: 0.3 })`.
+Flashlight defaults are softer (`flashlightBeam` 30, `chinLight` 4.5) so torches don't white out faces.

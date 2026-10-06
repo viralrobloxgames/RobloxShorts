@@ -160,14 +160,15 @@ export function build(scene) {
   // ---- closet: recess x -16.4..-11, z -0.5..4.5; louvred double doors at x -11 ----
   const closetM = std('#f1e9da', { roughness: 0.6 }), closetWall = std('#cdbfa8', { roughness: 0.9 });
   const closet = new THREE.Group(); closet.name = 'closet'; group.add(closet);
-  closet.add(box(5.4, 0.4, 6.4, floorMat('#8a5c38', 5, [1, 1]), -13.7, -0.2, 2, false));
-  closet.add(box(0.4, 8.4, 6.8, closetWall, -16.6, 4.2, 2, false), box(5.8, 8.4, 0.4, closetWall, -13.8, 4.2, -1.2, false), box(5.8, 8.4, 0.4, closetWall, -13.8, 4.2, 5.2, false), box(5.8, 0.4, 6.8, closetWall, -13.8, 8.4, 2, false));
-  closet.add(box(1.5, 0.15, 6.2, closetM, -15.6, 7.6, 2)); // shelf over the rail
-  { const rail = cyl(0.07, 0.07, 6.2, std('#c8c8c8', { metalness: 0.7, roughness: 0.3 }), 10, -14.4, 6.9, 2); rail.rotation.x = Math.PI / 2; closet.add(rail); }
+  // the walk-in runs on behind the bedroom's left wall to z -5.4: a hiding corner out of sight from the closet doors
+  closet.add(box(5.4, 0.4, 10.6, floorMat('#8a5c38', 5, [1, 2]), -13.7, -0.2, -0.1, false));
+  closet.add(box(0.4, 8.4, 11.0, closetWall, -16.6, 4.2, -0.1, false), box(5.8, 8.4, 0.4, closetWall, -13.8, 4.2, -5.6, false), box(5.8, 8.4, 0.4, closetWall, -13.8, 4.2, 5.2, false), box(5.8, 0.4, 11.0, closetWall, -13.8, 8.4, -0.1, false));
+  closet.add(box(1.5, 0.15, 10.2, closetM, -15.6, 7.6, -0.1)); // shelf over the rail
+  { const rail = cyl(0.07, 0.07, 10.0, std('#c8c8c8', { metalness: 0.7, roughness: 0.3 }), 10, -14.4, 6.9, 0.0); rail.rotation.x = Math.PI / 2; closet.add(rail); }
   const HOODIE_COLORS = ['#3b5ba5', '#2d2d2d', '#3f8f5a', '#7a7f87', '#c0392b', '#e0a32e', '#5a3d7a'];
   const hoodieZ = [-0.7, -0.15, 0.4, 3.6, 4.15, 4.7]; // a 2.6-wide gap round z 2 is Skye's spot
   hoodieZ.forEach((z, i) => { const h = hoodie(HOODIE_COLORS[i % HOODIE_COLORS.length]); h.position.set(-14.4, 6.95, z); closet.add(h); }); // rail along z: shoulders along x, faces along z
-  for (let i = 0; i < 3; i++) closet.add(box(1.2, 0.7 - i * 0.1, 1.0, std(['#e94d4d', '#ffffff', '#2c7be5'][i]), -15.6 + i * 0.1, 0.35 + i * 0.6, -0.6)); // shoe boxes
+  for (let i = 0; i < 3; i++) closet.add(box(1.2, 0.7 - i * 0.1, 1.0, std(['#e94d4d', '#ffffff', '#2c7be5'][i]), -15.6 + i * 0.1, 0.35 + i * 0.6, -4.8)); // shoe boxes (hiding corner)
   closet.add(box(1.3, 0.8, 0.9, std('#3a3a3a'), -15.6, 0.4, 4.6)); // sneakers box
   for (const z of [0.6, 1.4]) closet.add(box(1.2, 0.8, 1.0, std('#d4c6a5'), -15.2, 7.9, z)); // boxes on the shelf
   const cfr = doorFrame(6, 8, trimM); cfr.rotation.y = Math.PI / 2; cfr.position.set(-11, 0, 2); closet.add(cfr);
@@ -304,11 +305,13 @@ export function build(scene) {
     bedside_plate: M(0.9, 2.42, -7.5, 0, 'Ch10: plate spot on the bedside table top (y = table top)'),
     bedside_flashlight: M(1.2, 2.42, -7.2, -0.6, 'Ch1: flashlight lying on the bedside table'),
     lamp_switch: M(0.65, 2.75, -8.1, 0, 'Ch10: the lamp switch on the lamp base (hand point)'),
-    closet_hide: marks.closet_deep,
+    closet_hide: M(-12.0, 0, -3.0, -Math.PI / 2, 'Ch1: Skye pressed flat against the inside of the bedroom wall in the walk-in corner, facing in (-x): out of sight from closet_front with the doors open; only a lock of her hair at the wall edge'),
     mirror_stand: marks.desk_stand, bed_sit_up: marks.bed_sit, door_outside: marks.door_out, door_inside: marks.door_in,
   });
   Object.assign(cams, {
     closet_skye_cu: cams.closet_pov_cu,
+    closet_hide_pov: C([-15.6, 4.6, -4.6], [-10.5, 4.0, -0.2], 46, [], 'Ch1: from the walk-in corner: Skye (closet_hide) 3/4 in the foreground, Max at closet_front beyond the wall edge, seen through the open doors'),
+    closet_hide_ext: C([-6.4, 5.0, 6.0], [-12.8, 4.0, 0.4], 40, [], 'Ch1: room side over Max at closet_front into the open closet: hoodies, no Skye (only the lock at the wall edge)'),
     closet_pov_reverse: C([-15.6, 5.2, 2.0], [-8.6, 4.2, 2.0], 44, [], 'Ch1: from the back of the closet over the hoodies at Max in the open doorway (Skye at closet_deep)'),
     closet_max_mcu: C([-14.2, 4.9, 2.6], [-8.6, 4.5, 2.0], 32, [], 'Ch1: inside the closet between the hoodies, MCU on Max at closet_front'),
     closet_door_ext: C([-10.2, 5.0, -2.8], [-8.6, 4.3, 2.0], 40, [], 'Ch1: room side, front 3/4 on Max at closet_front (camera by the side wall, near the bed)'),
