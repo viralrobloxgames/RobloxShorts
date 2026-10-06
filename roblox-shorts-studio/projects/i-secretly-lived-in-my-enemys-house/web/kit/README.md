@@ -39,7 +39,7 @@ lines.json, plus an offset) and the per-set blocking in `update()`. Preview:
 | `mark(setId, name, fallback?)` → `{ pos, heading }` | `K.mark('bedroom', 'closet_inside', { pos: V(-6,0,6), heading: 2.7 })` (fallback = offset from the set origin, used with a warning until the set has the mark) |
 | `boxRoom(id)` | the placeholder room |
 | `loadLines(import.meta.url, ch, EST)` → `L` | top level of the clip: `const L = await K.loadLines(import.meta.url, 4, EST);` `L.lines` (`index` 1-based as in lines.json), `L.words` (each with `speaker`), `L.end`, `L.duration`, `L.measured`, `L.line(i)`, `L.said('MAX')`, `L.speakerAt(t)` |
-| `holdClock(t, L, extra?)` | `K.playAnim(a, [[A.idle, K.holdClock(t, L)]])`: idle motion runs only while someone speaks (plus `extra` [t0, t1] ranges), so silent held moments repeat frames exactly and render.mjs skips them |
+| `holdClock(t, L, extra?)` (the "hold()" of KIT_SPEC: `hold` itself is props.js's prop-in-hand helper) | `K.playAnim(a, [[A.idle, K.holdClock(t, L)]])`: idle motion runs only while someone speaks (plus `extra` [t0, t1] ranges), so silent held moments repeat frames exactly and render.mjs skips them |
 | `loadAnims(names)` | `const A = await K.loadAnims(['idle', 'walk', 'run'])` (pack animations) |
 | `playAnim(actor, layers)` | `K.playAnim(C.max, [[A.idle, idle], [A.point, 0.4, 0.5, false]])` |
 | `putOn(actor, at, { heading, sit, visible })` | `K.putOn(C.skye, K.mark('attic', 'nest'))`; feet on the mark's floor unless `sit` |
@@ -56,8 +56,9 @@ light in `set.lights` is off unless the preset or `practicals` turns it on (true
 | Export | Example |
 |---|---|
 | `PRESETS` | the numbers; change a look here (for every chapter), never in a chapter |
-| `setPractical(set, name, on)` | `K.setPractical(set, 'bedside_lamp', true)` (sets: `light.userData.bulb` = emissive mesh(es) switched with it) |
-| `flashlightBeam(stage)` → `{ set(on, from, dir) }` | `beam.set(true, torchWorldPos, dirVector)` each frame; spot light + faint cone |
+| `setPractical(set, name, on)` | `K.setPractical(set, 'bedside_lamp', true)` (sets: `light.userData.bulb` = emissive mesh(es) switched with it); `on` may be a 0..1 factor for ramps, e.g. the fridge light with the door: `practicals: { fridge_light: doorOpen }` |
+| `flashlightBeam(stage, opts)` → `{ set(on, from, dir), fromProp(on, prop, axis?) }` | `beam.fromProp(true, P.torch)` each frame (the held prop's world position, along its local +z or `axis`); `beam.set(true, pos, dir)` by hand; opts `cone: false` (no visible cone), `intensity`, `distance`, `angle` |
+| `chinLight(stage)` → `{ set(on, actor) }` | Ch6 torch under the chin: `chin.set(true, C.skye)`: warm up-light below the face, no cone |
 | `phoneGlow(stage)` → `{ set(on, pos) }` | `glow.set(true, phonePos)` |
 | `glowSticks(stage, n)` → `{ set(on, [pos, ...]) }` | `sticks.set(true, [wristL, wristR])` |
 
@@ -89,5 +90,5 @@ Coordinates are 1920x1080 units times `s`. The lower third (y > 760) belongs to 
 | `dayCard(g, s, t, { day, time })` | `K.dayCard(g, s, t, { day: 'TUESDAY', time: '6:04 AM' })` in `overlay()` of Ch2-11: full-width band across the top (y 35-265) from frame 0 for 2.1 s; frame the first shot's faces below it |
 | `timeStamp(g, s, text)` | `K.timeStamp(g, s, 'MONDAY 12:15 PM')` small, top left |
 | `redCircle(g, s, t, x, y, r, { t0, t1 })` | `K.redCircle(g, s, t, p.x, p.y, 130, { t0: 2.5 })` hand-drawn, draws on in 0.35 s |
-| `endScreen(g, s, t, { t0 })` | Ch11's last ~12 s: SUBSCRIBE @viralrobloxgames at the top; y 330-1000 left clear for YouTube's end-screen elements |
+| `endScreen(g, s, t, { t0 })` | Ch11's last ~12 s: SUBSCRIBE @viralrobloxgames in the top band (y 40-290, darkened); **clear space for YouTube's end-screen elements: x 0-1920, y 300-1040** (the whole frame below the title) where YouTube places two video tiles and the subscribe button. The picture underneath shows through a dim; frame the cast in the top band's sides or keep them small/out of the clear space |
 | `roundRect`, `OV` | |
