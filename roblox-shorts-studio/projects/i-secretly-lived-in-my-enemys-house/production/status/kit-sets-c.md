@@ -13,3 +13,4 @@ Next: watching requests.md and shots/*.md for more asks; available for a render 
   pantry slats are `noCamBlock` (setCam's clearShot never pulls a set cam inside); `setDoor()` on kitchen/exterior;
   aliases for every name ch01-ch04/ch11 code looks up (checked against web/chNN.js).
 - 13:18 UTC: per orchestrator, chapter QA dropped; answering kit-sets-c requests (background watch), waiting for a render job.
+- 23:30 UTC: SC1+SC2 plausibility fix landed (35ee40d): classroom aisles/seating/routes, kitchen stairs/routes/hide-reach marks/sightBlocked. Orchestrator + ch01/02/03/04/11 notified. Waiting for ch06's segment-B re-render request.

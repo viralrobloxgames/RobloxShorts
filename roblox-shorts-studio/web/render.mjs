@@ -14,7 +14,8 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { fitGate } from './lib/fitgate.mjs';
+import { fitGate, clipFiles } from './lib/fitgate.mjs';
+import crypto from 'node:crypto';
 
 const WEB = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.dirname(WEB);
@@ -70,7 +71,15 @@ if (args.resume) frames = frames.filter((f) => !fs.existsSync(path.join(out, `we
 const record = !args.scale && !args.samples, hashFile = path.join(out, 'frame_hashes.json');
 const saved = record && fs.existsSync(hashFile) ? JSON.parse(fs.readFileSync(hashFile, 'utf8')) : null;
 const hashes = saved && saved.clip === args.clip ? saved.hashes : {};
-const flushHashes = () => { if (record) fs.writeFileSync(hashFile, JSON.stringify({ clip: args.clip, total, hashes })); };
+// code: a fingerprint of everything the picture is computed from (the clip, its local imports such as the kit, the shared
+// libs and the runner). finish_longform.py copies it into each segment's record and stitch_longform.py warns when the two
+// segments of a chapter were rendered from different code (their seam can pop).
+const codeHash = (() => { const h = crypto.createHash('sha256'); const libs = fs.readdirSync(path.join(WEB, 'lib')).filter((f) => /\.(js|mjs)$/.test(f)).sort().map((f) => path.join(WEB, 'lib', f));
+  for (const f of [...clipFiles(args.clip).sort(), ...libs, path.join(WEB, 'runner.html')]) { h.update(path.relative(ROOT, f)); h.update(fs.readFileSync(f)); }
+  const sets = path.join(path.dirname(path.resolve(ROOT, args.clip)), 'kit', 'sets');            // set modules load dynamically
+  if (fs.existsSync(sets)) for (const f of fs.readdirSync(sets).sort()) { h.update(f); h.update(fs.readFileSync(path.join(sets, f))); }
+  return h.digest('hex').slice(0, 12); })();
+const flushHashes = () => { if (record) fs.writeFileSync(hashFile, JSON.stringify({ clip: args.clip, total, code: codeHash, hashes })); };
 const workers = Math.max(1, Number(args.workers || 1));
 const pages = [first, ...(await Promise.all(Array.from({ length: workers - 1 }, openPage)))];
 const t0 = Date.now(); let done = 0, skipped = 0;
