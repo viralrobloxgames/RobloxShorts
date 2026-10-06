@@ -1,0 +1,66 @@
+{
+ "lily_D_s33.wav": {
+  "who": "lily",
+  "style": "D",
+  "seed": 33,
+  "instruct": "A 7-year-old British girl with a slightly low, husky voice for her age: calm, unimpressed and deadpan, a tiny negotiator laying down her terms. She stops for a full breath after every sentence. Southern English accent, clear and natural, never squeaky, shrill or high-pitched.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_D_s44.wav": {
+  "who": "lily",
+  "style": "D",
+  "seed": 44,
+  "instruct": "A 7-year-old British girl with a slightly low, husky voice for her age: calm, unimpressed and deadpan, a tiny negotiator laying down her terms. She stops for a full breath after every sentence. Southern English accent, clear and natural, never squeaky, shrill or high-pitched.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_E_s33.wav": {
+  "who": "lily",
+  "style": "E",
+  "seed": 33,
+  "instruct": "A matter-of-fact seven-year-old English girl speaking in a low, flat, serious little voice, like a small judge reading out a verdict. Each short sentence is said on its own, with a clear pause before the next one. Natural child's voice, mid-pitched, not cartoonish, not squeaky.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_E_s44.wav": {
+  "who": "lily",
+  "style": "E",
+  "seed": 44,
+  "instruct": "A matter-of-fact seven-year-old English girl speaking in a low, flat, serious little voice, like a small judge reading out a verdict. Each short sentence is said on its own, with a clear pause before the next one. Natural child's voice, mid-pitched, not cartoonish, not squeaky.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_A_s33.wav": {
+  "who": "lily",
+  "style": "A",
+  "seed": 33,
+  "instruct": "A 7-year-old British girl with a clear, natural little girl's voice. Sharp and deadpan, very matter-of-fact, like a tiny businesswoman stating her terms. Calm, confident, unhurried, with short pauses between sentences. Childlike but clear, not squeaky or cartoonish.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_A_s44.wav": {
+  "who": "lily",
+  "style": "A",
+  "seed": 44,
+  "instruct": "A 7-year-old British girl with a clear, natural little girl's voice. Sharp and deadpan, very matter-of-fact, like a tiny businesswoman stating her terms. Calm, confident, unhurried, with short pauses between sentences. Childlike but clear, not squeaky or cartoonish.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_B_s33.wav": {
+  "who": "lily",
+  "style": "B",
+  "seed": 33,
+  "instruct": "A young English girl, about seven years old, southern English accent. A serious, bossy little negotiator: flat, certain, no giggling. Speaks slowly and precisely, each sentence on its own. A natural child's voice, not high-pitched or shrill.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_B_s44.wav": {
+  "who": "lily",
+  "style": "B",
+  "seed": 44,
+  "instruct": "A young English girl, about seven years old, southern English accent. A serious, bossy little negotiator: flat, certain, no giggling. Speaks slowly and precisely, each sentence on its own. A natural child's voice, not high-pitched or shrill.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ }
+}

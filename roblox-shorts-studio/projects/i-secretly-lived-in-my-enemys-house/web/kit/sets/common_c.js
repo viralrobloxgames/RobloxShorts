@@ -75,7 +75,6 @@ export function wallWithHoles(len, h, thick, m, holes = []) {
     for (const o of hs) { if (o.y0 > y) box(b - a, o.y0 - y, thick, m, mid, (y + o.y0) / 2, 0, g); y = o.y1; }
     if (y < h) box(b - a, h - y, thick, m, mid, (y + h) / 2, 0, g);
   }
-  g.traverse((o) => { if (o.isMesh) o.castShadow = false; });
   return g;
 }
 
@@ -83,23 +82,35 @@ export function wallWithHoles(len, h, thick, m, holes = []) {
 // normal pointing into the room (world space). Checked on every render through scene.onBeforeRender, so a camera
 // anywhere outside a wall sees straight in. Chapters don't need to do anything.
 const registries = new WeakMap();
-export function autoHideWalls(scene, walls, margin = 0.4) {
-  let list = registries.get(scene);
-  if (!list) {
-    list = []; registries.set(scene, list);
+function registry(scene, margin = 0.4) {
+  let reg = registries.get(scene);
+  if (!reg) {
+    reg = { walls: [], fns: [] }; registries.set(scene, reg);
     const prev = scene.onBeforeRender;
     const v = new THREE.Vector3();
     scene.onBeforeRender = function (renderer, sc, camera, rt) {
-      for (const w of list) {
+      for (const w of reg.walls) {
         if (w.forced !== undefined) { w.obj.visible = w.forced; continue; }
-        v.copy(camera.getWorldPosition(v)).sub(w.point);
+        camera.getWorldPosition(v).sub(w.point);
         w.obj.visible = v.dot(w.normal) > -margin;
       }
+      for (const f of reg.fns) f(camera);
       if (prev) prev.call(this, renderer, sc, camera, rt);
     };
   }
-  list.push(...walls);
+  return reg;
 }
+export function autoHideWalls(scene, walls) { registry(scene).walls.push(...walls); }
+// Run fn(camera) right before every render of the scene (after all of update()).
+export function onSceneRender(scene, fn) { registry(scene).fns.push(fn); }
+
+// Practicals for K.applyLight / K.setPractical (lighting.js): each entry in set.lights is a proxy light (never added to
+// the scene) whose intensity the kit switches (0..1+); the set multiplies its real lights by it right before each
+// render, together with its own state (e.g. the fridge light only shines while the door is open). A proxy nobody has
+// switched (intensity NaN) uses the set's time-of-day default.
+// The proxy is a black, zero-range light added to the set group so render.mjs's frame fingerprint sees its level.
+export function proxyLight(parent) { const p = new THREE.PointLight('#000000', NaN, 0.01); p.userData.base = 1; p.userData.proxy = true; if (parent) parent.add(p); return p; }
+export function proxyLevel(p, fallback) { return Number.isNaN(p.intensity) ? fallback : (p.visible === false ? 0 : p.intensity); }
 
 // Marks / cams in world space from set-local numbers.
 export function markMaker(offset) {

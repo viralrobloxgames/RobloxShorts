@@ -47,16 +47,27 @@ export function clearShot(target, pos, blockers, margin = 0.35, skip = []) {
   if (!blockers.length) return pos;
   const d = pos.clone().sub(target), len = d.length(); if (len < 1e-3) return pos;
   ray.set(target, d.divideScalar(len)); ray.near = 0.2; ray.far = len;
-  const hits = ray.intersectObjects(blockers, true).filter((h) => h.object.visible && visibleChain(h.object) && !h.object.userData.noCamBlock && !(h.object.material?.transparent && h.object.material.opacity < 0.5));
+  const hits = ray.intersectObjects(blockers, true).filter((h) => isSolid(h.object) && visibleChain(h.object));
   if (!hits.length) return pos;
   return target.clone().addScaledVector(ray.ray.direction, Math.max(0.6, hits[0].distance - margin));
 }
+// Only solid surfaces block a camera: not light shafts, dust (Points), lines, sprites, additive or see-through things.
+const isSolid = (o) => {
+  if (!o.isMesh || o.userData.noCamBlock) return false;
+  const m = Array.isArray(o.material) ? o.material[0] : o.material;
+  return !(m && (m.blending === THREE.AdditiveBlending || m.depthWrite === false || (m.transparent && m.opacity < 0.5)));
+};
 const visibleChain = (o) => { for (let x = o; x; x = x.parent) if (!x.visible) return false; return true; };
 
 let BLOCKERS = null;
 // What cameras must stay out of: the shown set's group plus the actors (an actor is never a blocker in its own shot).
 // Every frame: K.setBlockers(set.group, C.skye, C.max, ...). No arguments disables it.
-export function setBlockers(...objs) { BLOCKERS = objs.flat().map((o) => (o?.root ? o.root : o)).filter(Boolean); if (!BLOCKERS.length) BLOCKERS = null; }
+let SET_BLOCKERS = null;     // the same without actors: a set's named cameras (setCam) only clear against the set
+export function setBlockers(...objs) {
+  const all = objs.flat().filter(Boolean);
+  BLOCKERS = all.map((o) => (o.root ? o.root : o)); if (!BLOCKERS.length) BLOCKERS = null;
+  SET_BLOCKERS = all.filter((o) => !o.root); if (!SET_BLOCKERS.length) SET_BLOCKERS = null;
+}
 
 export function applyShot(stage, shot, { roll = 0 } = {}) {
   const c = stage.camera;
@@ -68,7 +79,7 @@ export function applyShot(stage, shot, { roll = 0 } = {}) {
 }
 export function setCam(stage, cam, opts = {}) {
   const shot = { pos: cam.pos.clone(), target: cam.target.clone(), fov: cam.fov || 40 };
-  if (opts.clear !== false) shot.pos = clearShot(shot.target, shot.pos, opts.blockers ?? BLOCKERS);
+  if (opts.clear !== false) shot.pos = clearShot(shot.target, shot.pos, opts.blockers ?? SET_BLOCKERS);
   return applyShot(stage, shot, opts);
 }
 // Blend two shots (a slow push or a pan): u 0..1.
