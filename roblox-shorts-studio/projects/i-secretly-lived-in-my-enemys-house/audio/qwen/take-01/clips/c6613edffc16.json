@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Lily, stop saying ghost.",
+ "seed": 1099,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "word": "stop",
+   "start": 0.78,
+   "end": 1.02
+  },
+  {
+   "word": "saying",
+   "start": 1.02,
+   "end": 1.44
+  },
+  {
+   "word": "ghost.",
+   "start": 1.44,
+   "end": 1.76
+  }
+ ],
+ "words_md5": "3cd792d9e51543dab06ac2cc63a54e42",
+ "whisper": "small.en"
+}
