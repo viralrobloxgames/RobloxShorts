@@ -17,23 +17,23 @@ Max has been my enemy since kindergarten. He called me a scaredy-cat and said no
 Seven days in his attic, stealing his dad's pancakes and haunting him every night. He had no idea... right? 🎃
 
 0:00 The Dare
-1:04 Twelve Pancakes
+1:03 Twelve Pancakes
 2:10 A Useful Ghost
-3:18 Cinnamon
-4:19 The Tea Party
+3:17 Cinnamon
+4:18 The Tea Party
 5:26 The Practice
-6:31 The Pumpkin Girl
-7:44 The Worst
-8:42 The Drawing
-9:42 Hungry?
-10:53 No Crusts
+6:23 The Pumpkin Girl
+7:37 The Worst
+8:35 The Drawing
+9:35 Hungry?
+10:40 No Crusts
 
 Subscribe to Viral Roblox Games for more stories like this! @viralrobloxgames
 
 #roblox #robloxstory #robloxanimation #halloween
 ```
 
-The chapter times above are **estimates** (measured narration for most chapters, estimates for Ch6 and Ch10). After the stitch, replace them with `delivery/youtube_chapters.txt`.
+The chapter times above are measured from the final stitch (`youtube_chapters.txt`).
 
 ## 3. Thumbnail
 
