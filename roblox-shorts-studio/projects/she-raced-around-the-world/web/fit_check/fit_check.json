@@ -1,10 +1,11 @@
 {
   "clip": "projects/she-raced-around-the-world/web/race_clip.js",
-  "generated": "2026-10-06T02:51:55.028Z",
-  "fingerprint": "eba41d432e33b603",
+  "generated": "2026-10-06T03:02:39.043Z",
+  "fingerprint": "1dc812bb51ee28d6",
   "tolerance_studs": 0.02,
   "passed": true,
-  "reviewed": false,
+  "reviewed": true,
   "wardrobe": [],
-  "pairs": []
+  "pairs": [],
+  "reviewedAt": "2026-10-06T03:02:39.579Z"
 }

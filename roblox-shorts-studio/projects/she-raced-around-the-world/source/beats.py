@@ -25,7 +25,8 @@ norm = lambda w: re.sub(r"[^a-z0-9]", '', w.lower())
 script = [norm(w) for line in (P / 'script.txt').read_text().splitlines() for w in line.split() if norm(w)]
 cap = P / 'audio/alignment/captions.json'
 if cap.is_file():
-    heard = [(norm(w['word']), w['start'], w['end']) for seg in json.loads(cap.read_text()) for w in seg['words'] if norm(w['word'])]
+    NUM = {'80': 'eighty', '72': 'seventytwo', '6': 'six', '11': 'eleven'}      # the transcriber writes these as digits
+    heard = [(NUM.get(norm(w['word']), norm(w['word'])), w['start'], w['end']) for seg in json.loads(cap.read_text()) for w in seg['words'] if norm(w['word'])]
     src = 'narration'
 else:
     heard, t = [], 0.0
