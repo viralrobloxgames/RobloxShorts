@@ -1,0 +1,23 @@
+{
+ "chapter": 8,
+ "part": "a",
+ "first_frame": 1,
+ "last_frame": 784,
+ "frames": 784,
+ "chapter_total": 1742,
+ "start_s": 0.0,
+ "seconds": 26.1333,
+ "encode": "x264-medium-crf18-high42-yuv420p-g60cgop-bf2-bt709-tb15360-v1",
+ "captions": 13,
+ "file": "ch08_a.mp4",
+ "sha256": "51fcd218350534cee9a9b04ae4521efa913a108254930628e494860497f5c3f2",
+ "probe": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1920,
+  "height": 1080,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "nb_read_frames": "784"
+ }
+}
