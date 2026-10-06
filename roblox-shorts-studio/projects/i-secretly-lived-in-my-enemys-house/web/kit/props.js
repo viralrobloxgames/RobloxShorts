@@ -769,16 +769,18 @@ function knife() {
 }
 
 // ---------- backpack (loose) ----------
-// Skye's lilac backpack off her back: 1.3 wide, 1.5 tall, 0.6 deep, front pocket +z, straps at the back (-z), a grab
+// Skye's lilac backpack off her back (matches cast.js's worn one): 1.5 wide, 1.6 tall, 0.62 deep, front pocket +z, straps at the back (-z), a grab
 // loop on top (the grip). place() stands it on the floor; hold(bp, skye, 'R', 'side') carries it by the loop.
 function backpack() {
-  const g = group('backpack'), lil = M('#c3a6ec', 0.75), dark = M('#8e6cc9', 0.7), body = new THREE.Group(); body.position.y = -1.62; g.add(body);
-  add(body, box(1.3, 1.45, 0.6, 0.28), lil, [0, 0.75, 0]);
-  add(body, box(1.0, 0.62, 0.22, 0.12), dark, [0, 0.45, 0.36]);
-  add(body, box(0.9, 0.04, 0.04, 0.02), M('#f0f0f0', 0.4), [0, 0.78, 0.48]);
-  for (const sx of [-1, 1]) add(body, box(0.2, 1.1, 0.12, 0.05), dark, [sx * 0.36, 0.78, -0.36]);
-  add(body, new THREE.TorusGeometry(0.12, 0.035, 6, 16, Math.PI), dark, [0, 1.47, 0]);
-  g.userData = { bottom: V(0, -1.62, 0), holdDefaults: { side: { level: true } } };
+  // same look as cast.js's worn one: body 1.5 x 1.6 x 0.62, lilac #bfa0e6, pocket #a585d4, zip #7e62a8
+  const g = group('backpack'), lil = M('#bfa0e6', 0.8), dark = M('#a585d4', 0.8), zip = M('#7e62a8', 0.5), body = new THREE.Group(); body.position.y = -1.75; g.add(body);
+  add(body, box(1.5, 1.6, 0.62, 0.2), lil, [0, 0.8, 0]);
+  add(body, box(1.1, 0.7, 0.2, 0.08), dark, [0, 0.45, 0.41]);
+  add(body, new THREE.BoxGeometry(0.9, 0.035, 0.03), zip, [0, 0.73, 0.515]);
+  add(body, box(0.07, 0.16, 0.04, 0.02), zip, [0.32, 0.66, 0.52]);
+  for (const sx of [-1, 1]) add(body, box(0.26, 1.32, 0.07, 0.03), dark, [sx * 0.52, 0.85, -0.35]);
+  add(body, new THREE.TorusGeometry(0.16, 0.035, 8, 16, Math.PI), dark, [0, 1.6, 0]);
+  g.userData = { bottom: V(0, -1.75, 0), holdDefaults: { side: { level: true } } };
   return g;
 }
 
