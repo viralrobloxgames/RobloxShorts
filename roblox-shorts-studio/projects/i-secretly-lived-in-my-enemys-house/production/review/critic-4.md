@@ -157,3 +157,101 @@ shorten the pose, see C7-2) and half the issues below go away.
 | 22 | 0:59.0-1:01.7 | 1776-1851 | Max face in Skye's head; bucket never straightened |
 | 23 | 1:02.0-1:05.0 | 1861-1951 | Max standing inside Skye |
 | 25-26 | 1:07.0-1:13.4 | 2011-2204 | Lily inside Skye in the end frame; arms rise instead of fall |
+
+## ch08 "The Worst" (film 7:37.3-8:35.4, 1742 frames)
+
+The emotional chapter is undercut by faces that don't match the lines: Skye smiles through her confession, through
+"The worst. Right. Got it.", through "Nothing. I left." and "It's dusty"; Lily grins on her sad lines. Its key prop,
+the note, is almost never seen: it is not visible in her hand at the door, never seen being crumpled, and in the attic it
+lies on the floor instead of in her fist.
+
+### Shared causes
+- **C8-1 Expressions contradict the lines (whole chapter).** Skye smiles on "go home" (f81-111, planned `sad`), "Dear
+  Max. The ghost was me. Sorry." (f170-271, big grin f261-291), at the door after hearing "the worst" (f560, f581-590
+  smiling between sad frames), "Nothing. I left. I didn't need to hear the rest." (f931-1000, open smile), "Tomorrow
+  night..." delivered with an "o" mouth not `determined` (f1221-1351), and "It's dusty" (f1681, smile; crying only from
+  f1711). Lily smiles on "What happened? Did he see you?" (f661, f691), "He said that?" (f781), "You don't really want
+  to do that." (f1491-1501) and "Then why are you crying?" (f1600). Fix: hold the planned base emotion per line and
+  only animate the mouth shape for speech; no smile-frame cycling. **must**
+- **C8-2 The note is missing as a prop (f1-785, f1021-1742).** No note visible in Skye's hand in the WS or the MCU
+  ("Dear Max" MCU crops her hands out completely, f161-291), none at the door gap, no crumple beat, and in the attic the
+  crumpled note sits on the floor beside her (f1021-1731) though the status says it rests in her fist on her knee. Fix:
+  note in her right palm in shots 1-3 (folded, readable size, shown low in the MCU), visible at the gap, crumple in her
+  fist on the back-away, fist with note on her knee in the attic. **must**
+
+### Issues in order
+1. **ch08 0:00.0-0:04.0 (f1-121) [7:37.3], pose/staging.** Skye stands square to camera beside Max's door with her
+   right arm raised forward in a stiff horizontal block (forearm out at waist height, like holding an invisible tray)
+   and her head turned toward the door; she is ~1 stud from the "MAX KEEP OUT" door but not facing it. Fix: face the
+   door 3/4, note held at chest in a bent arm. **should**
+2. **ch08 0:05.3-0:10.0 (f161-300) [7:42.6], camera/props.** The "Dear Max" MCU frames her chest and face only, a giant
+   foreground arm block on frame left; she reads the note she isn't holding. See C8-2. **must**
+3. **ch08 0:10.0-0:10.7 (f301-330) [7:47.3], interpenetration / pose.** The "slide it under the door" beat: Skye is
+   standing (not crouched), her right forearm goes **into the door panel** (f306-320), the brass doorknob sits inside
+   the side of her head (f306), and no note reaches the lit gap. Fix: kneel (`max_door_crouch`), side-on to the door,
+   hand with note at the gap, 0.3 stud clear of the door face, head clear of the knob. **must**
+4. **ch08 0:11.0-0:17.0 (f331-520) [7:48.3], prop/pose.** Max on the bed: the "phone" is not visible at all; his left
+   hand is a big block glued to the side of his face covering his ear and cheek, and he never moves for 6 s. He looks
+   like he's holding his face, not on the phone. Fix: phone visible (turn the hand so the phone's edge shows at the ear,
+   or a brighter phone with a lit screen), arm angled down from the elbow, small head moves. **must**
+5. **ch08 0:16.3-0:17.0 (f490-520) [7:53.6], camera.** "Skye is the worst..." cut to a slightly wider angle but
+   Max's bed is barely visible (he reads as standing at the window); bottom-right a clock-radio is half cropped. Fix:
+   show him seated on the bed edge with the duvet. **should**
+6. **ch08 0:17.3 (f521) [7:54.6], camera.** Shocked CU of Skye is so close her face is cut at left and bottom and the
+   mouth is half-covered by the caption; it reads as a jump-cut blob. Fix: MCU with her whole head in frame. **should**
+7. **ch08 0:17.7-0:18.3 (f530-556) [7:54.9], interpenetration / walk.** The back-away: her right forearm is again
+   inside the door (f530-541), and she doesn't walk back 2.5 studs: she slides sideways along the wall with no step
+   cycle; no crumple. Fix: real backward walk with feet stepping, crumple in the fist. **must**
+8. **ch08 0:18.7-0:20.0 (f560-600) [7:55.9], camera.** "The worst. Right. Got it." is an extreme CU where her face
+   fills the frame and her body is gone; plus smiles (C8-1). Fix: MCU, 3/4, lit door gap behind. **should**
+9. **ch08 0:21.3-0:21.7 (f641-660) [7:58.6], staging / identity.** Lily rises at the hatch with her back to the
+   camera wearing lavender pyjamas (ch07 had her in the yellow day dress 3 minutes earlier, fine for night) - but in
+   this WS Skye is not in the nest under the window: she sits on the open floor in the moonbeam beside the tea box,
+   arms out stiff. Fix: Skye in the nest, knees up. **should**
+10. **ch08 0:22.0-0:23.0 (f661-700) [7:59.3], staging.** "What happened? Did he see you?" MCU: Lily is standing beside
+    the vacuum facing the lens, but in the WS before and after she is still half in the hatch/at the far end; then at
+    f701 the WS shows **no Lily at all** (she vanished from the hatch) and she re-enters from the bottom-right corner at
+    f710. Fix: continuity of her position across the three shots (climb out, stand, walk). **must**
+11. **ch08 0:24.0-0:24.3 (f721-731) [8:01.3], walk.** Lily crosses the room at a sprint with a huge stride and her
+    teddy swinging out at arm's length; she crosses directly in front of the tea box. Acceptable, but the walk reads as
+    a jump. Fix: plan's ~12 st/s walk, smaller stride. **should**
+12. **ch08 0:24.7-1:00 (f740-1742) [8:01.9], lighting / limb blob.** Skye's left arm in every attic MCU is a glowing
+    white slab (blown-out moonlight rim) in the lower-left foreground; in the two-shot (f1021-1742) her left forearm is
+    **semi-transparent** (the wall and pink hand visible through it, f1681-1731). Fix: tame the moon rim on the arm
+    (or occlude it), fix the arm material opacity. **must** (transparency)
+13. **ch08 0:34.0-0:40.3 + 0:55.7-0:58.0 (f1021-1210, f1660-1742) [8:11.3], sitting / interpenetration.** Two-shot:
+    Skye's knees read as two grey boxes with blue tops (her bent legs seen end-on), and Lily's right leg runs straight
+    out **into the skeleton's foot/leg** (f1021-1742, purple leg block overlapping the skeleton's bone at bottom right);
+    Lily's shoulder is inside Skye's arm/side. Fix: rotate the two-shot 20-30 deg so legs read as legs; move the
+    skeleton 1 stud away or turn Lily's leg in; 0.5 stud gap between the girls. **must**
+14. **ch08 0:25.7-0:26.3, 0:30.7, 0:49.7-0:53.3 (f770-800, f920, f1491-1600) [8:02.9], camera.** Lily's MCU puts a
+    giant blurred Skye cheek/hair in the top-left corner and a purple forearm block across the bottom right. Fix:
+    reframe so Skye's shoulder is the only foreground. **should**
+15. **ch08 0:41-0:49 (f1221-1480) [8:18.3], pose.** "The biggest haunting..." has no fist thump on the knee (no
+    gesture at all); Skye's face is surprised "o" for "determined" (C8-1). Fix: one-arm fist to knee on "biggest";
+    `determined`/`scheming`. **should**
+16. **ch08 0:53.3-0:56.0 (f1600-1680) [8:30.6], caption/speaker.** "Then why are you crying?" plays mostly over Skye's
+    crying CU (Lily speaking off screen, f1611-1680) - OK as a reaction cut, but Lily is smiling on it in her own
+    frames (f1600). Fix: Lily `sad`, head tilt up. **should**
+17. **ch08 0:56.0-0:58.0 (f1681-1742) [8:33.3], animation.** "It's dusty" has no eye wipe, no sniff; Skye's face
+    pops smile -> "o" -> crying in 1 s, and the end frame holds with her arms rigidly down. Fix: crying from the first
+    word, left-hand eye wipe (one arm, below the head), hand back down before the end. **must**
+
+### ch08 must table
+| # | time (ch) | frames | what |
+|---|---|---|---|
+| C8-1 | whole chapter | see list | smiles on sad lines (Skye and Lily) |
+| C8-2 | 0:00-0:58 | 1-1742 | note never visible / not crumpled / lies on floor |
+| 2 | 0:05.3-0:10.0 | 161-300 | reading a note that isn't in frame or hand |
+| 3 | 0:10.0-0:10.7 | 301-330 | arm inside the door, knob in her head, no crouch |
+| 4 | 0:11.0-0:17.0 | 331-520 | Max "on the phone" with no phone, hand glued to face |
+| 7 | 0:17.7-0:18.3 | 530-556 | arm in the door again, slide instead of back-away walk |
+| 10 | 0:21.3-0:23.7 | 641-710 | Lily's position jumps / vanishes between shots |
+| 12 | 0:24.7-0:58.0 | 740-1742 | glowing / semi-transparent Skye arm |
+| 13 | 0:34.0-0:58.0 | 1021-1742 | Lily's leg in the skeleton, girls overlapping, box-knees |
+| 17 | 0:56.0-0:58.0 | 1681-1742 | no eye wipe, face pops |
+
+## Summary
+ch07: 22 musts (biggest: the narrow decor gap + rigid T-pose make every character stand inside Skye; the hatch
+climbs are elevator rises with arms up; the bucket-straightening payoff is missing). ch08: 10 musts (faces contradict the
+emotional lines; the note prop is missing; arm in the door; Max's phone invisible).

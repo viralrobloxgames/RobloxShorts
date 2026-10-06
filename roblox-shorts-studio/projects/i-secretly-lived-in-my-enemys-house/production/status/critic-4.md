@@ -1,2 +1,2 @@
-STATUS: WORKING
-critic-4: frame-by-frame critic for ch07 + ch08 (film 6:23-8:35).
+STATUS: DONE
+critic-4: ch07 + ch08 frame review done -> production/review/critic-4.md (ch07 22 musts, ch08 10 musts).
