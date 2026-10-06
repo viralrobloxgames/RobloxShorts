@@ -1,4 +1,4 @@
-"""Word-anchored beat times for web/banana_clip.js -> web/beats.js (export const W = {name: seconds}).
+"""Word-anchored beat times for web/penguin_clip.js -> web/beats.js (export const W = {name: seconds}).
 
   python3 source/beats.py     # real narration (audio/alignment/captions.json) if present, else an estimate from script.txt
 
@@ -9,23 +9,23 @@ import json, re, difflib
 from pathlib import Path
 P = Path(__file__).resolve().parent.parent
 ANCHORS = {
-    'pays': ('pays', 1), 'six1': ('six', 1), 'banana1': ('banana', 1), 'then1': ('then', 1), 'eats1': ('eats', 1),
-    'started': ('started', 1), 'miami': ('miami', 1), 'artist1': ('artist', 1), 'banana2': ('banana', 2), 'calls': ('calls', 1), 'art2': ('art', 2),
-    'collectors': ('collectors', 1), 'hundred': ('hundred', 1), 'each': ('each', 1),
-    'days': ('days', 1), 'peels': ('peels', 1), 'eats2': ('eats', 2), 'gallery': ('gallery', 1), 'panic': ('panic', 1),
-    'tape': ('tape', 1), 'new': ('new', 1), 'because': ('because', 1), 'never': ('never', 1), 'certificate': ('certificate', 1),
-    'instructions': ('instructions', 1), 'brown': ('brown', 1), 'replace': ('replace', 1),
-    'years': ('years', 1), 'seoul': ('seoul', 1), 'student': ('student', 1), 'eats3': ('eats', 3), 'skipped': ('skipped', 1), 'breakfast': ('breakfast', 1),
-    'then2': ('then', 2), 'auction': ('auction', 1), 'york': ('york', 1), 'bids': ('bids', 1), 'million2': ('million', 2),
-    'three': ('three', 1), 'five': ('five', 1), 'six2': ('six', 2), 'dollars3': ('dollars', 3),
-    'buyer': ('buyer', 1), 'stage': ('stage', 1), 'itself': ('itself', 1), 'street': ('street', 1), 'stand': ('stand', 1),
-    'sold': ('sold', 1), 'cents': ('cents', 1), 'follow': ('follow', 1),
+    'penguin1': ('penguin', 1), 'inspects': ('inspects', 1), 'soldiers1': ('soldiers', 1), 'salute1': ('salute', 1), 'outranks': ('outranks', 1),
+    'started': ('started', 1), 'seventytwo': ('seventytwo', 1), 'norways': ('norways', 1), 'guard1': ('guard', 1), 'zoo1': ('zoo', 1),
+    'scotland': ('scotland', 1), 'adopts': ('adopts', 1), 'name1': ('name', 1), 'nils': ('nils', 1), 'lance': ('lance', 1), 'corporal1': ('corporal', 1),
+    'every': ('every', 2), 'back': ('back', 1), 'promoted': ('promoted', 1), 'corporal2': ('corporal', 2), 'sergeant1': ('sergeant', 1),
+    'regimental': ('regimental', 1), 'major1': ('major', 1),
+    'penguins': ('penguins', 1), 'change': ('change', 1), 'dies': ('dies', 1), 'lookalike': ('lookalike', 1), 'rank': ('rank', 1),
+    'king': ('king', 1), 'knight': ('knight', 1), 'hundred': ('hundred', 1), 'march': ('march', 1), 'ceremony': ('ceremony', 1),
+    'citation': ('citation', 1), 'qualified': ('qualified', 1),
+    'bronze': ('bronze', 1), 'statue': ('statue', 1), 'brigadier': ('brigadier', 1), 'twentythree': ('twentythree', 1), 'major2': ('major', 2), 'general': ('general', 1),
+    'trained': ('trained', 1), 'salute2': ('salute', 2), 'waddles': ('waddles', 1), 'past': ('past', 1),
+    'follow': ('follow', 1),
 }
 norm = lambda w: re.sub(r"[^a-z0-9]", '', w.lower())
 script = [norm(w) for line in (P / 'script.txt').read_text().splitlines() for w in line.split() if norm(w)]
 cap = P / 'audio/alignment/captions.json'
 if cap.is_file():
-    ALIAS = {'6': 'six', '2': 'two', '120': 'hundred', '000': 'thousand', '25': 'twentyfive'}   # numerals Whisper writes for spoken words
+    ALIAS = {'1972': 'seventytwo', '2023': 'twentythree'}         # numerals Whisper writes for spoken words
     heard = [(ALIAS.get(norm(w['word']), norm(w['word'])), w['start'], w['end']) for seg in json.loads(cap.read_text()) for w in seg['words'] if norm(w['word'])]
     src = 'narration'
 else:
