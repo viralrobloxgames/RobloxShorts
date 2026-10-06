@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Okay. Don't tell anyone.",
+ "seed": 11828,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Okay,",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "don't",
+   "start": 0.82,
+   "end": 1.12
+  },
+  {
+   "word": "tell",
+   "start": 1.12,
+   "end": 1.28
+  },
+  {
+   "word": "anyone.",
+   "start": 1.28,
+   "end": 1.66
+  }
+ ],
+ "words_md5": "c3b45d5aae499a030ad2858aade0158a",
+ "whisper": "small.en"
+}
