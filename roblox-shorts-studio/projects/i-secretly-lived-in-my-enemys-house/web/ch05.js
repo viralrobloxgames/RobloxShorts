@@ -74,7 +74,6 @@ const M = {
   hatchClimb: () => K.mark('attic', 'hatch_climb'),
   hatchTop: () => K.mark('attic', 'hatch_top'),
   horse: () => K.mark('attic', 'hobby_horse'),
-  nestFront: () => { const m = K.mark('attic', 'nest_front'); m.pos.add(V(2.6, 0, 0.8)); return m; },   // out of the window shaft and its bar shadow
   teaSkye: () => K.mark('attic', 'tea_skye'),
   teaLily: () => K.mark('attic', 'tea_lily'),
 };
@@ -112,7 +111,7 @@ const SHOTS = [
   // frame 0: from beside the nest toward the hatch, Skye 3/4 in the foreground (left), Lily up through the hatch (right)
   { k: 0, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: W(-5.4, 2.7, -9.3), target: W(1.6, 3.4, -0.5), fov: 52 }, { blockers: SET.group }) },
   { k: 0, off: 1.3, id: 'lily_hatch', cam: (s) => hatchCu(s) },
-  { k: 0, off: 2.8, id: 'skye_shock', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5 }) },
+  { k: 0, off: 2.8, id: 'skye_shock', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5, heading: K.faceTo(M.nest(), M.hatchHead()) }) },   // fixed: she turns inside the shot
   { k: 1, off: -0.1, id: 'lily_hatch', cam: (s) => hatchCu(s) },
   { k: 2, off: -0.1, id: 'skye_nest', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5 }) },
   { k: 3, off: -0.1, id: 'lily_hatch', cam: (s) => hatchCu(s) },
@@ -149,7 +148,7 @@ const SHOTS = [
   .sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 function hatchCu(s) { return K.camOn(s, C.lily, 'mcu', { angle: 0.3, look: V(0, -0.75, 0), zoom: 1.3 }); }
-function lilyStand(s) { const h = K.headPos(C.lily); return K.setCam(s, { pos: W(-1.8, 2.9, -6.8), target: V(h.x, h.y - 0.7, h.z), fov: 40 }, { blockers: SET.group }); }
+function lilyStand(s) { const h = K.headPos(C.lily); return K.setCam(s, { pos: W(-1.4, 3.0, -7.3), target: V(h.x, h.y - 0.8, h.z), fov: 46 }, { blockers: SET.group }); }
 // the tea party side-on from the window-left side: Skye frame-left, Lily frame-right, the box and the toys between
 function teaSide(s, fov) { return K.setCam(s, { pos: W(-9.6, 3.8, 2.2), target: W(-3.5, 1.9, 1.8), fov }, { blockers: SET.group }); }
 function setNamed(name) { return K.setCam(STAGE, SET.cams[name], { blockers: SET.group }); }
@@ -202,7 +201,7 @@ export function update(t, stage) {
 
 // First half: the nest and the hatch. Line Skye -> Lily; cameras on the window-left side.
 const GRAB = 0.45;                                    // Lily stops beside the boxes to pick up the hobby horse
-const LILY_SPOT = () => { const p = W(-2.2, 0, -3.4); return { pos: p, heading: K.faceTo(p, M.nest()) }; };   // ~4.5 studs from Skye, clear of the skeleton and the window shaft
+const LILY_SPOT = () => { const m = K.mark('attic', 'nest_front'); return { pos: m.pos, heading: K.faceTo(m.pos, M.nest()) }; };   // ~4 studs from Skye, clear of the skeleton and the window shaft (SB1)
 const HORSE_STOP = () => ({ pos: W(6.5, 0, 3.0), heading: K.faceTo(W(6.5, 0, 3.0), W(7.9, 0, 2.6)) });          // 1.4 studs from the leaning horse
 function lilyPath() {
   const top = M.hatchTop(), horse = HORSE_STOP(), front = LILY_SPOT();
@@ -216,14 +215,14 @@ function blockNest(t, idle) {
   // Skye: cross-legged in her nest, side-on to the hatch with her crackers, head already turned to the hatch (frame 0);
   // she swings her whole body round to face Lily on her own shot (3.0-3.6 s), then follows her as she walks in.
   const turn = smooth(inv(3.0, 3.6, t));
-  const lilyAt = t < L5.t3 ? M.hatchHead() : L5.front;          // (a pure function of t: never read last frame's pose)
-  const faceLily = K.faceTo(nest, lilyAt);
+  // follows Lily: the hatch until she walks over, then (smoothly, while she crosses) her spot; a pure function of t
+  const hA = K.faceTo(nest, M.hatchHead()), hB = K.faceTo(nest, L5.front);
+  const faceLily = hA + (hB - hA) * smooth(inv(L5.t3, L5.t3 + 0.9, t));
   const kneelUp = t >= at(6, -0.15) && t < at(7, 0.3);           // up on her knees to plead
   floorSit(C.skye, { pos: nest.pos, heading: -1.0 + (faceLily + 1.0) * turn }, kneelUp ? 'kneel_up' : 'sit_cross');
   headYaw(C.skye, -0.55 * (1 - turn) + 0.05 * Math.sin(t * 1.7) * (t > 3.6 && t < at(2) ? 1 : 0));   // eyes on the hatch from frame 0
-  if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L', 0.7);       // the cracker packet in her left hand
+  if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L', 0.5);       // the cracker packet in her left hand
   if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'L', 0.75 + 0.08 * Math.sin(t * 25));   // "Boo": one arm up on the far side, hand wiggling
-  if (kneelUp) { K.gesture(C.skye, 'hand_hold', 'L', 0.9); K.gesture(C.skye, 'hand_hold', 'R', 0.9); }        // hands together at her chest
   const reach = smooth(inv(T.horseGive - 0.5, T.horseGive, t)) * (1 - smooth(inv(T.horseGive + 0.2, T.horseGive + 0.7, t)));
   if (reach > 0) K.gesture(C.skye, 'hold_out', 'R', reach);
   if (t >= T.horseGive + 0.7) K.gesture(C.skye, 'hand_hold', 'R');
@@ -246,7 +245,8 @@ function blockNest(t, idle) {
     P.teddySit.visible = false; C.lily.teddy.visible = true;
     const u = smooth(inv(L5.c1, L5.t1, t)), y1 = -1.2 * C.lily.scale;
     const d = K.posture(C.lily, u < 0.6 ? 'crouch' : 'stand'); K.holdTeddy(C.lily, 'L');
-    const p = V(hh.pos.x, 0, hh.pos.z).lerp(L5.top.pos, u); p.y = (1 - u) * y1 + u * 0 - (u < 0.6 ? d : 0);
+    const lift = smooth(Math.min(1, u / 0.45));                 // up out of the hole first, then onto the floor
+    const p = V(hh.pos.x, 0, hh.pos.z).lerp(L5.top.pos, smooth(Math.max(0, (u - 0.4) / 0.6))); p.y = y1 * (1 - lift) - (u < 0.6 ? d * lift : 0);
     putRoot(C.lily, p, Math.PI);
   } else {
     K.holdTeddy(C.lily, 'L'); P.teddySit.visible = false; C.lily.teddy.visible = true;
@@ -254,7 +254,6 @@ function blockNest(t, idle) {
       K.walk(C.lily, A, L5.top, L5.horse, L5.t1, t, { idleAt: idle });
       if (t >= L5.t2) K.gesture(C.lily, 'hold_out', 'R', Math.sin(Math.PI * inv(L5.t2, L5.t3, t)));   // reaches for the stick
     } else K.walk(C.lily, A, L5.horse, L5.front, L5.t3, t, { idleAt: idle, endHeading: L5.front.heading });
-    if (t >= at(7, 1.2) && t < at(7, 1.9)) K.gesture(C.lily, 'finger_up', 'L', smooth(inv(at(7, 1.2), at(7, 1.4), t)));   // "Every day."
     const offerU = smooth(inv(at(9, 0.3), at(9, 0.8), t));
     if (t >= at(9, 0.3) && t < T.horseGive + 0.3) K.gesture(C.lily, 'hold_out', 'R', 0.4 + 0.6 * offerU);     // holds the horse out to Skye
   }
@@ -274,7 +273,7 @@ function blockTea(t, idle) {
   floorSit(C.lily, { pos: li.pos, heading: li.heading + 0.45 }, 'kneel');
   // Skye: cup in her left hand (her right arm is on the camera side), the hobby horse across her lap
   const sip = (a, b) => t >= a && t < b;
-  K.gesture(C.skye, 'cup_hold', 'L', 0.9);                      // high enough that the cup clears the box
+  K.gesture(C.skye, 'cup_hold', 'L', 0.65);                      // high enough that the cup clears the box
   if (sip(at(12), end(12))) K.gesture(C.skye, 'hold_out', 'L');        // cup out for more tea
   if (sip(at(18), end(18, 0.5))) K.gesture(C.skye, 'cup_hold', 'L', 1);                          // "Professionally." (a sip)
   if (sip(at(20), end(20))) K.gesture(C.skye, 'hand_over_mouth', 'R', 0.6);                       // gossip

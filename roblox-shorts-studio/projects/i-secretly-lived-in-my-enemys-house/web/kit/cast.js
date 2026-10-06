@@ -658,10 +658,10 @@ export function blush(actor, amount = 1) {
 // above the shoulder (SKILL.md).
 export const POSES = {
   stand: {},
-  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-34, 6, -3], 'Arm.R': [-34, -6, 3] },
-  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-30, 4, -3], 'Arm.R': [-30, -4, 3] },
-  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-44, 10, -2], 'Arm.R': [-44, -10, 2] },
-  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-48, 12, 0], 'Arm.R': [-48, -12, 0] },
+  sit_chair: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], 'Arm.L': [-8, 2, -3], 'Arm.R': [-8, -2, 3] },
+  sit_upright: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [-4, 0, 0], Head: [-3, 0, 0], 'Arm.L': [-6, 2, -3], 'Arm.R': [-6, -2, 3] },
+  sit_slump: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [16, 0, 0], Head: [10, 0, 0], 'Arm.L': [-74, 8, 0], 'Arm.R': [-74, -8, 0] },
+  sit_desk_arms: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [6, 0, 0], 'Arm.L': [-86, 8, 0], 'Arm.R': [-86, -8, 0] },
   chin_on_hand: { 'Leg.L': [-90, 0, -2], 'Leg.R': [-90, 0, 2], Torso: [10, 0, 0], Head: [-4, 0, 6], 'Arm.R': [-136, -18, 56], 'Arm.L': [-60, 12, 0] },
   sit_cross: { 'Leg.L': [-90, 30, 0], 'Leg.R': [-90, -30, 0], 'Arm.L': [-36, 10, -2], 'Arm.R': [-36, -10, 2], drop: 1.5 },
   kneel: { 'Leg.L': [90, 0, -3], 'Leg.R': [90, 0, 3], Torso: [-4, 0, 0], 'Arm.L': [-16, 6, -2], 'Arm.R': [-16, -6, 2], drop: 1.5 },
@@ -681,7 +681,7 @@ export const POSES = {
   rest: { 'Arm.L': [-4, 2, -4], 'Arm.R': [-4, -2, 4] },                                   // standing, arms relaxed at the sides
   stand_hold: { 'Arm.L': [-24, 8, -3], 'Arm.R': [-24, -8, 3] },                           // something low in front (both hands), no T
   hold_paper: { 'Arm.L': [-80, 32, 0], 'Arm.R': [-80, -32, 0], Head: [8, 0, 0] },        // a sheet held at chest height, looking down at it
-  seated_rest: { 'Arm.L': [-34, 6, -3], 'Arm.R': [-34, -6, 3] },                          // arms only: hands beside the thighs (any seat)
+  seated_rest: { 'Arm.L': [-8, 2, -3], 'Arm.R': [-8, -2, 3] },                            // arms only: hanging beside the seat (clear of a desk/island top)
 };
 // One-arm gestures: side 'R' or 'L' (mirrored). Layer them over any pose.
 export const ARM_GESTURES = {

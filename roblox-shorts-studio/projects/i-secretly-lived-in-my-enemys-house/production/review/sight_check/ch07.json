@@ -1,0 +1,122 @@
+{
+ "chapter": 7,
+ "hider": "skye",
+ "seekers": [
+  "max",
+  "dad",
+  "lily"
+ ],
+ "fov": 110,
+ "ranges": [
+  {
+   "seeker": "lily",
+   "hider": "skye",
+   "from": 347,
+   "to": 347,
+   "sees": "Head",
+   "min_dist": 4.7,
+   "t": "11.53-11.53s",
+   "film": "6:35.4"
+  },
+  {
+   "seeker": "lily",
+   "hider": "skye",
+   "from": 355,
+   "to": 373,
+   "sees": "Head",
+   "min_dist": 2.1,
+   "t": "11.80-12.40s",
+   "film": "6:35.6"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 481,
+   "to": 481,
+   "sees": "Head",
+   "min_dist": 13.6,
+   "t": "16.00-16.00s",
+   "film": "6:39.8"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 487,
+   "to": 531,
+   "sees": "Head",
+   "min_dist": 10.5,
+   "t": "16.20-17.67s",
+   "film": "6:40.0"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 739,
+   "to": 745,
+   "sees": "Head",
+   "min_dist": 7.2,
+   "t": "24.60-24.80s",
+   "film": "6:48.4"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 925,
+   "to": 1279,
+   "sees": "Head",
+   "min_dist": 1.6,
+   "t": "30.80-42.60s",
+   "film": "6:54.6"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 1405,
+   "to": 1559,
+   "sees": "Head",
+   "min_dist": 2.3,
+   "t": "46.80-51.93s",
+   "film": "7:10.6"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 1731,
+   "to": 1731,
+   "sees": "Head",
+   "min_dist": 13,
+   "t": "57.67-57.67s",
+   "film": "7:21.5"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 1741,
+   "to": 1851,
+   "sees": "Head",
+   "min_dist": 1.6,
+   "t": "58.00-61.67s",
+   "film": "7:21.8"
+  },
+  {
+   "seeker": "lily",
+   "hider": "skye",
+   "from": 1965,
+   "to": 1985,
+   "sees": "Head",
+   "min_dist": 3,
+   "t": "65.47-66.13s",
+   "film": "7:29.3"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 1977,
+   "to": 1987,
+   "sees": "Head",
+   "min_dist": 13,
+   "t": "65.87-66.20s",
+   "film": "7:29.7"
+  }
+ ]
+}

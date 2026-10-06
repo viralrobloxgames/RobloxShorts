@@ -1,0 +1,82 @@
+{
+ "chapter": 3,
+ "hider": "skye",
+ "seekers": [
+  "max",
+  "dad",
+  "lily"
+ ],
+ "fov": 110,
+ "ranges": [
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 303,
+   "to": 307,
+   "sees": "Head",
+   "min_dist": 28.2,
+   "t": "10.07-10.20s",
+   "film": "2:20.6"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 311,
+   "to": 311,
+   "sees": "Head",
+   "min_dist": 27.5,
+   "t": "10.33-10.33s",
+   "film": "2:20.9"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 325,
+   "to": 335,
+   "sees": "Head",
+   "min_dist": 20.6,
+   "t": "10.80-11.13s",
+   "film": "2:21.4"
+  },
+  {
+   "seeker": "max",
+   "hider": "skye",
+   "from": 361,
+   "to": 365,
+   "sees": "Head",
+   "min_dist": 9.6,
+   "t": "12.00-12.13s",
+   "film": "2:22.6"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 1537,
+   "to": 1537,
+   "sees": "Torso",
+   "min_dist": 13,
+   "t": "51.20-51.20s",
+   "film": "3:01.8"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 1561,
+   "to": 1563,
+   "sees": "Head",
+   "min_dist": 10.2,
+   "t": "52.00-52.07s",
+   "film": "3:02.6"
+  },
+  {
+   "seeker": "dad",
+   "hider": "skye",
+   "from": 1821,
+   "to": 1911,
+   "sees": "Head",
+   "min_dist": 10.7,
+   "t": "60.67-63.67s",
+   "film": "3:11.2"
+  }
+ ]
+}
