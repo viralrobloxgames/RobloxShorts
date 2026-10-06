@@ -333,7 +333,7 @@ const SHOTS = [
   { line: 17, off: 0, id: 'max_off', cam: TWO },
   { line: 18, off: 0.3, id: 'dad_leaves', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 19, off: 0, id: 'max_walks', cam: TWO },
-  { line: 19, off: 1.2, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(5.2), 3.2, 5.3), target: W(D(6.7), -3.9, 5.0), fov: 38 }) },
+  { line: 19, off: 1.2, id: 'max_fix', cam: (s) => K.setCam(s, { pos: W(D(5.2), 3.2, 5.6), target: W(D(6.7), -3.9, 5.0), fov: 38 }) },
   { line: 20, off: 0, id: 'max_dinner', cam: (s) => K.setCam(s, { pos: W(D(4.1), 3.0, 5.3), target: W(D(6.4), -3.9, 4.7), fov: 38 }) },
   { line: 20, off: 2.7, id: 'max_down', cam: (s) => K.setCam(s, { pos: W(0.0, 1.0, 4.4), target: W(4.5, 7.5, 3.0), fov: 44 }) },
   { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.setCam(s, { pos: W(D(3.4), 0.4, 5.2), target: W(D(5.3), -3.5, 5.0), fov: 36 }) },
