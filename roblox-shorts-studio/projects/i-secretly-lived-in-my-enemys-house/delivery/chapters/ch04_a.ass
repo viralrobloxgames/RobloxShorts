@@ -1,0 +1,33 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:02.18,VO,,0,0,0,,WEDNESDAY. DAY THREE. I HADN'T
+Dialogue: 1,0:00:02.18,0:00:03.69,VO,,0,0,0,,BRUSHED MY HAIR SINCE MONDAY,
+Dialogue: 1,0:00:03.82,0:00:04.78,VO,,0,0,0,,AND SOMETHING TERRIBLE WAS
+Dialogue: 1,0:00:04.78,0:00:06.83,VO,,0,0,0,,HAPPENING. MAX WAS BEING NICE.
+Dialogue: 1,0:00:06.93,0:00:08.53,MAX,,0,0,0,,HEY, SKYE. WANT MY
+Dialogue: 1,0:00:08.53,0:00:10.40,MAX,,0,0,0,,COOKIE? YOU CAN HAVE IT.
+Dialogue: 1,0:00:10.69,0:00:11.76,SKYE,,0,0,0,,WHAT'S WRONG WITH IT?
+Dialogue: 1,0:00:11.77,0:00:13.58,MAX,,0,0,0,,NOTHING. IT'S A COOKIE.
+Dialogue: 1,0:00:13.80,0:00:15.03,SKYE,,0,0,0,,DID YOU LICK IT?
+Dialogue: 1,0:00:15.09,0:00:17.02,MAX,,0,0,0,,NO! I'M JUST BEING NICE.
+Dialogue: 1,0:00:17.23,0:00:19.04,SKYE,,0,0,0,,SINCE WHEN ARE YOU NICE TO ME?
+Dialogue: 1,0:00:19.12,0:00:20.56,MAX,,0,0,0,,SINCE A GHOST TOLD ME
+Dialogue: 1,0:00:20.56,0:00:22.71,MAX,,0,0,0,,TO. IT'S A LONG STORY.
+Dialogue: 1,0:00:22.94,0:00:24.90,MAX,,0,0,0,,IT WROTE ON OUR FRIDGE. IN MY
+Dialogue: 1,0:00:24.90,0:00:26.69,MAX,,0,0,0,,LITTLE SISTER'S MAGNET LETTERS.
+Dialogue: 1,0:00:26.89,0:00:27.50,SKYE,,0,0,0,,WOW. SPOOKY. WHAT DID IT SAY?

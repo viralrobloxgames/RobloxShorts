@@ -18,7 +18,7 @@ else:
 # 0-based script lines, as in web/ch01.js
 at = lambda i, off=0: by[i + 1]['start'] + off
 end = lambda i, off=0: by[i + 1]['end'] + off
-DOOR_OPEN, DOOR_SHUT, CLASS, SPIDER, JUMP = end(1, 0.15), end(2, 0.1), at(4, -0.35), end(6, 0.2), at(7, -0.05)
+DOOR_OPEN, DOOR_SHUT, CLASS, SPIDER, JUMP = end(1, 0.15), end(2, 0.1), at(4, -0.35), end(6, 0.3), at(7, -0.05)
 EXIT, DUSK, LUMP = at(13, 0.3), at(14, -0.35), end(18, 0.15)
 # as web/ch01.js: path_mid -> path_near (+0.6 s look round) -> porch_step -> back_door at 8 studs/s, then the door opens
 _legs = [(-2, 0, 12), (3.8, 0, 1.5), (6, 0.6, -5.8), (6, 0.6, -7.2)]
@@ -40,7 +40,7 @@ cue('latch', DOOR_SHUT + 0.38, 0.25)
 steps(DOOR_SHUT + 0.3, DOOR_SHUT + 1.3, 0.07)
 # the classroom at lunch: chatter under the scene, the spider plops into the lunchbox, Skye jumps up, Max walks off
 cue('crowd', CLASS, 0.07, dur=round(DUSK - CLASS, 3))
-cue('plop', SPIDER + 0.26, 0.35)
+cue('plop', SPIDER + 0.3, 0.35)
 cue('whoosh', JUMP, 0.18)
 steps(EXIT, EXIT + 1.6, 0.08, 0.45)
 # dusk: birds, her sneaking steps up the path, the unlocked back door opens and clicks shut behind her

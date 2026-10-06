@@ -1,0 +1,30 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.16,VO,,0,0,0,,FRIDAY NIGHT. I DECIDED
+Dialogue: 1,0:00:01.16,0:00:02.68,VO,,0,0,0,,TO STOP. I'D LEAVE MAX
+Dialogue: 1,0:00:02.68,0:00:03.86,VO,,0,0,0,,A NOTE, TELL HIM THE
+Dialogue: 1,0:00:03.86,0:00:05.43,VO,,0,0,0,,TRUTH, AND GO HOME.
+Dialogue: 1,0:00:05.49,0:00:07.86,SKYE,,0,0,0,,DEAR MAX. THE GHOST WAS ME. SORRY.
+Dialogue: 1,0:00:08.11,0:00:10.24,SKYE,,0,0,0,,ALSO, YOUR DAD'S PANCAKES ARE AMAZING.
+Dialogue: 1,0:00:11.06,0:00:13.75,MAX,,0,0,0,,SKYE? ASK SKYE TO THE DANCE?
+Dialogue: 1,0:00:13.98,0:00:15.99,MAX,,0,0,0,,OKAY. DON'T TELL ANYONE.
+Dialogue: 1,0:00:16.30,0:00:17.78,MAX,,0,0,0,,SKYE IS THE WORST...
+Dialogue: 1,0:00:18.59,0:00:21.14,SKYE,,0,0,0,,THE WORST. RIGHT. GOT IT.
+Dialogue: 1,0:00:21.26,0:00:23.37,LILY,,0,0,0,,WHAT HAPPENED? DID HE SEE YOU?
+Dialogue: 1,0:00:23.47,0:00:25.48,SKYE,,0,0,0,,WORSE. YOUR BROTHER THINKS I'M THE WORST.
+Dialogue: 1,0:00:25.64,0:00:26.13,LILY,,0,0,0,,HE SAID THAT?
