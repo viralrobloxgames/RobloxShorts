@@ -1,0 +1,7 @@
+{
+ "voice": "max_boy2",
+ "text": "Hey, Skye. Hungry? It's ham. No crusts.",
+ "seed": 87836,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}
