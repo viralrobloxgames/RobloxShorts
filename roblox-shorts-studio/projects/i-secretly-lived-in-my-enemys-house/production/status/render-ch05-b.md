@@ -6,3 +6,4 @@ Rendered from tree 72fe829 (ch05.js at ba2fd86). Per the orchestrator (15:00): n
 in the last shot, f~1975-2019, pose only). Segment B frames 910-2019 are on disk from ba2fd86; after READY_TO_RENDER I
 expect only the last shot to need re-rendering. My background watcher hit its time limit on a worker restart and has
 been restarted.
+18:20Z: segment B 910-2019 is complete on disk; ch05.js, kit, lib and narration are unchanged since the render. Fingerprints are saved with the fixed changed_frames (15:10Z protocol, step 1). Waiting for ch05 READY_TO_RENDER, then --delete + --resume + encode.

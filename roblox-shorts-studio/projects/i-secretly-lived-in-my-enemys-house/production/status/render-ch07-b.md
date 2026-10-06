@@ -1,6 +1,10 @@
-STATUS: RENDERING
-Role: render-ch07-b (segment B of ch07), per production/briefs/render_plan.md "Helper".
-- [x] machine check: npm ci ok, render.mjs 2 frames of ch07.js at --scale 0.3 ok (4.8 s/frame), finish_longform.py --help ok, ffmpeg present
-- [x] ch07 READY_FOR_GATE (FRAMES 2204, SPLIT 993, COMMIT 96ddb91): rendering 993-2204 into renders/ch07 (4 workers)
-- [x] ch07 READY_TO_RENDER (COMMIT 1f3787d, FRAMES 2204): first render stopped at 482 frames; the gate fix moved the tea seats so all 450 hashed B frames changed -> deleted (--force), re-rendering 993-2204 --resume
-- [ ] encode delivery/chapters/ch07_b.mp4, check, DONE
+STATUS: DONE
+FRAMES: 2204
+SPLIT: 993
+COMMIT: 1f3787d
+render-ch07-b: delivery/chapters/ch07_b.mp4 = frames 993-2204 (1212 frames, 1920x1080 30 fps, decodes with 1212 frames), 18 captions, 11.6 MB.
+- First render (from READY_FOR_GATE 96ddb91) stopped at 482 frames; the gate fix moved the tea seats, so all of B changed -> deleted (--force) and re-rendered from 1f3787d: 1212 frames, 114 copied by frame skip, 4.9 s per rendered frame on 4 workers (~45 min).
+- After the render, changed_frames showed only 1-992 (segment A, not on this machine) as changed: B is in sync with 1f3787d.
+- 3 stills checked (t=2, 18, 39 s): framing, captions and props OK.
+- Encode: finish_longform.py ran with no extra installs (~3 min).
+- renders/ch07 (B frames + frame_hashes.json) kept on this machine for final-review fixes ("re-sync ch07 B to <sha>").
