@@ -96,7 +96,8 @@ export async function setup(stage) {
 const T = {
   walk0: 0.0,                                  // Max leaves his desk on frame 0
   offer: () => wordT(1, 15, -0.1),             // "Max was being nice": cookie out
-  cookieDown: () => end(6, -0.2),              // after "I'm just being nice." he puts it on her desk
+  cookieDown: () => end(6, -0.2),
+  swap: () => end(6, 0.45),                    // sandwich from his left hand to his right              // after "I'm just being nice." he puts it on her desk
   lean: () => end(11, 0.05),                   // [+0.6 Max leans in]
   unlean: () => at(18, 0.1),                   // "Right." he straightens
   show: () => wordT(18, 4, -0.1),                     // lifts the sandwich to show it
@@ -129,26 +130,24 @@ const END = (s) => {                          // Skye MCU foreground left, Max a
 const SHOTS = [
   { line: 1, off: 0, id: 'skye_max_diag', cam: named('skye_max_diag', WIDE) },
   { line: 1, word: 10, id: 'two_shot', cam: S2 },
-  { line: 2, off: -0.1, id: 'max_cookie', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 3, off: -0.1, id: 'skye_wrong', cam: named('mcu_skye', SK('mcu')) },
   { line: 4, off: -0.1, id: 'max_nothing', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 5, off: -0.1, id: 'skye_lick', cam: named('cu_skye', SK('cu')) },
-  { line: 6, off: -0.1, id: 'max_no', cam: named('mcu_max_stand', MX('mcu')) },
-  { line: 7, off: -0.1, id: 'skye_since', cam: S2 },
+  { line: 6, off: -0.1, id: 'max_no', cam: S2 },
+  { line: 7, off: -0.1, id: 'skye_since', cam: named('mcu_skye', SK('mcu')) },
   { line: 8, off: -0.1, id: 'max_ghost', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 9, off: -0.1, id: 'fridge_two', cam: S2 },
   { line: 10, off: -0.1, id: 'skye_spooky', cam: named('mcu_skye', SK('mcu')) },
-  { line: 11, off: -0.1, id: 'max_private', cam: named('cu_side_stand', MX('cu')) },
+  { line: 11, off: -0.1, id: 'max_private', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 11, off: 1.0, id: 'lean_two', cam: S2c },
   { line: 13, off: -0.1, id: 'skye_fashion', cam: named('cu_skye', SK('cu')) },
   { line: 14, off: -0.1, id: 'max_pancakes', cam: S2c },
   { line: 15, off: -0.1, id: 'skye_lots', cam: named('mcu_skye', SK('mcu')) },
-  { line: 16, off: -0.1, id: 'max_cinnamon', cam: named('cu_side_stand', MX('cu')) },
+  { line: 16, off: -0.1, id: 'max_cinnamon', cam: MX('mcu') },          // follows his lean
   { line: 17, off: -0.1, id: 'skye_spice', cam: named('mcu_skye', SK('mcu')) },
   { line: 18, off: -0.1, id: 'right_two', cam: S2 },
-  { line: 18, word: 2, id: 'max_crusts', cam: named('mcu_max_stand', MX('mcu')) },
   { line: 19, off: -0.1, id: 'skye_crusts', cam: named('mcu_skye', SK('mcu')) },
-  { line: 20, off: -0.1, id: 'max_half', cam: named('mcu_max_stand', MX('mcu')) },
+  { line: 20, off: -0.1, id: 'max_half', cam: S2 },
   { line: 20, off: 99, id: 'handoff', cam: named('two_shot_desk', (s) => K.twoShot(s, C.skye, C.max, { framing: 'ws', fov: 36, bias: 0.35 })) },
   { line: 21, off: -0.35, id: 'end_front', cam: END },
 ].map((x) => ({ ...x, start: x.off === 99 ? end(x.line, 0.1) : x.word != null ? wordT(x.line, x.word, -0.1) : Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
@@ -191,17 +190,21 @@ export function update(t, stage) {
   let hS = turnTo(towardMax, 0.45 * ramp(t, wordT(1, 14), wordT(1, 15))), headY = 0;
   const hTurned = turnTo(towardMax, 0.45);
   const toDesk = Math.sign(amix(hTurned, watchMaxDesk, 1) - hTurned), away = -Math.sign(amix(hTurned, towardMax, 1) - hTurned || 1);
-  if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }        // stares after him
-  if (t > T.snap()) { hS = turnTo(towardMax, 0.45 * (1 - ramp(t, T.snap(), T.snap() + 0.25))); headY = 40 * toDesk * (1 - ramp(t, T.snap(), T.snap() + 0.25)); }
+  // stares after him through the hand-off shot; for her whisper (end_front) she faces front again, 3/4 to the lens
+  const faceFront = at(21, -0.45);
+  if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }
+  if (t > faceFront) { hS = mS.heading - 0.25; headY = 0; }
+  if (t > T.snap() && t < T.snap() + 0.45) headY = 12 * Math.sin((t - T.snap()) / 0.45 * Math.PI * 3);   // "Stop it, face." shakes it off
   let dS = { ...SIT };
   const back = (t > at(3) && t < at(7) ? ramp(t, at(3), at(3) + 0.3) * (t > at(5) ? 1 : 0.5) * (1 - ramp(t, at(7), at(7) + 0.3)) : 0)
     + (t > at(12) && t < at(16) ? ramp(t, at(12), at(12) + 0.3) * (1 - ramp(t, at(16) - 0.3, at(16))) * 0.7 : 0);
   dS.Torso = P3(SIT.Torso, K.POSES.lean_back.Torso, back); dS.Head = P3([0, 0, 0], K.POSES.lean_back.Head, back);
   if (t > at(10) && t < end(10, 0.3)) dS = K.mixAngles(dS, K.POSES.chin_on_hand, ramp(t, at(10), at(10) + 0.3) * (1 - ramp(t, end(10), end(10, 0.3))));
   if (t > at(17, 0.5) && t < end(17, 0.2)) headY += 30 * away * ramp(t, at(17, 0.5), at(17, 0.8)) * (1 - ramp(t, end(17), end(17, 0.2)));   // prim: turns her head away
-  dS.Head = [dS.Head?.[0] ?? 0, (dS.Head?.[1] ?? 0) + headY, dS.Head?.[2] ?? 0];
+  const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
+  dS.Head = [dS.Head?.[0] ?? 0, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
   sitOn(C.skye, mS, hS, dS);
-  if (t > at(13) && t < end(13, 0.25)) K.gesture(C.skye, 'hair_pat', 'L', ramp(t, at(13), at(13) + 0.25) * (1 - ramp(t, end(13), end(13, 0.25))));
+
   if (t > T.take() - 0.4) K.gesture(C.skye, 'hold_out', 'R', ramp(t, T.take() - 0.4, T.take()) * (1 - 0.5 * ramp(t, T.take() + 0.1, T.take() + 0.5)));
   let fS = 'annoyed';
   if (t > wordT(1, 15)) fS = 'suspicious';
@@ -233,8 +236,12 @@ export function update(t, stage) {
       if (t > at(8) && t < at(8, 1.4)) d.Head = [0, 18 * Math.sin((t - at(8)) * 4.5), 0];        // glances round: a secret
       if (t > at(11) && t < end(11)) d.Head = [6, -22, 0];                                          // "That's private." looks away
       standOn(C.max, mA.pos, hA, d);
-      K.gesture(C.max, 'cup_hold', 'L', 1 - 0.0 * offer);                                         // the sandwich in his left
-      if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, 'hold_out', 'L', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
+      // the sandwich: left hand until the cookie is down, then his near (right) hand so the camera sees it; at "Want half?"
+      // one half goes back to his left and the other is held out to her in his right
+      const swapped = t > T.swap();
+      K.gesture(C.max, 'cup_hold', 'L', swapped && t < T.split() ? 0 : 1);
+      if (swapped) K.gesture(C.max, 'cup_hold', 'R', ramp(t, T.swap() - 0.25, T.swap()));
+      if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, 'hold_out', 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
       const down = t > T.cookieDown() && t < T.cookieDown() + 0.5 ? Math.sin(Math.PI * clamp((t - T.cookieDown()) / 0.5)) : 0;
       if (offer > 0 || down > 0) K.gesture(C.max, down > 0 ? 'tap' : 'hold_out', 'R', Math.max(offer, down));
       if (t > T.split()) K.gesture(C.max, 'hold_out', 'R', ramp(t, T.split(), T.split() + 0.35) * (1 - ramp(t, T.take() + 0.1, T.take() + 0.4)));
@@ -275,8 +282,9 @@ export function update(t, stage) {
   const out = (u) => (u > 0.5 ? 'out' : 'palm');
   if (t < T.cookieDown() + 0.25) K.hold(P.cookie, C.max, 'R', out(t > T.offer() - 0.15 && t < T.cookieDown() ? 1 : 0));
   else { if (P.cookie.parent !== P.scene) P.scene.add(P.cookie); K.place(P.cookie, M.deskTop().pos.clone().add(V(-0.6, 0, 0.1)), 0.4); }
-  K.hold(P.halfA, C.max, t < T.back() ? 'L' : 'R');
-  if (t < T.split()) K.hold(P.halfB, C.max, 'L', 'palm', { offset: [0.38, 0, 0] });   // the two halves side by side
+  const hand0 = t < T.swap() ? 'L' : 'R';
+  K.hold(P.halfA, C.max, t < T.swap() ? 'L' : t < T.split() ? 'R' : t < T.back() ? 'L' : 'R', t > T.show() && t < at(19, 0.3) ? 'out' : 'palm');
+  if (t < T.split()) K.hold(P.halfB, C.max, hand0, t > T.show() && t < at(19, 0.3) ? 'out' : 'palm', { offset: [hand0 === 'L' ? 0.38 : -0.38, 0, 0] });   // the two halves side by side
   else if (t < T.take()) K.hold(P.halfB, C.max, 'R', 'out'); else K.hold(P.halfB, C.skye, 'R', t < T.take() + 0.3 ? 'out' : 'palm');
   if (P.bag) { const bag = M.bag(); if (P.bag.parent !== P.scene) P.scene.add(P.bag); K.place(P.bag, bag.pos, bag.heading); }
 
@@ -290,9 +298,10 @@ export function overlay(g, s, t) { K.dayCard(g, s, t, CARD); }
 
 // ---------- for the hold check (web/ch04_hold.js) ----------
 export const cast = () => ({ skye: C.skye, max: C.max, ...Object.fromEntries(EXTRAS.map((e, i) => ['extra' + i, e])) });
+const HC = { dist: 4.5, side: -2.0, up: 1.0 };
 export const HOLDS = [
-  [1.0, 'max', 'R', 'cookie (walking over)'], [1.0, 'max', 'L', 'sandwich halves (walking over)'],
-  [T.offer() + 0.5, 'max', 'R', 'cookie held out'], [T.show() + 0.5, 'max', 'L', 'sandwich shown'],
-  [T.split() + 0.5, 'max', 'R', 'half held out'], [T.split() + 0.5, 'max', 'L', 'other half'],
-  [T.take() + 0.8, 'skye', 'R', 'half in her hand'], [LAST + 0.7, 'skye', 'R', 'half, last frame'],
+  [1.0, 'max', 'R', 'cookie (walking over)', HC], [1.0, 'max', 'L', 'sandwich halves (walking over)', HC],
+  [T.offer() + 0.5, 'max', 'R', 'cookie held out', HC], [T.show() + 0.5, 'max', 'R', 'sandwich shown', HC],
+  [T.split() + 0.5, 'max', 'R', 'half held out', HC], [T.split() + 0.5, 'max', 'L', 'other half', HC],
+  [T.take() + 0.8, 'skye', 'R', 'half in her hand', HC], [LAST + 0.7, 'skye', 'R', 'half, last frame', HC],
 ];
