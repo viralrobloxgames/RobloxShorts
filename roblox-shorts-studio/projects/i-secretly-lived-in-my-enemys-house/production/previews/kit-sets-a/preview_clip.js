@@ -3,13 +3,14 @@ import * as THREE from 'three';
 import { loadRobloxCharacter, loadAnimation, robloxPose } from '../../../../../web/lib/robloxPack.js';
 import * as bedroom from '../../../web/kit/sets/bedroom.js';
 import * as hallway from '../../../web/kit/sets/hallway.js';
+import { applyLight } from '../../../web/kit/lighting.js';
 const SET = new URL(import.meta.url).searchParams.get('set') || 'bedroom';
 export const meta = { seconds: 40 / 30, fps: 30, width: 1920, height: 1080 };
 export const sky = { zenith: '#05070f', horizon: '#0b1222', below: '#05070f', fog: '#05070f' };
 let S, names, A = {}, cast = {};
 export async function setup(stage) {
   const { scene } = stage;
-  stage.hemi.intensity = 0.25; stage.hemi.color.set('#8ea6d8'); stage.sun.intensity = 0.0; stage.fill.intensity = 0.25; stage.rim.intensity = 0.15; scene.environmentIntensity = 0.25; scene.fog = null;
+  stage.hemi.intensity = 0.25; stage.hemi.color.set('#8ea6d8'); stage.sun.intensity = 0.0; stage.fill.intensity = 0.25; stage.rim.intensity = 0.15; scene.environmentIntensity = 0.25;
   const b = bedroom.build(scene), h = hallway.build(scene);
   S = SET === 'bedroom' ? b : h; (SET === 'bedroom' ? h : b).group.visible = false;
   names = Object.keys(S.cams); meta.names = names;
@@ -29,6 +30,7 @@ export function update(t, stage) {
   const c = S.useCam(stage.camera, names[i]);
   stage.camera.aspect = 1920 / 1080; stage.camera.updateProjectionMatrix();
   stage.aimSun(c.target, 30);
+  applyLight(stage, SET === 'bedroom' ? 'midnight' : 'night_moon', { set: S, practicals: SET === 'bedroom' ? { bedside_lamp: true, moon_window: true } : { moon_window: true, under_door: true, nightlight: true, attic_glow: true, linen_fill: true } });
 }
 export function overlay(g, s, t) {
   const i = Math.min(names.length - 1, Math.round(t * 30));
