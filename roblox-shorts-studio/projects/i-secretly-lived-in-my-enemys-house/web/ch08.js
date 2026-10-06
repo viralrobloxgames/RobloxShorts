@@ -10,33 +10,34 @@ import * as K from './kit/index.js';
 const CH = 8;
 const CARD = { day: 'FRIDAY', time: '9:30 PM' };
 const EST = [
-  { index: 0, speaker: 'VO', text: "Friday night. I decided to stop. I'd leave Max a note, tell him the truth, and go home.", start: 0.0, end: 6.4 },
-  { index: 1, speaker: 'SKYE', note: 'whisper', text: "Dear Max. The ghost was me. Sorry. Also, your dad's pancakes are amazing.", start: 6.7, end: 12.3 },
-  { index: 2, speaker: 'MAX', note: 'phone', text: 'Skye? Ask Skye to the dance?', start: 13.2, end: 15.2 },
-  { index: 3, speaker: 'MAX', note: 'phone', text: "Okay. Don't tell anyone.", start: 15.5, end: 17.2 },
-  { index: 4, speaker: 'MAX', note: 'phone', text: 'Skye is the worst...', start: 17.5, end: 19.0 },
-  { index: 5, speaker: 'SKYE', note: 'whisper', text: 'The worst. Right. Got it.', start: 19.9, end: 22.0 },
-  { index: 6, speaker: 'LILY', text: 'What happened? Did he see you?', start: 22.4, end: 24.4 },
-  { index: 7, speaker: 'SKYE', text: "Worse. Your brother thinks I'm the worst.", start: 24.7, end: 27.2 },
-  { index: 8, speaker: 'LILY', text: 'He said that?', start: 27.5, end: 28.4 },
-  { index: 9, speaker: 'SKYE', text: 'Word for word. Skye is the worst.', start: 28.7, end: 31.0 },
-  { index: 10, speaker: 'LILY', text: 'What came after?', start: 31.3, end: 32.4 },
-  { index: 11, speaker: 'SKYE', text: "Nothing. I left. I didn't need to hear the rest.", start: 32.7, end: 35.8 },
-  { index: 12, speaker: 'LILY', text: 'Max never says mean things about you. Only dumb things. Like how your laugh sounds like a goose.', start: 36.1, end: 41.6 },
-  { index: 13, speaker: 'SKYE', text: "Tomorrow night, I'm doing the biggest haunting this house has ever seen. And I'm filming the whole thing.", start: 41.9, end: 47.4 },
-  { index: 14, speaker: 'SKYE', text: 'On Monday, the whole class gets to watch Max scream.', start: 47.7, end: 50.6 },
-  { index: 15, speaker: 'LILY', text: "You don't really want to do that.", start: 50.9, end: 52.6 },
-  { index: 16, speaker: 'SKYE', text: 'Yes, I do.', start: 52.9, end: 53.8 },
-  { index: 17, speaker: 'LILY', text: 'Then why are you crying?', start: 54.1, end: 55.5 },
-  { index: 18, speaker: 'SKYE', text: "It's dusty. It's a really, really dusty attic.", start: 55.8, end: 59.0 },
+  { index: 1, speaker: 'VO', text: "Friday night. I decided to stop. I'd leave Max a note, tell him the truth, and go home.", start: 0.0, end: 6.4 },
+  { index: 2, speaker: 'SKYE', note: 'whisper', text: "Dear Max. The ghost was me. Sorry. Also, your dad's pancakes are amazing.", start: 6.7, end: 12.3 },
+  { index: 3, speaker: 'MAX', note: 'phone', text: 'Skye? Ask Skye to the dance?', start: 13.2, end: 15.2 },
+  { index: 4, speaker: 'MAX', note: 'phone', text: "Okay. Don't tell anyone.", start: 15.5, end: 17.2 },
+  { index: 5, speaker: 'MAX', note: 'phone', text: 'Skye is the worst...', start: 17.5, end: 19.0 },
+  { index: 6, speaker: 'SKYE', note: 'whisper', text: 'The worst. Right. Got it.', start: 19.9, end: 22.0 },
+  { index: 7, speaker: 'LILY', text: 'What happened? Did he see you?', start: 22.4, end: 24.4 },
+  { index: 8, speaker: 'SKYE', text: "Worse. Your brother thinks I'm the worst.", start: 24.7, end: 27.2 },
+  { index: 9, speaker: 'LILY', text: 'He said that?', start: 27.5, end: 28.4 },
+  { index: 10, speaker: 'SKYE', text: 'Word for word. Skye is the worst.', start: 28.7, end: 31.0 },
+  { index: 11, speaker: 'LILY', text: 'What came after?', start: 31.3, end: 32.4 },
+  { index: 12, speaker: 'SKYE', text: "Nothing. I left. I didn't need to hear the rest.", start: 32.7, end: 35.8 },
+  { index: 13, speaker: 'LILY', text: 'Max never says mean things about you. Only dumb things. Like how your laugh sounds like a goose.', start: 36.1, end: 41.6 },
+  { index: 14, speaker: 'SKYE', text: "Tomorrow night, I'm doing the biggest haunting this house has ever seen. And I'm filming the whole thing.", start: 41.9, end: 47.4 },
+  { index: 15, speaker: 'SKYE', text: 'On Monday, the whole class gets to watch Max scream.', start: 47.7, end: 50.6 },
+  { index: 16, speaker: 'LILY', text: "You don't really want to do that.", start: 50.9, end: 52.6 },
+  { index: 17, speaker: 'SKYE', text: 'Yes, I do.', start: 52.9, end: 53.8 },
+  { index: 18, speaker: 'LILY', text: 'Then why are you crying?', start: 54.1, end: 55.5 },
+  { index: 19, speaker: 'SKYE', text: "It's dusty. It's a really, really dusty attic.", start: 55.8, end: 59.0 },
 ];
 const L = await K.loadLines(import.meta.url, CH, EST);
 export const meta = K.chapterMeta(L.end + 0.8);
 export const sky = K.SKY;
 export const samples = () => 1;
-const at = (line, off = 0) => L.line(line).start + off;
-export const lineStart = (i) => L.line(i).start;
-const endOf = (line, off = 0) => L.line(line).end + off;
+// lines.json numbers spoken lines from 1; the code below counts them from 0 (line 0 = the VO)
+const at = (line, off = 0) => L.line(line + 1).start + off;
+export const lineStart = (i) => L.line(i + 1).start;
+const endOf = (line, off = 0) => L.line(line + 1).end + off;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const smooth = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
