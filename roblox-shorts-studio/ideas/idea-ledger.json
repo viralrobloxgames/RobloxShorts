@@ -424,11 +424,11 @@
       "title": "He Won The Marathon By Car",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "script_approved",
+      "status": "scene_built",
       "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-marathon-car-ride",
-      "notes": "Overnight run 2026-10-05: story picked by the user; script approval waived for this run (posting still needs approval). Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration. Web route."
+      "notes": "Overnight run 2026-10-05/06: story picked by the user; script approval waived for this run (posting still needs approval). Narration 60.7 s (George voice C, gap 0.6 / beat 1.3). Web route; full render started 2026-10-06 01:11 UTC. Fred Lorz, Andarin Carvajal, Len Taunyane; named only in the post copy. Strychnine/brandy left out of the narration."
     },
     {
       "title": "The Six Million Dollar Banana",
@@ -479,6 +479,26 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-postmans-palace",
       "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Ferdinand Cheval, Palais Ideal, Hauterives; named only in the post copy. Picked through general research. Web route; new postman_kepi accessory, procedural pebble palace that grows by clipping."
+    },
+    {
+      "title": "Spaghetti Grows On Trees",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story (1 April 1957): Britain's most serious news show reports a bumper spaghetti harvest in Switzerland, pickers pulling spaghetti off trees, the weevil gone, every strand bred to the same length; eight million watch, hundreds phone in asking how to grow their own, and are told to put a sprig of spaghetti in a tin of tomato sauce and hope for the best. It was April Fools' Day.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/spaghetti-grows-on-trees",
+      "notes": "Overnight run 2026-10-05/06: picked through general research because the user's second named story (Lawnchair Larry) was already in the ledger as He Flew A Lawn Chair. Script approval waived for the run by the user (posting still needs approval). Script v1 155 words. Web route."
+    },
+    {
+      "title": "She Went Over Niagara Falls In A Barrel",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_approved",
+      "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/over-the-falls-in-a-barrel",
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Web route."
     }
   ],
   "statuses": [
