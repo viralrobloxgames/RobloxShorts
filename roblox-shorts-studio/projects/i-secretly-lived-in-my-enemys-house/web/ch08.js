@@ -81,9 +81,9 @@ export async function setup(stage) {
 }
 
 // ---------- the shot table ----------
-const HALL = { set: 'hallway', light: 'night_moon', practicals: { moon: true, moonFill: true, underDoor: true, maxRoom: true, nightlight: true, ceiling: 0.3 } };
-const ROOM = { set: 'bedroom', light: 'night_moon', practicals: { lamp: true, moon: true, moonFill: true } };
-const ATT = { set: 'attic', light: 'night_moon', practicals: { moon: true, bounce: true, flashlight: true, flashlightCone: true } };
+const HALL = { set: 'hallway', light: 'night_moon', practicals: { moon_window: true, under_door: true, nightlight: true, ceiling_light: 0.3 } };
+const ROOM = { set: 'bedroom', light: 'night_moon', practicals: { bedside_lamp: true, moon_window: true } };
+const ATT = { set: 'attic', light: 'night_moon', practicals: { moon: true, bounce: true, flashlight: true, flashlightCone: true, hatchGlow: true } };
 const camS = (name) => (s) => K.setCam(s, K.getSet(SHOTSET[name] || 'hallway').cams[name]);
 const SHOTSET = { bed_edge_ms: 'bedroom' };
 const TWO = (s) => { const a = K.headPos(C.skye), b = K.headPos(C.lily), m = a.clone().add(b).multiplyScalar(0.5); return K.applyShot(s, { pos: m.clone().add(V(0.2, 0.9, 7.6)), target: m.clone().add(V(0, -0.5, 0)), fov: 38 }); };
@@ -96,7 +96,7 @@ const SHOTS = [
   { line: 0, off: 0, id: 'door_ws', ...HALL, cam: (s, t) => K.applyShot(s, K.blendShot(K.getSet('hallway').cams.wide_to_max_door, { pos: K.headPos(C.skye).add(V(4.6, 0.6, 5.0)), target: K.headPos(C.skye).add(V(0, -0.9, 0)), fov: 38 }, smooth((t - 0.3) / (endOf(0) - 0.3)))) },
   { line: 1, off: -0.1, id: 'note_mcu', ...HALL, cam: headCam(() => C.skye, V(3.4, 0.3, 3.2), 34, V(0, -0.6, 0)) },
   { line: 1, off: endOf(1) - at(1), id: 'kneel', ...HALL, cam: headCam(() => C.skye, V(3.6, 0.0, 0.6), 42, V(-0.9, -1.3, -0.8)) },
-  { line: 2, off: -0.1, id: 'max_phone', ...ROOM, cam: headCam(() => C.max, V(3.4, 0.3, -1.6), 32) },
+  { line: 2, off: -0.1, id: 'max_phone', ...ROOM, cam: headCam(() => C.max, V(4.6, 0.4, -2.6), 34, V(0, -0.7, 0)) },
   { line: 4, off: -0.1, id: 'max_worst', ...ROOM, cam: headCam(() => C.max, V(5.4, 0.6, -2.4), 40, V(0, -1.2, 0)) },
   { line: 4, off: 0.9, id: 'skye_hears', ...HALL, cam: headCam(() => C.skye, V(2.9, 0.1, 0.5), 30, V(0, -0.1, 0)) },
   { line: 4, off: endOf(4) - at(4) + 0.05, id: 'backs_away', ...HALL, cam: headCam(() => C.skye, V(4.6, 0.2, 2.2), 40, V(0, -1.0, 0)) },
@@ -179,7 +179,7 @@ export function update(t, stage) {
     K.blush(C.max, t > at(3) && t < at(3) + 1.6 ? 1 : 0);
   } else {
     K.only(C, ['skye', 'lily']);
-    K.setState({ chapter: CH });
+    K.setState({ chapter: CH, hatch: ramp(t, T.attic, T.attic + 0.5) });   // Lily pushes the hatch up
     K.setBlockers(set.group);
     // Skye cross-legged in the nest, turned a little toward Lily
     poseAt(C.skye, 'sit_cross', M.nest(), 0.25);
