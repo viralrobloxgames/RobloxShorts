@@ -16,7 +16,7 @@ else:
 at = lambda i, off=0: by[i]['start'] + off
 end = lambda i, off=0: by[i]['end'] + off
 # key times: keep in step with times() in web/ch07.js
-T = dict(lidLift=at(1, 3.6), goDecor=at(4), jam=end(4, 0.55), dadRise=end(5, 0.05), dadOut=at(6, 1.6), dadWalk1=at(9, 0.3),
+T = dict(lidLift=at(1, 3.6), goDecor=at(4, 0.45), jam=end(4, 0.95), dadRise=end(5, 0.05), dadOut=at(6, 1.6), dadWalk1=at(9, 0.3),
          dadWalk2=at(11, 1.5), nozzle=at(16, 1.6), hum=end(16, 0.15), humOff=at(17, 0.05), dadGo=at(18, 0.4),
          dadDown=end(18, -0.25), maxUp=end(18, 0.35), maxOut=at(19, -0.25), fix=at(19, 1.1), maxGo=end(20, 0.05),
          maxDown=end(20, 0.75), lilyCome=at(21, -0.2), lilyBack=end(5))

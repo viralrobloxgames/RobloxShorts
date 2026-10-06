@@ -1,3 +1,2 @@
-STATUS: WORKING
-render-ch03-b (kit-props session): machine checked - render OK (ch03 frames 1,200 at --scale 0.3: 7.3 s/frame on 2 workers, 4 cores), finish_longform.py --help OK, ffmpeg libx264 + ass filter present.
-Waiting for ch03 READY_FOR_GATE (FRAMES/SPLIT), then segment B into renders/ch03 -> delivery/chapters/ch03_b.mp4.
+STATUS: RENDERING
+render-ch03-b: segment B = frames 907-2013 of ch03 (FRAMES 2013, SPLIT 907, COMMIT 4d1828c) rendering into renders/ch03 (4 workers), started 13:59Z. Waiting for ch03 READY_TO_RENDER to sync changed frames, then encode delivery/chapters/ch03_b.mp4.
