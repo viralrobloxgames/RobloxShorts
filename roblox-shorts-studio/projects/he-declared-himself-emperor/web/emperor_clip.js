@@ -17,9 +17,9 @@ import { sanFrancisco, nortonUniform, merchantCoat, dress, hat, headHat, riceSac
 export const meta = { seconds: Math.ceil((W.end + 2.0) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'He Declared Himself Emperor' };
 export const sky = { zenith: '#5a8fd6', horizon: '#e6dcc4', below: '#f0f6ff', fog: '#e8e0cc', sunDir: new THREE.Vector3(0.4, 0.62, 0.68) };
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const T = { city: W.city1 - 0.15, name: W.name - 0.15, rich: W.rich - 0.15, ships: W.ship1 - 0.15, writes: W.writes - 0.15, paper: W.paper - 0.15, wears: W.wears - 0.15, money: W.prints2 - 0.15, congress: W.orders1 - 0.15, police: W.police - 0.15, furious: W.city2 - 0.15, chief: W.chief - 0.15, bridge: W.orders2 - 0.15 };
+const T = { city: W.city1 - 0.15, name: W.name - 0.15, rich: W.rich - 0.15, ships: W.ship1 - 0.15, writes: W.writes - 0.15, paper: W.paper - 0.15, wears: W.wears - 0.15, money: W.prints2 - 0.15, congress: W.orders1 - 0.15, police: W.police - 0.15, furious: W.city2 - 0.15, chief: W.chief - 0.15, bridge: W.orders2 - 0.15, built: W.decades - 0.15, dies: W.dies - 0.15, cta: W.follow - 0.15 };
 const SKIN = ['#f1c27d', '#c68642', '#e0ac69', '#8d5524'], COATS = ['#5a4636', '#3f4a5a', '#6b3b3b', '#4e5a3a'];
-let leo, max, SF, OUT, HAT;
+let leo, max, SF, OUT, HAT, MEMORIAL;
 const A = {}, folk = [], cops = [], SACKS = [];
 
 export async function setup(stage) {
@@ -50,9 +50,16 @@ export async function setup(stage) {
     scene.add(k); SACKS.push(k);
   }
   SF.ships.forEach((sh) => { sh.userData.home = sh.position.clone(); });
+  MEMORIAL = new THREE.Group();                           // the farewell: his feathered hat on a red cushion on a stand
+  MEMORIAL.add(new THREE.Mesh(new THREE.BoxGeometry(1.4, 2.4, 1.4), new THREE.MeshStandardMaterial({ color: '#3a2a1e', roughness: 0.8 })));
+  MEMORIAL.children[0].position.y = 1.2;
+  const cushion = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.4, 1.8), new THREE.MeshStandardMaterial({ color: '#9b1c2a', roughness: 0.9 })); cushion.position.y = 2.6; MEMORIAL.add(cushion);
+  const h = hat({ feather: true }); h.position.y = 2.8; MEMORIAL.add(h);
+  MEMORIAL.traverse((o) => { if (o.isMesh) o.castShadow = o.receiveShadow = true; });
+  MEMORIAL.position.set(-6, 0, STREET_Z); MEMORIAL.visible = false; scene.add(MEMORIAL);
 }
 
-const SHOTS = [[0, 'hook'], [T.city, 'city'], [T.name, 'name'], [T.rich, 'rich'], [T.ships, 'ships'], [T.writes, 'writes'], [T.paper, 'paper'], [T.wears, 'uniform'], [T.money, 'money'], [T.congress, 'congress'], [T.police, 'arrest'], [T.furious, 'furious'], [T.chief, 'salute'], [T.bridge, 'wip']]
+const SHOTS = [[0, 'hook'], [T.city, 'city'], [T.name, 'name'], [T.rich, 'rich'], [T.ships, 'ships'], [T.writes, 'writes'], [T.paper, 'paper'], [T.wears, 'uniform'], [T.money, 'money'], [T.congress, 'congress'], [T.police, 'arrest'], [T.furious, 'furious'], [T.chief, 'salute'], [T.bridge, 'bridge'], [T.built, 'built'], [T.dies, 'farewell'], [T.cta, 'cta']]
   .map(([start, id], i, a) => ({ start, end: a[i + 1] ? a[i + 1][0] : meta.seconds, id }));
 const X0 = -20, X1 = -4, SPEED = 5;                       // the Emperor's walk down the street (left to right)
 const FX = [-15, -11, -7.5, -1.5];                        // townsfolk on the boardwalk
@@ -66,6 +73,7 @@ export function update(t, stage) {
   const { shot, u } = shotAt(SHOTS, t); SHOT = shot.id;
   stage.sun.intensity = 2.8; stage.hemi.intensity = 0.55;
   const dock = t >= T.rich && t < T.writes, office = t >= T.writes && t < T.wears;   // the old clothes until the uniform
+  const late = t >= T.bridge;                             // the bridge on: townsfolk line the street for the farewell
   OUT.emperor.visible = HAT.emperor.visible = !(dock || office); OUT.merchant.visible = HAT.merchant.visible = dock || office;
   const d = Math.min(X1 - X0, t * SPEED), walking = !dock && d < X1 - X0, lx = X0 + d;
   leo.root.visible = true;
@@ -76,6 +84,11 @@ export function update(t, stage) {
   } else if (office) {                                    // at the BULLETIN's door with his proclamation
     leo.root.position.set(-1.6, 0, STREET_Z - 4.2); leo.root.rotation.set(0, -0.2, 0);
     robloxPose(leo, [[t < T.paper ? A.think : A.proud, t - T.writes, 1, true]]); grounded(leo, 0.03); setExpression(leo, 'happy');
+  } else if (t >= T.built) {                             // the bridge, the farewell, the end card: he is gone
+    leo.root.visible = false;
+  } else if (t >= T.bridge) {                             // on the dock, ordering a bridge across the bay
+    leo.root.position.set(DOCK.x - 3.2, 0, DOCK.z + 0.8); leo.root.rotation.set(0, 1.1, 0);
+    robloxPose(leo, [[A.point_forward, t - T.bridge, 1, true]]); grounded(leo, 0.8); setExpression(leo, 'determined');
   } else if (t >= T.police && t < T.bridge) {            // the arrest, the outrage, the salutes
     leo.root.position.set(-6, 0, STREET_Z); leo.root.rotation.set(0, 0.15, 0);
     robloxPose(leo, [[t < T.furious ? A.shock : A.proud, t - T.police, 1, true]]); grounded(leo); setExpression(leo, t < T.chief ? 'surprised' : 'happy');
@@ -95,6 +108,11 @@ export function update(t, stage) {
   SACKS.forEach((k, i) => { k.visible = i < landed; });
   folk.forEach((e, i) => {
     if (dock || (office && t < T.paper) || (t >= T.wears && t < T.money) || (t >= T.congress && t < T.police)) { e.root.visible = false; return; }
+    if (late) {
+      const show = t >= T.dies; e.root.visible = show; if (!show) return;
+      e.root.position.set(-13 + i * 3.6, 0, STREET_Z - 3.6); e.root.rotation.set(0, 0, 0);
+      robloxPose(e, [[A.idle, t + i, 1, true]]); grounded(e); setExpression(e, 'neutral'); return;
+    }
     if (t >= T.police && t < T.bridge) {
       e.root.visible = true; e.root.position.set(FX[i], 0, STREET_Z - 4.4); e.root.rotation.set(0, (i % 2 ? 0.25 : -0.25), 0);
       const fur = t >= T.furious && t < T.chief;
@@ -112,8 +130,12 @@ export function update(t, stage) {
     grounded(e); setExpression(e, near ? 'happy' : 'neutral');
   });
   cops.forEach((e, i) => {
-    const on = (t >= T.police && t < T.furious && i === 0) || (t >= T.chief && t < T.bridge);
+    const on = (t >= T.police && t < T.furious && i === 0) || (t >= T.chief && t < T.bridge) || t >= T.dies;
     e.root.visible = on; if (!on) return;
+    if (t >= T.dies) {                                     // the farewell: officers across the street, saluting
+      e.root.position.set(-8.6 + i * 5.2, 0, STREET_Z + 0.6); e.root.rotation.set(0, 0, 0); robloxPose(e, [[A.idle, t, 1, true]]);   // either side of the hat
+      setArm(e, ...SALUTE); grounded(e); setExpression(e, 'neutral'); return;
+    }
     const arrest = t < T.furious;
     e.root.position.set(arrest ? -4.4 : (i ? -8.6 : -3.4), 0, STREET_Z + (arrest ? 0.4 : 0.8)); e.root.rotation.set(0, arrest ? -1.2 : (i ? 0.9 : -0.9), 0);
     robloxPose(e, [[arrest ? A.point_forward : A.idle, t, 1, true]]);
@@ -121,6 +143,8 @@ export function update(t, stage) {
     grounded(e); setExpression(e, arrest ? 'determined' : 'neutral');
   });
   max.root.visible = t >= T.chief && t < T.bridge;
+  MEMORIAL.visible = t >= T.dies;
+  SF.bridge.visible = t >= T.built; if (SF.bridge.visible) SF.bridge.scale.set(1, Math.max(0.01, easeOut(clamp((t - T.built - 0.2) / 1.1))), 1);
   if (max.root.visible) {
     max.root.position.set(-7.6, 0, STREET_Z - 1.6); max.root.rotation.set(0, 0.7, 0);
     robloxPose(max, [[t < W.officers - 0.2 ? A.talk : A.idle, t - T.chief, 1, true]]); if (t > W.officers - 0.2) setArm(max, ...SALUTE);
@@ -139,6 +163,10 @@ export function update(t, stage) {
   else if (shot.id === 'arrest') { c.position.set(-3.6, 4.6, STREET_Z + 12.5); c.lookAt(V(-5.4, 5.0, STREET_Z)); c.fov = 46; }
   else if (shot.id === 'furious') { c.position.set(lerp(-10, -8.5, u), 4.8, STREET_Z + 10); c.lookAt(V(-9, 4.0, STREET_Z - 4.4)); c.fov = 50; }
   else if (shot.id === 'salute') { c.position.set(-5.8, 4.6, STREET_Z + lerp(15.5, 14, u)); c.lookAt(V(-6, 4.6, STREET_Z)); c.fov = 46; }
+  else if (shot.id === 'bridge') { c.position.set(DOCK.x - 9.5, 5.0, DOCK.z + 10.5); c.lookAt(V(DOCK.x - 0.6, 4.6, DOCK.z - 3)); c.fov = 48; }   // him on the left third, the bay behind
+  else if (shot.id === 'built') { c.position.set(DOCK.x - 4, 10, DOCK.z + 34); c.lookAt(V(DOCK.x + 30, 9, DOCK.z - 4)); c.fov = 52; }
+  else if (shot.id === 'farewell') { c.position.set(lerp(-6, -6, u), 4.2, STREET_Z + lerp(12, 10.5, u)); c.lookAt(V(-6, 3.4, STREET_Z)); c.fov = 50; }
+  else if (shot.id === 'cta') { c.position.set(-6, 5.0, STREET_Z + 15); c.lookAt(V(-6, 3.6, STREET_Z - 1)); c.fov = 50; }
   else if (shot.id === 'name') { c.position.set(lx + 1.6, 4.6, STREET_Z + lerp(9.6, 8.6, u)); c.lookAt(V(lx, 5.0, STREET_Z)); c.fov = 40; }   // head, hat and epaulettes, name above
   else { c.position.set(-6, 9.5, STREET_Z + 21); c.lookAt(V(-6, 2.6, STREET_Z - 3)); c.fov = 50; }
   c.up.set(0, 1, 0); c.updateProjectionMatrix(); stage.aimSun(V(lx, 2, STREET_Z), 18);
@@ -180,6 +208,20 @@ export function overlay(g, s, t) {
   if (SHOT === 'congress') {
     if (t > W.congress1 - 0.2 && t < W.congress2 - 0.1) decree(g, s, t, W.congress1 - 0.2);
     if (t > W.ignores - 0.1) bigText(g, s, '*crickets*', 540, 440, 96, '#ffffff', pop(t, W.ignores - 0.1), -0.03);
+  }
+  if (SHOT === 'bridge' && t > W.bridge - 0.2) decree(g, s, t, W.bridge - 0.2, ['BUILD A BRIDGE', 'ACROSS THE BAY'], 330);
+  if (SHOT === 'built') tag(g, s, t, W.built2 - 0.2, '1936', 'the Bay Bridge opens');
+  if (SHOT === 'farewell') tag(g, s, t, T.dies + 0.1, 'SAN FRANCISCO, 1880', 'his funeral');
+  if (t >= T.cta) {                                       // call to action (as in He Stole The Mona Lisa)
+    const k2 = easeOutBack(clamp((t - T.cta) / 0.3), 1.6);
+    g.save(); g.translate(540 * s, 440 * s); g.scale(k2, k2);
+    roundRect(g, -440 * s, -170 * s, 880 * s, 340 * s, 36 * s); g.fillStyle = 'rgba(12,16,32,.92)'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#ffd23f'; g.stroke();
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.font = `${60 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('MORE STORIES LIKE THIS', 0, -100 * s);
+    g.font = `800 ${46 * s}px Montserrat`; g.fillStyle = '#ffd23f'; g.fillText('@viralrobloxgames', 0, -26 * s);
+    roundRect(g, -170 * s, 50 * s, 340 * s, 84 * s, 20 * s); g.fillStyle = '#fe2c55'; g.fill();
+    g.font = `${52 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('FOLLOW', 0, 95 * s);
+    g.restore();
   }
   if (SHOT === 'arrest' && t > W.arrests - 0.1) bigText(g, s, 'ARRESTED!', 540, 400, 130, '#ff4b3f', pop(t, W.arrests - 0.1, 0.18), -0.1, '#2a0d0d');
   if (SHOT === 'furious' && t > W.furious - 0.15) bigText(g, s, 'OUTRAGE!', 540, 400, 140, '#ff4b3f', pop(t, W.furious - 0.15, 0.18), 0.06, '#2a0d0d');
@@ -230,13 +272,13 @@ function banknote(g, s, t, t0, stamp) {                     // his own money (Em
     g.fillStyle = '#2f9e44'; g.font = `${78 * s}px "Luckiest Guy"`; g.fillText('ACCEPTED', 0, 6 * s); g.restore(); }
   g.restore();
 }
-function decree(g, s, t, t0) {                              // "Congress is abolished" (12 October 1859)
+function decree(g, s, t, t0, lines = ['CONGRESS IS', 'ABOLISHED'], y = 520) {   // "Congress is abolished" (12 October 1859); the bridge
   const k = pop(t, t0, 0.25); if (k <= 0) return;
-  g.save(); g.translate(540 * s, 520 * s); g.rotate(0.03); g.scale(k, k);
+  g.save(); g.translate(540 * s, y * s); g.rotate(0.03); g.scale(k, k);
   roundRect(g, -360 * s, -200 * s, 720 * s, 400 * s, 16 * s); g.fillStyle = '#f3e7c9'; g.fill(); g.lineWidth = 6 * s; g.strokeStyle = '#8a6a3e'; g.stroke();
   g.fillStyle = '#3a2a1e'; g.textAlign = 'center'; g.textBaseline = 'middle';
   g.font = `700 ${34 * s}px "Playfair Display"`; g.fillText('BY ORDER OF THE EMPEROR', 0, -120 * s);
-  g.font = `900 ${64 * s}px "Playfair Display"`; g.fillText('CONGRESS IS', 0, -20 * s); g.fillText('ABOLISHED', 0, 60 * s);
+  g.font = `900 ${64 * s}px "Playfair Display"`; g.fillText(lines[0], 0, -20 * s); g.fillText(lines[1], 0, 60 * s);
   g.font = `italic 700 ${32 * s}px "Playfair Display"`; g.fillText('~ Norton I ~', 140 * s, 150 * s);
   g.restore();
 }
