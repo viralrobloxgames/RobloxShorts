@@ -1,0 +1,66 @@
+{
+ "voice": "george_c",
+ "text": "You put the Halloween stuff out already? It's not even Halloween.",
+ "seed": 23124,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "put",
+   "start": 0.18,
+   "end": 0.34
+  },
+  {
+   "word": "the",
+   "start": 0.34,
+   "end": 0.46
+  },
+  {
+   "word": "Halloween",
+   "start": 0.46,
+   "end": 0.74
+  },
+  {
+   "word": "stuff",
+   "start": 0.74,
+   "end": 1.0
+  },
+  {
+   "word": "out",
+   "start": 1.0,
+   "end": 1.2
+  },
+  {
+   "word": "already?",
+   "start": 1.2,
+   "end": 1.56
+  },
+  {
+   "word": "It's",
+   "start": 2.14,
+   "end": 2.36
+  },
+  {
+   "word": "not",
+   "start": 2.36,
+   "end": 2.48
+  },
+  {
+   "word": "even",
+   "start": 2.48,
+   "end": 2.76
+  },
+  {
+   "word": "Halloween.",
+   "start": 2.76,
+   "end": 3.16
+  }
+ ],
+ "words_md5": "2bb6f29cf9add8a7713527e1f7370f1d",
+ "whisper": "small.en"
+}

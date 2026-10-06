@@ -1,0 +1,36 @@
+{
+ "voice": "brittney",
+ "text": "He cut the crusts off.",
+ "seed": 62635,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "cut",
+   "start": 0.32,
+   "end": 0.5
+  },
+  {
+   "word": "the",
+   "start": 0.5,
+   "end": 0.64
+  },
+  {
+   "word": "crusts",
+   "start": 0.64,
+   "end": 1.16
+  },
+  {
+   "word": "off.",
+   "start": 1.16,
+   "end": 1.32
+  }
+ ],
+ "words_md5": "4caeef07fafc1cb995cf4924a2f16b6e",
+ "whisper": "small.en"
+}

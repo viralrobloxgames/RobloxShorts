@@ -1,0 +1,21 @@
+{
+ "voice": "lily_kid",
+ "text": "They're festive.",
+ "seed": 75593,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "They're",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "festive.",
+   "start": 0.26,
+   "end": 0.54
+  }
+ ],
+ "words_md5": "6e9213419d1ae60edf76b13037da674b",
+ "whisper": "small.en"
+}

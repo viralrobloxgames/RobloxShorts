@@ -1,12 +1,12 @@
 STATUS: READY
 
-Template ready: `web/ch_template.js`. Kit API + pipeline usage: `web/kit/README.md`.
-- Done and on main: kit index.js, sets/index.js, stage.js, lighting.js, camera.js, overlay.js, ch_template.js,
-  scripts/finish_longform.py, scripts/stitch_longform.py, render.mjs frame skip (+ runner.html fingerprint covers face
-  textures, exposure, sky, lights), proof clip.
-- Measured (proof, 1920x1080, 1 sample, 2 workers): 3.0 s/rendered frame; 33% of frames skipped on the proof
-  (wall 4:31 -> 3:00); copied frames identical to a no-skip render within renderer noise; two-segment encode + stitch:
-  stream copy, seams frame-exact, A/V 0.000 s, -14.1 LUFS / -1.0 dBTP.
-- Requests answered in production/requests.md (practicals, beam fromProp, chinLight, clearShot fix, endScreen space).
-- Template checked on the real bedroom + classroom sets (set cams for the closet, walls hidden automatically).
-- Next: answer production/requests.md every ~20 min; available for a render or stitch job.
+Kit + pipeline on main (see web/kit/README.md). Staying on per the orchestrator:
+- Answering requests in production/requests.md (watcher every 90 s). Done so far: practicals, beam fromProp, chinLight,
+  clearShot, endScreen space, night presets moonlight, attic_afternoon (attic's own lights), sunday_morning toned down.
+- YouTube package: the `package` role owns it (delivery/*_post.md, post.json, thumbnail pick A). My alternative
+  thumbnail is delivery/thumbnail_variants/D_lived_in_his_house_kitpipeline.jpg (web/thumbnail_kitpipeline.js).
+- QA of chapter drafts done: contact sheets every 4 s at 0.25 scale for all 11; concrete fixes per chapter in
+  requests.md (faces in the caption band: ch01/02/04/07; heads cut: ch07/09; faces too dark/blown: ch05/06/08/10).
+- Fit gate fixed: kit chapters are now fit-checked, one report per clip (web/fit_check/chNN/).
+- Measured: 3.0 s/rendered frame at 1080p (2 workers, 4 cores); frame skip 33% on the proof; seams frame-exact.
+- Next: final stitch when chapters are rendered.

@@ -1,0 +1,26 @@
+{
+ "voice": "lily_kid",
+ "text": "You like him.",
+ "seed": 90539,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "like",
+   "start": 0.22,
+   "end": 0.44
+  },
+  {
+   "word": "him.",
+   "start": 0.44,
+   "end": 0.74
+  }
+ ],
+ "words_md5": "9c38d12061ad1f90b6cc7173b12a0951",
+ "whisper": "small.en"
+}

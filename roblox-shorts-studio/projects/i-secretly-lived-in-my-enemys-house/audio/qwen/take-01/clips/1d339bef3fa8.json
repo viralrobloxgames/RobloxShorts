@@ -1,0 +1,41 @@
+{
+ "voice": "max_kid",
+ "text": "Skye? Ask Skye to the dance?",
+ "seed": 13832,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Skye?",
+   "start": 0.0,
+   "end": 1.06
+  },
+  {
+   "word": "Ask",
+   "start": 1.06,
+   "end": 1.42
+  },
+  {
+   "word": "Skye",
+   "start": 1.42,
+   "end": 1.84
+  },
+  {
+   "word": "to",
+   "start": 1.84,
+   "end": 1.94
+  },
+  {
+   "word": "the",
+   "start": 1.94,
+   "end": 2.06
+  },
+  {
+   "word": "dance?",
+   "start": 2.06,
+   "end": 2.34
+  }
+ ],
+ "words_md5": "228df8bbe1476502b4b1ba82b6010178",
+ "whisper": "small.en"
+}

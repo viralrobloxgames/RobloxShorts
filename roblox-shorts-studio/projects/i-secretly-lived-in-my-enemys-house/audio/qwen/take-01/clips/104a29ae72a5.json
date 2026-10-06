@@ -1,0 +1,96 @@
+{
+ "voice": "brittney",
+ "text": "Thursday night. I had my best haunting planned yet. Then I heard him through his bedroom door.",
+ "seed": 67638,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Thursday",
+   "start": 0.0,
+   "end": 0.86
+  },
+  {
+   "word": "night",
+   "start": 0.86,
+   "end": 1.2
+  },
+  {
+   "word": "I",
+   "start": 1.2,
+   "end": 1.4
+  },
+  {
+   "word": "had",
+   "start": 1.4,
+   "end": 1.52
+  },
+  {
+   "word": "my",
+   "start": 1.52,
+   "end": 1.68
+  },
+  {
+   "word": "best",
+   "start": 1.68,
+   "end": 1.92
+  },
+  {
+   "word": "haunting",
+   "start": 1.92,
+   "end": 2.34
+  },
+  {
+   "word": "planned",
+   "start": 2.34,
+   "end": 2.66
+  },
+  {
+   "word": "yet,",
+   "start": 2.66,
+   "end": 2.98
+  },
+  {
+   "word": "then",
+   "start": 3.32,
+   "end": 3.6
+  },
+  {
+   "word": "I",
+   "start": 3.6,
+   "end": 3.74
+  },
+  {
+   "word": "heard",
+   "start": 3.74,
+   "end": 3.88
+  },
+  {
+   "word": "him",
+   "start": 3.88,
+   "end": 4.06
+  },
+  {
+   "word": "through",
+   "start": 4.06,
+   "end": 4.24
+  },
+  {
+   "word": "his",
+   "start": 4.24,
+   "end": 4.42
+  },
+  {
+   "word": "bedroom",
+   "start": 4.42,
+   "end": 4.68
+  },
+  {
+   "word": "door.",
+   "start": 4.68,
+   "end": 4.92
+  }
+ ],
+ "words_md5": "2e4771b01781d3c77c6669af1842db8d",
+ "whisper": "small.en"
+}

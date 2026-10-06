@@ -1,0 +1,56 @@
+{
+ "voice": "george_c",
+ "text": "Does your mother know where you've been all week?",
+ "seed": 2310,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Does",
+   "start": 0.0,
+   "end": 0.14
+  },
+  {
+   "word": "your",
+   "start": 0.14,
+   "end": 0.26
+  },
+  {
+   "word": "mother",
+   "start": 0.26,
+   "end": 0.46
+  },
+  {
+   "word": "know",
+   "start": 0.46,
+   "end": 0.7
+  },
+  {
+   "word": "where",
+   "start": 0.7,
+   "end": 0.88
+  },
+  {
+   "word": "you've",
+   "start": 0.88,
+   "end": 1.08
+  },
+  {
+   "word": "been",
+   "start": 1.08,
+   "end": 1.28
+  },
+  {
+   "word": "all",
+   "start": 1.28,
+   "end": 1.44
+  },
+  {
+   "word": "week?",
+   "start": 1.44,
+   "end": 1.7
+  }
+ ],
+ "words_md5": "09bb3eee97097a72fd2ae283624c0484",
+ "whisper": "small.en"
+}

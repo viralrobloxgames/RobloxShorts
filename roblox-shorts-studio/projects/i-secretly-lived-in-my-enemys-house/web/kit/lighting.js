@@ -39,15 +39,15 @@ export const PRESETS = {
     sun: ['#ffb070', 2.4, [0.8, 0.22, 0.4]], hemi: ['#a58ac9', '#4a3426', 0.6], fill: ['#8a7fd6', 0.45], rim: ['#ffc48a', 1.0],
     env: 0.5, exposure: 1.0, fog: ['#7a5a7a', 140, 650], bloom: 0.3, practicals: {},
   },
-  attic_afternoon: {   // dusty warm light through the round window, shafts readable
+  attic_afternoon: {   // the attic's own lights (set.lights.sun through the round window, bounce) carry it: the stage sun is off
     sky: { zenith: '#4f8fe0', horizon: '#ffe2b0', below: '#d8c8a8', sunColor: '#ffd9a0' },
-    sun: ['#ffd9a8', 2.6, [0.75, 0.45, 0.35]], hemi: ['#ffe3c0', '#5a4636', 0.55], fill: ['#ffcf9a', 0.4], rim: ['#ffe0b8', 0.7],
-    env: 0.45, exposure: 1.0, fog: ['#c9a882', 140, 650], bloom: 0.3, practicals: {},
+    sun: ['#ffd9a8', 0.0, [0.75, 0.45, 0.35]], hemi: ['#ffe3c0', '#5a4636', 0.22], fill: ['#ffcf9a', 0.12], rim: ['#ffe0b8', 0.2],
+    env: 0.18, exposure: 1.0, fog: ['#c9a882', 140, 650], bloom: 0.3, practicals: { sun: 0.1, bounce: true },
   },
   sunday_morning: {    // Ch11 kitchen: soft warm morning, the happiest light in the film
     sky: { zenith: '#5aa8f0', horizon: '#fff0d0', below: '#f0ead8', sunColor: '#fff2c8' },
-    sun: ['#fff1d0', 2.8, [0.6, 0.5, 0.5]], hemi: ['#fff2dc', '#9a8a76', 0.75], fill: ['#ffe2b8', 0.6], rim: ['#fff4dc', 0.8],
-    env: 0.6, exposure: 0.98, fog: ['#f0e6d0', 160, 700], bloom: 0.22, practicals: {},
+    sun: ['#fff1d0', 1.4, [0.6, 0.5, 0.5]], hemi: ['#fff2dc', '#9a8a76', 0.5], fill: ['#ffe2b8', 0.35], rim: ['#fff4dc', 0.6],
+    env: 0.42, exposure: 0.9, fog: ['#f0e6d0', 160, 700], bloom: 0.22, practicals: {},   // the kitchen adds its own sun-in and room fill
   },
 };
 

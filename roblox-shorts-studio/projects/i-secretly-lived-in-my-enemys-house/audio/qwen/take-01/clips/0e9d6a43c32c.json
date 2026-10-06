@@ -1,0 +1,41 @@
+{
+ "voice": "max_kid",
+ "text": "Yo! Dance? You? Me? Ugh. No.",
+ "seed": 57879,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Yo.",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "Dance.",
+   "start": 0.9,
+   "end": 1.12
+  },
+  {
+   "word": "You.",
+   "start": 1.62,
+   "end": 1.94
+  },
+  {
+   "word": "Me.",
+   "start": 2.42,
+   "end": 2.74
+  },
+  {
+   "word": "Ugh.",
+   "start": 3.22,
+   "end": 3.54
+  },
+  {
+   "word": "No.",
+   "start": 3.94,
+   "end": 4.24
+  }
+ ],
+ "words_md5": "bef1989b0b9e7cb46225887f8cdfdd6a",
+ "whisper": "small.en"
+}

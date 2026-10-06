@@ -1,0 +1,31 @@
+{
+ "voice": "brittney",
+ "text": "Who is he asking?",
+ "seed": 63340,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Who",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "is",
+   "start": 0.48,
+   "end": 0.64
+  },
+  {
+   "word": "he",
+   "start": 0.64,
+   "end": 0.84
+  },
+  {
+   "word": "asking?",
+   "start": 0.84,
+   "end": 1.14
+  }
+ ],
+ "words_md5": "6d012836c41e7639be5153dfc521299e",
+ "whisper": "small.en"
+}

@@ -1,0 +1,16 @@
+{
+ "voice": "lily_kid",
+ "text": "Sure.",
+ "seed": 29463,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Sure!",
+   "start": 0.0,
+   "end": 0.38
+  }
+ ],
+ "words_md5": "315faa370bf4b95ce0a3c4d66c785e3b",
+ "whisper": "small.en"
+}

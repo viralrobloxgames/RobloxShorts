@@ -99,7 +99,7 @@ export async function setup(stage) {
   C = await K.loadCast(stage.scene);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.lily, 'lily_day');
   A = await K.loadAnims(['idle', 'walk', 'climb', 'sit', 'shrug', 'point', 'talk']);
-  for (const id of ['hobby_horse', 'teapot', 'cup']) { P[id] = K.makeProp(id); stage.scene.add(P[id]); }
+  for (const id of ['hobby_horse', 'teapot', 'cup', 'cracker_packet']) { P[id] = K.makeProp(id); stage.scene.add(P[id]); }
   P.cupLily = K.makeProp('cup'); stage.scene.add(P.cupLily);
   T.grab = lilyPath().t2;
 }
@@ -115,12 +115,12 @@ const SHOTS = [
   { k: 3, off: -0.1, id: 'lily_hatch', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.3 }) },
   { k: 4, off: -0.4, id: 'skye_nest', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5 }) },
   { k: 5, off: -0.35, id: 'wide_walk', cam: (s) => K.setCam(s, { pos: W(-10.2, 3.8, -2.5), target: W(2.5, 1.6, -0.5), fov: 52 }, { blockers: SET.group }) },
-  { k: 6, off: -0.1, id: 'skye_plead', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
+  { k: 6, off: -0.1, id: 'skye_plead', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
   { k: 7, off: -0.1, id: 'lily_deal', cam: (s) => lilyStand(s) },
   { k: 8, off: -0.1, id: 'skye_deal', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5 }) },
   { k: 9, off: -0.1, id: 'lily_horse', cam: (s) => lilyStand(s) },
-  { k: 9, off: 'end+0.05', id: 'horse_pov', cam: (s) => K.overShoulder(s, C.lily, C.skye, 'mcu', { shoulder: 1.2 }) },
-  { k: 10, off: -0.1, id: 'skye_horse', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.5 }) },
+  { k: 9, off: 'end+0.05', id: 'horse_pov', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
+  { k: 10, off: -0.1, id: 'skye_horse', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.9 }) },
   { k: 10, off: 'tea', id: 'tea_wide', cam: (s) => teaSide(s, 44) },
   { k: 11, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.55 }) },
   { k: 12, off: -0.1, id: 'skye_ots', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
@@ -145,9 +145,9 @@ const SHOTS = [
 ].map((x) => ({ ...x, start: x.off === 'tea' ? T.tea : x.off === 'blush' ? T.blush : x.off === 'end+0.05' ? end(x.k, 0.05) : at(x.k, x.off) }))
   .sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
-function lilyStand(s) { const h = K.headPos(C.lily); return K.setCam(s, { pos: W(-1.9, 2.9, -7.0), target: V(h.x, h.y - 0.55, h.z), fov: 34 }, { blockers: SET.group }); }
+function lilyStand(s) { const h = K.headPos(C.lily); return K.setCam(s, { pos: W(-3.3, 3.0, -5.4), target: V(h.x, h.y - 0.55, h.z), fov: 34 }, { blockers: SET.group }); }
 // the tea party side-on from the window-left side: Skye frame-left, Lily frame-right, the box and the toys between
-function teaSide(s, fov) { return K.setCam(s, { pos: W(-9.6, 3.7, 3.0), target: W(-3.5, 1.9, 1.8), fov }, { blockers: SET.group }); }
+function teaSide(s, fov) { return K.setCam(s, { pos: W(-9.6, 3.8, 2.2), target: W(-3.5, 1.9, 1.8), fov }, { blockers: SET.group }); }
 function setNamed(name) { return K.setCam(STAGE, SET.cams[name], { blockers: SET.group }); }
 function blushPush(s, t) {
   const u = smooth(inv(T.blush, at(29, 1.6), t));
@@ -179,7 +179,7 @@ export function update(t, stage) {
   const tea = t >= T.tea, bpOff = t >= T.backpackOff;
   K.setState({
     chapter: 5, hatch: 'open', tea, backpack: bpOff, hobbyHorse: t >= lilyPath().t2 + GRAB * 0.5 ? 'none' : 'boxes',
-    hide: tea ? ['teapot', 'cup_1'] : [],
+    hide: tea ? (lilyPours(t) ? ['teapot', 'cup_1'] : ['cup_1']) : t < at(2, 0.3) ? ['crackers'] : [],
   });
   K.dress(C.skye, bpOff ? 'skye_hoodie' : ['skye_hoodie', 'backpack']);
   K.applyLight(stage, 'attic_afternoon', { set });
@@ -211,6 +211,7 @@ function blockNest(t, idle) {
   const kneelUp = t >= at(6, -0.15) && t < at(7, 0.3);           // up on her knees to plead
   floorSit(C.skye, { pos: nest.pos, heading: -1.3 + (K.faceTo(nest, M.hatchHead()) + 1.3) * turn }, kneelUp ? 'kneel_up' : 'sit_cross');
   headYaw(C.skye, 0.2 * (1 - turn));
+  if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L');              // the cracker packet in her left hand
   if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'R', 0.8 + 0.2 * Math.sin(t * 14));   // "Boo" (one arm)
   if (t >= at(4) && t < end(4, 0.2)) K.gesture(C.skye, 'thumb_to_chest', 'R');                          // "modern ghost"
   if (kneelUp) { K.gesture(C.skye, 'hand_hold', 'L'); K.gesture(C.skye, 'hold_out', 'R', 0.55); K.gesture(C.skye, 'hold_out', 'L', 0.55); }
@@ -241,6 +242,7 @@ function blockNest(t, idle) {
   const lilyHasHorse = t >= L5.t2 + GRAB * 0.5 && t < T.horseGive;
   K.hold(P.hobby_horse, lilyHasHorse ? C.lily : C.skye, 'R');
   P.hobby_horse.visible = t >= L5.t2 + GRAB * 0.5;
+  K.hold(P.cracker_packet, C.skye, 'L'); P.cracker_packet.visible = t < at(2, 0.3);
   P.teapot.visible = P.cup.visible = P.cupLily.visible = false;
 }
 
@@ -248,28 +250,34 @@ function blockNest(t, idle) {
 function blockTea(t, idle) {
   const sk = M.teaSkye(), li = M.teaLily();
   K.setLine(C.lily, C.skye, -1);              // cameras on the window-left (-x) side, as in the first half
-  floorSit(C.skye, sk, 'sit_cross');
-  floorSit(C.lily, li, 'kneel');
-  // Skye: cup in her right hand, the hobby horse across her lap (left hand on the stick)
+  // both cheated ~25 degrees towards the window-left cameras so their faces read 3/4 in the two-shots
+  floorSit(C.skye, { pos: sk.pos, heading: sk.heading - 0.45 }, 'sit_cross');
+  floorSit(C.lily, { pos: li.pos, heading: li.heading + 0.45 }, 'kneel');
+  // Skye: cup in her left hand (her right arm is on the camera side), the hobby horse across her lap
   const sip = (a, b) => t >= a && t < b;
-  K.gesture(C.skye, 'cup_hold', 'R', 0.7);
-  if (sip(at(12), end(12)) || sip(at(29, 1.4), 1e9)) K.gesture(C.skye, 'hold_out', 'R');        // cup out for more tea
-  if (sip(at(18), end(18, 0.5))) K.gesture(C.skye, 'cup_hold', 'R', 1);                          // "Professionally." (a sip)
-  if (sip(at(20), end(20))) K.gesture(C.skye, 'hand_over_mouth', 'L', 0.6);                       // gossip
-  K.gesture(C.skye, 'hand_hold', 'L');
-  P.hobby_horse.visible = true; K.hold(P.hobby_horse, C.skye, 'L');
-  P.cup.visible = true; K.hold(P.cup, C.skye, 'R');
+  K.gesture(C.skye, 'cup_hold', 'L', 0.9);                      // high enough that the cup clears the box
+  if (sip(at(12), end(12)) || sip(at(29, 1.4), 1e9)) K.gesture(C.skye, 'hold_out', 'L');        // cup out for more tea
+  if (sip(at(18), end(18, 0.5))) K.gesture(C.skye, 'cup_hold', 'L', 1);                          // "Professionally." (a sip)
+  if (sip(at(20), end(20))) K.gesture(C.skye, 'hand_over_mouth', 'R', 0.6);                       // gossip
+  K.gesture(C.skye, 'hand_hold', 'R');
+  // the hobby horse lies across her lap (head to her right), flat on her crossed legs
+  if (P.hobby_horse.parent !== STAGE.scene) STAGE.scene.add(P.hobby_horse);
+  K.place(P.hobby_horse, W(-3.5, 0.85, 0.5), Math.PI / 2, { flat: true }); P.hobby_horse.visible = true;
+  P.cup.visible = true; K.hold(P.cup, C.skye, 'L');
   // Lily: teapot in her right hand (pours on "More tea, horse?" and at the end), her teddy beside her on the floor
-  const pour = sip(at(11, -0.2), end(11, 0.3)) || sip(at(24), end(24)) || t >= at(29, 1.6);
-  K.gesture(C.lily, pour ? 'hold_out' : 'cup_hold', 'R', pour ? 1 : 0.6);
+  const pour = lilyPours(t);
+  // pouring: arm out level so the pot clears the box; between pours the pot stands on the box (the set's teapot)
+  if (pour) K.gesture(C.lily, [-95, 0, 6], 'R');
   if (sip(at(23), end(23))) { K.gesture(C.lily, 'hold_out', 'L', 0.5); }                        // "I told him that." (a little shrug)
-  P.teapot.visible = true; K.hold(P.teapot, C.lily, 'R');
-  P.cupLily.visible = false;
+  K.hold(P.teapot, C.lily, 'R'); P.teapot.rotateX(0.5); P.teapot.visible = pour;
+  P.cupLily.visible = false; P.cracker_packet.visible = false;
   K.holdTeddy(C.lily, 'free');
   const tm = K.mark('attic', 'tea_teddy_lily'), td = C.lily.teddy;
   if (td.parent !== STAGE.scene) STAGE.scene.add(td);
   td.position.copy(tm.pos); td.rotation.set(0, tm.heading, 0); td.scale.setScalar(C.lily.scale);
 }
+
+const lilyPours = (t) => (t >= at(11, -0.2) && t < end(11, 0.3)) || (t >= at(24) && t < end(24)) || t >= at(29, 1.6);
 
 // floor poses from the cast (sit_cross, kneel, kneel_up): the pose's drop puts the seat on the floor
 function floorSit(actor, mark, pose) {
@@ -287,3 +295,23 @@ function headYaw(actor, yaw) { if (yaw) actor.bones.Head.quaternion.premultiply(
 export function overlay(g, s, t) {
   K.dayCard(g, s, t, CARD);
 }
+
+// ---------- held props, for web/ch05_hold.js: [t, who, hand, label] ----------
+export const HOLDS = () => {
+  const over = { up: 3.2, dist: 4.2, side: -1.5 };             // over the tea box (it hides the hands from eye level)
+  return [
+    [0.5, 'skye', 'L', 'cracker_packet (nest)'],
+    [0.5, 'lily', 'R', 'teddy hug (hatch)', { up: 3.0, dist: 4.0 }],
+    [T.climb + T.climbDur + 0.3, 'lily', 'L', 'teddy at her side (walking)'],
+    [at(6, 0.2), 'lily', 'R', 'hobby_horse (walking)'],
+    [at(9, 0.8), 'lily', 'R', 'hobby_horse held out', { side: 2.5, dist: 4.5 }],
+    [at(10, 1.4), 'skye', 'R', 'hobby_horse (Skye)', { up: 2.0 }],
+    [at(11, 0.3), 'lily', 'R', 'teapot pouring', over],
+    [at(12, 0.3), 'skye', 'L', 'cup held out', over],
+    [at(14, 0.3), 'skye', 'L', 'cup resting', over],
+    [at(15, 0.2), 'lily', 'R', 'teapot resting', over],
+    [at(18, 0.3), 'skye', 'L', 'cup sip', over],
+    [at(29, 1.8), 'skye', 'L', 'cup out (end)', over],
+    [at(29, 1.8), 'lily', 'R', 'teapot (end)', over],
+  ];
+};

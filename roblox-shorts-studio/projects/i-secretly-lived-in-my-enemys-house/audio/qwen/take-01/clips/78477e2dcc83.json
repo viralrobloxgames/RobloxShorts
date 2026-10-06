@@ -1,0 +1,41 @@
+{
+ "voice": "brittney",
+ "text": "And I do not like him.",
+ "seed": 82699,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "and",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "I",
+   "start": 0.24,
+   "end": 0.38
+  },
+  {
+   "word": "do",
+   "start": 0.38,
+   "end": 0.48
+  },
+  {
+   "word": "not",
+   "start": 0.48,
+   "end": 0.66
+  },
+  {
+   "word": "like",
+   "start": 0.66,
+   "end": 0.84
+  },
+  {
+   "word": "him.",
+   "start": 0.84,
+   "end": 1.04
+  }
+ ],
+ "words_md5": "3536d40d0bd6b136fe6b4df320e6a28f",
+ "whisper": "small.en"
+}

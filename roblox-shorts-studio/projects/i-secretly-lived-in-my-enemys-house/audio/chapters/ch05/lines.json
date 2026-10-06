@@ -1,0 +1,374 @@
+{
+ "chapter": 5,
+ "header": "CH05 | WEDNESDAY | 3:41 PM | The Tea Party",
+ "duration": 67.117,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Wednesday afternoon. I always got back before anyone else. Almost anyone.",
+   "start": 0.0,
+   "end": 4.72,
+   "clip": "audio/qwen/take-01/clips/ab1e48d9d61b.wav",
+   "seed": 14485
+  },
+  {
+   "index": 2,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Who are you?",
+   "start": 4.97,
+   "end": 5.969,
+   "clip": "audio/qwen/take-01/clips/77190749c390.wav",
+   "seed": 5268
+  },
+  {
+   "index": 3,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "I'm a ghost. Boo.",
+   "start": 6.219,
+   "end": 7.885,
+   "clip": "audio/qwen/take-01/clips/a91758070a90.wav",
+   "seed": 81637
+  },
+  {
+   "index": 4,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Ghosts don't have backpacks.",
+   "start": 8.135,
+   "end": 9.966,
+   "clip": "audio/qwen/take-01/clips/2172e3c047c0.wav",
+   "seed": 92176
+  },
+  {
+   "index": 5,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "I'm a modern ghost.",
+   "start": 10.216,
+   "end": 11.416,
+   "clip": "audio/qwen/take-01/clips/84159969ebb7.wav",
+   "seed": 56358
+  },
+  {
+   "index": 6,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "You're Skye. From the fridge.",
+   "start": 11.666,
+   "end": 13.894,
+   "clip": "audio/qwen/take-01/clips/5c3ead4bcd1e.wav",
+   "seed": 45434
+  },
+  {
+   "index": 7,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Okay. Please, please don't tell anyone.",
+   "start": 14.144,
+   "end": 16.464,
+   "clip": "audio/qwen/take-01/clips/f9e85db9a2f8.wav",
+   "seed": 78026
+  },
+  {
+   "index": 8,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "I won't tell. If you come to my tea party. Every day.",
+   "start": 16.714,
+   "end": 21.179,
+   "clip": "audio/qwen/take-01/clips/82264059e4d9.wav",
+   "seed": 29549
+  },
+  {
+   "index": 9,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Deal.",
+   "start": 21.429,
+   "end": 22.149,
+   "clip": "audio/qwen/take-01/clips/153e7c708a5f.wav",
+   "seed": 92329
+  },
+  {
+   "index": 10,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "And you have to be the horse.",
+   "start": 22.399,
+   "end": 24.145,
+   "clip": "audio/qwen/take-01/clips/9f8ca81f5c5f.wav",
+   "seed": 56309
+  },
+  {
+   "index": 11,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Fine. I'll be the horse.",
+   "start": 24.995,
+   "end": 26.473,
+   "clip": "audio/qwen/take-01/clips/2e1e54e294bf.wav",
+   "seed": 22497
+  },
+  {
+   "index": 12,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "More tea, horse?",
+   "start": 27.523,
+   "end": 29.151,
+   "clip": "audio/qwen/take-01/clips/c0f4a7f2712b.wav",
+   "seed": 45620
+  },
+  {
+   "index": 13,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Neigh. I mean, yes, please.",
+   "start": 29.401,
+   "end": 31.68,
+   "clip": "audio/qwen/take-01/clips/a0ed8b8cc732.wav",
+   "seed": 46648
+  },
+  {
+   "index": 14,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Why are you living in our attic?",
+   "start": 31.93,
+   "end": 33.617,
+   "clip": "audio/qwen/take-01/clips/5bcc6edcc4dd.wav",
+   "seed": 16187
+  },
+  {
+   "index": 15,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Your brother said I'm scared of everything.",
+   "start": 33.867,
+   "end": 36.347,
+   "clip": "audio/qwen/take-01/clips/28a8b40bb236.wav",
+   "seed": 64705
+  },
+  {
+   "index": 16,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Are you?",
+   "start": 36.597,
+   "end": 37.321,
+   "clip": "audio/qwen/take-01/clips/a85a047e8ed4.wav",
+   "seed": 33169
+  },
+  {
+   "index": 17,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Not of him.",
+   "start": 37.571,
+   "end": 38.371,
+   "clip": "audio/qwen/take-01/clips/0d270a5ab88f.wav",
+   "seed": 62039
+  },
+  {
+   "index": 18,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "So you're haunting him.",
+   "start": 38.621,
+   "end": 40.051,
+   "clip": "audio/qwen/take-01/clips/533d6a34dd7e.wav",
+   "seed": 55287
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Professionally.",
+   "start": 40.301,
+   "end": 41.092,
+   "clip": "audio/qwen/take-01/clips/df28765f2945.wav",
+   "seed": 24963
+  },
+  {
+   "index": 20,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Is it working?",
+   "start": 41.342,
+   "end": 42.287,
+   "clip": "audio/qwen/take-01/clips/9767218bf400.wav",
+   "seed": 22414
+  },
+  {
+   "index": 21,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "He hides under his blanket every night.",
+   "start": 42.537,
+   "end": 44.937,
+   "clip": "audio/qwen/take-01/clips/8a3a82bcbb33.wav",
+   "seed": 59023
+  },
+  {
+   "index": 22,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "He sleeps with the light on now. And he put garlic on his window.",
+   "start": 45.187,
+   "end": 49.333,
+   "clip": "audio/qwen/take-01/clips/4ee064408f46.wav",
+   "seed": 69329
+  },
+  {
+   "index": 23,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Garlic is for vampires.",
+   "start": 49.583,
+   "end": 51.103,
+   "clip": "audio/qwen/take-01/clips/0dd8a1ec98ed.wav",
+   "seed": 7502
+  },
+  {
+   "index": 24,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "I told him that.",
+   "start": 51.353,
+   "end": 52.586,
+   "clip": "audio/qwen/take-01/clips/91e47d8d5bc4.wav",
+   "seed": 61290
+  },
+  {
+   "index": 25,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "He talks about you every night at dinner, you know.",
+   "start": 52.836,
+   "end": 55.803,
+   "clip": "audio/qwen/take-01/clips/092f28f72c96.wav",
+   "seed": 1973
+  },
+  {
+   "index": 26,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Because he hates me.",
+   "start": 56.053,
+   "end": 57.493,
+   "clip": "audio/qwen/take-01/clips/047b1f104c78.wav",
+   "seed": 93740
+  },
+  {
+   "index": 27,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "That's not what it sounds like.",
+   "start": 57.743,
+   "end": 59.32,
+   "clip": "audio/qwen/take-01/clips/844e02c5b5c5.wav",
+   "seed": 70799
+  },
+  {
+   "index": 28,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "What does it sound like?",
+   "start": 59.57,
+   "end": 60.85,
+   "clip": "audio/qwen/take-01/clips/762547969723.wav",
+   "seed": 42868
+  },
+  {
+   "index": 29,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Like when Dad talks about pancakes.",
+   "start": 61.1,
+   "end": 63.197,
+   "clip": "audio/qwen/take-01/clips/c626c78cc7b3.wav",
+   "seed": 86132
+  },
+  {
+   "index": 30,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "That's... He doesn't... More tea, please.",
+   "start": 64.247,
+   "end": 66.517,
+   "clip": "audio/qwen/take-01/clips/c90971828b61.wav",
+   "seed": 75230
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the attic, afternoon sun through the round window. Skye in her nest of old blankets, backpack beside her. The hatch lifts: Lily's head pops up, holding her teddy.",
+   "until": 0.0
+  },
+  {
+   "after_line": 10,
+   "at": 24.145,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Skye looks at the hobby horse Lily is holding out.",
+   "until": 24.995
+  },
+  {
+   "after_line": 11,
+   "at": 26.473,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Tea party: teddies round an upturned box, a tiny teapot. Skye holds the hobby horse.",
+   "until": 27.523
+  },
+  {
+   "after_line": 29,
+   "at": 63.197,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Skye's face goes pink.",
+   "until": 64.247
+  }
+ ]
+}

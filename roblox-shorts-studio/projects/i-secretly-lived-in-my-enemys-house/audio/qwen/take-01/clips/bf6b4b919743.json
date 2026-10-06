@@ -1,0 +1,41 @@
+{
+ "voice": "brittney",
+ "text": "Lily! Don't sneak up on me.",
+ "seed": 44920,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "word": "don't",
+   "start": 0.52,
+   "end": 1.0
+  },
+  {
+   "word": "sneak",
+   "start": 1.0,
+   "end": 1.2
+  },
+  {
+   "word": "up",
+   "start": 1.2,
+   "end": 1.4
+  },
+  {
+   "word": "on",
+   "start": 1.4,
+   "end": 1.56
+  },
+  {
+   "word": "me",
+   "start": 1.56,
+   "end": 1.72
+  }
+ ],
+ "words_md5": "6244686ed1afce76b513dec3111fe794",
+ "whisper": "small.en"
+}

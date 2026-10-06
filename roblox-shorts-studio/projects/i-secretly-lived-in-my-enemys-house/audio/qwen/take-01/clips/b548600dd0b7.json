@@ -1,0 +1,21 @@
+{
+ "voice": "max_kid",
+ "text": "No crusts?",
+ "seed": 80621,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "No",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "crusts?",
+   "start": 0.28,
+   "end": 1.0
+  }
+ ],
+ "words_md5": "650fb67d72412ad2b5f1b495774c0645",
+ "whisper": "small.en"
+}

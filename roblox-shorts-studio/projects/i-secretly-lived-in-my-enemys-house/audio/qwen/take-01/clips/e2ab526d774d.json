@@ -1,0 +1,41 @@
+{
+ "voice": "george_c",
+ "text": "Be nice to Skye? Who's Skye?",
+ "seed": 55071,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Be",
+   "start": 0.0,
+   "end": 0.12
+  },
+  {
+   "word": "nice",
+   "start": 0.12,
+   "end": 0.3
+  },
+  {
+   "word": "to",
+   "start": 0.3,
+   "end": 0.52
+  },
+  {
+   "word": "Skye.",
+   "start": 0.52,
+   "end": 1.12
+  },
+  {
+   "word": "Who's",
+   "start": 1.12,
+   "end": 1.4
+  },
+  {
+   "word": "Skye?",
+   "start": 1.4,
+   "end": 1.82
+  }
+ ],
+ "words_md5": "88e3fa409e935b9c83212b8384f35b9e",
+ "whisper": "small.en"
+}

@@ -3,5 +3,44 @@
  "text": "Cinnamon is a very popular spice, Max.",
  "seed": 39149,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Cinnamon",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "is",
+   "start": 0.44,
+   "end": 0.76
+  },
+  {
+   "word": "a",
+   "start": 0.76,
+   "end": 0.9
+  },
+  {
+   "word": "very",
+   "start": 0.9,
+   "end": 1.18
+  },
+  {
+   "word": "popular",
+   "start": 1.18,
+   "end": 1.58
+  },
+  {
+   "word": "spice,",
+   "start": 1.58,
+   "end": 2.0
+  },
+  {
+   "word": "max.",
+   "start": 2.3,
+   "end": 2.58
+  }
+ ],
+ "words_md5": "90eae76919acc2ea066092c2092dcfb5",
+ "whisper": "small.en"
 }

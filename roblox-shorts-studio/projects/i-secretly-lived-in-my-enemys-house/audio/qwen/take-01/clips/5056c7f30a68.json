@@ -1,0 +1,31 @@
+{
+ "voice": "george_c",
+ "text": "Max, was that you?",
+ "seed": 65172,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Max,",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "was",
+   "start": 0.68,
+   "end": 0.76
+  },
+  {
+   "word": "that",
+   "start": 0.76,
+   "end": 0.96
+  },
+  {
+   "word": "you?",
+   "start": 0.96,
+   "end": 1.24
+  }
+ ],
+ "words_md5": "6bcaf22b1aa494749c1e0634240cea8e",
+ "whisper": "small.en"
+}

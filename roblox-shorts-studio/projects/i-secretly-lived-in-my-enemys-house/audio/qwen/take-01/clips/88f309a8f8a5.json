@@ -1,0 +1,101 @@
+{
+ "voice": "brittney",
+ "text": "Friday night. I decided to stop. I'd leave Max a note, tell him the truth, and go home.",
+ "seed": 75190,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Friday",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "night,",
+   "start": 0.28,
+   "end": 0.62
+  },
+  {
+   "word": "I",
+   "start": 0.76,
+   "end": 0.94
+  },
+  {
+   "word": "decided",
+   "start": 0.94,
+   "end": 1.22
+  },
+  {
+   "word": "to",
+   "start": 1.22,
+   "end": 1.46
+  },
+  {
+   "word": "stop.",
+   "start": 1.46,
+   "end": 1.78
+  },
+  {
+   "word": "I'd",
+   "start": 2.2,
+   "end": 2.34
+  },
+  {
+   "word": "leave",
+   "start": 2.34,
+   "end": 2.48
+  },
+  {
+   "word": "Max",
+   "start": 2.48,
+   "end": 2.74
+  },
+  {
+   "word": "a",
+   "start": 2.74,
+   "end": 2.98
+  },
+  {
+   "word": "note,",
+   "start": 2.98,
+   "end": 3.22
+  },
+  {
+   "word": "tell",
+   "start": 3.54,
+   "end": 3.66
+  },
+  {
+   "word": "him",
+   "start": 3.66,
+   "end": 3.78
+  },
+  {
+   "word": "the",
+   "start": 3.78,
+   "end": 3.92
+  },
+  {
+   "word": "truth,",
+   "start": 3.92,
+   "end": 4.18
+  },
+  {
+   "word": "and",
+   "start": 4.48,
+   "end": 4.64
+  },
+  {
+   "word": "go",
+   "start": 4.64,
+   "end": 4.84
+  },
+  {
+   "word": "home.",
+   "start": 4.84,
+   "end": 5.14
+  }
+ ],
+ "words_md5": "14d2fe7f2650d0b1b57606d1b277e2ee",
+ "whisper": "small.en"
+}

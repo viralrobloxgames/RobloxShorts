@@ -1,0 +1,46 @@
+{
+ "voice": "brittney",
+ "text": "A ghost? I thought nothing scares you.",
+ "seed": 75480,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "A",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "ghost?",
+   "start": 0.3,
+   "end": 0.58
+  },
+  {
+   "word": "I",
+   "start": 0.84,
+   "end": 0.88
+  },
+  {
+   "word": "thought",
+   "start": 0.88,
+   "end": 1.06
+  },
+  {
+   "word": "nothing",
+   "start": 1.06,
+   "end": 1.36
+  },
+  {
+   "word": "scares",
+   "start": 1.36,
+   "end": 1.74
+  },
+  {
+   "word": "you.",
+   "start": 1.74,
+   "end": 2.04
+  }
+ ],
+ "words_md5": "cdd5993af27fba2a12d43bf5d90ccd34",
+ "whisper": "small.en"
+}

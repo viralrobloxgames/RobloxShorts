@@ -1,0 +1,96 @@
+{
+ "voice": "max_kid",
+ "text": "Not because I... Never mind. Who even is Skye? I mean, I know who Skye is. Obviously.",
+ "seed": 70834,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Not",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "because",
+   "start": 0.28,
+   "end": 0.56
+  },
+  {
+   "word": "I,",
+   "start": 0.56,
+   "end": 0.88
+  },
+  {
+   "word": "never",
+   "start": 1.2,
+   "end": 1.4
+  },
+  {
+   "word": "mind.",
+   "start": 1.4,
+   "end": 1.8
+  },
+  {
+   "word": "Who",
+   "start": 2.38,
+   "end": 2.58
+  },
+  {
+   "word": "even",
+   "start": 2.58,
+   "end": 2.88
+  },
+  {
+   "word": "is",
+   "start": 2.88,
+   "end": 3.06
+  },
+  {
+   "word": "Skye?",
+   "start": 3.06,
+   "end": 3.88
+  },
+  {
+   "word": "I",
+   "start": 3.94,
+   "end": 4.1
+  },
+  {
+   "word": "mean,",
+   "start": 4.1,
+   "end": 4.28
+  },
+  {
+   "word": "I",
+   "start": 4.58,
+   "end": 4.74
+  },
+  {
+   "word": "know",
+   "start": 4.74,
+   "end": 4.92
+  },
+  {
+   "word": "who",
+   "start": 4.92,
+   "end": 5.14
+  },
+  {
+   "word": "Skye",
+   "start": 5.14,
+   "end": 5.54
+  },
+  {
+   "word": "is.",
+   "start": 5.54,
+   "end": 5.86
+  },
+  {
+   "word": "Obviously.",
+   "start": 6.38,
+   "end": 6.7
+  }
+ ],
+ "words_md5": "75dd3d04d1688cf05d686618d76fb3d9",
+ "whisper": "small.en"
+}
