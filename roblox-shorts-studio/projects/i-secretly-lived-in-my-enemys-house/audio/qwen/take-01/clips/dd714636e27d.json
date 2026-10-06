@@ -1,0 +1,61 @@
+{
+ "voice": "brittney",
+ "text": "On Monday, the whole class gets to watch Max scream.",
+ "seed": 12531,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "On",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "Monday,",
+   "start": 0.48,
+   "end": 0.78
+  },
+  {
+   "word": "the",
+   "start": 1.02,
+   "end": 1.06
+  },
+  {
+   "word": "whole",
+   "start": 1.06,
+   "end": 1.38
+  },
+  {
+   "word": "class",
+   "start": 1.38,
+   "end": 1.78
+  },
+  {
+   "word": "gets",
+   "start": 1.78,
+   "end": 1.98
+  },
+  {
+   "word": "to",
+   "start": 1.98,
+   "end": 2.2
+  },
+  {
+   "word": "watch",
+   "start": 2.2,
+   "end": 2.36
+  },
+  {
+   "word": "Max",
+   "start": 2.36,
+   "end": 2.8
+  },
+  {
+   "word": "scream.",
+   "start": 2.8,
+   "end": 3.34
+  }
+ ],
+ "words_md5": "1733387966e86bd5473c391acccdde27",
+ "whisper": "small.en"
+}

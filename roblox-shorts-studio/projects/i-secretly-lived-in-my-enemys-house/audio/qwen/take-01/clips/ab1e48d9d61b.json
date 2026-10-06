@@ -3,5 +3,64 @@
  "text": "Wednesday afternoon. I always got back before anyone else. Almost anyone.",
  "seed": 14485,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Wednesday",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "word": "afternoon,",
+   "start": 0.52,
+   "end": 1.02
+  },
+  {
+   "word": "I",
+   "start": 1.44,
+   "end": 1.64
+  },
+  {
+   "word": "always",
+   "start": 1.64,
+   "end": 1.98
+  },
+  {
+   "word": "got",
+   "start": 1.98,
+   "end": 2.24
+  },
+  {
+   "word": "back",
+   "start": 2.24,
+   "end": 2.46
+  },
+  {
+   "word": "before",
+   "start": 2.46,
+   "end": 2.82
+  },
+  {
+   "word": "anyone",
+   "start": 2.82,
+   "end": 3.28
+  },
+  {
+   "word": "else,",
+   "start": 3.28,
+   "end": 3.6
+  },
+  {
+   "word": "almost",
+   "start": 3.86,
+   "end": 4.04
+  },
+  {
+   "word": "anyone.",
+   "start": 4.04,
+   "end": 4.46
+  }
+ ],
+ "words_md5": "1abf5ab4190f16c58b2662ece284b762",
+ "whisper": "small.en"
 }

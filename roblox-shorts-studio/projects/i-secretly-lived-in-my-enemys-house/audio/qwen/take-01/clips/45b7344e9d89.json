@@ -1,0 +1,101 @@
+{
+ "voice": "brittney",
+ "text": "Tuesday night. If I was going to be a ghost, I was going to be a useful one.",
+ "seed": 68961,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Tuesday",
+   "start": 0.4,
+   "end": 0.72
+  },
+  {
+   "word": "night,",
+   "start": 0.72,
+   "end": 1.04
+  },
+  {
+   "word": "if",
+   "start": 1.22,
+   "end": 1.28
+  },
+  {
+   "word": "I",
+   "start": 1.28,
+   "end": 1.48
+  },
+  {
+   "word": "was",
+   "start": 1.48,
+   "end": 1.62
+  },
+  {
+   "word": "going",
+   "start": 1.62,
+   "end": 1.78
+  },
+  {
+   "word": "to",
+   "start": 1.78,
+   "end": 1.9
+  },
+  {
+   "word": "be",
+   "start": 1.9,
+   "end": 2.0
+  },
+  {
+   "word": "a",
+   "start": 2.0,
+   "end": 2.14
+  },
+  {
+   "word": "ghost,",
+   "start": 2.14,
+   "end": 2.36
+  },
+  {
+   "word": "I",
+   "start": 2.88,
+   "end": 2.92
+  },
+  {
+   "word": "was",
+   "start": 2.92,
+   "end": 3.04
+  },
+  {
+   "word": "going",
+   "start": 3.04,
+   "end": 3.22
+  },
+  {
+   "word": "to",
+   "start": 3.22,
+   "end": 3.38
+  },
+  {
+   "word": "be",
+   "start": 3.38,
+   "end": 3.5
+  },
+  {
+   "word": "a",
+   "start": 3.5,
+   "end": 3.62
+  },
+  {
+   "word": "useful",
+   "start": 3.62,
+   "end": 3.94
+  },
+  {
+   "word": "one.",
+   "start": 3.94,
+   "end": 4.3
+  }
+ ],
+ "words_md5": "b93c178c0582367a93570607b766a4a0",
+ "whisper": "small.en"
+}

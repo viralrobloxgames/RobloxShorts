@@ -3,5 +3,19 @@
  "text": "A what?",
  "seed": 15178,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "A",
+   "start": 0.0,
+   "end": 0.5
+  },
+  {
+   "word": "what?",
+   "start": 0.5,
+   "end": 0.72
+  }
+ ],
+ "words_md5": "6cf673705b3e6c51e157f7b1ab40c36f",
+ "whisper": "small.en"
 }

@@ -1,0 +1,36 @@
+{
+ "voice": "brittney",
+ "text": "Be scared. Be very scared.",
+ "seed": 36569,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Be",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "scared.",
+   "start": 0.3,
+   "end": 0.82
+  },
+  {
+   "word": "Be",
+   "start": 1.38,
+   "end": 1.56
+  },
+  {
+   "word": "very",
+   "start": 1.56,
+   "end": 2.02
+  },
+  {
+   "word": "scared.",
+   "start": 2.02,
+   "end": 2.5
+  }
+ ],
+ "words_md5": "ad78c30fd8747a5303957919d3438080",
+ "whisper": "small.en"
+}

@@ -3,5 +3,29 @@
  "text": "Garlic is for vampires.",
  "seed": 7502,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Garlic",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "is",
+   "start": 0.44,
+   "end": 0.6
+  },
+  {
+   "word": "for",
+   "start": 0.6,
+   "end": 0.76
+  },
+  {
+   "word": "vampires.",
+   "start": 0.76,
+   "end": 1.14
+  }
+ ],
+ "words_md5": "53a22eddc62bfb1a062db2062c3c4be2",
+ "whisper": "small.en"
 }

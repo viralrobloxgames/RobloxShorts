@@ -1,0 +1,61 @@
+{
+ "voice": "george_c",
+ "text": "That's my girl. Let's see. Skeleton. Witch. Giant pumpkin girl.",
+ "seed": 95746,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "That's",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "my",
+   "start": 0.44,
+   "end": 0.56
+  },
+  {
+   "word": "girl,",
+   "start": 0.56,
+   "end": 0.9
+  },
+  {
+   "word": "let's",
+   "start": 1.36,
+   "end": 1.58
+  },
+  {
+   "word": "see,",
+   "start": 1.58,
+   "end": 1.84
+  },
+  {
+   "word": "skeleton",
+   "start": 2.5,
+   "end": 2.5
+  },
+  {
+   "word": "witch,",
+   "start": 2.5,
+   "end": 3.12
+  },
+  {
+   "word": "giant",
+   "start": 3.98,
+   "end": 4.02
+  },
+  {
+   "word": "pumpkin",
+   "start": 4.02,
+   "end": 4.44
+  },
+  {
+   "word": "girl.",
+   "start": 4.44,
+   "end": 4.84
+  }
+ ],
+ "words_md5": "d07539a33185a7df53d1ff3115fb3a2b",
+ "whisper": "small.en"
+}

@@ -1,0 +1,36 @@
+{
+ "voice": "lily_kid",
+ "text": "Tea party. With the decorations.",
+ "seed": 34440,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Tea",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "Party",
+   "start": 0.32,
+   "end": 0.78
+  },
+  {
+   "word": "with",
+   "start": 0.78,
+   "end": 1.4
+  },
+  {
+   "word": "the",
+   "start": 1.4,
+   "end": 1.56
+  },
+  {
+   "word": "decorations",
+   "start": 1.56,
+   "end": 2.1
+  }
+ ],
+ "words_md5": "2c43f1c1c7081b530d87402e280b1dfb",
+ "whisper": "small.en"
+}

@@ -3,5 +3,49 @@
  "text": "Where do I hide? There's nowhere to hide!",
  "seed": 60817,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Where",
+   "start": 0.0,
+   "end": 0.58
+  },
+  {
+   "word": "do",
+   "start": 0.58,
+   "end": 0.72
+  },
+  {
+   "word": "I",
+   "start": 0.72,
+   "end": 0.86
+  },
+  {
+   "word": "hide?",
+   "start": 0.86,
+   "end": 1.22
+  },
+  {
+   "word": "There's",
+   "start": 1.68,
+   "end": 1.94
+  },
+  {
+   "word": "nowhere",
+   "start": 1.94,
+   "end": 2.2
+  },
+  {
+   "word": "to",
+   "start": 2.2,
+   "end": 2.5
+  },
+  {
+   "word": "hide.",
+   "start": 2.5,
+   "end": 2.76
+  }
+ ],
+ "words_md5": "2f3cad5759842c383520b29ae489eb01",
+ "whisper": "small.en"
 }
