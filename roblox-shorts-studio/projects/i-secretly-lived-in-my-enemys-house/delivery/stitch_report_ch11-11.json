@@ -1,0 +1,37 @@
+{
+ "file": "I_Secretly_Lived_In_My_Enemys_House_ch11-11.mp4",
+ "chapters": [
+  11
+ ],
+ "frames": 2095,
+ "frames_expected": 2095,
+ "seconds": 69.833,
+ "video_join": "stream copy",
+ "frames_match_segments": true,
+ "seams": [
+  {
+   "after": "ch11_a.mp4",
+   "frame": 943,
+   "ok": true
+  }
+ ],
+ "video_s": 69.833333,
+ "audio_s": 69.766,
+ "av_diff_s": -0.0673,
+ "loudness_I": "-14.09",
+ "true_peak": "-0.79",
+ "chapter_starts": {
+  "ch11": {
+   "frame": 0,
+   "s": 0.0,
+   "frames": 2095
+  }
+ },
+ "youtube_chapters": [
+  "0:00 No Crusts"
+ ],
+ "notes": [],
+ "size_mb": 21.6,
+ "sha256": "1ad062217f1cd11de2749e3567771fba57d004b7ec4a28087c7d24a5c5706c4c",
+ "ok": false
+}
