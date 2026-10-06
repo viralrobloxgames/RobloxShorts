@@ -10,23 +10,23 @@ out to sea), 261 miles in all. The outbreak was stopped, but the Central Park st
 ## State
 - 2026-10-06 ~04:15 BST: script v1 (169 words with the CTA, 18 lines) in `script.txt` (used as written: no approval
   needed tonight). Post copy: `delivery/post.json`. Ledger entry added (script_approved).
-- Web route drafted (no narration yet; `web/beats.js` is the estimate from `source/beats.py`): `web/kit.js` (snowy Nome
+- Narration (George voice C, local Qwen): 18 clips, tightened 49.6 -> 49.0 s, joined at gap 0.5 / beat 1.05: speech
+  ends 60.08 s; video 62.1 s (1863 frames) + 0.5 s cover = **62.6 s**. `source/beats.py` maps the transcriber's digits
+  (700, 20, 12, 170, 261, 53, 76) back to the script words; only "two" (of "two hundred and sixty-one") is
+  interpolated. Sound cues regenerated on the real beats (`source/sound_cues.json`, 68 cues; sfx in `audio/sfx/`).
+- Web route drafted (first built on the estimated beats; now on the narration): `web/kit.js` (snowy Nome
   at night with the doctor's house, the sick room, the frozen harbour with the ship in the ice and a frosted biplane,
   the trail through the spruce, the frozen sea with floes that drift out at night and the roadhouse, the New York park
   with the BALTO 1925 and TOGO 2001 plinths, the sled, the SERUM crate) and `web/dog_clip.js` (17 shots: hook, sick,
   ships, planes, dogs, relay, hardest, togo, run, back, ice, night, miles, arrive, statue, wait, cta; seven huskies from
   `animal_collie_parts` recoloured, Balto black, two bronze statues). One low-res frame per shot rendered and looked
-  at; the sick room, harbour and run cameras re-framed. Narration waits for the CPU (She Raced Around The World is
-  rendering).
+  at; the sick room, harbour and run cameras re-framed.
 
 ## Next
-1. `python3 scripts/qwen_cloud_george_c.py projects/the-dog-who-saved-a-town --take take-01`, then
-   `python3 scripts/tighten_clips.py projects/the-dog-who-saved-a-town --voice george_c --take take-01`, then
-   `QWEN_TTS_DIR=<empty dir> python3 scripts/narrate.py projects/the-dog-who-saved-a-town --voice george_c --take take-01 --beat 0.9 --gap 0.4`
-   (adjust the join so speech end + 2.5 s is 61-65 s), `source/beats.py` (word anchors; map the transcriber's digits
-   back to the script words as in She Raced Around The World), set `seconds` in `source/project.json`.
-2. Web route: `web/kit.js` (snowy Nome at night, the doctor's room with a kid in bed, a ship frozen in the ice, a
-   frosted biplane, the trail and the frozen sea with a whiteout, a roadhouse, the Central Park statue, Seward Park),
-   huskies from `animal_collie_parts` recoloured (Togo grey with a grey muzzle; Balto black), a sled and harness line,
-   a medicine box; `web/dog_clip.js` per the beats in `source/story.md`; preview every 10th frame, hold check, fit
-   check, sound cues, cover, full render, encode, blank-frame check, review. Never post without the user's approval.
+1. Preview every 10th frame on the real narration (`node web/render.mjs --clip projects/the-dog-who-saved-a-town/web/dog_clip.js --out /tmp/p --every 10 --scale 0.3 --samples 1 --workers 4 --skip-fit-check`),
+   fix framing and timing; hold check (`web/hold_check.js`: the bottle and the crate); fit check (no accessories:
+   `node web/fit_check.mjs --clip ...` then `--reviewed`); cover (`web/cover_clip.js` drafted, looked at once at low
+   res: the team running at the camera, THE DOG WHO / SAVED A TOWN / ...AND GOT NO STATUE) at full res into
+   `delivery/The_Dog_Who_Saved_A_Town_cover.png|jpg` + `_cover_grid.jpg`; full render; encode
+   (`python3 scripts/finish.py projects/the-dog-who-saved-a-town --encode --frames projects/the-dog-who-saved-a-town/renders/web`);
+   blank-frame check; review. Never post without the user's approval.
