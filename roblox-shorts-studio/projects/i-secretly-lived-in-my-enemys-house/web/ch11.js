@@ -2,6 +2,7 @@
 // Kitchen, Sunday morning: Skye walks down the stairs like a normal person, owns up, rings her mum; the fridge says
 // SAY YES; Max asks her to the dance; pancakes for everyone; the end screen on the wide of the island.
 // Everything is a pure function of t (the runner may render frames in any order).
+// The cast comes from kit/cast.js, which loads and fits the Roblox pack (web/lib/robloxPack.js): the fit check applies.
 import * as THREE from 'three';
 import * as K from './kit/index.js';
 
@@ -89,7 +90,7 @@ const seatedTwo = fixed([-0.2, 5.4, 5.0], [0.0, 4.4, -3.2], 30);
 const skyeSeatCU = (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.7 });
 const SHOTS = [
   { line: LN.vo, off: 0, id: 'stairs_wide', cam: fixed([5.5, 8.2, 15], [5, 5.6, -4], 56) },
-  { line: LN.morning, off: -0.1, id: 'stove_ms', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.45 }) },
+  { line: LN.morning, off: -0.1, id: 'stove_ms', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: 0.9 }) },
   { line: LN.pumpkin, off: -0.05, id: 'dad_cu', cam: dadCU },
   { line: LN.ghost, off: -0.05, id: 'island_two', cam: fixed([6, 6.2, 13], [8.5, 4.3, -1], 50) },
   { line: LN.thief, off: -0.05, id: 'dad_cu', cam: dadCU },
@@ -179,7 +180,7 @@ export function update(t, stage) {
     K.dress(C.skye, ['skye_hoodie', 'backpack']);
   } else {
     K.playAnim(C.skye, [[A.sit, 0]]);
-    gest(C.skye, 'point', 'R', at(LN.fridgeAsk) + 0.7, end(LN.fridgeAsk) + 0.2, t);
+    gest(C.skye, 'point', 'L', at(LN.fridgeAsk) + 0.7, end(LN.fridgeAsk) + 0.2, t);
     gest(C.skye, 'finger_up', 'R', at(LN.cond) + 0.4, end(LN.cond) + 0.3, t);
     K.putOn(C.skye, s3, { sit: true, heading: -0.5 });
     K.dress(C.skye, 'skye_hoodie');
@@ -194,7 +195,6 @@ export function update(t, stage) {
     if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = 0.15 + 0.7 * sm(inv(slide0, slide1, t));
     K.putOn(C.max, s2, { sit: true, heading: h });
     gest(C.max, 'point', 'R', at(LN.ghost) + 0.4, end(LN.ghost) + 0.2, t);
-    gest(C.max, 'hand_on_neck', 'L', at(LN.dance) + 0.2, end(LN.dance), t);
     gest(C.max, 'hold_out', 'R', slide0 - 0.4, slide1 + 0.5, t);
   }
 

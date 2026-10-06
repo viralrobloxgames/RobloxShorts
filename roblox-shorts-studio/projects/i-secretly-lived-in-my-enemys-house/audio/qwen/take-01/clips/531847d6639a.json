@@ -1,0 +1,86 @@
+{
+ "voice": "max_kid",
+ "text": "And then I said I'm asking her to the dance. If she ever comes down.",
+ "seed": 45780,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "And",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "then",
+   "start": 0.18,
+   "end": 0.32
+  },
+  {
+   "word": "I",
+   "start": 0.32,
+   "end": 0.48
+  },
+  {
+   "word": "said",
+   "start": 0.48,
+   "end": 0.62
+  },
+  {
+   "word": "I'm",
+   "start": 0.62,
+   "end": 0.84
+  },
+  {
+   "word": "asking",
+   "start": 0.84,
+   "end": 1.08
+  },
+  {
+   "word": "her",
+   "start": 1.08,
+   "end": 1.32
+  },
+  {
+   "word": "to",
+   "start": 1.32,
+   "end": 1.44
+  },
+  {
+   "word": "the",
+   "start": 1.44,
+   "end": 1.58
+  },
+  {
+   "word": "dance",
+   "start": 1.58,
+   "end": 1.96
+  },
+  {
+   "word": "if",
+   "start": 1.96,
+   "end": 2.52
+  },
+  {
+   "word": "she",
+   "start": 2.52,
+   "end": 2.74
+  },
+  {
+   "word": "ever",
+   "start": 2.74,
+   "end": 3.0
+  },
+  {
+   "word": "comes",
+   "start": 3.0,
+   "end": 3.3
+  },
+  {
+   "word": "down.",
+   "start": 3.3,
+   "end": 3.68
+  }
+ ],
+ "words_md5": "d770ac22e217b770580aa5323916f285",
+ "whisper": "small.en"
+}

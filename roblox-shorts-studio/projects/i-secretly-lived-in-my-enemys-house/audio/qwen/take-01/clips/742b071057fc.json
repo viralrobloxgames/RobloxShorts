@@ -1,0 +1,46 @@
+{
+ "voice": "lily_kid",
+ "text": "Then why is your face all red?",
+ "seed": 13268,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Then",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "why",
+   "start": 0.18,
+   "end": 0.44
+  },
+  {
+   "word": "is",
+   "start": 0.44,
+   "end": 0.62
+  },
+  {
+   "word": "your",
+   "start": 0.62,
+   "end": 0.78
+  },
+  {
+   "word": "face",
+   "start": 0.78,
+   "end": 1.04
+  },
+  {
+   "word": "all",
+   "start": 1.04,
+   "end": 1.3
+  },
+  {
+   "word": "red?",
+   "start": 1.3,
+   "end": 1.64
+  }
+ ],
+ "words_md5": "f147d4a0323dd3217e7257a8700ca536",
+ "whisper": "small.en"
+}

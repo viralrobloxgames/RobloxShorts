@@ -3,5 +3,44 @@
  "text": "Who would even say yes to him?",
  "seed": 74116,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Who",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "would",
+   "start": 0.48,
+   "end": 0.62
+  },
+  {
+   "word": "even",
+   "start": 0.62,
+   "end": 0.82
+  },
+  {
+   "word": "say",
+   "start": 0.82,
+   "end": 1.1
+  },
+  {
+   "word": "yes",
+   "start": 1.1,
+   "end": 1.46
+  },
+  {
+   "word": "to",
+   "start": 1.46,
+   "end": 1.76
+  },
+  {
+   "word": "him?",
+   "start": 1.76,
+   "end": 1.92
+  }
+ ],
+ "words_md5": "cbade0042f49b7d14c4511b4ec6d6d37",
+ "whisper": "small.en"
 }
