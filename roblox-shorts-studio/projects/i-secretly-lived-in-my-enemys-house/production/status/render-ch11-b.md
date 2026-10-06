@@ -1,4 +1,4 @@
-STATUS: WORKING
-render-ch11-b: helper for ch11 segment B (frames S..FRAMES).
-- Machine checked: web npm ci done; smoke render of ch11 frames 1,60 at 0.3 OK (~3.5 s/frame, clip currently 2324 frames); finish_longform.py test encode of 3 frames OK (1920x1080, libx264, libass, Pillow + LuckiestGuy font present). Nothing extra installed.
-- Next: waiting (background) for ch11 READY_FOR_GATE + FRAMES/SPLIT, then render segment B at once.
+STATUS: RENDERING
+render-ch11-b: ch11 segment B = frames 944-2095 (FRAMES 2095, SPLIT 944, first render from ch11 COMMIT 6ac38c4), 4 workers, into renders/ch11 on this machine.
+- Machine checked: web npm ci; smoke render + 3-frame test encode OK; nothing extra installed.
+- Next: wait for ch11 READY_TO_RENDER, sync changed frames (changed_frames.mjs --delete, render --resume), encode delivery/chapters/ch11_b.mp4.

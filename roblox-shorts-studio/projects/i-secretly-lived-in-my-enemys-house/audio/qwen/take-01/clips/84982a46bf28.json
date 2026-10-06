@@ -1,0 +1,21 @@
+{
+ "voice": "brittney",
+ "text": "Every box?",
+ "seed": 89783,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "every",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "box?",
+   "start": 0.36,
+   "end": 0.64
+  }
+ ],
+ "words_md5": "6953e905d89394eb17674f350e5bd6af",
+ "whisper": "small.en"
+}
