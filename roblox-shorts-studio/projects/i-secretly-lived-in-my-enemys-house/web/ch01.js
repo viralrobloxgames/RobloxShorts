@@ -99,10 +99,10 @@ function walkPath(a, pts, t0, t, opts = {}) {
 const P3 = (set, x, z, h = 0) => ({ pos: K.getSet(set).group.position.clone().add(V(x, 0, z)), heading: h });
 let STAGE = null, ROUTE = {};
 // walk along a set route (waypoints around the furniture, kit-sets-c); legs driven by the distance walked
-function routeWalk(a, set, pts, t0, t, { speed = 12, idleAt = 0, endHeading } = {}) {
+function routeWalk(a, set, pts, t0, t, { speed = 12, idleAt = 0, endHeading, startHeading } = {}) {
   const len = set.routeLength(pts), d = clamp((t - t0) * speed, 0, len), r = set.alongRoute(pts, d), moving = t > t0 && d < len;
   K.playAnim(a, moving ? [[A.walk, d / 14.5]] : [[A.idle, idleAt]]);
-  K.putOn(a, { pos: r.pos, heading: moving ? r.heading : (d >= len && endHeading !== undefined ? endHeading : r.heading) });
+  K.putOn(a, { pos: r.pos, heading: moving ? r.heading : d >= len ? (endHeading ?? r.heading) : (startHeading ?? r.heading) });
   return { moving, done: d >= len, arrive: t0 + len / speed };
 }
 const MAX_FROM = () => K.mark('classroom', 'max_desk_front');                  // Max starts at the front of his desk (row 3)
@@ -120,7 +120,7 @@ export async function setup(stage) {
     KNOCKS = [T.night + 0.2, T.night + 0.45, T.night + 0.7];
     for (const sh of SHOTS) if (sh.at) sh.start = sh.at(); SHOTS.sort((a, b) => a.start - b.start); }
   { const cl = K.getSet('classroom'), side = K.mark('classroom', 'skye_desk_side').pos;
-    ROUTE.in = cl.route(K.mark('classroom', 'desk_max_side_entry').pos, side);
+    ROUTE.in = cl.route(K.mark('classroom', 'desk_max_side_entry').pos.add(V(-1.2, 0, 0)), side);   // from the aisle beside his desk (clear of it)
     ROUTE.out = cl.route(side, K.mark('classroom', 'door_inside').pos);
     T.maxArrive = T.maxWalk + cl.routeLength(ROUTE.in) / 6;
     for (const sh of SHOTS) if (sh.at) sh.start = sh.at(); SHOTS.sort((a, b) => a.start - b.start); }
@@ -179,7 +179,7 @@ const S = {
   maxBrags: { scene: 'class', cam: (s, t, sh) => push(s, single(C.max, -1, 0.05), single(C.max, -1, 0.15), inv(sh.start, sh.start + 5, t)) },
   skyeSees: { scene: 'class', cam: (s, t, sh) => push(s, single(C.skye, 1, 0), single(C.skye, 1, 0.12), inv(sh.start, sh.start + 1.6, t)) },
   maxLeaves: { scene: 'class', cam: (s, t) => t < T.exit ? K.applyShot(s, single(C.max, -1, 0.05)) : K.setCam(s, cam(classroom(), 'wide_front'), { clear: false }) },   // the taunt on his face, then he goes
-  yardWide: { scene: 'dusk', cam: (s, t, sh) => push(s, shotOf(cam(exterior(), 'dusk_wide')), dolly(cam(exterior(), 'dusk_wide'), 0.35), inv(sh.start, sh.start + 4, t)) },
+  yardWide: { scene: 'dusk', cam: (s, t, sh) => push(s, { pos: V(1500 + 2, 11, 34), target: V(1500, 6, -2), fov: 50 }, { pos: V(1500 + 2, 9.5, 26), target: V(1500, 5.5, -2), fov: 50 }, inv(sh.start, sh.start + 4, t)) },   // below the far trees (dusk_wide sits inside them)
   backDoor: { scene: 'dusk', cam: (s) => K.applyShot(s, { pos: V(1500 + 13.5, 5.2, -3.0), target: V(1500 + 5.6, 4.3, -7.6), fov: 38 }) },   // yard side, 3/4: her grin back, the door swinging open
   knockDoors: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-6.0, 4.6, 3.4), target: V(-11.0, 4.2, 2.0), fov: 40 }) },   // the louvred doors rattle with each knock
   knock: { scene: 'night2', cam: (s) => K.applyShot(s, skyeCloset(0.1)) },
@@ -190,7 +190,7 @@ const S = {
 const SHOTS = [
   ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.35], ['maxHoodies', at(2) - 0.1],
   ['backToBed', T.doorShut], ['skyeWhisper', at(3) - 0.2],
-  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', () => Math.min(T.maxArrive - 0.15, at(5) - 0.2)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
+  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', () => Math.min(T.maxArrive - 0.7, at(5) - 0.2)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
   ['yardWide', T.dusk], ['backDoor', () => T.door - 0.75],
   ['knockDoors', () => T.night], ['knock', () => T.night + 1.0], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
@@ -245,8 +245,9 @@ function classScene(t, set, idle) {
   // extras eating at their desks; they turn to look at the shriek
   C.extras.forEach((e, i) => {
     const m = M.extra(i), look = t > T.jump + 0.2 && t < at(10);
-    K.putOn(e, m, { sit: true, heading: look ? m.heading + (K.faceTo(m, sk) - m.heading) * 0.35 : m.heading });
-    K.posture(e, look ? 'sit_chair' : 'sit_desk_arms'); e.root.position.y = set.seatY(e.scale);   // forearms on the desk; turned to look, hands in the lap
+    K.putOn(e, m, { sit: true, heading: m.heading });
+    K.posture(e, 'sit_desk_arms'); e.root.position.y = set.seatY(e.scale);   // forearms on the desk
+    if (look) headTurn(e, clamp(K.faceTo(m, sk) - m.heading, -0.7, 0.7));    // heads turn to the shriek
     e.setFace(look ? 'surprised' : 'happy');
   });
   // Skye: seated, turned towards Max once he talks; her right hand rests by the lunchbox (the spider lands on it);
@@ -272,7 +273,7 @@ function classScene(t, set, idle) {
   // Max: up the aisle from beside his desk during the VO, stands at her desk; a step in to drop the spider; leaves along the aisles
   const toSkye = K.faceTo(side, t < T.jump ? sk : stand) + 0.4;                                // cheated toward the camera side
   if (t < T.exit) {
-    if (t < T.spider - 1.0) routeWalk(C.max, set, ROUTE.in, T.maxWalk, t, { speed: 6, idleAt: idle, endHeading: toSkye });
+    if (t < T.spider - 1.0) { routeWalk(C.max, set, ROUTE.in, T.maxWalk, t, { speed: 6, idleAt: idle, endHeading: toSkye, startHeading: K.faceTo(ROUTE.in[0], side) }); if (t < T.maxWalk) { armSet(C.max, 'L', 0, 0, 0.06); armSet(C.max, 'R', 0, 0, -0.06); } }   // arms down at his desk
     else if (t < T.spider + 0.7) { K.walk(C.max, A, side, sideIn, T.spider - 1.0, t, { speed: 3, idleAt: idle, endHeading: K.faceTo(sideIn, BOX()) + 0.2 }); }
     else K.walk(C.max, A, sideIn, side, T.spider + 0.7, t, { speed: 3, idleAt: idle, endHeading: toSkye });
     if (t > at(5) + 0.2 && t < at(5, 1.8)) K.gesture(C.max, 'point', 'R');                     // points at the crusts
