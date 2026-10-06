@@ -74,7 +74,6 @@ const M = {
   hatchClimb: () => K.mark('attic', 'hatch_climb'),
   hatchTop: () => K.mark('attic', 'hatch_top'),
   horse: () => K.mark('attic', 'hobby_horse'),
-  nestFront: () => { const m = K.mark('attic', 'nest_front'); m.pos.add(V(2.6, 0, 0.8)); return m; },   // out of the window shaft and its bar shadow
   teaSkye: () => K.mark('attic', 'tea_skye'),
   teaLily: () => K.mark('attic', 'tea_lily'),
 };
@@ -149,7 +148,7 @@ const SHOTS = [
   .sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 function hatchCu(s) { return K.camOn(s, C.lily, 'mcu', { angle: 0.3, look: V(0, -0.75, 0), zoom: 1.3 }); }
-function lilyStand(s) { const h = K.headPos(C.lily); return K.setCam(s, { pos: W(-1.8, 2.9, -6.8), target: V(h.x, h.y - 0.7, h.z), fov: 40 }, { blockers: SET.group }); }
+function lilyStand(s) { const h = K.headPos(C.lily); return K.setCam(s, { pos: W(-1.4, 3.0, -7.3), target: V(h.x, h.y - 0.8, h.z), fov: 46 }, { blockers: SET.group }); }
 // the tea party side-on from the window-left side: Skye frame-left, Lily frame-right, the box and the toys between
 function teaSide(s, fov) { return K.setCam(s, { pos: W(-9.6, 3.8, 2.2), target: W(-3.5, 1.9, 1.8), fov }, { blockers: SET.group }); }
 function setNamed(name) { return K.setCam(STAGE, SET.cams[name], { blockers: SET.group }); }
@@ -202,7 +201,7 @@ export function update(t, stage) {
 
 // First half: the nest and the hatch. Line Skye -> Lily; cameras on the window-left side.
 const GRAB = 0.45;                                    // Lily stops beside the boxes to pick up the hobby horse
-const LILY_SPOT = () => { const p = W(-2.2, 0, -3.4); return { pos: p, heading: K.faceTo(p, M.nest()) }; };   // ~4.5 studs from Skye, clear of the skeleton and the window shaft
+const LILY_SPOT = () => { const m = K.mark('attic', 'nest_front'); return { pos: m.pos, heading: K.faceTo(m.pos, M.nest()) }; };   // ~4 studs from Skye, clear of the skeleton and the window shaft (SB1)
 const HORSE_STOP = () => ({ pos: W(6.5, 0, 3.0), heading: K.faceTo(W(6.5, 0, 3.0), W(7.9, 0, 2.6)) });          // 1.4 studs from the leaning horse
 function lilyPath() {
   const top = M.hatchTop(), horse = HORSE_STOP(), front = LILY_SPOT();
