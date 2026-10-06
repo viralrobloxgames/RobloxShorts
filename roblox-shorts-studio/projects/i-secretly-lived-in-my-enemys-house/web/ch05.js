@@ -273,7 +273,7 @@ function blockTea(t, idle) {
   // Lily: teapot in her right hand (pours on "More tea, horse?" and at the end), her teddy beside her on the floor
   const pour = lilyPours(t);
   // pouring: arm out level so the pot clears the box; between pours the pot stands on the box (the set's teapot)
-  if (pour) K.gesture(C.lily, [t >= MORE - 0.1 ? -112 : -92, -30, 6], 'L');  // up to Skye's cup at the end; lower elsewhere so it clears her face                       // left hand: the camera side
+  if (pour) K.gesture(C.lily, [-92, t >= MORE - 0.1 ? -45 : -30, 6], 'L');  // left hand (camera side), level so her face stays clear; at the end swung toward Skye's cup
   if (sip(at(23), end(23))) { K.gesture(C.lily, 'hold_out', 'R', 0.5); }                        // "I told him that." (a little shrug)
   K.hold(P.teapot, C.lily, 'L'); P.teapot.rotateX(0.5); P.teapot.visible = pour;
   P.cupLily.visible = false; P.cracker_packet.visible = false;
