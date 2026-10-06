@@ -3,6 +3,7 @@
 // night: Skye in her nest, Lily climbs up in her pyjamas; the revenge plan; "Then why are you crying?"
 // First frame = boundary "Start of Ch8"; last frame = "End of Ch8" (attic nest two-shot, Skye crying, Lily sad).
 // Everything is a pure function of t.
+// The cast comes from the Roblox pack via the kit (web/lib/robloxPack.js), so fit_check.mjs checks this clip's accessories.
 import * as THREE from 'three';
 import * as K from './kit/index.js';
 
@@ -31,7 +32,7 @@ const EST = [
   { index: 19, speaker: 'SKYE', text: "It's dusty. It's a really, really dusty attic.", start: 55.8, end: 59.0 },
 ];
 const L = await K.loadLines(import.meta.url, CH, EST);
-export const meta = K.chapterMeta(L.end + 0.8);
+export const meta = K.chapterMeta(L.lines[L.lines.length - 1].end + 0.8);   // last line + 0.8 s room tone
 export const sky = K.SKY;
 export const samples = () => 1;
 // lines.json numbers spoken lines from 1; the code below counts them from 0 (line 0 = the VO)
@@ -86,7 +87,7 @@ const ROOM = { set: 'bedroom', light: 'night_moon', practicals: { bedside_lamp: 
 const ATT = { set: 'attic', light: 'night_moon', practicals: { moon: true, bounce: true, flashlight: true, flashlightCone: true, hatchGlow: true } };
 const camS = (name) => (s) => K.setCam(s, K.getSet(SHOTSET[name] || 'hallway').cams[name]);
 const SHOTSET = { bed_edge_ms: 'bedroom' };
-const TWO = (s) => { const a = K.headPos(C.skye), b = K.headPos(C.lily), m = a.clone().add(b).multiplyScalar(0.5); return K.applyShot(s, { pos: m.clone().add(V(0.2, 0.9, 7.6)), target: m.clone().add(V(0, -0.5, 0)), fov: 38 }); };
+const TWO = (s) => { const a = K.headPos(C.skye), b = K.headPos(C.lily), m = a.clone().add(b).multiplyScalar(0.5); return K.applyShot(s, { pos: m.clone().add(V(0.4, 0.5, 7.4)), target: m.clone().add(V(-0.2, -1.1, 0)), fov: 36 }); };
 const camA = (name) => (s) => K.setCam(s, ATTIC.cams[name]);
 // attic singles: from the room side (+z), each cheated 3/4 toward the other (Lily is on Skye's left, frame-left)
 const headCam = (who, off, fov, look = V(0, -0.25, 0)) => (s) => { const h = K.headPos(who()); return K.applyShot(s, { pos: h.clone().add(off), target: h.clone().add(look), fov }); };
@@ -98,7 +99,7 @@ const SHOTS = [
   { line: 1, off: endOf(1) - at(1), id: 'kneel', ...HALL, cam: headCam(() => C.skye, V(3.6, 0.0, 0.6), 42, V(-0.9, -1.3, -0.8)) },
   { line: 2, off: -0.1, id: 'max_phone', ...ROOM, cam: headCam(() => C.max, V(4.6, 0.4, -2.6), 34, V(0, -0.7, 0)) },
   { line: 4, off: -0.1, id: 'max_worst', ...ROOM, cam: headCam(() => C.max, V(5.4, 0.6, -2.4), 40, V(0, -1.2, 0)) },
-  { line: 4, off: 0.9, id: 'skye_hears', ...HALL, cam: headCam(() => C.skye, V(2.9, 0.1, 0.5), 30, V(0, -0.1, 0)) },
+  { line: 4, off: 0.9, id: 'skye_hears', ...HALL, cam: headCam(() => C.skye, V(2.5, 0.1, -0.5), 32, V(0, -0.1, 0)) },
   { line: 4, off: endOf(4) - at(4) + 0.05, id: 'backs_away', ...HALL, cam: headCam(() => C.skye, V(4.6, 0.2, 2.2), 40, V(0, -1.0, 0)) },
   { line: 5, off: -0.1, id: 'got_it', ...HALL, cam: headCam(() => C.skye, V(3.6, 0.3, 1.2), 32, V(0, -0.4, 0)) },
   { line: 6, off: -0.35, id: 'lily_hatch', ...ATT, cam: camA('hatch_lily_cu') },
@@ -171,8 +172,8 @@ export function update(t, stage) {
     const b = M.bed();
     K.posture(C.max, 'sit_upright');
     K.putOn(C.max, { pos: b.pos.clone().setY(K.seatY(C.max, K.getSet('bedroom').marks.bed_edge.seat)), heading: Math.PI / 2 + 0.35 }, { sit: true });
-    K.gesture(C.max, 'phone_ear', 'L');                 // phone at his left ear (the far side from the camera: his face stays clear)
-    K.hold(P.phone, C.max, 'L');
+    K.gesture(C.max, 'phone_ear', 'R');                 // phone at his right ear (the far side from the camera: his face stays clear)
+    K.hold(P.phone, C.max, 'R', 'ear');
     P.note.visible = P.crumpled.visible = false;
     const face = t < at(2) + 0.6 ? 'surprised' : t < at(3) ? 'happy' : t < at(3) + 0.9 ? 'nervous' : 'happy';
     K.speak(C.max, face, t, L.said('MAX'));
@@ -184,8 +185,6 @@ export function update(t, stage) {
     // Skye cross-legged in the nest, turned a little toward Lily
     poseAt(C.skye, 'sit_cross', M.nest(), 0.25);
     K.gesture(C.skye, 'hand_hold', 'R');
-    const thump = t > at(13) && t < endOf(13) ? ramp(t, at(13) + 0.3, at(13) + 0.6) * (1 - ramp(t, endOf(13) - 0.4, endOf(13))) : 0;
-    if (thump > 0) K.gesture(C.skye, 'hold_out', 'R', thump);
     const wipe = ramp(t, at(18) + 0.2, at(18) + 0.6) * (1 - ramp(t, endOf(18) - 0.6, endOf(18) - 0.2));
     if (wipe > 0) K.gesture(C.skye, 'eye_wipe', 'L', wipe);
     K.hold(P.crumpled, C.skye, 'R'); P.crumpled.visible = true; P.note.visible = false; P.phone.visible = false;
@@ -222,3 +221,4 @@ export function overlay(g, s, t) {
 
 // for the hold check (web/ch08_hold.js)
 export function cast() { return { skye: C.skye, max: C.max, lily: C.lily }; }
+export function props() { return { note: P.note, crumpled: P.crumpled, phone: P.phone, teddy: C.lily.teddy }; }

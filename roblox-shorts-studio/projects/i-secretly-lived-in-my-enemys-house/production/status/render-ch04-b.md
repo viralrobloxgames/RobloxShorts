@@ -1,4 +1,4 @@
-STATUS: WORKING
+STATUS: RENDERING
 render-ch04-b (helper, segment B of ch04), run by the kit-sets-a session.
-- Machine check OK: render.mjs 2 frames of ch04 at scale 0.3 (4.0 s/frame), finish_longform.py --help runs, 4 cores, ffmpeg 6.1.
-- Waiting (background) for production/status/ch04.md READY_FOR_GATE with FRAMES/SPLIT; then segment B render starts.
+- 13:40 started frames 826-1833; ch04 READY_TO_RENDER (32dbd17) changed every frame (gate fixes), so restarted 826-1833 from scratch ~14:00.
+  before frame skips. Waiting for ch04 READY_TO_RENDER, then changed_frames --delete + --resume, finish -> ch04_b.mp4.

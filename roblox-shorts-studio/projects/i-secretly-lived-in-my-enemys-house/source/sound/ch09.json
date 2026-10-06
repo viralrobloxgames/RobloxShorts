@@ -178,12 +178,12 @@
  },
  {
   "asset": "sfx/plop.wav",
-  "start": 49.446,
+  "start": 49.896,
   "gain": 0.08
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 49.596,
+  "start": 49.996,
   "gain": 0.1
  },
  {
