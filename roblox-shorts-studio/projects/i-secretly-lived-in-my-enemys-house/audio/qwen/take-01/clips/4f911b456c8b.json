@@ -1,0 +1,96 @@
+{
+ "voice": "max_kid",
+ "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday.",
+ "seed": 14568,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Your",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "hair",
+   "start": 0.3,
+   "end": 0.58
+  },
+  {
+   "word": "is",
+   "start": 0.58,
+   "end": 0.8
+  },
+  {
+   "word": "pink.",
+   "start": 0.8,
+   "end": 1.14
+  },
+  {
+   "word": "It's",
+   "start": 1.78,
+   "end": 1.96
+  },
+  {
+   "word": "sticking",
+   "start": 1.96,
+   "end": 2.16
+  },
+  {
+   "word": "out",
+   "start": 2.16,
+   "end": 2.4
+  },
+  {
+   "word": "of",
+   "start": 2.4,
+   "end": 2.52
+  },
+  {
+   "word": "the",
+   "start": 2.52,
+   "end": 2.62
+  },
+  {
+   "word": "sheet.",
+   "start": 2.62,
+   "end": 2.96
+  },
+  {
+   "word": "Same",
+   "start": 3.58,
+   "end": 3.7
+  },
+  {
+   "word": "as",
+   "start": 3.7,
+   "end": 3.86
+  },
+  {
+   "word": "in",
+   "start": 3.86,
+   "end": 4.0
+  },
+  {
+   "word": "my",
+   "start": 4.0,
+   "end": 4.16
+  },
+  {
+   "word": "closet",
+   "start": 4.16,
+   "end": 4.46
+  },
+  {
+   "word": "on",
+   "start": 4.46,
+   "end": 4.7
+  },
+  {
+   "word": "Monday.",
+   "start": 4.7,
+   "end": 5.02
+  }
+ ],
+ "words_md5": "58a9e010992599cf1ca3bc32af5b51aa",
+ "whisper": "small.en"
+}

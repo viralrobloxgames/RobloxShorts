@@ -1,0 +1,31 @@
+{
+ "voice": "max_kid",
+ "text": "Go to bed, Dad!",
+ "seed": 5012,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Go",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "to",
+   "start": 0.2,
+   "end": 0.32
+  },
+  {
+   "word": "bed,",
+   "start": 0.32,
+   "end": 0.5
+  },
+  {
+   "word": "Dad.",
+   "start": 0.76,
+   "end": 0.78
+  }
+ ],
+ "words_md5": "ed298c849ec1183ed8bf14befa719b25",
+ "whisper": "small.en"
+}

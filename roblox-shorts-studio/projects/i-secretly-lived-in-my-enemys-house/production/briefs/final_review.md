@@ -18,3 +18,9 @@ challenges any section that needs tweaks. Status file `production/status/review-
    wrong and why it matters, the concrete fix, and severity (must / should / could). Musts are anything a viewer would
    notice or that weakens the story. Push it, set STATUS: DONE.
 4. After the fixes land (the orchestrator will message you), re-watch the changed timestamps and confirm or re-challenge.
+
+Ranges: review-1 ch01-ch03, review-2 ch04-ch06, review-3 ch07-ch09, review-4 ch10-ch11 + the global checks.
+review-4, package: two thumbnail drafts exist (`delivery/I_Secretly_Lived_In_My_Enemys_House_thumbnail.jpg` "HE NEVER
+KNEW" with variants in `delivery/thumbnail_variants/`, and an older `delivery/thumbnail.jpg` "I LIVED IN HIS HOUSE! 7 DAYS"
+with `youtube.md`). Pick one and say why. Challenge whether "HE NEVER KNEW" fights the twist (Max knew all along) or sets
+it up, whether faces and poses read at phone size, and whether the description's hook and chapter list match the film.

@@ -1,0 +1,76 @@
+{
+ "voice": "george_c",
+ "text": "Tomorrow, I'm going up into that attic, and I'm checking every single box.",
+ "seed": 87617,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Tomorrow",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "I'm",
+   "start": 0.26,
+   "end": 0.62
+  },
+  {
+   "word": "going",
+   "start": 0.62,
+   "end": 0.76
+  },
+  {
+   "word": "up",
+   "start": 0.76,
+   "end": 0.96
+  },
+  {
+   "word": "into",
+   "start": 0.96,
+   "end": 1.16
+  },
+  {
+   "word": "that",
+   "start": 1.16,
+   "end": 1.34
+  },
+  {
+   "word": "attic,",
+   "start": 1.34,
+   "end": 1.68
+  },
+  {
+   "word": "and",
+   "start": 2.0,
+   "end": 2.08
+  },
+  {
+   "word": "I'm",
+   "start": 2.08,
+   "end": 2.24
+  },
+  {
+   "word": "checking",
+   "start": 2.24,
+   "end": 2.44
+  },
+  {
+   "word": "every",
+   "start": 2.44,
+   "end": 2.84
+  },
+  {
+   "word": "single",
+   "start": 2.84,
+   "end": 3.14
+  },
+  {
+   "word": "box.",
+   "start": 3.14,
+   "end": 3.48
+  }
+ ],
+ "words_md5": "ea4e1357ba9a3e2b9f3088fc9ad23fdd",
+ "whisper": "small.en"
+}

@@ -1,0 +1,41 @@
+{
+ "voice": "lily_kid",
+ "text": "What happened? Did he see you?",
+ "seed": 93150,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "What",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "happened?",
+   "start": 0.2,
+   "end": 0.56
+  },
+  {
+   "word": "Did",
+   "start": 1.06,
+   "end": 1.16
+  },
+  {
+   "word": "he",
+   "start": 1.16,
+   "end": 1.28
+  },
+  {
+   "word": "see",
+   "start": 1.28,
+   "end": 1.5
+  },
+  {
+   "word": "you?",
+   "start": 1.5,
+   "end": 1.76
+  }
+ ],
+ "words_md5": "80b35facfe388a4049544a46c3487efe",
+ "whisper": "small.en"
+}

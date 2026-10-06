@@ -1,0 +1,56 @@
+{
+ "voice": "george_c",
+ "text": "Midnight snack, midnight snack, who wants a midnight snack?",
+ "seed": 10717,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Midnight",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "snack,",
+   "start": 0.38,
+   "end": 0.78
+  },
+  {
+   "word": "midnight",
+   "start": 1.16,
+   "end": 1.26
+  },
+  {
+   "word": "snack,",
+   "start": 1.26,
+   "end": 1.9
+  },
+  {
+   "word": "who",
+   "start": 2.18,
+   "end": 2.26
+  },
+  {
+   "word": "wants",
+   "start": 2.26,
+   "end": 2.46
+  },
+  {
+   "word": "a",
+   "start": 2.46,
+   "end": 2.6
+  },
+  {
+   "word": "midnight",
+   "start": 2.6,
+   "end": 2.9
+  },
+  {
+   "word": "snack?",
+   "start": 2.9,
+   "end": 3.34
+  }
+ ],
+ "words_md5": "71ddfb7f42fbfb8712cbe7ee408920b3",
+ "whisper": "small.en"
+}
