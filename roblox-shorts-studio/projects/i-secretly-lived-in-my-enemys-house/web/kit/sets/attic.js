@@ -2,7 +2,7 @@
 // Layout (local studs; the group sits at OFFSET; marks and cams are returned in world coordinates):
 //   a gabled room x -13..13, z -10..14; the ridge (y 13) runs along z, the knee walls at x = +-13 are 3 high.
 //   back gable wall z -10: the round window (centre y 7.2, r 1.9); Skye's nest under it (x 0, z -8).
-//   right side (x > 0): the HALLOWEEN box (6.2, -6.7) with the skeleton (3.6, -3.5) and the witch (8.9, -3.5) standing
+//   right side (x > 0): the HALLOWEEN box (6.2, -6.7) with the skeleton (2.1, -3.5) and the witch (10.2, -3.5, scale 0.9 under the roof) standing
 //     in front of it (the Ch7 pose mark is between them), XMAS (10, 0.5), MAX - OLD STUFF (9.2, 4.4), the hobby horse
 //     leaning on XMAS; the floor hatch (centre 4.5, 9.0; hole x 2.2..6.8, z 7.3..10.7) with the ladder going down,
 //     the vacuum spot beside it (7.8, 10.6).
@@ -357,8 +357,9 @@ export function build(scene) {
 
   // ---------- Halloween corner: HALLOWEEN box, skeleton, witch ----------
   const hallo = cardBox(3.2, 2.2, 2.6, 'HALLOWEEN', { seed: 2, tape: '#f28a1d', ink: '#111' }); add('box_halloween', at(hallo, 6.2, 0, -6.7, -0.08));
-  const skel = skeleton(); add('skeleton', at(skel, 3.6, 0, -3.5, 0.15));
-  const wit = witch(); add('witch', at(wit, 8.9, 0, -3.5, -0.2));
+  // SB1: ~4 studs either side of decor_pose (x 6.2) so the pumpkin girl's arms clear both; the witch is 0.9 scale to fit under the roof
+  const skel = skeleton(); add('skeleton', at(skel, 2.1, 0, -3.5, 0.15));
+  const wit = witch(); wit.scale.setScalar(0.9); add('witch', at(wit, 10.2, 0, -3.5, -0.2));
   const pump = kitProp('pumpkin_bucket', {}, pumpkinBucket); add('pumpkin_bucket', pump);
   // ---------- XMAS, MAX - OLD STUFF, hobby horse ----------
   const xmas = cardBox(3.0, 2.0, 2.6, 'XMAS', { seed: 3, tape: '#2f8f4e', ink: '#b3121f' }); add('box_xmas', at(xmas, 10.0, 0, 0.5, -0.45));
@@ -423,16 +424,16 @@ export function build(scene) {
     nest: mk(0.2, -7.2, 0, { note: 'sit cross-legged in the nest, facing the hatch side (+z)' }),
     nest_stand: mk(0.3, -5.6, 0),
     window: mk(0, -8.4, Math.PI, { note: 'standing at the round window looking out' }),
-    tea_skye: mk(-3.5, -0.1, 0, { note: 'cross-legged at the upturned box, nest side, facing +z (the round window behind her)' }),
-    tea_lily: mk(-3.5, 4.1, Math.PI, { note: 'kneeling opposite Skye, hatch side, facing -z' }),
-    tea_teddy_lily: mk(-2.2, 4.3, Math.PI, { note: "where Lily's teddy sits beside her" }),
+    tea_skye: mk(-3.5, -1.0, 0, { note: 'cross-legged at the upturned box, nest side, facing +z (the round window behind her); root 1.9 back from the box face (z 0.9)' }),
+    tea_lily: mk(-3.5, 4.4, Math.PI, { note: 'kneeling opposite Skye, hatch side, facing -z; knees clear of the box face (z 3.1)' }),
+    tea_teddy_lily: mk(-1.8, 4.6, Math.PI, { note: "where Lily's teddy sits beside her" }),
     tea_teddy_left: mk(-5.6, 2.0, Math.PI / 2), tea_teddy_right: mk(-1.4, 2.0, -Math.PI / 2),
     tea_table: mk(-3.5, 2.0, 0, { y: 1.42, note: 'top of the upturned box (y 1.42)' }),
     rocking_chair: mk(-8.0, -4.0, 0.7, { seatY: 1.65, note: 'seat centre; seat top y 1.65; the chair faces heading 0.7' }),
     rocking_chair_front: mk(-8.0 + Math.sin(0.7) * 2.2, -4.0 + Math.cos(0.7) * 2.2, 0.7),
-    decor_pose: mk(6.2, -3.5, 0, { note: 'Ch7: between the skeleton (x 3.6) and the witch (x 8.9), facing +z; arms out at shoulder height clear both' }),
-    skeleton: mk(3.6, -3.5, 0.15), witch: mk(8.9, -3.5, -0.2),
-    decor_front: mk(6.2, -1.1, Math.PI, { note: 'Dad nose to nose with the pumpkin girl (stand here facing her)' }),
+    decor_pose: mk(6.2, -3.5, 0, { note: 'Ch7: between the skeleton (x 2.1) and the witch (x 10.2), facing +z; ~4 studs each side, arms out clear both' }),
+    skeleton: mk(2.1, -3.5, 0.15), witch: mk(10.2, -3.5, -0.2),
+    decor_front: mk(6.2, -1.3, Math.PI, { note: 'Dad nose to nose with the pumpkin girl, 2.2 in front of her (stand here facing her)' }),
     box_halloween: mk(6.2, -5.0, Math.PI, { note: 'in front of the HALLOWEEN box, facing it' }),
     box_xmas: mk(8.6, 1.9, towards(8.6, 1.9, 10, 0.5)),
     box_max: mk(7.6, 6.0, towards(7.6, 6.0, 9.2, 4.6), { note: 'in front of MAX - OLD STUFF, facing it (Ch9)' }),
@@ -454,11 +455,13 @@ export function build(scene) {
   Object.assign(marks, {
     nest_sit: marks.nest, hatch_stand: marks.hatch_top, hatch_head: mk(4.5, 9.4, Math.PI, { y: -4 + 0.55, note: 'scale 1 head and shoulders; Lily: hatch_head_lily, Dad: hatch_head_dad, or hatchRise(scale, k)' }),
     hatch_below: marks.hatch_climb, vacuum_by_hatch: marks.vacuum,
-    nest_front: mk(0.5, -3.4, Math.PI, { note: 'standing ~4 studs in front of the nest, facing it' }),
+    nest_front: mk(-2.3, -3.2, towards(-2.3, -3.2, 0.2, -7.2), { note: 'standing ~4.7 studs in front of the nest, facing it; out of the sun shaft, 4.4 clear of the skeleton, 2.6 behind tea_skye (use as is, no offset)' }),
     nest_backpack: { pos: P(items.backpack), heading: items.backpack.rotation.y, note: 'where the loose backpack lies in the nest' },
     horse_lean: { pos: w(7.9, 0, 2.6), heading: -2.0, note: 'foot of the hobby horse leaning on the XMAS box' },
     tea_box: marks.tea_table, box_table: marks.tea_table, tea_teddy: marks.tea_teddy_lily, tea_toy_1: marks.tea_teddy_left, tea_toy_2: marks.tea_teddy_right,
-    decor_gap: marks.decor_pose, decor_inspect: marks.decor_front, decor_lily: mk(1.9, -2.6, 0.35, { note: 'Lily standing beside the decorations (left of the skeleton)' }),
+    decor_gap: marks.decor_pose, decor_inspect: marks.decor_front, decor_lily: mk(4.6, -1.6, towards(4.6, -1.6, 6.2, -3.5), { note: 'Lily ~2.4 in front of the pumpkin girl, skeleton side, facing her (never shoulder to shoulder)' }),
+    decor_dad: marks.decor_front,
+    decor_max: mk(7.8, -1.6, towards(7.8, -1.6, 6.2, -3.5), { note: 'Max ~2.4 in front of the pumpkin girl, witch side, facing her' }),
     old_stuff_box: marks.box_max, old_stuff_inside: { pos: P(items.drawing), heading: items.box_max.rotation.y, note: 'top of the contents inside MAX - OLD STUFF (where the drawing lies)' },
   });
   marks.nest_beside = mk(2.3, -6.9, -0.35, { note: 'Lily sitting next to Skye in the nest, frame-right of her from the +z cams (Ch8)' });
@@ -480,10 +483,10 @@ export function build(scene) {
     tea_two: cam([3.4, 3.5, 2.2], [-3.5, 1.8, 2.0], 40, 'tea party two-shot across the box from the +x side (Lily frame-left, Skye frame-right)'),
     tea_wide: cam([-7.0, 4.4, -6.6], [-3.0, 1.4, 2.4], 46, 'tea party wide 3/4 from window-left (Ch5 S12)'),
     tea_wide_front: cam([4.0, 5.2, 9.0], [-3.5, 1.4, 1.2], 44, 'tea party wide from the hatch side'),
-    tea_lily_ots: cam([-1.6, 3.7, -2.0], [-3.7, 2.2, 4.1], 34, "over Skye's left shoulder onto Lily"),
-    tea_skye_ots: cam([-2.2, 3.4, 6.4], [-3.5, 2.5, -0.1], 40, "over Lily's right shoulder onto Skye"),
-    tea_lily_cu: cam([-1.6, 2.7, 1.0], [-3.5, 2.4, 4.1], 30, 'Lily close (kneeling)'),
-    tea_skye_cu: cam([-1.6, 2.9, 3.1], [-3.5, 2.6, -0.1], 30, 'Skye close (cross-legged)'),
+    tea_lily_ots: cam([-1.6, 3.7, -2.0], [-3.7, 2.2, 4.4], 34, "over Skye's left shoulder onto Lily"),
+    tea_skye_ots: cam([-2.2, 3.4, 6.4], [-3.5, 2.5, -1.0], 40, "over Lily's right shoulder onto Skye"),
+    tea_lily_cu: cam([-1.6, 2.7, 1.0], [-3.5, 2.4, 4.4], 30, 'Lily close (kneeling)'),
+    tea_skye_cu: cam([-1.6, 2.9, 3.1], [-3.5, 2.6, -1.0], 30, 'Skye close (cross-legged)'),
     tea_hatch: cam([-9.0, 4.6, -3.0], [1.5, 1.5, 6.5], 48, 'Ch7 start: the tea party in front, the hatch in frame behind'),
     decor_wide: cam([6.2, 4.2, 7.0], [6.2, 2.9, -4.5], 42, 'Ch7: skeleton, Skye (pumpkin girl), witch in a row, HALLOWEEN box behind'),
     decor_ms: cam([5.9, 4.3, 2.0], [6.2, 3.6, -3.5], 38, 'Ch7: the pumpkin girl, medium'),
