@@ -36,6 +36,18 @@ const BAR = V(0, 0, 0), DOCK = V(160, 0, 0), DR = V(-300, 0, 0), PL = V(300, 0, 
 const MAX_BAR = BAR.clone().add(V(1.5, 0, 2.5)), SKY_BAR = BAR.clone().add(V(-1.3, 0, 2.5));
 const DF = 1.0;                                                     // the dock's deck height
 const CHIEF_D = DOCK.clone().add(V(-2, DF, 2.2)), MAX_D = DOCK.clone().add(V(2.2, DF, 3.0)), HOLE = DOCK.clone().add(V(-2, DF, -5.5));
+// The putt: he stands side-on (facing +X), the ball on the hole's line in front of his feet, the hole 6.2 away along -Z.
+const CHIEF_P = DOCK.clone().add(V(-3.3, DF, 1.0)), BALL0 = DOCK.clone().add(V(-2, DF + 0.13, 0.7)), PUTT_T = V(0, 0, -1);
+// The stroke: address, a slow backswing, an accelerating stroke through the ball, the follow-through held.
+// sw is the putter head's distance back from address (+ = away from the hole); hands and head move together, the head more.
+function swingAt(s) {
+  const t0 = B.putt + 0.3, t1 = t0 + 0.55, t2 = t1 + 0.28;
+  if (s < t0) return 0;
+  if (s < t1) return easeInOut(seg(s, t0, t1));
+  if (s < t2) return 1 - 1.65 * easeIn(seg(s, t1, t2));
+  return lerp(-0.65, 0, easeInOut(seg(s, B.sink + 0.2, B.sink + 0.9)));
+}
+const IMPACT = () => { const t1 = B.putt + 0.85; return t1 + 0.28 * Math.cbrt(1.25 / 1.65); };   // when the head reaches the ball (sw = -0.25)
 const GIG = DR.clone().add(V(0, 0.3, -3.4)), MAX_DR = DR.clone().add(V(3.4, 0.3, -0.6)), CHIEF_DR = DR.clone().add(V(-3.4, 0.3, -0.4));
 const CAR_A = PL.clone().add(V(-3, 0, 70)), CAR_B = PL.clone().add(V(-3, 0, 17));
 const SCOOP_AT = PL.clone().add(V(-2, 0.3, -6.7)), MAX_CTR = PL.clone().add(V(-2, 0.3, -2.7)), MAX_IN = PL.clone().add(V(-2, 0.3, 8)), SUN_CTR = PL.clone().add(V(-2, 3.46, -4.55));
@@ -48,7 +60,7 @@ const WIFE_SIDE = PL.clone().add(V(5.85, 0.3, -7.1)), WIFE_FRONT = PL.clone().ad
 // ---------- beats (all from narration words) ----------
 const B = {
   ask: W.girl - 0.1, think1: W.tempting1 - 0.1, stop1: W.case1 - 0.55, r1: W.case1, title: W.case1 + 0.25,
-  dock: W.somebody - 0.2, photo: W.kidnapped1 - 0.1, putt: W.chief - 0.2, sink: W.speech1 + 0.1, reveal: W.candidate - 0.25, working: W.figure - 0.3,
+  dock: W.somebody - 0.2, photo: W.kidnapped1 - 0.1, putt: W.chief - 0.2, sink: W.speech1 + 0.55, reveal: W.candidate - 0.25, working: W.figure - 0.3,
   note: W.ransom1 - 0.2, sniff: W.sniffed - 0.25, i1: W.waffle - 0.05, i2: W.fudge - 0.05, i3: W.mint - 0.1, drive: W.only - 0.25, inside: W.big1 - 0.2,
   offer: W.owner - 0.2, slide: W.free1 - 0.1, lean: W.sundae1 + 0.1, think2: W.tempting2 - 0.1, stop2: W.case2 - 0.55, r2: W.case2,
   back: W.out - 0.2, wipe: W.ransom2 - 0.1, crew: W.crew - 0.2, throw: W.threw + 0.15, splat: W.right + 0.1, cuff: W.cuffed - 0.15,
@@ -190,8 +202,11 @@ function chiefState(s) {
     b.floor = DF; b.put = 'ground';
     if (s < B.putt) { b.rotY = face(CHIEF_D, MAX_D) + 0.5; b.arms = [['R', 1.15, -0.25]]; b.photo = true; b.talk = win(s, W.kidnapped1 - 0.2, W.election + 0.5); }
     else {                                                         // the putt: both hands on the grip, a swing, the ball drops
-      b.rotY = face(CHIEF_D, HOLE) - Math.PI / 2; b.put = 'hands'; const sw = s < B.sink ? Math.sin((s - B.putt) * 3.0) * 0.25 * (1 - seg(s, B.sink - 0.4, B.sink)) : 0;
-      b.arms = [['R', 0.6 + sw, -0.55], ['L', 0.6 + sw, -0.55]];   // negative spread brings either hand in (the shoulders pivot 1.0 off centre) b.face = s > B.sink + 0.3 ? 'smug' : 'determined';
+      b.pos = CHIEF_P.clone(); b.rotY = Math.PI / 2; b.put = 'hands'; b.layers = [[A.idle, 0]]; const sw = swingAt(s);
+      // Hands together on the grip (negative spread brings either hand in: the shoulders pivot 1.0 off centre); the
+      // backswing rocks both hands towards his right (+Z, away from the hole), the stroke through to his left.
+      b.arms = [['R', 0.6, -0.55 + 0.22 * sw], ['L', 0.6, -0.55 - 0.22 * sw]];
+      b.face = s > B.sink ? 'smug' : 'determined'; b.lookDown = 0.25;
     }
     return b;
   }
@@ -263,6 +278,7 @@ function place(a, x) {
   for (const [side, ang, spread] of x.arms) armFwd(a, side, ang, spread);
   if (x.wave) { a.bones['Arm.L'].quaternion.setFromEuler(new THREE.Euler(-2.3 - 0.15 * Math.sin(tNow * 10), 0, 0.15, 'XYZ')); }
   if (x.nod) a.bones.Head.rotation.x += x.nod;
+  if (x.lookDown) a.bones.Head.rotation.x += x.lookDown;
   if (x.talk) a.bones.Head.rotation.x += 0.06 * Math.sin(tNow * 17);
   if (x.grounded) { a.root.updateMatrixWorld(true); a.root.position.y += x.floor - soleHeight(a); }
   setExpression(a, x.face);
@@ -309,15 +325,18 @@ export function update(t, stage) {
   // The Chief's putter: on the green, then in both hands (grip between the palms, the head on the deck in front).
   put.visible = !!C.put && chief.root.visible;
   if (C.put === 'ground') { put.position.copy(CHIEF_D).add(V(0.9, 0.12, -1.0)); put.quaternion.setFromAxisAngle(V(0, 0, 1), Math.PI / 2); }
-  else if (C.put === 'hands') {
-    const g = gripR(chief).lerp(gripL(chief), 0.5), headPt = g.clone().addScaledVector(fwdOf(chief), 1.0).setY(DF + 0.12);
-    const dir = headPt.clone().sub(g).normalize(); put.position.copy(g); put.quaternion.setFromUnitVectors(V(0, -1, 0), dir);
+  else if (C.put === 'hands') {                                  // grip in the hands, head on the green just behind the ball, swinging along the line
+    const g = gripR(chief).lerp(gripL(chief), 0.5), sw = swingAt(s);
+    const head = BALL0.clone().setY(DF + 0.12).addScaledVector(PUTT_T, -0.25 - sw).add(V(0, 0.1 * sw * sw, 0));
+    const yAx = g.clone().sub(head).normalize(), f = fwdOf(chief), xAx = f.clone().addScaledVector(yAx, -f.dot(yAx)).normalize(), zAx = xAx.clone().cross(yAx);
+    put.position.copy(g); put.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xAx, yAx, zAx)); put.scale.setScalar(g.distanceTo(head) / 3.6);
   }
+  if (C.put !== 'hands') put.scale.setScalar(1);
   pic.visible = !!C.photo && chief.root.visible;
   if (pic.visible) { pic.position.copy(gripR(chief)).add(V(0, 0.15, 0)); pic.rotation.set(0, chief.root.rotation.y - 0.3, 0); }   // held up at chest height, turned to camera
   // The golf ball rolls into the hole on the putt.
   ball.visible = win(s, B.dock, B.reveal);
-  if (ball.visible) { const k = easeOut(seg(s, B.sink - 0.9, B.sink)), from = CHIEF_D.clone().add(V(0, 0.13, -0.9)); ball.position.copy(from.lerp(HOLE.clone().add(V(0, 0.13, 0)), k)); if (s > B.sink) ball.position.y = DF - 0.2; }
+  if (ball.visible) { const k = easeOut(seg(s, IMPACT(), B.sink)); ball.position.copy(BALL0.clone().lerp(HOLE.clone().add(V(0, 0.13, 0)), k)); ball.rotation.set(k * 30, 0, 0); if (s > B.sink) ball.position.y = DF - 0.2; }   // struck at impact, drops on the beat
   // The ransom note: in Max's hand, then at his nose for the sniff.
   note.visible = !!M.note && max.root.visible;
   if (note.visible) {                                            // the writing faces his left, where the cameras are; held by its bottom edge
@@ -359,7 +378,7 @@ export function update(t, stage) {
     case 'hook': { const k = easeOut(seg(s, 0, 1.1)); const mid = mh.clone().lerp(kh, 0.5); look(mid.clone().add(V(0.2, 0.9, lerp(14, 11, k))), mid.clone().add(V(0, 0.4, 0)), 40, 25); break; }   // push-in: both faces cheated 3/4 to camera
     case 'tempt1': look(local(max, 5.6, 4.7, 3.4), local(max, 0, 4.0, 1.1), 38, 20); break;                        // his left profile (the raised right hand stays out of the lens); the nose fills a third of the frame
     case 'dock': { const k = easeInOut(u); look(DOCK.clone().add(V(lerp(9, 7, k), DF + 6.5, lerp(14, 12, k))), CHIEF_D.clone().lerp(MAX_D, 0.4).add(V(0, 3.4, 0)), 42, 30); break; }
-    case 'putt': { const k = easeInOut(u); look(CHIEF_D.clone().add(V(lerp(9.0, 8.2, k), 4.8, lerp(-7.6, -7.0, k))), CHIEF_D.clone().add(V(0.6, 2.9, -0.9)), 46, 25); break; }   // in front of him (he faces the open side of the dock): his face, the putt, the hole
+    case 'putt': { const k = easeInOut(u); look(HOLE.clone().add(V(lerp(5.6, 5.1, k), 4.9, lerp(-6.4, -5.9, k))), HOLE.clone().lerp(CHIEF_P, 0.6).add(V(1.0, 1.5, 0)), 46, 25); break; }   // past the cup, front side: his face, the stroke, the ball rolling into the hole   // in front of him (he faces the open side of the dock): his face, the putt, the hole
     case 'reveal': { const k = easeOut(seg(s, B.reveal, B.reveal + 0.3)); look(DR.clone().add(V(0.4, lerp(5.0, 4.6, k), lerp(11, 8.5, k))).add(jolt(B.reveal + 0.3, 0.06)), GIG.clone().add(V(0, 3.8, 0)), 42, 20); break; }
     case 'working': look(gh.clone().add(V(0.4, 0.4, 8.0)), gh.clone().add(V(0, 0.9, 0)), 38, 15); break;   // aimed above his wig, so his face sits low and the bubble has room
     case 'note': { const n = note.position.clone().add(V(0, 0.7, 0)); look(n.clone().addScaledVector(rightOf(max), -3.8).addScaledVector(fwdOf(max), 0.4).add(V(0, 0.4, 0)), n, 38, 12); break; }   // from his left

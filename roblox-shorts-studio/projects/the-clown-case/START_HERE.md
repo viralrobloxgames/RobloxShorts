@@ -33,5 +33,12 @@ original's Election Case: `source/story.md`. Script: `script.txt` (158 words, ~6
   cuff shot staged in the open floor with both cheated 3/4 (black eye moved to his right eye so it faces the camera),
   hold check incl. the cuffs. Changed frames re-rendered (943 of 1905).
 
+- Second review 2026-10-06: the putter stuck into the deck and the "swing" was an arm wobble. Rebuilt as a real putting
+  stroke: the Chief side-on to the hole (`CHIEF_P`), ball on the hole's line in front of his feet (`BALL0`), the putter
+  fitted between his hands and a head resting on the green (scaled to the reach), `swingAt()` address -> backswing ->
+  accelerating stroke -> held follow-through, hands rocking with it; the ball leaves on contact (`IMPACT`) and drops on
+  "speech". New camera past the cup shows his face, the stroke and the ball rolling in. Hold check covers address, top
+  of the backswing and impact. 183 frames re-rendered.
+
 ## Next
 - Encode, blank-frame scan, deliver. Then awaiting the user's review / approval; posting via the user's local Claude.

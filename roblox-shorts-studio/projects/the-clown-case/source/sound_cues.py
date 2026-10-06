@@ -17,7 +17,7 @@ def sniffs(t, n=3, every=0.35, g=0.5):
     for i in range(n): A('sniff.wav', t + i * every, g)
 
 B = dict(ask=W['girl'] - 0.1, stop1=W['case1'] - 0.55, r1=W['case1'], title=W['case1'] + 0.25, dock=W['somebody'] - 0.2,
-         putt=W['chief'] - 0.2, sink=W['speech1'] + 0.1, reveal=W['candidate'] - 0.25, working=W['figure'] - 0.3,
+         putt=W['chief'] - 0.2, sink=W['speech1'] + 0.55, reveal=W['candidate'] - 0.25, working=W['figure'] - 0.3,
          note=W['ransom1'] - 0.2, sniff=W['sniffed'] - 0.25, i1=W['waffle'] - 0.05, i2=W['fudge'] - 0.05, i3=W['mint'] - 0.1,
          drive=W['only'] - 0.25, inside=W['big1'] - 0.2, slide=W['free1'] - 0.1, lean=W['sundae1'] + 0.1, stop2=W['case2'] - 0.55,
          r2=W['case2'], back=W['out'] - 0.2, wipe=W['ransom2'] - 0.1, crew=W['crew'] - 0.2, throw=W['threw'] + 0.15,
@@ -29,7 +29,8 @@ A('swish_1', 0.0, 0.25); love(B['ask'] + 0.2); love(W['single'] + 0.1)
 T(330, W['tempting1'], 0.05, 0.5, sweep=-60); denied(B['stop1']); ding(B['r1']); A('swish_3', B['title'], 0.3)
 # The dock: gulls-ish chirps; the putt (tap, roll, plop); the clown reveal (hit + honk); "Is it working?".
 A('swish_2', B['dock'] - 0.05, 0.3); T([1800, 2200], B['dock'] + 0.4, 0.03, 0.06)
-A('click', B['putt'] + 0.5, 0.35); T(300, B['sink'] - 0.9, 0.025, 0.8, sweep=-40); A('impact_1', B['sink'], 0.35); ding(B['sink'] + 0.15)
+imp = B['putt'] + 0.85 + 0.28 * (1.25 / 1.65) ** (1 / 3)                                  # the stroke's impact (clown_clip.js IMPACT)
+A('click', imp, 0.4); T(300, imp + 0.05, 0.025, B['sink'] - imp - 0.05, sweep=-40); A('impact_1', B['sink'], 0.35); ding(B['sink'] + 0.15)
 A('impact_4', B['reveal'] + 0.3, 0.45); A('drum_hit', B['reveal'] + 0.3, 0.4); honk(B['reveal'] + 0.45); honk(B['reveal'] + 0.65)
 honk(B['working'] + 0.15, 0.05)
 # The ransom note (a paper swish); the sniff; the three smells; the drive.
