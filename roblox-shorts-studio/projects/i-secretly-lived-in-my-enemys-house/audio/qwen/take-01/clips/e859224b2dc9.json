@@ -3,5 +3,64 @@
  "text": "Why is my face hot? Stop it, face. He's the enemy.",
  "seed": 27247,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Why",
+   "start": 0.0,
+   "end": 0.6
+  },
+  {
+   "word": "is",
+   "start": 0.6,
+   "end": 0.78
+  },
+  {
+   "word": "my",
+   "start": 0.78,
+   "end": 0.94
+  },
+  {
+   "word": "face",
+   "start": 0.94,
+   "end": 1.18
+  },
+  {
+   "word": "hot?",
+   "start": 1.18,
+   "end": 1.54
+  },
+  {
+   "word": "Stop",
+   "start": 2.18,
+   "end": 2.3
+  },
+  {
+   "word": "it.",
+   "start": 2.3,
+   "end": 2.62
+  },
+  {
+   "word": "Face.",
+   "start": 3.18,
+   "end": 3.22
+  },
+  {
+   "word": "He's",
+   "start": 3.8,
+   "end": 3.96
+  },
+  {
+   "word": "the",
+   "start": 3.96,
+   "end": 4.08
+  },
+  {
+   "word": "enemy.",
+   "start": 4.08,
+   "end": 4.28
+  }
+ ],
+ "words_md5": "bc9f79f6f7551af1a394ef97bdc19fcd",
+ "whisper": "small.en"
 }
