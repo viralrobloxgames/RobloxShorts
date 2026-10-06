@@ -201,7 +201,7 @@ function leoAt(s, B) {
     case 'pump': { x = st(PUMP_AT.clone().add(V(0, 0, -1.4)), 0, 'determined'); x.pumping = true; return x; }
     case 'seal': {
       x = st(BARREL_DOCK.clone().add(V(1.8, 0, 3.2)), Math.PI - 0.5, 'determined');
-      if (s > W.adrift - 0.9) { const z = Math.max(47.2, 55.7 - Math.max(0, s - (W.adrift - 0.75)) * 9); const p = V(D.x + 1.8, D.y, z); x = st(p, Math.PI - 0.3, 'determined'); x.arms = [['L', 0.1, -1.35], ['R', 0.1, -1.35]]; if (z > 47.21 && s > W.adrift - 0.75) x.layers = [['walk', (55.7 - z) / STRIDE]]; }
+      if (s > W.adrift - 0.9) { const z = Math.max(47.6, 56.1 - Math.max(0, s - (W.adrift - 0.75)) * 9); const p = V(D.x + 1.8, D.y, z); x = st(p, Math.PI - 0.3, 'determined'); x.arms = [['L', 0.1, -1.35], ['R', 0.1, -1.35]]; if (z > 47.61 && s > W.adrift - 0.75) x.layers = [['walk', (56.1 - z) / STRIDE]]; }
       return x;
     }
   }
@@ -214,7 +214,7 @@ function noobAt(s) {
     case 'seal': {
       x = st(BARREL_DOCK.clone().add(V(-1.8, 0, 3.2)), Math.PI + 0.5, 'determined');
       if (s < W.adrift - 0.9) x.arms = [['R', 0.1, -2.0 + 0.4 * smooth(inv(W.seal - 0.15, W.seal + 0.25, s))]];
-      else { const z = Math.max(47.2, 55.7 - Math.max(0, s - (W.adrift - 0.75)) * 9); x = st(V(D.x - 1.8, D.y, z), Math.PI + 0.3, 'determined'); x.arms = [['L', 0.1, -1.35], ['R', 0.1, -1.35]]; if (z > 47.21 && s > W.adrift - 0.75) x.layers = [['walk', (55.7 - z) / STRIDE]]; }
+      else { const z = Math.max(47.6, 56.1 - Math.max(0, s - (W.adrift - 0.75)) * 9); x = st(V(D.x - 1.8, D.y, z), Math.PI + 0.3, 'determined'); x.arms = [['L', 0.1, -1.35], ['R', 0.1, -1.35]]; if (z > 47.61 && s > W.adrift - 0.75) x.layers = [['walk', (56.1 - z) / STRIDE]]; }
       return x;
     }
     case 'detect': case 'cta': {                                         // the detective
