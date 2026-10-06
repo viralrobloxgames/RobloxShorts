@@ -61,8 +61,8 @@ const KM = (name) => () => K.mark('kitchen', name);
 const KL = (x, y, z, heading = 0) => ({ pos: K.SET_ORIGIN.kitchen.clone().add(V(x, y, z)), heading });
 const M = {
   stairsTop: KM('stairs_top'), stairsMid: KM('stairs_mid'), stairsLow: KM('stairs_low'), stairsBottom: KM('stairs_bottom'),
-  stove: KM('stove_three_quarter'), islandEnd: () => KL(6.5, 0, 3.0, -1.0),   // in front of the island's right end: the walk to it crosses the frame fridge: KM('fridge'),
-  stool: (i, a) => { const m = K.mark('kitchen', `island_stool_${i}`); m.pos.y += 2 - 2 * (a?.scale ?? 1); return m; },
+  stove: KM('stove_three_quarter'), islandEnd: () => KL(6.5, 0, 3.0, -1.0), fridge: KM('fridge'),   // islandEnd: in front of the island's right end, so the walk to it crosses the frame
+  stool: (i, a) => { const m = K.mark('kitchen', `island_stool_${i}`); m.pos.y = K.getSet('kitchen').seatY(a?.scale ?? 1); return m; },   // hips on the seat (kit sit_chair)
   plateMax: () => KL(-1.2, 3.6, -1.25), plateSkye: () => KL(1.2, 3.6, -1.25), phoneDown: () => KL(2.3, 3.6, -1.0, 0.4),
   bagFloor: () => KL(2.5, 0, -3.9, -0.5), pan: () => KL(-2.85, 3.78, -10.1),
 };
@@ -136,14 +136,14 @@ const gest = (actor, name, side, t0, t1, t) => { const k = sm(inv(t0, t0 + 0.25,
 const STRIDE = 14.5;
 const PHONE_OFF = [-0.7, -0.3, 0];     // phone in the fist against her ear (hold() offset, phone frame)
 const PAN = () => true;                 // critic-6 #6/#15: Dad cooks the whole chapter, the pan in his right hand, the spatula in his left
-const SEAT_TOP = 2.4, LILY_KNEEL = 0.6;  // kitchen stool top; kneel_up root drop (kit posture), Lily kneeling on stool 1
+const SEAT_TOP = 2.2, LILY_KNEEL = 0.6;  // kitchen stool top; kneel_up root drop (kit posture), Lily kneeling on stool 1
 // the plate slide: Max turns on his stool with his left hand on the plate's rim; the plate follows that palm along the island top
 const SLIDE0 = () => T_PAY + 0.35, SLIDE1 = () => T_PAY + 1.35;
-const maxSlideH = (t) => 0.2 + 0.55 * sm(inv(SLIDE0(), SLIDE1(), t));
+const maxSlideH = (t) => 0.45 * sm(inv(SLIDE0(), SLIDE1(), t));   // the palm ends on the island in front of the gap, toward Skye (not in her)
 const palmL = (a) => { a.root.updateMatrixWorld(true); return a.bones['Arm.L'].localToWorld(V(0.5 * a.scale, -1.75 * a.scale, 0)); };
 // Max's left palm when posed for the slide at time tt (heading + full hold_out), projected on the island top
 function slidePalm(tt) {
-  K.playAnim(C.max, [[A.sit, 0]]); K.putOn(C.max, M.stool(2, C.max), { sit: true, heading: maxSlideH(tt) });
+  K.posture(C.max, 'sit_chair'); K.putOn(C.max, M.stool(2, C.max), { sit: true, heading: maxSlideH(tt) });
   K.gesture(C.max, 'hold_out', 'L', 1); const p = palmL(C.max); p.y = KO.y + 3.6; return p;
 }
 const FLIPS = () => [at(LN.pancakes) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5];
@@ -183,8 +183,8 @@ export function update(t, stage) {
     // legs driven by the distance travelled, arriving at the foot at 5.0 s
     const tLeave = at(LN.sorry) + 0.2, top = M.stairsTop(), T_FOOT = 5.0;
     if (t < T_FOOT) {
-      const u = inv(0, T_FOOT, t), from = top.pos.clone().lerp(bottom.pos, 0.3), pos = from.clone().lerp(bottom.pos, u);   // frame 0: out of the stairwell, a third of the way down
-      K.playAnim(C.skye, [[A.walk, (u * from.distanceTo(bottom.pos)) / STRIDE]]);
+      const u = 0.3 + 0.7 * inv(0, T_FOOT, t), pos = SET.stairsPath(u).pos, from = SET.stairsPath(0.3).pos;   // frame 0: out of the stairwell, a third of the way down; feet on the treads
+      K.playAnim(C.skye, [[A.walk, (from.distanceTo(pos)) / STRIDE]]);
       K.putOn(C.skye, { pos, heading: 0 });
     }
     else if (t < tLeave) {
@@ -192,8 +192,9 @@ export function update(t, stage) {
       const look = t < at(LN.thief) ? s2.pos : dadAt;
       K.putOn(C.skye, bottom, { heading: lerpH(K.faceTo(bottom, look), CHEAT, 0.55) });
     } else {
-      const m = K.walk(C.skye, A, bottom, endM, tLeave, t, { idleAt: idle });
-      if (m.done) {
+      const route = SET.fromStairs(endM.pos), d = Math.max(0, t - tLeave) * 12, m = SET.alongRoute(route, d);
+      if (!m.done) { K.playAnim(C.skye, [[A.walk, d / STRIDE]]); K.putOn(C.skye, { pos: m.pos, heading: m.heading }); }
+      else {
         K.playAnim(C.skye, [[A.idle, idle]]);
         const sh2 = sm(inv(at(LN.sleepover) + 0.2, at(LN.sleepover) + 0.45, t)) * (1 - sm(inv(end(LN.sleepover), end(LN.sleepover) + 0.3, t)));
         if (sh2 > 0) K.posture(C.skye, 'shrug', { mix: 0.35 * sh2, reset: false });   // a small shoulders-only lift
@@ -204,7 +205,7 @@ export function update(t, stage) {
     }
     K.dress(C.skye, ['skye_hoodie', 'backpack']);
   } else {
-    K.playAnim(C.skye, [[A.sit, 0]]);
+    K.posture(C.skye, 'sit_chair');
     // on her two lines she turns to the front-right camera: a thumb back over her right shoulder at the fridge, then a finger up (left arm, clear of Max)
     const turn = sm(inv(at(LN.fridgeAsk) - 0.2, at(LN.fridgeAsk) + 0.2, t)) * (1 - sm(inv(end(LN.cond) + 0.1, end(LN.cond) + 0.5, t)));
     K.putOn(C.skye, s3, { sit: true, heading: lerpH(-0.5, 0.45, turn) });
@@ -219,7 +220,7 @@ export function update(t, stage) {
   // --- Max: stool 2; turned a little to whoever matters; slides Skye the plate in the wide ---
   {
     const slide0 = T_PAY + 0.35, slide1 = T_PAY + 1.35;
-    K.playAnim(C.max, [[A.sit, 0]]);
+    K.posture(C.max, 'sit_chair');
     const toSkye = sm(inv(at(LN.ghost), at(LN.ghost) + 0.35, t)) * (1 - sm(inv(end(LN.ghost) + 0.1, end(LN.ghost) + 0.5, t)));
     let h = lerpH(t < at(LN.sorry) ? 0.4 : seated ? 0.5 : 0.3, K.faceTo(s2, bottom), toSkye);
     if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = maxSlideH(t);
