@@ -50,7 +50,8 @@ python3 scripts/narrate_multi.py projects/i-secretly-lived-in-my-enemys-house --
   "Back to", "Inside", "Dusk", or names a set: "The kitchen.", ...), plus every `[+N]`; a ghost line's echo tail runs past
   its `end` into the gap.
 - Levels: every clip is levelled to the same speech RMS (-20 dBFS) before its note effect, so the four voices match; the
-  effects (`FX` in the script) then make whisper/offscreen/behind door quieter and shriek/phone a little louder.
+  effects (`FX` in the script) then set the level: measured speech RMS normal -22.5 dB, phone -25.4, behind door -28.4,
+  offscreen, below -29.2 (whisper about -26, shriek about -20).
 - Commit after a run: `audio/qwen/take-01/clips/` (`*.wav` + `*.json` sidecars), `audio/qwen/take-01/clips_raw/`, and
   `audio/chapters/chNN/`. Never commit stand-in output: `--standin MAX=brittney` (testing before a voice exists) writes to
   `audio/chapters-standin/` and its clips are hashed under the stand-in's voice name, so they never pass for real ones —
