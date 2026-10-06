@@ -424,7 +424,7 @@
       "title": "He Won The Marathon By Car",
       "series": "standalone story",
       "created": "2026-10-05",
-      "status": "scene_built",
+      "status": "farm_render_running",
       "logline": "True story: at the 1904 St. Louis Olympic marathon, in 90-degree heat and dust with one water stop, the first man across the line had ridden eleven miles in a car and nearly got the gold before officials heard about it; a Cuban mailman in cut-off street clothes chatted with the crowd, ate rotten orchard apples, napped, and still finished fourth; another runner was chased a mile off course by a dog.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/the-marathon-car-ride",
@@ -494,11 +494,11 @@
       "title": "She Went Over Niagara Falls In A Barrel",
       "series": "standalone story",
       "created": "2026-10-06",
-      "status": "script_approved",
+      "status": "farm_render_running",
       "logline": "True story: on her 63rd birthday in 1901, a broke schoolteacher who tells everyone she's twenty years younger climbs into a wooden barrel above Niagara Falls; her cat went over first as a test and survived; friends pump in air with a bicycle pump and set her adrift; she goes over the Horseshoe Falls and climbs out twenty minutes later with a cut on her head, alive ('never again'). Famous at last, she waits for the money, and her manager runs off with her barrel; she spends her savings on detectives to get it back.",
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/over-the-falls-in-a-barrel",
-      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Web route."
+      "notes": "Overnight run 2026-10-06: story picked by the user; script approval waived for this run (posting still needs approval). Annie Edson Taylor, Frank M. Russell; named only in the post copy. 'Don't try this' only in the post copy. The popular quote 'No one ought ever do that again' could not be verified word for word; narration says 'Never again' (her documented 'I will never go over the Falls again'). Narration 59.9 s (George voice C, gap 0.6 / beat 1.3). Web route: barrel_clip.js (19 shots), kit (upper river, Horseshoe curtain, mist, gorge, dock, barrel, pump, cake, rowboat, poster); previews, motion pass, hold check and fit check (Max + top_hat) done; full render queued after He Won The Marathon By Car."
     },
     {
       "title": "She Raced Around The World",
@@ -519,6 +519,16 @@
       "platform": "TikTok (>60 s) / YouTube Shorts",
       "project": "projects/he-sold-the-eiffel-tower",
       "notes": "Overnight run (user, 2026-10-05 23:45 UK: no script approval needed tonight). Picked through general research; facts and sources in source/story.md ('tries it again', not 'sold it twice'). Web route; Max as Lustig in the top_hat, Leo as Poisson, procedural Eiffel Tower."
+    },
+    {
+      "title": "The First Speeding Ticket",
+      "series": "standalone story",
+      "created": "2026-10-06",
+      "status": "script_draft_awaiting_approval",
+      "logline": "True story: on 28 January 1896 in Kent, Walter Arnold becomes the first person charged with speeding, at 8 mph in a 2 mph zone; the law also wanted a crew of three with one walking ahead. A policeman chases him on a bicycle for five miles; he is charged with four offences at once. Months later the walker rule goes, the limit rises to 14 mph, and drivers celebrate with a run from London to Brighton that is still driven every year.",
+      "platform": "TikTok (>60 s) / YouTube Shorts",
+      "project": "projects/the-first-speeding-ticket",
+      "notes": "Draft prepared during the 2026-10-05/06 overnight run while the renders ran; not narrated or built. Needs approval. Sources: Historic UK, Guinness World Records. Walter Arnold named only in the post copy."
     }
   ],
   "statuses": [
