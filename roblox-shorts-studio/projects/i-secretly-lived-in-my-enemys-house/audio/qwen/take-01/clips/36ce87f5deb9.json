@@ -3,5 +3,79 @@
  "text": "Okay. This weekend, I just ask her. What's the worst she can say? Gross?",
  "seed": 91892,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Okay,",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "this",
+   "start": 0.8,
+   "end": 1.04
+  },
+  {
+   "word": "weekend,",
+   "start": 1.04,
+   "end": 1.34
+  },
+  {
+   "word": "I",
+   "start": 1.7,
+   "end": 1.82
+  },
+  {
+   "word": "just",
+   "start": 1.82,
+   "end": 2.02
+  },
+  {
+   "word": "ask",
+   "start": 2.02,
+   "end": 2.32
+  },
+  {
+   "word": "her,",
+   "start": 2.32,
+   "end": 2.56
+  },
+  {
+   "word": "what's",
+   "start": 3.14,
+   "end": 3.34
+  },
+  {
+   "word": "the",
+   "start": 3.34,
+   "end": 3.48
+  },
+  {
+   "word": "worst",
+   "start": 3.48,
+   "end": 3.72
+  },
+  {
+   "word": "she",
+   "start": 3.72,
+   "end": 4.04
+  },
+  {
+   "word": "can",
+   "start": 4.04,
+   "end": 4.22
+  },
+  {
+   "word": "say?",
+   "start": 4.22,
+   "end": 4.56
+  },
+  {
+   "word": "Gross?",
+   "start": 5.24,
+   "end": 5.28
+  }
+ ],
+ "words_md5": "c88da5b171060438f18412d2c19a3a82",
+ "whisper": "small.en"
 }

@@ -1,0 +1,56 @@
+{
+ "voice": "brittney",
+ "text": "It's dusty up there. It's a very dusty attic.",
+ "seed": 41839,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "It's",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "dusty",
+   "start": 0.32,
+   "end": 0.56
+  },
+  {
+   "word": "up",
+   "start": 0.56,
+   "end": 0.76
+  },
+  {
+   "word": "there.",
+   "start": 0.76,
+   "end": 0.96
+  },
+  {
+   "word": "It's",
+   "start": 1.2,
+   "end": 1.34
+  },
+  {
+   "word": "a",
+   "start": 1.34,
+   "end": 1.42
+  },
+  {
+   "word": "very",
+   "start": 1.42,
+   "end": 1.66
+  },
+  {
+   "word": "dusty",
+   "start": 1.66,
+   "end": 1.96
+  },
+  {
+   "word": "attic.",
+   "start": 1.96,
+   "end": 2.24
+  }
+ ],
+ "words_md5": "bc8873f2a12c602a177f63c900daccfe",
+ "whisper": "small.en"
+}
