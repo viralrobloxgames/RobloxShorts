@@ -62,6 +62,7 @@ Orchestrator routines: trig_01SHFzCL5TM3VVuWqEnfUCrE (:47) and a second one at :
 | render-ch09-b | session_01RmDSQSmZxiSnYwsnaz53yT |
 | render-ch10-b | session_012KdE2mYxkFxh8Hc5YFHzYW |
 | render-ch11-b | session_019itEkDEcdnMftz8PwrhKbc |
+| package (thumbnail, YouTube copy) | session_019cE5sZwNxrmfZaUNbxuCAr |
 
 Segment B helpers (static, they watch their chapter's status file and start at READY_FOR_GATE): ch01 kit-pipeline,
 ch02 kit-cast, ch03 kit-props, ch04 kit-sets-a, ch05 kit-sets-b, ch06 kit-sets-c, ch07 voices, ch08 narration-tool,
