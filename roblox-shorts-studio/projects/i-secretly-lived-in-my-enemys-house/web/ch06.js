@@ -176,7 +176,7 @@ function bedroom(t, idle, sh) {
   if (t < at(3)) {                                    // "Hey. So. Do you want to go to the Halloween dance with me?"
     const k = smooth((t - at(2) + 0.1) / 0.4) * (1 - smooth((t - wordT(2, 6)) / 0.4));   // nervous hand to his chin
     if (k > 0) { K.playAnim(mx, [[A.idle, idle], [A.think, 0.4, 2 * k, false]]); K.putOn(mx, m); }
-    const offer = smooth((t - wordT(2, 9) + 0.1) / 0.3);                               // open-hand offer on "with me?"
+    const offer = smooth((t - wordT(2, 10) + 0.1) / 0.3);                               // open-hand offer on "with me?"
     if (offer > 0) arm(mx, 'L', 1.1 * offer, 0.3 * offer, 0);
   } else if (t < at(4)) {                             // "No. Too serious." head shake
     headTurn(mx, 0.3 * Math.sin((t - at(3)) * 14) * pulse(t, at(3), 0.8)); face = 'annoyed';
@@ -289,7 +289,7 @@ function hallway(t, idle, sh) {
         K.playAnim(dd, [[A.idle, idle]]); K.putOn(dd, { pos: mid.pos, heading: h });
       }
       dFace = t < at(13, 1.6) ? 'nervous' : t < at(15) ? 'determined' : t < at(17) ? 'suspicious' : 'smug';
-      if (t >= wordT(14, 11) && t < at(15)) swordUp = smooth((t - wordT(14, 11)) / 0.25);   // "draw the line"
+      if (t >= wordT(14, 13) && t < at(15)) swordUp = smooth((t - wordT(14, 13)) / 0.25);   // "draw the line"
       if (t >= at(17) && t < T.hatch()) headTurn(dd, 0, 0.18 * smooth((t - at(17)) / 0.3)); // chin up
     } else {
       const m = K.walk(dd, A, mid, hm, T.hatch(), t, { speed: 9, idleAt: idle, endHeading: hm.heading });

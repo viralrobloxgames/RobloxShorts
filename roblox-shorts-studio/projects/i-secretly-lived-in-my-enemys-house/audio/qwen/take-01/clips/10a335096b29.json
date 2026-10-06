@@ -3,5 +3,24 @@
  "text": "No. Too serious.",
  "seed": 90434,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "No.",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "word": "Too",
+   "start": 0.78,
+   "end": 0.96
+  },
+  {
+   "word": "serious.",
+   "start": 0.96,
+   "end": 1.26
+  }
+ ],
+ "words_md5": "ab9fa41dfdd756ff32b316aab674d8be",
+ "whisper": "small.en"
 }

@@ -1,0 +1,51 @@
+{
+ "voice": "max_kid",
+ "text": "Who did you think was making the sandwiches?",
+ "seed": 66381,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Who",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "did",
+   "start": 0.2,
+   "end": 0.34
+  },
+  {
+   "word": "you",
+   "start": 0.34,
+   "end": 0.54
+  },
+  {
+   "word": "think",
+   "start": 0.54,
+   "end": 0.74
+  },
+  {
+   "word": "was",
+   "start": 0.74,
+   "end": 0.94
+  },
+  {
+   "word": "making",
+   "start": 0.94,
+   "end": 1.16
+  },
+  {
+   "word": "the",
+   "start": 1.16,
+   "end": 1.4
+  },
+  {
+   "word": "sandwiches?",
+   "start": 1.4,
+   "end": 1.76
+  }
+ ],
+ "words_md5": "23ca9ef300f0668d2d3e46a17f31e24a",
+ "whisper": "small.en"
+}
