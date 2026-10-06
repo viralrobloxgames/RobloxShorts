@@ -1,4 +1,4 @@
-STATUS: RENDERING
+STATUS: DONE
 FRAMES: 1792
 SPLIT: 807
 COMMIT: 0f5bcc3f
@@ -11,4 +11,4 @@ render-ch09-b (helper, segment B of ch09 per production/briefs/render_plan.md "H
 - [x] `delivery/chapters/ch09_b.mp4` (+ .json): h264 1920x1080 30 fps yuv420p, 986 frames, 32.87 s, 20 captions, 9.3 MB;
       decodes clean; stills at 1.5 / 15 / 31 s checked (drawing close-up, Skye+Lily two-shots, captions placed)
 - renders/ch09 kept (807-1792 + frame_hashes.json) for final-review re-syncs
-- [ ] review-2 fixes (from ch09, 18:54Z): re-rendering 807-915,1171-1378,1455-1525 at 0f5bcc3f, then re-encode ch09_b.mp4
+- [x] review-2 fixes (from ch09, 18:54Z): re-rendered 807-915,1171-1378,1455-1525 at 0f5bcc3f (388 frames), ch09_b.mp4 re-encoded --range 807-1792 --total 1792: 986 frames, decodes clean, 9.5 MB; stills at 851, 1257, 1482 checked
