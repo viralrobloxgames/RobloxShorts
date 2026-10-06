@@ -52,236 +52,232 @@ const T = {
   jump: at(7) - 0.05,               // Skye leaps up
   exit: at(13) + 0.3,               // Max leaves for the door
   dusk: at(14) - 0.35,              // the back of Max's house
+  door: end(14) - 1.6,              // the unlocked back door opens
   night: at(15) - 1.2,              // back in the bedroom; three knocks before "Maaax"
   lump: end(18) + 0.15,             // [+0.8] Max yanks the blanket over his head; the closet opens a crack
 };
 const KNOCKS = [T.night + 0.25, T.night + 0.55, T.night + 0.85];
 
-// ---------- marks (fallbacks are only used until the set defines the mark) ----------
+// ---------- marks (all from the sets) ----------
 const M = {
-  closet: () => K.mark('bedroom', 'closet_inside', { pos: V(-8, 0, 7), heading: -Math.PI / 2 + 0.0 }),
-  closetHide: () => K.mark('bedroom', 'closet_hide', { pos: V(-8.6, 0, 8.6), heading: -Math.PI / 2 }),
-  closetFront: () => K.mark('bedroom', 'closet_front', { pos: V(-3.5, 0, 6.5), heading: Math.PI / 2 }),
-  bedSide: () => K.mark('bedroom', 'bed_side', { pos: V(5, 0, 0), heading: -1.4 }),
-  bedLie: () => K.mark('bedroom', 'bed_lie', { pos: V(6.5, 1.6, -3), heading: -1.2 }),
-  deskSkye: () => K.mark('classroom', 'desk_skye', { pos: V(-4, 0, -2), heading: Math.PI }),
-  deskMax: () => K.mark('classroom', 'desk_max', { pos: V(0, 0, 3), heading: Math.PI }),
-  aisle: () => K.mark('classroom', 'aisle_skye', { pos: V(-1.6, 0, -1.2), heading: -Math.PI / 2 }),
-  classDoor: () => K.mark('classroom', 'door', { pos: V(8, 0, 6), heading: 0 }),
-  extra: (i) => K.mark('classroom', `desk_extra_${i + 1}`, { pos: V([-4, 4, 4, -8][i], 0, [3, -2, 3, 3][i]), heading: Math.PI }),
-  yard: () => K.mark('exterior', 'yard_start', { pos: V(-8, 0, 6), heading: 0.9 }),
-  backDoor: () => K.mark('exterior', 'back_door', { pos: V(2, 0, 2), heading: Math.PI }),
-  inside: () => K.mark('exterior', 'inside_back_door', { pos: V(2, 0, -1.5), heading: Math.PI }),
+  closet: () => ({ pos: V(-11.5, 0, 3.0), heading: -1.448 - 0.3 }),         // a little further toward the doors than closet_inside, so the gap camera has room
+  closetHoodies: () => ({ pos: V(-14.2, 0, 4.0), heading: Math.PI / 2 + 0.5 }), // pressed in among the right-hand hoodies: only her pink hair pokes out
+  closetDeep: () => K.mark('bedroom', 'closet_deep'),
+  closetCrack: () => K.mark('bedroom', 'closet_crack'),
+  closetFront: () => K.mark('bedroom', 'closet_front'),
+  bedSide: () => K.mark('bedroom', 'bed_side'),
+  bedSit: () => K.mark('bedroom', 'bed_sit'),
+  deskSkye: () => K.mark('classroom', 'desk_skye'),
+  aisle: () => K.mark('classroom', 'aisle_mid'),
+  skyeSide: () => K.mark('classroom', 'skye_desk_side'),
+  classDoor: () => K.mark('classroom', 'door_inside'),
+  extra: (i) => K.mark('classroom', `desk_extra_${i + 1}`),
+  gate: () => K.mark('exterior', 'gate'),
+  pathMid: () => K.mark('exterior', 'path_mid'),
+  pathNear: () => K.mark('exterior', 'path_near'),
+  step: () => K.mark('exterior', 'porch_step'),
+  backDoor: () => K.mark('exterior', 'back_door'),
+  inside: () => K.mark('exterior', 'inside_door'),
 };
-const SIT_DROP = 1.55;                                  // stand-in: the root drops this much when seated on a chair
 
 // ---------- setup ----------
-let C, A, P = {}, beam, RED = null, OVL = {};
+let C, A, P = {}, beam, RED = null, OVL = {}, SETS = {};
 export async function setup(stage) {
-  await K.buildSets(stage, ['bedroom', 'classroom', 'exterior']);
+  SETS = await K.buildSets(stage, ['bedroom', 'classroom', 'exterior']);
   K.setState({ chapter: 1 });
   C = await K.loadCast(stage.scene);
-  K.dress(C.skye, 'skye_hoodie'); K.dress(C.skye, 'backpack');
-  A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'point', 'sit', 'laugh', 'proud', 'talk', 'scheming']);
-  P.torch = K.makeProp('flashlight'); stage.scene.add(P.torch); K.hold(P.torch, C.max, 'R');
-  P.lunchbox = K.makeProp('lunchbox'); stage.scene.add(P.lunchbox);
-  P.sandwich = K.makeProp('sandwich'); stage.scene.add(P.sandwich);
-  P.spider = K.makeProp('rubber_spider'); stage.scene.add(P.spider);
-  beam = K.flashlightBeam(stage);
+  A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'sit', 'laugh', 'point']);
+  P.torch = K.makeProp('flashlight', { beam: true }); K.hold(P.torch, C.max, 'R');
+  P.lunchbox = K.makeProp('lunchbox', { open: true, spider: true }); stage.scene.add(P.lunchbox);
+  P.spider = K.makeProp('rubber_spider'); K.hold(P.spider, C.max, 'R');
+  beam = K.flashlightBeam(stage, { cone: 0 });
 }
 
 // ---------- helpers ----------
-// door controls are the set's (kit-sets-a / kit-sets-c); no-ops until the set has them
-const door = (set, name, u) => { if (set.setDoor) set.setDoor(name, u); else if (set.doors?.[name]?.set) set.doors[name].set(u); };
-const bed = (set, state) => { if (set.setBed) set.setBed(state); };
-// one-arm poses on top of the animation (no two-arms-up): arm bone euler (x forward/back, z sideways)
+const bedroom = () => SETS.bedroom, classroom = () => SETS.classroom, exterior = () => SETS.exterior;
+// one-arm poses on top of the animation (never both arms up): arm bone euler (x forward/back, z sideways)
 const armSet = (a, sd, x, y = 0, z = 0) => a.bones['Arm.' + sd].rotation.set(x, y, z);
-const handOverMouth = (a) => armSet(a, 'L', -2.35, 0.0, -0.55);     // left hand up across the mouth
+const handOverMouth = (a) => armSet(a, 'L', -2.2, 0.0, -0.95);     // left hand up across the mouth
 const crossArms = (a) => { armSet(a, 'L', -1.35, 0, -0.75); armSet(a, 'R', -1.25, 0, 0.75); };
 const hipsHands = (a) => { armSet(a, 'L', 0.1, 0, 0.55); armSet(a, 'R', 0.1, 0, -0.55); };
 const headTurn = (a, y, x = 0) => a.bones.Head?.rotation.set(x, y, 0);
 const faceAt = (list, t, dflt) => { let f = dflt; for (const [t0, x] of list) if (t >= t0) f = x; return f; };
-const offset = (m, dx, dz, dy = 0) => ({ pos: m.pos.clone().add(V(dx, dy, dz)), heading: m.heading });
-const fw = (h) => V(Math.sin(h), 0, Math.cos(h));
-const rt = (h) => V(-Math.cos(h), 0, Math.sin(h));      // the right of something facing h
+const cam = (set, name) => set.cams[name];
+const shotOf = (c) => ({ pos: c.pos.clone(), target: c.target.clone(), fov: c.fov });
+function push(stage, a, b, u) { return K.applyShot(stage, K.blendShot(a, b, smooth(clamp(u)))); }
+// a set cam pushed in toward its target by k (0..1 of the distance)
+// inside the closet, in the gap between the two clusters of hoodies (z 0.7..3.3), behind the rail
+const GAP = V(-15.0, 4.5, 2.0);
+// close on Skye from inside the closet (3/4 front); k pushes in
+const skyeCloset = (k) => { const h = K.headPos(C.skye); const p = h.clone().add(V(-2.9, 0.05, -0.6)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.25, 0)), fov: 36 }; };
+// classroom: every camera on the +z side of the Skye-Max line (the back rows' side, clear of the seated extras)
+const lineN = () => { const d = K.headPos(C.max).sub(K.headPos(C.skye)); d.y = 0; d.normalize(); const n = V(d.z, 0, -d.x); if (n.z < 0) n.negate(); return { d, n }; };
+// a 3/4 single: out to the side of the Skye-Max line and a little toward the other person (so we see the face)
+const single = (a, side, k) => { const { d, n } = lineN(), h = K.headPos(a); const p = h.clone().addScaledVector(n, 4.4).addScaledVector(d, 1.7 * side).add(V(0, 0.35, 0)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.45, 0)), fov: 36 }; };
+const pair = (dist) => { const { n } = lineN(), m = K.headPos(C.skye).lerp(K.headPos(C.max), 0.5); return { pos: m.clone().addScaledVector(n, dist).add(V(0, 0.9, 0)), target: m.clone().add(V(0, -0.9, 0)), fov: 38 }; };
+const dolly = (c, k) => { const s = shotOf(c); s.pos.lerp(s.target, k); return s; };
 
 // ---------- the shot table ----------
 // scene: night1 | class | dusk | night2. cam(stage, t, sh) frames whoever speaks.
 const S = {
-  hook: { scene: 'night1', cam: (s, t) => closetPov(s, t) },
-  skyeCU: { scene: 'night1', cam: (s, t, sh) => push(s, K.camOn(s, C.skye, 'mcu', { angle: 0.35, apply: false }), K.camOn(s, C.skye, 'cu', { angle: 0.35, apply: false }), inv(sh.start, sh.start + 3.5, t)) },
-  maxDoor: { scene: 'night1', cam: (s) => K.camOn(s, C.max, 'ms', { angle: 0.75 }) },
-  doorOpen: { scene: 'night1', cam: (s, t) => closetPov(s, t, true) },
-  maxHoodies: { scene: 'night1', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.3 }) },
-  backToBed: { scene: 'night1', cam: (s) => wideRoom(s) },
-  skyeWhisper: { scene: 'night1', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.35 }) },
-  classWide: { scene: 'class', cam: (s, t, sh) => classWide(s, inv(sh.start, sh.start + 4.5, t)) },
-  maxMocks: { scene: 'class', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.85 }) },
-  skyeBack: { scene: 'class', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.85 }) },
-  insert: { scene: 'class', cam: (s) => K.camOn(s, C.skye, 'ms', { angle: 0.9, height: 2.6, look: V(0, -1.2, 0) }) },
-  shriek: { scene: 'class', cam: (s) => K.camOn(s, C.skye, 'ms', { angle: 0.3 }) },
-  maxLaugh: { scene: 'class', cam: (s) => K.camOn(s, C.max, 'mcu', { angle: 0.85 }) },
-  classTwo: { scene: 'class', cam: (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms' }) },
-  skyeAsks: { scene: 'class', cam: (s) => K.camOn(s, C.skye, 'ms', { angle: 0.85 }) },
-  maxBrags: { scene: 'class', cam: (s, t, sh) => push(s, K.camOn(s, C.max, 'ms', { angle: 0.4, apply: false }), K.camOn(s, C.max, 'mcu', { angle: 0.4, apply: false }), inv(sh.start, sh.start + 5, t)) },
-  skyeSees: { scene: 'class', cam: (s, t, sh) => push(s, K.camOn(s, C.skye, 'mcu', { angle: 0.35, apply: false }), K.camOn(s, C.skye, 'cu', { angle: 0.35, apply: false }), inv(sh.start, sh.start + 1.6, t)) },
-  maxLeaves: { scene: 'class', cam: (s) => K.twoShot(s, C.skye, C.max, { framing: 'ws' }) },
-  yardWide: { scene: 'dusk', cam: (s) => yardWide(s) },
-  backDoor: { scene: 'dusk', cam: (s) => K.camOn(s, C.skye, 'ms', { angle: 0.6, fov: 38 }) },
-  knock: { scene: 'night2', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.35 }) },
-  maxBed: { scene: 'night2', cam: (s) => K.camOn(s, C.max, 'ms', { angle: 0.4 }) },
-  maxBedCU: { scene: 'night2', cam: (s, t, sh) => push(s, K.camOn(s, C.max, 'mcu', { angle: 0.4, apply: false }), K.camOn(s, C.max, 'cu', { angle: 0.4, apply: false }), inv(sh.start, sh.start + 4, t)) },
-  dayOne: { scene: 'night2', cam: (s) => wideRoom(s, true) },
+  hook: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).lerp(K.headPos(C.skye), 0.5).add(V(0, -0.4, 0)), fov: 50 }) },
+  skyeCU: { scene: 'night1', cam: (s, t, sh) => push(s, skyeCloset(0), skyeCloset(0.25), inv(sh.start, sh.start + 3.8, t)) },
+  maxDoor: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 32 }) },
+  doorOpen: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.8, 0)), fov: 40 }) },
+  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: V(-11.3, 5.3, 0.2), target: K.headPos(C.skye).add(V(0, 0.2, 0)), fov: 30 }) },
+  maxHoodies: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.45, 0)), fov: 24 }) },
+  backToBed: { scene: 'night1', cam: (s) => K.setCam(s, cam(bedroom(), 'two_shot_bed_closet'), { clear: false }) },
+  skyeWhisper: { scene: 'night1', cam: (s) => K.applyShot(s, skyeCloset(0.2)) },
+  classWide: { scene: 'class', cam: (s, t, sh) => push(s, shotOf(cam(classroom(), 'wide_front')), dolly(cam(classroom(), 'wide_front'), 0.3), inv(sh.start, sh.start + 4.5, t)) },
+  maxMocks: { scene: 'class', cam: (s) => K.applyShot(s, single(C.max, -1, 0)) },
+  skyeBack: { scene: 'class', cam: (s) => K.setCam(s, cam(classroom(), 'cu_skye_desk'), { clear: false }) },
+  insert: { scene: 'class', cam: (s) => K.setCam(s, cam(classroom(), 'lunchbox_top'), { clear: false }) },
+  shriek: { scene: 'class', cam: (s) => K.applyShot(s, pair(8.5)) },
+  maxLaugh: { scene: 'class', cam: (s) => K.applyShot(s, single(C.max, -1, 0)) },
+  classTwo: { scene: 'class', cam: (s) => K.applyShot(s, pair(7.5)) },
+  skyeAsks: { scene: 'class', cam: (s) => K.applyShot(s, single(C.skye, 1, 0.1)) },
+  maxBrags: { scene: 'class', cam: (s, t, sh) => push(s, single(C.max, -1, 0.1), single(C.max, -1, 0.35), inv(sh.start, sh.start + 5, t)) },
+  skyeSees: { scene: 'class', cam: (s, t, sh) => push(s, single(C.skye, 1, 0), single(C.skye, 1, 0.3), inv(sh.start, sh.start + 1.6, t)) },
+  maxLeaves: { scene: 'class', cam: (s) => K.setCam(s, cam(classroom(), 'wide_front'), { clear: false }) },
+  yardWide: { scene: 'dusk', cam: (s, t, sh) => push(s, shotOf(cam(exterior(), 'dusk_wide')), dolly(cam(exterior(), 'dusk_wide'), 0.35), inv(sh.start, sh.start + 4, t)) },
+  backDoor: { scene: 'dusk', cam: (s) => K.applyShot(s, { pos: V(1500 + 1.2, 4.4, -6.2), target: K.headPos(C.skye).add(V(0, -1.3, 0)), fov: 40 }) },
+  knock: { scene: 'night2', cam: (s) => K.applyShot(s, skyeCloset(0.1)) },
+  maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(2.6, 0.5, 6.0)), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 34 }) },
+  maxBedCU: { scene: 'night2', cam: (s, t, sh) => push(s, shotOf(cam(bedroom(), 'bed_cu')), dolly(cam(bedroom(), 'bed_cu'), 0.2), inv(sh.start, sh.start + 4, t)) },
+  dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-2.5, 5.4, 7.5), target: V(-8.8, 3.5, -1.0), fov: 50 }) },
 };
 const SHOTS = [
-  ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['maxHoodies', at(2) - 0.1],
+  ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.45], ['maxHoodies', at(2) - 0.1],
   ['backToBed', T.doorShut], ['skyeWhisper', at(3) - 0.2],
   ['classWide', T.class], ['maxMocks', at(5)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
-  ['yardWide', T.dusk], ['backDoor', at(14, 3.6)],
+  ['yardWide', T.dusk], ['backDoor', T.door - 4.2],
   ['knock', T.night], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
 ].map(([id, start]) => ({ id, start, ...S[id] })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 const SCENE = { night1: ['bedroom', 'night_moon'], class: ['classroom', 'school_day'], dusk: ['exterior', 'dusk'], night2: ['bedroom', 'night_moon'] };
 
-// ---------- cameras built from the closet's own frame ----------
-function push(stage, a, b, u) { return K.applyShot(stage, K.blendShot(a, b, smooth(u))); }
-function closetBasis() { const c = M.closet(); return { c, f: fw(c.heading), r: rt(c.heading) }; }
-// Inside the closet, behind and beside Skye, looking out through the door gap at Max: both faces read (frame 0).
-function closetPov(stage, t, opened = false) {
-  const set = K.currentSet();
-  if (set.cams.closet_pov && !opened) return K.setCam(stage, set.cams.closet_pov);
-  const { c, f, r } = closetBasis();
-  const pos = c.pos.clone().addScaledVector(f, -1.6).addScaledVector(r, -2.2).add(V(0, 4.9, 0));
-  const tgt = K.headPos(C.max).lerp(K.headPos(C.skye), opened ? 0.15 : 0.45).add(V(0, -0.5, 0));
-  return K.setCam(stage, { pos, target: tgt, fov: opened ? 42 : 46 }, { clear: false });
-}
-function wideRoom(stage, end = false) {
-  const set = K.currentSet();
-  if (set.cams.two_shot_bed_closet) return K.setCam(stage, set.cams.two_shot_bed_closet);
-  return K.twoShot(stage, C.max, C.skye, { framing: 'ws', fov: 40 });
-}
-function classWide(stage, u) {
-  const set = K.currentSet();
-  if (set.cams.classroom_wide) return K.setCam(stage, set.cams.classroom_wide);
-  const a = K.twoShot(stage, C.skye, C.max, { framing: 'ws', apply: false, fov: 42 }), b = K.twoShot(stage, C.skye, C.max, { framing: 'ms', apply: false, fov: 42 });
-  return push(stage, a, b, u * 0.6);
-}
-function yardWide(stage) {
-  const set = K.currentSet();
-  if (set.cams.back_door_wide) return K.setCam(stage, set.cams.back_door_wide);
-  return K.camOn(stage, C.skye, 'ws', { angle: 0.9, fov: 45 });
-}
-
 // ---------- blocking per scene ----------
 function night1(t, set, idle) {
   K.only(C, ['skye', 'max']);
-  K.setLine(C.max, C.skye, 1);
-  // closet door: ajar at frame 0 (the camera sees Max through the gap), swings open, shut again
-  const open = t < T.doorOpen ? 0.22 : t < T.doorShut ? 0.22 + 0.78 * easeOut(inv(T.doorOpen, T.doorOpen + 0.45, t)) : 1 - easeIn(inv(T.doorShut, T.doorShut + 0.4, t));
-  door(set, 'closet', open);
-  bed(set, 'normal');
-  // Skye: 3/4 to the camera in the closet, left hand over her mouth; ducks behind the hoodies while the door is open
-  const c = M.closet(), hideU = smooth(inv(T.doorOpen - 0.35, T.doorOpen, t)) * (1 - smooth(inv(T.doorShut + 0.4, T.doorShut + 0.9, t)));
-  const sk = { pos: c.pos.clone().lerp(M.closetHide().pos, hideU), heading: c.heading + 0.95 };
-  K.playAnim(C.skye, [[A.idle, idle]]); K.putOn(C.skye, sk);
-  if (t < end(3) - 0.6) handOverMouth(C.skye);
-  headTurn(C.skye, -0.35);
-  // Max: creeps from the bed to the closet (real walk, legs by distance), stops to listen, on to the doors; back to bed
-  const bs = M.bedSide(), cf = M.closetFront(), mid = { pos: bs.pos.clone().lerp(cf.pos, 0.45), heading: bs.heading };
-  const toCloset = K.faceTo(cf, M.closet());
+  K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
+  // closet doors: ajar at frame 0 (closet_pov sees Max through the gap), swung open, then shut
+  const open = t < T.doorOpen ? 0.5 : t < T.doorShut ? 0.5 + 0.42 * easeOut(inv(T.doorOpen, T.doorOpen + 0.45, t)) : 0.92 * (1 - easeIn(inv(T.doorShut, T.doorShut + 0.4, t)));
+  set.setClosetDoors(Math.max(open, t < T.doorShut ? 0.95 : open), open); set.setBlanketUp(false);
+  K.setPractical(set, 'closet', t > T.doorOpen && t < T.doorShut ? 0.5 : 0);   // the beam spilling into the closet   // left leaf wide (Max seen past it), right leaf ajar set.setLamp(false);
+  // Skye: 3/4 to the camera in the closet, left hand over her mouth; presses back into the hoodie gap while the doors are open
+  const c = M.closet(), hideU = smooth(inv(T.doorOpen - 0.3, T.doorOpen + 0.05, t)) * (1 - smooth(inv(T.doorShut + 0.4, T.doorShut + 0.9, t)));
+  K.playAnim(C.skye, [[A.idle, idle]]);
+  K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetHoodies().pos, hideU), heading: c.heading + hideU * (M.closetHoodies().heading - c.heading) });
+  if (t < end(3) - 0.5) handOverMouth(C.skye);
+  // Max: creeps from the bed to the closet (real walk), stops to listen, on to the doors; then pads back to bed
+  const bs = M.bedSide(), cf = M.closetFront(), mid = { pos: bs.pos.clone().lerp(cf.pos, 0.55), heading: K.faceTo(bs, cf) };
+  const start = { pos: bs.pos.clone().lerp(cf.pos, 0.2), heading: mid.heading };
   if (t < T.doorShut) {
-    if (t < at(1) - 1.3) K.walk(C.max, A, { pos: bs.pos.clone().lerp(cf.pos, 0.05), heading: 0 }, mid, -0.5, t, { speed: 7, idleAt: idle, endHeading: toCloset });
-    else K.walk(C.max, A, mid, cf, at(1) - 1.3, t, { speed: 7, idleAt: idle, endHeading: toCloset });
-    // he looks right at the pink lock (between two hoodies) while the door is open
-    headTurn(C.max, t > T.doorOpen + 0.35 && t < at(2) ? -0.25 : 0);
-  } else K.walk(C.max, A, cf, bs, T.doorShut + 0.25, t, { speed: 9, idleAt: idle });
-  // flashlight up, aimed at the closet
-  armSet(C.max, 'R', -1.45, 0, 0.05);
-  const sweep = t > T.doorOpen && t < at(2) ? Math.sin((t - T.doorOpen) * 3.2) * 0.35 : 0;
-  return { torch: t < T.doorShut + 0.3, sweep };
+    if (t < at(1) - 1.4) K.walk(C.max, A, start, mid, -0.35, t, { speed: 7, idleAt: idle, endHeading: K.faceTo(mid, cf) });
+    else K.walk(C.max, A, mid, cf, at(1) - 1.4, t, { speed: 7, idleAt: idle, endHeading: cf.heading });
+    headTurn(C.max, t > T.doorOpen + 0.35 && t < at(2) ? -0.25 : 0);   // he looks right at the pink lock
+  } else K.walk(C.max, A, cf, bs, T.doorShut + 0.25, t, { speed: 10, idleAt: idle });
+  const up = t < T.doorShut + 0.2;
+  armSet(C.max, 'R', up ? -1.35 : -0.3, 0, 0.05);                   // flashlight up, aimed at the closet
+  const sweep = t > T.doorOpen && t < at(2) ? Math.sin((t - T.doorOpen) * 3.2) * 0.3 : 0;
+  if (sweep) C.max.bones['Arm.R'].rotation.y = sweep;
+  K.hold(P.torch, C.max, 'R'); P.torch.visible = true;
+  P.lunchbox.visible = false; P.spider.visible = false;
+  return { torch: true };
 }
 
 function classScene(t, set, idle) {
   K.only(C, ['skye', 'max', 'extras']);
-  K.setLine(C.max, C.skye, 1);
-  const sk = M.deskSkye(), mx = M.deskMax(), ai = M.aisle();
+  K.dress(C.skye, 'skye_hoodie'); K.dress(C.skye, 'backpack', false); K.dress(C.max, 'max_school');
+  const sk = M.deskSkye(), ai = M.aisle(), side = M.skyeSide();
+  const stand = { pos: V(sk.pos.x + 0.9, 0, sk.pos.z + 0.2), heading: Math.PI / 2 };   // up out of her seat, into the aisle by Max
   // extras eating at their desks; they turn to look at the shriek
   C.extras.forEach((e, i) => {
-    const m = M.extra(i);
-    K.playAnim(e, [[A.sit, 0, 1, false], [A.idle, idle + i, 0.3]]);
-    K.putOn(e, offset(m, 0, 0, -SIT_DROP), { sit: true, heading: t > T.jump + 0.2 && t < at(10) ? K.faceTo(m, sk) : m.heading });
-    e.setFace(t > T.jump + 0.2 && t < at(10) ? 'surprised' : 'happy');
+    const m = M.extra(i), look = t > T.jump + 0.2 && t < at(10);
+    K.playAnim(e, [[A.sit, 0, 1, false]]);
+    K.putOn(e, m, { sit: true, heading: look ? m.heading + (K.faceTo(m, sk) - m.heading) * 0.5 : m.heading });
+    e.setFace(look ? 'surprised' : 'happy');
   });
-  // Skye: seated, turned towards Max, until the spider; then up and standing her ground
+  // Skye: seated, turned towards Max once he talks, until the spider; then up and standing her ground
   if (t < T.jump) {
     K.playAnim(C.skye, [[A.sit, 0, 1, false]]);
-    K.putOn(C.skye, offset(sk, 0, 0, -SIT_DROP), { sit: true, heading: t < at(5) ? sk.heading : sk.heading + 0.9 });
+    K.putOn(C.skye, sk, { sit: true, heading: t < at(5) - 0.3 ? sk.heading : sk.heading + (K.faceTo(sk, side) - sk.heading) * 0.6 });
   } else {
-    const up = smooth(inv(T.jump, T.jump + 0.25, t));
-    const stand = offset(sk, 0, 0, 0);
-    K.playAnim(C.skye, t < end(7) ? [[A.shock, (t - T.jump) * 1.0, 1, false]] : [[A.idle, idle]]);
-    K.putOn(C.skye, { pos: stand.pos.clone().add(V(0, -SIT_DROP * (1 - up), 0)), heading: K.faceTo(stand, C.max) });
+    const u = smooth(inv(T.jump, T.jump + 0.3, t));
+    K.playAnim(C.skye, t < end(7) ? [[A.shock, (t - T.jump), 1, false]] : [[A.idle, idle]]);
+    K.putOn(C.skye, { pos: sk.pos.clone().lerp(stand.pos, u), heading: K.faceTo(stand, side) });
+    if (u < 1) C.skye.root.position.y = sk.pos.y + (stand.pos.y - sk.pos.y) * u;   // rise from the seat
     if (t > at(10) - 0.2 && t < at(11)) hipsHands(C.skye);
     if (t > at(11) && t < at(12)) crossArms(C.skye);
   }
-  // Max: up from his desk, over to Skye's desk during the VO, standing over her; leaves at "See you tomorrow"
+  // Max: walks over from his column during the VO and stands over her; leaves at "See you tomorrow"
+  const toSkye = K.faceTo(side, t < T.jump ? sk : stand);
   if (t < T.exit) {
-    K.walk(C.max, A, mx, ai, T.class + 0.6, t, { idleAt: idle, endHeading: K.faceTo(ai, sk) });
-    if (t > at(5) && t < at(5, 1.6)) armSet(C.max, 'R', -1.5, 0, 0.15);           // points at the crusts
-    if (t > T.spider - 0.5 && t < T.spider + 0.3) armSet(C.max, 'R', -1.2, 0, 0.35); // holds the spider out over the lunchbox
-    if (t > at(8) && t < at(8, 2.2)) armSet(C.max, 'R', -1.6, 0, 0.1);              // holds it up: "It's rubber"
+    K.walk(C.max, A, ai, side, T.class + 1.0, t, { idleAt: idle, endHeading: toSkye });
+    if (t > at(5) + 0.2 && t < at(5, 1.8)) armSet(C.max, 'R', -1.45, 0, -0.1);           // points at the crusts
+    if (t > T.spider - 0.6 && t < T.spider + 0.25) armSet(C.max, 'R', -1.3, 0, -0.25);  // holds the spider over the lunchbox
+    if (t > at(8) && t < at(8, 2.2)) armSet(C.max, 'R', -1.7, 0, 0.0);                  // holds it up: "It's rubber"
     if (t > at(11) && t < end(11)) crossArms(C.max);
   } else {
-    const m = K.walk(C.max, A, ai, M.classDoor(), T.exit, t, { idleAt: idle });
-    if (m.moving && t < T.exit + 1.2) armSet(C.max, 'L', -0.2, 0, -2.3);            // one-arm wave over his shoulder
+    const m = K.walk(C.max, A, side, M.classDoor(), T.exit, t, { idleAt: idle });
+    if (m.moving && t < T.exit + 1.4) armSet(C.max, 'R', -0.2, 0, 2.3);                 // one-arm wave
   }
-  // lunchbox and sandwich on her desk; the spider in Max's hand, then dropped into the lunchbox, then back in his hand
-  const desk = sk.pos.clone().addScaledVector(fw(sk.heading), 1.6).add(V(0, 2.6, 0));
-  P.lunchbox.position.copy(desk); P.lunchbox.rotation.set(0, sk.heading, 0); P.lunchbox.visible = true;
-  P.sandwich.visible = t < T.jump; P.sandwich.position.copy(desk).add(V(0, 0.3, 0));
-  const hand = new THREE.Vector3(); C.max.bones['Arm.R'].localToWorld(hand.set(-0.5, -2.0, 0));
-  if (t < T.spider) P.spider.position.copy(hand);
-  else if (t < at(8)) P.spider.position.copy(hand.clone().lerp(desk, 1)).add(V(0, 0.25 + 0.6 * (1 - easeIn(inv(T.spider, T.spider + 0.25, t))), 0));
-  else P.spider.position.copy(hand);
-  P.spider.visible = t > at(5) + 1.6 && t < T.exit;
+  // the lunchbox on her desk; the spider in Max's hand, dropped into the lunchbox, picked up again ("It's rubber")
+  const top = set.anchors.skyeDeskTop;
+  K.place(P.lunchbox, top.clone().add(V(0, 0, 0.1)), sk.heading + Math.PI);
+  P.lunchbox.visible = true;
+  const sp = P.lunchbox.userData.spider; sp.userData.base ??= sp.position.clone();
+  const inBox = t >= T.spider && t < at(8) - 0.1;
+  sp.visible = inBox; sp.position.copy(sp.userData.base).add(V(0, 1.4 * (1 - easeIn(inv(T.spider, T.spider + 0.28, t))), 0));
+  K.hold(P.spider, C.max, 'R'); P.spider.visible = !inBox && t > at(5) + 1.8 && t < T.exit;
+  P.torch.visible = false;
+  return { torch: false };
 }
 
 function duskScene(t, set, idle) {
   K.only(C, ['skye']);
-  const y = M.yard(), d = M.backDoor(), ins = M.inside();
-  const arrive = at(14, 3.4), open0 = arrive + 0.2;
-  door(set, 'back_door', t < open0 ? 0 : t < open0 + 1.6 ? easeOut(inv(open0, open0 + 0.4, t)) : 1 - easeIn(inv(open0 + 1.6, open0 + 2.0, t)));
-  if (t < open0 + 0.5) {
-    K.walk(C.skye, A, y, d, arrive - y.pos.distanceTo(d.pos) / 8, t, { speed: 8, idleAt: idle });
-    if (t > arrive - 1.2 && t < arrive - 0.5) headTurn(C.skye, 0.7);            // a glance over her shoulder
-  } else {
-    const m = K.walk(C.skye, A, d, ins, open0 + 0.5, t, { speed: 8, idleAt: idle });
-    C.skye.root.visible = !m.done;
+  K.dress(C.skye, ['skye_hoodie', 'backpack']);
+  const legs = [M.gate(), M.pathMid(), M.pathNear(), M.step(), M.backDoor()];
+  const sp = 8;                                         // a sneaking walk, legs driven by distance
+  let t0 = T.dusk + 0.1, m;
+  for (let i = 0; i < legs.length - 1; i++) {
+    const d = legs[i].pos.distanceTo(legs[i + 1].pos), t1 = t0 + d / sp + (i === 2 ? 0.6 : 0);   // a look round at path_near
+    if (t < t1 || i === legs.length - 2) { m = K.walk(C.skye, A, legs[i], legs[i + 1], t0, t, { speed: sp, idleAt: idle, endHeading: legs[i + 1].heading }); break; }
+    t0 = t1;
   }
-  if (t > arrive - 0.1 && t < open0 + 0.4) armSet(C.skye, 'R', -1.3, 0, 0.1);     // her hand on the handle
+  if (t > T.door - 0.2 && t < T.door + 0.5) headTurn(C.skye, 0.9);   // a grin back over her shoulder   // glances over her shoulder at path_near
+  // the back door is unlocked: it just opens; she slips in and it closes behind her
+  const open = t < T.door ? 0 : t < T.door + 1.8 ? easeOut(inv(T.door, T.door + 0.4, t)) : 1 - easeIn(inv(T.door + 1.8, T.door + 2.2, t));
+  set.setState({ backDoor: open });
+  if (t > T.door - 0.3 && t < T.door + 0.4) armSet(C.skye, 'R', -1.3, 0, 0.1);   // hand on the handle
+  if (t >= T.door + 0.5) { const w = K.walk(C.skye, A, M.backDoor(), M.inside(), T.door + 0.5, t, { speed: sp, idleAt: idle }); C.skye.root.visible = !w.done; }
+  P.torch.visible = false; P.lunchbox.visible = false; P.spider.visible = false;
+  return { torch: false };
 }
 
 function night2(t, set, idle) {
   K.only(C, ['skye', 'max']);
-  K.setLine(C.max, C.skye, 1);
-  const crack = t < T.lump ? 0 : 0.12 * easeOut(inv(T.lump + 0.35, T.lump + 0.7, t));
-  door(set, 'closet', crack);
+  K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
   const lumped = t > T.lump + 0.2;
-  bed(set, lumped ? 'over_head' : 'normal');
-  // Skye in the closet: knocks three times (right knuckles), "Maaax", then her face in the crack
-  const c = M.closet();
-  const toDoor = t > T.lump;
+  set.setClosetDoors(t < T.lump + 0.35 ? 0 : 0.2 * easeOut(inv(T.lump + 0.35, T.lump + 0.75, t)), 0);
+  set.setBlanketUp(lumped); set.setLamp(false);
+  K.setPractical(set, 'closet', lumped ? 0.35 : 0);              // a little light in the closet so her grin reads at the crack
+  // Skye in the closet: knocks three times on the door (right knuckles), "Maaax", then her face at the crack
+  const c = M.closet(), toCrack = smooth(inv(T.lump, T.lump + 0.35, t));
   K.playAnim(C.skye, [[A.idle, idle]]);
-  K.putOn(C.skye, toDoor ? { pos: c.pos.clone().addScaledVector(fw(c.heading), 0.4), heading: c.heading + 0.45 } : { pos: c.pos, heading: c.heading + 0.95 });
-  const k = KNOCKS.findIndex((x) => t >= x && t < x + 0.22);
-  if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) armSet(C.skye, 'R', -1.5 + (k >= 0 ? 0.25 * Math.sin((t - KNOCKS[k]) / 0.22 * Math.PI) : 0), 0, 0.2);
-  // Max sitting up in bed, flashlight off on the bedside table; yanks the blanket over his head
-  const bl = M.bedLie();
-  K.playAnim(C.max, [[A.sit, 0, 1, false], [A.idle, idle, 0.3]]);
-  K.putOn(C.max, bl, { sit: true });
-  C.max.root.visible = !lumped;
-  headTurn(C.max, t > at(16) && t < at(18) ? 0.3 : 0);
+  K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetCrack().pos.clone().add(V(0.1, 0, 0.6)), toCrack), heading: c.heading + (M.closetCrack().heading - c.heading) * toCrack });
+  const k = KNOCKS.findIndex((x) => t >= x && t < x + 0.25);
+  if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) armSet(C.skye, 'R', -1.5 + (k >= 0 ? 0.3 * Math.sin((t - KNOCKS[k]) / 0.25 * Math.PI) : 0), 0, -0.35);
+  // Max sitting up in bed (flashlight off on the bedside table), then under the blanket
+  K.playAnim(C.max, [[A.sit, 0, 1, false]]);
+  K.putOn(C.max, M.bedSit(), { sit: true, visible: !lumped });
+  armSet(C.max, 'L', -0.1, 0, 0.08); armSet(C.max, 'R', -0.1, 0, -0.08);    // arms down on the blanket
+  headTurn(C.max, t > at(16) - 0.3 && t < at(18) ? 0.35 : 0);
+  // the flashlight, off, standing on the bedside table
+  if (P.torch.parent !== set.group) set.group.add(P.torch);
+  P.torch.userData.setOn(false); K.place(P.torch, V(1.2, 3.05, -7.6), 0); P.torch.rotation.x = -Math.PI / 2; P.torch.visible = true;
+  P.lunchbox.visible = false; P.spider.visible = false;
   return { torch: false };
 }
 
@@ -306,19 +302,21 @@ export function update(t, stage) {
   const idle = K.holdClock(t, L, [[0, T.closeup], [T.doorOpen, T.doorShut + 1.2], [T.spider, T.spider + 0.6], [T.exit, T.exit + 2], [T.dusk, T.dusk + 7.5], [T.night, at(15)], [T.lump, T.lump + 0.8]]);
   let r = {};
   if (sh.scene === 'night1') r = night1(t, set, idle);
-  else if (sh.scene === 'class') classScene(t, set, idle);
-  else if (sh.scene === 'dusk') duskScene(t, set, idle);
+  else if (sh.scene === 'class') r = classScene(t, set, idle);
+  else if (sh.scene === 'dusk') r = duskScene(t, set, idle);
   else r = night2(t, set, idle);
-  P.torch.visible = !!r.torch;
-  for (const k of ['lunchbox', 'sandwich', 'spider']) if (sh.scene !== 'class') P[k].visible = false;
   faces(t, sh.scene);
-  K.setBlockers(set.group, C.skye, C.max);
+  K.setBlockers(set.group, C.skye, C.max, ...(sh.scene === 'class' ? C.extras : []));
 
+  if (globalThis.DBG) console.warn("DBG", t.toFixed(2), JSON.stringify({ sk: C.skye.root.position, skh: C.skye.root.rotation.y, mx: C.max.root.position, mxh: C.max.root.rotation.y }));
   sh.cam(stage, t, sh);                                // camera last: it reads the posed actors
 
+  // the flashlight: its own soft cone plus the kit's spot light along the torch's forward axis
+  P.torch.userData.setOn(!!r.torch);
   if (r.torch) {
-    const from = new THREE.Vector3(); P.torch.getWorldPosition(from);
-    const h = C.max.root.rotation.y + (r.sweep || 0); beam.set(true, from, V(Math.sin(h), -0.12, Math.cos(h)));
+    const from = new THREE.Vector3(), q = new THREE.Quaternion();
+    P.torch.getWorldPosition(from); P.torch.getWorldQuaternion(q);
+    beam.set(true, from, V(0, 0, 1).applyQuaternion(q));
   } else beam.set(false);
 
   // red circle on Skye's face in the close-up (2.5 s)

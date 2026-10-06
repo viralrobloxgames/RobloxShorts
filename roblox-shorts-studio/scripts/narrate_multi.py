@@ -95,7 +95,7 @@ class TTS:
 
     def gen(self, voice, text, seed):
         self.torch.manual_seed(seed)
-        w, sr = self.m.generate_voice_clone(text=text, language='English', voice_clone_prompt=[self.prompt(voice)])
+        w, sr = self.m.generate_voice_clone(text=text, language='English', voice_clone_prompt=[self.prompt(voice)], max_new_tokens=300)
         return np.asarray(w[0], dtype=np.float32), sr
 
 
@@ -240,6 +240,10 @@ def main():
             attempt = meta.get('attempt', -1) + 1 if j['redo'] else 0
             seed = a.seed + int(j['name'][:6], 16) % 100000 + 1000 * attempt
             t1 = time.time(); y, sr = tts.gen(j['voice'], j['text'], seed)
+            for _ in range(3):  # a runaway take (far longer than the words need) gets the next seed
+                if len(y) / sr <= 2.5 + 0.75 * len(norm(j['text'])):
+                    break
+                log(f'  runaway take {len(y)/sr:.1f}s, new seed'); attempt += 1; seed += 1000; y, sr = tts.gen(j['voice'], j['text'], seed)
             if sr != SR:
                 import librosa; y = librosa.resample(y, orig_sr=sr, target_sr=SR); sr = SR
             sf.write(raw / f'{j["name"]}.wav', y, sr, subtype='PCM_16')
