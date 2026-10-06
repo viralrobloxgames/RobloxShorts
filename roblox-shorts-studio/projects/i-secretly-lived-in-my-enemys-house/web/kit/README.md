@@ -195,3 +195,36 @@ back per look; poses; gestures; gaits; blush): `production/previews/kit-cast/*.j
 Notes: walk in the sheet with the arms still or barely swinging (the drape bulges for legs and arms, but a big arm swing
 reads as a tent); one arm up through the sheet (phone, left arm at shoulder height) reads as a sheet-covered arm. No
 two-arms-up poses (SKILL.md): `climb` keeps both hands in front of the face, not above the head.
+
+## Render, finish, stitch (kit-pipeline)
+
+From `roblox-shorts-studio/` (P = `projects/i-secretly-lived-in-my-enemys-house`):
+
+```
+# render (frame skip is on: a frame identical to the previous one is copied; --no-skip turns it off)
+node web/render.mjs --clip $P/web/ch03.js --out /tmp/ch03 --workers 2                     # whole chapter
+node web/render.mjs --clip $P/web/ch03.js --out /tmp/ch03 --workers 2 --frames 1-1050      # segment A (helper renders 1051-end)
+# encode: video only, captions burned from audio/chapters/ch03/captions.json, the one fixed encode
+python3 scripts/finish_longform.py $P --chapter 3 --frames /tmp/ch03                        # -> delivery/chapters/ch03.mp4
+python3 scripts/finish_longform.py $P --chapter 3 --frames /tmp/ch03 --range 1-1050 --total 2040     # -> ch03_a.mp4
+python3 scripts/finish_longform.py $P --chapter 3 --frames /tmp/chB  --range 1051-2040 --total 2040  # -> ch03_b.mp4
+python3 scripts/finish_longform.py $P --chapter 3 --ass-only                                # just the captions file, to check
+# stitch (all segments in order; narration + SFX source/sound/chNN.json + music bed; -14 LUFS / -1 dBTP; seam checks)
+python3 scripts/stitch_longform.py $P                    # all 11 -> delivery/I_Secretly_Lived_In_My_Enemys_House.mp4 + youtube_chapters.txt
+python3 scripts/stitch_longform.py $P --chapters 1-5     # a block
+```
+
+- `--total` = the chapter's frame count (`Math.round(meta.seconds * 30)`); a full render's `frame_hashes.json` supplies it
+  automatically. Segment ranges must meet exactly (A ends at k, B starts at k+1); the stitch refuses gaps/overlaps.
+- Captions: speaker colour (VO/SKYE pink, MAX teal, DAD amber, LILY yellow; VO italic), Luckiest Guy 72 px, bottom centre.
+  If a face sits in the lower third for a shot, add `web/chNN_captions.json` `{"top": [[t0, t1], ...]}` (chapter seconds):
+  captions starting in those ranges go to the top.
+- SFX: `source/sound/chNN.json`, cues in chapter seconds, finish.py format (`asset` from assets/audio or assets/audio/horror,
+  or `tone`). Mixed only at the stitch; never into a chapter MP4.
+- Commit the chapter MP4 + its `.json` sidecar (not the `.ass`, not frames).
+
+**Proof (2026-10-06):** the 3 s clip `web/proof_clip.js` (template 5-8 s: a held silent moment, a whisper, a cut),
+1920x1080, 1 sample, 2 workers: 3.0 s per rendered frame; with frame skip 30 of 90 frames copied (33%), wall time
+4:31 → 3:00; copied frames equal a no-skip render within renderer noise. Encoded as ch01_a (1-45) + ch01_b (46-90) and
+a whole ch02, stitched with test audio: stream copy, 180/180 frames, per-frame checksums equal the segments' (both
+seams clean), A/V difference 0.000 s, -14.1 LUFS / -1.0 dBTP.
