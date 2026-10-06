@@ -3,5 +3,24 @@
  "text": "I knew first.",
  "seed": 8877,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "knew",
+   "start": 0.22,
+   "end": 0.38
+  },
+  {
+   "word": "first.",
+   "start": 0.38,
+   "end": 0.78
+  }
+ ],
+ "words_md5": "dbc152d8c64659fa6e387a189cf1c48c",
+ "whisper": "small.en"
 }

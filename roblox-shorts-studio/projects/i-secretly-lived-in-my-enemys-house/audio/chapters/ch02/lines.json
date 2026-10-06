@@ -1,0 +1,299 @@
+{
+ "chapter": 2,
+ "header": "CH02 | TUESDAY | 6:04 AM | Twelve Pancakes",
+ "duration": 66.707,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Tuesday. Rule one of living in your enemy's house: be out before anyone wakes up. Rule two: his dad wakes up at six.",
+   "start": 0.0,
+   "end": 7.12,
+   "clip": "audio/qwen/take-01/clips/c86998ff426e.wav",
+   "seed": 34309
+  },
+  {
+   "index": 2,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Good morning, kitchen! Who wants pancakes? Everybody wants pancakes!",
+   "start": 7.47,
+   "end": 11.31,
+   "clip": "audio/qwen/take-01/clips/b55b24c107e6.wav",
+   "seed": 85425
+  },
+  {
+   "index": 3,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Why is he so happy? It's still dark.",
+   "start": 11.56,
+   "end": 14.04,
+   "clip": "audio/qwen/take-01/clips/e04ac65a546b.wav",
+   "seed": 99283
+  },
+  {
+   "index": 4,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Dad, something was in my room last night. It said my name.",
+   "start": 14.29,
+   "end": 18.377,
+   "clip": "audio/qwen/take-01/clips/0cbfb577c342.wav",
+   "seed": 35586
+  },
+  {
+   "index": 5,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "That's just the pipes, champ. This house is a hundred years old. It says all sorts of things.",
+   "start": 18.627,
+   "end": 23.747,
+   "clip": "audio/qwen/take-01/clips/c5675e291873.wav",
+   "seed": 37131
+  },
+  {
+   "index": 6,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Or it's a ghost.",
+   "start": 23.997,
+   "end": 25.294,
+   "clip": "audio/qwen/take-01/clips/a31fe060bdbd.wav",
+   "seed": 90605
+  },
+  {
+   "index": 7,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Or it's a ghost!",
+   "start": 25.544,
+   "end": 26.505,
+   "clip": "audio/qwen/take-01/clips/581be810ff9f.wav",
+   "seed": 74389
+  },
+  {
+   "index": 8,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Not funny. I didn't sleep at all.",
+   "start": 26.755,
+   "end": 29.015,
+   "clip": "audio/qwen/take-01/clips/b3bb4361cd66.wav",
+   "seed": 78960
+  },
+  {
+   "index": 9,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Hang on. I made twelve pancakes. Why are there eleven?",
+   "start": 30.065,
+   "end": 33.345,
+   "clip": "audio/qwen/take-01/clips/d0a50697483c.wav",
+   "seed": 73811
+  },
+  {
+   "index": 10,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Ghost.",
+   "start": 33.595,
+   "end": 34.258,
+   "clip": "audio/qwen/take-01/clips/c681aa15bc6c.wav",
+   "seed": 9399
+  },
+  {
+   "index": 11,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Lily, stop saying ghost.",
+   "start": 34.508,
+   "end": 36.672,
+   "clip": "audio/qwen/take-01/clips/c6613edffc16.wav",
+   "seed": 1099
+  },
+  {
+   "index": 12,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": null,
+   "text": "Ghost, ghost, ghost, ghost.",
+   "start": 36.922,
+   "end": 40.355,
+   "clip": "audio/qwen/take-01/clips/bf278c2ebac4.wav",
+   "seed": 28577
+  },
+  {
+   "index": 13,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Fine. Ghost, if you're listening, the syrup's in the cupboard.",
+   "start": 40.605,
+   "end": 43.805,
+   "clip": "audio/qwen/take-01/clips/b04e5ff89f86.wav",
+   "seed": 54476
+  },
+  {
+   "index": 14,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Best. Pancake. Ever.",
+   "start": 44.655,
+   "end": 47.135,
+   "clip": "audio/qwen/take-01/clips/c4ec87cf18a2.wav",
+   "seed": 5684
+  },
+  {
+   "index": 15,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Wow. You look terrible.",
+   "start": 47.485,
+   "end": 49.325,
+   "clip": "audio/qwen/take-01/clips/9c3e43974a80.wav",
+   "seed": 39632
+  },
+  {
+   "index": 16,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "My house is haunted. It knows my name.",
+   "start": 49.575,
+   "end": 52.675,
+   "clip": "audio/qwen/take-01/clips/e3f91374fa05.wav",
+   "seed": 40512
+  },
+  {
+   "index": 17,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "A ghost? I thought nothing scares you.",
+   "start": 52.925,
+   "end": 55.177,
+   "clip": "audio/qwen/take-01/clips/79b1eb0d97ba.wav",
+   "seed": 75480
+  },
+  {
+   "index": 18,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "I'm not scared. I'm just very alert.",
+   "start": 55.427,
+   "end": 58.223,
+   "clip": "audio/qwen/take-01/clips/e580515b8efa.wav",
+   "seed": 40670
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Sure. That's why you hid under your blanket.",
+   "start": 58.473,
+   "end": 60.961,
+   "clip": "audio/qwen/take-01/clips/2c864320e52e.wav",
+   "seed": 18032
+  },
+  {
+   "index": 20,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "How do you know that?",
+   "start": 61.811,
+   "end": 63.034,
+   "clip": "audio/qwen/take-01/clips/1e85f758cb1d.wav",
+   "seed": 1452
+  },
+  {
+   "index": 21,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Lucky guess. Everybody does that. Bye!",
+   "start": 63.284,
+   "end": 66.107,
+   "clip": "audio/qwen/take-01/clips/85c2cb9184e5.wav",
+   "seed": 66232
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the upstairs hallway before dawn. The attic hatch in the ceiling eases down and Skye climbs down the ladder, backpack on.",
+   "until": 0.0
+  },
+  {
+   "after_line": 1,
+   "at": 7.12,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "The kitchen. Dad, in his apron, flips pancakes and hums. Skye, halfway down the stairs, freezes, then ducks behind the kitchen island. Lily's magnet letters are scattered over the fridge.",
+   "until": 7.47
+  },
+  {
+   "after_line": 3,
+   "at": 14.04,
+   "pause": 0.0,
+   "scene_change": false,
+   "text": "Max shuffles in, hair flat on one side. Lily skips in with her teddy.",
+   "until": 14.29
+  },
+  {
+   "after_line": 8,
+   "at": 29.015,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Skye's hand reaches up over the island and slides one pancake off the stack.",
+   "until": 30.065
+  },
+  {
+   "after_line": 13,
+   "at": 43.805,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Skye crawls out of the back door with the pancake in her mouth.",
+   "until": 44.655
+  },
+  {
+   "after_line": 14,
+   "at": 47.135,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the classroom before the bell. Max slumps at his desk. Skye leans on it.",
+   "until": 47.485
+  },
+  {
+   "after_line": 19,
+   "at": 60.961,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Max sits up.",
+   "until": 61.811
+  }
+ ]
+}

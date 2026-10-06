@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "I told him that.",
+ "seed": 61290,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "told",
+   "start": 0.22,
+   "end": 0.5
+  },
+  {
+   "word": "him",
+   "start": 0.5,
+   "end": 0.76
+  },
+  {
+   "word": "that.",
+   "start": 0.76,
+   "end": 1.02
+  }
+ ],
+ "words_md5": "7b7452928ca5f515bd1ead4474dbddca",
+ "whisper": "small.en"
+}

@@ -3,5 +3,99 @@
  "text": "Sunday. Day seven. For the first time all week, I walked down the stairs like a normal person.",
  "seed": 62696,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Sunday,",
+   "start": 0.0,
+   "end": 0.46
+  },
+  {
+   "word": "day",
+   "start": 0.7,
+   "end": 0.78
+  },
+  {
+   "word": "seven.",
+   "start": 0.78,
+   "end": 1.16
+  },
+  {
+   "word": "For",
+   "start": 1.56,
+   "end": 1.64
+  },
+  {
+   "word": "the",
+   "start": 1.64,
+   "end": 1.78
+  },
+  {
+   "word": "first",
+   "start": 1.78,
+   "end": 1.96
+  },
+  {
+   "word": "time",
+   "start": 1.96,
+   "end": 2.22
+  },
+  {
+   "word": "all",
+   "start": 2.22,
+   "end": 2.5
+  },
+  {
+   "word": "week,",
+   "start": 2.5,
+   "end": 2.76
+  },
+  {
+   "word": "I",
+   "start": 2.92,
+   "end": 3.02
+  },
+  {
+   "word": "walk",
+   "start": 3.02,
+   "end": 3.22
+  },
+  {
+   "word": "down",
+   "start": 3.22,
+   "end": 3.44
+  },
+  {
+   "word": "the",
+   "start": 3.44,
+   "end": 3.58
+  },
+  {
+   "word": "stairs",
+   "start": 3.58,
+   "end": 3.82
+  },
+  {
+   "word": "like",
+   "start": 3.82,
+   "end": 4.04
+  },
+  {
+   "word": "a",
+   "start": 4.04,
+   "end": 4.18
+  },
+  {
+   "word": "normal",
+   "start": 4.18,
+   "end": 4.4
+  },
+  {
+   "word": "person.",
+   "start": 4.4,
+   "end": 4.78
+  }
+ ],
+ "words_md5": "fd0890e1639565ad5a688e70083d65ea",
+ "whisper": "small.en"
 }

@@ -3,5 +3,39 @@
  "text": "That's... He doesn't... More tea, please.",
  "seed": 75230,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "That's,",
+   "start": 0.0,
+   "end": 0.58
+  },
+  {
+   "word": "he",
+   "start": 0.94,
+   "end": 1.04
+  },
+  {
+   "word": "doesn't",
+   "start": 1.04,
+   "end": 1.34
+  },
+  {
+   "word": "more",
+   "start": 1.34,
+   "end": 1.5
+  },
+  {
+   "word": "tea,",
+   "start": 1.5,
+   "end": 1.7
+  },
+  {
+   "word": "please.",
+   "start": 1.78,
+   "end": 1.94
+  }
+ ],
+ "words_md5": "ed271ce83a66a9ab9f8b899857d3296c",
+ "whisper": "small.en"
 }

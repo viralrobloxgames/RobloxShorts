@@ -3,5 +3,29 @@
  "text": "Quick! Be a decoration!",
  "seed": 59047,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Quick!",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "Be",
+   "start": 0.88,
+   "end": 1.1
+  },
+  {
+   "word": "a",
+   "start": 1.1,
+   "end": 1.26
+  },
+  {
+   "word": "decoration!",
+   "start": 1.26,
+   "end": 1.76
+  }
+ ],
+ "words_md5": "c2d70be0ce54c8a789784237c5cb2951",
+ "whisper": "small.en"
 }

@@ -3,5 +3,14 @@
  "text": "Professionally.",
  "seed": 24963,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Professionally.",
+   "start": 0.0,
+   "end": 0.7
+  }
+ ],
+ "words_md5": "ee10ac79abd6299e29111670c74fcb45",
+ "whisper": "small.en"
 }

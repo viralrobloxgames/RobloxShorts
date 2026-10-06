@@ -3,5 +3,39 @@
  "text": "Okay. Please, please don't tell anyone.",
  "seed": 78026,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Okay,",
+   "start": 0.0,
+   "end": 0.62
+  },
+  {
+   "word": "please,",
+   "start": 1.06,
+   "end": 1.06
+  },
+  {
+   "word": "please",
+   "start": 1.34,
+   "end": 1.46
+  },
+  {
+   "word": "don't",
+   "start": 1.46,
+   "end": 1.76
+  },
+  {
+   "word": "tell",
+   "start": 1.76,
+   "end": 1.88
+  },
+  {
+   "word": "anyone.",
+   "start": 1.88,
+   "end": 2.16
+  }
+ ],
+ "words_md5": "3ea9cce3838020e8c857ee67960ca61c",
+ "whisper": "small.en"
 }

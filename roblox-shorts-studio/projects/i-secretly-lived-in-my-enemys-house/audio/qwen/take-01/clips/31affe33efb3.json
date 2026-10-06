@@ -1,0 +1,31 @@
+{
+ "voice": "lily_kid",
+ "text": "He fixed your pumpkin.",
+ "seed": 56395,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "fixed",
+   "start": 0.18,
+   "end": 0.42
+  },
+  {
+   "word": "your",
+   "start": 0.42,
+   "end": 0.64
+  },
+  {
+   "word": "pumpkin?",
+   "start": 0.64,
+   "end": 0.9
+  }
+ ],
+ "words_md5": "859d19f6f253249ebb5c25c26c8bad79",
+ "whisper": "small.en"
+}

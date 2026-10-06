@@ -3,5 +3,49 @@
  "text": "Since when do you cut off your crusts?",
  "seed": 77692,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Since",
+   "start": 0.0,
+   "end": 0.56
+  },
+  {
+   "word": "when",
+   "start": 0.56,
+   "end": 0.78
+  },
+  {
+   "word": "do",
+   "start": 0.78,
+   "end": 0.92
+  },
+  {
+   "word": "you",
+   "start": 0.92,
+   "end": 1.02
+  },
+  {
+   "word": "cut",
+   "start": 1.02,
+   "end": 1.16
+  },
+  {
+   "word": "off",
+   "start": 1.16,
+   "end": 1.32
+  },
+  {
+   "word": "your",
+   "start": 1.32,
+   "end": 1.48
+  },
+  {
+   "word": "crusts?",
+   "start": 1.48,
+   "end": 1.98
+  }
+ ],
+ "words_md5": "6432f9671c5bee50d915a47961563b3b",
+ "whisper": "small.en"
 }

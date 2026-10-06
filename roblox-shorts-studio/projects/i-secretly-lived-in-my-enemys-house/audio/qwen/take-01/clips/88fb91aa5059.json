@@ -1,0 +1,61 @@
+{
+ "voice": "george_c",
+ "text": "Lily, if that's you, I'm not angry. I'm just hungry.",
+ "seed": 77374,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "if",
+   "start": 0.58,
+   "end": 0.76
+  },
+  {
+   "word": "that's",
+   "start": 0.76,
+   "end": 1.02
+  },
+  {
+   "word": "you,",
+   "start": 1.02,
+   "end": 1.24
+  },
+  {
+   "word": "I'm",
+   "start": 1.38,
+   "end": 1.52
+  },
+  {
+   "word": "not",
+   "start": 1.52,
+   "end": 1.62
+  },
+  {
+   "word": "angry,",
+   "start": 1.62,
+   "end": 1.96
+  },
+  {
+   "word": "I'm",
+   "start": 2.14,
+   "end": 2.28
+  },
+  {
+   "word": "just",
+   "start": 2.28,
+   "end": 2.4
+  },
+  {
+   "word": "hungry.",
+   "start": 2.4,
+   "end": 2.72
+  }
+ ],
+ "words_md5": "16348b7a27eb361f8e6dd06a559eaf05",
+ "whisper": "small.en"
+}
