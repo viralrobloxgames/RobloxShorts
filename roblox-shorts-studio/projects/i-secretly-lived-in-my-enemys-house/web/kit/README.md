@@ -441,3 +441,23 @@ use about -1.2 to -1.4. No two-arms-up poses.
 scenery or another character, in frame ranges with film times, depth and coverage, ranked high / medium / low; only clipping
 the camera can see. Mark an object `userData.noClipCheck = true` if it is meant to be passed through (e.g. a sheet).
 Results and the method: `production/review/clip_check/SUMMARY.md`.
+
+### PR1: held props stay in the palm and out of the body (kit-props)
+
+- `hold()` now orients a held prop from the arm in every pose, with no jumps between frames. Yaw follows the arm's horizontal direction and blends to the actor's heading as the arm hangs. Pitch stays level until the arm goes above horizontal, then follows it up. `level` props (cups, plates, teapot, food) never pitch. `side` and `aim` work as before.
+- **Clearance pass** (every `hold`/`hug`): points sampled from the prop must stay out of the holder's head, torso, legs and arms. The grip may sit inside the holding fist: points within `userData.gripR` of the origin or `userData.handle.r` of the handle axis. Otherwise the prop slides along its +z or outward, whichever is shorter, capped at 0.5 x scale so it never leaves the hand. `prop.userData.clipDepth` is what is left (0 = clean); `{ clear: false }` turns it off.
+- **`holdPose(prop, actor, hand, pose)`** poses the holding arm and holds the prop, with grip offsets checked on all three scales. Poses: `low`, `carry`, `chest`, `offer`, `raise`, `pour` (teapot tipped), `sip` (cup at the mouth), `ear` (phone). See `HOLD_POSES`. Use it after the cast pose each frame. For the hobby horse use `carry`/`offer` (in `low` its head brushes the arm).
+- **One prop per hold.** Make the prop once, call `hold`/`holdPose` every frame of the hold and keep it visible. Never swap two copies or re-create the prop mid-shot; that is the "pop". `note` now holds all three states: `note.userData.setState('crumpled')` swaps in place in the same hand (ch08).
+- **Teddy:** `holdTeddy(lily, ...)` must run every frame after posing Lily (the clearance depends on the pose).
+- Check sheets: `production/previews/kit-props/pr1_*.jpg` (clip `web/kit/props_pose_check.js`; the label shows slide/clip, red if anything is still inside).
+- (kit-sets-a, SA1/SA2) Hallway: the camera side runs on to z 34 (floor, side walls, ceiling, end wall) and the stair end
+  is closed, so no camera sees past the set. Bedroom: the walk-in runs on behind the left wall to z -5.4; `closet_hide` is
+  Skye flat against the inside of that wall, out of sight from `closet_front` with the doors open (a hair lock at the
+  edge at most); cams `closet_hide_pov` (corner: Skye 3/4 foreground, Max beyond the wall edge) and `closet_hide_ext`
+  (over Max into the open closet: hoodies, no Skye). With the doors shut the closet is dark and louvred: Max can't see in.
+
+### Cast colour floor (kit-pipeline, P1)
+Every lighting preset has `cast` (0 by day, ~0.2-0.38 at night / under the fridge / in the attic): each cast material
+also glows with its own texture at that level, applied right before each draw, so coloured light tints the set but not a
+character's skin, hair or clothes. Override per frame with `K.applyLight(stage, id, { set, castFloor: 0.3 })`.
+Flashlight defaults are softer (`flashlightBeam` 30, `chinLight` 4.5) so torches don't white out faces.
