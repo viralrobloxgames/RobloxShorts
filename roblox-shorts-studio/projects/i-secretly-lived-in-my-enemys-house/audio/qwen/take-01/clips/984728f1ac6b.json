@@ -1,0 +1,46 @@
+{
+ "voice": "george_c",
+ "text": "Lily? What are you doing up here?",
+ "seed": 79765,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "what",
+   "start": 0.48,
+   "end": 0.6
+  },
+  {
+   "word": "are",
+   "start": 0.6,
+   "end": 0.72
+  },
+  {
+   "word": "you",
+   "start": 0.72,
+   "end": 0.82
+  },
+  {
+   "word": "doing",
+   "start": 0.82,
+   "end": 1.08
+  },
+  {
+   "word": "up",
+   "start": 1.08,
+   "end": 1.26
+  },
+  {
+   "word": "here?",
+   "start": 1.26,
+   "end": 1.5
+  }
+ ],
+ "words_md5": "ebad202d6f507f674196ea7cf4ce4b3a",
+ "whisper": "small.en"
+}

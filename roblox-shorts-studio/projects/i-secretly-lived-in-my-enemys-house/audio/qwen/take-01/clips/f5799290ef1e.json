@@ -1,0 +1,41 @@
+{
+ "voice": "george_c",
+ "text": "Already? You're a good lad, Max.",
+ "seed": 87519,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Already",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "you're",
+   "start": 0.34,
+   "end": 0.68
+  },
+  {
+   "word": "a",
+   "start": 0.68,
+   "end": 0.76
+  },
+  {
+   "word": "good",
+   "start": 0.76,
+   "end": 0.86
+  },
+  {
+   "word": "lad,",
+   "start": 0.86,
+   "end": 1.14
+  },
+  {
+   "word": "Max.",
+   "start": 1.34,
+   "end": 1.42
+  }
+ ],
+ "words_md5": "79e476942c404bbbcac3077f1547926a",
+ "whisper": "small.en"
+}
