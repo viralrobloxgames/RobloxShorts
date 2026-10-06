@@ -1,0 +1,10 @@
+{
+ "max_A_s11.wav": {
+  "who": "max",
+  "style": "A",
+  "seed": 11,
+  "instruct": "A 12-year-old British boy from London with a natural, unbroken boy's voice. Cheeky class clown: quick, confident and a little smug, with real warmth underneath. Natural, brisk conversational pace with a clear pause between sentences. Young, but not squeaky or cartoonish, and not an adult.",
+  "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ }
+}

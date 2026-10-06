@@ -25,5 +25,28 @@ after the reset; 10-11 h was too long, so maximum parallelism (target ~5 h, ~18:
 Routines "Long-form video: orchestrator check-in" (hourly) wake this session; on each wake: get_session for every
 worker below; send_message any idle/failed worker whose status isn't DONE: "Resume from production/status/<role>.md".
 
-## Sessions
-(filled in as they are created)
+## Sessions (created 2026-10-06 ~11:54-11:57 UTC)
+| Role | Session |
+|---|---|
+| kit-pipeline | session_01UGSLAfBHvYKijFfutFvm7t |
+| kit-cast | session_01YDjFeYPSidcDaN1LLk2gpT |
+| kit-props | session_01DwipK2nr3EEpZZAzGsTWqc |
+| kit-sets-a | session_01PQQ1JioYHegRLRpkgSp8EH |
+| kit-sets-b | session_01AVE4GdYUmCbNXxt3UFSxrV |
+| kit-sets-c | session_01SThrwqNGmaog6Ec3d9dfuQ |
+| voices | session_01MBoRAo7uj2oPLFEpTTaYT8 |
+| narration-tool | session_01RGsEviSVchgJRhV8pxiJVR |
+| ch01 | session_01Lk9d91qbSG9PTQRmfRY4Vu |
+| ch02 | session_01GY8zW4QnczRdHFHEiMNHXu |
+| ch03 | session_017LkQiQMZNFpHC55fsdtvFo |
+| ch04 | session_01UdeZWmHNWTB5NVHjW2rEue |
+| ch05 | session_01QibSvnJQuxuA4Duv6xBoEh |
+| ch06 | session_016LiAKsiod7rLMgMG9BpZ6y |
+| ch07 | session_01R1X6TeYD2F7juNSRT2LrZt |
+| ch08 | session_01VKPfsgRop6xipAswEAWYrn |
+| ch09 | session_01XYtiYgxepqhMUNHisk1Df2 |
+| ch10 | session_01GpbJMMGFqdZsfFWsWu5Lk4 |
+| ch11 | session_01BfKdng2SSK8yGriwr5FWoJ |
+
+Later: gate-a/b/c (fresh), render helpers (reuse the 8 setup sessions + spares for segment B of each chapter), review-1..4 (fresh).
+Orchestrator routines: trig_01SHFzCL5TM3VVuWqEnfUCrE (:47) and a second one at :17.
