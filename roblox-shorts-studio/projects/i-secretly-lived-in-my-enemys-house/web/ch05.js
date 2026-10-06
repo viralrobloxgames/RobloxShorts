@@ -221,7 +221,7 @@ function blockNest(t, idle) {
   const kneelUp = t >= at(6, -0.15) && t < at(7, 0.3);           // up on her knees to plead
   floorSit(C.skye, { pos: nest.pos, heading: -1.0 + (faceLily + 1.0) * turn }, kneelUp ? 'kneel_up' : 'sit_cross');
   headYaw(C.skye, -0.55 * (1 - turn) + 0.05 * Math.sin(t * 1.7) * (t > 3.6 && t < at(2) ? 1 : 0));   // eyes on the hatch from frame 0
-  if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L', 0.7);       // the cracker packet in her left hand
+  if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L', 0.5);       // the cracker packet in her left hand
   if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'L', 0.75 + 0.08 * Math.sin(t * 25));   // "Boo": one arm up on the far side, hand wiggling
   if (kneelUp) { K.gesture(C.skye, 'hand_hold', 'L', 0.9); K.gesture(C.skye, 'hand_hold', 'R', 0.9); }        // hands together at her chest
   const reach = smooth(inv(T.horseGive - 0.5, T.horseGive, t)) * (1 - smooth(inv(T.horseGive + 0.2, T.horseGive + 0.7, t)));
@@ -246,7 +246,8 @@ function blockNest(t, idle) {
     P.teddySit.visible = false; C.lily.teddy.visible = true;
     const u = smooth(inv(L5.c1, L5.t1, t)), y1 = -1.2 * C.lily.scale;
     const d = K.posture(C.lily, u < 0.6 ? 'crouch' : 'stand'); K.holdTeddy(C.lily, 'L');
-    const p = V(hh.pos.x, 0, hh.pos.z).lerp(L5.top.pos, u); p.y = (1 - u) * y1 + u * 0 - (u < 0.6 ? d : 0);
+    const lift = smooth(Math.min(1, u / 0.45));                 // up out of the hole first, then onto the floor
+    const p = V(hh.pos.x, 0, hh.pos.z).lerp(L5.top.pos, smooth(Math.max(0, (u - 0.4) / 0.6))); p.y = y1 * (1 - lift) - (u < 0.6 ? d * lift : 0);
     putRoot(C.lily, p, Math.PI);
   } else {
     K.holdTeddy(C.lily, 'L'); P.teddySit.visible = false; C.lily.teddy.visible = true;
@@ -254,7 +255,6 @@ function blockNest(t, idle) {
       K.walk(C.lily, A, L5.top, L5.horse, L5.t1, t, { idleAt: idle });
       if (t >= L5.t2) K.gesture(C.lily, 'hold_out', 'R', Math.sin(Math.PI * inv(L5.t2, L5.t3, t)));   // reaches for the stick
     } else K.walk(C.lily, A, L5.horse, L5.front, L5.t3, t, { idleAt: idle, endHeading: L5.front.heading });
-    if (t >= at(7, 1.2) && t < at(7, 1.9)) K.gesture(C.lily, 'finger_up', 'L', smooth(inv(at(7, 1.2), at(7, 1.4), t)));   // "Every day."
     const offerU = smooth(inv(at(9, 0.3), at(9, 0.8), t));
     if (t >= at(9, 0.3) && t < T.horseGive + 0.3) K.gesture(C.lily, 'hold_out', 'R', 0.4 + 0.6 * offerU);     // holds the horse out to Skye
   }
@@ -274,7 +274,7 @@ function blockTea(t, idle) {
   floorSit(C.lily, { pos: li.pos, heading: li.heading + 0.45 }, 'kneel');
   // Skye: cup in her left hand (her right arm is on the camera side), the hobby horse across her lap
   const sip = (a, b) => t >= a && t < b;
-  K.gesture(C.skye, 'cup_hold', 'L', 0.9);                      // high enough that the cup clears the box
+  K.gesture(C.skye, 'cup_hold', 'L', 0.65);                      // high enough that the cup clears the box
   if (sip(at(12), end(12))) K.gesture(C.skye, 'hold_out', 'L');        // cup out for more tea
   if (sip(at(18), end(18, 0.5))) K.gesture(C.skye, 'cup_hold', 'L', 1);                          // "Professionally." (a sip)
   if (sip(at(20), end(20))) K.gesture(C.skye, 'hand_over_mouth', 'R', 0.6);                       // gossip
