@@ -30,7 +30,7 @@ sources: `source/story.md`. Made overnight without script approval (user request
   the store, the decree CONGRESS IS ABOLISHED, then *crickets*); from T.police (38 s) on it is a placeholder wide.
 
 ## Next
-1. Web clip `web/emperor_clip.js` from T.police on ( the arrest, the bridge, the farewell, CTA;
+1. Web clip `web/emperor_clip.js` from T.police on (the arrest, the bridge, the farewell, CTA;
    sets kit: 1859 San Francisco street, docks with ships,
    newspaper office, shop, a Capitol, the bay and bridge), previews, hold/fit checks, sound cues, cover, post copy,
    then the full render (needs disk space: see the Banana and Penguin notes).
