@@ -12,10 +12,10 @@ export async function setup(stage) {
   const { scene } = stage;
   stage.hemi.intensity = 0.25; stage.hemi.color.set('#8ea6d8'); stage.sun.intensity = 0.0; stage.fill.intensity = 0.25; stage.rim.intensity = 0.15; scene.environmentIntensity = 0.25;
   const b = bedroom.build(scene), h = hallway.build(scene);
-  S = ['bedroom', 'lump', 'desk'].includes(SET) ? b : h; (S === b ? h : b).group.visible = false;
-  names = SET === 'desk' ? ['mirror_mcu', 'mirror_ms', 'desk_wide'] : SET === 'lump' ? ['two_shot_bed_closet', 'bed_ms'] : SET === 'linen' ? ['linen_gap', 'linen_pov', 'linen_end', 'hatch_low_dad', 'dad_ms'] : Object.keys(S.cams); meta.names = names;
+  S = ['bedroom', 'lump', 'desk', 'hide'].includes(SET) ? b : h; (S === b ? h : b).group.visible = false;
+  names = SET === 'hide' ? ['closet_hide_pov', 'closet_hide_ext', 'closet_door_ext', 'two_shot_bed_closet'] : SET === 'desk' ? ['mirror_mcu', 'mirror_ms', 'desk_wide'] : SET === 'lump' ? ['two_shot_bed_closet', 'bed_ms'] : SET === 'linen' ? ['linen_gap', 'linen_pov', 'linen_end', 'hatch_low_dad', 'dad_ms'] : Object.keys(S.cams); meta.names = names;
   for (const n of ['idle', 'sit']) A[n] = await loadAnimation(n);
-  const want = SET === 'desk' ? [['Max', 'mirror_stand', 'idle']] : SET === 'lump' ? [] : SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_edge', 'sit'], ['Mia', 'ghost_stop', 'idle'], ['Leo', 'closet_front', 'idle']]
+  const want = SET === 'hide' ? [['Skye', 'closet_hide', 'idle'], ['Max', 'closet_front', 'idle']] : SET === 'desk' ? [['Max', 'mirror_stand', 'idle']] : SET === 'lump' ? [] : SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_edge', 'sit'], ['Mia', 'ghost_stop', 'idle'], ['Leo', 'closet_front', 'idle']]
     : SET === 'linen' ? [['Skye', 'linen_skye', 'idle'], ['Mia', 'linen_lily', 'idle'], ['Leo', 'dad_hatch', 'idle']]
     : [['Skye', 'max_door_listen', 'idle'], ['Mia', 'lily_behind_skye', 'idle'], ['Leo', 'dad_hatch', 'idle'], ['Max', 'stairs_top', 'idle']];
   for (const [who, mk, an] of want) {
@@ -23,7 +23,7 @@ export async function setup(stage) {
     const m = S.marks[mk]; if (!m) { console.error('missing mark ' + mk); continue; }
     a.root.position.copy(m.seat !== undefined ? bedroom.sitPos(m, a.root.scale.x) : m.pos); a.root.rotation.y = m.heading; scene.add(a.root); robloxPose(a, [[A[an], 0.5, 1, true]]); cast[who] = a;
   }
-  S.setState({ blanket: SET === 'lump' ? 'over_head' : 'flat', chapter: SET === 'bedroom' || SET === 'lump' ? 10 : 6, lamp: true, hall: true, underDoor: true, hatch: SET === 'hallway' ? 1 : 0, linen: SET === 'linen' ? 0.4 : 0.2, door: 0, closet: 0.3 });
+  S.setState({ blanket: SET === 'lump' ? 'over_head' : 'flat', chapter: SET === 'bedroom' || SET === 'lump' ? 10 : 6, lamp: true, hall: true, underDoor: true, hatch: SET === 'hallway' ? 1 : 0, linen: SET === 'linen' ? 0.4 : 0.2, door: 0, closet: SET === 'hide' ? 1 : 0.3 });
   window.camNames = names;
 }
 export function update(t, stage) {
