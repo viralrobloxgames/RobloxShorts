@@ -1,0 +1,7 @@
+{
+ "voice": "max_boy2",
+ "text": "Hello? Ghost? I just want some milk. Please don't eat me.",
+ "seed": 56520,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

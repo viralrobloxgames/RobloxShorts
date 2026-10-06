@@ -42,46 +42,46 @@
   {
    "index": 4,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Hello? Ghost? I just want some milk. Please don't eat me.",
    "start": 9.83,
    "end": 13.413,
-   "clip": "audio/qwen/take-01/clips/f14a905f9a8f.wav",
-   "seed": 13341
+   "clip": "audio/qwen/take-01/clips/c11b531f7432.wav",
+   "seed": 56520
   },
   {
    "index": 5,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "And if you're a vampire, we've got garlic.",
    "start": 13.663,
    "end": 16.336,
-   "clip": "audio/qwen/take-01/clips/781559826cba.wav",
-   "seed": 69862
+   "clip": "audio/qwen/take-01/clips/6c69216f642f.wav",
+   "seed": 4878
   },
   {
    "index": 6,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Be nice to Skye?",
    "start": 17.386,
    "end": 18.443,
-   "clip": "audio/qwen/take-01/clips/a921c838e551.wav",
-   "seed": 84309
+   "clip": "audio/qwen/take-01/clips/ff34f2f63717.wav",
+   "seed": 25311
   },
   {
    "index": 7,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Okay, ghost. That's weirdly specific.",
    "start": 18.693,
    "end": 21.673,
-   "clip": "audio/qwen/take-01/clips/9e1c0ee2e72b.wav",
-   "seed": 61947
+   "clip": "audio/qwen/take-01/clips/4ae736a9c725.wav",
+   "seed": 8931
   },
   {
    "index": 8,
@@ -97,35 +97,35 @@
   {
    "index": 9,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Fine. Deal. I'll be nice to Skye. But only because you asked.",
    "start": 24.933,
    "end": 29.807,
-   "clip": "audio/qwen/take-01/clips/57c56c689a95.wav",
-   "seed": 52249
+   "clip": "audio/qwen/take-01/clips/f1e0039eeb19.wav",
+   "seed": 51600
   },
   {
    "index": 10,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "Not because I... Never mind. Who even is Skye? I mean, I know who Skye is. Obviously.",
    "start": 30.057,
    "end": 37.183,
-   "clip": "audio/qwen/take-01/clips/fe602588497d.wav",
-   "seed": 70834
+   "clip": "audio/qwen/take-01/clips/9073c21be89f.wav",
+   "seed": 66895
   },
   {
    "index": 11,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": null,
    "text": "There. One sandwich, for the ghost. Please stay out of my closet.",
    "start": 38.433,
    "end": 42.731,
-   "clip": "audio/qwen/take-01/clips/5c776dae7842.wav",
-   "seed": 59962
+   "clip": "audio/qwen/take-01/clips/d1442c7263d8.wav",
+   "seed": 14553
   },
   {
    "index": 12,
@@ -174,13 +174,13 @@
   {
    "index": 16,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": "offscreen",
    "text": "Nobody! Go to bed, Dad!",
    "start": 56.301,
    "end": 58.547,
-   "clip": "audio/qwen/take-01/clips/dcfc8316d5f7.wav",
-   "seed": 82640
+   "clip": "audio/qwen/take-01/clips/a1be91c8307e.wav",
+   "seed": 158
   },
   {
    "index": 17,

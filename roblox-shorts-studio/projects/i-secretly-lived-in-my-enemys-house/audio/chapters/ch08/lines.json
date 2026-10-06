@@ -31,35 +31,35 @@
   {
    "index": 3,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": "phone",
    "text": "Skye? Ask Skye to the dance?",
    "start": 11.059,
    "end": 13.732,
-   "clip": "audio/qwen/take-01/clips/1d339bef3fa8.wav",
-   "seed": 13832
+   "clip": "audio/qwen/take-01/clips/e0b372e367dc.wav",
+   "seed": 26079
   },
   {
    "index": 4,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": "phone",
    "text": "Okay. Don't tell anyone.",
    "start": 13.982,
    "end": 16.045,
-   "clip": "audio/qwen/take-01/clips/81e107c781ac.wav",
-   "seed": 11828
+   "clip": "audio/qwen/take-01/clips/f332979dcb24.wav",
+   "seed": 38276
   },
   {
    "index": 5,
    "speaker": "MAX",
-   "voice": "max_kid",
+   "voice": "max_boy2",
    "note": "phone",
    "text": "Skye is the worst...",
    "start": 16.295,
    "end": 17.736,
-   "clip": "audio/qwen/take-01/clips/d27e422aa19b.wav",
-   "seed": 94959
+   "clip": "audio/qwen/take-01/clips/61384f30c996.wav",
+   "seed": 71484
   },
   {
    "index": 6,
