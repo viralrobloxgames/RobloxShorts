@@ -1,7 +1,9 @@
 // Render a web clip to PNG frames with headless Chromium (software WebGL, no GPU needed).
 //
 //   node web/render.mjs --clip projects/<slug>/web/<clip>.js --out projects/<slug>/renders/web
-//        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2] [--resume]
+//        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2] [--resume] [--no-skip]
+//
+// A frame whose fingerprint equals the previous frame's is copied, not rendered (see "Frame skip" below).
 //
 // A full render (no --frames / --every) of a clip that uses the Roblox pack needs a current, passing and reviewed
 // accessory fit check first: node web/fit_check.mjs --clip <clip>. --skip-fit-check overrides (not for deliveries).
@@ -71,22 +73,35 @@ const hashes = saved && saved.clip === args.clip ? saved.hashes : {};
 const flushHashes = () => { if (record) fs.writeFileSync(hashFile, JSON.stringify({ clip: args.clip, total, hashes })); };
 const workers = Math.max(1, Number(args.workers || 1));
 const pages = [first, ...(await Promise.all(Array.from({ length: workers - 1 }, openPage)))];
-const t0 = Date.now(); let done = 0;
-const queue = [...frames];
-await Promise.all(pages.map(async (page) => {
-  while (queue.length) {
-    const f = queue.shift();
-    const url = await page.evaluate(([f, s]) => window.renderFrame(f, s ? { samples: s } : {}), [f, args.samples ? Number(args.samples) : 0]);
-    if (record) hashes[f] = await page.evaluate((f) => window.frameState(f), f);
-    const file = path.join(out, `web_${String(f).padStart(4, '0')}.png`);
-    fs.writeFileSync(file + '.part', Buffer.from(url.split(',')[1], 'base64')); fs.renameSync(file + '.part', file);
+const t0 = Date.now(); let done = 0, skipped = 0;
+// Frame skip: when a frame's fingerprint (window.frameState: camera, every visible mesh/bone/light, materials and their
+// textures, exposure, fog, sky, the overlay) equals the previous frame's, the previous PNG is copied instead of rendering.
+// Each worker takes one contiguous run of frames so that held moments stay together. --no-skip turns it off.
+const skip = !args['no-skip'];
+const fileOf = (f) => path.join(out, `web_${String(f).padStart(4, '0')}.png`);
+const prints = new Map(record ? Object.entries(hashes).map(([k, v]) => [Number(k), v]) : []);   // frame -> fingerprint (this run, or a resumed full render)
+const per = Math.ceil(frames.length / pages.length);
+const chunks = pages.map((_, i) => frames.slice(i * per, (i + 1) * per));
+await Promise.all(pages.map(async (page, w) => {
+  for (const f of chunks[w]) {
+    const fp = (skip || record) ? await page.evaluate((f) => window.frameState(f), f) : null;
+    const file = fileOf(f);
+    if (skip && fp && prints.get(f - 1) === fp && fs.existsSync(fileOf(f - 1))) {
+      fs.copyFileSync(fileOf(f - 1), file + '.part'); fs.renameSync(file + '.part', file); skipped++;
+    } else {
+      const url = await page.evaluate(([f, s]) => window.renderFrame(f, s ? { samples: s } : {}), [f, args.samples ? Number(args.samples) : 0]);
+      fs.writeFileSync(file + '.part', Buffer.from(url.split(',')[1], 'base64')); fs.renameSync(file + '.part', file);
+    }
+    if (fp) prints.set(f, fp);
+    if (record) hashes[f] = fp;
     done++; if (record && done % 50 === 0) flushHashes();
     if (done % 10 === 0 || done === frames.length) {
       const s = (Date.now() - t0) / 1000;
-      console.log(`${done}/${frames.length} frames, ${(s / done).toFixed(2)} s/frame, ~${Math.round((s / done) * (frames.length - done))} s left`);
+      console.log(`${done}/${frames.length} frames (${skipped} copied), ${(s / done).toFixed(2)} s/frame, ~${Math.round((s / done) * (frames.length - done))} s left`);
     }
   }
 }));
 flushHashes();
 await browser.close(); server.close();
-console.log(`Wrote ${frames.length} frames to ${out} (${meta.seconds}s clip, ${total} frames total)`);
+const secs = (Date.now() - t0) / 1000;
+console.log(`Wrote ${frames.length} frames to ${out} (${meta.seconds}s clip, ${total} frames total); ${skipped} copied (${(100 * skipped / Math.max(1, frames.length)).toFixed(1)}% skipped), ${(secs / Math.max(1, frames.length)).toFixed(2)} s/frame overall, ${(secs / Math.max(1, frames.length - skipped)).toFixed(2)} s per rendered frame`);

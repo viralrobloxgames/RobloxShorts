@@ -6,5 +6,93 @@
   "instruct": "A 12-year-old British boy from London with a natural, unbroken boy's voice. Cheeky class clown: quick, confident and a little smug, with real warmth underneath. Natural, brisk conversational pace with a clear pause between sentences. Young, but not squeaky or cartoonish, and not an adult.",
   "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
   "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "max_A_s22.wav": {
+  "who": "max",
+  "style": "A",
+  "seed": 22,
+  "instruct": "A 12-year-old British boy from London with a natural, unbroken boy's voice. Cheeky class clown: quick, confident and a little smug, with real warmth underneath. Natural, brisk conversational pace with a clear pause between sentences. Young, but not squeaky or cartoonish, and not an adult.",
+  "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "max_B_s11.wav": {
+  "who": "max",
+  "style": "B",
+  "seed": 11,
+  "instruct": "A 13-year-old English schoolboy whose voice has not broken yet: mid-pitched, natural and relaxed. Dry, teasing and amused, like he has just caught someone out, but kind. Southern English accent. Quick but clear, each sentence separate.",
+  "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "max_B_s22.wav": {
+  "who": "max",
+  "style": "B",
+  "seed": 22,
+  "instruct": "A 13-year-old English schoolboy whose voice has not broken yet: mid-pitched, natural and relaxed. Dry, teasing and amused, like he has just caught someone out, but kind. Southern English accent. Quick but clear, each sentence separate.",
+  "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "max_C_s11.wav": {
+  "who": "max",
+  "style": "C",
+  "seed": 11,
+  "instruct": "A boy of about twelve with a southern English accent. Bright, mischievous and a bit of a show-off, but sweet and friendly underneath. A natural child's voice, not high-pitched, not deep, not a cartoon. Lively, normal speaking speed, clear sentence breaks.",
+  "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "max_C_s22.wav": {
+  "who": "max",
+  "style": "C",
+  "seed": 22,
+  "instruct": "A boy of about twelve with a southern English accent. Bright, mischievous and a bit of a show-off, but sweet and friendly underneath. A natural child's voice, not high-pitched, not deep, not a cartoon. Lively, normal speaking speed, clear sentence breaks.",
+  "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_A_s11.wav": {
+  "who": "lily",
+  "style": "A",
+  "seed": 11,
+  "instruct": "A 7-year-old British girl with a clear, natural little girl's voice. Sharp and deadpan, very matter-of-fact, like a tiny businesswoman stating her terms. Calm, confident, unhurried, with short pauses between sentences. Childlike but clear, not squeaky or cartoonish.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_A_s22.wav": {
+  "who": "lily",
+  "style": "A",
+  "seed": 22,
+  "instruct": "A 7-year-old British girl with a clear, natural little girl's voice. Sharp and deadpan, very matter-of-fact, like a tiny businesswoman stating her terms. Calm, confident, unhurried, with short pauses between sentences. Childlike but clear, not squeaky or cartoonish.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_B_s11.wav": {
+  "who": "lily",
+  "style": "B",
+  "seed": 11,
+  "instruct": "A young English girl, about seven years old, southern English accent. A serious, bossy little negotiator: flat, certain, no giggling. Speaks slowly and precisely, each sentence on its own. A natural child's voice, not high-pitched or shrill.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_B_s22.wav": {
+  "who": "lily",
+  "style": "B",
+  "seed": 22,
+  "instruct": "A young English girl, about seven years old, southern English accent. A serious, bossy little negotiator: flat, certain, no giggling. Speaks slowly and precisely, each sentence on its own. A natural child's voice, not high-pitched or shrill.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_C_s11.wav": {
+  "who": "lily",
+  "style": "C",
+  "seed": 11,
+  "instruct": "A seven-year-old girl from England, small and cute but cheeky and completely sure of herself. Bright, clear voice with a deadpan delivery, as if making a deal she knows she will win. Natural pace, clear breaks between sentences, not squeaky.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+ },
+ "lily_C_s22.wav": {
+  "who": "lily",
+  "style": "C",
+  "seed": 22,
+  "instruct": "A seven-year-old girl from England, small and cute but cheeky and completely sure of herself. Bright, clear voice with a deadpan delivery, as if making a deal she knows she will win. Natural pace, clear breaks between sentences, not squeaky.",
+  "text": "I won't tell. If you come to my tea party. Every day. And you have to be the horse.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
  }
 }
