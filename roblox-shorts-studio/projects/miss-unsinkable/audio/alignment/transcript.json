@@ -1,0 +1,801 @@
+{
+  "source": "narration.wav",
+  "duration": 57.2186875,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.08,
+      "text": " She survived the Titanic. Then she got on another ship.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.22,
+          "word": " She"
+        },
+        {
+          "start": 0.22,
+          "end": 0.58,
+          "word": " survived"
+        },
+        {
+          "start": 0.58,
+          "end": 0.82,
+          "word": " the"
+        },
+        {
+          "start": 0.82,
+          "end": 1.26,
+          "word": " Titanic."
+        },
+        {
+          "start": 1.94,
+          "end": 2.04,
+          "word": " Then"
+        },
+        {
+          "start": 2.04,
+          "end": 2.2,
+          "word": " she"
+        },
+        {
+          "start": 2.2,
+          "end": 2.32,
+          "word": " got"
+        },
+        {
+          "start": 2.32,
+          "end": 2.5,
+          "word": " on"
+        },
+        {
+          "start": 2.5,
+          "end": 2.8,
+          "word": " another"
+        },
+        {
+          "start": 2.8,
+          "end": 3.08,
+          "word": " ship."
+        }
+      ]
+    },
+    {
+      "start": 4.42,
+      "end": 10.98,
+      "text": " Violet Jessup works on ocean liners. In 1911 her ship, the Olympic collides with a navy warship.",
+      "words": [
+        {
+          "start": 4.42,
+          "end": 4.54,
+          "word": " Violet"
+        },
+        {
+          "start": 4.54,
+          "end": 4.98,
+          "word": " Jessup"
+        },
+        {
+          "start": 4.98,
+          "end": 5.28,
+          "word": " works"
+        },
+        {
+          "start": 5.28,
+          "end": 5.54,
+          "word": " on"
+        },
+        {
+          "start": 5.54,
+          "end": 5.9,
+          "word": " ocean"
+        },
+        {
+          "start": 5.9,
+          "end": 6.36,
+          "word": " liners."
+        },
+        {
+          "start": 7.0,
+          "end": 7.12,
+          "word": " In"
+        },
+        {
+          "start": 7.12,
+          "end": 7.74,
+          "word": " 1911"
+        },
+        {
+          "start": 7.74,
+          "end": 8.1,
+          "word": " her"
+        },
+        {
+          "start": 8.1,
+          "end": 8.36,
+          "word": " ship,"
+        },
+        {
+          "start": 8.8,
+          "end": 8.84,
+          "word": " the"
+        },
+        {
+          "start": 8.84,
+          "end": 9.22,
+          "word": " Olympic"
+        },
+        {
+          "start": 9.22,
+          "end": 9.88,
+          "word": " collides"
+        },
+        {
+          "start": 9.88,
+          "end": 10.04,
+          "word": " with"
+        },
+        {
+          "start": 10.04,
+          "end": 10.18,
+          "word": " a"
+        },
+        {
+          "start": 10.18,
+          "end": 10.42,
+          "word": " navy"
+        },
+        {
+          "start": 10.42,
+          "end": 10.98,
+          "word": " warship."
+        }
+      ]
+    },
+    {
+      "start": 11.4,
+      "end": 17.54,
+      "text": " Nobody dies. She keeps working. The next year she joins the Olympics brand new sister ship,",
+      "words": [
+        {
+          "start": 11.4,
+          "end": 11.66,
+          "word": " Nobody"
+        },
+        {
+          "start": 11.66,
+          "end": 12.06,
+          "word": " dies."
+        },
+        {
+          "start": 12.7,
+          "end": 12.82,
+          "word": " She"
+        },
+        {
+          "start": 12.82,
+          "end": 13.08,
+          "word": " keeps"
+        },
+        {
+          "start": 13.08,
+          "end": 13.54,
+          "word": " working."
+        },
+        {
+          "start": 14.64,
+          "end": 14.78,
+          "word": " The"
+        },
+        {
+          "start": 14.78,
+          "end": 15.0,
+          "word": " next"
+        },
+        {
+          "start": 15.0,
+          "end": 15.24,
+          "word": " year"
+        },
+        {
+          "start": 15.24,
+          "end": 15.4,
+          "word": " she"
+        },
+        {
+          "start": 15.4,
+          "end": 15.7,
+          "word": " joins"
+        },
+        {
+          "start": 15.7,
+          "end": 15.96,
+          "word": " the"
+        },
+        {
+          "start": 15.96,
+          "end": 16.28,
+          "word": " Olympics"
+        },
+        {
+          "start": 16.28,
+          "end": 16.62,
+          "word": " brand"
+        },
+        {
+          "start": 16.62,
+          "end": 16.92,
+          "word": " new"
+        },
+        {
+          "start": 16.92,
+          "end": 17.16,
+          "word": " sister"
+        },
+        {
+          "start": 17.16,
+          "end": 17.54,
+          "word": " ship,"
+        }
+      ]
+    },
+    {
+      "start": 17.82,
+      "end": 22.4,
+      "text": " the Titanic. It hits an iceberg. As she climbs into lifeboat 16,",
+      "words": [
+        {
+          "start": 17.82,
+          "end": 17.88,
+          "word": " the"
+        },
+        {
+          "start": 17.88,
+          "end": 18.22,
+          "word": " Titanic."
+        },
+        {
+          "start": 18.94,
+          "end": 19.12,
+          "word": " It"
+        },
+        {
+          "start": 19.12,
+          "end": 19.32,
+          "word": " hits"
+        },
+        {
+          "start": 19.32,
+          "end": 19.48,
+          "word": " an"
+        },
+        {
+          "start": 19.48,
+          "end": 19.92,
+          "word": " iceberg."
+        },
+        {
+          "start": 20.62,
+          "end": 20.72,
+          "word": " As"
+        },
+        {
+          "start": 20.72,
+          "end": 20.88,
+          "word": " she"
+        },
+        {
+          "start": 20.88,
+          "end": 21.14,
+          "word": " climbs"
+        },
+        {
+          "start": 21.14,
+          "end": 21.44,
+          "word": " into"
+        },
+        {
+          "start": 21.44,
+          "end": 21.9,
+          "word": " lifeboat"
+        },
+        {
+          "start": 21.9,
+          "end": 22.4,
+          "word": " 16,"
+        }
+      ]
+    },
+    {
+      "start": 22.98,
+      "end": 27.42,
+      "text": " an officer hands her a baby. She holds it for hours until a rescue ship arrives.",
+      "words": [
+        {
+          "start": 22.98,
+          "end": 23.08,
+          "word": " an"
+        },
+        {
+          "start": 23.08,
+          "end": 23.34,
+          "word": " officer"
+        },
+        {
+          "start": 23.34,
+          "end": 23.74,
+          "word": " hands"
+        },
+        {
+          "start": 23.74,
+          "end": 23.94,
+          "word": " her"
+        },
+        {
+          "start": 23.94,
+          "end": 24.06,
+          "word": " a"
+        },
+        {
+          "start": 24.06,
+          "end": 24.32,
+          "word": " baby."
+        },
+        {
+          "start": 25.1,
+          "end": 25.26,
+          "word": " She"
+        },
+        {
+          "start": 25.26,
+          "end": 25.48,
+          "word": " holds"
+        },
+        {
+          "start": 25.48,
+          "end": 25.64,
+          "word": " it"
+        },
+        {
+          "start": 25.64,
+          "end": 25.8,
+          "word": " for"
+        },
+        {
+          "start": 25.8,
+          "end": 26.1,
+          "word": " hours"
+        },
+        {
+          "start": 26.1,
+          "end": 26.36,
+          "word": " until"
+        },
+        {
+          "start": 26.36,
+          "end": 26.52,
+          "word": " a"
+        },
+        {
+          "start": 26.52,
+          "end": 26.76,
+          "word": " rescue"
+        },
+        {
+          "start": 26.76,
+          "end": 27.04,
+          "word": " ship"
+        },
+        {
+          "start": 27.04,
+          "end": 27.42,
+          "word": " arrives."
+        }
+      ]
+    },
+    {
+      "start": 28.179999999999996,
+      "end": 33.2,
+      "text": " Most people would never go to sea again. Violet becomes a nurse on a hospital ship,",
+      "words": [
+        {
+          "start": 28.179999999999996,
+          "end": 28.7,
+          "word": " Most"
+        },
+        {
+          "start": 28.7,
+          "end": 28.98,
+          "word": " people"
+        },
+        {
+          "start": 28.98,
+          "end": 29.2,
+          "word": " would"
+        },
+        {
+          "start": 29.2,
+          "end": 29.42,
+          "word": " never"
+        },
+        {
+          "start": 29.42,
+          "end": 29.62,
+          "word": " go"
+        },
+        {
+          "start": 29.62,
+          "end": 29.82,
+          "word": " to"
+        },
+        {
+          "start": 29.82,
+          "end": 29.96,
+          "word": " sea"
+        },
+        {
+          "start": 29.96,
+          "end": 30.4,
+          "word": " again."
+        },
+        {
+          "start": 31.32,
+          "end": 31.32,
+          "word": " Violet"
+        },
+        {
+          "start": 31.32,
+          "end": 31.68,
+          "word": " becomes"
+        },
+        {
+          "start": 31.68,
+          "end": 31.92,
+          "word": " a"
+        },
+        {
+          "start": 31.92,
+          "end": 32.16,
+          "word": " nurse"
+        },
+        {
+          "start": 32.16,
+          "end": 32.38,
+          "word": " on"
+        },
+        {
+          "start": 32.38,
+          "end": 32.5,
+          "word": " a"
+        },
+        {
+          "start": 32.5,
+          "end": 32.84,
+          "word": " hospital"
+        },
+        {
+          "start": 32.84,
+          "end": 33.2,
+          "word": " ship,"
+        }
+      ]
+    },
+    {
+      "start": 33.56,
+      "end": 40.66,
+      "text": " the Britannic, the Titanic's other sister. In 1916 it hits a mine and sinks in under an hour.",
+      "words": [
+        {
+          "start": 33.56,
+          "end": 33.68,
+          "word": " the"
+        },
+        {
+          "start": 33.68,
+          "end": 34.2,
+          "word": " Britannic,"
+        },
+        {
+          "start": 34.6,
+          "end": 34.66,
+          "word": " the"
+        },
+        {
+          "start": 34.66,
+          "end": 35.24,
+          "word": " Titanic's"
+        },
+        {
+          "start": 35.24,
+          "end": 35.42,
+          "word": " other"
+        },
+        {
+          "start": 35.42,
+          "end": 35.78,
+          "word": " sister."
+        },
+        {
+          "start": 36.96,
+          "end": 37.18,
+          "word": " In"
+        },
+        {
+          "start": 37.18,
+          "end": 37.86,
+          "word": " 1916"
+        },
+        {
+          "start": 37.86,
+          "end": 38.52,
+          "word": " it"
+        },
+        {
+          "start": 38.52,
+          "end": 38.72,
+          "word": " hits"
+        },
+        {
+          "start": 38.72,
+          "end": 38.88,
+          "word": " a"
+        },
+        {
+          "start": 38.88,
+          "end": 39.14,
+          "word": " mine"
+        },
+        {
+          "start": 39.14,
+          "end": 39.46,
+          "word": " and"
+        },
+        {
+          "start": 39.46,
+          "end": 39.7,
+          "word": " sinks"
+        },
+        {
+          "start": 39.7,
+          "end": 39.96,
+          "word": " in"
+        },
+        {
+          "start": 39.96,
+          "end": 40.22,
+          "word": " under"
+        },
+        {
+          "start": 40.22,
+          "end": 40.4,
+          "word": " an"
+        },
+        {
+          "start": 40.4,
+          "end": 40.66,
+          "word": " hour."
+        }
+      ]
+    },
+    {
+      "start": 41.18,
+      "end": 45.52,
+      "text": " Her lifeboat gets pulled toward the giant propellers. She jumps into the sea,",
+      "words": [
+        {
+          "start": 41.18,
+          "end": 41.4,
+          "word": " Her"
+        },
+        {
+          "start": 41.4,
+          "end": 41.86,
+          "word": " lifeboat"
+        },
+        {
+          "start": 41.86,
+          "end": 42.1,
+          "word": " gets"
+        },
+        {
+          "start": 42.1,
+          "end": 42.42,
+          "word": " pulled"
+        },
+        {
+          "start": 42.42,
+          "end": 42.72,
+          "word": " toward"
+        },
+        {
+          "start": 42.72,
+          "end": 42.96,
+          "word": " the"
+        },
+        {
+          "start": 42.96,
+          "end": 43.26,
+          "word": " giant"
+        },
+        {
+          "start": 43.26,
+          "end": 43.8,
+          "word": " propellers."
+        },
+        {
+          "start": 44.42,
+          "end": 44.56,
+          "word": " She"
+        },
+        {
+          "start": 44.56,
+          "end": 44.8,
+          "word": " jumps"
+        },
+        {
+          "start": 44.8,
+          "end": 45.04,
+          "word": " into"
+        },
+        {
+          "start": 45.04,
+          "end": 45.22,
+          "word": " the"
+        },
+        {
+          "start": 45.22,
+          "end": 45.52,
+          "word": " sea,"
+        }
+      ]
+    },
+    {
+      "start": 45.78,
+      "end": 51.06,
+      "text": " hits her head and survives again. She keeps working at sea for another 30 years.",
+      "words": [
+        {
+          "start": 45.78,
+          "end": 45.94,
+          "word": " hits"
+        },
+        {
+          "start": 45.94,
+          "end": 46.16,
+          "word": " her"
+        },
+        {
+          "start": 46.16,
+          "end": 46.42,
+          "word": " head"
+        },
+        {
+          "start": 46.42,
+          "end": 46.74,
+          "word": " and"
+        },
+        {
+          "start": 46.74,
+          "end": 47.16,
+          "word": " survives"
+        },
+        {
+          "start": 47.16,
+          "end": 47.54,
+          "word": " again."
+        },
+        {
+          "start": 48.62,
+          "end": 48.82,
+          "word": " She"
+        },
+        {
+          "start": 48.82,
+          "end": 49.02,
+          "word": " keeps"
+        },
+        {
+          "start": 49.02,
+          "end": 49.36,
+          "word": " working"
+        },
+        {
+          "start": 49.36,
+          "end": 49.6,
+          "word": " at"
+        },
+        {
+          "start": 49.6,
+          "end": 49.84,
+          "word": " sea"
+        },
+        {
+          "start": 49.84,
+          "end": 50.04,
+          "word": " for"
+        },
+        {
+          "start": 50.04,
+          "end": 50.28,
+          "word": " another"
+        },
+        {
+          "start": 50.28,
+          "end": 50.62,
+          "word": " 30"
+        },
+        {
+          "start": 50.62,
+          "end": 51.06,
+          "word": " years."
+        }
+      ]
+    },
+    {
+      "start": 51.66,
+      "end": 57.04,
+      "text": " People call her Miss Unsinkable. Follow Viral Roblox Games for more stories like this.",
+      "words": [
+        {
+          "start": 51.66,
+          "end": 51.9,
+          "word": " People"
+        },
+        {
+          "start": 51.9,
+          "end": 52.18,
+          "word": " call"
+        },
+        {
+          "start": 52.18,
+          "end": 52.4,
+          "word": " her"
+        },
+        {
+          "start": 52.4,
+          "end": 52.58,
+          "word": " Miss"
+        },
+        {
+          "start": 52.58,
+          "end": 53.24,
+          "word": " Unsinkable."
+        },
+        {
+          "start": 54.28,
+          "end": 54.58,
+          "word": " Follow"
+        },
+        {
+          "start": 54.58,
+          "end": 55.68,
+          "word": " ViralRobloxGames"
+        },
+        {
+          "start": 55.68,
+          "end": 55.94,
+          "word": " for"
+        },
+        {
+          "start": 55.94,
+          "end": 56.14,
+          "word": " more"
+        },
+        {
+          "start": 56.14,
+          "end": 56.46,
+          "word": " stories"
+        },
+        {
+          "start": 56.46,
+          "end": 56.74,
+          "word": " like"
+        },
+        {
+          "start": 56.74,
+          "end": 57.04,
+          "word": " this."
+        }
+      ]
+    }
+  ]
+}

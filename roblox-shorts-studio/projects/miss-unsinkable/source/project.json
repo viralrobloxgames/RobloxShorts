@@ -1,8 +1,14 @@
 {
   "title": "Miss Unsinkable",
   "character": "Mia",
-  "characters": ["Mia", "Leo", "Max", "Skye", "Noob"],
-  "seconds": 62.0,
+  "characters": [
+    "Mia",
+    "Leo",
+    "Max",
+    "Skye",
+    "Noob"
+  ],
+  "seconds": 59.0,
   "fps": 30,
   "width": 1080,
   "height": 1920,
@@ -11,7 +17,8 @@
   "finish": {
     "music": "playful_history_music",
     "word_fixes": {
-      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES"
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES",
+      "JESSUP": "JESSOP"
     }
   }
 }
