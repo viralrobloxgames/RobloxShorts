@@ -4,10 +4,11 @@ import * as base from './ch10.js';
 import { holdCheck } from '../../../web/lib/holdcheck.js';
 const T = base.TIMES, L = base.LINES, at = (i, o = 0) => L.line(i).start + o;
 export const { meta, sky, setup, update, overlay } = holdCheck(base, [
+  [0.3, 'max', 'R', 'plate at frame 1 (waiting in bed)'],
   [2.0, 'skye', 'R', 'phone held up recording (sheet on)'],
   [at(2, 0.5), 'skye', 'R', 'phone up, spooky arm out'],
-  [at(3, 0.5), 'max', 'L', 'plate out to her ("Hungry?")'],
-  [at(7, 1.2), 'max', 'L', 'plate lifted ("the sandwiches")'],
+  [at(3, 0.5), 'max', 'R', 'plate out to her ("Hungry?")'],
+  [at(7, 1.2), 'max', 'R', 'plate lifted ("the sandwiches")'],
   [T.pull + 0.6, 'skye', 'L', 'sheet bunched in her left hand'],
   [T.pull + 0.6, 'skye', 'R', 'phone lowered to her chest'],
   [at(12, 2.5), 'skye', 'R', 'phone hand pointing at him'],
