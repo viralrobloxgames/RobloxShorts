@@ -18,6 +18,9 @@ export const SKY = { zenith: '#0b1533', horizon: '#2a3a66', below: '#0b1020', fo
 
 // meta for a chapter of `seconds` (rounded up to whole frames). Frames are 1-based in render.mjs: frame f is at t = (f-1)/30.
 export function chapterMeta(seconds, extra = {}) { return { ...META, seconds: Math.ceil(seconds * FPS) / FPS, ...extra }; }
+// The chapter's length: the last line + 0.75 s of room tone, never shorter than the narration file.
+// export const meta = K.chapterMeta(K.chapterLength(L));
+export const chapterLength = (L) => Math.max(L.end + 0.75, L.duration);
 export const frameAt = (t) => Math.round(t * FPS) + 1;
 export const timeOf = (frame) => (frame - 1) / FPS;
 
@@ -86,6 +89,7 @@ export function boxRoom(id) {
 // chapter's estimate. Returns { lines, words, end, measured, line(i), said(speaker) }:
 //   lines: [{ index, speaker, note, text, start, end }] (spoken lines, in order; `index` as in lines.json)
 //   words: [{ word, start, end, speaker }]   end: the last line's end (s)   measured: true when it came from narration
+//   duration: the narration's length; index is 1-based (the chapter's spoken lines, as narrate_multi.py numbers them)
 // Use in the clip module (web/chNN.js) at top level:  const L = await K.loadLines(import.meta.url, 1, EST);
 export async function loadLines(clipUrl, ch, estimate = []) {
   const dir = new URL(`../audio/chapters/ch${String(ch).padStart(2, '0')}/`, clipUrl);
@@ -94,21 +98,22 @@ export async function loadLines(clipUrl, ch, estimate = []) {
   let lines, words, measured = !!lj;
   if (lj) {
     const arr = Array.isArray(lj) ? lj : lj.lines || [];
-    lines = arr.filter((x) => x.speaker && x.text && x.kind !== 'action' && x.type !== 'action').map((x, i) => ({ ...x, index: x.index ?? i }));
+    lines = arr.filter((x) => x.speaker && x.text && x.kind !== 'action' && x.type !== 'action').map((x, i) => ({ ...x, index: x.index ?? i + 1 }));
     const wa = cj ? (Array.isArray(cj) ? cj : cj.words || cj.captions || []) : [];
     words = wa.map((w) => ({ word: w.word ?? w.text, start: w.start, end: w.end, speaker: w.speaker }));
   } else {
-    lines = estimate.map((x, i) => ({ index: x.index ?? i, ...x }));
+    lines = estimate.map((x, i) => ({ ...x, index: x.index ?? i + 1 }));
     words = [];
     for (const l of lines) {                         // spread the line's words evenly over it (estimate only)
       const ws = l.text.split(/\s+/), d = (l.end - l.start) / ws.length;
       ws.forEach((w, k) => words.push({ word: w, start: l.start + k * d, end: l.start + (k + 0.85) * d, speaker: l.speaker }));
     }
   }
-  const end = Math.max(0, ...lines.map((l) => l.end), lj?.duration ?? 0);
+  const end = Math.max(0, ...lines.map((l) => l.end));
+  const duration = lj?.duration ?? end + 0.6;          // the narration file's length (last line + its tail + room tone)
   const byIndex = new Map(lines.map((l) => [l.index, l]));
   return {
-    lines, words, end, measured, actions: lj ? (Array.isArray(lj) ? [] : lj.actions || []) : [],
+    lines, words, end, duration, measured, actions: lj ? (Array.isArray(lj) ? [] : lj.actions || []) : [],
     line(i) { const l = byIndex.get(i); if (!l) throw new Error(`kit: no spoken line ${i} in ch${ch}`); return l; },
     said(speaker) { return words.filter((w) => w.speaker === speaker); },
     speakerAt(t) { const l = lines.find((x) => t >= x.start && t < x.end); return l ? l.speaker : null; },
