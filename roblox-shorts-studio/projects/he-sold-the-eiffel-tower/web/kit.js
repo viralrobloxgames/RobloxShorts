@@ -234,13 +234,13 @@ export function hotel(scene) {
   const mini = eiffel(); mini.scale.setScalar(0.11); mini.position.set(2.0, -2, -40); g.add(mini);    // seen through the window
   // the long table and chairs
   const cloth = std('#f6f1e4', { roughness: 0.85 }), wood = std('#5a3622', { roughness: 0.5 });
-  g.add(box(16, 0.3, 5, cloth, 0, 3.3, 0), box(16.2, 0.9, 5.2, cloth, 0, 2.9, 0));
-  for (const [x, z] of [[-7.5, -2.2], [7.5, -2.2], [-7.5, 2.2], [7.5, 2.2]]) g.add(box(0.4, 3, 0.4, wood, x, 1.5, z));
+  g.add(box(16, 0.3, 5, cloth, 0, 3.5, 0), box(16.2, 0.12, 5.2, cloth, 0, 3.38, 0));
+  for (const [x, z] of [[-7.5, -2.2], [7.5, -2.2], [-7.5, 2.2], [7.5, 2.2]]) g.add(box(0.4, 3.35, 0.4, wood, x, 1.67, z));
   const chairs = [];
   for (const [x, z, ry] of [[-5, -4.0, 0], [0, -4.0, 0], [5, -4.0, 0], [-10, 0, Math.PI / 2], [10, 0, -Math.PI / 2]]) { const c = chair(); c.position.set(x, 0, z); c.rotation.y = ry; g.add(c); chairs.push(c); }
   const ch = chandelier(); ch.position.set(0, 12.5, 0); g.add(ch);
   // on the table: candles and the papers
-  for (const x of [-5, 5]) { g.add(cyl(0.25, 0.35, 0.3, tm, 10, x, 3.6, 0.6), cyl(0.1, 0.1, 1.0, std('#fbf6e8'), 8, x, 4.2, 0.6), sph(0.12, std('#ffdf8a', { emissive: '#ffb84a', emissiveIntensity: 3 }), x, 4.8, 0.6, 8)); }
+  for (const x of [-2.5, 2.5]) { g.add(cyl(0.25, 0.35, 0.3, tm, 10, x, 3.8, -1.3), cyl(0.1, 0.1, 1.0, std('#fbf6e8'), 8, x, 4.4, -1.3), sph(0.12, std('#ffdf8a', { emissive: '#ffb84a', emissiveIntensity: 3 }), x, 5.0, -1.3, 8)); }
   return { group: g, chairs, window: win };
 }
 export function office(scene) {
