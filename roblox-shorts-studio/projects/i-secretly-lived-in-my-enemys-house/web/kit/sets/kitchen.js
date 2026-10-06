@@ -8,11 +8,11 @@
 //           (kids face the camera, Dad at the stove behind them); a character hides crouched on its front side.
 // Walls and ceiling hide automatically when the camera is outside them.
 import { THREE, V, std, glow, box, rbox, cyl, picture, fontText, floorTexture, wallTexture, wallWithHoles,
-  autoHideWalls, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
+  autoHideWalls, onSceneRender, proxyLight, proxyLevel, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
 
 export const OFFSET = V(900, 0, 0);
 const H = 12;                         // ceiling
-const ISLAND_TOP = 3.6, STOOL_TOP = 2.4, COUNTER_TOP = 3.4;
+const ISLAND_TOP = 3.6, STOOL_TOP = 2.2, COUNTER_TOP = 3.4;
 // stairs: 16 steps, rise 0.75, run 0.8; step i (1..16) top at y 0.75 i over z 2.0-0.8 i .. 2.0-0.8 (i-1); x 12..16
 const STEP_RISE = 0.75, STEP_RUN = 0.8, STAIR_Z0 = 2.0, STAIR_X = 14;
 export function stairFootY(z) { const i = Math.ceil((STAIR_Z0 - z) / STEP_RUN); return Math.max(0, Math.min(16, i)) * STEP_RISE; }
@@ -30,7 +30,7 @@ export function build(scene) {
   const tileM = std('#ffffff', { map: floorTexture('tile', [6, 5]), roughness: 0.55 });
   const cabM = std('#6f9a8d', { roughness: 0.55 });        // sage cabinets
   const cabDark = std('#557a6f', { roughness: 0.55 });
-  const topM = std('#efeae2', { roughness: 0.3 });           // light stone counter top
+  const topM = std('#efeae2', { roughness: 0.6 });           // light stone counter top
   const woodM = std('#a8723f', { roughness: 0.6 });
   const woodDark = std('#7a4f2a', { roughness: 0.65 });
   const steelM = std('#c9ced4', { roughness: 0.3, metalness: 0.6 });
@@ -89,7 +89,7 @@ export function build(scene) {
     day: outsideTex('#7cc0ff', '#dff1ff', garden(false)),
   };
   const outM = new THREE.MeshBasicMaterial({ map: OUT.night, fog: false });
-  const outPlane = (w, h, x, y, z, ry) => { const p = new THREE.Mesh(new THREE.PlaneGeometry(w, h), outM); p.position.set(x, y, z); p.rotation.y = ry; group.add(p); return p; };
+  const outPlane = (w, h, x, y, z, ry) => { const p = new THREE.Mesh(new THREE.PlaneGeometry(w, h), outM); p.userData.noCamBlock = true; p.position.set(x, y, z); p.rotation.y = ry; group.add(p); return p; };
   outPlane(14, 9, 3, 7, -15, 0);                  // behind the sink window
   outPlane(16, 12, 22, 5, 6, -Math.PI / 2);       // behind the back door
   front.add(outPlane(14, 9, 24.5, 7, 3.75, Math.PI));   // behind the front window (hides with the front wall)
@@ -216,15 +216,18 @@ export function build(scene) {
       for (let i = 0; i < 10; i++) spots.push([60 + r() * (w - 120), h - 60 - r() * 130]);
       for (const [x, y] of spots) letter(pool[(r() * pool.length) | 0], x, y, 70 + r() * 16, n++);
     }
-    if (text) {
-      const lines = String(text).toUpperCase().split('\n');
-      const longest = Math.max(...lines.map((l) => l.length));
-      const px = Math.min(150, (w - 60) / Math.max(1, longest) * 1.25), lh = px * 1.15;
-      const y0 = h / 2 - (lines.length - 1) * lh / 2;
-      lines.forEach((line, li) => {
-        const step = px * 0.8, x0 = w / 2 - (line.length - 1) * step / 2;
-        [...line].forEach((ch, ci) => { if (ch !== ' ') letter(ch, x0 + ci * step, y0 + li * lh, px, n++); });
-      });
+    if (text) {   // fixed grid: 7 columns x up to 3 rows, lines left-aligned, so a growing string never moves placed letters
+      const px = 128, step = 96, lh = 150, x0 = w / 2 - 3 * step, y0 = h / 2 - lh * 0.5;
+      String(text).toUpperCase().split('\n').forEach((line, li) => [...line].forEach((ch, ci) => {
+        if (ch === ' ') return;
+        const k = li * 16 + ci, rr = rng(101 + k * 7 + ch.charCodeAt(0));
+        const x = x0 + ci * step + (rr() - 0.5) * 8, y = y0 + li * lh + (rr() - 0.5) * 10;
+        g.save(); g.translate(x, y); g.rotate((rr() - 0.5) * 0.3);
+        g.font = `${px}px "Luckiest Guy"`; g.textAlign = 'center'; g.textBaseline = 'middle';
+        g.fillStyle = 'rgba(0,0,0,0.28)'; g.fillText(ch, 4, 6);
+        g.lineWidth = px * 0.08; g.strokeStyle = 'rgba(0,0,0,0.35)'; g.strokeText(ch, 0, 0);
+        g.fillStyle = LETTER_COLORS[(k * 3 + ch.charCodeAt(0)) % LETTER_COLORS.length]; g.fillText(ch, 0, 0); g.restore();
+      }));
     }
     lettersTex.needsUpdate = true;
   }
@@ -242,9 +245,9 @@ export function build(scene) {
   box(11.0, 0.3, 3.9, topM, 0, ISLAND_TOP - 0.15, -0.15, island);                // top z -2.1..1.8 (overhang on the stool side)
   for (let x = -4.2; x <= 4.3; x += 2.1) box(1.9, 2.2, 0.08, std('#36627b', { roughness: 0.55 }), x, 1.75, 1.77, island);   // panels on the hiding side
   // stools on the back side (z -3.2), seat top 2.4
-  const STOOL_X = [-3.6, -1.2, 1.2, 3.6], STOOL_Z = -3.2;
+  const STOOL_X = [-3.6, -1.2, 1.2, 3.6], STOOL_Z = -3.2, stools = [];
   for (const x of STOOL_X) {
-    const s = new THREE.Group(); s.position.set(x, 0, STOOL_Z); island.add(s);
+    const s = new THREE.Group(); s.position.set(x, 0, STOOL_Z); island.add(s); stools.push(s);
     cyl(0.8, 0.8, 0.3, woodM, 0, STOOL_TOP - 0.15, 0, s);
     for (const [dx, dz] of [[-0.5, -0.5], [0.5, -0.5], [-0.5, 0.5], [0.5, 0.5]]) { const l = cyl(0.08, 0.1, STOOL_TOP - 0.3, woodDark, dx * 0.95, (STOOL_TOP - 0.3) / 2, dz * 0.95, s); l.rotation.set(dz * 0.12, 0, -dx * 0.12); }
     const ring = new THREE.Mesh(new THREE.TorusGeometry(0.62, 0.05, 6, 20), woodDark); ring.rotation.x = Math.PI / 2; ring.position.y = 0.8; s.add(ring);
@@ -304,7 +307,7 @@ export function build(scene) {
     const d = new THREE.Group(); d.position.z = dz; piv.add(d);
     box(0.18, 7.9, 0.22, slatM, 0, 4.0, -1.13, d); box(0.18, 7.9, 0.22, slatM, 0, 4.0, 1.13, d);
     box(0.18, 0.3, 2.5, slatM, 0, 0.2, 0, d); box(0.18, 0.3, 2.5, slatM, 0, 7.8, 0, d); box(0.18, 0.35, 2.5, slatM, 0, 4.0, 0, d);
-    for (let y = 0.55; y < 7.6; y += 0.42) { if (Math.abs(y - 4.0) < 0.3) continue; const s = box(0.05, 0.3, 2.1, slatM, 0, y, 0, d); s.rotation.z = -1.15; }
+    for (let y = 0.55; y < 7.6; y += 0.42) { if (Math.abs(y - 4.0) < 0.3) continue; const s = box(0.05, 0.3, 2.1, slatM, 0, y, 0, d); s.rotation.z = -1.15; s.userData.noCamBlock = true; }
     box(0.12, 0.6, 0.12, handleM, 0.15, 4.0, side < 0 ? 1.0 : -1.0, d);
     pantryDoors.push({ piv, side });
   }
@@ -352,10 +355,10 @@ export function build(scene) {
   const moon = practical(new THREE.SpotLight('#9fb8ff', 0, 60, 0.5, 0.5, 1.2), 900);
   moon.position.set(30, 16, 2); moon.target.position.set(4, 0, 6); moon.castShadow = true; moon.shadow.mapSize.set(1024, 1024); moon.shadow.bias = -0.0004;
   group.add(moon, moon.target);
-  const moonSink = practical(new THREE.SpotLight('#9fb8ff', 0, 50, 0.45, 0.6, 1.2), 500);
-  moonSink.position.set(3, 14, -26); moonSink.target.position.set(1, 0, -2); group.add(moonSink, moonSink.target);
+  const moonSink = practical(new THREE.SpotLight('#9fb8ff', 0, 50, 0.45, 0.8, 1.2), 160);
+  moonSink.position.set(3, 14, -26); moonSink.target.position.set(2, 0, -6); group.add(moonSink, moonSink.target);
   // daylight through the windows (Ch11 Sunday morning): broad warm spots
-  const sunIn = practical(new THREE.SpotLight('#fff0d0', 0, 70, 0.6, 0.7, 1.0), 450);
+  const sunIn = practical(new THREE.SpotLight('#fff0d0', 0, 70, 0.6, 0.7, 1.0), 260);
   sunIn.position.set(30, 18, -2); sunIn.target.position.set(0, 0, 2); sunIn.castShadow = true; sunIn.shadow.mapSize.set(1024, 1024); sunIn.shadow.bias = -0.0004;
   group.add(sunIn, sunIn.target);
   const sunSink = practical(new THREE.SpotLight('#fff0d0', 0, 60, 0.5, 0.7, 1.0), 260);
@@ -379,7 +382,7 @@ export function build(scene) {
 
   // ---------------------------------------------------------------- marks (heading: forward = (sin h, 0, cos h))
   const PI = Math.PI;
-  const sit = (x, z, h = 0) => M(x, STOOL_TOP - 2, z, h, { sit: true, seatTop: STOOL_TOP + OFFSET.y });
+  const sit = (x, z, h = 0) => M(x, STOOL_TOP - 1.5, z, h, { sit: true, seatTop: STOOL_TOP + OFFSET.y });
   const marks = {
     fridge: M(-11, 0, -7.4, PI, { note: 'facing the fridge door (letters), arm length from it' }),
     fridge_open: M(-10.2, 0, -6.6, PI, { note: 'in the open fridge light, facing in; the door swings to his left' }),
@@ -411,7 +414,22 @@ export function build(scene) {
     back_door_outside: M(19.0, 0, 6.0, PI / 2, { note: 'just outside the back door (offscreen side)' }),
     front_doorway: M(-2, 0, 11.0, PI, { note: 'in the living-room doorway (front wall), facing in' }),
     kitchen_center: M(0, 0, 6.0, PI, { note: 'open floor in front of the island' }),
+    pantry_gap: M(-16.35, 0, -0.5, PI / 2, { note: 'just inside the pantry with the doors ajar (pantryDoors ~0.15), face in the centre gap' }),
+    island_counter: M(0, 0, -3.0, 0, { note: 'behind the island on the stove side, facing the camera side (making the sandwich; use stools: tucked)' }),
+    island_crouch: M(0.4, 0, 2.7, 0, { crouch: true, note: 'crouched low on the front side (head must stay below 3.6)' }),
+    island_max: M(-1.2, 0, -4.8, 0, { note: 'standing behind stool 2 facing the island' }),
+    island_lily: M(-3.6, 0, -4.8, 0, { note: 'standing behind stool 1 facing the island' }),
+    island_end: M(7.0, 0, -0.6, -PI / 2, { note: 'standing at the right (stool 3-4) end of the island, facing it' }),
+    cupboard: M(-6.6, 0, -8.3, PI, { note: 'at the upper cupboards left of the stove (the syrup)' }),
+    phone_corner: M(10.0, 0, 9.0, -PI * 0.8, { note: 'the front-right corner by the back door, facing into the room (phone call)' }),
+    stairs_exit: M(STAIR_X, 12, -10.6, PI, { note: 'top of the stairs, out of frame (walk up to here)' }),
+    pan: M(-2.85, COUNTER_TOP + 0.3, -10.1, PI, { note: 'the pan surface on the front-left burner (pos = top of the pan)' }),
+    island_plate_1: M(STOOL_X[0], ISLAND_TOP, -1.5, 0, { note: 'island top in front of stool 1 (y = top surface)' }),
+    island_plate_2: M(STOOL_X[1], ISLAND_TOP, -1.5, 0), island_plate_3: M(STOOL_X[2], ISLAND_TOP, -1.5, 0), island_plate_4: M(STOOL_X[3], ISLAND_TOP, -1.5, 0),
+    island_phone_3: M(STOOL_X[2] + 0.8, ISLAND_TOP, -1.2, 0, { note: 'island top beside stool 3\'s plate' }),
+    backpack_floor_3: M(STOOL_X[2] + 1.0, 0, -4.6, 0, { note: 'floor beside stool 3' }),
   };
+  marks.stairs_foot = marks.stairs_bottom; marks.back_door = marks.back_door_inside;
   // a walk path down the stairs: u 0 (top) .. 1 (floor at the bottom); y follows the steps
   function stairsPath(u) {
     const z = -9.6 + (3.4 + 9.6) * u; return { pos: W(STAIR_X, stairFootY(z), z), heading: 0 };
@@ -431,10 +449,10 @@ export function build(scene) {
     pancake_reach: C([3.2, 4.5, 3.6], [0.6, 3.9, 0.75], 34, { note: 'the stack on the island and the hand coming up from the front' }),
     stove: C([4.5, 5.6, -2.5], [-2, 4.9, -9.5], 38, { note: 'Dad at the stove, 3/4 from the right' }),
     stove_front: C([-2, 5.4, -3.0], [-2, 4.8, -9], 40, { note: 'over the stools toward Dad at the stove' }),
-    fridge: C([-5, 5.2, -1], [-11, 4.4, -9], 38, { note: 'the fridge and whoever stands at it, 3/4 from the right' }),
+    fridge: C([-6.6, 5.2, -2.8], [-11, 4.4, -9], 40, { note: 'the fridge and whoever stands at it, 3/4 from the right' }),
     fridge_wide: C([-3, 6.5, 5], [-10, 4.0, -8], 42, { note: 'the fridge corner, pantry at left, island edge at right' }),
     fridge_letters: C([-11, 4.7, -4.6], [-11, 4.7, -9], 34, { note: 'the magnet letters fill the frame' }),
-    fridge_pov: C([-11.2, 4.7, -11.2], [-10.6, 4.4, -3], 54, { note: 'from inside the fridge out (door open): the face at fridge_open lit by the fridge light' }),
+    fridge_pov: C([-11.1, 4.9, -9.35], [-10.4, 4.6, -3], 54, { note: 'from inside the fridge out (door open): the face at fridge_open lit by the fridge light' }),
     fridge_ots: C([-8.6, 5.9, -3.6], [-11, 4.6, -9], 40, { note: 'over the shoulder of someone at fridge_read toward the letters' }),
     pantry_pov: C([-17.2, 4.6, -0.5], [-11, 4.0, -7.5], 54, { note: 'from inside the pantry through the slats toward the fridge' }),
     pantry_pov_island: C([-17.2, 4.6, -0.5], [-2, 3.6, 0], 54, { note: 'from inside the pantry through the slats toward the island' }),
@@ -445,24 +463,42 @@ export function build(scene) {
     back_door: C([4, 4.5, 3], [16, 3.0, 6.2], 46, { note: 'the back door and whoever crawls out' }),
     back_door_wide: C([-4, 5.5, 8], [15, 2.6, 5.5], 44, { note: 'island front to the back door: the crawl route' }),
     reverse_from_stove: C([-1, 6.0, -8.5], [0, 3.6, 4], 50, { note: 'from the stove toward the island and the front (shows the front wall)' }),
+    kitchen_wide: C([0, 9.5, 24], [-1.5, 4.0, -4], 52, { note: 'pantry (left wall) L, fridge centre-L, island fg, stairs R' }),
+    fridge_side: C([-6.6, 5.2, -2.8], [-11, 4.4, -9], 40, { note: '3/4 on whoever is at the fridge, fridge left (same as fridge)' }),
+    fridge_cu: C([-9.6, 5.0, -5.2], [-11, 4.7, -9], 38, { note: 'closer on the fridge door (letters readable) and a face beside it' }),
+    pantry_gap: C([-11.5, 4.8, 3.0], [-16.3, 4.6, -0.5], 32, { note: 'outside the pantry, 3/4: the face in the gap of the ajar doors' }),
+    island_counter: C([0.8, 5.6, 7.5], [0, 4.3, -3.0], 38, { note: 'over the island onto whoever stands at island_counter' }),
+    island_low_behind: C([-0.5, 2.4, 7.5], [-8, 3.6, -8], 46, { note: 'low on the front side: the crouched hider fg, the fridge bg' }),
+    back_door_floor: C([3, 1.1, 3.5], [16, 1.6, 6], 48, { note: 'floor level toward the back door (the crawl out)' }),
+    stairs_side: C([2, 5.2, 4], [13.5, 5.2, -4], 46, { note: 'the stairs from the island (old stairs)' }),
+    stove_ms: C([3.5, 5.4, -3.2], [-1.8, 4.8, -9.2], 36, { note: 'MS of Dad at the stove' }),
+    island_two: C([3.0, 5.4, 5.0], [2.0, 4.2, -2.6], 40, { note: 'stools 2-3 and the island_end spot' }),
+    island_two_seated: C([0, 5.0, 6.0], [0, 4.0, -3.2], 34, { note: 'tight two-shot of stools 2 and 3, faces to camera' }),
+    island_wide: C([7.5, 8.5, 17], [-3.0, 4.2, -5], 44, { note: 'end screen: the four at the island, fridge letters readable at left, room at right' }),
   };
+  cams.stairs_wide = C([-12, 9, 19], [2.5, 4.6, -3.5], 44, { note: 'frame 0 of Ch11: stairs R, island, stove, fridge L all readable' });
 
   // ---------------------------------------------------------------- lights the presets switch
-  const lights = { fridge: fridgeLight, fridgeFill, moon, moonSink, sunIn, sunSink, roomFill, pendantL: pendants[0].L, pendantR: pendants[1].L, hood: hoodLight, pantry: pantryLight, upstairs: upLight };
+  // set.lights: the practicals K.applyLight / K.setPractical switch (proxies; see common_c.js). fridge_light only shines
+  // while the door is open; ceiling_light = the two pendants + the hood light (bulbs glow with it).
+  const lights = { fridge_light: proxyLight(group), ceiling_light: proxyLight(group), pantry_light: proxyLight(group), upstairs_light: proxyLight(group) };
+  // the room's own time-of-day lights (moon / sun through the windows, a soft fill) follow setState({ time }), not the presets
+  const internal = { moon, moonSink, sunIn, sunSink, roomFill };
 
   // ---------------------------------------------------------------- state
   const state = {};
   const TIME = {
-    night: { out: 'night', clock: [11, 52], lv: { moon: 1, moonSink: 1, roomFill: 0.06, pendantL: 0, pendantR: 0, hood: 0, upstairs: 0.3 } },
+    night: { out: 'night', clock: [11, 52], lv: { moon: 1, moonSink: 1, roomFill: 0.06, pendantL: 0, pendantR: 0, hood: 0, upstairs: 0 } },
     predawn: { out: 'predawn', clock: [6, 4], lv: { moon: 0.35, moonSink: 0.4, roomFill: 0.25, pendantL: 1, pendantR: 1, hood: 1, upstairs: 0.6 } },
     morning: { out: 'morning', clock: [8, 30], lv: { sunIn: 1, sunSink: 1, roomFill: 1, pendantL: 0, pendantR: 0, hood: 0, upstairs: 0.6 } },
     day: { out: 'day', clock: [12, 0], lv: { sunIn: 1, sunSink: 1, roomFill: 1 } },
   };
   function setState(s = {}) {
     if (s.chapter !== undefined) {
-      const ch = { 2: { time: 'predawn', fridge: 'LILY', fridgeScatter: true, pancakes: 12, plate: null, fridgeOpen: 0 },
-        3: { time: 'night', fridge: '', fridgeScatter: true, pancakes: null, plate: null, fridgeOpen: 1 },
-        11: { time: 'morning', fridge: 'BE NICE\n2 SKYE', fridgeScatter: true, pancakes: 8, plate: null, fridgeOpen: 0 } }[s.chapter] || {};
+      const ch = { 2: { time: 'predawn', fridge: 'LILY', fridgeScatter: true, pancakes: 12, plate: null, fridgeOpen: 0, stools: 'out', backDoor: 0 },
+        3: { time: 'night', fridge: 'BE NI', fridgeScatter: true, pancakes: null, plate: null, fridgeOpen: 1, stools: 'tucked', backDoor: 0 },
+        11: { time: 'morning', fridge: 'BE NICE\n2 SKYE', fridgeScatter: true, pancakes: 8, plate: null, fridgeOpen: 0, stools: 'out', backDoor: 0 } }[s.chapter];
+      if (!ch) return;          // another set's chapter: nothing to do here
       Object.assign(state, ch, { chapter: s.chapter });
     }
     for (const k of Object.keys(s)) if (k !== 'chapter') state[k] = s[k];
@@ -470,16 +506,11 @@ export function build(scene) {
     const T = TIME[state.time || 'day'];
     outM.map = OUT[T.out]; outM.needsUpdate = true;
     setClock(...(state.clock || T.clock));
-    for (const [k, L] of Object.entries(lights)) if (k !== 'fridge' && k !== 'fridgeFill') setPractical(L, T.lv[k] ?? 0);
-    for (const p of pendants) p.bulbM.emissiveIntensity = (T.lv.pendantL ?? 0) * 2.5;
-    // fridge letters (redrawn only on change)
-    const text = state.fridge ?? '', scatter = state.fridgeScatter ?? true;
+    const text = state.letters ?? state.fridge ?? '', scatter = state.fridgeScatter ?? true;
     if (text !== letterState.text || scatter !== letterState.scatter) { drawLetters(text, scatter); letterState.text = text; letterState.scatter = scatter; }
-    // fridge door 0 (shut) .. 1 (open ~100 degrees); the light follows the door
-    const open = Math.max(0, Math.min(1, state.fridgeOpen ?? 0));
-    doorPivot.rotation.y = -open * 1.75;
-    const lit = state.fridgeLight ?? Math.min(1, open * 3);
-    setPractical(fridgeLight, lit); setPractical(fridgeFill, lit); frIn.emissiveIntensity = 0.12 * lit;
+    doorPivot.rotation.y = -Math.max(0, Math.min(1, state.fridgeOpen ?? 0)) * 1.75;
+    const tucked = (state.stools ?? 'out') === 'tucked';
+    stools.forEach((st) => { st.position.z = tucked ? -1.75 : STOOL_Z; });
     // pancakes: null hides the plate; n shows n pancakes
     const n = state.pancakes;
     stack.visible = n !== null && n !== undefined;
@@ -493,19 +524,30 @@ export function build(scene) {
     plate.visible = !!state.plate; sandwich.visible = state.plate === 'sandwich';
     // doors 0..1
     doorPivot2.rotation.y = (state.backDoor ?? 0) * 1.6;      // swings outward
-    const pd = state.pantryDoors ?? 0;
+    const pd = state.pantryDoors ?? state.pantryDoor ?? 0;
     for (const { piv, side } of pantryDoors) piv.rotation.y = -side * pd * 1.6;   // swing into the room
-    // explicit practical levels, e.g. { practicals: { pendantL: 1, fridge: 0.5 } }
-    if (state.practicals) for (const [k, v] of Object.entries(state.practicals)) {
-      if (lights[k]) setPractical(lights[k], v);
-      if (k === 'pendantL' || k === 'pendantR') pendants[k === 'pendantL' ? 0 : 1].bulbM.emissiveIntensity = v * 2.5;
-    }
     // walls: force one visible/hidden, e.g. { walls: { wall_front: false } } (default: automatic)
     if (state.walls) for (const w of walls) { const v = state.walls[w.obj.name]; w.forced = v === undefined || v === 'auto' ? undefined : v; }
   }
+  // real light levels, right before each render: explicit setState({ practicals }) > K.applyLight proxies > time default
+  function level(name, timeDefault) { const x = state.practicals?.[name]; return x !== undefined ? Number(x) : proxyLevel(lights[name], timeDefault); }
+  onSceneRender(scene, () => {
+    if (!group.visible) return;
+    const T = TIME[state.time || 'day'];
+    for (const [k, L] of Object.entries(internal)) setPractical(L, state.practicals?.[k] ?? T.lv[k] ?? 0);
+    const open = Math.max(0, Math.min(1, state.fridgeOpen ?? 0));
+    const fl = level('fridge_light', 1) * Math.min(1, open * 3);
+    setPractical(fridgeLight, fl); setPractical(fridgeFill, fl); frIn.emissiveIntensity = 0.12 * fl;
+    const cl = level('ceiling_light', T.lv.pendantL ?? 0);
+    for (const p of pendants) { setPractical(p.L, cl); p.bulbM.emissiveIntensity = 2.5 * cl; }
+    setPractical(hoodLight, cl);
+    setPractical(pantryLight, level('pantry_light', 0)); setPractical(upLight, level('upstairs_light', T.lv.upstairs ?? 0));
+  });
   setState({ time: 'day', fridge: '', pancakes: null, plate: null });
 
   // world-space helpers for chapters
   const anchors = { pancakeStackTop: () => W(STACK.x, STACK.y + 0.1 + (state.pancakes || 0) * 0.11, STACK.z), plate: W(PLATE.x, PLATE.y, PLATE.z), fridgeLetters: W(-11, 4.6, -8.7) };
-  return { id: 'kitchen', group, marks, cams, lights, setState, state, stairsPath, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
+  // door helper: setDoor('back_door' | 'pantry' | 'fridge', 0..1)
+  const setDoor = (name, u) => setState({ [{ back_door: 'backDoor', pantry: 'pantryDoors', fridge: 'fridgeOpen' }[name] || name]: u });
+  return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
 }

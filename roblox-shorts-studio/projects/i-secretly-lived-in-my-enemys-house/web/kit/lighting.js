@@ -12,17 +12,17 @@ export const PRESETS = {
   night_moon: {        // Max's room / hallway at night, moonlight through the window, cool and dark but readable
     sky: { zenith: '#070d22', horizon: '#1d2b52', below: '#080b18', sunColor: '#9fb6ff' },
     sun: ['#a9bfff', 1.5, [-0.45, 0.7, 0.55]], hemi: ['#5a6fa8', '#1a1a2a', 0.55], fill: ['#7f95d6', 0.35], rim: ['#b9c8ff', 0.55],
-    env: 0.32, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.35, practicals: {},
+    env: 0.32, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.35, practicals: { moon_window: true, nightlight: true },
   },
   midnight: {          // Ch10: darker than night_moon; the lamp click is the reveal
     sky: { zenith: '#04081a', horizon: '#121c3c', below: '#05070f', sunColor: '#8aa2f0' },
     sun: ['#8fa6f5', 1.1, [-0.45, 0.7, 0.55]], hemi: ['#3e4f86', '#101018', 0.4], fill: ['#6a7fc4', 0.25], rim: ['#a4b6ff', 0.45],
-    env: 0.22, exposure: 1.0, fog: ['#080c1c', 140, 600], bloom: 0.45, practicals: {},
+    env: 0.22, exposure: 1.0, fog: ['#080c1c', 140, 600], bloom: 0.45, practicals: { moon_window: 0.6, nightlight: true },
   },
   night_fridge: {      // kitchen at night: blue moon + the warm fridge light when the door is open (practical fridge_light)
     sky: { zenith: '#070d22', horizon: '#1d2b52', below: '#080b18', sunColor: '#9fb6ff' },
     sun: ['#a9bfff', 1.2, [0.5, 0.7, 0.45]], hemi: ['#4d5f96', '#18161e', 0.45], fill: ['#6f86c8', 0.3], rim: ['#b9c8ff', 0.5],
-    env: 0.28, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.4, practicals: { fridge_light: true },
+    env: 0.28, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.4, practicals: { fridge_light: true, moon_window: true },
   },
   predawn: {           // Tuesday 6 am: deep blue windows, warm kitchen ceiling light on
     sky: { zenith: '#1a2350', horizon: '#6a5f8f', below: '#14162a', sunColor: '#ffb48a' },
@@ -57,7 +57,8 @@ function envFor(stage, id, sky) {
     const pmrem = new THREE.PMREMGenerator(stage.renderer), envScene = new THREE.Scene();
     const sd = new THREE.Vector3(...PRESETS[id].sun[2]).normalize();
     envScene.add(new THREE.Mesh(new THREE.SphereGeometry(10, 32, 16), skyMaterial({ ...sky, sunDir: sd })));
-    envCache.set(id, pmrem.fromScene(envScene, 0.02).texture);
+    const tex = pmrem.fromScene(envScene, 0.02).texture; tex.name = 'env:' + id;   // a stable name for render.mjs's fingerprint
+    envCache.set(id, tex);
   }
   return envCache.get(id);
 }
@@ -99,21 +100,46 @@ export function setPractical(set, name, on) {
 }
 
 // ---------- movable practicals ----------
-// Flashlight beam: a spot light plus a faint visible cone. beam.set(on, fromWorld, dirWorld). Parent nothing: place it
-// every frame from the torch prop (e.g. from the prop's world position and its forward axis).
-export function flashlightBeam(stage, { color = '#fff3c4', intensity = 60, range = 40, angle = 0.32, cone = 0.06 } = {}) {
-  const light = new THREE.SpotLight(color, 0, range, angle, 0.5, 1.4); light.userData.base = intensity;
-  const len = 9, geo = new THREE.ConeGeometry(Math.tan(angle) * len, len, 24, 1, true); geo.translate(0, -len / 2, 0); geo.rotateX(-Math.PI / 2);
-  const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: cone, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false }));
-  stage.scene.add(light, light.target, mesh);
+// Flashlight beam: a spot light plus a faint visible cone (cone: false for none, e.g. a torch under a chin at MCU).
+//   beam.set(on, fromWorld, dirWorld)      on = true/false or an intensity factor
+//   beam.fromProp(on, prop, axis?)         from a held prop: its world position, along its local axis (default +z)
+export function flashlightBeam(stage, { color = '#fff3c4', intensity = 60, range = 40, distance, angle = 0.32, cone = 0.06, penumbra = 0.5 } = {}) {
+  const light = new THREE.SpotLight(color, 0, distance ?? range, angle, penumbra, 1.4); light.userData.base = intensity;
+  let mesh = null;
+  if (cone) {
+    const len = 9, geo = new THREE.ConeGeometry(Math.tan(angle) * len, len, 24, 1, true); geo.translate(0, -len / 2, 0); geo.rotateX(-Math.PI / 2);
+    mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: cone, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false }));
+    mesh.userData.noCamBlock = true; stage.scene.add(mesh);
+  }
+  stage.scene.add(light, light.target);
   const set = (on, from, dir) => {
-    light.visible = mesh.visible = !!on; light.intensity = on ? intensity * (on === true ? 1 : on) : 0;
+    light.visible = !!on; if (mesh) mesh.visible = !!on; light.intensity = on ? intensity * (on === true ? 1 : on) : 0;
     if (!on) return;
     light.position.copy(from); light.target.position.copy(from).addScaledVector(dir.clone().normalize(), 10);
-    mesh.position.copy(from); mesh.lookAt(light.target.position);
+    if (mesh) { mesh.position.copy(from); mesh.lookAt(light.target.position); }
+  };
+  const _p = new THREE.Vector3(), _q = new THREE.Quaternion();
+  const fromProp = (on, prop, axis = new THREE.Vector3(0, 0, 1)) => {
+    if (!on) return set(false);
+    prop.updateWorldMatrix(true, false); prop.getWorldPosition(_p); prop.getWorldQuaternion(_q);
+    set(on, _p, axis.clone().applyQuaternion(_q));
   };
   set(false);
-  return { light, mesh, set };
+  return { light, mesh, set, fromProp };
+}
+// Torch under the chin (Ch6): a soft warm up-light just below and in front of a face, short range, no cone.
+//   chin.set(on, actor)   (uses the head's world position and the actor's facing)
+export function chinLight(stage, { color = '#ffd9a0', intensity = 9, range = 4.5 } = {}) {
+  const light = new THREE.PointLight(color, 0, range, 2); stage.scene.add(light);
+  const _h = new THREE.Vector3();
+  const set = (on, actor) => {
+    light.visible = !!on; light.intensity = on ? intensity * (on === true ? 1 : on) : 0;
+    if (!on) return;
+    actor.root.updateMatrixWorld(true); actor.bones.Head.localToWorld(_h.set(0, 0.1 * actor.scale, 0));
+    const h = actor.root.rotation.y; light.position.copy(_h).add(new THREE.Vector3(Math.sin(h) * 0.9, -0.6 * actor.scale, Math.cos(h) * 0.9));
+  };
+  set(false);
+  return { light, set };
 }
 // Phone glow: a small cool light in front of a face. glow.set(on, phoneWorldPos)
 export function phoneGlow(stage, { color = '#cfe2ff', intensity = 6, range = 5 } = {}) {
