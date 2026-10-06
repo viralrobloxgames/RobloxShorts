@@ -1,0 +1,447 @@
+[
+ {
+  "asset": "drum_hit",
+  "start": 0,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/crowd.wav",
+  "start": 0,
+  "gain": 0.06,
+  "dur": 5.84
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 0.56,
+  "gain": 0.45
+ },
+ {
+  "asset": "impact_1",
+  "start": 0.56,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/police_whistle.wav",
+  "start": 4.01,
+  "gain": 0.12
+ },
+ {
+  "asset": "swish_2",
+  "start": 4.16,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 4.26,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 5.84,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 5.94,
+  "gain": 0.25
+ },
+ {
+  "asset": "impact_2",
+  "start": 6.34,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/shake.wav",
+  "start": 8.25,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/clang.wav",
+  "start": 8.5,
+  "gain": 0.15
+ },
+ {
+  "asset": "sfx/coins.wav",
+  "start": 10.13,
+  "gain": 0.35
+ },
+ {
+  "asset": "drum_hit",
+  "start": 10.13,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 11.92,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 13.17,
+  "gain": 0.4
+ },
+ {
+  "tone": [
+   784,
+   988,
+   1319
+  ],
+  "start": 13.22,
+  "gain": 0.04,
+  "dur": 0.14
+ },
+ {
+  "asset": "sfx/typewriter.wav",
+  "start": 15.23,
+  "gain": 0.3,
+  "dur": 0.6600000000000001
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 15.99,
+  "gain": 0.45
+ },
+ {
+  "asset": "sfx/desk_bell.wav",
+  "start": 16.04,
+  "gain": 0.15
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 16.4,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 16.5,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 16.52,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 16.64,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 16.76,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 16.88,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/crowd.wav",
+  "start": 18.33,
+  "gain": 0.07,
+  "dur": 1.490000000000002
+ },
+ {
+  "asset": "sfx/desk_bell.wav",
+  "start": 18.38,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/hiss.wav",
+  "start": 19.92,
+  "gain": 0.08,
+  "dur": 0.6
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 22.51,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_3",
+  "start": 22.51,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 23.12,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/chime.wav",
+  "start": 25.51,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/boing.wav",
+  "start": 26.78,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/coins.wav",
+  "start": 30.48,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/coins.wav",
+  "start": 32.82,
+  "gain": 0.4
+ },
+ {
+  "asset": "swish_3",
+  "start": 33.48,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/train_whistle.wav",
+  "start": 35.21,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/hiss.wav",
+  "start": 35.36,
+  "gain": 0.18,
+  "dur": 2.0
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 35.71,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 36.16,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 36.556,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 36.904,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 37.211,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 37.481,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/bonk.wav",
+  "start": 38.73,
+  "gain": 0.35
+ },
+ {
+  "tone": [
+   392,
+   370,
+   349,
+   330
+  ],
+  "start": 38.93,
+  "gain": 0.05,
+  "dur": 0.22
+ },
+ {
+  "asset": "sfx/hiss.wav",
+  "start": 41.4,
+  "gain": 0.18,
+  "dur": 1.2
+ },
+ {
+  "asset": "sfx/squeak.wav",
+  "start": 42.06,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 42.44,
+  "gain": 0.2
+ },
+ {
+  "asset": "drum_hit",
+  "start": 43.56,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/pop.wav",
+  "start": 43.56,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/ring.wav",
+  "start": 44.67,
+  "gain": 0.25,
+  "dur": 0.6
+ },
+ {
+  "asset": "sfx/police_whistle.wav",
+  "start": 46.27,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 46.32,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/waves.wav",
+  "start": 47.48,
+  "gain": 0.15,
+  "dur": 1.4500000000000028
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 47.48,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 47.7,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 47.92,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/horn.wav",
+  "start": 48.04,
+  "gain": 0.3
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 48.14,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 48.36,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 48.58,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 48.8,
+  "gain": 0.14
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 49.89,
+  "gain": 0.25
+ },
+ {
+  "asset": "swish_1",
+  "start": 50.55,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/coins.wav",
+  "start": 50.65,
+  "gain": 0.35
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 52.18,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/coins.wav",
+  "start": 52.28,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/flutter.wav",
+  "start": 52.43,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/police_whistle.wav",
+  "start": 52.49,
+  "gain": 0.22
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 52.74,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_1",
+  "start": 52.74,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/crickets.wav",
+  "start": 54.06,
+  "gain": 0.12,
+  "dur": 4.1200000000000045
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 54.95,
+  "gain": 0.2
+ },
+ {
+  "asset": "sfx/squeak.wav",
+  "start": 55.15,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/police_whistle.wav",
+  "start": 55.64,
+  "gain": 0.22
+ },
+ {
+  "asset": "sfx/squeak.wav",
+  "start": 55.75,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 55.94,
+  "gain": 0.4
+ },
+ {
+  "asset": "impact_2",
+  "start": 55.94,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/typewriter.wav",
+  "start": 59.32,
+  "gain": 0.25,
+  "dur": 0.7299999999999969
+ },
+ {
+  "asset": "sfx/thud.wav",
+  "start": 60.21,
+  "gain": 0.4
+ },
+ {
+  "asset": "drum_hit",
+  "start": 60.21,
+  "gain": 0.3
+ },
+ {
+  "tone": [
+   988,
+   1319
+  ],
+  "start": 61.99,
+  "gain": 0.05,
+  "dur": 0.12
+ }
+]

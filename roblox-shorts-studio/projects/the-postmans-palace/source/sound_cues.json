@@ -16,7 +16,7 @@
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 5.3,
+  "start": 4.97,
   "gain": 0.4
  },
  {
@@ -24,13 +24,13 @@
    1047,
    1568
   ],
-  "start": 5.35,
+  "start": 5.02,
   "gain": 0.05,
   "dur": 0.12
  },
  {
   "asset": "sfx/chime.wav",
-  "start": 10.18,
+  "start": 9.58,
   "gain": 0.35
  },
  {
@@ -40,486 +40,501 @@
    1175,
    1568
   ],
-  "start": 12.54,
+  "start": 11.47,
   "gain": 0.04,
   "dur": 0.16
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 14.12,
+  "start": 12.92,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 14.54,
+  "start": 13.34,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 14.96,
+  "start": 13.76,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 15.38,
+  "start": 14.18,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 15.8,
+  "start": 14.6,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 16.22,
+  "start": 15.02,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 16.64,
+  "start": 15.44,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 17.06,
+  "start": 15.86,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 17.48,
+  "start": 16.28,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 17.9,
+  "start": 16.7,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 18.32,
+  "start": 17.12,
   "gain": 0.12
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 18.74,
-  "gain": 0.12
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 19.16,
+  "start": 17.54,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 19.24,
-  "gain": 0.25
- },
- {
-  "asset": "click",
-  "start": 19.49,
+  "start": 17.86,
   "gain": 0.25
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 19.58,
-  "gain": 0.12
- },
- {
-  "asset": "sfx/footstep.wav",
-  "start": 20.0,
+  "start": 17.96,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 20.33,
+  "start": 18.11,
   "gain": 0.25
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 20.42,
+  "start": 18.38,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 18.8,
   "gain": 0.12
  },
  {
   "asset": "click",
-  "start": 20.63,
+  "start": 19.04,
   "gain": 0.25
  },
  {
   "asset": "sfx/footstep.wav",
-  "start": 20.84,
+  "start": 19.22,
+  "gain": 0.12
+ },
+ {
+  "asset": "click",
+  "start": 19.34,
+  "gain": 0.25
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 19.64,
+  "gain": 0.12
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 20.06,
   "gain": 0.12
  },
  {
   "asset": "sfx/hangar_roll.wav",
-  "start": 21.17,
+  "start": 20.17,
   "gain": 0.18,
-  "dur": 2.669999999999998
+  "dur": 2.1899999999999977
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 21.78,
+  "start": 20.44,
   "gain": 0.2
  },
  {
   "asset": "sfx/crickets.wav",
-  "start": 23.74,
+  "start": 22.26,
   "gain": 0.18,
-  "dur": 7.479999999999999
+  "dur": 5.74
  },
  {
   "asset": "click",
-  "start": 24.14,
+  "start": 22.66,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 24.64,
+  "start": 23.16,
   "gain": 0.2
  },
  {
   "asset": "sfx/applause.wav",
-  "start": 27.39,
+  "start": 25.09,
   "gain": 0.12,
   "dur": 1.2
  },
  {
   "asset": "impact_1",
-  "start": 27.44,
+  "start": 25.14,
   "gain": 0.2
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 30.26,
+  "start": 27.24,
   "gain": 0.25
  },
  {
   "asset": "click",
-  "start": 31.12,
+  "start": 27.9,
   "gain": 0.1
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 31.12,
+  "start": 27.9,
   "gain": 0.25
  },
  {
   "asset": "click",
-  "start": 31.24,
+  "start": 28.02,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 31.36,
+  "start": 28.14,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 31.48,
+  "start": 28.26,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 31.6,
+  "start": 28.38,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 31.72,
+  "start": 28.5,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 31.84,
+  "start": 28.62,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 31.96,
+  "start": 28.74,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 32.08,
+  "start": 28.86,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 32.2,
+  "start": 28.98,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 32.32,
+  "start": 29.1,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 32.44,
+  "start": 29.22,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 32.56,
+  "start": 29.34,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 32.68,
-  "gain": 0.1
- },
- {
-  "asset": "click",
-  "start": 32.8,
+  "start": 29.46,
   "gain": 0.1
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 32.82,
+  "start": 29.51,
   "gain": 0.35
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 32.82,
+  "start": 29.51,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 32.92,
+  "start": 29.58,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.04,
+  "start": 29.7,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.16,
+  "start": 29.82,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.28,
+  "start": 29.94,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.4,
+  "start": 30.06,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.52,
+  "start": 30.18,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.64,
+  "start": 30.3,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.76,
+  "start": 30.42,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 33.88,
+  "start": 30.54,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.0,
+  "start": 30.66,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.12,
+  "start": 30.78,
+  "gain": 0.1
+ },
+ {
+  "asset": "click",
+  "start": 30.9,
   "gain": 0.1
  },
  {
   "asset": "sfx/whoosh.wav",
-  "start": 34.16,
+  "start": 30.9,
   "gain": 0.25
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 34.21,
+  "start": 30.95,
   "gain": 0.35
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 34.21,
+  "start": 30.95,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 34.24,
+  "start": 31.02,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.36,
+  "start": 31.14,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.48,
+  "start": 31.26,
+  "gain": 0.1
+ },
+ {
+  "asset": "click",
+  "start": 31.38,
+  "gain": 0.1
+ },
+ {
+  "asset": "click",
+  "start": 31.5,
   "gain": 0.1
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 34.54,
+  "start": 31.55,
   "gain": 0.35
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 34.54,
+  "start": 31.55,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 34.6,
+  "start": 31.62,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.72,
+  "start": 31.74,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.84,
+  "start": 31.86,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 34.96,
-  "gain": 0.1
- },
- {
-  "asset": "click",
-  "start": 35.08,
-  "gain": 0.1
- },
- {
-  "asset": "click",
-  "start": 35.2,
+  "start": 31.98,
   "gain": 0.1
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 35.2,
+  "start": 32.09,
   "gain": 0.35
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 35.2,
+  "start": 32.09,
   "gain": 0.2
  },
  {
   "asset": "click",
-  "start": 35.32,
+  "start": 32.1,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 35.44,
+  "start": 32.22,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 35.56,
+  "start": 32.34,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 35.68,
+  "start": 32.46,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 35.8,
+  "start": 32.58,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 35.92,
+  "start": 32.7,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.04,
+  "start": 32.82,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.16,
+  "start": 32.94,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.28,
+  "start": 33.06,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.4,
+  "start": 33.18,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.52,
+  "start": 33.3,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.64,
+  "start": 33.42,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.76,
+  "start": 33.54,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 36.88,
+  "start": 33.66,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 37.0,
+  "start": 33.78,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 37.12,
+  "start": 33.9,
   "gain": 0.1
  },
  {
   "asset": "click",
-  "start": 37.24,
+  "start": 34.02,
+  "gain": 0.1
+ },
+ {
+  "asset": "click",
+  "start": 34.14,
+  "gain": 0.1
+ },
+ {
+  "asset": "click",
+  "start": 34.26,
   "gain": 0.1
  },
  {
   "asset": "sfx/fanfare.wav",
-  "start": 37.49,
+  "start": 34.45,
   "gain": 0.42
  },
  {
   "asset": "drum_hit",
-  "start": 38.83,
+  "start": 35.87,
   "gain": 0.3
  },
  {
   "asset": "drum_hit",
-  "start": 40.08,
+  "start": 38.02,
   "gain": 0.3
  },
  {
   "asset": "swish_3",
-  "start": 42.53,
+  "start": 40.0,
   "gain": 0.25
  },
  {
@@ -528,89 +543,79 @@
    659,
    784
   ],
-  "start": 44.56,
+  "start": 41.51,
   "gain": 0.04,
   "dur": 0.14
  },
  {
   "asset": "sfx/pop.wav",
-  "start": 49.06,
+  "start": 45.69,
   "gain": 0.25
  },
  {
   "asset": "sfx/bonk.wav",
-  "start": 49.82,
+  "start": 46.31,
   "gain": 0.35
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 50.7,
+  "start": 47.3,
   "gain": 0.12
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 51.15,
+  "start": 47.75,
   "gain": 0.12
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 51.6,
+  "start": 48.2,
   "gain": 0.12
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 52.05,
+  "start": 48.65,
   "gain": 0.12
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 52.5,
+  "start": 49.1,
   "gain": 0.12
  },
  {
   "asset": "drum_hit",
-  "start": 52.81,
+  "start": 49.24,
   "gain": 0.3
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 52.95,
+  "start": 49.55,
   "gain": 0.12
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 53.4,
+  "start": 50.0,
   "gain": 0.12
  },
  {
   "asset": "sfx/thud.wav",
-  "start": 53.85,
-  "gain": 0.12
- },
- {
-  "asset": "sfx/thud.wav",
-  "start": 54.3,
-  "gain": 0.12
- },
- {
-  "asset": "sfx/thud.wav",
-  "start": 54.75,
+  "start": 50.45,
   "gain": 0.12
  },
  {
   "asset": "sfx/chime.wav",
-  "start": 55.15,
+  "start": 51.13,
   "gain": 0.35
  },
  {
   "asset": "sfx/applause.wav",
-  "start": 56.75,
+  "start": 52.18,
   "gain": 0.18,
   "dur": 2.0
  },
  {
   "asset": "sfx/coins.wav",
-  "start": 59.79,
+  "start": 54.82,
   "gain": 0.35
  },
  {
@@ -618,7 +623,7 @@
    988,
    1319
   ],
-  "start": 62.46,
+  "start": 57.29,
   "gain": 0.05,
   "dur": 0.12
  }
