@@ -61,7 +61,7 @@ const KM = (name) => () => K.mark('kitchen', name);
 const KL = (x, y, z, heading = 0) => ({ pos: K.SET_ORIGIN.kitchen.clone().add(V(x, y, z)), heading });
 const M = {
   stairsTop: KM('stairs_top'), stairsMid: KM('stairs_mid'), stairsLow: KM('stairs_low'), stairsBottom: KM('stairs_bottom'),
-  stove: KM('stove_three_quarter'), islandEnd: () => KL(6.5, 0, 3.0, -1.0),   // in front of the island's right end: the walk to it crosses the frame fridge: KM('fridge'),
+  stove: KM('stove_three_quarter'), islandEnd: () => KL(6.5, 0, 3.0, -1.0), fridge: KM('fridge'),   // islandEnd: in front of the island's right end, so the walk to it crosses the frame
   stool: (i, a) => { const m = K.mark('kitchen', `island_stool_${i}`); m.pos.y += 2 - 2 * (a?.scale ?? 1); return m; },
   plateMax: () => KL(-1.2, 3.6, -1.25), plateSkye: () => KL(1.2, 3.6, -1.25), phoneDown: () => KL(2.3, 3.6, -1.0, 0.4),
   bagFloor: () => KL(2.5, 0, -3.9, -0.5), pan: () => KL(-2.85, 3.78, -10.1),
@@ -139,7 +139,7 @@ const PAN = () => true;                 // critic-6 #6/#15: Dad cooks the whole 
 const SEAT_TOP = 2.4, LILY_KNEEL = 0.6;  // kitchen stool top; kneel_up root drop (kit posture), Lily kneeling on stool 1
 // the plate slide: Max turns on his stool with his left hand on the plate's rim; the plate follows that palm along the island top
 const SLIDE0 = () => T_PAY + 0.35, SLIDE1 = () => T_PAY + 1.35;
-const maxSlideH = (t) => 0.2 + 0.55 * sm(inv(SLIDE0(), SLIDE1(), t));
+const maxSlideH = (t) => 0.45 * sm(inv(SLIDE0(), SLIDE1(), t));   // the palm ends on the island in front of the gap, toward Skye (not in her)
 const palmL = (a) => { a.root.updateMatrixWorld(true); return a.bones['Arm.L'].localToWorld(V(0.5 * a.scale, -1.75 * a.scale, 0)); };
 // Max's left palm when posed for the slide at time tt (heading + full hold_out), projected on the island top
 function slidePalm(tt) {
