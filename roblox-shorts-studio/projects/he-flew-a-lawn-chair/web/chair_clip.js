@@ -44,10 +44,10 @@ export async function setup(stage) {
   [max, mia, leo, skye, noob] = await Promise.all([
     loadRobloxCharacter('Max', { expressions: ['happy', 'neutral', 'surprised', 'scared', 'shocked', 'determined', 'smug', 'nervous', 'laugh', 'sad', 'annoyed',
       'confused', 'talking', 'mouth_o', 'frost_scared', 'frost_shocked', 'frost_nervous'].map(G) }),
-    loadRobloxCharacter('Mia', { expressions: ['happy', 'neutral', 'surprised', 'scared', 'shocked', 'nervous', 'talking'] }),
-    loadRobloxCharacter('Leo', { expressions: ['happy', 'neutral', 'surprised', 'shocked', 'nervous', 'talking', 'determined', 'scared'], hairLift: 0.16 }),
-    loadRobloxCharacter('Skye', { expressions: ['happy', 'neutral', 'surprised', 'shocked', 'nervous', 'talking', 'determined'] }),
-    loadRobloxCharacter('Noob', { expressions: ['happy', 'neutral', 'surprised', 'determined', 'talking'] }),
+    loadRobloxCharacter('Mia', { expressions: ['happy', 'neutral', 'surprised', 'scared', 'shocked', 'nervous', 'talking', 'determined', 'sad', 'smug', 'confused', 'mouth_o', 'laugh', 'annoyed'] }),
+    loadRobloxCharacter('Leo', { expressions: ['happy', 'neutral', 'surprised', 'scared', 'shocked', 'nervous', 'talking', 'determined', 'sad', 'smug', 'confused', 'mouth_o', 'laugh', 'annoyed'], hairLift: 0.16 }),
+    loadRobloxCharacter('Skye', { expressions: ['happy', 'neutral', 'surprised', 'scared', 'shocked', 'nervous', 'talking', 'determined', 'sad', 'smug', 'confused', 'mouth_o', 'laugh', 'annoyed'] }),
+    loadRobloxCharacter('Noob', { expressions: ['happy', 'neutral', 'surprised', 'scared', 'shocked', 'nervous', 'talking', 'determined', 'sad', 'smug', 'confused', 'mouth_o', 'laugh', 'annoyed'] }),
   ]);
   scene.add(max.root, mia.root, leo.root, skye.root, noob.root);
   caps.leo = await wear(leo, 'officer_cap'); caps.skye = await wear(skye, 'officer_cap'); caps.noob = await wear(noob, 'officer_cap');
@@ -168,7 +168,7 @@ function maxAt(s) {
     case 'police': {
       x = st(K.STREET.clone().add(V(13.5, 0, -1.5)), -0.3, 'happy'); x.sit = false;
       if (s < W.unhurt + 0.2) { x.layers = [['proud', s - T.police, 1, false]]; x.face = 'happy'; }
-      if (s >= W.police - 0.1) { x.layers = [['idle', s]]; x.face = 'nervous'; x.heading = lerp(-0.3, 0.6, smooth(inv(W.police - 0.1, W.police + 0.3, s))); }
+      if (s >= W.police - 0.1) { x.layers = [['idle', s]]; x.face = 'nervous'; x.heading = lerp(-0.3, 0.25, smooth(inv(W.police - 0.1, W.police + 0.3, s))); x.look = [0.6 * smooth(inv(W.police - 0.1, W.police + 0.3, s)), 0]; }
       break;
     }
     case 'press': {
@@ -293,7 +293,7 @@ const MODES = {
   high: { zen: '#1546b8', hor: '#9fd0ff', bel: '#dbe9f7', fog: '#cfe2f5', near: 140, far: 700, sun: 3.3, sunC: '#fff6ea', hemi: 0.7, env: 0.6, fill: 0.8, rim: 1.0 },
   dusk: { zen: '#2a2f6a', hor: '#f0905a', bel: '#3a3550', fog: '#7a5f72', near: 60, far: 420, sun: 1.5, sunC: '#ffb27a', hemi: 0.55, env: 0.35, fill: 0.5, rim: 1.2 },
   night: { zen: '#10142e', hor: '#3a2f55', bel: '#151528', fog: '#262338', near: 50, far: 380, sun: 0.35, sunC: '#9fb4ff', hemi: 0.4, env: 0.2, fill: 0.35, rim: 0.6 },
-  museum: { zen: '#2f7fe6', hor: '#bfe4ff', bel: '#e9f4ff', fog: '#e8eef5', near: 200, far: 900, sun: 2.4, sunC: '#fff6ea', hemi: 0.8, env: 0.7, fill: 0.8, rim: 0.6 },
+  museum: { zen: '#2f7fe6', hor: '#bfe4ff', bel: '#e9f4ff', fog: '#e8eef5', near: 200, far: 900, sun: 1.5, sunC: '#fff6ea', hemi: 0.45, env: 0.45, fill: 0.5, rim: 0.5 },
 };
 const _c1 = new THREE.Color(), _c2 = new THREE.Color();
 function light(stage, mode, mix = null, k = 0) {
@@ -430,21 +430,24 @@ export function update(t, stage) {
   switch (shot.id) {
     case 'hook': { const k = easeOut(clamp(t / 2.5)); look(stage, V(lerp(7.5, 8.5, k), lerp(2.4, 2.8, k), lerp(14, 16.5, k)), V(1.5, lerp(9.5, 10.5, k), 0), 64, 30); break; }
     case 'plan': look(stage, V(16, 4, 30), V(2, 12 + 0.4 * LIFT(s), 0), 56, 34); break;
-    case 'snap': look(stage, S.hitch.clone().add(V(3.2, 2.2, 5.6)), S.hitch.clone().add(V(0.4, 1.6, 0.6)), 50, 10); break;
+    case 'snap': look(stage, K.LAUNCH.clone().add(V(7.5, 3.0, 22)), K.LAUNCH.clone().add(V(3.5, 12.5, 0)), 60, 24); break;   // the Jeep, the rope and the chair in one frame
     case 'climb': look(stage, cp.clone().add(V(5.5, 1.0, 8.5)), cp.clone().add(V(0, 5, 0)), 58, 30); break;
     case 'freeze': look(stage, hd.clone().add(V(1.0, -0.1, 4.4).applyAxisAngle(V(0, 1, 0), 0.2)), hd.clone().add(V(0, 0.1, 0)), 42, 8); break;
-    case 'eye': look(stage, K.EYE.clone().add(V(-5.6, 5.2, 9.5)), K.EYE.clone().add(V(0.8, 5.4, -1.2)), 50, 16); break;
+    case 'eye':                                                // the chart and the doctor first, then his squint from the front
+      if (t < W.eyesight - 0.1) look(stage, K.EYE.clone().add(V(6.5, 5.6, 9.5)), K.EYE.clone().add(V(-0.6, 6.2, -4.5)), 52, 16);
+      else look(stage, K.EYE.clone().add(V(0.8, 5.4, -3.6)), K.EYE.clone().add(V(3.2, 6.0, 1.5)), 48, 12);
+      break;
     case 'packed': look(stage, hd.clone().add(V(1.6, -0.6, 7.2).applyAxisAngle(V(0, 1, 0), 0.35)), hd.clone().add(V(0, -0.9, 0)), 44, 10); break;
-    case 'liner': look(stage, cp.clone().add(V(-6, 3.0, 13)), cp.clone().add(V(-4, 7, -20)), 54, 30); break;
-    case 'cockpit': look(stage, K.PLANE.clone().add(V(-1.0, 4.6, 14)), K.PLANE.clone().add(V(0, 3.4, 2.0)), 44, 14); break;
+    case 'liner': look(stage, cp.clone().add(V(3.5, 2.0, 12)), cp.clone().add(V(0, 7.0, -20)), 54, 30); break;
+    case 'cockpit': look(stage, K.PLANE.clone().add(V(0.2, 5.8, 10.5)), K.PLANE.clone().add(V(0, 4.1, 2.0)), 46, 14); break;
     case 'tower': { const k = smooth(u); look(stage, K.TOWER.clone().add(V(lerp(18, 14, k), 3, 42)), K.TOWER.clone().add(V(0, 24, 0)), 52, 40); break; }
     case 'pops': look(stage, cp.clone().add(V(2.0, 0.2, 9.5)), cp.clone().add(V(0, 9.5, 0)), 62, 30); break;
     case 'drop': look(stage, hd.clone().add(V(3.4, -1.6, 6.0)), hd.clone().add(V(0, -1.8, 0)), 50, 10); break;
     case 'lines': look(stage, K.STREET.clone().add(V(4, 7, -30)), K.STREET.clone().add(V(12, 14, -6)), 56, 40); break;
-    case 'police': look(stage, K.STREET.clone().add(V(9, 4.0, -15)), K.STREET.clone().add(V(16, 4.2, -3)), 50, 18); break;
-    case 'press': look(stage, K.STREET.clone().add(V(13, 4.2, -10.5)), K.STREET.clone().add(V(13.5, 4.6, -1)), 52, 16); break;
-    case 'fined': look(stage, hd.clone().add(V(2.2, 0.4, 7.5).applyAxisAngle(V(0, 1, 0), 0.4)), hd.clone().add(V(0, -1.0, 0)), 46, 12); break;
-    case 'aircraft': look(stage, hd.clone().add(V(0.6, 0.2, 5.5).applyAxisAngle(V(0, 1, 0), 0.4)), hd.clone().add(V(0, -0.3, 0)), 44, 10); break;
+    case 'police': look(stage, K.STREET.clone().add(V(11.5, 4.4, 10)), K.STREET.clone().add(V(15.5, 4.4, -3.5)), 52, 18); break;
+    case 'press': look(stage, K.STREET.clone().add(V(13.5, 4.6, 12)), K.STREET.clone().add(V(13.5, 5.0, -1.5)), 52, 16); break;
+    case 'fined': look(stage, hd.clone().add(V(2.2, 1.2, 8.5).applyAxisAngle(V(0, 1, 0), 0.4)), hd.clone().add(V(0, 2.2, 0)), 46, 12); break;
+    case 'aircraft': look(stage, hd.clone().add(V(0.6, 0.9, 6.8).applyAxisAngle(V(0, 1, 0), 0.4)), hd.clone().add(V(0, 1.9, 0)), 44, 10); break;
     case 'never': look(stage, K.LAUNCH.clone().add(V(-3.5, 1.4, 16)), K.LAUNCH.clone().add(V(-6.5, 8, 4)), 56, 20); break;
     case 'museum': { const k = easeOut(clamp((t - T.museum) / 3.2)); look(stage, K.MUSEUM.clone().add(V(lerp(4, 2, k), lerp(9, 6.5, k), lerp(26, 19, k))), K.MUSEUM.clone().add(V(0, lerp(9, 5.5, k), 0)), 52, 24); break; }
     case 'cta': look(stage, cp.clone().add(V(4, 4, 22)), cp.clone().add(V(0, 11, 0)), 54, 30); break;
@@ -546,7 +549,7 @@ function radar(g, s, t) {                                     // the tower's rad
 }
 function notice(g, s, t) {                                    // the FAA notice
   const k = easeOut(clamp((t - T.fined) / 0.35)), y0 = lerp(1920, 0, k);
-  g.save(); g.translate(0, y0 * s);
+  g.save(); g.translate(0, y0 * s); g.translate(540 * s, 250 * s); g.scale(0.72, 0.72); g.translate(-540 * s, -250 * s);
   const x = 110, y = 300, w = 860, h = 620;
   g.save(); g.translate(540 * s, (y + h / 2) * s); g.rotate(-0.03); g.translate(-540 * s, -(y + h / 2) * s);
   roundRect(g, x * s, y * s, w * s, h * s, 14 * s); g.fillStyle = '#fbfaf4'; g.shadowColor = 'rgba(0,0,0,.4)'; g.shadowBlur = 30 * s; g.fill(); g.shadowColor = 'transparent';

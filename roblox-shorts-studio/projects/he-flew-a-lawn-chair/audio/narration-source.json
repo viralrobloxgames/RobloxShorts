@@ -4,7 +4,7 @@
   "voice": "george_c (local clone)",
   "take": "take-01",
   "clips": "audio/qwen/take-01/clips",
-  "gap_seconds": 0.38,
-  "beat_seconds": 0.8,
-  "speech_end_seconds": 55.87
+  "gap_seconds": 0.55,
+  "beat_seconds": 1.05,
+  "speech_end_seconds": 59.85
 }

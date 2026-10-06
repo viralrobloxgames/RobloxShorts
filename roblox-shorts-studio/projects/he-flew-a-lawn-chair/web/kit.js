@@ -240,7 +240,7 @@ export function airlinerNose() {
   g.add(rbox(9.4, 0.9, 9.4, 0.4, white, 0, 6.6, 0.8));                                  // roof
   g.add(rbox(9.4, 2.2, 1.4, 0.5, white, 0, 0.3, 5.6));                                  // below the windscreen
   const nose = sph(4.4, white, 0, 1.0, 6.2, 28); nose.scale.set(1.0, 0.55, 0.8); g.add(nose);
-  for (const x of [-4.3, -1.5, 1.5, 4.3]) g.add(box(0.35, 4.3, 0.4, dark, x, 3.6, 5.6));  // windscreen pillars
+  for (const x of [-4.3, 0, 4.3]) g.add(box(0.35, 4.3, 0.4, dark, x, 3.6, 5.6));          // windscreen pillars (clear of the pilots' faces)
   g.add(box(9.2, 0.45, 0.6, dark, 0, 1.5, 5.6), box(9.2, 0.45, 0.6, dark, 0, 5.8, 5.6));
   // livery stripe and a side window row
   for (const sx of [-1, 1]) { const s = box(0.1, 0.7, 40, blue, sx * 4.62, 2.4, -20); g.add(s); for (let z = -6; z > -42; z -= 2.6) g.add(box(0.12, 0.8, 0.8, std('#2a3448', { roughness: 0.2 }), sx * 4.62, 3.6, z)); }
@@ -299,7 +299,7 @@ export function street(scene) {
     const hh = house(14, 8, 11, cols[(i + 12) % cols.length], ['#7a3b2e', '#4e5d73', '#6b5a3e'][(i + 12) % 3], winM); hh.position.set(i * 22, 0, 16); hh.rotation.y = Math.PI; g.add(hh);
     const hb = house(14, 8, 11, cols[(i + 15) % cols.length], ['#6b5a3e', '#7a3b2e', '#4e5d73'][(i + 12) % 3], winM); hb.position.set(i * 22 + 8, 0, -38); g.add(hb);
   }
-  trees(g, [[-12, 4, 0.9], [14, 3, 0.8], [36, 5, 0.9], [-34, 4, 0.8], [-58, 4, 0.9], [60, 3, 1], [-20, -32, 1], [24, -30, 0.9]], 17);
+  trees(g, [[-12, 4, 0.9], [27, 6, 0.8], [40, 5, 0.9], [-34, 4, 0.8], [-58, 4, 0.9], [60, 3, 1], [-20, -32, 1], [24, -30, 0.9]], 17);
   // power poles along the near side of the road, with three lines strung between them (sagging catenaries)
   const pole = std('#6a4a30', { roughness: 0.9 }), lines = [];
   const xs = []; for (let x = -132; x <= 132; x += 33) xs.push(x);
