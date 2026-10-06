@@ -433,3 +433,11 @@ use about -1.2 to -1.4. No two-arms-up poses.
 | `drawing` | crayon drawing, ME AND SKYE. BEST FRENDS.; carry2 handles; `place(d, pos, h, { flat: true })` in the box |
 | `backpack` | Skye's lilac backpack as a loose prop (floor, nest, chair back), top loop grip |
 | `cracker_packet` | Skye's crackers (nest), palm or `place(..., { flat })` |
+
+## Clipping check (kit-pipeline)
+
+`node web/clip_check.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/chNN.js [--every 2] [--frames a-b] --out projects/i-secretly-lived-in-my-enemys-house/production/review/clip_check/chNN.json`
+(about 15 s a chapter). Poses every sampled frame as for a render and lists where a character's body goes through visible
+scenery or another character, in frame ranges with film times, depth and coverage, ranked high / medium / low; only clipping
+the camera can see. Mark an object `userData.noClipCheck = true` if it is meant to be passed through (e.g. a sheet).
+Results and the method: `production/review/clip_check/SUMMARY.md`.
