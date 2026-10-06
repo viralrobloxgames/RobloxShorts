@@ -99,3 +99,4 @@ re-render A (chapter) + B (same helpers as phase 2) -> re-stitch (same command) 
 |---|---|
 | critic-1 (now ch01 only) | session_01MBPEtt2p6fabrhjtXdpGWx |
 | critic-7 (ch02) | session_01Se3gj5odNjgiyMc6oaWrF1 |
+| kit-sets-b2 (attic SB1/SB2; kit-sets-b stood down, waits on "its human") | session_01ShUZFy3fAiUUE12teaccuV |
