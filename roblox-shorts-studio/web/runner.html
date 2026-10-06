@@ -59,8 +59,27 @@ const ov = document.createElement('canvas'); ov.width = Math.round(meta.width / 
 const r6 = (x) => Math.round(x * 1e4) / 1e4;
 // A texture's identity that is the same on every page load: its name, else its image file's path, else (canvas or
 // render target) its size and update count.
+// A deformed geometry (e.g. the sheet drape) by its vertex contents, not its version counter (that depends on how often
+// the page drew it). Untouched geometry (version 0) counts as fixed.
+const posKey = (geo) => { const a = geo?.attributes.position; if (!a || !a.version) return 0; let s1 = 0, s2 = 0; const v = a.array; for (let i = 0; i < v.length; i++) { s1 += v[i]; s2 += v[i] * ((i % 97) + 1); } return r6(s1) + ':' + r6(s2); };
 const texKey = (t) => { if (!t) return ''; if (!t.isTexture) return 'x'; if (t.name) return t.name; const im = t.image; if (im?.src) return new URL(im.src).pathname; return (im ? im.width + 'x' + im.height : '') + ':' + t.version; };
 const view = new THREE.Frustum(), shade = new THREE.Frustum(), m4 = new THREE.Matrix4(), bs = new THREE.Sphere();
+// A 2D context stand-in that draws on the real context and logs each call / property set (gradients and images by value).
+const real = new WeakMap();
+const fmtArg = (v) => typeof v === 'number' ? r6(v) : v == null ? '' : typeof v === 'string' || typeof v === 'boolean' ? String(v)
+  : real.has(v) ? v.__key : v.width !== undefined ? 'img' + v.width + 'x' + v.height + (v.src ? new URL(v.src).pathname : '') : Array.isArray(v) ? v.map(fmtArg).join(',') : 'o';
+function recorder(ctx, log) {
+  const wrapGrad = (gr, key) => { const p = new Proxy(gr, { get(o, k) { if (k === '__key') return key; const v = o[k]; return typeof v === 'function' ? (...a) => { log.push('g.' + k + '(' + a.map(fmtArg).join(',') + ')'); return v.apply(o, a); } : v; } }); real.set(p, gr); return p; };
+  const unwrap = (v) => (real.has(v) ? real.get(v) : v);
+  return new Proxy(ctx, {
+    get(o, k) {
+      const v = o[k];
+      if (typeof v !== 'function') return v;
+      return (...a) => { const key = k + '(' + a.map(fmtArg).join(',') + ')'; log.push(key); const r = v.apply(o, a.map(unwrap)); return /^create.*Gradient$|^createPattern$/.test(k) ? wrapGrad(r, key) : r; };
+    },
+    set(o, k, v) { log.push(k + '=' + fmtArg(v)); o[k] = unwrap(v); return true; },
+  });
+}
 window.frameState = (frame, raw = false) => {   // raw: the unhashed state string, for debugging a mismatch
   const t = (frame - 1) / meta.fps, samples = clip.samples ? clip.samples(t) : 4, shutter = clip.shutter ? clip.shutter(t) : 0;
   const parts = [samples, r6(shutter)];
@@ -87,11 +106,14 @@ window.frameState = (frame, raw = false) => {   // raw: the unhashed state strin
       }
       if (!(o.isMesh || o.isSprite || o.isPoints || o.isLine)) return;
       const geo = o.geometry; if (geo && !geo.boundingSphere) geo.computeBoundingSphere();
-      if (geo?.boundingSphere && o.frustumCulled !== false) {   // always-drawn things (frustumCulled off) always count
+      // geometry deformed at runtime (e.g. the sheet drape) keeps the bounding sphere of whatever pose it had when the
+      // sphere was first computed, so it is always counted and hashed by its contents, never by that sphere
+      const deformed = !!geo?.attributes.position?.version;
+      if (!deformed && geo?.boundingSphere && o.frustumCulled !== false) {   // always-drawn things (frustumCulled off) always count
         bs.copy(geo.boundingSphere).applyMatrix4(o.matrixWorld); if (o.isSkinnedMesh) bs.radius = bs.radius * 1.5 + 3;   // posed limbs reach past the bind-pose bounds
         if (!view.intersectsSphere(bs) && !(o.castShadow && shade.intersectsSphere(bs))) return;
       }
-      parts.push('M', ...o.matrixWorld.elements.map(r6), geo ? geo.attributes.position?.count : 0, geo?.attributes.position?.version ?? 0, geo?.boundingSphere ? r6(geo.boundingSphere.radius) : 0);
+      parts.push('M', ...o.matrixWorld.elements.map(r6), geo ? geo.attributes.position?.count : 0, posKey(geo), geo?.boundingSphere && !deformed ? r6(geo.boundingSphere.radius) : 0);
       if (o.isInstancedMesh) parts.push(o.count, o.instanceMatrix.version, o.instanceColor?.version ?? '');
       // texture identity (texKey), not just its size: a face swap (talking / mouth_o) keeps the size but changes the picture
       for (const m of [].concat(o.material || [])) {
@@ -104,15 +126,24 @@ window.frameState = (frame, raw = false) => {   // raw: the unhashed state strin
     parts.push('E', r6(stage.renderer.toneMappingExposure), r6(stage.scene.environmentIntensity ?? 1), texKey(stage.scene.environment), texKey(stage.scene.background));
   }
   clip.update(t, stage);
-  og.clearRect(0, 0, ov.width, ov.height); if (clip.overlay) clip.overlay(og, 0.1, t);
-  const px = og.getImageData(0, 0, ov.width, ov.height).data;
+  // The overlay counts by what it draws, not by its pixels: every canvas call and property set (numbers rounded) is
+  // recorded. Pixels were not stable: small text rasterizes a little differently with the canvas's history.
+  const log = []; if (clip.overlay) clip.overlay(recorder(og, log), 0.1, t);
+  parts.push('O', ...log);
   let h1 = 0x811c9dc5, h2 = 0x01000193;                            // two FNV-style hashes over the state and the overlay
   const str = parts.join('|');
   if (raw) return str;
   for (let i = 0; i < str.length; i++) { h1 = Math.imul(h1 ^ str.charCodeAt(i), 16777619); h2 = Math.imul(h2 ^ str.charCodeAt(i), 2246822519); }
-  for (let i = 0; i < px.length; i += 4) { const v = px[i] | (px[i + 1] << 8) | (px[i + 2] << 16) | (px[i + 3] << 24); h1 = Math.imul(h1 ^ v, 16777619); h2 = Math.imul(h2 ^ v, 2246822519); }
   return (h1 >>> 0).toString(16).padStart(8, '0') + (h2 >>> 0).toString(16).padStart(8, '0');
 };
+// Warm-up: the first text a page draws rasterizes slightly differently from every later draw (glyph caches), which made
+// the first frame each page fingerprinted differ from the same frame fingerprinted later. Draw every font and the clip's
+// own overlay once on both canvases before reporting ready.
+for (const [cv, ctx, sc] of [[out, g, stage.scale], [ov, og, 0.1]]) {
+  for (const f of ['80px "Luckiest Guy"', '800 34px Montserrat', '80px "Alfa Slab One"', '700 40px "Playfair Display"']) { ctx.font = f; ctx.fillText('AaQq09 WARMUP', 10, 60); }
+  if (clip.overlay) { clip.update(0, stage); clip.overlay(ctx, sc, 0); clip.overlay(ctx, sc, 0); }
+  cv.width = cv.width;
+}
 window.clipMeta = meta;
 window.clipModule = clip; window.clipStage = stage;     // for tools that query a clip (e.g. which frames see an object)
 window.ready = true;
