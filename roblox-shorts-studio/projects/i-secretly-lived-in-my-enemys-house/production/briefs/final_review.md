@@ -33,3 +33,10 @@ files DONE), not after the whole film. Build your block yourself (nothing extra 
 (from `roblox-shorts-studio/`; it needs the segments and `audio/chapters/chNN/` from main and takes a few minutes) and
 review that MP4. review-2 builds the whole film (all 11) when everything is in and owns the seams between blocks.
 Be quick and decisive: one complete pass (aim for ~30 min), musts first. Fixes are re-rendered only where frames change.
+
+## Chapter by chapter (orchestrator, 15:05Z)
+Don't wait for your whole block: as soon as a chapter's segments are both on main (`chNN_a.mp4` + `chNN_b.mp4`), stitch
+that chapter alone (`--chapters N-N --no-split`, a few minutes) and review it; write its section in your review file and
+push it at once so fixes can start. When your block is complete, do one flow pass over the stitched block (pacing between
+chapters, seams, repetition). Note: `web/changed_frames.mjs --delete` is unreliable for now (see requests.md); fixes are
+re-rendered by frame range, so give exact times for every must.
