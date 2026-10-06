@@ -158,3 +158,39 @@ End screen 00:58.4-01:09.8 (11.4 s), dimmed scene with SUBSCRIBE @viralrobloxgam
 29. **00:58.4-01:09.8, could.** The music under the end screen sits at about -32 dB, so the last 8 s are near silent.
     Bring the bed up ~6 dB for the end-screen tail, or add a short outro sting, so viewers don't drop off thinking it
     has ended before the end-screen cards show.
+
+## Ch10 "Hungry?" (SATURDAY 11:59 PM), 65.19 s, 1956 frames, reviewed 19:5xZ
+
+What works: the reveal dialogue is clear and well paced. Max now sounds like a boy (`max_boy2`, median 157 Hz vs
+Skye 231 Hz). The red circle on the pink lock at 00:20-00:21 is a lovely echo of the Ch1 hook. Skye's `shocked`
+eyes on "Monday? You knew?" (00:25) and her blush and sweat drop on "asking her to the dance" (00:44-00:46) sell it.
+Stitch: -14.13 LUFS, TP -1.44 dBTP, A/V ok. Ghost lines are processed (centroid ~1.8 kHz).
+
+30. **00:00.0-00:09.3 (frames 1-280), must, the film's biggest one.** The twist's reveal is spoiled in frame 1.
+    The script and boundary sheet want a near-black room (`midnight`: moonlight, green glow sticks, the phone glow),
+    lamp off, Max in the dark, then "**Click: the bedside lamp comes on. Max is sitting up in bed, wide awake, holding
+    a plate**" at ~00:08. In the film, the chapter opens on a fully lit room with Max sitting up, **smiling at
+    camera**, plate on the bed, while the ghost is still at the door (00:00-00:03). The ghost shots (00:04-00:08) are
+    lit like daytime too. By the time the lamp should click, the audience has known for 8 s. Fix: frames 1-250 in the
+    `midnight` preset, near black, with Max a dark shape (or out of frame, so the ghost approaches an apparently
+    sleeping lump). Glow sticks and phone are the only light, and the lamp is off. Lamp click (SFX + light on) at
+    ~00:08.3 (frame 250), then Max lit, sitting up, plate in his hands, `happy`. Every frame after the click can stay
+    as is. Re-render frames 1-280.
+31. **01:02.3-01:05.2 (frames 1870-1956), must.** "Nobody!" / "Nobody!" is the chapter's button, and both faces are
+    unreadable: the camera is behind and to the side, Max's face is in shadow against the lamp, and Skye's head is
+    cut by the frame top and backlit, with only the glow sticks bright. Boundary sheet: a two-shot toward the door,
+    both `shocked`, turned to it. Fix: a frontal two-shot (camera by the door looking in), both faces lit by the
+    lamp, both turning their heads to camera/door on their "Nobody!", then the hard cut to Ch11.
+32. **00:56.3-01:00.4 (frames 1690-1812), should.** "Because before you haunted it, this house was really boring."
+    is the warmest line in the film, and the scripted beat "[+1.0 Skye smiles. Max smiles.]" plays on a wide where
+    their faces are ~25 px. Hold Max's close-up for the line, then a tighter two-shot for the two smiles (both
+    `happy`).
+33. **00:00-00:08, should.** The VO says "Phone recording", but no phone is visible in the ghost's hands (boundary
+    sheet: `phone` held up in her right hand, recording, ideally with its screen glowing). Put it in her right hand
+    with the red REC dot readable in the 00:04-00:08 close.
+34. **01:00.4-01:02.3 (frames 1812-1869), should.** Dad's offscreen "Max? Who are you talking to?" is *brighter* than
+    any other line (centroid 4.8 kHz) and only 2 dB under Max, so he sounds as if he's in the room. Every other
+    offscreen line in the film is muffled (Ch7 Max 0.9 kHz, Ch9 Dad 1.1 kHz). Give it the same `behind door`
+    treatment (low-pass, -5 dB). Also, the door insert shows a static door, and the boundary sheet has the handle
+    turning: animate the handle and add a light strip under the door (blank_frames flags 01:00.3-01:02.0 as a
+    near-empty shot).
