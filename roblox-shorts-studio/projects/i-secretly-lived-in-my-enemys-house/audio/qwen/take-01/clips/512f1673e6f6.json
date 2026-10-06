@@ -1,0 +1,36 @@
+{
+ "voice": "max_kid",
+ "text": "Lily! Go back to bed!",
+ "seed": 20547,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily,",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "word": "go",
+   "start": 0.76,
+   "end": 1.1
+  },
+  {
+   "word": "back",
+   "start": 1.1,
+   "end": 1.3
+  },
+  {
+   "word": "to",
+   "start": 1.3,
+   "end": 1.48
+  },
+  {
+   "word": "bed.",
+   "start": 1.48,
+   "end": 1.72
+  }
+ ],
+ "words_md5": "0f7c42ff95c4a8ab6f9383d045c84191",
+ "whisper": "small.en"
+}
