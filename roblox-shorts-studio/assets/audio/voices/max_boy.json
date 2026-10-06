@@ -1,0 +1,23 @@
+{
+ "made_with": "Qwen3-TTS-12Hz-1.7B-VoiceDesign (cloud, CPU, float32, 4 threads)",
+ "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+ "seed": 5,
+ "language": "English",
+ "instruct": "A confident 12-year-old boy with a lower, slightly gravelly voice, clearly male, like a cheeky boy from a children's TV show. Teasing, amused, relaxed. English accent. Medium pace with a short pause between sentences.",
+ "text": "Your hair is pink. It's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?",
+ "max_new_tokens": 300,
+ "audition": "projects/i-secretly-lived-in-my-enemys-house/production/auditions/max_boy/B_s5.wav (style B, seed 5, of 3 styles x 2 seeds)",
+ "checks": {
+  "duration_s": 9.92,
+  "f0_median_hz": 191.4,
+  "f0_p10_p90_hz": [
+   114.4,
+   286.5
+  ],
+  "words_per_s": 2.71,
+  "transcript": "Your hair is pink, it's sticking out of the sheet. Same as in my closet on Monday. Who did you think was making the sandwiches?"
+ },
+ "why": "User: max_kid (242 Hz) read as a girl. B_s5 is the only take with a median in the 165-200 Hz target (191 Hz) at a natural pace (2.71 w/s, near max_kid's 2.89), transcript exact. A_s5/A_s17 ~218 Hz (still high), C_s5 167 Hz but jumps to 387 Hz, B_s17/C_s17 127-137 Hz (sound older) and fast (3.3-3.4 w/s).",
+ "role": "MAX (12-year-old British boy), replaces max_kid in every chapter (scripts/replace_speaker.py)",
+ "chosen": "2026-10-06 by narration-tool (user request via orchestrator)"
+}

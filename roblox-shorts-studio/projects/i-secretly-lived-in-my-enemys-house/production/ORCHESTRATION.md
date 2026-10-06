@@ -63,6 +63,8 @@ Orchestrator routines: trig_01SHFzCL5TM3VVuWqEnfUCrE (:47) and a second one at :
 | render-ch10-b | session_012KdE2mYxkFxh8Hc5YFHzYW |
 | render-ch11-b | session_019itEkDEcdnMftz8PwrhKbc |
 | package (thumbnail, YouTube copy) | session_019cE5sZwNxrmfZaUNbxuCAr |
+| review-1 (final review ch01-06) | session_01X2goqpd5nPz8uYK1JitJaQ |
+| review-2 (final review ch07-11 + whole film) | session_01P89AesJF24x7Kgo7BUpVm9 |
 
 Segment B helpers (static, they watch their chapter's status file and start at READY_FOR_GATE): ch01 kit-pipeline,
 ch02 kit-cast, ch03 kit-props, ch04 kit-sets-a, ch05 kit-sets-b -> reassigned to gate-a at 14:26Z (kit-sets-b stalled), ch06 kit-sets-c, ch07 voices, ch08 narration-tool,
