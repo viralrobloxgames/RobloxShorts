@@ -216,7 +216,7 @@ function skyeAt(s) {
   let x = base(HL(-12, 0, 2), R90, 'neutral'); x.visible = false;
   if (s >= T.hall && s < T.ransom) {
     x.visible = true;
-    if (s < T.empty) { moveTo(x, HL(-11, 0, 1.0), HL(11, 0, 1.0), T.guards - 0.6, s, 12, R90); if (s < T.guards - 0.6) x.pos = HL(-11, 0, 1.0); x.face = 'happy'; }
+    if (s < T.empty) { moveTo(x, HL(-11, 0, 1.0), HL(11, 0, 1.0), T.guards - 0.1, s, 12, R90); if (s < T.guards - 0.1) x.pos = HL(-11, 0, 1.0); x.face = 'happy'; }   // starts at the cut: earlier, his path crossed the hall2 lens
     else { x = base(HL(-3.0, 0, 0.2), 2.6, 'shocked'); x.visible = true; x.layers = [['shock', clamp(s - T.empty - 0.35, 0, 0.5), 1, false]]; if (s < T.empty + 0.35) x.layers = [['idle', s]]; x.face = s < T.empty + 0.35 ? 'neutral' : 'shocked'; }
     return x;
   }
