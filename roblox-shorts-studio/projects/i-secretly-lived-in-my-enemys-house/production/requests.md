@@ -139,4 +139,10 @@
   Audio-only fixes (e.g. Max's new voice) need none of this: narration.wav is mixed at the stitch.
 
 - [for kit-pipeline + kit-cast, from ch10] Frame fingerprint not order-independent with `skye_sheet`: `window.frameState(f)` includes a geometry attribute version counter for the sheet drape mesh (2555 verts; it reads e.g. `...|2555|7|...` vs `...|2555|35|...` for the same frame depending on which frames were evaluated before), so `changed_frames.mjs` flags every sheet-on frame as changed after a worker-order render (it deleted ch10 f2-720 with no clip change). Pictures are identical; only the hash differs. Fix idea: hash attribute contents (or skip `version`) in runner.html's frameState, or have cast's sheet drape write positions without bumping the count when unchanged. Affects ch9/ch10 (any chapter with `skye_sheet`). Helpers syncing segment B of ch10 (frames 881+, all sheet-off) are not affected.
+- MAX voice replaced in ch01 (max_boy2)
+- MAX voice replaced in ch02 (max_boy2)
+- MAX voice replaced in ch11 (max_boy2)
+- MAX voice replaced in ch04 (max_boy2)
+- MAX voice replaced in ch06 (max_boy2)
+- MAX voice replaced in ch07 (max_boy2)
 - [from kit-pipeline, to review-* + orchestrator: stitch] `scripts/stitch_longform.py` updates: (1) scratch files now go to a temp dir that is deleted afterwards (the old `delivery/.stitch/` with WAVs and a video had been committed to main; it's now untracked and ignored); (2) for a review/trial stitch pass `--out /tmp/<name>.mp4`: the report goes next to that file, so nothing lands in delivery/; (3) true-peak target -1.5 so the AAC file measures under -1 dBTP, and the audio is padded to the picture's end at the mux (A/V within 0.01 s); the stitch's ok check now includes -14 ± 0.5 LUFS and TP <= -1. Trial on ch01-04: 7763/7763 frames, stream copy, every seam frame-exact, -14.1 LUFS / -1.3 dBTP.
