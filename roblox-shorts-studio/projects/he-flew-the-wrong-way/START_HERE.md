@@ -36,6 +36,20 @@ python3 scripts/review/blank_frames.py projects/he-flew-the-wrong-way/delivery/H
 python3 scripts/post_md.py projects/he-flew-the-wrong-way
 ```
 
+- Hold check `web/hold_check.js` (screwdriver, stamp, telegram; props sit at the measured palm (-0.5, -1.3, 0) of the
+  arm bone, see `PALM_R`), looked at. Fit check: Mia + Leo officer_cap, 2 pairs PASS, reviewed.
+- Sound: `source/make_sfx.py` (radial engine drone, sputter, fuel drip, liner horn, waves, telegraph, crowd; copies
+  the rest) -> `audio/sfx/`; `source/sound_cues.py` -> `source/sound_cues.json` (131 cues). Music: playful_history_music.
+- Cover: `web/cover_clip.js` (Max grinning in the cabin window at dawn; HE FLEW THE / WRONG WAY / ...ON PURPOSE? /
+  1938 · TRUE STORY), `delivery/He_Flew_The_Wrong_Way_cover.png/.jpg`, 3:4 grid check `_cover_grid.jpg`.
+- **Delivered for review (2026-10-06 04:04 UTC):** `delivery/He_Flew_The_Wrong_Way.mp4`, **62.1 s** (1864 frames incl.
+  the 0.5 s cover), fully decoded, captions burned in; `delivery/He_Flew_The_Wrong_Way_post.md` + `post.json`.
+  Full render 1849 frames (web route, 1 sample, ~2.5 h on 4 cores). Blank-frame check: one 0.27 s run at 20.67 s
+  (frames 620-628) is the deliberate haze as the plane enters the cloud bank (plane, Max and sea visible), kept.
+- Known nit for a re-cut: in the compass-excuse close-up (about 35-38 s) Max's face sits in the caption band, so the
+  caption crosses his mouth. Fix: in `wrongway_clip.js` aim the 'excuse' camera lower (target y ~4.5) and move the
+  compass card up (cy ~390) and "MY COMPASS!" to y ~640, then `node web/changed_frames.mjs --clip ... --out
+  renders/web --delete`, fit check + --reviewed, `render.mjs --resume`, re-encode.
+
 ## Next
-1. Previews on the real timings, motion pass, hold check, fit check, full render, sound cues, cover, encode, review,
-   post copy. Post only after the user approves the MP4.
+1. The user watches the MP4. Post only after the user approves this MP4 (TikTok first, then YouTube Shorts).
