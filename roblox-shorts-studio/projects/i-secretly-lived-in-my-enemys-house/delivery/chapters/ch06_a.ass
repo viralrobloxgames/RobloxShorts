@@ -1,0 +1,30 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: VO,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,1,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: SKYE,Luckiest Guy,72,&H00B56FFF,&H00B56FFF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: MAX,Luckiest Guy,72,&H00D6E62E,&H00D6E62E,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: DAD,Luckiest Guy,72,&H0020B0FF,&H0020B0FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+Style: LILY,Luckiest Guy,72,&H004DE1FF,&H004DE1FF,&H00152435,&H90000000,0,0,0,0,100,100,1,0,1,6,2,2,180,180,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.67,VO,,0,0,0,,THURSDAY NIGHT. I HAD MY
+Dialogue: 1,0:00:01.67,0:00:02.65,VO,,0,0,0,,BEST HAUNTING PLANNED
+Dialogue: 1,0:00:02.65,0:00:04.05,VO,,0,0,0,,YET. THEN I HEARD HIM
+Dialogue: 1,0:00:04.05,0:00:05.26,VO,,0,0,0,,THROUGH HIS BEDROOM DOOR.
+Dialogue: 1,0:00:05.46,0:00:07.02,MAX,,0,0,0,,HEY. SO. DO YOU
+Dialogue: 1,0:00:07.02,0:00:07.60,MAX,,0,0,0,,WANT TO GO TO
+Dialogue: 1,0:00:07.60,0:00:09.15,MAX,,0,0,0,,THE HALLOWEEN DANCE WITH ME?
+Dialogue: 1,0:00:09.22,0:00:10.83,MAX,,0,0,0,,NO. TOO SERIOUS.
+Dialogue: 1,0:00:11.19,0:00:15.78,MAX,,0,0,0,,YO! DANCE? YOU? ME? UGH. NO.
+Dialogue: 1,0:00:15.85,0:00:18.76,MAX,,0,0,0,,OKAY. THIS WEEKEND, I JUST ASK HER.
+Dialogue: 1,0:00:18.99,0:00:21.48,MAX,,0,0,0,,WHAT'S THE WORST SHE CAN SAY? GROSS?
+Dialogue: 1,0:00:21.87,0:00:23.36,SKYE,,0,0,0,,WHO IS HE ASKING?
+Dialogue: 1,0:00:23.48,0:00:25.75,SKYE,,0,0,0,,WHO WOULD EVEN SAY YES TO HIM?
