@@ -461,3 +461,10 @@ Every lighting preset has `cast` (0 by day, ~0.2-0.38 at night / under the fridg
 also glows with its own texture at that level, applied right before each draw, so coloured light tints the set but not a
 character's skin, hair or clothes. Override per frame with `K.applyLight(stage, id, { set, castFloor: 0.3 })`.
 Flashlight defaults are softer (`flashlightBeam` 30, `chinLight` 4.5) so torches don't white out faces.
+
+### Cuts and camera continuity (kit-pipeline, P2)
+`camOn` / `twoShot` / `overShoulder` frame from the actor's facing at that frame, so a shot whose actor turns makes the
+camera orbit (ch11's stove shot flew through Dad's head and a wall). For a shot whose actor turns or walks, pass a fixed
+`heading` (`K.camOn(s, C.dad, 'ms', { angle: 0.9, heading: 0.05 })`) or use a fixed set camera (`K.setCam`). Check:
+`node web/cam_check.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/chNN.js` lists glides (the camera
+travelling > 0.6 studs/frame on 2+ frames, i.e. not a clean cut), cameras inside scenery and cameras at a head.
