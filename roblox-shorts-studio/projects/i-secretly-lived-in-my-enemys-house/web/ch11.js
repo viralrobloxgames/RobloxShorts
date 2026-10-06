@@ -30,17 +30,17 @@ const EST = (() => {
   raw.forEach(([speaker, text, pause = 0], index) => {
     if (index) t += 0.25 + pause;
     const d = Math.max(0.8, text.split(/\s+/).length / 2.5);
-    out.push({ index, speaker, text, start: t, end: t + d }); t += d;
+    out.push({ index: index + 1, speaker, text, start: t, end: t + d });   // lines.json counts from 1 t += d;
   });
   return out;
 })();
 const L = await K.loadLines(import.meta.url, CH, EST);
 const at = (line, off = 0) => L.line(line).start + off;
 const end = (line, off = 0) => L.line(line).end + off;
-// key lines (indexes as in lines.json)
-const LN = { vo: 0, morning: 1, pumpkin: 2, ghost: 3, thief: 4, sorry: 5, knew: 6, youKnew: 7, horse: 8, mother: 9,
-  sleepover: 10, week: 11, long: 12, phone: 13, mom: 14, dance: 15, fridgeAsk: 16, says: 17, cond: 18, crusts: 19,
-  crusts2: 20, pancakes: 21, spent: 22, sub: 23 };
+// key lines (indexes as in lines.json: spoken lines from 1)
+const LN = { vo: 1, morning: 2, pumpkin: 3, ghost: 4, thief: 5, sorry: 6, knew: 7, youKnew: 8, horse: 9, mother: 10,
+  sleepover: 11, week: 12, long: 13, phone: 14, mom: 15, dance: 16, fridgeAsk: 17, says: 18, cond: 19, crusts: 20,
+  crusts2: 21, pancakes: 22, spent: 23, sub: 24 };
 const T_LATER = end(LN.mom) + 0.1;                    // the "Later" cut: SAY YES, Skye seated
 const T_WIDE = end(LN.pancakes) + 0.1;                // the wide on the island
 const T_END = at(LN.sub) - 0.1;                       // end screen from the subscribe line
