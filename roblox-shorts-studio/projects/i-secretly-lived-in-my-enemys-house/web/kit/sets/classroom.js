@@ -9,7 +9,7 @@ import { THREE, V, std, glow, box, rbox, cyl, picture, fontText, floorTexture, w
   autoHideWalls, markMaker, camMaker, practical, setPractical, canvasTexture, rng } from './common_c.js';
 
 export const OFFSET = V(1200, 0, 0);
-const H = 13, DESK_TOP = 3.1, SEAT_TOP = 2.0;
+const H = 13, DESK_TOP = 3.1, SEAT_TOP = 1.7;
 export const COLS = [-13, -5, 3, 11], ROWS = [-7, -1, 5, 11];
 const CHAIR_DZ = 1.9;                 // the seated root is this far behind (+z) the desk centre
 
@@ -121,7 +121,6 @@ export function build(scene) {
   function deskUnit(x, z, colorIdx) {
     const d = new THREE.Group(); d.position.set(x, 0, z); group.add(d);
     box(3.6, 0.22, 2.3, deskTopM, 0, DESK_TOP - 0.11, 0, d);
-    box(3.3, 0.12, 1.8, metalM, 0, 2.62, -0.15, d);               // book tray (front part only, legs pass behind it)
     box(3.3, 0.35, 0.08, metalM, 0, 2.8, -1.05, d);
     for (const sx of [-1.6, 1.6]) for (const sz of [-1.0, 1.0]) cyl(0.07, 0.07, DESK_TOP - 0.2, metalM, sx, (DESK_TOP - 0.2) / 2, sz, d, 8);
     // chair behind the desk (seated root at z + CHAIR_DZ)
@@ -166,7 +165,7 @@ export function build(scene) {
   group.userData.walls = walls.map((w) => w.obj);
 
   // ---------------------------------------------------------------- marks
-  const sit = (key) => { const t = desks[key].top.clone().sub(OFFSET); return M(t.x, SEAT_TOP - 2, t.z + CHAIR_DZ, PI, { sit: true, seatTop: SEAT_TOP, desk: key }); };
+  const sit = (key) => { const t = desks[key].top.clone().sub(OFFSET); return M(t.x, SEAT_TOP - 1.5, t.z + CHAIR_DZ, PI, { sit: true, seatTop: SEAT_TOP, desk: key }); };
   const marks = {};
   ROWS.forEach((z, ri) => COLS.forEach((x, ci) => { marks[`desk_r${ri + 1}c${ci + 1}`] = sit(`r${ri + 1}c${ci + 1}`); }));
   Object.assign(marks, {
