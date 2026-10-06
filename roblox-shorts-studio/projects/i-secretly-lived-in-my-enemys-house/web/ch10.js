@@ -65,7 +65,7 @@ const T = {
 // bedside table + lamp at x 0.6 z -7.8, door in the right wall at z 3.5). Skye stands screen right, Max screen left.
 const M = {
   doorIn: () => K.mark('bedroom', 'door_in_bed', { pos: V(8.2, 0, 2.8), heading: -2.15 }),
-  ghost: () => K.mark('bedroom', 'mid_room_bed', { pos: V(3.0, 0, -0.5), heading: -2.2 }),
+  ghost: () => K.mark('bedroom', 'ghost_stop', { pos: V(3.2, 0, -4.4), heading: -1.27 }),
   nearBed: () => K.mark('bedroom', 'ghost_stop', { pos: V(3.2, 0, -4.4), heading: -1.27 }),  // beside the bed edge, level with Max (both read from +z)
   bedUp: () => K.mark('bedroom', 'bed_sit_door', { pos: V(-4, 0.1, -6.4), heading: 0.99 }),
   bedEdge: () => K.mark('bedroom', 'bed_edge', { pos: V(-1.3, 0.0, -4.6), heading: Math.PI / 2 }),
@@ -102,6 +102,7 @@ const palm = (a, sd, y = -1.3) => a.bones['Arm.' + sd].localToWorld(V(sd === 'R'
 const toward = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
 // turn a heading `k` x 0.45 rad toward +z (the camera side): faces open to the lens in a face-to-face scene
 const cheat = (h, k = 1, amt = 0.45) => { const d = Math.atan2(Math.sin(0 - h), Math.cos(0 - h)); return h + Math.sign(d) * Math.min(Math.abs(d), amt) * k; };
+const lerpV = (a, b, u) => a.clone().lerp(b, u);
 const lerpAngle = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * u;
 
 // ---------- Skye ----------
@@ -114,10 +115,10 @@ function poseSkye(t, idle) {
   // 1) the entrance: already a step inside the doorway at frame 0, creeping to her mark
   const m0 = { pos: din.pos.clone().lerp(g.pos, 0.08), heading: toward(din.pos, g.pos) };
   let heading;
-  if (t < at(9) - 0.6) {
+  if (true) {
     const m = K.walk(a, A, m0, g, 0, t, { speed: CREEP, idleAt: idle, endHeading: toward(g.pos, M.bedUp().pos) });
     heading = a.root.rotation.y;
-    if (m.done) heading = toward(g.pos, t < T.edge + 0.6 ? M.bedUp().pos : M.bedEdge().pos);
+    if (m.done) heading = toward(g.pos, lerpV(M.bedUp().pos, M.bedEdge().pos, smooth(inv(T.edge, T.edge + 1.0, t))));
   } else {
     // 2) after "fixing your pumpkin" she steps nearer the bed (a real walk), before "But on the phone"
     K.walk(a, A, g, nb, at(9) - 0.6, t, { speed: 9, idleAt: idle });
@@ -174,14 +175,14 @@ function poseMax(t, idle) {
   K.playAnim(a, [[A.sit, 0, 1, false]]);
   K.putOn(a, { pos, heading }, { sit: true });
   // the lamp click: right hand back to the switch on the bedside table
-  if (t > T.click - 0.45 && t < T.click + 0.35) { const u = Math.sin(inv(T.click - 0.45, T.click + 0.35, t) * Math.PI); armSide(a, 'R', lerp(0.2, 1.2, u), lerp(0, -0.8, u)); }
+  if (t > T.click - 0.45 && t < T.click + 0.35) { const u = Math.sin(inv(T.click - 0.45, T.click + 0.35, t) * Math.PI); armSide(a, 'L', lerp(0.2, 1.2, u), lerp(0, -0.8, u)); }
   // holding the plate: in his lap (left hand forward-low), out to her on "Hungry?", lifted on "the sandwiches"
   let plateUp = -0.55;
   if (t > at(3) && t < end(3, 0.2)) plateUp = -0.55 - 0.7 * smooth(inv(at(3), at(3, 0.4), t));
   if (t > at(7) && t < end(7)) plateUp = -0.55 - 0.6 * Math.sin(inv(at(7), end(7), t) * Math.PI);
-  if (t < T.edge + 0.55) armFwd(a, 'L', plateUp, -0.05);
-  else if (t < T.edge + 0.9) armSide(a, 'L', 0.9, -0.5);                                  // reaching to the table
-  if (t > T.pink - 0.15 && t < T.monday) armFwd(a, 'R', -1.5, 0.05);                      // points at her head
+  if (t < T.edge + 0.55) armFwd(a, 'R', plateUp, -0.05);
+  else if (t < T.edge + 0.9) armSide(a, 'R', 0.9, -0.5);                                  // reaching to the table
+  if (t > T.pink - 0.15 && t < T.monday) armFwd(a, 'L', -1.5, 0.05);                      // points at her head
   if (t > T.pumpkin - 0.1 && t < end(8, 0.1)) armSide(a, 'R', 2.0 + 0.12 * Math.sin((t - T.pumpkin) * 9), -0.6); // straightening a pumpkin
   if (t > at(13, -0.1) && t < end(13, 0.2)) { armSide(a, 'L', 0.75, -0.7); armSide(a, 'R', 0.75, -0.7); } // a shrug, arms low
   if (t > at(11) && t < T.comesDown + 0.2) headTurn(a, 0, 0.18);                         // eyes down, blushing
@@ -192,7 +193,7 @@ function poseMax(t, idle) {
   if (t > T.dad + 0.2) face = 'shocked';
   K.speak(a, t > at(17, -0.05) && t < end(17) ? 'shouting' : face, t, L.said('MAX'));
   const inHand = t < T.edge + 0.6;
-  if (inHand) K.hold(P.plate, a, 'L', 'palm'); else P.plate.visible = false;
+  if (inHand) K.hold(P.plate, a, 'R', 'palm'); else P.plate.visible = false;
   P.plateDown.visible = !inHand;
   if (!inHand) { const pm = M.plate(); K.place(P.plateDown, pm.pos, pm.heading); }
 }
@@ -202,34 +203,43 @@ const LINE_SIDE = () => {                            // the side of the line sky
   const A0 = M.ghost().pos, B0 = M.bedUp().pos, d = B0.clone().sub(A0), q = V(A0.x, 0, A0.z + 20).sub(A0);
   return Math.sign(d.x * q.z - d.z * q.x) || 1;
 };
-const skyeOn = (framing, o = {}) => (s) => K.camOn(s, C.skye, framing, { angle: 0.75, fov: 35, ...o });
+const FR = { cu: [2.6, 0.04], mcu: [3.8, 0.1], ms: [4.8, 0.18], ws: [9, 0.22] };
+function camFrom(stage, actor, dir, framing, fov = 32, lift = 0.35) {
+  const [span, up] = FR[framing], eye = K.headPos(actor), target = eye.clone().add(V(0, -up * span, 0));
+  const d = span / 2 / Math.tan(THREE.MathUtils.degToRad(fov) / 2), n = dir.clone().setY(0).normalize();
+  return K.setCam(stage, { pos: target.clone().addScaledVector(n, d).add(V(0, lift + 0.12 * span, 0)), target, fov }, { clear: false });
+}
+const SKYE_DIR = V(-4.7, 0, 3.9), MAX_EDGE_DIR = V(4.8, 0, 3.1);   // camera side of the line, lamp out of frame
+const skyeOn = (framing) => (s) => camFrom(s, C.skye, SKYE_DIR, framing);
 const maxOn = (framing, o = {}) => (s) => K.camOn(s, C.max, framing, { angle: 0.5, fov: 35, ...o });
-const two = () => (s) => K.setCam(s, { pos: V(0.8, 5.2, 6.8), target: V(0.6, 3.7, -4.3), fov: 38 }, { clear: false });
+const setCamOf = (name) => (s) => K.setCam(s, K.getSet('bedroom').cams[name], { clear: false });
+const maxEdge = (framing) => (s) => camFrom(s, C.max, MAX_EDGE_DIR, framing);
+const two = () => (s) => K.setCam(s, { pos: V(-1.6, 5.2, 5.2), target: V(1.0, 3.6, -4.5), fov: 38 }, { clear: false });
 const SHOTS = [
   { line: 1, off: 0, id: 'open', cam: (s) => K.setCam(s, { pos: K.getSet('bedroom').cams.two_shot_bed_door.pos, target: V(3.0, 3.3, -4.4), fov: 52 }, { clear: false }) },  // the set's Ch10 cam, panned to keep Max in frame
-  { line: 1, off: 3.9, id: 'ghost_front', cam: (s) => K.setCam(s, { pos: V(-2.0, 5.0, -0.6), target: V(3, 4.3, -0.5), fov: 34 }, { clear: false }) },
-  { line: 2, off: -0.15, id: 'ghost_ms', cam: (s) => K.setCam(s, { pos: V(-4.0, 5.4, 0.4), target: V(3, 3.4, -0.5), fov: 40 }, { clear: false }) },
-  { line: 2, off: (ln(2).end - ln(2).start) + 0.0, id: 'click', cam: maxOn('mcu', { angle: 0.55 }) },
-  { line: 3, off: -0.1, id: 'hungry', cam: maxOn('mcu') },
-  { line: 4, off: -0.1, id: 'not_skye', cam: (s) => K.setCam(s, { pos: V(-4.0, 5.4, 0.4), target: V(3, 3.4, -0.5), fov: 40 }, { clear: false }) },
-  { line: 5, off: -0.1, id: 'pink', cam: maxOn('mcu') },
-  { line: 5, off: T.sticking - at(5) - 0.1, id: 'lock_cu', cam: (s) => K.setCam(s, { pos: V(-0.45, 4.85, 0.05), target: V(3, 4.6, -0.5), fov: 38 }, { clear: false }) },
-  { line: 5, off: T.monday - at(5) - 0.1, id: 'monday', cam: maxOn('mcu') },
-  { line: 5, off: T.pull - at(5) - 0.1, id: 'pull', cam: skyeOn('ms', { angle: 0.45 }) },
+  { line: 1, off: 3.9, id: 'ghost_front', cam: (s) => K.setCam(s, { pos: V(-1.4, 4.9, -2.9), target: V(3.2, 4.4, -4.4), fov: 34 }, { clear: false }) },
+  { line: 2, off: -0.15, id: 'ghost_ms', cam: (s) => K.setCam(s, { pos: V(-2.6, 5.4, 0.8), target: V(3.2, 3.6, -4.4), fov: 40 }, { clear: false }) },
+  { line: 2, off: T.click - at(2) - 0.03, id: 'click', cam: setCamOf('bed_cu') },
+  { line: 3, off: -0.1, id: 'hungry', cam: setCamOf('bed_ms') },
+  { line: 4, off: -0.1, id: 'not_skye', cam: (s) => K.setCam(s, { pos: V(-2.6, 5.4, 0.8), target: V(3.2, 3.6, -4.4), fov: 40 }, { clear: false }) },
+  { line: 5, off: -0.1, id: 'pink', cam: setCamOf('bed_ms') },
+  { line: 5, off: T.sticking - at(5) - 0.1, id: 'lock_cu', cam: (s) => K.setCam(s, { pos: V(0.55, 4.85, -1.95), target: V(3.2, 4.6, -4.4), fov: 38 }, { clear: false }) },
+  { line: 5, off: T.monday - at(5) - 0.1, id: 'monday', cam: setCamOf('bed_cu') },
+  { line: 5, off: T.pull - at(5) - 0.1, id: 'pull', cam: skyeOn('ms') },
   { line: 6, off: -0.1, id: 'you_knew', cam: skyeOn('mcu') },
-  { line: 7, off: -0.1, id: 'sandwiches', cam: maxOn('mcu') },
+  { line: 7, off: -0.1, id: 'sandwiches', cam: setCamOf('bed_ms') },
   { line: 8, off: -0.1, id: 'pumpkin', cam: two() },
   { line: 9, off: -0.1, id: 'phone', cam: skyeOn('mcu') },
-  { line: 10, off: -0.1, id: 'too_early', cam: maxOn('mcu') },
+  { line: 10, off: -0.1, id: 'too_early', cam: maxEdge('mcu') },
   { line: 10, off: T.attic - at(10) - 0.3, id: 'attic', cam: two() },
-  { line: 11, off: -0.1, id: 'dance', cam: maxOn('mcu') },
+  { line: 11, off: -0.1, id: 'dance', cam: maxEdge('mcu') },
   { line: 11, off: T.comesDown - at(11) - 0.1, id: 'comes_down', cam: skyeOn('cu') },
   { line: 12, off: -0.1, id: 'fridge', cam: skyeOn('ms') },
-  { line: 13, off: -0.1, id: 'convincing', cam: maxOn('mcu') },
+  { line: 13, off: -0.1, id: 'convincing', cam: maxEdge('mcu') },
   { line: 14, off: -0.1, id: 'why', cam: skyeOn('mcu') },
   { line: 15, off: -0.1, id: 'boring', cam: two() },
   { line: 16, off: -0.1, id: 'door', cam: (s) => K.setCam(s, { pos: V(5.0, 4.4, 6.8), target: V(10.8, 3.3, 3.6), fov: 34 }, { clear: false }) },
-  { line: 17, off: -0.15, id: 'nobody', cam: (s) => K.setCam(s, K.getSet('bedroom').cams.two_shot_door, { clear: false }) },
+  { line: 17, off: -0.15, id: 'nobody', cam: (s) => K.setCam(s, { pos: V(1.0, 5.3, 5.0), target: V(1.0, 4.0, -4.5), fov: 36 }, { clear: false }) },
 ].map((x) => ({ ...x, start: Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
