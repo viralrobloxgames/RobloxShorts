@@ -1,0 +1,114 @@
+{
+ "lily_A_s33.wav": {
+  "dur": 6.16,
+  "transcript": "I won't tell. If you come to my tea party, every day, and you have to be the horse!",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 358.4,
+  "f0_p10_p90": [
+   217.0,
+   464.6
+  ],
+  "wps": 3.3,
+  "sentence_gaps": [
+   0.64
+  ]
+ },
+ "lily_A_s44.wav": {
+  "dur": 6.64,
+  "transcript": "I won't tell if you come to my tea party every day and you have to be the horse",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 388.6,
+  "f0_p10_p90": [
+   312.0,
+   521.7
+  ],
+  "wps": 3.04,
+  "sentence_gaps": []
+ },
+ "lily_B_s33.wav": {
+  "dur": 5.84,
+  "transcript": "I won't tell. If you come to my tea party every day and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 381.9,
+  "f0_p10_p90": [
+   274.8,
+   486.8
+  ],
+  "wps": 3.45,
+  "sentence_gaps": [
+   0.76
+  ]
+ },
+ "lily_B_s44.wav": {
+  "dur": 8.8,
+  "transcript": "I won't tell if you come to my tea party every day and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 433.7,
+  "f0_p10_p90": [
+   332.5,
+   506.9
+  ],
+  "wps": 2.27,
+  "sentence_gaps": []
+ },
+ "lily_D_s33.wav": {
+  "dur": 6.88,
+  "transcript": "I won't tell, if you come to my tea party, every day, and you have to be the horse!",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 302.3,
+  "f0_p10_p90": [
+   201.7,
+   372.1
+  ],
+  "wps": 2.97,
+  "sentence_gaps": []
+ },
+ "lily_D_s44.wav": {
+  "dur": 7.44,
+  "transcript": "I won't tell, if you come to my tea party, every day, and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 328.7,
+  "f0_p10_p90": [
+   247.7,
+   436.2
+  ],
+  "wps": 2.72,
+  "sentence_gaps": []
+ },
+ "lily_E_s33.wav": {
+  "dur": 6.08,
+  "transcript": "I won't tell. If you come to my tea party, every day, and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 338.3,
+  "f0_p10_p90": [
+   227.1,
+   504.0
+  ],
+  "wps": 3.32,
+  "sentence_gaps": [
+   0.48
+  ]
+ },
+ "lily_E_s44.wav": {
+  "dur": 6.48,
+  "transcript": "I won't tell. If you come to my tea party, every day, and you have to be the horse.",
+  "match": 1.0,
+  "exact": true,
+  "f0_median": 373.2,
+  "f0_p10_p90": [
+   266.0,
+   433.2
+  ],
+  "wps": 3.07,
+  "sentence_gaps": [
+   0.82
+  ]
+ }
+}
