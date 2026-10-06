@@ -12,6 +12,42 @@ Sections are pushed one chapter at a time as segments land; the flow pass over t
 
 ---
 
+## Ch01 "The Dare" (MONDAY 9:47 PM), 1911 frames, 63.7 s
+
+Stitched from main 15:20Z (ch01_a 1-860 + ch01_b 861-1911): seam clean, A/V 0.0, -14.1 LUFS. blank_frames: none.
+Hook checks pass: VO and caption from frame 0, MONDAY 9:47 PM stamp, both faces in frame 0, CU by 1 s, red circle at
+2.5 s, Max's door at ~7 s (the script's 4 s was the plan; 7 s is fine because the circle beat fills it). MONDAY
+12:15 PM stamp on the classroom (0:12.2). Max's sly smile on "Huh. Just hoodies." (0:09.5-0:09.9) is exactly the
+right tell. Spider drop insert (0:24.5) reads well. Levels even (-12.8 to -15.5) except Lily (#4).
+
+1. **0:07.6-0:08.1 (frames 229-244), the twist's first clue is a pink blob on a grey wall. MUST.**
+   The insert after the door opens shows a flat grey surface with a pink shape, no hoodies and no flashlight beam, for
+   0.5 s. This is the clue Ch10 pays off ("Same as in my closet on Monday") and the reason the twist plays fair; right
+   now nobody will remember it, and nobody can tell it's hair. Fix inside the existing 1.25 s action pause (frames
+   212-249, no retime): door swings open over ~0.3 s, then a ~0.9 s insert of two hanging hoodies (different colours)
+   with the lock of pink hair poking out between them, Max's flashlight circle sweeping across and STOPPING on the
+   pink. Same framing logic as the wide at 0:09.97, where the open closet with hoodies does read.
+2. **0:25.3-0:27.3 (frames 761-818), Skye shrieks "Spider! Get it off!" with a calm face, then a smile. MUST.**
+   Her mouth is a small "o" and at 0:25.8 and 0:26.2-0:27.0 it's a smile. This beat is what makes "You're scared of
+   everything" true and sets up the whole dare. Fix: face `scared` (or `shocked`) for the whole line, and a recoil away
+   from the spider (lean back, `shock` arms at shoulder height, never both arms up).
+3. **The closet CUs are underlit: Skye's face reads as a dark-brown mask. SHOULD.** 0:01-0:04.5 (the hook's CU, under
+   the red circle), 0:10.5-0:12.2 ("That was way too close") and 0:52.5-0:54.5 ("Maaax"). On a phone her skin reads as
+   a different colour from the daytime Skye, and in the hook the left hand over her mouth is a big flat brown block
+   filling ~40% of the CU. Fix: a soft warm fill on her face from Max's flashlight side (or a moon rim) so the skin
+   stays peach-in-shadow, and bring the hand down/in so it covers only the mouth (frames 31-136, 323-366, 1576-1636).
+4. **0:57.3-0:59.4, Lily's offscreen line is ~8 dB under the lines around it. SHOULD (audio only).** "I am in bed!
+   And you're too loud!" measures about -21.6 against -13.9 / -12.8 for Max either side; on a phone speaker it drops
+   out, and it's a joke. Keep the muffling, raise it ~4 dB so it sits ~4 dB under Max.
+5. **0:45.0-0:47.1 (frames 1351-1413), "See you tomorrow, scaredy-cat." plays on a wide where no face reads.
+   SHOULD.** The taunt that closes the dare (and the word the whole week answers) is delivered by a 40-px Max walking
+   away. Fix: Max turning back over his shoulder in MS/MCU for the line, or Skye's narrowed-eyes reaction to it.
+6. **1:00.7-1:01.2 (frames 1822-1836), Max smiles on "Then who said my name?". SHOULD.** The one deliberate tell is
+   the "Just hoodies" smile; here he should be properly scared (he yanks the blanket over his head a beat later), or
+   the twist gets given away in chapter one. Face `scared` from 0:59.6 to the yank.
+7. **VO "And this morning, he started a war" over a MONDAY 12:15 PM stamp. COULD.** Morning vs lunchtime (the stamp is
+   right per the script). Fix, audio only: retake that VO line as "And today, he started a war" (same length).
+
 ## Ch04 "Cinnamon" (WEDNESDAY 12:15 PM), 1833 frames, 61.1 s
 
 Stitched from main 15:05Z (ch04_a + ch04_b, commit 32dbd17): seam at frame 825 clean, A/V diff 0.0, -14.2 LUFS
