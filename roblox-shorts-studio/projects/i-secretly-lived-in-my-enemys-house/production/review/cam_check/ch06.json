@@ -1,0 +1,17 @@
+{
+ "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch06.js",
+ "chapter": 6,
+ "frames": 1733,
+ "glide_threshold": 0.6,
+ "flags": [
+  {
+   "kind": "glide",
+   "from": 1573,
+   "to": 1573,
+   "info": "13.0 studs over 2 frames",
+   "t": "52.40-52.40s",
+   "film": "6:18.5",
+   "frames": 1
+  }
+ ]
+}

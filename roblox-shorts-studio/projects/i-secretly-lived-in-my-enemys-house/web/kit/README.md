@@ -482,3 +482,9 @@ Flashlight defaults are softer (`flashlightBeam` 30, `chinLight` 4.5) so torches
   `island_hide_crawl_door`. `set.sightBlocked(eyeWorld, headWorld)` → true when the island hides the head from those
   eyes (sitting upright at `island_hide` the hair can show over the top to someone on a stool). Stove marks moved to z −7.9 so
   Dad's arms stay in front of the counter. `set.seatY(scale)` for the stools (seat 2.2).
+### Cuts and camera continuity (kit-pipeline, P2)
+`camOn` / `twoShot` / `overShoulder` frame from the actor's facing at that frame, so a shot whose actor turns makes the
+camera orbit (ch11's stove shot flew through Dad's head and a wall). For a shot whose actor turns or walks, pass a fixed
+`heading` (`K.camOn(s, C.dad, 'ms', { angle: 0.9, heading: 0.05 })`) or use a fixed set camera (`K.setCam`). Check:
+`node web/cam_check.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/chNN.js` lists glides (the camera
+travelling > 0.6 studs/frame on 2+ frames, i.e. not a clean cut), cameras inside scenery and cameras at a head.
