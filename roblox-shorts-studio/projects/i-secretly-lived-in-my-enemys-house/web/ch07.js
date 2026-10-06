@@ -217,7 +217,7 @@ function poseDad(t, idle) {
     if (t > at(14) && t < at(16)) headTurn(d, 0.75 * sm(at(14), at(14, 0.3), t) * (1 - sm(at(16), at(16, 0.3), t)));
     // the nozzle: right arm forward, raised toward her face
     const nz = sm(T.nozzle, T.nozzle + 0.5, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
-    if (nz > 0) K.gesture(d, 'hold_out', 'R', nz);
+    if (nz > 0) K.gesture(d, 'hold_out', 'L', 0.55 * nz);       // his left: the camera side
     if (t > T.humOff) headTurn(d, 1.2 * sm(T.humOff, T.humOff + 0.35, t));               // toward the hatch
     return;
   }
@@ -282,7 +282,7 @@ function placeProps(t) {
     K.place(v, p, h);
   } else { const m = M.vac(); K.place(v, m.pos, m.heading); }
   const up = sm(T.nozzle, T.nozzle + 0.5, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
-  if (up > 0.05) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye) }); else v.userData.park();
+  if (up > 0.05) K.hold(wand, C.dad, 'L', 'palm', { aim: K.headPos(C.skye).add(V(0, -0.35, 0)) }); else v.userData.park();
 }
 
 // ---------- the shot table ----------

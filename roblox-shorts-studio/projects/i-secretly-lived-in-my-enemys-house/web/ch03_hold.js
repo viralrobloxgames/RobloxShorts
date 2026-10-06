@@ -4,12 +4,11 @@ import * as base from './ch03.js';
 import { holdCheck } from '../../../web/lib/holdcheck.js';
 const { lineAt: at, lineEnd: end } = base;
 export const { meta, sky, setup, update, overlay } = holdCheck(base, [
-  [1.0, 'skye', 'L', 'magnet letters (at the fridge)'],
-  [at(3, 1.0), 'max', 'R', 'flashlight (walking in)'],
+  [1.0, 'skye', 'L', 'magnet letters (at the fridge)', { side: 3.0, dist: 4.5, up: 1.5 }],
+  [at(3, 1.0), 'max', 'R', 'flashlight (walking in)', { side: 2.5 }],
   [at(6, 0.5), 'max', 'R', 'flashlight (at the fridge)'],
-  [end(8, 0.75), 'max', 'R', 'ham (from the fridge)'],
-  [end(8, 0.75), 'max', 'L', 'milk (from the fridge)'],
-  [at(9, 0.3), 'max', 'R', 'ham (at the island)'],
+  [end(8, 0.75), 'max', 'R', 'ham (from the fridge)', { side: 3.0, dist: 4.5, up: 1.5 }],
+  [at(9, 0.3), 'max', 'R', 'ham (at the island)', { side: 3.0, dist: 4.5, up: 1.5 }],
   [end(9, 0.5), 'max', 'R', 'knife (cutting the crusts)'],
   [at(11, 1.0), 'skye', 'R', 'sandwich (crusts line)'],
   [at(12, 1.5), 'skye', 'R', 'sandwich (smug line)'],
