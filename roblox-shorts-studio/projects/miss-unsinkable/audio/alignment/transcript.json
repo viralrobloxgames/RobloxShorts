@@ -1,6 +1,6 @@
 {
   "source": "narration.wav",
-  "duration": 57.2186875,
+  "duration": 61.076,
   "segments": [
     {
       "start": 0.0,
@@ -24,7 +24,7 @@
         },
         {
           "start": 0.82,
-          "end": 1.26,
+          "end": 1.28,
           "word": " Titanic."
         },
         {
@@ -239,12 +239,12 @@
       ]
     },
     {
-      "start": 17.82,
+      "start": 17.84,
       "end": 22.4,
       "text": " the Titanic. It hits an iceberg. As she climbs into lifeboat 16,",
       "words": [
         {
-          "start": 17.82,
+          "start": 17.84,
           "end": 17.88,
           "word": " the"
         },
@@ -270,7 +270,7 @@
         },
         {
           "start": 19.48,
-          "end": 19.92,
+          "end": 19.9,
           "word": " iceberg."
         },
         {
@@ -332,11 +332,11 @@
         },
         {
           "start": 23.94,
-          "end": 24.06,
+          "end": 24.08,
           "word": " a"
         },
         {
-          "start": 24.06,
+          "start": 24.08,
           "end": 24.32,
           "word": " baby."
         },
@@ -393,12 +393,12 @@
       ]
     },
     {
-      "start": 28.179999999999996,
-      "end": 33.2,
-      "text": " Most people would never go to sea again. Violet becomes a nurse on a hospital ship,",
+      "start": 28.14,
+      "end": 34.48,
+      "text": " Most people would never go to sea again. Not Violet. Violet becomes a nurse on a hospital ship,",
       "words": [
         {
-          "start": 28.179999999999996,
+          "start": 28.14,
           "end": 28.7,
           "word": " Most"
         },
@@ -414,385 +414,422 @@
         },
         {
           "start": 29.2,
-          "end": 29.42,
+          "end": 29.44,
           "word": " never"
         },
         {
-          "start": 29.42,
-          "end": 29.62,
+          "start": 29.44,
+          "end": 29.64,
           "word": " go"
         },
         {
-          "start": 29.62,
+          "start": 29.64,
           "end": 29.82,
           "word": " to"
         },
         {
           "start": 29.82,
-          "end": 29.96,
+          "end": 29.94,
           "word": " sea"
         },
         {
-          "start": 29.96,
-          "end": 30.4,
+          "start": 29.94,
+          "end": 30.38,
           "word": " again."
         },
         {
-          "start": 31.32,
-          "end": 31.32,
+          "start": 31.06,
+          "end": 31.18,
+          "word": " Not"
+        },
+        {
+          "start": 31.18,
+          "end": 31.54,
+          "word": " Violet."
+        },
+        {
+          "start": 32.28,
+          "end": 32.62,
           "word": " Violet"
         },
         {
-          "start": 31.32,
-          "end": 31.68,
+          "start": 32.62,
+          "end": 32.96,
           "word": " becomes"
         },
         {
-          "start": 31.68,
-          "end": 31.92,
+          "start": 32.96,
+          "end": 33.22,
           "word": " a"
         },
         {
-          "start": 31.92,
-          "end": 32.16,
+          "start": 33.22,
+          "end": 33.44,
           "word": " nurse"
         },
         {
-          "start": 32.16,
-          "end": 32.38,
+          "start": 33.44,
+          "end": 33.66,
           "word": " on"
         },
         {
-          "start": 32.38,
-          "end": 32.5,
+          "start": 33.66,
+          "end": 34.12,
           "word": " a"
         },
         {
-          "start": 32.5,
-          "end": 32.84,
+          "start": 34.12,
+          "end": 34.12,
           "word": " hospital"
         },
         {
-          "start": 32.84,
-          "end": 33.2,
+          "start": 34.12,
+          "end": 34.48,
           "word": " ship,"
         }
       ]
     },
     {
-      "start": 33.56,
-      "end": 40.66,
+      "start": 34.86,
+      "end": 41.96,
       "text": " the Britannic, the Titanic's other sister. In 1916 it hits a mine and sinks in under an hour.",
       "words": [
         {
-          "start": 33.56,
-          "end": 33.68,
+          "start": 34.86,
+          "end": 34.96,
           "word": " the"
         },
         {
-          "start": 33.68,
-          "end": 34.2,
+          "start": 34.96,
+          "end": 35.48,
           "word": " Britannic,"
         },
         {
-          "start": 34.6,
-          "end": 34.66,
+          "start": 35.86,
+          "end": 35.96,
           "word": " the"
         },
         {
-          "start": 34.66,
-          "end": 35.24,
+          "start": 35.96,
+          "end": 36.52,
           "word": " Titanic's"
         },
         {
-          "start": 35.24,
-          "end": 35.42,
+          "start": 36.52,
+          "end": 36.7,
           "word": " other"
         },
         {
-          "start": 35.42,
-          "end": 35.78,
+          "start": 36.7,
+          "end": 37.04,
           "word": " sister."
         },
         {
-          "start": 36.96,
-          "end": 37.18,
+          "start": 38.2,
+          "end": 38.48,
           "word": " In"
         },
         {
-          "start": 37.18,
-          "end": 37.86,
+          "start": 38.48,
+          "end": 39.1,
           "word": " 1916"
         },
         {
-          "start": 37.86,
-          "end": 38.52,
+          "start": 39.1,
+          "end": 39.8,
           "word": " it"
         },
         {
-          "start": 38.52,
-          "end": 38.72,
+          "start": 39.8,
+          "end": 40.0,
           "word": " hits"
         },
         {
-          "start": 38.72,
-          "end": 38.88,
+          "start": 40.0,
+          "end": 40.16,
           "word": " a"
         },
         {
-          "start": 38.88,
-          "end": 39.14,
+          "start": 40.16,
+          "end": 40.42,
           "word": " mine"
         },
         {
-          "start": 39.14,
-          "end": 39.46,
+          "start": 40.42,
+          "end": 40.74,
           "word": " and"
         },
         {
-          "start": 39.46,
-          "end": 39.7,
+          "start": 40.74,
+          "end": 40.98,
           "word": " sinks"
         },
         {
-          "start": 39.7,
-          "end": 39.96,
+          "start": 40.98,
+          "end": 41.24,
           "word": " in"
         },
         {
-          "start": 39.96,
-          "end": 40.22,
+          "start": 41.24,
+          "end": 41.5,
           "word": " under"
         },
         {
-          "start": 40.22,
-          "end": 40.4,
+          "start": 41.5,
+          "end": 41.68,
           "word": " an"
         },
         {
-          "start": 40.4,
-          "end": 40.66,
+          "start": 41.68,
+          "end": 41.96,
           "word": " hour."
         }
       ]
     },
     {
-      "start": 41.18,
-      "end": 45.52,
+      "start": 42.48,
+      "end": 46.8,
       "text": " Her lifeboat gets pulled toward the giant propellers. She jumps into the sea,",
       "words": [
         {
-          "start": 41.18,
-          "end": 41.4,
+          "start": 42.48,
+          "end": 42.68,
           "word": " Her"
         },
         {
-          "start": 41.4,
-          "end": 41.86,
+          "start": 42.68,
+          "end": 43.14,
           "word": " lifeboat"
         },
         {
-          "start": 41.86,
-          "end": 42.1,
+          "start": 43.14,
+          "end": 43.38,
           "word": " gets"
         },
         {
-          "start": 42.1,
-          "end": 42.42,
+          "start": 43.38,
+          "end": 43.7,
           "word": " pulled"
         },
         {
-          "start": 42.42,
-          "end": 42.72,
+          "start": 43.7,
+          "end": 44.0,
           "word": " toward"
         },
         {
-          "start": 42.72,
-          "end": 42.96,
+          "start": 44.0,
+          "end": 44.24,
           "word": " the"
         },
         {
-          "start": 42.96,
-          "end": 43.26,
+          "start": 44.24,
+          "end": 44.54,
           "word": " giant"
         },
         {
-          "start": 43.26,
-          "end": 43.8,
+          "start": 44.54,
+          "end": 45.04,
           "word": " propellers."
         },
         {
-          "start": 44.42,
-          "end": 44.56,
+          "start": 45.74,
+          "end": 45.84,
           "word": " She"
         },
         {
-          "start": 44.56,
-          "end": 44.8,
+          "start": 45.84,
+          "end": 46.06,
           "word": " jumps"
         },
         {
-          "start": 44.8,
-          "end": 45.04,
+          "start": 46.06,
+          "end": 46.32,
           "word": " into"
         },
         {
-          "start": 45.04,
-          "end": 45.22,
+          "start": 46.32,
+          "end": 46.48,
           "word": " the"
         },
         {
-          "start": 45.22,
-          "end": 45.52,
+          "start": 46.48,
+          "end": 46.8,
           "word": " sea,"
         }
       ]
     },
     {
-      "start": 45.78,
-      "end": 51.06,
+      "start": 47.08,
+      "end": 52.34,
       "text": " hits her head and survives again. She keeps working at sea for another 30 years.",
       "words": [
         {
-          "start": 45.78,
-          "end": 45.94,
+          "start": 47.08,
+          "end": 47.22,
           "word": " hits"
         },
         {
-          "start": 45.94,
-          "end": 46.16,
+          "start": 47.22,
+          "end": 47.44,
           "word": " her"
         },
         {
-          "start": 46.16,
-          "end": 46.42,
+          "start": 47.44,
+          "end": 47.7,
           "word": " head"
         },
         {
-          "start": 46.42,
-          "end": 46.74,
+          "start": 47.7,
+          "end": 48.02,
           "word": " and"
         },
         {
-          "start": 46.74,
-          "end": 47.16,
+          "start": 48.02,
+          "end": 48.44,
           "word": " survives"
         },
         {
-          "start": 47.16,
-          "end": 47.54,
+          "start": 48.44,
+          "end": 48.82,
           "word": " again."
         },
         {
-          "start": 48.62,
-          "end": 48.82,
+          "start": 49.92,
+          "end": 50.1,
           "word": " She"
         },
         {
-          "start": 48.82,
-          "end": 49.02,
+          "start": 50.1,
+          "end": 50.3,
           "word": " keeps"
         },
         {
-          "start": 49.02,
-          "end": 49.36,
+          "start": 50.3,
+          "end": 50.62,
           "word": " working"
         },
         {
-          "start": 49.36,
-          "end": 49.6,
+          "start": 50.62,
+          "end": 50.88,
           "word": " at"
         },
         {
-          "start": 49.6,
-          "end": 49.84,
+          "start": 50.88,
+          "end": 51.12,
           "word": " sea"
         },
         {
-          "start": 49.84,
-          "end": 50.04,
+          "start": 51.12,
+          "end": 51.32,
           "word": " for"
         },
         {
-          "start": 50.04,
-          "end": 50.28,
+          "start": 51.32,
+          "end": 51.56,
           "word": " another"
         },
         {
-          "start": 50.28,
-          "end": 50.62,
+          "start": 51.56,
+          "end": 51.9,
           "word": " 30"
         },
         {
-          "start": 50.62,
-          "end": 51.06,
+          "start": 51.9,
+          "end": 52.34,
           "word": " years."
         }
       ]
     },
     {
-      "start": 51.66,
-      "end": 57.04,
-      "text": " People call her Miss Unsinkable. Follow Viral Roblox Games for more stories like this.",
+      "start": 52.980000000000004,
+      "end": 57.1,
+      "text": " Three ships. Three disasters. People call her Miss Unsinkable.",
       "words": [
         {
-          "start": 51.66,
-          "end": 51.9,
+          "start": 52.9,
+          "end": 53.22,
+          "word": " Three"
+        },
+        {
+          "start": 53.22,
+          "end": 53.6,
+          "word": " ships."
+        },
+        {
+          "start": 54.06,
+          "end": 54.3,
+          "word": " Three"
+        },
+        {
+          "start": 54.3,
+          "end": 54.78,
+          "word": " disasters."
+        },
+        {
+          "start": 55.56,
+          "end": 55.7,
           "word": " People"
         },
         {
-          "start": 51.9,
-          "end": 52.18,
+          "start": 55.7,
+          "end": 56.02,
           "word": " call"
         },
         {
-          "start": 52.18,
-          "end": 52.4,
+          "start": 56.02,
+          "end": 56.26,
           "word": " her"
         },
         {
-          "start": 52.4,
-          "end": 52.58,
+          "start": 56.26,
+          "end": 56.44,
           "word": " Miss"
         },
         {
-          "start": 52.58,
-          "end": 53.24,
+          "start": 56.44,
+          "end": 57.1,
           "word": " Unsinkable."
-        },
+        }
+      ]
+    },
+    {
+      "start": 58.04,
+      "end": 60.9,
+      "text": " Follow Viral Roblox Games for more stories like this.",
+      "words": [
         {
-          "start": 54.28,
-          "end": 54.58,
+          "start": 58.04,
+          "end": 58.42,
           "word": " Follow"
         },
         {
-          "start": 54.58,
-          "end": 55.68,
+          "start": 58.42,
+          "end": 59.56,
           "word": " ViralRobloxGames"
         },
         {
-          "start": 55.68,
-          "end": 55.94,
+          "start": 59.56,
+          "end": 59.8,
           "word": " for"
         },
         {
-          "start": 55.94,
-          "end": 56.14,
+          "start": 59.8,
+          "end": 60.0,
           "word": " more"
         },
         {
-          "start": 56.14,
-          "end": 56.46,
+          "start": 60.0,
+          "end": 60.32,
           "word": " stories"
         },
         {
-          "start": 56.46,
-          "end": 56.74,
+          "start": 60.32,
+          "end": 60.6,
           "word": " like"
         },
         {
-          "start": 56.74,
-          "end": 57.04,
+          "start": 60.6,
+          "end": 60.9,
           "word": " this."
         }
       ]

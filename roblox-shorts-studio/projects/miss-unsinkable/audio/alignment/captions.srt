@@ -1,5 +1,5 @@
 1
-00:00:00,000 --> 00:00:01,380
+00:00:00,000 --> 00:00:01,400
 She survived the Titanic.
 
 2
@@ -51,11 +51,11 @@ joins the Olympics brand
 new sister ship,
 
 14
-00:00:17,820 --> 00:00:18,340
+00:00:17,840 --> 00:00:18,340
 the Titanic.
 
 15
-00:00:18,940 --> 00:00:20,040
+00:00:18,940 --> 00:00:20,020
 It hits an iceberg.
 
 16
@@ -87,89 +87,101 @@ hours until a rescue
 ship arrives.
 
 23
-00:00:28,180 --> 00:00:29,420
+00:00:28,140 --> 00:00:29,440
 Most people would never
 
 24
-00:00:29,420 --> 00:00:30,520
+00:00:29,440 --> 00:00:30,500
 go to sea again.
 
 25
-00:00:31,320 --> 00:00:32,160
-Violet becomes a nurse
+00:00:31,060 --> 00:00:31,660
+Not Violet.
 
 26
-00:00:32,160 --> 00:00:33,320
-on a hospital ship,
+00:00:32,280 --> 00:00:33,440
+Violet becomes a nurse
 
 27
-00:00:33,560 --> 00:00:34,320
-the Britannic,
+00:00:33,440 --> 00:00:34,600
+on a hospital ship,
 
 28
-00:00:34,600 --> 00:00:35,900
-the Titanic's other sister.
+00:00:34,860 --> 00:00:35,600
+the Britannic,
 
 29
-00:00:36,960 --> 00:00:38,720
-In 1916 it hits
+00:00:35,860 --> 00:00:37,160
+the Titanic's other sister.
 
 30
-00:00:38,720 --> 00:00:39,700
-a mine and sinks
+00:00:38,200 --> 00:00:40,000
+In 1916 it hits
 
 31
-00:00:39,700 --> 00:00:40,780
-in under an hour.
+00:00:40,000 --> 00:00:40,980
+a mine and sinks
 
 32
-00:00:41,180 --> 00:00:42,420
-Her lifeboat gets pulled
+00:00:40,980 --> 00:00:42,080
+in under an hour.
 
 33
-00:00:42,420 --> 00:00:43,920
-toward the giant propellers.
+00:00:42,480 --> 00:00:43,700
+Her lifeboat gets pulled
 
 34
-00:00:44,420 --> 00:00:45,220
-She jumps into the
+00:00:43,700 --> 00:00:45,160
+toward the giant propellers.
 
 35
-00:00:45,220 --> 00:00:45,640
-sea,
+00:00:45,740 --> 00:00:46,480
+She jumps into the
 
 36
-00:00:45,780 --> 00:00:46,740
-hits her head and
+00:00:46,480 --> 00:00:46,920
+sea,
 
 37
-00:00:46,740 --> 00:00:47,660
-survives again.
+00:00:47,080 --> 00:00:48,020
+hits her head and
 
 38
-00:00:48,620 --> 00:00:49,600
-She keeps working at
+00:00:48,020 --> 00:00:48,940
+survives again.
 
 39
-00:00:49,600 --> 00:00:50,620
-sea for another 30
+00:00:49,920 --> 00:00:50,880
+She keeps working at
 
 40
-00:00:50,620 --> 00:00:51,180
-years.
+00:00:50,880 --> 00:00:51,900
+sea for another 30
 
 41
-00:00:51,660 --> 00:00:52,580
-People call her Miss
+00:00:51,900 --> 00:00:52,460
+years.
 
 42
-00:00:52,580 --> 00:00:53,360
-Unsinkable.
+00:00:52,900 --> 00:00:53,720
+Three ships.
 
 43
-00:00:54,280 --> 00:00:55,940
-Follow ViralRobloxGames for
+00:00:54,060 --> 00:00:54,900
+Three disasters.
 
 44
-00:00:55,940 --> 00:00:57,160
+00:00:55,560 --> 00:00:56,440
+People call her Miss
+
+45
+00:00:56,440 --> 00:00:57,220
+Unsinkable.
+
+46
+00:00:58,040 --> 00:00:59,800
+Follow ViralRobloxGames for
+
+47
+00:00:59,800 --> 00:01:01,020
 more stories like this.
