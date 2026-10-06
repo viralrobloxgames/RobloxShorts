@@ -1,0 +1,89 @@
+{
+  "clip": "projects/he-sold-the-eiffel-tower/web/eiffel_clip.js",
+  "generated": "2026-10-06T02:43:58.732Z",
+  "fingerprint": "57dc259e5aeaa71b",
+  "tolerance_studs": 0.02,
+  "passed": true,
+  "reviewed": true,
+  "wardrobe": [
+    {
+      "character": "Noob",
+      "options": {
+        "expressions": [
+          "neutral",
+          "happy",
+          "surprised",
+          "angry",
+          "suspicious",
+          "smug",
+          "shouting"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "officer_cap"
+      ]
+    },
+    {
+      "character": "Max",
+      "options": {
+        "expressions": [
+          "smug",
+          "cool",
+          "happy",
+          "neutral",
+          "scheming",
+          "evil_grin",
+          "shocked",
+          "surprised",
+          "talking",
+          "determined",
+          "scared"
+        ],
+        "scale": 1,
+        "hairLift": 0
+      },
+      "accessories": [
+        "top_hat"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "character": "Noob",
+      "accessory": "officer_cap",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.105,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "character": "Max",
+      "accessory": "top_hat",
+      "mode": "seat",
+      "scale": 1,
+      "stretch": 1,
+      "offset": [
+        0,
+        1.4,
+        0
+      ],
+      "hideHair": false,
+      "depth": -0.037,
+      "count": 0,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "reviewedAt": "2026-10-06T02:44:16.745Z"
+}

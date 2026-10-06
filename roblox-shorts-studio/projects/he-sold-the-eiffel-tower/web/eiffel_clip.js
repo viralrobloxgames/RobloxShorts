@@ -149,7 +149,7 @@ function maxAt(s) {
       x = st(a, -R90, 'scared'); moveTo(x, a, b, T.flee - 0.4, s, 16, -R90 - 0.6, 'run'); x.face = 'scared'; return x;
     }
     case 'capone': {                                             // hands the briefcase back across the desk; takes the reward
-      x = st(G_(-5.5, 0, -0.4), headTo(G_(-5.5, 0, -0.4), G_(1.0, 0, -5.6)), 'smug');
+      x = st(G_(-6.0, 0, -2.6), R90 - 0.5, 'smug');
       const k = smooth(inv(T.capone + 0.1, W.gangster, s)); x.arms = [['R', 0.1, lerp(-0.3, -1.05, k)]]; x.case = k < 0.98 ? 'R' : null;
       if (s > W.capone + 0.3) { x.arms = [['R', 0.1, -1.0]]; x.face = 'cool'; }
       return x;
@@ -221,7 +221,7 @@ function extraAt(a, s) {
       return x;
     }
     case 'capone': {
-      x = st(G_(1.0, 0, -5.6), headTo(G_(1.0, 0, -5.6), G_(-5.5, 0, -0.4)), 'suspicious'); x.outfit = 'gang'; x.layers = [['idle', s]];
+      x = st(G_(-0.6, 0, -5.4), -0.75, 'suspicious'); x.outfit = 'gang'; x.layers = [['idle', s]];
       if (s > W.capone - 0.1) { x.face = 'happy'; x.arms = [['R', 0.1, lerp(-0.3, -1.05, smooth(inv(W.capone - 0.1, W.capone + 0.3, s)))]]; x.stack = 'R'; }
       return x;
     }
@@ -274,7 +274,7 @@ const MODES = {
   day: { sun: 2.8, sunC: '#fff0dc', hemi: 0.6, env: 0.55, fill: 0.7, rim: 1.0, z: '#3f86e6', h: '#cfe8ff', fog: '#d6e9f7', near: 160, far: 1000 },
   indoor: { sun: 1.2, sunC: '#fff0dc', hemi: 1.1, env: 0.9, fill: 0.9, rim: 0.8, z: '#3f86e6', h: '#cfe8ff', fog: '#d6e9f7', near: 160, far: 1000 },
   hotel: { sun: 1.0, sunC: '#ffe2b8', hemi: 1.0, env: 0.85, fill: 0.9, rim: 0.9, z: '#3f86e6', h: '#ffe9c8', fog: '#f2e2c8', near: 160, far: 1000 },
-  gang: { sun: 0.5, sunC: '#ffd9a0', hemi: 0.7, env: 0.55, fill: 0.7, rim: 1.0, z: '#2a2f45', h: '#5a4a3a', fog: '#3a3028', near: 160, far: 1000 },
+  gang: { sun: 0.7, sunC: '#ffd9a0', hemi: 1.0, env: 0.8, fill: 1.0, rim: 1.0, z: '#2a2f45', h: '#5a4a3a', fog: '#3a3028', near: 160, far: 1000 },
   night: { sun: 0.35, sunC: '#9fb4ff', hemi: 0.45, env: 0.3, fill: 0.35, rim: 0.7, z: '#0b1226', h: '#22304e', fog: '#141c30', near: 80, far: 500 },
 };
 function light(stage, mode) {
@@ -346,7 +346,7 @@ export function update(t, stage) {
   if (SHOT === 'call') { P.phone.visible = true; P.phone.position.copy(H_(0.9, 3.65, -1.6)); P.phone.rotation.set(0, 0, 0); const ear = P.phone.userData.ear;
     if (ex.mia.ear) { const g = grip(mia, 'R'); ear.position.copy(g).sub(P.phone.position).add(V(0, 0.05, 0)); ear.rotation.set(0, 0, 0); } else { ear.position.copy(P.phone.userData.rest); ear.rotation.set(0, 0, 0); } }
   if (mx.case) holdAt(max, 'R', P.case);
-  if (SHOT === 'capone' && !mx.case && s > W.gangster - 0.05) { P.case.visible = true; P.case.position.copy(G_(-1.6, 3.6 + 1.85, -2.6)); P.case.rotation.set(0, 0.5, 0); }
+  if (SHOT === 'capone' && !mx.case && s > W.gangster - 0.05) { P.case.visible = true; P.case.position.copy(G_(-3.4, 3.6 + 1.85, -2.6)); P.case.rotation.set(0, 0.4, 0); }
   if (ex.noob.stack && noob.root.visible) { P.stack.visible = true; P.stack.position.copy(grip(noob, 'R')).add(V(0, 0.1, 0)); P.stack.rotation.set(0, noob.root.rotation.y, 0); }
   if (SHOT === 'rope') { P.rope.visible = true; P.rope.position.copy(J_(0, 21.7, 0.4)); P.rope.rotation.set(0, 0, 0); }
   if (SHOT === 'train' || SHOT === 'again') { const ch = S.stn.loco.userData.chimney.clone(); S.stn.loco.localToWorld(ch); puffs(ch, s, 0, 6, SHOT === 'train' ? 1 : -1); }
@@ -376,14 +376,14 @@ export function update(t, stage) {
     case 'whisper': look(stage, H_(-4.0, 6.0, 8.5), H_(-7.6, 4.6, -1.2), 48, 16); break;
     case 'poisson': look(stage, H_(-4.4, 6.0, 6.5), H_(-5, 5.0, -2.9), 44, 10); break;
     case 'bribe': look(stage, H_(-9.8, 5.4, 14.5), H_(-9.8, 4.4, 2.2), 46, 14); break;
-    case 'train': look(stage, S_(-5, 4.6, -13), S_(-1, 4.4, 2.5), 52, 24); break;
+    case 'train': look(stage, mp.clone().add(V(3.0, 3.0, -14.5)), mp.clone().add(V(0.5, 2.6, 1.0)), 52, 24); break;
     case 'shame': { const k = easeOut(u); look(stage, P_(lerp(5.8, 4.6, k), 4.2, lerp(5.0, 3.2, k)), P_(2.2, 5.2, -6), 50, 30); break; }
     case 'again': look(stage, S_(9, 4.8, -12), S_(3, 4.0, 0.5), 50, 20); break;
     case 'call': look(stage, H_(1.2, 5.6, 5.8), H_(0.2, 4.6, -2.6), 44, 10); break;
     case 'flee': look(stage, D_(mp.x - 9, 6.0, 16), D_(mp.x + 1, 4.5, 2), 52, 30); break;
-    case 'capone': look(stage, G_(3.0, 6.6, 12.5), G_(-2.2, 4.6, -2.6), 58, 14); break;
+    case 'capone': look(stage, G_(-3.5, 7.0, 9.5), G_(-3.0, 4.2, -3.0), 56, 14); break;
     case 'money': look(stage, O_(1.2, 6.4, 7.5), O_(1.0, 4.6, -4.6), 50, 14); break;
-    case 'rope': { const yy = Math.max(hdM.y, 4.6); look(stage, J_(6.5, yy + 1.0, 15.5), J_(-0.5, yy - 0.8, 0), 50, 20); break; }
+    case 'rope': { const yy = Math.max(hdM.y, 4.6); look(stage, J_(4.5, yy + 1.0, 16.5), J_(-1.6, yy - 0.8, 1.5), 50, 20); break; }
     case 'cert': { const c = stage.camera; c.position.copy(K.DESK).add(V(0, K.DESK_Y + 10.2, 0.6)); c.fov = 64; c.updateProjectionMatrix(); c.up.set(0, 0, -1); c.lookAt(K.DESK.clone().add(V(0, K.DESK_Y, 0.55))); stage.aimSun(K.DESK.clone(), 10); break; }
     case 'cta': look(stage, P_(0.6, 2.4, 51.5), P_(0, 25, 0), 62, 30); break;
     default: look(stage, V(5, 6, 10), V(0, 4, 0), 50);

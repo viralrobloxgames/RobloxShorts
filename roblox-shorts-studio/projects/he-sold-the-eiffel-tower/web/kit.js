@@ -273,7 +273,7 @@ export function gang(scene) {
   const leather = chair('#5a1a12'); leather.scale.setScalar(1.15); leather.position.set(0, 0, -6.3); g.add(leather);
   const lamp = new THREE.Group(); lamp.position.set(3.4, 3.6, -3.6); g.add(lamp);
   lamp.add(cyl(0.4, 0.5, 0.2, std('#c9a74a', { metalness: 0.7 }), 12, 0, 0.1, 0), cyl(0.06, 0.06, 1.6, std('#c9a74a', { metalness: 0.7 }), 6, 0, 0.9, 0), cyl(0.3, 0.9, 0.7, std('#2b7a4a', { emissive: '#1a4a2a', emissiveIntensity: 0.6 }), 14, 0, 1.8, 0));
-  const lampLight = new THREE.PointLight('#ffd08a', 40, 22, 1.5); lampLight.position.set(3.4, 5.6, -3.0); g.add(lampLight);
+  const lampLight = new THREE.PointLight('#ffd08a', 70, 26, 1.5); lampLight.position.set(1.0, 6.4, -1.5); g.add(lampLight);
   g.add(box(0.8, 0.5, 0.8, std('#e8e2d0'), -3.0, 3.85, -3.6));      // ashtray-ish box (no smoke)
   return { group: g, lampLight };
 }

@@ -11,19 +11,23 @@ rope and is caught again. His death certificate: apprentice salesman and counter
 
 ## State
 - Script v1 (157 words) written (no approval needed tonight). Ledger: script_approved.
-- Narration: George voice C started (`scripts/qwen_cloud_george_c.py --take take-01`); paused while The Postman's
-  Palace renders (it shares the CPU). Then `tighten_clips.py` + `narrate.py --voice george_c`, then
-  `python3 source/beats.py` (anchors in it) to put the clip on the real word timings.
-- Web route: `web/kit.js` (procedural Eiffel Tower: four lattice legs merging at the second platform, a shaft to the
-  top, arches, platforms, a rust tint for the "rusting" beat; Paris avenue with clipped trees, lamp posts, Paris
-  blocks; hotel suite with chandelier and long table; office with typewriter and stamp (also the counterfeit room and
-  the certificate desk); station with the steam train; dock with the steamship; gangster's office; the prison wall at
-  night with the knotted-sheet rope) and `web/eiffel_clip.js` (19 shots, written on the estimated timings; not yet
-  previewed). Cast: Max = Lustig (top_hat, dark suit shell), Leo = Poisson (brown suit), Mia and Skye = dealers (Mia
-  calls the police), Noob = dealer / Capone (pinstripes) / policeman (officer_cap, uniform).
-- To do: narration -> beats, preview every shot (fix framing, sitting height SIT_Y, holds), hold check, fit check
-  (top_hat on Max, officer_cap on Noob), sound (`source/make_sfx.py`, `source/sound_cues.py`), cover, post copy,
-  full render, encode, review. Post only after the user approves the MP4.
+- Narration: George voice C, take-01 (`scripts/qwen_cloud_george_c.py`, `tighten_clips.py`, `narrate.py --voice
+  george_c`): 61.5 s of speech (words end 61.52 s). Video = speech + 2.0 s end card = 63.5 s (1906 frames), + 0.5 s
+  cover = **64.0 s**. Captions: "Poison" fixed to "Poisson" in `audio/alignment/captions.json` / `.srt` (and a
+  POISON -> POISSON word fix in `source/project.json`).
+- Web route: `web/eiffel_clip.js` (19 shots) on the real word timings (`source/beats.py` -> `web/beats.js`),
+  `web/kit.js` (procedural Eiffel Tower with a rust tint, Paris avenue, hotel suite, office / counterfeit room /
+  certificate desk, station and steam train, dock and steamship, gangster's office, prison wall at night with the
+  sheet rope). Every shot previewed on the real timings and reframed where needed. Seated dealers use SIT_Y 0.7
+  (hips 2 above the root), legs under the table; walk 12 / run 16 studs/s.
+- Fit check (top_hat on Max, officer_cap on Noob) passed and reviewed. Hold check (`web/hold_check.js`: bill of sale,
+  newspaper, stamp, bribe bag, cash bag, phone earpiece, briefcase, reward) looked at.
+- Sound: `source/make_sfx.py` (copies plus synthesized train whistle and police whistle), `source/sound_cues.py` (81
+  cues). Cover: `delivery/He_Sold_The_Eiffel_Tower_cover.png/.jpg` + 3:4 grid crop (HE SOLD THE / EIFFEL TOWER /
+  TRUE STORY · 1925 over the tower, Max and Leo shaking on the bill of sale). Post copy: `delivery/post.json`.
+- Full render handed to a separate cloud session (session_01QjVpJDa6PsFp3oEozzRadh, branch claude/eiffel-render)
+  so it runs alongside The Postman's Palace render; it encodes, checks and pushes the MP4 to main. If that session
+  didn't finish, run the full render and finish commands below. Post only after the user approves the MP4.
 
 ## Commands
 ```
