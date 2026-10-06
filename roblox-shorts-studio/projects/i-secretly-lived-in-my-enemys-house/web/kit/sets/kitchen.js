@@ -547,5 +547,7 @@ export function build(scene) {
 
   // world-space helpers for chapters
   const anchors = { pancakeStackTop: () => W(STACK.x, STACK.y + 0.1 + (state.pancakes || 0) * 0.11, STACK.z), plate: W(PLATE.x, PLATE.y, PLATE.z), fridgeLetters: W(-11, 4.6, -8.7) };
-  return { id: 'kitchen', group, marks, cams, lights, setState, state, stairsPath, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
+  // door helper: setDoor('back_door' | 'pantry' | 'fridge', 0..1)
+  const setDoor = (name, u) => setState({ [{ back_door: 'backDoor', pantry: 'pantryDoors', fridge: 'fridgeOpen' }[name] || name]: u });
+  return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
 }

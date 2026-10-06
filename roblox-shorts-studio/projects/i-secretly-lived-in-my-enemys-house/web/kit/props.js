@@ -43,6 +43,17 @@ function crumple(geo, amt, seed = 3) {
   geo.computeVertexNormals(); return geo;
 }
 
+// smooth cloth folds: radial ripples (vertical creases) plus a soft lumpy wobble
+function folds(geo, amt, seed = 1) {
+  const p = geo.attributes.position, v = new THREE.Vector3(), r = rnd(seed), ph = [r() * 6, r() * 6, r() * 6];
+  for (let i = 0; i < p.count; i++) {
+    v.fromBufferAttribute(p, i); const a = Math.atan2(v.x, v.z);
+    const k = 1 + amt * (Math.sin(a * 7 + ph[0] + v.y * 2) * 0.6 + Math.sin(a * 3 + ph[1] - v.y * 3) * 0.5 + Math.sin(v.y * 9 + ph[2]) * 0.3);
+    p.setXYZ(i, v.x * k, v.y, v.z * k);
+  }
+  geo.computeVertexNormals(); return geo;
+}
+
 // ---------- fonts (magnet letters) ----------
 const FONT = await new FontLoader().loadAsync(new URL('../../../../web/node_modules/three/examples/fonts/helvetiker_bold.typeface.json', import.meta.url).href);
 export const LETTER_COLORS = ['#e8413c', '#2f7de1', '#f6c22b', '#3bb54a', '#f07c1e', '#9b59d0'];
@@ -160,7 +171,7 @@ function rubberSpider() {
 // Black handle, steel slotted blade; 1.5 long. Grip mid-handle, blade forward (+z) and tilted down a little.
 function spatula() {
   const g = group('spatula'), black = M('#1d1d22', 0.5), steel = M('#c9ced6', 0.25, { metalness: 0.85 });
-  add(g, roundedCylinder(0.065, 0.75, 0.03), black, [0, 0, 0.05], [Math.PI / 2, 0, 0]);
+  add(g, roundedCylinder(0.065, 0.9, 0.03), black, [0, 0, 0.12], [Math.PI / 2, 0, 0]);
   add(g, cyl(0.025, 0.025, 0.36), steel, [0, -0.02, 0.58], [Math.PI / 2 + 0.12, 0, 0]);
   const blade = new THREE.Group(); blade.position.set(0, -0.06, 0.78); blade.rotation.x = 0.18; g.add(blade);
   add(blade, box(0.42, 0.025, 0.5, 0.01), steel, [0, 0, 0.25]);
@@ -181,8 +192,8 @@ function pancakeMesh(seed = 1) {
 // pancake: one, origin at its centre bottom (pinch it at the edge with opts.grip = 'edge').
 function pancake(o = {}) {
   const g = group('pancake'), p = pancakeMesh(o.seed ?? 7); g.add(p);
-  if (o.grip === 'edge') p.position.z = PANCAKE_R - 0.08;
-  g.userData = { bottom: V(0, 0, o.grip === 'edge' ? PANCAKE_R - 0.08 : 0), holdDefaults: { palm: { level: true }, out: { level: true } } };
+  if (o.grip === 'edge') p.position.z = PANCAKE_R + 0.12;
+  g.userData = { bottom: V(0, 0, o.grip === 'edge' ? PANCAKE_R + 0.12 : 0), holdDefaults: { palm: { level: true }, out: { level: true } } };
   return g;
 }
 // pancake_stack { count = 12, plate = true, butter = false, syrup = false }: on a white plate; setCount(n) hides from the
@@ -268,7 +279,7 @@ function breadShape(w, d, bites, seed) {
 function sandwich(o = {}) {
   const g = group('sandwich'), crusts = !!o.crusts, half = !!o.half, bites = o.bitten === 'half_eaten' ? 3 : (o.bitten ?? 0);
   const w = half ? 0.36 : 0.72, d = 0.72, t = 0.085;
-  const inner = new THREE.Group(); inner.position.z = d / 2 + 0.06; g.add(inner); // back edge just past the grip
+  const inner = new THREE.Group(); inner.position.z = d / 2 + 0.16; g.add(inner); // back edge just past the grip
   const shape = breadShape(w, d, bites, 9);
   const slab = (thick) => { const e = new THREE.ExtrudeGeometry(shape, { depth: thick, bevelEnabled: true, bevelThickness: 0.012, bevelSize: 0.012, bevelSegments: 2, curveSegments: 6 }); e.rotateX(Math.PI / 2); e.translate(0, thick, 0); return e; };
   const bread = M('#f5e6c4', 0.85), crustM = M('#b9772f', 0.8);
@@ -280,7 +291,7 @@ function sandwich(o = {}) {
   if (crusts) for (const [x, z, ww, dd] of [[0, -d / 2, w, 0.05], [w / 2, 0, 0.05, d], [-w / 2, 0, 0.05, d], ...(bites ? [] : [[0, d / 2, w, 0.05]])]) add(inner, box(ww + 0.03, t * 2 + 0.06, dd + 0.03, 0.02), crustM, [x, t + 0.02, z]);
   if (bites) { const r = rnd(2); for (let i = 0; i < 5; i++) add(inner, box(0.03, 0.02, 0.03, 0.005), bread, [(r() - 0.5) * w * 0.8, -0.005, d / 2 + 0.05 + r() * 0.1]); }
   inner.position.y = -t; // filling at the grip height
-  g.userData = { bottom: V(0, -t, 0), center: V(0, 0, d / 2 + 0.06), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
+  g.userData = { bottom: V(0, -t, 0), center: V(0, 0, d / 2 + 0.16), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
   return g;
 }
 
@@ -295,8 +306,8 @@ function cookie(o = {}) {
   add(inner, e, M('#d49a4e', 0.8));
   for (let i = 0; i < 9; i++) { const a = r() * TAU, d = r() * R * 0.75; add(inner, box(0.06, 0.04, 0.06, 0.015), M('#3e2414', 0.6), [Math.cos(a) * d, h + 0.02, -Math.sin(a) * d], [0, a, 0]); }
   if (o.upright) { inner.rotation.x = Math.PI / 2; inner.position.set(0, R + 0.05, 0.05); }
-  else inner.position.set(0, -h / 2, R + 0.05);
-  g.userData = { bottom: o.upright ? V(0, -0.05, 0.05) : V(0, -h / 2 - 0.02, R + 0.05), center: V(0, 0, R + 0.05), holdDefaults: { palm: { level: true }, out: { level: true } } };
+  else inner.position.set(0, -h / 2, R + 0.2);
+  g.userData = { bottom: o.upright ? V(0, -0.05, 0.05) : V(0, -h / 2 - 0.02, R + 0.2), center: V(0, 0, R + 0.2), holdDefaults: { palm: { level: true }, out: { level: true } } };
   return g;
 }
 
@@ -326,7 +337,7 @@ function cobweb(o = {}) {
 // (held hanging in Lily's hand: hold(teddy, lily, 'L', 'side')); 'hug' mode sits it on her chest, facing out.
 // { pose: 'sit' } builds it sitting (legs forward) for tables and laps; place() puts its bottom down.
 function teddy(o = {}) {
-  const g = group('teddy'), fur = M('#8a5a34', 0.95, { sheen: 1, sheenRoughness: 0.6, sheenColor: new THREE.Color('#c79a6b') }), cream = M('#e9cfa6', 0.9);
+  const g = group('teddy'), fur = M(o.fur ?? '#8a5a34', 0.95, { sheen: 1, sheenRoughness: 0.6, sheenColor: new THREE.Color(o.sheen ?? '#c79a6b') }), cream = M(o.cream ?? '#e9cfa6', 0.9);
   const b = new THREE.Group(); g.add(b); // teddy body frame: origin at its seat, facing +z
   add(b, sph(0.3), fur, [0, 0.36, 0], [0, 0, 0], [1, 1.12, 0.88]);
   add(b, sph(0.2), cream, [0, 0.34, 0.14], [0, 0, 0], [1, 1.15, 0.5]);
@@ -337,8 +348,8 @@ function teddy(o = {}) {
   for (const s of [-1, 1]) add(b, sph(0.042), M('#0d0a09', 0.15, { clearcoat: 1 }), [s * 0.1, 0.96, 0.25]);
   add(b, new THREE.TorusGeometry(0.035, 0.012, 6, 16, Math.PI), M('#1b1210', 0.5), [0, 0.77, 0.32], [0, 0, Math.PI]);
   const bow = new THREE.Group(); bow.position.set(0, 0.65, 0.2); b.add(bow);
-  for (const s of [-1, 1]) add(bow, new THREE.ConeGeometry(0.08, 0.16, 12), M('#e03045', 0.5), [s * 0.08, 0, 0], [0, 0, s * Math.PI / 2]);
-  add(bow, sph(0.045), M('#e03045', 0.5));
+  for (const s of [-1, 1]) add(bow, new THREE.ConeGeometry(0.08, 0.16, 12), M(o.bow ?? '#e03045', 0.5), [s * 0.08, 0, 0], [0, 0, s * Math.PI / 2]);
+  add(bow, sph(0.045), M(o.bow ?? '#e03045', 0.5));
   const limb = (x, y, z, rx, rz, len = 0.32) => { const l = add(b, new THREE.CapsuleGeometry(0.09, len, 6, 12), fur, [x, y, z], [rx, 0, rz]); return l; };
   const sit = o.pose === 'sit';
   limb(-0.27, 0.48, 0.02, 0, -0.5);                       // right arm, relaxed
@@ -351,7 +362,7 @@ function teddy(o = {}) {
   }
   if (raised) b.position.set(-0.29, -1.0, 0.12); // paw top at the origin, the body hanging outward of a right hand
   g.userData = {
-    bottom: sit ? V(0, 0.01, 0) : V(-0.29, -1.18, 0.12),
+    bottom: sit ? V(0, 0.01, 0) : raised ? V(-0.29, -1.18, 0.12) : V(0, -0.17, 0),
     holdDefaults: {
       side: (hand) => ({ mirror: hand === 'L', level: true }),
       palm: (hand) => ({ mirror: hand === 'L', level: true }),
@@ -363,14 +374,14 @@ function teddy(o = {}) {
 
 // ---------- tea set ----------
 // teapot: toy teapot, white with pink spots, 0.6 tall. Grip = the handle (at -z); spout +z. tip(a) pours by rotating
-// about its x axis (call after hold). cup: toy teacup on a saucer ({ saucer: false } without), handle at the grip, the
+// about its x axis (call after hold). cup: toy teacup ({ saucer: true } on a saucer, for the table), handle at the grip, the
 // cup in front of the fist (+z).
 function spotsTex(base, spot) {
   return textTex(256, 128, (x, w, h) => { x.fillStyle = base; x.fillRect(0, 0, w, h); x.fillStyle = spot; const r = rnd(8); for (let i = 0; i < 22; i++) { x.beginPath(); x.arc(r() * w, 20 + r() * (h - 40), 6 + r() * 4, 0, TAU); x.fill(); } });
 }
 function teapot() {
   const g = group('teapot'), china = new THREE.MeshPhysicalMaterial({ map: spotsTex('#fbf6f8', '#ff8fc0'), roughness: 0.25, clearcoat: 0.9 }), pink = M('#ff8fc0', 0.3, { clearcoat: 0.8 });
-  const pot = new THREE.Group(); pot.position.set(0, -0.12, 0.42); g.add(pot);
+  const pot = new THREE.Group(); pot.position.set(0, -0.12, 0.5); g.add(pot);
   add(pot, sph(0.26, 28), china, [0, 0.24, 0], [0, 0, 0], [1, 0.85, 1]);
   add(pot, cyl(0.14, 0.18, 0.05), pink, [0, 0.03, 0]);
   add(pot, cyl(0.15, 0.15, 0.05), pink, [0, 0.44, 0]);
@@ -379,7 +390,7 @@ function teapot() {
   add(pot, cyl(0.035, 0.065, 0.32), china, [0, 0.33, 0.3], [0.85, 0, 0]);
   add(pot, new THREE.TorusGeometry(0.12, 0.03, 8, 20, Math.PI * 1.3), china, [0, 0.25, -0.28], [0, Math.PI / 2, Math.PI * 0.35]);
   g.userData = {
-    pot, bottom: V(0, -0.12, 0.42),
+    pot, bottom: V(0, -0.12, 0.5),
     tip(a) { g.rotateX(a); },
     holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } },
   };
@@ -387,14 +398,14 @@ function teapot() {
 }
 function cup(o = {}) {
   const g = group('cup'), china = new THREE.MeshPhysicalMaterial({ map: spotsTex('#fbf6f8', '#ff8fc0'), roughness: 0.25, clearcoat: 0.9, side: THREE.DoubleSide });
-  const c = new THREE.Group(); c.position.set(0, -0.1, 0.36); g.add(c);
+  const c = new THREE.Group(); c.position.set(0, -0.1, 0.42); g.add(c);
   const pts = [[0, 0], [0.08, 0], [0.1, 0.02], [0.16, 0.1], [0.18, 0.2], [0.17, 0.2], [0.15, 0.11], [0.07, 0.04], [0, 0.04]].map(([x, y]) => new THREE.Vector2(x, y));
   add(c, new THREE.LatheGeometry(pts, 32), china);
   add(c, new THREE.CircleGeometry(0.15, 24), M('#c98a5a', 0.15, { clearcoat: 1 }), [0, 0.15, 0], [-Math.PI / 2, 0, 0]); // tea
   add(c, new THREE.TorusGeometry(0.06, 0.02, 8, 16), china, [0, 0.11, -0.19], [0, Math.PI / 2, 0]);
-  if (o.saucer !== false) add(c, new THREE.LatheGeometry([[0, -0.03], [0.25, -0.02], [0.27, 0.0], [0.25, 0], [0, -0.01]].map(([x, y]) => new THREE.Vector2(x, y)), 32), china);
+  if (o.saucer) add(c, new THREE.LatheGeometry([[0, -0.03], [0.25, -0.02], [0.27, 0.0], [0.25, 0], [0, -0.01]].map(([x, y]) => new THREE.Vector2(x, y)), 32), china);
   if (o.tea === false) c.children[1].visible = false;
-  g.userData = { bottom: V(0, o.saucer !== false ? -0.13 : -0.1, 0.36), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
+  g.userData = { bottom: V(0, o.saucer ? -0.13 : -0.1, 0.42), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
   return g;
 }
 
@@ -499,6 +510,8 @@ function vacuum() {
       if (hose) { hose.geometry.dispose(); g.remove(hose); }
       hose = add(g, new THREE.TubeGeometry(curve, 48, 0.075, 10), hoseMat);
     },
+    holdDefaults: { side: { level: true, offset: [0, -1.02, 0.15] } }, // carried up the ladder by the top handle
+    onHold: () => g.userData.update(),
     park() { if (wand.parent !== g) g.add(wand); wand.position.set(0.3, 1.0, -0.6); wand.rotation.set(-0.3, 0, 0); g.userData.update(); },
   };
   g.userData.park();
@@ -547,11 +560,11 @@ function note(o = {}) {
     return g;
   }
   const tex = textTex(256, 200, (x, w, h) => { x.fillStyle = '#fbfaf5'; x.fillRect(0, 0, w, h); x.fillStyle = '#d0408a'; x.font = '64px "Luckiest Guy", sans-serif'; x.textAlign = 'center'; x.fillText('Max', w / 2, 125); });
-  const front = add(g, new THREE.PlaneGeometry(0.5, 0.4), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.85 }), [0, 0.2, 0.32], [-0.08, 0, 0]);
-  add(g, new THREE.PlaneGeometry(0.5, 0.4), new THREE.MeshStandardMaterial({ color: '#f0eee6', roughness: 0.85, side: THREE.DoubleSide }), [0, 0.2, 0.29], [0.1, Math.PI, 0]);
-  add(g, box(0.5, 0.025, 0.035, 0.01), paper, [0, 0.4, 0.305]);
+  const front = add(g, new THREE.PlaneGeometry(0.5, 0.4), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.85 }), [0, 0.2, 0.47], [-0.08, 0, 0]);
+  add(g, new THREE.PlaneGeometry(0.5, 0.4), new THREE.MeshStandardMaterial({ color: '#f0eee6', roughness: 0.85, side: THREE.DoubleSide }), [0, 0.2, 0.44], [0.1, Math.PI, 0]);
+  add(g, box(0.5, 0.025, 0.035, 0.01), paper, [0, 0.4, 0.455]);
   front.castShadow = true;
-  g.userData = { bottom: V(0, 0.0, 0.3), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
+  g.userData = { bottom: V(0, 0.0, 0.45), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
   return g;
 }
 
@@ -576,7 +589,7 @@ function phone(o = {}) {
   g.userData = {
     screen: scr, light, bottom: V(0, -0.11, 0),
     setGlow(v) { scr.material = v ? on : off; if (light) light.visible = v; g.userData.glow = v; },
-    holdDefaults: { out: { level: true, rot: [0, Math.PI, 0] }, palm: { level: true, rot: [0, Math.PI, 0] } },
+    holdDefaults: { out: { level: true, rot: [0, Math.PI, 0], offset: [0, 0.38, 0] }, palm: { level: true, rot: [0, Math.PI, 0], offset: [0, 0.42, -0.3] } },
   };
   g.userData.setGlow(o.glow ?? (o.screen !== 'off'));
   return g;
@@ -592,10 +605,18 @@ function sheetAlpha(holes) {
 function bedsheet(o = {}) {
   const g = group('bedsheet'), st = o.state ?? 'flat', cloth = (holes) => new THREE.MeshPhysicalMaterial({ color: '#f7f7f4', roughness: 0.9, sheen: 0.6, sheenColor: new THREE.Color('#ffffff'), side: THREE.DoubleSide, alphaMap: sheetAlpha(holes), alphaTest: 0.5 });
   const nH = o.holes === true ? 2 : (o.holes || 0);
+  if (st === 'bundle') { // an armful carried in both arms (carry2): a soft folded pile
+    const cl = M('#f4f4f1', 0.92, { sheen: 0.6, sheenColor: new THREE.Color('#ffffff') });
+    add(g, folds(new THREE.SphereGeometry(0.6, 40, 28), 0.06, 5), cl, [0, 0.1, 0.25], [0, 0, Math.PI / 2], [0.75, 1.25, 0.8]);
+    add(g, folds(new THREE.CylinderGeometry(0.3, 0.45, 0.8, 32, 8, true), 0.06, 6), M('#f4f4f1', 0.92, { side: THREE.DoubleSide }), [0.15, -0.5, 0.3], [0, 0, 0.1]);
+    g.userData = { bottom: V(0, -0.9, 0.3), handles: { L: V(0.62, 0.05, 0.15), R: V(-0.62, 0.05, 0.15) } };
+    return g;
+  }
   if (st === 'bunched') {
-    add(g, crumple(new THREE.IcosahedronGeometry(0.42, 3), 0.22, 4), M('#f4f4f1', 0.92), [0, -0.5, 0.15], [0, 0, 0], [1.1, 1, 0.9]);
-    const tail = crumple(new THREE.ConeGeometry(0.38, 1.6, 16, 8), 0.12, 9); add(g, tail, M('#f4f4f1', 0.92), [0.05, -1.35, 0.1], [Math.PI, 0, 0.12]);
-    add(g, crumple(new THREE.IcosahedronGeometry(0.22, 2), 0.25, 7), M('#f4f4f1', 0.92), [0, -0.08, 0.05]);
+    const cl = M('#f4f4f1', 0.92, { sheen: 0.6, sheenColor: new THREE.Color('#ffffff') });
+    add(g, folds(new THREE.SphereGeometry(0.5, 40, 28), 0.09, 1), cl, [0, -0.55, 0.12], [0, 0, 0], [1.05, 0.9, 0.85]);
+    const tail = folds(new THREE.CylinderGeometry(0.42, 0.2, 1.5, 40, 16, true), 0.07, 2); add(g, tail, M('#f4f4f1', 0.92, { side: THREE.DoubleSide }), [0.05, -1.35, 0.08], [0, 0, 0.08]);
+    add(g, folds(new THREE.SphereGeometry(0.28, 28, 20), 0.06, 3), cl, [0, -0.1, 0.05]);
     g.userData = { bottom: V(0, -2.1, 0.1) };
     return g;
   }
@@ -621,15 +642,17 @@ function bedsheet(o = {}) {
 // Kids' scissors: red plastic finger loops, steel blades, 0.75 long, blades +z. Grip = the loops; { open: 0.35 } angle.
 function scissors(o = {}) {
   const g = group('scissors'), red = M('#e2353a', 0.35, { clearcoat: 0.6 }), steel = M('#d4d8de', 0.2, { metalness: 0.9 });
-  const a = o.open ?? 0.3;
+  const halves = [];
   for (const s of [-1, 1]) {
-    const half = new THREE.Group(); half.position.z = 0.22; half.rotation.y = s * a / 2; g.add(half);
-    add(half, new THREE.TorusGeometry(0.1, 0.035, 8, 20), red, [s * 0.1, 0, -0.22], [Math.PI / 2, 0, 0], [1, 1.3, 1]);
+    const half = new THREE.Group(); half.position.z = 0.22; half.userData.s = s; halves.push(half); g.add(half);
+    add(half, new THREE.TorusGeometry(0.13, 0.04, 8, 20), red, [s * 0.13, 0, -0.22], [Math.PI / 2, 0, 0], [1, 1.3, 1]);
     add(half, box(0.05, 0.03, 0.14, 0.01), red, [s * 0.05, 0, -0.08]);
-    const bl = add(half, new THREE.ConeGeometry(0.05, 0.48, 4), steel, [-s * 0.012, 0, 0.24], [Math.PI / 2, 0, Math.PI / 4], [1, 1, 0.35]);
+    const bl = add(half, new THREE.ConeGeometry(0.06, 0.75, 4), steel, [-s * 0.012, 0, 0.37], [Math.PI / 2, 0, Math.PI / 4], [1, 1, 0.35]);
   }
-  add(g, cyl(0.025, 0.025, 0.08, 10), M('#555', 0.4, { metalness: 0.6 }), [0, 0, 0.22]);
-  g.userData = { bottom: V(0, -0.04, 0.1), holdDefaults: { palm: {}, out: {} } };
+  add(g, cyl(0.03, 0.03, 0.08, 10), M('#555', 0.4, { metalness: 0.6 }), [0, 0, 0.22]);
+  for (const ch of [...g.children]) ch.position.z += 0.2; // loops in the fist, the hinge and blades out of it
+  g.userData = { bottom: V(0, -0.04, 0.3), setOpen(a) { for (const h of halves) h.rotation.y = h.userData.s * a / 2; } }; // a: 0 shut .. 0.6 wide (snip by animating it)
+  g.userData.setOpen(o.open ?? 0.3);
   return g;
 }
 
@@ -642,7 +665,7 @@ function glowSticks(o = {}) {
   const g = group('glow_sticks'), cols = o.colors ?? ['#5dff6a', '#ff5ad1', '#4fd2ff', '#fff15a', '#5dff6a', '#ff9a3c'], sticks = [];
   cols.forEach((c, i) => { const a = (i / cols.length) * TAU; const s = add(g, new THREE.CapsuleGeometry(0.04, 0.72, 4, 10), glowStickMat(c, !!o.lit), [0, 0.09 + Math.sin(a) * 0.07, Math.cos(a) * 0.07], [0, 0, Math.PI / 2 + (i - 2.5) * 0.04]); s.userData.color = c; sticks.push(s); });
   add(g, new THREE.TorusGeometry(0.12, 0.02, 6, 20), M('#2c2c2c', 0.6), [0.15, 0.09, 0], [0, Math.PI / 2, 0]);
-  g.userData = { sticks, bottom: V(0, 0, 0), setLit(on) { for (const s of sticks) s.material = glowStickMat(s.userData.color, on); }, holdDefaults: { palm: { rot: [0, Math.PI / 2, 0] } } };
+  g.userData = { sticks, bottom: V(0, 0, 0), setLit(on) { for (const s of sticks) s.material = glowStickMat(s.userData.color, on); }, holdDefaults: { palm: { rot: [0, Math.PI / 2, 0], offset: [-0.3, -0.09, 0] }, side: { rot: [0, Math.PI / 2, 0], offset: [-0.3, -0.09, 0] } } };
   return g;
 }
 function glowBand(o = {}) {
@@ -705,13 +728,14 @@ function milk() {
   g.userData = { bottom: V(0, -0.35, 0.42), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
   return g;
 }
-function ham() {
+function ham(o = {}) {
   const g = group('ham'), meat = M('#d9787a', 0.55, { clearcoat: 0.3 }), glaze = M('#a8502c', 0.45, { clearcoat: 0.5 });
   add(g, cyl(0.06, 0.06, 0.35, 12), M('#f1e6d0', 0.5), [0, 0, 0.12], [Math.PI / 2, 0, 0]);
   add(g, sph(0.08, 12), M('#f1e6d0', 0.5), [0, 0, -0.06], [0, 0, 0], [1.3, 1, 1]);
   add(g, new THREE.CapsuleGeometry(0.32, 0.35, 8, 20), glaze, [0, 0, 0.72], [Math.PI / 2, 0, 0], [1, 1, 0.9]);
   add(g, new THREE.CircleGeometry(0.3, 28), meat, [0, 0, 1.24], [0, 0, 0]);
   add(g, sph(0.33, 24), meat, [0, 0, 1.06], [0, 0, 0], [0.92, 0.82, 0.55]);
+  if (o.raided) { g.children.at(-1).position.z = 0.86; g.children.at(-2).position.z = 1.0; g.children.at(-3).scale.set(1, 1, 0.55); g.children.at(-3).position.z = 0.6; } // a big chunk gone
   g.userData = { bottom: V(0, -0.3, 0.7), holdDefaults: { side: { rot: [0.25, 0, 0] } } };
   return g;
 }
@@ -738,10 +762,62 @@ function pan(o = {}) {
 }
 function knife() {
   const g = group('knife'), steel = M('#d6dae0', 0.2, { metalness: 0.9 });
-  add(g, roundedCylinder(0.05, 0.45, 0.02), M('#f2f2f2', 0.4), [0, 0, 0.05], [Math.PI / 2, 0, 0]);
-  add(g, box(0.09, 0.02, 0.55, 0.02), steel, [0, 0, 0.55]);
+  add(g, roundedCylinder(0.05, 0.6, 0.02), M('#f2f2f2', 0.4), [0, 0, 0.1], [Math.PI / 2, 0, 0]);
+  add(g, box(0.1, 0.02, 0.6, 0.02), steel, [0, 0, 0.7]);
   g.userData = { bottom: V(0, -0.05, 0.3) };
   return g;
+}
+
+// ---------- backpack (loose) ----------
+// Skye's lilac backpack off her back: 1.3 wide, 1.5 tall, 0.6 deep, front pocket +z, straps at the back (-z), a grab
+// loop on top (the grip). place() stands it on the floor; hold(bp, skye, 'R', 'side') carries it by the loop.
+function backpack() {
+  const g = group('backpack'), lil = M('#c3a6ec', 0.75), dark = M('#8e6cc9', 0.7), body = new THREE.Group(); body.position.y = -1.62; g.add(body);
+  add(body, box(1.3, 1.45, 0.6, 0.28), lil, [0, 0.75, 0]);
+  add(body, box(1.0, 0.62, 0.22, 0.12), dark, [0, 0.45, 0.36]);
+  add(body, box(0.9, 0.04, 0.04, 0.02), M('#f0f0f0', 0.4), [0, 0.78, 0.48]);
+  for (const sx of [-1, 1]) add(body, box(0.2, 1.1, 0.12, 0.05), dark, [sx * 0.36, 0.78, -0.36]);
+  add(body, new THREE.TorusGeometry(0.12, 0.035, 6, 16, Math.PI), dark, [0, 1.47, 0]);
+  g.userData = { bottom: V(0, -1.62, 0), holdDefaults: { side: { level: true } } };
+  return g;
+}
+
+// ---------- small extras ----------
+// cracker_packet: a half-eaten packet of crackers (red wrapper, crackers sliding out), grip at its closed end, lies flat.
+// bread: one crustless white slice (lying flat, grip at the back edge like the sandwich). napkin: folded paper napkin.
+// apple, juice_box (with a straw): extras' lunches.
+function crackerPacket() {
+  const g = group('cracker_packet'), p = new THREE.Group(); p.position.z = 0.35; g.add(p);
+  add(p, box(0.42, 0.14, 0.62, 0.05), M('#d8342f', 0.45, { clearcoat: 0.6 }), [0, 0, 0]);
+  add(p, box(0.44, 0.02, 0.2, 0.01), M('#f6d34a', 0.5), [0, 0.07, 0.05]);
+  for (let i = 0; i < 3; i++) add(p, box(0.34, 0.06, 0.34, 0.02), M('#e7b35f', 0.8), [0.02 * i, 0.03 + i * 0.01, 0.38 + i * 0.12], [0, i * 0.2, 0]);
+  g.userData = { bottom: V(0, -0.07, 0.35), holdDefaults: { palm: { level: true }, out: { level: true } } };
+  return g;
+}
+function bread() {
+  const g = group('bread'), s = new THREE.Shape(); s.moveTo(-0.36, -0.36); s.lineTo(0.36, -0.36); s.lineTo(0.36, 0.25); s.quadraticCurveTo(0.36, 0.42, 0.18, 0.42); s.quadraticCurveTo(0, 0.36, -0.18, 0.42); s.quadraticCurveTo(-0.36, 0.42, -0.36, 0.25); s.lineTo(-0.36, -0.36);
+  const e = new THREE.ExtrudeGeometry(s, { depth: 0.08, bevelEnabled: true, bevelThickness: 0.012, bevelSize: 0.012, bevelSegments: 2 }); e.rotateX(Math.PI / 2); e.translate(0, 0.08, 0);
+  add(g, e, M('#f5e6c4', 0.85), [0, -0.04, 0.55]);
+  g.userData = { bottom: V(0, -0.04, 0.55), holdDefaults: { palm: { level: true }, out: { level: true } } };
+  return g;
+}
+function napkin() {
+  const g = group('napkin'); add(g, box(0.55, 0.03, 0.55, 0.01), M('#ffffff', 0.9), [0, 0.015, 0.4], [0, 0.3, 0]);
+  g.userData = { bottom: V(0, 0, 0.4) }; return g;
+}
+function apple(o = {}) {
+  const g = group('apple'), a = new THREE.Group(); a.position.set(0, 0, 0.4); g.add(a);
+  add(a, sph(0.22, 24), M(o.color ?? '#d7262b', 0.3, { clearcoat: 0.8 }), [0, 0.2, 0], [0, 0, 0], [1, 0.9, 1]);
+  add(a, cyl(0.015, 0.015, 0.12, 6), M('#5a3b1c', 0.6), [0, 0.43, 0]);
+  add(a, sph(0.06, 10), M('#4caf3d', 0.5), [0.06, 0.42, 0], [0, 0, 0.6], [1.4, 0.3, 0.7]);
+  g.userData = { bottom: V(0, 0, 0.4), holdDefaults: { palm: { level: true }, out: { level: true } } }; return g;
+}
+function juiceBox(o = {}) {
+  const g = group('juice_box'), j = new THREE.Group(); j.position.set(0, -0.2, 0.36); g.add(j);
+  const tex = textTex(128, 160, (x, w, h) => { x.fillStyle = o.color ?? '#ff9a1f'; x.fillRect(0, 0, w, h); x.fillStyle = '#fff'; x.beginPath(); x.arc(64, 70, 34, 0, TAU); x.fill(); x.fillStyle = o.color ?? '#ff9a1f'; x.font = 'bold 26px sans-serif'; x.textAlign = 'center'; x.fillText('JUICE', 64, 80); });
+  add(j, new THREE.BoxGeometry(0.3, 0.45, 0.18), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.5 }), [0, 0.225, 0]);
+  add(j, cyl(0.015, 0.015, 0.3, 6), M('#ffffff', 0.4), [0.08, 0.55, 0], [0, 0, 0.25]);
+  g.userData = { bottom: V(0, -0.2, 0.36), holdDefaults: { palm: { level: true }, out: { level: true } } }; return g;
 }
 
 // ---------- registry ----------
@@ -760,7 +836,7 @@ export const PROPS = {
   cobweb: { build: cobweb, what: 'cobweb wisp for the hair (wearOnHead)' },
   teddy: { build: teddy, what: "Lily's brown teddy ({ pose: 'sit' })" },
   teapot: { build: teapot, what: 'toy teapot' },
-  cup: { build: cup, what: 'toy teacup on a saucer' },
+  cup: { build: cup, what: 'toy teacup ({ saucer: true } for the table)' },
   hobby_horse: { build: hobbyHorse, what: 'hobby horse' },
   pumpkin_bucket: { build: pumpkinBucket, what: "jack-o'-lantern bucket (wearOnHead for Ch7)" },
   vacuum: { build: vacuum, what: 'canister vacuum; userData.wand is the held part' },
@@ -777,6 +853,20 @@ export const PROPS = {
   syrup: { build: syrup, what: 'syrup bottle' },
   pan: { build: pan, what: 'frying pan ({ pancake: true })' },
   knife: { build: knife, what: 'butter knife' },
+  sandwich_plate: { build: (o) => plate({ with: 'ham_sandwich', ...o }), what: 'plate with a crustless ham sandwich (two halves)' },
+  sheet_bunched: { build: (o) => bedsheet({ ...o, state: 'bunched' }), what: "Dad's sheet scrunched in one fist" },
+  note_crumpled: { build: (o) => note({ ...o, state: 'crumpled' }), what: 'the crumpled note' },
+  toy_teddy_a: { build: (o) => teddy({ pose: 'sit', fur: '#efe6d6', cream: '#ffffff', sheen: '#ffffff', bow: '#6aa8ff', ...o }), what: 'tea-party toy: a cream teddy, sitting' },
+  toy_teddy_b: { build: (o) => teddy({ pose: 'sit', fur: '#f2a7c8', cream: '#ffe4f0', sheen: '#ffd0e6', bow: '#ffd23f', ...o }), what: 'tea-party toy: a pink teddy, sitting' },
+  cracker_packet: { build: crackerPacket, what: "Skye's cracker packet (nest)" },
+  bread: { build: bread, what: 'one slice of white bread' },
+  napkin: { build: napkin, what: 'folded paper napkin' },
+  apple: { build: apple, what: "an extra's apple ({ color })" },
+  juice_box: { build: juiceBox, what: "an extra's juice box ({ color })" },
+  sandwich_crustless: { build: (o) => sandwich({ crusts: false, ...o }), what: 'alias of sandwich' },
+  sandwich_half: { build: (o) => sandwich({ half: true, ...o }), what: 'half a crustless sandwich' },
+  butter_knife: { build: knife, what: 'alias of knife' },
+  backpack: { build: backpack, what: "Skye's lilac backpack as a loose prop (floor, nest, hanging on a chair)" },
 };
 
 // makeProp(id, opts): a fresh THREE.Group (shadows on), userData.id = id.
@@ -793,9 +883,18 @@ const _q = new THREE.Quaternion(), _q2 = new THREE.Quaternion(), _v = new THREE.
 const UP = V(0, 1, 0);
 // place(prop, pos, heading = 0): stand the prop with its userData.bottom on pos (in the prop's parent space), turned to
 // heading (rotation about y). Leaves the prop where it is in the tree.
-export function place(prop, pos, heading = 0) {
-  prop.rotation.set(0, heading, 0); prop.scale.setScalar(prop.userData.scale ?? 1);
-  const b = (prop.userData.bottom ?? V(0, 0, 0)).clone().multiplyScalar(prop.userData.scale ?? 1).applyAxisAngle(UP, heading);
+// opts.flat: lay it on its back (screen / face up: phone, note, drawing, flashlight on its side), front toward heading.
+export function place(prop, pos, heading = 0, opts = {}) {
+  const sc = prop.userData.scale ?? 1;
+  prop.scale.setScalar(sc);
+  if (opts.flat) {
+    prop.rotation.set(-Math.PI / 2, 0, 0, 'YXZ'); prop.rotation.y = heading; prop.updateMatrix();
+    const c = prop.clone(); c.position.set(0, 0, 0); c.updateMatrixWorld(true); const box3 = new THREE.Box3().setFromObject(c, true);
+    prop.position.copy(pos).add(V(-(box3.min.x + box3.max.x) / 2, -box3.min.y + 0.002, -(box3.min.z + box3.max.z) / 2));
+    return prop;
+  }
+  prop.rotation.set(0, heading, 0);
+  const b = (prop.userData.bottom ?? V(0, 0, 0)).clone().multiplyScalar(sc).applyAxisAngle(UP, heading);
   prop.position.copy(pos).sub(b);
   return prop;
 }
@@ -819,6 +918,8 @@ function defaults(prop, mode, hand) { const d = prop.userData.holdDefaults?.[mod
 export function hold(prop, actor, hand = 'R', mode = 'palm', opts = {}) {
   const sd = sideOf(hand), o = { ...defaults(prop, mode, sd), ...opts }, S = actor.scale ?? 1, sc = o.scale ?? 1;
   if (mode === 'hug') return hug(prop, actor, sd, o);
+  if (mode === 'ear') return atEar(prop, actor, sd, o);
+  if (mode === 'mouth') return inMouth(prop, actor, o);
   const bone = actor.bones['Arm.' + sd];
   if (prop.parent !== bone) bone.add(prop);
   prop.position.set(sd === 'R' ? -0.5 * S : 0.5 * S, (mode === 'out' ? -1.75 : -1.3) * S, 0);
@@ -831,6 +932,12 @@ export function hold(prop, actor, hand = 'R', mode = 'palm', opts = {}) {
     _q.setFromAxisAngle(UP, heading + (o.yaw ?? 0));
     bone.getWorldQuaternion(_q2); prop.quaternion.copy(_q2.invert().multiply(_q));
   }
+  if (o.aim) { // point the prop's +z at a world point (keeps it as upright as it can)
+    actor.root.updateMatrixWorld(true); const gw = bone.localToWorld(prop.position.clone()), dir = o.aim.clone().sub(gw).normalize();
+    const up0 = Math.abs(dir.y) > 0.97 ? V(0, 0, 1).applyQuaternion(actor.root.getWorldQuaternion(new THREE.Quaternion())).multiplyScalar(-Math.sign(dir.y)) : UP;
+    const xw = new THREE.Vector3().crossVectors(up0, dir).normalize(), yw = new THREE.Vector3().crossVectors(dir, xw);
+    _q.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xw, yw, dir)); bone.getWorldQuaternion(_q2); prop.quaternion.copy(_q2.invert().multiply(_q));
+  }
   if (o.rot) prop.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(...o.rot)));
   if (o.offset) prop.position.add(V(...o.offset).multiplyScalar(sc).applyQuaternion(prop.quaternion));
   prop.visible = o.visible ?? true;
@@ -838,6 +945,33 @@ export function hold(prop, actor, hand = 'R', mode = 'palm', opts = {}) {
   prop.userData.onHold?.();
   return prop;
 }
+// 'ear': a phone against the side of the head (on the Head bone), screen inward; pose the arm up beside the head yourself.
+function atEar(prop, actor, sd, o) {
+  const S = actor.scale ?? 1, head = actor.bones.Head, sc = o.scale ?? 1;
+  if (prop.parent !== head) head.add(prop);
+  prop.position.set((sd === 'R' ? -0.66 : 0.66) * S, 0.42 * S, 0.05 * S);
+  prop.quaternion.setFromEuler(new THREE.Euler(0, sd === 'R' ? -Math.PI / 2 : Math.PI / 2, 0)); // screen (+z) faces the head
+  prop.rotateX(-0.25); prop.scale.set(sc, sc, sc);
+  if (o.offset) prop.position.add(V(...o.offset));
+  prop.updateMatrixWorld(true);
+  return prop;
+}
+// 'mouth': clamped in the teeth (a pancake as Skye crawls out): on the Head bone at the mouth, sticking out forward,
+// prop level with the head. The pancake's centre goes 0.45 in front of the face.
+function inMouth(prop, actor, o) {
+  const S = actor.scale ?? 1, head = actor.bones.Head, sc = o.scale ?? 1;
+  if (prop.parent !== head) head.add(prop);
+  const b = prop.userData.bottom ?? V(0, 0, 0);
+  prop.quaternion.setFromEuler(new THREE.Euler(...(o.rot ?? [0.25, 0, 0]))); prop.scale.set(sc, sc, sc);
+  prop.position.set(0, 0.3 * S, 0.62 * S).sub(b.clone().setY(0).multiplyScalar(sc).applyQuaternion(prop.quaternion)).add(V(0, 0, 0.36));
+  if (o.offset) prop.position.add(V(...o.offset));
+  prop.updateMatrixWorld(true);
+  return prop;
+}
+// facePoint(actor): a world point on the face - hold(flashlight_small, skye, "R", "palm", { aim: facePoint(skye) })
+// with the arm raised in front of the chest lights her face from below.
+export function facePoint(actor) { actor.root.updateMatrixWorld(true); return actor.bones.Head.localToWorld(V(0, 0.55 * (actor.scale ?? 1), 0.6 * (actor.scale ?? 1))); }
+export const chinPoint = facePoint;
 function hug(prop, actor, sd, o) {
   const S = actor.scale ?? 1, torso = actor.bones.Torso, sc = o.scale ?? 1;
   if (prop.parent !== torso) torso.add(prop);
@@ -872,6 +1006,18 @@ export function carry2(prop, actor, opts = {}) {
   setWorld(prop, pos, q, sc);
   prop.updateMatrixWorld(true);
   return Math.abs(span - h.L.distanceTo(h.R) * sc);
+}
+
+// reach2(actor, width, pitch): pose both arms forward by pitch (radians, negative = raised) and swing them in until the
+// two fists are `width` studs apart (grip to grip) - e.g. reach2(max, plate, -1.1) then carry2(plate, max). Pass the prop
+// instead of a number to use its handle spacing. Returns the inward angle (Arm.L rotation.z; Arm.R gets the negative).
+export function reach2(actor, width, pitch = -1.2) {
+  if (typeof width !== 'number') { const h = width.userData.handles; width = h.L.distanceTo(h.R) * (width.scale?.x ?? 1); }
+  const S = actor.scale ?? 1, set = (a) => { actor.bones['Arm.L'].rotation.set(pitch, 0, a); actor.bones['Arm.R'].rotation.set(pitch, 0, -a); actor.root.updateMatrixWorld(true);
+    return actor.bones['Arm.L'].localToWorld(V(0.5 * S, -1.3 * S, 0)).distanceTo(actor.bones['Arm.R'].localToWorld(V(-0.5 * S, -1.3 * S, 0))); };
+  const sgn = set(0.2) < set(0) ? 1 : -1; let lo = 0, hi = 1.3;
+  for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (set(sgn * m) > width) lo = m; else hi = m; }
+  set(sgn * (lo + hi) / 2); return sgn * (lo + hi) / 2;
 }
 
 // ---------- worn props ----------

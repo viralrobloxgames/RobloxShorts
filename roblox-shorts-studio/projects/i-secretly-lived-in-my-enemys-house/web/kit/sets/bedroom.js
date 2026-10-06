@@ -292,6 +292,7 @@ export function build(scene) {
     bedside_plate: M(0.9, 2.42, -7.5, 0, 'Ch10: plate spot on the bedside table top (y = table top)'),
     bedside_flashlight: M(1.2, 2.42, -7.2, -0.6, 'Ch1: flashlight lying on the bedside table'),
     lamp_switch: M(0.65, 2.75, -8.1, 0, 'Ch10: the lamp switch on the lamp base (hand point)'),
+    closet_hide: marks.closet_deep,
     mirror_stand: marks.desk_stand, bed_sit_up: marks.bed_sit, door_outside: marks.door_out, door_inside: marks.door_in,
   });
   Object.assign(cams, {

@@ -1,0 +1,116 @@
+{
+ "voice": "brittney",
+ "text": "We were best friends. Then he knocked down my sandcastle, so I knocked down his. And we just never stopped.",
+ "seed": 95181,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "We",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "word": "were",
+   "start": 0.42,
+   "end": 0.56
+  },
+  {
+   "word": "best",
+   "start": 0.56,
+   "end": 0.82
+  },
+  {
+   "word": "friends.",
+   "start": 0.82,
+   "end": 1.18
+  },
+  {
+   "word": "Then",
+   "start": 1.64,
+   "end": 1.8
+  },
+  {
+   "word": "he",
+   "start": 1.8,
+   "end": 1.94
+  },
+  {
+   "word": "knocked",
+   "start": 1.94,
+   "end": 2.2
+  },
+  {
+   "word": "down",
+   "start": 2.2,
+   "end": 2.48
+  },
+  {
+   "word": "my",
+   "start": 2.48,
+   "end": 2.64
+  },
+  {
+   "word": "sand",
+   "start": 2.64,
+   "end": 2.92
+  },
+  {
+   "word": "castle,",
+   "start": 2.92,
+   "end": 3.32
+  },
+  {
+   "word": "so",
+   "start": 3.44,
+   "end": 3.62
+  },
+  {
+   "word": "I",
+   "start": 3.62,
+   "end": 3.74
+  },
+  {
+   "word": "knocked",
+   "start": 3.74,
+   "end": 3.96
+  },
+  {
+   "word": "down",
+   "start": 3.96,
+   "end": 4.22
+  },
+  {
+   "word": "his",
+   "start": 4.22,
+   "end": 4.44
+  },
+  {
+   "word": "and",
+   "start": 4.44,
+   "end": 4.74
+  },
+  {
+   "word": "we",
+   "start": 4.74,
+   "end": 4.86
+  },
+  {
+   "word": "just",
+   "start": 4.86,
+   "end": 5.04
+  },
+  {
+   "word": "never",
+   "start": 5.04,
+   "end": 5.28
+  },
+  {
+   "word": "stopped.",
+   "start": 5.28,
+   "end": 5.62
+  }
+ ],
+ "words_md5": "c3b3cb6681a78e3fef55bf83ce9d3013",
+ "whisper": "small.en"
+}

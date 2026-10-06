@@ -1,0 +1,41 @@
+{
+ "voice": "brittney",
+ "text": "He kept it. All this time.",
+ "seed": 77071,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "kept",
+   "start": 0.24,
+   "end": 0.42
+  },
+  {
+   "word": "it",
+   "start": 0.42,
+   "end": 0.66
+  },
+  {
+   "word": "all",
+   "start": 0.66,
+   "end": 0.88
+  },
+  {
+   "word": "this",
+   "start": 0.88,
+   "end": 1.04
+  },
+  {
+   "word": "time.",
+   "start": 1.04,
+   "end": 1.32
+  }
+ ],
+ "words_md5": "23566b875d90ed6b17cfa02258772fe2",
+ "whisper": "small.en"
+}
