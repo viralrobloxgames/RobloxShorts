@@ -41,3 +41,32 @@ Max's phone lines correctly band-limited (centroid ~1.2-1.4 kHz vs 2.5 kHz dry),
 6. **00:25-00:49 (attic close-ups of Skye), should.** The flashlight standing on end blows out the top of her hair
    into a white-violet hotspot and a bright rim along her shoulders; it looks like a render error at phone size.
    Fix: lower that light's intensity ~40% or move it below her chin line; re-render frames 750-1500 (close-up shots only).
+
+## Package: thumbnail, title, description (first pass, before the full stitch)
+
+**Thumbnail pick: A "HE NEVER KNEW"** (`I_Secretly_Lived_In_My_Enemys_House_thumbnail.jpg`), not D "I LIVED IN HIS
+HOUSE! 7 DAYS" (`thumbnail_variants/D_...`; that is the older `thumbnail.jpg` draft). Why:
+- D at phone width (~360 px) is dark and muddy, Max is a half-lit head cut off at the right edge, Skye is small in a
+  yellow wash; and its text just repeats the title word for word. A is brighter, has two readable faces and adds
+  something the title doesn't have.
+- **"HE NEVER KNEW" helps the twist.** It's the narrator's own belief: it echoes the first line ("...and he had no idea")
+  and the description ("He had no idea... right?"), and Ch10 shows it was wrong. That's a promise the film keeps by
+  overturning it, not clickbait: viewers who reach "Same as in my closet on Monday" get the joke on the thumbnail.
+  A "...?" is not needed; the flat statement is the stronger hook.
+- B "7 DAYS HIDING" is a fine backup but a weaker curiosity gap. C's red circle is on her *face*, which is redundant.
+
+Fixes to A:
+7. **Package, should.** Max's face in A is a flat neutral looking past her, and it's the weakest face in the frame.
+   Give him a small sideways smirk with his eyes toward Skye (`smug`/side-eye). It reads as "he totally sees her"
+   at a glance, which plants the twist and rewards a re-watch. Keep Skye's `shocked`.
+8. **Package, should.** At phone size Skye's face is ~45 px tall. Crop in ~15% toward the two of them (lose the
+   left-hand louvres) so both faces are at least 60 px at 360 px width; keep the text block where it is.
+9. **Package, could.** If C is kept as an A/B test variant, move the red circle from her face to **the lock of pink hair
+   sticking out between the hoodies**: that's the actual clue from Ch1/Ch10, so the circle becomes a plant too.
+
+Description and settings:
+10. **Package, must (at the global pass).** The chapter list in `_post.md`/`post.json` is still the estimate (0:00,
+    1:04, ... 10:53). Replace it with `delivery/youtube_chapters.txt` from the full stitch; checked again below.
+11. **Package, could.** Settings say "altered content: No". Fine for an animated Roblox story, but Skye is voiced by a
+    voice clone (`brittney`): if that voice is cloned from a real, identifiable person rather than a stock voice, the
+    user should decide that box before posting.
