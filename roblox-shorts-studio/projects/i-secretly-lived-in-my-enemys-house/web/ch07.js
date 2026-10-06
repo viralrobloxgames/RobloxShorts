@@ -191,7 +191,7 @@ function poseLily(t, idle) {
   }
   if (t < T.lilyCome) {                                      // back at the tea party
     const m = K.walk(l, A, jam, tl, T.lilyBack, t, { speed: 16, idleAt: idle });
-    if (m.done) { sitFloor(l, tl, towards(tl, M.front()) * 0.6 + tl.heading * 0.4, 'kneel'); if (t > at(7) && t < end(9)) K.gesture(l, 'cup_hold', 'L'); }
+    if (m.done) sitFloor(l, tl, towards(tl, M.front()) * 0.6 + tl.heading * 0.4, 'kneel');
     return;
   }
   const side = pt(7.3, -2.5, 0);
@@ -280,7 +280,11 @@ function placeProps(t) {
   const pb = P.pumpkin;
   if (pb && t >= T.jam - 0.3) {
     pb.visible = true;
-    if (t < T.jam) placeWorld(pb, onBone(C.lily, 'Arm.L', V(0.5, -2.3, 0), [0, 0, 0], 1 / C.lily.scale * 0.9));
+    if (t < T.jam) {                                       // hanging by its handle from Lily's left palm
+      C.lily.root.updateMatrixWorld(true);
+      const g = C.lily.bones['Arm.L'].localToWorld(V(0.5, -1.3, 0).multiplyScalar(C.lily.scale)).add(V(0, -1.43 * 0.9, 0));
+      placeWorld(pb, new THREE.Matrix4().compose(g, new THREE.Quaternion().setFromEuler(new THREE.Euler(0, C.lily.root.rotation.y, 0)), V(0.9, 0.9, 0.9)));
+    }
     else {
       const tilt = lerp(0.22, 0.0, sm(T.fix - 0.1, T.fix + 0.35, t));
       const drop = 0.25 * (1 - sm(T.jam, T.jam + 0.12, t));
@@ -345,6 +349,9 @@ function faces(t) {
   K.speak(C.dad, dad, t, L.said('DAD'));
   K.speak(C.max, max, t, L.said('MAX').filter((w) => w.start > at(17)));   // his offscreen call isn't lip-synced
 }
+
+export const cast = () => ({ skye: C.skye, lily: C.lily, dad: C.dad, max: C.max });                        // for web/ch07_hold.js
+export const HOLD_TIMES = T;
 
 // ---------- update ----------
 export function update(t, stage) {
