@@ -116,3 +116,104 @@ Source: `delivery/chapters/ch11_a.mp4` + `ch11_b.mp4` (SPLIT 944), 3 fps 2x2 she
 | 15 | whole chapter | spatula appears and disappears |
 | 16 | 0:13, 0:29.7 | identical Dad point pose, spatula at the floor |
 | 17 | 0:15-0:29.6 | Skye zombie arms; two-arms-up shrug |
+
+## Whole-film character identity (film times)
+
+Method: the whole film sampled every 3 s (4x3 sheets), then a side-by-side grid of Max from every chapter (15 s, 57 s, 141 s,
+213 s, 333 s, 468 s, 597 s, 630 s, 676 s). The pattern: **every night or coloured-light scene recolours skin and hair**, and the
+lighting is not compensated on the faces. Day scenes (classroom, Sunday kitchen) are correct. The single root-cause fix for most
+items below is a **face/skin key light per character** (a small neutral fill on the head, or `MeshBasic`/emissive skin and hair
+with a floor on brightness and saturation), so blue moonlight, fridge light, flashlight and attic amber tint the set but not
+the cast's identity colours.
+
+### Max
+I1. **ch01 0:51-1:00 (night, Max's room), identity: Max in bed reads as a different, dark-skinned boy with blue-black hair.**
+    Skin goes to dark brown and the hair turns navy/black under the blue night light. This is the user's 0:57 example, confirmed.
+    Fix: a face key light, as above; check the hair stays the brown of the classroom shots. **must**
+I2. **ch03 2:21-2:51 (night kitchen, fridge light), identity: the same dark-faced, black-haired Max for 30 s, and the "grey" PJ top reads
+    navy.** Fix: a face key light; the fridge light should not drive the face colour. **must**
+I3. **ch06 5:30-5:42 and 6:12 (desk mirror, warm lamp), identity and wardrobe: Max has a different, lighter, orange-brown messy hair look,
+    and his top reads tan/khaki with orange sleeves.** Next to 0:15 and 10:45 he does not read as the same boy. Fix: a face key light
+    plus a neutral fill so the `max_pjs` grey reads grey; confirm the hair mesh is the same as in the other chapters. **must**
+I4. **ch10 9:42-9:57 vs 10:03-10:33, identity: Max changes appearance mid-scene.** In the bed shots (9:42-9:57) he has light skin, brown
+    side-swept hair and a tan T-shirt. In the wider and over-shoulder shots (10:03-10:33) he has dark brown skin, black spiky hair and
+    a navy T-shirt. Same scene, same minute; it reads as two different boys. Fix: a face key light; match the light colour across the
+    angles of one scene. **must**
+I5. ch08 7:48-7:51 (night bed, on the phone): blue-black hair, but the face stays light enough; fixed by the same key light. **should**
+I6. ch02 1:18, 1:27-1:42 (dawn kitchen): Max OK (grey top, brown hair), slightly dark. No action beyond the global fix.
+
+### Skye
+I7. **ch01 0:00-0:03 and 0:51 (closet, night), identity: Skye in the closet has a brown face and purple hair.** The cold-open hook is the
+    first image of the film, and the girl in it does not match the bright pink-haired Skye the viewer meets at 0:21. Fix: a face key
+    light; keep her hair pink (hair saturation floor). **must**
+I8. **ch03 3:15 (fridge-light kitchen), identity: the same dark face and purple hair.** **should**
+I9. **ch08 8:03-8:30 (attic, flashlight), identity: the top of Skye's head is blown out to a glowing white/lilac.** The flashlight sits
+    above her head and bleaches the pink hair. Fix: move the flashlight below chin level (it is a "torch under the chin" scene) or
+    clamp the hair's specular/emissive response. **should**
+I10. ch06 5:45-6:00 (landing, night): Skye's face is grey-washed and her hair dark magenta; borderline. **should**
+I11. ch05, ch07, ch09 (attic amber): Skye stays readable (orange cast but pink hair and white hoodie hold). OK.
+
+### Lily
+I12. ch05 4:27-5:24, ch07 6:45-7:09, ch09 8:57-9:12 (attic amber): Lily's face loses all features except the eyes, a flat orange-brown
+     disc, and her yellow `lily_day` dress merges with the amber walls. Fix: the face key light; consider a slightly cooler fill in the
+     attic so the yellow dress separates from the wood. **should**
+I13. ch06 5:51-6:00 (landing, night): Lily is a near-black silhouette at the frame bottom; the face is unreadable. **should**
+I14. ch05 4:36: Lily stands inside the skeleton (the ribs overlap her face and body). That is an interpenetration rather than identity;
+     it belongs to ch05's critic, flagged here so it is not lost. **must**
+
+### Dad
+I15. **ch03 3:03-3:12 and ch06 6:03-6:18, wardrobe: Dad wears a maroon dressing gown with blue-striped trim, which is not on the boundary
+     sheet.** His only listed wardrobe is `dad_cardigan` (plus the apron in the kitchen). If the robe is a deliberate night look, it needs
+     a kit id and a boundary-sheet line; otherwise use `dad_cardigan`. His hair in these shots reads purple/plum. Fix: register a
+     `dad_robe` wardrobe or switch the shots back to the cardigan; a face key light for the hair. **should**
+I16. **ch06 6:18, identity: the flashlight held at Dad's chest whites out his face completely** (a white blob with eyes). Fix: aim the
+     flashlight forward/down, away from his face. **should**
+I17. ch02 1:12-1:33 (dawn kitchen): Dad's dark-brown hair reads red-maroon under the warm pendant lights. **should**
+I18. ch11 0:45.8 (`max_cu`): Dad's head sits behind Max's head (see ch11 issue 24).
+
+### Extras
+I19. ch01 0:12-0:45, ch02 1:51-2:09, ch04 3:18-4:15: the classroom extras (Noob with a red cap, the blonde girl, the kid in the orange
+     beanie, a dark-haired boy) are consistent within the classroom and stay in the same seats across days. OK. One exception:
+     **ch04 4:12, identity: a boy seen from behind at Skye's desk row wears a teal hoodie with black spiky hair.** He reads as Max
+     with the wrong hair (Max's hair is the dark-brown swoop), or as an extra in Max's hoodie. Fix: if it is Max, use his hair; if it is an
+     extra, change the hoodie colour. **should**
+
+## Repeated poses (whole film)
+
+R1. **Arms straight out forward at shoulder height ("zombie arms"), both arms, the default talking pose for every character.**
+    Seen at 0:18-0:21 (Max, Skye), 1:39-1:42 (Max), 3:21-3:33 (Max, Skye), 3:42-4:15 (Max, Skye, about 30 s of it), 4:21-4:42 (Skye),
+    9:00-9:21 (Skye), 10:00-10:27 (Skye), 10:55-10:58 and 11:15-11:20 (ch11). Once you notice it, it is in almost every MCU, and it is the
+    single most robotic thing in the film. Fix: change the default `speak()` idle to arms down (hands at the sides or one hand at
+    waist height). Raise a single forearm only on a gesture beat and return it within about 1.5 s. Shots seated at a desk or island
+    may rest the forearms flat on the surface, not floating. **must**
+R2. **One arm stuck straight out sideways (Lily and Dad).** Lily: 4:51-5:15 in every one of her tea-party singles, and 6:45-7:09. Dad:
+    1:12, 1:21-1:24, 6:42-6:57, and ch11 0:13 and 0:29.7 (identical, ch11 issue 16). The arm is horizontal, perpendicular to the body,
+    pointing at nothing. Fix: give each line its own gesture (point at a person or object, hand on hip, hold the spatula/teapot at waist
+    height), or the arms at rest. **must**
+R3. **Two-arms-up / T-pose shapes**, against the house rule: Skye's scarecrow at 6:36-6:39, 6:54-7:18 (arms out horizontal for over 40
+    s; the boundary sheet allows shoulder height, but held this long with the skeleton and witch beside her it reads as a T-pose
+    model, not a girl pretending); Skye 6:27 (both arms up and out, "Where do I hide?"); Skye 9:03 (arms out wide holding the drawing);
+    the ch11 shrug at 0:25. Fix: the scarecrow drops her elbows a little and tilts her head; "Where do I hide?" is a one-arm flail;
+    hold the drawing at chest height with the elbows bent. **must**
+R4. Max's hand at the back of his head / phone at the ear: 7:48-7:51 and ch11 0:32 Skye: forearm laid over the top of the head. The same
+    "arm over the head" rig shape is used for both the phone and the embarrassed rub. Fix: an elbow-down variant (see ch11 issue 18).
+    **should**
+R5. Face cycling: during lip-sync, the `speak` mouth replaces the emotion every other frame (ch11 issue 21; also 1:57, 3:21-3:33, 5:36-5:42).
+    The faces flick between the emotion and a generic smile/"o". Fix: lip-sync on top of the emotion face, not instead of it. **should**
+
+## Musts (identity and poses)
+| # | where | issue |
+|---|---|---|
+| I1 | 0:51-1:00 | Max dark-faced, blue-black hair at night |
+| I2 | 2:21-2:51 | Max dark-faced in the fridge light |
+| I3 | 5:30-5:42, 6:12 | Max different hair and shirt colour at the desk |
+| I4 | 9:42-10:33 | Max changes skin, hair and shirt between angles of one scene |
+| I7 | 0:00-0:03, 0:51 | cold-open Skye brown-faced with purple hair |
+| I14 | 4:36 | Lily inside the skeleton |
+| R1 | whole film | both-arms-forward zombie talking pose everywhere |
+| R2 | 1:12-1:24, 4:51-5:15, 6:42-7:09, ch11 | one arm out sideways pointing at nothing |
+| R3 | 6:27, 6:36-7:18, 9:03, ch11 0:25 | T-pose / two-arms-up shapes |
+
+Root-cause fixes, in order of payoff: (1) a per-character face/hair key light with colour floors (fixes I1-I13, I16-I17);
+(2) a new default `speak()` arm idle (fixes R1 and most of ch11 issues 7, 17 and 22); (3) hard camera cuts with no
+interpolation across `camOn` changes (ch11 issue 1, probably present in other chapters too).
