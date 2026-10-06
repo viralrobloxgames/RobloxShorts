@@ -1,0 +1,36 @@
+{
+ "voice": "max_kid",
+ "text": "Then who said my name?",
+ "seed": 87307,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Then",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "who",
+   "start": 0.28,
+   "end": 0.5
+  },
+  {
+   "word": "said",
+   "start": 0.5,
+   "end": 0.74
+  },
+  {
+   "word": "my",
+   "start": 0.74,
+   "end": 0.96
+  },
+  {
+   "word": "name?",
+   "start": 0.96,
+   "end": 1.24
+  }
+ ],
+ "words_md5": "44eb95c2e5cb11bc86f42ad405779f1a",
+ "whisper": "small.en"
+}
