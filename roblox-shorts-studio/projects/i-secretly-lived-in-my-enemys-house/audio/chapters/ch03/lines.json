@@ -1,0 +1,277 @@
+{
+ "chapter": 3,
+ "header": "CH03 | TUESDAY | 11:52 PM | A Useful Ghost",
+ "duration": 66.88,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Tuesday night. If I was going to be a ghost, I was going to be a useful one.",
+   "start": 0.0,
+   "end": 4.48,
+   "clip": "audio/qwen/take-01/clips/45b7344e9d89.wav",
+   "seed": 68961
+  },
+  {
+   "index": 2,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Lily's fridge letters. Perfect.",
+   "start": 4.73,
+   "end": 6.73,
+   "clip": "audio/qwen/take-01/clips/e989c9e361ba.wav",
+   "seed": 5238
+  },
+  {
+   "index": 3,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Be. Nice. To. Skye.",
+   "start": 6.98,
+   "end": 8.98,
+   "clip": "audio/qwen/take-01/clips/eb2e4414b4e8.wav",
+   "seed": 12881
+  },
+  {
+   "index": 4,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Hello? Ghost? I just want some milk. Please don't eat me.",
+   "start": 9.83,
+   "end": 13.413,
+   "clip": "audio/qwen/take-01/clips/f14a905f9a8f.wav",
+   "seed": 13341
+  },
+  {
+   "index": 5,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "And if you're a vampire, we've got garlic.",
+   "start": 13.663,
+   "end": 16.336,
+   "clip": "audio/qwen/take-01/clips/781559826cba.wav",
+   "seed": 69862
+  },
+  {
+   "index": 6,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Be nice to Skye?",
+   "start": 17.386,
+   "end": 18.443,
+   "clip": "audio/qwen/take-01/clips/a921c838e551.wav",
+   "seed": 84309
+  },
+  {
+   "index": 7,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Okay, ghost. That's weirdly specific.",
+   "start": 18.693,
+   "end": 21.673,
+   "clip": "audio/qwen/take-01/clips/9e1c0ee2e72b.wav",
+   "seed": 61947
+  },
+  {
+   "index": 8,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Be scared. Be very scared.",
+   "start": 21.923,
+   "end": 24.683,
+   "clip": "audio/qwen/take-01/clips/bdc40c1a8bde.wav",
+   "seed": 36569
+  },
+  {
+   "index": 9,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Fine. Deal. I'll be nice to Skye. But only because you asked.",
+   "start": 24.933,
+   "end": 29.807,
+   "clip": "audio/qwen/take-01/clips/57c56c689a95.wav",
+   "seed": 52249
+  },
+  {
+   "index": 10,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "Not because I... Never mind. Who even is Skye? I mean, I know who Skye is. Obviously.",
+   "start": 30.057,
+   "end": 37.183,
+   "clip": "audio/qwen/take-01/clips/fe602588497d.wav",
+   "seed": 70834
+  },
+  {
+   "index": 11,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": null,
+   "text": "There. One sandwich, for the ghost. Please stay out of my closet.",
+   "start": 38.433,
+   "end": 42.731,
+   "clip": "audio/qwen/take-01/clips/5c776dae7842.wav",
+   "seed": 59962
+  },
+  {
+   "index": 12,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "He cut the crusts off.",
+   "start": 43.581,
+   "end": 45.021,
+   "clip": "audio/qwen/take-01/clips/71de9e5faddf.wav",
+   "seed": 62635
+  },
+  {
+   "index": 13,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": null,
+   "text": "Max made the ghost a sandwich. He's so scared, he's feeding it.",
+   "start": 45.271,
+   "end": 49.591,
+   "clip": "audio/qwen/take-01/clips/f4e5e1a071ad.wav",
+   "seed": 49710
+  },
+  {
+   "index": 14,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Midnight snack, midnight snack, who wants a midnight snack?",
+   "start": 50.441,
+   "end": 53.961,
+   "clip": "audio/qwen/take-01/clips/24c8900d60a2.wav",
+   "seed": 10717
+  },
+  {
+   "index": 15,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Be nice to Skye? Who's Skye?",
+   "start": 54.211,
+   "end": 56.051,
+   "clip": "audio/qwen/take-01/clips/e2ab526d774d.wav",
+   "seed": 55071
+  },
+  {
+   "index": 16,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "offscreen",
+   "text": "Nobody! Go to bed, Dad!",
+   "start": 56.301,
+   "end": 58.547,
+   "clip": "audio/qwen/take-01/clips/dcfc8316d5f7.wav",
+   "seed": 82640
+  },
+  {
+   "index": 17,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "And who's been at my ham?",
+   "start": 58.797,
+   "end": 60.157,
+   "clip": "audio/qwen/take-01/clips/c31e8372d59f.wav",
+   "seed": 87408
+  },
+  {
+   "index": 18,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Lily, if that's you, I'm not angry. I'm just hungry.",
+   "start": 60.407,
+   "end": 63.39,
+   "clip": "audio/qwen/take-01/clips/88fb91aa5059.wav",
+   "seed": 77374
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Best. Haunting. Ever.",
+   "start": 64.44,
+   "end": 66.28,
+   "clip": "audio/qwen/take-01/clips/1d5fb5a3bb3a.wav",
+   "seed": 25122
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the dark kitchen, lit by the open fridge. Skye stands at the fridge with a handful of magnet letters.",
+   "until": 0.0
+  },
+  {
+   "after_line": 3,
+   "at": 8.98,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Footsteps on the stairs. Skye dives into the pantry and peeks out through the slats.",
+   "until": 9.83
+  },
+  {
+   "after_line": 5,
+   "at": 16.336,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "He opens the fridge, stops, and reads the letters: BE NICE 2 SKYE.",
+   "until": 17.386
+  },
+  {
+   "after_line": 10,
+   "at": 37.183,
+   "pause": 1.0,
+   "scene_change": false,
+   "text": "Max makes a ham sandwich, cuts off the crusts and leaves it on a plate on the counter.",
+   "until": 38.433
+  },
+  {
+   "after_line": 11,
+   "at": 42.731,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "He goes back upstairs. Skye creeps out and picks up the sandwich.",
+   "until": 43.581
+  },
+  {
+   "after_line": 13,
+   "at": 49.591,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "More footsteps. Skye ducks behind the island with the sandwich. Dad shuffles in, in his dressing gown.",
+   "until": 50.441
+  },
+  {
+   "after_line": 18,
+   "at": 63.39,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "Dad leaves with the ham. Skye, cheeks full, lets her breath out.",
+   "until": 64.44
+  }
+ ]
+}

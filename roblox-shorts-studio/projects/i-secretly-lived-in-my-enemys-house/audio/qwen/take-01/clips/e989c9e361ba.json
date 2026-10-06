@@ -1,0 +1,31 @@
+{
+ "voice": "brittney",
+ "text": "Lily's fridge letters. Perfect.",
+ "seed": 5238,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Lily's",
+   "start": 0.0,
+   "end": 0.48
+  },
+  {
+   "word": "Fridge",
+   "start": 0.48,
+   "end": 0.76
+  },
+  {
+   "word": "Letters,",
+   "start": 0.76,
+   "end": 1.04
+  },
+  {
+   "word": "perfect!",
+   "start": 1.42,
+   "end": 1.58
+  }
+ ],
+ "words_md5": "cb68573fe8aa53413fa4baaff032b262",
+ "whisper": "small.en"
+}

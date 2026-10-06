@@ -1,0 +1,71 @@
+{
+ "voice": "brittney",
+ "text": "Max made the ghost a sandwich. He's so scared, he's feeding it.",
+ "seed": 49710,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "Max",
+   "start": 0.0,
+   "end": 0.72
+  },
+  {
+   "word": "made",
+   "start": 0.72,
+   "end": 1.0
+  },
+  {
+   "word": "the",
+   "start": 1.0,
+   "end": 1.16
+  },
+  {
+   "word": "ghost",
+   "start": 1.16,
+   "end": 1.38
+  },
+  {
+   "word": "a",
+   "start": 1.38,
+   "end": 1.56
+  },
+  {
+   "word": "sandwich.",
+   "start": 1.56,
+   "end": 1.9
+  },
+  {
+   "word": "He's",
+   "start": 2.34,
+   "end": 2.58
+  },
+  {
+   "word": "so",
+   "start": 2.58,
+   "end": 2.84
+  },
+  {
+   "word": "scared.",
+   "start": 2.84,
+   "end": 3.26
+  },
+  {
+   "word": "He's",
+   "start": 3.48,
+   "end": 3.7
+  },
+  {
+   "word": "feeding",
+   "start": 3.7,
+   "end": 3.92
+  },
+  {
+   "word": "it.",
+   "start": 3.92,
+   "end": 4.2
+  }
+ ],
+ "words_md5": "c87db1fc9fa082b4001dce9a34c06003",
+ "whisper": "small.en"
+}
