@@ -89,7 +89,7 @@ export async function setup(stage) {
   A = await K.loadAnims(['idle', 'walk', 'run', 'shock', 'sit', 'laugh', 'point']);
   P.torch = K.makeProp('flashlight', { beam: true }); K.hold(P.torch, C.max, 'R');
   P.lunchbox = K.makeProp('lunchbox', { open: true, spider: true }); stage.scene.add(P.lunchbox);
-  P.spider = K.makeProp('rubber_spider'); K.hold(P.spider, C.max, 'R');
+  P.spider = K.makeProp('rubber_spider'); K.hold(P.spider, C.max, 'R', 'out');
   beam = K.flashlightBeam(stage, { cone: 0 });
 }
 
@@ -190,7 +190,7 @@ function night1(t, set, idle) {
 function classScene(t, set, idle) {
   K.only(C, ['skye', 'max', 'extras']);
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.skye, 'backpack', false); K.dress(C.max, 'max_school');
-  const sk = M.deskSkye(), ai = M.aisle(), side = M.skyeSide();
+  const sk = M.deskSkye(), ai = M.aisle(), side = { ...M.skyeSide() }; side.pos.x -= 0.7;   // a step closer to her desk
   const stand = { pos: V(sk.pos.x + 0.9, 0, sk.pos.z + 0.2), heading: Math.PI / 2 };   // up out of her seat, into the aisle by Max
   // extras eating at their desks; they turn to look at the shriek
   C.extras.forEach((e, i) => {
@@ -225,12 +225,12 @@ function classScene(t, set, idle) {
   }
   // the lunchbox on her desk; the spider in Max's hand, dropped into the lunchbox, picked up again ("It's rubber")
   const top = set.anchors.skyeDeskTop;
-  K.place(P.lunchbox, top.clone().add(V(0, 0, 0.1)), sk.heading + Math.PI);
+  K.place(P.lunchbox, top.clone().add(V(1.0, 0, 0.1)), sk.heading + Math.PI);   // on the aisle side of her desk, in Max's reach
   P.lunchbox.visible = true;
   const sp = P.lunchbox.userData.spider; sp.userData.base ??= sp.position.clone();
   const inBox = t >= T.spider && t < at(8) - 0.1;
   sp.visible = inBox; sp.position.copy(sp.userData.base).add(V(0, 1.4 * (1 - easeIn(inv(T.spider, T.spider + 0.28, t))), 0));
-  K.hold(P.spider, C.max, 'R'); P.spider.visible = !inBox && t > at(5) + 1.8 && t < T.exit;
+  K.hold(P.spider, C.max, 'R', 'out'); P.spider.visible = !inBox && t > at(5) + 1.8 && t < T.exit;
   P.torch.visible = false;
   return { torch: false };
 }
@@ -328,3 +328,7 @@ export function overlay(g, s, t) {
   if (OVL.stamp) K.timeStamp(g, s, OVL.stamp);
   if (RED) K.redCircle(g, s, t, RED.x, RED.y - 10, 150, { t0: T.circle, t1: T.circleOff });
 }
+
+// for web/ch01_hold.js
+export const cast = () => ({ skye: C.skye, max: C.max });
+export const TIMES = T;
