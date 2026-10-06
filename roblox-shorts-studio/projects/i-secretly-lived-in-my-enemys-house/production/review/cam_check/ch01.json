@@ -1,0 +1,17 @@
+{
+ "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch01.js",
+ "chapter": 1,
+ "frames": 1911,
+ "glide_threshold": 0.6,
+ "flags": [
+  {
+   "kind": "inside",
+   "from": 1414,
+   "to": 1461,
+   "info": "box 39.6x8.0x39.6 @set_exterior(-6.0,18.0,56.0)",
+   "t": "47.10-48.67s",
+   "film": "0:47.1",
+   "frames": 48
+  }
+ ]
+}

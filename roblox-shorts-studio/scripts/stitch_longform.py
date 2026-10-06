@@ -89,6 +89,8 @@ def segments(P, ch):
     for s in segs:
         if s['first_frame'] != nxt: raise SystemExit(f'ch{ch:02d}: {s["path"].name} starts at frame {s["first_frame"]}, expected {nxt} (gap or overlap)')
         nxt = s['last_frame'] + 1
+    codes = {s.get('code') for s in segs if s.get('code')}
+    if len(codes) > 1: print(f'WARNING ch{ch:02d}: segments rendered from different code {sorted(codes)}: the A/B seam may pop; re-sync with changed_frames')
     totals = {s['chapter_total'] for s in segs if s.get('chapter_total')}
     if len(totals) > 1: raise SystemExit(f'ch{ch:02d}: segments disagree on the chapter length {totals}')
     if totals and nxt - 1 != totals.pop(): raise SystemExit(f'ch{ch:02d}: segments end at frame {nxt - 1}, chapter has more frames')

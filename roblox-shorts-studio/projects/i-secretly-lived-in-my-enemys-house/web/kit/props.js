@@ -105,7 +105,7 @@ function flashlight(o = {}) {
     spot.position.set(0, 0, 0.9 * k); spot.target.position.set(0, 0, 6); g.add(spot, spot.target); spot.castShadow = !!o.shadow;
   }
   g.userData = {
-    beam: cone, lens, spot, on: o.on ?? true, bottom: V(0, 0, -0.475 * k), // standing on its tail: rotation.x = -PI/2, place() handles it
+    beam: cone, lens, spot, on: o.on ?? true, handle: { axis: "z", r: 0.2 * k }, gripR: 0.5 * k, bottom: V(0, 0, -0.475 * k), // standing on its tail: rotation.x = -PI/2, place() handles it
     setOn(on) { g.userData.on = on; lens.material = on ? lensOn : lensOff; cone.visible = on && g.userData.beamWanted; if (spot) spot.visible = on; },
     setBeam(on) { g.userData.beamWanted = on; cone.visible = on && g.userData.on; },
     beamWanted: !!o.beam,
@@ -144,7 +144,7 @@ function lunchbox(o = {}) {
   contents.visible = false;
   g.userData = {
     lid: lidPivot, sandwich: sw, spider: sp, bottom: V(0, top - H, 0),
-    setOpen(a) { lidPivot.rotation.x = -1.95 * a; contents.visible = a > 0.05; },
+    setOpen(a) { lidPivot.rotation.x = -1.95 * a; contents.visible = a > 0.05; g.userData._pts = g.userData._isGrip = null; },
     holdDefaults: { side: (hand) => ({ rot: [0, hand === 'R' ? -Math.PI / 2 : Math.PI / 2, 0] }), palm: { level: true } },
   };
   g.userData.setOpen(o.open ? 1 : 0);
@@ -176,7 +176,7 @@ function spatula() {
   const blade = new THREE.Group(); blade.position.set(0, -0.06, 0.78); blade.rotation.x = 0.18; g.add(blade);
   add(blade, box(0.42, 0.025, 0.5, 0.01), steel, [0, 0, 0.25]);
   for (const x of [-0.11, 0, 0.11]) add(blade, box(0.04, 0.03, 0.28, 0.01), M('#3a3d44', 0.4), [x, 0.002, 0.24]);
-  g.userData = { bottom: V(0, -0.07, 0) };
+  g.userData = { bottom: V(0, -0.07, 0), handle: { axis: 'z', r: 0.1 } };
   return g;
 }
 
@@ -429,7 +429,7 @@ function hobbyHorse() {
   add(h, new THREE.TorusGeometry(0.19, 0.022, 6, 24), M('#d33a2f', 0.5), [0, 0.24, 0.42], [0.35, 0, 0]);
   add(h, new THREE.TorusGeometry(0.35, 0.018, 6, 24, Math.PI), M('#d33a2f', 0.5), [0, 0.0, 0.2], [0, Math.PI / 2, Math.PI * 0.6]);
   add(g, cyl(0.075, 0.075, 0.6, 12), M('#2f4f9a', 0.6), [0, 0, 0]); // grip wrap
-  g.userData = { bottom: V(0, -2.94, 0), holdDefaults: { side: { level: true }, palm: { level: true } } };
+  g.userData = { bottom: V(0, -2.94, 0), handle: { axis: 'y', r: 0.12 }, gripR: 0.4, holdDefaults: { side: { level: true }, palm: { level: true } } };
   return g;
 }
 
@@ -532,7 +532,7 @@ function broom(o = {}) {
   const sg = new THREE.CylinderGeometry(0.15, 0.42, 0.95, 20, 6); sg.scale(1, 1, 0.45); crumple(sg, 0.05, 6);
   add(head, sg, straw, [0, 0, 0.48], [Math.PI / 2, 0, 0]);
   add(head, cyl(0.17, 0.2, 0.06, 20).scale(1, 1, 0.5), M('#d33a2f', 0.5), [0, 0, 0.3], [Math.PI / 2, 0, 0]);
-  g.userData = { bottom: V(0, 0, 2.86 + shift), holdDefaults: { side: { rot: [Math.PI / 2 - 0.12, 0, 0] } } };
+  g.userData = { bottom: V(0, 0, 2.86 + shift), handle: { axis: 'z', r: 0.1 }, holdDefaults: { side: { rot: [Math.PI / 2 - 0.12, 0, 0] } } };
   return g;
 }
 
@@ -540,7 +540,7 @@ function broom(o = {}) {
 // { state: 'folded' (default) | 'crumpled' | 'open' }. Folded: a white note folded in half, "Max" on the front, held
 // pinched at its bottom edge (stands up out of the fist, faces +z). Crumpled: a 0.42 paper ball in the fist.
 // Open: "Dear Max. The ghost was me. Sorry. Also, your dad's pancakes are amazing." in Skye's pen.
-function note(o = {}) {
+function noteOne(o = {}) {
   const g = group('note'), st = o.state ?? (o.crumpled ? 'crumpled' : 'folded'), paper = M('#fbfaf5', 0.85);
   if (st === 'crumpled') {
     const geo = crumple(new THREE.IcosahedronGeometry(0.22, 2), 0.28, 5);
@@ -565,6 +565,23 @@ function note(o = {}) {
   add(g, box(0.5, 0.025, 0.035, 0.01), paper, [0, 0.4, 0.455]);
   front.castShadow = true;
   g.userData = { bottom: V(0, 0.0, 0.45), holdDefaults: { palm: { level: true }, out: { level: true }, side: { level: true } } };
+  return g;
+}
+
+// note: all three states in one prop, parented together, so a crumple is setState('crumpled') on the same object (it
+// never leaves the hand). userData.state; holdDefaults follow the state.
+function note(o = {}) {
+  const g = group('note'), parts = {};
+  for (const st of ['folded', 'crumpled', 'open']) { parts[st] = noteOne({ ...o, state: st }); g.add(parts[st]); }
+  g.userData = {
+    parts, holdDefaults: {},
+    setState(st) {
+      for (const [k, c] of Object.entries(parts)) c.visible = k === st;
+      Object.assign(g.userData, { state: st, bottom: parts[st].userData.bottom, handles: parts[st].userData.handles, holdDefaults: parts[st].userData.holdDefaults ?? {} });
+      g.userData._pts = null; g.userData._isGrip = null;
+    },
+  };
+  g.userData.setState(o.state ?? (o.crumpled ? 'crumpled' : 'folded'));
   return g;
 }
 
@@ -651,7 +668,7 @@ function scissors(o = {}) {
   }
   add(g, cyl(0.03, 0.03, 0.08, 10), M('#555', 0.4, { metalness: 0.6 }), [0, 0, 0.22]);
   for (const ch of [...g.children]) ch.position.z += 0.2; // loops in the fist, the hinge and blades out of it
-  g.userData = { bottom: V(0, -0.04, 0.3), setOpen(a) { for (const h of halves) h.rotation.y = h.userData.s * a / 2; } }; // a: 0 shut .. 0.6 wide (snip by animating it)
+  g.userData = { bottom: V(0, -0.04, 0.3), handle: { axis: "z", r: 0.15 }, setOpen(a) { for (const h of halves) h.rotation.y = h.userData.s * a / 2; } }; // a: 0 shut .. 0.6 wide (snip by animating it)
   g.userData.setOpen(o.open ?? 0.3);
   return g;
 }
@@ -736,7 +753,7 @@ function ham(o = {}) {
   add(g, new THREE.CircleGeometry(0.3, 28), meat, [0, 0, 1.24], [0, 0, 0]);
   add(g, sph(0.33, 24), meat, [0, 0, 1.06], [0, 0, 0], [0.92, 0.82, 0.55]);
   if (o.raided) { g.children.at(-1).position.z = 0.86; g.children.at(-2).position.z = 1.0; g.children.at(-3).scale.set(1, 1, 0.55); g.children.at(-3).position.z = 0.6; } // a big chunk gone
-  g.userData = { bottom: V(0, -0.3, 0.7), holdDefaults: { side: { rot: [0.25, 0, 0] } } };
+  g.userData = { bottom: V(0, -0.3, 0.7), handle: { axis: "z", r: 0.12 }, gripR: 0.4, holdDefaults: { side: { rot: [0.25, 0, 0] } } };
   return g;
 }
 function syrup() {
@@ -757,14 +774,14 @@ function pan(o = {}) {
   add(p, new THREE.LatheGeometry(pts, 40), black);
   add(g, cyl(0.04, 0.04, 0.3, 8), black, [0, -0.04, 0.38], [Math.PI / 2 + 0.25, 0, 0]);
   const cake = pancakeMesh(31); cake.position.y = 0.04; cake.visible = !!o.pancake; p.add(cake);
-  g.userData = { panPivot: p, pancake: cake, bottom: V(0, -0.08, 0.95), holdDefaults: { palm: { level: true }, side: { level: true } } };
+  g.userData = { handle: { axis: "z", r: 0.1 }, panPivot: p, pancake: cake, bottom: V(0, -0.08, 0.95), holdDefaults: { palm: { level: true }, side: { level: true } } };
   return g;
 }
 function knife() {
   const g = group('knife'), steel = M('#d6dae0', 0.2, { metalness: 0.9 });
   add(g, roundedCylinder(0.05, 0.6, 0.02), M('#f2f2f2', 0.4), [0, 0, 0.1], [Math.PI / 2, 0, 0]);
   add(g, box(0.1, 0.02, 0.6, 0.02), steel, [0, 0, 0.7]);
-  g.userData = { bottom: V(0, -0.05, 0.3) };
+  g.userData = { bottom: V(0, -0.05, 0.3), handle: { axis: "z", r: 0.08 } };
   return g;
 }
 
@@ -843,7 +860,7 @@ export const PROPS = {
   pumpkin_bucket: { build: pumpkinBucket, what: "jack-o'-lantern bucket (wearOnHead for Ch7)" },
   vacuum: { build: vacuum, what: 'canister vacuum; userData.wand is the held part' },
   broom: { build: broom, what: 'broom ({ grip: "end" })' },
-  note: { build: note, what: "Skye's note, { state: 'folded' | 'crumpled' | 'open' }" },
+  note: { build: note, what: "Skye's note, { state: 'folded' | 'crumpled' | 'open' }; setState(s) swaps in place (no pop)" },
   phone: { build: phone, what: "phone, { screen: 'record' | 'call' | 'home' | 'off' }, setGlow(on)" },
   bedsheet: { build: bedsheet, what: "Dad's good sheet, { state: 'flat' | 'held' | 'bunched', holes: 0..2 }" },
   scissors: { build: scissors, what: "kids' scissors, { open }" },
@@ -919,23 +936,29 @@ function defaults(prop, mode, hand) { const d = prop.userData.holdDefaults?.[mod
 // Call every frame after posing the actor (the pose moves the bones). Returns the prop.
 export function hold(prop, actor, hand = 'R', mode = 'palm', opts = {}) {
   const sd = sideOf(hand), o = { ...defaults(prop, mode, sd), ...opts }, S = actor.scale ?? 1, sc = o.scale ?? 1;
-  if (mode === 'hug') return hug(prop, actor, sd, o);
+  if (mode === 'hug') return clearOf(hug(prop, actor, sd, o), actor, null, o, 'forward');
   if (mode === 'ear') return atEar(prop, actor, sd, o);
   if (mode === 'mouth') return inMouth(prop, actor, o);
   const bone = actor.bones['Arm.' + sd];
   if (prop.parent !== bone) bone.add(prop);
   prop.position.set(sd === 'R' ? -0.5 * S : 0.5 * S, (mode === 'out' ? -1.75 : -1.3) * S, 0);
-  if (mode === 'side') prop.quaternion.identity(); else prop.quaternion.setFromAxisAngle(V(1, 0, 0), Math.PI / 2);
   prop.scale.set(o.mirror ? -sc : sc, sc, sc);
-  if (o.level) {
-    actor.root.updateMatrixWorld(true);
-    const armDown = V(0, -1, 0).transformDirection(bone.matrixWorld); armDown.y = 0;
-    const heading = armDown.length() > 0.35 && mode !== 'side' ? Math.atan2(armDown.x, armDown.z) : actor.root.getWorldQuaternion(_q2) && new THREE.Euler().setFromQuaternion(_q2, 'YXZ').y;
-    _q.setFromAxisAngle(UP, heading + (o.yaw ?? 0));
+  actor.root.updateMatrixWorld(true);
+  if (mode === 'side') prop.quaternion.identity();
+  else {
+    // PR1: orientation from the arm, continuous in every pose. Yaw: along the arm's horizontal direction (blending to the
+    // actor's heading as the arm hangs); pitch: level while the arm is at or below horizontal, then follows a raised arm
+    // up (a broom raised like a sword). level props never pitch.
+    const d = V(0, -1, 0).transformDirection(bone.matrixWorld), elev = Math.acos(THREE.MathUtils.clamp(-d.y, -1, 1));
+    const fwd = V(0, 0, 1).applyQuaternion(actor.root.getWorldQuaternion(_q2)); fwd.y = 0; fwd.normalize();
+    const hz = V(d.x, 0, d.z), w = THREE.MathUtils.smoothstep(hz.length(), 0.25, 0.65);
+    const yd = fwd.multiplyScalar(1 - w).add(hz.normalize().multiplyScalar(w)); if (yd.lengthSq() < 1e-6) yd.copy(V(0, 0, 1));
+    const pitch = o.level ? 0 : Math.max(0, elev - Math.PI / 2);
+    _q.setFromEuler(new THREE.Euler(-pitch, Math.atan2(yd.x, yd.z) + (o.yaw ?? 0), 0, 'YXZ'));
     bone.getWorldQuaternion(_q2); prop.quaternion.copy(_q2.invert().multiply(_q));
   }
   if (o.aim) { // point the prop's +z at a world point (keeps it as upright as it can)
-    actor.root.updateMatrixWorld(true); const gw = bone.localToWorld(prop.position.clone()), dir = o.aim.clone().sub(gw).normalize();
+    const gw = bone.localToWorld(prop.position.clone()), dir = o.aim.clone().sub(gw).normalize();
     const up0 = Math.abs(dir.y) > 0.97 ? V(0, 0, 1).applyQuaternion(actor.root.getWorldQuaternion(new THREE.Quaternion())).multiplyScalar(-Math.sign(dir.y)) : UP;
     const xw = new THREE.Vector3().crossVectors(up0, dir).normalize(), yw = new THREE.Vector3().crossVectors(dir, xw);
     _q.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xw, yw, dir)); bone.getWorldQuaternion(_q2); prop.quaternion.copy(_q2.invert().multiply(_q));
@@ -944,9 +967,107 @@ export function hold(prop, actor, hand = 'R', mode = 'palm', opts = {}) {
   if (o.offset) prop.position.add(V(...o.offset).multiplyScalar(sc).applyQuaternion(prop.quaternion));
   prop.visible = o.visible ?? true;
   prop.updateMatrixWorld(true);
+  clearOf(prop, actor, sd, o, mode === 'side' ? 'outward' : 'forward');
   prop.userData.onHold?.();
   return prop;
 }
+
+// ---------- PR1: keep held props out of the holder's body ----------
+// Points sampled from the prop's own meshes (prop space, cached). Points of the grip (within gripR of the origin, or
+// within handle.r of the handle axis) may sit in the holding fist; every other point must stay out of the head, torso,
+// legs and both arms. If some are inside, the prop slides along its own +z ('forward') or away from the body axis
+// ('outward', things hanging at the side), whichever clears it with the smaller step (max opts.maxSlide = 0.5 * scale, so the grip stays in the fist). opts.clear = false
+// turns it off. prop.userData.clipDepth: what is left inside after the slide (0 = clean). Deterministic per pose.
+const BODY_PARTS = new Set(['Head', 'Torso', 'Left Arm', 'Right Arm', 'Left Leg', 'Right Leg']);
+function propPoints(prop) {
+  if (prop.userData._pts) return prop.userData._pts;
+  const pts = [], inv = new THREE.Matrix4(); prop.updateMatrixWorld(true); inv.copy(prop.matrixWorld).invert();
+  prop.traverse((m) => {
+    if (!m.isMesh || m.userData.noClear || m.material?.isShaderMaterial || m.material?.blending === THREE.AdditiveBlending) return;
+    for (let x = m; x && x !== prop; x = x.parent) if (!x.visible || x.userData.noClear || x.userData.owner) return; // hidden states, the vacuum wand
+    const pa = m.geometry.attributes.position, M4 = inv.clone().multiply(m.matrixWorld), step = Math.max(1, Math.floor(pa.count / 120));
+    for (let i = 0; i < pa.count; i += step) pts.push(V(0, 0, 0).fromBufferAttribute(pa, i).applyMatrix4(M4));
+  });
+  return (prop.userData._pts = pts);
+}
+function bodyBoxes(actor) {
+  const out = [];
+  actor.root.traverse((m) => {
+    if (!m.isMesh || !BODY_PARTS.has(m.name) || !m.visible) return;
+    if (!m.geometry.boundingBox) m.geometry.computeBoundingBox();
+    out.push({ name: m.name, box: m.geometry.boundingBox.clone().expandByScalar(-0.04 * (actor.scale ?? 1)), inv: m.matrixWorld.clone().invert() });
+  });
+  return out;
+}
+const _p = new THREE.Vector3(), _l = new THREE.Vector3();
+function depthAt(pts, M, shift, boxes, holdArm, isGrip) {
+  let worst = 0;
+  for (let i = 0; i < pts.length; i++) {
+    _p.copy(pts[i]).applyMatrix4(M).add(shift);
+    for (const b of boxes) {
+      if (b.name === holdArm && isGrip[i]) continue;
+      _l.copy(_p).applyMatrix4(b.inv); const bx = b.box;
+      if (_l.x <= bx.min.x || _l.x >= bx.max.x || _l.y <= bx.min.y || _l.y >= bx.max.y || _l.z <= bx.min.z || _l.z >= bx.max.z) continue;
+      worst = Math.max(worst, Math.min(_l.x - bx.min.x, bx.max.x - _l.x, _l.y - bx.min.y, bx.max.y - _l.y, _l.z - bx.min.z, bx.max.z - _l.z));
+    }
+  }
+  return worst;
+}
+function clearOf(prop, actor, sd, o = {}, how = 'forward') {
+  prop.userData.clipDepth = 0; prop.userData.clearShift = 0;
+  if (o.clear === false) return prop;
+  const S = actor.scale ?? 1, pts = propPoints(prop), boxes = bodyBoxes(actor), holdArm = sd ? (sd === 'R' ? 'Right Arm' : 'Left Arm') : null;
+  const gR = prop.userData.gripR ?? 0.35, hd = prop.userData.handle;
+  const isGrip = prop.userData._isGrip ?? (prop.userData._isGrip = pts.map((q) => q.length() < gR || (hd ? (hd.axis === 'y' ? Math.hypot(q.x, q.z) : Math.hypot(q.x, q.y)) < hd.r : false)));
+  prop.updateMatrixWorld(true); const M = prop.matrixWorld.clone();
+  const c = V(0, 0, 0).applyMatrix4(actor.root.matrixWorld), g0 = V(0, 0, 0).applyMatrix4(M);
+  const outw = g0.clone().sub(c).setY(0); if (outw.lengthSq() < 1e-6) outw.set(1, 0, 0); outw.normalize();
+  const fwdz = V(0, 0, 1).transformDirection(M);
+  const dirs = how === 'outward' ? [outw, fwdz] : [fwdz, outw];
+  const zero = V(0, 0, 0), d0 = depthAt(pts, M, zero, boxes, holdArm, isGrip);
+  if (d0 <= 0.01) return prop;
+  // the slide is capped so the grip never leaves the fist (contact beats a floating prop)
+  const cap = Math.round((o.maxSlide ?? 0.5) * S / 0.05);
+  let best = 0, bestD = d0, bestDir = dirs[0];
+  for (const dir of dirs) for (let k = 1; k <= cap; k++) {
+    const sh = k * 0.05, dd = depthAt(pts, M, dir.clone().multiplyScalar(sh), boxes, holdArm, isGrip);
+    if (dd < bestD - 0.005 || (dd <= 0.01 && bestD <= 0.01 && sh < best)) { best = sh; bestD = dd; bestDir = dir; }
+    if (dd <= 0.01) break;
+  }
+  if (best > 0) { const wp = g0.clone().addScaledVector(bestDir, best); prop.position.copy(prop.parent.worldToLocal(wp)); prop.updateMatrixWorld(true); }
+  prop.userData.clipDepth = Math.round(bestD * 100) / 100; prop.userData.clearShift = Math.round(best * 100) / 100;
+  return prop;
+}
+
+// holdPose(prop, actor, hand, pose, opts): pose the holding arm for a common held moment AND hold the prop there, with the
+// grip offsets measured on the hold check. Poses (arm pitch / inward swing in radians; rigid R6 arms):
+//   low   - arm relaxed at the side, things hanging (teddy, lunchbox, bucket, broom down, bunched sheet)
+//   carry - arm a little forward, prop level in front of the fist (sandwich, cookie, note, cup carried)
+//   chest - fist in front of the chest (cup, teapot, letters, phone screen, sandwich to eat)
+//   offer - arm out in front, prop past the fist (cookie, sandwich half, note, hobby horse offered)
+//   raise - arm raised above shoulder (broom like a sword, phone held up recording, flashlight overhead)
+//   pour  - teapot tipped toward a cup in front;  sip - cup at the mouth;  ear - phone at the ear
+// opts as hold() (plus pitch / inward to override the arm). Call every frame after the cast pose; returns the prop.
+export const HOLD_POSES = {
+  low: { pitch: -0.12, inward: 0, mode: 'side' },
+  carry: { pitch: -0.45, inward: 0.12, mode: 'palm' },
+  chest: { pitch: -1.15, inward: 0.42, mode: 'palm' },
+  offer: { pitch: -1.45, inward: 0.12, mode: 'out' },
+  raise: { pitch: -2.35, inward: 0.12, mode: 'palm' },
+  pour: { pitch: -1.25, inward: 0.3, mode: 'palm', tip: 0.6 },
+  sip: { pitch: -2.05, inward: 0.62, mode: 'palm' },
+  ear: { pitch: -2.75, inward: 0.45, mode: 'ear' },
+};
+export function holdPose(prop, actor, hand = 'R', pose = 'chest', opts = {}) {
+  const P = HOLD_POSES[pose] ?? HOLD_POSES.chest, sd = sideOf(hand), arm = actor.bones['Arm.' + sd];
+  const inward = opts.inward ?? P.inward;
+  arm.rotation.set(opts.pitch ?? P.pitch, 0, (sd === 'R' ? 1 : -1) * inward);
+  const o = { ...opts }; delete o.pitch; delete o.inward;
+  hold(prop, actor, sd, P.mode, o);
+  if (P.tip) { prop.rotateX(P.tip); prop.updateMatrixWorld(true); }
+  return prop;
+}
+
 // 'ear': a phone against the side of the head (on the Head bone), screen inward; pose the arm up beside the head yourself.
 function atEar(prop, actor, sd, o) {
   const S = actor.scale ?? 1, head = actor.bones.Head, sc = o.scale ?? 1;

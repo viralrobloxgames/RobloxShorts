@@ -126,7 +126,8 @@ def main():
     F = Path(a.frames).resolve()
     have = sorted(int(m.group(1)) for f in F.glob('web_*.png') if (m := re.fullmatch(r'web_(\d+)\.png', f.name)))
     hj = F / 'frame_hashes.json'
-    total = a.total or (json.loads(hj.read_text()).get('total') if hj.exists() else None)
+    hjd = json.loads(hj.read_text()) if hj.exists() else {}
+    total = a.total or hjd.get('total')
     A, B = (map(int, a.range.split('-'))) if a.range else (1, total or (have[-1] if have else 0))
     missing = [f for f in range(A, B + 1) if f not in set(have)]
     if missing or B < A: raise SystemExit(f'frames {A}..{B} needed in {F}; missing {len(missing)} (first: {missing[:5]})')
@@ -145,7 +146,7 @@ def main():
                                                 'stream=width,height,nb_read_frames,r_frame_rate,pix_fmt,profile,codec_name', '-of', 'json', str(out)], text=True))['streams'][0]
     if int(probe['nb_read_frames']) != n or (probe['width'], probe['height']) != (W, H) or probe['r_frame_rate'] != f'{FPS}/1':
         raise SystemExit(f'encode check failed: {probe} (wanted {n} frames {W}x{H} @ {FPS})')
-    rep = {'chapter': ch, 'part': part or None, 'first_frame': A, 'last_frame': B, 'frames': n, 'chapter_total': total,
+    rep = {'chapter': ch, 'part': part or None, 'code': hjd.get('code'), 'first_frame': A, 'last_frame': B, 'frames': n, 'chapter_total': total,
            'start_s': round(t0, 4), 'seconds': round(n / FPS, 4), 'encode': ENCODE_ID, 'captions': ne, 'file': out.name,
            'sha256': hashlib.sha256(out.read_bytes()).hexdigest(), 'probe': probe}
     out.with_suffix('.json').write_text(json.dumps(rep, indent=1))
