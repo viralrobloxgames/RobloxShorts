@@ -1,0 +1,46 @@
+{
+ "voice": "lily_kid",
+ "text": "He looks at it when he's sad.",
+ "seed": 11921,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "He",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "looks",
+   "start": 0.18,
+   "end": 0.36
+  },
+  {
+   "word": "at",
+   "start": 0.36,
+   "end": 0.62
+  },
+  {
+   "word": "it",
+   "start": 0.62,
+   "end": 0.74
+  },
+  {
+   "word": "when",
+   "start": 0.74,
+   "end": 0.9
+  },
+  {
+   "word": "he's",
+   "start": 0.9,
+   "end": 1.18
+  },
+  {
+   "word": "sad.",
+   "start": 1.18,
+   "end": 1.46
+  }
+ ],
+ "words_md5": "17a6c577218e07b11580a794e2fc01f3",
+ "whisper": "small.en"
+}

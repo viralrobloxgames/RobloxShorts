@@ -1,0 +1,46 @@
+{
+ "voice": "brittney",
+ "text": "It was a really good sandcastle.",
+ "seed": 74012,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "It",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "was",
+   "start": 0.18,
+   "end": 0.28
+  },
+  {
+   "word": "a",
+   "start": 0.28,
+   "end": 0.44
+  },
+  {
+   "word": "really",
+   "start": 0.44,
+   "end": 0.68
+  },
+  {
+   "word": "good",
+   "start": 0.68,
+   "end": 0.88
+  },
+  {
+   "word": "sand",
+   "start": 0.88,
+   "end": 1.2
+  },
+  {
+   "word": "castle.",
+   "start": 1.2,
+   "end": 1.6
+  }
+ ],
+ "words_md5": "16c5caa377534180b9891c5e68b40ff0",
+ "whisper": "small.en"
+}

@@ -100,17 +100,19 @@ function registry(scene, margin = 0.4) {
   }
   return reg;
 }
-export function autoHideWalls(scene, walls) { registry(scene).walls.push(...walls); }
+// Walls never block the kit cameras' clearShot (they hide whenever the camera is outside them).
+export function autoHideWalls(scene, walls) { for (const w of walls) w.obj.traverse((o) => { o.userData.noCamBlock = true; }); registry(scene).walls.push(...walls); }
 // Run fn(camera) right before every render of the scene (after all of update()).
 export function onSceneRender(scene, fn) { registry(scene).fns.push(fn); }
 
 // Practicals for K.applyLight / K.setPractical (lighting.js): each entry in set.lights is a proxy light (never added to
 // the scene) whose intensity the kit switches (0..1+); the set multiplies its real lights by it right before each
 // render, together with its own state (e.g. the fridge light only shines while the door is open). A proxy nobody has
-// switched (intensity NaN) uses the set's time-of-day default.
+// switched (intensity -1) uses the set's time-of-day default.
 // The proxy is a black, zero-range light added to the set group so render.mjs's frame fingerprint sees its level.
-export function proxyLight(parent) { const p = new THREE.PointLight('#000000', NaN, 0.01); p.userData.base = 1; p.userData.proxy = true; if (parent) parent.add(p); return p; }
-export function proxyLevel(p, fallback) { return Number.isNaN(p.intensity) ? fallback : (p.visible === false ? 0 : p.intensity); }
+// Untouched = intensity -1 and hidden (a hidden light never reaches the shader).
+export function proxyLight(parent) { const p = new THREE.PointLight('#000000', -1, 0.01); p.visible = false; p.userData.base = 1; p.userData.proxy = true; if (parent) parent.add(p); return p; }
+export function proxyLevel(p, fallback) { return p.intensity < 0 ? fallback : (p.visible === false ? 0 : p.intensity); }
 
 // Marks / cams in world space from set-local numbers.
 export function markMaker(offset) {
@@ -126,5 +128,5 @@ export function useCam(camera, c) {
 // A practical light with a base intensity; set via setPractical(light, level 0..1).
 export function practical(light, base) { light.userData.base = base; light.userData.practical = true; light.intensity = base; return light; }
 export function setPractical(light, level) { light.intensity = light.userData.base * level; light.visible = level > 0; }
-// Sitting: hip at the seat top, so the actor's root y = seatTop - 2 * actorScale (R6 hip pivot is 2 studs up).
-export const SIT_ROOT = (seatTop, scale = 1) => seatTop - 2 * scale;
+// Sitting (kit-cast seatY): root y = seatTop - 1.5 * actorScale (thighs horizontal on the seat).
+export const SIT_ROOT = (seatTop, scale = 1) => seatTop - 1.5 * scale;

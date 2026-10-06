@@ -1,0 +1,201 @@
+[
+ {
+  "asset": "sfx/birds.wav",
+  "start": 0.0,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 0.4,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 1.1,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 1.8,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 2.5,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 3.2,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 3.9,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 4.6,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 4.9,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 5.3,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 6.0,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 6.7,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/click.wav",
+  "start": 7.4,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 9.8,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 14.7,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/door_creak.wav",
+  "start": 17.437,
+  "gain": 0.05,
+  "dur": 0.6
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 19.6,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 23.031,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 23.481,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 23.931,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/swish_1.wav",
+  "start": 24.381,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 24.5,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/swish_1.wav",
+  "start": 25.031,
+  "gain": 0.06
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 26.564,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 26.964,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 27.364,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/footstep.wav",
+  "start": 27.764,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 29.4,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 34.3,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 39.2,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 44.1,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/swish_1.wav",
+  "start": 48.846,
+  "gain": 0.05
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 49.0,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/plop.wav",
+  "start": 49.446,
+  "gain": 0.08
+ },
+ {
+  "asset": "sfx/whoosh.wav",
+  "start": 49.596,
+  "gain": 0.1
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 53.9,
+  "gain": 0.035,
+  "dur": 5.0
+ },
+ {
+  "asset": "sfx/birds.wav",
+  "start": 58.8,
+  "gain": 0.035,
+  "dur": 0.925
+ }
+]

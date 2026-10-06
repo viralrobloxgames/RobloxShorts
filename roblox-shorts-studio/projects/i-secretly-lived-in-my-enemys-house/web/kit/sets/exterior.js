@@ -160,7 +160,7 @@ export function build(scene) {
     lawn_center: M(0, 0, 10, PI, { note: 'middle of the lawn facing the house' }),
     back_step: M(6, 0.6, -5.6, 0, { note: 'on the step just outside the back door, facing the garden (Ch2: eating the pancake)' }),
   };
-  marks.yard_start = marks.gate;
+  marks.yard_start = marks.gate; marks.inside_back_door = marks.inside_door;
   const cams = {
     dusk_wide: C([2, 15, 50], [0, 7, -2], 50, { note: 'the back of the house and the garden; the gate bottom left' }),
     gate: C([-4.5, 5.2, 21.5], [-10, 4.4, 30], 44, { note: 'from the garden toward the gate: Skye slipping in, facing camera' }),
@@ -192,5 +192,7 @@ export function build(scene) {
     gatePiv.rotation.y = (state.gate ?? 0.35) * 1.4;        // swings into the garden
   }
   setState({ time: 'day' });
-  return { id: 'exterior', group, marks, cams, lights, setState, state, walls: [] };
+  // door helper (ch01): setDoor('back_door' | 'gate', 0..1)
+  const setDoor = (name, u) => setState({ [name === 'gate' ? 'gate' : 'backDoor']: u });
+  return { id: 'exterior', group, marks, cams, lights, setState, setDoor, state, walls: [] };
 }
