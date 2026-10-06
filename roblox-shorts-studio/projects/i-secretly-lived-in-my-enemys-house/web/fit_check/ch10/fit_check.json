@@ -1,7 +1,7 @@
 {
   "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch10.js",
-  "generated": "2026-10-06T14:00:49.345Z",
-  "fingerprint": "973c68780752eeaa",
+  "generated": "2026-10-06T14:11:40.721Z",
+  "fingerprint": "6faede410f693898",
   "tolerance_studs": 0.02,
   "passed": true,
   "reviewed": true,
@@ -201,5 +201,5 @@
       "note": "replaces the character hair; review the sheet"
     }
   ],
-  "reviewedAt": "2026-10-06T14:00:50.345Z"
+  "reviewedAt": "2026-10-06T14:11:41.691Z"
 }
