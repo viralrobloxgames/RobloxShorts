@@ -29,6 +29,24 @@ rope and is caught again. His death certificate: apprentice salesman and counter
   so it runs alongside The Postman's Palace render; it encodes, checks and pushes the MP4 to main. If that session
   didn't finish, run the full render and finish commands below. Post only after the user approves the MP4.
 
+## Delivered for review (not posted)
+- `delivery/He_Sold_The_Eiffel_Tower.mp4`: **64.0 s** (1920 frames at 30 fps, 1080x1920; 63.5 s video + 0.5 s cover),
+  fully decoded, audio and burned-in captions. Validation: `delivery/He_Sold_The_Eiffel_Tower.validation.json`.
+  Post copy: `delivery/He_Sold_The_Eiffel_Tower_post.md`. **Not posted anywhere**, waiting for the user's review.
+- Rendered in session_01QjVpJDa6PsFp3oEozzRadh (4 workers, about 3 s per frame). The clip's `meta.seconds` rounds up to
+  63.533 s, so the render made 1906 frames, but `source/project.json` (and so the audio mix) is 63.5 s = 1905 frames and
+  `finish.py` needs exactly that. The encode used frames 1-1905 (symlinked into `renders/web1905`). The dropped frame
+  1906 was the last 1/30 s of the end card and looks the same as 1905. To avoid this next time, make the clip and
+  project.json lengths agree.
+- `scripts/review/blank_frames.py`: no blank or blocked frames flagged (1920 frames, median edge 11.44).
+- Contact sheet plus close looks at ~13-15 s, 47-53 s and the cover. Minor things only, not re-rendered:
+  - ~15 s "He fakes": over-the-shoulder shot, so the top hat hides Lustig's face (deliberate framing).
+  - ~47-48 s "Gangster Al Capone": Capone's face is mostly hidden behind the briefcase on the desk; Lustig is cut by the
+    left edge.
+  - ~50 s "Escapes down a rope": Lustig climbs facing the wall, so his face is hidden (fits the action).
+  - ~51 s: the officer is only partly in frame at the left edge as he walks in; fully in shot by ~53 s.
+  - No props floating away from hands and no both-arms-up poses seen. The cover (last 0.5 s) shows correctly.
+
 ## Commands
 ```
 python3 source/beats.py                                                                    # from the project dir
