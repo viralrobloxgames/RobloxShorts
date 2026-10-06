@@ -1,0 +1,272 @@
+{
+ "chapter": 6,
+ "header": "CH06 | THURSDAY | 10:15 PM | The Practice",
+ "duration": 57.77,
+ "sample_rate": 24000,
+ "take": "take-01",
+ "standin": null,
+ "lines": [
+  {
+   "index": 1,
+   "speaker": "VO",
+   "voice": "brittney",
+   "note": null,
+   "text": "Thursday night. I had my best haunting planned yet. Then I heard him through his bedroom door.",
+   "start": 0.0,
+   "end": 5.109,
+   "clip": "audio/qwen/take-01/clips/104a29ae72a5.wav",
+   "seed": 67638
+  },
+  {
+   "index": 2,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "behind door",
+   "text": "Hey. So. Do you want to go to the Halloween dance with me?",
+   "start": 5.459,
+   "end": 8.97,
+   "clip": "audio/qwen/take-01/clips/5683af89a1d8.wav",
+   "seed": 69884
+  },
+  {
+   "index": 3,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "behind door",
+   "text": "No. Too serious.",
+   "start": 9.22,
+   "end": 10.936,
+   "clip": "audio/qwen/take-01/clips/10a335096b29.wav",
+   "seed": 90434
+  },
+  {
+   "index": 4,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "behind door",
+   "text": "Yo! Dance? You? Me? Ugh. No.",
+   "start": 11.186,
+   "end": 15.603,
+   "clip": "audio/qwen/take-01/clips/0e9d6a43c32c.wav",
+   "seed": 57879
+  },
+  {
+   "index": 5,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "behind door",
+   "text": "Okay. This weekend, I just ask her. What's the worst she can say? Gross?",
+   "start": 15.853,
+   "end": 21.617,
+   "clip": "audio/qwen/take-01/clips/36ce87f5deb9.wav",
+   "seed": 91892
+  },
+  {
+   "index": 6,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Who is he asking?",
+   "start": 21.867,
+   "end": 23.227,
+   "clip": "audio/qwen/take-01/clips/28a35fb6599b.wav",
+   "seed": 63340
+  },
+  {
+   "index": 7,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Who would even say yes to him?",
+   "start": 23.477,
+   "end": 25.553,
+   "clip": "audio/qwen/take-01/clips/769f57711f6f.wav",
+   "seed": 74116
+  },
+  {
+   "index": 8,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": "whisper",
+   "text": "You like him.",
+   "start": 26.403,
+   "end": 27.381,
+   "clip": "audio/qwen/take-01/clips/1b51fed14708.wav",
+   "seed": 90539
+  },
+  {
+   "index": 9,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Lily! Don't sneak up on me.",
+   "start": 27.631,
+   "end": 29.471,
+   "clip": "audio/qwen/take-01/clips/bf6b4b919743.wav",
+   "seed": 44920
+  },
+  {
+   "index": 10,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "And I do not like him.",
+   "start": 29.721,
+   "end": 30.921,
+   "clip": "audio/qwen/take-01/clips/78477e2dcc83.wav",
+   "seed": 82699
+  },
+  {
+   "index": 11,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": "whisper",
+   "text": "Then why is your face all red?",
+   "start": 31.171,
+   "end": 33.177,
+   "clip": "audio/qwen/take-01/clips/742b071057fc.wav",
+   "seed": 13268
+  },
+  {
+   "index": 12,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "It's dusty up there. It's a very dusty attic.",
+   "start": 33.427,
+   "end": 35.827,
+   "clip": "audio/qwen/take-01/clips/39184200c143.wav",
+   "seed": 41839
+  },
+  {
+   "index": 13,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Hello? Mister Ghost? This is a friendly house. We're friendly people.",
+   "start": 36.877,
+   "end": 41.103,
+   "clip": "audio/qwen/take-01/clips/5e639f31a551.wav",
+   "seed": 85964
+  },
+  {
+   "index": 14,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "But you have eaten nine of my pancakes, and that is where I draw the line.",
+   "start": 41.353,
+   "end": 45.033,
+   "clip": "audio/qwen/take-01/clips/b55de9fad459.wav",
+   "seed": 86134
+  },
+  {
+   "index": 15,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Max, was that you?",
+   "start": 45.883,
+   "end": 47.297,
+   "clip": "audio/qwen/take-01/clips/5056c7f30a68.wav",
+   "seed": 65172
+  },
+  {
+   "index": 16,
+   "speaker": "MAX",
+   "voice": "max_kid",
+   "note": "behind door",
+   "text": "Go to bed, Dad!",
+   "start": 47.547,
+   "end": 48.466,
+   "clip": "audio/qwen/take-01/clips/f744871bf61d.wav",
+   "seed": 5012
+  },
+  {
+   "index": 17,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "I'm a grown man. I go to bed when I want.",
+   "start": 48.716,
+   "end": 51.016,
+   "clip": "audio/qwen/take-01/clips/3715ec557f17.wav",
+   "seed": 10169
+  },
+  {
+   "index": 18,
+   "speaker": "DAD",
+   "voice": "george_c",
+   "note": null,
+   "text": "Tomorrow, I'm going up into that attic, and I'm checking every single box.",
+   "start": 51.266,
+   "end": 54.946,
+   "clip": "audio/qwen/take-01/clips/fa0dd455c541.wav",
+   "seed": 87617
+  },
+  {
+   "index": 19,
+   "speaker": "SKYE",
+   "voice": "brittney",
+   "note": "whisper",
+   "text": "Every box?",
+   "start": 55.196,
+   "end": 55.996,
+   "clip": "audio/qwen/take-01/clips/84982a46bf28.wav",
+   "seed": 89783
+  },
+  {
+   "index": 20,
+   "speaker": "LILY",
+   "voice": "lily_kid",
+   "note": "whisper",
+   "text": "Uh-oh.",
+   "start": 56.246,
+   "end": 57.17,
+   "clip": "audio/qwen/take-01/clips/5237c35499fb.wav",
+   "seed": 88304
+  }
+ ],
+ "actions": [
+  {
+   "after_line": 0,
+   "at": 0.0,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Hard cut: the upstairs hallway, dark. Skye creeps toward Max's door, flashlight under her chin. Lamplight leaks under his door.",
+   "until": 0.0
+  },
+  {
+   "after_line": 1,
+   "at": 5.109,
+   "pause": 0.0,
+   "scene_change": true,
+   "text": "Inside: Max, in pyjamas, rehearses to his mirror.",
+   "until": 5.459
+  },
+  {
+   "after_line": 7,
+   "at": 25.553,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "A small hand taps her shoulder: Lily, in pyjamas, right behind her.",
+   "until": 26.403
+  },
+  {
+   "after_line": 12,
+   "at": 35.827,
+   "pause": 0.8,
+   "scene_change": false,
+   "text": "A floorboard creaks. A flashlight beam swings in from the end of the hallway: Dad, in his dressing gown, holding a broom like a sword.",
+   "until": 36.877
+  },
+  {
+   "after_line": 14,
+   "at": 45.033,
+   "pause": 0.6,
+   "scene_change": false,
+   "text": "Lily pulls Skye into the linen closet. They peek through the gap.",
+   "until": 45.883
+  }
+ ]
+}

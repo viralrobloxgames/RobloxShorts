@@ -64,7 +64,7 @@ let KNOCKS = [];
 // ---------- marks (all from the sets) ----------
 const M = {
   closet: () => ({ pos: V(-11.5, 0, 3.0), heading: -1.448 - 0.3 }),         // a little further toward the doors than closet_inside, so the gap camera has room
-  closetHoodies: () => ({ pos: V(-14.2, 0, 4.0), heading: Math.PI / 2 + 0.5 }), // pressed in among the right-hand hoodies: only her pink hair pokes out
+  closetHoodies: () => ({ pos: V(-13.95, 0, 3.85), heading: Math.PI / 2 + 0.5 }), // pressed in among the right-hand hoodies: only her pink hair pokes out
   closetDeep: () => K.mark('bedroom', 'closet_deep'),
   closetCrack: () => K.mark('bedroom', 'closet_crack'),
   closetFront: () => K.mark('bedroom', 'closet_front'),
@@ -132,7 +132,7 @@ const S = {
   skyeCU: { scene: 'night1', cam: (s, t, sh) => push(s, skyeCloset(0), skyeCloset(0.25), inv(sh.start, sh.start + 3.8, t)) },
   maxDoor: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 32 }) },
   doorOpen: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.8, 0)), fov: 40 }) },
-  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(-0.7, 0.1, 0.3)), target: K.headPos(C.skye).add(V(0, 0.3, 0)), fov: 30 }) },   // Max's POV: the pink lock between the hoodies
+  pinkLock: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(-0.7, 0.1, 0.3)), target: K.headPos(C.skye).add(V(0, 0.45, 0)), fov: 20 }) },   // Max's POV: the pink lock between the hoodies
   maxHoodies: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.45, 0)), fov: 24 }) },
   backToBed: { scene: 'night1', cam: (s) => K.setCam(s, cam(bedroom(), 'two_shot_bed_closet'), { clear: false }) },
   skyeWhisper: { scene: 'night1', cam: (s) => K.applyShot(s, skyeCloset(0.2)) },
@@ -152,7 +152,7 @@ const S = {
   knock: { scene: 'night2', cam: (s) => K.applyShot(s, skyeCloset(0.1)) },
   maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(2.6, 0.5, 6.0)), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 34 }) },
   maxBedCU: { scene: 'night2', cam: (s, t, sh) => { const h = K.headPos(C.max); return push(s, { pos: h.clone().add(V(1.6, 0.3, 4.2)), target: h.clone().add(V(0, -0.4, 0)), fov: 32 }, { pos: h.clone().add(V(1.2, 0.25, 3.2)), target: h.clone().add(V(0, -0.35, 0)), fov: 32 }, inv(sh.start, sh.start + 4, t)); } },
-  dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-2.8, 5.3, 7.2), target: V(-8.0, 3.6, -1.6), fov: 50 }) },
+  dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-0.8, 5.6, -6.6), target: V(-7.8, 3.6, -0.2), fov: 50 }) },
 };
 const SHOTS = [
   ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.45], ['maxHoodies', at(2) - 0.1],
@@ -172,7 +172,7 @@ function night1(t, set, idle) {
   // closet doors: ajar at frame 0 (closet_pov sees Max through the gap), swung open, then shut
   const open = t < T.doorOpen ? 0.5 : t < T.doorShut ? 0.5 + 0.42 * easeOut(inv(T.doorOpen, T.doorOpen + 0.45, t)) : 0.92 * (1 - easeIn(inv(T.doorShut, T.doorShut + 0.4, t)));
   set.setClosetDoors(Math.max(open, t < T.doorShut ? 0.95 : open), open); set.setBlanket('flat');
-  K.setPractical(set, 'closet', t > T.doorOpen && t < T.doorShut ? 2.5 : 0);   // the beam spilling into the closet
+  K.setPractical(set, 'closet_light', t > T.doorOpen && t < T.doorShut ? 1.0 : 0);   // the beam spilling into the closet
   set.setLamp(false);   // left leaf wide (Max seen past it), right leaf ajar
   // Skye: 3/4 to the camera in the closet, left hand over her mouth; presses back into the hoodie gap while the doors are open
   const c = M.closet(), hideU = smooth(inv(T.doorOpen - 0.3, T.doorOpen + 0.05, t)) * (1 - smooth(inv(T.doorShut, T.doorShut + 0.45, t)));
@@ -268,13 +268,13 @@ function night2(t, set, idle) {
   K.only(C, ['skye', 'max']);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
   const lumped = t > T.lump + 0.2;
-  set.setClosetDoors(t < T.lump + 0.35 ? 0 : 0.34 * easeOut(inv(T.lump + 0.35, T.lump + 0.75, t)), 0);
+  set.setClosetDoors(0, t < T.lump + 0.35 ? 0 : 0.3 * easeOut(inv(T.lump + 0.35, T.lump + 0.75, t)));
   set.setBlanket(lumped ? 'over_head' : 'legs'); set.setLamp(false);
-  K.setPractical(set, 'closet', lumped ? 1.6 : 0);              // a little light in the closet so her grin reads at the crack
+  K.setPractical(set, 'closet_light', lumped ? 1.4 : 0);              // a little light in the closet so her grin reads at the crack
   // Skye in the closet: knocks three times on the door (right knuckles), "Maaax", then her face at the crack
   const c = M.closet(), toCrack = smooth(inv(T.lump, T.lump + 0.35, t));
   K.playAnim(C.skye, [[A.idle, idle]]);
-  const crackAt = { pos: V(-10.75, 0, 1.45), heading: Math.atan2(-2.5 + 10.75, 7.5 - 1.45) };   // face at the gap the left leaf opens, turned to the camera
+  const crackAt = { pos: V(-10.75, 0, 2.95), heading: Math.atan2(-0.8 + 10.75, -6.6 - 2.95) };   // face at the gap the right leaf opens, toward the camera by the window   // leaning out of the gap   // face at the gap the left leaf opens, turned to the camera
   K.putOn(C.skye, { pos: c.pos.clone().lerp(crackAt.pos, toCrack), heading: c.heading + (crackAt.heading - c.heading) * toCrack });
   const k = KNOCKS.findIndex((x) => t >= x && t < x + 0.25);
   if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) K.gesture(C.skye, 'knock', 'R', k >= 0 ? 1 - 0.35 * Math.sin((t - KNOCKS[k]) / 0.25 * Math.PI) : 1);
