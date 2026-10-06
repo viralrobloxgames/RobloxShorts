@@ -76,7 +76,7 @@ const M = {
 const SEAT_TOP = 1.7;                                       // classroom chair seat height (until the set's mark gives seatTop)
 
 // ---------- setup ----------
-let C, A, P = {}, EXTRAS = [];
+let C, A, P = {}, EXTRAS = [], MAXSTAND = null;
 export async function setup(stage) {
   await K.buildSets(stage, ['classroom']);
   K.setState({ chapter: CH });
@@ -90,6 +90,10 @@ export async function setup(stage) {
   P.cobweb = K.makeProp('cobweb'); K.wearOnHead(P.cobweb, C.skye, { spot: 'left' });
   P.lunch = EXTRAS.map((_, i) => add(...[['sandwich', {}], ['cookie', {}], ['sandwich', { half: true }], ['sandwich', { bitten: 2 }]][i]));
   P.scene = stage.scene;
+  buildShots();
+  // a stand-in for Max standing in the aisle: the hand-off two-shot keeps this framing while he walks back (one angle)
+  MAXSTAND = { root: new THREE.Object3D(), bones: {}, scale: 1 };
+  MAXSTAND.bones.Head = new THREE.Object3D(); MAXSTAND.bones.Head.position.set(0, 4, 0); MAXSTAND.root.add(MAXSTAND.bones.Head);
 }
 
 // ---------- key times ----------
@@ -127,7 +131,14 @@ const END = (s) => {                          // Skye MCU foreground left, Max a
   const pos = sk.clone().add(V(-2.6, 0.2, -6.4));
   return K.applyShot(s, { pos, target, fov: 34 });
 };
-const SHOTS = [
+// "Want half?" two-shot: Max's place in it is his standing mark, so the angle holds still while he walks away
+const HALF = (s, t) => {
+  const mA = M.aisle(); MAXSTAND.root.position.copy(mA.pos); MAXSTAND.root.rotation.set(0, mA.heading - 0.5, 0);
+  return K.twoShot(s, C.skye, MAXSTAND, { framing: 'ms', fov: 34, look: V(0, -0.45, 0) });
+};
+// the end shot starts once Max is back in his seat (walk 12 studs/s from the aisle), never before line 21's lead-in
+const ENDCUT = () => Math.max(at(21, -0.35), T.back() + M.aisle().pos.distanceTo(M.max().pos) / 12 + 0.2);
+const SHOT_LIST = [
   { line: 1, off: 0, id: 'skye_max_diag', cam: named('skye_max_diag', WIDE) },
   { line: 1, word: 10, id: 'two_shot', cam: S2 },
   { line: 3, off: -0.1, id: 'skye_wrong', cam: named('mcu_skye', SK('mcu')) },
@@ -147,10 +158,12 @@ const SHOTS = [
   { line: 17, off: -0.1, id: 'skye_spice', cam: named('mcu_skye', SK('mcu')) },
   { line: 18, off: -0.1, id: 'right_two', cam: S2 },
   { line: 19, off: -0.1, id: 'skye_crusts', cam: named('mcu_skye', SK('mcu')) },
-  { line: 20, off: -0.1, id: 'max_half', cam: S2 },
-  { line: 20, off: 99, id: 'handoff', cam: (s) => K.twoShot(s, C.skye, C.max, { framing: 'ms', fov: 36, bias: 0.5, look: V(0, -0.6, 0) }) },   // board side: the hands meet in clear view
-  { line: 21, off: -0.35, id: 'end_front', cam: END },
-].map((x) => ({ ...x, start: x.off === 99 ? end(x.line, 0.1) : x.word != null ? wordT(x.line, x.word, -0.1) : Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start);
+  { line: 20, off: -0.1, id: 'max_half', cam: HALF },                    // one angle from "Want half?" through the take and his walk back
+  { line: 21, off: 98, id: 'end_front', cam: END },                       // cut once, after he has sat down
+];
+// shot starts need the set's marks (ENDCUT), so they are computed in setup() once the classroom is built
+let SHOTS = [];
+const buildShots = () => { SHOTS = SHOT_LIST.map((x) => ({ ...x, start: x.off === 98 ? ENDCUT() : x.off === 99 ? end(x.line, 0.1) : x.word != null ? wordT(x.line, x.word, -0.1) : Math.max(0, at(x.line, x.off)) })).sort((a, b) => a.start - b.start); };
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
 // ---------- posing helpers (choreography only; poses, gestures, faces and looks come from the kit) ----------
@@ -194,7 +207,7 @@ export function update(t, stage) {
   const hTurned = turnTo(towardMax, 0.45);
   const toDesk = Math.sign(amix(hTurned, watchMaxDesk, 1) - hTurned), away = -Math.sign(amix(hTurned, towardMax, 1) - hTurned || 1);
   // stares after him through the hand-off shot; for her whisper (end_front) she faces front again, 3/4 to the lens
-  const faceFront = at(21, -0.45);
+  const faceFront = ENDCUT() - 0.1;
   if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }
   if (t > faceFront) { hS = mS.heading - 0.25; headY = 0; }
   if (t > T.snap() && t < T.snap() + 0.45) headY = 12 * Math.sin((t - T.snap()) / 0.45 * Math.PI * 3);   // "Stop it, face." shakes it off
@@ -204,6 +217,7 @@ export function update(t, stage) {
   dS.Torso = P3(SIT.Torso, K.POSES.lean_back.Torso, back); dS.Head = P3([0, 0, 0], K.POSES.lean_back.Head, back);
   if (t > at(10) && t < end(10, 0.3)) dS = K.mixAngles(dS, K.POSES.chin_on_hand, 0.4 * ramp(t, at(10), at(10) + 0.3) * (1 - ramp(t, end(10), end(10, 0.3))));
   if (t > at(17, 0.5) && t < end(17, 0.2)) headY += 30 * away * ramp(t, at(17, 0.5), at(17, 0.8)) * (1 - ramp(t, end(17), end(17, 0.2)));   // prim: turns her head away
+  if (t > at(13) && t < end(13, 0.25)) headY += 25 * away * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25)));   // "It's fashion." flips her hair away from him: the cobweb side to camera
   const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
   dS.Head = [dS.Head?.[0] ?? 0, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
   sitOn(C.skye, mS, hS, dS);
@@ -293,7 +307,8 @@ export function update(t, stage) {
   if (P.bag) { const bag = M.bag(); if (P.bag.parent !== P.scene) P.scene.add(P.bag); K.place(P.bag, bag.pos, bag.heading); }
 
   K.setBlockers(set.group, C.skye, C.max);
-  K.setLine(C.skye, C.max, -1);                            // board side (-z) of Skye -> Max
+  { const mA = M.aisle(); MAXSTAND.root.position.copy(mA.pos); MAXSTAND.root.rotation.set(0, mA.heading - 0.5, 0); }
+  K.setLine(C.skye, t < T.back() ? C.max : MAXSTAND, -1);   // after the take the line stays on his standing mark (no flip while he walks)                            // board side (-z) of Skye -> Max
   sh.cam(stage, t);
 }
 
