@@ -18,16 +18,16 @@ import * as K from './kit/index.js';
 // ---------- CHAPTER ----------
 const CH = 0;                                        // chapter number (0 = this template: no lines.json, so EST is used)
 const CARD = { day: 'MONDAY', time: '9:47 PM' };     // the day card (Ch2-11 open on it from frame 0; Ch1 uses a time stamp)
-// Estimated spoken lines (seconds) until audio/chapters/chNN/lines.json exists; same `index` numbering as lines.json.
+// Estimated spoken lines (seconds) until audio/chapters/chNN/lines.json exists; `index` is 1-based as in lines.json.
 const EST = [
-  { index: 0, speaker: 'VO', text: "I secretly lived in my enemy's house for a week, and he had no idea.", start: 0.0, end: 3.4 },
-  { index: 1, speaker: 'MAX', text: 'Hello? Is somebody in my closet?', start: 3.7, end: 5.4 },
-  { index: 2, speaker: 'SKYE', note: 'whisper', text: 'That was way too close.', start: 6.2, end: 7.7 },
-  { index: 3, speaker: 'MAX', text: 'You cut the crusts off your sandwich? What are you, five?', start: 8.1, end: 10.5 },
-  { index: 4, speaker: 'SKYE', text: "At least my lunch doesn't smell like your gym socks.", start: 10.8, end: 12.7 },
+  { index: 1, speaker: 'VO', text: "I secretly lived in my enemy's house for a week, and he had no idea.", start: 0.0, end: 3.4 },
+  { index: 2, speaker: 'MAX', text: 'Hello? Is somebody in my closet?', start: 3.7, end: 5.4 },
+  { index: 3, speaker: 'SKYE', note: 'whisper', text: 'That was way too close.', start: 6.2, end: 7.7 },
+  { index: 4, speaker: 'MAX', text: 'You cut the crusts off your sandwich? What are you, five?', start: 8.1, end: 10.5 },
+  { index: 5, speaker: 'SKYE', text: "At least my lunch doesn't smell like your gym socks.", start: 10.8, end: 12.7 },
 ];
 const L = await K.loadLines(import.meta.url, CH, EST);
-export const meta = K.chapterMeta(L.end + 0.75);      // last line + room tone (boundary sheet: 0.5-1.0 s)
+export const meta = K.chapterMeta(K.chapterLength(L)); // last line + room tone (boundary sheet: 0.5-1.0 s)
 export const sky = K.SKY;
 export const samples = () => 1;                       // one sample per frame (house setting for the long-form)
 const at = (line, off = 0) => L.line(line).start + off;
@@ -58,13 +58,13 @@ export async function setup(stage) {
 // Each shot runs from its line's start (+ off) to the next shot. set/light/practicals pick the place and the light;
 // cam(stage, t) frames whoever speaks. Cuts follow the speaker; a scene's line is set once (setLine) at its first shot.
 const SHOTS = [
-  { line: 0, off: 0, id: 'hook', set: 'bedroom', light: 'night_moon', cam: (s) => K.overShoulder(s, C.skye, C.max, 'ms', { fov: 40 }) },
-  { line: 0, off: 1.0, id: 'skye_cu', set: 'bedroom', light: 'night_moon', cam: (s) => K.camOn(s, C.skye, 'cu') },
-  { line: 1, off: 0, id: 'max_asks', set: 'bedroom', light: 'night_moon', cam: (s) => K.overShoulder(s, C.skye, C.max, 'mcu') },
-  { line: 2, off: 0, id: 'skye_whisper', set: 'bedroom', light: 'night_moon', cam: (s) => K.camOn(s, C.skye, 'cu') },
-  { line: 3, off: -0.25, id: 'class_two', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.twoShot(s, C.max, C.skye) },
-  { line: 3, off: 1.2, id: 'max_mocks', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.overShoulder(s, C.skye, C.max, 'mcu') },
-  { line: 4, off: 0, id: 'skye_back', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.overShoulder(s, C.max, C.skye, 'mcu') },
+  { line: 1, off: 0, id: 'hook', set: 'bedroom', light: 'night_moon', cam: (s) => K.overShoulder(s, C.skye, C.max, 'ms', { fov: 40 }) },
+  { line: 1, off: 1.0, id: 'skye_cu', set: 'bedroom', light: 'night_moon', cam: (s) => K.camOn(s, C.skye, 'cu') },
+  { line: 2, off: 0, id: 'max_asks', set: 'bedroom', light: 'night_moon', cam: (s) => K.overShoulder(s, C.skye, C.max, 'mcu') },
+  { line: 3, off: 0, id: 'skye_whisper', set: 'bedroom', light: 'night_moon', cam: (s) => K.camOn(s, C.skye, 'cu') },
+  { line: 4, off: -0.25, id: 'class_two', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.twoShot(s, C.max, C.skye) },
+  { line: 4, off: 1.2, id: 'max_mocks', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.overShoulder(s, C.skye, C.max, 'mcu') },
+  { line: 5, off: 0, id: 'skye_back', set: 'classroom', light: 'school_day', stamp: 'MONDAY 12:15 PM', cam: (s) => K.overShoulder(s, C.max, C.skye, 'mcu') },
 ].map((x) => ({ ...x, start: at(x.line, x.off) })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 
