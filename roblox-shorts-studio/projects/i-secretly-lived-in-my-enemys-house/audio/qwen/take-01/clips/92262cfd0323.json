@@ -3,5 +3,114 @@
  "text": "So after school, I slipped in through his back door and hid in the last place anyone would look for me.",
  "seed": 78105,
  "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base"
+ "model": "Qwen3-TTS-12Hz-1.7B-Base",
+ "words": [
+  {
+   "word": "So",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "after",
+   "start": 0.44,
+   "end": 0.68
+  },
+  {
+   "word": "school,",
+   "start": 0.68,
+   "end": 1.0
+  },
+  {
+   "word": "I",
+   "start": 1.38,
+   "end": 1.44
+  },
+  {
+   "word": "slipped",
+   "start": 1.44,
+   "end": 1.66
+  },
+  {
+   "word": "in",
+   "start": 1.66,
+   "end": 1.9
+  },
+  {
+   "word": "through",
+   "start": 1.9,
+   "end": 2.06
+  },
+  {
+   "word": "his",
+   "start": 2.06,
+   "end": 2.24
+  },
+  {
+   "word": "back",
+   "start": 2.24,
+   "end": 2.48
+  },
+  {
+   "word": "door",
+   "start": 2.48,
+   "end": 2.72
+  },
+  {
+   "word": "and",
+   "start": 2.72,
+   "end": 3.18
+  },
+  {
+   "word": "hid",
+   "start": 3.18,
+   "end": 3.38
+  },
+  {
+   "word": "in",
+   "start": 3.38,
+   "end": 3.54
+  },
+  {
+   "word": "the",
+   "start": 3.54,
+   "end": 3.66
+  },
+  {
+   "word": "last",
+   "start": 3.66,
+   "end": 3.94
+  },
+  {
+   "word": "place",
+   "start": 3.94,
+   "end": 4.24
+  },
+  {
+   "word": "anyone",
+   "start": 4.24,
+   "end": 4.58
+  },
+  {
+   "word": "would",
+   "start": 4.58,
+   "end": 4.86
+  },
+  {
+   "word": "look",
+   "start": 4.86,
+   "end": 5.02
+  },
+  {
+   "word": "for",
+   "start": 5.02,
+   "end": 5.2
+  },
+  {
+   "word": "me.",
+   "start": 5.2,
+   "end": 5.34
+  }
+ ],
+ "words_md5": "1854633d7d8fe426907bdff17c474d1a",
+ "whisper": "small.en"
 }

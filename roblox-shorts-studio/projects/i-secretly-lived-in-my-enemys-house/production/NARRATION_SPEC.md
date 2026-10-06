@@ -51,10 +51,12 @@ python3 scripts/narrate_multi.py projects/i-secretly-lived-in-my-enemys-house --
   its `end` into the gap.
 - Levels: every clip is levelled to the same speech RMS (-20 dBFS) before its note effect, so the four voices match; the
   effects (`FX` in the script) then set the level: measured speech RMS normal -22.5 dB, phone -25.4, behind door -28.4,
-  offscreen, below -29.2 (whisper about -26, shriek about -20).
+  offscreen, below -29.2, offscreen -30, whisper -26.5, ghost -23.6, shriek -19.6 (measured on Ch1 and a test).
 - Commit after a run: `audio/qwen/take-01/clips/` (`*.wav` + `*.json` sidecars), `audio/qwen/take-01/clips_raw/`, and
   `audio/chapters/chNN/`. Never commit stand-in output: `--standin MAX=brittney` (testing before a voice exists) writes to
   `audio/chapters-standin/` and its clips are hashed under the stand-in's voice name, so they never pass for real ones —
   but don't `git add` them either.
 - `--gen-only` generates clips without joining (e.g. to pre-generate several chapters in one model load: `--chapters 4,5`),
   `--max-lines N` narrates only the first N lines (testing), `--whisper small.en` is the default check model.
+- Ch1 proof (2026-10-06, all four voices): 20 lines, 63.5 s, hook at 0.0 s; 18 clips generated in ~10 min of CPU. Its
+  check report lists `ch1:16 "maaax" / heard "max"` and `ch1:18 "i am" / heard "i'm"`: both are whisper's hearing, kept.

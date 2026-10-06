@@ -46,11 +46,13 @@ export const meta = K.chapterMeta(L.end + 0.8);
 export const sky = K.SKY;
 export const samples = () => 1;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
-const at = (i, off = 0) => L.line(i).start + off;
-const endOf = (i, off = 0) => L.line(i).end + off;
+// lines by their order in the chapter (0-based; lines.json numbers them from 1)
+const LN = (i) => { const l = L.lines[i]; if (!l) throw new Error(`ch03: no spoken line #${i}`); return l; };
+const at = (i, off = 0) => LN(i).start + off;
+const endOf = (i, off = 0) => LN(i).end + off;
 const inv = (a, b, x) => Math.min(1, Math.max(0, (x - a) / (b - a)));
 const sm = (u) => u * u * (3 - 2 * u);
-const word = (i, k) => { const l = L.line(i), ws = L.words.filter((w) => w.speaker === l.speaker && w.start >= l.start - 0.05 && w.end <= l.end + 0.05); return ws[Math.min(k, ws.length - 1)] || { start: l.start, end: l.end }; };
+const word = (i, k) => { const l = LN(i), ws = L.words.filter((w) => w.speaker === l.speaker && w.start >= l.start - 0.05 && w.end <= l.end + 0.05); return ws[Math.min(k, ws.length - 1)] || { start: l.start, end: l.end }; };
 
 // ---------- marks (kitchen set, local layout in web/kit/sets/kitchen.js; +z is the open camera side) ----------
 const PI = Math.PI;
@@ -61,11 +63,11 @@ function lettersAt3(u) {
   const th = -1.75 * u, x = FR_HINGE[0] + 2 * Math.cos(th) + 0.36 * Math.sin(th), z = FR_HINGE[1] - 2 * Math.sin(th) + 0.36 * Math.cos(th);
   return { pos: W(x, 4.6, z), n: V(Math.sin(th), 0, Math.cos(th)), r: V(Math.cos(th), 0, -Math.sin(th)) };
 }
-const M = {};
+const M = {}, CREEP = 9;                                   // tiptoe speed (studs/s)
 function marks() {
   const mk = (n) => K.mark('kitchen', n);
   M.peek = null;
-  for (const n of ['fridge_read', 'pantry_inside', 'pantry_slats', 'pantry_front', 'island_end_left', 'island_hide_left', 'stairs_top', 'stairs_bottom']) M[n] = mk(n);
+  for (const n of ['fridge_read', 'pantry_inside', 'pantry_slats', 'pantry_front', 'island_end_left', 'island_crouch', 'stairs_top', 'stairs_bottom']) M[n] = mk(n);
   const LD = lettersAt3(DOOR_SKYE);
   const sp = LD.pos.clone().addScaledVector(LD.n, 2.1).addScaledVector(LD.r, -0.5); sp.y = 0;
   M.skyeDoor = { pos: sp, heading: K.faceTo(sp, LD.pos.clone().setY(0)) - 0.65 };   // cheated 3/4 toward the camera
@@ -92,7 +94,7 @@ function times() {
   T.plateOut = at(10, 0.35);
   T.maxOut = endOf(10, -0.35);
   T.creep = endOf(10, 0.3);
-  T.grab = T.creep + (M.pantry_slats.pos.distanceTo(M.pantry_front.pos) + M.pantry_front.pos.distanceTo(M.islandEnd.pos)) / 10 + 0.25;
+  T.grab = T.creep + (M.pantry_slats.pos.distanceTo(M.pantry_front.pos) + M.pantry_front.pos.distanceTo(M.islandEnd.pos)) / CREEP + 0.25;
   T.duck = endOf(12, 0.05); T.dadIn = endOf(12, 0.2);
   T.lookUp = at(15, 0.05);
   T.open3 = at(16, -0.2); T.ham = at(16, 0.45); T.bite = endOf(16, 0.05);
@@ -100,13 +102,14 @@ function times() {
   T.exhale = at(18, -0.6);
   const arrive = (pts, t0, v) => { let tt = t0; for (let i = 0; i < pts.length - 1; i++) tt += pts[i].pos.distanceTo(pts[i + 1].pos) / v; return tt; };
   T.maxAt = arrive([M.stairs_top, M.stairs_bottom, M.behind, M.behindL, M.reader], T.maxIn, 12);
-  T.maxBottom = arrive([M.stairs_top, M.stairs_bottom], T.maxIn, 12); T.dadBottom = arrive([M.stairs_top, M.stairs_bottom], T.dadIn, 9);
+  T.maxBottom = arrive([M.stairs_top, M.stairs_bottom], T.maxIn, 12); T.dadBottom = arrive([M.stairs_top, M.stairs_bottom], T.dadIn, 9); T.dadBehind = arrive([M.stairs_top, M.stairs_bottom, M.behind], T.dadIn, 9);
   T.dadAt = arrive([M.stairs_top, M.stairs_bottom, M.behind, M.behindL, M.reader], T.dadIn, 9);
 }
 
 // ---------- setup ----------
-let C, A, P = {}, beam, set;
+let C, A, P = {}, beam, set, SCENE;
 export async function setup(stage) {
+  SCENE = stage.scene;
   await K.buildSets(stage, ['kitchen']);
   K.setState({ chapter: 3 });
   set = K.getSet('kitchen');
@@ -115,10 +118,9 @@ export async function setup(stage) {
   K.dress(C.skye, 'skye_hoodie'); K.dress(C.max, 'max_pjs'); K.dress(C.dad, 'dad_robe');
   A = await K.loadAnims(['idle', 'walk', 'run', 'duck', 'sit', 'horror_reach', 'horror_listen', 'horror_torch_hold', 'typing', 'think', 'shrug', 'look_up', 'talk', 'scheming', 'hold']);
   const add = (k, id, o) => { P[k] = K.makeProp(id, o); stage.scene.add(P[k]); return P[k]; };
-  add('letters', 'magnet_letters'); add('torch', 'flashlight'); add('knife', 'butter_knife');
-  add('sandwich', 'sandwich_crustless'); add('bitten', 'sandwich_crustless', { bitten: true }); add('plate', 'plate');
-  add('ham', 'ham'); add('dadHam', 'ham'); add('bread', 'bread');
-  add('onPlate', 'sandwich_crustless'); add('torchDown', 'flashlight');
+  add('letters', 'magnet_letters', { letters: 'CE2SKYE' }); add('torch', 'flashlight'); add('torchDown', 'flashlight'); add('knife', 'knife');
+  add('sandwich', 'sandwich', { filling: 'ham' }); add('bitten', 'sandwich', { filling: 'ham', bitten: 'half_eaten' }); add('onPlate', 'sandwich', { filling: 'ham' });
+  add('plate', 'plate'); add('ham', 'ham'); add('dadHam', 'ham'); add('milk', 'milk');
   beam = K.flashlightBeam(stage);
   times();
 }
@@ -143,7 +145,7 @@ function lettersInsert(s, u) {
   const LD = lettersAt3(u), pos = LD.pos.clone().addScaledVector(LD.n, 3.0).addScaledVector(LD.r, 2.6).add(V(0, 0.3, 0));
   return K.applyShot(s, { pos, target: LD.pos.clone(), fov: 34 });
 }
-const WALK_IN = [-14.2, 5.4, -1.6], AT_FRIDGE = [-4.6, 5.3, -6.0], AT_ISLAND = [-1.5, 5.6, 5.0], PEEK = [-10.2, 4.8, -0.3], HIDE = [-0.8, 3.0, 8.2], LOW = [2.2, 2.3, 9.5];
+const WALK_IN = [-14.2, 5.4, -1.6], AT_FRIDGE = [-4.6, 5.3, -6.0], AT_ISLAND = [-1.5, 5.6, 5.0], PEEK = [-10.2, 4.8, -0.3], HIDE = [2.4, 3.0, 6.6], LOW = [4.6, 2.5, 7.4];
 const SHOTS = [
   { at: () => 0, id: 'open', cam: fix([-8.3, 5.3, -5.4], 'skye', 'ms') },
   { at: () => at(1), id: 'skye_letters', cam: fix([-7.6, 5.2, -5.2], 'skye', 'mcu') },
@@ -166,14 +168,14 @@ const SHOTS = [
   { at: () => at(11, 0.15), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'mcu') },
   { at: () => at(12), id: 'skye_smug', cam: fix(AT_ISLAND, 'skye', 'ms') },
   { at: () => T.duck - 0.05, id: 'wide_dad', cam: cam('stairs_wide') },
-  { at: () => T.dadBottom + 0.6, id: 'dad_walk', cam: fix(WALK_IN, 'dad', 'ms') },
+  { at: () => T.dadBehind, id: 'dad_walk', cam: cam('kitchen_wide') },
   { at: () => T.dadAt + 0.1, id: 'dad_snack', cam: fix(AT_FRIDGE, 'dad', 'ms') },
   { at: () => at(14), id: 'dad_reads', cam: fix(AT_FRIDGE, 'dad', 'mcu') },
   { at: () => at(15), id: 'dad_up', cam: fix(AT_FRIDGE, 'dad', 'mcu') },
   { at: () => at(16), id: 'dad_ham', cam: fix(AT_FRIDGE, 'dad', 'ms') },
   { at: () => T.bite, id: 'skye_chew', cam: fix(HIDE, 'skye', 'cu') },
   { at: () => at(17), id: 'dad_hungry', cam: fix(AT_FRIDGE, 'dad', 'ms') },
-  { at: () => T.dadOut + 0.4, id: 'low_behind', cam: fix(LOW, 'skye', 'ms', { up: 0.6 }) },
+  { at: () => T.dadOut + 0.4, id: 'low_behind', cam: fix(LOW, 'skye', 'ms', { up: 0.4 }) },
 ];
 let SH = null;
 const shotAt = (t) => { SH ||= SHOTS.map((x) => ({ ...x, start: x.at() })).sort((a, b) => a.start - b.start); let s = SH[0]; for (const x of SH) if (t >= x.start) s = x; return s; };
@@ -190,6 +192,8 @@ function route(pts, t0, t, speed = 12) {
   }
   return r;
 }
+// put a prop on a surface (world pos), taking it out of any hand first
+function put(prop, pos, heading = 0) { if (prop.parent !== SCENE) SCENE.add(prop); K.place(prop, pos, heading); prop.visible = true; return prop; }
 const walkAnim = (r, speed = 12) => [[speed >= 14 ? A.run : A.walk, r.anim]];
 function place(actor, at, layers, heading) { K.playAnim(actor, layers); K.putOn(actor, at, heading === undefined ? {} : { heading }); }
 // a walk that ends on a mark; while still: the given layers and heading
@@ -249,19 +253,21 @@ export function update(t, stage) {
     skFace = 'scared';
     walkTo(sk, [M.skyeDoor, M.pantry_front, M.pantry_inside, M.pantry_slats], T.dive, t, 16, [[A.idle, idle]]);
     if (t > at(4, 0.3)) skFace = t < at(5) ? 'smug' : t < at(9) ? 'scheming' : 'surprised';
-  } else if (t < T.duck) {                                  // creeps out, takes the sandwich
+  } else if (t < T.duck) {                                  // creeps out (tiptoe), takes the sandwich
     skFace = t < at(12) ? 'surprised' : 'smug';
-    const r = walkTo(sk, [M.pantry_slats, M.pantry_front, M.islandEnd], T.creep, t, 10, [[A.idle, idle], [A.hold, 0.3, 1]]);
+    const r = route([M.pantry_slats, M.pantry_front, M.islandEnd], T.creep, t, CREEP);
+    if (r.moving) { K.putOn(sk, { pos: r.pos, heading: r.heading }); const d = K.posture(sk, K.gait('creep', r.anim)); sk.root.position.y = r.pos.y - d; }
+    else place(sk, r.done ? M.islandEnd : M.pantry_slats, [[A.idle, idle], [A.hold, 0.3, t >= T.grab - 0.2 ? 1 : 0]]);
     if (t >= T.grab) { P.sandwich.visible = true; K.hold(P.sandwich, sk, 'R'); }
-    void r;
   } else {                                                  // ducks down at the front of the island
-    const r = route([M.islandEnd, M.frontL, M.island_hide_left], T.duck, t, 14);
+    const r = route([M.islandEnd, M.frontL, M.island_crouch], T.duck, t, 14);
     if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 14), r.heading);
-    else { place(sk, M.island_hide_left, [[A.sit, 0], [A.hold, 0.3, 0.6]], 0.25); sk.root.position.y -= 1.5 * sk.scale; }   // sitting tucked on the floor against the island
+    else { K.putOn(sk, M.island_crouch, { heading: 0.35 }); const d = K.posture(sk, 'crouch'); sk.root.position.y = M.island_crouch.pos.y - d; }
     skFace = t < T.exhale ? 'scared' : 'happy';
     const s = t >= T.bite ? P.bitten : P.sandwich; s.visible = true; K.hold(s, sk, 'R');
   }
-  K.speak(sk, skFace, t, L.said('SKYE'));
+  const skLine = L.lines.find((l) => l.speaker === 'SKYE' && t >= l.start - 0.1 && t < l.end + 0.1);
+  K.speak(sk, skFace, t, L.said('SKYE'), { whisper: skLine?.note === 'whisper' });
 
   // ----- Max -----
   const mx = C.max;
@@ -279,7 +285,7 @@ export function update(t, stage) {
       }
       face = t < at(4) ? 'scared' : t < T.reachMax ? 'nervous' : t < at(5) ? 'surprised' : t < at(8) ? 'suspicious' : 'nervous';
       if (t < T.open2) { P.torch.visible = true; K.hold(P.torch, mx, 'R'); }
-      else { P.ham.visible = t > T.open2 + 0.45; K.hold(P.ham, mx, 'R'); P.bread.visible = t > T.open2 + 0.6; K.hold(P.bread, mx, 'L'); }
+      else { P.ham.visible = t > T.open2 + 0.45; K.hold(P.ham, mx, 'R', 'side'); P.milk.visible = t > T.open2 + 0.6; K.hold(P.milk, mx, 'L'); }
       if (t < T.open2 && r.done) { const from = new THREE.Vector3(); P.torch.getWorldPosition(from); const h = mx.root.rotation.y; beam.set(true, from, V(Math.sin(h), -0.12, Math.cos(h))); }
       else if (t < T.open2 && t > T.maxIn) { const from = new THREE.Vector3(); P.torch.getWorldPosition(from); const h = mx.root.rotation.y; beam.set(true, from, V(Math.sin(h), -0.3, Math.cos(h))); }
     } else if (t < T.maxOut) {                              // at the island's left end: the sandwich
@@ -288,8 +294,9 @@ export function update(t, stage) {
       if (making) still.push([A.typing, t - T.make0, 1.4]);
       walkTo(mx, [M.reader, M.islandEnd], T.toIsland, t, 12, still);
       if (making) { P.knife.visible = true; K.hold(P.knife, mx, 'R'); }
-      if (t < T.make0) { P.ham.visible = true; K.hold(P.ham, mx, 'R'); P.bread.visible = true; K.hold(P.bread, mx, 'L'); }
-      P.torchDown.visible = true; P.torchDown.position.copy(M.torchRest); P.torchDown.rotation.set(0, 0.4, PI / 2);
+      if (t < T.make0) { P.ham.visible = true; K.hold(P.ham, mx, 'R', 'side'); P.milk.visible = true; K.hold(P.milk, mx, 'L'); }
+      else { P.milk.visible = true; put(P.milk, M.plate.clone().add(V(0.9, 0, -1.1)), 0.3); P.ham.visible = t < T.make1; put(P.ham, M.plate.clone().add(V(-0.2, 0, -1.4)), 1.2); }
+      P.torchDown.visible = true; put(P.torchDown, M.torchRest.clone().add(V(0, 0.27, 0)), -2.2); P.torchDown.userData.setOn?.(false);
       face = t < word(9, 4).start ? 'nervous' : t < at(10) ? 'annoyed' : 'nervous';
     } else {                                                // back upstairs
       const r = walkTo(mx, [M.islandEnd, M.frontL, M.stairs_bottom, M.stairs_top], T.maxOut, t, 12, [[A.idle, idle]]);
@@ -300,8 +307,8 @@ export function update(t, stage) {
   }
   // the plate on the island from the moment Max makes the sandwich; the sandwich on it until Skye takes it
   if (t >= T.make0) {
-    P.plate.visible = true; P.plate.position.copy(M.plate); P.plate.rotation.set(0, 0, 0);
-    if (t >= T.make0 + 0.5 && t < T.grab) { P.onPlate.visible = true; P.onPlate.position.copy(M.plate).add(V(0, 0.12, 0)); P.onPlate.rotation.set(0, 0.3, 0); }
+    P.plate.visible = true; put(P.plate, M.plate, 0);
+    if (t >= T.make0 + 0.5 && t < T.grab) { P.onPlate.visible = true; put(P.onPlate, M.plate.clone().add(V(0, 0.055, -0.4)), 0.3); }
   }
 
   // ----- Dad -----
@@ -314,11 +321,11 @@ export function update(t, stage) {
       const h = t > at(17, 0.2) ? PI - 1.35 : M.reader.heading;
       walkTo(dd, [M.stairs_top, M.stairs_bottom, M.behind, M.behindL, M.reader], T.dadIn, t, 9, still, h);
       face = t < at(14) ? 'happy' : t < T.lookUp ? 'suspicious' : t < at(16) ? 'surprised' : t < at(17) ? 'annoyed' : 'sad';
-      if (t >= T.ham) { P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R'); }
+      if (t >= T.ham) { P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R', 'side'); }
     } else {
       const r = walkTo(dd, [M.reader, M.behindL, M.behind, M.stairs_bottom, M.stairs_top], T.dadOut, t, 9, [[A.idle, idle]]);
       if (r.done) dd.root.visible = false;
-      P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R');
+      P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R', 'side');
     }
     K.speak(dd, face, t, L.said('DAD'));
   }
@@ -328,3 +335,8 @@ export function update(t, stage) {
 
 // ---------- overlay ----------
 export function overlay(g, s, t) { K.dayCard(g, s, t, CARD); }
+
+// for the hold check (ch03_hold.js)
+export const cast = () => C;
+export const lineAt = (i, off = 0) => at(i, off);
+export const lineEnd = (i, off = 0) => endOf(i, off);
