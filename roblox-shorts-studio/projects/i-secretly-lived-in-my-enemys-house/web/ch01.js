@@ -64,7 +64,7 @@ const DUSK_SPEED = 8, DUSK_LEGS = () => [K.mark('exterior', 'path_mid'), K.mark(
 T.door = 0;   // filled in setup() from the marks (needs the built sets)
 // Max in bed (3/4 from his left, a little above): headboard, pillow and the duvet over his legs all in frame
 const BEDCAM = { pos: V(2.2, 6.6, -1.0), target: V(-4.2, 3.2, -5.2), fov: 42 };
-const BLANKET = (t) => (t < T.wake + 0.45 ? 'lying' : 'sitting');   // kit-sets-a's draped duvet over him lying / sitting
+const BLANKET = (t) => (t < T.wake + 0.45 || t > T.lump + 0.2 ? 'lying' : 'sitting');   // kit-sets-a's draped duvet over him lying / sitting
 let KNOCKS = [];
 
 // ---------- marks (all from the sets) ----------
@@ -105,11 +105,12 @@ const P3 = (set, x, z, h = 0) => ({ pos: K.getSet(set).group.position.clone().ad
 function setLegs(a, on) { for (const b of ['Leg.L', 'Leg.R']) a.bones[b].traverse((o) => { if (o.isMesh) o.visible = on; }); }
 let STAGE = null, ROUTE = {};
 // walk along a set route (waypoints around the furniture, kit-sets-c); legs driven by the distance walked
-function routeWalk(a, set, pts, t0, t, { speed = 12, idleAt = 0, endHeading, startHeading } = {}) {
-  const len = set.routeLength(pts), d = clamp((t - t0) * speed, 0, len), r = set.alongRoute(pts, d), moving = t > t0 && d < len;
-  K.playAnim(a, moving ? [[A.walk, d / 14.5]] : [[A.idle, idleAt]]);
+function routeWalk(a, set, pts, t0, t, { speed = 12, idleAt = 0, endHeading, startHeading, lead = 0.15 } = {}) {
+  const len = set.routeLength(pts), RU = 0.3, tt = t - t0 + lead, d = clamp(tt < RU ? speed * tt * tt / (2 * RU) : speed * (tt - RU / 2), 0, len);   // steps off (accelerates over 0.3 s, starting `lead` early so the arrival is unchanged)
+  const r = set.alongRoute(pts, d), moving = tt > 0 && d < len, w = smooth(clamp(tt / RU));
+  K.playAnim(a, moving ? (w < 1 ? [[A.idle, idleAt, 1 - w], [A.walk, d / 14.5, w]] : [[A.walk, d / 14.5]]) : [[A.idle, idleAt]]);
   K.putOn(a, { pos: r.pos, heading: moving ? r.heading : d >= len ? (endHeading ?? r.heading) : (startHeading ?? r.heading) });
-  return { moving, done: d >= len, arrive: t0 + len / speed };
+  return { moving, done: d >= len, arrive: t0 + len / speed + RU / 2 - lead };
 }
 const MAX_FROM = () => K.mark('classroom', 'max_desk_front');                  // Max starts at the front of his desk (row 3)
 const BOX = () => K.getSet('classroom').anchors.skyeDeskTop.clone().add(V(1.0, 0, 0.1));   // the lunchbox on Skye's desk
@@ -160,6 +161,18 @@ const lineN = () => { const d = K.headPos(C.max).sub(K.headPos(C.skye)); d.y = 0
 // a 3/4 single: out to the side of the Skye-Max line and a little toward the other person (so we see the face)
 const single = (a, side, k) => { const { d, n } = lineN(), h = K.headPos(a); const p = h.clone().addScaledVector(n, 4.3).addScaledVector(d, 1.1 * side).add(V(0, 0.35, 0)); p.lerp(h, k); return { pos: p, target: h.clone().add(V(0, -0.45, 0)), fov: 36 }; };
 const pair = (dist) => { const { n } = lineN(), m = K.headPos(C.skye).lerp(K.headPos(C.max), 0.5); return { pos: m.clone().addScaledVector(n, dist).add(V(0, 0.9, 0)), target: m.clone().add(V(0, -0.9, 0)), fov: 38 }; };
+// eases (no one-frame snaps): ramp(t, a, b) rises over [a, a+d] and falls over [b, b+d]
+const ramp = (t, a, b = Infinity, d = 0.2) => smooth(inv(a, a + d, t)) * (1 - smooth(inv(b, b + d, t)));
+// an arm eased toward an euler (radians) from wherever the pose left it
+const armMix = (a, sd, x, y, z, k) => { if (k <= 0) return; const b = a.bones['Arm.' + sd], q = new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z, b.rotation.order)); b.quaternion.slerp(q, Math.min(k, 1)); };
+// a prop's world transform when held (so it can fly from one hold to another)
+function heldWorld(prop, actor, hand, mode, opts) { K.hold(prop, actor, hand, mode, opts); actor.root.updateMatrixWorld(true); prop.updateWorldMatrix(true, false); return prop.matrixWorld.clone(); }
+function flyProp(prop, m0, m1, u) {
+  const p0 = new THREE.Vector3(), q0 = new THREE.Quaternion(), s0 = new THREE.Vector3(), p1 = new THREE.Vector3(), q1 = new THREE.Quaternion(), s1 = new THREE.Vector3();
+  m0.decompose(p0, q0, s0); m1.decompose(p1, q1, s1);
+  if (prop.parent !== STAGE.scene) STAGE.scene.add(prop);
+  prop.position.copy(p0.lerp(p1, u)); prop.quaternion.copy(q0.slerp(q1, u)); prop.scale.copy(s0.lerp(s1, u));
+}
 const dolly = (c, k) => { const s = shotOf(c); s.pos.lerp(s.target, k); return s; };
 
 // ---------- the shot table ----------
@@ -263,10 +276,10 @@ function classScene(t, set, idle) {
   // Skye: seated, turned towards Max once he talks; her right hand rests by the lunchbox (the spider lands on it);
   // then up into the aisle, holding the arm with the spider out away from her ("Get it off!"), and standing her ground
   if (t < T.jump) {
-    const turned = t >= at(5) - 0.3;
-    K.putOn(C.skye, sk, { sit: true, heading: turned ? sk.heading + (K.faceTo(sk, side) - sk.heading) * 0.45 : sk.heading });
-    K.posture(C.skye, turned ? 'sit_chair' : 'sit_desk_arms'); C.skye.root.position.y = set.seatY(C.skye.scale);   // eating at the desk, then turned to Max
-    if (t > T.spider - 1.2) armSet(C.skye, 'R', -1.15, 0, 0);                                  // hand on the desk by the lunchbox
+    const turned = smooth(inv(at(5) - 0.45, at(5) - 0.1, t));
+    K.putOn(C.skye, sk, { sit: true, heading: sk.heading + (K.faceTo(sk, side) - sk.heading) * 0.45 * turned });
+    K.posture(C.skye, K.mixAngles(K.POSES.sit_desk_arms, K.POSES.sit_chair, turned)); C.skye.root.position.y = set.seatY(C.skye.scale);   // eating at the desk, then turned to Max
+    armMix(C.skye, 'R', -1.15, 0, 0, smooth(inv(T.spider - 1.35, T.spider - 0.85, t)));          // hand on the desk by the lunchbox
   } else {
     const u = smooth(inv(T.jump, T.jump + 0.3, t));
     K.playAnim(C.skye, [[A.idle, idle]]);
@@ -276,35 +289,33 @@ function classScene(t, set, idle) {
     if (rec > 0) {                                                                               // recoil: lean back from her own hand
       C.skye.root.rotation.order = 'YXZ'; C.skye.root.rotation.x = -0.15 * rec;
     }
-    if (t < at(8) - 0.15) K.gesture(C.skye, 'hold_out', 'R', 1);                               // the spider hand held out, away from her
-    if (t < at(8) - 0.15) C.skye.bones['Arm.R'].rotation.z += 0.12 * Math.sin(t * 38) * rec;   // shaking it
-    if (t > at(10) - 0.2 && t < at(11)) hipsHands(C.skye);
+    const out = 1 - smooth(inv(at(8) - 0.15, at(8) + 0.2, t));
+    if (out > 0) { K.gesture(C.skye, 'hold_out', 'R', out); C.skye.bones['Arm.R'].rotateZ(0.12 * Math.sin(t * 38) * rec * out); }   // the spider hand held out, away from her, shaking; lowered once he takes it
+    { const k = ramp(t, at(10) - 0.2, at(11) - 0.2, 0.25); if (k > 0) { K.gesture(C.skye, 'hand_on_hip', 'L', k); K.gesture(C.skye, 'hand_on_hip', 'R', k); } }
   }
   // Max: up the aisle from beside his desk during the VO, stands at her desk; a step in to drop the spider; leaves along the aisles
   const toSkye = K.faceTo(side, t < T.jump ? sk : stand) + 0.4;                                // cheated toward the camera side
   if (t < T.exit) {
-    if (t < T.spider - 1.0) { routeWalk(C.max, set, ROUTE.in, T.maxWalk, t, { speed: 6, idleAt: idle, endHeading: toSkye, startHeading: K.faceTo(ROUTE.in[0], side) }); if (t < T.maxWalk) { armSet(C.max, 'L', 0, 0, 0.06); armSet(C.max, 'R', 0, 0, -0.06); } }   // arms down at his desk
-    else if (t < T.spider + 0.7) { K.walk(C.max, A, side, sideIn, T.spider - 1.0, t, { speed: 3, idleAt: idle, endHeading: K.faceTo(sideIn, BOX()) + 0.2 }); }
-    else K.walk(C.max, A, sideIn, side, T.spider + 0.7, t, { speed: 3, idleAt: idle, endHeading: toSkye });
-    if (t > at(5) + 0.2 && t < at(5, 1.8)) K.gesture(C.max, 'point', 'R');                     // points at the crusts
-    if (t > T.spider - 0.6 && t < T.spider + 0.3) armSet(C.max, 'R', -1.45, 0, 0);             // hand out over her hand
-    if (t > at(8) - 0.15 && t < at(8, 2.4)) armSet(C.max, 'R', -2.0, 0, 0.15);                 // holds it up by his face: "It's rubber"
+    if (t < T.spider - 1.0) { routeWalk(C.max, set, ROUTE.in, T.maxWalk, t, { speed: 6, idleAt: idle, endHeading: toSkye, startHeading: K.faceTo(ROUTE.in[0], side) }); { const k = 1 - smooth(inv(T.maxWalk, T.maxWalk + 0.3, t)); armMix(C.max, 'L', 0, 0, 0.06, k); armMix(C.max, 'R', 0, 0, -0.06, k); } }   // arms down at his desk
+    else { const k = smooth(inv(T.spider - 1.0, T.spider - 0.6, t)) * (1 - smooth(inv(T.spider + 0.7, T.spider + 1.1, t)));   // a small step in to the lunchbox and back, eased
+      K.playAnim(C.max, [[A.idle, idle]]); K.putOn(C.max, { pos: side.pos.clone().lerp(sideIn.pos, k), heading: toSkye + (K.faceTo(sideIn, BOX()) + 0.2 - toSkye) * k }); }
+    { const k = ramp(t, at(5) + 0.05, at(5, 1.8), 0.22); if (k > 0) K.gesture(C.max, 'point', 'R', k); }   // points at the crusts
+    armMix(C.max, 'R', -1.45, 0, 0, ramp(t, T.spider - 0.8, T.spider + 0.3, 0.25));             // hand out over her hand
+    armMix(C.max, 'R', -1.45, 0, 0, ramp(t, at(8) - 0.5, at(8) - 0.15, 0.3) );                  // reaches for the spider on her hand
+    armMix(C.max, 'R', -2.0, 0, 0.15, ramp(t, at(8) - 0.15, at(8, 2.4), 0.3));                  // holds it up by his face: "It's rubber"
     if (t > at(11) && t < end(11)) { armSet(C.max, 'R', 0, 0, -0.06); K.gesture(C.max, 'hand_on_hip', 'L'); }   // relaxed: arm down, one hand on his hip
   } else {
-    const m = routeWalk(C.max, set, ROUTE.out, T.exit, t, { idleAt: idle });
+    const m = routeWalk(C.max, set, ROUTE.out, T.exit, t, { idleAt: idle, lead: 0 });
     if (m.moving && t < T.exit + 1.2) waveArm(C.max, t, 'R');                                    // one-arm wave as he goes
   }
   // the lunchbox on her desk; the spider: Max's palm -> onto her hand -> on her hand while she shrieks -> back in his hand
   K.place(P.lunchbox, BOX(), sk.heading + Math.PI);
   P.lunchbox.visible = true; P.lunchbox.userData.spider.visible = false;
-  const onSkye = t >= T.spider + 0.3 && t < at(8) - 0.15, falling = t >= T.spider && t < T.spider + 0.3;
-  if (falling) {
-    const a0 = new THREE.Vector3(), b0 = new THREE.Vector3();
-    K.hold(P.spider, C.max, 'R', 'out'); C.max.root.updateMatrixWorld(true); P.spider.getWorldPosition(a0);
-    C.skye.root.updateMatrixWorld(true); { const tmp = P.spider.clone(); K.hold(tmp, C.skye, 'R', 'out', { offset: [0, 0.55, -0.2] }); C.skye.root.updateMatrixWorld(true); tmp.getWorldPosition(b0); tmp.parent.remove(tmp); }   // land where it will sit on her hand
-    if (P.spider.parent !== STAGE.scene) STAGE.scene.add(P.spider);
-    P.spider.position.copy(a0.lerp(b0, easeIn(inv(T.spider, T.spider + 0.3, t)))); P.spider.rotation.set(0, 0, 0); P.spider.scale.setScalar(1);
-  } else if (onSkye) K.hold(P.spider, C.skye, 'R', 'out', { offset: [0, 0.55, -0.2] });   // sitting on top of her hand, not sunk into it
+  const ON = { offset: [0, 0.55, -0.2] };   // sitting on top of her hand, not sunk into it
+  const H = at(8) - 0.15, falling = t >= T.spider && t < T.spider + 0.3, taking = t >= H && t < H + 0.25, onSkye = t >= T.spider + 0.3 && t < H;
+  if (falling) flyProp(P.spider, heldWorld(P.spider, C.max, 'R', 'out'), heldWorld(P.spider, C.skye, 'R', 'out', ON), easeIn(inv(T.spider, T.spider + 0.3, t)));   // drops from his fingers onto her hand
+  else if (taking) flyProp(P.spider, heldWorld(P.spider, C.skye, 'R', 'out', ON), heldWorld(P.spider, C.max, 'R', 'out'), smooth(inv(H, H + 0.25, t)));     // he plucks it off her hand
+  else if (onSkye) K.hold(P.spider, C.skye, 'R', 'out', ON);
   else K.hold(P.spider, C.max, 'R', 'out');
   P.spider.visible = t > at(5) + 1.8 && t < T.exit;
   P.torch.visible = false;
@@ -334,13 +345,15 @@ function duskScene(t, set, idle) {
 function night2(t, set, idle) {
   K.only(C, ['skye', 'max']);
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
-  const lumped = t > T.lump + 0.2;
-  const rattle = KNOCKS.some((x) => t >= x && t < x + 0.12) ? 0.025 : 0;
+  const pull = smooth(inv(T.lump + 0.12, T.lump + 0.45, t)), lumped = t > T.lump + 0.4;   // he slides back down (below) while the duvet is pulled up over his head
+  const rattle = KNOCKS.reduce((r, x) => r + (t >= x && t < x + 0.16 ? 0.025 * Math.sin(Math.PI * (t - x) / 0.16) : 0), 0);   // each knock shakes the leaf in and out
   const crk = t < T.lump + 0.6 ? rattle : 0.27 * easeOut(inv(T.lump + 0.6, T.lump + 0.95, t));
   set.setClosetDoors(rattle, crk);
-  set.setBlanket(lumped ? 'over_head' : BLANKET(t));
+  set.setBlanket(pull >= 1 ? 'over_head' : BLANKET(t));
+  { const u = set.parts.blanketUp; u.visible = pull > 0; const k = 0.25 + 0.75 * pull;   // the over-head duvet grows from the foot of the bed up over him
+    u.scale.set(1, 0.6 + 0.4 * pull, k); u.position.z = -1.75 * (1 - k); }
  set.setLamp(false);
-  K.setPractical(set, 'closet_light', lumped ? 3.0 : 0);              // a little light in the closet so her grin reads at the crack
+  K.setPractical(set, 'closet_light', 3.0 * smooth(inv(T.lump + 0.3, T.lump + 0.8, t)));              // a little light in the closet so her grin reads at the crack
   // Skye in the closet: knocks three times on the door (right knuckles), "Maaax", then her face at the crack
   const c = M.closet(), toCrack = t > T.lump + 0.15 ? 1 : 0;
   const crackAt = { pos: V(-11.95, 0, 3.4), heading: Math.atan2(2.5 + 11.75, -7.8 - 3.4) + 0.35 };   // face at the gap the right leaf opens, toward the camera by the window   // leaning out of the gap   // face at the gap the left leaf opens, turned to the camera
@@ -354,14 +367,14 @@ function night2(t, set, idle) {
   // Max sitting up in bed (flashlight off on the bedside table), then under the blanket
   // Max in bed: lying on his back, head on the pillow, until "Maaax"; lifts his head, pushes up to sit back against the
   // headboard and pillow, legs forward under the duvet; then dives under it (the lump)
-  const up = smooth(inv(T.wake, T.wake + 0.9, t)), lift = smooth(inv(at(15) + 0.25, at(15) + 0.6, t));
+  const up = smooth(inv(T.wake, T.wake + 0.9, t)) * (1 - smooth(inv(T.lump, T.lump + 0.35, t))), lift = smooth(inv(at(15) + 0.25, at(15) + 0.6, t));
   const lieRoot = V(-4, 0, -2.85), sitRoot = V(-4, 0, -5.95);   // lying: the rig pivots at the feet, so its head lands on the pillow at z -7.6
   K.putOn(C.max, { pos: lieRoot.clone().lerp(sitRoot, up), heading: 0 }, { sit: true, visible: !lumped });
   const armsIn = { 'Arm.L': [-12, 0, -4], 'Arm.R': [-12, 0, 4] };                                  // arms close in all the way up
   const lieP = { ...K.POSES.lie_back, ...armsIn, Head: [(1 - up) * 30 * lift, 0, 0] };            // head lifts up off the pillow (never dips)
   const sitP = { ...K.POSES.sit_upright, Torso: [-20, 0, 0], ...armsIn };   // leaning back on the pillow, hands on the duvet
   const drop = K.posture(C.max, K.mixAngles(lieP, sitP, up));
-  C.max.root.position.y = (1 - up) * 1.9 + up * K.seatY(C.max, 2.0);
+  C.max.root.position.y = (1 - up) * 1.9 + up * K.seatY(C.max, 2.0) - 0.7 * pull;   // sinks under the duvet as it comes up
   if (up > 0) C.max.bones.Root.position.y += 0.5 * (1 - up) * C.max.scale;   // the kit lifts the lying root 0.5 only at exactly -90 deg: keep that lift while he rises (no dip)
   setLegs(C.max, false);   // his legs are under the duvet: its leg ridge is them (no separate roll beside plaid legs)   // lying: sunk a little into the mattress and pillow, under the duvet   // body and legs stay under the duvet's ridge (top y 3.07)   // lying: his back on the mattress, head on the pillow
   headTurn(C.max, t > at(17) - 0.1 && t < end(17) + 0.2 ? 0.4 * smooth(inv(at(17) - 0.1, at(17) + 0.25, t)) : t > at(16) - 0.3 && t < at(18) ? 0.35 : 0);   // turns to the wall Lily's voice comes through
