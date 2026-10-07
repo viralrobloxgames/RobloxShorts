@@ -59,3 +59,14 @@ Visual: every 6th frame over A-E, whole chapter every 24th (the kit change touch
 | E Lily's face away on "Sure." | fixed |
 
 No musts left.
+
+## Final pass
+Delivery: ch07_a.mp4 (f1-992) + ch07_b.mp4 (f993-2204), both from de6e40d9, 1920x1080 30 fps, 992 + 1212 frames.
+- Whole chapter at 2 fps in 2x2 sheets: matches the re-checked clip; captions present, readable, on the right lines.
+- Must ranges (vacuum down the hatch f1699-1747, Skye's arms dropping f1963-2204, Dad f781-829, Lily f241-289,
+  "Sure." f2161-2204): all as fixed at de6e40d9.
+- Gesture-snap scan (frame-difference across all 2204 frames, every non-cut spike inspected as a frame pair: f55, 135,
+  296, 317, 524, 540, 645, 1141, 1278, 1327, 1410, 1552, 1755, 1785, 1834, 1996): camera moves, blinks, mouth shapes
+  and a continuous reach (Max f1831-1836); no limb, head or prop jumps in one frame.
+- Seam f989-996: Dad's turn continues smoothly across the split, no pop.
+FINAL: PASS

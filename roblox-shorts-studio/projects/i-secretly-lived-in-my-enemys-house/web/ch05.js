@@ -222,7 +222,8 @@ function blockNest(t, idle) {
   floorSit(C.skye, { pos: nest.pos, heading: -1.0 + (faceLily + 1.0) * turn }, kneelUp ? 'kneel_up' : 'sit_cross');
   headYaw(C.skye, -0.55 * (1 - turn) + 0.05 * Math.sin(t * 1.7) * (t > 3.6 && t < at(2) ? 1 : 0));   // eyes on the hatch from frame 0
   if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L', 0.5);       // the cracker packet in her left hand
-  if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'L', 0.95 + 0.05 * Math.sin(t * 25));   // "Boo": one arm up on the far side, hand wiggling
+  const boo = smooth(inv(at(2, 0.45), at(2, 0.65), t)) * (1 - smooth(inv(end(2, 0.1), end(2, 0.3), t)));   // eased up and down (0.2 s)
+  if (boo > 0) K.gesture(C.skye, 'wave', 'L', boo * (0.95 + 0.05 * Math.sin(t * 25)));   // "Boo": one arm up on the far side, hand wiggling
   const reach = smooth(inv(T.horseGive - 0.5, T.horseGive, t)) * (1 - smooth(inv(T.horseGive + 0.2, T.horseGive + 0.7, t)));
   if (reach > 0) K.gesture(C.skye, 'hold_out', 'R', reach);
   if (t >= T.horseGive + 0.7) K.gesture(C.skye, 'hand_hold', 'R');
@@ -288,14 +289,17 @@ function blockTea(t, idle) {
   const pour = lilyPours(t);
   // pouring: arm out level so the pot clears the box; between pours the pot stands on the box (the set's teapot)
   // one teapot track: always in her left hand; level when pouring, low by her knee in between (never both arms up)
-  if (pour) K.gesture(C.lily, [-92, t >= MORE - 0.1 ? -45 : -30, 6], 'L'); else K.gesture(C.lily, [-38, 28, 0], 'L');   // teapot low by her knee, hand turned in (Arm.L y > 0 = inward)  // left hand (camera side), level so her face stays clear; at the end swung toward Skye's cup
-  K.hold(P.teapot, C.lily, 'L'); if (pour) P.teapot.rotateX(0.5 * smooth(inv(0, 0.4, t - pourStart(t)))); P.teapot.visible = true;
+  const pw = pourWeight(t);                                       // 0 = teapot by her knee, 1 = pouring; eased over 0.2 s each way
+  K.gesture(C.lily, [-38, 28, 0], 'L');
+  if (pw > 0) K.gesture(C.lily, [-92, t >= MORE - 0.1 ? -45 : -30, 6], 'L', pw);   // teapot low by her knee, hand turned in (Arm.L y > 0 = inward)  // left hand (camera side), level so her face stays clear; at the end swung toward Skye's cup
+  K.hold(P.teapot, C.lily, 'L'); if (pw > 0) P.teapot.rotateX(0.5 * pw); P.teapot.visible = true;
   P.cupLily.visible = false; P.cracker_packet.visible = false;
   const tm = K.mark('attic', 'tea_teddy_lily'); teddyDown(tm.pos, tm.heading);
 }
 
 const POURS = () => [[at(11, -0.2), end(11, 0.3)], [at(24), end(24)], [MORE - 0.1, 1e9]];
 const pourStart = (t) => (POURS().find(([a, b]) => t >= a && t < b) || [t])[0];
+const pourWeight = (t) => Math.max(0, ...POURS().map(([a, b]) => smooth(inv(a, a + 0.2, t)) * (1 - smooth(inv(b, b + 0.2, t)))));
 const lilyPours = (t) => (t >= at(11, -0.2) && t < end(11, 0.3)) || (t >= at(24) && t < end(24)) || t >= MORE - 0.1;
 
 // Lily's teddy put down: her held bear hides and the sitting one stands in for it (one teddy on screen)
