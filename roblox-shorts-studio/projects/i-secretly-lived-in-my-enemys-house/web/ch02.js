@@ -231,7 +231,7 @@ function hallway(t, idle) {
 // Layout (sets/kitchen.js): camera side +z; the stove at the back, the stools on the island's back side facing +z,
 // Skye hides on the front side; the stairs come down the right wall, the back door beside their foot.
 let KS = '';
-function stealCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(5.2, 7.8, -0.6)), target: o.clone().add(V(0.6, 3.8, 2.0)), fov: 44 }; }
+function stealCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(5.2, 6.2, -1.8)), target: o.clone().add(V(1.0, 4.5, 1.5)), fov: 40 }; }   // over the island's far-right corner: her face 3/4, her hand on the stack beside it
 const STEAL_AT = () => V(0.5, 0, 3.45).add(K.SET_ORIGIN.kitchen);   // kneeling side-on to the island under the stack, facing +x
 function crawlCam() { const o = K.SET_ORIGIN.kitchen, h = K.headPos(C.skye); return { pos: o.clone().add(V(12.8, 3.4, 13.0)), target: h.clone().add(V(0, -0.6, 0)), fov: 36 }; }   // in front of her path to the door: she crawls toward camera, face 3/4   // from beside the door, she crawls toward camera
 function entranceCam() { const o = K.SET_ORIGIN.kitchen; return { pos: o.clone().add(V(1.2, 5.8, -9.6)), target: o.clone().add(V(9.0, 4.2, 0.0)), fov: 44 }; }
@@ -341,19 +341,15 @@ function kitchen(t, idle) {
     if (t >= T.steal() && t < T.steal() + 1.3) {
       // turned to the island, crouched, one arm up over the counter to the stack
       const u = smooth(inv(T.steal(), T.steal() + 0.3, t)) - smooth(inv(T.slide() + 0.35, T.slide() + 0.65, t));
-      poseAt(C.skye, { ...K.POSES.kneel_up, Head: [-8, -55, 0] }, reach.pos, reach.heading);    // kneeling up against the island front (the family is looking at Dad), face turned to camera
-      K.gesture(C.skye, 'reach_up', 'L', u);                                                        // one arm straight up beside the edge, hand over the top
+      // kneeling up against the island front a step left of the stack, so her right hand lands on the top pancake
+      // beside it (camera side); she pulls it straight back off the stack toward her
+      const pull = smooth(inv(T.slide(), T.slide() + 0.45, t));
+      poseAt(C.skye, { 'Leg.L': [0, 0, -4], 'Leg.R': [0, 0, 4], 'Arm.R': [-10, 0, 4], Torso: [18 - 32 * pull, 0, 0], Head: [-14 + 20 * pull, -55, 0] }, reach.pos.clone().add(V(1.0, 0, 0)), reach.heading);   // half-crouched against the island (family turned away)
+      K.gesture(C.skye, [-172 + 25 * pull, 0, 4], 'L', u);   // hand on the top pancake, then she leans back and draws it off toward her                                                        // one arm straight up beside the edge, hand over the top
     } else (t < at(4, -0.1) ? hideCrouch : hideLow)(hide);
     if (t >= T.slide()) {
       // the top pancake slides off the stack toward her, then she has it in her left hand
-      const v = inv(T.slide(), T.slide() + 0.5, t), top = ks.anchors.pancakeStackTop().add(V(0, 0.11, 0));   // where the 12th sat
-      if (t < T.steal() + 1.3) K.hold(P.pancake, C.skye, 'L'); else { K.hold(P.pancake, C.skye, 'R', 'mouth'); P.pancake.visible = true; }   // then between her teeth
-      if (v < 1) {
-        // the top pancake slides off the stack to the island's front edge, then drops into her hand
-        const hand = V(); P.pancake.getWorldPosition(hand); stage0.scene.attach(P.pancake);
-        const edge = V(top.x, top.y, K.SET_ORIGIN.kitchen.z + 2.0);
-        P.pancake.position.copy(v < 0.6 ? top.clone().lerp(edge, smooth(v / 0.6)) : edge.clone().lerp(hand, smooth((v - 0.6) / 0.4))); P.pancake.rotation.set(0, 0, 0);
-      }
+      if (t < T.steal() + 1.3) K.hold(P.pancake, C.skye, 'L', 'out', { level: true }); else { K.hold(P.pancake, C.skye, 'R', 'mouth'); P.pancake.visible = true; }   // in her hand from its first moving frame, then between her teeth
     }
   } else {
     // crawl: from the hiding spot round to the back door and out
@@ -372,7 +368,7 @@ function outside(t, idle) {
   stand(C.skye, M.porch(), 0, idle);
   const bite = smooth(inv(wd(14, 2, -0.3), wd(14, 2, -0.05), t));
   const up = bite - smooth(inv(wd(14, 2, 0.25), wd(14, 2, 0.55), t));                           // to her mouth on "Ever", then back down
-  K.gesture(C.skye, 'chin_hand', 'L', 0.72);                                       // pancake in her palm beside her face (far hand), to her mouth on "Ever"
+  K.gesture(C.skye, 'chin_hand', 'L', 0.72 + 0.2 * up);   // up to her mouth on "Ever"                                       // pancake in her palm beside her face (far hand), to her mouth on "Ever"
   C.skye.bones.Head.rotateX(0.3 * up);                                                         // she dips her head to the pancake to bite
   K.hold(P.edgeCake, C.skye, 'L', 'palm', { level: true }); P.edgeCake.visible = true;
 }
