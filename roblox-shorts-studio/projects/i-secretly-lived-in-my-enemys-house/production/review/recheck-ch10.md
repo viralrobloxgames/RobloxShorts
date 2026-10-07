@@ -40,3 +40,17 @@ sight as before (expected); cam_check 0 glides, 0 inside scenery. Visual: every 
 Glow sticks now read as glowing bracelets wrapped round both forearms (f121-541), no floating sticks. Skye's lowered arm
 is in front of her body in the wides, no spread. Shoulds #29/#33 left as is (accepted).
 New: none.
+
+## Gesture-snap scan @ 1a5199f3 (segment B, delivery/chapters/ch10_b.mp4)
+
+Mean |f - f-1| at 480 px, cuts excluded, every spike looked at as a frame pair. Caption on/off and face-texture
+swaps (f977, f985, f1075, ...) are fine. Snaps (one-frame jumps inside a shot, all from step on/off code):
+
+| Frames | What | Code | Verdict |
+|---|---|---|---|
+| f1274->1275 | Max MCU: head snaps down/turns in one frame ("eyes down, blushing") | ch10.js:192 `headTurn(a,0,0.18)` on a hard window; its end at T.comesDown+0.2 snaps back too | **must**: ease in/out over ~6 frames |
+| f1460->1461 | Skye MCU: phone arm jumps from low to raised forward in one frame ("Because a fridge told you to") | ch10.js:140 `armFwd(a,'R',-1.45,0.05)` on a hard window | **must**: ease over ~6 frames |
+| f1512->1513 | same arm drops back down in one frame | ch10.js:140 window end | **must**: ease over ~6 frames |
+| (T.pink edges) | ch10.js:193 `headTurn(a,0,-0.1)` is the same hard step; ease it too | ch10.js:193 | **must** (same pattern) |
+
+Segment A (1-880) scan is running from a 0.25-scale render at 1a5199f3; result to follow.

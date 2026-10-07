@@ -17,3 +17,19 @@ New issues:
 The payoff two-shot no longer has the floating pancake flip, which closes that critic-6 should.
 
 **RECHECK: OK @ 50e434a3**
+
+## Gesture-snap scan @ 50e434a3 (added to the brief after my OK)
+
+Method: a frame-to-frame difference (`tblend` difference + YAVG) over every frame. Sources: f1-943 from my own 0.25-scale render, and f944-2095 from the 09:35 `ch11_b.mp4`. Every spike that was not a cut was re-rendered frame by frame with the fixed `render.mjs` on main, so these snaps are in the clip, not render pops. They overturn my OK.
+
+| frames | what | fix | |
+|---|---|---|---|
+| 560-562 | Lily's close-up opens on the cut for 2 frames in her previous pose (body turned, one arm up and out to the side), then snaps into `hug_teddy` at f562 | have the hug pose and facing in place by f559, before the cut | **must** |
+| 525-526 | Skye's head turns from profile to 3/4 front in one frame (two-shot by the stairs) | ease the head turn over about 6 frames | **must** |
+| 1276-1277 | Lily's head jumps about 15° from looking frame-right to the camera in one frame at the start of "The fridge says yes" (the arms are fine) | ease over about 6 frames | **must** |
+| 1664-1669 | Max's arm by the plate (his left, frame-right) flickers up, down, up: raised at 1664-65, down at 1666-67, raised again at 1668 | one eased raise (or none); no alternating keys | **must** |
+| 1723-1724 | Max's arm by the plate drops from the forearm on the table to hanging in one frame | ease over about 6 frames | **must** |
+
+Not snaps: f56-57 is the title fade; f1067, 1194 and 1500 are a caption change plus a mouth shape; f1152, 1561 and 1668 (the caption part) are caption changes.
+
+**RECHECK: MUSTS @ 50e434a3** (snaps only; R-a and R-b stay fixed)

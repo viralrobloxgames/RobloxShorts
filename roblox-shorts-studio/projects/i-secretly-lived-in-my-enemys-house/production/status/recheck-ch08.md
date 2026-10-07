@@ -1,3 +1,3 @@
-STATUS: WAITING
+STATUS: DONE
 RECHECK: OK @ bfdc9f04
-FINAL: PENDING (ch08_b re-render OK, seam fixed; waiting for the ch08_a re-render)
+FINAL: MUSTS (a: 545-546 arm snap on the back-away; 746-748 foreground flash after the cut; b final, seam OK)

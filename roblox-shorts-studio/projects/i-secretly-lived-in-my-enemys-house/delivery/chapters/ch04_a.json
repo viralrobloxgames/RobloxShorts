@@ -11,7 +11,7 @@
  "encode": "x264-medium-crf18-high42-yuv420p-g60cgop-bf2-bt709-tb15360-v1",
  "captions": 16,
  "file": "ch04_a.mp4",
- "sha256": "ee1f41959cad599be5a87b651b05354a8b89e3ba6f3a218eac59c5eae975ba30",
+ "sha256": "e299f86df5c341219c62fd4e7f471577ba90049dd2d270f1c976699dac276ff6",
  "probe": {
   "codec_name": "h264",
   "profile": "High",
