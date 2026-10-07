@@ -66,3 +66,4 @@ Verdict: **OK**.
 Diff from 5fc54214: only the spider's offset on Skye's hand (ch01.js, 2 lines). clip_check and cam_check are unchanged from 5fc54214 (same 2 explained highs, 0/0/0). I rendered frames 730-840: the spider goes from Max's hand onto her hand and sits on top of it, not sunk in. Every must is still fixed.
 
 Verdict: **OK** (supersedes OK @ 5fc54214).
+Also rendered f740-850 every 5th frame at 0.5 scale on the orchestrator's request: the spider drops from Max's hand, then sits on top of Skye's hand through the shriek and Max picks it back up. No clipping; still OK.
