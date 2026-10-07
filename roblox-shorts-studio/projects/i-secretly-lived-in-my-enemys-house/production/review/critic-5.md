@@ -194,3 +194,22 @@ cyan, Skye pink, Dad orange offscreen). "THE DANCE..." over Skye's reaction is a
 | 31 | ch10 0:00.0-0:01.5 | f1-45 | ghost through the desk chair, jumps 1 m mid-shot |
 
 Shoulds: ch09 #1, 6, 7, 11-14, 16-20; ch10 #25, 26, 29, 30, 32-35.
+
+## Recheck ch10 at 1a5199f3: OK
+
+Previews rendered myself (`web/render.mjs --scale 0.5 --samples 1`). I sampled every 15th frame across the whole chapter,
+every 6th frame (5 fps) on f1-90, 240-330, 520-560, 690-740, 800-910, 1200-1270, 1400-1580 and 1760-1956, and every
+2nd frame over the sheet pull (f712-732). 268 + 11 frames in total.
+
+- #21 OK: one Max (grey pyjama tee, swept brown hair) in every shot; no teleport.
+- #22 OK: he sits upright at the headboard, torso above the duvet, legs under it.
+- #23 OK: no bed-edge or nightstand contact anywhere.
+- #24 OK: the plate is in both hands from the lamp on to "the sandwiches", then rests on his lap. No blinking.
+- #27 / #28 OK: one-arm gesture on "fridge"; no two-arms-up or straight-arms poses.
+- #31 OK: the ghost creeps toward the lens clear of the chair; no jump.
+- #25, #26, #29, #30, #32-#35 OK: the dark open has Max out of frame; the sheet lifts above her head on camera before
+  the cut; Max's eyeline is screen right; the reverse CUs are clear of his arm; both turn to each other in the smile
+  shot; the end shot is lit.
+
+One new should (not blocking): the glow-stick bracelets are now oversized neon **squares** around the hands (the
+ghost shots f1-90 and f708-721; most visible f19-37). Round loops at wrist size would read as glow sticks. **should**

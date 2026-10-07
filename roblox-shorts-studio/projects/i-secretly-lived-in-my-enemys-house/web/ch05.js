@@ -126,22 +126,22 @@ const SHOTS = [
   { k: 10, off: 'tea', id: 'tea_wide', cam: (s) => teaSide(s, 44) },
   { k: 11, off: -0.1, id: 'pour_two', cam: (s) => teaSide(s, 34) },   // the pour reads side-on (in a single her near arm would cover her)
   { k: 12, off: -0.1, id: 'skye_ots', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
-  { k: 13, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.55 }) },
+  { k: 13, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.55 }) },
   { k: 14, off: -0.1, id: 'skye_ots', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
-  { k: 15, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'cu', { angle: 0.4 }) },
-  { k: 16, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.4 }) },
-  { k: 17, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.55 }) },
-  { k: 18, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.4 }) },
-  { k: 19, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'cu', { angle: 0.4 }) },
+  { k: 15, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.4 }) },
+  { k: 16, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.7 }) },
+  { k: 17, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.55 }) },
+  { k: 18, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.7 }) },
+  { k: 19, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.4 }) },
   { k: 20, off: -0.1, id: 'skye_ots', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
-  { k: 21, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.55 }) },
-  { k: 22, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.4 }) },
-  { k: 23, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'cu', { angle: 0.4 }) },
+  { k: 21, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.55 }) },
+  { k: 22, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.7 }) },
+  { k: 23, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.4 }) },
   { k: 24, off: -0.1, id: 'tea_two', cam: (s) => teaSide(s, 34) },
   { k: 25, off: -0.1, id: 'skye_ots', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.55 }) },
-  { k: 26, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.55 }) },
-  { k: 27, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.4 }) },
-  { k: 28, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'cu', { angle: 0.4 }) },
+  { k: 26, off: -0.1, id: 'lily_ots', cam: (s) => K.camOn(s, C.lily, 'ms', { angle: 0.55 }) },
+  { k: 27, off: -0.1, id: 'skye_cu', cam: (s) => K.camOn(s, C.skye, 'cu', { angle: 0.7 }) },
+  { k: 28, off: -0.1, id: 'lily_cu', cam: (s) => K.camOn(s, C.lily, 'mcu', { angle: 0.4 }) },
   { k: 28, off: 'blush', id: 'blush_push', cam: (s, t) => blushPush(s, t) },
   { k: 29, off: 'more', id: 'end_two', cam: (s) => teaSide(s, 34) },
 ].map((x) => ({ ...x, start: x.off === 'tea' ? T.tea : x.off === 'blush' ? T.blush : x.off === 'end+0.05' ? end(x.k, 0.05) : x.off === 'more' ? MORE - 0.1 : at(x.k, x.off) }))
@@ -222,7 +222,7 @@ function blockNest(t, idle) {
   floorSit(C.skye, { pos: nest.pos, heading: -1.0 + (faceLily + 1.0) * turn }, kneelUp ? 'kneel_up' : 'sit_cross');
   headYaw(C.skye, -0.55 * (1 - turn) + 0.05 * Math.sin(t * 1.7) * (t > 3.6 && t < at(2) ? 1 : 0));   // eyes on the hatch from frame 0
   if (t < at(2, 0.3)) K.gesture(C.skye, 'cup_hold', 'L', 0.5);       // the cracker packet in her left hand
-  if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'L', 0.75 + 0.08 * Math.sin(t * 25));   // "Boo": one arm up on the far side, hand wiggling
+  if (t >= at(2, 0.55) && t < end(2, 0.2)) K.gesture(C.skye, 'wave', 'L', 0.95 + 0.05 * Math.sin(t * 25));   // "Boo": one arm up on the far side, hand wiggling
   const reach = smooth(inv(T.horseGive - 0.5, T.horseGive, t)) * (1 - smooth(inv(T.horseGive + 0.2, T.horseGive + 0.7, t)));
   if (reach > 0) K.gesture(C.skye, 'hold_out', 'R', reach);
   if (t >= T.horseGive + 0.7) K.gesture(C.skye, 'hand_hold', 'R');
@@ -255,7 +255,7 @@ function blockNest(t, idle) {
       if (t >= L5.t2) K.gesture(C.lily, 'hold_out', 'R', Math.sin(Math.PI * inv(L5.t2, L5.t3, t)));   // reaches for the stick
     } else K.walk(C.lily, A, L5.horse, L5.front, L5.t3, t, { idleAt: idle, endHeading: L5.front.heading });
     const offerU = smooth(inv(at(9, 0.3), at(9, 0.8), t));
-    if (t >= at(9, 0.3) && t < T.horseGive + 0.3) K.gesture(C.lily, 'hold_out', 'R', 0.4 + 0.6 * offerU);     // holds the horse out to Skye
+    if (t >= L5.t2 + GRAB * 0.5 && t < T.horseGive + 0.3) K.gesture(C.lily, 'hold_out', 'R', 0.5 + 0.5 * offerU);   // carried in front of her (head clear of the arm), held out to Skye on line 9
   }
   const lilyHasHorse = t >= L5.t2 + GRAB * 0.5 && t < T.horseGive;
   K.hold(P.hobby_horse, lilyHasHorse ? C.lily : C.skye, 'R');
@@ -288,7 +288,7 @@ function blockTea(t, idle) {
   const pour = lilyPours(t);
   // pouring: arm out level so the pot clears the box; between pours the pot stands on the box (the set's teapot)
   // one teapot track: always in her left hand; level when pouring, low by her knee in between (never both arms up)
-  if (pour) K.gesture(C.lily, [-92, t >= MORE - 0.1 ? -45 : -30, 6], 'L'); else K.gesture(C.lily, 'hand_hold', 'L', 0.8);  // left hand (camera side), level so her face stays clear; at the end swung toward Skye's cup
+  if (pour) K.gesture(C.lily, [-92, t >= MORE - 0.1 ? -45 : -30, 6], 'L'); else K.gesture(C.lily, [-38, 28, 0], 'L');   // teapot low by her knee, hand turned in (Arm.L y > 0 = inward)  // left hand (camera side), level so her face stays clear; at the end swung toward Skye's cup
   K.hold(P.teapot, C.lily, 'L'); if (pour) P.teapot.rotateX(0.5 * smooth(inv(0, 0.4, t - pourStart(t)))); P.teapot.visible = true;
   P.cupLily.visible = false; P.cracker_packet.visible = false;
   const tm = K.mark('attic', 'tea_teddy_lily'); teddyDown(tm.pos, tm.heading);
