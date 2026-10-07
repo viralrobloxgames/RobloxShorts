@@ -82,3 +82,17 @@ Diff from 1a727048: ch01.js night2 / bed shots only. cam_check 0/0/0. The sight 
 - Sitting against the headboard (f1660-1800): reads as sitting up, with pillow and headboard in frame. Fine once B1 fixes the legs/duvet.
 
 Verdict: **MUSTS** (B1, B2).
+
+## Re-check @ 6b008a0d (bed)
+Diff from 8e1f87e8: ch01.js night/bed only (12 lines). cam_check 0/0/0; sight unchanged. clip_check bed highs are down to 54.2-54.6 s: Max's torso under the duvet top, his head on the pillow and an arm on the duvet edge while lying. In the renders this reads as lying in bed, nothing poking through. I rendered f1620-1680 every 3rd frame plus 1700-1911; viewer test applied.
+
+| must | status | note |
+|---|---|---|
+| B1 duvet beside his legs | fixed | legs hidden; the duvet's leg ridge reads as his legs under it, lying and sitting |
+| B2 head dips into the pillow | fixed | head lifts straight off the pillow |
+| B3 arms out on the sit-up | fixed | arms close in |
+| user 0:51-1:00 "standing inside the bed" | fixed | lying with his head on the pillow, then sitting up against the pillow/headboard with the duvet over his legs |
+| all earlier musts | still fixed | |
+- should: f1845, a white pillow block stands against the wall behind the bed foot in the closet shot, reading slightly as floating. Drop it to the bed or crop it.
+
+Verdict: **OK**.
