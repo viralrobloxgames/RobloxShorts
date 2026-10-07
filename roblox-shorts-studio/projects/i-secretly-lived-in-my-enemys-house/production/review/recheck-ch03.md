@@ -25,3 +25,17 @@ New / remaining:
 - **N1** frames 1341-1487 (2:55.2-2:59.8): the sandwich disappears from the plate between 1343 and 1345, and her hand never visibly touches it. It is then not seen in Skye's hand for the rest of the close-up, because the hand stays below the island's top edge. It reads as the sandwich vanishing. Fix: in this shot, the hand should visibly reach the plate on the grab frame and lift the sandwich into view at chest height (raise the hold or the camera). **must**
 - **N2** frames 1812-1838 (3:11.0-3:11.9), Skye close-up in front of the open fridge: a brown hair tuft (Dad's head, directly behind hers) sticks up over Skye's pink hair and reads as a brown bun on Skye. Fix: move the camera or Dad so his head is not behind hers. **must**
 - **N3** frames 1801-1896 (3:10.6-3:13.7), Dad at the open fridge: his R arm sticks straight forward at the lens with a closed fist for about 3 s, and the held item is cropped below frame. This is the "arm straight out" pose the user rejected. Fix: a relaxed bent-elbow hold with the ham visible at waist or chest height, or lower the arm. **must**
+
+## Re-check @ 726592de
+
+Automated: clip_check `--sight skye:max,dad,lily` finds 0 sightings. Its only high hit is the same one-frame foot on the bottom tread (1533), which is resting contact. cam_check finds 0 glides, 0 cameras inside scenery and 0 cameras at a head.
+Visual: the whole chapter at `--every 15`. Also 1335-1490 at every 5th frame, 1795-1900 at every 6th, and spot checks of 285-316, 1117-1153 and 1527-1545.
+
+| # | item | verdict |
+|---|---|---|
+| N1 (must 6) | sandwich vanishes from the plate | fixed: her R hand reaches the plate (1340-1345) and lifts the sandwich to chest height, where it stays in view through 1487 |
+| N2 | Dad's hair behind Skye's head | fixed: the close-up is re-angled, and Dad is well clear of her head, top right behind the island |
+| N3 | Dad's arm straight at the lens | fixed: a bent-elbow hold with the ham visible at chest height (1786-1897) |
+| 1-5, 7-10, I2, I8, I15 | as @ f33491e8 | still fixed; no regressions seen in the whole-chapter pass |
+
+New issues: none.
