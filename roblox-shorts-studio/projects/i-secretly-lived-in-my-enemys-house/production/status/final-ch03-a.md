@@ -1,3 +1,5 @@
-STATUS: RENDERING @ b6998591
+STATUS: DONE
+COMMIT: b6998591
 RANGE: 1-906
-NOTE: re-render of changed frames only (changed_frames --delete, then --resume); earlier DONE was @ 726592de
+FRAMES: 906 (1920x1080), 3 stills checked
+NOTE: changed frames only re-rendered at b6998591 (frames dir + frame_hashes.json kept in /tmp/frames)
