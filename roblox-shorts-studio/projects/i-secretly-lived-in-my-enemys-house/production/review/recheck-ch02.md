@@ -80,3 +80,7 @@ The only change since 72fff376 is ch02.js (the steal camera and pose, and the ex
 | exterior bite on "Ever" (round-2 should) | **regressed, must** | see below |
 
 - **frames 1400-1415, must (C1, user 1:47, regression).** The new `chin_hand` raise (0.72 + 0.2*up) lifts the big hand block over her nose and mouth again, with the pancake as a flat disc across the block's face (f1402, f1405, f1411). This is the exact image the user rejected. Fix: keep the hand at 0.72, beside her chin, and get the bite by dipping her head to the pancake (Head x rotation, as in 72fff376), or by moving the pancake (not the hand block) to her mouth. Nothing may pass in front of her face.
+
+## Re-check @ 521a2b9e
+
+This commit only changes the steal lean and hand. The steal is fixed: f874-898, the pancake rides on her palm and her torso is clear of the counter top. The exterior must from 05362a98 is **not fixed** (that code is unchanged): at f1405 the hand block still covers her nose and mouth, with the pancake as a disc on the block's face. That stays a must.
