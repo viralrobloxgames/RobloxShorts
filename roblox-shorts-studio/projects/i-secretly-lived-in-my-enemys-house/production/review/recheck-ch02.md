@@ -90,3 +90,22 @@ This commit only changes the steal lean and hand. The steal is fixed: f874-898, 
 The only change is the exterior chin_hand, back to 0.72. At f1340-1414 the hand stays beside her chin, her face is never covered, and the bite is a head dip. cam_check is clean. Every must from critic-7, the user's list (1:18, 1:19, 1:40, 1:45, 1:47, 1:53) and my rounds 1-3 is fixed. Shoulds left: no full bite on "Ever"; Max is barely on screen at f460-495.
 
 **RECHECK: OK @ 2d6fc591**
+
+## Re-check @ 07d9417c (pantry restage, with the viewer test)
+
+Automated checks: cam_check found 0 glides, 0 cameras inside scenery and 0 at a head. clip_check high hits are only Dad's spatula hand 2% into the stove top (accepted). The sight check shows only the meant classroom moment at 66.2 s.
+
+Method: the whole chapter from the shot cameras at every 3rd frame, plus eye-line renders from Max's, Lily's and Dad's heads toward Skye at every 6th frame over f190-1335. These are scratch wrapper clips that override the camera, not committed.
+
+| hiding beat | verdict | notes |
+|---|---|---|
+| run to the pantry, f196-260 | OK | Dad has his back to the room at the stove; Max and Lily are not down yet |
+| whisper inside the pantry, f346-422 | OK | |
+| kids come down and sit, f427-628 | OK | the pantry doors are shut; no one can see her |
+| pov_gap / peek / peek_cake, f629-717, f843-868, f1163-1191 | OK | the doors are shut down to a narrow gap |
+| steal at the side counter, f869-899 | should | she stands upright in the open beside the pantry for about 1 s with clear lines of sight from all three; it holds up only because the kids sit turned to Dad and Dad faces the pan. Lily is in profile about 10 studs away in the shot. Keep her low (crouched below the counter edge) or tighten the frame so the family is not in it |
+| **exit, f1201-1332** | **must (viewer test)** | see below |
+
+- **frames 1201-1332, must.** Skye walks upright out of the pantry, across the open kitchen floor, along the island front and past the stair foot to the back door: 4.4 s in the open. The eye-line renders show a clear line of sight from Max, Lily and Dad the whole way (f1204-1330). In `dad_syrup` (f1192-1266) the camera sits behind Dad's head looking at the kids, and Skye walks right behind them, exactly in Dad's eyeline while he talks to them. Viewers will think "Dad would see her". It is the same problem the user rejected (hiding in plain sight), now as a walk. Fix: no on-screen walk across the room while the family is there. For example, she stays in the pantry and slips out only after the family has left the kitchen (Dad: "…cupboard", the kids and Dad go out to the hall or school, then cut outside). Or she leaves by a route with a solid wall between her and every family member: a door from the pantry or beside it, never across the open floor in anyone's view.
+
+Everything else from the earlier rounds is unchanged and still fixed.
