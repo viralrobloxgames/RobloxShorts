@@ -54,3 +54,11 @@ swaps (f977, f985, f1075, ...) are fine. Snaps (one-frame jumps inside a shot, a
 | (T.pink edges) | ch10.js:193 `headTurn(a,0,-0.1)` is the same hard step; ease it too | ch10.js:193 | **must** (same pattern) |
 
 Segment A (1-880) scan is running from a 0.25-scale render at 1a5199f3; result to follow.
+
+## Re-check @ 1b11aa8b (snap fixes; kit filter K cancelled)
+
+snap_check: 0 high (4 low: f36 leg 29 deg / root 0.31 at the eased waypoint, glow band f36/f717, not visible as jumps).
+clip_check 0 high, 0 medium, 1 low (same headboard rest); sight as before; cam_check 0/0/0.
+Full-res looks at the former snap points (f2-45 walk, f722-724 sheet lift, f1272-1278 head dip, f1458-1464 fridge
+point up, f1510-1516 down): every move now eases over several frames; no one-frame jumps. All earlier musts still fixed.
+Verdict: OK.
