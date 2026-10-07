@@ -64,8 +64,7 @@ const DUSK_SPEED = 8, DUSK_LEGS = () => [K.mark('exterior', 'path_mid'), K.mark(
 T.door = 0;   // filled in setup() from the marks (needs the built sets)
 // Max in bed (3/4 from his left, a little above): headboard, pillow and the duvet over his legs all in frame
 const BEDCAM = { pos: V(2.2, 6.6, -1.0), target: V(-4.2, 3.2, -5.2), fov: 42 };
-// the duvet: draped over him lying / sitting (kit-sets-a modes when they land, else the current ones)
-const BLANKET = (t) => { const st = t < T.wake + 0.5 ? 'lying' : 'sitting'; return K.getSet('bedroom').blanketModes?.includes?.(st) ? st : (st === 'lying' ? 'flat' : 'legs'); };
+const BLANKET = (t) => (t < T.wake + 0.45 ? 'lying' : 'sitting');   // kit-sets-a's draped duvet over him lying / sitting
 let KNOCKS = [];
 
 // ---------- marks (all from the sets) ----------
@@ -190,8 +189,8 @@ const S = {
   knockDoors: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-6.0, 4.6, 3.4), target: V(-11.0, 4.2, 2.0), fov: 40 }) },   // the louvred doors rattle with each knock
   knock: { scene: 'night2', cam: (s) => K.applyShot(s, skyeCloset(0.1)) },
   maxWakes: { scene: 'night2', cam: (s) => K.applyShot(s, BEDCAM) },   // 3/4 from the side: pillow, headboard, the L of his body under the duvet
-  maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, BEDCAM) },
-  maxBedCU: { scene: 'night2', cam: (s, t, sh) => { const h = K.headPos(C.max); return push(s, { pos: h.clone().add(V(1.6, 0.3, 4.2)), target: h.clone().add(V(0, -0.4, 0)), fov: 32 }, { pos: h.clone().add(V(1.2, 0.25, 3.2)), target: h.clone().add(V(0, -0.35, 0)), fov: 32 }, inv(sh.start, sh.start + 4, t)); } },
+  maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, { ...BEDCAM, pos: V(0.6, 6.2, -2.4), target: V(-4.2, 3.6, -5.6), fov: 40 }) },   // a step closer for his line, the bed still in frame
+  maxBedCU: { scene: 'night2', cam: (s, t, sh) => { const h = K.headPos(C.max); return push(s, { pos: h.clone().add(V(3.6, 1.9, 3.4)), target: h.clone().add(V(0, -0.8, 0)), fov: 36 }, { pos: h.clone().add(V(3.1, 1.6, 2.9)), target: h.clone().add(V(0, -0.7, 0)), fov: 36 }, inv(sh.start, sh.start + 4, t)); } },   // 3/4 from his side: pillow and headboard behind him
   dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(2.5, 6.6, -7.8), target: V(-7.0, 3.9, -0.9), fov: 27 }) },
 };
 const SHOTS = [
@@ -354,13 +353,13 @@ function night2(t, set, idle) {
   // Max in bed: lying on his back, head on the pillow, until "Maaax"; lifts his head, pushes up to sit back against the
   // headboard and pillow, legs forward under the duvet; then dives under it (the lump)
   const up = smooth(inv(T.wake, T.wake + 0.9, t)), lift = smooth(inv(at(15) + 0.25, at(15) + 0.6, t));
-  const lieRoot = V(-4, 0, -2.85), sitRoot = V(-4, 0, -6.4);   // lying: the rig pivots at the feet, so its head lands on the pillow at z -7.6
+  const lieRoot = V(-4, 0, -2.85), sitRoot = V(-4, 0, -5.95);   // lying: the rig pivots at the feet, so its head lands on the pillow at z -7.6
   K.putOn(C.max, { pos: lieRoot.clone().lerp(sitRoot, up), heading: 0 }, { sit: true, visible: !lumped });
   const lieP = { ...K.POSES.lie_back, Head: [(1 - up) * -32 * lift, 0, 0] };                    // head lifted off the pillow
-  const sitP = { ...K.POSES.sit_upright, Torso: [-14, 0, 0], 'Arm.L': [-10, 0, -6], 'Arm.R': [-10, 0, 6] };   // leaning back on the pillow, hands on the duvet
+  const sitP = { ...K.POSES.sit_upright, Torso: [-20, 0, 0], 'Arm.L': [-10, 0, -6], 'Arm.R': [-10, 0, 6] };   // leaning back on the pillow, hands on the duvet
   const drop = K.posture(C.max, K.mixAngles(lieP, sitP, up));
-  C.max.root.position.y = (1 - up) * 2.65 + up * K.seatY(C.max, 2.15);   // lying: his back on the mattress, head on the pillow
-  headTurn(C.max, t > at(17) - 0.1 && t < end(17) + 0.2 ? -0.45 * smooth(inv(at(17) - 0.1, at(17) + 0.25, t)) : t > at(16) - 0.3 && t < at(18) ? 0.35 : 0);   // turns to the wall Lily's voice comes through
+  C.max.root.position.y = (1 - up) * 1.9 + up * K.seatY(C.max, 2.0);   // lying: sunk a little into the mattress and pillow, under the duvet   // body and legs stay under the duvet's ridge (top y 3.07)   // lying: his back on the mattress, head on the pillow
+  headTurn(C.max, t > at(17) - 0.1 && t < end(17) + 0.2 ? 0.4 * smooth(inv(at(17) - 0.1, at(17) + 0.25, t)) : t > at(16) - 0.3 && t < at(18) ? 0.35 : 0);   // turns to the wall Lily's voice comes through
   // the flashlight, off, standing on the bedside table
   if (P.torch.parent !== set.group) set.group.add(P.torch);
   P.torch.userData.setOn(false); K.place(P.torch, V(1.2, 3.05, -7.6), 0); P.torch.rotation.x = -Math.PI / 2; P.torch.visible = true;

@@ -58,6 +58,8 @@ export const SHOTS = [
   ['classroom', 'end_front', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['desk_max'], x2: ['desk_extra_2'] }],
   ['classroom', 'mcu_max_stand', { chapter: 4 }, 'day', { skye: ['desk_skye'], max: ['skye_desk_side'] }],
   ['exterior', 'back_step_mcu', { chapter: 2 }, 'dusk', { skye: ['back_step'] }],
+  ['kitchen', 'kitchen_wide', { chapter: 2, stackAt: 'side', pantryDoors: 0.3 }, 'dim', { skye: ['pantry_step_out'] }],
+  ['kitchen', 'pantry_peek', { chapter: 2, stackAt: 'side', pantryDoors: 0.3 }, 'dim', { skye: ['pantry_step_out'] }],
   ['exterior', 'dusk_wide', { chapter: 1 }, 'dusk', { skye: ['gate'] }],
   ['exterior', 'gate', { chapter: 1 }, 'dusk', { skye: ['gate'] }],
   ['exterior', 'garden_follow', { chapter: 1 }, 'dusk', { skye: ['path_mid'] }],
