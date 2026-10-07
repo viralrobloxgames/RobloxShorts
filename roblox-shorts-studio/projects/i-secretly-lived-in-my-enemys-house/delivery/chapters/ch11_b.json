@@ -1,7 +1,7 @@
 {
  "chapter": 11,
  "part": "b",
- "code": "05d6e485bfaa",
+ "code": "991304b368c6",
  "first_frame": 944,
  "last_frame": 2095,
  "frames": 1152,
@@ -11,7 +11,7 @@
  "encode": "x264-medium-crf18-high42-yuv420p-g60cgop-bf2-bt709-tb15360-v1",
  "captions": 17,
  "file": "ch11_b.mp4",
- "sha256": "fd2f96efe82082146431b4f39f424d07744026e6b16095914f92a581c54c8eb0",
+ "sha256": "3c6d162a4a921007bc960bca4cf4b97ad1094a3baa8dcc5d11488dac66fd7b40",
  "probe": {
   "codec_name": "h264",
   "profile": "High",
