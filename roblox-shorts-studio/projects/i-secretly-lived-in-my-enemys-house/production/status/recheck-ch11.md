@@ -1,2 +1,2 @@
 STATUS: WAITING
-RECHECK: MUSTS @ a9896716 (f437-438 walk-start snap)
+RECHECK: OK @ a248aa3d

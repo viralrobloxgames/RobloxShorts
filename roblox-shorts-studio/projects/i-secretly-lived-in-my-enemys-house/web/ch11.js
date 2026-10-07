@@ -193,8 +193,13 @@ export function update(t, stage) {
       const look = t < at(LN.thief) ? s2.pos : dadAt;
       K.putOn(C.skye, bottom, { heading: lerpH(K.faceTo(bottom, look), CHEAT, 0.55) });
     } else {
-      const route = SET.fromStairs(endM.pos), d = Math.max(0, t - tLeave) * 12, m = SET.alongRoute(route, d);
-      if (!m.done) { K.playAnim(C.skye, [[A.walk, d / STRIDE]]); K.putOn(C.skye, { pos: m.pos, heading: m.heading }); }
+      // recheck: turn toward the route over ~6 frames first, then a walk that fades in from a small first step
+      const tWalk = tLeave + 0.2, route = SET.fromStairs(endM.pos), d = Math.max(0, t - tWalk) * 12, m = SET.alongRoute(route, d);
+      // heading from the route ~1.5 studs behind to ~1.5 ahead, so corners turn over ~7 frames instead of one
+      const routeH = (dd) => { const a = SET.alongRoute(route, dd + 1.5).pos, b = SET.alongRoute(route, Math.max(0, dd - 1.5)).pos; return Math.atan2(a.x - b.x, a.z - b.z); };
+      const hStand = lerpH(K.faceTo(bottom, dadAt), CHEAT, 0.55), hRoute = routeH(0);
+      if (t < tWalk) { K.posture(C.skye, 'stand'); K.playAnim(C.skye, [[A.idle, idle]]); K.putOn(C.skye, bottom, { heading: lerpH(hStand, hRoute, sm(inv(tLeave, tWalk, t))) }); }
+      else if (!m.done) { K.playAnim(C.skye, [[A.idle, idle], [A.walk, d / STRIDE, sm(inv(tWalk, tWalk + 0.25, t))]]); K.putOn(C.skye, { pos: m.pos, heading: routeH(d) }); }
       else {
         K.posture(C.skye, 'stand'); K.playAnim(C.skye, [[A.idle, idle]]);
         const sh2 = sm(inv(at(LN.sleepover) + 0.2, at(LN.sleepover) + 0.45, t)) * (1 - sm(inv(end(LN.sleepover), end(LN.sleepover) + 0.3, t)));
