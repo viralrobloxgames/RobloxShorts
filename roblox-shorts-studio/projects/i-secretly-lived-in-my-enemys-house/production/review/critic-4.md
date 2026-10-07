@@ -254,3 +254,24 @@ lies on the floor instead of in her fist.
 ch07: 22 musts (biggest: the narrow decor gap + rigid T-pose make every character stand inside Skye; the hatch
 climbs are elevator rises with arms up; the bucket-straightening payoff is missing). ch08: 10 musts (faces contradict the
 emotional lines; the note prop is missing; arm in the door; Max's phone invisible).
+
+## ch08 re-check (commit 90468d1e, own previews)
+
+Rendered with `web/render.mjs --scale 0.5 --samples 1`: every 5th frame over f1-785 and f1000-1742, every 15th over
+the whole chapter, plus f733-744 (Lily's walk to the nest). 371 + 6 frames. Results per must:
+
+| must | result |
+|---|---|
+| C8-2 note | **OK.** Folded note with "MAX" in her right palm in the WS (f1-131) and MCU (f181-296), at the door gap (f301-306), crumpled in her fist on the back-away (f541-551), fist on the knee in the attic, and in the wipe. |
+| 2 "Dear Max" | **OK.** The note is in frame. Minor: her forearm is held stiff and horizontal, pointed at the lens like a block in the left foreground (f181-296); angle it more across her chest. should |
+| 3 door | **OK.** She kneels low; her hand reaches the gap without going into the door; the knob is clear of her head. |
+| 4 Max phone | **Partly.** A dark sliver of phone shows behind the fist at f376-401 and f496-516; at f331-371 it is still almost fully hidden by the block hand. Make it bigger or angle it out from the hand (bright screen edge) so it reads in every frame of the shot. should |
+| 7 back-away | **OK.** Real backstep away from the door, crumpled note in her fist, forearm clear of the door. |
+| 10 Lily continuity | **OK.** One wide angle: she rises (f631-656), her CU follows, then the same wide shows her climbing out and walking to the nest (f706-744). |
+| 12 glowing/see-through arm | **OK.** No transparency anywhere. Residual: Lily's near arm has a strong lavender rim bloom in the two-shot (f1025-1742), and Skye's wipe fist flares to white at f1705. should |
+| 13 two-shot overlaps | **OK.** Lily is clear of Skye, the skeleton and the box. New, should: on her walk in, Lily passes between the tea box and Skye's knees and overlaps Skye's body from camera (f742-744); route her round the far side of the box. |
+| 17 eye wipe / crying | **Partly.** Crying from the first word: OK. The "wipe" (f1675-1705) is the fist held up beside her head at shoulder height with the crumpled note stuck on the camera-facing flat of the fist; it never reaches the eye and reads as showing the note or a half-wave. Bring the fist to the eye/cheek (back of the wrist to the eye), note hidden in the palm. should |
+| C8-1 faces | **NOT FIXED: must.** The base faces are now right (sad brows, sad mouth between words), but the speak() viseme cycle still contains a **closed smile** mouth shape, so every sad line flickers to a smile on about every third sample: Skye on "The worst. Right. Got it." (f561, f576, f581), "Worse..." (f746), "Nothing. I left. I didn't need to hear the rest." (f1000, f1010), crying "It's dusty" (f1695-1700, a smile under tears), and Lily on "Then why are you crying?" (f1600), "What happened? Did he see you?" (f661-666, f696-701) and "He said that?" (f771, f781). Fix: when the base emotion is sad/scared/crying/annoyed, drop the smile viseme and use a flat or downturned closed mouth (and an open "o"/"ah" for the open shapes). |
+
+Verdict: **not yet OK**. 1 must left (C8-1, the smile viseme on sad lines). The rest pass; there are 5 shoulds (phone
+visibility, wipe pose, Lily's path past Skye's knees, rim bloom on Lily's arm, the MCU forearm).

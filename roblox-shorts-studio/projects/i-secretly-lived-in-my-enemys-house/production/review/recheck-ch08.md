@@ -28,3 +28,6 @@ New / remaining:
 - frames 301-329: Skye smiles and looks into the lens while sliding the note. Fix: sad/neutral, eyes on the gap. should
 - frames 521-533: shocked CU crops the top of her head. should
 - frames 781-916, 1501-1606: Lily MCU still has the purple forearm block bottom-left and a glowing white Skye arm at the right edge. should
+
+## Re-check @ 986b476f
+ch08.js and the kit's character/speak code are byte-identical to 90468d1e (only kit/sets/kitchen.js changed, not used by ch08), so the frames are the same: M1 (smile visemes on sad lines) and M2 (splayed arms in the attic WS/two-shot) remain **not fixed**; shoulds as above.
