@@ -37,3 +37,20 @@ New / remaining:
 - tea_skye_cu (f~880-910, 1240-1300, ...), the skeleton's skull sits right on top of Skye's head in the background, should:
   shift the camera a touch so the skull clears her head.
 - c3 #6 "hand on chest" still reads as a forearm across her chest at shoulder height (f~306-339), should.
+
+## Re-check @ 3830bc67
+
+Automated: clip_check 0 high (same 1 medium nest-blanket contact + 3 low 0.07 box contacts), sight as before (Skye is
+discovered, not hiding), cam_check 0/0/0. Seam 909/910 pixel-identical. Previews: whole chapter every 15th frame + N1/N2
+ranges and the earlier must frames.
+
+| Must | Verdict |
+|---|---|
+| N1 horse through Lily's arm (f498-690) | fixed (stick in her fist in front of her, head clear of the arm, through the hold-out and hand-off) |
+| N2 Lily's sideways tea arm (c6 R2) | fixed (teapot hangs by her knee in frame in tea_lily_ots; arms slope down in tea_lily_cu) |
+| all earlier musts | still fixed |
+
+Shoulds: "Boo" arm now up (fixed). Remaining, not blocking: in tea_skye_cu the skeleton's skull still sits just above
+Skye's head in the background; "hand on chest" forearm at chest height (f306-339).
+
+Verdict: OK at 3830bc67.

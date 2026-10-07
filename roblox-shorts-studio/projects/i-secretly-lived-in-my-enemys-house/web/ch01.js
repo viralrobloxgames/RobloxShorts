@@ -65,7 +65,7 @@ let KNOCKS = [];
 
 // ---------- marks (all from the sets) ----------
 const M = {
-  closet: () => ({ pos: V(-12.15, 0, 3.1), heading: -1.85 }),   // deep enough that her backpack stays behind the door plane   // behind the closed right leaf: out of Max's line of sight, 3/4 to the closet camera         // a little further toward the doors than closet_inside, so the gap camera has room
+  closet: () => K.mark('bedroom', 'closet_hide'),   // the walk-in corner behind the bedroom wall: solid wall between her and Max (SA2)   // behind the closed right leaf: out of Max's line of sight, 3/4 to the closet camera         // a little further toward the doors than closet_inside, so the gap camera has room
   closetHoodies: () => ({ pos: V(-13.15, 0, 4.0), heading: Math.PI / 2 + 0.6 }),   // pressed against the right-hand hoodies, only her pink hair past their edge // pressed in among the right-hand hoodies: only her pink hair pokes out
   closetDeep: () => K.mark('bedroom', 'closet_deep'),
   closetCrack: () => K.mark('bedroom', 'closet_crack'),
@@ -159,7 +159,7 @@ const dolly = (c, k) => { const s = shotOf(c); s.pos.lerp(s.target, k); return s
 // ---------- the shot table ----------
 // scene: night1 | class | dusk | night2. cam(stage, t, sh) frames whoever speaks.
 const S = {
-  hook: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).lerp(K.headPos(C.skye), 0.5).add(V(0, -0.4, 0)), fov: 50 }) },
+  hook: { scene: 'night1', cam: (s) => K.setCam(s, cam(bedroom(), 'closet_hide_pov'), { clear: false }) },   // Skye 3/4 in the corner, Max beyond the wall edge
   skyeCU: { scene: 'night1', cam: (s, t, sh) => push(s, skyeCloset(0), skyeCloset(0.25), inv(sh.start, sh.start + 3.8, t)) },
   maxDoor: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 32 }) },
   doorOpen: { scene: 'night1', cam: (s) => K.applyShot(s, { pos: GAP.clone(), target: K.headPos(C.max).add(V(0, -0.8, 0)), fov: 40 }) },
@@ -213,14 +213,16 @@ function night1(t, set, idle) {
   const c = M.closet(), hideU = smooth(inv(T.doorOpen - 0.3, T.doorOpen + 0.05, t)) * (1 - smooth(inv(T.doorShut, T.doorShut + 0.45, t)));
   K.playAnim(C.skye, [[A.idle, idle]]);
   if (t >= T.doorOpen + 0.35 && t < at(2) - 0.1) K.putOn(C.skye, { pos: V(-14.05, 0, 3.88), heading: -Math.PI / 2 });   // the insert: her back to the room, hair in the seam between the grey and red hoodies
-  else K.putOn(C.skye, { pos: c.pos.clone().lerp(M.closetHoodies().pos, hideU), heading: c.heading + hideU * (M.closetHoodies().heading - c.heading) });
-  if (t < end(3) - 0.2 && hideU < 0.5) { const k = 1 - smooth(inv(end(3) - 0.5, end(3) - 0.2, t)); handOverMouth(C.skye, k); headTurn(C.skye, 0.3 * k, 0.12 * k); }   // the hand comes down slowly after the whisper   // head turned into the hand
+  else K.putOn(C.skye, c);   // flat against the wall in the corner the whole time
+  if (t < end(3) - 0.2 && !(t >= T.doorOpen + 0.35 && t < at(2) - 0.1)) { const k = 1 - smooth(inv(end(3) - 0.5, end(3) - 0.2, t)); handOverMouth(C.skye, k); headTurn(C.skye, 0.3 * k, 0.12 * k); }   // the hand comes down slowly after the whisper   // head turned into the hand
   // Max: creeps from the bed to the closet (real walk), stops to listen, on to the doors; then pads back to bed
   const bs = M.bedSide(), cf = M.closetFront(), mid = { pos: bs.pos.clone().lerp(cf.pos, 0.55), heading: K.faceTo(bs, cf) };
-  const start = { pos: V(-1.5, 0, -0.6), heading: K.faceTo(V(-1.5, 0, -0.6), cf) };   // in front of the bed foot
-  mid.pos.copy(start.pos.clone().lerp(cf.pos, 0.5));
+  // he creeps in from the middle of the room (seen through the open left leaf from Skye's corner); the bedroom wall stays
+  // between his eyes and her the whole way (clip_check --sight)
+  const start = { pos: V(-4.6, 0, 8.2), heading: K.faceTo(V(-4.6, 0, 8.2), cf) };
+  mid.pos.copy(start.pos.clone().lerp(cf.pos, 0.45)); mid.heading = start.heading;
   if (t < T.doorShut) {
-    if (t < at(1) - 1.4) K.walk(C.max, A, start, mid, -0.35, t, { speed: 7, idleAt: idle, endHeading: K.faceTo(mid, cf) });
+    if (t < at(1) - 1.4) K.walk(C.max, A, start, mid, -0.35, t, { speed: 5, idleAt: idle, endHeading: K.faceTo(mid, cf) });
     else K.walk(C.max, A, mid, cf, at(1) - 1.4, t, { speed: 7, idleAt: idle, endHeading: cf.heading });
     headTurn(C.max, t > T.doorOpen + 0.35 && t < at(2) ? -0.25 : 0);   // he looks right at the pink lock
   } else walkPath(C.max, [cf, { pos: V(-1.0, 0, -0.9) }, bs], T.doorShut + 0.25, t, { speed: 10, idleAt: idle });
@@ -326,16 +328,18 @@ function night2(t, set, idle) {
   K.dress(C.skye, ['skye_hoodie', 'backpack']); K.dress(C.max, 'max_pjs');
   const lumped = t > T.lump + 0.2;
   const rattle = KNOCKS.some((x) => t >= x && t < x + 0.12) ? 0.025 : 0;
-  const crk = t < T.lump + 0.35 ? rattle : 0.27 * easeOut(inv(T.lump + 0.35, T.lump + 0.75, t));
+  const crk = t < T.lump + 0.6 ? rattle : 0.27 * easeOut(inv(T.lump + 0.6, T.lump + 0.95, t));
   set.setClosetDoors(rattle, crk);
   set.setBlanket(lumped ? 'over_head' : 'legs');
  set.setLamp(false);
   K.setPractical(set, 'closet_light', lumped ? 3.0 : 0);              // a little light in the closet so her grin reads at the crack
   // Skye in the closet: knocks three times on the door (right knuckles), "Maaax", then her face at the crack
-  const c = M.closet(), toCrack = smooth(inv(T.lump, T.lump + 0.35, t));
-  K.playAnim(C.skye, [[A.idle, idle]]);
+  const c = M.closet(), toCrack = t > T.lump + 0.15 ? 1 : 0;
   const crackAt = { pos: V(-11.95, 0, 3.4), heading: Math.atan2(2.5 + 11.75, -7.8 - 3.4) + 0.35 };   // face at the gap the right leaf opens, toward the camera by the window   // leaning out of the gap   // face at the gap the left leaf opens, turned to the camera
-  K.putOn(C.skye, { pos: c.pos.clone().lerp(crackAt.pos, toCrack), heading: c.heading + (crackAt.heading - c.heading) * toCrack });
+  K.playAnim(C.skye, [[A.idle, idle]]);
+  const knocking = t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4;
+  if (t < T.lump + 0.15) K.putOn(C.skye, { pos: knocking ? c.pos.clone().add(V(-0.9, 0, 0)) : c.pos, heading: knocking ? Math.PI / 2 : c.heading });   // turns to knock on the wall she hides behind
+  else { walkPath(C.skye, [c, { pos: V(-13.3, 0, -3.0) }, { pos: V(-13.5, 0, -1.6) }, { pos: V(-12.9, 0, 1.6) }, crackAt], T.lump + 0.15, t, { speed: 12, idleAt: idle, endHeading: crackAt.heading }); }   // out of the corner to the crack while he dives under the blanket
   if (toCrack > 0) { armSet(C.skye, 'L', 0, 0, 0.05); armSet(C.skye, 'R', 0, 0, 0.1); }   // arms down at her sides in the gap
   const k = KNOCKS.findIndex((x) => t >= x && t < x + 0.25);
   if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) K.gesture(C.skye, 'knock', 'R', k >= 0 ? 1 - 0.35 * Math.sin((t - KNOCKS[k]) / 0.25 * Math.PI) : 1);

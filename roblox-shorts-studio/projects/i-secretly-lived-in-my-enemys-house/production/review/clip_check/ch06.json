@@ -7,32 +7,8 @@
  "min_depth": 0.06,
  "onscreen_only": true,
  "film_start_s": 326.067,
- "seconds": 18,
+ "seconds": 19.1,
  "summary": [
-  {
-   "actor": "lily",
-   "object": "box 0.6x7.6x0.3 @set_hallway(-16.9,3.8,-0.3)",
-   "kind": "scenery",
-   "frames": "1601-1645",
-   "t": "53.3-54.8s",
-   "film": "6:19.4",
-   "parts": "Arm.R",
-   "max_depth": 0.2,
-   "max_cover_pct": 11,
-   "severity": "low"
-  },
-  {
-   "actor": "lily",
-   "object": "box 0.6x7.6x0.3 @set_hallway(-16.9,3.8,-0.3)",
-   "kind": "scenery",
-   "frames": "1711-1733",
-   "t": "57.0-57.7s",
-   "film": "6:23.1",
-   "parts": "Arm.R",
-   "max_depth": 0.19,
-   "max_cover_pct": 11,
-   "severity": "low"
-  },
   {
    "actor": "skye",
    "object": "sph 0.3x0.3x0.3 @set_hallway(-7.5,3.7,-4.7)",
@@ -65,8 +41,8 @@
    "t": "26.2-26.2s",
    "film": "5:52.3",
    "parts": "Arm.R",
-   "max_depth": 0.33,
-   "max_cover_pct": 27,
+   "max_depth": 0.36,
+   "max_cover_pct": 22,
    "severity": "medium"
   },
   {
@@ -77,7 +53,7 @@
    "t": "26.2-26.2s",
    "film": "5:52.3",
    "parts": "Arm.L",
-   "max_depth": 0.35,
+   "max_depth": 0.37,
    "max_cover_pct": 11,
    "severity": "medium"
   }
@@ -110,38 +86,12 @@
    "kind": "scenery"
   },
   {
-   "actor": "lily",
-   "part": "Arm.R",
-   "object": "box 0.6x7.6x0.3 @set_hallway(-16.9,3.8,-0.3)",
-   "from": 1601,
-   "to": 1645,
-   "depth": 0.2,
-   "cover": 11,
-   "samples": 23,
-   "t": "53.33-54.80s",
-   "film": "6:19.4",
-   "kind": "scenery"
-  },
-  {
-   "actor": "lily",
-   "part": "Arm.R",
-   "object": "box 0.6x7.6x0.3 @set_hallway(-16.9,3.8,-0.3)",
-   "from": 1711,
-   "to": 1733,
-   "depth": 0.19,
-   "cover": 11,
-   "samples": 12,
-   "t": "57.00-57.73s",
-   "film": "6:23.1",
-   "kind": "scenery"
-  },
-  {
    "actor": "skye",
    "part": "Arm.L",
    "object": "lily.Arm.R",
    "from": 787,
    "to": 787,
-   "depth": 0.35,
+   "depth": 0.37,
    "cover": 11,
    "samples": 1,
    "t": "26.20-26.20s",
@@ -154,8 +104,8 @@
    "object": "skye.Arm.L",
    "from": 787,
    "to": 787,
-   "depth": 0.33,
-   "cover": 27,
+   "depth": 0.36,
+   "cover": 22,
    "samples": 1,
    "t": "26.20-26.20s",
    "film": "5:52.3",
@@ -385,12 +335,12 @@
    {
     "seeker": "lily",
     "hider": "skye",
-    "from": 1367,
+    "from": 1369,
     "to": 1369,
     "sees": "Head",
     "min_dist": 1.4,
-    "t": "45.53-45.60s",
-    "film": "6:11.6"
+    "t": "45.60-45.60s",
+    "film": "6:11.7"
    }
   ]
  }
