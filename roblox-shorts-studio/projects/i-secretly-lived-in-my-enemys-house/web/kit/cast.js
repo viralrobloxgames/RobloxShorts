@@ -550,14 +550,14 @@ export function dress(actor, id, on = true) {
   const owner = BASE_OWNER[id];
   if (owner && owner !== actor.name) throw new Error(`Wardrobe "${id}" is for ${owner}, not ${actor.name}`);
   if (id === 'backpack') { overlay(actor, 'backpack', on, () => [makeBackpack(actor)]); return actor; }
-  if (id === 'glow_sticks') { overlay(actor, 'glow_sticks', on, () => glowBands(actor)); return actor; }
+  if (id === 'glow_sticks') { overlay(actor, 'glow_sticks', on, () => glowBands(actor)); fitBands(actor); return actor; }
   if (id === 'skye_sheet') {
     if (on && actor.outfit !== 'skye_hoodie') dress(actor, 'skye_hoodie');
     overlay(actor, 'skye_sheet', on, () => makeSheet(actor));
     if (actor.hairMesh) actor.hairMesh.visible = !on;
     if (actor.face) actor.face.visible = !on;
     if (on) overlay(actor, 'backpack', false);
-    actor.sheetOn = on; return actor;
+    actor.sheetOn = on; fitBands(actor); return actor;
   }
   if (!LOOKS[id] && id !== 'extras' && id !== 'max_school') throw new Error(`Unknown wardrobe id "${id}"`);
   if (actor.name === 'Skye') overlay(actor, 'backpack', false);      // a base look drops the backpack: dress(skye, ['skye_hoodie', 'backpack'])
@@ -565,6 +565,16 @@ export function dress(actor, id, on = true) {
   actor.outfit = id;
   if (actor.name === 'Skye' && actor.sheetOn) dress(actor, 'skye_sheet', false);
   return actor;
+}
+// Glow bands sit on the bare wrist; with the sheet on they move to the sleeve cuff and widen to its size (critic-5 ch10 #30).
+function fitBands(actor) {
+  const S = actor.scale;
+  for (const b of actor.overlays.glow_sticks || []) {
+    if (!b.userData.base) b.userData.base = { y: b.position.y, s: b.scale.x };
+    const k = actor.sheetOn ? 0.64 / 0.56 : 1;
+    b.position.y = actor.sheetOn ? -1.62 * S : b.userData.base.y;
+    b.scale.set(b.userData.base.s * k, b.userData.base.s, b.userData.base.s * k);
+  }
 }
 function overlay(actor, key, on, make) {
   if (on && !actor.overlays[key]) actor.overlays[key] = make();
