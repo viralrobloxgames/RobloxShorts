@@ -1,0 +1,7 @@
+{
+ "voice": "george_dad",
+ "text": "And who's been at my ham?",
+ "seed": 65135,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

@@ -152,24 +152,24 @@
   {
    "index": 14,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Midnight snack, midnight snack, who wants a midnight snack?",
    "start": 50.441,
    "end": 53.961,
-   "clip": "audio/qwen/take-01/clips/24c8900d60a2.wav",
-   "seed": 10717
+   "clip": "audio/qwen/take-01/clips/b99fa4ecda9d.wav",
+   "seed": 65105
   },
   {
    "index": 15,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Be nice to Skye? Who's Skye?",
    "start": 54.211,
    "end": 56.051,
-   "clip": "audio/qwen/take-01/clips/e2ab526d774d.wav",
-   "seed": 55071
+   "clip": "audio/qwen/take-01/clips/ed1de5fee4bb.wav",
+   "seed": 39762
   },
   {
    "index": 16,
@@ -185,24 +185,24 @@
   {
    "index": 17,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "And who's been at my ham?",
    "start": 58.797,
    "end": 60.157,
-   "clip": "audio/qwen/take-01/clips/c31e8372d59f.wav",
-   "seed": 87408
+   "clip": "audio/qwen/take-01/clips/3c80822e9ca0.wav",
+   "seed": 65135
   },
   {
    "index": 18,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Lily, if that's you, I'm not angry. I'm just hungry.",
    "start": 60.407,
    "end": 63.39,
-   "clip": "audio/qwen/take-01/clips/88fb91aa5059.wav",
-   "seed": 77374
+   "clip": "audio/qwen/take-01/clips/c19358cdac2e.wav",
+   "seed": 86245
   },
   {
    "index": 19,
