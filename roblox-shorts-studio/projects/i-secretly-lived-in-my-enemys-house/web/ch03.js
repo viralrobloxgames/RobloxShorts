@@ -118,7 +118,7 @@ function times() {
   T.shut3 = endOf(17, -0.75); T.dadOut = endOf(17, -0.2);
   T.exhale = at(18, -0.6);
   T.maxAt = arrive(DOWN(), T.maxIn, 12);
-  T.maxBottom = arrive([M.stairs_top, M.stairs_bottom], T.maxIn, 12); T.dadBottom = arrive([M.stairs_top, M.stairs_bottom], T.dadIn, DADV); T.dadBehind = arrive(DOWN().slice(0, 5), T.dadIn, DADV);
+  T.maxBottom = arrive([M.stairs_top, M.stairs_bottom], T.maxIn, 12); T.maxBehind = arrive(DOWN().slice(0, 5), T.maxIn, 12); T.dadBottom = arrive([M.stairs_top, M.stairs_bottom], T.dadIn, DADV); T.dadBehind = arrive(DOWN().slice(0, 5), T.dadIn, DADV);
   T.dadAt = arrive(DOWN(), T.dadIn, DADV);
   T.round = T.dadBehind + 0.55;                             // Dad at x ~4 on the back path: she slips round to the front
 }
@@ -170,8 +170,8 @@ const SHOTS = [
   { at: () => at(2), id: 'letters_insert', cam: (s) => lettersInsert(s, DOOR_SKYE) },
   { at: () => T.freeze, id: 'wide_dive', cam: cam('fridge_wide') },
   { at: () => Math.max(T.maxIn, T.dive + 0.55), id: 'max_stairs', cam: cam('stairs_bottom') },
-  { at: () => T.maxBottom + 0.5, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
-  { at: () => at(4), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
+  { at: () => T.maxBottom + 0.3, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
+  { at: () => Math.max(at(4), T.maxAt + 0.05), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
   { at: () => Math.min(T.maxAt + 0.1, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
   { at: () => at(5), id: 'letters_max', cam: fix(AT_FRIDGE, 'max', 'ms', { up: 0.1 }) },
   { at: () => at(6), id: 'max_mcu', cam: fix(AT_FRIDGE, 'max', 'mcu') },
@@ -315,7 +315,7 @@ export function update(t, stage) {
     }
   } else if (t < T.creep) {                                 // through the open pantry doors, deep inside; at the gap only for her peeks
     skFace = 'scared';
-    const r = route([M.skyeDoor, M.pantry_front, M.pantry_inside, M.pantryCorner], T.dive, t, 16);
+    const r = route([M.skyeDoor, { pos: W(-11.6, 0, -3.2) }, M.pantry_front, M.pantry_inside, M.pantryCorner], T.dive, t, 16);   // wide of the open left leaf
     if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 16), r.heading);
     else place(sk, PEEKS.includes(sh.id) && t > T.dive + 1.2 ? M.pantry_gap : M.pantryCorner, [[A.idle, idle]], PI / 2);
     if (t > at(4, 0.3)) skFace = t < at(5) ? 'smug' : t < at(9) ? 'scheming' : 'surprised';
