@@ -183,7 +183,7 @@ const SHOTS = [
   { at: () => word(9, 6).start, id: 'max_sandwich', cam: fix(AT_ISLAND, 'max', 'ms') },
   { at: () => endOf(9, 0.0), id: 'sandwich_insert', cam: (s) => K.applyShot(s, { pos: M.plate.clone().add(V(1.3, 2.4, 3.6)), target: M.plate.clone().add(V(-0.2, 0.3, -0.3)), fov: 34 }) },
   { at: () => at(10), id: 'max_plate', cam: fix(AT_ISLAND, 'max', 'mcu') },
-  { at: () => T.maxOut, id: 'wide_swap', cam: cam('fridge_wide') },
+  { at: () => T.maxOut, id: 'wide_swap', cam: cam('wide') },
   { at: () => Math.max(at(11, 0.15), T.grab - 0.5), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'mcu') },
   { at: () => at(12), id: 'skye_smug', cam: fix(AT_ISLAND, 'skye', 'ms') },
   { at: () => T.duck - 0.05, id: 'wide_dad', cam: cam('stairs_wide') },
