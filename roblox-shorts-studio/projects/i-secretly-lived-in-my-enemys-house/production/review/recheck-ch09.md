@@ -62,3 +62,14 @@ seated two-shot, glow sticks, last shot). No new musts. Remaining shoulds (not b
 CU; rim glow on Skye's raised arm f556-661.
 
 **RECHECK: OK @ 91b328d1**
+
+## Final pass (lean, per orchestrator 19:25Z)
+- Commit: final-ch09-a (1-806) and final-ch09-b (807-1792) status files both DONE @ 91b328d1 (the OK sha); both mp4 .json
+  carry code 1ffb255a8f6c, 806 + 986 = 1792 frames, 1920x1080 30 fps, 15 + 20 captions.
+- Seam (a last 6 frames -> b first 4): mean |f - f-1| at 270p 0.38-0.62 inside A, 0.69 across the split, 0.50-0.71 inside B:
+  no pop; same shot and pose continue.
+- 1 fps contact sheets of both mp4s: matches the passed 91b328d1 previews (drawing at chest in hands, teddy with Lily,
+  put-back, sheet bunched then opened on the cut, last shot); captions present and in speaker colours.
+- The anti-snap kit filter was cancelled (requests.md 15:50Z), so no separate snap check was run.
+
+**FINAL: PASS**
