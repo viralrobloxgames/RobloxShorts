@@ -1,7 +1,7 @@
 // Render a web clip to PNG frames with headless Chromium (software WebGL, no GPU needed).
 //
 //   node web/render.mjs --clip projects/<slug>/web/<clip>.js --out projects/<slug>/renders/web
-//        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2] [--resume] [--no-skip]
+//        [--frames 1-300 | --frames 1,45,90] [--every 10] [--scale 0.5] [--samples 8] [--workers 2] [--resume] [--no-skip] [--preroll all|N|0]
 //
 // A frame whose fingerprint equals the previous frame's is copied, not rendered (see "Frame skip" below).
 //
@@ -91,8 +91,18 @@ const fileOf = (f) => path.join(out, `web_${String(f).padStart(4, '0')}.png`);
 const prints = new Map(record ? Object.entries(hashes).map(([k, v]) => [Number(k), v]) : []);   // frame -> fingerprint (this run, or a resumed full render)
 const per = Math.ceil(frames.length / pages.length);
 const chunks = pages.map((_, i) => frames.slice(i * per, (i + 1) * per));
+// Pre-roll: some scene state depends on the frames posed before (e.g. a prop re-seated only when it is where the last
+// frame left it), so a page that starts cold in the middle of a shot can pose it differently from a page that got there
+// frame by frame. Before a worker's first frame f0 (and after any jump, e.g. --resume gaps), pose the up to N frames
+// before it without drawing: by default from frame 1 (--preroll all), so every page reaches each frame with the same
+// history as one sequential render (~15 ms a frame, well under a minute); --preroll N limits it to N frames, 0 turns it off. web/seam_check.mjs measures whether that is enough for a clip.
+const preroll = args.preroll === undefined || args.preroll === 'all' ? Infinity : Number(args.preroll);   // default: from frame 1
 await Promise.all(pages.map(async (page, w) => {
+  let last = 0;                                           // the last frame this page posed
   for (const f of chunks[w]) {
+    if (preroll > 0 && f > last + 1 && f > 1)               // a cold start or a jump (--resume gaps): pose the frames before it
+      await page.evaluate(([a, b]) => { for (let k = a; k <= b; k++) window.frameState(k); }, [Math.max(1, last + 1, f - preroll), f - 1]);
+    last = f;
     const fp = (skip || record) ? await page.evaluate((f) => window.frameState(f), f) : null;
     const file = fileOf(f);
     if (skip && fp && prints.get(f - 1) === fp && fs.existsSync(fileOf(f - 1))) {
