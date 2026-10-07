@@ -5,7 +5,7 @@
 // Everything is a pure function of t.
 import * as THREE from 'three';
 import * as K from './kit/index.js';
-import { travel } from '../../../web/lib/locomotion.js';
+import { travel, STRIDE } from '../../../web/lib/locomotion.js';
 
 // ---------- CHAPTER ----------
 const CH = 3;
@@ -98,7 +98,7 @@ function marks() {
 
 // ---------- key times ----------
 const T = {};
-const arrive = (pts, t0, v) => { let tt = t0; for (let i = 0; i < pts.length - 1; i++) tt += pts[i].pos.distanceTo(pts[i + 1].pos) / v; return tt; };
+const arrive = (pts, t0, v) => { let tt = t0 + 0.25; for (let i = 0; i < pts.length - 1; i++) tt += pts[i].pos.distanceTo(pts[i + 1].pos) / v; return tt; };   // + ACC (ease in/out)
 const DOWN = () => [M.stairs_top, M.stairs_bottom, M.footOut, M.stairTurn, M.behind, M.behindL, M.reader];
 function times() {
   T.reach1 = 0.9; T.reach2 = 2.7;                                          // C, then E go up during the VO
@@ -120,7 +120,7 @@ function times() {
   T.maxAt = arrive(DOWN(), T.maxIn, 12);
   T.maxBottom = arrive([M.stairs_top, M.stairs_bottom], T.maxIn, 12); T.maxBehind = arrive(DOWN().slice(0, 5), T.maxIn, 12); T.dadBottom = arrive([M.stairs_top, M.stairs_bottom], T.dadIn, DADV); T.dadBehind = arrive(DOWN().slice(0, 5), T.dadIn, DADV);
   T.dadAt = arrive(DOWN(), T.dadIn, DADV);
-  T.round = T.dadBehind + 0.55;                             // Dad at x ~4 on the back path: she slips round to the front
+  T.round = T.dadBehind - 0.1;                             // Dad at x ~4 on the back path: she slips round to the front
 }
 
 // ---------- setup ----------
@@ -170,8 +170,9 @@ const SHOTS = [
   { at: () => at(2), id: 'letters_insert', cam: (s) => lettersInsert(s, DOOR_SKYE) },
   { at: () => T.freeze, id: 'wide_dive', cam: cam('fridge_wide') },
   { at: () => Math.max(T.maxIn, T.dive + 0.55), id: 'max_stairs', cam: cam('stairs_bottom') },
-  { at: () => T.maxBottom + 0.3, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
-  { at: () => Math.max(at(4), T.maxAt + 0.05), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
+  { at: () => T.maxBottom + 0.3, id: 'max_turn_wide', cam: cam('wide') },
+  { at: () => T.maxBehind + 0.15, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
+  { at: () => Math.max(at(4), T.maxAt + 0.35), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
   { at: () => Math.max(T.maxAt + 0.5, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
   { at: () => at(5), id: 'letters_max', cam: fix(AT_FRIDGE, 'max', 'ms', { up: 0.1 }) },
   { at: () => at(6), id: 'max_mcu', cam: fix(AT_FRIDGE, 'max', 'mcu') },
@@ -200,32 +201,71 @@ let SH = null;
 const shotAt = (t) => { SH ||= SHOTS.map((x) => ({ ...x, start: x.at() })).sort((a, b) => a.start - b.start); let s = SH[0]; for (const x of SH) if (t >= x.start) s = x; return s; };
 
 // ---------- helpers ----------
-// A walk through marks/points from t0: { pos, heading, moving, anim, done, arrive }.
-function route(pts, t0, t, speed = 12) {
-  let tt = t0, r = null;
-  for (let i = 0; i < pts.length - 1; i++) {
-    const a = pts[i].pos || pts[i], b = pts[i + 1].pos || pts[i + 1];
-    r = travel(a, b, tt, t, speed);
-    if (Math.abs(a.x - b.x) < 0.01 && Math.abs(a.x - M.stairs_top.pos.x) < 0.01) r.pos.y = set.stairFootY(r.pos.z - 0.45);   // feet on the higher tread under the body (kit stairsPath rule)
-    if (!r.done) return r;
-    tt = r.arrive;
-  }
+// ---- motion: walks that ease in and out (no velocity snaps), one leg-cycle phase over the whole path, heading blended
+// round corners and into the final facing, and the walk pose cross-faded with the standing pose by speed ----
+const ACC = 0.25;                                          // seconds to reach / leave walking speed
+const angLerp = (a, b, u) => { let d = ((b - a + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI; return a + d * u; };
+const isStairSeg = (a, b) => Math.abs(a.x - b.x) < 0.01 && Math.abs(a.x - M.stairs_top.pos.x) < 0.01 && Math.abs(a.y - b.y) > 0.01;
+function motion(pts, t0, t, v) {
+  const P = pts.map((p) => p.pos || p), segs = []; let L = 0;
+  for (let i = 0; i < P.length - 1; i++) { const len = P[i].distanceTo(P[i + 1]); segs.push({ a: P[i], b: P[i + 1], d0: L, len, h: Math.atan2(P[i + 1].x - P[i].x, P[i + 1].z - P[i].z), stair: isStairSeg(P[i], P[i + 1]) }); L += len; }
+  const Tm = L / v + ACC, tau = t - t0;
+  let d, sp;
+  if (L < 1e-3 || tau <= 0) { d = 0; sp = 0; }
+  else if (tau >= Tm) { d = L; sp = 0; }
+  else if (tau < ACC) { d = v * tau * tau / (2 * ACC); sp = v * tau / ACC; }
+  else if (tau > Tm - ACC) { const q = Tm - tau; d = L - v * q * q / (2 * ACC); sp = v * q / ACC; }
+  else { d = v * (tau - ACC / 2); sp = v; }
+  let i = segs.findIndex((x) => d <= x.d0 + x.len); if (i < 0) i = segs.length - 1;
+  const sg = segs[i], u = sg.len ? Math.min(1, Math.max(0, (d - sg.d0) / sg.len)) : 1, pos = sg.a.clone().lerp(sg.b, u);
+  if (sg.stair) pos.y = set.stairFootY(pos.z - 0.45);
+  const R = 0.6; let h = sg.h;                              // corners: blend over 0.6 studs either side
+  if (i > 0 && d - sg.d0 < R) h = angLerp(segs[i - 1].h, sg.h, 0.5 + 0.5 * (d - sg.d0) / R);
+  else if (i < segs.length - 1 && sg.d0 + sg.len - d < R) h = angLerp(sg.h, segs[i + 1].h, 0.5 - 0.5 * (sg.d0 + sg.len - d) / R);
+  // distance to the nearest stair end along the path (to blend the stair gait into the floor walk)
+  let stairGap = Infinity, stairU = 0;
+  for (const x of segs) if (x.stair) for (const [dd, pz] of [[x.d0, x.a.z], [x.d0 + x.len, x.b.z]]) { const g = Math.abs(d - dd); if (g < stairGap) { stairGap = g; stairU = (pz + 9.6) / 13; } }
+  return { pos, d, L, w: Math.min(1, sp / v), started: tau > 0, done: tau >= Tm, moving: sp > 1e-3, arrive: t0 + Tm, heading: h, h0: segs[0].h, hEnd: segs[segs.length - 1].h,
+    anim: d / STRIDE, stair: sg.stair, stairU: sg.stair ? (pos.z + 9.6) / 13 : stairU, stairGap: sg.stair ? 0 : stairGap };
+}
+const BONE_KEYS = () => Object.keys(C.skye.bones);
+function snapPose(actor) { return BONE_KEYS().map((k) => [actor.bones[k].quaternion.clone(), actor.bones[k].position.clone()]); }
+function mixPoses(actor, A0, B0, w) { BONE_KEYS().forEach((k, j) => { actor.bones[k].quaternion.copy(A0[j][0]).slerp(B0[j][0], w); actor.bones[k].position.copy(A0[j][1]).lerp(B0[j][1], w); }); }
+// run a pose function and return how far the root must sit below the floor point (posture drop, or the sole offset of an anim pose)
+function poseK(actor, fn, floorY) { actor.root.position.y = floorY; actor.root.updateMatrixWorld(true); const dr = fn(); actor.root.updateMatrixWorld(true); return dr != null ? dr : actor.soleHeight() - floorY; }
+function blendFns(actor, fa, fb, w, floorY) {
+  if (w <= 0.001) return poseK(actor, fa, floorY);
+  if (w >= 0.999) return poseK(actor, fb, floorY);
+  const ka = poseK(actor, fa, floorY), pa = snapPose(actor), kb = poseK(actor, fb, floorY), pb = snapPose(actor);
+  mixPoses(actor, pa, pb, w); return ka + (kb - ka) * w;
+}
+// walkTo(actor, pts, t0, t, speed, still, heading, opts): still = layers or fn() -> drop|null (pose at the end; opts.from = before
+// the start); opts.gait = (r) => posture dict for a posture gait (creep, crawl), opts.extra = anim layers added to the walk.
+function walkTo(actor, pts, t0, t, v, still, heading, opts = {}) {
+  const tf = opts.turnFirst || 0;                          // turn on the spot first (s), then walk
+  const r = motion(pts, t0 + tf, t, v);
+  const endH = heading ?? pts[pts.length - 1].heading ?? r.hEnd, startH = opts.startHeading ?? pts[0].heading ?? r.h0;
+  let h = r.heading;
+  if (!r.started) h = tf ? angLerp(startH, r.h0, sm(inv(t0, t0 + tf, t))) : startH;
+  else if (r.d < 0.6 && !tf) h = angLerp(startH, r.heading, r.d / 0.6);
+  if (r.started && t > r.arrive - 0.15) h = angLerp(r.done ? r.hEnd : h, endH, sm(inv(r.arrive - 0.15, r.arrive + 0.3, t)));
+  if (opts.face !== undefined) h = opts.face;              // keeps facing one way (small steps back / sideways)
+  actor.root.position.copy(r.pos); actor.root.rotation.set(0, h, 0); actor.root.updateMatrixWorld(true);
+  const asFn = (st) => (typeof st === 'function' ? st : () => { K.playAnim(actor, st); return null; });
+  const stillFn = asFn(r.started && r.d > r.L / 2 ? still : (opts.from ?? still));
+  const walkAnimFn = () => { K.playAnim(actor, [[v >= 14 ? A.run : A.walk, r.anim], ...(opts.extra || [])]); return null; };
+  const stairFn = (uu) => () => K.posture(actor, set.stairsGait(Math.min(1, Math.max(0, uu)))) || 0;
+  let gaitFn = opts.gait ? () => K.posture(actor, opts.gait(r)) || 0 : walkAnimFn;
+  if (r.stair) gaitFn = stairFn(r.stairU);
+  else if (r.stairGap < 0.8) { const q = r.stairGap / 0.8, g0 = gaitFn; gaitFn = () => blendFns(actor, stairFn(r.stairU), g0, q, r.pos.y); }
+  const k = blendFns(actor, stillFn, gaitFn, r.w, r.pos.y);
+  actor.root.position.y = r.pos.y - k; actor.root.updateMatrixWorld(true);
   return r;
 }
-// put a prop on a surface (world pos), taking it out of any hand first
-function put(prop, pos, heading = 0) { if (prop.parent !== SCENE) SCENE.add(prop); K.place(prop, pos, heading); prop.visible = true; return prop; }
 const walkAnim = (r, speed = 12) => [[speed >= 14 ? A.run : A.walk, r.anim]];
 function place(actor, at, layers, heading) { K.playAnim(actor, layers); K.putOn(actor, at, heading === undefined ? {} : { heading }); }
-// a walk that ends on a mark; while still: the given layers and heading
-function walkTo(actor, pts, t0, t, speed, still, heading) {
-  const r = route(pts, t0, t, speed);
-  if (r.moving && r.pos.y > 0.05 && actor === C.dad) {     // Dad shuffles down the stairs (small steps, no leg through a tread)
-    K.putOn(actor, { pos: r.pos, heading: r.heading }); const d = K.posture(actor, K.gait('shuffle', r.anim)); actor.root.position.y -= d || 0;
-  } else if (r.moving) place(actor, { pos: r.pos }, walkAnim(r, speed), r.heading);
-  else if (r.done) place(actor, pts[pts.length - 1], still, heading ?? pts[pts.length - 1].heading);
-  else place(actor, pts[0], still, pts[0].heading);
-  return r;
-}
+// put a prop on a surface (world pos), taking it out of any hand first
+function put(prop, pos, heading = 0) { if (prop.parent !== SCENE) SCENE.add(prop); K.place(prop, pos, heading); prop.visible = true; return prop; }
 // the letters on the door: two padded lines so the layout never shifts as letters go up
 function lettersText(t) {
   const full = 'BE NICE\n2 SKYE';
@@ -239,10 +279,12 @@ function lettersText(t) {
 const ramp = (t, a, b, d = 0.35) => sm(inv(a, a + d, t)) * (1 - sm(inv(b, b + 0.3, t)));
 const fridgeAt = (t) => Math.max(DOOR_SKYE * (1 - sm(inv(T.shut1, T.shut1 + 0.3, t))), ramp(t, T.open2, T.shut2), ramp(t, T.open3, T.shut3));
 const PEEKS = ['skye_peek', 'skye_peek2', 'skye_react'];
+// the peek shot around t (with 0.7 s either side for her walk to and from the gap): { pk, pe } or null
+function peekWin(t) { if (!SH) return null; const j = SH.findIndex((x, k) => PEEKS.includes(x.id) && t >= x.start - 0.7 && t < (SH[k + 1]?.start ?? 1e9) + 0.7); return j < 0 ? null : { pk: SH[j], pe: SH[j + 1]?.start ?? 1e9 }; }
 function pantryAt(t, shot) {                               // the slatted doors: open for her, shut behind her, a crack for her peeks
   if (t < T.dive) return 0;
   if (t < T.dive + 1.2) return sm(inv(T.dive, T.dive + 0.3, t)) * (1 - sm(inv(T.dive + 0.85, T.dive + 1.2, t)));
-  if (t < T.creep) return PEEKS.includes(shot) ? 0.3 : 0;
+  if (t < T.creep) { const w = peekWin(t); return w ? 0.3 * sm(inv(w.pk.start - 0.7, w.pk.start - 0.45, t)) * (1 - sm(inv(w.pe + 0.45, w.pe + 0.7, t))) : 0; }
   return sm(inv(T.creep, T.creep + 0.25, t)) * (1 - sm(inv(T.creep + 1.1, T.creep + 1.45, t)));
 }
 
@@ -277,6 +319,10 @@ function aimArm(actor, side, target, blend) {
   bone.quaternion.slerp(new THREE.Quaternion().setFromUnitVectors(g, dirW.applyQuaternion(pq)), Math.min(1, blend));
   actor.root.updateMatrixWorld(true);
 }
+// a point low in front of the hip (carrying a torch)
+const carryOf = (a) => a.root.position.clone().add(V(Math.sin(a.root.rotation.y), 0, Math.cos(a.root.rotation.y)).multiplyScalar(1.0)).add(V(-0.9 * Math.cos(a.root.rotation.y), 2.6, 0.9 * Math.sin(a.root.rotation.y)));
+// a point in front of an actor's chest (where a held thing is shown)
+const chestOf = (a) => a.root.position.clone().add(V(Math.sin(a.root.rotation.y), 0, Math.cos(a.root.rotation.y)).multiplyScalar(1.6)).add(V(-0.3 * Math.cos(a.root.rotation.y), 4.15, 0.3 * Math.sin(a.root.rotation.y)));
 function cutArm(t) {
   const mx = C.max, bone = mx.bones['Arm.R'];
   const u = sm(inv(T.cut0, T.cut1, t)), blend = sm(inv(T.cut0 - 0.15, T.cut0, t)) * (1 - sm(inv(T.cut1, T.cut1 + 0.2, t)));
@@ -325,36 +371,37 @@ export function update(t, stage) {
     }
   } else if (t < T.creep) {                                 // through the open pantry doors, deep inside; at the gap only for her peeks
     skFace = 'scared';
-    const r = route([M.skyeDoor, { pos: W(-11.6, 0, -3.2) }, M.pantry_front, M.pantry_inside, M.pantryCorner], T.dive, t, 16);   // wide of the open left leaf
-    if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 16), r.heading);
-    else place(sk, PEEKS.includes(sh.id) && t > T.dive + 1.2 ? M.pantry_gap : M.pantryCorner, [[A.idle, idle]], PI / 2);
+    const w = peekWin(t);
+    if (w && t > T.dive + 1.2) {
+      const pk = w.pk, pe = w.pe;
+      const step = { face: PI / 2, gait: (r) => K.gait('creep', r.anim) };   // small steps, still facing out, arms in
+      if (t < pe) walkTo(sk, [M.pantryCorner, M.pantry_gap], pk.start - 0.5, t, 6, [[A.idle, idle]], PI / 2, step);
+      else walkTo(sk, [M.pantry_gap, M.pantryCorner], pe, t, 6, [[A.idle, idle]], PI / 2, step);
+    } else walkTo(sk, [M.skyeDoor, { pos: W(-11.6, 0, -3.2) }, M.pantry_front, M.pantry_inside, M.pantryCorner], T.dive, t, 16, [[A.idle, idle]], PI / 2,
+      { from: [[A.horror_listen, 0.9 + (T.dive - T.freeze)]], startHeading: M.skyeDoor.heading - 0.6 });   // wide of the open left leaf
     if (t > at(4, 0.3)) skFace = t < at(5) ? 'smug' : t < at(9) ? 'scheming' : 'surprised';
   } else if (t < T.duck) {                                  // tiptoes out round the back of the island, takes the sandwich
     skFace = t < at(12) ? 'surprised' : 'smug';
-    const r = route([M.pantryCorner, M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, t, CREEP);
-    if (r.moving) { K.putOn(sk, { pos: r.pos, heading: r.heading }); const d = K.posture(sk, K.gait('creep', r.anim)); sk.root.position.y = r.pos.y - d; }
-    else {
-      place(sk, M.skyeCounter, [[A.idle, idle]]);
+    walkTo(sk, [M.pantryCorner, M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, t, CREEP, [[A.idle, idle]], M.skyeCounter.heading,
+      { gait: (r) => K.gait('creep', r.anim) });
+    if (t > T.grab - 0.55) {
       const onPlate = M.sandwichAt.clone().add(V(Math.sin(M.sandwichH), 0, Math.cos(M.sandwichH)).multiplyScalar(0.42)).add(V(0, 0.15, 0));
-      const chest = sk.root.position.clone().add(V(Math.sin(sk.root.rotation.y), 0, Math.cos(sk.root.rotation.y)).multiplyScalar(1.6)).add(V(-0.3, 4.15, 0));
       const lift = sm(inv(T.grab + 0.05, T.grab + 0.5, t));
-      aimArm(sk, 'R', onPlate.clone().lerp(chest, lift), sm(inv(T.grab - 0.5, T.grab - 0.1, t)));   // reaches to the plate, lifts it up
+      aimArm(sk, 'R', onPlate.clone().lerp(chestOf(sk), lift), sm(inv(T.grab - 0.5, T.grab - 0.1, t)));   // reaches to the plate, lifts it up
     }
     if (t >= T.grab) { P.sandwich.visible = true; K.hold(P.sandwich, sk, 'R', 'palm', { level: true }); }
   } else if (t < T.round) {                                 // runs round to the island's left end and sits tight against it
-    const r = route([M.skyeCounter, M.counterBack, M.endRun, M.hideEnd], T.duck, t, 14);
-    if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 14), r.heading);
-    else { K.putOn(sk, M.hideEnd); const d = K.posture(sk, 'sit_cross'); sk.root.position.y = M.hideEnd.pos.y - d; K.gesture(sk, 'chin_hand', 'R', 0.6); }
+    const sit = () => { const d = K.posture(sk, 'sit_cross'); K.gesture(sk, 'chin_hand', 'R', 0.6); return d; };
+    const holding = () => { K.playAnim(sk, [[A.idle, idle]]); aimArm(sk, 'R', chestOf(sk), 1); return null; };
+    const rr = walkTo(sk, [M.skyeCounter, M.counterBack, M.endRun, M.hideEnd], T.duck, t, 11, sit, M.hideEnd.heading, { from: holding, turnFirst: 0.35 });
+    aimArm(sk, 'R', chestOf(sk), 1 - sm(inv(rr.arrive - 0.1, rr.arrive + 0.35, t)));
     skFace = 'scared';
-    const s = t >= T.bite ? P.bitten : P.sandwich; s.visible = true; K.hold(s, sk, 'R');
+    const s = t >= T.bite ? P.bitten : P.sandwich; s.visible = true; K.hold(s, sk, 'R', 'palm', { level: true });
   } else {                                                  // as Dad leaves along the back, she crawls round to the front
-    const r = route([M.hideEnd, { pos: W(-7.3, 0, 2.75) }, M.hideFront], T.round, t, 7);
-    K.putOn(sk, { pos: r.moving ? r.pos : M.hideFront.pos, heading: r.moving ? r.heading : M.hideFront.heading });
-    const d = r.moving ? K.posture(sk, K.gait('crawl', r.anim)) : K.posture(sk, 'sit_cross');
-    sk.root.position.y = M.hideFront.pos.y - d;
-    if (!r.moving) K.gesture(sk, 'chin_hand', 'R', 0.6);
+    const sit = () => { const d = K.posture(sk, 'sit_cross'); K.gesture(sk, 'chin_hand', 'R', 0.6); return d; };
+    walkTo(sk, [M.hideEnd, { pos: W(-7.3, 0, 2.75) }, M.hideFront], T.round, t, 7, sit, M.hideFront.heading, { gait: (r) => K.gait('crawl', r.anim) });
     skFace = t < T.exhale ? 'scared' : 'happy';
-    P.bitten.visible = true; K.hold(P.bitten, sk, 'R');
+    P.bitten.visible = true; K.hold(P.bitten, sk, 'R', 'palm', { level: true });
   }
   const skLine = L.lines.find((l) => l.speaker === 'SKYE' && t >= l.start - 0.1 && t < l.end + 0.1);
   K.speak(sk, skFace, t, L.said('SKYE'), { whisper: skLine?.note === 'whisper' });
@@ -369,7 +416,7 @@ export function update(t, stage) {
       const shr = sm(inv(at(8), at(8, 0.2), t)) * (1 - sm(inv(at(8, 0.6), at(8, 0.85), t)));
       if (shr > 0) still.push([A.shrug, Math.min(t - at(8), 0.6), 1.2 * shr]);
       const turn = sm(inv(at(6, 0.0), at(6, 0.7), t)) * (1 - sm(inv(T.open2 - 0.5, T.open2, t)));   // eases round to talk to the room
-      const r = walkTo(mx, DOWN(), T.maxIn, t, 12, still, M.reader.heading - 0.65 * turn);
+      const r = walkTo(mx, DOWN(), T.maxIn, t, 12, still, M.reader.heading - 0.65 * turn, { extra: [[A.horror_torch_hold, 0.5, 0.7]] });
       face = t < at(4) ? 'scared' : t < T.reachMax ? 'nervous' : t < at(8) ? 'suspicious' : 'nervous';
       if (t < T.open2) { P.torch.visible = true; K.hold(P.torch, mx, 'R'); }
       else {                                                // opens the fridge, takes the ham, pushes it shut
@@ -390,11 +437,14 @@ export function update(t, stage) {
       if (t < T.make0 - 0.4) { P.ham.visible = true; K.hold(P.ham, mx, 'R', 'side'); }
       else { put(P.ham, M.hamRest, 1.2); }
       if (t >= at(10, 0.4)) reachG(mx, 'R', at(10, 0.4), at(10, 1.4));   // "There." slides the plate an inch toward the room
-      put(P.torchDown, M.torchRest.clone().add(V(0, 0.27, 0)), -2.2); P.torchDown.userData.setOn?.(false);
+      if (t < T.maxOut - 0.2) { put(P.torchDown, M.torchRest.clone().add(V(0, 0.27, 0)), -2.2); P.torchDown.userData.setOn?.(false); }
+      aimArm(mx, 'R', M.torchRest.clone().add(V(0, 0.3, 0)).lerp(carryOf(mx), sm(inv(T.maxOut - 0.25, T.maxOut, t))), sm(inv(T.maxOut - 0.75, T.maxOut - 0.35, t)));   // picks up his torch
+      if (t >= T.maxOut - 0.2) { P.torch.visible = true; K.hold(P.torch, mx, 'R'); }
       face = t < word(9, 4).start ? 'nervous' : t < at(10) ? 'annoyed' : 'nervous';
     } else {                                                // back round the island and up the stairs
-      const r = walkTo(mx, [M.counter, M.counterBack, M.behind, M.stairTurn, M.footOut, M.stairs_bottom, M.stairs_top], T.maxOut, t, 12, [[A.idle, idle]]);
+      const r = walkTo(mx, [M.counter, M.counterBack, M.behind, M.stairTurn, M.footOut, M.stairs_bottom, M.stairs_top], T.maxOut, t, 12, [[A.idle, idle], [A.horror_torch_hold, 0.5, 0.5]], undefined, { extra: [[A.horror_torch_hold, 0.5, 0.5]], turnFirst: 0.35 });
       if (r.done) mx.root.visible = false;
+      aimArm(mx, 'R', carryOf(mx), 1);                       // carries it low in front, the same through walk and stairs
       P.torch.visible = true; K.hold(P.torch, mx, 'R');
       put(P.ham, M.hamRest, 1.2); face = 'nervous';
     }
@@ -416,7 +466,7 @@ export function update(t, stage) {
       const lu = sm(inv(T.lookUp, T.lookUp + 0.25, t)) * (1 - sm(inv(at(16, -0.25), at(16), t)));
       if (lu > 0) still.push([A.look_up, 0.4, 1.5 * lu]);
       walkTo(dd, DOWN(), T.dadIn, t, DADV, still, M.reader.heading);
-      face = t < at(14) ? 'happy' : t < T.lookUp ? 'suspicious' : t < at(16) ? 'surprised' : t < at(17) ? 'annoyed' : 'sad';
+      face = t < at(14) ? 'happy' : t < at(16) ? 'suspicious' : t < at(17) ? 'annoyed' : 'sad';
       reachG(dd, 'L', T.open3 - 0.35, T.open3 + 0.02);     // pulls the fridge open ...
       reachG(dd, 'L', T.shut3 - 0.3, T.shut3 + 0.02);      // ... and pushes it shut
       if (t >= T.ham) {                                     // lifts his ham to look at it
@@ -426,6 +476,7 @@ export function update(t, stage) {
     } else {
       const r = walkTo(dd, [M.reader, M.behindL, M.behind, M.stairTurn, M.footOut, M.stairs_bottom, M.stairs_top], T.dadOut, t, DADV, [[A.idle, idle]]);
       if (r.done) dd.root.visible = false;
+      K.gesture(dd, 'cup_hold', 'R', 1);
       P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R', 'side');
     }
     K.speak(dd, face, t, L.said('DAD'));
