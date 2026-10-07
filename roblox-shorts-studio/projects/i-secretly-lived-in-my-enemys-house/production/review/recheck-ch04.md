@@ -24,3 +24,9 @@ New / remaining:
 - **frames 1660-1833, must (#18 not fixed).** Skye holds the half at the end of an arm held straight out at shoulder height, pointed at the aisle and lens-left, for 6 s with no movement. Her other arm is a large tan and white block filling the bottom-right corner (f1708-1833, full-res f1800). Fix: angle the R arm down so the half sits in front of her chest, about 30-40° forward of hanging (or bring it to her mouth for a bite). Lay the L forearm flat on the desk out of the corner, or reframe so it leaves the frame.
 - frames 1381-1501, should. Max's R arm holds the whole sandwich straight out at the left frame edge for 4 s. Lower it to chest height, or add a little sway.
 - frames 169-500, should. The cookie offer arm stays locked for about 11 s, and the cookie pokes out of the hand's edge rather than resting on a palm. Readable as an offer; a small sway or lowering between lines would help.
+
+## Re-check @ 80a98e8b
+(Relayed by the orchestrator: recheck-ch04's own commit 3d1e74f could not be pushed from its session.)
+- #18 **fixed** (34381f27): the end-shot half rests in Skye's palm on the desk, no straight arm; the far arm is out of the corner.
+- Every critic-2 ch04 must plus critic-6 I19 and R1: fixed. clip_check: 0 high. cam_check: clean.
+- Verdict: **OK @ 80a98e8b**. The two shoulds (Max's held-out sandwich arm f1381-1501, the locked cookie offer f169-500) were addressed in 34381f27 with lowered arms and a sway.
