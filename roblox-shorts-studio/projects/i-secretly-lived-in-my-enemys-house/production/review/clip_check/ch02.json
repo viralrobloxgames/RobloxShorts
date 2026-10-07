@@ -7,7 +7,7 @@
  "min_depth": 0.06,
  "onscreen_only": true,
  "film_start_s": 63.7,
- "seconds": 46.5,
+ "seconds": 69.6,
  "summary": [
   {
    "actor": "dad",
@@ -94,6 +94,18 @@
    "severity": "medium"
   },
   {
+   "actor": "max",
+   "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
+   "kind": "scenery",
+   "frames": "1421-1837",
+   "t": "47.3-61.2s",
+   "film": "1:51.0",
+   "parts": "Arm.L,Arm.R",
+   "max_depth": 0.43,
+   "max_cover_pct": 13,
+   "severity": "medium"
+  },
+  {
    "actor": "skye",
    "object": "box 1.7x3.8x0.2 @set_hallway(-3.1,8.2,-1.0)",
    "kind": "scenery",
@@ -130,18 +142,6 @@
    "severity": "medium"
   },
   {
-   "actor": "max",
-   "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
-   "kind": "scenery",
-   "frames": "1421-1837",
-   "t": "47.3-61.2s",
-   "film": "1:51.0",
-   "parts": "Arm.L,Arm.R",
-   "max_depth": 0.4,
-   "max_cover_pct": 10,
-   "severity": "medium"
-  },
-  {
    "actor": "skye",
    "object": "box 0.2x0.4x2.0 @set_hallway(-1.8,5.0,0.0)",
    "kind": "scenery",
@@ -151,18 +151,6 @@
    "parts": "Leg.R,Arm.R,Leg.L",
    "max_depth": 0.48,
    "max_cover_pct": 0,
-   "severity": "medium"
-  },
-  {
-   "actor": "skye",
-   "object": "box 10.4x3.0x2.6 @set_kitchen(0.0,1.8,0.4)",
-   "kind": "scenery",
-   "frames": "1235-1255",
-   "t": "41.1-41.8s",
-   "film": "1:44.8",
-   "parts": "Arm.L",
-   "max_depth": 0.23,
-   "max_cover_pct": 33,
    "severity": "medium"
   },
   {
@@ -335,18 +323,6 @@
   },
   {
    "actor": "skye",
-   "object": "box 1.9x2.2x0.1 @set_kitchen(4.2,1.8,1.8)",
-   "kind": "scenery",
-   "frames": "1241-1255",
-   "t": "41.3-41.8s",
-   "film": "1:45.0",
-   "parts": "Arm.L",
-   "max_depth": 0.29,
-   "max_cover_pct": 0,
-   "severity": "medium"
-  },
-  {
-   "actor": "skye",
    "object": "box 0.4x4.2x0.4 @set_kitchen(11.2,2.1,1.6)",
    "kind": "scenery",
    "frames": "219-221",
@@ -355,6 +331,18 @@
    "parts": "Arm.R",
    "max_depth": 0.38,
    "max_cover_pct": 11,
+   "severity": "medium"
+  },
+  {
+   "actor": "skye",
+   "object": "box 3.7x3.9x1.8 @set_kitchen(17.8,2.0,4.8)",
+   "kind": "scenery",
+   "frames": "1303-1303",
+   "t": "43.4-43.4s",
+   "film": "1:47.1",
+   "parts": "Arm.L",
+   "max_depth": 0.36,
+   "max_cover_pct": 25,
    "severity": "medium"
   },
   {
@@ -442,18 +430,6 @@
    "severity": "low"
   },
   {
-   "actor": "skye",
-   "object": "box 1.9x2.2x0.1 @set_kitchen(2.1,1.8,1.8)",
-   "kind": "scenery",
-   "frames": "1235-1243",
-   "t": "41.1-41.4s",
-   "film": "1:44.8",
-   "parts": "Arm.L",
-   "max_depth": 0.22,
-   "max_cover_pct": 0,
-   "severity": "low"
-  },
-  {
    "actor": "dad",
    "object": "cyl 0.2x0.2x0.2 @set_kitchen(-2.9,3.0,-9.4)",
    "kind": "scenery",
@@ -527,6 +503,18 @@
   },
   {
    "actor": "skye",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,4.9,-3.2)",
+   "kind": "scenery",
+   "frames": "147-147",
+   "t": "4.9-4.9s",
+   "film": "1:08.6",
+   "parts": "Leg.L",
+   "max_depth": 0.27,
+   "max_cover_pct": 10,
+   "severity": "medium"
+  },
+  {
+   "actor": "skye",
    "object": "box 10.4x3.0x2.6 @set_kitchen(0.0,1.8,0.4)",
    "kind": "scenery",
    "frames": "345-459",
@@ -586,6 +574,18 @@
    "severity": "medium"
   },
   {
+   "actor": "skye",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,5.3,-3.2)",
+   "kind": "scenery",
+   "frames": "147-147",
+   "t": "4.9-4.9s",
+   "film": "1:08.6",
+   "parts": "Leg.L",
+   "max_depth": 0.27,
+   "max_cover_pct": 5,
+   "severity": "medium"
+  },
+  {
    "actor": "max",
    "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
    "kind": "scenery",
@@ -595,6 +595,18 @@
    "parts": "Arm.R",
    "max_depth": 0.09,
    "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,5.6,-4.0)",
+   "kind": "scenery",
+   "frames": "141-141",
+   "t": "4.7-4.7s",
+   "film": "1:08.4",
+   "parts": "Leg.L",
+   "max_depth": 0.24,
+   "max_cover_pct": 10,
    "severity": "low"
   },
   {
@@ -647,6 +659,30 @@
   },
   {
    "actor": "skye",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,6.0,-4.0)",
+   "kind": "scenery",
+   "frames": "141-141",
+   "t": "4.7-4.7s",
+   "film": "1:08.4",
+   "parts": "Leg.L",
+   "max_depth": 0.24,
+   "max_cover_pct": 5,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
+   "object": "box 3.3x3.9x2.6 @set_kitchen(17.6,2.0,5.2)",
+   "kind": "scenery",
+   "frames": "1301-1301",
+   "t": "43.3-43.3s",
+   "film": "1:47.0",
+   "parts": "Arm.L",
+   "max_depth": 0.18,
+   "max_cover_pct": 14,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
    "object": "box 1.9x2.2x0.1 @set_kitchen(0.0,1.8,1.8)",
    "kind": "scenery",
    "frames": "239-239",
@@ -655,6 +691,30 @@
    "parts": "Arm.R",
    "max_depth": 0.21,
    "max_cover_pct": 0,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,2.3,0.0)",
+   "kind": "scenery",
+   "frames": "173-173",
+   "t": "5.7-5.7s",
+   "film": "1:09.4",
+   "parts": "Leg.R",
+   "max_depth": 0.18,
+   "max_cover_pct": 5,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,0.4,1.6)",
+   "kind": "scenery",
+   "frames": "187-187",
+   "t": "6.2-6.2s",
+   "film": "1:09.9",
+   "parts": "Leg.R",
+   "max_depth": 0.16,
+   "max_cover_pct": 10,
    "severity": "low"
   },
   {
@@ -671,12 +731,36 @@
   },
   {
    "actor": "skye",
-   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,5.3,-3.2)",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,1.9,-0.0)",
    "kind": "scenery",
-   "frames": "147-147",
-   "t": "4.9-4.9s",
-   "film": "1:08.6",
-   "parts": "Leg.L",
+   "frames": "173-173",
+   "t": "5.7-5.7s",
+   "film": "1:09.4",
+   "parts": "Leg.R",
+   "max_depth": 0.15,
+   "max_cover_pct": 10,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,0.8,1.6)",
+   "kind": "scenery",
+   "frames": "187-187",
+   "t": "6.2-6.2s",
+   "film": "1:09.9",
+   "parts": "Leg.R",
+   "max_depth": 0.15,
+   "max_cover_pct": 5,
+   "severity": "low"
+  },
+  {
+   "actor": "skye",
+   "object": "box 1.6x0.1x3.2 @set_kitchen(14.9,0.0,6.0)",
+   "kind": "scenery",
+   "frames": "1303-1303",
+   "t": "43.4-43.4s",
+   "film": "1:47.1",
+   "parts": "Leg.R",
    "max_depth": 0.15,
    "max_cover_pct": 0,
    "severity": "low"
@@ -723,6 +807,19 @@
    "kind": "scenery"
   },
   {
+   "actor": "max",
+   "part": "Arm.L",
+   "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
+   "from": 1421,
+   "to": 1837,
+   "depth": 0.43,
+   "cover": 13,
+   "samples": 209,
+   "t": "47.33-61.20s",
+   "film": "1:51.0",
+   "kind": "scenery"
+  },
+  {
    "actor": "dad",
    "part": "Arm.L",
    "object": "box 0.2x0.1x1.2 @set_kitchen(-2.9,3.7,-9.2)",
@@ -733,19 +830,6 @@
    "samples": 20,
    "t": "24.07-25.33s",
    "film": "1:27.8",
-   "kind": "scenery"
-  },
-  {
-   "actor": "max",
-   "part": "Arm.L",
-   "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
-   "from": 1421,
-   "to": 1837,
-   "depth": 0.4,
-   "cover": 10,
-   "samples": 209,
-   "t": "47.33-61.20s",
-   "film": "1:51.0",
    "kind": "scenery"
   },
   {
@@ -1126,19 +1210,6 @@
    "kind": "scenery"
   },
   {
-   "actor": "skye",
-   "part": "Arm.L",
-   "object": "box 10.4x3.0x2.6 @set_kitchen(0.0,1.8,0.4)",
-   "from": 1235,
-   "to": 1255,
-   "depth": 0.23,
-   "cover": 33,
-   "samples": 11,
-   "t": "41.13-41.80s",
-   "film": "1:44.8",
-   "kind": "scenery"
-  },
-  {
    "actor": "dad",
    "part": "Arm.L",
    "object": "box 0.2x0.1x1.2 @set_kitchen(-2.9,3.7,-9.2)",
@@ -1192,19 +1263,6 @@
   },
   {
    "actor": "skye",
-   "part": "Arm.L",
-   "object": "box 1.9x2.2x0.1 @set_kitchen(4.2,1.8,1.8)",
-   "from": 1241,
-   "to": 1255,
-   "depth": 0.29,
-   "cover": 0,
-   "samples": 8,
-   "t": "41.33-41.80s",
-   "film": "1:45.0",
-   "kind": "scenery"
-  },
-  {
-   "actor": "skye",
    "part": "Arm.R",
    "object": "box 0.2x0.4x2.0 @set_hallway(-2.5,6.8,0.0)",
    "from": 15,
@@ -1253,19 +1311,6 @@
    "samples": 2,
    "t": "14.47-14.53s",
    "film": "1:18.2",
-   "kind": "scenery"
-  },
-  {
-   "actor": "skye",
-   "part": "Arm.L",
-   "object": "box 1.9x2.2x0.1 @set_kitchen(2.1,1.8,1.8)",
-   "from": 1235,
-   "to": 1243,
-   "depth": 0.22,
-   "cover": 0,
-   "samples": 5,
-   "t": "41.13-41.40s",
-   "film": "1:44.8",
    "kind": "scenery"
   },
   {
@@ -1529,6 +1574,19 @@
    "kind": "scenery"
   },
   {
+   "actor": "skye",
+   "part": "Arm.L",
+   "object": "box 3.7x3.9x1.8 @set_kitchen(17.8,2.0,4.8)",
+   "from": 1303,
+   "to": 1303,
+   "depth": 0.36,
+   "cover": 25,
+   "samples": 1,
+   "t": "43.40-43.40s",
+   "film": "1:47.1",
+   "kind": "scenery"
+  },
+  {
    "actor": "max",
    "part": "Arm.R",
    "object": "box 0.1x3.2x0.1 @set_kitchen(11.2,3.8,0.0)",
@@ -1556,6 +1614,32 @@
   },
   {
    "actor": "skye",
+   "part": "Leg.L",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,4.9,-3.2)",
+   "from": 147,
+   "to": 147,
+   "depth": 0.27,
+   "cover": 10,
+   "samples": 1,
+   "t": "4.87-4.87s",
+   "film": "1:08.6",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.L",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,5.3,-3.2)",
+   "from": 147,
+   "to": 147,
+   "depth": 0.27,
+   "cover": 5,
+   "samples": 1,
+   "t": "4.87-4.87s",
+   "film": "1:08.6",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
    "part": "Arm.R",
    "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
    "from": 1975,
@@ -1565,6 +1649,32 @@
    "samples": 1,
    "t": "65.80-65.80s",
    "film": "2:09.5",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.L",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,5.6,-4.0)",
+   "from": 141,
+   "to": 141,
+   "depth": 0.24,
+   "cover": 10,
+   "samples": 1,
+   "t": "4.67-4.67s",
+   "film": "1:08.4",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.L",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,6.0,-4.0)",
+   "from": 141,
+   "to": 141,
+   "depth": 0.24,
+   "cover": 5,
+   "samples": 1,
+   "t": "4.67-4.67s",
+   "film": "1:08.4",
    "kind": "scenery"
   },
   {
@@ -1582,14 +1692,14 @@
   },
   {
    "actor": "skye",
-   "part": "Arm.R",
-   "object": "box 0.4x4.2x0.4 @set_kitchen(11.2,2.1,1.6)",
+   "part": "Leg.R",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,2.3,0.0)",
    "from": 173,
-   "to": 175,
-   "depth": 0.09,
-   "cover": 3,
-   "samples": 2,
-   "t": "5.73-5.80s",
+   "to": 173,
+   "depth": 0.18,
+   "cover": 5,
+   "samples": 1,
+   "t": "5.73-5.73s",
    "film": "1:09.4",
    "kind": "scenery"
   },
@@ -1608,54 +1718,106 @@
   },
   {
    "actor": "skye",
-   "part": "Leg.L",
-   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,5.3,-3.2)",
-   "from": 147,
-   "to": 147,
+   "part": "Arm.L",
+   "object": "box 3.3x3.9x2.6 @set_kitchen(17.6,2.0,5.2)",
+   "from": 1301,
+   "to": 1301,
+   "depth": 0.18,
+   "cover": 14,
+   "samples": 1,
+   "t": "43.33-43.33s",
+   "film": "1:47.0",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.R",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,0.4,1.6)",
+   "from": 187,
+   "to": 187,
+   "depth": 0.16,
+   "cover": 10,
+   "samples": 1,
+   "t": "6.20-6.20s",
+   "film": "1:09.9",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.R",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,1.9,-0.0)",
+   "from": 173,
+   "to": 173,
+   "depth": 0.15,
+   "cover": 10,
+   "samples": 1,
+   "t": "5.73-5.73s",
+   "film": "1:09.4",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.R",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,0.8,1.6)",
+   "from": 187,
+   "to": 187,
+   "depth": 0.15,
+   "cover": 5,
+   "samples": 1,
+   "t": "6.20-6.20s",
+   "film": "1:09.9",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Leg.R",
+   "object": "box 1.6x0.1x3.2 @set_kitchen(14.9,0.0,6.0)",
+   "from": 1303,
+   "to": 1303,
    "depth": 0.15,
    "cover": 0,
    "samples": 1,
-   "t": "4.87-4.87s",
-   "film": "1:08.6",
+   "t": "43.40-43.40s",
+   "film": "1:47.1",
    "kind": "scenery"
   },
   {
    "actor": "skye",
-   "part": "Leg.L",
-   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,4.9,-3.2)",
-   "from": 147,
-   "to": 147,
-   "depth": 0.12,
-   "cover": 14,
+   "part": "Leg.R",
+   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,1.5,0.8)",
+   "from": 181,
+   "to": 181,
+   "depth": 0.09,
+   "cover": 5,
    "samples": 1,
-   "t": "4.87-4.87s",
-   "film": "1:08.6",
+   "t": "6.00-6.00s",
+   "film": "1:09.7",
    "kind": "scenery"
   },
   {
    "actor": "skye",
-   "part": "Leg.L",
-   "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,6.0,-4.0)",
-   "from": 141,
-   "to": 141,
-   "depth": 0.11,
-   "cover": 0,
+   "part": "Arm.R",
+   "object": "box 0.5x8.4x0.3 @set_kitchen(16.0,4.2,8.2)",
+   "from": 1301,
+   "to": 1301,
+   "depth": 0.09,
+   "cover": 11,
    "samples": 1,
-   "t": "4.67-4.67s",
-   "film": "1:08.4",
+   "t": "43.33-43.33s",
+   "film": "1:47.0",
    "kind": "scenery"
   },
   {
    "actor": "skye",
-   "part": "Leg.L",
-   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,5.6,-4.0)",
-   "from": 141,
-   "to": 141,
-   "depth": 0.1,
-   "cover": 14,
+   "part": "Leg.R",
+   "object": "box 5.0x0.8x0.8 @set_kitchen(13.5,1.1,0.8)",
+   "from": 181,
+   "to": 181,
+   "depth": 0.08,
+   "cover": 10,
    "samples": 1,
-   "t": "4.67-4.67s",
-   "film": "1:08.4",
+   "t": "6.00-6.00s",
+   "film": "1:09.7",
    "kind": "scenery"
   },
   {
