@@ -62,7 +62,8 @@ function wordT(line, re, fallback = 0) {
 // scarecrow arms are out (critic-4 C7-1). Offsets: off(m, forward, left) in the mark's frame.
 const off = (m, f, l, heading = m.heading) => ({ pos: m.pos.clone().add(V(Math.sin(m.heading) * f + Math.cos(m.heading) * l, 0, Math.cos(m.heading) * f - Math.sin(m.heading) * l)), heading });
 const M = {
-  teaSkye: () => pt(-6.4, 4.0, 0.45), teaLily: () => pt(-1.3, 4.2, -0.5),   // either side of the tea box's front, faces to the opening camera
+  teaSkye: () => pt(-6.4, 4.0, 0.45), teaOpen: () => pt(-1.3, 4.2, -0.5),   // either side of the tea box's front, faces to the opening camera
+  teaLily: () => K.mark('attic', 'tea_lily'),                                 // back at the party: kneeling at the box, facing it
   pose: () => K.mark('attic', 'decor_pose'),
   hatchTop: () => K.mark('attic', 'hatch_top'), climb: () => K.mark('attic', 'hatch_climb'),
   vac: () => K.mark('attic', 'vacuum'),
@@ -228,16 +229,17 @@ function poseSkye(t, idle) {
 
 // ---------- Lily ----------
 function poseLily(t, idle) {
-  const l = C.lily, tl = M.teaLily(), stand = pt(-0.6, 5.0, -1.2);
+  const l = C.lily, tl = M.teaLily(), stand = pt(-0.6, 5.0, -1.2);   // tl: the party seat she runs back to
   const atTea = (tt) => {                               // kneeling at the box, cup in her left hand; sips on "plan ahead"
     sitFloor(l, tl, tl.heading, 'kneel');
     const sip = sm(at(10, 0.6), at(10, 0.9), tt) * (1 - sm(end(10), end(10, 0.3), tt));
-    K.gesture(l, 'cup_hold', 'L', 0.35 + 0.65 * sip);
+    K.gesture(l, 'cup_hold', 'L', 0.6 + 0.4 * sip);
   };
-  if (t < T.lilyUp) { sitFloor(l, tl, tl.heading, 'kneel'); headTurn(l, headTo(l, W(4.5, 9.0), 0.8) * sm(T.rattle + 0.1, T.rattle + 0.35, t)); return; }
+  const to = M.teaOpen();
+  if (t < T.lilyUp) { sitFloor(l, to, to.heading, 'kneel'); headTurn(l, headTo(l, W(4.5, 9.0), 0.8) * sm(T.rattle + 0.1, T.rattle + 0.35, t)); return; }
   if (t < T.lilyGo) {                                   // "Quick! Be a decoration!": side-on, pointing across at the decorations
-    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: 1.1 });     // side-on to the camera, facing the decorations
-    K.gesture(l, 'point', 'L', sm(at(3), at(3, 0.25), t));                              // points across frame at the decorations (her free arm; the teddy is in her right)
+    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: -0.15 });   // to the camera
+    K.gesture(l, [-6, 0, 88], 'L', sm(at(3), at(3, 0.25), t));                         // her free arm straight out sideways, across frame at the decorations (the teddy is in her right)
     return;
   }
   if (t < T.lilyBack) {
@@ -385,7 +387,7 @@ function placeProps(t) {
   }
   if (t >= T.dadOut && t < T.dadDown - 0.45) {
     const nz = sm(T.nozzle, T.nozzle + 0.6, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
-    if (nz > 0.05) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye).add(V(0, 0.35, 0)) });
+    if (nz > 0.05 && t < T.humOff) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye).add(V(0, 0.35, 0)) });
     else {                                              // held like a real wand: angled down, nozzle on the boards ahead of him
       const fl = d.position.clone().addScaledVector(fwd, 0.5).addScaledVector(left, -1.3); fl.y = 0.15;   // down at his right side, clear of her
       K.hold(wand, C.dad, 'R', 'palm', { aim: fl });
@@ -403,7 +405,7 @@ function pairShot(s, other, { dist = 6.0, up = 0.25, fov = 36, bias = 0.5, spot 
 const HATCH_CAM = (s) => K.setCam(s, { pos: W(-2.6, 0.6, 5.8), target: W(4.3, 7.4, 2.8), fov: 44 });
 const HATCH_SIDE = (s) => K.setCam(s, { pos: W(0.6, 8.0, 5.4), target: W(4.6, 0.6, 4.0), fov: 44 });   // from beside the hatch, back at the room
 const DAD_ROW = (s) => K.setCam(s, { pos: W(-3.6, 6.0, 5.4), target: W(4.4, -1.0, 3.0), fov: 46 });   // Dad by the tea box side, the row behind him
-const LILY_TEA = (s) => K.setCam(s, { pos: W(-4.8, 8.6, 3.8), target: W(-1.5, 3.9, 2.0), fov: 40 });
+const LILY_TEA = (s) => K.setCam(s, { pos: W(-1.2, 0.6, 3.1), target: W(-3.5, 4.4, 2.0), fov: 38 });   // across the tea box onto Lily (the cups between them); Dad is out of frame
 const OPEN = (s) => K.setCam(s, { pos: W(-7.6, 12.2, 5.8), target: W(2.8, 0.6, 1.4), fov: 52 });
 const SHOTS = [
   { line: 1, off: 0, id: 'open', cam: OPEN },
@@ -416,7 +418,7 @@ const SHOTS = [
   { line: 6, off: 0.15, id: 'dad_rises', cam: HATCH_CAM },
   { line: 7, off: 0, id: 'dad_lily', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.4 }) },
   { line: 8, off: 0, id: 'lily_tea', cam: LILY_TEA },
-  { line: 9, off: 0, id: 'dad_halloween', cam: DAD_ROW },
+  { line: 9, off: 0.7, id: 'dad_halloween', cam: DAD_ROW },
   { line: 10, off: 0, id: 'lily_plan', cam: LILY_TEA },
   { line: 11, off: 0, id: 'row', cam: DAD_ROW },   // Dad points out the row, then walks up to her
   { line: 11, off: 3.6, id: 'two_girl', cam: (s) => pairShot(s, C.dad, { spot: S.inspect, zb: -0.3 }) },   // cut round as he stops in front of her
@@ -440,7 +442,7 @@ const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.star
 // ---------- faces: one base emotion per line (lip sync from the kit on the words) ----------
 function faces(t) {
   const posed = t >= T.pose;
-  const skye = t < at(2) ? 'shocked' : t < T.pose ? 'scared' : t < at(21) ? (t > T.nozzle + 0.5 && t < T.humOff + 0.3 ? 'scared' : 'neutral') : t < at(23) ? 'annoyed' : 'smug';
+  const skye = t < T.pose ? 'shocked' : t < at(21) ? (t > T.nozzle + 0.5 && t < T.humOff + 0.3 ? 'shocked' : 'neutral') : t < at(23) ? 'annoyed' : 'smug';
   const lily = t < at(2) ? 'surprised' : t < at(5) ? 'happy' : t < T.dadRise ? 'smug' : t < at(10) ? 'happy' : t < at(15) ? 'smug' : t < at(21) ? 'neutral' : t < at(24) ? 'smug' : 'suspicious';
   const dad = t < at(7) ? 'determined' : t < at(9) ? 'surprised' : t < at(11) ? 'suspicious' : t < at(12) ? 'happy' : t < at(14) ? 'suspicious' : t < at(16) ? 'confused' : t < at(17) ? 'determined' : t < at(18) ? 'surprised' : 'happy';
   const max = t < T.fix - 0.1 ? 'suspicious' : t < at(20) ? 'smug' : 'neutral';
