@@ -47,3 +47,18 @@ New:
   the last shot (hands on the corners, elbows down, sheet at chest), or the bunched sheet in one hand until the open.
   **must**
 Shoulds left: rim glow on Skye's raised R arm f556-661; Lily's shoulder sliver in Skye's box CUs.
+
+## Re-check @ 91b328d1
+Automated: same 6 high + 1 medium at MAX - OLD STUFF (rotated-box AABB false positives, accepted at 34d5f66f); cam_check 0/0/0.
+Visual: f690-758 every 4th, f1560-1698 every 6th, whole chapter every 30th (plus every 15th at the earlier rounds).
+
+| must | verdict |
+|---|---|
+| #8 walk | fixed: front walk f698-714 with a natural arm swing, then side-on f718-758, arms down/forward into the box |
+| N5 sheet arms f1576-1646 | fixed: arms low, bunched sheet held off-frame low in the R hand, opened on the cut to the last shot (f1650); no spread arms |
+
+All earlier musts stay fixed (drawing in hand at chest through 781-1471, teddy in Lily's hands throughout, put-back,
+seated two-shot, glow sticks, last shot). No new musts. Remaining shoulds (not blocking): sheet not visible in the "Yes."
+CU; rim glow on Skye's raised arm f556-661.
+
+**RECHECK: OK @ 91b328d1**
