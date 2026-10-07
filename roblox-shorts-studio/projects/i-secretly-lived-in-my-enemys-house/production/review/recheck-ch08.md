@@ -72,3 +72,11 @@ Diff vs bfdc9f04: ch08.js only, 2 lines (skye_worse cut +0.2 s; the note fist ea
 | 545-546 arm snap | fixed: the fist lowers gradually over 540-548 (30 fps strip), no one-frame jump |
 | 746-748 foreground flash | fixed: the MCU now starts at 751 after the WS of Lily crossing; 751-756 clean |
 No new issues in 532-558 / 742-756.
+
+### Final pass, ch08_a @ a76617f1 (sha256 e64342eb...)
+- 784 frames. Frame-difference profile is identical to the 7726e1e1 render except at the two fixes: the 746-748 spikes are gone (the cut is now at 751) and 545-546 is an eased step. The rest of segment A is unchanged from the render already viewed at 2 fps.
+- 542-547: the note fist lowers gradually, no snap. 748-753: WS, then the MCU from 751, no foreground flash.
+- Seam 782-787 (a|b): continuous, no pop.
+- ch08_b (fbda89d8...) unchanged and final.
+
+**FINAL: PASS**
