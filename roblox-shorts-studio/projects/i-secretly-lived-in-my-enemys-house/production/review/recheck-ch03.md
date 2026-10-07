@@ -78,3 +78,10 @@ New snaps from snap_check that are visible on screen (each a **must**, eased ove
 - **T6** 1550-1551 (wide): Dad's walk pops into a splayed, jump-like pose in one frame.
 - **T7** 1589-1590 and 1609-1610: Dad's arms swap position (the forward arm changes sides) in one frame.
 Fine: 1903-1904 (a barely visible change).
+
+## Re-check @ b6998591
+
+Automated: snap_check finds 38 events, **0 high** (it was 33 high). clip_check --sight finds 0 sightings and 0 high hits. cam_check finds 0 glides, 0 cameras inside scenery and 0 cameras at a head.
+Visual (0.5 scale, the frame before each former snap point and 3 frames after it): S3 1691-1694, Dad's head turn, is now eased. T1 385-388 is now a cut to the wide. T2 443-446, T3 929-932, T4 1490-1493, T5 1513-1516, T6 1550-1553 and T7 1609-1612 all move gradually, with no one-frame jumps. S1, S2 and S4-S7 were fixed @ 6d8d0547.
+
+All musts fixed; no new issues. **RECHECK: OK @ b6998591.**
