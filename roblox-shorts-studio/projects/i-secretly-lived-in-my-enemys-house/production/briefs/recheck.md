@@ -32,6 +32,12 @@ critic-5.md (ch09) + critic-6 R3; ch10 critic-5.md (ch10) + critic-6 I4; ch11 cr
      at 5-10 fps, i.e. every 3rd-6th frame) plus the whole chapter with `--every 15`; view them as 2x2 sheets
      (ffmpeg `tile=2x2`, 960 px wide). For each must: fixed or not. Then anything new, with the checklist in
      `briefs/frame_critic.md` (clipping, sitting, walking, secrets, props in palms, poses, identity, camera, captions).
+   - **Viewer test (the user's own bar, after he still found problems the checks passed):** watch each shot as a viewer
+     would. Does every pose read as what it should be at a glance (sitting up in bed must look like sitting up in bed,
+     with the pillow/headboard and legs under the duvet readable, never like standing inside the bed)? Is every hiding
+     place one a real person would choose, where the others plausibly would not look (not crouched behind a counter in
+     the open, in front of the stairs the family comes down)? Would anything make a viewer think "they'd see her" or
+     "that looks wrong"? If yes, it is a must even when clip_check and the sight check pass.
 3. **Verdict**: append `## Re-check @ <sha>` to your report (one row per must: fixed / not fixed, plus new issues as
    `frames a-b, what, fix, must|should`), push to main. Then:
    - OK (no musts left): status `RECHECK: OK @ <sha>`; message the chapter session (roster in `production/ORCHESTRATION.md`):
