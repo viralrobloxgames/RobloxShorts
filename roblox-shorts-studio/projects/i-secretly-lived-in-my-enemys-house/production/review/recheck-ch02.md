@@ -47,3 +47,25 @@ New and remaining issues:
 - **N8 frames 496-552, must (A5).** See A5. Either Dad turns from the stove to Max for line 4, or Max is 3/4 toward Dad and not toward the lens.
 - N9 frames 97-136, should. In the hall creep both of Skye's arms are flared stiffly out from her body. Fix: arms closer in, one hand forward (sneak).
 - N10 frames 460-495, should. Max is barely on screen during his own line (B3).
+
+## Re-check @ 72fff376
+
+Automated checks: cam_check found 0 glides, 0 cameras inside scenery and 0 at a head. clip_check found 4 high hits, all Dad's spatula hand 2% into the stove top (accepted). Max's arm against the stair wall is now medium, 0.2 deep, and not visible in the render. The sight check shows the same brief stair glimpses as before plus the meant classroom moment (accepted). I viewed the whole chapter.
+
+| item | verdict | notes |
+|---|---|---|
+| N1 (user 1:18) Max inside the stair-side wall | fixed | f427-459: his body is whole beside the wall |
+| N2 whisper-shot hide pose | fixed | f346-426: upright low crouch, head level |
+| N3 airplane arms on the stairs | fixed | the near hand is low; the far hand trails at the wall (acceptable) |
+| N4 ladder | fixed | she is now on the ladder face |
+| N5 steal | **not fixed** | see below |
+| N6 (user 1:47) exterior hand and pancake | fixed for the hold | the block no longer covers her face; the pancake sits at the end of her hand beside her chin. Should: there is no visible bite on "Ever" (f1400-1415), only a small head dip |
+| N7 Max smiling on scared or annoyed lines | fixed | flat mouth at f811/841/1876, "o" at f1546, teeth on "alert" |
+| N8 Dad turned to Max for line 4 | fixed | f463-535 Dad faces the kids |
+| N9 hall-creep arms (should) | improved | |
+| N10 Max barely on screen during his line (should) | not changed | |
+
+Must left:
+- **frames 887-896, the steal, must.** The stolen pancake lifts off the stack and floats in mid-air beside and above Skye's head for about 0.2 s (f890-893), touching nothing. Her hand block is behind the stack, not under the pancake. Then the pancake disappears behind the stack (f896). It reads as a floating prop, the exact thing the user rejected at 1:47. Fix: her hand on the top pancake in front of the stack (camera side) from T.steal, and the pancake parented to that hand from the first frame it moves, sliding it straight off toward her below the stack top. No free lerp to the "edge" point, which from this camera sits in the air above her head.
+
+Note for the orchestrator: this commit changes the shared kit `web/kit/cast.js` `speak()`. Non-bright faces now alternate base/`mouth_o` instead of `mouth_small`, and 'surprised' and 'neutral' were removed from BRIGHT. This changes lip-sync in every chapter, not just ch02.
