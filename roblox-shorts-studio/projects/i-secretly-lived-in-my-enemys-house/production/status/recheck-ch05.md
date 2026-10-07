@@ -1,3 +1,2 @@
-STATUS: DONE
-RECHECK: OK @ 3830bc67
-FINAL: PASS (re-render a2bf6070/abd36b10)
+STATUS: WAITING
+RECHECK: REOPENED @ 3830bc67 (11:45Z: ease the one-frame gesture snaps f204-205, f820-821, f1586-1587, f1675-1676)

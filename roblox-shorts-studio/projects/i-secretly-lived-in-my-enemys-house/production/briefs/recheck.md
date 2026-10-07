@@ -38,6 +38,11 @@ critic-5.md (ch09) + critic-6 R3; ch10 critic-5.md (ch10) + critic-6 I4; ch11 cr
      place one a real person would choose, where the others plausibly would not look (not crouched behind a counter in
      the open, in front of the stairs the family comes down)? Would anything make a viewer think "they'd see her" or
      "that looks wrong"? If yes, it is a must even when clip_check and the sight check pass.
+   - **Gesture snaps** (also in the final pass): scan frame-to-frame differences across the chapter (e.g. ffmpeg
+     `tblend=all_mode=difference` + a per-frame mean, or 30 fps strips) and look at every spike that is not a cut or a
+     caption change. A limb, head or held prop that jumps to a new position in one frame inside a shot (an arm from
+     the knee to shoulder height, a "Boo" arm from down to up) reads as robotic: it is a must, fixed by easing the
+     change over ~6 frames.
 3. **Verdict**: append `## Re-check @ <sha>` to your report (one row per must: fixed / not fixed, plus new issues as
    `frames a-b, what, fix, must|should`), push to main. Then:
    - OK (no musts left): status `RECHECK: OK @ <sha>`; message the chapter session (roster in `production/ORCHESTRATION.md`):
