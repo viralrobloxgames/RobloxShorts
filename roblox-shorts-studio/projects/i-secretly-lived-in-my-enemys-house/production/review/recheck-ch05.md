@@ -84,3 +84,19 @@ ch05_a.mp4 sha256 a2bf6070... (909 frames) + ch05_b.mp4 abd36b10... (1110 frames
   the gesture with no ease). Fix if the clip is ever reopened: ease the gesture over ~6 frames.
 
 FINAL: PASS
+
+## Re-check @ 81cd0a48 (snap fix)
+
+ch05.js diff vs 3830bc67: only the Boo-arm and pour-arm easing (pourWeight, 0.2 s). clip_check unchanged (0 high, 1 medium
+nest contact, 3 low), cam_check 0/0/0.
+Snap scan: every frame rendered (2019, scale 0.25) and frame-to-frame diffs checked:
+| Snap | Verdict |
+|---|---|
+| f204 Skye "Boo" arm | fixed: rises over f202-207 (largest step 5.0 vs 10.4 before) |
+| f820 pour start | fixed: teapot rises over f821-823, then the planned cut at 824 |
+| f1586 pour start | fixed: rises over f1587-1591 |
+| f1675 pour end | fixed: lowers over f1675-1679 |
+No other in-shot spikes except the title-card fade (f55-59). Remaining should: f420->421 Skye's arm settles 2 frames before
+the cut at 423 (6.2, one frame).
+
+Verdict: OK at 81cd0a48.
