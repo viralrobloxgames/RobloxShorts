@@ -54,3 +54,27 @@ Segment A (1-906, rendered at --scale 0.25 @ 726592de, same method): the cuts (1
 - **S5** frames 452-453 (2:15.6): a 2-frame shot (a tighter Max at the fridge) between the cuts at 452 and 454 reads as a flash/jump cut. Fix: drop it, so the shot at 454 starts at 452, or hold it for at least ~12 frames.
 - **S6** frames 522-523 (2:17.9), Max at the fridge: his head turns from looking at the fridge to frontal in one frame. Fix: ease the turn over ~6 frames.
 - **S7** frames 769-770 (2:26.2), Max CU: his R arm (screen left) drops from raised-outward to his side in one frame. Fix: ease it over ~6 frames.
+
+## Re-check @ 6d8d0547 (S1-S7 eased; kit filter K cancelled)
+
+Automated: clip_check --sight finds 0 sightings, and its only high hit is the known foot on the stair (1533). cam_check is clean. snap_check finds 72 events, 33 of them high. Viewed as frame pairs at 0.5: S1-S7 and the high events at 386, 444, 930, 1491, 1514, 1551, 1590, 1610 and 1904.
+
+| item | verdict |
+|---|---|
+| S1 1155-1156 | fixed |
+| S2 1330-1332 | fixed (shot reworked as a wide) |
+| S3 1691-1692 Dad's head turn | **not fixed**: still 3/4 to frontal in one frame |
+| S4 1762-1763 fridge door | fixed |
+| S5 452-453 flash shot | fixed |
+| S6 522-523 Max's head | fixed |
+| S7 769-770 Max's arm | fixed |
+
+New snaps from snap_check that are visible on screen (each a **must**, eased over ~6 frames):
+- **T1** 385-386: at the island, Max goes from facing the camera with the torch raised to turned away with his arm across his body, in one frame.
+- **T2** 443-444: Max's torch arm drops from raised (lit torch) to his side in one frame.
+- **T3** 929-930: Max's arms jump from his sides to L arm out / R arm forward in one frame.
+- **T4** 1490-1491 (wide): Skye at the island turns from facing the camera to facing away in one frame.
+- **T5** 1513-1514 (wide): Skye drops from a run to a crouch in one frame.
+- **T6** 1550-1551 (wide): Dad's walk pops into a splayed, jump-like pose in one frame.
+- **T7** 1589-1590 and 1609-1610: Dad's arms swap position (the forward arm changes sides) in one frame.
+Fine: 1903-1904 (a barely visible change).

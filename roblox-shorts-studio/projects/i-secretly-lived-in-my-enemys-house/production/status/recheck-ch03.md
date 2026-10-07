@@ -1,2 +1,2 @@
 STATUS: WAITING
-RECHECK: MUSTS @ 726592de (gesture snaps S1-S7)
+RECHECK: MUSTS @ 6d8d0547 (S3 + snaps T1-T7)
