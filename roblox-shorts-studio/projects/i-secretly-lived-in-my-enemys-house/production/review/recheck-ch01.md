@@ -154,3 +154,12 @@ Diff from f827e63e: ch01.js 11 lines (the closet turn and Skye's hand), plus a c
 | all earlier musts (incl. G1-G10, bed, hook) | still fixed | the rest of the clip is unchanged since f827e63e (full scan there) |
 
 Verdict: **OK**.
+
+## Final pass @ 38a96332 (ch01_a.mp4 + ch01_b.mp4)
+- Files: a 860 + b 1051 = 1911 frames, 1920x1080. final-ch01-a/b both DONE at 38a96332.
+- 2 fps 4x4 sheets of the whole chapter: matches the clip I passed (hook in the corner, classroom, spider, back door, bed, Lily off-screen, end beat); captions in frame.
+- Gesture-snap scan over all 1910 frame pairs (a+b joined): no one-frame limb, head or prop jumps inside a shot. The remaining spikes are cuts, caption changes, lip-sync mouth shapes (669-693, 1108, 1304), the eased crusts arm (529-531, 578-581) and the intended knock rattle (1571-1590).
+- Seam (860/861): no spike, continuous.
+- Shoulds only: flashlight arm straight; the pillow block at f1845.
+
+FINAL: PASS
