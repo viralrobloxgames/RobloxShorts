@@ -43,3 +43,8 @@ Previews: whole chapter every 15th frame; every 4th over 600-630, 931-1001, 1491
 | all earlier musts (C8-2, 2, 3, 4, 7, 10, 12, 13, 17) | still fixed |
 
 No new musts. Shoulds left (not blocking): eye wipe is a static fist beside her face (1651-1705); box knees in the two-shot; smile + lens look while sliding the note (301-329); I9 head-top glow in attic MCUs; foreground arm blocks in Lily's MCU.
+
+## Final pass
+delivery/chapters/ch08_a.mp4 (784 f, frames 1-784, rendered @ bfdc9f04) + ch08_b.mp4 (958 f, 785-1742, rendered @ bfdc9f04): 1742 frames total, 1920x1080, 30 fps. Whole chapter viewed at 2 fps in 2x2 sheets; it matches the approved bfdc9f04 previews (faces, note, door, phone, attic arms, eye-wipe beat, captions OK).
+
+- **MUST, seam pop (782-787, Lily MCU "He said that?").** In one continuous shot, Lily's teddy jumps between a's last frame (784) and b's first frame (785). In a it sits high at her right with the bunny on her shirt visible; in b it sits low and centred, covering the bunny. The clip itself has no change there. The render is stateful: a cold render of the clip starting at 780 gives b's position, while a's warm sequential render (and the every-15 preview from frame 1) gives a's. Fix: re-render b with a pre-roll (start at the shot's first frame, ~766, and drop the frames before 785) so its state matches a, or make the teddy/arm hold deterministic per frame and re-render both. Then re-check 782-788.
