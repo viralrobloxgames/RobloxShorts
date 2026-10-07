@@ -1,1 +1,3 @@
-STATUS: RERENDER @ 91b328d1 (10:58Z: re-render the whole segment with the pre-rolling render.mjs from main)
+STATUS: DONE
+COMMIT: 91b328d1
+RANGE: 807-1792
