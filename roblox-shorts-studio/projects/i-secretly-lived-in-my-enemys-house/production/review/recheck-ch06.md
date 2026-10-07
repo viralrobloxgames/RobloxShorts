@@ -53,3 +53,21 @@ Previews: fix ranges every 6th frame, full-res f1627, f1729.
 
 No new issues. Remaining shoulds (Skye's torch on her forearm at f960-1010, the floor glow wedge in the dash wide) are
 not musts.
+
+## Gesture-snap scan @ 8537ebc6 (added to the brief after the OK)
+
+Every frame of the clip at 0.25 scale, `tblend=difference` mean per frame. Spikes above 3x the local median were checked
+as 5-frame strips. Cuts and caption fades are skipped. 384-385, 408-411 and 432-435 are Max's gestures moving over 2-4
+frames (should, could ease to ~6). 1325-1326 is Dad's broom leaving frame over 2 frames (should). The rest:
+
+- frames 68-70, creep: Skye turns 180 deg from facing the lens to her back in one frame (f69 -> f70). Fix: turn over
+  ~8 frames. **must**
+- frames 276-278, `mirror_mcu`: Max's hand-on-neck arm drops from beside his head to his side in one frame
+  (f277 -> f278). Fix: ease it down over ~6 frames. **must**
+- frames 475-477, `mirror_ms`: the facepalm hand leaves his face and hangs at his side in one frame (f476 -> f477).
+  Fix: ease over ~6 frames. **must**
+- frames 1605-1607, `hatch_low`: in one frame Dad's torch arm jumps from his waist to raised at the hatch (and the beam
+  switches on), and his broom arm jumps from upright to pointing (f1606 -> f1607). Fix: raise both over ~6-8 frames,
+  with the beam on as the torch comes up (or start the shot with them already raised). **must**
+
+Verdict: RECHECK reverted to MUSTS @ 8537ebc6. The final renders from 8537ebc6 need redoing once these are fixed.

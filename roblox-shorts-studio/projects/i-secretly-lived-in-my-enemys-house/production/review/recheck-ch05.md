@@ -70,3 +70,33 @@ Whole chapter at 2 fps in sheets, must ranges in stills, seam.
 - Shoulds still open (not blocking): skeleton skull just above Skye's head in tea_skye_cu; "hand on chest" forearm at chest height.
 
 FINAL: PASS
+
+## Final pass (re-render with pre-roll)
+
+ch05_a.mp4 sha256 a2bf6070... (909 frames) + ch05_b.mp4 abd36b10... (1110 frames), 3830bc67, pre-rolling render.mjs.
+- Frame-to-frame scan of all 2019 frames (mean abs diff vs its neighbours): every spike is a camera cut or a caption
+  change on/next to a cut. Nothing at the seam 909/910 or at any chunk start (equal 4-way splits ~228/455/682 and
+  ~1188/1465/1742 are clean). No render pops.
+- 2 fps scan of the whole chapter: matches the approved clip; must fixes intact, captions on the right speaker.
+- Clip-level one-frame gesture snaps (in the frozen clip, not render faults), should: f204->205 Skye's "Boo" arm goes
+  from down to up in one frame; f420->421 Skye's arm settles 2 frames before the cut; Lily's teapot arm jumps between
+  knee and pour height in one frame at pour starts and ends, f820->821, f1586->1587, f1675->1676 (lilyPours() switches
+  the gesture with no ease). Fix if the clip is ever reopened: ease the gesture over ~6 frames.
+
+FINAL: PASS
+
+## Re-check @ 81cd0a48 (snap fix)
+
+ch05.js diff vs 3830bc67: only the Boo-arm and pour-arm easing (pourWeight, 0.2 s). clip_check unchanged (0 high, 1 medium
+nest contact, 3 low), cam_check 0/0/0.
+Snap scan: every frame rendered (2019, scale 0.25) and frame-to-frame diffs checked:
+| Snap | Verdict |
+|---|---|
+| f204 Skye "Boo" arm | fixed: rises over f202-207 (largest step 5.0 vs 10.4 before) |
+| f820 pour start | fixed: teapot rises over f821-823, then the planned cut at 824 |
+| f1586 pour start | fixed: rises over f1587-1591 |
+| f1675 pour end | fixed: lowers over f1675-1679 |
+No other in-shot spikes except the title-card fade (f55-59). Remaining should: f420->421 Skye's arm settles 2 frames before
+the cut at 423 (6.2, one frame).
+
+Verdict: OK at 81cd0a48.

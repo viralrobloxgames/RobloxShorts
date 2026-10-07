@@ -54,3 +54,21 @@ delivery/chapters/ch08_a.mp4 (784 f, frames 1-784, rendered @ bfdc9f04) + ch08_b
 - Whole of b (785-1742) at 2 fps: matches the approved clip. Faces, crumpled note fist, hands in on the knees, Lily's arms round the teddy, eye-wipe beat and captions all OK. No new issues; the smile on "watch Max scream" is the scheming line, as planned.
 - seam_check over 785-1742 (4 workers): cold starts differ on every chunk start, so any render without the full pre-roll would pop. A pre-roll of 300 still differs at 1265 and 1505, so only `--preroll all` (render.mjs's new default) is safe for ch08. ch08_a's seam_check over 1-784 (1/2/4 workers) shows 0 differences.
 - final-ch08-a is re-rendering (RENDERING). The pass is pending its DONE; then I'll re-check a at 2 fps and the seam again.
+- Gesture-snap scan of b (per-frame mean |f - f-1| at 480 px, 786-1742): the spikes over 30 are the cuts (800, 888, 930, 1024, 1216, 1491, 1551, 1583, 1610, 1637). The 1-3 bumps sit 3 frames after cuts or on caption changes (1379). The eye wipe up (1647-1655) and down (1703-1711) is eased over ~8 frames. The isolated 5.6 at 1400 is a uniform whole-frame luma shift, with no limb, head or prop moving (30 fps strip 1397-1402). **No gesture snaps in b.**
+
+### Final pass, ch08_a re-rendered (pre-roll render.mjs, sha256 7726e1e1...)
+- 784 frames, seam_check 1-784 (1/2/4 workers): 0 cold/warm differences. Seam 782-787 with the new b: **no pop**.
+- Gesture-snap scan of a: the cuts are 163, 300, 330, 487, 517, 535, 556, 629, 657, 703, 745 and 768. Gradual ramps: the opening camera move 23-149, the kneel 302-313 and the back-away 536-555. The 56 bump is the "FRIDAY 9:30 PM" card fading. Two in-shot spikes are real:
+  - **MUST frames 545-546** (back-away MCU, "Skye is the worst..." aftermath): Skye's right arm with the crumpled note snaps in one frame from forearm-forward/fist at the door to hanging straight at her side. Fix: ease the arm change over ~6 frames (or keep the fist forward until the cut at 556).
+  - **MUST frames 746-748** (attic MCU of Skye on "Worse. Your brother thinks I'm the worst.", the first 3 frames after the cut at 745): a glowing white/lilac block (Lily passing the lens) flashes across the left edge, then vanishes. Fix: start the MCU after she clears the frame (cut at ~749), or keep her out of this camera's frustum.
+- Rest of a at 2 fps: matches the approved clip.
+
+**FINAL: MUSTS**: 545-546 arm snap, 746-748 foreground flash. Both are clip fixes and need a re-render of a (range 536-784 at least); b is final.
+
+## Re-check @ a76617f1 (the two segment-A musts from the final pass)
+Diff vs bfdc9f04: ch08.js only, 2 lines (skye_worse cut +0.2 s; the note fist eased down from the rise). Per-frame fingerprints vs bfdc9f04: only **535-545 and 745-750** change; **nothing at or after 785**, so ch08_b stays final.
+| must | verdict |
+|---|---|
+| 545-546 arm snap | fixed: the fist lowers gradually over 540-548 (30 fps strip), no one-frame jump |
+| 746-748 foreground flash | fixed: the MCU now starts at 751 after the WS of Lily crossing; 751-756 clean |
+No new issues in 532-558 / 742-756.

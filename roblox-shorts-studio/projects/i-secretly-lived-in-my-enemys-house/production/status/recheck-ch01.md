@@ -1,2 +1,3 @@
 STATUS: WAITING
-RECHECK: OK @ 6b008a0d
+RECHECK: MUSTS @ 6b008a0d
+FINAL: MUSTS (gesture snaps G1-G10, see review)

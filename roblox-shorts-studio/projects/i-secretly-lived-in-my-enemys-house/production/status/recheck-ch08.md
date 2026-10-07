@@ -1,3 +1,3 @@
 STATUS: WAITING
-RECHECK: OK @ bfdc9f04
-FINAL: PENDING (ch08_b re-render OK, seam fixed; waiting for the ch08_a re-render)
+RECHECK: OK @ a76617f1
+FINAL: PENDING (re-render of ch08_a at a76617f1; ch08_b final)

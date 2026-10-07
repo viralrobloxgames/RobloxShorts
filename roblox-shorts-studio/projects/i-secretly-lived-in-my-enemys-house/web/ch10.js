@@ -106,6 +106,8 @@ const toward = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
 // turn a heading `k` x 0.45 rad toward +z (the camera side): faces open to the lens in a face-to-face scene
 const cheat = (h, k = 1, amt = 0.45) => { const d = Math.atan2(Math.sin(0 - h), Math.cos(0 - h)); return h + Math.sign(d) * Math.min(Math.abs(d), amt) * k; };
 const lerpV = (a, b, u) => a.clone().lerp(b, u);
+// a soft on/off window: 0 outside [a, b], easing in and out over e seconds (no one-frame snaps)
+const W = (t, a, b, e = 0.2) => smooth(inv(a, a + e, t)) * (1 - smooth(inv(b - e, b, t)));
 const lerpAngle = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * u;
 
 // ---------- Skye ----------
@@ -126,18 +128,20 @@ function poseSkye(t, idle) {
   let heading = a.root.rotation.y;
   if (t > t1 + LANE.pos.distanceTo(g.pos) / CREEP) heading = faceMax;
   // spooky sway on "Maaax" and "I am a ghost"
-  const spook = (t > at(2, -0.2) && t < end(2, 0.1)) || (t > at(4, -0.2) && t < end(4, 0.1));
-  if (spook) heading += 0.12 * Math.sin(t * 3.2);
+  const spook = Math.max(W(t, at(2, -0.2), end(2, 0.1)), W(t, at(4, -0.2), end(4, 0.1)));
+  heading += 0.12 * Math.sin(t * 3.2) * spook;
   // 3) the door: both turn to it on Dad's voice
   if (t > T.pull) heading = cheat(heading, smooth(inv(T.pull, T.pull + 0.6, t)), 0.65);
   if (t > T.dad + 0.25) heading = lerpAngle(heading, cheat(toward(a.root.position, M.door().pos), 1, 0.15), smooth(inv(T.dad + 0.25, T.dad + 0.8, t)));
   a.root.rotation.y = heading; a.root.updateMatrixWorld(true);
   // arms: the phone up recording (right), lowered to her chest once the sheet is off
-  armFwd(a, 'R', t < T.pull + 0.3 ? -1.35 : -0.7, t < T.pull + 0.3 ? 0.2 : 0.02);
-  if (spook) armFwd(a, 'L', -1.15 + 0.12 * Math.sin(t * 5), 0.15);                    // spooky forearm forward, below the shoulder
-  if (t > T.pull - 0.2 && t < T.pull + 0.55) { const k = Math.sin(inv(T.pull - 0.2, T.pull + 0.55, t) * Math.PI); armFwd(a, 'L', lerp(-0.75, -2.6, k), 0.35); armFwd(a, 'R', lerp(-1.35, -2.5, k), 0.35); }
+  const low = smooth(inv(T.pull + 0.3, T.pull + 0.8, t)), rP = lerp(-1.35, -0.7, low), rS = lerp(0.2, 0.02, low);
+  const lP = lerp(-0.1, -0.75, smooth(inv(T.pull - 0.2, T.pull + 0.55, t)));
+  armFwd(a, 'R', rP, rS);
+  if (sheetOn && t < T.pull - 0.2) armFwd(a, 'L', lerp(-0.1, -1.15 + 0.12 * Math.sin(t * 5), spook), 0.15);   // spooky forearm forward, below the shoulder (eased)
+  if (t > T.pull - 0.2 && t < T.pull + 0.55) { const k = Math.sin(inv(T.pull - 0.2, T.pull + 0.55, t) * Math.PI); armFwd(a, 'L', lerp(lP, -2.6, k), lerp(0.02, 0.35, k)); armFwd(a, 'R', lerp(rP, -2.5, k), lerp(rS, 0.35, k)); }
   else if (!sheetOn) armFwd(a, 'L', -0.75, 0.02);                                         // sheet bunched in her left hand, at her hip
-  if (t > T.fridge - 0.5 && t < end(12)) armFwd(a, 'R', -1.45, 0.05);                    // points at him with the phone hand
+  { const w = W(t, T.fridge - 0.5, end(12)); if (w > 0) armFwd(a, 'R', lerp(-0.7, -1.45, w), lerp(0.02, 0.05, w)); }   // points at him with the phone hand (eased)
   a.root.updateMatrixWorld(true);
   // faces (they only read once the sheet is off)
   let face = 'scheming';
@@ -187,10 +191,10 @@ function poseMax(t, idle) {
   if (carrying) { armFwd(a, 'L', p, -0.22); armFwd(a, 'R', p, -0.22); }
   else { armFwd(a, 'L', -1.35, -0.25); armFwd(a, 'R', -1.35, -0.25); }   // hands resting on the duvet beside the plate
   // one-arm gestures once the plate is down
-  if (t > T.pumpkin - 0.1 && t < end(8, 0.1)) armFwd(a, 'R', -2.15 + 0.1 * Math.sin((t - T.pumpkin) * 9), 0.45 + 0.08 * Math.sin((t - T.pumpkin) * 9 + 1)); // straightening an imaginary pumpkin: hand forward at head height, small wiggle
+  { const w = W(t, T.pumpkin - 0.25, end(8, 0.2), 0.25); if (w > 0) armFwd(a, 'R', lerp(-1.35, -2.15 + 0.1 * Math.sin((t - T.pumpkin) * 9), w), lerp(-0.25, 0.45 + 0.08 * Math.sin((t - T.pumpkin) * 9 + 1), w)); } // straightening an imaginary pumpkin: hand forward at head height, small wiggle
   if (t > at(13, -0.1) && t < end(13, 0.2)) { const u = Math.sin(inv(at(13, -0.1), end(13, 0.2), t) * Math.PI); armFwd(a, 'R', lerp(-1.35, -1.3, u), lerp(-0.25, 0.5, u)); headTurn(a, 0, -0.08 * u); } // one-hand palm-up shrug
-  if (t > at(11) && t < T.comesDown + 0.2) headTurn(a, 0, 0.18);                         // eyes down, blushing
-  if (t > T.pink - 0.1 && t < T.monday) headTurn(a, 0, -0.1);                            // chin up at her hair
+  headTurn(a, 0, 0.18 * W(t, at(11), T.comesDown + 0.2));                         // eyes down, blushing
+  headTurn(a, 0, -0.1 * W(t, T.pink - 0.1, T.monday));                            // chin up at her hair
   a.root.updateMatrixWorld(true);
   let face = 'happy';
   if (t > T.monday && t < end(5)) face = 'smug';

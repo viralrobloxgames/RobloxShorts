@@ -38,6 +38,17 @@ critic-5.md (ch09) + critic-6 R3; ch10 critic-5.md (ch10) + critic-6 I4; ch11 cr
      place one a real person would choose, where the others plausibly would not look (not crouched behind a counter in
      the open, in front of the stairs the family comes down)? Would anything make a viewer think "they'd see her" or
      "that looks wrong"? If yes, it is a must even when clip_check and the sight check pass.
+   - **Gesture snaps** (also in the final pass): scan frame-to-frame differences across the chapter (e.g. ffmpeg
+     `tblend=all_mode=difference` + a per-frame mean, or 30 fps strips) and look at every spike that is not a cut or a
+     caption change. A limb, head or held prop that jumps to a new position in one frame inside a shot (an arm from
+     the knee to shoulder height, a "Boo" arm from down to up) reads as robotic: it is a must, fixed by easing the
+     change over ~6 frames.
+     **Primary tool from 14:50Z: `node web/snap_check.mjs --clip projects/i-secretly-lived-in-my-enemys-house/web/chNN.js
+     [--root <tree at sha>] --out chNN.json`** (~30 s, poses every frame in order, lists one-frame bone/prop/root
+     jumps with film time and severity). Once the kit's anti-snap filter has landed (requests.md, 14:50Z entry), high
+     limb/prop events should be ~0: look at every remaining **high** event as a full-res frame pair; visible inside a
+     shot = must (usually a root start/stop pop the chapter eases), invisible (off frame, occluded, tiny) = note it
+     as accepted. The pixel scan above stays a cross-check for what the pose tool can't see (lights, set pieces).
 3. **Verdict**: append `## Re-check @ <sha>` to your report (one row per must: fixed / not fixed, plus new issues as
    `frames a-b, what, fix, must|should`), push to main. Then:
    - OK (no musts left): status `RECHECK: OK @ <sha>`; message the chapter session (roster in `production/ORCHESTRATION.md`):

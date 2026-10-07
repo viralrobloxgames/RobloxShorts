@@ -114,7 +114,7 @@ function times() {
   T.grab = arrive([M.pantryCorner, M.pantry_inside, M.pantry_front, M.pantryOut, M.counterBack, M.skyeCounter], T.creep, CREEP) + 0.45;
   T.duck = endOf(12, 0.05); T.dadIn = endOf(12, 0.1);
   T.lookUp = at(15, 0.05);
-  T.open3 = at(16, -0.2); T.ham = at(16, 0.45); T.bite = endOf(16, 0.05);
+  T.open3 = at(16, 0.08); T.ham = at(16, 0.6); T.bite = endOf(16, 0.05);
   T.shut3 = endOf(17, -0.75); T.dadOut = endOf(17, -0.2);
   T.exhale = at(18, -0.6);
   T.maxAt = arrive(DOWN(), T.maxIn, 12);
@@ -172,7 +172,7 @@ const SHOTS = [
   { at: () => Math.max(T.maxIn, T.dive + 0.55), id: 'max_stairs', cam: cam('stairs_bottom') },
   { at: () => T.maxBottom + 0.3, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
   { at: () => Math.max(at(4), T.maxAt + 0.05), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
-  { at: () => Math.min(T.maxAt + 0.1, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
+  { at: () => Math.max(T.maxAt + 0.5, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
   { at: () => at(5), id: 'letters_max', cam: fix(AT_FRIDGE, 'max', 'ms', { up: 0.1 }) },
   { at: () => at(6), id: 'max_mcu', cam: fix(AT_FRIDGE, 'max', 'mcu') },
   { at: () => at(7), id: 'skye_peek2', cam: fix(PEEK, 'skye', 'cu') },
@@ -184,7 +184,7 @@ const SHOTS = [
   { at: () => endOf(9, 0.0), id: 'sandwich_insert', cam: (s) => K.applyShot(s, { pos: M.plate.clone().add(V(1.3, 2.4, 3.6)), target: M.plate.clone().add(V(-0.2, 0.3, -0.3)), fov: 34 }) },
   { at: () => at(10), id: 'max_plate', cam: fix(AT_ISLAND, 'max', 'mcu') },
   { at: () => T.maxOut, id: 'wide_swap', cam: cam('wide') },
-  { at: () => Math.max(at(11, 0.15), T.grab - 0.5), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'ms', { up: -0.3 }) },
+  { at: () => Math.max(at(11, 0.15), T.grab - 0.3), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'ms', { up: -0.3 }) },
   { at: () => at(12), id: 'skye_smug', cam: fix(AT_ISLAND, 'skye', 'ms') },
   { at: () => T.duck - 0.05, id: 'wide_dad', cam: cam('stairs_wide') },
   { at: () => T.dadBehind + 0.1, id: 'dad_walk', cam: fix(WALK_IN, 'dad', 'ms') },
@@ -366,10 +366,11 @@ export function update(t, stage) {
     let face = 'scared';
     if (t < T.toIsland) {                                   // down the stairs, round the back of the island, to the fridge
       const still = [[A.idle, idle], [A.horror_torch_hold, 0.5, t < T.open2 ? 0.7 : 0]];
-      if (t > at(8) && t < at(8, 0.7)) still.push([A.shrug, t - at(8), 1.2]);
+      const shr = sm(inv(at(8), at(8, 0.2), t)) * (1 - sm(inv(at(8, 0.6), at(8, 0.85), t)));
+      if (shr > 0) still.push([A.shrug, Math.min(t - at(8), 0.6), 1.2 * shr]);
       const turn = sm(inv(at(6, 0.0), at(6, 0.7), t)) * (1 - sm(inv(T.open2 - 0.5, T.open2, t)));   // eases round to talk to the room
       const r = walkTo(mx, DOWN(), T.maxIn, t, 12, still, M.reader.heading - 0.65 * turn);
-      face = t < at(4) ? 'scared' : t < T.reachMax ? 'nervous' : t < at(5) ? 'surprised' : t < at(8) ? 'suspicious' : 'nervous';
+      face = t < at(4) ? 'scared' : t < T.reachMax ? 'nervous' : t < at(8) ? 'suspicious' : 'nervous';
       if (t < T.open2) { P.torch.visible = true; K.hold(P.torch, mx, 'R'); }
       else {                                                // opens the fridge, takes the ham, pushes it shut
         reachG(mx, 'L', T.open2 - 0.35, T.open2 + 0.02);
@@ -381,7 +382,8 @@ export function update(t, stage) {
     } else if (t < T.maxOut) {                              // behind the island facing the room: the sandwich
       const still = [[A.idle, idle]];
       const making = t >= T.make0 && t < T.make1;
-      if (making && !(t >= T.cut0 && t < T.cut1 + 0.2)) still.push([A.typing, t - T.make0, 1.0]);
+      const tw = sm(inv(T.make0, T.make0 + 0.2, t)) * (1 - sm(inv(T.make1, T.make1 + 0.25, t))) * (1 - sm(inv(T.cut0 - 0.2, T.cut0, t)) * (1 - sm(inv(T.cut1 + 0.2, T.cut1 + 0.4, t))));
+      if (tw > 0) still.push([A.typing, t - T.make0, 1.0 * tw]);
       walkTo(mx, [M.reader, M.behindL, M.counterBack, M.counter], T.toIsland, t, 12, still);
       if (t >= T.cut0 - 0.15 && t < T.cut1 + 0.2) cutArm(t);  // the knife along the crust edge
       if (making) { P.knife.visible = true; K.hold(P.knife, mx, 'R', 'side', t >= T.cut0 - 0.15 && t < T.cut1 + 0.2 ? { level: true, yaw: CUT.yaw } : {}); }
@@ -411,7 +413,8 @@ export function update(t, stage) {
     let face = 'happy';
     if (t < T.dadOut) {
       const still = [[A.idle, idle]];
-      if (t >= T.lookUp && t < at(16)) still.push([A.look_up, 0.4, 1.5]);
+      const lu = sm(inv(T.lookUp, T.lookUp + 0.25, t)) * (1 - sm(inv(at(16, -0.25), at(16), t)));
+      if (lu > 0) still.push([A.look_up, 0.4, 1.5 * lu]);
       walkTo(dd, DOWN(), T.dadIn, t, DADV, still, M.reader.heading);
       face = t < at(14) ? 'happy' : t < T.lookUp ? 'suspicious' : t < at(16) ? 'surprised' : t < at(17) ? 'annoyed' : 'sad';
       reachG(dd, 'L', T.open3 - 0.35, T.open3 + 0.02);     // pulls the fridge open ...
