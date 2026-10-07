@@ -49,3 +49,15 @@ clip_check: sight hits now only at 7.6-8.1 s (the pink-lock insert: Max sees her
 Shoulds left: flashlight arm straight (f211-260), white blob at the left edge of the Max CUs (f1105-1300).
 
 Verdict: **MUSTS** (c1 #8, N4).
+
+## Re-check @ 5fc54214
+Diff from 65f9fd9e: 5 lines of ch01.js (the aisle walk on the wide, Max's arms on his long line). clip_check is the same as at 65f9fd9e (sight hits only on the pink-lock insert, accepted, and in the classroom; the same 2 high, both explained there); no new Max/desk hits. cam_check: 0/0/0. I rendered frames 440-480 and 1100-1320 (and the rest at 65f9fd9e, unchanged).
+
+| must | status | note |
+|---|---|---|
+| c1 #8 180° spin | fixed | the wide carries the walk up the aisle; the single opens on him already facing (f470+) |
+| N4 / c6 R1 arm forward | fixed | f1120-1300 arms down |
+| all earlier musts | fixed | |
+Shoulds left: flashlight arm straight (f211-260), white blob at the left edge of the Max CUs.
+
+Verdict: **OK**.
