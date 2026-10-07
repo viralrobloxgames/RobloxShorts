@@ -114,7 +114,7 @@ const lerpAngle = (a, b, u) => a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) 
 const CREEP = 6;                                     // creeping speed, studs/s (legs driven by distance)
 function poseSkye(t, idle) {
   const a = C.skye, g = M.ghost(), nb = M.nearBed(), din = M.doorIn();
-  const lift = inv(T.pull - 0.15, T.pull + 0.45, t), sheetOn = lift < 1;   // ~0.6 s pull, on camera
+  const lift = inv(T.pull - 0.15, T.pull + 0.2, t), sheetOn = lift < 1;   // the sheet lifts as both hands rise; at the top of the raise it becomes the bunch in her hand
   K.dress(a, 'skye_hoodie'); K.dress(a, 'skye_sheet', sheetOn); if (sheetOn) K.sheetLift(a, lift);
   K.dress(a, 'glow_sticks');
   // 1) the entrance: a step inside the doorway at frame 0, creeping down a clear lane between the desk chair and the
@@ -125,8 +125,10 @@ function poseSkye(t, idle) {
   const faceMax = toward(g.pos, M.bedUp().pos);
   if (t < t1) K.walk(a, A, m0, LANE, 0, t, { speed: CREEP, idleAt: idle });
   else K.walk(a, A, LANE, g, t1, t, { speed: CREEP, idleAt: idle, endHeading: faceMax });
-  let heading = a.root.rotation.y;
-  if (t > t1 + LANE.pos.distanceTo(g.pos) / CREEP) heading = faceMax;
+  // headings eased through the waypoint turn and the arrival turn (no one-frame snaps)
+  const h1 = toward(m0.pos, LANE.pos), h2 = toward(LANE.pos, g.pos), t2 = t1 + LANE.pos.distanceTo(g.pos) / CREEP;
+  let heading = lerpAngle(h1, h2, smooth(inv(t1 - 0.2, t1 + 0.2, t)));
+  heading = lerpAngle(heading, faceMax, smooth(inv(t2 - 0.15, t2 + 0.3, t)));
   // spooky sway on "Maaax" and "I am a ghost"
   const spook = Math.max(W(t, at(2, -0.2), end(2, 0.1)), W(t, at(4, -0.2), end(4, 0.1)));
   heading += 0.12 * Math.sin(t * 3.2) * spook;
@@ -136,12 +138,12 @@ function poseSkye(t, idle) {
   a.root.rotation.y = heading; a.root.updateMatrixWorld(true);
   // arms: the phone up recording (right), lowered to her chest once the sheet is off
   const low = smooth(inv(T.pull + 0.3, T.pull + 0.8, t)), rP = lerp(-1.35, -0.7, low), rS = lerp(0.2, 0.02, low);
-  const lP = lerp(-0.1, -0.75, smooth(inv(T.pull - 0.2, T.pull + 0.55, t)));
+  const lP = lerp(-0.85, -0.75, smooth(inv(T.pull - 0.2, T.pull + 0.55, t)));
   armFwd(a, 'R', rP, rS);
-  if (sheetOn && t < T.pull - 0.2) armFwd(a, 'L', lerp(-0.1, -1.15 + 0.12 * Math.sin(t * 5), spook), 0.15);   // spooky forearm forward, below the shoulder (eased)
-  if (t > T.pull - 0.2 && t < T.pull + 0.55) { const k = Math.sin(inv(T.pull - 0.2, T.pull + 0.55, t) * Math.PI); armFwd(a, 'L', lerp(lP, -2.6, k), lerp(0.02, 0.35, k)); armFwd(a, 'R', lerp(rP, -2.5, k), lerp(rS, 0.35, k)); }
+  if (sheetOn && t < T.pull - 0.2) armFwd(a, 'L', lerp(-0.85, -1.2 + 0.12 * Math.sin(t * 5), spook), 0.15);   // spooky forearm forward, below the shoulder (eased)
+  if (t > T.pull - 0.2 && t < T.pull + 0.55) { const k = Math.sin(inv(T.pull - 0.2, T.pull + 0.55, t) * Math.PI); armFwd(a, 'L', lerp(lP, -1.85, k), lerp(0.02, 0.22, k)); armFwd(a, 'R', lerp(rP, -1.8, k), lerp(rS, 0.22, k)); }
   else if (!sheetOn) armFwd(a, 'L', -0.75, 0.02);                                         // sheet bunched in her left hand, at her hip
-  { const w = W(t, T.fridge - 0.5, end(12)); if (w > 0) armFwd(a, 'R', lerp(-0.7, -1.45, w), lerp(0.02, 0.05, w)); }   // points at him with the phone hand (eased)
+  { const w = W(t, T.fridge - 0.5, end(12), 0.3); if (w > 0) armFwd(a, 'R', lerp(-0.7, -1.45, w), lerp(0.02, 0.05, w)); }   // points at him with the phone hand (eased)
   a.root.updateMatrixWorld(true);
   // faces (they only read once the sheet is off)
   let face = 'scheming';
@@ -193,8 +195,8 @@ function poseMax(t, idle) {
   // one-arm gestures once the plate is down
   { const w = W(t, T.pumpkin - 0.25, end(8, 0.2), 0.25); if (w > 0) armFwd(a, 'R', lerp(-1.35, -2.15 + 0.1 * Math.sin((t - T.pumpkin) * 9), w), lerp(-0.25, 0.45 + 0.08 * Math.sin((t - T.pumpkin) * 9 + 1), w)); } // straightening an imaginary pumpkin: hand forward at head height, small wiggle
   if (t > at(13, -0.1) && t < end(13, 0.2)) { const u = Math.sin(inv(at(13, -0.1), end(13, 0.2), t) * Math.PI); armFwd(a, 'R', lerp(-1.35, -1.3, u), lerp(-0.25, 0.5, u)); headTurn(a, 0, -0.08 * u); } // one-hand palm-up shrug
-  headTurn(a, 0, 0.18 * W(t, at(11), T.comesDown + 0.2));                         // eyes down, blushing
-  headTurn(a, 0, -0.1 * W(t, T.pink - 0.1, T.monday));                            // chin up at her hair
+  headTurn(a, 0, 0.18 * W(t, at(11), T.comesDown + 0.2, 0.3));                         // eyes down, blushing
+  headTurn(a, 0, -0.1 * W(t, T.pink - 0.1, T.monday, 0.3));                            // chin up at her hair
   a.root.updateMatrixWorld(true);
   let face = 'happy';
   if (t > T.monday && t < end(5)) face = 'smug';
@@ -239,6 +241,7 @@ const SHOTS = [
   { line: 5, off: T.sticking - at(5) - 0.1, id: 'lock_cu', cam: (s) => K.setCam(s, { pos: V(0.55, 4.85, -1.95), target: V(3.2, 4.6, -4.4), fov: 38 }, { clear: false }) },
   { line: 5, off: T.monday - at(5) - 0.1, id: 'monday', cam: maxEdge('mcu') },
   { line: 5, off: T.pull - at(5) - 0.1, id: 'pull', cam: (s) => K.setCam(s, { pos: V(-3.6, 6.2, 1.6), target: V(3.2, 5.0, -4.4), fov: 42 }, { clear: false }) },
+  { line: 5, off: T.pull + 0.2 - at(5), id: 'unmasked', cam: skyeOn('ms') },   // the cut lands on the frame the sheet becomes the bunch in her hand
   { line: 6, off: -0.1, id: 'you_knew', cam: skyeOn('mcu') },
   { line: 7, off: -0.1, id: 'sandwiches', cam: (s) => camFrom(s, C.max, MAX_BED_DIR, 'ms', 34, 0.8) },
   { line: 8, off: -0.1, id: 'pumpkin', cam: two() },
