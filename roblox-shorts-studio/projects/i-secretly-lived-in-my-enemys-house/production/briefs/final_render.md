@@ -9,7 +9,9 @@ Paths: work from `roblox-shorts-studio/`; `P=projects/i-secretly-lived-in-my-ene
    1-1 --scale 0.25`. Write `$P/production/status/final-chNN-<a|b>.md` = `STATUS: WAITING`, push.
 2. **Wait** (background, then end your turn) for the OK line:
    `until git fetch -q origin main && git show origin/main:$P/production/status/recheck-chNN.md 2>/dev/null | grep -q "RECHECK: OK @"; do sleep 120; done`
-3. **Render at that sha**: `git worktree add /tmp/wt <sha>`; from `/tmp/wt/roblox-shorts-studio`:
+3. **Render at that sha**: `git worktree add /tmp/wt <sha>`, then **take the fixed renderer from main** (it pre-rolls from
+   frame 1 so every worker's first frame matches a sequential render; without it poses/props pop at chunk starts):
+   `git fetch origin main && git -C /tmp/wt checkout origin/main -- roblox-shorts-studio/web/render.mjs`. From `/tmp/wt/roblox-shorts-studio`:
    `node web/render.mjs --clip $P/web/chNN.js --out /tmp/frames --frames <range> --workers 4` as a background command
    (~50-60 min), status `STATUS: RENDERING @ <sha>`, end your turn.
 4. **Encode** (from the worktree): `python3 scripts/finish_longform.py projects/i-secretly-lived-in-my-enemys-house
