@@ -1,1 +1,1 @@
-STATUS: WAITING (render @ 2d6fc591 stopped, ch02 reopened; will not publish it)
+STATUS: RERENDER @ pending (10:58Z: re-render the whole segment with the pre-rolling render.mjs from main)
