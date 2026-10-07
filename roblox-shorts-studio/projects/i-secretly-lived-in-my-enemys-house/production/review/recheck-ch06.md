@@ -71,3 +71,23 @@ frames (should, could ease to ~6). 1325-1326 is Dad's broom leaving frame over 2
   with the beam on as the torch comes up (or start the shot with them already raised). **must**
 
 Verdict: RECHECK reverted to MUSTS @ 8537ebc6. The final renders from 8537ebc6 need redoing once these are fixed.
+
+## Re-check @ 2142589b
+
+Changes since 8537ebc6: `web/ch06.js` (the four snaps plus Max's gestures), plus shared kit `cast.js`/`bedroom.js`. So I
+diffed every 3rd frame of the whole chapter against the 8537ebc6 render. Outside the fixed ranges, only f1126-1231 and
+f1567-1588 changed: Dad's torch now hangs pointing down from his hand instead of glaring at the lens (better). Nothing
+regressed. cam_check: 0 glides / 0 inside scenery / 0 at a head. clip_check: 0 high; 2 medium = Lily's one-frame tap
+(f786). Sight: same off-screen `dad sees skye` 6:02.0 (f1078-1082), OK.
+Snap scan (every frame, 0.25 scale, tblend difference): no single-frame spike inside a shot remains. The fix ranges were
+viewed at 30 fps (0.5 scale).
+
+| Must | Frames | Verdict |
+|---|---|---|
+| Skye's 180 deg snap turn | 68-70 | fixed (turn over ~8 frames) |
+| Max's neck arm drop | 276-278 | fixed (eases over ~7) |
+| Max's facepalm drop | 475-477 | fixed (eases over ~6; f478 is that motion, no pop) |
+| Dad's torch/broom raise at the hatch | 1605-1607 | fixed: a continuous raise with the beam following. The beam sweeps past the lens as a faint warm wash for ~2 frames (f1605-1606), which reads as a torch sweep; OK |
+| earlier musts | | still fixed |
+
+Shoulds: Max's point/thumb/facepalm now ease over ~4-6 frames (432-435), fine. No musts.
