@@ -616,7 +616,7 @@ export async function loadCast(scene) {
 // ~0.14 s; between words and outside their lines the full base face. `words` = captions.json words ({ word, start, end,
 // speaker }) - all of them or just this actor's; only words whose speaker matches the actor (SKYE/MAX/DAD/LILY) count.
 // { whisper: true } uses the small mouth. Returns the face key set.
-const BRIGHT = new Set(['happy', 'laugh', 'smug', 'scheming', 'surprised', 'neutral', 'talking']);
+const BRIGHT = new Set(['happy', 'laugh', 'smug', 'scheming', 'talking']);
 const MOUTH_TOP = 600;          // every pack face (plain and glam) keeps its mouth below this row and eyes/brows/tears above
 function mouthFace(actor, base, mouth) {
   const key = `${base}+${mouth}`;
@@ -638,8 +638,10 @@ export function speak(actor, baseFace, t, words = [], { whisper = false } = {}) 
     if (w.speaker && actor.speaker && String(w.speaker).toUpperCase() !== actor.speaker) continue;
     const k = Math.floor((t - w.start) / 0.14), odd = (i + k) % 2;
     // `talking` is a smiling open mouth: only bright faces use it; sad/scared/angry ones alternate `mouth_o` / `mouth_small`
-    const open = BRIGHT.has(baseFace) ? 'talking' : 'mouth_o', small = BRIGHT.has(baseFace) ? 'mouth_o' : 'mouth_small';
-    const f = whisper ? (odd ? baseFace : mouthFace(actor, baseFace, 'mouth_small')) : mouthFace(actor, baseFace, odd ? small : open);
+    // non-bright faces alternate the open "o" with their OWN mouth (frown/flat): the pack's mouth_small is a little smile
+    const bright = BRIGHT.has(baseFace);
+    const f = whisper ? (odd ? baseFace : bright ? mouthFace(actor, baseFace, 'mouth_small') : mouthFace(actor, baseFace, 'mouth_o'))
+      : bright ? mouthFace(actor, baseFace, odd ? 'mouth_o' : 'talking') : (odd ? baseFace : mouthFace(actor, baseFace, 'mouth_o'));
     actor.setFace(f); return f;
   }
   actor.setFace(baseFace); return baseFace;
