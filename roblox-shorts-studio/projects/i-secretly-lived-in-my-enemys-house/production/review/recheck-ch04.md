@@ -30,3 +30,15 @@ New / remaining:
 - #18 **fixed** (34381f27): the end-shot half rests in Skye's palm on the desk, no straight arm; the far arm is out of the corner.
 - Every critic-2 ch04 must plus critic-6 I19 and R1: fixed. clip_check: 0 high. cam_check: clean.
 - Verdict: **OK @ 80a98e8b**. The two shoulds (Max's held-out sandwich arm f1381-1501, the locked cookie offer f169-500) were addressed in 34381f27 with lowered arms and a sway.
+
+## Gesture-snap scan @ 80a98e8b
+
+Method: segment A is delivery/chapters/ch04_a.mp4 (80a98e8b). Segment B is a fresh render of f826-1833 at scale 0.25 (80a98e8b, current render.mjs). I decoded both at 480 px, took the per-frame mean |f - f-1| and flagged spikes over 3x the local median. I excluded cuts (diff > 45) and inspected every remaining spike as a frame pair. Caption and face-texture changes (f56 title fade, 208, 322, 415, 518, 690, 808, 878) are fine.
+
+New musts:
+- **frames 171-172 (0:05.7), must.** Skye's head snaps from looking off-left to facing Max in one frame, as she folds her arms. Fix: ease the head turn over about 6 frames (f167-172).
+- **frames 1663-1664 (0:55.4), must.** Max turns about 180° in one frame, from facing camera to his back, mid-step, right after the hand-off. Fix: ease the yaw over about 6-8 frames, turning as he steps off.
+- **frames 1704-1705 (0:56.8), must.** In the two-shot just before the end-shot cut, Skye's head swings from away to front and her R arm jumps from hanging to forward with the half in one frame. The half pops into view. Fix: ease the arm and the head over about 6 frames, or place the change on the cut (f1708) so it isn't seen.
+- Small spikes at f910 and f1059 are minor arm/face settles, not visible snaps. OK.
+
+**RECHECK: MUSTS @ 80a98e8b (gesture snaps)**

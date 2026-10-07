@@ -1,3 +1,3 @@
-STATUS: DONE
-RECHECK: OK @ bfdc9f04
-FINAL: MUSTS (a: 545-546 arm snap on the back-away; 746-748 foreground flash after the cut; b final, seam OK)
+STATUS: WAITING
+RECHECK: OK @ a76617f1
+FINAL: PENDING (re-render of ch08_a at a76617f1; ch08_b final)
