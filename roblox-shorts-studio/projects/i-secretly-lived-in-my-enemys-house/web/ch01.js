@@ -101,6 +101,8 @@ function walkPath(a, pts, t0, t, opts = {}) {
   return m;
 }
 const P3 = (set, x, z, h = 0) => ({ pos: K.getSet(set).group.position.clone().add(V(x, 0, z)), heading: h });
+// show / hide an actor's leg meshes (Max's legs under the duvet in bed)
+function setLegs(a, on) { for (const b of ['Leg.L', 'Leg.R']) a.bones[b].traverse((o) => { if (o.isMesh) o.visible = on; }); }
 let STAGE = null, ROUTE = {};
 // walk along a set route (waypoints around the furniture, kit-sets-c); legs driven by the distance walked
 function routeWalk(a, set, pts, t0, t, { speed = 12, idleAt = 0, endHeading, startHeading } = {}) {
@@ -355,10 +357,13 @@ function night2(t, set, idle) {
   const up = smooth(inv(T.wake, T.wake + 0.9, t)), lift = smooth(inv(at(15) + 0.25, at(15) + 0.6, t));
   const lieRoot = V(-4, 0, -2.85), sitRoot = V(-4, 0, -5.95);   // lying: the rig pivots at the feet, so its head lands on the pillow at z -7.6
   K.putOn(C.max, { pos: lieRoot.clone().lerp(sitRoot, up), heading: 0 }, { sit: true, visible: !lumped });
-  const lieP = { ...K.POSES.lie_back, Head: [(1 - up) * -32 * lift, 0, 0] };                    // head lifted off the pillow
-  const sitP = { ...K.POSES.sit_upright, Torso: [-20, 0, 0], 'Arm.L': [-10, 0, -6], 'Arm.R': [-10, 0, 6] };   // leaning back on the pillow, hands on the duvet
+  const armsIn = { 'Arm.L': [-12, 0, -4], 'Arm.R': [-12, 0, 4] };                                  // arms close in all the way up
+  const lieP = { ...K.POSES.lie_back, ...armsIn, Head: [(1 - up) * 30 * lift, 0, 0] };            // head lifts up off the pillow (never dips)
+  const sitP = { ...K.POSES.sit_upright, Torso: [-20, 0, 0], ...armsIn };   // leaning back on the pillow, hands on the duvet
   const drop = K.posture(C.max, K.mixAngles(lieP, sitP, up));
-  C.max.root.position.y = (1 - up) * 1.9 + up * K.seatY(C.max, 2.0);   // lying: sunk a little into the mattress and pillow, under the duvet   // body and legs stay under the duvet's ridge (top y 3.07)   // lying: his back on the mattress, head on the pillow
+  C.max.root.position.y = (1 - up) * 1.9 + up * K.seatY(C.max, 2.0);
+  if (up > 0) C.max.bones.Root.position.y += 0.5 * (1 - up) * C.max.scale;   // the kit lifts the lying root 0.5 only at exactly -90 deg: keep that lift while he rises (no dip)
+  setLegs(C.max, false);   // his legs are under the duvet: its leg ridge is them (no separate roll beside plaid legs)   // lying: sunk a little into the mattress and pillow, under the duvet   // body and legs stay under the duvet's ridge (top y 3.07)   // lying: his back on the mattress, head on the pillow
   headTurn(C.max, t > at(17) - 0.1 && t < end(17) + 0.2 ? 0.4 * smooth(inv(at(17) - 0.1, at(17) + 0.25, t)) : t > at(16) - 0.3 && t < at(18) ? 0.35 : 0);   // turns to the wall Lily's voice comes through
   // the flashlight, off, standing on the bedside table
   if (P.torch.parent !== set.group) set.group.add(P.torch);
@@ -385,6 +390,7 @@ function faces(t, sc) {
 // ---------- update ----------
 export function update(t, stage) {
   const sh = shotAt(t), [setId, light] = SCENE[sh.scene];
+  setLegs(C.max, true);
   const set = K.showSet(setId);
   K.applyLight(stage, light, { set, practicals: { bedside_lamp: false, moon_window: setId === 'bedroom' } });
   const idle = K.holdClock(t, L, [[0, T.closeup], [T.doorOpen, T.doorShut + 1.2], [T.spider, T.spider + 0.6], [T.exit, T.exit + 2], [T.dusk, T.dusk + 7.5], [T.night, at(15)], [T.lump, T.lump + 0.8]]);
