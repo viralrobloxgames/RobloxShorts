@@ -5,7 +5,8 @@
 // frame turns much more than ~22 degrees), with smoothstep timing. Never across a camera cut (camera moves
 // > cutStuds or turns > cutDeg in one frame) or set change, never for an actor that was hidden on the frame before or
 // moved more than `teleport` studs (re-placed), and root *positions* are never touched (marks, seats and contacts stay
-// exactly where the clip puts them). Held props follow the hands; nothing else is changed.
+// exactly where the clip puts them). When the clip moves an actor up or down in a frame (sits, kneels, stands up) the
+// legs and Root bone are not eased that frame (they must match the new height). Held props follow the hands.
 //
 // The clip never sees the filtered pose: before each clip.update the bones get the clip's own values back, so a clip
 // poses exactly as it would without the filter, and every frame away from a snap is identical to an unfiltered render.
@@ -18,11 +19,12 @@ import * as THREE from 'three';
 import { packActors } from './robloxPack.js';
 
 const BONES = ['Root', 'Torso', 'Head', 'Arm.L', 'Arm.R', 'Leg.L', 'Leg.R'];
+const LOWER = ['Root', 'Leg.L', 'Leg.R'];
 const smooth = (x) => (x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x));
 const DEG = 180 / Math.PI;
 
 export function createAntiSnap(clip, stage, meta, opts = {}) {
-  const o = { boneDeg: 25, rootDeg: 25, hardDeg: 50, sudden: 0.5, minFrames: 6, maxFrames: 12, degPerFrame: 15, cutStuds: 0.5, cutDeg: 10, teleport: 3, ...opts };
+  const o = { boneDeg: 25, rootDeg: 25, hardDeg: 50, sudden: 0.5, liftStuds: 0.2, minFrames: 6, maxFrames: 12, degPerFrame: 15, cutStuds: 0.5, cutDeg: 10, teleport: 3, ...opts };
   const fps = meta.fps || 30;
   let cur = 0;                      // last frame stepped (detection done)
   let prevRaw = null, prevShown = null, prevCam = null;
@@ -69,9 +71,14 @@ export function createAntiSnap(clip, stage, meta, opts = {}) {
       const snap = (part, deg, min) => { nd[part] = deg; return deg > o.hardDeg || (deg > min && (ld[part] ?? 0) < o.sudden * deg); };
       if (blocked(f)) { for (const [k, v] of Object.entries(r.bones)) if (pr.bones[k]) nd[k] = v.q.angleTo(pr.bones[k].q) * DEG; continue; }
       let b = blends.get(a);
+      // The clip moved the actor up or down this frame (sitting down, kneeling, standing up): the legs and the Root bone
+      // must match the new height at once, or eased legs would sink through the floor or hang under a seat.
+      const lifted = Math.abs(r.pos.y - pr.pos.y) > o.liftStuds;
+      if (lifted && b) for (const k of LOWER) delete b.bones[k];
       for (const [k, v] of Object.entries(r.bones)) {
         const pv = pr.bones[k]; if (!pv) continue;
         const deg = v.q.angleTo(pv.q) * DEG;
+        if (lifted && LOWER.includes(k)) { nd[k] = deg; continue; }
         if (snap(k, deg, o.boneDeg)) {
           if (!b) { b = { bones: {}, root: null }; blends.set(a, b); }
           const n = Math.min(o.maxFrames, Math.max(o.minFrames, Math.round(deg / o.degPerFrame)));
