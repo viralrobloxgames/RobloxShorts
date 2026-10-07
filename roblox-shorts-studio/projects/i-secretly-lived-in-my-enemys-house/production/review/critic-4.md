@@ -275,3 +275,20 @@ the whole chapter, plus f733-744 (Lily's walk to the nest). 371 + 6 frames. Resu
 
 Verdict: **not yet OK**. 1 must left (C8-1, the smile viseme on sad lines). The rest pass; there are 5 shoulds (phone
 visibility, wipe pose, Lily's path past Skye's knees, rim bloom on Lily's arm, the MCU forearm).
+
+## ch08 re-check 2 (commit 986b476f, frozen kit incl. 99095c70 speak() fix, own previews)
+
+Rendered 107 frames at 0.5 scale, every 2nd-3rd frame through every sad line flagged last time (f556-628,
+f655-703, f746-791, f995-1022, f1590-1610, f1675-1741) plus spot frames across the chapter.
+
+- **C8-1 faces: OK.** No smile visemes left: Skye alternates her sad mouth with an "o" on "The worst. Right. Got it.",
+  "Worse...", "Nothing. I left..." and crying "It's dusty"; Lily alternates scared/sad mouths with an "o" on "What
+  happened?", "He said that?" and "Then why are you crying?". Lily's smug smile on "goose" and Skye's scheming grin
+  on "Max scream" are intended.
+- **M2 two-shot arms: OK.** Skye's hands are in at her knees with the note fist; Lily's arms are around the teddy.
+- Musts from the first pass: all still OK.
+- Shoulds still open (not blocking): Max's phone is barely visible at f331-371; the eye wipe is a raised fist beside
+  her head with the note on its outside (f1675-1702), not at the eye, and it flares white at f1705; Lily passes very
+  close in front of Skye on her walk in (f742-744); there is a lavender rim bloom on Lily's near arm.
+
+**ch08: OK (0 musts).**
