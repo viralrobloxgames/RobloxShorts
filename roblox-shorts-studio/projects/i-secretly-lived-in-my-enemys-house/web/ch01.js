@@ -56,11 +56,16 @@ const T = {
   exit: end(13) - 0.15,             // Max says it from her desk, then leaves for the door
   dusk: at(14) - 0.35,              // the back of Max's house
   night: 0,                         // set below: back in the bedroom; three knocks before "Maaax"
+  wake: end(15) + 0.1,              // after "Maaax" he pushes up to sit (on camera)
   lump: end(18) + 0.15,             // [+0.8] Max yanks the blanket over his head; the closet opens a crack
 };
 // dusk: from halfway up the garden path to the back door (a look round at path_near), then in; the door shuts behind her
 const DUSK_SPEED = 8, DUSK_LEGS = () => [K.mark('exterior', 'path_mid'), K.mark('exterior', 'path_near'), K.mark('exterior', 'porch_step'), K.mark('exterior', 'back_door')];
 T.door = 0;   // filled in setup() from the marks (needs the built sets)
+// Max in bed (3/4 from his left, a little above): headboard, pillow and the duvet over his legs all in frame
+const BEDCAM = { pos: V(2.2, 6.6, -1.0), target: V(-4.2, 3.2, -5.2), fov: 42 };
+// the duvet: draped over him lying / sitting (kit-sets-a modes when they land, else the current ones)
+const BLANKET = (t) => { const st = t < T.wake + 0.5 ? 'lying' : 'sitting'; return K.getSet('bedroom').blanketModes?.includes?.(st) ? st : (st === 'lying' ? 'flat' : 'legs'); };
 let KNOCKS = [];
 
 // ---------- marks (all from the sets) ----------
@@ -184,7 +189,8 @@ const S = {
   backDoor: { scene: 'dusk', cam: (s) => K.applyShot(s, { pos: V(1500 + 14.5, 5.4, -1.6), target: V(1500 + 5.4, 4.2, -7.8), fov: 44 }) },   // yard side, 3/4: her grin back, the door swinging open
   knockDoors: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(-6.0, 4.6, 3.4), target: V(-11.0, 4.2, 2.0), fov: 40 }) },   // the louvred doors rattle with each knock
   knock: { scene: 'night2', cam: (s) => K.applyShot(s, skyeCloset(0.1)) },
-  maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: K.headPos(C.max).add(V(2.6, 0.5, 6.0)), target: K.headPos(C.max).add(V(0, -1.0, 0)), fov: 34 }) },
+  maxWakes: { scene: 'night2', cam: (s) => K.applyShot(s, BEDCAM) },   // 3/4 from the side: pillow, headboard, the L of his body under the duvet
+  maxBed: { scene: 'night2', cam: (s) => K.applyShot(s, BEDCAM) },
   maxBedCU: { scene: 'night2', cam: (s, t, sh) => { const h = K.headPos(C.max); return push(s, { pos: h.clone().add(V(1.6, 0.3, 4.2)), target: h.clone().add(V(0, -0.4, 0)), fov: 32 }, { pos: h.clone().add(V(1.2, 0.25, 3.2)), target: h.clone().add(V(0, -0.35, 0)), fov: 32 }, inv(sh.start, sh.start + 4, t)); } },
   dayOne: { scene: 'night2', cam: (s) => K.applyShot(s, { pos: V(2.5, 6.6, -7.8), target: V(-7.0, 3.9, -0.9), fov: 27 }) },
 };
@@ -194,7 +200,7 @@ const SHOTS = [
   ['classWide', T.class], ['maxIntro', at(4)], ['classWalk', T.maxWalk + 0.6], ['maxMocks', () => Math.min(T.maxArrive + 0.05, at(5) - 0.1)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
   ['yardWide', T.dusk], ['backDoor', () => T.door - 0.75],
-  ['knockDoors', () => T.night], ['knock', () => T.night + 1.0], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
+  ['knockDoors', () => T.night], ['knock', () => T.night + 1.0], ['maxWakes', end(15) + 0.05], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
 ].map(([id, start]) => ({ id, start: typeof start === 'function' ? 0 : start, at: typeof start === 'function' ? start : null, ...S[id] })).sort((a, b) => a.start - b.start);
 const shotAt = (t) => { let s = SHOTS[0]; for (const x of SHOTS) if (t >= x.start) s = x; return s; };
 const SCENE = { night1: ['bedroom', 'night_moon'], class: ['classroom', 'school_day'], dusk: ['exterior', 'dusk'], night2: ['bedroom', 'night_moon'] };
@@ -331,7 +337,7 @@ function night2(t, set, idle) {
   const rattle = KNOCKS.some((x) => t >= x && t < x + 0.12) ? 0.025 : 0;
   const crk = t < T.lump + 0.6 ? rattle : 0.27 * easeOut(inv(T.lump + 0.6, T.lump + 0.95, t));
   set.setClosetDoors(rattle, crk);
-  set.setBlanket(lumped ? 'over_head' : 'legs');
+  set.setBlanket(lumped ? 'over_head' : BLANKET(t));
  set.setLamp(false);
   K.setPractical(set, 'closet_light', lumped ? 3.0 : 0);              // a little light in the closet so her grin reads at the crack
   // Skye in the closet: knocks three times on the door (right knuckles), "Maaax", then her face at the crack
@@ -345,9 +351,15 @@ function night2(t, set, idle) {
   const k = KNOCKS.findIndex((x) => t >= x && t < x + 0.25);
   if (t > KNOCKS[0] - 0.2 && t < KNOCKS[2] + 0.4) K.gesture(C.skye, 'knock', 'R', k >= 0 ? 1 - 0.35 * Math.sin((t - KNOCKS[k]) / 0.25 * Math.PI) : 1);
   // Max sitting up in bed (flashlight off on the bedside table), then under the blanket
-  K.playAnim(C.max, [[A.sit, 0, 1, false]]);
-  K.putOn(C.max, M.bedSit(), { sit: true, visible: !lumped });
-  armSet(C.max, 'L', -0.1, 0, 0.08); armSet(C.max, 'R', -0.1, 0, -0.08);    // arms down on the blanket
+  // Max in bed: lying on his back, head on the pillow, until "Maaax"; lifts his head, pushes up to sit back against the
+  // headboard and pillow, legs forward under the duvet; then dives under it (the lump)
+  const up = smooth(inv(T.wake, T.wake + 0.9, t)), lift = smooth(inv(at(15) + 0.25, at(15) + 0.6, t));
+  const lieRoot = V(-4, 0, -2.85), sitRoot = V(-4, 0, -6.4);   // lying: the rig pivots at the feet, so its head lands on the pillow at z -7.6
+  K.putOn(C.max, { pos: lieRoot.clone().lerp(sitRoot, up), heading: 0 }, { sit: true, visible: !lumped });
+  const lieP = { ...K.POSES.lie_back, Head: [(1 - up) * -32 * lift, 0, 0] };                    // head lifted off the pillow
+  const sitP = { ...K.POSES.sit_upright, Torso: [-14, 0, 0], 'Arm.L': [-10, 0, -6], 'Arm.R': [-10, 0, 6] };   // leaning back on the pillow, hands on the duvet
+  const drop = K.posture(C.max, K.mixAngles(lieP, sitP, up));
+  C.max.root.position.y = (1 - up) * 2.65 + up * K.seatY(C.max, 2.15);   // lying: his back on the mattress, head on the pillow
   headTurn(C.max, t > at(17) - 0.1 && t < end(17) + 0.2 ? -0.45 * smooth(inv(at(17) - 0.1, at(17) + 0.25, t)) : t > at(16) - 0.3 && t < at(18) ? 0.35 : 0);   // turns to the wall Lily's voice comes through
   // the flashlight, off, standing on the bedside table
   if (P.torch.parent !== set.group) set.group.add(P.torch);
