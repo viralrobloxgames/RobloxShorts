@@ -69,3 +69,14 @@ Must left:
 - **frames 887-896, the steal, must.** The stolen pancake lifts off the stack and floats in mid-air beside and above Skye's head for about 0.2 s (f890-893), touching nothing. Her hand block is behind the stack, not under the pancake. Then the pancake disappears behind the stack (f896). It reads as a floating prop, the exact thing the user rejected at 1:47. Fix: her hand on the top pancake in front of the stack (camera side) from T.steal, and the pancake parented to that hand from the first frame it moves, sliding it straight off toward her below the stack top. No free lerp to the "edge" point, which from this camera sits in the air above her head.
 
 Note for the orchestrator: this commit changes the shared kit `web/kit/cast.js` `speak()`. Non-bright faces now alternate base/`mouth_o` instead of `mouth_small`, and 'surprised' and 'neutral' were removed from BRIGHT. This changes lip-sync in every chapter, not just ch02.
+
+## Re-check @ 05362a98
+
+The only change since 72fff376 is ch02.js (the steal camera and pose, and the exterior arm raise). cam_check is clean. clip_check has one new high hit: Skye's torso and arms in the island top, 29.1-29.5 s. She leans over the counter with her chin at the edge, the counter hides the overlap, and in the render it reads as leaning on it, so I accept it. The sight check is unchanged. I viewed f871-901 and f1396-1414 at every 3rd frame.
+
+| item | verdict | notes |
+|---|---|---|
+| steal (round-2 must) | fixed | f886-895: her hand is on the top pancake, which rides on her palm as she draws it back; it never floats free |
+| exterior bite on "Ever" (round-2 should) | **regressed, must** | see below |
+
+- **frames 1400-1415, must (C1, user 1:47, regression).** The new `chin_hand` raise (0.72 + 0.2*up) lifts the big hand block over her nose and mouth again, with the pancake as a flat disc across the block's face (f1402, f1405, f1411). This is the exact image the user rejected. Fix: keep the hand at 0.72, beside her chin, and get the bite by dipping her head to the pancake (Head x rotation, as in 72fff376), or by moving the pancake (not the hand block) to her mouth. Nothing may pass in front of her face.
