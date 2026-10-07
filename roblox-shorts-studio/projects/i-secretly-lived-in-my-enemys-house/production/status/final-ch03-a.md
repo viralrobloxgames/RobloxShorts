@@ -1,4 +1,3 @@
-STATUS: DONE
-COMMIT: 726592de
+STATUS: RENDERING @ b6998591
 RANGE: 1-906
-FRAMES: 906 (1920x1080), 3 stills checked
+NOTE: re-render of changed frames only (changed_frames --delete, then --resume); earlier DONE was @ 726592de
