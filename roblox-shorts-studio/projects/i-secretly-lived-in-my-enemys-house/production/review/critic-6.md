@@ -217,3 +217,45 @@ R5. Face cycling: during lip-sync, the `speak` mouth replaces the emotion every 
 Root-cause fixes, in order of payoff: (1) a per-character face/hair key light with colour floors (fixes I1-I13, I16-I17);
 (2) a new default `speak()` arm idle (fixes R1 and most of ch11 issues 7, 17 and 22); (3) hard camera cuts with no
 interpolation across `camOn` changes (ch11 issue 1, probably present in other chapters too).
+
+## ch11 re-check @ b948ad2f (own previews: `--every 15 --scale 0.5` whole chapter; dense f1-187 every 6, f280-390 every 10, f424-475 every 3, f1650-1725 every 5)
+
+Verdict: **not yet OK. Two musts remain (R-a, R-b)**; everything else passes or is down to a should.
+
+| # | was | now |
+|---|---|---|
+| 1-3 | camera glide, jump cut, 4 angles and a 180° flip | **fixed**: hard cuts, one framing per line, and Skye's walk to the island is one camera panning with her (f430-475), island-front side |
+| 5 | no stair walk | **fixed**: continuous walk down the treads f1-~140, round the newel to the floor, no pop |
+| 6 / 15 | Dad not at the stove; spatula comes and goes | **fixed** in the wides (Dad at the back counter/stove, pan in hand at f1276-1321, f1561+). In the `dad_cu` close-ups the hands are out of frame, so no visible props, which is fine |
+| 7 | Max points at the camera, Skye missing | **partly**: Max and Skye are now both in frame. But see R-a, and Max is small and half-hidden behind the pancake stack at frame left, with his point barely readable. Fix: re-aim the shot or move the stack. **should** |
+| 10 | wide pile-up, floating pancake | **fixed** in the wide: Dad reads above Lily, clear of Max; SAY YES whole |
+| 11-12 | arms through each other at the island | **fixed**: stools spaced, no contact (f1081-1186, f1201-1366, f1426-1441) |
+| 13 | teddy not in Lily's arms | **teddy fixed** (on her chest), **pose not**: see R-b |
+| 14 | plate teleports, arm in counter | **fixed**: the plate rides Max's palm from his spot to Skye's (f1665-1725), with no jump |
+| 16 | identical Dad points | **should**: neither point reads in the `dad_cu` (f391-421, f901-931). At most a shoulder block moves at the frame edge. Widen to a MS for those two lines, or accept them as face-only beats |
+| 17 | zombie arms, V shrug | **fixed**: arms down on the walk and talk, the shrug is small, the phone is at the ear with the elbow down (f961-1036) |
+
+**R-a ch11 0:09.4-0:12.9 (f282-390), pose, MUST: Skye's "small awkward wave" is both arms held out and down-sideways (an A/T shape) for 3.5 s.**
+She stands foreground right with both forearms angled away from her body, like a "ta-da", and holds it for the whole of "Dad, this
+is Skye. She's the ghost." Fix: one-arm `wave` (or one hand at her neck); the other arm hangs at her side.
+
+**R-b ch11 0:18.6-0:22.5 (f560-676) and 0:42.4-0:44.0 (f1273-1321), pose, MUST: Lily's "hug" is both arms raised up and out in a V on either side of the teddy.**
+Her arms do not touch the bear. It is a two-arms-up shape in a close-up, held about 4 s, against the house rule. On the fridge point (f1276-1321), one arm comes forward as a huge foreground block while the other stays up and out. Fix: `posture(lily,'hug_teddy')`
+with the forearms crossed over the bear; on her fridge line, keep one arm on the bear and raise only the pointing arm (and keep it
+out of the lens, e.g. pointing across frame toward the fridge side).
+
+Shoulds still open: ch11 issue 24 (Dad's face peeking out beside Max's head in `max_cu`, f1381-1411); the flipped pancake arcs
+through the seated two-shot right next to Max's head (f1705-1720) while the pan is out of frame, so it reads as floating. Keep
+the flip in the stove shot or the wide.
+
+After R-a and R-b, ch11 is OK from me (no need to re-check the shoulds).
+
+## ch11 final check @ 50e434a3 (own spot renders f290-380, f580-660, f1280-1320, f1700-1715)
+
+- R-a **fixed**: Skye stands at the stair foot with one arm waving and the other down.
+- R-b **fixed**: Lily's forearms close over the teddy (the elbows sit a little high, acceptable for the block rig). On "The fridge
+  says yes" only her right arm goes out, frame-left toward the fridge, and the bear stays on her chest.
+- The pancake no longer floats in the payoff two-shot.
+
+**ch11: OK from critic-6.** Shoulds still open, not blocking: the Dad points don't read in `dad_cu`; Max is small behind the
+pancake stack in the f282-390 two-shot; Dad's face shows beside Max in `max_cu`.

@@ -33,6 +33,7 @@ cue('swish_1', TAP - 0.02, 0.10)                    # Lily's tap on her shoulder
 cue('door_creak', CREAK - 0.05, 0.30)               # the floorboard creak at the end of the hall
 s = CREAK + 0.35                                    # Dad's slow steps toward them (4 studs/s)
 while s < at(13, 1.4): cue('footstep', s, 0.10); s += 0.7
+cue('door_creak', end(14, -0.3), 0.16)              # a creak on the stairs behind Dad: he spins round to it
 for k in range(3): cue('footstep', HIDE + 0.15 + 0.16 * k, 0.07)    # the dash into the linen closet
 cue('door_creak', HIDE + 0.5, 0.14)                 # the closet door pulled almost shut
 cue('footstep', HATCH + 0.05, 0.10); cue('footstep', HATCH + 0.4, 0.10)   # Dad steps under the hatch

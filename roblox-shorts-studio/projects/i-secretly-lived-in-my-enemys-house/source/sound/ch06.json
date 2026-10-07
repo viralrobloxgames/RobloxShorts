@@ -51,6 +51,11 @@
   "gain": 0.1
  },
  {
+  "asset": "sfx/door_creak.wav",
+  "start": 44.509,
+  "gain": 0.16
+ },
+ {
   "asset": "sfx/footstep.wav",
   "start": 45.039,
   "gain": 0.07

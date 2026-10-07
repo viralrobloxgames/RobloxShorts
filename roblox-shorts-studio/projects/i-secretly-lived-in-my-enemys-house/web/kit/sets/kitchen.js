@@ -309,6 +309,9 @@ export function build(scene) {
     box(0.18, 0.3, 2.5, slatM, 0, 0.2, 0, d); box(0.18, 0.3, 2.5, slatM, 0, 7.8, 0, d); box(0.18, 0.35, 2.5, slatM, 0, 4.0, 0, d);
     for (let y = 0.55; y < 7.6; y += 0.42) { if (Math.abs(y - 4.0) < 0.3) continue; const s = box(0.05, 0.3, 2.1, slatM, 0, y, 0, d); s.rotation.z = -1.15; s.userData.noCamBlock = true; }
     box(0.12, 0.6, 0.12, handleM, 0.15, 4.0, side < 0 ? 1.0 : -1.0, d);
+    // opaque back panel behind the louvres (pantry side), so a shut pantry hides whoever is inside; moves with its leaf,
+    // so the centre gap between the leaves still opens when they are ajar (pantryDoors 0.3)
+    box(0.06, 7.4, 2.2, std('#2b2420', { roughness: 0.9 }), -0.13, 4.0, 0, d);
     pantryDoors.push({ piv, side });
   }
 
