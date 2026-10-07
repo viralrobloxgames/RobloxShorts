@@ -215,7 +215,8 @@ function walkPath(a, pts, t0, t, endHeading) {
 }
 const sitRootY = (a, m) => (m.sit ? m.pos.y : K.seatY(a, m.pos.y + SEAT_TOP));
 // when Max is seated again (walk back + 0.6 s sit-down); the end shot cuts in after this
-const SEATED = () => T.back() + pathTime(maxPathIn()) + 0.6;
+const TURN = 0.25;
+const SEATED = () => T.back() + TURN + pathTime(maxPathIn()) + 0.6;
 // Max's arms while standing at her desk: relaxed, one forearm up only on a beat
 function maxArms(t) {
   K.gesture(C.max, LOW, 'R', 1);                                                    // the sandwich, low in his right hand
@@ -249,7 +250,7 @@ export function update(t, stage) {
   const hTurned = turnTo(towardMax, 0.35);
   const toDesk = Math.sign(amix(hTurned, watchMaxDesk, 1) - hTurned), away = -Math.sign(amix(hTurned, towardMax, 1) - hTurned || 1);
   // stares after him through the hand-off shot; for her whisper (end_front) she faces front again, 3/4 to the lens
-  const faceFront = ENDCUT() - 0.1;
+  const faceFront = ENDCUT();                                                       // on the cut, never seen mid-shot
   if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }
   if (t > faceFront) { hS = mS.heading - 0.25; headY = 0; }
   const endArmL = t > faceFront;                                                     // end shot: her near-lens left arm rests down by the seat
@@ -263,7 +264,7 @@ export function update(t, stage) {
   if (t > at(17, 0.5) && t < end(17, 0.2)) headY += 30 * away * ramp(t, at(17, 0.5), at(17, 0.8)) * (1 - ramp(t, end(17), end(17, 0.2)));   // prim: turns her head away
   if (t > at(13) && t < end(13, 0.25)) headY += 25 * away * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25)));   // "It's fashion." flips her hair away from him: the cobweb side to camera
   const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
-  const lookUp = t > wordT(1, 15) && t < T.back() ? -8 : 0;                      // looks up at him (he is standing)
+  const lookUp = -8 * ramp(t, wordT(1, 14), wordT(1, 15) + 0.1) * (1 - ramp(t, T.back(), T.back() + 0.3));                      // looks up at him (he is standing)
   dS.Head = [(dS.Head?.[0] ?? 0) + lookUp, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
   if (endArmL) dS['Arm.L'] = [6, 0, -6];
   sitOn(C.skye, mS, hS, dS);
@@ -297,15 +298,20 @@ export function update(t, stage) {
       if (t > at(14) && t < at(14, 0.8)) d.Head = [(d.Head?.[0] ?? 0) + 12 * Math.abs(Math.sin((t - at(14)) * Math.PI * 5)), 0, 0];  // sniff, sniff
       if (t > at(8) && t < at(8, 1.4)) d.Head = [0, 9 * Math.sin((t - at(8)) * 4.5), 0];        // glances round: a secret
       if (t > at(11) && t < end(11)) d.Head = [6, -22, 0];                                          // "That's private." looks away
-      standOn(C.max, mA.pos, hA, d);
+      const arriveTurn = smooth((t - tIn) / 0.25);                                     // turns from his walk heading to face her over 0.25 s
+      standOn(C.max, mA.pos, amix(K.faceTo(PATH_IN[1], PATH_IN[2]), hA, arriveTurn), d);
       maxArms(t);
     }
-  } else if (t < T.back() + tBack) {
-    walkPath(C.max, PATH_BACK, T.back(), t, -Math.PI / 2);
+  } else if (t < T.back() + TURN) {
+    const u = smooth((t - T.back()) / TURN);                                         // turns round on the spot first (no 1-frame spin)
+    standOn(C.max, mA.pos, amix(hA, K.faceTo(mA.pos, PATH_BACK[1]), u), {});
+    K.gesture(C.max, LOW, 'R', 1);
+  } else if (t < T.back() + TURN + tBack) {
+    walkPath(C.max, PATH_BACK, T.back() + TURN, t, -Math.PI / 2);
     K.gesture(C.max, LOW, 'R', 1);                                                    // his half, low at his side
   } else {
     // sidle from beside the chair onto the seat over 0.6 s, turning to the front; then seated, glancing over at her
-    const u = smooth((t - T.back() - tBack) / 0.6), side = PATH_IN[0];
+    const u = smooth((t - T.back() - TURN - tBack) / 0.6), side = PATH_IN[0];
     const seat = { pos: mM.pos.clone(), heading: mM.heading, sit: mM.sit };
     const hM = amix(-Math.PI / 2, mM.heading, u);
     if (u < 1) {
