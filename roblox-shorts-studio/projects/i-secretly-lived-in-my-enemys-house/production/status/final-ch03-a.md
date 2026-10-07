@@ -1,3 +1,4 @@
-STATUS: RENDERING @ 726592de
+STATUS: DONE
+COMMIT: 726592de
 RANGE: 1-906
-NOTE: whole-segment re-render with pre-rolling render.mjs (started 11:02Z)
+FRAMES: 906 (1920x1080), 3 stills checked
