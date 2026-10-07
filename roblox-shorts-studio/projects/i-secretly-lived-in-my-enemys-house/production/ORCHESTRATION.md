@@ -100,3 +100,25 @@ re-render A (chapter) + B (same helpers as phase 2) -> re-stitch (same command) 
 | critic-1 (now ch01 only) | session_01MBPEtt2p6fabrhjtXdpGWx |
 | critic-7 (ch02) | session_01Se3gj5odNjgiyMc6oaWrF1 |
 | kit-sets-b2 (attic SB1/SB2; kit-sets-b stood down, waits on "its human") | session_01ShUZFy3fAiUUE12teaccuV |
+
+## Phase 5: lean last phase (04:20Z, 2026-10-07)
+The 23:10Z window ran out at 23:56Z (~25 long-context sessions; every turn re-reads the whole context). Now: chapter
+sessions only fix (READY_FOR_RECHECK + COMMIT, end turn); fresh `recheck-chNN` (Opus, `briefs/recheck.md`) re-check and
+later do the final pass on the final MP4s; fresh `final-chNN-a/b` (Sonnet, `briefs/final_render.md`) wait for
+`RECHECK: OK @ <sha>` in `status/recheck-chNN.md`, render their segment at that sha, encode, push, `status/final-chNN-x.md`
+DONE. Old critics 1-7 and old helpers stand down. Orchestrator: when every recheck-chNN has `FINAL: PASS`, stitch
+(`--music-gain 0.09 --music-duck "8@49-58,10@56-60"`), check the user's 12 examples, deliver (720p halves in chat + parts
+in git), update START_HERE/ledger, delete routine trig_01HDGnJJhFJCFHgLovLmazw1. Never post.
+| chNN | recheck | final A | final B |
+|---|---|---|---|
+| ch01 | session_019HwEo2Jfq3KkQCZ5pQybAZ | session_01MMmR7X6r872W7tVNTx9SNY | session_01EGcrKZpusTGWXxEY6v9aT4 |
+| ch02 | session_01TA2eUfruC6WsytqfABs6fh | session_01BCU14kYDoD34spAkXgeUCF | session_01VjPt4w9mxVb7fGZGPCfTGk |
+| ch03 | session_01FwpJcgVFQ9e3jSf934dm9N | session_01PSv4YEoHtnZfRrT5URud31 | session_017Pqdg7ze3iUS8nPFDRAAyW |
+| ch04 | session_01MUCMTaQbT3CdCuaC9zhKWo | session_0143X6We9zAFkZXQz3GoaYiE | session_01KtZKvCFZRAovSxeCMfXhzm |
+| ch05 | session_015dVJbazRVhn8EavhYNHAVE | session_01Aub8bGUFbikhHDmWUPLh5F | session_017BerdLdR5TJM6oVF31dLKB |
+| ch06 | session_01UJU5XM3cuJJ1tDzqaL5tLM | session_01B38E92Bz4p8x4TLQWPSPNG | session_01Em7SWWxE1QG2tHeUvMBXrw |
+| ch07 | session_01PANaLQGZT7bFEYhiS5AFFQ | session_01P2o4LSzo2x5qZ5EapQyU7k | session_01AuU3Lw3AGcx6nZKAocpjE9 |
+| ch08 | session_01PvwFyKTRzfg9aGdSE1nc58 | session_017oSMbV1wciYxje9M3xjBv6 | session_01KwVBfg9MmGAm755MgN3wS2 |
+| ch09 | session_01QMs3Mf4KwuKKLon4ZrxU3U | session_01DXqyqNEskLfeL8B8ZxBRdv | session_01McdkEawuZ9CjmVZNWNeBrK |
+| ch10 | session_01BhPL25xQ8ZNmHHqmCQ2tGe | session_01KZPxbhzpTs1hRzzbRU79rK | session_014FKJB7R3G7jT4wsH2b66DR |
+| ch11 | session_01UpTiNJkeQVu58jeEMLx9kF | session_017wXjNDHohGEk7gDAEoaPcG | session_012qJFfcL19x2xtyHtwDdNRN |

@@ -1,7 +1,7 @@
-STATUS: DONE
+STATUS: DONE (stood down)
 FRAMES: 1956
 SPLIT: 881
-COMMIT: e4b9cc36
+COMMIT: bfdc9f04
 
 render-ch10-b (helper, segment B of ch10 = frames 881-1956)
 - [x] machine check OK (npm ci, render smoke test, finish_longform test encode); nothing missing
@@ -11,3 +11,4 @@ render-ch10-b (helper, segment B of ch10 = frames 881-1956)
 - [x] delivery/chapters/ch10_b.mp4 (+ .json, .ass): 1076 frames, 1920x1080 h264 yuv420p 30 fps, 35.87 s, 21 captions, 10.1 MB; 3 stills checked (f925, f1390, f1956)
 - renders/ch10 kept on this machine for final-review re-syncs
 - [x] review-2 re-sync to e4b9cc36 (#31 nobody, #32 boring/smiles): 1660-1956 re-rendered (297 frames, 74 copied), 881-1659 kept (f900/f1500 re-render match, mean diff 0.1/255); ch10_b.mp4 re-encoded: 1076 frames, 1920x1080, 35.87 s, 21 captions, 9.9 MB; stills f1706, f1826, f1954 checked
+- [x] stood down 04:55Z per orchestrator (requests.md 04:30Z): the bfdc9f04 re-render was stopped and nothing new was encoded or pushed. The final ch10 B render comes from final-ch10-b. delivery/chapters/ch10_b.mp4 on main is still the e4b9cc36 (review-2) version. renders/ch10 on this machine has partial bfdc9f04 frames and no reusable B frames
