@@ -50,3 +50,7 @@ Rendered f30-70, f155-185 and f1640-1740 at scale 0.25 and ran the frame-diff sc
 - f1663-1664, Max's 180° turn: fixed. It is a continuous turn over f1665-1672, then the walk.
 - f1704-1705, Skye's arm and head: fixed. The change is now on the cut at f1715; no in-shot jump.
 Pending: snap_check, clip_check --sight, cam_check and the viewer test at a main sha >= K. Then RECHECK: OK.
+
+K was cancelled (orchestrator, 15:34Z). The snap fixes are verified at 827699ba (above), and ch04 reports clip_check 0 high and cam_check clean there.
+
+**RECHECK: OK @ 827699ba**
