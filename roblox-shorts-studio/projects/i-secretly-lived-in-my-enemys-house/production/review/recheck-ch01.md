@@ -96,3 +96,12 @@ Diff from 8e1f87e8: ch01.js night/bed only (12 lines). cam_check 0/0/0; sight un
 - should: f1845, a white pillow block stands against the wall behind the bed foot in the closet shot, reading slightly as floating. Drop it to the bed or crop it.
 
 Verdict: **OK**.
+
+## Final pass (delivery/chapters/ch01_a.mp4 + ch01_b.mp4 @ 6b008a0d)
+- Files: a = 860 frames, b = 1051 frames (sum 1911 = FRAMES), both 1920x1080 at 30 fps.
+- I looked at the whole chapter at 2 fps (a+b joined) in 4x4 sheets. It matches the clip I passed at 6b008a0d: the hook with Skye in the walk-in corner, no spin into the classroom single, the spider on her hand, Max's arms relaxed, the back door, the bed (lying, then sitting up against the pillow and headboard under the duvet), Max turning to the wall for Lily, and the end beat. Captions are present and inside frame.
+- Full-res stills (hook CU f41, classroom single f471, shriek f791, sitting in bed b f790): clean, no artefacts. Faces are peach and hair keeps its colour at night.
+- Seam (a f858-860 / b f1-4, "It's rubber. Skye. Wow."): continuous, no pop.
+- Shoulds left (not blocking): flashlight arm straight; the pillow block against the wall at f1845.
+
+FINAL: PASS
