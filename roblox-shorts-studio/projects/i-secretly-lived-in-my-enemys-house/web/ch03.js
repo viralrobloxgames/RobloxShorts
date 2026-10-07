@@ -163,7 +163,7 @@ function lettersInsert(s, u) {
   const LD = lettersAt3(u), pos = LD.pos.clone().addScaledVector(LD.n, 3.0).addScaledVector(LD.r, 2.6).add(V(0, 0.3, 0));
   return K.applyShot(s, { pos, target: LD.pos.clone(), fov: 34 });
 }
-const WALK_IN = [-14.2, 5.4, -1.6], AT_FRIDGE = [-4.6, 5.3, -6.0], AT_ISLAND = [-1.2, 5.7, 6.2], PEEK = [-10.2, 4.8, -0.3], HIDE = [-2.2, 3.0, 7.2], LOW = [0.6, 2.4, 7.6];
+const WALK_IN = [-14.2, 5.4, -1.6], AT_FRIDGE = [-4.6, 5.3, -6.0], AT_ISLAND = [-1.2, 5.7, 6.2], PEEK = [-10.2, 4.8, -0.3], HIDE = [1.2, 3.1, 6.4], LOW = [0.6, 2.4, 7.6];
 const SHOTS = [
   { at: () => 0, id: 'open', cam: (s, t) => { const u = sm(inv(0, at(1), t)); return K.applyShot(s, { pos: M.openCam.clone().lerp(M.openLook, 0.18 * u), target: M.openLook, fov: 44 }); } },
   { at: () => at(1), id: 'skye_letters', cam: fix([-7.6, 5.2, -5.2], 'skye', 'mcu') },
@@ -184,7 +184,7 @@ const SHOTS = [
   { at: () => endOf(9, 0.0), id: 'sandwich_insert', cam: (s) => K.applyShot(s, { pos: M.plate.clone().add(V(1.3, 2.4, 3.6)), target: M.plate.clone().add(V(-0.2, 0.3, -0.3)), fov: 34 }) },
   { at: () => at(10), id: 'max_plate', cam: fix(AT_ISLAND, 'max', 'mcu') },
   { at: () => T.maxOut, id: 'wide_swap', cam: cam('wide') },
-  { at: () => Math.max(at(11, 0.15), T.grab - 0.5), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'mcu') },
+  { at: () => Math.max(at(11, 0.15), T.grab - 0.5), id: 'skye_crusts', cam: fix(AT_ISLAND, 'skye', 'ms', { up: -0.3 }) },
   { at: () => at(12), id: 'skye_smug', cam: fix(AT_ISLAND, 'skye', 'ms') },
   { at: () => T.duck - 0.05, id: 'wide_dad', cam: cam('stairs_wide') },
   { at: () => T.dadBehind + 0.1, id: 'dad_walk', cam: fix(WALK_IN, 'dad', 'ms') },
@@ -267,6 +267,16 @@ function cutGeometry() {
   M.sandwichAt = centre.clone().addScaledVector(tdir, -0.42);   // the sandwich's grip (back edge) on the plate
   M.plate = centre.clone().setY(3.6);
 }
+// aim an actor's straight arm so its palm grip points at a world target (blend 0..1 over the current pose)
+function aimArm(actor, side, target, blend) {
+  if (blend <= 0) return;
+  const bone = actor.bones['Arm.' + side], g = V(side === 'R' ? -0.5 : 0.5, -1.3, 0).normalize();
+  actor.root.updateMatrixWorld(true);
+  const sh = bone.getWorldPosition(V(0, 0, 0)), dirW = target.clone().sub(sh).normalize();
+  const pq = bone.parent.getWorldQuaternion(new THREE.Quaternion()).invert();
+  bone.quaternion.slerp(new THREE.Quaternion().setFromUnitVectors(g, dirW.applyQuaternion(pq)), Math.min(1, blend));
+  actor.root.updateMatrixWorld(true);
+}
 function cutArm(t) {
   const mx = C.max, bone = mx.bones['Arm.R'];
   const u = sm(inv(T.cut0, T.cut1, t)), blend = sm(inv(T.cut0 - 0.15, T.cut0, t)) * (1 - sm(inv(T.cut1, T.cut1 + 0.2, t)));
@@ -325,10 +335,12 @@ export function update(t, stage) {
     if (r.moving) { K.putOn(sk, { pos: r.pos, heading: r.heading }); const d = K.posture(sk, K.gait('creep', r.anim)); sk.root.position.y = r.pos.y - d; }
     else {
       place(sk, M.skyeCounter, [[A.idle, idle]]);
-      reachG(sk, 'R', T.grab - 0.45, T.grab + 0.2);                      // reaches to the plate ...
-      if (t >= T.grab) K.gesture(sk, 'chin_hand', 'R', 0.6 * sm(inv(T.grab + 0.05, T.grab + 0.4, t)));   // ... lifts it to her chest
+      const onPlate = M.sandwichAt.clone().add(V(Math.sin(M.sandwichH), 0, Math.cos(M.sandwichH)).multiplyScalar(0.42)).add(V(0, 0.15, 0));
+      const chest = sk.root.position.clone().add(V(Math.sin(sk.root.rotation.y), 0, Math.cos(sk.root.rotation.y)).multiplyScalar(1.6)).add(V(-0.3, 4.15, 0));
+      const lift = sm(inv(T.grab + 0.05, T.grab + 0.5, t));
+      aimArm(sk, 'R', onPlate.clone().lerp(chest, lift), sm(inv(T.grab - 0.5, T.grab - 0.1, t)));   // reaches to the plate, lifts it up
     }
-    if (t >= T.grab) { P.sandwich.visible = true; K.hold(P.sandwich, sk, 'R'); }
+    if (t >= T.grab) { P.sandwich.visible = true; K.hold(P.sandwich, sk, 'R', 'palm', { level: true }); }
   } else if (t < T.round) {                                 // runs round to the island's left end and sits tight against it
     const r = route([M.skyeCounter, M.counterBack, M.endRun, M.hideEnd], T.duck, t, 14);
     if (r.moving) place(sk, { pos: r.pos }, walkAnim(r, 14), r.heading);
@@ -405,8 +417,8 @@ export function update(t, stage) {
       reachG(dd, 'L', T.open3 - 0.35, T.open3 + 0.02);     // pulls the fridge open ...
       reachG(dd, 'L', T.shut3 - 0.3, T.shut3 + 0.02);      // ... and pushes it shut
       if (t >= T.ham) {                                     // lifts his ham to look at it
-        K.gesture(dd, 'hold_out', 'R', sm(inv(T.ham, T.ham + 0.35, t)));
-        P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R', t >= T.ham + 0.2 ? 'out' : 'side');
+        K.gesture(dd, 'cup_hold', 'R', sm(inv(T.ham, T.ham + 0.35, t)));
+        P.dadHam.visible = true; K.hold(P.dadHam, dd, 'R', 'side');
       }
     } else {
       const r = walkTo(dd, [M.reader, M.behindL, M.behind, M.stairTurn, M.footOut, M.stairs_bottom, M.stairs_top], T.dadOut, t, DADV, [[A.idle, idle]]);
