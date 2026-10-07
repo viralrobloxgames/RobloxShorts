@@ -84,6 +84,7 @@ export async function setup(stage) {
   P.spatula = K.makeProp('spatula'); stage.scene.add(P.spatula);
   P.pan = K.makeProp('pan', { pancake: true }); stage.scene.add(P.pan);
   P.pancake = K.makeProp('pancake'); stage.scene.add(P.pancake);
+  P.edgeCake = K.makeProp('pancake', { grip: 'edge' }); stage.scene.add(P.edgeCake);   // held by its edge outside
 }
 
 // ---------- key times ----------
@@ -100,7 +101,7 @@ export const T = {
   sitUp: () => endOf(19, 0.08),                   // [+0.6] Max sits up
   bye0: () => endOf(21, -0.35),                   // she heads back to her desk on "Bye!"
 };
-T.slide = () => T.steal() + 0.45;                 // the pancake leaves the stack
+T.slide = () => T.steal() + 0.32;                 // the pancake leaves the stack
 
 // ---------- the shot table ----------
 const kc = (name) => K.getSet('kitchen').cams[name];
@@ -168,6 +169,7 @@ function sitOn(actor, seat, pose, t0, t, from = null, blend = 0.35, heading = se
 }
 // hip on the floor, legs out (Skye behind the island)
 // low against the island front (hands and knees, head ~2.6): below every seated sight line (kit island_hide_low)
+function hideCrouch(m) { poseAt(C.skye, K.POSES.crouch, m.pos, 0.5); }   // upright low crouch, head level, 3/4 to camera
 function hideLow(m) { poseAt(C.skye, { ...crawlPose(0), Head: [-40, -50, 0] }, m.pos, PI / 2); }   // side-on along the island front, face turned out
 function floorSit(actor, m) { poseAt(actor, 'sit_chair', V(m.pos.x, m.pos.y + 0.5 - 1.5 * actor.scale, m.pos.z), m.heading); }
 // hands and knees; the crawl cycle is driven by the distance covered (phase = distance / STRIDE)
@@ -214,13 +216,13 @@ function hallway(t, idle) {
     const u = lerp(0.45, 0, smooth(inv(0, T.ladderEnd(), t))), lp = hs.ladderPoint(u);
     const climbed = hs.ladderPoint(0.45).pos.y - lp.pos.y;
     const g = K.gait('climb', climbed / 1.6), c = Math.sin(climbed / 1.6 * PI * 2);
-    poseAt(C.skye, { ...g, 'Arm.L': [-48 + 8 * c, 0, -16], 'Arm.R': [-48 - 8 * c, 0, 16], Head: [14, 62, 0] }, lp.pos, lp.heading + 0.45);   // hands on the side rails at chest height, face turned 3/4 over her shoulder   // cheated 3/4 to camera, looking down over her shoulder
+    poseAt(C.skye, { ...g, 'Arm.L': [-34 + 8 * c, 0, -16], 'Arm.R': [-34 - 8 * c, 0, 16], Head: [6, 70, 0] }, lp.pos, lp.heading + 0.3);   // hands on the side rails at chest height, face turned 3/4 over her shoulder   // cheated 3/4 to camera, looking down over her shoulder
   } else {
     const foot = K.mark('hallway', 'ladder_foot'), top = M.stairsTop();
     const m = travel(foot.pos, top.pos, T.ladderEnd() + 0.35, t, 6);
     if (m.moving) {
       // creeping, glancing back toward Max's door (down the hall behind her)
-      poseAt(C.skye, { ...K.gait('creep', m.anim), Head: [-6, inv(0.2, 0.5, m.u) * (1 - inv(0.7, 0.9, m.u)) * 25, 0] }, m.pos, m.heading);
+      poseAt(C.skye, { ...K.gait('creep', m.anim), 'Arm.L': [-18, 0, -4], 'Arm.R': [-18, 0, 4], Head: [-6, inv(0.2, 0.5, m.u) * (1 - inv(0.7, 0.9, m.u)) * 25, 0] }, m.pos, m.heading);
     } else stand(C.skye, { pos: m.pos }, m.done ? 0.8 : foot.heading + 0.7, idle);   // at the stairs she looks back down the hall
   }
 }
@@ -246,6 +248,7 @@ function stairsGait(actor, kind, t0, t, u0, u1, speed, idle) {
   if (u > 0 && u < 1) {
     const g = K.gait(kind, u * len / STRIDE);
     for (const k of ['Leg.L', 'Leg.R']) if (g[k]) g[k] = [g[k][0] * 0.45, g[k][1], g[k][2]];   // short steps on the stairs: feet stay clear of the treads
+    g['Arm.L'] = [-8 * Math.sin(u * len / STRIDE * PI * 2), 0, -3]; g['Arm.R'] = [-38, 0, 6];          // left arm low, right hand on the rail
     poseAt(actor, g, p.pos, p.heading);
   }
   else stand(actor, p, p.heading, idle);
@@ -268,7 +271,7 @@ function kitchen(t, idle) {
   const said = (i) => t >= at(i) && t < endOf(i);
 
   // Dad: cooking at the stove (3/4), turned to the room for his lines; to the island end for the count
-  const dadTalk = L.lines.some((l) => l.speaker === 'DAD' && t >= l.start + (l.index === 2 ? 0.9 : -0.2) && t < l.end + 0.3);   // line 2 starts to the stove
+  const dadTalk = L.lines.some((l) => l.speaker === 'DAD' && t >= l.start + (l.index === 2 ? 0.9 : -0.2) && t < l.end + 0.3) || (t >= at(4, 0.4) && t < endOf(4));   // and he turns to Max for Max's first line   // line 2 starts to the stove
   P.spatula.visible = true;
   if (t < at(9)) {
     const m0 = dadTalk ? M.stoveTurned() : M.stove(), m = m0;
@@ -305,7 +308,7 @@ function kitchen(t, idle) {
     const sw = stairsGait(a, kind, t0, t, 0, 1, sp, idle);
     if (!sw.done) continue;
     const o = K.SET_ORIGIN.kitchen, behind = V(stool.pos.x, 0, stool.pos.z - 1.4);
-    const way = [K.getSet('kitchen').stairsPath(1).pos, o.clone().add(V(10.3, 0, 3.9)), o.clone().add(V(9.6, 0, -4.6)), behind];   // off the treads, round the newel post, down the side and behind the island (never past Skye's side)
+    const way = [K.getSet('kitchen').stairsPath(1).pos, o.clone().add(V(9.0, 0, 4.4)), o.clone().add(V(8.8, 0, -4.6)), behind];   // off the treads, round the newel post, down the side and behind the island (never past Skye's side)
     const m = pathMove(way, sw.end, t, sp);
     if (!m.done) { poseAt(a, K.gait(kind, m.anim), m.pos, m.heading); continue; }
     let look = null;
@@ -332,7 +335,7 @@ function kitchen(t, idle) {
     if (sw.done) {
       const m = travel(M.stairsBottom().pos, hide.pos, sw.end, t, 16);
       if (!m.done) poseAt(C.skye, K.gait('run', m.anim), m.pos, m.heading);
-      else hideLow(hide);
+      else (t < at(4, -0.1) ? hideCrouch : hideLow)(hide);
     }
   } else if (t < T.crawl0()) {
     if (t >= T.steal() && t < T.steal() + 1.3) {
@@ -340,12 +343,17 @@ function kitchen(t, idle) {
       const u = smooth(inv(T.steal(), T.steal() + 0.3, t)) - smooth(inv(T.slide() + 0.35, T.slide() + 0.65, t));
       poseAt(C.skye, { ...K.POSES.kneel_up, Head: [-8, -55, 0] }, reach.pos, reach.heading);    // kneeling up against the island front (the family is looking at Dad), face turned to camera
       K.gesture(C.skye, 'reach_up', 'L', u);                                                        // one arm straight up beside the edge, hand over the top
-    } else hideLow(hide);
+    } else (t < at(4, -0.1) ? hideCrouch : hideLow)(hide);
     if (t >= T.slide()) {
       // the top pancake slides off the stack toward her, then she has it in her left hand
-      const v = smooth(inv(T.slide(), T.slide() + 0.35, t)), top = ks.anchors.pancakeStackTop();
+      const v = inv(T.slide(), T.slide() + 0.5, t), top = ks.anchors.pancakeStackTop().add(V(0, 0.11, 0));   // where the 12th sat
       if (t < T.steal() + 1.3) K.hold(P.pancake, C.skye, 'L'); else { K.hold(P.pancake, C.skye, 'R', 'mouth'); P.pancake.visible = true; }   // then between her teeth
-      if (v < 1) { const hand = V(); P.pancake.getWorldPosition(hand); stage0.scene.attach(P.pancake); P.pancake.position.copy(top.clone().lerp(hand, v)); P.pancake.rotation.set(0, 0, 0); }
+      if (v < 1) {
+        // the top pancake slides off the stack to the island's front edge, then drops into her hand
+        const hand = V(); P.pancake.getWorldPosition(hand); stage0.scene.attach(P.pancake);
+        const edge = V(top.x, top.y, K.SET_ORIGIN.kitchen.z + 2.0);
+        P.pancake.position.copy(v < 0.6 ? top.clone().lerp(edge, smooth(v / 0.6)) : edge.clone().lerp(hand, smooth((v - 0.6) / 0.4))); P.pancake.rotation.set(0, 0, 0);
+      }
     }
   } else {
     // crawl: from the hiding spot round to the back door and out
@@ -364,9 +372,9 @@ function outside(t, idle) {
   stand(C.skye, M.porch(), 0, idle);
   const bite = smooth(inv(wd(14, 2, -0.3), wd(14, 2, -0.05), t));
   const up = bite - smooth(inv(wd(14, 2, 0.25), wd(14, 2, 0.55), t));                           // to her mouth on "Ever", then back down
-  K.gesture(C.skye, 'chin_hand', 'L', 0.72 + 0.28 * up);                                       // pancake in her palm beside her face (far hand), to her mouth on "Ever"
-  C.skye.bones.Head.rotateX(0.18 * up);
-  K.hold(P.pancake, C.skye, 'L', 'palm', { level: true });
+  K.gesture(C.skye, 'chin_hand', 'L', 0.72);                                       // pancake in her palm beside her face (far hand), to her mouth on "Ever"
+  C.skye.bones.Head.rotateX(0.3 * up);                                                         // she dips her head to the pancake to bite
+  K.hold(P.edgeCake, C.skye, 'L', 'palm', { level: true }); P.edgeCake.visible = true;
 }
 
 // ---------- classroom before the bell ----------
