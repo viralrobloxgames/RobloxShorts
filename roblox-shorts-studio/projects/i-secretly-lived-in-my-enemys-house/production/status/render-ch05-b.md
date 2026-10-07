@@ -1,9 +1,3 @@
-STATUS: RENDERING
-render-ch05-b (gate-a session): delivery/chapters/ch05_b.mp4 (+ .json) = ch05 frames 910-2019 at COMMIT bc038bc (GATE: PASS).
-- First render 910-2019 from ba2fd86 (1110 frames, 75% copied, 1.15 s/frame overall). ch05 said only 1965-2019 changed at
-  bc038bc (pose only): those 55 PNGs were deleted and re-rendered with --resume. Nothing else in ch05.js/kit/lib/narration changed.
-- Check: ffprobe decodes 1110 frames, 1920x1080 30 fps, 7.8 MB, 20 captions. Stills at 1 s / 18 s / 36.9 s look right (captions in
-  speaker colours; last shot has Lily's mouth clear of her pouring arm).
-- Frames kept in renders/ch05 for final-review fixes. Fingerprints saved with the fixed changed_frames.mjs before the fix.
-2026-10-07 04:45Z: re-sync requested by ch05 (recheck OK @ 3830bc67, plausibility rework). Old B frames deleted; re-rendering
-all of 910-2019 at 3830bc67 (--workers 4), then re-encode ch05_b.mp4 (--range 910-2019 --total 2019).
+STATUS: DONE
+render-ch05-b: stood down 2026-10-07 04:55Z per orchestrator (requests.md 04:30Z). Final ch05 segment B comes from final-ch05-b.
+The re-render to 3830bc67 I had started was killed; no new delivery/chapters/ch05_b.mp4 was pushed from here.
