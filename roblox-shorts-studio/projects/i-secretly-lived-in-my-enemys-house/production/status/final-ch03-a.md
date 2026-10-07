@@ -1,1 +1,3 @@
-STATUS: RERENDER @ 726592de (10:58Z: re-render the whole segment with the pre-rolling render.mjs from main)
+STATUS: RENDERING @ 726592de
+RANGE: 1-906
+NOTE: whole-segment re-render with pre-rolling render.mjs (started 11:02Z)
