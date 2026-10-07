@@ -146,7 +146,7 @@ function slidePalm(tt) {
   K.posture(C.max, 'sit_chair'); K.putOn(C.max, M.stool(2, C.max), { sit: true, heading: maxSlideH(tt) });
   K.gesture(C.max, 'hold_out', 'L', 1); const p = palmL(C.max); p.y = KO.y + 3.6; return p;
 }
-const FLIPS = () => [at(LN.pancakes) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5];
+const FLIPS = () => [at(LN.pancakes) + 0.3, T_WIDE + 0.7, T_END + 2.5, T_END + 7.5];   // none in the payoff two-shot (it floated by Max's head)
 // Walk down the stairs in legs [from, to, arriveAt]: straight along the flight (feet on the slope), legs driven by the
 // horizontal distance, stopping between legs (a nervous pause on the steps).
 function stairsWalk(actor, legs, t, idle, speed = 10) {
@@ -188,14 +188,15 @@ export function update(t, stage) {
       C.skye.root.position.copy(p.pos); C.skye.root.rotation.y = p.heading; C.skye.root.visible = true; C.skye.root.updateMatrixWorld(true);
     }
     else if (t < tLeave) {
-      K.playAnim(C.skye, [[A.idle, idle]]);
+      K.posture(C.skye, 'stand'); K.playAnim(C.skye, [[A.idle, idle]]);    // arms at her sides (no stair-gait residue)
+      gest(C.skye, 'wave', 'L', at(LN.ghost) + 0.3, end(LN.ghost) + 0.2, t);  // critic-6 R-a: a one-arm wave on "this is Skye"
       const look = t < at(LN.thief) ? s2.pos : dadAt;
       K.putOn(C.skye, bottom, { heading: lerpH(K.faceTo(bottom, look), CHEAT, 0.55) });
     } else {
       const route = SET.fromStairs(endM.pos), d = Math.max(0, t - tLeave) * 12, m = SET.alongRoute(route, d);
       if (!m.done) { K.playAnim(C.skye, [[A.walk, d / STRIDE]]); K.putOn(C.skye, { pos: m.pos, heading: m.heading }); }
       else {
-        K.playAnim(C.skye, [[A.idle, idle]]);
+        K.posture(C.skye, 'stand'); K.playAnim(C.skye, [[A.idle, idle]]);
         const sh2 = sm(inv(at(LN.sleepover) + 0.2, at(LN.sleepover) + 0.45, t)) * (1 - sm(inv(end(LN.sleepover), end(LN.sleepover) + 0.3, t)));
         if (sh2 > 0) K.posture(C.skye, 'shrug', { mix: 0.35 * sh2, reset: false });   // a small shoulders-only lift
         gest(C.skye, 'phone_ear', 'R', at(LN.mom) - 0.4, T_LATER + 0.2, t);
@@ -233,11 +234,11 @@ export function update(t, stage) {
   // --- Lily: stool 1, teddy in her right hand ---
   {
     // critic-6 #13: kneeling up on the stool (a 7-year-old at a high island), the teddy hugged to her chest
-    K.posture(C.lily, 'kneel_up', { extra: { 'Arm.L': [-48, 0, 26], 'Arm.R': [-42, 0, -26] } });
+    K.posture(C.lily, 'kneel_up', { extra: K.POSES.hug_teddy });   // critic-6 R-b: forearms crossed over the bear
     const kp = s1.pos.clone(); kp.y = SEAT_TOP + KO.y - LILY_KNEEL * C.lily.scale;
     K.putOn(C.lily, { pos: kp, heading: t < at(LN.knew) ? 0.45 : t >= at(LN.says) - 0.05 && t < at(LN.cond) - 0.05 ? 0.25 : t < T_WIDE ? -0.25 : 0.35 }, { sit: true });
     K.holdTeddy(C.lily, 'hug');
-    gest(C.lily, 'point', 'L', at(LN.says) + 0.2, end(LN.says) + 0.3, t);   // at the fridge
+    gest(C.lily, [10, 0, 85], 'R', at(LN.says) + 0.2, end(LN.says) + 0.3, t);   // one arm out sideways toward the fridge (frame-left), the other still round the bear
   }
 
   // --- Dad: at the stove the whole chapter, the pan in his right hand, the spatula in his left; turns smoothly to whoever matters ---
