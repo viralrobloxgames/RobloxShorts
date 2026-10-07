@@ -31,3 +31,15 @@ New / remaining:
 
 ## Re-check @ 986b476f
 ch08.js and the kit's character/speak code are byte-identical to 90468d1e (only kit/sets/kitchen.js changed, not used by ch08), so the frames are the same: M1 (smile visemes on sad lines) and M2 (splayed arms in the attic WS/two-shot) remain **not fixed**; shoulds as above.
+
+## Re-check @ bfdc9f04
+clip_check: 0 ranges (sight: Lily sees Skye in the attic, intended). cam_check: 0 glides, 0 inside scenery, 0 at a head.
+Previews: whole chapter every 15th frame; every 4th over 600-630, 931-1001, 1491-1511, 1636-1720; full-res 1100.
+
+| must | verdict |
+|---|---|
+| M1 / C8-1 smile visemes on sad lines | fixed: f601-625, 949-993, 781/796, 1493-1505, 1653-1713 alternate the sad/flat base mouth with "o", no smile frames |
+| M2 splayed arms in the attic | fixed: Skye's hands meet on her knees beside the note fist; Lily's arms come forward to her lap round the teddy (f1036-1742) |
+| all earlier musts (C8-2, 2, 3, 4, 7, 10, 12, 13, 17) | still fixed |
+
+No new musts. Shoulds left (not blocking): eye wipe is a static fist beside her face (1651-1705); box knees in the two-shot; smile + lens look while sliding the note (301-329); I9 head-top glow in attic MCUs; foreground arm blocks in Lily's MCU.

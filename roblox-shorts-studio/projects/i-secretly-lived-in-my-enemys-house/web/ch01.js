@@ -169,6 +169,7 @@ const S = {
   skyeWhisper: { scene: 'night1', cam: (s) => K.applyShot(s, skyeCloset(0.2)) },
   classWide: { scene: 'class', cam: (s, t, sh) => push(s, shotOf(cam(classroom(), 'wide_front')), dolly(cam(classroom(), 'wide_front'), 0.3), inv(sh.start, sh.start + 4.5, t)) },
   maxIntro: { scene: 'class', cam: (s) => { const h = K.headPos(C.max), sd = K.mark('classroom', 'skye_desk_side').pos; return K.applyShot(s, { pos: sd.clone().add(V(-1.6, 4.9, -4.6)), target: h.clone().add(V(0, -0.9, 0)), fov: 36 }); } },
+  classWalk: { scene: 'class', cam: (s) => K.setCam(s, cam(classroom(), 'wide_front'), { clear: false }) },   // the walk up the aisle, wide (the route turns him away from the close camera)
   maxMocks: { scene: 'class', cam: (s) => K.applyShot(s, single(C.max, -1, 0)) },
   skyeBack: { scene: 'class', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: 0.45, height: 0.9 }) },
   insert: { scene: 'class', cam: (s) => K.setCam(s, cam(classroom(), 'lunchbox_top'), { clear: false }) },
@@ -190,7 +191,7 @@ const S = {
 const SHOTS = [
   ['hook', 0], ['skyeCU', T.closeup], ['maxDoor', at(1) - 0.1], ['doorOpen', T.doorOpen - 0.15], ['pinkLock', T.doorOpen + 0.35], ['maxHoodies', at(2) - 0.1],
   ['backToBed', T.doorShut], ['skyeWhisper', at(3) - 0.2],
-  ['classWide', T.class], ['maxIntro', at(4)], ['maxMocks', () => Math.min(T.maxArrive - 0.7, at(5) - 0.2)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
+  ['classWide', T.class], ['maxIntro', at(4)], ['classWalk', T.maxWalk + 0.6], ['maxMocks', () => Math.min(T.maxArrive + 0.05, at(5) - 0.1)], ['skyeBack', at(6)], ['insert', T.spider - 0.15], ['shriek', T.jump],
   ['maxLaugh', at(8)], ['classTwo', at(9)], ['skyeAsks', at(10)], ['maxBrags', at(11)], ['skyeSees', at(12)], ['maxLeaves', at(13)],
   ['yardWide', T.dusk], ['backDoor', () => T.door - 0.75],
   ['knockDoors', () => T.night], ['knock', () => T.night + 1.0], ['maxBed', at(16)], ['maxBedCU', at(17)], ['dayOne', T.lump],
@@ -281,7 +282,7 @@ function classScene(t, set, idle) {
     if (t > at(5) + 0.2 && t < at(5, 1.8)) K.gesture(C.max, 'point', 'R');                     // points at the crusts
     if (t > T.spider - 0.6 && t < T.spider + 0.3) armSet(C.max, 'R', -1.45, 0, 0);             // hand out over her hand
     if (t > at(8) - 0.15 && t < at(8, 2.4)) armSet(C.max, 'R', -2.0, 0, 0.15);                 // holds it up by his face: "It's rubber"
-    if (t > at(11) && t < end(11)) crossArms(C.max);
+    if (t > at(11) && t < end(11)) { armSet(C.max, 'R', 0, 0, -0.06); K.gesture(C.max, 'hand_on_hip', 'L'); }   // relaxed: arm down, one hand on his hip
   } else {
     const m = routeWalk(C.max, set, ROUTE.out, T.exit, t, { idleAt: idle });
     if (m.moving && t < T.exit + 1.2) waveArm(C.max, t, 'R');                                    // one-arm wave as he goes
@@ -293,10 +294,10 @@ function classScene(t, set, idle) {
   if (falling) {
     const a0 = new THREE.Vector3(), b0 = new THREE.Vector3();
     K.hold(P.spider, C.max, 'R', 'out'); C.max.root.updateMatrixWorld(true); P.spider.getWorldPosition(a0);
-    C.skye.root.updateMatrixWorld(true); C.skye.bones['Arm.R'].localToWorld(b0.set(-0.5, -2.0, 0.2));
+    C.skye.root.updateMatrixWorld(true); { const tmp = P.spider.clone(); K.hold(tmp, C.skye, 'R', 'out', { offset: [0, 0.55, -0.2] }); C.skye.root.updateMatrixWorld(true); tmp.getWorldPosition(b0); tmp.parent.remove(tmp); }   // land where it will sit on her hand
     if (P.spider.parent !== STAGE.scene) STAGE.scene.add(P.spider);
     P.spider.position.copy(a0.lerp(b0, easeIn(inv(T.spider, T.spider + 0.3, t)))); P.spider.rotation.set(0, 0, 0); P.spider.scale.setScalar(1);
-  } else if (onSkye) K.hold(P.spider, C.skye, 'R', 'out');
+  } else if (onSkye) K.hold(P.spider, C.skye, 'R', 'out', { offset: [0, 0.55, -0.2] });   // sitting on top of her hand, not sunk into it
   else K.hold(P.spider, C.max, 'R', 'out');
   P.spider.visible = t > at(5) + 1.8 && t < T.exit;
   P.torch.visible = false;

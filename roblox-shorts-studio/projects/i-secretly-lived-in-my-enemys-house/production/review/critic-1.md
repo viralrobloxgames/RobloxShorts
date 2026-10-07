@@ -64,6 +64,21 @@ How I looked: I joined chNN_a + chNN_b, took 3 fps 2x2 sheets at 960 px across e
 - **PR1 prop grips:** #10 (the spider has no hand), #12 (fist into her face: also blocking, so hold 15-20 cm off her face), #13 (the floating lunchbox is a placement, not a grip: ch01 must put it on the desk top).
 - **SC1 classroom seats/aisles:** #6, #7, #9, #14 (`desk_rXcY_side`, `set.route()`). Chapter-only: #15 (OTS camera through her arm), #17 (door), #18, #20 (Lily on screen).
 
+### ch01 re-check (36ced560, frozen kit): OK, no musts left
+I rendered 251 preview frames myself (`--scale 0.5`): every 15th frame, plus dense samples every 4-10 frames over the hook (f1-330), the classroom walk (f360-530), the spider (f720-910), the exit (f1340-1425) and the back door (f1470-1570). Results against the ch01 musts:
+- #1/#2/#3 hook: fixed. Skye stays behind the closed right leaf, inside the closet, for the approach (f1-201), and Max's view is blocked by the leaf and the frame. When he opens the leaf (f221-226) there is no Skye in his view.
+- #6/#7/#9 classroom: fixed. Max stands in the aisle beside his desk with no chair through him (f378-391), walks the aisle (f444), and the exit wide (f1410) is clear.
+- #8: fixed. The OTS from behind (f450-468) cuts to the facing CU at f474 with no flip inside a shot.
+- #10/#11/#12: fixed. "Get it off" is a one-arm pose with the spider at her hand (f766-811), and Max holds the spider out clear of her face (f834-846).
+- #13/#14: fixed. The lunchbox sits on the desk top (f516-526), and the 2-shot (f946-991) has no desk through either body.
+- #17: fixed. The back door opens, she steps through and it shuts (f1530-1561).
+- #19/#20: fixed. Skin and hair read correctly at night (f1606-1711), and Max turns toward the wall for Lily's line (f1726-1771).
+Remaining should-level notes (no need to block the render):
+- f736-744 spider insert: the spider ends up at the desk edge by Max's sleeve, not on Skye's hand or the sandwich. Then in f766-811 its body half-sinks into her hand block. Seat it on top of her hand.
+- f311-316: as Max walks away, Skye's pink head and backpack read through the louvres. He has his back to her, so it's fine for the audience, but darker slats would sell the hiding better.
+- f231-241 hair-lock insert: it still reads as a pink tentacle on a white box. The hoodies aren't readable.
+- #21 bed torso and #22 floating book (f1846-1891): unchanged, as ch01 said.
+
 ## ch02 "Twelve Pancakes" (1:03.7-2:10.6)
 
 ### A. Secrecy: Skye in plain view of the family (shared cause: her kitchen marks are on the lit room side of the island, and the family's eyelines point at her)
