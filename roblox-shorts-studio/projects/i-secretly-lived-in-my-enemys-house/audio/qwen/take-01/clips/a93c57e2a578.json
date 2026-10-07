@@ -1,7 +1,7 @@
 {
  "voice": "george_dad",
  "text": "For a week?",
- "seed": 92108,
- "attempt": 1,
+ "seed": 93108,
+ "attempt": 2,
  "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }
