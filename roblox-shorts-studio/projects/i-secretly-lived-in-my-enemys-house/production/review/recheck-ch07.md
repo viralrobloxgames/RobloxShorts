@@ -45,3 +45,17 @@ New / remaining:
 - D. frames 241-289, Lily's "Quick! Be a decoration!" point is a horizontal arm to her side for 1.6 s; angle it at the
   decor line. should
 - E. frames 2161-2204, "Sure.": Lily's face is turned away from camera on her own line. should
+
+## Re-check @ de6e40d9
+Automated: clip_check 0 high, 1 medium (Dad's hand holding the vacuum, contact), 7 low (unchanged); cam_check 0/0/0.
+Visual: every 6th frame over A-E, whole chapter every 24th (the kit change touched every frame; no regressions).
+
+| item | status |
+|---|---|
+| A vacuum/wand teleport f1716-1718 | fixed (he carries both down the hatch) |
+| B Skye's arms rise / held out at the end | fixed (arms drop f1975-1987, at her sides to the end) |
+| C Dad's straight side arm f781-829 | fixed (arms at rest) |
+| D Lily's horizontal point f241-289 | fixed (angled at the decorations) |
+| E Lily's face away on "Sure." | fixed |
+
+No musts left.
