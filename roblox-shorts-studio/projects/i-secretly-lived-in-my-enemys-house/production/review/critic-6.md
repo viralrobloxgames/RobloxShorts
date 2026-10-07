@@ -249,3 +249,13 @@ through the seated two-shot right next to Max's head (f1705-1720) while the pan 
 the flip in the stove shot or the wide.
 
 After R-a and R-b, ch11 is OK from me (no need to re-check the shoulds).
+
+## ch11 final check @ 50e434a3 (own spot renders f290-380, f580-660, f1280-1320, f1700-1715)
+
+- R-a **fixed**: Skye stands at the stair foot with one arm waving and the other down.
+- R-b **fixed**: Lily's forearms close over the teddy (the elbows sit a little high, acceptable for the block rig). On "The fridge
+  says yes" only her right arm goes out, frame-left toward the fridge, and the bear stays on her chest.
+- The pancake no longer floats in the payoff two-shot.
+
+**ch11: OK from critic-6.** Shoulds still open, not blocking: the Dad points don't read in `dad_cu`; Max is small behind the
+pancake stack in the f282-390 two-shot; Dad's face shows beside Max in `max_cu`.
