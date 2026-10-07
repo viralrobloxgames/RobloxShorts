@@ -62,3 +62,11 @@ clip_check 0 high, 0 medium, 1 low (same headboard rest); sight as before; cam_c
 Full-res looks at the former snap points (f2-45 walk, f722-724 sheet lift, f1272-1278 head dip, f1458-1464 fridge
 point up, f1510-1516 down): every move now eases over several frames; no one-frame jumps. All earlier musts still fixed.
 Verdict: OK.
+
+## Final pass (delivery/chapters/ch10_a.mp4 + ch10_b.mp4)
+
+Both final-ch10-a/b DONE at COMMIT 1b11aa8b; both .json carry the same render code 22352066fb72; ch10.js unchanged since
+1b11aa8b. seam_check 881-1956 (4 workers, preroll 300): cold and pre-rolled differ on 0 frames at every start. The 880|881
+split falls on a cut (Max MCU -> wide two-shot), same Max, no pop. 1 fps contact sheet of the whole chapter: one Max
+throughout, plate continuous, glow bands on Skye's wrists, no spread/T poses, captions present, door insert and end OK.
+Verdict: FINAL: PASS.
