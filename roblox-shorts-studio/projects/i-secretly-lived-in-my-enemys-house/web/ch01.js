@@ -294,10 +294,10 @@ function classScene(t, set, idle) {
   if (falling) {
     const a0 = new THREE.Vector3(), b0 = new THREE.Vector3();
     K.hold(P.spider, C.max, 'R', 'out'); C.max.root.updateMatrixWorld(true); P.spider.getWorldPosition(a0);
-    C.skye.root.updateMatrixWorld(true); C.skye.bones['Arm.R'].localToWorld(b0.set(-0.5, -2.0, 0.2));
+    C.skye.root.updateMatrixWorld(true); { const tmp = P.spider.clone(); K.hold(tmp, C.skye, 'R', 'out', { offset: [0, 0.55, -0.2] }); C.skye.root.updateMatrixWorld(true); tmp.getWorldPosition(b0); tmp.parent.remove(tmp); }   // land where it will sit on her hand
     if (P.spider.parent !== STAGE.scene) STAGE.scene.add(P.spider);
     P.spider.position.copy(a0.lerp(b0, easeIn(inv(T.spider, T.spider + 0.3, t)))); P.spider.rotation.set(0, 0, 0); P.spider.scale.setScalar(1);
-  } else if (onSkye) K.hold(P.spider, C.skye, 'R', 'out');
+  } else if (onSkye) K.hold(P.spider, C.skye, 'R', 'out', { offset: [0, 0.55, -0.2] });   // sitting on top of her hand, not sunk into it
   else K.hold(P.spider, C.max, 'R', 'out');
   P.spider.visible = t > at(5) + 1.8 && t < T.exit;
   P.torch.visible = false;
