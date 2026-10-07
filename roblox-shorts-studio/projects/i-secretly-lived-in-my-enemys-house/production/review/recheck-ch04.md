@@ -42,3 +42,11 @@ New musts:
 - Small spikes at f910 and f1059 are minor arm/face settles, not visible snaps. OK.
 
 **RECHECK: MUSTS @ 80a98e8b (gesture snaps)**
+
+## Early look at the snap fixes @ 827699ba (OK held until the kit anti-snap filter K)
+
+Rendered f30-70, f155-185 and f1640-1740 at scale 0.25 and ran the frame-diff scan on them. The only isolated spikes left are the title fade (f56) and the end-shot cut (f1715).
+- f171-172, Skye's head: fixed. The diff is even at about 1.8 per frame over f156-167 (an eased look-up).
+- f1663-1664, Max's 180° turn: fixed. It is a continuous turn over f1665-1672, then the walk.
+- f1704-1705, Skye's arm and head: fixed. The change is now on the cut at f1715; no in-shot jump.
+Pending: snap_check, clip_check --sight, cam_check and the viewer test at a main sha >= K. Then RECHECK: OK.
