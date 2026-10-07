@@ -35,3 +35,21 @@ New / remaining:
 - frames 960-1010, Skye's torch sits on top of her horizontal forearm (not in the hand), and the folded-arms read as one block; should
 - frames 1345-1380, dash wide: Dad (back to us) holds both arms forward at shoulder height, a stiff silhouette; arms lower. should
 - frames 1363-1400, a glowing yellow floor wedge in the bottom-left foreground of the closet-end wide; should
+
+## Re-check @ 8537ebc6
+
+Diff vs f18aca08 for ch06: only `web/ch06.js` (mirror hand, hatch camera/torch, closet door crack, hop hand, dash torch arm);
+the only kit change is `kit/sets/kitchen.js`, which ch06 does not use. cam_check: 0 glides / 0 inside scenery / 0 at a head.
+clip_check: 0 high; 2 medium = Lily's tap on Skye's arm (f786, one frame, contact). Sight: only the same off-screen
+`dad sees skye` 6:02.0 (f1078-1082, Dad still on the stairs, girls not hiding), and Lily/Skye talking; OK.
+Previews: fix ranges every 6th frame, full-res f1627, f1729.
+
+| Must | Frames | Verdict |
+|---|---|---|
+| `mirror_mcu` hand on neck | 171-235 | fixed: elbow up and out beside his head, face clear |
+| `hatch_low` | 1579-1648 | fixed: the whole hatch and pull cord in frame, Dad raises the torch and the beam runs from it to the hatch, head tilted up |
+| `linen_end` end hold | 1711-1733 | fixed: door at a crack in the dark, only the two faces peek out, no glow inside, Dad's back to it |
+| all earlier musts (see above) | | still fixed |
+
+No new issues. Remaining shoulds (Skye's torch on her forearm at f960-1010, the floor glow wedge in the dash wide) are
+not musts.
