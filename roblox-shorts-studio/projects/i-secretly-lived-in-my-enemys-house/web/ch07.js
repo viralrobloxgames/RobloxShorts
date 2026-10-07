@@ -140,7 +140,7 @@ function times() {
   T.maxGo = end(20, 0.05);
   T.maxDown = T.maxGo + 1.35;
   T.lilyCome = at(21, -0.2);
-  T.armsDown = at(23, 0.3);
+  T.armsDown = at(21, -0.3);             // Max is gone: her arms come down to her sides
 }
 times();
 
@@ -216,11 +216,11 @@ function poseSkye(t, idle) {
   const wp = pt(-1.0, 5.2);                             // round the front of the tea box (Lily stands by it)
   const m = walkPath(s, [{ pos: ts.pos, heading: ts.heading }, wp, pt(3.6, 2.6), pt(6.9, 0.8), pose], T.goDecor + 0.1, t, { idleAt: idle, endHeading: pose.heading, speed: 16 });
   if (!m.done) return;
-  // the propped scarecrow (kit pose, C7-2) with its sway; a tired droop on "I almost got hoovered", arms down at the end
+  // the propped scarecrow (kit pose, C7-2) with its sway; once Max has gone her arms come straight down to her sides
   K.putOn(s, pose);
   let k = sm(T.pose - 0.2, T.pose + 0.15, t);
   k *= 1 - 0.15 * sm(at(21), end(21), t);
-  k *= 1 - 0.45 * sm(T.armsDown, T.armsDown + 1.2, t);
+  k *= 1 - sm(T.armsDown, T.armsDown + 0.9, t);
   K.posture(s, 'scarecrow', { mix: k });
   if (k > 0.5) K.scarecrowSway(s, idle, k);
   const fl = sm(T.nozzle + 0.6, T.nozzle + 0.9, t) * (1 - sm(T.humOff, T.humOff + 0.4, t));
@@ -239,7 +239,7 @@ function poseLily(t, idle) {
   if (t < T.lilyUp) { sitFloor(l, to, to.heading, 'kneel'); headTurn(l, headTo(l, W(4.5, 9.0), 0.8) * sm(T.rattle + 0.1, T.rattle + 0.35, t)); return; }
   if (t < T.lilyGo) {                                   // "Quick! Be a decoration!": side-on, pointing across at the decorations
     K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: -0.15 });   // to the camera
-    K.gesture(l, [-6, 0, 88], 'L', sm(at(3), at(3, 0.25), t));                         // her free arm straight out sideways, across frame at the decorations (the teddy is in her right)
+    K.gesture(l, [24, 0, 74], 'L', sm(at(3), at(3, 0.25), t));                         // her free arm out and back, angled at the decorations behind her (the teddy is in her right)
     return;
   }
   if (t < T.lilyBack) {
@@ -266,7 +266,7 @@ function poseLily(t, idle) {
   }
   const le = S.lilyEnd();
   const m = walkPath(l, [tl, pt(2.0, 2.6), le], T.lilyCome, t, { idleAt: idle, endHeading: le.heading });
-  if (m.done) headTurn(l, at(24, -0.3) < t ? headTo(l, C.skye.bones.Head.getWorldPosition(V()), 0.9) * 0.8 : 0);   // side-eye at Skye on "Sure."
+  if (m.done) headTurn(l, at(24, -0.3) < t ? headTo(l, pairCamPos(le.pos, 4.6), 0.9) * sm(at(24, -0.3), at(24, 0.0), t) : 0);   // "Sure.": a knowing look out to the camera
 }
 
 // ---------- Dad ----------
@@ -281,7 +281,6 @@ function poseDad(t, idle) {
   }
   if (t < T.skel - 0.3) {
     const m = walkPath(d, [DAD_OUT(), DAD_NEAR()], T.dadWalk1, t, { idleAt: idle, endHeading: towards(DAD_NEAR(), M.teaLily()) + 0.6 });
-    if (m.done && t > at(9, 1.6) && t < end(9)) K.gesture(d, 'point', 'L', sm(at(9, 1.6), at(9, 1.9), t));   // side-on toward the decorations
     return;
   }
   const insp = S.inspect();
@@ -317,7 +316,7 @@ function poseDad(t, idle) {
     const m = walkPath(d, [{ pos: hv.pos, heading: hv.heading + 0.9 }, drop, DOWN()], T.dadGo, t, { idleAt: idle, speed: 12, endHeading: 0 });
     return;
   }
-  if (t < T.dadDown + 0.8) { climbAt(d, DOWN(), 0, 1 - sm(T.dadDown, T.dadDown + 0.75, t), { reach: 40 }); return; }   // facing the ladder
+  if (t < T.dadDown + 0.8) { climbAt(d, DOWN(), 0, 1 - sm(T.dadDown, T.dadDown + 0.75, t), { reach: 40, busyL: true }); return; }   // facing the ladder
   d.root.visible = false;
 }
 
@@ -375,17 +374,17 @@ function placeProps(t) {
   }
   // vacuum: carried up in Dad's left hand, set down, its wand in his right palm the whole scene, left beside the hatch
   const v = P.vac, wand = v.userData.wand;
-  v.visible = t >= T.dadRise;
+  v.visible = t >= T.dadRise && t < T.dadDown + 0.8;   // he takes it down the ladder with him
   if (!v.visible) return;
   const d = C.dad.root, h = d.rotation.y, left = V(Math.cos(h), 0, -Math.sin(h)), fwd = V(Math.sin(h), 0, Math.cos(h));
-  const carried = t < T.vacDown || (t >= T.dadGo && t < T.dadDown - 0.45);
+  const carried = t < T.vacDown || t >= T.dadGo;
   if (carried) { K.hold(v, C.dad, 'L', 'side'); }
   else {
     if (v.parent !== P.scene) P.scene.add(v);
     if (t < T.dadGo) { const p = d.position.clone().addScaledVector(left, -2.4).addScaledVector(fwd, -0.9); p.y = 0; K.place(v, p, h); }   // at his right side, the hose up to the wand in his right hand
     else { const vs = VAC_SPOT(); K.place(v, vs.pos, vs.heading); }
   }
-  if (t >= T.dadOut && t < T.dadDown - 0.45) {
+  if (t >= T.dadOut) {
     const nz = sm(T.nozzle, T.nozzle + 0.6, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
     if (nz > 0.05 && t < T.humOff) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye).add(V(0, 0.35, 0)) });
     else {                                              // held like a real wand: angled down, nozzle on the boards ahead of him
