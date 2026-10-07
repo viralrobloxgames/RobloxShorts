@@ -64,3 +64,11 @@ delivery/chapters/ch08_a.mp4 (784 f, frames 1-784, rendered @ bfdc9f04) + ch08_b
 - Rest of a at 2 fps: matches the approved clip.
 
 **FINAL: MUSTS**: 545-546 arm snap, 746-748 foreground flash. Both are clip fixes and need a re-render of a (range 536-784 at least); b is final.
+
+## Re-check @ a76617f1 (the two segment-A musts from the final pass)
+Diff vs bfdc9f04: ch08.js only, 2 lines (skye_worse cut +0.2 s; the note fist eased down from the rise). Per-frame fingerprints vs bfdc9f04: only **535-545 and 745-750** change; **nothing at or after 785**, so ch08_b stays final.
+| must | verdict |
+|---|---|
+| 545-546 arm snap | fixed: the fist lowers gradually over 540-548 (30 fps strip), no one-frame jump |
+| 746-748 foreground flash | fixed: the MCU now starts at 751 after the WS of Lily crossing; 751-756 clean |
+No new issues in 532-558 / 742-756.
