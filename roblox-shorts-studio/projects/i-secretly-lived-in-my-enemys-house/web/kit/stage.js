@@ -31,7 +31,6 @@ const K = { stage: null, sets: {}, current: null };
 // build is reported and replaced by an empty box room so a chapter can be blocked out before its set lands.
 export async function buildSets(stage, ids = SET_IDS, state = null) {
   K.stage = stage;
-  globalThis.__antiSnap ??= { on: true };      // every chapter: one-frame pose snaps are eased (see antiSnap below)
   for (const id of ids) {
     if (K.sets[id]) continue;
     let set;
@@ -84,15 +83,6 @@ export function boxRoom(id) {
     cams: { wide: { pos: W(0, 6, -16), target: W(0, 3, 4), fov: 45 } },
     setState() {},
   };
-}
-
-// ---------- anti-snap ----------
-// One-frame pose snaps inside a shot (a limb or an actor's facing turning a long way between two frames) are eased by
-// web/lib/antisnap.js (runner.html), on for every chapter: the shown pose crossfades from the frame before over 6-12
-// frames; never across a cut or a set change; root positions, marks and seats stay exact. Opt out for the whole clip with
-// K.antiSnap(false) in setup(), or keep meant instant changes (a jump scare) with K.antiSnap(true, { windows: [[t0, t1]] }).
-export function antiSnap(on = true, { windows } = {}) {
-  globalThis.__antiSnap = { ...(globalThis.__antiSnap || {}), on, ...(windows ? { windows } : {}) };
 }
 
 // ---------- the chapter's timeline ----------

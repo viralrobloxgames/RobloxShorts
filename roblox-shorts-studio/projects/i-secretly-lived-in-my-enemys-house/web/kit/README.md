@@ -482,21 +482,6 @@ Flashlight defaults are softer (`flashlightBeam` 30, `chinLight` 4.5) so torches
   `island_hide_crawl_door`. `set.sightBlocked(eyeWorld, headWorld)` → true when the island hides the head from those
   eyes (sitting upright at `island_hide` the hair can show over the top to someone on a stool). Stove marks moved to z −7.9 so
   Dad's arms stay in front of the counter. `set.seatY(scale)` for the stools (seat 2.2).
-### Anti-snap: one-frame pose snaps are eased (orchestrator, 2026-10-07 15:00Z)
-`web/lib/antisnap.js`, wired into `web/runner.html` (renders, frameState, changed_frames, seam_check) and
-`web/lib/clipcheck_page.js` (clip_check, cam_check, snap_check), on for every chapter (`buildSets` turns it on). When a
-bone of a pack actor (Root, Torso, Head, arms, legs) or an actor's facing turns suddenly between two frames inside a shot
-(> 50 deg, or > 25 deg when the frame before turned less than half as much, so run cycles and steady turns are left
-alone), the shown pose crossfades from the frame before to the clip's pose over 6-12 frames (smoothstep). Never across a
-camera cut (> 0.5 studs or > 10 deg in one frame) or a set change; not for an actor that was hidden the frame before or
-moved > 3 studs; root **positions** are never touched, so marks, seats and contacts stay exact. Held props follow the
-eased hands. The clip never sees the eased pose (its own values are put back before every update), so every frame away
-from a snap is identical to before. Frames are posed in order from frame 1 (render.mjs pre-rolls; tools step through
-gaps), so a render, clip_check and snap_check see the same eased poses.
-- Opt out for a clip: `K.antiSnap(false)` in setup(). Keep a meant instant change (jump scare): `K.antiSnap(true, { windows: [[t0, t1]] })` (no new crossfade starts inside those seconds).
-- What it eased: `window.antiSnap.events` in the runner page (frame, actor, part, degrees, frames).
-- Not handled (the chapter's job): walk start/stop speed pops (snap_check `root`), props changing holder or jumping on their own.
-
 ### Cuts and camera continuity (kit-pipeline, P2)
 `camOn` / `twoShot` / `overShoulder` frame from the actor's facing at that frame, so a shot whose actor turns makes the
 camera orbit (ch11's stove shot flew through Dad's head and a wall). For a shot whose actor turns or walks, pass a fixed

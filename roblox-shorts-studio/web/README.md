@@ -74,9 +74,6 @@ node web/render.mjs --clip projects/<slug>/web/<clip>.js --out projects/<slug>/r
 python scripts/finish.py <project dir> --encode --frames projects/<slug>/renders/web
 ```
 
-Anti-snap filter (`lib/antisnap.js`): a clip (or its kit) sets `window.__antiSnap = { on: true }` and runner.html then poses every frame
-through it (window.clipUpdate): sudden one-frame bone/facing turns inside a shot are crossfaded over 6-12 frames; frames are posed
-in order from frame 1, the clip's own pose is restored before each update, root positions are never changed. See the project kit README.
 Snap check (one-frame pops inside a shot, ~30 s per chapter, no drawing): `node web/snap_check.mjs --clip projects/<slug>/web/chNN.js [--root <tree at a sha>] --out chNN.json`
 poses every frame from frame 1 in order and lists the frame pairs f-1 -> f where an on-camera bone (torso, head, arms, legs) turns > 25 deg,
 an actor's or prop's velocity changes > 0.3 studs/frame, a prop changes holder, or an actor teleports > 3 studs; camera cuts and set
