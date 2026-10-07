@@ -1,6 +1,6 @@
 # He Flew The Wrong Way
 
-TikTok: **not posted** · YouTube: **not posted** · `He_Flew_The_Wrong_Way.mp4` (62 s)
+TikTok: **scheduled** · YouTube: **scheduled** · `He_Flew_The_Wrong_Way.mp4` (62 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
@@ -42,8 +42,8 @@ Sources:
 
 ## Settings
 
-- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
-- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
+- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: upload `He_Flew_The_Wrong_Way_cover.jpg`
+- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: upload `He_Flew_The_Wrong_Way_cover.jpg` as the thumbnail
 
 YouTube tags (optional, under Show more):
 

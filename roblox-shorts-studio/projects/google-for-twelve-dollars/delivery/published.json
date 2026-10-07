@@ -1,8 +1,28 @@
 {
   "file": "He_Bought_Google_For_12_Dollars.mp4",
   "sha256": "a6146f4ae23bf0fb5523dd31a28baac23913da202df3bee387e1a0898d48259d",
-  "approved": {"by": "user", "at": "2026-10-06", "how": "\"approved, schedule them all\" in chat (15-video plan, three a night)"},
+  "approved": {
+    "by": "user",
+    "at": "2026-10-06",
+    "how": "\"approved, schedule them all\" in chat (15-video plan, three a night)"
+  },
   "scheduled_for": "2026-10-07T19:00:00+01:00",
-  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "last frame of the video (Edit cover)", "content_check_lite": "switched off (still running at schedule time)"},
-  "youtube": {"status": "draft", "video_id": "w2vjy-yDljw", "url": "https://youtube.com/shorts/w2vjy-yDljw", "note": "Uploaded 2026-10-06 as a private draft with title, description, tags, not made for kids, altered content No, category Gaming. NOT scheduled: custom thumbnail upload is blocked (channel 'video verification in review') and Select from video offers three auto frames, none the cover. Set the cover, then schedule for scheduled_for."}
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "switched off (still running at schedule time)"
+  },
+  "youtube": {
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "video_id": "w2vjy-yDljw",
+    "url": "https://youtube.com/shorts/w2vjy-yDljw",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "custom upload of delivery/*_cover.jpg (channel verification cleared)",
+    "note": "Scheduled 2026-10-07 for 7 Oct 19:00 UK (2026-10-07T19:00:00+01:00); read back from the Studio \"Video scheduled\" dialog."
+  }
 }

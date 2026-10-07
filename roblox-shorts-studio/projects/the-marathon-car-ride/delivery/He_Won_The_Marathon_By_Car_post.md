@@ -1,6 +1,6 @@
 # He Won The Marathon By Car
 
-TikTok: **not posted** · YouTube: **not posted** · `He_Won_The_Marathon_By_Car.mp4` (63 s)
+TikTok: **scheduled** · YouTube: **scheduled** · `He_Won_The_Marathon_By_Car.mp4` (63 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
@@ -41,8 +41,8 @@ Sources:
 
 ## Settings
 
-- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
-- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
+- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: upload `He_Won_The_Marathon_By_Car_cover.jpg`
+- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: upload `He_Won_The_Marathon_By_Car_cover.jpg` as the thumbnail
 
 YouTube tags (optional, under Show more):
 

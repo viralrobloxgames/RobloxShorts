@@ -1,8 +1,28 @@
 {
   "file": "She_Went_Over_Niagara_Falls_In_A_Barrel.mp4",
   "sha256": "f5436fc8c92faa7b5c66ecf4f8ad586c5d40f5392a8585c5b851e7ab474134d8",
-  "approved": {"by": "user", "at": "2026-10-06", "how": "\"approved, schedule them all\" in chat (15-video plan, three a night)"},
+  "approved": {
+    "by": "user",
+    "at": "2026-10-06",
+    "how": "\"approved, schedule them all\" in chat (15-video plan, three a night)"
+  },
   "scheduled_for": "2026-10-12T20:45:00+01:00",
-  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "last frame of the video (Edit cover)", "content_check_lite": "on, passed (no issues found)"},
-  "youtube": {"status": "not_uploaded", "note": "YouTube daily upload limit reached 2026-10-06 after 10 uploads. Upload from 2026-10-07, set the cover, then schedule for scheduled_for."}
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "on, passed (no issues found)"
+  },
+  "youtube": {
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "video_id": "Mwo3EEjPy1E",
+    "url": "https://youtube.com/shorts/Mwo3EEjPy1E",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "custom upload of delivery/*_cover.jpg (channel verification cleared)",
+    "note": "Scheduled 2026-10-07 for 12 Oct 20:45 UK (2026-10-12T20:45:00+01:00); read back from the Studio \"Video scheduled\" dialog."
+  }
 }

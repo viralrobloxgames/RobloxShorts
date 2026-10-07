@@ -1,6 +1,6 @@
 # Lightning Hit Him Seven Times
 
-TikTok: **not posted** · YouTube: **not posted** · `Lightning_Hit_Him_Seven_Times.mp4` (64 s)
+TikTok: **scheduled** · YouTube: **scheduled** · `Lightning_Hit_Him_Seven_Times.mp4` (64 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
@@ -42,8 +42,8 @@ Sources:
 
 ## Settings
 
-- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: pick the **last frame** of the video
-- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: the **last frame** (Thumbnail, Select from video)
+- **TikTok:** Everyone · AI-generated label OFF (the user's standing choice, references/scheduling-workflow.md) · comments ON, duet ON, stitch ON · cover: upload `Lightning_Hit_Him_Seven_Times_cover.jpg`
+- **YouTube:** Public · made for kids: No · altered content: No · category: Gaming · Shorts frame: upload `Lightning_Hit_Him_Seven_Times_cover.jpg` as the thumbnail
 
 YouTube tags (optional, under Show more):
 

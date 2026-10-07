@@ -1,8 +1,28 @@
 {
   "file": "The_Clown_Case.mp4",
   "sha256": "45058b9588311f7a443a5c23531e39e07a67cf0894938807685e6b33d84ed761",
-  "approved": {"by": "user", "at": "2026-10-06", "how": "\"The clown case is ready now with the corrected video\" in chat (golf scene re-render, commit e76a06d); part of the approved 15-video plan"},
+  "approved": {
+    "by": "user",
+    "at": "2026-10-06",
+    "how": "\"The clown case is ready now with the corrected video\" in chat (golf scene re-render, commit e76a06d); part of the approved 15-video plan"
+  },
   "scheduled_for": "2026-10-08T19:00:00+01:00",
-  "tiktok": {"status": "scheduled", "method": "TikTok Studio web, Schedule", "privacy": "Everyone", "ai_label": false, "cover": "last frame of the video (Edit cover)", "content_check_lite": "on, passed (no issues found)"},
-  "youtube": {"status": "not_uploaded", "note": "YouTube daily upload limit reached 2026-10-06 after 10 uploads. Upload from 2026-10-07, set the cover (custom thumbnail upload still blocked at 12:20 on 2026-10-06: video verification in review), then schedule for scheduled_for."}
+  "tiktok": {
+    "status": "scheduled",
+    "method": "TikTok Studio web, Schedule",
+    "privacy": "Everyone",
+    "ai_label": false,
+    "cover": "last frame of the video (Edit cover)",
+    "content_check_lite": "on, passed (no issues found)"
+  },
+  "youtube": {
+    "status": "scheduled",
+    "method": "YouTube Studio web, Schedule",
+    "video_id": "3VQnb9EyIgM",
+    "url": "https://youtube.com/shorts/3VQnb9EyIgM",
+    "made_for_kids": false,
+    "altered_content": false,
+    "thumbnail": "custom upload of delivery/*_cover.jpg (channel verification cleared)",
+    "note": "Scheduled 2026-10-07 for 8 Oct 19:00 UK (2026-10-08T19:00:00+01:00); read back from the Studio \"Video scheduled\" dialog."
+  }
 }

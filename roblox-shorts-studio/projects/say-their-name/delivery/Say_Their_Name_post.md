@@ -1,6 +1,6 @@
 # Say Their Name
 
-TikTok: **scheduled** · YouTube: **not_posted** · `Say_Their_Name.mp4` (64 s)
+TikTok: **scheduled** · YouTube: **scheduled** · `Say_Their_Name.mp4` (64 s)
 
 Tap the copy button on each box. Post only after the video is approved: TikTok first, then YouTube.
 
