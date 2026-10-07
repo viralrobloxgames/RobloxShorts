@@ -74,8 +74,8 @@ const M = {
   nestStand: () => W(-1.9, -5.4, 0),   // left of the nest_stand mark, out of the window's sun shaft
   chair: () => K.mark('attic', 'rocking_chair', W(-8, -4, 0.7)),
   chairFront: () => K.mark('attic', 'rocking_chair_front', W(-6.6, -2.3, 0.7)),
-  box: () => { const m = K.mark('attic', 'box_max', W(7.6, 6.0, 2.29)); m.pos.addScaledVector(V(Math.sin(m.heading), 0, Math.cos(m.heading)), -0.8); return m; },   // 0.8 back from the mark: clear of the open flaps
-  lilyBox: () => W(2.9, 6.2, 0.75),      // Lily beside Skye at the box (screen left), both cheated open to the +z camera side
+  box: () => { const m = K.mark('attic', 'box_max', W(7.6, 6.0, 2.29)); m.pos.addScaledVector(V(Math.sin(m.heading), 0, Math.cos(m.heading)), -0.55); return m; },   // 0.55 back from the mark: her crouch clears the box, her hands reach the middle of the contents
+  lilyBox: () => W(2.4, 6.4, 0.75),      // Lily beside Skye at the box (screen left), both cheated open to the +z camera side
   hatch: () => V(4.5, 1.2, 9.0).add(OFF),
 };
 const towardXZ = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
@@ -136,11 +136,10 @@ let ROCK = 0;
 const ARMS = (a, l, r = [l[0], -l[1], -l[2]]) => K.posture(a, { 'Arm.L': l, 'Arm.R': r }, { reset: false });
 const mixArm = (p, q, u) => p.map((v, i) => v + (q[i] - v) * u);
 const LILY_HUG = globalThis.LH ?? [-48, 34, 0];   // both forearms round the teddy on her chest
-const CHEST = [-80, 32, 0], /* = cast.js hold_paper */ WAIST = [-38, 20, 0], DOWN = [-6, 0, -4], BOX_REACH = [-38, 14, 0], FLAPS = [-55, 4, 0];
-const SHEET_CHEST = [-84, -8, 0], SHEET_CHIN = [-104, -10, 0], LAP_L = [-34, 30, 0], LAP_R = [-34, -34, 0];
+const CHEST = [-80, 32, 0], /* = cast.js hold_paper */ WAIST = [-38, 20, 0], DOWN = [-6, 0, -4], BOX_REACH = [-104, 33, 0],   /* relative to the crouched torso: hands down onto the contents */ FLAPS = [-34, 10, 0];
+const SHEET_CHEST = [-84, 4, 0], SHEET_CHIN = [-122, 4, 0], LAP_L = [-34, 30, 0], LAP_R = [-34, -34, 0];
 // the drawing lying on top of the contents of MAX - OLD STUFF, art up, its top towards the insert camera's "up"
-const BOX_TOP = V(9.2, 1.25, 4.6).add(OFF), BOX_UPDIR = V(-0.24, 0, -0.97).normalize();
-const DRAW_IN_BOX = (() => { const x = V(-BOX_UPDIR.z, 0, BOX_UPDIR.x), m = new THREE.Matrix4().makeBasis(x, BOX_UPDIR, V(0, 1, 0)); return { pos: BOX_TOP.clone().addScaledVector(BOX_UPDIR, -0.425), q: new THREE.Quaternion().setFromRotationMatrix(m) }; })();
+const FLAT = -Math.PI / 2;   // carry2 tilt: the drawing lying flat, art up
 
 // ---------- where everyone is ----------
 function skyeAt(s, idle) {
@@ -152,7 +151,7 @@ function skyeAt(s, idle) {
     const snip = cutting ? Math.sin(s * 9) : 0;
     let L = LAP_L, Rr = mixArm(LAP_R, [-60, -14, 0], 0.5 + 0.5 * snip);
     const g0 = wordAt(1, 6), g1 = endOf(1);                // "glow sticks" ... end of the line: the bundle up in her L palm
-    if (s >= g0 - 0.3 && s < g1 + 0.2) { const u = smooth(inv(g0 - 0.3, g0, s)) * (1 - smooth(inv(g1, g1 + 0.2, s))); L = mixArm(LAP_L, [-92, 16, 0], u); st.glow = u > 0.5; }
+    if (s >= g0 - 0.3 && s < g1 + 0.2) { const u = smooth(inv(g0 - 0.3, g0, s)) * (1 - smooth(inv(g1, g1 + 0.2, s))); L = mixArm(LAP_L, [-68, 36, 0], u); st.glow = u > 0.5; }
     if (s >= wordAt(1, 10) - 0.1 && s < endOf(1) + 0.3) Rr = mixArm(Rr, [-100, -10, 0], smooth(inv(wordAt(1, 10) - 0.1, wordAt(1, 10) + 0.15, s)));   // "revenge": scissors up
     ARMS(sk, L, Rr);
     st.face = s >= wordAt(1, 10) && s < endOf(1) + 0.3 ? 'scheming' : 'determined';
@@ -180,9 +179,9 @@ function skyeAt(s, idle) {
     if (s < T.lidOpened) { const u = smooth(inv(T.lidOpen - 0.35, T.lidOpen, s)); arms = mixArm(DOWN, FLAPS, u); bend = 0.35 * u; }
     else if (s < T.pick - 0.3) { const u = smooth(inv(T.lidOpened, T.lidOpened + 0.2, s)); arms = mixArm(FLAPS, DOWN, u); bend = 0.35 * (1 - u); }
     else if (s < T.pick + 0.15) { const u = smooth(inv(T.pick - 0.3, T.pick, s)); arms = mixArm(DOWN, BOX_REACH, u); bend = u; }   // down to the drawing; contact at T.pick
-    else { const u = smooth(inv(T.pick + 0.15, T.pick + 0.6, s)); arms = mixArm(BOX_REACH, CHEST, u); bend = 1 - u; st.drawing = 'hands'; st.lift = u; }   // one continuous lift to her chest
+    else { const u = smooth(inv(T.pick + 0.15, T.pick + 0.6, s)); arms = mixArm(BOX_REACH, CHEST, u); bend = 1 - u; st.drawing = 'hands'; st.tilt = lerp(FLAT, -0.45, u); }   // one continuous lift to her chest
     if (s >= T.pick && s < T.pick + 0.15) st.drawing = 'contact';
-    if (bend) K.posture(sk, 'hip_bend', { reset: false, mix: 0.5 * bend });   // a half bend: the open flap is right in front of her
+    if (bend) K.posture(sk, 'kneel', { reset: false, mix: bend, extra: { Torso: [30 * bend, 0, 0], Head: [-20 * bend, 0, 0] } });   // kneels at the box, leaning in
     ARMS(sk, arms);
     st.face = s >= T.pick ? 'surprised' : 'determined';
     if (s >= T.pick + 0.15) { K.putOn(sk, { pos: to.pos, heading: lerpAng(to.heading, SKYE_OPEN, smooth(inv(T.pick + 0.4, T.pick + 0.7, s))) }); }   // lift clear of the flaps first, then turn to Lily
@@ -211,8 +210,8 @@ function skyeAt(s, idle) {
       look = 0.2; st.face = 'sad';
       h = lerpAng(SKYE_OPEN, box.heading, smooth(inv(T.back, T.back + 0.16, s)));
       const u = smooth(inv(T.back + 0.2, T.contact, s)), w = smooth(inv(T.backDone + 0.05, T.backDone + 0.35, s));
-      arms = mixArm(mixArm(CHEST, BOX_REACH, u), DOWN, w); K.posture(sk, 'hip_bend', { reset: false, mix: 0.5 * u * (1 - w) });
-      st.down = u; st.drawing = s < T.contact ? 'hands' : s < T.backDone ? 'contact' : 'box';
+      arms = mixArm(mixArm(CHEST, BOX_REACH, u), DOWN, w); K.posture(sk, 'kneel', { reset: false, mix: u * (1 - w), extra: { Torso: [30 * u * (1 - w), 0, 0], Head: [-20 * u * (1 - w), 0, 0] } });
+      st.tilt = lerp(-0.45, FLAT, u); st.drawing = s < T.contact ? 'hands' : 'box';
     }
     if (s >= T.lidClose - 0.3 && s < T.sheetUp) { const u = smooth(inv(T.lidClose - 0.3, T.lidClose, s)) * (1 - smooth(inv(T.lidClosed - 0.05, T.lidClosed + 0.1, s))); arms = mixArm(DOWN, FLAPS, u); K.posture(sk, 'hip_bend', { reset: false, mix: 0.35 * u }); }
     if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.4 ? 'open' : 'floor'; h = lerpAng(box.heading, SKYE_OPEN, u); arms = u > 0.4 ? SHEET_CHEST : DOWN; look = 0; }
@@ -267,6 +266,19 @@ function lilyAt(s, idle) {
 // ---------- props ----------
 let HOLES = 1;
 const _wp = V(), _wq = new THREE.Quaternion();
+// The drawing's place on top of the contents = exactly where her hands lay it down at T.contact (her pose evaluated at
+// that instant), so the pick-up starts from it and the put-back ends on it with no jump. Deterministic, computed once.
+const IDLE_EXTRA = [[T.walk, T.picked], [T.lilyWalk, T.lilyWalk + 2], [T.back, T.sheetUpDone]];
+let REST = null;
+function restPose() {
+  if (REST) return REST;
+  const idle = K.holdClock(T.contact, L, IDLE_EXTRA);
+  skyeAt(T.contact, idle); C.skye.root.updateMatrixWorld(true);
+  K.carry2(P.drawing, C.skye, { tilt: FLAT });
+  P.drawing.updateMatrixWorld(true);
+  REST = { pos: P.drawing.getWorldPosition(V()), q: P.drawing.getWorldQuaternion(new THREE.Quaternion()) };
+  return REST;
+}
 function placeProps(sk, s) {
   const root = C.skye.root, h = root.rotation.y, f = V(Math.sin(h), 0, Math.cos(h)), world = root.parent;
   const mode = sk.sheet;
@@ -275,10 +287,10 @@ function placeProps(sk, s) {
     const sh = P.sheetLap, holes = s < wordAt(1, 3) ? 1 : 2;
     if (holes !== HOLES) { sh.userData.setHoles(holes); HOLES = holes; }
     if (sh.parent !== world) world.add(sh);
-    sh.visible = true; sh.scale.set(0.95, 0.14, 0.9);   // a soft drape, not a box
-    sh.position.copy(root.position).setY(M.nest().pos.y + 1.38).addScaledVector(f, 0.8); sh.rotation.set(0, h + Math.PI, 0);
+    sh.visible = true; sh.scale.set(0.9, 0.1, 0.8);   // spread on the blankets in front of her, its near edge over her feet
+    sh.position.copy(root.position).setY(M.nest().pos.y + 0.36).addScaledVector(f, 2.2); sh.rotation.set(0, h + Math.PI, 0);
   } else if (mode === 'carry') { P.sheetBunch.visible = true; K.hold(P.sheetBunch, C.skye, 'R', 'palm'); }
-  else if (mode === 'open') { P.sheetHeld.visible = true; K.carry2(P.sheetHeld, C.skye); }
+  else if (mode === 'open') { P.sheetHeld.visible = true; K.carry2(P.sheetHeld, C.skye, { scale: 0.72 }); }
   else {                                                    // dropped flat on the floor beside her, left of the box
     const sh = P.sheetLap; if (sh.parent !== world) world.add(sh);
     if (HOLES !== 2) { sh.userData.setHoles(2); HOLES = 2; }
@@ -289,18 +301,10 @@ function placeProps(sk, s) {
   if (sk.scissors === 'hand') K.hold(P.scissors, C.skye, 'R');
   else { if (P.scissors.parent !== world) world.add(P.scissors); P.scissors.position.copy(M.nest().pos).add(V(1.1, 0.34, 0.9)); P.scissors.quaternion.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0.6)); P.scissors.scale.setScalar(1); }
   P.glow.visible = !!sk.glow; if (sk.glow) K.hold(P.glow, C.skye, 'L', 'palm', { scale: 1.25 });
-  // the drawing: in the box (art up), in her hands (carry2 at her chest), or blending between the two at the contacts
-  const d = P.drawing; d.visible = true;
-  const inBox = () => { if (d.parent !== world) world.add(d); d.position.copy(DRAW_IN_BOX.pos); d.quaternion.copy(DRAW_IN_BOX.q); d.scale.setScalar(1); };
-  if (sk.drawing === 'box') inBox();
-  else {
-    K.carry2(d, C.skye, { tilt: sk.tilt ?? 0, at: (sk.tilt ?? 0) < 0 ? 'out' : 'palm' });
-    let k = 0;                                              // how far the drawing still is from her hands, towards its place in the box
-    if (s < T.picked) k = sk.drawing === 'contact' ? 1 : 1 - (sk.lift ?? 1);
-    else if (sk.drawing === 'contact') k = 1;
-    else if (sk.down != null) k = sk.down;
-    if (k > 0) { d.position.lerp(DRAW_IN_BOX.pos, k); d.quaternion.slerp(DRAW_IN_BOX.q, k); }
-  }
+  // the drawing: lying on top of the contents (REST), or in her hands (carry2 every frame, tilting flat as she sets it down)
+  const d = P.drawing; d.visible = true; const rest = restPose();
+  if (sk.drawing === 'box' || sk.drawing === 'contact') { if (d.parent !== world) world.add(d); d.position.copy(rest.pos); d.quaternion.copy(rest.q); d.scale.setScalar(1); }
+  else K.carry2(d, C.skye, { tilt: sk.tilt ?? 0, at: 'palm' });
 }
 
 // ---------- shots ----------
@@ -318,15 +322,19 @@ const LILY_BOX = (s) => { const h = K.headPos(C.lily); K.setCam(s, { pos: h.clon
 // inserts into MAX - OLD STUFF from above its left side (Skye reaches in from the right edge)
 const INSERT = { pos: V(9.9, 5.0, 7.4).add(OFF), target: V(9.2, 1.25, 4.6).add(OFF), fov: 22 };   // level, from Skye's side: her forearms come in at the bottom edge
 // her reach into the box, side on (from her actual head and heading; SIDE_ANG picks the side)
+// straight down onto the drawing lying on the contents (where she lays it), its top edge up on screen
+const TOPDOWN = (h) => (s) => { const r = REST, up = V(0, 1, 0).applyQuaternion(r.q), c = r.pos.clone().addScaledVector(up, 0.42);
+  K.setCam(s, { pos: c.clone().add(V(0, h, 0)).addScaledVector(up, -0.05), target: c, fov: 46 }, { clear: false });
+  up.y = 0; up.normalize(); s.camera.up.copy(up); s.camera.lookAt(c); s.camera.updateMatrixWorld(true); };
 const SIDE_ANG = 0.9;   // side on, her face readable, the box in front of her
-const SIDE = (s) => front('skye', { heading: M.box().heading, ang: SIDE_ANG, d: 7.5, up: 0.6, look: -1.9, fov: 42 })(s);
+const SIDE = (s) => front('skye', { heading: M.box().heading, ang: SIDE_ANG, d: 7.5, up: 0.4, look: -1.65, fov: 30 })(s);
 const INSERT_WIDE = { pos: V(9.9, 5.0, 7.4).add(OFF), target: V(9.1, 1.4, 4.75).add(OFF), fov: 27 };
 const push = (a, b, t0, t1) => (s, t) => K.applyShot(s, K.blendShot(a, b, smooth(inv(t0, t1, t))));
 const NEST_TWO = { pos: NESTCAM.pos.clone().lerp(NESTCAM.target, 0.18), target: NESTCAM.target, fov: NESTCAM.fov };
 const BOX_TWO = { pos: BOXCAM.pos.clone().lerp(BOXCAM.target, 0.12), target: BOXCAM.target.clone().add(V(0, 0.75, 0)), fov: 40 };
 const SHOTS = [
   { line: 0, off: 0, id: 'open', cam: (s, t) => push(NESTCAM, { pos: NESTCAM.pos.clone().lerp(NESTCAM.target, 0.3), target: NESTCAM.target, fov: NESTCAM.fov }, 0, endOf(0))(s, t) },
-  { line: 1, off: 0, id: 'skye_steps', cam: front('skye', { ang: -0.45, d: 7.8, up: 0.4, look: -1.05 }) },
+  { line: 1, off: 0, id: 'skye_steps', cam: front('skye', { ang: -0.1, d: 7.0, up: 0.6, look: -1.1 }) },
   { line: 2, off: 0, id: 'lily_sheet', cam: front('lily', { ang: 0.25, d: 4.6 }) },
   { line: 3, off: 0, id: 'two_nest', cam: FIX(NEST_TWO) },
   { line: 4, off: 0, id: 'dad_below', cam: (s, t) => push(NEST_TWO, { pos: NEST_TWO.pos.clone().lerp(NEST_TWO.target, 0.2), target: NEST_TWO.target, fov: NEST_TWO.fov }, at(4), at(4) + 0.6)(s, t) },
@@ -334,22 +342,22 @@ const SHOTS = [
   { line: 6, off: -0.3, id: 'skye_stand', cam: front('skye', { ang: -0.35, d: 7.5, up: 0.9, look: -1.3, fov: 36 }) },
   { line: 7, off: 0, id: 'lily_box', cam: front('lily', { ang: 0.25, d: 4.6 }) },
   { line: 7, off: 0, at: () => wordAt(7, 3) - 0.05, id: 'skye_walk', cam: FIX(BOXCAM) },
-  { line: 7, off: 0, at: () => T.lidOpen + 0.3, id: 'box_insert', cam: FIX(INSERT) },   // the flaps open: the drawing on top
+  { line: 7, off: 0, at: () => T.lidOpen + 0.3, id: 'box_insert', cam: TOPDOWN(1.1) },   // the flaps open: the drawing on top
   { line: 7, off: 0, at: () => T.pick - 0.35, id: 'pick_side', cam: SIDE },
-  { line: 8, off: 0, at: () => T.pick + 0.42, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 6.2, look: -0.9 }) },
+  { line: 8, off: 0, at: () => T.pick + 0.42, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.72, d: 6.2, look: -0.9 }) },
   { line: 9, off: 0, id: 'drawing_cu', cam: (s) => { const r = C.skye.root.position, h = C.skye.root.rotation.y, f = V(Math.sin(h), 0, Math.cos(h)); const m = handsMid(C.skye); K.setCam(s, { pos: m.clone().addScaledVector(f, 2.4).add(V(0, 1.6, 0)), target: m.clone().add(V(0, 0.25, 0)), fov: 34 }, { clear: false }); } },
-  { line: 9, off: 0, at: () => SPELL - 0.1, id: 'skye_spelled', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 5.8, look: -0.75 }) },
+  { line: 9, off: 0, at: () => SPELL - 0.1, id: 'skye_spelled', cam: front('skye', { heading: SKYE_OPEN, ang: 0.72, d: 5.8, look: -0.75 }) },
   { line: 10, off: 0, id: 'lily_kinder', cam: LILY_BOX },
-  { line: 11, off: 0, id: 'skye_kept', cam: (s, t) => { const u = smooth(inv(at(11), endOf(11) + 0.3, t)); front('skye', { heading: SKYE_OPEN, ang: 0.6, d: lerp(6.0, 4.8, u), look: -0.75 })(s); } },
+  { line: 11, off: 0, id: 'skye_kept', cam: (s, t) => { const u = smooth(inv(at(11), endOf(11) + 0.3, t)); front('skye', { heading: SKYE_OPEN, ang: 0.72, d: lerp(6.0, 4.8, u), look: -0.75 })(s); } },
   { line: 12, off: 0, id: 'lily_sad', cam: LILY_BOX },
   { line: 13, off: 0, id: 'two_sandcastle', cam: FIX({ pos: V(5.4, 3.9, 12.6).add(OFF), target: V(6.1, 3.2, 5.6).add(OFF), fov: 40 }) },
   { line: 14, off: 0, id: 'lily_seven', cam: LILY_BOX },
-  { line: 15, off: 0, id: 'skye_good', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 5.8, look: -0.75 }) },
-  { line: 15, off: 0, at: () => endOf(15, 0.05), id: 'look_cu', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 5.6, look: -0.85 }) },
+  { line: 15, off: 0, id: 'skye_good', cam: front('skye', { heading: SKYE_OPEN, ang: 0.72, d: 5.8, look: -0.75 }) },
+  { line: 15, off: 0, at: () => endOf(15, 0.05), id: 'look_cu', cam: front('skye', { heading: SKYE_OPEN, ang: 0.72, d: 5.6, look: -0.85 }) },
   { line: 15, off: 0, at: () => T.back + 0.17, id: 'put_side', cam: SIDE },
-  { line: 15, off: 0, at: () => T.backDone + 0.3, id: 'put_back', cam: FIX(INSERT_WIDE) },   // insert: the drawing back on top, the lid
+  { line: 15, off: 0, at: () => T.backDone + 0.3, id: 'put_back', cam: TOPDOWN(1.3) },   // insert: the drawing back on top, the lid
   { line: 16, off: 0.6, id: 'lily_still', cam: LILY_BOX },
-  { line: 17, off: -0.05, id: 'skye_yes', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 6.2, look: -0.8 }) },
+  { line: 17, off: -0.05, id: 'skye_yes', cam: front('skye', { heading: SKYE_OPEN, ang: 0.72, d: 6.2, look: -0.8 }) },
   { line: 18, off: 0, id: 'two_dumb', cam: FIX(BOX_TWO) },
   { line: 19, off: 0, id: 'two_hatch', cam: FIX(BOXCAM) },
 ].map((x) => ({ ...x, start: x.at ? x.at() : at(x.line, x.off) })).sort((a, b) => a.start - b.start);
@@ -360,16 +368,19 @@ let OVL = {};
 export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet('attic');
-  const lid = 0.72 * (t < T.lidOpen ? 0 : t < T.lidOpened ? smooth(inv(T.lidOpen, T.lidOpened, t)) : t < T.lidClose ? 1 : 1 - smooth(inv(T.lidClose, T.lidClosed, t)));   // flaps stand up, so her hands reach in between them
+  const lid = 1.0 * (t < T.lidOpen ? 0 : t < T.lidOpened ? smooth(inv(T.lidOpen, T.lidOpened, t)) : t < T.lidClose ? 1 : 1 - smooth(inv(T.lidClose, T.lidClosed, t)));   // flaps stand up, so her hands reach in between them
   K.applyLight(stage, 'attic_afternoon', { set });
   K.setBlockers(set.group, C.skye, C.lily);
   K.setLine(C.lily, C.skye, 1);
   K.only(C, ['skye', 'lily']);
   // idle motion while someone speaks and while things move (walks, the lid, the sheet)
-  const idle = K.holdClock(t, L, [[T.walk, T.picked], [T.lilyWalk, T.lilyWalk + 2], [T.back, T.sheetUpDone]]);
+  const idle = K.holdClock(t, L, IDLE_EXTRA);
+  restPose();                              // (poses Skye once at T.contact; the frame's own pose follows)
   ROCK = 0;
   const sk = skyeAt(t, idle), li = lilyAt(t, idle + 0.7);
   K.setState({ chapter: 9, maxBox: lid, drawing: 'none', rock: ROCK, glowSticks: !sk.glow });   // the drawing is the kit prop, placed by placeProps
+  // the near flap (Skye's side) swings right over and hangs down outside the box front, so she can reach in over the edge
+  { const fl = attic.items?.box_max?.userData?.flaps || []; for (const f of fl) { f.rotation.x = f.userData.s > 0 ? 4.69 * lid : -2.0 * lid; f.visible = !(globalThis.HIDE_FLAP === f.userData.s); } }
 
   K.speak(C.skye, sk.face, t, L.said('SKYE'), { whisper: true });   // mouth only, the expression held per phrase
   K.holdTeddy(C.lily, 'hug');
@@ -398,3 +409,4 @@ export const HOLDS = [
   [at(20, 0.2), 'lily', 'R', 'teddy, last frame'],
 ];
 export const SHOT_LIST = SHOTS.map((x, i) => ({ id: x.id, start: x.start, end: SHOTS[i + 1]?.start ?? meta.seconds }));
+
