@@ -33,3 +33,19 @@ New issues:
 - N7 frames 1105-1300, a white out-of-focus blob (Skye's shoulder) at the left edge of Max's CUs (c1 #15). **should**
 
 Verdict: **MUSTS** (c1 #1, #2, #8; N1-N4).
+
+## Re-check @ 65f9fd9e
+clip_check: sight hits now only at 7.6-8.1 s (the pink-lock insert: Max sees her torso at 6 studs, read as a white hoodie next to "Just hoodies"; accepted, should) and in the classroom (no hiding). 2 high: 7.6 s pink lock (intended) and 61.5 s Skye's Leg.L in wall_left for one sample (she is behind the closet front, not visible in f1843-1849). cam_check: 0/0/0. I rendered the whole chapter at every 15th frame, plus single frames 462-472, 1120-1290 and 1840-1911.
+
+| must | status | note |
+|---|---|---|
+| c1 #1/#2 hook sight line | fixed | Skye is in the walk-in corner with the wall between them; sight check clean |
+| N1 louvres f300-325 | fixed | |
+| N2 louvres f1570-1600 | fixed | she is in the corner, out of view |
+| N3 arms through the leaf f1843-1851 | fixed | clip hits now ~0-2% cover; Max is asleep (should only) |
+| c1 #8 180° spin | **not fixed** | f462-468 back of the head, f469 side, f470 facing, same setup. Cut at 469, or start the shot on the facing pose. **must** |
+| N4 / c6 R1 arm straight forward | **not fixed** | f1120-1290: Max's right arm still straight forward at shoulder height across the frame for about 6 s. Arm down. **must** |
+| others from the first re-check | still fixed | |
+Shoulds left: flashlight arm straight (f211-260), white blob at the left edge of the Max CUs (f1105-1300).
+
+Verdict: **MUSTS** (c1 #8, N4).
