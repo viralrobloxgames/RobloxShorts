@@ -81,7 +81,7 @@ const M = {
 const towardXZ = (from, to) => Math.atan2(to.x - from.x, to.z - from.z);
 const SKYE_OPEN = -0.75, LILY_OPEN = 0.5;  // box scene: facing each other, opened to the +z side (camera, hatch)
 // box-scene cameras (attic local coords): the two-shot from the hatch side, and the walk/put-back angle
-const BOXCAM = { pos: V(5.8, 4.5, 12.4).add(OFF), target: V(6.5, 3.4, 5.6).add(OFF), fov: 40 };
+const BOXCAM = { pos: V(4.8, 4.6, 13.0).add(OFF), target: V(5.3, 3.4, 5.9).add(OFF), fov: 44 };
 const NESTCAM = { pos: V(-3.0, 4.4, 5.6).add(OFF), target: V(-3.7, 2.0, -5.4).add(OFF), fov: 50 };
 // where the drawing is: between Skye's hands (props may not have landed yet)
 function handsMid(a) { const l = a.bones['Arm.L'].localToWorld(V(0.5 * a.scale, -1.8 * a.scale, 0)), r = a.bones['Arm.R'].localToWorld(V(-0.5 * a.scale, -1.8 * a.scale, 0)); return l.lerp(r, 0.5); }
@@ -136,7 +136,7 @@ let ROCK = 0;
 const ARMS = (a, l, r = [l[0], -l[1], -l[2]]) => K.posture(a, { 'Arm.L': l, 'Arm.R': r }, { reset: false });
 const mixArm = (p, q, u) => p.map((v, i) => v + (q[i] - v) * u);
 const LILY_HUG = globalThis.LH ?? [-48, 34, 0];   // both forearms round the teddy on her chest
-const CHEST = [-80, 24, 0], WAIST = [-38, 20, 0], DOWN = [-6, 0, -4], BOX_REACH = [-38, 14, 0], FLAPS = [-55, 4, 0];
+const CHEST = [-80, 32, 0], /* = cast.js hold_paper */ WAIST = [-38, 20, 0], DOWN = [-6, 0, -4], BOX_REACH = [-38, 14, 0], FLAPS = [-55, 4, 0];
 const SHEET_CHEST = [-84, -8, 0], SHEET_CHIN = [-104, -10, 0], LAP_L = [-34, 30, 0], LAP_R = [-34, -34, 0];
 // the drawing lying on top of the contents of MAX - OLD STUFF, art up, its top towards the insert camera's "up"
 const BOX_TOP = V(9.2, 1.25, 4.6).add(OFF), BOX_UPDIR = V(-0.24, 0, -0.97).normalize();
@@ -185,7 +185,7 @@ function skyeAt(s, idle) {
     if (bend) K.posture(sk, 'hip_bend', { reset: false, mix: 0.5 * bend });   // a half bend: the open flap is right in front of her
     ARMS(sk, arms);
     st.face = s >= T.pick ? 'surprised' : 'determined';
-    if (s >= T.pick + 0.15) { K.putOn(sk, { pos: to.pos, heading: lerpAng(to.heading, SKYE_OPEN, smooth(inv(T.pick + 0.3, T.pick + 0.7, s))) }); }
+    if (s >= T.pick + 0.15) { K.putOn(sk, { pos: to.pos, heading: lerpAng(to.heading, SKYE_OPEN, smooth(inv(T.pick + 0.4, T.pick + 0.7, s))) }); }   // lift clear of the flaps first, then turn to Lily
     return st;
   }
   // at the box, turned half to Lily (and the lens), the drawing at her chest in both hands
@@ -209,7 +209,7 @@ function skyeAt(s, idle) {
     st.face = s < T.back - 0.2 ? 'sad' : 'happy'; look = 0.38;
     if (s >= T.back) {
       look = 0.2; st.face = 'sad';
-      h = lerpAng(SKYE_OPEN, box.heading, smooth(inv(T.back, T.back + 0.25, s)));
+      h = lerpAng(SKYE_OPEN, box.heading, smooth(inv(T.back, T.back + 0.16, s)));
       const u = smooth(inv(T.back + 0.2, T.contact, s)), w = smooth(inv(T.backDone + 0.05, T.backDone + 0.35, s));
       arms = mixArm(mixArm(CHEST, BOX_REACH, u), DOWN, w); K.posture(sk, 'hip_bend', { reset: false, mix: 0.5 * u * (1 - w) });
       st.down = u; st.drawing = s < T.contact ? 'hands' : s < T.backDone ? 'contact' : 'box';
@@ -336,7 +336,7 @@ const SHOTS = [
   { line: 7, off: 0, at: () => wordAt(7, 3) - 0.05, id: 'skye_walk', cam: FIX(BOXCAM) },
   { line: 7, off: 0, at: () => T.lidOpen + 0.3, id: 'box_insert', cam: FIX(INSERT) },   // the flaps open: the drawing on top
   { line: 7, off: 0, at: () => T.pick - 0.35, id: 'pick_side', cam: SIDE },
-  { line: 8, off: 0, at: () => T.pick + 0.4, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 6.2, look: -0.9 }) },
+  { line: 8, off: 0, at: () => T.pick + 0.42, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 6.2, look: -0.9 }) },
   { line: 9, off: 0, id: 'drawing_cu', cam: (s) => { const r = C.skye.root.position, h = C.skye.root.rotation.y, f = V(Math.sin(h), 0, Math.cos(h)); const m = handsMid(C.skye); K.setCam(s, { pos: m.clone().addScaledVector(f, 2.4).add(V(0, 1.6, 0)), target: m.clone().add(V(0, 0.25, 0)), fov: 34 }, { clear: false }); } },
   { line: 9, off: 0, at: () => SPELL - 0.1, id: 'skye_spelled', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 5.8, look: -0.75 }) },
   { line: 10, off: 0, id: 'lily_kinder', cam: LILY_BOX },
@@ -346,7 +346,7 @@ const SHOTS = [
   { line: 14, off: 0, id: 'lily_seven', cam: LILY_BOX },
   { line: 15, off: 0, id: 'skye_good', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 5.8, look: -0.75 }) },
   { line: 15, off: 0, at: () => endOf(15, 0.05), id: 'look_cu', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 5.6, look: -0.85 }) },
-  { line: 15, off: 0, at: () => T.back, id: 'put_side', cam: SIDE },
+  { line: 15, off: 0, at: () => T.back + 0.17, id: 'put_side', cam: SIDE },
   { line: 15, off: 0, at: () => T.backDone + 0.3, id: 'put_back', cam: FIX(INSERT_WIDE) },   // insert: the drawing back on top, the lid
   { line: 16, off: 0.6, id: 'lily_still', cam: LILY_BOX },
   { line: 17, off: -0.05, id: 'skye_yes', cam: front('skye', { heading: SKYE_OPEN, ang: 0.6, d: 6.2, look: -0.8 }) },
@@ -360,7 +360,7 @@ let OVL = {};
 export function update(t, stage) {
   const sh = shotAt(t);
   const set = K.showSet('attic');
-  const lid = t < T.lidOpen ? 0 : t < T.lidOpened ? smooth(inv(T.lidOpen, T.lidOpened, t)) : t < T.lidClose ? 1 : 1 - smooth(inv(T.lidClose, T.lidClosed, t));
+  const lid = 0.72 * (t < T.lidOpen ? 0 : t < T.lidOpened ? smooth(inv(T.lidOpen, T.lidOpened, t)) : t < T.lidClose ? 1 : 1 - smooth(inv(T.lidClose, T.lidClosed, t)));   // flaps stand up, so her hands reach in between them
   K.applyLight(stage, 'attic_afternoon', { set });
   K.setBlockers(set.group, C.skye, C.lily);
   K.setLine(C.lily, C.skye, 1);
