@@ -70,3 +70,17 @@ Whole chapter at 2 fps in sheets, must ranges in stills, seam.
 - Shoulds still open (not blocking): skeleton skull just above Skye's head in tea_skye_cu; "hand on chest" forearm at chest height.
 
 FINAL: PASS
+
+## Final pass (re-render with pre-roll)
+
+ch05_a.mp4 sha256 a2bf6070... (909 frames) + ch05_b.mp4 abd36b10... (1110 frames), 3830bc67, pre-rolling render.mjs.
+- Frame-to-frame scan of all 2019 frames (mean abs diff vs its neighbours): every spike is a camera cut or a caption
+  change on/next to a cut. Nothing at the seam 909/910 or at any chunk start (equal 4-way splits ~228/455/682 and
+  ~1188/1465/1742 are clean). No render pops.
+- 2 fps scan of the whole chapter: matches the approved clip; must fixes intact, captions on the right speaker.
+- Clip-level one-frame gesture snaps (in the frozen clip, not render faults), should: f204->205 Skye's "Boo" arm goes
+  from down to up in one frame; f420->421 Skye's arm settles 2 frames before the cut; Lily's teapot arm jumps between
+  knee and pour height in one frame at pour starts and ends, f820->821, f1586->1587, f1675->1676 (lilyPours() switches
+  the gesture with no ease). Fix if the clip is ever reopened: ease the gesture over ~6 frames.
+
+FINAL: PASS
