@@ -33,3 +33,36 @@ Method: a frame-to-frame difference (`tblend` difference + YAVG) over every fram
 Not snaps: f56-57 is the title fade; f1067, 1194 and 1500 are a caption change plus a mouth shape; f1152, 1561 and 1668 (the caption part) are caption changes.
 
 **RECHECK: MUSTS @ 50e434a3** (snaps only; R-a and R-b stay fixed)
+
+## Re-check @ a9896716
+
+Own checks: `clip_check --sight` reports 0 high (27 medium, of the same kinds as before); `cam_check` 0/0/0; `snap_check` 1 high and 22 low. The pixel snap scan over all 2095 frames (0.25 scale, no captions) shows only the title fade (f56-57) and the end-screen dim (f1980). I also re-viewed the `--every 15` pass at 0.5 and every frame of each snap range.
+
+| must | verdict |
+|---|---|
+| f560-562 Lily snaps into the hug after the cut | **fixed**: the hug pose is there from the first frame of the close-up |
+| f525-526 Skye's head snap | **fixed**: eased over about 6 frames |
+| f1276-1277 Lily's head snap | **fixed**: a gradual turn after the cut |
+| f1664-1669 Max's arm flicker | **fixed**: the arm is steady |
+| f1723-1724 Max's arm drop | **fixed**: the arm is steady |
+| R-a, R-b | still fixed |
+| the rest of the chapter (`--every 15`) | no regressions |
+
+New issue:
+- **f437-438, must**: by the front door (the shot that cuts in at f429), Skye stands facing the camera with her arms down at f435-437, then at f438 she is mid-stride and turned side-on: a body turn of about 90° plus a full stride in one frame. `snap_check` rates it high (arms and legs 63°). Fix: turn her over about 6 frames and start the walk from a small first step.
+- The low `snap_check` flags are not visible: Max's background arm at f283, Max out of frame at f402, Skye's stepped stair gait, phone and spatula handling. No action.
+
+**RECHECK: MUSTS @ a9896716** (one: f437-438)
+
+## Re-check @ a248aa3d
+
+The diff from a9896716 touches only Skye's walk-off in `ch11.js` (shared lib, kit and render files are unchanged). Checks: `clip_check --sight` reports 0 high (27 medium, as before); `cam_check` 0/0/0; `snap_check` 0 high (21 low events, the same harmless kinds as before). The pixel snap scan over f425-600, every frame, shows only the cuts at f429, f560 and f600. I viewed every frame of f433-456 and every 6th of f458-596.
+
+| must | verdict |
+|---|---|
+| f437-438 Skye's walk-start snap | **fixed**: she turns from facing the camera to the route over f437-449 while the walk eases in from a small step, and the corner toward the island is smooth. She still reaches the island in the same pan, and the cut to Lily at f560 is unchanged |
+| the five earlier snaps, R-a, R-b | unchanged since a9896716 (the clip diff doesn't touch them) |
+
+No new issues.
+
+**RECHECK: OK @ a248aa3d**

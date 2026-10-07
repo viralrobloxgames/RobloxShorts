@@ -37,7 +37,7 @@ steps(0.0, 0.9, 0.08); steps(at(1, -1.4), at(1, -0.4), 0.08)
 cue('door_creak', DOOR_OPEN, 0.3)
 cue('swish_1', DOOR_OPEN + 0.35, 0.08)
 cue('latch', DOOR_SHUT + 0.38, 0.25)
-steps(DOOR_SHUT + 0.3, DOOR_SHUT + 1.3, 0.07)
+steps(DOOR_SHUT + 0.45, DOOR_SHUT + 1.45, 0.07)   # he turns round first (0.15-0.45 s)
 # the classroom at lunch: chatter under the scene, the spider plops into the lunchbox, Skye jumps up, Max walks off
 cue('crowd', CLASS, 0.07, dur=round(DUSK - CLASS, 3))
 cue('plop', SPIDER + 0.3, 0.35)

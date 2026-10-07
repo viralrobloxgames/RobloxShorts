@@ -100,3 +100,14 @@ No other in-shot spikes except the title-card fade (f55-59). Remaining should: f
 the cut at 423 (6.2, one frame).
 
 Verdict: OK at 81cd0a48.
+
+## Final pass @ 81cd0a48
+
+ch05_a.mp4 sha256 a986198f... (909 frames) + ch05_b.mp4 89d2929f... (1110 frames).
+- Frame-difference scan over all 2019 frames: matches the clip-preview scan at 81cd0a48. The four eased moves (f202-207,
+  f821-823, f1587-1591, f1675-1679) spread over 3-5 frames; the other spikes are cuts and caption changes. Nothing at
+  the seam 909/910 or at any chunk start.
+- 2 fps scan: matches the approved clip; must fixes intact, captions on the right speaker.
+- Should still open: f420->421 Skye's arm settles 2 frames before the cut.
+
+FINAL: PASS

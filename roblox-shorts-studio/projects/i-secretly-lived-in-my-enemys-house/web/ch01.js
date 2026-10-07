@@ -235,7 +235,7 @@ function night1(t, set, idle) {
   K.playAnim(C.skye, [[A.idle, idle]]);
   if (t >= T.doorOpen + 0.35 && t < at(2) - 0.1) K.putOn(C.skye, { pos: V(-14.05, 0, 3.88), heading: -Math.PI / 2 });   // the insert: her back to the room, hair in the seam between the grey and red hoodies
   else K.putOn(C.skye, c);   // flat against the wall in the corner the whole time
-  if (t < end(3) - 0.2 && !(t >= T.doorOpen + 0.35 && t < at(2) - 0.1)) { const k = 1 - smooth(inv(end(3) - 0.5, end(3) - 0.2, t)); handOverMouth(C.skye, k); headTurn(C.skye, 0.3 * k, 0.12 * k); }   // the hand comes down slowly after the whisper   // head turned into the hand
+  if (t < end(3) - 0.2 && !(t >= T.doorOpen + 0.35 && t < at(2) - 0.1)) { const k = 1 - smooth(inv(end(3) - 0.75, end(3) - 0.2, t)); K.gesture(C.skye, [-122 * k, 0, 88 * k], 'L', smooth(Math.min(1, 2 * k))); headTurn(C.skye, 0.3 * k, 0.12 * k); }   // the hand comes down slowly after the whisper   // head turned into the hand
   // Max: creeps from the bed to the closet (real walk), stops to listen, on to the doors; then pads back to bed
   const bs = M.bedSide(), cf = M.closetFront(), mid = { pos: bs.pos.clone().lerp(cf.pos, 0.55), heading: K.faceTo(bs, cf) };
   // he creeps in from the middle of the room (seen through the open left leaf from Skye's corner); the bedroom wall stays
@@ -246,9 +246,12 @@ function night1(t, set, idle) {
     if (t < at(1) - 1.4) K.walk(C.max, A, start, mid, -0.35, t, { speed: 5, idleAt: idle, endHeading: K.faceTo(mid, cf) });
     else K.walk(C.max, A, mid, cf, at(1) - 1.4, t, { speed: 7, idleAt: idle, endHeading: cf.heading });
     headTurn(C.max, t > T.doorOpen + 0.35 && t < at(2) ? -0.25 : 0);   // he looks right at the pink lock
-  } else walkPath(C.max, [cf, { pos: V(-1.0, 0, -0.9) }, bs], T.doorShut + 0.25, t, { speed: 10, idleAt: idle });
-  const up = t < T.doorShut + 0.2;
-  armSet(C.max, 'R', up ? -1.35 : -0.3, 0, 0.05);                   // flashlight up, aimed at the closet
+  } else if (t < T.doorShut + 0.45) {   // turns round from the doors (0.3 s), then pads back to bed
+    const h0 = cf.heading, h1 = K.faceTo(cf, { pos: V(-1.0, 0, -0.9) }), dh = Math.atan2(Math.sin(h1 - h0), Math.cos(h1 - h0));
+    K.playAnim(C.max, [[A.idle, idle]]); K.putOn(C.max, { pos: cf.pos, heading: h0 + dh * smooth(inv(T.doorShut + 0.15, T.doorShut + 0.45, t)) });
+  } else walkPath(C.max, [cf, { pos: V(-1.0, 0, -0.9) }, bs], T.doorShut + 0.45, t, { speed: 10, idleAt: idle });
+  const up = 1 - smooth(inv(T.doorShut + 0.1, T.doorShut + 0.4, t));
+  armSet(C.max, 'R', -0.3 - 1.05 * up, 0, 0.05);                   // flashlight up, aimed at the closet
   const sweep = t > T.doorOpen && t < at(2) ? Math.sin((t - T.doorOpen) * 3.2) * 0.3 : 0;
   if (sweep) C.max.bones['Arm.R'].rotation.y = sweep;
   K.hold(P.torch, C.max, 'R'); P.torch.visible = true;

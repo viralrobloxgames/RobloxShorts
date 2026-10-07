@@ -1,2 +1,2 @@
 STATUS: WAITING
-RECHECK: MUSTS @ 80a98e8b (gesture snaps f171-172, f1663-1664, f1704-1705)
+RECHECK: MUSTS @ 80a98e8b (snap fixes verified early at 827699ba; final OK waits for kit anti-snap K)
