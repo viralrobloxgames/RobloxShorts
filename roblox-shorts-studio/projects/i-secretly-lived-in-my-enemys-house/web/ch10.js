@@ -123,8 +123,11 @@ function poseSkye(t, idle) {
   const m0 = { pos: din.pos.clone().lerp(LANE.pos, 0.45), heading: toward(din.pos, LANE.pos) };
   const t1 = m0.pos.distanceTo(LANE.pos) / CREEP;
   const faceMax = toward(g.pos, M.bedUp().pos);
-  if (t < t1) K.walk(a, A, m0, LANE, 0, t, { speed: CREEP, idleAt: idle });
-  else K.walk(a, A, LANE, g, t1, t, { speed: CREEP, idleAt: idle, endHeading: faceMax });
+  // one continuous walk along the two-leg path: the leg cycle runs on the total distance, so it doesn't restart at the waypoint
+  const d1 = m0.pos.distanceTo(LANE.pos), d2 = LANE.pos.distanceTo(g.pos), dist = Math.min(CREEP * t, d1 + d2);
+  const wpos = dist < d1 ? m0.pos.clone().lerp(LANE.pos, dist / d1) : LANE.pos.clone().lerp(g.pos, (dist - d1) / d2);
+  K.playAnim(a, dist < d1 + d2 ? [[A.walk, dist / 14.5]] : [[A.idle, idle]]);
+  K.putOn(a, { pos: wpos, heading: 0 });
   // headings eased through the waypoint turn and the arrival turn (no one-frame snaps)
   const h1 = toward(m0.pos, LANE.pos), h2 = toward(LANE.pos, g.pos), t2 = t1 + LANE.pos.distanceTo(g.pos) / CREEP;
   let heading = lerpAngle(h1, h2, smooth(inv(t1 - 0.2, t1 + 0.2, t)));
@@ -284,7 +287,7 @@ export function update(t, stage) {
   OVL = { id: sh.id };
 }
 // the door: swinging open at frame 0, pushed shut behind her once she's in
-function doorOpen(t) { return t < 2.4 ? lerp(0.7, 1.0, smooth(clamp(t / 0.8))) : 1 - smooth(inv(2.4, 3.0, t)); }
+function doorOpen(t) { return t < 2.4 ? 0.6 : 0.6 - 0.6 * smooth(inv(2.4, 3.0, t)); }
 
 // ---------- overlay ----------
 export function overlay(g, s, t) {
