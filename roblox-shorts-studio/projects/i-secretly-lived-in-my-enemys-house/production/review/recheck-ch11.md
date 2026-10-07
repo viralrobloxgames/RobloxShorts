@@ -53,3 +53,16 @@ New issue:
 - The low `snap_check` flags are not visible: Max's background arm at f283, Max out of frame at f402, Skye's stepped stair gait, phone and spatula handling. No action.
 
 **RECHECK: MUSTS @ a9896716** (one: f437-438)
+
+## Re-check @ a248aa3d
+
+The diff from a9896716 touches only Skye's walk-off in `ch11.js` (shared lib, kit and render files are unchanged). Checks: `clip_check --sight` reports 0 high (27 medium, as before); `cam_check` 0/0/0; `snap_check` 0 high (21 low events, the same harmless kinds as before). The pixel snap scan over f425-600, every frame, shows only the cuts at f429, f560 and f600. I viewed every frame of f433-456 and every 6th of f458-596.
+
+| must | verdict |
+|---|---|
+| f437-438 Skye's walk-start snap | **fixed**: she turns from facing the camera to the route over f437-449 while the walk eases in from a small step, and the corner toward the island is smooth. She still reaches the island in the same pan, and the cut to Lily at f560 is unchanged |
+| the five earlier snaps, R-a, R-b | unchanged since a9896716 (the clip diff doesn't touch them) |
+
+No new issues.
+
+**RECHECK: OK @ a248aa3d**
