@@ -1,4 +1,4 @@
 STATUS: DONE
-COMMIT: 1a5199f3
+COMMIT: 1b11aa8b
 RANGE: 881-1956
-RENDERER: pre-roll render.mjs (b698dc7e)
+RENDERER: pre-roll render.mjs, changed frames only (194) via --resume
