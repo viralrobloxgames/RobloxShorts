@@ -157,7 +157,7 @@ const lerpA = (a, b, u) => a + (b - a) * u;
 
 // ---------- update ----------
 export function update(t, stage) {
-  P.dadAim = false;
+  P.dadAim = false; P.dadUp = 0;
   const sh = shotAt(t);
   const set = K.showSet(sh.set);
   const idle = K.holdClock(t, L, [[0, T.heard() + 0.6], [T.tap() - 1.8, T.tap() + 0.7], [T.creak(), at(13, 1.8)], [T.spin() - 0.3, at(15, 0.4)], [T.hatch() - 0.2, T.atHatch() + 0.5]]);
@@ -181,19 +181,26 @@ function bedroom(t, idle, sh) {
   const m = M.mirror(), mx = C.max;
   let face = 'nervous';
   K.playAnim(mx, [[A.idle, idle]]); K.putOn(mx, m);
-  if (t < at(3)) {                                    // "Hey. So. Do you want to go to the Halloween dance with me?"
-    const neck = ramp(t, at(2) - 0.1, 0.3) * (1 - ramp(t, wordT(2, 8), 0.3));   // right hand to the back of his neck
-    const offer = ramp(t, wordT(2, 9), 0.3);                                     // then a small palm-up offer, chest height
-    if (neck > 0.01) arm(mx, 'R', -0.25 * neck, 2.25 * neck);   // elbow out and up: hand at the back of his neck, nothing in front of his face
-    if (offer > 0.01) K.gesture(mx, 'hold_out', 'R', offer * 0.8);
-  } else if (t < at(4)) {                             // "No. Too serious." head shake
+  // gestures eased in and out over ~6 frames each, chained (each one blends from the arm the last one left)
+  const neck = ramp(t, at(2) - 0.1, 0.3) * (1 - ramp(t, wordT(2, 8), 0.3));   // right hand to the back of his neck
+  const offer = ramp(t, wordT(2, 9), 0.3) * (1 - ramp(t, at(3) - 0.05, 0.25)); // then a small palm-up offer, chest height
+  if (neck > 0.01) arm(mx, 'R', -0.25 * neck, 2.25 * neck);   // elbow out and up: hand at the back of his neck, nothing in front of his face
+  if (offer > 0.01) K.gesture(mx, 'hold_out', 'R', offer * 0.8);
+  if (t >= at(3) && t < at(4)) {                      // "No. Too serious." head shake
     headTurn(mx, 0.3 * Math.sin((t - at(3)) * 14) * pulse(t, at(3), 0.8)); face = 'annoyed';
-  } else if (t < at(5)) {                             // "Yo! Dance? You? Me? Ugh. No."
-    face = 'happy';
+  } else if (t >= at(4) && t < at(5) + 0.3) {         // "Yo! Dance? You? Me? Ugh. No."
+    face = t < at(5) ? 'happy' : 'determined';
     const you = wordT(4, 2), me = wordT(4, 3), ugh = wordT(4, 4);
-    if (t >= you - 0.12 && t < me - 0.06) arm(mx, 'R', 0.75 * ramp(t, you - 0.12, 0.12), -1.0 * ramp(t, you - 0.12, 0.12));   // finger-gun at his reflection, out to the side (not into the lens)
-    else if (t >= me - 0.06 && t < ugh - 0.06) K.gesture(mx, 'thumb_to_chest', 'R', ramp(t, me - 0.06, 0.12));
-    if (t >= ugh - 0.06) { K.gesture(mx, 'eye_wipe', 'R', ramp(t, ugh - 0.06, 0.15)); face = 'annoyed'; }   // facepalm: hand to his face
+    const pt = ramp(t, you - 0.15, 0.2) * (1 - ramp(t, me - 0.12, 0.2));          // finger-gun at his reflection, out to the side
+    const th = ramp(t, me - 0.12, 0.2) * (1 - ramp(t, ugh - 0.12, 0.2));          // thumb to his chest
+    const fp = ramp(t, ugh - 0.12, 0.2) * (1 - ramp(t, at(5) - 0.05, 0.22));      // facepalm: hand to his face
+    if (pt > 0.01) arm(mx, 'R', 0.75 * pt, -1.0 * pt);
+    if (th > 0.01) K.gesture(mx, 'thumb_to_chest', 'R', th);
+    if (fp > 0.01) K.gesture(mx, 'eye_wipe', 'R', fp);
+    if (t >= ugh - 0.06 && t < at(5)) face = 'annoyed';
+  }
+  if (t < at(5)) {
+    // line 5's face is set below
   } else if (sh.id !== 'max_bed') {                   // "Okay. This weekend, I just ask her..." squares up, a nod
     face = 'determined'; headTurn(mx, 0, -0.12 * pulse(t, wordT(5, 3), 0.5));
   } else {                                            // "Go to bed, Dad!" turned 3/4 toward his door
@@ -223,6 +230,10 @@ function hallway(t, idle, sh) {
     const cr = M.creep(), via = hw(-6.4, -1.4, -Math.PI / 2), sp = 3.2, arrive = 3.0;   // along the middle of the hall (clear of the side table), then in to the door
     const t0 = arrive - (cr.pos.distanceTo(via.pos) + via.pos.distanceTo(door.pos)) / sp;
     const m = run2(sk, cr, via, door, t0, t, sp);
+    {   // round the corner of her path over ~8 frames instead of one
+      const t1 = t0 + cr.pos.distanceTo(via.pos) / sp, h1 = Math.atan2(via.pos.x - cr.pos.x, via.pos.z - cr.pos.z), h2 = Math.atan2(door.pos.x - via.pos.x, door.pos.z - via.pos.z);
+      if (m.moving && t > t1 - 0.14 && t < t1 + 0.14) sk.root.rotation.y = lerpA(h1, h2, ramp(t, t1 - 0.14, 0.28));
+    }
     if (m.moving) { const d = K.posture(sk, K.gait('creep', m.anim)); sk.root.position.y -= d || 0; }
     if (m.done) {
       let h = lerpA(Math.atan2(door.pos.x - via.pos.x, door.pos.z - via.pos.z), door.heading, ramp(t, arrive, 0.3));             // turns to the lens over ~9 frames
@@ -317,15 +328,24 @@ function hallway(t, idle, sh) {
         const u = ramp(t, m.arrive, 0.4);
         K.playAnim(dd, [[A.idle, idle]]); K.putOn(dd, { pos: hm.pos, heading: lerpA(walkH, hm.heading, u) });   // turns round via the lens side
         const up = ramp(t, m.arrive + 0.3, 0.35);
-        headTurn(dd, 0, 0.75 * up); broomUp = up; torch = 1.55 * up + 0.5 * (1 - up); P.dadAim = up > 0.5;   // looks up at the hatch, torch raised at it
+        headTurn(dd, 0, 0.75 * up); broomUp = up; torch = 1.55 * up + 0.5 * (1 - up); P.dadUp = up; P.dadAim = up > 0.5;   // looks up at the hatch, torch raised at it
       }
       dFace = 'determined';
     }
     // broom in his right hand, bristles forward; raised up beside his head (out to the side, clear of the face) on the beats
     arm(dd, 'R', 0.9 + 1.4 * broomUp, 0.15 + 0.35 * broomUp, 0);
-    K.hold(P.broom, dd, 'R', 'palm', broomUp > 0.5 ? {} : { aim: K.headPos(dd).add(V(Math.sin(dd.root.rotation.y) * 6, 1.5, Math.cos(dd.root.rotation.y) * 6)) });
+    {   // the broom's aim blends from forward (sword) to along the raised arm, so it never pops
+      const hR = handPos(dd, 'R', V()), sR = dd.bones['Arm.R'].localToWorld(V(-0.5, 0, 0));
+      const fwdPt = K.headPos(dd).add(V(Math.sin(dd.root.rotation.y) * 6, 1.5, Math.cos(dd.root.rotation.y) * 6));
+      const armPt = hR.clone().addScaledVector(hR.clone().sub(sR).normalize(), 6);
+      K.hold(P.broom, dd, 'R', 'palm', { aim: fwdPt.lerp(armPt, smooth(broomUp)) });
+    }
     arm(dd, 'L', torch, 0.1, 0);                     // torch low in his left hand
-    K.hold(P.torchDad, dd, 'L', 'palm', P.dadAim ? { aim: HATCH_C() } : {});
+    {   // the torch's aim blends from along the arm to the hatch as he looks up
+      const hL = handPos(dd, 'L', V()), sL = dd.bones['Arm.L'].localToWorld(V(0.5, 0, 0));
+      const armPt = hL.clone().addScaledVector(hL.clone().sub(sL).normalize(), 6);
+      K.hold(P.torchDad, dd, 'L', 'palm', { aim: armPt.lerp(HATCH_C(), P.dadUp || 0) });
+    }
     K.speak(dd, dFace, t, L.said('DAD'));
   }
   return linen;
@@ -346,7 +366,7 @@ function beams(t, sh) {
     const s0 = a.bones['Arm.L'].localToWorld(V(0.5, 0, 0)); _d.copy(_p).sub(s0).normalize();   // along the arm
     if (t < at(13)) { const sw = Math.sin((t - T.creak()) * 2.2) * 0.6; _d.applyAxisAngle(V(0, 1, 0), sw); }  // the beam swings in
     if (t >= T.spin() && t < at(15, 0.3)) _d.copy(STAIRS_C()).sub(_p).normalize();     // at the noise on the stairs
-    if (P.dadAim) _d.copy(HATCH_C()).sub(_p).normalize();                         // up at the hatch
+    if (P.dadUp > 0) _d.lerp(HATCH_C().sub(_p).normalize(), P.dadUp).normalize();   // eases up to the hatch with his torch
     beamDad.set(true, _p.clone(), _d.clone());
   } else beamDad.set(false);
 }

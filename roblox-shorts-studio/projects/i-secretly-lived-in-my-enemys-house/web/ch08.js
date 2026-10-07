@@ -113,7 +113,7 @@ const SHOTS = [
   { line: 6, off: -0.35, id: 'attic_open', ...ATT, cam: ATTIC_WS },
   { line: 6, off: 0.6, id: 'lily_hatch', ...ATT, cam: camA('hatch_lily_cu') },
   { line: 7, off: -0.1, id: 'attic_wide', ...ATT, cam: ATTIC_WS },
-  { line: 7, off: 1.3, id: 'skye_worse', ...ATT, cam: SKYE_MCU },
+  { line: 7, off: 1.5, id: 'skye_worse', ...ATT, cam: SKYE_MCU },   // after Lily has cleared this lens
     { line: 8, off: -0.1, id: 'lily_said', ...ATT, cam: LILY_MCU },
   { line: 9, off: -0.1, id: 'skye_word', ...ATT, cam: SKYE_MCU },
   { line: 10, off: -0.1, id: 'lily_after', ...ATT, cam: LILY_MCU },
@@ -163,6 +163,7 @@ export function update(t, stage) {
       K.gesture(C.skye, NOTE_CHEST, 'R');
       if (read > 0) K.gesture(C.skye, NOTE_READ, 'R', read);
       if (kneelK > 0) K.gesture(C.skye, NOTE_GAP, 'R', kneelK);
+      if (t >= T.rise) K.gesture(C.skye, FIST_FRONT, 'R', ramp(t, T.rise, backT0));   // ease the fist down as she rises (no snap at the back-away)
     } else {
       // backs away from the door: a real backward walk (backstep cycle driven by the distance, 3 studs/s), facing the door
       const k = M.doorKneel(), st = M.doorStep(), d1 = k.pos.distanceTo(st.pos), u = clamp((t - backT0) * 3 / d1);
