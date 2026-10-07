@@ -74,6 +74,12 @@ node web/render.mjs --clip projects/<slug>/web/<clip>.js --out projects/<slug>/r
 python scripts/finish.py <project dir> --encode --frames projects/<slug>/renders/web
 ```
 
+Snap check (one-frame pops inside a shot, ~30 s per chapter, no drawing): `node web/snap_check.mjs --clip projects/<slug>/web/chNN.js [--root <tree at a sha>] --out chNN.json`
+poses every frame from frame 1 in order and lists the frame pairs f-1 -> f where an on-camera bone (torso, head, arms, legs) turns > 25 deg,
+an actor's or prop's velocity changes > 0.3 studs/frame, a prop changes holder, or an actor teleports > 3 studs; camera cuts and set
+changes are skipped; each event has film time and severity (high = limb > 60 deg, a teleport, or a jump > 1 stud). It reads the pose,
+not pixels, so it needs the clip source, not an mp4.
+
 The cost is about 2.3 s per sample at 1080 x 1920 on 4 CPU cores: 3 samples for static shots and 6 for motion blur.
 A 10 s clip takes about 30 minutes.
 
