@@ -60,7 +60,8 @@ const T = {
   walk: at(7, 0.55),                      // Skye heads for MAX - OLD STUFF while Lily is still talking
 };
 T.lidOpen = T.walk + 1.45; T.lidOpened = T.lidOpen + 0.4; T.pick = T.lidOpened + 0.55; T.picked = at(8, -0.05);
-T.lilyWalk = at(8, 0.2);                 // Lily gets up and comes over while Skye reads the drawing
+T.lilyWalk = at(8, 0.2);
+                 // Lily gets up and comes over while Skye reads the drawing
 T.back = endOf(15, 0.55); T.contact = T.back + 0.65; T.backDone = T.contact + 0.1; T.lidClose = at(16, 0.75); T.lidClosed = T.lidClose + 0.25;   // the flaps close off screen, during Lily's line   // a long look, turn, bend and lay it on top
 T.sheetUp = T.lidClosed; T.sheetUpDone = T.sheetUp + 0.6;
 T.dad2 = at(19); T.ghost = at(20);
@@ -191,7 +192,7 @@ function skyeAt(s, idle) {
   let h = SKYE_OPEN;
   st.sheet = 'floor'; st.drawing = 'hands'; st.face = 'surprised'; st.tilt = -0.45;
   K.playAnim(sk, [[A.idle, idle]]);
-  let arms = CHEST, look = 0;
+  let arms = CHEST, look = 0, carryR = false;
   if (s >= at(9)) st.face = s < SPELL ? 'happy' : 'smug';
   if (s >= SPELL) look = 0.3;                              // "He spelled friends wrong": eyes on it
   if (s >= at(10)) { st.face = 'sad'; look = 0.15; }
@@ -214,15 +215,16 @@ function skyeAt(s, idle) {
       st.tilt = lerp(-0.45, FLAT, u); st.drawing = s < T.contact ? 'hands' : 'box';
     }
     if (s >= T.lidClose - 0.3 && s < T.sheetUp) { const u = smooth(inv(T.lidClose - 0.3, T.lidClose, s)) * (1 - smooth(inv(T.lidClosed - 0.05, T.lidClosed + 0.1, s))); arms = mixArm(DOWN, FLAPS, u); K.posture(sk, 'hip_bend', { reset: false, mix: 0.35 * u }); }
-    if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.4 ? 'open' : 'floor'; h = lerpAng(box.heading, SKYE_OPEN, u); arms = u > 0.4 ? SHEET_CHEST : DOWN; look = 0; }
+    if (s >= T.sheetUp) { st.face = 'determined'; const u = smooth(inv(T.sheetUp, T.sheetUpDone, s)); st.sheet = u > 0.4 ? 'carry' : 'floor'; h = lerpAng(box.heading, SKYE_OPEN, u); arms = DOWN; carryR = u > 0.4; look = 0; }
   }
-  if (s >= T.sheetUpDone) { st.sheet = 'open'; st.face = 'determined'; arms = SHEET_CHEST; look = 0; }
+  if (s >= T.sheetUpDone) { st.sheet = 'carry'; st.face = 'determined'; arms = DOWN; carryR = true; look = 0; }   // the bunched sheet in her right hand
   if (s >= at(18)) st.face = 'smug';
   if (s >= T.dad2 - 0.1) {                                 // Dad again: she turns to the hatch, the sheet up under her chin
-    st.face = s < T.ghost ? 'shocked' : 'determined'; arms = mixArm(SHEET_CHEST, SHEET_CHIN, smooth(inv(T.dad2, T.dad2 + 0.5, s)));
+    st.face = s < T.ghost ? 'shocked' : 'determined'; st.sheet = 'open'; carryR = false; arms = SHEET_CHIN;   // she shakes it open on the cut
     h = lerpAng(SKYE_OPEN, towardXZ(box.pos, M.hatch()), 0.5 * smooth(inv(T.dad2 - 0.1, T.dad2 + 0.3, s)));
   }
   ARMS(sk, arms);
+  if (carryR) K.posture(sk, { 'Arm.R': [-32, -10, 0] }, { reset: false });
   if (look) lookHead(sk, 0, look);
   K.putOn(sk, { pos: box.pos, heading: h });
   return st;
@@ -342,6 +344,7 @@ const SHOTS = [
   { line: 6, off: -0.3, id: 'skye_stand', cam: front('skye', { ang: -0.35, d: 7.5, up: 0.9, look: -1.3, fov: 36 }) },
   { line: 7, off: 0, id: 'lily_box', cam: front('lily', { ang: 0.25, d: 4.6 }) },
   { line: 7, off: 0, at: () => wordAt(7, 3) - 0.05, id: 'skye_walk', cam: FIX(BOXCAM) },
+  { line: 7, off: 0, at: () => T.walk + 1.2, id: 'open_side'   /* the walk (14.9 studs at 12/s) ends at the box */, cam: SIDE },
   { line: 7, off: 0, at: () => T.lidOpen + 0.3, id: 'box_insert', cam: TOPDOWN(1.1) },   // the flaps open: the drawing on top
   { line: 7, off: 0, at: () => T.pick - 0.35, id: 'pick_side', cam: SIDE },
   { line: 8, off: 0, at: () => T.pick + 0.42, id: 'skye_what', cam: front('skye', { heading: SKYE_OPEN, ang: 0.72, d: 6.2, look: -0.9 }) },
