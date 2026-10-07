@@ -1,4 +1,2 @@
-STATUS: DONE
-COMMIT: 6b008a0d
-RANGE: 1-860
-NOTE: rendered with the pre-rolling render.mjs (origin/main, b698dc7e) after the 10:58Z RERENDER note was posted; no further re-render needed
+STATUS: WAITING (superseded)
+NOTE: ch01_a.mp4 on main (cdca445f) was rendered at 6b008a0d and is SUPERSEDED by the gesture-snap fix; waiting for a RECHECK: OK @ <sha> other than 6b008a0d

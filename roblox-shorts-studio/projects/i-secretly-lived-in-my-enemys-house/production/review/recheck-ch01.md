@@ -105,3 +105,22 @@ Verdict: **OK**.
 - Shoulds left (not blocking): flashlight arm straight; the pillow block against the wall at f1845.
 
 FINAL: PASS
+
+## Final pass, gesture-snap scan (added to the brief after the PASS above; supersedes it)
+Method: a+b joined, 320x180 gray, `tblend=difference` mean per frame. A spike is a frame above 3x the median of the ±6 frames around it. I left out cuts (diff >30) and caption-only changes, and looked at every remaining spike as a before/after pair. Frame numbers are chapter frames, snap between f-1 and f.
+
+| # | frames | what | fix | |
+|---|---|---|---|---|
+| G1 | 425-426 | Max goes from standing idle to a full walk stride in one frame (classroom wide, "That's Max") | ease the walk in over ~6 frames (step-off) | must |
+| G2 | 514-515 | Max CU: the foreground white block (Skye's arm) disappears and her open lunchbox with the sandwich appears in one frame | ease the arm out / don't pop the lunchbox state | must |
+| G3 | 529-530 | "You cut the crusts": Max's arm snaps from down to straight forward in one frame | ease over ~6 frames | must |
+| G4 | 577-578 | the same arm snaps back down in one frame | ease | must |
+| G5 | 702-703 | "gym socks": Skye's arm snaps from down to raised forward in one frame | ease | must |
+| G6 | 747-748 | top-down insert: the spider jumps from Max's fingers to beside Skye's elbow in one frame | let it fall/crawl over ~6 frames | must |
+| G7 | 821-822 | the spider leaves Skye's hand and Max's arm snaps up holding it at her face in one frame | ease the reach/hand-off | must |
+| G8 | 898-899 | Max's arm with the spider drops in one frame | ease | must |
+| G9 | 1036-1037 | 2-shot: Skye's left arm swings from down to out in one frame | ease | must |
+| G10 | 1843-1844 | last shot: Max's shoulder at the right frame edge vanishes in one frame | ease or keep it | must |
+| — | 1571-1590 | louvre shot: a small periodic flicker every ~4 frames (diff ~5.7), not visible at pair scale | look; likely Skye stepping behind the slats | should |
+
+FINAL: MUSTS (G1-G10). Everything else in the final pass above stands.
