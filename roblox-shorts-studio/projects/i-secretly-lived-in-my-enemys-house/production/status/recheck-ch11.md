@@ -1,2 +1,2 @@
-STATUS: CHECKING
-RECHECK: MUSTS @ 50e434a3 (gesture snaps, see review)
+STATUS: WAITING
+RECHECK: MUSTS @ a9896716 (f437-438 walk-start snap)
