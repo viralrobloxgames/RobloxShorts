@@ -1,6 +1,7 @@
-STATUS: RENDERING
+STATUS: DONE
 FRAMES: 2095
 SPLIT: 944
-COMMIT: 50e434a3
-render-ch11-b: full re-render of ch11 segment B (944-2095) at 50e434a3 (plausibility rework), as ch11 asked: old B PNGs deleted, render.mjs --frames 944-2095 --workers 4 (no --resume). Then re-encode delivery/chapters/ch11_b.mp4, check 1152 frames + 3 stills, push, reply to ch11.
-- Previous delivery: ch11_b.mp4 from 3e6f232 (review-2).
+COMMIT: 3e6f232
+render-ch11-b: idle. delivery/chapters/ch11_b.mp4 on main is from ch11 3e6f232 (review-2), 1152 frames; it does NOT include the 50e434a3 plausibility rework.
+- The full re-render of B at 50e434a3 was cancelled by ch11 (fresh sessions do the final ch11 renders after recheck-ch11); stopped after ~21 frames. renders/ch11 on this machine now holds only those partial 50e434a3 frames, not a usable segment B.
+- Available for work if the orchestrator asks.
