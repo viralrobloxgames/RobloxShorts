@@ -129,7 +129,7 @@
  "audio_s": 710.122,
  "av_diff_s": -0.0113,
  "loudness_I": "-14.11",
- "true_peak": "-1.24",
+ "true_peak": "-1.16",
  "chapter_starts": {
   "ch01": {
    "frame": 0,
@@ -204,8 +204,8 @@
   "music ducked in ch08 49-58s",
   "music ducked in ch10 56-60s"
  ],
- "size_mb": 242.2,
- "sha256": "f4b0f9ad13185d74f618640523e2bd58033986d64ec4b9d829d6c065d6e7ca0d",
+ "size_mb": 250.2,
+ "sha256": "5ed37b522678d4033218fcdaad92f7d6cc99cb8dc693a7f2627b99c175af7c2b",
  "ok": true,
  "parts": [
   "I_Secretly_Lived_In_My_Enemys_House.mp4.part_aa",
