@@ -1,0 +1,35 @@
+{
+ "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch11.js",
+ "chapter": 11,
+ "frames": 2095,
+ "glide_threshold": 0.6,
+ "flags": [
+  {
+   "kind": "glide",
+   "from": 158,
+   "to": 161,
+   "info": "27.8 studs over 5 frames",
+   "t": "5.23-5.33s",
+   "film": "10:45.5",
+   "frames": 4
+  },
+  {
+   "kind": "inside",
+   "from": 161,
+   "to": 161,
+   "info": "wall_back box 10.8x12.0x0.5 @set_kitchen(10.6,6.0,-12.3)",
+   "t": "5.33-5.33s",
+   "film": "10:45.6",
+   "frames": 1
+  },
+  {
+   "kind": "glide",
+   "from": 162,
+   "to": 167,
+   "info": "8.1 studs over 7 frames",
+   "t": "5.37-5.53s",
+   "film": "10:45.7",
+   "frames": 6
+  }
+ ]
+}

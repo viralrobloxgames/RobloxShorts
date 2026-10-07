@@ -1,0 +1,65 @@
+{
+ "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch10.js",
+ "chapter": 10,
+ "frames_total": 1956,
+ "every": 2,
+ "sampled": 978,
+ "min_depth": 0.06,
+ "onscreen_only": true,
+ "film_start_s": 575.1,
+ "seconds": 17.2,
+ "summary": [
+  {
+   "actor": "max",
+   "object": "box 3.6x0.6x1.5 @set_bedroom(-4.0,2.4,-7.9)",
+   "kind": "scenery",
+   "frames": "1-117",
+   "t": "0.0-3.9s",
+   "film": "9:35.1",
+   "parts": "Leg.L",
+   "max_depth": 0.22,
+   "max_cover_pct": 6,
+   "severity": "low"
+  },
+  {
+   "actor": "max",
+   "object": "box 5.8x0.3x1.1 @set_bedroom(-4.0,4.3,-8.8)",
+   "kind": "scenery",
+   "frames": "1873-1955",
+   "t": "62.4-65.1s",
+   "film": "10:37.5",
+   "parts": "Arm.L",
+   "max_depth": 0.21,
+   "max_cover_pct": 3,
+   "severity": "low"
+  }
+ ],
+ "ranges": [
+  {
+   "actor": "max",
+   "part": "Leg.L",
+   "object": "box 3.6x0.6x1.5 @set_bedroom(-4.0,2.4,-7.9)",
+   "from": 1,
+   "to": 117,
+   "depth": 0.22,
+   "cover": 6,
+   "samples": 59,
+   "t": "0.00-3.87s",
+   "film": "9:35.1",
+   "kind": "scenery"
+  },
+  {
+   "actor": "max",
+   "part": "Arm.L",
+   "object": "box 5.8x0.3x1.1 @set_bedroom(-4.0,4.3,-8.8)",
+   "from": 1873,
+   "to": 1955,
+   "depth": 0.21,
+   "cover": 3,
+   "samples": 42,
+   "t": "62.40-65.13s",
+   "film": "10:37.5",
+   "kind": "scenery"
+  }
+ ]
+}

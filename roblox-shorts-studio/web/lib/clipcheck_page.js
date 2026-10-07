@@ -179,3 +179,55 @@ export function checkFrame(frame, { minDepth = 0.06 } = {}) {
   }
   return [...hits.values()].map((h) => ({ actor: h.actor, part: h.part, object: h.object, onscreen: h.onscreen, depth: Math.round(h.depth * 100) / 100, cover: h.cover }));
 }
+
+// Camera check for one frame: where the camera is, whether it sits inside solid scenery, and how close it is to the
+// nearest character's head (a camera inside or right at a head shows a wall of face).
+export function checkCamera(frame) {
+  const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
+  clip.update((frame - 1) / meta.fps, stage);
+  stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
+  stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
+  const cam = stage.camera, p = cam.getWorldPosition(new THREE.Vector3()), target = new THREE.Vector3();
+  cam.getWorldDirection(target);
+  const roots = new Set(packActors.map((a) => a.root));
+  let inside = null, depth = 0;
+  for (const ob of obstacles(stage.scene, roots)) { if (!ob.box.containsPoint(p)) continue; const d = depthIn(ob, p); if (d > depth) { depth = d; inside = ob.name; } }
+  let head = null, hd = Infinity;
+  for (const bp of bodyParts(stage.scene)) {
+    if (bp.part !== 'Head') continue;
+    const c = bp.boxFull.getCenter(new THREE.Vector3()), d = c.distanceTo(p) - 0.6 * (bp.a.scale || 1);
+    if (d < hd) { hd = d; head = bp.actor; }
+  }
+  return { pos: p.toArray().map((x) => Math.round(x * 100) / 100), dir: target.toArray().map((x) => Math.round(x * 1000) / 1000), fov: cam.fov, inside, depth: Math.round(depth * 100) / 100, head, headDist: Math.round(hd * 100) / 100 };
+}
+
+// Line of sight for hiding: for each seeker, can his eyes see the hider's head or torso? Inside his field of view (fov
+// degrees around where his head faces) and nothing solid in between (scenery or another character). [{ seeker, sees, part, dist, angle }]
+export function checkSight(frame, hider, seekers, { fov = 110 } = {}) {
+  const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
+  clip.update((frame - 1) / meta.fps, stage);
+  stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
+  stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
+  const parts = bodyParts(stage.scene), roots = new Set(packActors.map((a) => a.root));
+  const H = parts.filter((p) => p.actor === hider && (p.part === 'Head' || p.part === 'Torso'));
+  if (!H.length) return [];
+  const occ = obstacles(stage.scene, roots).map((o) => o.o), ray = new THREE.Raycaster(), out = [];
+  for (const sk of seekers) {
+    const head = parts.find((p) => p.actor === sk && p.part === 'Head'); if (!head) continue;
+    const eye = head.boxFull.getCenter(new THREE.Vector3());
+    const facing = new THREE.Vector3(0, 0, 1).applyQuaternion(head.mesh.getWorldQuaternion(new THREE.Quaternion())); facing.y = 0; facing.normalize();
+    const others = parts.filter((p) => p.actor !== sk && p.actor !== hider).map((p) => p.mesh);
+    let best = null;
+    for (const h of H) {
+      const tgt = h.boxFull.getCenter(new THREE.Vector3()), dir = tgt.clone().sub(eye), dist = dir.length(); dir.divideScalar(dist);
+      const flat = dir.clone(); flat.y = 0; flat.normalize();
+      const ang = THREE.MathUtils.radToDeg(Math.acos(Math.max(-1, Math.min(1, flat.dot(facing)))));
+      if (ang > fov / 2) continue;
+      ray.set(eye, dir); ray.near = 0.4; ray.far = dist - 0.5;
+      const blocked = ray.intersectObjects([...occ, ...others], false).some((x) => isSolidHit(x.object));
+      if (!blocked && (!best || h.part === 'Head')) best = { seeker: sk, sees: h.part, dist: Math.round(dist * 10) / 10, angle: Math.round(ang) };
+    }
+    if (best) out.push(best);
+  }
+  return out;
+}

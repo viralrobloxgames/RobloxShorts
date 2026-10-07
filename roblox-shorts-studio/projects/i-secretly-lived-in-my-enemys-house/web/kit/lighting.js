@@ -5,6 +5,7 @@
 // movable ones (flashlight beam, phone glow, glow sticks) come from the factories below.
 import * as THREE from 'three';
 import { skyMaterial } from '../../../../web/lib/world.js';
+import { packActors } from '../../../../web/lib/robloxPack.js';
 
 // sky: background + image light; sun: the key (moon through the window at night); hemi: ambient; env: image-light
 // strength; exposure: tone-mapping exposure; fog: [colour, near, far]; practicals: the set lights that are on by default.
@@ -12,42 +13,42 @@ export const PRESETS = {
   night_moon: {        // Max's room / hallway at night, moonlight through the window, cool and dark but readable
     sky: { zenith: '#070d22', horizon: '#1d2b52', below: '#080b18', sunColor: '#9fb6ff' },
     sun: ['#a9bfff', 1.5, [-0.45, 0.7, 0.55]], hemi: ['#5a6fa8', '#1a1a2a', 0.55], fill: ['#7f95d6', 0.35], rim: ['#b9c8ff', 0.55],
-    env: 0.32, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.35, practicals: { moon_window: true, nightlight: true },
+    env: 0.32, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.35, cast: 0.38, practicals: { moon_window: true, nightlight: true },
   },
   midnight: {          // Ch10: darker than night_moon; the lamp click is the reveal
     sky: { zenith: '#04081a', horizon: '#121c3c', below: '#05070f', sunColor: '#8aa2f0' },
     sun: ['#8fa6f5', 1.1, [-0.45, 0.7, 0.55]], hemi: ['#3e4f86', '#101018', 0.4], fill: ['#6a7fc4', 0.25], rim: ['#a4b6ff', 0.45],
-    env: 0.22, exposure: 1.0, fog: ['#080c1c', 140, 600], bloom: 0.45, practicals: { moon_window: 0.6, nightlight: true },
+    env: 0.22, exposure: 1.0, fog: ['#080c1c', 140, 600], bloom: 0.45, cast: 0.34, practicals: { moon_window: 0.6, nightlight: true },
   },
   night_fridge: {      // kitchen at night: blue moon + the warm fridge light when the door is open (practical fridge_light)
     sky: { zenith: '#070d22', horizon: '#1d2b52', below: '#080b18', sunColor: '#9fb6ff' },
     sun: ['#a9bfff', 1.2, [0.5, 0.7, 0.45]], hemi: ['#4d5f96', '#18161e', 0.45], fill: ['#6f86c8', 0.3], rim: ['#b9c8ff', 0.5],
-    env: 0.28, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.4, practicals: { fridge_light: true, moon_window: true },
+    env: 0.28, exposure: 1.05, fog: ['#0e1428', 140, 600], bloom: 0.4, cast: 0.38, practicals: { fridge_light: true, moon_window: true },
   },
   predawn: {           // Tuesday 6 am: deep blue windows, warm kitchen ceiling light on
     sky: { zenith: '#1a2350', horizon: '#6a5f8f', below: '#14162a', sunColor: '#ffb48a' },
     sun: ['#c8b8ff', 1.3, [0.6, 0.35, 0.5]], hemi: ['#8a8fc0', '#3a2f2a', 0.7], fill: ['#ffcf9e', 0.5], rim: ['#c9b8ff', 0.5],
-    env: 0.45, exposure: 1.0, fog: ['#3a3d66', 140, 600], bloom: 0.3, practicals: { ceiling_light: true },
+    env: 0.45, exposure: 1.0, fog: ['#3a3d66', 140, 600], bloom: 0.3, cast: 0.22, practicals: { ceiling_light: true },
   },
   school_day: {        // classroom, bright neutral daylight through the windows
     sky: { zenith: '#2f7fe6', horizon: '#bfe4ff', below: '#e9f4ff', sunColor: '#fff1d6' },
     sun: ['#fff0dc', 3.0, [0.55, 0.62, 0.45]], hemi: ['#d9ecff', '#8a93a6', 0.7], fill: ['#a9d2ff', 0.7], rim: ['#ffe6c8', 0.8],
-    env: 0.6, exposure: 0.95, fog: ['#cfe8ff', 160, 700], bloom: 0.22, practicals: {},
+    env: 0.6, exposure: 0.95, fog: ['#cfe8ff', 160, 700], bloom: 0.22, cast: 0, practicals: {},
   },
   dusk: {              // Monday after school, the back of the house: low orange sun, purple sky
     sky: { zenith: '#2b2f6b', horizon: '#ff9a5c', below: '#3a2a3a', sunColor: '#ffae66' },
     sun: ['#ffb070', 2.4, [0.8, 0.22, 0.4]], hemi: ['#a58ac9', '#4a3426', 0.6], fill: ['#8a7fd6', 0.45], rim: ['#ffc48a', 1.0],
-    env: 0.5, exposure: 1.0, fog: ['#7a5a7a', 140, 650], bloom: 0.3, practicals: {},
+    env: 0.5, exposure: 1.0, fog: ['#7a5a7a', 140, 650], bloom: 0.3, cast: 0.15, practicals: {},
   },
   attic_afternoon: {   // the attic's own lights (set.lights.sun through the round window, bounce) carry it: the stage sun is off
     sky: { zenith: '#4f8fe0', horizon: '#ffe2b0', below: '#d8c8a8', sunColor: '#ffd9a0' },
-    sun: ['#ffd9a8', 0.0, [0.75, 0.45, 0.35]], hemi: ['#ffe3c0', '#5a4636', 0.22], fill: ['#ffcf9a', 0.12], rim: ['#ffe0b8', 0.2],
-    env: 0.18, exposure: 1.0, fog: ['#c9a882', 140, 650], bloom: 0.3, practicals: { sun: 0.1, bounce: true },
+    sun: ['#ffd9a8', 0.0, [0.75, 0.45, 0.35]], hemi: ['#ffe3c0', '#5a4636', 0.22], fill: ['#c3cdec', 0.45], rim: ['#ffe0b8', 0.2],   // SB2: a cool front fill so faces and Lily's yellow dress separate from the amber wood
+    env: 0.18, exposure: 1.0, fog: ['#c9a882', 140, 650], bloom: 0.3, cast: 0.22, practicals: { sun: 0.1, bounce: true },
   },
   sunday_morning: {    // Ch11 kitchen: soft warm morning, the happiest light in the film
     sky: { zenith: '#5aa8f0', horizon: '#fff0d0', below: '#f0ead8', sunColor: '#fff2c8' },
     sun: ['#fff1d0', 1.4, [0.6, 0.5, 0.5]], hemi: ['#fff2dc', '#9a8a76', 0.5], fill: ['#ffe2b8', 0.35], rim: ['#fff4dc', 0.6],
-    env: 0.42, exposure: 0.9, fog: ['#f0e6d0', 160, 700], bloom: 0.22, practicals: {},   // the kitchen adds its own sun-in and room fill
+    env: 0.42, exposure: 0.9, fog: ['#f0e6d0', 160, 700], bloom: 0.22, cast: 0, practicals: {},   // the kitchen adds its own sun-in and room fill
   },
 };
 
@@ -80,6 +81,7 @@ export function applyLight(stage, id, opts = {}) {
   stage.renderer.toneMappingExposure = p.exposure;
   stage.scene.fog.color.set(p.fog[0]); stage.scene.fog.near = p.fog[1]; stage.scene.fog.far = p.fog[2];
   if (stage.bloom) stage.bloom.strength = p.bloom;
+  castFloor(opts.castFloor ?? p.cast ?? 0, stage);
   if (opts.set) {
     const want = { ...p.practicals, ...(opts.practicals || {}) };
     for (const name of Object.keys(opts.set.lights || {})) setPractical(opts.set, name, want[name] ?? false);
@@ -103,7 +105,7 @@ export function setPractical(set, name, on) {
 // Flashlight beam: a spot light plus a faint visible cone (cone: false for none, e.g. a torch under a chin at MCU).
 //   beam.set(on, fromWorld, dirWorld)      on = true/false or an intensity factor
 //   beam.fromProp(on, prop, axis?)         from a held prop: its world position, along its local axis (default +z)
-export function flashlightBeam(stage, { color = '#fff3c4', intensity = 60, range = 40, distance, angle = 0.32, cone = 0.06, penumbra = 0.5 } = {}) {
+export function flashlightBeam(stage, { color = '#fff3c4', intensity = 30, range = 40, distance, angle = 0.32, cone = 0.06, penumbra = 0.5 } = {}) {
   const light = new THREE.SpotLight(color, 0, distance ?? range, angle, penumbra, 1.4); light.userData.base = intensity;
   let mesh = null;
   if (cone) {
@@ -129,7 +131,7 @@ export function flashlightBeam(stage, { color = '#fff3c4', intensity = 60, range
 }
 // Torch under the chin (Ch6): a soft warm up-light just below and in front of a face, short range, no cone.
 //   chin.set(on, actor)   (uses the head's world position and the actor's facing)
-export function chinLight(stage, { color = '#ffd9a0', intensity = 9, range = 4.5 } = {}) {
+export function chinLight(stage, { color = '#ffd9a0', intensity = 4.5, range = 4.5 } = {}) {
   const light = new THREE.PointLight(color, 0, range, 2); stage.scene.add(light);
   const _h = new THREE.Vector3();
   const set = (on, actor) => {
@@ -154,4 +156,37 @@ export function glowSticks(stage, n = 2, { color = '#5dff7a', intensity = 4, ran
   const set = (on, positions = []) => lights.forEach((l, i) => { l.visible = !!on && !!positions[i]; l.intensity = l.visible ? intensity : 0; if (l.visible) l.position.copy(positions[i]); });
   set(false);
   return { lights, set };
+}
+
+// ---------- the cast keeps its colours ----------
+// Coloured light (blue moon, fridge, attic amber) tints the set, but a character's skin, hair and clothes must stay
+// recognisably theirs: each cast material also glows with its own texture at `k` (the preset's `cast`, 0 by day), a
+// floor no light colour can shift. applyLight() sets it every frame; opts.castFloor overrides.
+export function castFloor(k, stage) {
+  CAST.k = k;
+  if (stage && !CAST.hooked.has(stage.scene)) {                  // applied right before each draw (after faces/wardrobe swap)
+    const sc = stage.scene, prev = sc.onBeforeRender;
+    sc.onBeforeRender = function (...a) { syncCast(); return prev.apply(this, a); };
+    CAST.hooked.add(sc);
+  }
+}
+const CAST = { k: 0, hooked: new WeakSet() };
+function syncCast() {
+  const k = CAST.k;
+  for (const a of packActors) {
+    if (!a.root.parent) continue;
+    a.root.traverse((o) => {
+      if (!o.isMesh) return;
+      for (const m of [].concat(o.material)) {
+        if (!m || !m.emissive || !m.map) continue;
+        if (m.userData.castFloor === undefined) {
+          m.userData.castFloor = m.emissive.getHex() === 0;          // things that glow on their own keep their glow
+          if (m.userData.castFloor) { m.emissive.set('#ffffff'); m.emissiveMap = m.map; m.needsUpdate = true; }
+        }
+        if (!m.userData.castFloor) continue;
+        if (m.emissiveMap !== m.map) m.emissiveMap = m.map;         // the current face / outfit
+        m.emissive.copy(m.color); m.emissiveIntensity = k;
+      }
+    });
+  }
 }
