@@ -172,7 +172,7 @@ const SHOTS = [
   { at: () => Math.max(T.maxIn, T.dive + 0.55), id: 'max_stairs', cam: cam('stairs_bottom') },
   { at: () => T.maxBottom + 0.3, id: 'max_walks', cam: fix(WALK_IN, 'max', 'ms') },
   { at: () => Math.max(at(4), T.maxAt + 0.05), id: 'max_vampire', cam: fix(AT_FRIDGE, 'max', 'mcu') },
-  { at: () => Math.min(T.maxAt + 0.1, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
+  { at: () => Math.max(T.maxAt + 0.5, T.reachMax - 0.1), id: 'max_fridge', cam: fix(AT_FRIDGE, 'max', 'ms') },
   { at: () => at(5), id: 'letters_max', cam: fix(AT_FRIDGE, 'max', 'ms', { up: 0.1 }) },
   { at: () => at(6), id: 'max_mcu', cam: fix(AT_FRIDGE, 'max', 'mcu') },
   { at: () => at(7), id: 'skye_peek2', cam: fix(PEEK, 'skye', 'cu') },
@@ -366,10 +366,11 @@ export function update(t, stage) {
     let face = 'scared';
     if (t < T.toIsland) {                                   // down the stairs, round the back of the island, to the fridge
       const still = [[A.idle, idle], [A.horror_torch_hold, 0.5, t < T.open2 ? 0.7 : 0]];
-      if (t > at(8) && t < at(8, 0.7)) still.push([A.shrug, t - at(8), 1.2]);
+      const shr = sm(inv(at(8), at(8, 0.2), t)) * (1 - sm(inv(at(8, 0.6), at(8, 0.85), t)));
+      if (shr > 0) still.push([A.shrug, Math.min(t - at(8), 0.6), 1.2 * shr]);
       const turn = sm(inv(at(6, 0.0), at(6, 0.7), t)) * (1 - sm(inv(T.open2 - 0.5, T.open2, t)));   // eases round to talk to the room
       const r = walkTo(mx, DOWN(), T.maxIn, t, 12, still, M.reader.heading - 0.65 * turn);
-      face = t < at(4) ? 'scared' : t < T.reachMax ? 'nervous' : t < at(5) ? 'surprised' : t < at(8) ? 'suspicious' : 'nervous';
+      face = t < at(4) ? 'scared' : t < T.reachMax ? 'nervous' : t < at(8) ? 'suspicious' : 'nervous';
       if (t < T.open2) { P.torch.visible = true; K.hold(P.torch, mx, 'R'); }
       else {                                                // opens the fridge, takes the ham, pushes it shut
         reachG(mx, 'L', T.open2 - 0.35, T.open2 + 0.02);
