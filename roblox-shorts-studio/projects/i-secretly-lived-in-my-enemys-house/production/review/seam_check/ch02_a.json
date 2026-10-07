@@ -1,0 +1,54 @@
+{
+ "clip": "projects/i-secretly-lived-in-my-enemys-house/web/ch02.js",
+ "root": "/tmp/claude-0/-home-user-RobloxShorts/475cf600-86fe-5b9a-84ad-f0b7d040f147/scratchpad/trees/2d6fc591/roblox-shorts-studio",
+ "range": "1-903",
+ "workers": 4,
+ "preroll": 0,
+ "seconds": 158,
+ "starts": [
+  {
+   "start": 1,
+   "window": "1-226",
+   "cold_differs": 0,
+   "cold_frames": [],
+   "cold_converged": true,
+   "preroll_differs": 0,
+   "preroll_frames": [],
+   "preroll_converged": true
+  },
+  {
+   "start": 227,
+   "window": "227-452",
+   "cold_differs": 0,
+   "cold_frames": [],
+   "cold_converged": true,
+   "preroll_differs": 0,
+   "preroll_frames": [],
+   "preroll_converged": true
+  },
+  {
+   "start": 453,
+   "window": "453-678",
+   "cold_differs": 226,
+   "cold_frames": [
+    "453-678"
+   ],
+   "cold_converged": false,
+   "preroll_differs": 0,
+   "preroll_frames": [],
+   "preroll_converged": true
+  },
+  {
+   "start": 679,
+   "window": "679-903",
+   "cold_differs": 225,
+   "cold_frames": [
+    "679-903"
+   ],
+   "cold_converged": false,
+   "preroll_differs": 0,
+   "preroll_frames": [],
+   "preroll_converged": true
+  }
+ ]
+}

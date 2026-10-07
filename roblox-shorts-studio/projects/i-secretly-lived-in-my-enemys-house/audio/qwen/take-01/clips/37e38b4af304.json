@@ -1,0 +1,7 @@
+{
+ "voice": "george_dad",
+ "text": "Right, ghost. It's you, me, and the vacuum.",
+ "seed": 65808,
+ "attempt": 3,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

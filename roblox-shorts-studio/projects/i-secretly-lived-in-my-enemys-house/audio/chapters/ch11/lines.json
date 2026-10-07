@@ -20,24 +20,24 @@
   {
    "index": 2,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Morning, Max! Morning, Lily! Morning...",
    "start": 5.314,
    "end": 7.874,
-   "clip": "audio/qwen/take-01/clips/6fa56b9f258a.wav",
-   "seed": 16920
+   "clip": "audio/qwen/take-01/clips/870438f9978e.wav",
+   "seed": 48517
   },
   {
    "index": 3,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Pumpkin girl?",
    "start": 8.124,
    "end": 9.14,
-   "clip": "audio/qwen/take-01/clips/cfccd41ad3cd.wav",
-   "seed": 18465
+   "clip": "audio/qwen/take-01/clips/1a0dc1638791.wav",
+   "seed": 7534
   },
   {
    "index": 4,
@@ -53,13 +53,13 @@
   {
    "index": 5,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "The pancake thief!",
    "start": 13.052,
    "end": 14.092,
-   "clip": "audio/qwen/take-01/clips/6672b8fcbd83.wav",
-   "seed": 14117
+   "clip": "audio/qwen/take-01/clips/4f76f0213ff6.wav",
+   "seed": 7869
   },
   {
    "index": 6,
@@ -86,13 +86,13 @@
   {
    "index": 8,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "You knew?",
    "start": 20.006,
    "end": 20.826,
-   "clip": "audio/qwen/take-01/clips/1899962f07bc.wav",
-   "seed": 12259
+   "clip": "audio/qwen/take-01/clips/1d6885c37562.wav",
+   "seed": 27378
   },
   {
    "index": 9,
@@ -108,13 +108,13 @@
   {
    "index": 10,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Does your mother know where you've been all week?",
    "start": 22.554,
    "end": 24.471,
-   "clip": "audio/qwen/take-01/clips/84c919d596a1.wav",
-   "seed": 2310
+   "clip": "audio/qwen/take-01/clips/5c969512754e.wav",
+   "seed": 67938
   },
   {
    "index": 11,
@@ -130,13 +130,13 @@
   {
    "index": 12,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "For a week?",
    "start": 26.731,
    "end": 27.509,
-   "clip": "audio/qwen/take-01/clips/749bb938f1ac.wav",
-   "seed": 42118
+   "clip": "audio/qwen/take-01/clips/a93c57e2a578.wav",
+   "seed": 92108
   },
   {
    "index": 13,
@@ -152,13 +152,13 @@
   {
    "index": 14,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Phone. Now. Then pancakes.",
    "start": 29.849,
    "end": 32.095,
-   "clip": "audio/qwen/take-01/clips/ed107b141ef3.wav",
-   "seed": 36328
+   "clip": "audio/qwen/take-01/clips/54dafe808183.wav",
+   "seed": 63163
   },
   {
    "index": 15,
@@ -240,13 +240,13 @@
   {
    "index": 22,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Pancakes for everyone! Including the ghost! Especially the ghost.",
    "start": 48.365,
    "end": 51.849,
-   "clip": "audio/qwen/take-01/clips/f489de21c9d1.wav",
-   "seed": 26155
+   "clip": "audio/qwen/take-01/clips/13a84694009c.wav",
+   "seed": 89339
   },
   {
    "index": 23,

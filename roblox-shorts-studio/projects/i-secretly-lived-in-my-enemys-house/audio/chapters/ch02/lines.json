@@ -20,13 +20,13 @@
   {
    "index": 2,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Good morning, kitchen! Who wants pancakes? Everybody wants pancakes!",
    "start": 7.47,
    "end": 11.31,
-   "clip": "audio/qwen/take-01/clips/b55b24c107e6.wav",
-   "seed": 85425
+   "clip": "audio/qwen/take-01/clips/e96bc7f83e0a.wav",
+   "seed": 97556
   },
   {
    "index": 3,
@@ -53,13 +53,13 @@
   {
    "index": 5,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "That's just the pipes, champ. This house is a hundred years old. It says all sorts of things.",
    "start": 18.627,
    "end": 23.747,
-   "clip": "audio/qwen/take-01/clips/c5675e291873.wav",
-   "seed": 37131
+   "clip": "audio/qwen/take-01/clips/4a02019f4033.wav",
+   "seed": 50254
   },
   {
    "index": 6,
@@ -75,13 +75,13 @@
   {
    "index": 7,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Or it's a ghost!",
    "start": 25.544,
    "end": 26.505,
-   "clip": "audio/qwen/take-01/clips/581be810ff9f.wav",
-   "seed": 74389
+   "clip": "audio/qwen/take-01/clips/b819fd4b4b64.wav",
+   "seed": 65354
   },
   {
    "index": 8,
@@ -97,13 +97,13 @@
   {
    "index": 9,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Hang on. I made twelve pancakes. Why are there eleven?",
    "start": 30.065,
    "end": 33.345,
-   "clip": "audio/qwen/take-01/clips/d0a50697483c.wav",
-   "seed": 73811
+   "clip": "audio/qwen/take-01/clips/cfbc39d7a123.wav",
+   "seed": 14214
   },
   {
    "index": 10,
@@ -141,13 +141,13 @@
   {
    "index": 13,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": null,
    "text": "Fine. Ghost, if you're listening, the syrup's in the cupboard.",
    "start": 40.605,
    "end": 43.805,
-   "clip": "audio/qwen/take-01/clips/b04e5ff89f86.wav",
-   "seed": 54476
+   "clip": "audio/qwen/take-01/clips/a6147e99f772.wav",
+   "seed": 84299
   },
   {
    "index": 14,

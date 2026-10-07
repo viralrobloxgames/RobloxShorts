@@ -67,3 +67,32 @@ Diff from 5fc54214: only the spider's offset on Skye's hand (ch01.js, 2 lines). 
 
 Verdict: **OK** (supersedes OK @ 5fc54214).
 Also rendered f740-850 every 5th frame at 0.5 scale on the orchestrator's request: the spider drops from Max's hand, then sits on top of Skye's hand through the shriek and Max picks it back up. No clipping; still OK.
+
+## Re-check @ 8e1f87e8 (reopened: Max in bed, 0:51-1:00)
+Diff from 1a727048: ch01.js night2 / bed shots only. cam_check 0/0/0. The sight hits are unchanged (pink-lock insert, classroom). clip_check: 5 **new** highs, all Max in the bed (54.2-57.3 s and 61.3 s): legs inside the duvet box (86-100% cover), head and arms inside the pillow/headboard box (57%). I rendered f1520-1850 every 6th frame, f1626-1668 every 3rd, and the chapter at every 15th frame; outside the bed range nothing changed. Viewer test applied.
+
+| must | status | note |
+|---|---|---|
+| user: Max in bed reads as standing inside the bed | **not fixed** (new problems) | see B1-B3 |
+| all earlier musts | still fixed | |
+
+- **B1** frames 1626-1700 (0:54.2-56.7), props/clipping: the "duvet" is a separate red roll lying beside Max's legs. It doesn't cover him and doesn't move with him. His plaid PJ legs lie on top of the bed next to it and poke out through its side (f1626, f1641-1668; clip_check legs 86-100% inside the duvet box). It reads as a red bolster, not a duvet over his legs. Fix: one duvet surface that covers him from the waist down (a shaped top over his legs, or hide the legs and raise the duvet top over them), turned back at the waist when he sits up. **must**
+- **B2** frames 1626-1635 (0:54.2-54.5), clipping/pop: as he starts to lift, his head sinks into the pillow (f1629: only a hair tuft shows; the head is gone for a frame between f1626 and f1632) and his arms go into the headboard/pillow (clip_check 57%). Fix: start the lift from a head height that clears the pillow, no dip. **must**
+- **B3** frames 1638-1650, pose: on the sit-up both arms swing out flat at his sides (robot), and his torso pivots stiffly at the mattress line. Fix: push up on the elbows/hands, arms close to his body. **should** (must if it still reads robotic after B1)
+- Sitting against the headboard (f1660-1800): reads as sitting up, with pillow and headboard in frame. Fine once B1 fixes the legs/duvet.
+
+Verdict: **MUSTS** (B1, B2).
+
+## Re-check @ 6b008a0d (bed)
+Diff from 8e1f87e8: ch01.js night/bed only (12 lines). cam_check 0/0/0; sight unchanged. clip_check bed highs are down to 54.2-54.6 s: Max's torso under the duvet top, his head on the pillow and an arm on the duvet edge while lying. In the renders this reads as lying in bed, nothing poking through. I rendered f1620-1680 every 3rd frame plus 1700-1911; viewer test applied.
+
+| must | status | note |
+|---|---|---|
+| B1 duvet beside his legs | fixed | legs hidden; the duvet's leg ridge reads as his legs under it, lying and sitting |
+| B2 head dips into the pillow | fixed | head lifts straight off the pillow |
+| B3 arms out on the sit-up | fixed | arms close in |
+| user 0:51-1:00 "standing inside the bed" | fixed | lying with his head on the pillow, then sitting up against the pillow/headboard with the duvet over his legs |
+| all earlier musts | still fixed | |
+- should: f1845, a white pillow block stands against the wall behind the bed foot in the closet shot, reading slightly as floating. Drop it to the bed or crop it.
+
+Verdict: **OK**.

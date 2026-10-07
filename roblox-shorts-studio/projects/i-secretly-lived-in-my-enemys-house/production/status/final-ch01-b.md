@@ -1,3 +1,1 @@
-STATUS: DONE
-COMMIT: 5fc54214 (B identical at 1a727048)
-RANGE: 861-1911
+STATUS: RERENDER @ 6b008a0d (10:58Z: re-render the whole segment with the pre-rolling render.mjs from main)

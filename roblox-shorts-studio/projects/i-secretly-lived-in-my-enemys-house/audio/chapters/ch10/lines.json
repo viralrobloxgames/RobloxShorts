@@ -174,13 +174,13 @@
   {
    "index": 16,
    "speaker": "DAD",
-   "voice": "george_c",
+   "voice": "george_dad",
    "note": "offscreen",
    "text": "Max? Who are you talking to?",
    "start": 60.403,
    "end": 62.279,
-   "clip": "audio/qwen/take-01/clips/6ec85e523ced.wav",
-   "seed": 60331
+   "clip": "audio/qwen/take-01/clips/e45a9275294a.wav",
+   "seed": 65471
   },
   {
    "index": 17,

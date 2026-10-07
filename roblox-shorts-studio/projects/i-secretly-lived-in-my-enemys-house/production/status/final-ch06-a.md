@@ -1,1 +1,1 @@
-STATUS: RENDERING @ 8537ebc6
+STATUS: RENDERING @ 8537ebc6 (pre-rolling render.mjs, whole segment 1-780)

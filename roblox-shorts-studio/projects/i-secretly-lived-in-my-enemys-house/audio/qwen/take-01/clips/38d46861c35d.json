@@ -1,0 +1,7 @@
+{
+ "voice": "george_dad",
+ "text": "Max, was that you?",
+ "seed": 24469,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}
