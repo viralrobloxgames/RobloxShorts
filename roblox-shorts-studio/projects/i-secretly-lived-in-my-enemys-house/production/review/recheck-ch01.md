@@ -61,3 +61,8 @@ Diff from 65f9fd9e: 5 lines of ch01.js (the aisle walk on the wide, Max's arms o
 Shoulds left: flashlight arm straight (f211-260), white blob at the left edge of the Max CUs.
 
 Verdict: **OK**.
+
+## Re-check @ 1a727048
+Diff from 5fc54214: only the spider's offset on Skye's hand (ch01.js, 2 lines). clip_check and cam_check are unchanged from 5fc54214 (same 2 explained highs, 0/0/0). I rendered frames 730-840: the spider goes from Max's hand onto her hand and sits on top of it, not sunk in. Every must is still fixed.
+
+Verdict: **OK** (supersedes OK @ 5fc54214).

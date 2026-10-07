@@ -1,3 +1,3 @@
-STATUS: RENDERING
+STATUS: DONE
 
-render-ch01-b: full re-render of segment B, frames 861-1911, at ch01 1a727048 (kit unchanged since), 4 workers, started 04:56 UTC. Then finish_longform -> delivery/chapters/ch01_b.mp4.
+render-ch01-b: the 04:55 UTC full re-render request was cancelled by ch01 at 04:56 (final-ch01-a/b will render both segments). Render stopped; nothing pushed. delivery/chapters/ch01_b.mp4 unchanged.
