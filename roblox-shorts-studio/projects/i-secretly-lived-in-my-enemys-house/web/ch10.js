@@ -133,10 +133,10 @@ function poseSkye(t, idle) {
   if (t > T.dad + 0.25) heading = lerpAngle(heading, cheat(toward(a.root.position, M.door().pos), 1, 0.15), smooth(inv(T.dad + 0.25, T.dad + 0.8, t)));
   a.root.rotation.y = heading; a.root.updateMatrixWorld(true);
   // arms: the phone up recording (right), lowered to her chest once the sheet is off
-  armFwd(a, 'R', t < T.pull + 0.3 ? -1.35 : -0.7, 0.2);
+  armFwd(a, 'R', t < T.pull + 0.3 ? -1.35 : -0.7, t < T.pull + 0.3 ? 0.2 : 0.02);
   if (spook) armFwd(a, 'L', -1.15 + 0.12 * Math.sin(t * 5), 0.15);                    // spooky forearm forward, below the shoulder
   if (t > T.pull - 0.2 && t < T.pull + 0.55) { const k = Math.sin(inv(T.pull - 0.2, T.pull + 0.55, t) * Math.PI); armFwd(a, 'L', lerp(-0.75, -2.6, k), 0.35); armFwd(a, 'R', lerp(-1.35, -2.5, k), 0.35); }
-  else if (!sheetOn) armFwd(a, 'L', -0.75, 0.25);                                         // sheet bunched in her left hand, at her hip
+  else if (!sheetOn) armFwd(a, 'L', -0.75, 0.02);                                         // sheet bunched in her left hand, at her hip
   if (t > T.fridge - 0.5 && t < end(12)) armFwd(a, 'R', -1.45, 0.05);                    // points at him with the phone hand
   a.root.updateMatrixWorld(true);
   // faces (they only read once the sheet is off)
@@ -187,7 +187,7 @@ function poseMax(t, idle) {
   if (carrying) { armFwd(a, 'L', p, -0.22); armFwd(a, 'R', p, -0.22); }
   else { armFwd(a, 'L', -1.35, -0.25); armFwd(a, 'R', -1.35, -0.25); }   // hands resting on the duvet beside the plate
   // one-arm gestures once the plate is down
-  if (t > T.pumpkin - 0.1 && t < end(8, 0.1)) armSide(a, 'R', 2.0 + 0.12 * Math.sin((t - T.pumpkin) * 9), -0.6); // straightening a pumpkin
+  if (t > T.pumpkin - 0.1 && t < end(8, 0.1)) armFwd(a, 'R', -2.15 + 0.1 * Math.sin((t - T.pumpkin) * 9), 0.45 + 0.08 * Math.sin((t - T.pumpkin) * 9 + 1)); // straightening an imaginary pumpkin: hand forward at head height, small wiggle
   if (t > at(13, -0.1) && t < end(13, 0.2)) { const u = Math.sin(inv(at(13, -0.1), end(13, 0.2), t) * Math.PI); armFwd(a, 'R', lerp(-1.35, -1.3, u), lerp(-0.25, 0.5, u)); headTurn(a, 0, -0.08 * u); } // one-hand palm-up shrug
   if (t > at(11) && t < T.comesDown + 0.2) headTurn(a, 0, 0.18);                         // eyes down, blushing
   if (t > T.pink - 0.1 && t < T.monday) headTurn(a, 0, -0.1);                            // chin up at her hair
