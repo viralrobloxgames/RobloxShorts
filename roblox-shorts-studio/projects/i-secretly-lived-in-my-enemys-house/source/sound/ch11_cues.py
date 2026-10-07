@@ -31,7 +31,7 @@ cue('click', at(15) - 0.4, 0.25)
 cue('chime', T_LATER + 0.05, 0.22)
 cue('click', T_LATER + 0.65, 0.2)
 # pancake flips: whoosh up, plop down (same times as the clip)
-for f in [at(22) + 0.3, T_WIDE + 0.7, T_WIDE + 4.7, T_END + 2.5, T_END + 7.5]:
+for f in [at(22) + 0.3, T_WIDE + 0.7, T_END + 2.5, T_END + 7.5]:
     cue('whoosh', f, 0.18); cue('plop', f + 0.85, 0.3)
 # Max slides the plate to Skye
 cw = json.loads((P / 'audio/chapters/ch11/captions.json').read_text())['words']

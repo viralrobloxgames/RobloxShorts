@@ -127,7 +127,7 @@ const WIDE = (s, t) => {
 };
 const named = (id, fb) => (s, t) => { const c = K.getSet('classroom').cams[id]; return c ? K.setCam(s, c) : fb(s, t); };
 const END = (s) => {                          // Skye MCU foreground left, Max at his desk background right
-  const c = K.getSet('classroom').cams.end_front; if (c) return K.setCam(s, { ...c, target: c.target.clone().add(V(0, -0.85, 0)) });
+  const c = K.getSet('classroom').cams.end_front; if (c) return K.setCam(s, { ...c, target: c.target.clone().add(V(0, -1.15, 0)) });
   const sk = K.headPos(C.skye), mx = K.headPos(C.max);
   const target = sk.clone().lerp(mx, 0.42).add(V(0, -0.5, 0));
   const pos = sk.clone().add(V(-2.6, 0.2, -6.4));
@@ -221,9 +221,10 @@ function maxArms(t) {
   K.gesture(C.max, LOW, 'R', 1);                                                    // the sandwich, low in his right hand
   const offer = ramp(t, T.offer() - 0.3, T.offer()) * (1 - ramp(t, T.cookieDown() - 0.35, T.cookieDown()));
   const down = t > T.cookieDown() - 0.35 && t < T.cookieDown() + 0.45 ? Math.sin(Math.PI * clamp((t - T.cookieDown() + 0.35) / 0.8)) : 0;
-  if (offer > 0) K.gesture(C.max, OFFER_ARM, 'L', offer);                           // the cookie on his palm, toward her
+  const sway = 4 * Math.sin(K.holdClock(t, L) * 1.3);
+  if (offer > 0) K.gesture(C.max, [-70 + sway, 0, 6], 'L', offer);                           // the cookie on his palm, toward her
   if (down > 0) K.gesture(C.max, 'tap', 'L', down);                                 // sets it down on her desk
-  if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, [-86, 0, -6], 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
+  if (t > T.show() && t < at(19, 0.3)) K.gesture(C.max, [-64 + sway, 0, -10], 'R', ramp(t, T.show(), T.show() + 0.3) * (1 - ramp(t, at(19), at(19, 0.3))));
   if (t > T.split() - 0.3) {                                                         // breaks it with both hands at chest height
     const both = ramp(t, T.split() - 0.3, T.split()) * (1 - ramp(t, T.split() + 0.2, T.split() + 0.45));
     K.gesture(C.max, [-70, 0, -16], 'R', both); K.gesture(C.max, [-70, 0, -16], 'L', both);
@@ -251,6 +252,7 @@ export function update(t, stage) {
   const faceFront = ENDCUT() - 0.1;
   if (t > T.back()) { hS = hTurned; headY = 40 * toDesk * ramp(t, T.back(), T.back() + 0.6); }
   if (t > faceFront) { hS = mS.heading - 0.25; headY = 0; }
+  const endArmL = t > faceFront;                                                     // end shot: her near-lens left arm rests down by the seat
   if (t > T.snap() && t < T.snap() + 0.45) headY = 12 * Math.sin((t - T.snap()) / 0.45 * Math.PI * 3);   // "Stop it, face." shakes it off
   // turned toward Max her arms hang beside the seat (clear of the desk, nothing reaches at him); facing front, forearms flat on the desk
   const folded = turnU * (t > faceFront ? 0 : 1);
@@ -263,10 +265,11 @@ export function update(t, stage) {
   const tilt = t > at(13) && t < end(13, 0.25) ? 12 * ramp(t, at(13), at(13) + 0.2) * (1 - ramp(t, end(13), end(13, 0.25))) : 0;   // "It's fashion." smug head tilt
   const lookUp = t > wordT(1, 15) && t < T.back() ? -8 : 0;                      // looks up at him (he is standing)
   dS.Head = [(dS.Head?.[0] ?? 0) + lookUp, (dS.Head?.[1] ?? 0) + headY, (dS.Head?.[2] ?? 0) + tilt];
+  if (endArmL) dS['Arm.L'] = [6, 0, -6];
   sitOn(C.skye, mS, hS, dS);
 
   if (t > T.take() - 0.45) K.gesture(C.skye, OFFER_ARM, 'R', 0.9 * ramp(t, T.take() - 0.45, T.take()));   // reaches for the half
-  if (t > T.take() + 0.05) K.gesture(C.skye, [-106, 0, -30], 'R', ramp(t, T.take() + 0.05, T.take() + 0.35));      // brings it in across her chest (not out at the aisle)
+  if (t > T.take() + 0.05) if (!endArmL) K.gesture(C.skye, [-38, 0, -16], 'R', ramp(t, T.take() + 0.05, T.take() + 0.35));      // her half held in front of her, arm ~35 deg forward of hanging; in the end shot her forearm rests on the desk (the half in her palm on the desk top)
   let fS = 'annoyed';
   if (t > wordT(1, 15)) fS = 'suspicious';
   if (t > at(7)) fS = 'annoyed';

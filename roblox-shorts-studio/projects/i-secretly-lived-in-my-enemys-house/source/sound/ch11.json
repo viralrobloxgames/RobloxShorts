@@ -155,16 +155,6 @@
   "dur": 0.9
  },
  {
-  "asset": "sfx/whoosh.wav",
-  "start": 56.649,
-  "gain": 0.18
- },
- {
-  "asset": "sfx/plop.wav",
-  "start": 57.499,
-  "gain": 0.3
- },
- {
   "asset": "sfx/pop.wav",
   "start": 57.659,
   "gain": 0.3
