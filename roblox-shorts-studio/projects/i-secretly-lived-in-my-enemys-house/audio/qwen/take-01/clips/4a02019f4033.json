@@ -1,0 +1,7 @@
+{
+ "voice": "george_dad",
+ "text": "That's just the pipes, champ. This house is a hundred years old. It says all sorts of things.",
+ "seed": 50254,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}
