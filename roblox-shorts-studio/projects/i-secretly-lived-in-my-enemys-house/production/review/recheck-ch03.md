@@ -85,3 +85,12 @@ Automated: snap_check finds 38 events, **0 high** (it was 33 high). clip_check -
 Visual (0.5 scale, the frame before each former snap point and 3 frames after it): S3 1691-1694, Dad's head turn, is now eased. T1 385-388 is now a cut to the wide. T2 443-446, T3 929-932, T4 1490-1493, T5 1513-1516, T6 1550-1553 and T7 1609-1612 all move gradually, with no one-frame jumps. S1, S2 and S4-S7 were fixed @ 6d8d0547.
 
 All musts fixed; no new issues. **RECHECK: OK @ b6998591.**
+
+## Final pass
+
+- Both final statuses are DONE at b6998591 (a: 1-906, b: 907-2013). The `code` fingerprint in both `ch03_a.json` and `ch03_b.json` is 091cbbae5147, so both halves were rendered from the same code; it is no longer the 726592de-era e6bae5603db8. The .json files do not record the sha, so b6998591 comes from the final status files.
+- Seam: the pixel diff of the joined a+b at 906→907 is flat, with no pop. The b chunk starts (1184, 1461, 1738) are also flat. seam_check (907-2013, preroll 300, window 8) still reports cold-start pose differences at the chunk starts, but nothing shows in the delivered pixels.
+- Whole chapter: a frame-to-frame diff scan, plus the in-shot spikes viewed as pairs (363 a stair step; 523 a caption; 660-662 a light fade; 1267 the torch switching on; 1771 the fridge door opening over 2 frames). No snaps.
+- A 1 fps contact sheet of the whole chapter: identity, staging, props and captions are consistent. The hide reads correctly.
+
+**FINAL: PASS**
