@@ -344,8 +344,8 @@ function kitchen(t, idle) {
       // kneeling up against the island front a step left of the stack, so her right hand lands on the top pancake
       // beside it (camera side); she pulls it straight back off the stack toward her
       const pull = smooth(inv(T.slide(), T.slide() + 0.45, t));
-      poseAt(C.skye, { 'Leg.L': [0, 0, -4], 'Leg.R': [0, 0, 4], 'Arm.R': [-10, 0, 4], Torso: [18 - 32 * pull, 0, 0], Head: [-14 + 20 * pull, -55, 0] }, reach.pos.clone().add(V(1.0, 0, 0)), reach.heading);   // half-crouched against the island (family turned away)
-      K.gesture(C.skye, [-172 + 25 * pull, 0, 4], 'L', u);   // hand on the top pancake, then she leans back and draws it off toward her                                                        // one arm straight up beside the edge, hand over the top
+      poseAt(C.skye, { 'Leg.L': [0, 0, -4], 'Leg.R': [0, 0, 4], 'Arm.R': [-10, 0, 4], Torso: [6 - 22 * pull, 0, 0], Head: [-14 + 20 * pull, -55, 0] }, reach.pos.clone().add(V(1.0, 0, 0.35)), reach.heading);   // half-crouched against the island (family turned away)
+      K.gesture(C.skye, [-160 + 15 * pull, 0, 4], 'L', u);   // hand on the top pancake, then she leans back and draws it off toward her                                                        // one arm straight up beside the edge, hand over the top
     } else (t < at(4, -0.1) ? hideCrouch : hideLow)(hide);
     if (t >= T.slide()) {
       // the top pancake slides off the stack toward her, then she has it in her left hand
