@@ -368,7 +368,7 @@ function outside(t, idle) {
   stand(C.skye, M.porch(), 0, idle);
   const bite = smooth(inv(wd(14, 2, -0.3), wd(14, 2, -0.05), t));
   const up = bite - smooth(inv(wd(14, 2, 0.25), wd(14, 2, 0.55), t));                           // to her mouth on "Ever", then back down
-  K.gesture(C.skye, 'chin_hand', 'L', 0.72 + 0.2 * up);   // up to her mouth on "Ever"                                       // pancake in her palm beside her face (far hand), to her mouth on "Ever"
+  K.gesture(C.skye, 'chin_hand', 'L', 0.72);                    // beside her chin; the bite is her head dipping to it                                       // pancake in her palm beside her face (far hand), to her mouth on "Ever"
   C.skye.bones.Head.rotateX(0.3 * up);                                                         // she dips her head to the pancake to bite
   K.hold(P.edgeCake, C.skye, 'L', 'palm', { level: true }); P.edgeCake.visible = true;
 }
