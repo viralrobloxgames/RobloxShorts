@@ -1,0 +1,7 @@
+{
+ "voice": "george_dad",
+ "text": "You put the Halloween stuff out already? It's not even Halloween.",
+ "seed": 82292,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}
