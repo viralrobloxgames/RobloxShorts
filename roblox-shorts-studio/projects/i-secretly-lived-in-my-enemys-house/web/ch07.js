@@ -73,26 +73,27 @@ const faceHer = (m, cheat = 0) => {
   const d = Math.atan2(Math.sin(hc - h0), Math.cos(hc - h0));
   return { pos: m.pos, heading: h0 + d * cheat };
 };
-// the pair camera: square to the line between her and her partner, swung toward the front of the room so both faces
-// read 3/4 (for Dad straight in front of her it sits on the open tea-box side, -x)
+// the pair camera: square to the line between her and her partner, on her front side, so she and a partner at her
+// front diagonal both read 3/4 (Max and Lily at her front-left: camera on the open -x side; Dad at her front-right:
+// camera on the witch side)
 function pairCamPos(near, dist = 6.0) {
   const p = M.pose().pos, ab = near.clone().sub(p); ab.y = 0;
-  let n = V(ab.z, 0, -ab.x).normalize();
-  if (n.z < -1e-3 || (Math.abs(n.z) <= 1e-3 && n.x > 0)) n.negate();
-  n.add(V(0, 0, 0.6)).normalize();
+  const n = V(ab.z, 0, -ab.x).normalize(); if (n.z < 0) n.negate();
+  n.add(V(0, 0, 0.15)).normalize();
   return p.clone().lerp(near, 0.5).add(n.multiplyScalar(dist));
 }
-// Partners stand on a front diagonal (~2.5 studs, decor_lily / decor_max side), so the pair camera, square to the pair,
-// sees her face and theirs 3/4 and her arm never points into the lens; straight in front only for the bucket fix.
+// Partners stand at her front diagonals (~3 studs, clear of her hands): Dad at her front-right (the open side), Max and
+// Lily at her front-left; the pair camera, square to the pair, sees both faces 3/4 and her arm never points into the
+// lens. Straight in front only for the bucket (Lily jams it on, Max turns it level).
 const S = {                                                         // spots around her
-  inspect: () => faceHer(off(M.pose(), 2.9, -1.1), 0.2),             // Dad at her front-right (decor_lily side), bends in nose to nose
-  hoover: () => faceHer(off(M.pose(), 3.7, -1.9), 0.3),            // backed off along the diagonal: the nozzle stops short of her face
+  inspect: () => faceHer(off(M.pose(), 2.6, -2.6)),                 // Dad square to her; leans in nose to nose
+  hoover: () => faceHer(off(M.pose(), 3.0, -3.0), 0.2),            // backed off along the diagonal: the nozzle stops short of her face
   maxFront: () => faceHer(off(M.pose(), 1.75, 0.25)),               // Max square in front of her, close enough to reach the bucket
-  maxBack: () => faceHer(off(M.pose(), 2.9, 1.6), 0.5),            // stepped back to her front-left (decor_max), clear of her hand
+  maxBack: () => faceHer(off(M.pose(), 2.9, 1.6), 0.5),             // stepped back to her front-left (decor_max), clear of her hand
   lilyJam: () => faceHer(off(M.pose(), 2.15, -0.1)),                // square in front of her, hops to reach her head
   lilyWait: () => faceHer(off(M.pose(), 2.6, -3.4)),                // waiting, clear of her path, her arms and the skeleton
-  lilyOrders: () => faceHer(off(M.pose(), 2.3, -1.9), 0.5),         // stepped back to decor_lily (a little wider of her right hand), 3/4 to the camera
-  lilyEnd: () => faceHer(off(M.pose(), 2.3, -1.9), 0.5),            // decor_lily, a little wider of her lowered right hand
+  lilyOrders: () => faceHer(off(M.pose(), 2.3, 2.0), 0.45),         // stepped back to her front-left (decor_max side), 3/4 to the camera
+  lilyEnd: () => faceHer(off(M.pose(), 2.3, 2.0), 0.45),
 };
 const GRAB = () => pt(6.4, -4.0, Math.PI);                          // in front of the HALLOWEEN box, facing it (before Skye gets there)
 const DAD_OUT = () => pt(3.9, 5.0, -2.2);
@@ -111,7 +112,7 @@ function times() {
   T.lilyGo = end(3, 0.1);               // Lily runs for the bucket first
   T.grab = T.lilyGo + 0.85;
   T.jam = end(4, 1.15);
-  T.pose = T.jam + 0.6;                 // her arms go out once Lily has stepped back
+  T.pose = end(5, -0.7);                // her arms go out on "Think pumpkin thoughts"
   T.lilyStep = T.jam + 0.25;             // steps back to give her orders
   T.lilyBack = end(5, 0.0);              // runs back to the tea box
   T.dadRise = end(5, 0.05);
@@ -235,7 +236,7 @@ function poseLily(t, idle) {
   };
   if (t < T.lilyUp) { sitFloor(l, tl, tl.heading, 'kneel'); headTurn(l, headTo(l, W(4.5, 9.0), 0.8) * sm(T.rattle + 0.1, T.rattle + 0.35, t)); return; }
   if (t < T.lilyGo) {                                   // "Quick! Be a decoration!": side-on, pointing across at the decorations
-    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: -0.25 });   // to Skye and the camera
+    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: 0.9 });     // side-on to the camera
     K.gesture(l, [-35, 0, -80], 'L', sm(at(3), at(3, 0.25), t));                         // her left arm out sideways at the decorations (one arm)
     return;
   }
@@ -296,8 +297,9 @@ function poseDad(t, idle) {
     const m = walkPath(d, [DAD_NEAR(), insp], T.dadWalk2, t, { idleAt: idle, endHeading: insp.heading, speed: 7 });
     if (!m.done) return;
     const lk = sm(T.lean, T.lean + 0.5, t) * (1 - sm(T.unlean, T.unlean + 0.4, t));
-    if (lk > 0) K.posture(d, 'hip_bend', { mix: 0.5 * lk, reset: false });                       // nose to nose
-    if (t > at(12) && t < end(12)) K.gesture(d, 'chin_hand', 'L', sm(at(12), at(12, 0.3), t) * (1 - sm(end(12, -0.3), end(12), t)));   // strokes his chin, mulling it over
+    if (lk > 0) K.posture(d, 'hip_bend', { mix: 0.35 * lk, reset: false, extra: { Head: [-12 - 10 * lk, 0, 0] } });   // nose to nose (head forward, not his shoulders)
+    else if (t < at(14, 0.1)) headTurn(d, 0.35 * sm(T.dadWalk2 + 0.8, T.dadWalk2 + 1.2, t));        // his face a little to the camera
+    if (t > at(12) && t < end(12)) K.gesture(d, [-140, -40, 10], 'L', sm(at(12), at(12, 0.3), t) * (1 - sm(end(12, -0.3), end(12), t)));   // strokes his chin, mulling it over
     if (t > at(14, 0.1) && t < at(16)) headTurn(d, headTo(d, M.teaLily().pos, 1.0) * sm(at(14, 0.1), at(14, 0.4), t) * (1 - sm(at(16), at(16, 0.3), t)));
     return;
   }
@@ -401,7 +403,7 @@ function pairShot(s, other, { dist = 6.0, up = 0.25, fov = 36, bias = 0.5, spot 
 const HATCH_CAM = (s) => K.setCam(s, { pos: W(-2.6, 0.6, 5.8), target: W(4.3, 7.4, 2.8), fov: 44 });
 const HATCH_SIDE = (s) => K.setCam(s, { pos: W(0.6, 8.0, 5.4), target: W(4.6, 0.6, 4.0), fov: 44 });   // from beside the hatch, back at the room
 const LILY_TEA = (s) => K.setCam(s, { pos: W(-4.8, 8.6, 3.8), target: W(-1.5, 3.9, 2.0), fov: 40 });
-const OPEN = (s) => K.setCam(s, { pos: W(-5.0, 12.4, 5.6), target: W(2.8, 0.6, 1.4), fov: 52 });
+const OPEN = (s) => K.setCam(s, { pos: W(-7.6, 12.2, 5.8), target: W(2.8, 0.6, 1.4), fov: 52 });
 const SHOTS = [
   { line: 1, off: 0, id: 'open', cam: OPEN },
   { line: 2, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-3.3, 11.2, 4.8), target: W(-3.2, 4.2, 3.0), fov: 46 }) },
@@ -425,7 +427,7 @@ const SHOTS = [
   { line: 17, off: 0, id: 'max_off', cam: (s) => pairShot(s, C.dad, { dist: 7.5, fov: 40, spot: S.hoover }) },
   { line: 18, off: 0, id: 'dad_leaves', cam: HATCH_SIDE },
   { line: 18, off: 1.2, id: 'dad_down', cam: HATCH_CAM },
-  { line: 19, off: 0.7, id: 'max_fix', cam: (s) => pairShot(s, C.max, { dist: 5.2, fov: 36, spot: S.maxFront }) },
+  { line: 19, off: 0.7, id: 'max_fix', cam: (s) => pairShot(s, C.max, { dist: 5.6, fov: 36, spot: S.maxBack }) },
   { line: 20, off: 0, id: 'max_dinner', cam: (s) => pairShot(s, C.max, { dist: 5.8, fov: 38, spot: S.maxBack }) },
   { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.25, fov: 36, look: V(0, 0.35, 0) }) },
   { line: 22, off: 0, id: 'end_two', cam: (s) => pairShot(s, C.lily, { dist: 6.4, fov: 44, up: -0.2, bias: 0.4, spot: S.lilyEnd }) },
