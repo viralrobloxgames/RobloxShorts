@@ -7,7 +7,7 @@
  "min_depth": 0.06,
  "onscreen_only": true,
  "film_start_s": 197.667,
- "seconds": 25.8,
+ "seconds": 24.5,
  "summary": [
   {
    "actor": "skye",
@@ -58,18 +58,6 @@
    "severity": "low"
   },
   {
-   "actor": "max",
-   "object": "skye.Arm.R",
-   "kind": "actor",
-   "frames": "1667-1669",
-   "t": "55.5-55.6s",
-   "film": "4:13.2",
-   "parts": "Arm.R",
-   "max_depth": 0.23,
-   "max_cover_pct": 5,
-   "severity": "low"
-  },
-  {
    "actor": "skye",
    "object": "box 1.5x1.6x0.6 @world(1187.0,4.3,2.4)",
    "kind": "scenery",
@@ -91,18 +79,6 @@
    "parts": "Head",
    "max_depth": 0.06,
    "max_cover_pct": 5,
-   "severity": "low"
-  },
-  {
-   "actor": "skye",
-   "object": "max.Arm.R",
-   "kind": "actor",
-   "frames": "1667-1669",
-   "t": "55.5-55.6s",
-   "film": "4:13.2",
-   "parts": "Arm.R",
-   "max_depth": 0.17,
-   "max_cover_pct": 3,
    "severity": "low"
   }
  ],
@@ -174,19 +150,6 @@
   },
   {
    "actor": "max",
-   "part": "Arm.R",
-   "object": "skye.Arm.R",
-   "from": 1667,
-   "to": 1669,
-   "depth": 0.23,
-   "cover": 5,
-   "samples": 2,
-   "t": "55.53-55.60s",
-   "film": "4:13.2",
-   "kind": "actor"
-  },
-  {
-   "actor": "max",
    "part": "Arm.L",
    "object": "box 3.2x0.2x2.3 @set_classroom(-5.0,3.0,5.0)",
    "from": 1687,
@@ -197,19 +160,6 @@
    "t": "56.20-56.20s",
    "film": "4:13.9",
    "kind": "scenery"
-  },
-  {
-   "actor": "skye",
-   "part": "Arm.R",
-   "object": "max.Arm.R",
-   "from": 1667,
-   "to": 1669,
-   "depth": 0.17,
-   "cover": 3,
-   "samples": 2,
-   "t": "55.53-55.60s",
-   "film": "4:13.2",
-   "kind": "actor"
   },
   {
    "actor": "max",
