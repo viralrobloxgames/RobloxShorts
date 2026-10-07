@@ -1,6 +1,7 @@
 {
  "chapter": 6,
  "part": "a",
+ "code": "e538fe4d579c",
  "first_frame": 1,
  "last_frame": 780,
  "frames": 780,
@@ -10,7 +11,7 @@
  "encode": "x264-medium-crf18-high42-yuv420p-g60cgop-bf2-bt709-tb15360-v1",
  "captions": 13,
  "file": "ch06_a.mp4",
- "sha256": "c31c64e4010dbda4bf0dfa8d926d1d81ef7c38fea56b7cf93d73b35afef7dc8d",
+ "sha256": "e2655a4250b3fc9fa32fd00b8e299d4a64d7649cc7395a4bdaf5fa57ed45654c",
  "probe": {
   "codec_name": "h264",
   "profile": "High",
