@@ -1,1 +1,3 @@
-STATUS: RENDERING @ 80a98e8b (re-render with fixed render.mjs)
+STATUS: DONE
+COMMIT: 80a98e8b
+RANGE: 826-1833
