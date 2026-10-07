@@ -54,3 +54,11 @@ Pending: snap_check, clip_check --sight, cam_check and the viewer test at a main
 K was cancelled (orchestrator, 15:34Z). The snap fixes are verified at 827699ba (above), and ch04 reports clip_check 0 high and cam_check clean there.
 
 **RECHECK: OK @ 827699ba**
+
+## Final pass (lean, per orchestrator 19:25Z)
+
+- Deliveries: ch04_a.mp4 (frames 1-825) and ch04_b.mp4 (826-1833), both 1920x1080. They decode to 825 + 1008 = 1833 frames, which matches FRAMES. Both .json files have the same render fingerprint (code abfd45546fc6), and their sha256 matches the mp4s. Both final statuses say COMMIT 827699ba, and ch04.js and web/lib are unchanged from 827699ba to the render head. The .json files don't store the git sha itself.
+- Seam: seam_check 806-846 shows pre-rolled vs warm differing on 0 frames at both starts; cold starts differ, as expected, which is why pre-roll is used. Visually, the last 3 frames of a and the first 3 of b are the same mcu_skye shot with the same caption and only the mouth animating: no pop.
+- 1 fps contact sheet of the whole chapter: nothing new. The cookie is set down, the hand-off is clean, Skye's end shot rests on the desk, and captions are present throughout.
+
+**FINAL: PASS**
