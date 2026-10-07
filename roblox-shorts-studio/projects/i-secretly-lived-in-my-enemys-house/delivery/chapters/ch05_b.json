@@ -1,7 +1,7 @@
 {
  "chapter": 5,
  "part": "b",
- "code": "ac1e6a7c52c7",
+ "code": "d0646470a6e4",
  "first_frame": 910,
  "last_frame": 2019,
  "frames": 1110,
@@ -11,7 +11,7 @@
  "encode": "x264-medium-crf18-high42-yuv420p-g60cgop-bf2-bt709-tb15360-v1",
  "captions": 20,
  "file": "ch05_b.mp4",
- "sha256": "abd36b1037229d989fc4158154f7de4eb667943abc2f6d326d2e61748c78b2a8",
+ "sha256": "89d2929f9312f428811972fc562309a0e2c59496f2bd9c18052ed66cf4b5fc5a",
  "probe": {
   "codec_name": "h264",
   "profile": "High",
