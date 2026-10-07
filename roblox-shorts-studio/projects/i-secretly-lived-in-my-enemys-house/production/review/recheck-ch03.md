@@ -39,3 +39,15 @@ Visual: the whole chapter at `--every 15`. Also 1335-1490 at every 5th frame, 17
 | 1-5, 7-10, I2, I8, I15 | as @ f33491e8 | still fixed; no regressions seen in the whole-chapter pass |
 
 New issues: none.
+
+## Gesture-snap scan @ 726592de (segment B, delivery ch03_b.mp4 907-2013)
+
+Method: decode at 480 px and take the per-frame mean |f - f-1|. Every spike that is not a cut was viewed as a frame pair or a 9-frame strip. The cuts (936, 945, 981, 1117, 1154, 1273, 1330, 1489, 1577, 1615, 1628, 1765, 1808, 1841, 1897) and the caption changes (1225, 1235, 1360) are fine. The knife stroke (1121-1126) moves fast but continuously. The fridge door closing at 921-924 and 1885-1888 is a quick 3-frame shut, which reads as a slam. All of these are OK.
+
+Snaps (each a **must**, fixed by easing over ~6 frames or starting the shot on the settled pose):
+- **S1** frames 1154-1156 (2:49.1): the shot opens with Max's hands resting on the island (plate and torch). At 1156 both arms drop to his sides in one frame. Fix: start the shot on the arms-down pose, or ease the drop.
+- **S2** frames 1330-1332 (2:54.9): the shot opens with Skye's arms held out from her body for 2 frames. At 1332 they snap down. Fix: start the shot on the settled pose.
+- **S3** frames 1691-1692 (3:06.9), Dad CU: his head turns from 3/4 (looking right) to frontal in one frame. Fix: ease the turn over ~6 frames.
+- **S4** frames 1762-1763 (3:09.3): the fridge door goes from nearly closed to wide open in one frame, and the fridge light floods in, 2 frames before the cut at 1765. Fix: ease the opening over ~6 frames, or open it after the cut.
+
+Segment A (1-906): rendering at --scale 0.25; scan to follow.
