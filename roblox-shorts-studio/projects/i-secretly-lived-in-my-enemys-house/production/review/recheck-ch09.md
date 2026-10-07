@@ -26,3 +26,24 @@ New issues:
   her; teddy visible in her hand. **must**
 - N3 frames 925-1105 (Skye CUs): Lily's yellow shoulder blob still in the bottom-left corner (#16 claimed fixed). **should**
 - N4 frames 191-340: R forearm still a large foreground block across the lower left. **should**
+
+## Re-check @ 34d5f66f
+Automated: clip_check 6 high + 1 medium, all Skye's arms vs MAX - OLD STUFF at 25.1-25.2 s and 49.7-50.0 s. Looked at
+f748-760 and f1487-1502: forearms pass over the wall top into the open box; agree these are AABB false positives of the
+rotated box. cam_check 0/0/0. Sightings = talk (nobody hides).
+
+| must | verdict |
+|---|---|
+| #5 put-back | fixed: kneels, drawing in both hands (f1487), hands into the box (1493-1496), drawing lying art-up on the contents as she lifts out (1502), level insert (1508-1516) |
+| #8 walk f716-730 | **not fixed**: from behind, f716-728 the camera-right upper arm is still horizontal out to the side at shoulder height, the other raised beside her head (two-arms-up shape, ~0.4 s) |
+| #9 Skye seated | fixed: sheet flat on the blankets in front, crossed legs read |
+| #15 last shot f1647-1792 | fixed: narrower sheet, hands on the top corners at chin height, eye holes at collar |
+| N1 glow sticks f265-340 | fixed: bundle in front at the lap/chest, arm bent inward |
+| N2 Lily in the sun shaft | fixed: medium is tighter, Lily and the shaft out of frame |
+
+New:
+- N5 frames 1576-1646 ("Yes." CU and the wider two-shot before the last shot): Skye holds the sheet at waist with both
+  arms spread horizontally to the sides at shoulder height (f1606-1636 reads as a T-pose with a sheet). Fix: same grip as
+  the last shot (hands on the corners, elbows down, sheet at chest), or the bunched sheet in one hand until the open.
+  **must**
+Shoulds left: rim glow on Skye's raised R arm f556-661; Lily's shoulder sliver in Skye's box CUs.
