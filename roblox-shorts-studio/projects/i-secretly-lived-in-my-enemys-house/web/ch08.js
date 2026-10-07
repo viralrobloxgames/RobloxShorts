@@ -136,6 +136,7 @@ function poseAt(actor, pose, at, heading, opts = {}) {
 }
 
 // note arm poses (degrees, kit gesture convention): bent up at the chest / raised to read / out and down to the door gap
+const ARM_IN_L = [-48, 0, -38], ARM_IN_R = [-44, 0, -38], LILY_LAP = { 'Arm.L': [-62, 0, 42], 'Arm.R': [-58, 0, -42] };
 const PHONE_TURN = 0.9, PHONE_ARM = [-28, 0, 124], EYE_WIPE = [-118, 0, 30];
 const NOTE_CHEST = [-70, 0, -22], NOTE_READ = [-96, 0, -28], NOTE_GAP = [-30, 0, 16], FIST_FRONT = [-34, 0, 8];
 
@@ -196,11 +197,11 @@ export function update(t, stage) {
     K.setBlockers(set.group);
     // Skye cross-legged in the nest, turned a little toward Lily
     poseAt(C.skye, 'sit_cross', M.nest(), -0.25);   // turned a little toward Lily (at her left)
-    K.gesture(C.skye, [-26, 0, -14], 'L');               // her near arm rests inward on her knee, clear of Lily
+    K.gesture(C.skye, ARM_IN_L, 'L');                // her left hand in on her knees, next to the note fist
     // her right fist with the crumpled note rests on her knee; one thump on "biggest"
     const big = (L.said('SKYE').find((w) => /biggest/i.test(w.word)) || { start: at(13, 1.5) }).start;
     const thump = Math.max(0, Math.sin(Math.PI * clamp((t - big + 0.15) / 0.4)));
-    K.gesture(C.skye, [-22 - 30 * thump, 0, -16], 'R');
+    K.gesture(C.skye, [ARM_IN_R[0] - 30 * thump, 0, ARM_IN_R[2]], 'R');
     // "It's dusty": the left hand comes up to wipe her eye (fist in front of the cheek, never into the head), then down
     const wipe = 0.9 * ramp(t, at(18, 0.15), at(18, 0.55)) * (1 - ramp(t, endOf(18, -0.6), endOf(18, -0.2)));
     if (wipe > 0) K.gesture(C.skye, EYE_WIPE, 'R', wipe);   // the far hand (the fist with the note), so it never crosses Lily
@@ -221,7 +222,7 @@ export function update(t, stage) {
     } else if (t < arrive) {
       K.walk(C.lily, A, top, side, walkT0, t);
     } else {
-      poseAt(C.lily, 'sit_cross', side, side.heading, { extra: { 'Arm.L': [-48, 0, 26], 'Arm.R': [-42, 0, -26] } });
+      poseAt(C.lily, 'sit_cross', side, side.heading, { extra: LILY_LAP });   // arms in around the teddy in her lap
     }
     K.holdTeddy(C.lily, t >= arrive ? 'hug' : 'L');
     const lf = t < at(8) ? 'scared' : t < at(10) ? 'surprised' : t < at(12) ? 'suspicious'
