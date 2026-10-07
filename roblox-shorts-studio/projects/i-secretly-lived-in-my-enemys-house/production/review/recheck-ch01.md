@@ -143,3 +143,14 @@ New, found by this scan (I missed both at 6b008a0d because I took them for capti
 - Checked and fine: 1304, 1723-1828 (face/mouth changes only), 709/715, 1106-1109 (small, eased).
 
 Verdict: **MUSTS** (G11, G12).
+
+## Re-check @ 38a96332 (G11, G12)
+Diff from f827e63e: ch01.js 11 lines (the closet turn and Skye's hand), plus a clip_check page helper (tooling only). clip_check, sight and cam_check are identical to f827e63e. I rendered frames 280-380 at every frame and snap-scanned them: the only spikes are the 4 cuts (302, 318, 367, 378).
+
+| must | status | note |
+|---|---|---|
+| G11 Max's 180° turn 308-309 | fixed | turns in place over ~10 frames (304-314), flashlight arm lowers, then he walks |
+| G12 Skye's hand 353-354 | fixed | the hand eases down from her mouth over ~16 frames (345-361) |
+| all earlier musts (incl. G1-G10, bed, hook) | still fixed | the rest of the clip is unchanged since f827e63e (full scan there) |
+
+Verdict: **OK**.
