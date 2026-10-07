@@ -109,3 +109,19 @@ Method: the whole chapter from the shot cameras at every 3rd frame, plus eye-lin
 - **frames 1201-1332, must.** Skye walks upright out of the pantry, across the open kitchen floor, along the island front and past the stair foot to the back door: 4.4 s in the open. The eye-line renders show a clear line of sight from Max, Lily and Dad the whole way (f1204-1330). In `dad_syrup` (f1192-1266) the camera sits behind Dad's head looking at the kids, and Skye walks right behind them, exactly in Dad's eyeline while he talks to them. Viewers will think "Dad would see her". It is the same problem the user rejected (hiding in plain sight), now as a walk. Fix: no on-screen walk across the room while the family is there. For example, she stays in the pantry and slips out only after the family has left the kitchen (Dad: "…cupboard", the kids and Dad go out to the hall or school, then cut outside). Or she leaves by a route with a solid wall between her and every family member: a door from the pantry or beside it, never across the open floor in anyone's view.
 
 Everything else from the earlier rounds is unchanged and still fixed.
+
+### Gesture-snap scan @ 07d9417c (added after the verdict above, per the updated brief)
+
+Method: every frame rendered at 0.25 scale. Mean frame-to-frame difference over the picture area, excluding the caption band. Spikes above 3x the local median, cuts excluded. I viewed each spike as a pair of frames. Every one of these is a one-frame jump inside a shot, so each is a **must**; the fix is to ease it over ~6 frames:
+- f92-93 (hall_creep): Skye spins from her back to her front in one frame.
+- f279-280 (dad_morning): Dad turns from the stove to face the room in one frame.
+- f552-553 (max_dad): Dad turns from the room back to the stove in one frame.
+- f722-723 and f761-762 (lily_ghost, Dad behind Lily): Dad turns to the stove, then back to the room, each in one frame.
+- f767-768 and f796-797 (dad_ghost): the pan arm jumps from down to forward with the pan, then back down, each in one frame.
+- f805-806 (max_notfunny, Dad behind Max): Dad turns away in one frame.
+- f866-867 (peek): both pantry doors jump from the narrow gap to wide open in one frame.
+- f914-915 (dad_count): Max's head at the right edge turns away in one frame.
+- f920-921 (dad_count): Dad turns from the pan to the room, with the spatula arm up, in one frame.
+- f1008-1009 and f1010-1011 (lily_ghost2, Dad behind Lily): the spatula arm jumps up, then back down, in one frame each.
+- f1036-1037 (max_lily): Max and Lily both turn their heads in one frame.
+The common causes look like turns that set the heading directly (Dad's stove/room facing, the kids' turn-round on the stools) and gesture weights stepping 0 -> 1. Easing every facing or heading change and every gesture weight with smooth() over ~0.2 s would fix the whole class.
