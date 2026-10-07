@@ -7,7 +7,7 @@
  "min_depth": 0.06,
  "onscreen_only": true,
  "film_start_s": 63.7,
- "seconds": 72.5,
+ "seconds": 72.2,
  "summary": [
   {
    "actor": "dad",
@@ -1278,6 +1278,19 @@
   },
   {
    "actor": "skye",
+   "part": "Arm.L",
+   "object": "cyl 1.5x0.1x1.5 @set_kitchen(0.6,4.1,1.1)",
+   "from": 881,
+   "to": 881,
+   "depth": 0.1,
+   "cover": 0,
+   "samples": 1,
+   "t": "29.33-29.33s",
+   "film": "1:33.0",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
    "part": "Leg.R",
    "object": "box 5.1x0.1x0.9 @set_kitchen(13.5,1.5,0.8)",
    "from": 181,
@@ -1313,6 +1326,32 @@
    "samples": 1,
    "t": "6.00-6.00s",
    "film": "1:09.7",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Arm.L",
+   "object": "cyl 1.6x0.1x1.6 @set_kitchen(0.6,3.9,1.1)",
+   "from": 881,
+   "to": 881,
+   "depth": 0.08,
+   "cover": 0,
+   "samples": 1,
+   "t": "29.33-29.33s",
+   "film": "1:33.0",
+   "kind": "scenery"
+  },
+  {
+   "actor": "skye",
+   "part": "Arm.L",
+   "object": "cyl 1.5x0.1x1.5 @set_kitchen(0.6,4.4,1.1)",
+   "from": 881,
+   "to": 881,
+   "depth": 0.07,
+   "cover": 0,
+   "samples": 1,
+   "t": "29.33-29.33s",
+   "film": "1:33.0",
    "kind": "scenery"
   },
   {

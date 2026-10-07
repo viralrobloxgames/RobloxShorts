@@ -47,3 +47,46 @@ New and remaining issues:
 - **N8 frames 496-552, must (A5).** See A5. Either Dad turns from the stove to Max for line 4, or Max is 3/4 toward Dad and not toward the lens.
 - N9 frames 97-136, should. In the hall creep both of Skye's arms are flared stiffly out from her body. Fix: arms closer in, one hand forward (sneak).
 - N10 frames 460-495, should. Max is barely on screen during his own line (B3).
+
+## Re-check @ 72fff376
+
+Automated checks: cam_check found 0 glides, 0 cameras inside scenery and 0 at a head. clip_check found 4 high hits, all Dad's spatula hand 2% into the stove top (accepted). Max's arm against the stair wall is now medium, 0.2 deep, and not visible in the render. The sight check shows the same brief stair glimpses as before plus the meant classroom moment (accepted). I viewed the whole chapter.
+
+| item | verdict | notes |
+|---|---|---|
+| N1 (user 1:18) Max inside the stair-side wall | fixed | f427-459: his body is whole beside the wall |
+| N2 whisper-shot hide pose | fixed | f346-426: upright low crouch, head level |
+| N3 airplane arms on the stairs | fixed | the near hand is low; the far hand trails at the wall (acceptable) |
+| N4 ladder | fixed | she is now on the ladder face |
+| N5 steal | **not fixed** | see below |
+| N6 (user 1:47) exterior hand and pancake | fixed for the hold | the block no longer covers her face; the pancake sits at the end of her hand beside her chin. Should: there is no visible bite on "Ever" (f1400-1415), only a small head dip |
+| N7 Max smiling on scared or annoyed lines | fixed | flat mouth at f811/841/1876, "o" at f1546, teeth on "alert" |
+| N8 Dad turned to Max for line 4 | fixed | f463-535 Dad faces the kids |
+| N9 hall-creep arms (should) | improved | |
+| N10 Max barely on screen during his line (should) | not changed | |
+
+Must left:
+- **frames 887-896, the steal, must.** The stolen pancake lifts off the stack and floats in mid-air beside and above Skye's head for about 0.2 s (f890-893), touching nothing. Her hand block is behind the stack, not under the pancake. Then the pancake disappears behind the stack (f896). It reads as a floating prop, the exact thing the user rejected at 1:47. Fix: her hand on the top pancake in front of the stack (camera side) from T.steal, and the pancake parented to that hand from the first frame it moves, sliding it straight off toward her below the stack top. No free lerp to the "edge" point, which from this camera sits in the air above her head.
+
+Note for the orchestrator: this commit changes the shared kit `web/kit/cast.js` `speak()`. Non-bright faces now alternate base/`mouth_o` instead of `mouth_small`, and 'surprised' and 'neutral' were removed from BRIGHT. This changes lip-sync in every chapter, not just ch02.
+
+## Re-check @ 05362a98
+
+The only change since 72fff376 is ch02.js (the steal camera and pose, and the exterior arm raise). cam_check is clean. clip_check has one new high hit: Skye's torso and arms in the island top, 29.1-29.5 s. She leans over the counter with her chin at the edge, the counter hides the overlap, and in the render it reads as leaning on it, so I accept it. The sight check is unchanged. I viewed f871-901 and f1396-1414 at every 3rd frame.
+
+| item | verdict | notes |
+|---|---|---|
+| steal (round-2 must) | fixed | f886-895: her hand is on the top pancake, which rides on her palm as she draws it back; it never floats free |
+| exterior bite on "Ever" (round-2 should) | **regressed, must** | see below |
+
+- **frames 1400-1415, must (C1, user 1:47, regression).** The new `chin_hand` raise (0.72 + 0.2*up) lifts the big hand block over her nose and mouth again, with the pancake as a flat disc across the block's face (f1402, f1405, f1411). This is the exact image the user rejected. Fix: keep the hand at 0.72, beside her chin, and get the bite by dipping her head to the pancake (Head x rotation, as in 72fff376), or by moving the pancake (not the hand block) to her mouth. Nothing may pass in front of her face.
+
+## Re-check @ 521a2b9e
+
+This commit only changes the steal lean and hand. The steal is fixed: f874-898, the pancake rides on her palm and her torso is clear of the counter top. The exterior must from 05362a98 is **not fixed** (that code is unchanged): at f1405 the hand block still covers her nose and mouth, with the pancake as a disc on the block's face. That stays a must.
+
+## Re-check @ 2d6fc591
+
+The only change is the exterior chin_hand, back to 0.72. At f1340-1414 the hand stays beside her chin, her face is never covered, and the bite is a head dip. cam_check is clean. Every must from critic-7, the user's list (1:18, 1:19, 1:40, 1:45, 1:47, 1:53) and my rounds 1-3 is fixed. Shoulds left: no full bite on "Ever"; Max is barely on screen at f460-495.
+
+**RECHECK: OK @ 2d6fc591**

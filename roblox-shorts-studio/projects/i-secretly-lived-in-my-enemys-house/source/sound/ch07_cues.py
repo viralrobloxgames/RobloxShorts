@@ -16,10 +16,11 @@ else:
 at = lambda i, off=0: by[i]['start'] + off
 end = lambda i, off=0: by[i]['end'] + off
 # key times: keep in step with times() in web/ch07.js
-T = dict(lidLift=at(1, 3.6), goDecor=at(4, 0.45), jam=end(4, 0.95), dadRise=end(5, 0.05), dadOut=at(6, 0.7), dadWalk1=at(9, 0.3),
-         dadWalk2=at(11, 1.5), nozzle=at(16, 1.6), hum=end(16, 0.15), humOff=at(17, 0.05), dadGo=end(18, -0.5),
-         dadDown=end(18, 0.25), maxUp=end(18, 0.55), maxOut=at(19, -0.45), fix=at(19, 1.6), maxGo=end(20, 0.05),
-         maxDown=end(20, 1.65), lilyCome=at(21, -0.2), lilyBack=end(5))
+T = dict(lidLift=at(1, 3.6), goDecor=at(4, 0.45), jam=end(4, 1.15), dadRise=end(5, 0.05), dadOut=at(6, 0.7), dadWalk1=at(9, 0.3),
+         dadWalk2=at(11, 3.08), nozzle=at(16, 1.48), hum=end(16, 0.15), humOff=at(17, 0.05), dadGo=at(18, 0.5),
+         maxOut=at(19, 0.6), fix=at(19, 1.71), maxGo=end(20, 0.05), lilyCome=at(21, -0.2), lilyBack=end(5))
+T.update(dadDown=T['dadGo'] + 1.4, maxDown=T['maxGo'] + 1.35)
+T['maxUp'] = T['dadDown'] + 0.85
 LENGTH = max(x['end'] for x in by.values()) + 0.75
 
 cues = []
@@ -43,7 +44,7 @@ cue('room_hum', T['hum'], 0.55, dur=round(T['humOff'] - T['hum'] + 0.08, 3))
 cue('torch_click', T['humOff'], 0.22)                            # ...and off when Max shouts
 steps(T['dadGo'], T['dadGo'] + 0.7, 0.2, 0.08)                 # Dad to the hatch and down
 steps(T['dadDown'], T['maxUp'], 0.3, 0.07)
-steps(T['maxUp'], T['maxUp'] + 0.5, 0.3, 0.07)                   # Max up
+steps(T['maxUp'], T['maxUp'] + 0.5, 0.3, 0.07)                   # Max up (then the long look)
 steps(T['maxOut'], T['maxOut'] + 0.95, 0.35, 0.07)
 cue('swish_1', T['fix'] - 0.1, 0.07)                             # he straightens the pumpkin
 steps(T['maxGo'], T['maxGo'] + 0.95, 0.35, 0.07)                 # Max back to the hatch and down
