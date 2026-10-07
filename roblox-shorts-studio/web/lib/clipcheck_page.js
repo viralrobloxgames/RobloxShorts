@@ -131,7 +131,7 @@ function satDepth(A, B) {
 export function checkFrame(frame, { minDepth = 0.06 } = {}) {
   const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
   const t = (frame - 1) / meta.fps;
-  clip.update(t, stage);
+  (window.clipUpdate || clip.update)(t, stage);
   stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
   stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
   const cam = stage.camera, frustum = new THREE.Frustum().setFromProjectionMatrix(_m.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse));
@@ -184,7 +184,7 @@ export function checkFrame(frame, { minDepth = 0.06 } = {}) {
 // nearest character's head (a camera inside or right at a head shows a wall of face).
 export function checkCamera(frame) {
   const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
-  clip.update((frame - 1) / meta.fps, stage);
+  (window.clipUpdate || clip.update)((frame - 1) / meta.fps, stage);
   stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
   stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
   const cam = stage.camera, p = cam.getWorldPosition(new THREE.Vector3()), target = new THREE.Vector3();
@@ -205,7 +205,7 @@ export function checkCamera(frame) {
 // degrees around where his head faces) and nothing solid in between (scenery or another character). [{ seeker, sees, part, dist, angle }]
 export function checkSight(frame, hider, seekers, { fov = 110 } = {}) {
   const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
-  clip.update((frame - 1) / meta.fps, stage);
+  (window.clipUpdate || clip.update)((frame - 1) / meta.fps, stage);
   stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
   stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
   const parts = bodyParts(stage.scene), roots = new Set(packActors.map((a) => a.root));
@@ -237,7 +237,7 @@ export function checkSight(frame, hider, seekers, { fov = 110 } = {}) {
 const SNAP_BONES = ['Torso', 'Head', 'Arm.L', 'Arm.R', 'Leg.L', 'Leg.R'];
 export function snapState(frame) {
   const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
-  clip.update((frame - 1) / meta.fps, stage);
+  (window.clipUpdate || clip.update)((frame - 1) / meta.fps, stage);
   stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
   stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
   const cam = stage.camera, cp = cam.getWorldPosition(new THREE.Vector3()), cd = cam.getWorldDirection(new THREE.Vector3());
