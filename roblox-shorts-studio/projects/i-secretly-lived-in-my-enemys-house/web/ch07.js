@@ -76,10 +76,10 @@ const faceHer = (m, cheat = 0) => {
 // the pair camera: square to the line between her and her partner, on her front side, so she and a partner at her
 // front diagonal both read 3/4 (Max and Lily at her front-left: camera on the open -x side; Dad at her front-right:
 // camera on the witch side)
-function pairCamPos(near, dist = 6.0) {
+function pairCamPos(near, dist = 6.0, zb = 0.15) {   // zb: swing toward her front (+) or the partner's front (-)
   const p = M.pose().pos, ab = near.clone().sub(p); ab.y = 0;
   const n = V(ab.z, 0, -ab.x).normalize(); if (n.z < 0) n.negate();
-  n.add(V(0, 0, 0.15)).normalize();
+  n.add(V(0, 0, zb)).normalize();
   return p.clone().lerp(near, 0.5).add(n.multiplyScalar(dist));
 }
 // Partners stand at her front diagonals (~3 studs, clear of her hands): Dad at her front-right (the open side), Max and
@@ -88,7 +88,7 @@ function pairCamPos(near, dist = 6.0) {
 const S = {                                                         // spots around her
   inspect: () => faceHer(off(M.pose(), 2.6, -2.6)),                 // Dad square to her; leans in nose to nose
   hoover: () => faceHer(off(M.pose(), 3.0, -3.0), 0.2),            // backed off along the diagonal: the nozzle stops short of her face
-  maxFront: () => faceHer(off(M.pose(), 1.75, 0.25)),               // Max square in front of her, close enough to reach the bucket
+  maxFront: () => faceHer(off(M.pose(), 2.0, 0.8)),                  // Max at her front-left, inside her hand, close enough to reach the bucket
   maxBack: () => faceHer(off(M.pose(), 2.9, 1.6), 0.5),             // stepped back to her front-left (decor_max), clear of her hand
   lilyJam: () => faceHer(off(M.pose(), 2.15, -0.1)),                // square in front of her, hops to reach her head
   lilyWait: () => faceHer(off(M.pose(), 2.6, -3.4)),                // waiting, clear of her path, her arms and the skeleton
@@ -236,8 +236,8 @@ function poseLily(t, idle) {
   };
   if (t < T.lilyUp) { sitFloor(l, tl, tl.heading, 'kneel'); headTurn(l, headTo(l, W(4.5, 9.0), 0.8) * sm(T.rattle + 0.1, T.rattle + 0.35, t)); return; }
   if (t < T.lilyGo) {                                   // "Quick! Be a decoration!": side-on, pointing across at the decorations
-    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: 0.9 });     // side-on to the camera
-    K.gesture(l, [-35, 0, -80], 'L', sm(at(3), at(3, 0.25), t));                         // her left arm out sideways at the decorations (one arm)
+    K.playAnim(l, [[A.idle, idle]]); K.putOn(l, { pos: stand.pos, heading: 1.1 });     // side-on to the camera, facing the decorations
+    K.gesture(l, 'point', 'L', sm(at(3), at(3, 0.25), t));                              // points across frame at the decorations (her free arm; the teddy is in her right)
     return;
   }
   if (t < T.lilyBack) {
@@ -254,8 +254,7 @@ function poseLily(t, idle) {
       if (t < T.jam + 0.15) K.gesture(l, 'reach_up', 'L');
       return;
     }
-    const lo = S.lilyOrders(), ok = backStep(l, S.lilyJam(), lo, T.lilyStep, t, lerp(S.lilyJam().heading, lo.heading, sm(T.lilyStep, T.lilyStep + 0.4, t)));
-    if (ok) K.gesture(l, 'finger_up', 'L', sm(at(5, 2.0), at(5, 2.3), t) * (1 - sm(end(5, -0.3), end(5), t)));
+    const lo = S.lilyOrders(); backStep(l, S.lilyJam(), lo, T.lilyStep, t, lerp(S.lilyJam().heading, lo.heading, sm(T.lilyStep, T.lilyStep + 0.4, t)));
     return;
   }
   if (t < T.lilyCome) {                                 // back at the tea party (runs across, wide of the lens)
@@ -290,7 +289,7 @@ function poseDad(t, idle) {
       const skel = set.items.skeleton.getWorldPosition(V()), wit = set.items.witch.getWorldPosition(V());
       const dn = DAD_NEAR(), hs = towards(dn, { pos: skel }), hw = towards(dn, { pos: wit });
       const h0 = towards(dn, M.teaLily()) + 0.6, k1 = sm(T.skel - 0.3, T.skel, t), k2 = sm(T.witch - 0.15, T.witch + 0.15, t);
-      K.playAnim(d, [[A.idle, idle]]); K.putOn(d, { pos: dn.pos, heading: lerp(lerp(h0, hs, k1), hw, k2) });
+      K.playAnim(d, [[A.idle, idle]]); K.putOn(d, { pos: dn.pos, heading: lerp(lerp(h0, lerp(h0, hs, 0.5), k1), lerp(h0, hw, 0.5), k2) });   // half turns: his face stays to the camera
       K.gesture(d, 'point', 'L', sm(T.skel - 0.15, T.skel + 0.1, t) * (1 - sm(T.girl - 1.2, T.girl - 0.95, t)));
       return;
     }
@@ -325,7 +324,7 @@ function poseMax(t, idle) {
   const x = C.max, climb = M.climb();
   if (t < T.maxUp) { x.root.visible = false; return; }
   if (t < T.maxOut) {                                   // up the ladder to head and shoulders, then the long look at her
-    const k = 0.62 * sm(T.maxUp, T.maxUp + 0.5, t);
+    const k = 0.8 * sm(T.maxUp, T.maxUp + 0.5, t);    // up to his waist: the lit hole stays below his hoodie
     climbAt(x, climb, towards(climb, M.pose()), k);
     if (t > T.maxUp + 0.5) K.posture(x, 'stand', { reset: false, extra: { 'Arm.L': [-60, 0, -6], 'Arm.R': [-60, 0, 6] } });   // hands on the hatch rim
     return;
@@ -334,9 +333,10 @@ function poseMax(t, idle) {
   if (t < T.maxGo) {
     if (t < T.maxBack) {
       const m = walkPath(x, [climb, pt(5.6, 4.0), mf], T.maxOut, t, { idleAt: idle, endHeading: mf.heading });
+      K.gesture(x, [6, 0, -4], 'R', sm(T.maxOut + 0.5, T.maxOut + 0.9, t));   // near arm held in as he comes up beside her hand
       if (!m.done) return;
       const fx = sm(T.fix - 0.3, T.fix, t) * (1 - sm(T.fix + 0.45, T.fix + 0.7, t));
-      if (fx > 0) K.gesture(x, [-147, 0, 8], 'L', fx);  // his right hand up on the bucket, turning it level
+      if (fx > 0) K.gesture(x, [-147, 0, 8], 'L', fx);  // his left hand up on the bucket, turning it level
       return;
     }
     backStep(x, mf, mb, T.maxBack, t, mf.heading);
@@ -359,7 +359,7 @@ function placeProps(t) {
   const shut = sm(T.grab + 0.05, T.grab + 0.3, t);
   K.setState({ chapter: 7, hatch: lid, halloween: 1 - shut, pumpkin: t < T.grab ? 'box' : 'none', vacuum: false, hide: ['teddy_right', ...(lilyCup ? ['cup_2'] : [])] });
   // the hatch light: softer while someone climbs through it (no neon bloom on the hoodies)
-  const hg = set.lights?.hatchGlow; if (hg && hg.intensity > 0) hg.intensity *= 0.35;
+  const hg = set.lights?.hatchGlow; if (hg && hg.intensity > 0) hg.intensity *= (t > T.maxUp - 0.2 && t < T.maxOut + 0.6) ? 0 : 0.18;   // no green bloom on Max's hoodie
   // Lily's cup (her own, from the box) while she kneels at the tea party
   P.cup.visible = lilyCup;
   if (lilyCup) K.hold(P.cup, C.lily, 'L', 'palm');
@@ -385,7 +385,7 @@ function placeProps(t) {
   }
   if (t >= T.dadOut && t < T.dadDown - 0.45) {
     const nz = sm(T.nozzle, T.nozzle + 0.6, t) * (1 - sm(T.humOff + 0.2, T.humOff + 0.6, t));
-    if (nz > 0.05) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye) });
+    if (nz > 0.05) K.hold(wand, C.dad, 'R', 'palm', { aim: K.headPos(C.skye).add(V(0, 0.35, 0)) });
     else {                                              // held like a real wand: angled down, nozzle on the boards ahead of him
       const fl = d.position.clone().addScaledVector(fwd, 0.5).addScaledVector(left, -1.3); fl.y = 0.15;   // down at his right side, clear of her
       K.hold(wand, C.dad, 'R', 'palm', { aim: fl });
@@ -395,13 +395,14 @@ function placeProps(t) {
 
 // ---------- cameras ----------
 // the two-shot on Skye and whoever stands in front of her, from the -x side, square to the pair (both faces cheated 3/4)
-function pairShot(s, other, { dist = 6.0, up = 0.25, fov = 36, bias = 0.5, spot = null } = {}) {
+function pairShot(s, other, { dist = 6.0, up = 0.25, fov = 36, bias = 0.5, spot = null, zb = 0.15 } = {}) {
   const a = K.headPos(C.skye), b = K.headPos(other), mid = a.clone().lerp(b, bias);
-  const c = pairCamPos((spot ? spot() : other.root).pos ?? other.root.position, dist); c.y = mid.y + up;   // placed from the partner's mark, so it holds still while they walk
+  const c = pairCamPos((spot ? spot() : other.root).pos ?? other.root.position, dist, zb); c.y = mid.y + up;   // placed from the partner's mark, so it holds still while they walk
   return K.setCam(s, { pos: c, target: mid.clone().add(V(0, -0.35, 0)), fov });
 }
 const HATCH_CAM = (s) => K.setCam(s, { pos: W(-2.6, 0.6, 5.8), target: W(4.3, 7.4, 2.8), fov: 44 });
 const HATCH_SIDE = (s) => K.setCam(s, { pos: W(0.6, 8.0, 5.4), target: W(4.6, 0.6, 4.0), fov: 44 });   // from beside the hatch, back at the room
+const DAD_ROW = (s) => K.setCam(s, { pos: W(-3.6, 6.0, 5.4), target: W(4.4, -1.0, 3.0), fov: 46 });   // Dad by the tea box side, the row behind him
 const LILY_TEA = (s) => K.setCam(s, { pos: W(-4.8, 8.6, 3.8), target: W(-1.5, 3.9, 2.0), fov: 40 });
 const OPEN = (s) => K.setCam(s, { pos: W(-7.6, 12.2, 5.8), target: W(2.8, 0.6, 1.4), fov: 52 });
 const SHOTS = [
@@ -409,25 +410,26 @@ const SHOTS = [
   { line: 2, off: 0, id: 'hide', cam: (s) => K.setCam(s, { pos: W(-3.3, 11.2, 4.8), target: W(-3.2, 4.2, 3.0), fov: 46 }) },
   { line: 3, off: 0, id: 'lily_quick', cam: (s) => K.setCam(s, { pos: W(-1.4, 10.4, 4.0), target: W(-0.8, 5.0, 2.8), fov: 38 }) },
   { line: 4, off: 0, id: 'skye_what', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.3 }) },
-  { line: 4, off: 0.6, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(10.6, 6.0, 5.0), target: W(5.2, -2.4, 3.0), fov: 48 }) },   // from the witch side, she runs in from frame left
-  { line: 5, off: 0, id: 'lily_orders', cam: (s) => pairShot(s, C.lily, { dist: 6.4, fov: 40, spot: S.lilyOrders }) },
+  { line: 4, off: 0.6, id: 'decor_jam', cam: (s) => K.setCam(s, { pos: W(7.0, 6.5, 5.2), target: W(5.4, -2.6, 3.0), fov: 46 }) },   // from the witch side, she runs in from frame left
+  { line: 5, off: 1.0, id: 'lily_orders', cam: (s) => pairShot(s, C.lily, { dist: 6.4, fov: 40, spot: S.lilyOrders }) },
   { line: 6, off: -0.85, id: 'back_wide', cam: OPEN },
   { line: 6, off: 0.15, id: 'dad_rises', cam: HATCH_CAM },
   { line: 7, off: 0, id: 'dad_lily', cam: (s) => K.camOn(s, C.dad, 'ms', { angle: -0.4 }) },
   { line: 8, off: 0, id: 'lily_tea', cam: LILY_TEA },
-  { line: 9, off: 0, id: 'dad_halloween', cam: (s) => K.setCam(s, { pos: W(-3.6, 6.0, 5.4), target: W(4.4, -1.0, 3.0), fov: 46 }) },
+  { line: 9, off: 0, id: 'dad_halloween', cam: DAD_ROW },
   { line: 10, off: 0, id: 'lily_plan', cam: LILY_TEA },
-  { line: 11, off: 0, id: 'row', cam: (s) => pairShot(s, C.dad, { dist: 10.5, fov: 46, up: 0.6, spot: S.inspect }) },   // the row and Dad walking up to her
-  { line: 12, off: 0, id: 'two_hmm', cam: (s) => pairShot(s, C.dad, { spot: S.inspect }) },
-  { line: 13, off: -0.8, id: 'nose', cam: (s) => pairShot(s, C.dad, { dist: 6.5, fov: 24, spot: S.inspect }) },
-  { line: 14, off: 0, id: 'dad_asks', cam: (s) => pairShot(s, C.dad, { spot: S.inspect }) },
+  { line: 11, off: 0, id: 'row', cam: DAD_ROW },   // Dad points out the row, then walks up to her
+  { line: 11, off: 3.6, id: 'two_girl', cam: (s) => pairShot(s, C.dad, { spot: S.inspect, zb: -0.3 }) },   // cut round as he stops in front of her
+  { line: 12, off: 0, id: 'two_hmm', cam: (s) => pairShot(s, C.dad, { spot: S.inspect , zb: -0.3}) },
+  { line: 13, off: -0.8, id: 'nose', cam: (s) => pairShot(s, C.dad, { dist: 6.5, fov: 24, spot: S.inspect , zb: -0.3}) },
+  { line: 14, off: 0, id: 'dad_asks', cam: (s) => pairShot(s, C.dad, { spot: S.inspect , zb: -0.3}) },
   { line: 15, off: 0, id: 'lily_festive', cam: LILY_TEA },
-  { line: 16, off: 0, id: 'hoover', cam: (s) => pairShot(s, C.dad, { dist: 7.5, fov: 40, spot: S.hoover }) },
-  { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => pairShot(s, C.dad, { dist: 4.6, fov: 30, bias: 0.15, spot: S.hoover }) },
-  { line: 17, off: 0, id: 'max_off', cam: (s) => pairShot(s, C.dad, { dist: 7.5, fov: 40, spot: S.hoover }) },
+  { line: 16, off: 0, id: 'hoover', cam: (s) => pairShot(s, C.dad, { dist: 7.5, fov: 40, spot: S.hoover , zb: -0.3}) },
+  { line: 16, off: 2.4, id: 'nozzle_cu', cam: (s) => pairShot(s, C.dad, { dist: 4.6, fov: 30, bias: 0.15, spot: S.hoover , zb: -0.3}) },
+  { line: 17, off: 0, id: 'max_off', cam: (s) => pairShot(s, C.dad, { dist: 7.5, fov: 40, spot: S.hoover , zb: -0.3}) },
   { line: 18, off: 0, id: 'dad_leaves', cam: HATCH_SIDE },
   { line: 18, off: 1.2, id: 'dad_down', cam: HATCH_CAM },
-  { line: 19, off: 0.7, id: 'max_fix', cam: (s) => pairShot(s, C.max, { dist: 5.6, fov: 36, spot: S.maxBack }) },
+  { line: 19, off: 0.7, id: 'max_fix', cam: (s) => pairShot(s, C.max, { dist: 5.6, fov: 36, bias: 0.3, spot: S.maxFront }) },
   { line: 20, off: 0, id: 'max_dinner', cam: (s) => pairShot(s, C.max, { dist: 5.8, fov: 38, spot: S.maxBack }) },
   { line: 21, off: 0, id: 'skye_hoovered', cam: (s) => K.camOn(s, C.skye, 'mcu', { angle: -0.25, fov: 36, look: V(0, 0.35, 0) }) },
   { line: 22, off: 0, id: 'end_two', cam: (s) => pairShot(s, C.lily, { dist: 6.4, fov: 44, up: -0.2, bias: 0.4, spot: S.lilyEnd }) },
