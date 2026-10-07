@@ -84,3 +84,9 @@ The only change since 72fff376 is ch02.js (the steal camera and pose, and the ex
 ## Re-check @ 521a2b9e
 
 This commit only changes the steal lean and hand. The steal is fixed: f874-898, the pancake rides on her palm and her torso is clear of the counter top. The exterior must from 05362a98 is **not fixed** (that code is unchanged): at f1405 the hand block still covers her nose and mouth, with the pancake as a disc on the block's face. That stays a must.
+
+## Re-check @ 2d6fc591
+
+The only change is the exterior chin_hand, back to 0.72. At f1340-1414 the hand stays beside her chin, her face is never covered, and the bite is a head dip. cam_check is clean. Every must from critic-7, the user's list (1:18, 1:19, 1:40, 1:45, 1:47, 1:53) and my rounds 1-3 is fixed. Shoulds left: no full bite on "Ever"; Max is barely on screen at f460-495.
+
+**RECHECK: OK @ 2d6fc591**
