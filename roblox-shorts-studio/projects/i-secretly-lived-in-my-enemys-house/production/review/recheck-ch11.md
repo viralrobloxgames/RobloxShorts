@@ -66,3 +66,12 @@ The diff from a9896716 touches only Skye's walk-off in `ch11.js` (shared lib, ki
 No new issues.
 
 **RECHECK: OK @ a248aa3d**
+
+## Final pass (lean, per the orchestrator: usage limit nearly spent)
+
+- Source: `final-ch11-a` (f1-943) and `final-ch11-b` (f944-2095) both say STATUS: DONE at COMMIT a248aa3d, and both mp4 JSON files carry the same code fingerprint (991304b368c6). `ch11.js` on main is unchanged since a248aa3d.
+- `seam_check`: for part a, every cold start (1, 237, 473, 709) has 0 differing frames. For part b, the 944 start has 0; the worker starts at 1232, 1520 and 1808 differ cold and with a 300-frame pre-roll, but show 0 with a full pre-roll from frame 1. That full pre-roll is what render.mjs on main does by default, and part b was rendered with it.
+- Seam at f944 in the delivered files: frame-to-frame differences over f935-952 stay at 0.19-1.04 (gray mean), a continuous shot with no pop.
+- 1 fps contact sheet of ch11_a + ch11_b: every shot, caption and the end screen are present. R-a, R-b and the snap fixes read as checked at a248aa3d, and nothing new shows.
+
+**FINAL: PASS**
