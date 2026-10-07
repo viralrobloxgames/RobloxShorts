@@ -50,4 +50,7 @@ Snaps (each a **must**, fixed by easing over ~6 frames or starting the shot on t
 - **S3** frames 1691-1692 (3:06.9), Dad CU: his head turns from 3/4 (looking right) to frontal in one frame. Fix: ease the turn over ~6 frames.
 - **S4** frames 1762-1763 (3:09.3): the fridge door goes from nearly closed to wide open in one frame, and the fridge light floods in, 2 frames before the cut at 1765. Fix: ease the opening over ~6 frames, or open it after the cut.
 
-Segment A (1-906): rendering at --scale 0.25; scan to follow.
+Segment A (1-906, rendered at --scale 0.25 @ 726592de, same method): the cuts (143, 211, 272, 326, 380, 452, 659, 749, 896), the caption fade at 56-57 and the stair walk (343) are fine. The arm rise at 751-756 is gradual, so it is fine too.
+- **S5** frames 452-453 (2:15.6): a 2-frame shot (a tighter Max at the fridge) between the cuts at 452 and 454 reads as a flash/jump cut. Fix: drop it, so the shot at 454 starts at 452, or hold it for at least ~12 frames.
+- **S6** frames 522-523 (2:17.9), Max at the fridge: his head turns from looking at the fridge to frontal in one frame. Fix: ease the turn over ~6 frames.
+- **S7** frames 769-770 (2:26.2), Max CU: his R arm (screen left) drops from raised-outward to his side in one frame. Fix: ease it over ~6 frames.
