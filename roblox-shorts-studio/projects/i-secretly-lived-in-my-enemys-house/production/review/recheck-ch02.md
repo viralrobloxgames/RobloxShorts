@@ -125,3 +125,21 @@ Method: every frame rendered at 0.25 scale. Mean frame-to-frame difference over 
 - f1008-1009 and f1010-1011 (lily_ghost2, Dad behind Lily): the spatula arm jumps up, then back down, in one frame each.
 - f1036-1037 (max_lily): Max and Lily both turn their heads in one frame.
 The common causes look like turns that set the heading directly (Dad's stove/room facing, the kids' turn-round on the stools) and gesture weights stepping 0 -> 1. Easing every facing or heading change and every gesture weight with smooth() over ~0.2 s would fix the whole class.
+
+## Re-check @ c99847e2 (exit restaged, snaps eased)
+
+Automated checks: cam_check found 0 glides, 0 cameras inside scenery and 0 at a head. The sight check shows only the meant classroom look. clip_check has 9 high hits, all Dad's arms at the stove inside the cabinet or counter-top boxes (up to 22% cover). At full resolution these are hidden by the island in the wide shot and fall below the frame in his MS, so I accept them. Gesture-snap scan (every frame at 0.25): no one-frame jumps left inside shots. The 13 from 07d9417c are gone.
+
+| item | verdict | notes |
+|---|---|---|
+| exit walk in plain sight (must) | fixed | f1106-1337: Lily, Max and then Dad leave by the living-room doorway; the pantry doors stay shut; she steps out only into the empty kitchen (f1318-1330), then the cut outside. Passes the viewer test |
+| 13 gesture snaps (must) | fixed | scan clean |
+| steal with the family in frame (should) | fixed | the steal camera faces the wall, the family is out of frame, and the doors ease open |
+| rest of the chapter | unchanged and still fixed | ladder, stairs, whisper, entrance, exterior hold and the classroom spot-checked at every 60th frame |
+
+New shoulds (not blocking):
+- f890-894: in the steal, Skye freezes completely for 4 frames, then backs off at full speed (abrupt restart). Ease into the back-off.
+- f1150-1200: Lily skips out with both arms raised out sideways, and the teddy she was hugging is gone.
+- f934-990 (dad_count): Dad, side-on, holds the spatula arm straight out for the whole line, face 3/4 away. Point, then lower the arm, and turn his face more to camera.
+
+**RECHECK: OK @ c99847e2**
