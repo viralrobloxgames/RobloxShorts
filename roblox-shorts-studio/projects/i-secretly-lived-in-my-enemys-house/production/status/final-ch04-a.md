@@ -1,3 +1,1 @@
-STATUS: DONE
-COMMIT: 80a98e8b
-RANGE: 1-825
+STATUS: RENDERING @ 827699ba (changed frames only, --resume)
