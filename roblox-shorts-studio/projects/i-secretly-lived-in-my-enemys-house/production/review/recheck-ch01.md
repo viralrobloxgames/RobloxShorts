@@ -124,3 +124,33 @@ Method: a+b joined, 320x180 gray, `tblend=difference` mean per frame. A spike is
 | — | 1571-1590 | louvre shot: a small periodic flicker every ~4 frames (diff ~5.7), not visible at pair scale | look; likely Skye stepping behind the slats | should |
 
 FINAL: MUSTS (G1-G10). Everything else in the final pass above stands.
+
+## Re-check @ f827e63e (gesture snaps)
+The automated checks match 6b008a0d (clip_check: the same 5 explained highs; same sight hits; cam_check 0/0/0). Every frame 1-1911 rendered at 0.25 and snap-scanned (no captions in these renders, so every spike is motion or a cut). I also looked at the chapter at every 15th frame; nothing new.
+
+| must | status | note |
+|---|---|---|
+| G1 walk step-off 425 | fixed | no spike |
+| G2 lunchbox / arm 514 | fixed | |
+| G3 / G4 crusts arm 529 / 578 | fixed | eased over ~4-5 frames (spread spikes 528-531, 578-581) |
+| G5-G9 | fixed | no spikes |
+| G10 shoulder at the edge 1844 | fixed | |
+| louvre knock 1571-1590 | ok | sine rattle (intended) |
+
+New, found by this scan (I missed both at 6b008a0d because I took them for caption changes):
+- **G11** frames 308-309 (0:10.3), the closet wide: Max goes from facing the closet doors (hand on the leaf) to turned 180° and walking away with the flashlight beam on, in one frame. Fix: a ~6-8 frame turn (or cut on the turn). **must**
+- **G12** frames 353-354 (0:11.8), Skye's closet CU: her hand jumps from over her mouth to the lower right of frame in one frame (c1 #5 asked for a lowering over 6-8 frames). Fix: ease the hand down over ~6 frames. **must**
+- Checked and fine: 1304, 1723-1828 (face/mouth changes only), 709/715, 1106-1109 (small, eased).
+
+Verdict: **MUSTS** (G11, G12).
+
+## Re-check @ 38a96332 (G11, G12)
+Diff from f827e63e: ch01.js 11 lines (the closet turn and Skye's hand), plus a clip_check page helper (tooling only). clip_check, sight and cam_check are identical to f827e63e. I rendered frames 280-380 at every frame and snap-scanned them: the only spikes are the 4 cuts (302, 318, 367, 378).
+
+| must | status | note |
+|---|---|---|
+| G11 Max's 180° turn 308-309 | fixed | turns in place over ~10 frames (304-314), flashlight arm lowers, then he walks |
+| G12 Skye's hand 353-354 | fixed | the hand eases down from her mouth over ~16 frames (345-361) |
+| all earlier musts (incl. G1-G10, bed, hook) | still fixed | the rest of the clip is unchanged since f827e63e (full scan there) |
+
+Verdict: **OK**.

@@ -1,1 +1,3 @@
-STATUS: RERENDER (two fixes pending)
+STATUS: DONE
+COMMIT: a76617f1
+RANGE: 1-784

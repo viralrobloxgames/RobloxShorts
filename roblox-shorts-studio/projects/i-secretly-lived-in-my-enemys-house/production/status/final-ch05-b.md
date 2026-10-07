@@ -1,1 +1,3 @@
-STATUS: RERENDER (snap fixes pending)
+STATUS: DONE
+COMMIT: 81cd0a48
+RANGE: 910-2019
