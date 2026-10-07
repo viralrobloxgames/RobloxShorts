@@ -26,3 +26,17 @@ New:
   hand at head height turning an imaginary pumpkin (small wrist/forearm wiggle). **must**
 - f991-1065, 1321-1651 (Skye MCU): her phone arm is still a blown-out white block at lower left (critic-5 #33). should
 - Max MCU (f1081-1291, 1681-1771): both forearms are big blocks toward the lens (critic-5 #29). should
+
+## Re-check @ 1a5199f3
+
+Automated: clip_check 0 high, 0 medium, 1 low (same resting contact, Max Arm.L on the headboard 62.4-65.1 s);
+sight as before (expected); cam_check 0 glides, 0 inside scenery. Visual: every 30th frame + 920-990 every 4th.
+
+| Must | Result |
+|---|---|
+| f930-984 pumpkin mime arm out sideways | fixed: one arm forward at head height, ~35 deg out, small wiggle; reads as a mime, not a T-pose |
+| all earlier musts (#21-24, #27, #28, #31, I4) | still fixed; no regression from the kit change (cast.js) |
+
+Glow sticks now read as glowing bracelets wrapped round both forearms (f121-541), no floating sticks. Skye's lowered arm
+is in front of her body in the wides, no spread. Shoulds #29/#33 left as is (accepted).
+New: none.
