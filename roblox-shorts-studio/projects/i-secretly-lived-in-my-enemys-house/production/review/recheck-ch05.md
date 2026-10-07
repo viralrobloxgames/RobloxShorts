@@ -54,3 +54,19 @@ Shoulds: "Boo" arm now up (fixed). Remaining, not blocking: in tea_skye_cu the s
 Skye's head in the background; "hand on chest" forearm at chest height (f306-339).
 
 Verdict: OK at 3830bc67.
+
+## Final pass
+
+delivery/chapters/ch05_a.mp4 (f1-909, 909 frames) + ch05_b.mp4 (f910-2019, 1110 frames), both from 3830bc67, 1920x1080 30 fps.
+Whole chapter at 2 fps in sheets, must ranges in stills, seam.
+- Seam (last frame of A vs first of B): mean abs diff 0.32/255, same shot, same caption ("Neigh. I mean, yes, please."), only a
+  lip-sync mouth change. No pop.
+- All re-check musts hold in the final encode: attic clear of the skeleton/witch/tea box; horse in Lily's fist in front of her
+  (S8-S10) then in Skye's palm; teapot in Lily's hand, low by her knee in her singles; Skye's cup in her palm through
+  "More tea, please"; Lily's face reads in the amber light. Captions sit over the right speaker.
+- Orchestrator's question, film 4:36 (ch05 f~500-690, lily_ms): checked at full resolution (f600). Lily's right hand holds the
+  horse forward; her left arm hangs straight down at her side (sleeve, cuff, forearm down to her hip). It is not an arm
+  stuck out sideways, so not R2. No must.
+- Shoulds still open (not blocking): skeleton skull just above Skye's head in tea_skye_cu; "hand on chest" forearm at chest height.
+
+FINAL: PASS
