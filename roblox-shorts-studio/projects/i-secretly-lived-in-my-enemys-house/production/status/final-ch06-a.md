@@ -1,1 +1,1 @@
-STATUS: RERENDER @ 8537ebc6 (10:58Z: re-render the whole segment with the pre-rolling render.mjs from main)
+STATUS: RENDERING @ 8537ebc6 (pre-rolling render.mjs, whole segment 1-780)
