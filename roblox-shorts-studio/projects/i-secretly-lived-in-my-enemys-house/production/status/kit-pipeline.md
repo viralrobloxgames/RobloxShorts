@@ -12,3 +12,4 @@ Kit + pipeline on main (see web/kit/README.md). Staying on per the orchestrator:
 - Next: final stitch when chapters are rendered.
 
 Final (orchestrator stitch bf9f3a7, using stitch_longform.py): 21304/21304 frames, stream copy, 21/21 seams frame-exact, A/V 0.011 s, -14.1 LUFS / -1.2 dBTP, 242 MB in 3 parts.
+- 14:40Z snap_check: web/snap_check.mjs + README line committed (pose-based, not mp4). The 11-chapter run was stopped on the orchestrator's request; ch01/03/04/06 results are in review/snap_check/ (SUMMARY.md). Kit untouched.

@@ -200,8 +200,9 @@ export function update(t, stage) {
         const sh2 = sm(inv(at(LN.sleepover) + 0.2, at(LN.sleepover) + 0.45, t)) * (1 - sm(inv(end(LN.sleepover), end(LN.sleepover) + 0.3, t)));
         if (sh2 > 0) K.posture(C.skye, 'shrug', { mix: 0.35 * sh2, reset: false });   // a small shoulders-only lift
         gest(C.skye, 'phone_ear', 'R', at(LN.mom) - 0.4, T_LATER + 0.2, t);
-        const look = t > end(LN.sorry) - 0.9 && t < end(LN.sorry) + 0.2 ? M.fridge().pos : dadAt;
-        K.putOn(C.skye, endM, { heading: lerpH(K.faceTo(endM, look), CHEAT, 0.6) });
+        // a look to the fridge on "And the fridge.", eased in and out (recheck: no one-frame head turn)
+        const e = end(LN.sorry), wl = sm(inv(e - 0.9, e - 0.7, t)) * (1 - sm(inv(e + 0.2, e + 0.4, t)));
+        K.putOn(C.skye, endM, { heading: lerpH(lerpH(K.faceTo(endM, dadAt), K.faceTo(endM, M.fridge().pos), wl), CHEAT, 0.6) });
       }
     }
     K.dress(C.skye, ['skye_hoodie', 'backpack']);
@@ -224,7 +225,8 @@ export function update(t, stage) {
     K.posture(C.max, 'sit_chair');
     const toSkye = sm(inv(at(LN.ghost), at(LN.ghost) + 0.35, t)) * (1 - sm(inv(end(LN.ghost) + 0.1, end(LN.ghost) + 0.5, t)));
     let h = lerpH(t < at(LN.sorry) ? 0.4 : seated ? 0.5 : 0.3, K.faceTo(s2, bottom), toSkye);
-    if (t >= slide0 - 0.4 && t < slide1 + 0.6) h = maxSlideH(t);
+    const ws = sm(inv(slide0 - 0.4, slide0 - 0.2, t)) * (1 - sm(inv(slide1 + 0.4, slide1 + 0.6, t)));   // eased in and out of the slide turn (no snap)
+    if (ws > 0) h = lerpH(h, maxSlideH(t), ws);
     K.putOn(C.max, s2, { sit: true, heading: h });
     { const a0 = at(LN.ghost) - 0.05, a1 = end(LN.ghost) + 0.6, k = sm(inv(a0, a0 + 0.07, t)) * (1 - sm(inv(a1 - 0.07, a1, t)));
       if (k > 0) K.gesture(C.max, 'point', 'R', k); }      // a quick raise: the arm never sweeps through the island top
@@ -236,7 +238,13 @@ export function update(t, stage) {
     // critic-6 #13: kneeling up on the stool (a 7-year-old at a high island), the teddy hugged to her chest
     K.posture(C.lily, 'kneel_up', { extra: K.POSES.hug_teddy });   // critic-6 R-b: forearms crossed over the bear
     const kp = s1.pos.clone(); kp.y = SEAT_TOP + KO.y - LILY_KNEEL * C.lily.scale;
-    K.putOn(C.lily, { pos: kp, heading: t < at(LN.knew) ? 0.45 : t >= at(LN.says) - 0.05 && t < at(LN.cond) - 0.05 ? 0.25 : t < T_WIDE ? -0.25 : 0.35 }, { sit: true });
+    // her turns are eased (~6 frames) and the one into her close-up is done before the cut
+    let lh = 0.45;
+    lh = lerpH(lh, -0.25, sm(inv(at(LN.knew) - 0.45, at(LN.knew) - 0.15, t)));
+    lh = lerpH(lh, 0.25, sm(inv(at(LN.says) - 0.05, at(LN.says) + 0.15, t)));
+    lh = lerpH(lh, -0.25, sm(inv(at(LN.cond) - 0.05, at(LN.cond) + 0.15, t)));
+    lh = lerpH(lh, 0.35, sm(inv(T_WIDE - 0.3, T_WIDE - 0.1, t)));
+    K.putOn(C.lily, { pos: kp, heading: lh }, { sit: true });
     K.holdTeddy(C.lily, 'hug');
     gest(C.lily, [10, 0, 85], 'R', at(LN.says) + 0.2, end(LN.says) + 0.3, t);   // one arm out sideways toward the fridge (frame-left), the other still round the bear
   }
