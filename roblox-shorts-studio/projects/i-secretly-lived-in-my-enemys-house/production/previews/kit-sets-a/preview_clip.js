@@ -12,10 +12,10 @@ export async function setup(stage) {
   const { scene } = stage;
   stage.hemi.intensity = 0.25; stage.hemi.color.set('#8ea6d8'); stage.sun.intensity = 0.0; stage.fill.intensity = 0.25; stage.rim.intensity = 0.15; scene.environmentIntensity = 0.25;
   const b = bedroom.build(scene), h = hallway.build(scene);
-  S = ['bedroom', 'lump', 'desk', 'hide'].includes(SET) ? b : h; (S === b ? h : b).group.visible = false;
-  names = SET === 'hide' ? ['closet_hide_pov', 'closet_hide_ext', 'closet_door_ext', 'two_shot_bed_closet'] : SET === 'desk' ? ['mirror_mcu', 'mirror_ms', 'desk_wide'] : SET === 'lump' ? ['two_shot_bed_closet', 'bed_ms'] : SET === 'linen' ? ['linen_gap', 'linen_pov', 'linen_end', 'hatch_low_dad', 'dad_ms'] : Object.keys(S.cams); meta.names = names;
+  S = ['bedroom', 'lump', 'desk', 'hide', 'drape'].includes(SET) ? b : h; (S === b ? h : b).group.visible = false;
+  names = SET === 'drape' ? ['bed_ms', 'two_shot_bed_closet', 'bed_ms', 'two_shot_bed_closet'] : SET === 'hide' ? ['closet_hide_pov', 'closet_hide_ext', 'closet_door_ext', 'two_shot_bed_closet'] : SET === 'desk' ? ['mirror_mcu', 'mirror_ms', 'desk_wide'] : SET === 'lump' ? ['two_shot_bed_closet', 'bed_ms'] : SET === 'linen' ? ['linen_gap', 'linen_pov', 'linen_end', 'hatch_low_dad', 'dad_ms'] : Object.keys(S.cams); meta.names = names;
   for (const n of ['idle', 'sit']) A[n] = await loadAnimation(n);
-  const want = SET === 'hide' ? [['Skye', 'closet_hide', 'idle'], ['Max', 'closet_front', 'idle']] : SET === 'desk' ? [['Max', 'mirror_stand', 'idle']] : SET === 'lump' ? [] : SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_edge', 'sit'], ['Mia', 'ghost_stop', 'idle'], ['Leo', 'closet_front', 'idle']]
+  const want = SET === 'drape' ? [] : SET === 'hide' ? [['Skye', 'closet_hide', 'idle'], ['Max', 'closet_front', 'idle']] : SET === 'desk' ? [['Max', 'mirror_stand', 'idle']] : SET === 'lump' ? [] : SET === 'bedroom' ? [['Skye', 'closet_inside', 'idle'], ['Max', 'bed_edge', 'sit'], ['Mia', 'ghost_stop', 'idle'], ['Leo', 'closet_front', 'idle']]
     : SET === 'linen' ? [['Skye', 'linen_skye', 'idle'], ['Mia', 'linen_lily', 'idle'], ['Leo', 'dad_hatch', 'idle']]
     : [['Skye', 'max_door_listen', 'idle'], ['Mia', 'lily_behind_skye', 'idle'], ['Leo', 'dad_hatch', 'idle'], ['Max', 'stairs_top', 'idle']];
   for (const [who, mk, an] of want) {
@@ -28,6 +28,7 @@ export async function setup(stage) {
 }
 export function update(t, stage) {
   const i = Math.min(names.length - 1, Math.round(t * 30));
+  if (SET === 'drape') S.setBlanket(i < 2 ? 'lying' : 'sitting');
   const c = S.useCam(stage.camera, names[i]);
   stage.camera.aspect = 1920 / 1080; stage.camera.updateProjectionMatrix();
   stage.aimSun(c.target, 30);
