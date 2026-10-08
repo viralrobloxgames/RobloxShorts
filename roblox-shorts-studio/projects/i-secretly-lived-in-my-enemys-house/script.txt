@@ -193,13 +193,13 @@ LILY: I like to plan ahead.
 DAD: That's my girl. Let's see. Skeleton. Witch. Giant pumpkin girl.
 DAD: Hmm. I don't remember buying a pumpkin girl.
 [+0.8 Dad leans in, nose to nose with Skye. She doesn't blink.]
-DAD: Very realistic. Bit dusty. Smells like cinnamon.
+DAD: Very realistic. Kinda dusty. Smells like cinnamon.
 DAD: Lily, why do the decorations smell like cinnamon?
 LILY: They're festive.
-DAD: Well, she's filthy. Hold still, pumpkin girl. Time for a good hoover.
+DAD: Well, she's filthy. Hold still, pumpkin girl. Time for a good vacuum.
 [+0.6 He raises the vacuum nozzle toward her face.]
 MAX (offscreen): Dad! I'll clean the attic. Your football's starting!
-DAD: Already? You're a good lad, Max.
+DAD: Already? You're a good kid, Max.
 [+1.2 Dad climbs down. Max climbs up, looks at the pumpkin girl for a long moment, and straightens the pumpkin on her head.]
 MAX: Nice decoration. Very realistic.
 MAX: Lily. Dinner. Five minutes.
