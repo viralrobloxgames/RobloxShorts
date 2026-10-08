@@ -1,0 +1,78 @@
+{
+ "text": "Good morning, kitchen! Who wants pancakes? That's just the pipes, champ. This house is a hundred years old. Hmm. I don't remember buying a pumpkin girl.",
+ "reference_style": "ElevenLabs \"Mark - Natural Conversations\" (preview f0 median 127 Hz, p10-p90 97-220, 3.44 w/s); inspiration only",
+ "takes": {
+  "A_s7": {
+   "instruct": "A warm, casual American dad in his mid-thirties with a medium-low voice. Relaxed, easygoing and friendly, a smile in his voice. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Natural pace with small pauses.",
+   "seed": 7,
+   "dur": 8.96,
+   "f0_med": 149.0,
+   "f0_p10_p90": [
+    84.9,
+    261.0
+   ],
+   "wps": 2.9,
+   "transcript": "Good morning, kitchen. Who wants pancakes? That's just the pipes, champ. This house is a hundred years old. Hmm, I don't remember buying a pumpkin girl."
+  },
+  "A_s21": {
+   "instruct": "A warm, casual American dad in his mid-thirties with a medium-low voice. Relaxed, easygoing and friendly, a smile in his voice. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Natural pace with small pauses.",
+   "seed": 21,
+   "dur": 9.04,
+   "f0_med": 146.9,
+   "f0_p10_p90": [
+    90.0,
+    222.6
+   ],
+   "wps": 2.88,
+   "transcript": "Good morning, kitchen. Who wants pancakes? That's just the pipes, champ. This house is a hundred years old. Hmm. I don't remember buying a pumpkin girl."
+  },
+  "B_s7": {
+   "instruct": "A young American dad in his early thirties with a smooth, natural medium voice. Light, upbeat and genuine, casually chatty. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Unhurried, natural rhythm.",
+   "seed": 7,
+   "dur": 11.84,
+   "f0_med": 137.1,
+   "f0_p10_p90": [
+    81.8,
+    201.0
+   ],
+   "wps": 2.2,
+   "transcript": "Good morning kitchen, who wants pancakes? That's just the pipes, champ. This house is 100 years old. Hmm, I don't remember buying a pumpkin girl."
+  },
+  "B_s21": {
+   "instruct": "A young American dad in his early thirties with a smooth, natural medium voice. Light, upbeat and genuine, casually chatty. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Unhurried, natural rhythm.",
+   "seed": 21,
+   "dur": 11.28,
+   "f0_med": 188.3,
+   "f0_p10_p90": [
+    103.2,
+    249.9
+   ],
+   "wps": 2.3,
+   "transcript": "Good morning kitchen, who wants pancakes? That's just the pipes champ. This house is a hundred years old. Hmm, I don't remember buying a pumpkin girl."
+  },
+  "C_s7": {
+   "instruct": "A laid-back American guy in his thirties, soft-spoken and genuine, a friendly father with a slightly husky medium-low voice. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Relaxed pace, playful when joking.",
+   "seed": 7,
+   "dur": 10.88,
+   "f0_med": 144.4,
+   "f0_p10_p90": [
+    89.1,
+    192.7
+   ],
+   "wps": 2.39,
+   "transcript": "Good morning, kitchen. Who wants pancakes? That's just the pipes, champ. This house is a hundred years old. Hmm. I don't remember buying a pumpkin, girl."
+  },
+  "C_s21": {
+   "instruct": "A laid-back American guy in his thirties, soft-spoken and genuine, a friendly father with a slightly husky medium-low voice. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Relaxed pace, playful when joking.",
+   "seed": 21,
+   "dur": 9.76,
+   "f0_med": 149.5,
+   "f0_p10_p90": [
+    88.9,
+    214.1
+   ],
+   "wps": 2.66,
+   "transcript": "Good morning, kitchen. Who wants pancakes? That's just the pipes, champ. This house is a hundred years old. Hmm. I don't remember buying a pumpkin, girl."
+  }
+ }
+}
