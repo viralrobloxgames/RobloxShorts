@@ -33,11 +33,11 @@ def stretch(y, sr, target_n, tmp):
     return out
 
 
-def f0_p95(y, sr):
+def f0_p95(y, sr, q=95):
     import librosa
     f0, vf, _ = librosa.pyin(librosa.resample(y, orig_sr=sr, target_sr=16000), fmin=70, fmax=500, sr=16000)
     f0 = f0[vf & ~np.isnan(f0)]
-    return float(np.percentile(f0, 95)) if len(f0) else 0.0
+    return float(np.percentile(f0, q)) if len(f0) else 0.0
 
 
 def main():
@@ -48,6 +48,8 @@ def main():
     ap.add_argument('--redo', default='', help='ch:line list to re-take with the next seed')
     ap.add_argument('--whisper', default='small.en')
     ap.add_argument('--max-f0', type=float, default=330, help='re-take a line whose pitch p95 is above this (squeaks)')
+    ap.add_argument('--min-f0', type=float, default=0, help='re-take a line whose median pitch is below this (the clone drifting into a deeper voice)')
+    ap.add_argument('--tries', type=int, default=4, help='takes per line before keeping the best')
     a = ap.parse_args()
     o = (a.project if a.project.is_absolute() or a.project.exists() else nm.ROOT / a.project).resolve()
     if not (nm.V / f'{a.voice}.wav').is_file():
@@ -86,17 +88,17 @@ def main():
                 if tts is None:
                     tts = nm.TTS(log)
                 base_attempt = meta.get('attempt', -1) + 1 if force else 0; best = None
-                for k in range(4):
+                for k in range(a.tries):
                     att = base_attempt + k; seed = a.seed + int(name[:6], 16) % 100000 + 1000 * att
                     t1 = time.time(); y, gsr = tts.gen(a.voice, l['text'], seed)
                     if gsr != nm.SR:
                         import librosa; y = librosa.resample(y, orig_sr=gsr, target_sr=nm.SR)
-                    ty = nm.tighten(y, nm.SR); ratio = len(ty) / tn; p95 = f0_p95(ty, nm.SR)
-                    log(f'  ch{c}:{l["index"]} take seed {seed}: {len(ty)/sr:.2f}s for {tn/sr:.2f}s (ratio {ratio:.2f}, F0 p95 {p95:.0f} Hz) in {time.time()-t1:.0f}s')
-                    score = max(ratio / HI, LO / ratio, p95 / a.max_f0)
+                    ty = nm.tighten(y, nm.SR); ratio = len(ty) / tn; p95 = f0_p95(ty, nm.SR); med = f0_p95(ty, nm.SR, 50) if a.min_f0 else 1e9
+                    log(f'  ch{c}:{l["index"]} take seed {seed}: {len(ty)/sr:.2f}s for {tn/sr:.2f}s (ratio {ratio:.2f}, F0 p95 {p95:.0f} Hz, median {min(med, 9999):.0f}) in {time.time()-t1:.0f}s')
+                    score = max(ratio / HI, LO / ratio, p95 / a.max_f0, (a.min_f0 / med) if med else 9)
                     if best is None or score < best[0]:
                         best = (score, y, ty, seed, att)
-                    if LO <= ratio <= HI and p95 <= a.max_f0:
+                    if LO <= ratio <= HI and p95 <= a.max_f0 and med >= a.min_f0:
                         break
                 _, y, ty, seed, att = best
                 sf.write(raw / f'{name}.wav', y, nm.SR, subtype='PCM_16'); sf.write(clips / f'{name}.wav', ty, nm.SR, subtype='PCM_16')
