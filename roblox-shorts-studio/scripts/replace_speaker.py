@@ -40,6 +40,17 @@ def f0_p95(y, sr, q=95):
     return float(np.percentile(f0, q)) if len(f0) else 0.0
 
 
+_REF = {}
+def speaker_sim(tts, voice, y):
+    # cosine similarity of the take's speaker embedding to the voice sample's (Qwen3 Base speaker encoder)
+    def emb(a):
+        e = tts.m.create_voice_clone_prompt(ref_audio=a, x_vector_only_mode=True)[0].ref_spk_embedding.float().flatten().numpy()
+        return e / np.linalg.norm(e)
+    if voice not in _REF:
+        _REF[voice] = emb(str(nm.V / f'{voice}.wav'))
+    return float(emb((y, nm.SR)) @ _REF[voice])
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('project', type=Path); ap.add_argument('--chapters', required=True)
@@ -50,6 +61,7 @@ def main():
     ap.add_argument('--max-f0', type=float, default=330, help='re-take a line whose pitch p95 is above this (squeaks)')
     ap.add_argument('--min-f0', type=float, default=0, help='re-take a line whose median pitch is below this (the clone drifting into a deeper voice)')
     ap.add_argument('--tries', type=int, default=4, help='takes per line before keeping the best')
+    ap.add_argument('--min-sim', type=float, default=0, help='re-take a line whose speaker similarity to the voice sample is below this (sounds like someone else)')
     a = ap.parse_args()
     o = (a.project if a.project.is_absolute() or a.project.exists() else nm.ROOT / a.project).resolve()
     if not (nm.V / f'{a.voice}.wav').is_file():
@@ -94,11 +106,12 @@ def main():
                     if gsr != nm.SR:
                         import librosa; y = librosa.resample(y, orig_sr=gsr, target_sr=nm.SR)
                     ty = nm.tighten(y, nm.SR); ratio = len(ty) / tn; p95 = f0_p95(ty, nm.SR); med = f0_p95(ty, nm.SR, 50) if a.min_f0 else 1e9
-                    log(f'  ch{c}:{l["index"]} take seed {seed}: {len(ty)/sr:.2f}s for {tn/sr:.2f}s (ratio {ratio:.2f}, F0 p95 {p95:.0f} Hz, median {min(med, 9999):.0f}) in {time.time()-t1:.0f}s')
-                    score = max(ratio / HI, LO / ratio, p95 / a.max_f0, (a.min_f0 / med) if med else 9)
+                    sim = speaker_sim(tts, a.voice, ty) if a.min_sim else 1.0
+                    log(f'  ch{c}:{l["index"]} take seed {seed}: {len(ty)/sr:.2f}s for {tn/sr:.2f}s (ratio {ratio:.2f}, F0 p95 {p95:.0f} Hz, median {min(med, 9999):.0f}, sim {sim:.3f}) in {time.time()-t1:.0f}s')
+                    score = max(ratio / HI, LO / ratio, p95 / a.max_f0, (a.min_f0 / med) if med else 9, 1 + (a.min_sim - sim) * 10)
                     if best is None or score < best[0]:
                         best = (score, y, ty, seed, att)
-                    if LO <= ratio <= HI and p95 <= a.max_f0 and med >= a.min_f0:
+                    if LO <= ratio <= HI and p95 <= a.max_f0 and med >= a.min_f0 and sim >= a.min_sim:
                         break
                 _, y, ty, seed, att = best
                 sf.write(raw / f'{name}.wav', y, nm.SR, subtype='PCM_16'); sf.write(clips / f'{name}.wav', ty, nm.SR, subtype='PCM_16')
