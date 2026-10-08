@@ -41,7 +41,10 @@ const port = server.address().port;
 
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium',
-  args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--disable-gpu-watchdog'],
+  // RENDER_GL=gpu uses the machine's own graphics card (much faster where there is one; pixels differ slightly from the
+  // software renderer, so never mix the two within one video).
+  args: process.env.RENDER_GL === 'gpu' ? ['--use-gl=angle', '--use-angle=d3d11', '--ignore-gpu-blocklist', '--enable-gpu', '--disable-gpu-watchdog']
+    : ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--disable-gpu-watchdog'],
 });
 const scale = Number(args.scale || 1);
 async function openPage() {

@@ -1,0 +1,20 @@
+{
+  "title": "He Stole The Mona Lisa Wide",
+  "character": "Max",
+  "characters": ["Max", "Leo", "Mia", "Skye", "Noob"],
+  "seconds": 61.9,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "platform": "YouTube long-form (16:9)",
+  "status": "in_progress",
+  "finish": {
+    "music": "playful_history_music",
+    "caption_font_size": 80,
+    "caption_margin_v": 70,
+    "word_fixes": {
+      "VIRALROBLOXGAMES": "VIRAL ROBLOX GAMES",
+      "CUE": "QUEUE"
+    }
+  }
+}

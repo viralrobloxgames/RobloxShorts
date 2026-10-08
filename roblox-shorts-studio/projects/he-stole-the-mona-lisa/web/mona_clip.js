@@ -21,6 +21,10 @@ import {
 } from './kit.js';
 
 export const meta = { seconds: Math.ceil((W.end + 2.0) * 30) / 30, fps: 30, width: 1080, height: 1920, title: 'He Stole The Mona Lisa' };
+// Frame layout. Portrait by default; a landscape cut (projects/he-stole-the-mona-lisa-wide) overrides it: w/h the frame,
+// ox/oy shift the centred graphics, tagY the place tags, fovK narrows every lens (cam[shot] = { k, dy } per shot),
+// ext widens the sun's shadow box, wide lays the newspapers in a row.
+export const LAY = { w: 1080, h: 1920, ox: 0, oy: 0, tagY: 250, fovK: 1, ext: 1, wide: false, cam: {}, cta: 'FOLLOW', ctaColor: '#fe2c55' };
 export const sky = { zenith: '#4f8fe6', horizon: '#d7ecff', below: '#f0f6ff', fog: '#e8f2ff', sunDir: new THREE.Vector3(0.45, 0.7, 0.55) };
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const VA = (p) => (Array.isArray(p) ? V(p[0], p[1] || 0, p[2]) : p.clone());
@@ -471,7 +475,7 @@ function bigText(g, s, text, x, y, size, color, k = 1, rot = 0, edge = '#16141f'
 // a place / time tag in the top left
 function tag(g, s, t, t0, text, sub) {
   const a = clamp((t - t0) / 0.2); if (a <= 0) return;
-  g.save(); g.globalAlpha = a; g.translate((60 - 30 * (1 - easeOut(a))) * s, 250 * s);
+  g.save(); g.globalAlpha = a; g.translate((60 - 30 * (1 - easeOut(a)) - LAY.ox) * s, (LAY.tagY - LAY.oy) * s);
   g.font = `800 ${34 * s}px Montserrat`; const w = Math.max(g.measureText(text).width, sub ? g.measureText(sub).width : 0) / s + 56;
   roundRect(g, 0, 0, w * s, (sub ? 108 : 66) * s, 18 * s); g.fillStyle = 'rgba(14,18,34,.82)'; g.fill(); g.fillStyle = '#ffd23f'; g.fillRect(0, 0, 10 * s, (sub ? 108 : 66) * s);
   g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillStyle = '#ffffff'; g.fillText(text, 30 * s, 34 * s);
@@ -513,7 +517,7 @@ function papers(g, s, t) {
   HEADS.forEach(([name, head, col], i) => {
     const t0 = T.papers + 0.05 + i * 0.32, a = clamp((t - t0) / 0.35); if (a <= 0) return;
     const k = easeOutBack(a, 1.4), spin = (1 - easeOut(a)) * 6.0;
-    const [x, y, r] = [[300, 420, -0.12], [780, 470, 0.1], [330, 820, 0.08], [760, 860, -0.07]][i];
+    const [x, y, r] = (LAY.wide ? [[-120, 560, -0.1], [320, 610, 0.08], [760, 560, -0.06], [1200, 610, 0.09]] : [[300, 420, -0.12], [780, 470, 0.1], [330, 820, 0.08], [760, 860, -0.07]])[i];
     g.save(); g.translate(x * s, y * s); g.rotate(r + spin); g.scale(k, k);
     g.shadowColor = 'rgba(0,0,0,.4)'; g.shadowBlur = 20 * s; g.fillStyle = '#f2ead8'; g.fillRect(-190 * s, -230 * s, 380 * s, 460 * s); g.shadowColor = 'transparent';
     g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = `700 ${30 * s}px "Playfair Display"`; g.fillStyle = '#16182a'; g.fillText(name, 0, -195 * s);
@@ -535,7 +539,7 @@ export function overlay(g, s, t) {
   if (t >= T.morning && t < T.hooks) tag(g, s, t, T.morning, 'NEXT MORNING');
   if (SHOT === 'hooks' && cam) {                            // circle the four pegs where they really are
     const a = clamp((t - W.four) / 0.25);
-    if (a > 0) { g.save(); g.globalAlpha = a; g.strokeStyle = '#ffd23f'; g.lineWidth = 9 * s; for (const [px, py] of PEGS) { const v = G(px, py, -9.56).project(cam); g.beginPath(); g.arc((v.x + 1) / 2 * 1080 * s, (1 - v.y) / 2 * 1920 * s, 70 * s * lerp(1.4, 1, easeOut(a)), 0, 7); g.stroke(); } g.restore(); }
+    if (a > 0) { g.save(); g.globalAlpha = a; g.strokeStyle = '#ffd23f'; g.lineWidth = 9 * s; for (const [px, py] of PEGS) { const v = G(px, py, -9.56).project(cam); g.beginPath(); g.arc(((v.x + 1) / 2 * LAY.w - LAY.ox) * s, ((1 - v.y) / 2 * LAY.h - LAY.oy) * s, 70 * s * lerp(1.4, 1, easeOut(a)), 0, 7); g.stroke(); } g.restore(); }
   }
   if (SHOT === 'guards' && t > W.shrug - 0.2) {              // the guard's thought: she's off being photographed
     const k = easeOutBack(clamp((t - W.shrug + 0.2) / 0.25), 1.6); g.save(); g.translate(720 * s, 470 * s); g.scale(k, k);
@@ -547,7 +551,7 @@ export function overlay(g, s, t) {
     g.fillStyle = '#ffffff'; g.beginPath(); g.moveTo(-10 * s, -60 * s); g.lineTo(20 * s, -80 * s); g.lineTo(5 * s, -40 * s); g.fill();
     g.restore();
   }
-  if (SHOT === 'isnt') { const a = clamp((t - T.isnt) / 0.15); g.save(); g.globalAlpha = 0.28 * a * (0.7 + 0.3 * Math.sin(t * 14)); const gr = g.createRadialGradient(540 * s, 960 * s, 300 * s, 540 * s, 960 * s, 1100 * s); gr.addColorStop(0, 'rgba(230,57,70,0)'); gr.addColorStop(1, 'rgba(230,57,70,1)'); g.fillStyle = gr; g.fillRect(0, 0, 1080 * s, 1920 * s); g.restore(); stamp(g, s, t, W.isnt + 0.15, 'STOLEN!', 540, 520, '#e63946', 140); }
+  if (SHOT === 'isnt') { const a = clamp((t - T.isnt) / 0.15); g.save(); g.globalAlpha = 0.28 * a * (0.7 + 0.3 * Math.sin(t * 14)); const gr = g.createRadialGradient(CX * s, CY * s, 300 * s, CX * s, CY * s, 1100 * s); gr.addColorStop(0, 'rgba(230,57,70,0)'); gr.addColorStop(1, 'rgba(230,57,70,1)'); g.fillStyle = gr; g.fillRect(FX, FY, FW, FH); g.restore(); stamp(g, s, t, W.isnt + 0.15, 'STOLEN!', 540, 520, '#e63946', 140); }
   if (SHOT === 'front') { tag(g, s, t, T.front, 'CLOSED FOR A WEEK'); }
   if (SHOT === 'search' && t > W.sixty - 0.1) {
     const k = easeOut(clamp((t - W.sixty + 0.1) / 0.7)), n = Math.round(60 * k);
@@ -572,7 +576,7 @@ export function overlay(g, s, t) {
   if (SHOT === 'dealer' && t > W.real - 0.05) stamp(g, s, t, W.real - 0.05, 'REAL', 760, 520, '#1e9e55', 110, 0.1);
   if (SHOT === 'calls' && t > W.police2 - 0.1) stamp(g, s, t, W.police2 - 0.1, 'ARRESTED!', 540, 520, '#e63946', 120);
   if (SHOT === 'then') {
-    const a = clamp((t - T.then) / 0.15); g.save(); g.globalAlpha = 0.32 * a; g.fillStyle = '#a07a4a'; g.globalCompositeOperation = 'color'; g.fillRect(0, 0, 1080 * s, 1920 * s); g.restore();
+    const a = clamp((t - T.then) / 0.15); g.save(); g.globalAlpha = 0.32 * a; g.fillStyle = '#a07a4a'; g.globalCompositeOperation = 'color'; g.fillRect(FX, FY, FW, FH); g.restore();
     bigText(g, s, '1911', 540, 380, 150, '#f2ead8', easeOutBack(a, 1.6), -0.04);
     if (t > W.hardly - 0.1) bigText(g, s, '(nobody looking)', 540, 510, 56, '#ffffff', easeOutBack(clamp((t - W.hardly + 0.1) / 0.2), 1.6), -0.04);
   }
@@ -590,8 +594,8 @@ export function overlay(g, s, t) {
     g.textAlign = 'center'; g.textBaseline = 'middle';
     g.font = `${60 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('MORE STORIES LIKE THIS', 0, -100 * s);
     g.font = `800 ${46 * s}px Montserrat`; g.fillStyle = '#ffd23f'; g.fillText('@viralrobloxgames', 0, -26 * s);
-    roundRect(g, -170 * s, 50 * s, 340 * s, 84 * s, 20 * s); g.fillStyle = '#fe2c55'; g.fill();
-    g.font = `${52 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText('FOLLOW', 0, 95 * s);
+    roundRect(g, -170 * s, 50 * s, 340 * s, 84 * s, 20 * s); g.fillStyle = LAY.ctaColor; g.fill();
+    g.font = `${52 * s}px "Luckiest Guy"`; g.fillStyle = '#ffffff'; g.fillText(LAY.cta, 0, 95 * s);
     g.restore();
   }
 }
