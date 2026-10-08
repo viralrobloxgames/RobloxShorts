@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "I'm a grown man. I go to bed when I want.",
+ "seed": 1278,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

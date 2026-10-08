@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Pancakes for everyone! Including the ghost! Especially the ghost.",
+ "seed": 99147,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

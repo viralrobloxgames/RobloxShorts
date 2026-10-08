@@ -53,13 +53,13 @@
   {
    "index": 5,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": "offscreen, below",
    "text": "Has anyone seen my good sheet?",
    "start": 15.711,
    "end": 17.287,
-   "clip": "audio/qwen/take-01/clips/3ab306d9d6a6.wav",
-   "seed": 46995
+   "clip": "audio/qwen/take-01/clips/834cbddae439.wav",
+   "seed": 4938
   },
   {
    "index": 6,
@@ -218,13 +218,13 @@
   {
    "index": 20,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": "offscreen, below",
    "text": "Lily? Why are there pancake crumbs on the attic ladder?",
    "start": 54.989,
    "end": 57.987,
-   "clip": "audio/qwen/take-01/clips/7fb2ff3392d7.wav",
-   "seed": 68972
+   "clip": "audio/qwen/take-01/clips/5a469d29e584.wav",
+   "seed": 16394
   },
   {
    "index": 21,

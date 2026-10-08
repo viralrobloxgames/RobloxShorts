@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Lily, if that's you, I'm not angry. I'm just hungry.",
+ "seed": 28726,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

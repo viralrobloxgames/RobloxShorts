@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Hello? Mister Ghost? This is a friendly house. We're friendly people.",
+ "seed": 80298,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

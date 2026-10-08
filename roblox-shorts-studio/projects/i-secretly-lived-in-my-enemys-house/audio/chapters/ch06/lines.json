@@ -141,35 +141,35 @@
   {
    "index": 13,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Hello? Mister Ghost? This is a friendly house. We're friendly people.",
    "start": 36.877,
    "end": 40.879,
-   "clip": "audio/qwen/take-01/clips/fa1584b9c1c2.wav",
-   "seed": 89585
+   "clip": "audio/qwen/take-01/clips/c7969d87cff8.wav",
+   "seed": 80298
   },
   {
    "index": 14,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "But you have eaten nine of my pancakes, and that is where I draw the line.",
    "start": 41.129,
    "end": 44.809,
-   "clip": "audio/qwen/take-01/clips/22910cff5ece.wav",
-   "seed": 65433
+   "clip": "audio/qwen/take-01/clips/60c3428a1272.wav",
+   "seed": 41519
   },
   {
    "index": 15,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Max, was that you?",
    "start": 45.659,
    "end": 47.073,
-   "clip": "audio/qwen/take-01/clips/38d46861c35d.wav",
-   "seed": 24469
+   "clip": "audio/qwen/take-01/clips/63772b7140b1.wav",
+   "seed": 18648
   },
   {
    "index": 16,
@@ -185,24 +185,24 @@
   {
    "index": 17,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "I'm a grown man. I go to bed when I want.",
    "start": 48.492,
    "end": 50.792,
-   "clip": "audio/qwen/take-01/clips/130bb7e9f419.wav",
-   "seed": 48260
+   "clip": "audio/qwen/take-01/clips/10c9a92b6a8e.wav",
+   "seed": 1278
   },
   {
    "index": 18,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Tomorrow, I'm going up into that attic, and I'm checking every single box.",
    "start": 51.042,
    "end": 54.722,
-   "clip": "audio/qwen/take-01/clips/d54ad6dd19da.wav",
-   "seed": 78403
+   "clip": "audio/qwen/take-01/clips/026aa8ba7ae5.wav",
+   "seed": 58453
   },
   {
    "index": 19,

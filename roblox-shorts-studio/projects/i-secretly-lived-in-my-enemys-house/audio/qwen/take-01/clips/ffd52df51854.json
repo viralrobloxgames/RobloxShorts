@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Lily? What are you doing up here?",
+ "seed": 66330,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

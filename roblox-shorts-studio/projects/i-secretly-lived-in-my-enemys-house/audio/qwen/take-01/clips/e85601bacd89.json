@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Midnight snack, midnight snack, who wants a midnight snack?",
+ "seed": 26446,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

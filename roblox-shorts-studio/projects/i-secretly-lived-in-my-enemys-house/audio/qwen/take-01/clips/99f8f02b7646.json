@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "You knew?",
+ "seed": 92813,
+ "attempt": 2,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

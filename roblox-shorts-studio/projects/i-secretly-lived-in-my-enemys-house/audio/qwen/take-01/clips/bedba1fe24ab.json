@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Does your mother know where you've been all week?",
+ "seed": 8142,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

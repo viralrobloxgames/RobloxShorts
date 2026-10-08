@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Tomorrow, I'm going up into that attic, and I'm checking every single box.",
+ "seed": 58453,
+ "attempt": 0,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}

@@ -64,24 +64,24 @@
   {
    "index": 6,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Right, ghost. It's you, me, and the vacuum.",
    "start": 16.753,
    "end": 19.346,
-   "clip": "audio/qwen/take-01/clips/37e38b4af304.wav",
-   "seed": 68808
+   "clip": "audio/qwen/take-01/clips/587f079114ca.wav",
+   "seed": 101764
   },
   {
    "index": 7,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Lily? What are you doing up here?",
    "start": 19.596,
    "end": 21.251,
-   "clip": "audio/qwen/take-01/clips/b25de6fc7934.wav",
-   "seed": 89523
+   "clip": "audio/qwen/take-01/clips/ffd52df51854.wav",
+   "seed": 66330
   },
   {
    "index": 8,
@@ -97,13 +97,13 @@
   {
    "index": 9,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "You put the Halloween stuff out already? It's not even Halloween.",
    "start": 24.256,
    "end": 27.66,
-   "clip": "audio/qwen/take-01/clips/28ed675f43a6.wav",
-   "seed": 82292
+   "clip": "audio/qwen/take-01/clips/99625f115008.wav",
+   "seed": 52268
   },
   {
    "index": 10,
@@ -119,46 +119,46 @@
   {
    "index": 11,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "That's my girl. Let's see. Skeleton. Witch. Giant pumpkin girl.",
    "start": 29.849,
    "end": 34.888,
-   "clip": "audio/qwen/take-01/clips/5d2e2eaf6677.wav",
-   "seed": 6747
+   "clip": "audio/qwen/take-01/clips/f8e1d4655d38.wav",
+   "seed": 11817
   },
   {
    "index": 12,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Hmm. I don't remember buying a pumpkin girl.",
    "start": 35.138,
    "end": 37.913,
-   "clip": "audio/qwen/take-01/clips/da0a4a754d5b.wav",
-   "seed": 89559
+   "clip": "audio/qwen/take-01/clips/e0d0cf84b492.wav",
+   "seed": 33596
   },
   {
    "index": 13,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Very realistic. Kinda dusty. Smells like cinnamon.",
    "start": 38.963,
    "end": 42.241,
-   "clip": "audio/qwen/take-01/clips/34d70af926b7.wav",
-   "seed": 62999
+   "clip": "audio/qwen/take-01/clips/97e3d585a47f.wav",
+   "seed": 54338
   },
   {
    "index": 14,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Lily, why do the decorations smell like cinnamon?",
    "start": 42.491,
    "end": 45.354,
-   "clip": "audio/qwen/take-01/clips/bb2c52b07873.wav",
-   "seed": 66655
+   "clip": "audio/qwen/take-01/clips/e9fafce5bb70.wav",
+   "seed": 34217
   },
   {
    "index": 15,
@@ -174,13 +174,13 @@
   {
    "index": 16,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Well, she's filthy. Hold still, pumpkin girl. Time for a good vacuum.",
    "start": 46.741,
    "end": 50.913,
-   "clip": "audio/qwen/take-01/clips/ca88b97cc8e0.wav",
-   "seed": 73350
+   "clip": "audio/qwen/take-01/clips/e4158f5127c3.wav",
+   "seed": 47804
   },
   {
    "index": 17,
@@ -196,13 +196,13 @@
   {
    "index": 18,
    "speaker": "DAD",
-   "voice": "george_dad",
+   "voice": "dad_us",
    "note": null,
    "text": "Already? You're a good kid, Max.",
    "start": 55.777,
    "end": 57.442,
-   "clip": "audio/qwen/take-01/clips/61131549c0ab.wav",
-   "seed": 63954
+   "clip": "audio/qwen/take-01/clips/782bc8390ee7.wav",
+   "seed": 77605
   },
   {
    "index": 19,

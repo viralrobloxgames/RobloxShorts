@@ -1,0 +1,7 @@
+{
+ "voice": "dad_us",
+ "text": "Already? You're a good kid, Max.",
+ "seed": 77605,
+ "attempt": 2,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
+}
