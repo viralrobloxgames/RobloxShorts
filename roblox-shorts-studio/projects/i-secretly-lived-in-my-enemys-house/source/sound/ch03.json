@@ -1,11 +1,5 @@
 [
  {
-  "asset": "sfx/room_hum.wav",
-  "start": 0.0,
-  "gain": 0.05,
-  "dur": 67.08
- },
- {
   "asset": "sfx/click.wav",
   "start": 0.95,
   "gain": 0.04

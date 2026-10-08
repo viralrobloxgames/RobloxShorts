@@ -146,21 +146,6 @@ export function build(scene) {
   const head = new THREE.Mesh(new THREE.SphereGeometry(1.05, 20, 14), lumpM); head.scale.set(1.15, 0.85, 1.0); head.position.set(-4.0, 2.75, -7.6); head.castShadow = head.receiveShadow = true;
   const knee = new THREE.Mesh(new THREE.SphereGeometry(0.85, 18, 12), lumpM); knee.scale.set(1.3, 0.75, 1.0); knee.position.set(-4.1, 2.8, -3.8); knee.castShadow = knee.receiveShadow = true;
   blanketUp.add(body, head, knee);
-  // draped duvet over a body on the bed (opt-in modes 'lying' / 'sitting'): the blanket lies on the mattress from z0 to
-  // the foot and hangs over the sides; a soft rounded ridge (the legs, ~2.2 wide, top ~1.1 above the mattress so a 1-stud
-  // thick rig stays covered) runs down the middle with two foot bumps at the end
-  function drape(z0) {
-    const g = new THREE.Group(); g.visible = false; bed.add(g);
-    const len = -1.8 - z0, zc = (z0 - 1.8) / 2, m = blanketM.clone(); m.flatShading = false;
-    g.add(box(5.3, 0.3, len, blanketM, -4, 2.25, zc)); for (const sd of [-1, 1]) g.add(box(0.2, 1.4, len, blanketM, -4 + sd * 2.65, 1.6, zc)); g.add(box(5.3, 1.2, 0.2, blanketM, -4, 1.6, -1.75));
-    const rl = len - 1.0, ridge = new THREE.Mesh(new THREE.CapsuleGeometry(0.62, Math.max(0.1, rl - 1.24), 6, 18), m);
-    ridge.rotation.x = Math.PI / 2; ridge.scale.set(1.75, 1, 1.0); ridge.position.set(-4, 2.45, z0 + 0.5 + rl / 2); ridge.castShadow = ridge.receiveShadow = true; g.add(ridge);
-    for (const sd of [-1, 1]) { const ft = new THREE.Mesh(new THREE.SphereGeometry(0.42, 16, 10), m); ft.scale.set(1.0, 1.15, 0.8); ft.position.set(-4 + sd * 0.48, 2.8, -2.5); ft.castShadow = ft.receiveShadow = true; g.add(ft); }
-    // the duvet edge folded back at the top
-    g.add(box(5.3, 0.35, 0.5, std('#f4f4f4', { roughness: 0.9 }), -4, 2.42, z0 + 0.2));
-    return g;
-  }
-  const blanketLying = drape(-6.6), blanketSitting = drape(-5.8);
 
   // ---- bedside table + lamp (x 0.6, z -7.8) ----
   group.add(box(2.2, 2.4, 2.0, woodM, 0.6, 1.2, -7.9), box(1.8, 0.6, 0.1, darkWood, 0.6, 1.5, -6.86), box(0.3, 0.15, 0.1, std('#d9b34a', { metalness: 0.6 }), 0.6, 1.5, -6.78));
@@ -259,7 +244,7 @@ export function build(scene) {
 
   function setClosetDoors(fl = 0, fr = fl) { closetL.rotation.y = -Math.PI / 2 + fl * 1.9; closetR.rotation.y = Math.PI / 2 - fr * 1.9; } // 0 shut, 1 swung wide into the room
   function setDoor(f = 0) { doorLeaf.rotation.y = -Math.PI / 2 - f * 1.7; } // 0 shut, 1 open into the room (toward -x, leaf swings toward the desk side)
-  function setBlanket(mode = 'flat') { blanketUp.visible = mode === 'over_head'; blanketLegs.visible = mode === 'legs'; blanketLying.visible = mode === 'lying'; blanketSitting.visible = mode === 'sitting'; blanket.visible = mode === 'flat'; } // 'flat' | 'legs' | 'over_head' | 'lying' | 'sitting'
+  function setBlanket(mode = 'flat') { blanketUp.visible = mode === 'over_head'; blanketLegs.visible = mode === 'legs'; blanket.visible = mode === 'flat'; } // 'flat' | 'legs' | 'over_head'
   function setBlanketUp(up) { setBlanket(up ? 'over_head' : 'flat'); }
   function setClock(text) { const c = clockFace.material.map.image.getContext('2d'); c.fillStyle = '#111'; c.fillRect(0, 0, 128, 96); c.font = 'bold 54px monospace'; c.fillStyle = '#ff4a3a'; c.textAlign = 'center'; c.fillText(text, 64, 66); clockFace.material.map.needsUpdate = true; }
   setLamp(false); setMoon(true); setHall(false); prac('closet_light', false); prac('desk_lamp', false); setClosetDoors(0); setDoor(0);
@@ -341,7 +326,7 @@ export function build(scene) {
     ghost_front_mcu: C([-0.2, 5.0, -0.6], [3.2, 4.8, -4.2], 34, [], 'Ch10: Skye at ghost_stop from the front (bed side of her, camera side of the line)'),
   });
 
-  const parts = { bed, blanket, blanketUp, blanketLegs, blanketLying, blanketSitting, pillow, closet, closetL, closetR, doorLeaf, desk, chair, mirror: mirrorGlass, garlic, shade, bulb, moon, sky, rug, hallPanel };
+  const parts = { bed, blanket, blanketUp, blanketLegs, pillow, closet, closetL, closetR, doorLeaf, desk, chair, mirror: mirrorGlass, garlic, shade, bulb, moon, sky, rug, hallPanel };
 
   function setState(state = {}) {
     const ch = state.chapter ?? 1;

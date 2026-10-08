@@ -1,11 +1,5 @@
 [
  {
-  "asset": "sfx/night_bed.wav",
-  "start": 0.0,
-  "gain": 0.1,
-  "dur": 8.64
- },
- {
   "asset": "sfx/door_creak.wav",
   "start": 0.0,
   "gain": 0.32

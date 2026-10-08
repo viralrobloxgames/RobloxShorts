@@ -267,15 +267,6 @@ export function build(scene) {
   // pancake stack (on a plate on the island, toward the hiding side so a hand can reach it from the front)
   const STACK = V(0.6, ISLAND_TOP, 1.12);   // plate rim at the front edge (z 1.8) so a hand from the front can reach it
   const stack = new THREE.Group(); stack.position.copy(STACK); island.add(stack);
-  // opt-in side counter against the left wall just right of the pantry opening (x -16..-14.6, z 2.5..5.0, top 3.4);
-  // hidden unless setState({ stackAt: 'side' }), which also moves the pancake stack onto it (ch02's pancake steal)
-  const SIDE_STACK = V(-15.25, COUNTER_TOP, 3.4);
-  const sideG = new THREE.Group(); sideG.visible = false; group.add(sideG);
-  box(1.3, COUNTER_TOP - 0.25 - 0.4, 2.5, cabM, -15.35, 0.4 + (COUNTER_TOP - 0.65) / 2, 3.75, sideG);
-  box(1.1, 0.4, 2.3, std('#3f5a52'), -15.45, 0.2, 3.75, sideG);
-  box(1.45, 0.25, 2.6, topM, -15.3, COUNTER_TOP - 0.125, 3.75, sideG);
-  box(0.08, COUNTER_TOP - 1.25, 2.2, cabDark, -14.68, 0.45 + (COUNTER_TOP - 1.25) / 2 + 0.05, 3.75, sideG);
-  box(0.12, 0.1, 0.6, handleM, -14.6, COUNTER_TOP - 0.62, 3.75, sideG);
   cyl(0.66, 0.56, 0.1, std('#ffffff', { roughness: 0.3 }), 0, 0.05, 0, stack);
   const cakeM = std('#d9a05b', { roughness: 0.7 }), cakeTop = std('#c4823d', { roughness: 0.6 });
   const cakes = []; const CAKE_H = 0.11;
@@ -417,7 +408,6 @@ export function build(scene) {
     pantry_inside: M(-17.5, 0, -0.5, PI / 2, { note: 'inside the pantry facing out (+x)' }),
     pantry_slats: M(-16.75, 0, -0.5, PI / 2, { note: 'nose to the slats, peeking out; the camera pantry_peek sees the eyes through the gap' }),
     pantry_front: M(-13.5, 0, -0.5, -PI / 2, { note: 'outside the pantry doors facing them' }),
-    pantry_step_out: M(-13.5, 0, 2.3, Math.atan2(-1.75, 1.1), { note: 'one step out of the ajar pantry, facing the side counter stack (opt-in stackAt: side); stack top ~2.1 away' }),
     stairs_top: M(STAIR_X, stairFootY(-9.6 - 0.45), -9.6, 0, { note: 'top of the visible stairs (head in the stairwell), facing down (+z)' }),
     stairs_mid: M(STAIR_X, stairFootY(-4.0 - 0.45), -4.0, 0, { note: 'halfway down (Ch2 freeze)' }),
     stairs_low: M(STAIR_X, stairFootY(0.4 - 0.45), 0.4, 0, { note: 'two steps from the bottom' }),
@@ -575,9 +565,6 @@ export function build(scene) {
       if (marks[`island_plate_${n}`]) marks[`island_plate_${n}`].pos.x = wx;
       if (n === 3) { marks.island_phone_3.pos.x = wx + 0.8; marks.backpack_floor_3.pos.x = wx + 1.0; }
     });
-    // stackAt: 'island' (default) | 'side' (shows the side counter and moves the stack onto it)
-    const sideOn = state.stackAt === 'side'; sideG.visible = sideOn;
-    if (sideOn) { stack.position.copy(SIDE_STACK); } else { stack.position.copy(STACK); }
     // pancakes: null hides the plate; n shows n pancakes
     const n = state.pancakes;
     stack.visible = n !== null && n !== undefined;
@@ -613,10 +600,9 @@ export function build(scene) {
   setState({ time: 'day', fridge: '', pancakes: null, plate: null });
 
   // world-space helpers for chapters
-  const anchors = { pancakeStackTop: () => W(stack.position.x, stack.position.y + 0.1 + (state.pancakes || 0) * 0.11, stack.position.z),
-    sideStackTop: () => W(SIDE_STACK.x, SIDE_STACK.y + 0.1 + (state.pancakes || 0) * 0.11, SIDE_STACK.z), plate: W(PLATE.x, PLATE.y, PLATE.z), fridgeLetters: W(-11, 4.6, -8.7) };
+  const anchors = { pancakeStackTop: () => W(STACK.x, STACK.y + 0.1 + (state.pancakes || 0) * 0.11, STACK.z), plate: W(PLATE.x, PLATE.y, PLATE.z), fridgeLetters: W(-11, 4.6, -8.7) };
   // door helper: setDoor('back_door' | 'pantry' | 'fridge', 0..1)
   const setDoor = (name, u) => setState({ [{ back_door: 'backDoor', pantry: 'pantryDoors', fridge: 'fridgeOpen' }[name] || name]: u });
   return { id: 'kitchen', group, marks, cams, lights, setState, setDoor, state, stairsPath, stairsGait, route, fromStairs, alongRoute, routeLength, sightBlocked,
-    seatY: (scale = 1) => STOOL_TOP - 1.5 * scale, STOOL_TOP, ISLAND_TOP, sideStackTop: anchors.sideStackTop, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
+    seatY: (scale = 1) => STOOL_TOP - 1.5 * scale, STOOL_TOP, ISLAND_TOP, stairFootY: (zWorld) => stairFootY(zWorld - OFFSET.z), anchors, walls: walls.map((w) => w.obj) };
 }

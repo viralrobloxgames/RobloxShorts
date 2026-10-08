@@ -231,31 +231,3 @@ export function checkSight(frame, hider, seekers, { fov = 110 } = {}) {
   }
   return out;
 }
-
-// Snap check: per frame, each visible actor's limb rotations (bone local quaternions), root position and held / loose
-// props' world positions, compared with the previous frame by the caller. Returns { cam: [pos, dir], actors: {...}, props: {...} }.
-const SNAP_BONES = ['Torso', 'Head', 'Arm.L', 'Arm.R', 'Leg.L', 'Leg.R'];
-export function snapState(frame) {
-  const clip = window.clipModule, stage = window.clipStage, meta = window.clipMeta;
-  clip.update((frame - 1) / meta.fps, stage);
-  stage.scene.updateMatrixWorld(true); stage.camera.updateMatrixWorld(true);
-  stage.scene.onBeforeRender(stage.renderer, stage.scene, stage.camera, null);
-  const cam = stage.camera, cp = cam.getWorldPosition(new THREE.Vector3()), cd = cam.getWorldDirection(new THREE.Vector3());
-  const actors = {}, props = {};
-  const fr = new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse));
-  const seen = (o) => { const b = new THREE.Box3().setFromObject(o); return !b.isEmpty() && fr.intersectsBox(b); };   // any part inside the camera's view
-  for (const a of packActors) {
-    if (!a.root.parent || !visibleChain(a.root)) continue;
-    let p = a.root; while (p.parent) p = p.parent; if (p !== stage.scene) continue;
-    const name = actorName(a), bones = {};
-    for (const b of SNAP_BONES) if (a.bones[b]) bones[b] = a.bones[b].quaternion.toArray();
-    actors[name] = { root: a.root.getWorldPosition(new THREE.Vector3()).toArray(), heading: a.root.rotation.y, bones, on: seen(a.root) };
-  }
-  stage.scene.traverseVisible((o) => {                      // props: makeProp roots (userData.id), held or loose
-    if (!o.userData || !o.userData.id || typeof o.userData.id !== 'string' || !visibleChain(o)) return;
-    for (let x = o.parent; x; x = x.parent) if (x.userData?.id && typeof x.userData.id === 'string') return;   // nested part of a prop
-    let holder = null; for (let x = o.parent; x; x = x.parent) { const a = packActors.find((q) => q.root === x); if (a) { holder = actorName(a); break; } }
-    props[o.userData.id + '#' + o.id] = { pos: o.getWorldPosition(new THREE.Vector3()).toArray(), holder, on: seen(o) };
-  });
-  return { cam: [cp.toArray(), cd.toArray()], actors, props };
-}

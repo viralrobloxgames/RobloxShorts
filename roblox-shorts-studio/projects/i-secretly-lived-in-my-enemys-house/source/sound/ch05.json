@@ -91,12 +91,6 @@
   "gain": 0.07
  },
  {
-  "asset": "sfx/hiss.wav",
-  "start": 27.423,
-  "gain": 0.03,
-  "dur": 1.0
- },
- {
   "asset": "sfx/click.wav",
   "start": 29.251,
   "gain": 0.05
@@ -158,11 +152,5 @@
   "start": 63.7,
   "gain": 0.025,
   "dur": 3.567
- },
- {
-  "asset": "sfx/hiss.wav",
-  "start": 65.947,
-  "gain": 0.03,
-  "dur": 1.0
  }
 ]

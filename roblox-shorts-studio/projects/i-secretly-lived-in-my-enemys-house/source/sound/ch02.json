@@ -1,11 +1,5 @@
 [
  {
-  "asset": "sfx/room_hum.wav",
-  "start": 0.0,
-  "gain": 0.05,
-  "dur": 4.56
- },
- {
   "asset": "sfx/door_creak.wav",
   "start": 0.15,
   "gain": 0.05,
@@ -200,39 +194,9 @@
   "gain": 0.08
  },
  {
-  "asset": "sfx/forest_wind.wav",
-  "start": 44.355,
-  "gain": 0.05,
-  "dur": 2.93
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 47.285,
-  "gain": 0.04,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 52.185,
-  "gain": 0.04,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 57.085,
-  "gain": 0.04,
-  "dur": 5.0
- },
- {
   "asset": "sfx/click.wav",
   "start": 61.091,
   "gain": 0.08
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 61.985,
-  "gain": 0.04,
-  "dur": 4.872
  },
  {
   "asset": "sfx/footstep.wav",

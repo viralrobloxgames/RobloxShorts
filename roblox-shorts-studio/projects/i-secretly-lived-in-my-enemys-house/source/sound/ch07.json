@@ -165,12 +165,6 @@
   "gain": 0.25
  },
  {
-  "asset": "sfx/room_hum.wav",
-  "start": 51.063,
-  "gain": 0.55,
-  "dur": 0.83
- },
- {
   "asset": "sfx/torch_click.wav",
   "start": 51.813,
   "gain": 0.22

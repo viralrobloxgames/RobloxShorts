@@ -1,11 +1,5 @@
 [
  {
-  "asset": "sfx/night_bed.wav",
-  "start": 0.0,
-  "gain": 0.09,
-  "dur": 21.206
- },
- {
   "asset": "sfx/footstep.wav",
   "start": 10.359,
   "gain": 0.08
@@ -29,12 +23,6 @@
   "asset": "sfx/footstep.wav",
   "start": 18.836,
   "gain": 0.07
- },
- {
-  "asset": "sfx/room_hum.wav",
-  "start": 21.206,
-  "gain": 0.06,
-  "dur": 36.851
  },
  {
   "asset": "sfx/door_creak.wav",

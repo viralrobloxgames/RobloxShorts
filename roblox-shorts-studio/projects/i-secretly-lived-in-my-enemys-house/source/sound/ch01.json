@@ -1,11 +1,5 @@
 [
  {
-  "asset": "sfx/night_bed.wav",
-  "start": 0.0,
-  "gain": 0.1,
-  "dur": 12.199
- },
- {
   "asset": "sfx/footstep.wav",
   "start": 0.0,
   "gain": 0.08
@@ -54,12 +48,6 @@
   "asset": "sfx/footstep.wav",
   "start": 11.459,
   "gain": 0.07
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 12.199,
-  "gain": 0.07,
-  "dur": 34.883
  },
  {
   "asset": "sfx/plop.wav",
@@ -116,12 +104,6 @@
   "asset": "sfx/latch.wav",
   "start": 52.012,
   "gain": 0.2
- },
- {
-  "asset": "sfx/night_bed.wav",
-  "start": 52.112,
-  "gain": 0.1,
-  "dur": 11.573
  },
  {
   "asset": "sfx/latch.wav",

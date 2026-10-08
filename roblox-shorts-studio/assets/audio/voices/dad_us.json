@@ -1,0 +1,18 @@
+{
+ "made_with": "Qwen3-TTS-12Hz-1.7B-VoiceDesign (cloud, CPU)",
+ "seed": 21,
+ "instruct": "A laid-back American guy in his thirties, soft-spoken and genuine, a friendly father with a slightly husky medium-low voice. Clear General American accent. Natural, unscripted and conversational, like talking plainly with family at the kitchen table, never like an announcer. Relaxed pace, playful when joking.",
+ "checks": {
+  "dur": 9.76,
+  "f0_med": 149.5,
+  "f0_p10_p90": [
+   88.9,
+   214.1
+  ],
+  "wps": 2.66,
+  "transcript": "Good morning, kitchen. Who wants pancakes? That's just the pipes, champ. This house is a hundred years old. Hmm. I don't remember buying a pumpkin, girl."
+ },
+ "inspiration": "ElevenLabs \"Mark - Natural Conversations\" (casual, natural American style; designed from a text description, nothing cloned)",
+ "role": "DAD (American), replaces george_dad in every chapter",
+ "chosen": "2026-10-08 by the user (C_s21)"
+}

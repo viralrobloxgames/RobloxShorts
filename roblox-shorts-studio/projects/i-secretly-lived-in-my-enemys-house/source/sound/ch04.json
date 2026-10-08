@@ -1,11 +1,5 @@
 [
  {
-  "asset": "sfx/crowd.wav",
-  "start": 0.0,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
   "asset": "sfx/footstep.wav",
   "start": 0.12,
   "gain": 0.07
@@ -21,75 +15,9 @@
   "gain": 0.07
  },
  {
-  "asset": "sfx/crowd.wav",
-  "start": 4.9,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 9.8,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 14.7,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
   "asset": "sfx/plop.wav",
   "start": 16.998,
   "gain": 0.12
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 19.6,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 24.5,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 29.4,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 34.3,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 39.2,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 44.1,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 49.0,
-  "gain": 0.045,
-  "dur": 5.0
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 53.9,
-  "gain": 0.045,
-  "dur": 5.0
  },
  {
   "asset": "sfx/swish_1.wav",
@@ -120,11 +48,5 @@
   "asset": "sfx/pop.wav",
   "start": 56.845,
   "gain": 0.12
- },
- {
-  "asset": "sfx/crowd.wav",
-  "start": 58.8,
-  "gain": 0.045,
-  "dur": 2.285
  }
 ]
