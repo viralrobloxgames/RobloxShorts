@@ -1,0 +1,114 @@
+{
+ "text": "You cut the crusts off your sandwich? What are you, five? I'm not scared. I'm just very alert. Lily! Go back to bed!",
+ "target": "clearly a boy; f0 median 165-205 Hz",
+ "takes": {
+  "A_s5": {
+   "instruct": "A confident 12-year-old American boy with a slightly husky, lower kid's voice. Teasing, cocky and amused, a bit of a show-off. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. Medium pace.",
+   "seed": 5,
+   "dur": 7.6,
+   "f0_med": 253.8,
+   "f0_p10_p90": [
+    165.1,
+    359.8
+   ],
+   "wps": 3.03,
+   "transcript": "You cut the crust off your sandwich? What are you, five? I'm not scared, I'm just very alert. Lily, go back to bed."
+  },
+  "A_s13": {
+   "instruct": "A confident 12-year-old American boy with a slightly husky, lower kid's voice. Teasing, cocky and amused, a bit of a show-off. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. Medium pace.",
+   "seed": 13,
+   "dur": 9.2,
+   "f0_med": 245.2,
+   "f0_p10_p90": [
+    115.7,
+    317.9
+   ],
+   "wps": 2.5,
+   "transcript": "You cut the crust off your sandwich! What are you, five? Huh, I'm not scared. I'm just very alert! Lily! Go back to bed!"
+  },
+  "A_s29": {
+   "instruct": "A confident 12-year-old American boy with a slightly husky, lower kid's voice. Teasing, cocky and amused, a bit of a show-off. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. Medium pace.",
+   "seed": 29,
+   "dur": 8.48,
+   "f0_med": 338.8,
+   "f0_p10_p90": [
+    218.9,
+    378.5
+   ],
+   "wps": 2.71,
+   "transcript": "You cut the crusts off your sandwich? What are you, five? I'm not scared, I'm just very alert. Lily, go back to bed."
+  },
+  "B_s5": {
+   "instruct": "A 12-year-old American boy from a family sitcom, with a lower, slightly scratchy voice that's just starting to drop. Sarcastic and playful, quick but clear. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. ",
+   "seed": 5,
+   "dur": 8.88,
+   "f0_med": 326.3,
+   "f0_p10_p90": [
+    145.8,
+    389.2
+   ],
+   "wps": 2.59,
+   "transcript": "You cut the crusts off your sandwich? What are you five? I'm not scared. I'm just very alert, Lily. Go back to bed."
+  },
+  "B_s13": {
+   "instruct": "A 12-year-old American boy from a family sitcom, with a lower, slightly scratchy voice that's just starting to drop. Sarcastic and playful, quick but clear. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. ",
+   "seed": 13,
+   "dur": 9.52,
+   "f0_med": 223.5,
+   "f0_p10_p90": [
+    159.0,
+    350.7
+   ],
+   "wps": 2.42,
+   "transcript": "You cut the crusts off your sandwich? What are you, Five? I'm not scared, I'm just very alert. Lily! Go back to bed!"
+  },
+  "B_s29": {
+   "instruct": "A 12-year-old American boy from a family sitcom, with a lower, slightly scratchy voice that's just starting to drop. Sarcastic and playful, quick but clear. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. ",
+   "seed": 29,
+   "dur": 10.24,
+   "f0_med": 275.2,
+   "f0_p10_p90": [
+    184.3,
+    411.0
+   ],
+   "wps": 2.25,
+   "transcript": "You cut the crust off your sandwich? What are you five? I'm not scared. I'm just very alert. Lily, go back to bed."
+  },
+  "C_s5": {
+   "instruct": "An easygoing 13-year-old American boy with a warm, lower voice, a bit gravelly. Casual and cheeky, deadpan when joking, loud when he yells. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. Natural rhythm.",
+   "seed": 5,
+   "dur": 7.84,
+   "f0_med": 205.0,
+   "f0_p10_p90": [
+    136.8,
+    255.3
+   ],
+   "wps": 2.93,
+   "transcript": "You cut the crust off your sandwich? What are you five? I'm not scared, I'm just very alert. Lily, go back to bed."
+  },
+  "C_s13": {
+   "instruct": "An easygoing 13-year-old American boy with a warm, lower voice, a bit gravelly. Casual and cheeky, deadpan when joking, loud when he yells. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. Natural rhythm.",
+   "seed": 13,
+   "dur": 7.92,
+   "f0_med": 138.4,
+   "f0_p10_p90": [
+    77.6,
+    243.6
+   ],
+   "wps": 2.9,
+   "transcript": "You cut the crust off your sandwich, what are you five? I'm not scared, I'm just very alert. Lily, go back to bed."
+  },
+  "C_s29": {
+   "instruct": "An easygoing 13-year-old American boy with a warm, lower voice, a bit gravelly. Casual and cheeky, deadpan when joking, loud when he yells. General American accent. Natural and conversational, like a real kid talking to his friends, not a cartoon and not an announcer. Clearly a boy, never girlish. Natural rhythm.",
+   "seed": 29,
+   "dur": 7.44,
+   "f0_med": 333.0,
+   "f0_p10_p90": [
+    234.1,
+    398.3
+   ],
+   "wps": 3.09,
+   "transcript": "You cut the crust off your sandwich? What are you, five? I'm not scared, I'm just very alert. Lily, go back to bed."
+  }
+ }
+}
