@@ -1,31 +1,7 @@
 {
  "voice": "brittney",
  "text": "Wow. You look terrible.",
- "seed": 39632,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base",
- "words": [
-  {
-   "word": "Wow,",
-   "start": 0.0,
-   "end": 0.46
-  },
-  {
-   "word": "you",
-   "start": 0.78,
-   "end": 0.96
-  },
-  {
-   "word": "look",
-   "start": 0.96,
-   "end": 1.08
-  },
-  {
-   "word": "terrible.",
-   "start": 1.08,
-   "end": 1.52
-  }
- ],
- "words_md5": "dfb652529106a44fe0d7def8469a8c02",
- "whisper": "small.en"
+ "seed": 43632,
+ "attempt": 4,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }

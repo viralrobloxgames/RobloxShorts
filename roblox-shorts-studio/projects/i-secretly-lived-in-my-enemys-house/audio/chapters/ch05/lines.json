@@ -103,7 +103,7 @@
    "start": 21.429,
    "end": 22.149,
    "clip": "audio/qwen/take-01/clips/153e7c708a5f.wav",
-   "seed": 92329
+   "seed": 105329
   },
   {
    "index": 10,
@@ -191,7 +191,7 @@
    "start": 37.571,
    "end": 38.371,
    "clip": "audio/qwen/take-01/clips/0d270a5ab88f.wav",
-   "seed": 62039
+   "seed": 73039
   },
   {
    "index": 18,

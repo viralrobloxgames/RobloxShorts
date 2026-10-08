@@ -118,7 +118,9 @@ def main():
                 meta = {'voice': a.voice, 'text': l['text'], 'seed': seed, 'attempt': att, 'model': 'Qwen3-TTS-12Hz-1.7B-Base'}
                 side.write_text(json.dumps(meta, indent=1))
             ty, _ = sf.read(clips / f'{name}.wav', dtype='float32'); ratio = len(ty) / tn
-            new = nm.effect(stretch(nm.level(ty), sr, tn, tmp), sr, l['note'] or '', tmp)[:tn]
+            # a take much shorter than its slot is only slowed to 0.9x and padded with a pause (a big slow-down sounds drawn out)
+            tgt = tn if len(ty) / tn >= 0.9 else int(len(ty) / 0.9)
+            new = nm.effect(stretch(nm.level(ty), sr, tgt, tmp), sr, l['note'] or '', tmp)[:tn]
             if len(new) < tn:
                 new = np.concatenate([new, np.zeros(tn - len(new), np.float32)])
             f = int(0.01 * sr); g = np.linspace(0, 1, f, dtype=np.float32)

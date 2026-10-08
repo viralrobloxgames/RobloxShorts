@@ -1,16 +1,7 @@
 {
  "voice": "brittney",
  "text": "Deal.",
- "seed": 92329,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base",
- "words": [
-  {
-   "word": "deal.",
-   "start": 0.0,
-   "end": 0.46
-  }
- ],
- "words_md5": "9066a52d6bd3d5a916ac2102a1f2d37e",
- "whisper": "small.en"
+ "seed": 105329,
+ "attempt": 13,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }

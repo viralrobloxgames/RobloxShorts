@@ -1,16 +1,7 @@
 {
  "voice": "brittney",
  "text": "Yes.",
- "seed": 12273,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base",
- "words": [
-  {
-   "word": "Yes.",
-   "start": 0.0,
-   "end": 0.32
-  }
- ],
- "words_md5": "653d97d4755540cfc3a75a7cbe76eb54",
- "whisper": "small.en"
+ "seed": 25273,
+ "attempt": 13,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }

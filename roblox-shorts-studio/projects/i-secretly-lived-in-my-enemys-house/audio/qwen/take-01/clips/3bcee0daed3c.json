@@ -1,26 +1,7 @@
 {
  "voice": "brittney",
  "text": "Fine. One condition.",
- "seed": 19661,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base",
- "words": [
-  {
-   "word": "Find",
-   "start": 0.0,
-   "end": 0.4
-  },
-  {
-   "word": "one",
-   "start": 0.4,
-   "end": 0.88
-  },
-  {
-   "word": "condition.",
-   "start": 0.88,
-   "end": 1.14
-  }
- ],
- "words_md5": "89f26c109d558aadec4ee2a41078797c",
- "whisper": "small.en"
+ "seed": 20661,
+ "attempt": 1,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }

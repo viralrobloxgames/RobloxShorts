@@ -1,31 +1,7 @@
 {
  "voice": "brittney",
  "text": "I almost got hoovered.",
- "seed": 90548,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base",
- "words": [
-  {
-   "word": "I",
-   "start": 0.0,
-   "end": 0.2
-  },
-  {
-   "word": "almost",
-   "start": 0.2,
-   "end": 0.44
-  },
-  {
-   "word": "got",
-   "start": 0.44,
-   "end": 0.68
-  },
-  {
-   "word": "hoover'd.",
-   "start": 0.68,
-   "end": 1.1
-  }
- ],
- "words_md5": "f68f932b8fdec372df5d49d8a5f321c1",
- "whisper": "small.en"
+ "seed": 95548,
+ "attempt": 5,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }

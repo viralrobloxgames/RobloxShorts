@@ -1,26 +1,7 @@
 {
  "voice": "brittney",
  "text": "Not of him.",
- "seed": 62039,
- "attempt": 0,
- "model": "Qwen3-TTS-12Hz-1.7B-Base",
- "words": [
-  {
-   "word": "Not",
-   "start": 0.0,
-   "end": 0.32
-  },
-  {
-   "word": "of",
-   "start": 0.32,
-   "end": 0.46
-  },
-  {
-   "word": "him?",
-   "start": 0.46,
-   "end": 0.66
-  }
- ],
- "words_md5": "31ae190fb20589033ab7fe1995d356e5",
- "whisper": "small.en"
+ "seed": 73039,
+ "attempt": 11,
+ "model": "Qwen3-TTS-12Hz-1.7B-Base"
 }
